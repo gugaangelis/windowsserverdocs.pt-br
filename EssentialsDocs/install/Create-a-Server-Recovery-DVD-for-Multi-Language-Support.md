@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: b71fc748f7cc8d82420b7a62fe502135036db727
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9cafaf25a18ffe17894e11ff0676e492656e5831
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312109"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256665"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Criar um DVD de recuperação de servidor para suporte a vários idiomas
 
@@ -44,7 +44,7 @@ ms.locfileid: "80312109"
   
 2.  Criar uma mídia de distribuição  
   
-### <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
+### <a name="prerequisites"></a>Pré-requisitos  
  Para adicionar suporte multilíngue à Instalação do Windows, é preciso:  
   
 
@@ -66,7 +66,7 @@ ms.locfileid: "80312109"
 > [!NOTE]
 >  Verifique se você instalou os pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual correta. Os pacotes de idiomas da interface do usuário multilíngüe do Windows Server 2012 estão disponíveis no [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções descritas no passo a [passo: criação de imagem multilíngüe do Windows na criação de um multilíngue](https://technet.microsoft.com/library/jj126995.aspx) ao criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas do Windows Server Essentials ao install. wim.  
 >   
->  Os pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia do pacote de idiomas em \Language packs\\<\>do CultureName.  
+>  Os pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia do pacote de idiomas em \Language packs \\<CultureName \> .  
   
 > [!NOTE]
 >  Nem todos os pacotes de idiomas podem não estar disponíveis antes do lançamento do Windows Server 2012.  
@@ -102,15 +102,10 @@ ms.locfileid: "80312109"
     Dism /Unmount-Wim /MountDir:C:\InstallMount /Commit  
     ```  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
  [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
-
- [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizações adicionais](../install/Additional-Customizations.md)   
- [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

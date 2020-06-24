@@ -8,12 +8,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ddcdb9576072af6b7014f6dc9b0c38e9f5bdd25d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 69a57333990a225663d2cd3cc61c75947d07cdab
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818359"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267367"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>Criar uma Unidade Flash USB Inicializável
 
@@ -36,7 +36,7 @@ Você pode criar uma unidade flash USB inicializável para usar para implantar o
   
 1.  Insira uma unidade flash USB em um computador em execução.  
   
-2.  Abra uma janela de Prompt de Comando como administrador.  
+2.  Abra uma janela de Prompt de comando como administrador.  
   
 3.  Digite `diskpart`.  
   
@@ -46,7 +46,7 @@ Você pode criar uma unidade flash USB inicializável para usar para implantar o
   
 6.  Digite `clean`e clique em ENTER. Esse comando exclui todos os dados da unidade flash USB.  
   
-7.  Para criar uma nova partição primária na unidade flash USB, digite `create partition primary` e clique em ENTER.  
+7.  Para criar uma nova partição primária na unidade flash USB, digite `create partition primary`e clique em ENTER.  
   
 8.  Para selecionar a partição recém-criada, digite `select partition 1`e clique em ENTER.  
   
@@ -61,18 +61,12 @@ Você pode criar uma unidade flash USB inicializável para usar para implantar o
   
 12. Quando terminar de preparar sua imagem personalizada, salve-a na raiz da unidade flash USB.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 
  [Introdução com o Windows Server Essentials ADK](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testar a experiência do usuário](Testing-the-Customer-Experience.md)   
-
- [Introdução com o Windows Server Essentials ADK](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizações adicionais](../install/Additional-Customizations.md)   
- [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)   
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)     
 
  [Como podemos ajudá-lo?](https://windows.microsoft.com/windows/support)

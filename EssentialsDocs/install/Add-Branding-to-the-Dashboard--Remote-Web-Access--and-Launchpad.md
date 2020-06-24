@@ -8,12 +8,12 @@ ms.assetid: 166262f8-b2a5-4b1c-a4a7-a141e1c54f10
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 50f132d7f6422c32b2a72948ca96b5bd82e701df
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbe1c042c965a639ac860a7151d16e6548324d9e
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817739"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267507"
 ---
 # <a name="add-branding-to-the-dashboard-remote-web-access-and-launchpad"></a>Adicionar Identidade Visual para o Dashboard, o Acesso Remoto da Web e a Barra Inicial
 
@@ -30,13 +30,13 @@ ms.locfileid: "80817739"
   
 1.  No servidor, mova o mouse para o canto superior direito da tela e clique em **Pesquisar**.  
   
-2.  Na caixa de Pesquisa, digite **regedit**e, em seguida, clique no aplicativo **Regedit** .  
+2.  Na caixa de Pesquisa, digite **regedit** e, em seguida, clique no aplicativo **Regedit**.  
   
 3.  No painel de navegação, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**. Se a chave **OEM** não existir, conclua as seguintes etapas para criá-la:  
   
     1.  Clique com o botão direito do mouse em **Windows Server**, clique em **Novo** e em **Chave**.  
   
-    2.  Digite **OEM** como nome da chave.  
+    2.  Digite **OEM** para o nome da chave.  
   
 4.  (Opcional) Se estiver criando uma entrada para um logotipo, você poderá criar diferentes chaves para distinguir as versões de idioma do logotipo. Por exemplo, se você tiver as versões em inglês e em alemão de um logotipo, é possível criar uma chave en-us e uma chave de-de. Como todos os arquivos de logotipo são armazenados na mesma pasta, é necessário fornecer instâncias do arquivo de imagem do logotipo com um nome exclusivo para cada idioma. Por exemplo, você cria um arquivo chamado DashboardLogo_en.png e DashboardLogo_de.png.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "80817739"
   
 ### <a name="registry-strings-and-values"></a>Valores e cadeias de caracteres do Registro  
   
-|Local da identidade visual|Descrição|Nome da cadeia de caracteres|Valor de dados|  
+|Local da identidade visual|Description|Nome da cadeia de caracteres|Valor de dados|  
 |--------------------------|-----------------|-----------------|----------------|  
 |Logotipo do Dashboard|Adiciona a imagem do logotipo ao Dashboard. O logotipo do painel deve estar no formato .png e não deve exceder 350 pixels de largura por 38 de altura.<br /><br /> **Importante:** Para comarcar o painel com o logotipo, você deve editar o bloco de trabalho artístico que é fornecido no DVD do OPK e acrescentar o logotipo da empresa à imagem, ao seguir os requisitos de espaço em branco apropriados. Para obter mais informações, consulte o lado a lado do exemplo fornecido.|DashboardLogo|Nome do arquivo de imagem do logotipo|  
 |DashboardClientLogo|Adiciona a imagem do logotipo para a tela de logon de cliente do Painel.|DashboardClientLogo|Nome do arquivo de imagem do logotipo|  
@@ -75,9 +75,7 @@ ms.locfileid: "80817739"
 |Logotipo do site|Altera o logotipo padrão do site do Acesso Remoto da Web. O tamanho esperado do logotipo é 32 pixels por 32 pixels. Se seu logotipo for menor ou maior do que isso, será aumentado ou reduzido para se adequar a essas dimensões|WebsiteLogo|Nome do arquivo de imagem do logotipo|  
 |Logotipo do site anexado|O logotipo do parceiro será exibido logo abaixo do logotipo da Microsoft exibido no site do Acesso via Web Remoto. O tamanho esperado do logotipo é 200 pixels de altura por 50 pixels de largura. Se o seu logotipo for maior do que isso, ele será reduzido para se ajustar, sendo mantida a taxa de proporção original. Se o seu logotipo for menor do que isso, ele será centralizado no espaço de 200 por 50 pixels, e a taxa de proporção e o tamanho não serão alterados.|OEMLogo|Nome do arquivo de imagem do logotipo|  
 
-| Links no site home page e na página de logon | Acrescente links à página de logon e home page do site do Acesso via Web remoto. O .xml que contém as informações do link deve estar localizado em %programFiles%\Windows Server\Bin\OEM. O exemplo a seguir mostra o formato do arquivo. xml:<br /><br /> < OemLinks\><br /> < LogonLinks\><br /> Nome do link de <\=LogonLinkName ><br /> < text\>LogonLinkDescription </text\><br /> URL de <\>LogonLinkURL </URL\><br /> Ícone de <\>LinkIcon </Icon\><br /> </link\><br /> </LogonLinks\><br /> < HomepageLinks\><br /> Nome do link de <\=HomepageLinkName ><br /> < text\>HomepageLinkDescription </text\><br /> URL de <\>HomepageLinkURL </URL\><br /> </link\><br /> </HomepageLinks\><br /> </OemLinks\>| LinksXML | Consulte a tabela de [elementos LinksXML](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md#BKMK_Links) para obter uma lista dos elementos e descrições. |  
-
-| Links no site home page e na página de logon | Acrescente links à página de logon e home page do site do Acesso via Web remoto. O .xml que contém as informações do link deve estar localizado em %programFiles%\Windows Server\Bin\OEM. O exemplo a seguir mostra o formato do arquivo. xml:<br /><br /> < OemLinks\><br /> < LogonLinks\><br /> Nome do link de <\=LogonLinkName ><br /> < text\>LogonLinkDescription </text\><br /> URL de <\>LogonLinkURL </URL\><br /> Ícone de <\>LinkIcon </Icon\><br /> </link\><br /> </LogonLinks\><br /> < HomepageLinks\><br /> Nome do link de <\=HomepageLinkName ><br /> < text\>HomepageLinkDescription </text\><br /> URL de <\>HomepageLinkURL </URL\><br /> </link\><br /> </HomepageLinks\><br /> </OemLinks\>| LinksXML | Consulte a tabela de [elementos LinksXML](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md#BKMK_Links) para obter uma lista dos elementos e descrições. |  
+| Links no site home page e na página de logon | Acrescente links à página de logon e home page do site do Acesso via Web remoto. O .xml que contém as informações do link deve estar localizado em %programFiles%\Windows Server\Bin\OEM. O exemplo a seguir mostra o formato do arquivo. xml:<br /><br /> <OemLinks\><br /> <LogonLinks\><br /> Nome do link de <\= LogonLinkName><br /> <Text \> LogonLinkDescription</Text\><br /> <URL \> LogonLinkURL</URL\><br /> Ícone de <\> LinkIcon</Icon\><br /> </link\><br /> </LogonLinks\><br /> <HomepageLinks\><br /> Nome do link de <\= HomepageLinkName><br /> <Text \> HomepageLinkDescription</Text\><br /> <URL \> HomepageLinkURL</URL\><br /> </link\><br /> </HomepageLinks\><br /> </OemLinks \> | LinksXML | Consulte a tabela de [elementos LinksXML](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md#BKMK_Links) para obter uma lista dos elementos e descrições. |    
 
 | Logotipo da Launchpad | Adiciona a imagem de logotipo ao Launchpad. O logotipo Launchpad deve estar no formato. png e não deve ser mais alto que 64 pixels. | LaunchpadLogo | Nome do arquivo de imagem de logotipo |  
   
@@ -85,7 +83,7 @@ ms.locfileid: "80817739"
   
 ### <a name="linksxml-elements"></a>Elementos de LinksXML  
   
-|Elemento LinksXML|Descrição|  
+|Elemento LinksXML|Description|  
 |----------------------|-----------------|  
 |**LogonLinks**|  
 |LogonLinkName|O nome do link de logon.|  
@@ -98,7 +96,7 @@ ms.locfileid: "80817739"
 |HomepageLinkURL|A URL que aponta para o link da home page.|  
 |HomepageLinkIcon|O nome do arquivo de ícone do link da home page. Este arquivo deve estar no mesmo local de pasta do arquivo .xml. As imagens do HomepageLinkIcon devem ter 16x16 pixels e devem estar no formato. png. Se você não fornecer um HomepageLinkIcon, será usada a imagem padrão do ícone de link da home page.|  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   

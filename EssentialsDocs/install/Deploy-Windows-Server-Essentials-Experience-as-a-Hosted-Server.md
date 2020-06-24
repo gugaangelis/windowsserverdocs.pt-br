@@ -8,65 +8,41 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9ddeaedb09346216585b2eb1237ed9340da59756
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4066e003e2b32ddf746b9a37a10ebecfa3c50851
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817969"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267617"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Implantar a Experiência do Windows Server Essentials como um servidor hospedado
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este documento inclui informações específicas para os hosters que pretendem implantar o Microsoft Windows Server 16 com a função de experiência do Windows Server Essentials (conhecida como Windows Server Essentials no restante do documento) instalada em seu laboratório e pretende oferecer a experiência do Windows Server Essentials como um serviço para seus clientes. Este documento inclui as seguintes seções:  
+Este documento inclui informações específicas para os hosters que pretendem implantar o Microsoft Windows Server 16 com a função de experiência do Windows Server Essentials (conhecida como Windows Server Essentials no restante do documento) instalada em seu laboratório e pretender oferecer experiência do Windows Server Essentials como um serviço para seus clientes. Este documento inclui as seguintes seções:  
   
 
--   [Visão geral da experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
+-   [Visão geral da Experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
   
--   [Benefícios da hospedagem da experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
+-   [Benefícios de hospedagem da Experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
   
 -   [Opções de implantação com suporte](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
   
 -   [Topologias de rede com suporte](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
   
--   [Personalizar a imagem da função de experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
+-   [Personalizar a imagem da função da Experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
   
--   [Automatizar a implantação da experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
+-   [Automatizar a implantação da Experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
   
--   [Migre dados do Windows Small Business Server para a experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
-  
--   [Executar tarefas comuns usando o Windows PowerShell](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
-  
--   [Integração de email com o Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
-  
--   [Monitorar e gerenciar usando ferramentas nativas](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
-  
--   [Cenários de teste](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
-  
--   [Informações de suporte](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
-
--   [Visão geral da experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_WSEEOverview)  
-  
--   [Benefícios da hospedagem da experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Benefits)  
-  
--   [Opções de implantação com suporte](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedDeployment)  
-  
--   [Topologias de rede com suporte](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_SupportedToplogy)  
-  
--   [Personalizar a imagem da função de experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_CustomizeImage)  
-  
--   [Automatizar a implantação da experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_AutomateDeployment)  
-  
--   [Migre dados do Windows Small Business Server para a experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
+-   [Migrar dados do Windows Small Business Server para a Experiência do Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Migrate)  
   
 -   [Executar tarefas comuns usando o Windows PowerShell](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_PowerShell)  
   
 -   [Integração de email com o Windows Server Essentials](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_EmailIntegration)  
   
--   [Monitorar e gerenciar usando ferramentas nativas](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
+-   [Monitorar e gerenciar usando as ferramentas nativas](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Monitoring)  
   
--   [Cenários de teste](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
+-   [Cenários do teste](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Scenarios)  
   
 -   [Informações de suporte](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_Support)  
 
@@ -175,7 +151,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
 - **Backup do cliente** O backup de cliente será desativado por padrão para computadores cliente recentemente associados.  
   
-- **Serviço de restauração do cliente** Serviço de restauração do cliente will be disabled, and the UI will be hidden from the Dashboard.  
+- **Serviço de restauração do cliente** O serviço de restauração do cliente será desabilitado e a interface do usuário ficará oculta do Painel.  
   
 - **Histórico de arquivos** As configurações do histórico de arquivos para contas de usuário recém-criadas não serão gerenciadas automaticamente pelo servidor.  
   
@@ -195,7 +171,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 -   Para saber como instalar a função de experiência do Windows Server Essentials usando o Windows PowerShell, consulte [instalar e configurar o Windows Server Essentials](https://technet.microsoft.com/library/dn281793.aspx).  
   
 > [!NOTE]
->  Verifique se as configurações de fuso horário da máquina virtual do host e da experiência do Windows Server Essentials são as mesmas. Caso contrário, você pode enfrentar vários erros. Isso inclui: a configuração inicial do servidor pode não ter êxito em tarefas relacionadas ao certificado, o certificado pode não funcionar por algumas horas depois que a função da experiência do Windows Server Essentials for instalada e as informações do dispositivo não serão atualizadas devidamente.  
+>  Verifique se as configurações de fuso horário da máquina virtual do host e da experiência do Windows Server Essentials são as mesmas. Caso contrário, você pode enfrentar vários erros. Isso inclui: a configuração inicial do servidor pode não ter êxito em tarefas relacionadas ao certificado, o certificado pode não funcionar por algumas horas depois que a função da experiência do Windows Server Essentials for instalada e as informações do dispositivo não serão atualizadas corretamente.  
   
  Após a implantação, use o cmdlet do Windows PowerShell **Get-WssConfigurationStatus** para verificar se a configuração inicial foi bem-sucedida. O status retornado deve ser um dos seguintes: **Notstarted**, **FinishedWithWarning**, **Executando**, **Concluído**, **Falha**ou **PendingReboot**.  
   
@@ -236,7 +212,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ### <a name="add-user"></a>Adicionar usuário  
  **Sintaxe**:  
   
- Add-WssUser [-name] < cadeia de caracteres\> [-password] < SecureString\> [-AccessLevel < String\> &#124; {User Administrator}] [-FirstName < String\>] [-LastName < String\>] [-AllowRemoteAccess] [-AllowVpnAccess] [< commonparameters\>]  
+ Add-WssUser [-name] <cadeia \> de caracteres [-password] <SecureString \> [-AccessLevel <String \> {usuário &#124; administrador}] [-FirstName <String \> ] [-LastName <String \> ] [-AllowRemoteAccess] [-AllowVpnAccess] [<CommonParameters \> ]  
   
  **Exemplo**:  
   
@@ -247,7 +223,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ### <a name="add-server-folder"></a>Adicionar Pasta do Servidor  
  **Sintaxe**:  
   
- Add-WssFolder [-name] < cadeia de caracteres\> [-Path] < cadeia de caracteres\> [[-Description] < cadeia de caracteres\>] [-KeepPermissions] [< CommonParameters\>]  
+ Add-WssFolder [-name] <cadeia \> de caracteres [-Path] <cadeia de caracteres \> [[-Description] <cadeia de caracteres \> ] [-KeepPermissions] [<CommonParameters \> ]  
   
  **Exemplo**:  
   
@@ -261,7 +237,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ##  <a name="monitor-and-manage-by-using-native-tools"></a><a name="BKMK_Monitoring"></a>Monitorar e gerenciar usando ferramentas nativas  
  Esta seção aborda as ferramentas nativas que estão disponíveis no Windows Server 2012 R2 para monitorar e gerenciar o servidor.  
   
-### <a name="group-policy"></a>Diretiva de grupos  
+### <a name="group-policy"></a>Política de Grupo  
   A experiência do Windows Server Essentials aproveita o suporte nativo do Política de Grupo no Windows Server 2012 R2 e fornece uma interface do usuário para configurar o redirecionamento de pasta e as configurações de segurança.  
   
 > [!NOTE]
@@ -310,9 +286,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
     -   Para alterar o limite do ponto de verificação: No cliente, altere **HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold** do seu valor padrão de 40 GB.  
   
--   **Restauração Bare Metal do Cliente** Como o Ambiente de Pré-instalação do Windows não tem suporte para conexão VPN, não há suporte para a Restauração Bare Metal do Cliente. Você deve ocultar a tarefa de Serviço de Restauração do Cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).  
+-   **Restauração Bare Metal do Cliente** Como o Ambiente de Pré-instalação do Windows não tem suporte para conexão VPN, não há suporte para a Restauração Bare Metal do Cliente. Você deve ocultar a tarefa de serviço de restauração do cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).  
   
-##### <a name="file-history"></a>Histórico de Arquivos  
+##### <a name="file-history"></a>Histórico de arquivos  
  Histórico de arquivos é um recurso no Windows 8.1 e Windows 8 para fazer backup dos dados de perfil (bibliotecas, área de trabalho, contatos, favoritos) para um compartilhamento de rede. Você pode gerenciar centralmente a configuração do Histórico de arquivos de todos os computadores que executam o Windows 8.1 ou Windows 8 que fazem parte da rede do Windows Server Essentials. Os dados de backup são armazenados no servidor executando o Windows Server Essentials. Você deve ocultar a tarefa de Serviço de restauração do cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)  
   
 ### <a name="storage-management"></a>Gerenciamento de armazenamento  
@@ -322,7 +298,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
  Da perspectiva de hospedagem, recomendamos que você teste os seguintes cenários:  
   
 
--   [Implantação de servidor](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerDeploy)  
+-   [Implantação de Servidor](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerDeploy)  
   
 -   [Configuração do servidor](Deploy-Windows-Server-Essentials-Experience-as-a-Hosted-Server.md#BKMK_ServerConfig2)  
   
@@ -398,7 +374,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 -   [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [O que há de novo no Windows Server Essentials](../get-started/what-s-new.md)  
 

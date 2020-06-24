@@ -8,12 +8,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f7914ff205382ed2c74cb130061f850e2c0675f5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 145d4ef1039093f224e1dc73cb5d8286ddd8e494
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852289"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256476"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Transição do Windows Server Essentials para o Windows Server 2012 R2 Standard
 
@@ -39,9 +39,9 @@ O Windows Server 2016 é o sistema operacional pronto para a nuvem que dá supor
   
     1.  Abra uma janela de comando como administrador.  
   
-    2.  Execute o seguinte comando:  
+    2.  Execute o comando a seguir:  
   
-         **DISM/online/Set-Edition: ServerStandard/geteula:** *caminho do EULA* (em que o *caminho do EULA* representa o local no qual você deseja salvar o arquivo de eula; por exemplo: c:\ ws8std_eula. rtf). Use .rtf como extensão de nome de arquivo.  
+         **dism /online /set-edition:ServerStandard /geteula:** *caminho do eula* (onde *caminho do eula* representa o local no qual deseja salvar o arquivo dos Termos de Licença. Use .rtf como extensão de nome de arquivo.  
   
     3.  Abra o local onde salvou o arquivo e clique duas vezes nele para abri-lo.  
   
@@ -67,10 +67,8 @@ O Windows Server 2016 é o sistema operacional pronto para a nuvem que dá supor
   
    Após a transição, os recursos do Windows Server Essentials permanecem no servidor e têm suporte para até 100 usuários e 200 dispositivos.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 
 -   [Migrar dados do servidor para o Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Migrar dados do servidor para o Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

@@ -8,12 +8,12 @@ ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 65d3f3f30a69e9879e722cbdab260fb9715af545
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 46ee8e19f50b1bce48bd1e7c773bbd802d85b550
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820029"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267566"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Instalar e configurar o Windows Server Essentials
 
@@ -31,10 +31,6 @@ ms.locfileid: "80820029"
 1.  [Etapa 1: instalar o sistema operacional Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation) Nesta etapa, você instala o sistema operacional em seu servidor.  
   
 2.  [Etapa 2: configurar o sistema operacional Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure) Nesta etapa, você conclui a instalação fornecendo informações sobre sua empresa, configurações de domínio e administrador de rede. Essas informações são usadas para que o servidor fique pronto para uso.  
-
-1.  [Etapa 1: instalar o sistema operacional Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation) Nesta etapa, você instala o sistema operacional em seu servidor.  
-  
-2.  [Etapa 2: configurar o sistema operacional Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure) Nesta etapa, você conclui a instalação fornecendo informações sobre sua empresa, configurações de domínio e administrador de rede. Essas informações são usadas para que o servidor fique pronto para uso.  
 
   
 ###  <a name="step-1-install-the-windows-server-essentials-operating-system"></a><a name="BKMK_ManualInstallation"></a>Etapa 1: instalar o sistema operacional Windows Server Essentials  
@@ -74,9 +70,9 @@ ms.locfileid: "80820029"
    > [!NOTE]
    >  Se escolher não aceitar os termos de licença, a instalação não continua.  
   
-8. Em **Que tipo de instalação você deseja?** , clique em **Personalizada: Instalar somente o Windows (avançada)**  
+8. Em **Que tipo de instalação você deseja?**, clique em **Personalizada: Instalar somente o Windows (avançada)**  
   
-9. Em **Onde deseja instalar o Windows?** , selecione o disco rígido em que deseja instalar o sistema operacional Windows. Verifique se todos os discos rígidos internos estão disponíveis para instalação.  
+9. Em **Onde deseja instalar o Windows?**, selecione o disco rígido em que deseja instalar o sistema operacional Windows. Verifique se todos os discos rígidos internos estão disponíveis para instalação.  
   
     > [!IMPORTANT]
     >   O Windows Server Essentials deve ser instalado como C: volume e o tamanho do volume deve ser de pelo menos 60 GB. Recomenda-se criar duas partições no disco do sistema operacional, e não usar C: (partição do sistema) para armazenar nenhum dado de negócio.  
@@ -89,11 +85,11 @@ ms.locfileid: "80820029"
     1.  Para excluir uma partição, selecione a partição, clique em **Opções de unidade (avançadas)** e clique em **Excluir**. Depois de excluir a partição do sistema, crie uma nova partição usando as instruções na etapa **b** ou **c**.  
   
         > [!NOTE]
-        >  Depois de clicar em **Opções de unidade (avançadas)** , essa opção não aparecerá novamente. Nesse caso, ignore a parte da etapa que se refere a opções de unidade.  
+        >  Depois de clicar em **Opções de unidade (avançadas)**, essa opção não aparecerá novamente. Nesse caso, ignore a parte da etapa que se refere a opções de unidade.  
   
-    2.  Para criar uma partição a partir de um espaço não particionado, clique no disco rígido que deseja particionar, clique em **Opções de unidade (avançadas)** , clique em **Novo**, clique na caixa de texto **Tamanho** e digite o tamanho da partição que deseja criar. Por exemplo, se usar o tamanho de partição recomendado de 120 gigabytes (GB), digite **122880**e depois clique em **Aplicar**. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
+    2.  Para criar uma partição a partir de um espaço não particionado, clique no disco rígido que deseja particionar, clique em **Opções de unidade (avançadas)**, clique em **Novo**, clique na caixa de texto **Tamanho** e digite o tamanho da partição que deseja criar. Por exemplo, se usar o tamanho de partição recomendado de 120 gigabytes (GB), digite **122880**e depois clique em **Aplicar**. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
   
-    3.  Para criar uma partição que use todo o espaço não particionado, clique no disco rígido que você deseja particionar, clique em **Opções de unidade (avançadas)** , clique em **Novo** e clique em **Aplicar** para aceitar o tamanho padrão da partição. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
+    3.  Para criar uma partição que use todo o espaço não particionado, clique no disco rígido que você deseja particionar, clique em **Opções de unidade (avançadas)**, clique em **Novo** e clique em **Aplicar** para aceitar o tamanho padrão da partição. Depois de a partição ter sido criada, clique em **Avançar**. A partição é formatada antes de a instalação continuar.  
   
         > [!IMPORTANT]
         >  Você não pode mover o sistema operacional para uma partição diferente depois de concluir esta etapa.  
@@ -117,7 +113,7 @@ ms.locfileid: "80820029"
   
 ##### <a name="to-configure-the-operating-system"></a>Para configurar o sistema operacional  
   
-1.  Na página **Verificar as configurações de data e hora**, clique em **Alterar configurações de data e hora do sistema** para selecionar as configurações de data, hora e fuso horário para o servidor. Ao concluir, clique em **Avançar**.  
+1.  Na página **Verificar as configurações de data e hora**, clique em **Alterar configurações de data e hora do sistema** para selecionar as configurações de data, hora e fuso horário para o servidor. Quando tiver terminado, clique em **Avançar**.  
   
     > [!IMPORTANT]
     >  Se você estiver instalando o Windows Server Essentials em uma máquina virtual, certifique-se de escolher as mesmas configurações de fuso horário que estão sendo usadas pelo sistema operacional do host. Se as configurações de fuso horário diferirem, a instalação do servidor podem não ser bem-sucedida.  
@@ -133,7 +129,7 @@ ms.locfileid: "80820029"
     > [!IMPORTANT]
     >  O nome do servidor deve ser exclusivo na sua rede. Não é possível alterar o nome do servidor ou o nome de domínio interno depois de concluir esta etapa.  
   
-4.  Clique em **Avançar**.  
+4.  Clique em **Próximo**.  
   
 5.  Na página **Fornecer as informações da conta do administrador**, digite as informações para uma nova conta de administrador.  
   
@@ -146,7 +142,7 @@ ms.locfileid: "80820029"
   
 8.  A página **Atualizando e preparando o servidor** exibe o progresso do processo de instalação final. Isso leva tempo para concluir, e o computador reiniciará algumas vezes.  
   
-9. Depois de o último servidor reiniciar, a página **Seu servidor está pronto para ser usado** aparece. Clique em **Fechar**.  
+9. Depois de o último servidor reiniciar, a página **Seu servidor está pronto para ser usado** aparece. Clique em **fechar**  
   
 10. Clique no bloco Dashboard na tela **Inicial** e, no Dashboard, conclua as tarefas de **Configurar meu Servidor** na página **Home**. Você deve concluir essas tarefas imediatamente após a conclusão da instalação do Windows Server Essentials.  
   
@@ -162,18 +158,18 @@ ms.locfileid: "80820029"
   
  A tabela a seguir define os itens que podem aparecer na lista de tarefas de configuração.  
   
-|{1&gt;Tarefa&lt;1}|Descrição
+|Tarefa|Descrição
 |----------|-----------------|  
 |Obter atualizações para outros produtos da Microsoft|Clique nessa tarefa para acessar um link que executa uma ferramenta que permite que você especifique se deseja usar Microsoft Update para obter automaticamente atualizações para o Windows Server Essentials e outros produtos da Microsoft, como o Office.  
 |Adicionar contas de usuário|Clique nessa tarefa para visualizar breves informações sobre a adição de contas de usuário. Um link para executar o **Assistente para Adicionar uma Conta de Usuário** é fornecido. Para obter mais informações, consulte [Incluir uma conta de usuário](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).  
 |Adicionar pastas de servidor|Clique nessa tarefa para visualizar breves informações sobre a adição de pastas do servidor. Um link para executar o **Assistente para Adicionar uma Pasta** é fornecido. Também é fornecido um link para um tópico de ajuda online sobre usar Pastas do Servidor. Para obter mais informações, consulte [Incluir ou mover uma pasta no servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5). 
 |Configurar Backup do Servidor|Clique nessa tarefa para visualizar breves informações sobre usar o Servidor de Backup para proteger seus dados. Um link para executar o **Assistente para Configurar o Servidor de Backup** é fornecido. Para obter mais informações, consulte [Configurar ou personalizar o backup do servidor](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1). 
-|Configurar o Acesso em Qualquer Local|Clique nesta tarefa para exibir informações resumidas sobre o recurso de acesso em qualquer local no Windows Server Essentials. Um link para a página **Configurações do Acesso em Qualquer Local** é fornecido. Para obter mais informações, consulte [gerenciar o acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md). 
+|Configurar Acesso em Qualquer Local|Clique nesta tarefa para exibir informações resumidas sobre o recurso de acesso em qualquer local no Windows Server Essentials. Um link para a página **Configurações do Acesso em Qualquer Local** é fornecido. Para obter mais informações, consulte [gerenciar o acesso em qualquer local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md). 
 |Configurar notificação de alerta por email|Clique nessa tarefa para visualizar breves informações sobre notificação de alerta por email. Um link para executar a ferramenta **Configurar notificação por email para alertas** é fornecido. Para obter mais informações, consulte [Configurar notificações por email para alertas](../manage/Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email).  
 |Configurar Servidor de Mídia|Clique nessa tarefa para visualizar breves informações sobre o uso do Servidor de Mídia para compartilhar músicas, vídeos e arquivos de imagem. Um link para a página  **Configurações de Mídia** é fornecido. Também é fornecido um link para um tópico de ajuda online com mais informações sobre o Servidor de Mídia. Para obter mais informações, consulte [gerenciar mídia digital](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md). 
 |Computadores conectados|Clique nessa tarefa para visualizar breves informações sobre como conectar um computador em rede ao servidor. Para obter mais informações, consulte [Computadores conectados ao servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 -   [Instalar o Windows Server Essentials](Install-Windows-Server-Essentials.md)
 

@@ -8,12 +8,12 @@ ms.assetid: 9860a6b9-baea-4bf0-9a9f-6f1a288f996e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a517fd56c16860b0c3bfeeaf5cac0d4049b9041e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 10f7e58aad26f85455388654c65b73fd72f9ae13
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819869"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256646"
 ---
 # <a name="replace-o365-integration-module-buy-try-endpoint-url-in-support-of-microsoft-online-service-reseller-agreement"></a>Substituir a URL de ponto de extremidade de compra/teste do módulo de integração O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft
 
@@ -32,7 +32,7 @@ ms.locfileid: "80819869"
   
     -   Nome da chave = MOSRASTDBUY  
   
-    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor = http://syndicatepartner.office365.com/enterprisebuy.html  
+    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor =http://syndicatepartner.office365.com/enterprisebuy.html  
   
 2.  Um ponto final de teste de assinatura do Office 365 Enterprise.  
   
@@ -42,7 +42,7 @@ ms.locfileid: "80819869"
   
     -   Nome da chave = MOSRASTDTRY  
   
-    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor = http://syndicatepartner.office365.com/enterprisetry.html  
+    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor =http://syndicatepartner.office365.com/enterprisetry.html  
   
 3.  Um ponto de extremidade de compra de assinatura do Office 365 Small Business Premium.  
   
@@ -52,7 +52,7 @@ ms.locfileid: "80819869"
   
     -   Nome da chave = MOSRALITEBUY  
   
-    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor = http://syndicatepartner.office365.com/smallbizbuy.html  
+    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor =http://syndicatepartner.office365.com/smallbizbuy.html  
   
 4.  Um ponto de extremidade de avaliação de assinatura do Office 365 Small Business Premium.  
   
@@ -62,7 +62,7 @@ ms.locfileid: "80819869"
   
     -   Nome da chave = MOSRALITETRY  
   
-    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor = http://syndicatepartner.office365.com/smallbiztry.html  
+    -   Valor = *xxxxx*, onde xxxxx é o seu URL de compra de assinatura empresarial. Por exemplo, valor =http://syndicatepartner.office365.com/smallbiztry.html  
   
 #### <a name="to-add-an-endpoint-url-key-to-the-registry"></a>Para adicionar uma chave de URL de ponto de final ao registro  
   
@@ -88,13 +88,10 @@ ms.locfileid: "80819869"
   
 7.  Repita as etapas de 4 a 6 para cada nome de cadeia de caracteres listado na etapa 4.  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testando a experiência do cliente](Testing-the-Customer-Experience.md) ao [criar e personalizar a imagem](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizações adicionais](../install/Additional-Customizations.md)   
- [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)
-
+ [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
+ 

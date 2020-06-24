@@ -8,24 +8,24 @@ ms.assetid: f22fc0a4-cb82-4e60-afe6-2d03145745e7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 52763340ae2df60f37757dc2fb1344fb891c8f7a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b416e6a3ce226328bd2d65928852ce507fbc2128
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852539"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256616"
 ---
 # <a name="migrate-windows-server-2008-foundation-to-windows-server-essentials"></a>Migrar do Windows Server 2008 Foundation para o Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este guia descreve como migrar um domínio existente do Windows Server 2008 Foundation para o Windows Server&reg; 2012 Essentials em novo hardware e, em seguida, migrar as configurações e os dados. Este guia também descreve como remover o servidor existente da rede do Windows Server Essentials depois de concluir a migração.  
+Este guia descreve como migrar um domínio existente do Windows Server 2008 Foundation para o Windows Server &reg; 2012 Essentials em novo hardware e, em seguida, migrar as configurações e os dados. Este guia também descreve como remover o servidor existente da rede do Windows Server Essentials depois de concluir a migração.  
   
 > [!NOTE]
 >  Para evitar problemas durante a migração, a equipe de desenvolvimento de produtos do Windows Server Essentials recomenda enfaticamente que você leia este documento antes de começar a migração.  
   
 ## <a name="additional-resources"></a>Recursos adicionais  
- Para obter links para informações adicionais, ferramentas e recursos da Comunidade para ajudá-lo a orientá-lo durante o processo de migração, consulte [migração do Windows Small Business Server](https://go.microsoft.com/fwlink/?LinkId=217520).  
+ Para ter acesso a links com informações adicionais, ferramentas e recursos da comunidade com orientações sobre o processo de migração, visite o site de [Migração do Windows Small Business Server](https://go.microsoft.com/fwlink/?LinkId=217520).  
   
 ## <a name="terms-and-definitions"></a>Termos e definições  
  **Servidor de origem:** O servidor existente do qual você está migrando suas configurações e dados.  
@@ -49,20 +49,6 @@ Este guia descreve como migrar um domínio existente do Windows Server 2008 Foun
 6.  [Executar tarefas de pós-implantação para a migração do Windows Server Essentials](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md).  Depois de concluir a migração de todas as configurações e dados para o Windows Server Essentials, talvez você queira mapear os computadores permitidos para as contas de usuário.  
   
 7.  [Execute o analisador de práticas recomendadas do Windows Server Essentials](Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md).  Depois de concluir a migração de configurações e dados para o Windows Server Essentials, você deve executar o BPA do Windows Server Essentials.  
-
-1.  [Prepare o servidor de origem para a migração do Windows Server Essentials](../migrate/Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md).  Você deve garantir que o servidor de origem e a rede estejam prontos para a migração. Esta seção o guia pelos processos de backup do servidor de origem, avaliação da integridade do sistema do servidor de origem, instalação dos service packs e das correções mais recentes e verificação da configuração da rede.  
-  
-2.  [Instale o Windows Server Essentials no modo de migração](../migrate/Install-Windows-Server-Essentials-in-migration-mode.md).  Esta seção descreve as etapas que devem ser seguidas para instalar o Windows Server Essentials no servidor de destino no modo de migração.  
-  
-3.  [Junte computadores à nova rede do Windows Server Essentials](../migrate/Join-computers-to-the-new-Windows-Server-Essentials-network.md).  Esta seção aborda a adição de computadores cliente à nova rede do Windows Server Essentials e a atualização de Política de Grupo configurações.  
-  
-4.  [Mova os dados e as configurações do Windows Server 2008 Foundation para o servidor de destino](../migrate/Move-Windows-Server-2008-Foundation-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.  
-  
-5.  [Rebaixe e remova o servidor de origem da nova rede do Windows Server Essentials](../migrate/Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md).  Antes da remoção do servidor de origem da rede, você deve forçar uma atualização da Política de Grupo e rebaixar o servidor de origem.  
-  
-6.  [Executar tarefas de pós-implantação para a migração do Windows Server Essentials](../migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md).  Depois de concluir a migração de todas as configurações e dados para o Windows Server Essentials, talvez você queira mapear os computadores permitidos para as contas de usuário.  
-  
-7.  [Execute o analisador de práticas recomendadas do Windows Server Essentials](../migrate/Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md).  Depois de concluir a migração de configurações e dados para o Windows Server Essentials, você deve executar o BPA do Windows Server Essentials.  
 
   
  Vários procedimentos de migração exigem a abertura de uma janela de prompt de comando como administrador.  

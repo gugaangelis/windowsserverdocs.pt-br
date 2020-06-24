@@ -8,18 +8,18 @@ ms.assetid: 32fc90d8-31c5-4c7e-9fe3-483cf3c35f78
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 190d49fe3a33c5391f199cb013d661cc519b1ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19a3039b01b70937241ece767f5d4971af26f5f4
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852499"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256554"
 ---
 # <a name="migrate-windows-small-business-server-2011-essentials-to-windows-server-essentials"></a>Migrar do Windows Small Business Server 2011 Essentials para o Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este guia descreve como migrar um domínio existente do Windows Small Business Server 2011 Essentials para o Windows Server&reg; 2012 Essentials e, em seguida, migrar as configurações e os dados. Este guia também descreve como remover o servidor existente da rede do Windows Server Essentials depois de concluir a migração.  
+Este guia descreve como migrar um domínio existente do Windows Small Business Server 2011 Essentials para o Windows Server &reg; 2012 Essentials e, em seguida, para migrar as configurações e os dados. Este guia também descreve como remover o servidor existente da rede do Windows Server Essentials depois de concluir a migração.  
   
 > [!NOTE]
 >  Para evitar problemas durante a migração, a equipe de desenvolvimento de produtos do Windows Server Essentials recomenda enfaticamente que você leia este documento antes de começar a migração.  
@@ -27,12 +27,10 @@ Este guia descreve como migrar um domínio existente do Windows Small Business S
 > [!NOTE]
 > 
 >  Para migrar os dados do servidor para a versão mais recente do Windows Server Essentials, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
-> 
->  Para migrar os dados do servidor para a versão mais recente do Windows Server Essentials, consulte [migrar para o Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
 
   
 ## <a name="additional-resources"></a>Recursos adicionais  
- Para obter links para informações adicionais, ferramentas e recursos da Comunidade para ajudá-lo a orientá-lo durante o processo de migração, consulte [migração do Windows Small Business Server](https://go.microsoft.com/fwlink/?LinkId=217520).  
+ Para ter acesso a links com informações adicionais, ferramentas e recursos da comunidade com orientações sobre o processo de migração, visite o site de [Migração do Windows Small Business Server](https://go.microsoft.com/fwlink/?LinkId=217520).  
   
 ## <a name="terms-and-definitions"></a>Termos e definições  
  **Servidor de origem:** O servidor existente do qual você está migrando suas configurações e dados.  

@@ -8,18 +8,18 @@ ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: daa8f75671c4dc663cca12dd0618a593c2010103
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f8ef3af7fecf5fe07f5a88758fc6636a846f8e08
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817439"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267348"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Kit de Avaliação e Implantação para Windows Server Essentials
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-O ADK (Kit de avaliação e implantação) do Windows Server&reg; 2012 Essentials é uma coleção de ferramentas, binários e pacotes de idiomas do sistema operacional que você pode usar para personalizar, avaliar e implantar o Windows Server Essentials em novos computadores. Este documento inclui informações específicas para parceiros que pretendem pré-instalar o sistema operacional para seus clientes e inclui os seguintes tópicos:  
+O &reg; ADK (Kit de avaliação e implantação) do Windows Server 2012 Essentials é uma coleção de ferramentas, binários e pacotes de idiomas do sistema operacional que você pode usar para personalizar, avaliar e implantar o Windows Server Essentials em novos computadores. Este documento inclui informações específicas para parceiros que pretendem pré-instalar o sistema operacional para seus clientes e inclui os seguintes tópicos:  
   
 
 -   [Introdução ao ADK do Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
@@ -28,7 +28,7 @@ O ADK (Kit de avaliação e implantação) do Windows Server&reg; 2012 Essential
   
     -   [Requisitos de hardware do computador de destino](Hardware-Requirements-for-the-Target-Computer.md)  
   
-    -   [Pré-configurando um roteador](Preconfiguring-a-Router.md)  
+    -   [Pré-configurando um Roteador](Preconfiguring-a-Router.md)  
   
     -   [Preparar o computador do técnico](Prepare-the-Technician-Computer.md)  
   
@@ -80,72 +80,12 @@ O ADK (Kit de avaliação e implantação) do Windows Server&reg; 2012 Essential
   
 -   [Preparar a imagem para implantação](Preparing-the-Image-for-Deployment.md)  
   
--   [Testar a experiência do usuário](Testing-the-Customer-Experience.md)  
-
--   [Introdução ao ADK do Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
-  
-    -   [Informações importantes para a utilização do ADK do Windows Server Essentials](../install/Important-Information-for-Using-the-Windows-Server-Essentials-ADK.md)  
-  
-    -   [Requisitos de hardware do computador de destino](../install/Hardware-Requirements-for-the-Target-Computer.md)  
-  
-    -   [Pré-configurando um roteador](../install/Preconfiguring-a-Router.md)  
-  
-    -   [Preparar o computador do técnico](../install/Prepare-the-Technician-Computer.md)  
-  
-    -   [Configurar o armazenamento de servidor](../install/Configure-Server-Storage.md)  
-  
--   [Criar e personalizar a imagem](../install/Creating-and-Customizing-the-Image.md)  
-  
-    -   [Criar uma imagem personalizada simples](../install/Create-a-Simple-Customized-Image.md)  
-  
-    -   [Criar uma unidade Flash USB inicializável](../install/Create-a-Bootable-USB-Flash-Drive.md)  
-  
-    -   [Criar uma imagem usando arquivos de resposta](../install/Create-an-Image-By-Using-Answer-Files.md)  
-  
-    -   [Personalizar a imagem](../install/Customize-the-Image.md)  
-  
--   [Personalizações adicionais](../install/Additional-Customizations.md)  
-  
-    -   [Adicionar identidade visual ao Dashboard, ao Acesso Remoto da Web e à Barra Inicial](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
-  
-    -   [Adicionar uma guia a Configurações](../install/Add-a-Tab-to-Settings.md)  
-  
-    -   [Adicionar categorias de nível superior à Barra Inicial (sistema operacional Macintosh)](../install/Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
-  
-    -   [Alterar configurações de streaming de mídia](../install/Change-Media-Streaming-Settings.md)  
-  
-    -   [Alterar o esquema de cores do Dashboard e da Barra Inicial](../install/Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
-  
-    -   [Alterar a ordem e o agrupamento de guias](../install/Change-the-Order-and-Grouping-of-Tabs.md)  
-  
-    -   [Instalar ou remover pacotes de idiomas](../install/Install-or-Remove-Language-Packs.md)  
-  
-    -   [Gerenciar nomes de domínio e provedores de nomes de domínio](../install/Manage-Domain-Names-and-Domain-Name-Providers.md)  
-  
-    -   [Personalizar inscrição para a tarefa do serviços Microsoft Online Backup](../install/Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
-  
-    -   [Personalizar espaços de armazenamento](../install/Customize-Storage-Spaces.md)  
-  
-    -   [Criar a mídia de restauração do cliente de vários idiomas](../install/Build-Multi-Language-Client-Restore-Media.md)  
-  
-    -   [Automatizar a instalação de suplementos durante a configuração](../install/Automate-Installation-of-Add-Ins-During-Setup.md)  
-  
-    -   [Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
-  
-    -   [Substituir o URL de ponto de extremidade de compra/teste do módulo de integração do O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
-  
-    -   [Criar um DVD de recuperação de servidor para servidores administrados remotamente](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
-  
-    -   [Criar um DVD de recuperação de servidor para suporte a vários idiomas](../install/Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)  
-  
--   [Preparar a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)  
-  
--   [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)  
+-   [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
 
   
 ## <a name="copyright-information"></a>Informações de direitos autorais  
- Este documento é fornecido no estado em que se encontra. As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites da Web, podem ser alteradas sem aviso prévio. Alguns exemplos usados aqui são fornecidos apenas como ilustração e são fictícios. Nenhuma associação ou conexão real é pretendida ou deve ser inferida. Este documento não oferece a você quaisquer direitos legais sobre propriedade intelectual para qualquer produto da Microsoft. Você pode copiar e usar este documento para fins de referência interna.  
+ Este documento é fornecido no estado em que se encontra. As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites, estão sujeitas a alterações sem prévio aviso.  Alguns exemplos aqui representados são fornecidos somente para fins de ilustração e são fictícios. Nenhuma associação ou conexão real é intencional ou deve ser inferida. Este documento não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft. Você pode copiar e usar este documento para fins de referência interna.  
   
- Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows e Windows Server são marcas registradas do grupo de empresas Microsoft. Todas as outras marcas pertencem a seus respectivos proprietários.  
+ Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows e Windows Server são marcas registradas do grupo de empresas Microsoft. Todas as outras marcas comerciais pertencem a seus respectivos proprietários.  
   
- &copy; 2012 Microsoft. Todos os direitos reservados.
+ &copy;2012 Microsoft. Todos os direitos reservados.

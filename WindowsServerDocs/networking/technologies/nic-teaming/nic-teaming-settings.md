@@ -9,12 +9,12 @@ ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: 8ae461f8e9236451e9a6b442cafecee4981ed8ce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 133e44c83032976f08819529508b3990b6e78596
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853709"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256676"
 ---
 # <a name="nic-teaming-settings"></a>Configurações de agrupamento NIC
 Neste tópico, fornecemos uma visão geral das propriedades da equipe da NIC, como os modos de agrupamento e balanceamento de carga. Também fornecemos detalhes sobre a configuração do adaptador em espera e a propriedade da interface da equipe principal. Se você tiver pelo menos dois adaptadores de rede em uma equipe NIC, não será necessário designar um adaptador em espera para tolerância a falhas.
@@ -24,12 +24,12 @@ Neste tópico, fornecemos uma visão geral das propriedades da equipe da NIC, co
 ![Propriedades da equipe da NIC](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
 
 ## <a name="teaming-modes"></a>Modos de agrupamento 
-As opções para o modo de agrupamento são **independentes de comutação** e **comutadores dependentes**. O modo dependente de comutador inclui **agrupamento estático** e **LACP (protocolo de controle de agregação de link)** . 
+As opções para o modo de agrupamento são **independentes de comutação** e **comutadores dependentes**. O modo dependente de comutador inclui **agrupamento estático** e **LACP (protocolo de controle de agregação de link)**. 
 
 >[!TIP]
 >Para melhor desempenho da equipe NIC, recomendamos que você use um modo de balanceamento de carga de distribuição dinâmica.  
   
-### <a name="switch-independent"></a>Alternar independente
+### <a name="switch-independent"></a>Independente do Comutador
   
 [!INCLUDE [switch-independent-shortdesc-include](../../includes/switch-independent-shortdesc-include.md)] 
   
@@ -70,7 +70,7 @@ Use o Windows PowerShell para especificar valores para os seguintes componentes 
   
 O hash de portas TCP cria a distribuição mais granular de fluxos de tráfego, resultando em fluxos menores que podem ser movidos independentemente entre os membros da equipe NIC. No entanto, você não pode usar o hash de portas TCP para o tráfego que não é baseado em TCP ou UDP, ou onde as portas TCP e UDP estão ocultas da pilha, como com o tráfego protegido por IPsec. Nesses casos, o hash usa automaticamente o hash de endereço IP ou, se o tráfego não for um tráfego IP, o hash de endereço MAC será usado.  
   
-### <a name="hyper-v-port"></a>Porta Hyper-V
+### <a name="hyper-v-port"></a>Porta do Hyper-V
   
 [!INCLUDE [hyper-v-port-shortdesc-include](../../includes/hyper-v-port-shortdesc-include.md)]  
   
@@ -78,7 +78,7 @@ Como a opção adjacente sempre vê um endereço MAC específico em uma porta, o
   
 No entanto, se o host tiver apenas algumas VMs, esse modo poderá não ser granular o suficiente para alcançar uma distribuição bem balanceada. Esse modo também limitará sempre uma única VM (ou seja, o tráfego de uma única porta de comutador) para a largura de banda disponível em uma única interface. O agrupamento NIC usa a porta do comutador virtual Hyper-V como o identificador em vez de usar o endereço MAC de origem porque, em alguns casos, uma VM pode ser configurada com mais de um endereço MAC em uma porta de comutador.  
   
-### <a name="dynamic"></a>Dynamic
+### <a name="dynamic"></a>Dinâmico
   
 [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
   
@@ -108,7 +108,7 @@ Depois que você clicar no link realçado, a caixa de diálogo **nova interface 
   
 Se você estiver usando VLANs, poderá usar essa caixa de diálogo para especificar um número de VLAN.  
   
-Se você estiver ou não usando VLANs, poderá especificar um nome de tNIC para a equipe NIC.  
+Se você estiver ou não usando VLANs, poderá especificar um nome NIC para a equipe NIC.  
   
 
 

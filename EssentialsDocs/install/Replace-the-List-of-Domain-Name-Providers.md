@@ -8,12 +8,12 @@ ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e55dc757b93c7e11b29ed4fd579362900e54f909
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5281afa423360779924ff212ff300195fac5695
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819839"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267497"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>Substituir a Lista de Provedores de Nomes de Domínio
 
@@ -22,13 +22,13 @@ ms.locfileid: "80819839"
 É possível substituir a lista de provedores de nomes de domínio exibida no Assistente de Configuração de Nomes de Domínio executando as seguintes tarefas:  
 
 
--   [Criar os arquivos do serviço de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [Criar arquivos de serviços de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
--   [Adicionar uma entrada ao registro no computador de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [Adicionar uma entrada no Registro do computador de referência](Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
--   [Criar os arquivos do serviço de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
+-   [Criar arquivos de serviços de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_ReferralFiles)  
 
--   [Adicionar uma entrada ao registro no computador de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
+-   [Adicionar uma entrada no Registro do computador de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)  
 
 
 ###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>Criar os arquivos do serviço de referência  
@@ -50,7 +50,7 @@ ms.locfileid: "80819839"
 
 7.  Se um logotipo estiver disponível para o provedor de nomes de domínio, adicione-o clicando em **Alterar Logotipo**.  
 
-8.  Clique em **Salvar**.  
+8.  Clique em **Save** (Salvar).  
 
 9. Repita as etapas 2 a 8 para cada provedor de nomes de domínio que desejar listar no assistente.  
 
@@ -63,7 +63,7 @@ ms.locfileid: "80819839"
 
 ##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave ao Registro  
 
-1.  No computador de referência, clique em **Iniciar**, insira **regedit** e pressione **Enter**.  
+1.  No computador de referência, clique em **Iniciar**, digite **regedit** e pressione **Enter**.  
 
 2.  No painel esquerdo, expanda **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**, expanda **Windows Server**, expanda **Gerenciadores de Domínio** e, finalmente, expanda **Provedores**.  
 
@@ -85,11 +85,11 @@ ms.locfileid: "80819839"
 ~~~
 
 ###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>Problemas de status do nome de domínio  
- Se um parceiro adicionar provedores de nome de domínio e usar uma API (interface de programação de aplicativo) no SDK do Windows Server Essentials para definir os status desconhecido, falha e CertificateRequestNotSubmitted para o certificado, o cliente receberá um incorreto resultado da mensagem e da configuração. Isso ocorre porque os casos são tratados por exceções, em vez de retornarem um status.  
+ Se um parceiro adicionar provedores de nome de domínio e usar uma API (interface de programação de aplicativo) no SDK do Windows Server Essentials para definir os status desconhecido, falha e CertificateRequestNotSubmitted para o certificado, o cliente receberá uma mensagem incorreta e o resultado da configuração. Isso ocorre porque os casos são tratados por exceções, em vez de retornarem um status.  
 
  Os seguintes status de domínio são falhas e devem ser relatados como erro:  
 
-- Falha  
+- Falhou  
 
 - PendingCustomerInterventionRequired (Intervenção de cliente pendente requerida)  
 
@@ -103,21 +103,16 @@ ms.locfileid: "80819839"
 
   Os seguintes status de domínio são bem-sucedidos e devem ser relatados como sucesso:  
 
-- Pronto  
+- Ready  
 
 - Pendente  
 
 - InRenewal (Em renovação)  
 
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
  [Personalizações adicionais](Additional-Customizations.md)   
  [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
  [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
-
- [Criando e personalizando a imagem](../install/Creating-and-Customizing-the-Image.md)   
- [Personalizações adicionais](../install/Additional-Customizations.md)   
- [Preparando a imagem para implantação](../install/Preparing-the-Image-for-Deployment.md)   
- [Testar a experiência do usuário](../install/Testing-the-Customer-Experience.md)
 

@@ -8,18 +8,18 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aace7849244bb65ec0042971e6ec899f554a62d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 20b38be01d091f5dfeb819712c57c1f87eaf770f
+ms.sourcegitcommit: fdc3ce1992f4dd6ea1771479d525126abbbcfa72
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852299"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85256623"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transição do Windows Server Essentials para o Windows Server 2012 Standard
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
- O Windows Server&reg; 2012 Essentials dá suporte a até 25 usuários e 50 dispositivos. Quando suas necessidades de negócios excederem o limite, você poderá executar uma transição de licença in-loco do Windows Server Essentials para o Windows Server 2012 Standard para permanecer em conformidade com a licença.  
+ O Windows Server &reg; 2012 Essentials dá suporte a até 25 usuários e 50 dispositivos. Quando suas necessidades de negócios excederem o limite, você poderá executar uma transição de licença in-loco do Windows Server Essentials para o Windows Server 2012 Standard para permanecer em conformidade com a licença.  
   
 ## <a name="how-the-transition-affects-user-and-device-limits"></a>Como a transição afeta os limites de usuários e dispositivos  
  Depois de fazer a transição para o Windows Server 2012 Standard, os limites de conta de usuário e dispositivos são removidos, mas os recursos que são exclusivos do Windows Server Essentials (como o painel, Acesso via Web remota e backup do computador cliente) ainda permanecem disponíveis. Porém, por limitações técnicas, esses recursos oferecem suporte no máximo a 75 contas de usuário e 75 dispositivos. Se for necessário adicionar mais de 75 contas de usuário ou dispositivos, desative os recursos do Windows Server Essentials e use as ferramentas nativas do Windows Server 2012 Standard para gerenciar contas de usuário e dispositivos.  
@@ -38,7 +38,7 @@ ms.locfileid: "80852299"
   
     1.  Abra uma janela de comando como administrador.  
   
-    2.  Execute o seguinte comando:  
+    2.  Execute o comando a seguir:  
   
          **dism/online/Set-Edition: ServerStandard/geteula: caminho do EULA**  
   
@@ -62,7 +62,7 @@ ms.locfileid: "80852299"
   
 2. Abra o Windows PowerShell como administrador e execute o comando a seguir.  
   
-    **DISM/online/Set-Edition: ServerStandard/AcceptEula/ProductKey:** *Product Key*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *Chave do produto (Product Key)*  
   
     Em que *chave do produto* é a chave do produto (Product Key) para sua cópia do Windows Server 2012 Standard.  
   
@@ -99,16 +99,12 @@ ms.locfileid: "80852299"
   
    É possível que algumas tarefas executadas pelo desativar o **Assistente de recursos do Windows Server Essentials** não sejam concluídas com êxito. Em alguns casos, isso pode impedir a execução do Painel. Caso isso ocorra, você poderá iniciar o assistente manualmente executando o arquivo:  
   
-   **%Systemdrive%\Arquivos de Programas\windows Server\Bin\TurnOffFeaturesWizard.exe**  
+   **Server\Bin\TurnOffFeaturesWizard.exede Programas\windows em%systemdrive%\Arquivos**  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Veja também  
   
 
 -   [Transição para o Windows Server 2012 R2 Standard](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
 -   [Migrar dados do servidor para o Windows Server Essentials](Migrate-Server-Data-to-Windows-Server-Essentials.md)
-
--   [Transição para o Windows Server 2012 R2 Standard](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
-  
--   [Migrar dados do servidor para o Windows Server Essentials](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
