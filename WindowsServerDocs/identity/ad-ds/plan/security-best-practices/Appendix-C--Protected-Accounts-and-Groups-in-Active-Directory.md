@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3036176127cbb5401c582d81ddb2704d790a209a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18a293f4ec7d96516bd89396c13562ba68dc471f
+ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821679"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345430"
 ---
 # <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>Apêndice C: Contas protegidas e grupos no Active Directory
 
@@ -37,22 +37,20 @@ A tabela a seguir contém os grupos protegidos no Active Directory listados pelo
 |Administrador|Administrador|Administrador|Administrador|
 |Administradores|Administradores|Administradores|Administradores|
 |Operadores de cópia|Operadores de cópia|Operadores de cópia|Operadores de cópia|
-|Editores de certificados|||
-|Administradores do domínio|Administradores do domínio|Administradores do domínio|Administradores do domínio|
+|Editores de Certificados|||
+|Administradores de Domínio|Administradores de Domínio|Administradores de Domínio|Administradores de Domínio|
 |Controladores de Domínio|Controladores de Domínio|Controladores de Domínio|Controladores de Domínio|
-|Administrador corporativo|Administrador corporativo|Administrador corporativo|Administrador corporativo|
-||||Administradores de chave corporativa|
-||||Administradores de chaves|
+|Administradores Corporativos|Administradores Corporativos|Administradores Corporativos|Administradores Corporativos|
 |Krbtgt|Krbtgt|Krbtgt|Krbtgt|
 |Operadores de Impressão|Operadores de Impressão|Operadores de Impressão|Operadores de Impressão|
 |||Controladores de Domínio somente leitura|Controladores de Domínio somente leitura|
-|Duplicador|Duplicador|Duplicador|Duplicador|
+|Replicador|Replicador|Replicador|Replicador|
 |Administradores de esquemas|Administradores de esquemas|Administradores de esquemas|Administradores de esquemas|
 |Opers. de servidores|Opers. de servidores|Opers. de servidores|Opers. de servidores|
 
 #### <a name="adminsdholder"></a>AdminSDHolder
 
-A finalidade do objeto AdminSDHolder é fornecer permissões de "modelo" para as contas e grupos protegidos no domínio. O AdminSDHolder é criado automaticamente como um objeto no contêiner do sistema de cada domínio Active Directory. Seu caminho é: **CN = AdminSDHolder, CN = System, DC = < domain_component >, DC = < domain_component >?.**  
+A finalidade do objeto AdminSDHolder é fornecer permissões de "modelo" para as contas e grupos protegidos no domínio. O AdminSDHolder é criado automaticamente como um objeto no contêiner do sistema de cada domínio Active Directory. Seu caminho é: **CN = AdminSDHolder, CN = System, DC =<domain_component>, DC =<domain_component>?.**  
 
 Ao contrário da maioria dos objetos no domínio Active Directory, que pertencem ao grupo Administradores, o AdminSDHolder pertence ao grupo Admins. do domínio. Por padrão, o EAs pode fazer alterações no objeto AdminSDHolder de qualquer domínio, assim como os grupos admins. do domínio do domínio e administradores. Além disso, embora o proprietário padrão do AdminSDHolder seja o grupo Admins do domínio do domínio, os membros de administradores ou administradores corporativos podem apropriar-se do objeto.  
 
@@ -76,9 +74,9 @@ Os procedimentos para executar o SDProp manualmente em sistemas operacionais mai
 
 ###### <a name="running-sdprop-manually-in-windows-server-2008-or-earlier"></a>Executando SDProp manualmente no Windows Server 2008 ou anterior
 
-Você pode forçar o SDProp a ser executado usando Ldp. exe ou executando um script de modificação LDAP. Para executar o SDProp usando o LDP. exe, execute as seguintes etapas depois de fazer alterações no objeto AdminSDHolder em um domínio:  
+Você pode forçar o SDProp a ser executado usando Ldp.exe ou executando um script de modificação LDAP. Para executar o SDProp usando Ldp.exe, execute as seguintes etapas depois de fazer alterações no objeto AdminSDHolder em um domínio:  
 
-1. Inicie o **LDP. exe**.  
+1. Iniciar **Ldp.exe**.  
 2. Clique em **conexão** na caixa de diálogo LDP e clique em **conectar**.  
 
    ![contas e grupos protegidos](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_9.gif)  
@@ -114,9 +112,9 @@ Se preferir executar o SDProp manualmente via LDIFDE ou um script, você poderá
 
 ###### <a name="running-sdprop-manually-in-windows-server-2012-or-windows-server-2008-r2"></a>Executando o SDProp manualmente no Windows Server 2012 ou no Windows Server 2008 R2
 
-Você também pode forçar o SDProp a ser executado usando o LDP. exe ou executando um script de modificação LDAP. Para executar o SDProp usando o LDP. exe, execute as seguintes etapas depois de fazer alterações no objeto AdminSDHolder em um domínio:  
+Você também pode forçar o SDProp a ser executado usando Ldp.exe ou executando um script de modificação LDAP. Para executar o SDProp usando Ldp.exe, execute as seguintes etapas depois de fazer alterações no objeto AdminSDHolder em um domínio:  
 
-1. Inicie o **LDP. exe**.  
+1. Iniciar **Ldp.exe**.  
 
 2. Na caixa de diálogo **LDP** , clique em **conexão**e em **conectar**.  
 

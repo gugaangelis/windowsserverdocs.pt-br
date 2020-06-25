@@ -7,12 +7,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: c5955ad8be987ebfd605bb59cfdc43b9011714c4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d4dadcabfb911c7722da493c45db112477eab34c
+ms.sourcegitcommit: a1641b80c88205c0253f354f2d427d77bb879643
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853579"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85345410"
 ---
 # <a name="virtual-network-peering"></a>Emparelhamento de rede virtual
 
@@ -20,11 +20,11 @@ ms.locfileid: "80853579"
 
 O emparelhamento de rede virtual permite que você conecte duas redes virtuais diretamente. Uma vez emparelhadas, para fins de conectividade, as redes virtuais aparecem como uma. 
 
-Os benefícios de usar o emparelhamento de rede virtual incluem:
+Os benefícios do uso do emparelhamento de rede virtual incluem:
 
 -   O tráfego entre as máquinas virtuais nas redes virtuais emparelhadas é roteado por meio da infraestrutura de backbone somente por meio de endereços IP *privados* . A comunicação entre as redes virtuais não requer Internet ou gateways públicos.
 
--   Uma conexão de baixa latência e largura de banda alta entre os recursos em diferentes redes virtuais.
+-   Baixa latência, conexão com largura de banda alta entre os recursos em redes virtuais diferentes.
 
 -   A capacidade de recursos em uma rede virtual se comunicarem com recursos em uma rede virtual diferente.
 
@@ -47,15 +47,13 @@ O emparelhamento de rede virtual tem alguns requisitos e restrições:
 
 - Como o emparelhamento de rede virtual está entre duas redes virtuais, não há nenhuma relação transitiva derivada entre emparelhamentos. Por exemplo, se você emparelhar virtualNetworkA com virtualNetworkB e virtualNetworkB com virtualNetworkC, o virtualNetworkA não será emparelhado com virtualNetworkC.
 
-  [imagem aqui]
-
 ## <a name="connectivity"></a>Conectividade
 
 Depois de emparelhar as redes virtuais, os recursos em qualquer rede virtual podem se conectar diretamente com os recursos na rede virtual emparelhada.
 
 -   A latência de rede entre as máquinas virtuais nas redes virtuais emparelhadas é igual à latência em uma única rede virtual.
 
--   A taxa de transferência de rede é baseada na largura de banda permitida para a máquina virtual. Não há nenhuma restrição adicional na largura de banda dentro do emparelhamento.
+-   A taxa de transferência de rede é baseada na largura de banda permitida para a máquina virtual. Não existe restrição adicional quanto à largura de banda no emparelhamento.
 
 -   O tráfego entre máquinas virtuais em redes virtuais emparelhadas é roteado diretamente por meio da infraestrutura de backbone, não por meio de um gateway ou pela Internet pública.
 
@@ -63,7 +61,7 @@ Depois de emparelhar as redes virtuais, os recursos em qualquer rede virtual pod
 
 Você pode aplicar listas de controle de acesso (ACLs) em qualquer rede virtual para bloquear o acesso a outras redes virtuais ou sub-redes, se desejado. Se você abrir a conectividade completa entre redes virtuais emparelhadas (que é a opção padrão), poderá aplicar ACLs a sub-redes ou máquinas virtuais específicas para bloquear ou negar acesso específico. Para saber mais sobre ACLs, confira [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
 
-## <a name="service-chaining"></a>Encadeamento de serviço
+## <a name="service-chaining"></a>Encadeamento de serviços
 
 Você pode configurar rotas definidas pelo usuário que apontem para máquinas virtuais em redes virtuais emparelhadas como o endereço IP do próximo salto, para habilitar o encadeamento de serviços. O encadeamento de serviços permite direcionar o tráfego de uma rede virtual para uma solução de virtualização, em uma rede virtual emparelhada, por meio de rotas definidas pelo usuário.
 
@@ -75,7 +73,7 @@ O emparelhamento de rede virtual permite que o próximo salto em uma rota defini
 
 Cada rede virtual, independentemente de estar emparelhada com outra rede virtual, ainda pode ter seu próprio gateway para se conectar a uma rede local. Ao emparelhar redes virtuais, você também pode configurar o gateway na rede virtual emparelhada como um ponto de trânsito para uma rede local. Nesse caso, a rede virtual que usa um gateway remoto não pode ter seu próprio gateway. Uma rede virtual pode ter apenas um gateway que pode ser um gateway local ou remoto (na rede virtual emparelhada).
 
-## <a name="monitor"></a>Monitorar
+## <a name="monitor"></a>Monitoramento
 
 Ao emparelhar duas redes virtuais, você deve configurar um emparelhamento para cada rede virtual no emparelhamento.
 
@@ -83,12 +81,12 @@ Você pode monitorar o status da conexão de emparelhamento, que pode estar em u
 
 -   **Iniciado em:** Mostrado quando você cria o emparelhamento da primeira rede virtual para a segunda rede virtual.
 
--   **Conectado:** Mostrado depois de criar o emparelhamento da segunda rede virtual para a primeira rede virtual. O estado de emparelhamento da primeira rede virtual é alterado de iniciado para conectado. Ambos os pares de rede virtual devem ter o estado conectado antes de estabelecer um emparelhamento de rede virtual com êxito.
+-   **Conectado:** Mostrado depois de criar o emparelhamento da segunda rede virtual para a primeira rede virtual. O estado de emparelhamento da primeira rede virtual muda de Iniciado para Conectado. Ambos os pares de rede virtual devem ter o estado conectado antes de estabelecer um emparelhamento de rede virtual com êxito.
 
 -   **Desconectado:** Mostrado se uma rede virtual se desconectar de outra rede virtual.
 
 [infográfico dos Estados]
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 [Configurar o emparelhamento de rede virtual](sdn-configure-vnet-peering.md): neste procedimento, você usa o Windows PowerShell para localizar a rede lógica do provedor de HNV para criar duas redes virtuais, cada uma com uma sub-rede. Você também configura o emparelhamento entre as duas redes virtuais.
 

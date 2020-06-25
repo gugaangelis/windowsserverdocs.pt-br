@@ -7,21 +7,44 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/03/2020
+ms.date: 05/06/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 69e33ef5f187672d948b6734a9ae7f68b54b7608
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0943379b8f251d1548a0aa920a95931dc39a0624
+ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854649"
+ms.lasthandoff: 05/07/2020
+ms.locfileid: "82903445"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novidades do cliente para iOS
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para iOS](remote-desktop-ios.md), adicionando novos recursos e corrigindo problemas. Você encontrará as atualizações mais recentes nesta página.
 
->[!IMPORTANT]
->Temos o compromisso de tornar este aplicativo o melhor cliente da Área de Trabalho Remota para iOS e valorizamos seus comentários. Você pode relatar problemas em **Ajuda** > **Relatar um Problema**.
+## <a name="how-to-report-issues"></a>Como relatar problemas
+
+Temos o compromisso de tornar o cliente da Área de Trabalho Remota para iOS o melhor possível, por isso valorizamos seus comentários. Você pode relatar problemas em **Ajuda** > **Relatar um Problema**.
+
+## <a name="updates-for-version-1007"></a>Atualizações para a versão 10.0.7
+
+*Data da publicação: 29/4/2020*
+
+Nesta atualização, adicionamos a capacidade de classificar a exibição de lista de computadores (disponível no iPhone) por nome ou horário da última conexão.
+
+## <a name="updates-for-version-1006"></a>Atualizações para a versão 10.0.6
+
+*Data da publicação: 31/3/2020*
+
+É hora de uma atualização rápida com algumas correções de bugs. Veja as novidades dessa versão:
+
+- Foram corrigidos diversos problemas de acessibilidade do VoiceOver.
+- Corrigido um problema em que os usuários não podiam se conectar com credenciais de turco.
+- As sessões exibidas na interface do usuário para alternativa agora são ordenadas por quando elas foram iniciadas.
+- A seleção do botão Voltar na Central de Conexão agora leva você de volta para a última sessão ativa.
+- Os mouses Swiftpoint agora são liberados ao alternar saindo do cliente para outro aplicativo.
+- Melhor interoperabilidade com o serviço de área de trabalho virtual do Windows.
+- Correção de falhas que estavam aparecendo no relatório de erros.
+
+Agradecemos todos os comentários enviados para nós por meio da App Store, do aplicativo e do email. Além disso, agradecemos especialmente a todos que trabalharam conosco para diagnosticar problemas.
 
 ## <a name="updates-for-version-1005"></a>Atualizações da versão 10.0.5
 
