@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 16bf61ae4601848f12d7ecd56d751837dd153408
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 1786b7c9a10e11e95f736d1db20bdc12eb4844b7
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333957"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372213"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implantando os Serviços de Federação do Active Directory no Azure
 O AD FS fornece recursos simplificados e seguros de federação de identidade e de logon único (SSO) da Web. A federação com o Azure AD ou o O365 habilita os usuários a se autenticar usando credenciais locais e acessar todos os recursos na nuvem. Como resultado, é importante ter uma infraestrutura altamente disponível do AD FS para garantir o acesso a recursos locais e na nuvem. Implantar o AD FS no Azure pode ajudar a atingir a alta disponibilidade necessária com esforço mínimo.
@@ -198,8 +198,13 @@ Para equilibrar o tráfego de modo eficiente, o ILB deve ser configurado com reg
 
 **6.5. Atualizar DNS com ILB**
 
-Vá para o servidor DNS e crie um CNAME para o ILB. O CNAME deve ser para o serviço de federação com o endereço IP que aponta para o endereço IP do ILB. Por exemplo, se o endereço DIP ILB for 10.3.0.8 e o serviço de federação instalado for fs.contoso.com, crie um CNAME para fs.contoso.com apontando para 10.3.0.8.
-Isso garantirá que todas as comunicações relacionadas a fs.contoso.com sejam direcionadas para o ILB e sejam roteadas adequadamente.
+Usando seu servidor DNS interno, crie um registro A para o ILB. O registro a deve ser para o serviço de Federação com o endereço IP apontando para o endereço IP do ILB. Por exemplo, se o endereço IP ILB for 10.3.0.8 e o serviço de Federação instalado for fs.contoso.com, crie um registro A para fs.contoso.com apontando para 10.3.0.8.
+Isso garantirá que todos os dados trasmitted para fs.contoso.com acabem no ILB e sejam adequadamente roteados. 
+
+> [!NOTE]
+>Se sua implantação também estiver usando IPv6, certifique-se de criar um registro AAAA correspondente.
+>
+>
 
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. Configurando o servidor proxy de aplicativo Web
 **7.1. Configurar os servidores de Proxy de Aplicativo Web para acessar os servidores do AD FS**
@@ -261,7 +266,7 @@ Siga as mesmas etapas usadas no ILB para configurar a regra de balanceamento de 
 
 Em geral, você precisa das regras a seguir para proteger com eficiência sua sub-rede interna (na ordem listada abaixo)
 
-| Regra | Descrição | Flow |
+| Regra | Description | Flow |
 |:--- |:--- |:---:|
 | AllowHTTPSFromDMZ |Permitir a comunicação HTTPS de rede de perímetro |Entrada |
 | DenyInternetOutbound |Sem acesso à Internet |Saída |
@@ -270,7 +275,7 @@ Em geral, você precisa das regras a seguir para proteger com eficiência sua su
 
 **9.2. Proteger a sub-rede de perímetro**
 
-| Regra | Descrição | Flow |
+| Regra | Description | Flow |
 |:--- |:--- |:---:|
 | AllowHTTPSFromInternet |Permitir HTTPS da Internet para a rede de perímetro |Entrada |
 | DenyInternetOutbound |Tudo para a Internet é bloqueado, exceto HTTPS |Saída |
@@ -333,14 +338,14 @@ Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar es
 
 ## <a name="additional-resources"></a>Recursos adicionais
 * [Conjuntos de disponibilidade](https://aka.ms/Azure/Availability) 
-* [Balanceador de carga do Azure](https://aka.ms/Azure/ILB)
+* [Azure Load Balancer](https://aka.ms/Azure/ILB)
 * [Balanceador de Carga Interno](https://aka.ms/Azure/ILB/Internal)
 * [Balanceador de Carga para a Internet](https://aka.ms/Azure/ILB/Internet)
-* [Contas de armazenamento](https://aka.ms/Azure/Storage)
-* [Redes virtuais do Azure](https://aka.ms/Azure/VNet)
+* [Contas de Armazenamento](https://aka.ms/Azure/Storage)
+* [Redes Virtuais do Azure](https://aka.ms/Azure/VNet)
 * [AD FS e Links de Proxy de Aplicativo Web](https://aka.ms/ADFSLinks) 
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Integrando suas identidades locais ao Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
+* [Integração de suas identidades locais com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [Configurar e gerenciar o AD FS usando o Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-fed-whatis)
 * [Implantação AD FS de alta disponibilidade entre regiões no Azure com o Gerenciador de tráfego do Azure](active-directory-adfs-in-azure-with-azure-traffic-manager.md)

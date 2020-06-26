@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 331e5ff2dbe7f172488543d1d1f5ed0f757cd584
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
+ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333947"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85372203"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalize as declarações a serem emitidas no id_token ao usar o OpenID Connect ou o OAuth com o AD FS 2016 ou posterior
 
@@ -40,7 +40,7 @@ Em determinados cenários, é possível que o aplicativo cliente não tenha um r
 
 ![Restringir](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
 
-Com o [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) instalado em seus servidores de AD FS
+Com a atualização de segurança do [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) ou posterior instalada em seus servidores de AD FS
 1. `response_mode`é definido como form_post
 2. Os clientes públicos e confidenciais podem obter declarações personalizadas no token de ID
 3. Atribua `allatclaims` o escopo ao par cliente – RP.
@@ -58,16 +58,16 @@ Siga as etapas abaixo para criar e configurar o aplicativo no AD FS para receber
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>Criar e configurar um grupo de aplicativos no AD FS 2016 ou posterior
 
 1. Em gerenciamento de AD FS, clique com o botão direito do mouse em grupos de aplicativos e selecione **Adicionar grupo de aplicativos**.
-2. No assistente de grupo de aplicativos, para o nome, insira **ADFSSSO** e, em aplicativos cliente-servidor, selecione o **aplicativo nativo acessando um modelo de aplicativo Web** . Clique em **Próximo**.
+2. No assistente de grupo de aplicativos, para o nome, insira **ADFSSSO** e, em aplicativos cliente-servidor, selecione o **aplicativo nativo acessando um modelo de aplicativo Web** . Clique em **Avançar**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-3. Copie o valor do **identificador de cliente** .  Ele será usado posteriormente como o valor de ida: ClientId no arquivo Web. config dos aplicativos.
-4. Insira o seguinte para o **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Próximo**.
+3. Copie o valor do **identificador de cliente** .  Ele será usado posteriormente como o valor de ida: ClientId no arquivo de web.config de aplicativos.
+4. Insira o seguinte para o **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Avançar**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. Na tela **Configurar API da Web** , insira o seguinte para o **identificador**  -  **https://contoso.com/WebApp** .  Clique em **Adicionar**. Clique em **Próximo**.  Esse valor será usado posteriormente para **ida: ResourceId** no arquivo Web. config dos aplicativos.
+5. Na tela **Configurar API da Web** , insira o seguinte para o **identificador**  -  **https://contoso.com/WebApp** .  Clique em **Adicionar**. Clique em **Avançar**.  Esse valor será usado posteriormente para **ida: ResourceId** no arquivo de web.config de aplicativos.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
@@ -96,7 +96,7 @@ Siga as etapas abaixo para criar e configurar o aplicativo no AD FS para receber
 
     ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.PNG)
 
-13. Na tela **Adicionar Assistente de regra de declaração de transformação** , insira **ForCustomIDToken** no nome da **regra de declaração** e a regra de declaração a seguir na **regra personalizada**. Clique em **concluir**
+13. Na tela **Adicionar Assistente de regra de declaração de transformação** , insira **ForCustomIDToken** no nome da **regra de declaração** e a regra de declaração a seguir na **regra personalizada**. Clique em **Concluir**
 
     ```
     x:[]
@@ -128,7 +128,7 @@ git clone https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-op
 
 1. Abra o exemplo usando o Visual Studio.
 2. Recompile o aplicativo para que todos os NuGets ausentes sejam restaurados.
-3. Abra o arquivo Web. config.  Modifique os valores a seguir para que a aparência seja parecida com a seguinte:
+3. Abra o arquivo web.config.  Modifique os valores a seguir para que a aparência seja parecida com a seguinte:
 
    ```xml
    <add key="ida:ClientId" value="[Replace this Client Id from #3 above under section Create and configure an Application Group in AD FS 2016 or later]" />
