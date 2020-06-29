@@ -1,6 +1,6 @@
 ---
 title: ntfrsutl
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando NTFRSUTL, que despeja as tabelas internas, thread e informações de memória para o serviço de replicação de arquivo NT (NTFRS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc1275b7936a88b14b7658e2fe27d3958a035a04
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f931d916888a372d66a1cc06cb7543067b9b9d3b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820916"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472762"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Despeja as tabelas internas, thread e informações de memória para o serviço de replicação de arquivo NT \( NTFRS \) . Ele é executado em servidores locais e remotos. A configuração de recuperação para NTFRS no Gerenciador de controle de serviço \( SCM \) pode ser essencial para localizar e manter eventos de log importantes no computador. Essa ferramenta fornece um método conveniente para revisar essas configurações.
+Despeja as tabelas internas, thread e informações de memória para o serviço de replicação de arquivo NT (NTFRS) dos servidores locais e remotos. A configuração de recuperação para o NTFRS no Gerenciador de controle de serviço (SCM) pode ser essencial para localizar e manter eventos de log importantes no computador. Essa ferramenta fornece um método conveniente para revisar essas configurações.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,35 +30,36 @@ ntfrsutl[memory|threads|stage][<computer>]
 ntfrsutl ds[<computer>]
 ntfrsutl [sets][<computer>]
 ntfrsutl [version][<computer>]
-ntfrsutl poll[/quickly[=[<N>]]][/slowly[=[<N>]]][/now][<computer>]
+ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|  Parâmetro  |                                                                                                                                                                                                                                                                                                                                        Descrição                                                                                                                                                                                                                                                                                                                                         |
-|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   idtable   |                                                                                                                                                                                                                                                                                                                                          Tabela de ID                                                                                                                                                                                                                                                                                                                                          |
-| ConfigTable |                                                                                                                                                                                                                                                                                                                                  Tabela de configuração do FRS                                                                                                                                                                                                                                                                                                                                   |
-|    inlog    |                                                                                                                                                                                                                                                                                                                                        Log de entrada                                                                                                                                                                                                                                                                                                                                         |
-|   outlog    |                                                                                                                                                                                                                                                                                                                                        Log de saída                                                                                                                                                                                                                                                                                                                                        |
-| <computer>  |                                                                                                                                                                                                                                                                                                                                  Especifica o computador.                                                                                                                                                                                                                                                                                                                                   |
-|   memória    |                                                                                                                                                                                                                                                                                                                                        Uso de memória                                                                                                                                                                                                                                                                                                                                        |
-|   threads   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|    preparar    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|     AD      |                                                                                                                                                                                                                                                                                                                         lista o modo de exibição do serviço NTFRS do DS.                                                                                                                                                                                                                                                                                                                          |
-|    conjuntos     |                                                                                                                                                                                                                                                                                                                             Especifica os conjuntos de réplica ativas                                                                                                                                                                                                                                                                                                                              |
-|   version   |                                                                                                                                                                                                                                                                                                                       Especifica a API e as versões do serviço NTFRS.                                                                                                                                                                                                                                                                                                                        |
-|    sondagem     | Especifica os intervalos de sondagem atuais.<p>Parâmetros:<p><ul><li>** \/ rapidamente** \[ **\=** \[ <N>\]\]\( Sonda rapidamente  \)<p><ul><li>**rapidamente** \- Sonda rapidamente até que a configuração estável seja rectrieved</li><li>**rapidamente \= ** \-Sonda rapidamente todos os minutos padrão.</li><li>**rapidamente \= ** <N> \-Sonda rapidamente a cada *N* minutos</li></ul></li><li>** \/ lentamente** \[ **\=** \[ <N>\]\] \(Sondagens lentamente\)<p><ul><li>**lentamente** \- Sonda lentamente até que a configuração estável seja recuperada</li><li>**lentamente \= ** \-Sonda lentamente a cada minutos padrão</li><li>**lentamente \= ** <N> \-Sonda rapidamente a cada *N* minutos</li></ul></li><li>** \/ agora** \( Sondagens agora\)</li></ul> |
-|     \/?     |                                                                                                                                                                                                                                                                                                                            Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                            |
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| idtable | Especifica a tabela de ID. |
+| ConfigTable | Especifica a tabela de configuração do FRS. |
+| inlog | Especifica o log de entrada. |
+| outlog | Especifica o log de saída. |
+| `<computer>` | Especifica o computador. |
+| memória | Especifica o uso de memória. |
+| threads | Especifica o uso de memória. |
+| preparar | Especifica o uso de memória. |
+| AD | Lista o modo de exibição do serviço NTFRS do DS. |
+| conjuntos | Especifica os conjuntos de réplica ativas. |
+| version | Especifica a API e as versões do serviço NTFRS. |
+| sondagem | Especifica os intervalos de sondagem atuais.<ul><li>`/quickly`-Sonda rapidamente até recuperar uma configuração estável.</li><li>`/quickly=`-Sonda rapidamente a cada número padrão de minutos.</li><li>`/quickly=<n>`-Sonda rapidamente a cada *n* minutos.</li><li>`/slowly`-Sonda lentamente até recuperar uma configuração estável.</li><li>`/slowly=`-Sonda lentamente cada número padrão de minutos.</li><li>`/slowly=<n>`-Pesquisas lentamente a cada *n* minutos.</li><li>`/now`-Sondas agora.</li></ul>|
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="examples"></a>Exemplos
-Para determinar o intervalo de sondagem para a replicação de arquivo:
+### <a name="examples"></a>Exemplos
+
+Para determinar o intervalo de sondagem para a replicação de arquivo, digite:
 
 ```
 C:\Program Files\SupportTools>ntfrsutl poll wrkstn-1
 ```
 
-Para determinar a versão atual da API da interface do programa de aplicativo do NTFRS \( \) :
+Para determinar a versão atual da API (interface de programa de aplicativo) do NTFRS, digite:
 
 ```
 C:\Program Files\SupportTools>ntfrsutl version
@@ -67,7 +68,3 @@ C:\Program Files\SupportTools>ntfrsutl version
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-
-
-
-

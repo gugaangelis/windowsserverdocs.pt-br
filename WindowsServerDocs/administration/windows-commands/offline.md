@@ -1,6 +1,6 @@
 ---
 title: offline
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando offline, que usa um disco online ou volume para o estado offline.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,32 +9,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0be67fbdb84cf2e48e67a617a73e0fb24cc74b67
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f189ba1208e9e9a6769321170d2a9289b10189e8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723433"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472672"
 ---
 # <a name="offline"></a>offline
-
-
 
 Coloca um disco ou volume online no estado offline.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-Offline disk
-Offline volume
+offline disk
+offline volume
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[Disco offline](offline-disk.md)|Coloca o disco online com foco no estado offline.|
-|[Volume offline](offline-volume.md)|Coloca o volume online com foco no estado offline.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| [offline disk](offline-disk.md) | Coloca o disco online com foco no estado offline. |
+| [offline volume](offline-volume.md) | Coloca o volume online com foco no estado offline. |
 
 ## <a name="additional-references"></a>Referências adicionais
 
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

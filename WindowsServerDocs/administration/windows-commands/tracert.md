@@ -9,18 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00ae2f60181126657bfb3fe77144e6bc33167b4d
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: a6ef48350a0b8a4f67f1e564a9ca16db8b4dd5e6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149744"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472923"
 ---
 # <a name="tracert"></a>tracert
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Determina o caminho levado para um destino enviando uma solicitação de eco do protocolo ICMP ou mensagens ICMPv6 para o destino com valores de campo TTL (vida útil) incrementalmente crescentes. O caminho exibido é a lista de interfaces do roteador próximo/lado dos roteadores no caminho entre um host de origem e um destino. A interface Near/lado é a interface do roteador que está mais próxima do host de envio no caminho. Usado sem parâmetros, o tracert exibe a ajuda.
+
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -38,8 +39,8 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |/w\<timeout>|Especifica a quantidade de tempo em milissegundos para aguardar o tempo de ICMP excedido ou a mensagem de resposta de eco correspondente a uma determinada mensagem de solicitação de eco a ser recebida. Se não for recebido dentro do tempo limite, um asterisco (*) será exibido. O tempo limite padrão é 4000 (4 segundos).|
 |/R|Especifica que o cabeçalho de extensão de roteamento IPv6 deve ser usado para enviar uma mensagem de solicitação de eco para o host local, usando o destino como um destino intermediário e testando a rota inversa.|
 |/S\<Srcaddr>|Especifica o endereço de origem a ser usado nas mensagens de solicitação de eco. Use esse parâmetro somente ao rastrear endereços IPv6.|
-|/4|Especifica que o tracert. exe pode usar somente IPv4 para este rastreamento.|
-|/6|Especifica que o tracert. exe pode usar somente IPv6 para este rastreamento.|
+|/4|Especifica que tracert.exe pode usar somente IPv4 para este rastreamento.|
+|/6|Especifica que tracert.exe pode usar somente IPv6 para este rastreamento.|
 |\<TargetName>|Especifica o destino, identificado pelo endereço IP ou pelo nome do host.|
 |/?|Exibe a ajuda no prompt de comando.|
 

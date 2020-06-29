@@ -1,6 +1,6 @@
 ---
 title: prnqctl
-description: Imprima uma página de teste, pause ou retome uma impressora.
+description: Tópico de referência para o comando prnqctl, que imprime uma página de teste e pausa ou retoma uma impressora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,58 +9,64 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 3e18a9c0321197887b1f708854a130f41b41e7a7
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: b8a551e34754771a69af1b41e5da3fd726df1185
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222040"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472191"
 ---
 # <a name="prnqctl"></a>prnqctl
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Imprime uma página de teste, pausa ou retoma uma impressora e limpa uma fila de impressora.
+Imprime uma página de teste, pausa ou retoma uma impressora e limpa uma fila de impressora. Esse comando é um script Visual Basic localizado no `%WINdir%\System32\printing_Admin_Scripts\<language>` diretório. Para usar esse comando em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prnqctl ou altere os diretórios para a pasta apropriada. Por exemplo: `cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl`.
 
 ## <a name="syntax"></a>Sintaxe
+
 ```
-cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
-[-p <printerName>] [-u <UserName>] [-w <Password>]
+cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-u <Username>] [-w <password>]
 ```
+
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|-------|--------|
-|-Z|pausa a impressão na impressora especificada com o parâmetro **-p** .|
-|-M|Retoma a impressão na impressora especificada com o parâmetro **-p** .|
-|-E|imprime uma página de teste na impressora especificada com o parâmetro **-p** .|
-|-X|Cancela todos os trabalhos de impressão na impressora especificada com o parâmetro **-p** .|
-|-s\<ServerName>|Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado.|
-|-p\<printerName>|Especifica o nome da impressora que você deseja gerenciar. Obrigatórios.|
-|-u \<UserName> -w\<Password>|Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione.|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+|--|--|
+| -Z | Pausa a impressão na impressora especificada pelo parâmetro **-p** . |
+| -M | Retoma a impressão na impressora especificada pelo parâmetro **-p** . |
+| -E | Imprime uma página de teste na impressora especificada pelo parâmetro **-p** . |
+| -X | Cancela todos os trabalhos de impressão na impressora especificada pelo parâmetro **-p** . |
+| -s`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -p`<Printername>` | Obrigatórios. Especifica o nome da impressora que você deseja gerenciar. |
+| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
-- O comando **prnqctl** é um script Visual Basic localizado no diretório%windir%\system32\ printing_Admin_Scripts \\ <language> . Para usar esse comando, em um prompt de comando, digite **cscript** seguido pelo caminho completo para o arquivo prnqctl ou altere os diretórios para a pasta apropriada. Por exemplo:
-  ```
-  cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl
-  ```
-- Se as informações fornecidas contiverem espaços, use aspas em volta do texto (por exemplo, `"computer Name"` ).
+#### <a name="remarks"></a>Comentários
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Exemplos
-Para imprimir uma página de teste na impressora Laserprinter1 compartilhada pelo \\ computador \Server1, digite:
+- Se as informações fornecidas contiverem espaços, use aspas ao contrário do texto (por exemplo, "nome do computador").
+
+### <a name="examples"></a>Exemplos
+
+Para imprimir uma página de teste na impressora Laserprinter1 compartilhada pelo \\ computador Server1, digite:
+
 ```
-cscript Prnqctl -e -s Server1 -p Laserprinter1
+cscript prnqctl -e -s Server1 -p Laserprinter1
 ```
+
 Para pausar a impressão na impressora Laserprinter1 no computador local, digite:
+
 ```
-cscript Prnqctl -z -p Laserprinter1
+cscript prnqctl -z -p Laserprinter1
 ```
+
 Para cancelar todos os trabalhos de impressão na impressora Laserprinter1 no computador local, digite:
+
 ```
-cscript Prnqctl -x -p Laserprinter1
+cscript prnqctl -x -p Laserprinter1
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
-- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
- [referência de comando de impressão](print-command-reference.md)
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Referência aos comandos de impressão](print-command-reference.md)

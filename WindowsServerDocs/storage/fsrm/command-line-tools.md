@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 78c054c5b0c3de19d1f3acd825335eab2f140541
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2acce64aa14d60503a5b443b831a03338c204be2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394303"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472812"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Ferramentas de linha de comando do Gerenciador de Recursos de Servidor de Arquivos
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Gerenciador de recursos do servidor de arquivos instala o cmdlets do PowerShell [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager), bem como as ferramentas de linha de comando a seguir:
 
@@ -27,13 +27,13 @@ Gerenciador de recursos do servidor de arquivos instala o cmdlets do PowerShell 
 
 Você pode usar essas ferramentas para gerenciar recursos de armazenamento em um computador local ou em um computador remoto. Para obter mais informações sobre essas ferramentas de linha de comando, consulte as referências a seguir:
 
--   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**:<https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**:<https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**:<https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
-> Para ver a sintaxe de comando e os parâmetros disponíveis para um comando, execute o comando com o parâmetro <strong>/?</strong> .
+> Para ver a sintaxe de comando e os parâmetros disponíveis para um comando, execute o comando com o parâmetro <strong>/?</strong> parâmetro.
 
 
 ## <a name="remote-management-using-the-command-line-tools"></a>Gerenciamento remoto usando as ferramentas de linha de comando
@@ -47,7 +47,7 @@ Por exemplo, **Dirquota.exe** inclui um parâmetro **exportar modelo** para grav
 
 <br />
 
-## <a name="additional-considerations"></a>Considerações adicionais 
+## <a name="additional-considerations"></a>Considerações adicionais
 
 Para gerenciar recursos remotos com as ferramentas de linha de comando:
 
@@ -57,6 +57,6 @@ Para gerenciar recursos remotos com as ferramentas de linha de comando:
 -   A exceção **Gerenciamento do Gerenciador de Recursos de Servidor de Arquivos remoto** no computador remoto deve ser habilitada. Habilite essa exceção usando o Firewall do Windows no Painel de Controle.
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciar recursos de armazenamento remoto](managing-remote-storage-resources.md)

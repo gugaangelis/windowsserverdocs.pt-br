@@ -7,14 +7,14 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b06d69c020ea38a2fb9f23df2cfd9cd4191ae315
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857549"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473583"
 ---
-# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Considerações sobre simetria de unidade para Espaços de Armazenamento Diretos 
+# <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Considerações sobre simetria de unidade para Espaços de Armazenamento Diretos
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
@@ -26,7 +26,7 @@ Este tópico explica as restrições e fornece exemplos de configurações com e
 
 ## <a name="constraints"></a>Restrições
 
-### <a name="type"></a>Tipo
+### <a name="type"></a>Digite
 
 Todos os servidores devem ter os mesmos [tipos de unidades](choosing-drives.md#drive-types).
 
@@ -48,9 +48,9 @@ Por exemplo, se um servidor tiver seis SSD, *todos* eles deverão ter seis SSD.
    > [!NOTE]
    > Não há problema em misturar e comparar unidades SATA e SAS semelhantes.
 
-### <a name="size"></a>Size
+### <a name="size"></a>Tamanho
 
-É recomendável usar unidades dos mesmos tamanhos sempre que possível. O uso de unidades de capacidade de tamanhos diferentes pode resultar em alguma capacidade inutilizável e o uso de unidades de cache de tamanhos diferentes pode não melhorar o desempenho do cache. Consulte a próxima seção para obter detalhes.
+É recomendável usar unidades dos mesmos tamanhos sempre que possível. O uso de unidades de capacidade de tamanhos diferentes pode resultar em alguma capacidade inutilizável e o uso de unidades de cache de tamanhos diferentes pode não melhorar o desempenho do cache. Confira a próxima seção para saber mais detalhes.
 
    > [!WARNING]
    > Diferentes tamanhos de unidades de capacidade entre servidores podem resultar em capacidade subutilizada.
@@ -136,7 +136,7 @@ Cada servidor usa uma combinação diferente de 1,2 TB e um SSD de 1,6 TB muito 
 
 Com suporte.
 
-### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![sem suporte](media/drive-symmetry-considerations/unsupported.png) Sem suporte: tipos diferentes de unidades entre servidores
+### <a name="unsupported-not-supported-different-types-of-drives-across-servers"></a>![não compatível](media/drive-symmetry-considerations/unsupported.png) Sem suporte: tipos diferentes de unidades entre servidores
 
 O servidor 1 tem o NVMe, mas os outros não.
 
@@ -148,7 +148,7 @@ O servidor 1 tem o NVMe, mas os outros não.
 
 Não há suporte para isso. Os tipos de unidades devem ser os mesmos em todos os servidores.
 
-### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![sem suporte](media/drive-symmetry-considerations/unsupported.png) Sem suporte: número diferente de cada tipo entre servidores
+### <a name="unsupported-not-supported-different-number-of-each-type-across-servers"></a>![não compatível](media/drive-symmetry-considerations/unsupported.png) Sem suporte: número diferente de cada tipo entre servidores
 
 O servidor 3 tem mais unidades do que as outras.
 
@@ -159,12 +159,12 @@ O servidor 3 tem mais unidades do que as outras.
 
 Não há suporte para isso. O número de unidades de cada tipo deve ser o mesmo em todos os servidores.
 
-### <a name="unsupported-not-supported-only-hdd-drives"></a>![sem suporte](media/drive-symmetry-considerations/unsupported.png) Sem suporte: somente unidades HDD
+### <a name="unsupported-not-supported-only-hdd-drives"></a>![não compatível](media/drive-symmetry-considerations/unsupported.png) Sem suporte: somente unidades HDD
 
 Todos os servidores têm apenas unidades de HDD conectadas.
 
 |Servidor 1|Servidor 2|Servidor 3|
-|-|-|-| 
+|-|-|-|
 |HDD de 18 x (capacidade) |HDD de 18 x (capacidade)|HDD de 18 x (capacidade)|
 
 Não há suporte para isso. Você precisa adicionar no mínimo duas unidades de cache (NvME ou SSD) anexadas a cada um dos servidores.
@@ -173,14 +173,14 @@ Não há suporte para isso. Você precisa adicionar no mínimo duas unidades de 
 
 Para recapitular, todos os servidores no cluster devem ter os mesmos tipos de unidades e o mesmo número de cada tipo. Há suporte para misturar e combinar modelos de unidade e tamanhos de unidade, conforme necessário, com as considerações acima.
 
-| Restrição                               |               |
+| Constraint                               |               |
 |------------------------------------------|---------------|
 | Mesmos tipos de unidades em cada servidor     | **Necessário**  |
 | Mesmo número de cada tipo em cada servidor | **Necessário**  |
-| Mesmos modelos de unidade em cada servidor        | Recomendações   |
-| Mesmos tamanhos de unidade em cada servidor         | Recomendações   |
+| Mesmos modelos de unidade em cada servidor        | Recomendadas   |
+| Mesmos tamanhos de unidade em cada servidor         | Recomendadas   |
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Requisitos de hardware Espaços de Armazenamento Diretos](storage-spaces-direct-hardware-requirements.md)
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)

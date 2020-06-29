@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 643a603e89adeb0c1f3c70b0b0cabbf6bcb54731
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 33dad41e01cab4c36ea55bcb84e8033bd358d617
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851899"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471561"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Ajuste de desempenho de servidores do Active Directory
 
@@ -44,12 +44,12 @@ No entanto, sabemos que isso leva tempo e muitos ambientes estão em execução 
 
 Incentivamos que você se mantenha atualizado sobre as notícias, as orientações e as práticas recomendadas mais recentes para gerenciar o ADDS pelo blog da nossa equipe, ["Pergunte à equipe dos Serviços de Diretório"](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS).
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Planejamento da capacidade do AD DS](capacity-planning-for-active-directory-domain-services.md)
 - [Considerações sobre hardware](hardware-considerations.md)
 - [Considerações sobre o uso de memória](memory-usage-considerations.md)
 - [Considerações sobre LDAP](ldap-considerations.md)
 - [Posicionamento adequado dos controladores de domínio e considerações sobre o local](site-definition-considerations.md)
-- [Solução de problemas de desempenho do AD DS](troubleshoot.md)  
-  
+- [Solução de problemas de desempenho do AD DS](troubleshoot.md)
+

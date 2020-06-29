@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 31853f1adaed6794138861da0991aa47e79602bc
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 6799e0e3b47d6cc98cbb42407ffbed1a9578675a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070568"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473433"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Limites de escalabilidade do servidor de destino iSCSI
 
@@ -42,37 +42,37 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="odd">
 <td><p>instâncias de destino iSCSI por servidor de destino iSCSI</p></td>
 <td><p>256</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>unidades lógicas (Lu) iSCSI ou discos virtuais por servidor de destino iSCSI</p></td>
 <td><p>512</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td><p>Configurações de teste incluídas: 8 Lu por instância de destino com uma média de mais de 64 destinos e 256 instâncias de destino com uma LU por destino.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Lu iSCSI ou discos virtuais por instância de destino iSCSI</p></td>
 <td><p>256 (128 no Windows Server 2012)</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Sessões que podem se conectar simultaneamente a uma instância de destino iSCSI</p></td>
 <td><p>544 (512 no Windows Server 2012)</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Instantâneos por LU</p></td>
 <td><p>512</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td><p>Há um limite de 512 instantâneos por volume de aplicativo iSCSI independente.</p></td>
 </tr>
 <tr class="even">
 <td><p>Discos virtuais ou instantâneos montados localmente por dispositivo de armazenamento</p></td>
 <td><p>32</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td><p>Discos virtuais montados localmente Don&#39;t oferecem qualquer funcionalidade específica de iSCSI e foram preteridos – para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>.</p></td>
 </tr>
 </tbody>
@@ -99,20 +99,20 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="odd">
 <td><p>Nós de cluster de failover</p></td>
 <td><p>8 (5 no Windows Server 2012)</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Vários nós de cluster ativos</p></td>
 <td><p>Com suporte</p></td>
-<td> 
+<td>
 <p>N/D</p></td>
 <td><p>Cada nó ativo no cluster de failover possui uma instância de cluster de servidor de destino iSCSI diferente com outros nós que atuam como possíveis nós de proprietário.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Nível de recuperação de erro (ERL)</p></td>
 <td><p>0</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -124,7 +124,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="odd">
 <td><p>Sessões que podem se conectar simultaneamente a uma instância de destino iSCSI</p></td>
 <td><p>544 (512 no Windows Server 2012)</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -142,7 +142,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="even">
 <td><p>Convertendo um servidor de destino iSCSI autônomo em um servidor de destino iSCSI clusterizado ou vice-versa</p></td>
 <td><p>Sem suporte</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td><p>A instância de destino iSCSI e os dados de configuração de disco virtual, incluindo metadados de instantâneo, são perdidos durante a conversão.</p></td>
 </tr>
 </tbody>
@@ -169,19 +169,19 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="odd">
 <td><p>Número máximo de adaptadores de rede ativos</p></td>
 <td><p>8</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td><p>Aplica-se a adaptadores de rede dedicados ao tráfego iSCSI, em vez do número total de adaptadores de rede no dispositivo.</p></td>
 </tr>
 <tr class="even">
 <td><p>Portal (endereços IP) com suporte</p></td>
 <td><p>64</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Velocidade da porta de rede</p></td>
 <td><p>1 Gbps, 10 Gbps, 40Gbps, 56 Gbps (Windows Server 2012 R2 e mais recente somente)</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -264,40 +264,40 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td><p>Tamanho mínimo do formato do VHD</p></td>
 <td><p>. vhdx: 3 MB</p>
 <p>. vhd: 8 MB</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td><p>Aplica-se a todos os tipos de VHD com suporte: pai, diferencial e fixo.</p></td>
 </tr>
 <tr class="even">
 <td><p>Tamanho máximo do VHD pai</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 2 TB</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Tamanho máximo de VHD fixo</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 16 TB</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Tamanho máximo de VHD diferencial</p></td>
 <td><p>. vhdx: 64 TB</p>
 <p>. vhd: 2 TB</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>Formato de VHD fixo</p></td>
 <td><p>Com suporte</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Formato diferencial do VHD</p></td>
 <td><p>Com suporte</p></td>
-<td><p>Não</p></td>
+<td><p>No</p></td>
 <td><p>Os instantâneos não podem ser obtidos de discos virtuais iSCSI baseados em VHD diferenciais.</p></td>
 </tr>
 <tr class="odd">
@@ -310,7 +310,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td><p>Formato dinâmico do VHD</p></td>
 <td><p>. vhdx: Sim</p>
 <p>. vhd: Sim (não no Windows Server 2012)</p></td>
-<td><p>Sim</p></td>
+<td><p>Yes</p></td>
 <td><p>Não há suporte para desmapeador&#39;t.</p></td>
 </tr>
 <tr class="odd">
@@ -537,7 +537,7 @@ Também testamos os seguintes iniciadores iSCSI executando uma inicialização s
 
   - CD ou disco USB com iPXE
 
-## <a name="see-also"></a>Confira também
+## <a name="additional-references"></a>Referências adicionais
 
 A lista a seguir fornece recursos adicionais sobre o Servidor de Destino iSCSI e as tecnologias relacionadas.
 

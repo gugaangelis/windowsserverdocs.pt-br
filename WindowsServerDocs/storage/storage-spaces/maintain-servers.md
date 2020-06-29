@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccf8d809354f96277701cd365966ba5e914f64b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857529"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473473"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
 
@@ -24,7 +24,7 @@ Este tópico fornece diretrizes sobre como reiniciar ou desligar corretamente se
 
 Com os Espaços de Armazenamento Diretos, colocar um servidor offline (desativando-o) também significa colocar offline partes do armazenamento que é compartilhado entre todos os servidores do cluster. Isso requer a pausa (suspensão) do servidor que você quer colocar offline, movendo funções para outros servidores no cluster e verificando se todos os dados estão disponíveis nos outros servidores do cluster para que os dados permaneçam seguros e acessíveis durante toda a manutenção.
 
-Use os procedimentos a seguir para pausar corretamente um servidor em um cluster de Espaços de Armazenamento Diretos antes de colocá-lo offline. 
+Use os procedimentos a seguir para pausar corretamente um servidor em um cluster de Espaços de Armazenamento Diretos antes de colocá-lo offline.
 
    > [!IMPORTANT]
    > Para instalar atualizações em um cluster de Espaços de Armazenamento Diretos, use o CAU (Atualização com Suporte a Cluster), que executa automaticamente os procedimentos neste tópico para que você não precise fazê-lo ao instalar atualizações. Para obter mais informações, consulte [CAU (Atualização com Suporte a Cluster)](https://technet.microsoft.com/library/hh831694.aspx).
@@ -36,7 +36,7 @@ Antes de colocar um servidor offline para manutenção, verifique a integridade 
 Para fazer isso, abra uma sessão do PowerShell com permissões de administrador e execute o seguinte comando para exibir o status do volume:
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 ```
 
 Este é um exemplo da saída do comando:
@@ -50,7 +50,7 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 Verifique se a propriedade **HealthStatus** de cada volume (disco virtual) está **Íntegra**.
 
-Para fazer isso no Gerenciador de Cluster de Failover, acesse **Armazenamento** > **Discos**.
+Para fazer isso no Gerenciador de cluster de failover, vá para **Storage**  >  **discos**de armazenamento.
 
 Verifique se a coluna **Status** coluna de cada volume (disco virtual) mostra **Online**.
 
@@ -71,7 +71,7 @@ Para fazer isso no Gerenciador de Cluster de Failover, acesse **Nós**, clique c
 
 ![Pausar/Esvaziar](media/maintain-servers/pause-drain.png)
 
-Todas as máquinas virtuais começarão a realizar a migração ao vivo para outros servidores no cluster. Isso pode demorar alguns minutos.
+Todas as máquinas virtuais começarão a realizar a migração ao vivo para outros servidores no cluster. Isso pode levar alguns minutos.
 
    > [!NOTE]
    > Quando você pausar e esvaziar o nó do cluster corretamente, o Windows executará uma verificação de segurança automática para garantir que é seguro continuar. Se houver volumes não íntegros, ele interromperá o processo e alertará você de que não é seguro continuar.
@@ -82,12 +82,12 @@ Todas as máquinas virtuais começarão a realizar a migração ao vivo para out
 
 Depois que o servidor tiver concluído o esvaziamento, ele aparecerá como **Em Pausa** no Gerenciador de Cluster de Failover e no PowerShell.
 
-![Em pausa](media/maintain-servers/paused.png)
+![Em Pausa](media/maintain-servers/paused.png)
 
 Agora você pode reiniciá-lo ou desligá-lo com segurança como faria normalmente (por exemplo, usando os cmdlets Restart-Computer ou Stop-Computer do PowerShell).
 
 ```PowerShell
-Get-VirtualDisk 
+Get-VirtualDisk
 
 FriendlyName ResiliencySettingName OperationalStatus HealthStatus IsManualAttach Size
 ------------ --------------------- ----------------- ------------ -------------- ----
@@ -143,7 +143,7 @@ O **BytesTotal** mostra a quantidade de armazenamento que precisa ser ressincron
    > [!WARNING]
    > Não é seguro colocar outro servidor offline até que esses trabalhos de reparo sejam concluídos.
 
-Durante esse tempo, os volumes continuarão aparecendo como **Aviso**, o que é normal. 
+Durante esse tempo, os volumes continuarão aparecendo como **Aviso**, o que é normal.
 
 Por exemplo, se você usar o cmdlet `Get-VirtualDisk`, poderá ver o seguinte resultado:
 ```
@@ -173,17 +173,17 @@ Use as etapas a seguir para demarcar o sistema Espaços de Armazenamento Diretos
 2. Coloque os discos virtuais offline.
 3. Interrompa o cluster para colocar o pool de armazenamento offline. Execute o cmdlet **Stop-cluster** ou use Gerenciador de cluster de failover para interromper o cluster.
 4. Defina o serviço de cluster como **desabilitado** em Services. msc em cada nó. Isso impede que o serviço de cluster seja inicializado durante o patch.
-5. Aplique a atualização cumulativa do Windows Server e todas as atualizações necessárias da pilha de manutenção a todos os nós. (Você pode atualizar todos os nós ao mesmo tempo, não há necessidade de esperar, pois o cluster está inoperante).  
+5. Aplique a atualização cumulativa do Windows Server e todas as atualizações necessárias da pilha de manutenção a todos os nós. (Você pode atualizar todos os nós ao mesmo tempo, não há necessidade de esperar, pois o cluster está inoperante).
 6. Reinicie os nós e verifique se tudo está correto.
 7. Defina o serviço de cluster novamente como **automático** em cada nó.
-8. Inicie o cluster. Execute o cmdlet **Start-cluster** ou use Gerenciador de cluster de failover. 
+8. Inicie o cluster. Execute o cmdlet **Start-cluster** ou use Gerenciador de cluster de failover.
 
    Aguarde alguns minutos.  Verifique se o pool de armazenamento está íntegro.
 9. Coloque os discos virtuais novamente online.
 10. Monitore o status dos discos virtuais executando os cmdlets **Get-volume** e **Get-VirtualDisk** .
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
-- [CAU (atualização com suporte a cluster)](https://technet.microsoft.com/library/hh831694.aspx)
+- [CAU (Atualização com Suporte a Cluster)](https://technet.microsoft.com/library/hh831694.aspx)

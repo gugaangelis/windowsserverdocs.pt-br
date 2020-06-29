@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e1028d294e58bdb37ffbb3f0d75c7a69882b3e0b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f275e7657fc1e5d9ab982726c5b9b9adee381830
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820959"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473463"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Noções básicas sobre o cache nos Espaços de Armazenamento Diretos
 
@@ -25,7 +25,7 @@ A maneira como o cache funciona depende dos tipos de unidades presentes.
 
 O vídeo a seguir entra em detalhes sobre como o cache funciona para Espaços de Armazenamento Diretos, assim como outras considerações de design.
 
-<strong>Considerações de design de Espaços de Armazenamento Diretos</strong><br>(20 minutos)<br>
+<strong>Considerações de design dos Espaços de Armazenamento Diretos</strong><br>(20 minutos)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>Tipos de unidade e opções de implantação
@@ -75,7 +75,7 @@ As implantações híbridas pretendem equilibrar desempenho e capacidade ou maxi
 
 ## <a name="cache-drives-are-selected-automatically"></a>Unidades de cache são selecionadas automaticamente
 
-Em implantações com vários tipos de unidades, os Espaços de Armazenamento Diretos usam automaticamente todas as unidades do tipo "mais rápida" para armazenar em cache. As unidades restantes são usadas para capacidade.
+Em implantações com vários tipos de unidades, os Espaços de Armazenamento Diretos usam automaticamente todas as unidades do tipo "mais rápida" para armazenar em cache. As unidades restantes são usadas para a capacidade.
 
 O tipo "mais rápido" é determinado de acordo com a hierarquia a seguir.
 
@@ -115,7 +115,7 @@ Espaços de Armazenamento Diretos implementam um algoritmo que cancela a reprodu
 
 ### <a name="caching-in-deployments-with-drives-of-all-three-types"></a>Armazenando em cache implantações com unidades de todos os três tipos
 
-Quando unidades de todos os três tipos estão presentes, as unidades NVMe oferecem armazenamento em cache para as SSDs e as HDDs. O comportamento é o descrito acima: somente gravações são armazenadas em cache para as SSDs, e leituras e gravações são armazenadas em cache para as HDDs. O custo indireto do armazenamento em cache para as HDDs é distribuído por igual entre as unidades de cache. 
+Quando unidades de todos os três tipos estão presentes, as unidades NVMe oferecem armazenamento em cache para as SSDs e as HDDs. O comportamento é o descrito acima: somente gravações são armazenadas em cache para as SSDs, e leituras e gravações são armazenadas em cache para as HDDs. O custo indireto do armazenamento em cache para as HDDs é distribuído por igual entre as unidades de cache.
 
 ## <a name="summary"></a>Resumo
 
@@ -175,7 +175,7 @@ Você pode optar por usar o cache CSV, ou não – cabe a você. Ele permanece d
 
 ## <a name="manual-configuration"></a>Configuração manual
 
-Para a maioria das implantações, a configuração manual não é necessária. Caso você precise dele, consulte as seções a seguir. 
+Para a maioria das implantações, a configuração manual não é necessária. Caso você precise dele, consulte as seções a seguir.
 
 Se você precisar fazer alterações no modelo de dispositivo de cache após a instalação, edite o documento de componentes de suporte do Serviço de Integridade, conforme descrito em [serviço de integridade visão geral](../../failover-clustering/health-service-overview.md#supported-components-document).
 
@@ -188,7 +188,7 @@ Para usar unidades de mais resistência no armazenamento em cache para unidades 
    >[!TIP]
    > Certifique-se de comparar a cadeia de caracteres do modelo exatamente como ela é exibida na saída de **Get-PhysicalDisk**.
 
-####  <a name="example"></a>{1&gt;Exemplo&lt;1}
+####  <a name="example"></a>Exemplo
 
 Primeiro, obtenha uma lista de discos físicos:
 
@@ -211,7 +211,7 @@ Em seguida, digite o seguinte comando, especificando o modelo de dispositivo de 
 Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 ```
 
-Você pode verificar se as unidades desejadas estão sendo usadas no armazenamento em cache executando **Get-PhysicalDisk** no PowerShell e verificando se a propriedade **Usage** diz **"Journal"** .
+Você pode verificar se as unidades desejadas estão sendo usadas no armazenamento em cache executando **Get-PhysicalDisk** no PowerShell e verificando se a propriedade **Usage** diz **"Journal"**.
 
 ### <a name="manual-deployment-possibilities"></a>Possibilidades de implantação manual
 
@@ -227,7 +227,7 @@ Para substituir o comportamento, use o cmdlet **set-ClusterStorageSpacesDirect**
 
 Você pode usar **Get-ClusterStorageSpacesDirect** para verificar se o comportamento está definido.
 
-#### <a name="example"></a>{1&gt;Exemplo&lt;1}
+#### <a name="example"></a>Exemplo
 
 Primeiro, obtenha as configurações de Espaços de Armazenamento Diretos:
 
@@ -271,7 +271,7 @@ Por exemplo, 2 unidades de cache associadas a 4 unidades de capacidade resulta e
 
 Não há regra universal, mas se houver muitas perdas de leitura no cache, isso poderá ser subdimensionado e você deverá levar em consideração a adição de unidades de cache para expandir o cache. É possível adicionar unidades de cache ou de capacidade de maneira independente, sempre que você quiser.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Escolhendo unidades e tipos de resiliência](choosing-drives.md)
 - [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

@@ -1,6 +1,6 @@
 ---
-title: volume offline
-description: Tópico de referência para * * * *-
+title: offline volume
+description: Tópico de referência para o comando de volume offline, que leva o volume online com foco para o estado offline.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,21 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d17295f3367fed054a7f6a245bae44ea3494a4a8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e49a88671285bed69cfbb9c4e7bc950eb100b3e6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723452"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472712"
 ---
-# <a name="offline-volume"></a>volume offline
-
-
+# <a name="offline-volume"></a>offline volume
 
 Coloca o volume online com foco no estado offline.
 
-> [!IMPORTANT]
-> Esse comando do DiskPart não está disponível em nenhuma edição do Windows Vista.
+> [!NOTE]
+> Um volume deve ser selecionado para que o comando de **volume offline** seja executado com sucesso. Use o comando [selecionar volume](select-volume.md) para selecionar um disco e deslocar o foco para ele.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -33,17 +31,14 @@ offline volume [noerr]
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
+| Parâmetro | Descrição |
+| --------- | ----------- |
+| NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
-## <a name="remarks"></a>Comentários
-
--   Um volume deve ser selecionado para que isso tenha sucesso. Use o comando **selecionar volume** para selecionar um disco e deslocar o foco para ele.
-
-## <a name="examples"></a>Exemplos
+### <a name="examples"></a>Exemplos
 
 Para colocar o disco com foco offline, digite:
+
 ```
 offline volume
 ```
@@ -51,4 +46,3 @@ offline volume
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-

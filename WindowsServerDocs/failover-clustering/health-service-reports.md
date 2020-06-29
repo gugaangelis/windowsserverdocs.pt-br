@@ -7,20 +7,20 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 0a03dc5d646d24c9f24f979df36fb3fe1eafe631
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a1aedd4dc48abb38c33679f219a6825c6a9141bb
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720549"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473023"
 ---
 # <a name="health-service-reports"></a>Relatórios de Serviço de Integridade
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-## <a name="what-are-reports"></a>O que são relatórios  
+## <a name="what-are-reports"></a>O que são relatórios
 
-O Serviço de Integridade reduz o trabalho necessário para obter informações de desempenho e capacidade ao vivo de seu cluster Espaços de Armazenamento Diretos. Um novo cmdlet fornece uma lista organizada de métricas essenciais, que são coletadas com eficiência e agregadas dinamicamente entre os nós, com lógica interna para detectar a associação do cluster. Todos os valores são apenas pontuais e em tempo real.  
+O Serviço de Integridade reduz o trabalho necessário para obter informações de desempenho e capacidade ao vivo de seu cluster Espaços de Armazenamento Diretos. Um novo cmdlet fornece uma lista organizada de métricas essenciais, que são coletadas com eficiência e agregadas dinamicamente entre os nós, com lógica interna para detectar a associação do cluster. Todos os valores são apenas pontuais e em tempo real.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
@@ -30,16 +30,16 @@ Use este cmdlet para obter métricas para todo o cluster de Espaços de Armazena
 Get-StorageSubSystem Cluster* | Get-StorageHealthReport
 ```
 
-O parâmetro de **contagem** opcional indica quantos conjuntos de valores retornar, em intervalos de um segundo.  
+O parâmetro de **contagem** opcional indica quantos conjuntos de valores retornar, em intervalos de um segundo.
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>  
+Get-StorageSubSystem Cluster* | Get-StorageHealthReport -Count <Count>
 ```
 
-Você também pode obter métricas para um volume ou servidor específico:  
+Você também pode obter métricas para um volume ou servidor específico:
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>  
+Get-Volume -FileSystemLabel <Label> | Get-StorageHealthReport -Count <Count>
 
 Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 ```
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>Conectar
 
-Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C\#, a opção mais direta para essa camada de acesso a dados.
+Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C \# , a opção mais direta para essa camada de acesso a dados.
 
 ```
 using System.Security;
@@ -79,7 +79,7 @@ O nome de usuário fornecido deve ser um administrador local do computador de de
 
 Com o **CimSession** estabelecido, você pode consultar Instrumentação de gerenciamento do Windows (WMI) no cluster.
 
-Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **StorageSubSystem\_do MSFT** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos **os\_StorageNode de MSFT** no cluster, e todos os volumes de **MSFT\_** e de dados. Por fim, você precisará **do\_MSFT StorageHealth**, o serviço de integridade em si.
+Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o ** \_ StorageSubSystem do MSFT** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos **os \_ StorageNode de MSFT** no cluster, e todos os volumes de **MSFT \_ **e de dados. Por fim, você precisará do **MSFT \_ StorageHealth**, o serviço de integridade em si.
 
 ```
 CimInstance Cluster;
@@ -207,13 +207,13 @@ Não é necessário dizer que essas métricas podem ser visualizadas, armazenada
 
 Cada exemplo de métricas é um "relatório" que contém muitos "registros" correspondentes a métricas individuais.
 
-Para o esquema completo, inspecione as **classes\_MSFT StorageHealthReport** e **MSFT\_HealthRecord** em *storagewmi. mof*.
+Para o esquema completo, inspecione as classes **MSFT \_ StorageHealthReport** e **MSFT \_ HealthRecord** em *storagewmi. mof*.
 
 Cada métrica tem apenas três propriedades, por esta tabela.
 
 | **Propriedade** | **Exemplo**       |
 | -------------|-------------------|
-| Nome         | IOLatencyAverage  |
+| Name         | IOLatencyAverage  |
 | Valor        | 0, 21           |
 | Unidades        | 3                 |
 
@@ -280,6 +280,6 @@ Abaixo estão as métricas disponíveis para cada escopo no Windows Server 2016.
 | IOThroughputTotal   | 1         |
 | IOThroughputWrite   | 1         |
 
-## <a name="see-also"></a>Confira também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Serviço de Integridade no Windows Server 2016](health-service-overview.md)

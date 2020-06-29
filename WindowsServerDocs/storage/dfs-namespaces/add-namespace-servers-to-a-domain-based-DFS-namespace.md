@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: fa28ec06448b67724ce8e3f29894fc70f6a6dae9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee2ae5ddf40c6d8b49b9fbd40505f4e8c70fd92c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386251"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473493"
 ---
 # <a name="add-namespace-servers-to-a-domain-based-dfs-namespace"></a>Adicionar servidores de namespace para um namespace DFS baseado em domínio
 
@@ -38,10 +38,10 @@ Para adicionar um servidor de namespace para um namespace baseado em domínio us
 > [!TIP]
 > Para adicionar um servidor de namespace usando o Windows PowerShell, use o [cmdlet New-DfsnRootTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnroottarget). O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
--   [Examinar os requisitos do servidor de namespaces do DFS](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
+-   [Confira os requisitos do servidor de Namespaces DFS](https://technet.microsoft.com/library/cc753448(v=ws.11).aspx)
 -   [Criar um namespace do DFS](create-a-dfs-namespace.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
 

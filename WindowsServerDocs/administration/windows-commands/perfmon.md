@@ -1,6 +1,6 @@
 ---
 title: perfmon
-description: Tópico de referência para Perfmon
+description: Tópico de referência para o comando Perfmon, que inicia o monitor de desempenho e confiabilidade do Windows em um modo autônomo específico.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 5742b51ffd4fca16c1054e373636afbe39968c96
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 96d1589dcd75814c37c2ad295cf60887eb07739c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723319"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472472"
 ---
 # <a name="perfmon"></a>perfmon
 
@@ -28,13 +28,15 @@ perfmon </res|report|rel|sys>
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|/res|Iniciar Modo de Exibição de Recursos.|
-|/Report|Inicie o conjunto de coletores de dados de diagnóstico do sistema e exiba um relatório dos resultados.|
-|/rel|Inicie o monitor de confiabilidade.|
-|/sys|Inicie o monitor de desempenho.|
+| Parâmetro | Descrição |
+|--|--|
+| /res | Inicia o Modo de Exibição de Recursos. |
+| /Report | Inicia o conjunto de coletores de dados de diagnóstico do sistema e exibe um relatório dos resultados. |
+| /rel | Inicia o monitor de confiabilidade. |
+| /sys | Inicia o monitor de desempenho. |
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Monitor de desempenho do Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749154(v%3dws.11))
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [Monitor de desempenho do Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749154(v%3dws.11))

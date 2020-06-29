@@ -1,6 +1,6 @@
 ---
-title: disco online
-description: Tópico de referência para * * * *-
+title: online disk
+description: Tópico de referência para o comando de disco online, que coloca o disco offline no estado online.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,26 +9,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 110a73a46712e3cbe5b5ff22b7e4343afb103966
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 954e52788f3236cb9b2898a23edae25d5b22deb8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723409"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472673"
 ---
-# <a name="online-disk"></a>disco online
+# <a name="online-disk"></a>online disk
 
+Coloca o disco offline no estado online. Para discos básicos, esse comando tenta colocar online o disco selecionado e todos os volumes nesse disco. Para discos dinâmicos, esse comando tenta colocar online todos os discos que não estão marcados como externos no computador local. Ele também tenta colocar todos os volumes online no conjunto de discos dinâmicos.
 
+Se um disco dinâmico em um grupo de discos for colocado online e for o único disco do grupo, o grupo original será recriado e o disco será movido para esse grupo. Se houver outros discos no grupo e eles estiverem online, o disco será simplesmente adicionado de volta ao grupo. Se o grupo de um disco selecionado contiver volumes espelhados ou RAID-5, esse comando também ressincronizará esses volumes.
 
-Coloca os discos que estão offline no momento para um estado online.
-
-> [!IMPORTANT]
-> Esse comando não está disponível em nenhuma edição do Windows Vista.
+> [!NOTE]
+> Um disco deve ser selecionado para que o comando de **disco online** tenha sucesso. Use o comando [selecionar disco](select-disk.md) para selecionar um disco e deslocar o foco para ele.
 
 > [!IMPORTANT]
 > Esse comando falhará se for usado em um disco somente leitura.
-
-Para obter instruções sobre como usar esse comando, consulte [reativar um disco dinâmico ausente ou offline](https://go.microsoft.com/fwlink/?LinkId=207046) (https://go.microsoft.com/fwlink/?LinkId=207046).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -38,22 +36,16 @@ online disk [noerr]
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
+Para obter instruções sobre como usar esse comando, consulte [reativar um disco dinâmico ausente ou offline](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732026(v=ws.11)).
 
-## <a name="remarks"></a>Comentários
+| Parâmetro | Descrição |
+|--|--|
+| NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
--   Quando usado sem parâmetros no Windows Vista, esse comando opera em um grupo de discos. Para discos básicos, nunca há mais de um disco por grupo. Para discos dinâmicos, o grupo inclui todos os discos dinâmicos não estrangeiros.
--   Para discos básicos, esse comando tentará colocar online o disco selecionado e todos os volumes nesse disco.
--   Para discos dinâmicos, esse comando tentará colocar online todos os discos que não estão marcados como estranhos no computador local. Ele também tentará colocar todos os volumes online no conjunto de discos dinâmicos.
--   Se um disco dinâmico em um grupo de discos for colocado online e for o único disco do grupo, o grupo original será recriado e o disco será movido para esse grupo. Se houver outros discos no grupo e eles estiverem online, o disco será simplesmente adicionado de volta ao grupo.
--   Se o grupo de um disco selecionado contiver volumes espelhados ou RAID-5, esse comando também ressincronizará esses volumes.
--   Um disco deve ser selecionado para que esse comando tenha sucesso. Use o comando **selecionar disco** para selecionar um disco e deslocar o foco para ele.
+### <a name="examples"></a>Exemplos
 
-## <a name="examples"></a>Exemplos
+Para colocar o disco com foco online, digite:
 
-Para colocar o disco em foco online, digite:
 ```
 online disk
 ```
@@ -61,4 +53,3 @@ online disk
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-

@@ -7,12 +7,12 @@ ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 5fe2f98c89d97325c1f59dc6ba292831e0ffa5ff
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720558"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473103"
 ---
 # <a name="health-service-faults"></a>Falhas de Serviço de Integridade
 
@@ -20,9 +20,9 @@ ms.locfileid: "82720558"
 
 ## <a name="what-are-faults"></a>O que são falhas
 
-O Serviço de Integridade monitora constantemente o cluster Espaços de Armazenamento Diretos para detectar problemas e gerar "falhas". Um novo cmdlet exibe quaisquer falhas atuais, permitindo que você verifique facilmente a integridade da sua implantação sem examinar cada entidade ou recurso por vez. As falhas são projetadas para serem precisas, fáceis de entender e acionáveis.  
+O Serviço de Integridade monitora constantemente o cluster Espaços de Armazenamento Diretos para detectar problemas e gerar "falhas". Um novo cmdlet exibe quaisquer falhas atuais, permitindo que você verifique facilmente a integridade da sua implantação sem examinar cada entidade ou recurso por vez. As falhas são projetadas para serem precisas, fáceis de entender e acionáveis.
 
-Cada falha contém cinco campos importantes:  
+Cada falha contém cinco campos importantes:
 
 -   Severity
 -   Descrição do problema
@@ -30,51 +30,51 @@ Cada falha contém cinco campos importantes:
 -   Informações de identificação para a entidade com falha
 -   Sua localização física (se aplicável)
 
-Por exemplo, aqui está uma falha típica:  
+Por exemplo, aqui está uma falha típica:
 
 ```
-Severity: MINOR                                         
-Reason: Connectivity has been lost to the physical disk.                           
-Recommendation: Check that the physical disk is working and properly connected.    
-Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789                        
+Severity: MINOR
+Reason: Connectivity has been lost to the physical disk.
+Recommendation: Check that the physical disk is working and properly connected.
+Part: Manufacturer Contoso, Model XYZ9000, Serial 123456789
 Location: Seattle DC, Rack B07, Node 4, Slot 11
 ```
 
  >[!NOTE]
- > A localização física é derivada da configuração do domínio de falha. Para obter mais informações sobre domínios de falha, consulte [domínios de falha no Windows Server 2016](fault-domains.md). Se você não fornecer essas informações, o campo local poderá ser menos útil (por exemplo, ele pode mostrar apenas o número de slot).  
+ > A localização física é derivada da configuração do domínio de falha. Para obter mais informações sobre domínios de falha, consulte [domínios de falha no Windows Server 2016](fault-domains.md). Se você não fornecer essas informações, o campo local poderá ser menos útil (por exemplo, ele pode mostrar apenas o número de slot).
 
 ## <a name="root-cause-analysis"></a>Análise da causa raiz
 
-O Serviço de Integridade pode avaliar o potencial causalidade entre entidades com falha para identificar e combinar falhas que são consequências do mesmo problema subjacente. Reconhecendo cadeias de efeito, isso gera relatórios menos longos. Por exemplo, se um servidor estiver inativo, espera-se que qualquer unidade no servidor também seja sem conectividade. Portanto, apenas uma falha será gerada para a causa raiz-nesse caso, o servidor.  
+O Serviço de Integridade pode avaliar o potencial causalidade entre entidades com falha para identificar e combinar falhas que são consequências do mesmo problema subjacente. Reconhecendo cadeias de efeito, isso gera relatórios menos longos. Por exemplo, se um servidor estiver inativo, espera-se que qualquer unidade no servidor também seja sem conectividade. Portanto, apenas uma falha será gerada para a causa raiz-nesse caso, o servidor.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
 Para ver as falhas atuais no PowerShell, execute este cmdlet:
 
 ```PowerShell
-Get-StorageSubSystem Cluster* | Debug-StorageSubSystem  
+Get-StorageSubSystem Cluster* | Debug-StorageSubSystem
 ```
 
-Isso retorna quaisquer falhas que afetam o cluster de Espaços de Armazenamento Diretos geral. Geralmente, essas falhas estão relacionadas ao hardware ou à configuração. Se não houver falhas, esse cmdlet não retornará nada.  
+Isso retorna quaisquer falhas que afetam o cluster de Espaços de Armazenamento Diretos geral. Geralmente, essas falhas estão relacionadas ao hardware ou à configuração. Se não houver falhas, esse cmdlet não retornará nada.
 
 >[!NOTE]
 > Em um ambiente de não produção e, por sua conta e risco, você pode experimentar esse recurso disparando falhas por conta própria, por exemplo, removendo um disco físico ou desligando um nó. Depois que a falha for exibida, insira novamente o disco físico ou reinicie o nó e a falha desaparecerá novamente.
 
-Você também pode exibir as falhas que estão afetando apenas volumes específicos ou compartilhamentos de arquivos com os seguintes cmdlets:  
+Você também pode exibir as falhas que estão afetando apenas volumes específicos ou compartilhamentos de arquivos com os seguintes cmdlets:
 
 ```PowerShell
-Get-Volume -FileSystemLabel <Label> | Debug-Volume  
+Get-Volume -FileSystemLabel <Label> | Debug-Volume
 
-Get-FileShare -Name <Name> | Debug-FileShare  
+Get-FileShare -Name <Name> | Debug-FileShare
 ```
 
-Isso retorna todas as falhas que afetam apenas o volume ou o compartilhamento de arquivos específico. Geralmente, essas falhas estão relacionadas ao planejamento de capacidade, à resiliência de dados ou a recursos como armazenamento de qualidade de serviço ou de réplica de armazenamento. 
+Isso retorna todas as falhas que afetam apenas o volume ou o compartilhamento de arquivos específico. Geralmente, essas falhas estão relacionadas ao planejamento de capacidade, à resiliência de dados ou a recursos como armazenamento de qualidade de serviço ou de réplica de armazenamento.
 
 ## <a name="usage-in-net-and-c"></a>Uso em .NET e C #
 
 ### <a name="connect"></a>Conectar
 
-Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C\#, a opção mais direta para essa camada de acesso a dados.
+Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C \# , a opção mais direta para essa camada de acesso a dados.
 
 ```
 using System.Security;
@@ -105,7 +105,7 @@ O nome de usuário fornecido deve ser um administrador local do computador de de
 
 Com o **CimSession** estabelecido, você pode consultar Instrumentação de gerenciamento do Windows (WMI) no cluster.
 
-Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o **StorageSubSystem\_do MSFT** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos **os\_StorageNode de MSFT** no cluster, e todos os volumes de **MSFT\_** e de dados. Por fim, você precisará **do\_MSFT StorageHealth**, o serviço de integridade em si.
+Antes que você possa obter falhas ou métricas, você precisará obter instâncias de vários objetos relevantes. Primeiro, o ** \_ StorageSubSystem do MSFT** que representa espaços de armazenamento diretos no cluster. Usando isso, você pode obter todos **os \_ StorageNode de MSFT** no cluster, e todos os volumes de **MSFT \_ **e de dados. Por fim, você precisará do **MSFT \_ StorageHealth**, o serviço de integridade em si.
 
 ```
 CimInstance Cluster;
@@ -153,7 +153,7 @@ Invoque o **diagnóstico** para obter quaisquer falhas atuais com escopo para o 
 
 A lista completa de falhas disponíveis em cada escopo no Windows Server 2016 está documentada abaixo.
 
-```       
+```
 public void GetFaults(CimSession Session, CimInstance Target)
 {
     // Set Parameters (None)
@@ -176,7 +176,7 @@ public void GetFaults(CimSession Session, CimInstance Target)
 
 Pode fazer sentido criar e manter sua própria representação de falhas. Por exemplo, essa classe **myfault** armazena várias propriedades-chave de falhas, incluindo **faultid**, que pode ser usado posteriormente para associar atualizações ou remover notificações, ou para eliminar a duplicação caso a mesma falha seja detectada várias vezes, por qualquer motivo.
 
-```       
+```
 public class MyFault {
     public String FaultId { get; set; }
     public String Reason { get; set; }
@@ -212,9 +212,9 @@ A lista completa de propriedades em cada falha (**DiagnoseResult**) está docume
 
 Quando as falhas são criadas, removidas ou atualizadas, o Serviço de Integridade gera eventos WMI. Eles são essenciais para manter o estado do aplicativo em sincronia sem sondagem frequente e podem ajudar com coisas como determinar quando enviar alertas por email, por exemplo. Para assinar esses eventos, este código de exemplo usa o padrão de design observador novamente.
 
-Primeiro, assine os eventos do **MSFT\_StorageFaultEvent** .
+Primeiro, assine os eventos do **MSFT \_ StorageFaultEvent** .
 
-```      
+```
 public void ListenForFaultEvents()
 {
     IObservable<CimSubscriptionResult> Events = Session.SubscribeAsync(
@@ -222,7 +222,7 @@ public void ListenForFaultEvents()
     // Subscribe the Observer
     FaultsObserver<CimSubscriptionResult> Observer = new FaultsObserver<CimSubscriptionResult>(this);
     IDisposable Disposeable = Events.Subscribe(Observer);
-}   
+}
 ```
 
 Em seguida, implemente um observador cujo método **OnNext ()** será invocado sempre que um novo evento for gerado.
@@ -241,7 +241,7 @@ class FaultsObserver : IObserver
 
         if (SubscriptionResult != null)
         {
-            // Unpack            
+            // Unpack
             CimKeyedCollection<CimProperty> Properties = SubscriptionResult.Instance.CimInstanceProperties;
             String ChangeType = Properties["ChangeType"].Value.ToString();
             String FaultId = Properties["FaultId"].Value.ToString();
@@ -283,7 +283,7 @@ No entanto, em alguns casos, as falhas podem ser redescobertas pelo Serviço de 
 
 ### <a name="properties-of-faults"></a>Propriedades de falhas
 
-Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esquema completo, inspecione a **classe\_MSFT StorageDiagnoseResult** em *storagewmi. mof*.
+Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esquema completo, inspecione a classe **MSFT \_ StorageDiagnoseResult** em *storagewmi. mof*.
 
 | **Propriedade**              | **Exemplo**                                                     |
 |---------------------------|-----------------------------------------------------------------|
@@ -307,7 +307,7 @@ Esta tabela apresenta várias propriedades-chave do objeto de falha. Para o esqu
 
 ## <a name="properties-of-fault-events"></a>Propriedades de eventos de falha
 
-Esta tabela apresenta várias propriedades-chave do evento de falha. Para o esquema completo, inspecione a **classe\_MSFT StorageFaultEvent** em *storagewmi. mof*.
+Esta tabela apresenta várias propriedades-chave do evento de falha. Para o esquema completo, inspecione a classe **MSFT \_ StorageFaultEvent** em *storagewmi. mof*.
 
 Observe o **ChangeType**, que indica se uma falha está sendo criada, removida ou atualizada e a **faultid**. Um evento também contém todas as propriedades da falha afetada.
 
@@ -326,7 +326,7 @@ Observe o **ChangeType**, que indica se uma falha está sendo criada, removida o
 
 ## <a name="coverage"></a>Cobertura
 
-No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura de falha:  
+No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura de falha:
 
 ### <a name="physicaldisk-8"></a>**PhysicalDisk (8)**
 
@@ -513,12 +513,12 @@ No Windows Server 2016, o Serviço de Integridade fornece a seguinte cobertura d
 * Motivo: *"um ou mais consumidores de armazenamento (geralmente máquinas virtuais) estão usando uma política inexistente com a ID {ID}."*
 * Recomendado: *"recriar quaisquer políticas de QoS de armazenamento ausentes".*
 
-<sup>1</sup> indica que o volume atingiu 80% Full (severidade secundária) ou 90% Full (severidade principal).  
-<sup>2</sup> indica que alguns. VHD (s) no volume não atingiram seu IOPS mínimo por mais de 10% (menor), 30% (principal) ou 50% (crítico) de uma janela de 24 horas sem interrupção.  
+<sup>1</sup> indica que o volume atingiu 80% Full (severidade secundária) ou 90% Full (severidade principal).
+<sup>2</sup> indica que alguns. VHD (s) no volume não atingiram seu IOPS mínimo por mais de 10% (menor), 30% (principal) ou 50% (crítico) de uma janela de 24 horas sem interrupção.
 
 >[!NOTE]
-> A integridade dos componentes do compartimento de armazenamento, como sensores, fontes de alimentação e ventiladores, é derivada de SES (Serviços de Compartimento) SCSI. Se o fornecedor não lhe der essas informações, o Serviço de Integridade não poderá exibi-las.  
+> A integridade dos componentes do compartimento de armazenamento, como sensores, fontes de alimentação e ventiladores, é derivada de SES (Serviços de Compartimento) SCSI. Se o fornecedor não lhe der essas informações, o Serviço de Integridade não poderá exibi-las.
 
-## <a name="see-also"></a>Confira também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Serviço de Integridade no Windows Server 2016](health-service-overview.md)

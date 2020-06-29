@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f87614d5884d25c4e462cdccd8de72a7980368ec
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e742b5f9f94da06d43127c437f6ce693d4bcfc16
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402003"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472882"
 ---
 # <a name="classification-management"></a>Gerenciamento de classificação
 
@@ -23,7 +23,7 @@ Propriedades de classificação são usadas para categorizar arquivos e podem se
 
 Existem muitas formas para classificar um arquivo. Uma maneira é criar uma propriedade de classificação que atribui um valor para todos os arquivos dentro de um diretório especificado. Outra maneira é criar regras para decidir qual valor definir para uma determinada propriedade.
 
-Esta seção inclui os seguintes tópicos:
+Esta seção inclui os tópicos a seguir:
 
 -   [Criar uma propriedade de classificação](create-classification-property.md)
 -   [Criar uma regra de classificação automática](create-automatic-classification-rule.md)
@@ -33,6 +33,6 @@ Esta seção inclui os seguintes tópicos:
 > Para definir notificações por email e determinados recursos de relatório, você deve configurar primeiro as opções gerais do Gerenciador de recursos do servidor de arquivos.
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)

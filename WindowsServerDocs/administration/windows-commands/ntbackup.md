@@ -1,6 +1,6 @@
 ---
 title: ntbackup
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando Ntbackup, que foi substituído pelo comando Wbadmin.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba3aaaa192283e0e1dc1777a27fc13973949784b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9ca42abd326c2d5112e4d4a629f93afd814e7d59
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723479"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472782"
 ---
 # <a name="ntbackup"></a>ntbackup
 
+Faz backup e restaura o computador e os arquivos de um prompt de comando. Este comando foi substituído pelo [comando Wbadmin](wbadmin.md).
 
-
-O comando **Ntbackup** não está disponível no Windows Vista ou no windows Server 2008. Em vez disso, você deve usar o comando **Wbadmin** e os subcomandos para fazer backup e restaurar o computador e os arquivos de um prompt de comando.
-
-Não é possível recuperar backups criados com o **ntbackup** usando o **wbadmin**. No entanto, uma versão do **Ntbackup** está disponível como um download para os usuários do windows Server 2008 e do Windows Vista que desejam recuperar os backups criados usando o **Ntbackup**. Esta versão para download do **Ntbackup** permite que você execute recuperações apenas de backups herdados e não pode ser usada em computadores que executam o windows Server 2008 ou o Windows Vista para criar novos backups. Para baixar esta versão do **Ntbackup**, consulte [https://go.microsoft.com/fwlink/?LinkId=82917](https://go.microsoft.com/fwlink/?LinkId=82917).
+> [!IMPORTANT]
+> O comando **Wbadmin** não pode recuperar backups criados usando o comando **Ntbackup** . No entanto, uma versão do **Ntbackup** está disponível como um download do [Utilitário de restauração de backup do Windows NT](https://www.microsoft.com/download/details.aspx?id=4220). Esta versão para download ajuda a executar recuperações de backups herdados, mas não pode criar novos backups.
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-[Wbadmin](wbadmin.md)
+- [wbadmin](wbadmin.md)

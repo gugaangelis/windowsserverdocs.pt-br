@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instruções detalhadas para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como uma infraestrutura hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79323288"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472823"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
@@ -39,7 +39,7 @@ Reúna as seguintes informações:
 
 - **Nomes de servidor.** Familiarize-se com as políticas de nomenclatura de sua organização para computadores, arquivos, caminhos e outros recursos. Você precisará provisionar vários servidores, cada um com nomes exclusivos.
 
-- **Nome de domínio.** Familiarize-se com as políticas de sua organização para a nomenclatura de domínio e ingresso no domínio.  Você ingressará os servidores em seu domínio e precisará especificar o nome de domínio. 
+- **Nome de domínio.** Familiarize-se com as políticas de sua organização para a nomenclatura de domínio e ingresso no domínio.  Você ingressará os servidores em seu domínio e precisará especificar o nome de domínio.
 
 - **Rede RDMA.** Há dois tipos de protocolos RDMA: iWarp e RoCE. Observe qual é o uso dos adaptadores de rede e, se RoCE, observe também a versão (v1 ou v2). Para RoCE, observe também o modelo de seu comutador Top-of-rack.
 
@@ -51,7 +51,7 @@ Reúna as seguintes informações:
 
 A primeira etapa é instalar o Windows Server em cada servidor que estará no cluster. Espaços de Armazenamento Diretos requer o Windows Server 2016 Datacenter Edition. Você pode usar a opção de instalação Server Core ou o servidor com a experiência desktop.
 
-Ao instalar o Windows Server usando o assistente de instalação, você pode escolher entre o *Windows Server* (referindo-se ao Server Core) e o *Windows Server (servidor com a experiência desktop)* , que é o equivalente da opção de instalação *completa* disponível no Windows Server 2012 R2. Se você não escolher, obterá a opção de instalação Server Core. Para obter mais informações, consulte [Opções de instalação para o Windows Server 2016](../../get-started/Windows-Server-2016.md).
+Ao instalar o Windows Server usando o assistente de instalação, você pode escolher entre o *Windows Server* (referindo-se ao Server Core) e o *Windows Server (servidor com a experiência desktop)*, que é o equivalente da opção de instalação *completa* disponível no Windows Server 2012 R2. Se você não escolher, obterá a opção de instalação Server Core. Para obter mais informações, consulte [Opções de instalação para o Windows Server 2016](../../get-started/Windows-Server-2016.md).
 
 ### <a name="step-12-connect-to-the-servers"></a>Etapa 1,2: conectar-se aos servidores
 
@@ -80,26 +80,26 @@ Entre na sessão do PS e use o nome do servidor ou o endereço IP do nó ao qual
    ```
 
 > [!TIP]
-> Se você estiver implantando remotamente de um sistema de gerenciamento, poderá receber um erro, como *o WinRM, não pode processar a solicitação.* Para corrigir isso, use o Windows PowerShell para adicionar cada servidor à lista de hosts confiáveis no seu computador de gerenciamento:  
->   
-> `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
->  
-> Observação: a lista de hosts confiáveis dá suporte a curingas, como `Server*`.
+> Se você estiver implantando remotamente de um sistema de gerenciamento, poderá receber um erro, como *o WinRM, não pode processar a solicitação.* Para corrigir isso, use o Windows PowerShell para adicionar cada servidor à lista de hosts confiáveis no seu computador de gerenciamento:
 >
-> Para exibir sua lista de hosts confiáveis, digite `Get-Item WSMAN:\Localhost\Client\TrustedHosts`.  
->   
-> Para esvaziar a lista, digite `Clear-Item WSMAN:\Localhost\Client\TrustedHost`.  
+> `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
+>
+> Observação: a lista de hosts confiáveis dá suporte a curingas, como `Server*` .
+>
+> Para exibir sua lista de hosts confiáveis, digite `Get-Item WSMAN:\Localhost\Client\TrustedHosts` .
+>
+> Para esvaziar a lista, digite `Clear-Item WSMAN:\Localhost\Client\TrustedHost` .
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>Etapa 1,3: ingressar no domínio e adicionar contas de domínio
 
-Até agora, você configurou os servidores individuais com a conta de administrador local, `<ComputerName>\Administrator`.
+Até agora, você configurou os servidores individuais com a conta de administrador local, `<ComputerName>\Administrator` .
 
 Para gerenciar Espaços de Armazenamento Diretos, você precisará unir os servidores a um domínio e usar uma conta de domínio Active Directory Domain Services que esteja no grupo Administradores em cada servidor.
 
-No sistema de gerenciamento, abra um console do PowerShell com privilégios de administrador. Use `Enter-PSSession` para se conectar a cada servidor e executar o cmdlet a seguir, substituindo seu próprio nome de computador, nome de domínio e credenciais de domínio:
+No sistema de gerenciamento, abra um console do PowerShell com privilégios de administrador. Use `Enter-PSSession` o para se conectar a cada servidor e execute o seguinte cmdlet, substituindo seu próprio nome de computador, nome de domínio e credenciais de domínio:
 
-```PowerShell  
-Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
+```PowerShell
+Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
 Se sua conta de administrador de armazenamento não for um membro do grupo Admins. do domínio, adicione sua conta de administrador de armazenamento ao grupo local de administradores em cada nó, ou melhor ainda, adicione o grupo que você usa para administradores de armazenamento. Você pode usar o comando a seguir (ou gravar uma função do Windows PowerShell para fazer isso-consulte [usar o PowerShell para adicionar usuários de domínio a um grupo local](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obter mais informações):
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>Etapa 3,2: validar o cluster
 
-Nesta etapa, você executará a ferramenta de validação de cluster para garantir que os nós de servidor estejam configurados corretamente para criar um cluster usando Espaços de Armazenamento Diretos. Quando a validação de cluster (`Test-Cluster`) é executada antes de o cluster ser criado, ele executa os testes que verificam se a configuração parece adequada para funcionar com êxito como um cluster de failover. O exemplo diretamente abaixo usa o parâmetro `-Include` e, em seguida, as categorias específicas de testes são especificadas. Isso garante que os testes dos Espaços de Armazenamento Diretos específicos sejam incluídos na validação.
+Nesta etapa, você executará a ferramenta de validação de cluster para garantir que os nós de servidor estejam configurados corretamente para criar um cluster usando Espaços de Armazenamento Diretos. Quando a validação de cluster ( `Test-Cluster` ) é executada antes da criação do cluster, ela executa os testes que verificam se a configuração é adequada para funcionar com êxito como um cluster de failover. O exemplo diretamente abaixo usa o `-Include` parâmetro e, em seguida, as categorias específicas de testes são especificadas. Isso garante que os testes dos Espaços de Armazenamento Diretos específicos sejam incluídos na validação.
 
 Use o seguinte comando do PowerShell para validar um conjunto de servidores para uso como um cluster de Espaços de Armazenamento Diretos.
 
@@ -216,7 +216,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 Nesta etapa, você criará um cluster com os nós que você validou para a criação do cluster na etapa anterior usando o seguinte cmdlet do PowerShell.
 
-Ao criar o cluster, você receberá um aviso informando: "houve problemas ao criar a função clusterizada que pode impedi-lo de iniciar. Para saber mais, consulte o arquivo de relatório abaixo." Você pode ignorar com segurança este aviso. Ele ocorre devido a indisponibilidade dos discos para o quórum do cluster. Recomendamos a configuração de uma testemunha de compartilhamento de arquivo ou de uma testemunha de nuvem após a criação do cluster.
+Ao criar o cluster, você receberá um aviso informando: "houve problemas ao criar a função clusterizada que pode impedi-lo de iniciar. Para saber mais, consulte o arquivo de relatório abaixo." Ignore esse erro. Ele ocorre devido a indisponibilidade dos discos para o quórum do cluster. Recomendamos a configuração de uma testemunha de compartilhamento de arquivo ou de uma testemunha de nuvem após a criação do cluster.
 
 > [!Note]
 > Se os servidores estiverem usando endereços IP estáticos, modifique o comando a seguir para refletir o endereço IP estático, adicionando o seguinte parâmetro e especificando o endereço IP:-StaticAddress &lt;X.X.X.X&gt;.
@@ -229,18 +229,18 @@ Após a criação do cluster, a replicação da entrada de DNS para o nome do cl
 
 ### <a name="step-34-configure-a-cluster-witness"></a>Etapa 3,4: configurar uma testemunha de cluster
 
-Recomendamos que você configure uma testemunha para o cluster, de modo que clusters com três ou mais servidores possam resistir a dois servidores com falha ou estarem offline. Uma implantação de dois servidores requer uma testemunha de cluster; caso contrário, o servidor que ficará offline fará com que o outro fique indisponível também. Com esses sistemas, você pode usar um compartilhamento de arquivo como uma testemunha, ou usar uma testemunha de nuvem. 
+Recomendamos que você configure uma testemunha para o cluster, de modo que clusters com três ou mais servidores possam resistir a dois servidores com falha ou estarem offline. Uma implantação de dois servidores requer uma testemunha de cluster; caso contrário, o servidor que ficará offline fará com que o outro fique indisponível também. Com esses sistemas, você pode usar um compartilhamento de arquivo como uma testemunha, ou usar uma testemunha de nuvem.
 
-Para obter mais informações, consulte os seguintes tópicos:
+Para obter mais informações, veja os tópicos a seguir:
 
 - [Configurar e gerenciar o quórum](../../failover-clustering/manage-cluster-quorum.md)
-- [Implantar uma testemunha de nuvem para um cluster de failover](../../failover-clustering/deploy-cloud-witness.md)
+- [Implantar uma testemunha de nuvem para um Cluster de Failover](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>Etapa 3.5: Habilitar os Espaços de Armazenamento Diretos
 
-Depois de criar o cluster, use o cmdlet `Enable-ClusterStorageSpacesDirect` PowerShell, que colocará o sistema de armazenamento no modo de Espaços de Armazenamento Diretos e faça o seguinte automaticamente:
+Depois de criar o cluster, use o `Enable-ClusterStorageSpacesDirect` cmdlet do PowerShell, que colocará o sistema de armazenamento no modo de espaços de armazenamento diretos e faça o seguinte automaticamente:
 
--   **Criar um pool:** cria um grande Pool único com um nome como "S2D no Cluster1".
+-   **Criar um pool:** Cria um único pool grande que tem um nome como "S2D em CLUSTER1".
 
 -   **Configura os caches dos Espaços de Armazenamento Diretos:** se houver mais de um tipo de mídia (unidade) disponível para uso dos Espaços de Armazenamento Diretos, ele habilitará o mais rápido como dispositivos de cache (leitura e gravação na maioria dos casos)
 
@@ -258,7 +258,7 @@ Após a conclusão desse comando, o que pode demorar alguns minutos, o sistema e
 
 ### <a name="step-36-create-volumes"></a>Etapa 3.6: Criar volumes
 
-É recomendável usar o cmdlet `New-Volume`, pois ele fornece a experiência mais rápida e direta. Este cmdlet único cria automaticamente o disco virtual, partições, formata-o, cria o volume com o nome correspondente e o adiciona a volumes de cluster compartilhados – tudo em uma etapa simples.
+É recomendável usar o `New-Volume` cmdlet, pois ele fornece a experiência mais rápida e direta. Este cmdlet único cria automaticamente o disco virtual, partições, formata-o, cria o volume com o nome correspondente e o adiciona a volumes de cluster compartilhados – tudo em uma etapa simples.
 
 Para obter mais informações, consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md).
 
@@ -268,7 +268,7 @@ Opcionalmente, você pode habilitar o cache do volume compartilhado do cluster (
 
 Habilitar o cache CSV reduz a quantidade de memória disponível para executar VMs em um cluster hiperconvergente, portanto, você terá que balancear o desempenho do armazenamento com a memória disponível para VHDs.
 
-Para definir o tamanho do cache CSV, abra uma sessão do PowerShell no sistema de gerenciamento com uma conta que tenha permissões de administrador no cluster de armazenamento e, em seguida, use esse script, alterando as variáveis `$ClusterName` e `$CSVCacheSize` conforme apropriado (Este exemplo define um cache CSV de 2 GB por servidor):
+Para definir o tamanho do cache CSV, abra uma sessão do PowerShell no sistema de gerenciamento com uma conta que tenha permissões de administrador no cluster de armazenamento e, em seguida, use esse script, alterando as `$ClusterName` `$CSVCacheSize` variáveis e conforme apropriado (Este exemplo define um cache CSV de 2 GB por servidor):
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,7 +287,7 @@ Para obter mais informações, consulte [usando o cache de leitura em memória C
 
 Se você estiver implantando um cluster hiperconvergente, a última etapa será provisionar máquinas virtuais no cluster Espaços de Armazenamento Diretos.
 
-Os arquivos da máquina virtual devem ser armazenados no namespace CSV dos sistemas (exemplo: c:\\ClusterStorage\\Volume1), assim como as VMs clusterizadas em clusters de failover.
+Os arquivos da máquina virtual devem ser armazenados no namespace CSV dos sistemas (exemplo: c: \\ ClusterStorage \\ Volume1), assim como as VMs clusterizadas em clusters de failover.
 
 Você pode usar ferramentas na caixa ou outras ferramentas para gerenciar o armazenamento e as máquinas virtuais, como System Center Virtual Machine Manager.
 
@@ -301,7 +301,7 @@ A próxima etapa na configuração dos serviços de cluster para o servidor de a
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>Para criar uma função de Servidor de Arquivos de Escalabilidade Horizontal usando Gerenciador do Servidor
 
-1. Em Gerenciador de Cluster de Failover, selecione o cluster, vá para **funções**e clique em **Configurar função...** .<br>O assistente de alta disponibilidade é exibido.
+1. Em Gerenciador de Cluster de Failover, selecione o cluster, vá para **funções**e clique em **Configurar função...**.<br>O assistente de alta disponibilidade é exibido.
 2. Na página **selecionar função** , clique em **servidor de arquivos**.
 3. Na página **tipo de servidor de arquivos** , clique em **servidor de arquivos de escalabilidade horizontal para dados de aplicativo**.
 4. Na página **ponto de acesso para cliente** , digite um nome para o servidor de arquivos de escalabilidade horizontal.
@@ -312,8 +312,8 @@ A próxima etapa na configuração dos serviços de cluster para o servidor de a
     **Figura 1** Gerenciador de Cluster de Failover mostrando o Servidor de Arquivos de Escalabilidade Horizontal com o status em execução
 
 > [!NOTE]
->  Depois de criar a função clusterizada, pode haver alguns atrasos de propagação de rede que podem impedi-lo de criar compartilhamentos de arquivos nele por alguns minutos ou possivelmente mais.  
-  
+>  Depois de criar a função clusterizada, pode haver alguns atrasos de propagação de rede que podem impedi-lo de criar compartilhamentos de arquivos nele por alguns minutos ou possivelmente mais.
+
 #### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Para criar uma função de Servidor de Arquivos de Escalabilidade Horizontal usando o Windows PowerShell
 
  Em uma sessão do Windows PowerShell que está conectada ao cluster de servidor de arquivos, insira os seguintes comandos para criar a função de Servidor de Arquivos de Escalabilidade Horizontal, alterar *FSCLUSTER* para corresponder ao nome do cluster e *SOFS* para corresponder ao nome que você deseja dar à função de servidor de arquivos de escalabilidade horizontal:
@@ -337,7 +337,7 @@ Use os scripts incluídos na [configuração de compartilhamento SMB para o scri
 Para criar compartilhamentos de arquivos usando scripts do PowerShell, faça o seguinte:
 
 1. Baixe os scripts incluídos na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a) em um dos nós do cluster do servidor de arquivos.
-2. Abra uma sessão do Windows PowerShell com credenciais de administrador de domínio no sistema de gerenciamento e use o script a seguir para criar um grupo de Active Directory para os objetos de computador do Hyper-V, alterando os valores das variáveis conforme apropriado para seu ambiente
+2. Abra uma sessão do Windows PowerShell com credenciais de administrador de domínio no sistema de gerenciamento e use o script a seguir para criar um grupo de Active Directory para os objetos de computador Hyper-V, alterando os valores das variáveis conforme apropriado para o seu ambiente:
 
     ```PowerShell
     # Replace the values of these variables
@@ -371,7 +371,7 @@ Para criar compartilhamentos de arquivos usando scripts do PowerShell, faça o s
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>Etapa 4,3 habilitar a delegação restrita de Kerberos
 
-Para configurar a delegação restrita de Kerberos para o gerenciamento de cenário remoto e aumentar a segurança de Migração ao Vivo, de um dos nós de cluster de armazenamento, use o script KCDSetup. ps1 incluído na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Aqui está um pequeno wrapper para o script:
+Para configurar a delegação restrita de Kerberos para o gerenciamento de cenário remoto e aumentar a segurança de Migração ao Vivo, de um dos nós de cluster de armazenamento, use o script KCDSetup.ps1 incluído na [configuração de compartilhamento SMB para cargas de trabalho do Hyper-V](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a). Aqui está um pequeno wrapper para o script:
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -382,15 +382,15 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 Depois de implantar o servidor de arquivos clusterizado, é recomendável testar o desempenho da sua solução usando cargas de trabalho sintéticas antes de trazer qualquer carga de trabalho real. Isso permite confirmar se a solução está sendo executada corretamente e solucionar quaisquer problemas remanescentes antes de adicionar a complexidade das cargas de trabalho. Para obter mais informações, consulte [testar o desempenho de espaços de armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
--   [Entender o cache em Espaços de Armazenamento Diretos](understand-the-cache.md)
--   [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
+-   [Noções básicas sobre o cache nos Espaços de Armazenamento Diretos](understand-the-cache.md)
+-   [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
 -   [Tolerância a falhas de espaços de armazenamento](storage-spaces-fault-tolerance.md)
--   [Requisitos de hardware Espaços de Armazenamento Diretos](Storage-Spaces-Direct-Hardware-Requirements.md)
+-   [Requisitos de hardware de Espaços de Armazenamento Diretos](Storage-Spaces-Direct-Hardware-Requirements.md)
 -   [To RDMA, or not to RDMA – that is the question](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (blog do TechNet)

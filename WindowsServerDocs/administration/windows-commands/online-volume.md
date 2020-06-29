@@ -1,6 +1,6 @@
 ---
-title: volume online
-description: Tópico de referência para * * * *-
+title: online volume
+description: Tópico de referência para o comando de volume online, que coloca o volume offline para o estado online.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,24 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bb2ee396e4fa8a2e61001df0d979d85dabe1aa32
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 83a1e4bf1d6afe9485ab71c9af372166797900b3
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82723427"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472662"
 ---
-# <a name="online-volume"></a>volume online
+# <a name="online-disk"></a>online disk
 
+Coloca o volume offline no estado online. Este comando funciona em volumes que falharam, estão falhando ou estão em estado de redundância com falha.
 
-
-Coloca os volumes que estão offline no momento para um estado online
-
-> [!IMPORTANT]
-> Esse comando não está disponível em nenhuma edição do Windows Vista.
+> [!NOTE]
+> Um volume deve ser selecionado para que o comando de **volume online** tenha sucesso. Use o comando [selecionar volume](select-volume.md) para selecionar um volume e deslocar o foco para ele.
 
 > [!IMPORTANT]
-> Esse comando falhará se for usado em um volume somente leitura.
+> Esse comando falhará se for usado em um disco somente leitura.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -36,18 +34,14 @@ online volume [noerr]
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|NOERR|Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro.|
+| Parâmetro | Descrição |
+|--|--|
+| NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
-## <a name="remarks"></a>Comentários
-
--   Este comando opera em volumes que falharam, estão falhando ou estão em estado de redundância com falha.
--   Um volume deve ser selecionado para que esse comando tenha sucesso. Use o comando **selecionar volume** para selecionar um volume e deslocar o foco para ele.
-
-## <a name="examples"></a>Exemplos
+### <a name="examples"></a>Exemplos
 
 Para colocar o volume com foco online, digite:
+
 ```
 online volume
 ```
@@ -55,4 +49,3 @@ online volume
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-

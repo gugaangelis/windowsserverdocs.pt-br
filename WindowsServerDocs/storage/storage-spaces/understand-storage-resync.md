@@ -8,26 +8,26 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1209a3e08922a380ef46d3be6d28ce489b748f22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79e5e1e9daba005a086c16dd1d8e3e3f9a28a8a2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820929"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473413"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>Entender e monitorar a ressincronização de armazenamento
 
 >Aplica-se a: Windows Server 2019
 
-Os alertas de resincronização de armazenamento são um novo recurso de [espaços de armazenamento diretos](storage-spaces-direct-overview.md) no Windows Server 2019 que permite ao serviço de integridade lançar uma falha quando o armazenamento é ressincronizado. O alerta é útil para notificá-lo quando a ressincronização estiver acontecendo, para que você não demore acidentalmente mais servidores (o que pode causar a falha de vários domínios de falhas, resultando no desligamento do seu cluster). 
+Os alertas de resincronização de armazenamento são um novo recurso de [espaços de armazenamento diretos](storage-spaces-direct-overview.md) no Windows Server 2019 que permite ao serviço de integridade lançar uma falha quando o armazenamento é ressincronizado. O alerta é útil para notificá-lo quando a ressincronização estiver acontecendo, para que você não demore acidentalmente mais servidores (o que pode causar a falha de vários domínios de falhas, resultando no desligamento do seu cluster).
 
 Este tópico fornece o plano de fundo e as etapas para entender e ver a resincronização de armazenamento em um cluster de failover do Windows Server com o Espaços de Armazenamento Diretos.
 
 ## <a name="understanding-resync"></a>Compreendendo a ressincronização
 
-Vamos começar com um exemplo simples para entender como o armazenamento fica fora de sincronia. Tenha em mente que nenhuma solução de armazenamento distribuído de nada compartilhado (somente unidades locais) exibe esse comportamento. Como você verá abaixo, se um nó de servidor ficar inativo, suas unidades não serão atualizadas até que ele volte a ficar online-isso é verdade para qualquer arquitetura hiperconvergente. 
+Vamos começar com um exemplo simples para entender como o armazenamento fica fora de sincronia. Tenha em mente que nenhuma solução de armazenamento distribuído de nada compartilhado (somente unidades locais) exibe esse comportamento. Como você verá abaixo, se um nó de servidor ficar inativo, suas unidades não serão atualizadas até que ele volte a ficar online-isso é verdade para qualquer arquitetura hiperconvergente.
 
-Suponha que desejamos armazenar a cadeia de caracteres "Olá". 
+Suponha que desejamos armazenar a cadeia de caracteres "Olá".
 
 ![ASCII da cadeia de caracteres "Olá"](media/understand-storage-resync/hello.png)
 
@@ -39,7 +39,7 @@ Suponha que nós atualizamos nossa cadeia de caracteres de "Olá" para "ajuda!" 
 
 ![ASCII da cadeia de caracteres "ajuda!"](media/understand-storage-resync/help.png)
 
-Depois de atualizarmos a cadeia de caracteres, copie #2 e #3 serão atualizados com êxito. No entanto, a cópia #1 ainda não pode ser acessada porque o servidor #1 está inoperante temporariamente (para manutenção). 
+Depois de atualizarmos a cadeia de caracteres, copie #2 e #3 serão atualizados com êxito. No entanto, a cópia #1 ainda não pode ser acessada porque o servidor #1 está inoperante temporariamente (para manutenção).
 
 ![Gif de gravação para copiar #2 e #2 "](media/understand-storage-resync/write.gif)
 
@@ -61,7 +61,7 @@ Para exibir essa falha no PowerShell, execute:
 Get-HealthFault
 ```
 
-Essa é uma nova falha no Windows Server 2019 e aparecerá no PowerShell, no relatório de validação de cluster e em qualquer outro lugar que se baseie em falhas de integridade. 
+Essa é uma nova falha no Windows Server 2019 e aparecerá no PowerShell, no relatório de validação de cluster e em qualquer outro lugar que se baseie em falhas de integridade.
 
 Para obter uma exibição mais profunda, você pode consultar o banco de dados de série temporal no PowerShell da seguinte maneira:
 
@@ -86,7 +86,7 @@ Ao mostrar o progresso geral da ressincronização do armazenamento, você pode 
 
 ![Imagem de alerta no centro de administração do Windows "](media/understand-storage-resync/alert.png)
 
-O alerta é útil para notificá-lo quando a ressincronização estiver acontecendo, para que você não demore acidentalmente mais servidores (o que pode causar a falha de vários domínios de falhas, resultando no desligamento do seu cluster). 
+O alerta é útil para notificá-lo quando a ressincronização estiver acontecendo, para que você não demore acidentalmente mais servidores (o que pode causar a falha de vários domínios de falhas, resultando no desligamento do seu cluster).
 
 Se você navegar até a página *servidores* no centro de administração do Windows, clicar em *inventário*e, em seguida, escolher um servidor específico, poderá obter uma visão mais detalhada de como essa ressincronização de armazenamento é procurada por servidor. Se você navegar até o servidor e examinar o gráfico de *armazenamento* , verá a quantidade de dados que precisa ser reparada em uma linha *roxa* com o número exato direito acima. Esse valor aumentará quando o servidor estiver inoperante (mais dados precisa ser ressincronizado) e diminuir gradualmente quando o servidor voltar a ficar online (os dados estão sendo sincronizados). Quando a quantidade de dados que precisa ser reparada for 0, seu armazenamento será feito com a ressincronização – agora você está livre para retirar um servidor se precisar. Uma captura de tela dessa experiência no centro de administração do Windows é mostrada abaixo:
 
@@ -111,7 +111,7 @@ Regeneration          00:01:19              Running               50            
 
 Essa exibição é muito mais granular, já que os trabalhos de armazenamento listados são por volume, você pode ver a lista de trabalhos em execução e pode acompanhar o progresso individual. Esse cmdlet funciona no Windows Server 2016 e 2019.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Colocar um servidor offline para manutenção](maintain-servers.md)
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)

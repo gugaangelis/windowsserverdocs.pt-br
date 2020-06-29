@@ -1,6 +1,6 @@
 ---
 title: rcp
-description: Tópico de referência para * * * *-
+description: Tópico de referência para o comando RCP, que copia arquivos entre computadores. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52728f144c8fd8688514bbef659e276ef06c185c
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 1e06f9751a690e1593a0fb3e30dc31c14c8f960a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222834"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471861"
 ---
 # <a name="rcp"></a>rcp
 
+>[!IMPORTANT]
+> Este comando foi preterido.
 
+Você pode instalar o subsistema para aplicativos baseados em UNIX usando o **Assistente para adicionar recursos**. Para obter mais informações e os arquivos de download, consulte [utilitários e SDK para o subsistema para aplicativos baseados em UNIX no Microsoft Windows 7 e no Windows Server 2008 R2](https://www.microsoft.com/download/details.aspx?id=2391).
 
-Copia arquivos entre computadores. Este comando foi preterido. Você pode instalar o subsistema para aplicativos baseados em UNIX usando o assistente para adicionar recursos. Para obter mais informações, consulte [componentes de interoperabilidade do UNIX do Windows Server 2008](https://go.microsoft.com/fwlink/?LinkId=191835) no site da Microsoft. Após a instalação, você pode abrir uma janela de comando do Shell C ou do shell Korn e executar o **rcp**. Para obter mais informações, digite **Man RCP** no Shell C ou no prompt do shell Korn.
+Após a instalação, você pode abrir um shell do C (csh ou tcsh) ou uma janela de comando do KornShell e executar o **rcp**. Para obter mais informações, digite **Man RCP** no prompt do C shell ou KornShell.
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

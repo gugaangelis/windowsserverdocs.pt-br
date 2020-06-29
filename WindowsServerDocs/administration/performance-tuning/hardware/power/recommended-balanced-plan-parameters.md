@@ -1,18 +1,18 @@
 ---
 title: Parâmetros de plano de energia balanceados recomendados para tempos de resposta rápidos
-description: Parâmetros de plano de energia balanceados recomendados para tempo de resposta rápido
+description: Parâmetros de plano de energia balanceados recomendados para tempos de resposta rápidos
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
-ms.topic: article
+ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 288746b5361c550e167f64886a929c96c81ff8d0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 62dc6168e76bf3951443df0f06c47a8684d2df26
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851959"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471581"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parâmetros de plano de energia balanceados recomendados para cargas de trabalho que exigem tempos de resposta rápidos
 
@@ -21,7 +21,7 @@ O plano de energia **equilibrado** padrão usa a **taxa de transferência** como
 No entanto, o **tempo de resposta** pode aumentar exponencialmente com aumentos de utilização. Hoje em dia, o requisito de tempo de resposta rápido aumentou drasticamente. Embora a Microsoft tenha sugerido os usuários para alternar para o plano de energia de **alto desempenho** quando eles precisam de um tempo de resposta rápido, alguns usuários não querem perder o benefício de energia durante os níveis de carga leve a médio. Portanto, a Microsoft fornece o seguinte conjunto de alterações de parâmetro sugeridas para as cargas de trabalho que exigem tempo de resposta rápido.
 
 
-| Parâmetro | Descrição | Valor padrão | Valor proposto |
+| Parâmetro | Descrição | Valor Padrão | Valor proposto |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Limite de aumento de desempenho do processador | Limite de utilização acima do qual a frequência deve aumentar | 90 | 60 |
 | Limite de redução de desempenho do processador | Limite de utilização abaixo do qual a frequência é reduzida | 80 | 40 |
@@ -45,9 +45,9 @@ Essa alteração se baseia na análise do desempenho e da compensação de energ
 
 ## <a name="specpower--java-workload"></a>SPECpower – carga de trabalho JAVA
 
-[SPECpower\_ssj2008](http://spec.org/power_ssj2008/), o benchmark de especificação padrão da indústria mais popular para características de desempenho e potência do servidor, é usado para verificar o impacto de energia. Como ele usa apenas a **taxa de transferência** como métrica de desempenho, o plano de energia **equilibrado** padrão fornece a melhor eficiência de energia.
+[SPECpower \_ ssj2008](http://spec.org/power_ssj2008/), o benchmark de especificação padrão da indústria mais popular para características de energia e desempenho do servidor, é usado para verificar o impacto de energia. Como ele usa apenas a **taxa de transferência** como métrica de desempenho, o plano de energia **equilibrado** padrão fornece a melhor eficiência de energia.
 
-A alteração de parâmetro proposta consome uma potência ligeiramente mais alta na luz (ou seja, < = 20%) níveis de carga. Mas com o nível de carga mais alto, a diferença aumenta e começa a consumir a mesma potência que o plano de energia de **alto desempenho** após o nível de carga de 60%. Para usar os parâmetros de alteração propostos, os usuários devem estar cientes do custo de energia em níveis de carga médio a alto durante o planejamento de capacidade de seu rack.
+A alteração de parâmetro proposta consome uma potência ligeiramente mais alta na luz (ou seja, <= 20%) níveis de carga. Mas com o nível de carga mais alto, a diferença aumenta e começa a consumir a mesma potência que o plano de energia de **alto desempenho** após o nível de carga de 60%. Para usar os parâmetros de alteração propostos, os usuários devem estar cientes do custo de energia em níveis de carga médio a alto durante o planejamento de capacidade de seu rack.
 
 ## <a name="geekbench-3"></a>GeekBench 3
 
@@ -64,8 +64,8 @@ Configuramos um [cluster de failover] e usamos Diskspd para gerar Random e Seque
 >[!Important]
 >A partir de processadores Intel [Broadwell] que executam o Windows Server 2016, a maioria das decisões de gerenciamento de energia do processador é feita no processador em vez do nível do sistema operacional para obter uma adaptação mais rápida às alterações de carga de trabalho. Os parâmetros herdados PPM usados pelo sistema operacional têm um impacto mínimo sobre as decisões de frequência reais, exceto a informando ao processador se ele deve favorecer a energia ou o desempenho, ou limitar as frequências mínimas e máximas. Portanto, a alteração de parâmetro de PPM proposta é direcionada apenas para os sistemas Broadwell.
 
-## <a name="see-also"></a>Consulte também
-- [Considerações de desempenho de hardware do servidor](../index.md)
+## <a name="see-also"></a>Consulte Também
+- [Considerações sobre o desempenho de hardware](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Considerações de energia de hardware do servidor)
 - [Power and Performance Tuning](power-performance-tuning.md) (Energia e ajuste de desempenho)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Ajuste de gerenciamento de energia do processador)

@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 48171657b42ec8b6ba09aa6a35a2f898d6775d07
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72ad55fad515ea769ea739f037165547b1104889
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857079"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472953"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Políticas de autenticação e silos de políticas de autenticação
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico destinado a profissionais de TI descreve os silos de política de autenticação e as políticas que podem restringir contas a esses silos. Ele também explica como as políticas de autenticação podem ser usadas para restringir o escopo das contas.
 
-Os silos de política de autenticação e as políticas de acompanhamento fornecem uma maneira de conter credenciais de alto privilégio para sistemas que somente são pertinentes aos usuários, computadores ou serviços selecionados. Os silos podem ser definidos e gerenciados em Active Directory Domain Services (AD DS) usando os cmdlets Centro Administrativo do Active Directory e Active Directory do Windows PowerShell.
+Os silos de política de autenticação e as políticas de acompanhamento fornecem uma maneira de conter credenciais de alto privilégio para sistemas que somente são pertinentes aos usuários, computadores ou serviços selecionados. Os silos podem ser definidos e gerenciados no AD DS (Serviços de Domínio Active Directory) usando o Centro Administrativo do Active Directory e os cmdlets do Windows PowerShell do Active Directory.
 
 Os silos de política de autenticação são contêiners aos quais os administradores podem atribuir contas de usuário, de computador e de serviço. Os conjuntos de contas podem, então, ser gerenciados pelas políticas de autenticação aplicadas àquele contêiner. Isso reduz a necessidade de o administrador rastrear o acesso aos recursos para contas individuais e ajuda a evitar que usuários mal-intencionados acessem outros recursos por meio do roubo de credenciais.
 
@@ -35,9 +35,9 @@ Para mais informações sobre como configurar os silos da política de autentica
 ### <a name="about-authentication-policy-silos"></a>Sobre silos de política de autenticação
 Um silo de política de autenticação controla quais contas podem ser restringidas pelo silo e define as políticas de autenticação a serem aplicadas aos membros. Você pode criar o silo com base nos requisitos da sua organização. Os silos são objetos do Active Directory para usuários, computadores e serviços, conforme definido pelo esquema na tabela a seguir.
 
-**Esquema de Active Directory para silos de política de autenticação**
+**Esquema do Active Directory para silos de política de autenticação**
 
-|Nome de Exibição|Descrição|
+|Nome de exibição|Descrição|
 |--------|--------|
 |Silo de política de autenticação|Uma instância desta classe define as políticas de autenticação e comportamentos relacionados para usuários, computadores e serviços designados.|
 |Silos de política de autenticação|Um contêiner desta classe pode conter objetos do silo de política de autenticação.|
@@ -49,7 +49,7 @@ Um silo de política de autenticação controla quais contas podem ser restringi
 Os silos de política de autenticação podem ser configurados usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](how-to-configure-protected-accounts.md).
 
 ### <a name="about-authentication-policies"></a>Sobre políticas de autenticação
-Uma política de autenticação define as propriedades de tempo de vida TGT (tíquete de concessão de tíquete) do protocolo Kerberos e as condições do controle de acesso de autenticação para um tipo de conta. A política é criada e controla o contêiner de AD DS conhecido como o silo de política de autenticação.
+Uma política de autenticação define as propriedades de tempo de vida TGT (tíquete de concessão de tíquete) do protocolo Kerberos e as condições do controle de acesso de autenticação para um tipo de conta. A política é criada e controla o contêiner de AD DS conhecido como silo da política de autenticação.
 
 As políticas de autenticação controlam o seguinte:
 
@@ -73,21 +73,21 @@ O tipo de conta Active Directory determina a função do chamador como um dos se
 
     São usadas contas de serviço gerenciadas autônomas, contas de serviço gerenciadas de grupo ou um objeto de conta personalizado derivado de um desses dois tipos de contas de serviço. As políticas podem definir as condições de controle de acesso de um dispositivo, que são usadas para restringir as credenciais da conta de serviço gerenciada a dispositivos específicos com uma identidade de Active Directory. Os serviços nunca deverão ser membros do grupo de segurança Usuários Protegidos, pois todas as autenticações de entrada falharão.
 
--   **Ele**
+-   **Computador**
 
     É usado um objeto de conta de computador ou um objeto de conta personalizado derivado de um objeto de conta de computador. As políticas podem definir as condições de controle de acesso necessárias para permitir a autenticação à conta com base nas propriedades do usuário e do dispositivo. Os computadores nunca deverão ser membros do grupo de segurança Usuários Protegidos, pois todas as autenticações de entrada falharão. Por padrão, as tentativas de usar autenticação NTLM são rejeitadas. Um tempo de vida de TGT não deve ser configurado para contas de computador.
 
 > [!NOTE]
 > É possível definir uma política de autenticação em um conjunto de contas sem associar a política a um silo de política de autenticação. Você pode usar esta estratégia quando uma única conta precisar ser protegida.
 
-**Esquema de Active Directory para políticas de autenticação**
+**Esquema do Active Directory para políticas de autenticação**
 
 As políticas para os objetos do Active Directory para usuários, computadores e serviços são definidas pelo esquema na tabela a seguir.
 
-|Tipo|Nome de Exibição|Descrição|
+|Type|Nome de exibição|Descrição|
 |----|--------|--------|
 |Política|Política de autenticação|Uma instância desta classe define os comportamentos da política de autenticação para as entidades designadas.|
-|Política|Políticas de Autenticação|Um contêiner desta classe pode conter objetos de política de autenticação.|
+|Política|Políticas de autenticação|Um contêiner desta classe pode conter objetos de política de autenticação.|
 |Política|Política de autenticação imposta|Especifica se a política de autenticação foi imposta.<p>Quando não está imposta, a política fica no modo de auditoria por padrão e os eventos que indicam potenciais sucessos ou falhas são gerados, mas as proteções não são aplicadas ao sistema.|
 |Política|Vínculo regressivo da política de autenticação atribuída|Este atributo é o vínculo regressivo para msDS-AssignedAuthNPolicy.|
 |Política|Política de autenticação atribuída|Especifica qual AuthNPolicy deve ser aplicada a esta entidade.|
@@ -100,22 +100,22 @@ As políticas para os objetos do Active Directory para usuários, computadores e
 |Computador|Vínculo regressivo da política de autenticação de computador|Este atributo é o vínculo regressivo para msDS-ComputerAuthNPolicy.|
 |Computador|ms-DS-Computer-Allowed-To-Authenticate-To|Este atributo é usado para determinar o conjunto de entidades permitidas para autenticação a um serviço executado sob uma conta de computador.|
 |Computador|Tempo de vida de TGT de computador|Especifica a duração máxima de um TGT de Kerberos emitido para um computador (expressada em segundos). Não é recomendável alterar essa configuração.|
-|Service|Política de autenticação de serviço|Especifica qual AuthNPolicy deve ser aplicada aos serviços atribuídos a este objeto de silo.|
-|Service|Vínculo regressivo da política de autenticação de serviço|Este atributo é o vínculo regressivo para msDS-ServiceAuthNPolicy.|
-|Service|ms-DS-Service-Allowed-To-Authenticate-To|Este atributo é usado para determinar o conjunto de entidades permitidas para autenticação a um serviço executado sob uma conta de serviço.|
-|Service|ms-DS-Service-Allowed-To-Authenticate-From|Este atributo é usado para determinar o conjunto de dispositivos com os quais uma conta de serviço possui permissão para entrar.|
-|Service|Tempo de vida de TGT de serviço|Especifica a duração máxima de um TGT de Kerberos emitido para um serviço (expressada em segundos).|
+|Serviço|Política de autenticação de serviço|Especifica qual AuthNPolicy deve ser aplicada aos serviços atribuídos a este objeto de silo.|
+|Serviço|Vínculo regressivo da política de autenticação de serviço|Este atributo é o vínculo regressivo para msDS-ServiceAuthNPolicy.|
+|Serviço|ms-DS-Service-Allowed-To-Authenticate-To|Este atributo é usado para determinar o conjunto de entidades permitidas para autenticação a um serviço executado sob uma conta de serviço.|
+|Serviço|ms-DS-Service-Allowed-To-Authenticate-From|Este atributo é usado para determinar o conjunto de dispositivos com os quais uma conta de serviço possui permissão para entrar.|
+|Serviço|Tempo de vida de TGT de serviço|Especifica a duração máxima de um TGT de Kerberos emitido para um serviço (expressada em segundos).|
 
 As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](how-to-configure-protected-accounts.md).
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 Esta seção explica como os silos de política de autenticação e as políticas de autenticação funcionam em conjunto com o grupo de segurança Usuários Protegidos, bem como a implementação do protocolo Kerberos no Windows.
 
 -   [Como o protocolo Kerberos é usado com silos e políticas de autenticação](#BKMK_HowKerbUsed)
 
--   [Como a restrição de uma entrada do usuário funciona](#BKMK_HowRestrictingSignOn)
+-   [Como funciona a restrição de entrada de usuário](#BKMK_HowRestrictingSignOn)
 
--   [Como a restrição da emissão do tíquete de serviço funciona](#BKMK_HowRestrictingServiceTicket)
+-   [Como funciona a restrição de emissão de tíquete de serviço](#BKMK_HowRestrictingServiceTicket)
 
 **Contas protegidas**
 
@@ -131,7 +131,7 @@ O grupo de segurança usuários protegidos dispara proteção não configurável
 
 Para mais informações sobre este grupo de segurança, consulte [Como funciona o grupo Usuários Protegidos](protected-users-security-group.md#BKMK_HowItWorks).
 
-**Políticas de silos e autenticação**
+**Silos e políticas de autenticação**
 
 Os silos de política de autenticação e as políticas de autenticação aproveitam a infraestrutura de autenticação existente do Windows. O uso do protocolo NTLM é rejeitado, sendo usado o protocolo Kerberos com tipos de criptografia mais modernos. As políticas de autenticação complementam o grupo de segurança Usuários Protegidos ao oferecer uma maneira de aplicar restrições configuráveis a contas, além de fornecer restrições a contas para serviços e computadores. As políticas de autenticação são impostas durante o compartilhamento do protocolo Kerberos AS (serviço de autenticação) ou TGS (serviço de concessão de tíquete). Para saber mais sobre como o Windows usa o protocolo Kerberos e quais alterações foram feitas para dar suporte aos silos de política de autenticação e as políticas de autenticação, consulte:
 
@@ -139,7 +139,7 @@ Os silos de política de autenticação e as políticas de autenticação aprove
 
 -   [Alterações na autenticação Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) (windows Server 2008 R2 e Windows 7)
 
-### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Como o protocolo Kerberos é usado com políticas e silos de política de autenticação
+### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Como o protocolo Kerberos é usado com silos de políticas e políticas de autenticação
 Quando uma conta de domínio é ligada a um silo de política de autenticação e o usuário entra, o Gerenciador de contas de segurança adiciona o tipo de declaração do Silo de política de autenticação que inclui o silo como valor. Essa declaração na conta fornece o acesso ao silo de destino.
 
 Quando uma política de autenticação é imposta e o serviço de autenticação solicita que uma conta de domínio seja recebida no controlador de domínio, este retorna um TGT não renovável com o tempo de vida configurado (exceto se o tempo de vida de TGT do domínio for mais breve).
@@ -166,14 +166,14 @@ Você pode usar uma única política de autenticação para todos os membros de 
 
 As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](how-to-configure-protected-accounts.md).
 
-### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>Como a restrição de uma entrada do usuário funciona
+### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>Como funciona a restrição de entrada de usuário
 Como essas políticas de autenticação são aplicadas a uma conta, elas também se aplicam às contas usadas pelos serviços. Esta configuração será muito útil se você desejar limitar o uso de uma senha para um serviço a um host específico. Isso ocorre, por exemplo, quando contas de serviço gerenciadas de grupo são configuradas onde os hosts têm permissão para recuperar a senha dos Serviços de Domínio Active Directory. Contudo, a senha pode ser usada de qualquer host para autenticação inicial. Ao aplicar uma condição de controle de acesso, uma camada de proteção adicional pode ser obtida ao limitar que a senha pode ser recuperada apenas por um determinado conjunto de hosts.
 
 Quando os serviços executados como sistema, serviço de rede ou outra identidade de serviço local se conectam aos serviços de rede, eles usam a conta de computador do host. As contas de computador não podem ser restringidas. Por isso, mesmo se o serviço estiver usando uma conta de computador que não seja para um host do Windows, ela não poderá ser restrita.
 
 Restringir a entrada do usuário a hosts específicos exige que o controlador de domínio valide a identidade do host. Ao usar autenticação Kerberos com proteção Kerberos (que faz parte do Controle de Acesso Dinâmico), o Centro de Distribuição de Chave é fornecido com o TGT do host ao qual o usuário está se autenticando. O conteúdo deste TGT protegido é usado para concluir uma verificação de acesso para determinar se o host é permitido.
 
-Quando um usuário entra no Windows ou digita suas credenciais de domínio em uma solicitação de credenciais para um aplicativo, por padrão, o Windows envia um AS-REQ desprotegido para o controlador de domínio. Se o usuário estiver enviando a solicitação de um computador que não oferece suporte à proteção, como computadores que executam o Windows 7 ou o Windows Vista, a solicitação falhará.
+Quando um usuário entra no Windows ou digita suas credenciais de domínio em uma solicitação de credenciais para um aplicativo, por padrão, o Windows envia um AS-REQ desprotegido para o controlador de domínio. Se o usuário estiver enviando a solicitação de um computador que não dá suporte à proteção, caso este computador esteja executando o Windows 7 ou o Windows Vista, por exemplo, a solicitação falhará.
 
 A lista a seguir descreve este processo:
 
@@ -200,7 +200,7 @@ Mesmo quando os sistemas operacionais oferecerem suporte à proteção Kerberos,
 
 3.  O controlador de domínio devolve uma resposta protegida (AS-REP) e a autenticação prossegue.
 
-### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>Como a restrição da emissão do tíquete de serviço funciona
+### <a name="how-restricting-service-ticket-issuance-works"></a><a name="BKMK_HowRestrictingServiceTicket"></a>Como funciona a restrição de emissão de tíquete de serviço
 Quando uma conta não é permitida e um usuário que tem um TGT tenta se conectar ao serviço (por exemplo, abrindo um aplicativo que requer autenticação para um serviço que é identificado pelo SPN (nome da entidade de serviço) do serviço, ocorre a seguinte sequência:
 
 1.  Ao tentar se conectar ao SPN1 do SPN, o Windows envia um TGS-REQ para o controlador de domínio que está solicitando um tíquete de serviço para SPN1.
@@ -221,7 +221,7 @@ Quando uma conta é permitida porque a conta atende às condições de controle 
 
 4.  O controlador de domínio responde à solicitação com um TGS-REP (resposta de serviço de concessão de tíquete).
 
-## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>Erro associado e mensagens de evento informativas
+## <a name="associated-error-and-informational-event-messages"></a><a name="BKMK_ErrorandEvents"></a>Mensagens de erro associadas e eventos informativos
 A tabela a seguir descreve os eventos associados ao grupo de segurança Usuários Protegidos e as políticas de autenticação aplicadas aos silos de política de autenticação.
 
 Os eventos são registrados nos Logs de Aplicativos e Serviços, em **Microsoft\Windows\Authentication**.
@@ -236,7 +236,7 @@ Para ver as etapas de solução de problemas que usam esses eventos, consulte as
 |106<p>**AuthenticationPolicyFailures-DomainController**|Motivo: uma falha de restrição de Kerberos ocorre porque o usuário ou o dispositivo não tem permissão para se autenticar no servidor.<p>Um evento é registrado no controlador de domínio para indicar que o tíquete de serviço do Kerberos foi negado, pois o usuário, dispositivo ou ambos não cumprem as restrições de controle de acesso impostas.<p>Exibe os nomes do dispositivo, política e silo.|
 |306<p>**AuthenticationPolicyFailures-DomainController**|Motivo: uma falha de restrição de Kerberos pode ocorrer porque o usuário ou o dispositivo não tem permissão para se autenticar no servidor.<p>No modo de auditoria, um evento informativo é registrado no controlador de domínio para indicar que o tíquete de serviço do Kerberos será negado, pois o usuário, o dispositivo ou ambos não cumprem as restrições de controle de acesso.<p>Exibe os nomes do dispositivo, política e silo.|
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 [Como configurar contas protegidas](how-to-configure-protected-accounts.md)
 
 [Proteção e gerenciamento de credenciais](credentials-protection-and-management.md)

@@ -1,6 +1,6 @@
 ---
 title: pathping
-description: Saiba como obter informações de latência e perda de rede usando o comando pathping.
+description: Tópico de referência para o comando pathping, que obtém informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,55 +9,57 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6943a9762aed0a6c2ac71c73565ab49811a8e307
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6f3f90be7be29f1c50e70fa8ec49685ee1843c45
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821166"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472552"
 ---
 # <a name="pathping"></a>pathping
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Fornece informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino. o **pathping** envia várias mensagens de solicitação de eco para cada roteador entre uma origem e um destino durante um período de tempo e, em seguida, computa os resultados com base nos pacotes retornados de cada roteador. Como o **pathping** exibe o grau de perda de pacotes em um determinado roteador ou link, você pode determinar quais roteadores ou sub-redes podem estar tendo problemas de rede.
+Fornece informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino. Esse comando envia várias mensagens de solicitação de eco para cada roteador entre uma origem e um destino, ao longo de um período de tempo e, em seguida, computa os resultados com base nos pacotes retornados de cada roteador. Como esse comando exibe o grau de perda de pacotes em um determinado roteador ou link, você pode determinar quais roteadores ou sub-redes podem estar tendo problemas de rede. Usado sem parâmetros, este comando exibe a ajuda.
 
-o **pathping** executa o equivalente do comando **tracert** identificando quais roteadores estão no caminho. Em seguida, ele envia pings periodicamente para todos os roteadores em um período de tempo especificado e computa estatísticas com base no número retornado de cada um. Usado sem parâmetros, o **pathping** exibe a ajuda.
+> [!NOTE]
+> Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
+>
+> Além disso, esse comando identifica quais roteadores estão no caminho, o mesmo que usar o [comando tracert](tracert.md). Howevever, esse comando também envia pings periodicamente para todos os roteadores em um período de tempo especificado e computa estatísticas com base no número retornado de cada um.
 
 ## <a name="syntax"></a>Sintaxe
-```
-pathping [/n] [/h] [/g <Hostlist>] [/p <Period>] [/q <NumQueries> [/w <timeout>] [/i <IPaddress>] [/4 <IPv4>] [/6 <IPv6>][<TargetName>]
-```
-#### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|/n|Impede o **pathping** de tentar resolver os endereços IP de roteadores intermediários para seus nomes. Isso pode agilizar a exibição dos resultados do **pathping** .|
-|/h \< MaximumHops>|Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos.|
-|/g \< hostlist>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços.|
-|/p \< período>|Especifica o número de milissegundos a aguardar entre pings consecutivos. O padrão é 250 milissegundos (1/4 segundo).|
-|/q \< NumQueries>|Especifica o número de mensagens de solicitação de eco enviadas a cada roteador no caminho. O padrão é 100 consultas.|
-|\<tempo limite de/w>|Especifica o número de milissegundos para aguardar cada resposta. O padrão é 3000 milissegundos (3 segundos).|
-|/i \< IPaddress>|Especifica o endereço de origem.|
-|/4 \<> IPv4|Especifica que pathping usa somente IPv4.|
-|/6 \<> IPv6|Especifica que o pathping usa somente IPv6.|
-|\<> TargetName|Especifica o destino, que é identificado pelo endereço IP ou pelo nome do host.|
-|/?|Exibe a ajuda no prompt de comando.|
-
-## <a name="remarks"></a>Comentários
--   os parâmetros do **pathping** diferenciam maiúsculas de minúsculas.
--   Para evitar o congestionamento da rede, os pings devem ser enviados em um ritmo suficientemente lento.
--   Para minimizar os efeitos de perdas de intermitência, não envie pings com muita frequência.
--   Ao usar o parâmetro **/p** , os pings são enviados individualmente para cada salto intermediário. Por isso, o intervalo entre dois pings enviados para o mesmo salto é o *período* multiplicado pelo número de saltos.
--   Ao usar o parâmetro **/w** , vários pings podem ser enviados em paralelo. Por isso, a quantidade de tempo especificada no parâmetro *Timeout* não é limitada pela quantidade de tempo especificada no parâmetro *period* para aguardar entre pings.
--   Esse comando estará disponível somente se o protocolo TCP/IP estiver instalado como um componente nas propriedades de um adaptador de rede em conexões de rede.
-
-## <a name="examples"></a>Exemplos
-
-Para mostrar a saída do comando **pathping** :
 
 ```
-D:\>pathping /n corp1
-Tracing route to corp1 [10.54.1.196]
+pathping [/n] [/h <maximumhops>] [/g <hostlist>] [/p <Period>] [/q <numqueries> [/w <timeout>] [/i <IPaddress>] [/4 <IPv4>] [/6 <IPv6>][<targetname>]
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+|--|--|
+| /n | Impede o **pathping** de tentar resolver os endereços IP de roteadores intermediários para seus nomes. Isso pode agilizar a exibição dos resultados do **pathping** . |
+| /h`<maximumhops>` | Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos. |
+| /g`<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem flexível** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é **9**. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
+| /p`<period>` | Especifica o número de milissegundos a aguardar entre pings consecutivos. O padrão é 250 milissegundos (1/4 segundo). Esse parâmetro envia pings individuais para cada salto intermediário. Por isso, o intervalo entre dois pings enviados para o mesmo salto é o *período* multiplicado pelo número de saltos. |
+| /q`<numqueries>` | Especifica o número de mensagens de solicitação de eco enviadas a cada roteador no caminho. O padrão é 100 consultas. |
+| /w`<timeout>` | Especifica o número de milissegundos para aguardar cada resposta. O padrão é 3000 milissegundos (3 segundos). Esse parâmetro envia vários pings em paralelo. Por isso, a quantidade de tempo especificada no parâmetro *Timeout* não é limitada pela quantidade de tempo especificada no parâmetro *period* para aguardar entre pings. |
+| /i`<IPaddress>` | Especifica o endereço de origem. |
+| /4`<IPv4>` | Especifica que pathping usa somente IPv4. |
+| /6`<IPv6>` | Especifica que o pathping usa somente IPv6. |
+| `<targetname>` | Especifica o destino, que é identificado pelo endereço IP ou pelo nome do host. |
+| /? | Exibe a ajuda no prompt de comando. |
+
+#### <a name="remarks"></a>Comentários
+
+- Todos os parâmetros diferenciam maiúsculas de minúsculas.
+
+- Para evitar o congestionamento da rede e minimizar os efeitos das perdas de intermitência, os pings devem ser enviados em um ritmo suficientemente lento.
+
+### <a name="example-of-the-pathping-command-output"></a>Exemplo da saída do comando pathping
+
+```
+D:\>pathping /n contoso1
+Tracing route to contoso1 [10.54.1.196]
 over a maximum of 30 hops:
   0  172.16.87.35
   1  172.16.87.218
@@ -81,11 +83,15 @@ Hop  RTT    Lost/Sent = Pct  Lost/Sent = Pct  address
   5   24ms    13/ 100 = 13%     0/ 100 =  0%  10.54.1.196
 Trace complete.
 ```
-Quando o **pathping** é executado, os primeiros resultados listam o caminho. Esse é o mesmo caminho mostrado usando o comando **tracert** . Em seguida, uma mensagem ocupada é exibida por aproximadamente 90 segundos (o tempo varia de acordo com a contagem de saltos). Durante esse tempo, as informações são coletadas de todos os roteadores listados anteriormente e dos links entre eles. no final desse período, os resultados do teste são exibidos.
 
-No relatório de exemplo acima, **este nó/link**, **perdido/enviado = PCT** e colunas de **endereço** mostram que o link entre 172.16.87.218 e 192.168.52.1 está removendo 13% dos pacotes. Os roteadores em saltos 2 e 4 também estão descartando pacotes endereçados a eles, mas essa perda não afeta a capacidade de encaminhar o tráfego que não é endereçado a eles.
+Quando o **pathping** é executado, os primeiros resultados listam o caminho. Em seguida, uma mensagem ocupada é exibida por aproximadamente 90 segundos (o tempo varia de acordo com a contagem de saltos). Durante esse tempo, as informações são coletadas de todos os roteadores listados anteriormente e dos links entre eles. No final desse período, os resultados do teste são exibidos.
+
+No relatório de exemplo acima, **este nó/link**, **perdido/enviado = PCT** e colunas de **endereço** mostram que o link entre *172.16.87.218* e *192.168.52.1* está removendo 13% dos pacotes. Os roteadores em saltos 2 e 4 também descartam pacotes endereçados a eles, mas essa perda não afeta a capacidade de encaminhar o tráfego que não é endereçado a eles.
 
 As tarifas de perda exibidas para os links, identificadas como uma barra vertical ( **|** ) na coluna **endereço** , indicam o congestionamento do link que está causando a perda de pacotes que estão sendo encaminhados no caminho. As tarifas de perda exibidas para roteadores (identificadas por seus endereços IP) indicam que esses roteadores podem estar sobrecarregados.
 
 ## <a name="additional-references"></a>Referências adicionais
+
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando tracert](tracert.md)

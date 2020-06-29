@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: fc673d2c3e1404dbd750d4c0ef05ec6db50017aa
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: dc84edaebda64d3ae359e17b683411ac479c9397
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963072"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473213"
 ---
 # <a name="guidelines-for-troubleshooting-the-key-management-service-kms"></a>Diretrizes para solucionar problemas do KMS (Serviço de Gerenciamento de Chaves)
 
@@ -44,14 +44,14 @@ Os campos mais importantes para solução de problemas são os seguintes. O que 
 - **Nome**. Isso indica a edição do Windows instalada no sistema do host KMS. Isso poderá ser importante para a solução de problemas se você estiver tendo problemas para adicionar ou alterar a chave do host KMS (por exemplo, para verificar se a chave tem suporte na edição do sistema operacional).
 - **Descrição**. Informa a chave que está instalada. Use este campo para verificar qual chave foi usada para ativar o serviço e se ela é ou não a correto para os clientes KMS que você implantou.
 - **Status da licença**. Esse é o status do sistema do host KMS. O valor deve ser pelo menos **Licensed**. Qualquer outro valor significa que algo está errado e talvez você precise reativar o host.
-- **Contagem atual**. A contagem exibida estará entre **0** e **50**. A contagem é cumulativa (entre sistemas operacionais) e indica o número de sistemas válidos que tentaram ser ativados em um período de 30 dias.  
-  
-  Se a contagem é **0**, o serviço foi ativado recentemente ou nenhum cliente válido se conectou ao host KMS.  
-  
-  A contagem não aumentará acima de **50**, independentemente de quantos sistemas válidos existirem no ambiente. Isso ocorre porque a contagem é definida para armazenar em cache apenas duas vezes a política de licença máxima que é retornada por um cliente KMS. A política máxima atualmente é definida pelo sistema operacional do cliente Windows, que requer uma contagem de **25** ou superior do host KMS para se ativar. Portanto, a contagem mais alta no host KMS é 2 x 25 ou 50. Observe que em ambientes que contêm apenas clientes KMS do Windows Server, a contagem máxima no host KMS será **10**. Isso ocorre porque o limite para as edições do Windows Server é **5** (2 x 5 ou 10).  
-  
-  Um problema comum relacionado à contagem é se o ambiente tem um host KMS ativado e clientes suficientes, mas a contagem não aumenta além de um. O principal problema é que a imagem do cliente implantada não foi configurada corretamente (**sysprep /generalize**) e os sistemas não têm CMIDs (IDs do computador cliente) exclusivas. Para obter mais informações, confira [Cliente KMS](#kms-client) e [A contagem atual do KMS não aumenta quando você adiciona o novo Windows Vista ou computadores cliente baseados no Windows 7 à rede](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista). Um dos nossos engenheiros de escalonamento de suporte também publicou sobre esse problema, em [A contagem de cliente do host KMS não está aumentando devido a CMIDs duplicadas](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/).  
-  
+- **Contagem atual**. A contagem exibida estará entre **0** e **50**. A contagem é cumulativa (entre sistemas operacionais) e indica o número de sistemas válidos que tentaram ser ativados em um período de 30 dias.
+
+  Se a contagem é **0**, o serviço foi ativado recentemente ou nenhum cliente válido se conectou ao host KMS.
+
+  A contagem não aumentará acima de **50**, independentemente de quantos sistemas válidos existirem no ambiente. Isso ocorre porque a contagem é definida para armazenar em cache apenas duas vezes a política de licença máxima que é retornada por um cliente KMS. A política máxima atualmente é definida pelo sistema operacional do cliente Windows, que requer uma contagem de **25** ou superior do host KMS para se ativar. Portanto, a contagem mais alta no host KMS é 2 x 25 ou 50. Observe que em ambientes que contêm apenas clientes KMS do Windows Server, a contagem máxima no host KMS será **10**. Isso ocorre porque o limite para as edições do Windows Server é **5** (2 x 5 ou 10).
+
+  Um problema comum relacionado à contagem é se o ambiente tem um host KMS ativado e clientes suficientes, mas a contagem não aumenta além de um. O principal problema é que a imagem do cliente implantada não foi configurada corretamente (**sysprep /generalize**) e os sistemas não têm CMIDs (IDs do computador cliente) exclusivas. Para obter mais informações, confira [Cliente KMS](#kms-client) e [A contagem atual do KMS não aumenta quando você adiciona o novo Windows Vista ou computadores cliente baseados no Windows 7 à rede](https://support.microsoft.com/help/929829/the-kms-current-count-does-not-increase-when-you-add-new-windows-vista). Um dos nossos engenheiros de escalonamento de suporte também publicou sobre esse problema, em [A contagem de cliente do host KMS não está aumentando devido a CMIDs duplicadas](https://blogs.technet.microsoft.com/askcore/2009/10/16/kms-host-client-count-not-increasing-due-to-duplicate-cmids/).
+
   Outro motivo pelo qual a contagem pode não estar aumentando é que há muitos hosts KMS no ambiente e a contagem é distribuída em todos eles.
 - **Ouvindo na porta**. A comunicação com o KMS usa RPC anônimo. Por padrão, os clientes usam a porta TCP 1688 para se conectar ao host KMS. Verifique se essa porta está aberta entre seus clientes KMS e o host KMS. Você pode alterar ou configurar a porta no host KMS. Durante a comunicação, o host KMS envia a designação de porta para os clientes KMS. Se você alterar a porta em um cliente KMS, a designação de porta será substituída quando o cliente contatar o host.
 
@@ -61,7 +61,7 @@ Muitas vezes, recebemos uma pergunta sobre a seção "solicitações cumulativas
 
 #### <a name="event-id-12290"></a>ID do evento 12290
 
-O host KMS registra a ID de evento 12290 quando um cliente KMS entra em contato com o host a fim de ativá-lo. A ID de evento 12290 fornece uma quantidade significativa de informações que você pode usar para descobrir que tipo de cliente contatou o host e por que ocorreu uma falha. O seguinte segmento de uma entrada de ID de evento 12290 é proveniente do log de eventos do Serviço de Gerenciamento de Chaves de nosso host KMS.  
+O host KMS registra a ID de evento 12290 quando um cliente KMS entra em contato com o host a fim de ativá-lo. A ID de evento 12290 fornece uma quantidade significativa de informações que você pode usar para descobrir que tipo de cliente contatou o host e por que ocorreu uma falha. O seguinte segmento de uma entrada de ID de evento 12290 é proveniente do log de eventos do Serviço de Gerenciamento de Chaves de nosso host KMS.
 
 ![Evento 12290 do KMS](./media/ee939272.kms_12290_event(en-us,technet.10).png)
 
@@ -113,7 +113,7 @@ Quando um cliente KMS é ativado ou reativado com êxito, o cliente registra doi
 
 ![ID de evento 12288 do cliente KMS](./media/ee939272.client_12288(en-us,technet.10).png)
 
-Caso veja apenas a ID de evento 12288 (sem uma ID de evento 12289 correspondente), isso significa que o cliente KMS não pôde acessar o host KMS, o host KMS não respondeu ou o cliente não recebeu a resposta. Nesse caso, verifique se o host KMS é detectável e se os clientes KMS podem contatá-lo.  
+Caso veja apenas a ID de evento 12288 (sem uma ID de evento 12289 correspondente), isso significa que o cliente KMS não pôde acessar o host KMS, o host KMS não respondeu ou o cliente não recebeu a resposta. Nesse caso, verifique se o host KMS é detectável e se os clientes KMS podem contatá-lo.
 
 As informações mais relevantes na ID de evento 12288 são os dados na seção de informações. Por exemplo, essa seção mostra o estado atual do cliente mais o FQDN e a porta TCP que o cliente usou quando ele tentou ativar. Você pode usar o FQDN para solucionar problemas de casos em que a contagem em um host KMS não está aumentando. Por exemplo, se houver muitos hosts KMS disponíveis para os clientes (sistemas legítimos ou não autorizados), a contagem poderá ser distribuída em todos eles.
 
@@ -133,7 +133,7 @@ Se você precisar chamar o suporte para solucionar problemas de ativação, o en
 - Saída **Slmgr.vbs /dlv** do host KMS e dos sistemas de cliente KMS. Se você usar wscript ou cscript para executar o comando, poderá usar Ctrl + C para copiar a saída e, em seguida, colá-la no Bloco de notas para enviá-la ao contato de suporte.
 - Logs de eventos do host KMS (log do Serviço de Gerenciamento de Chaves) e dos sistemas de cliente KMS (log do aplicativo)
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 - [Pergunte à equipe principal: #Activation](https://blogs.technet.microsoft.com/askcore/tag/Activation/)
 
 

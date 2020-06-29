@@ -1,6 +1,6 @@
 ---
-title: consultar usuário
-description: Tópico de referência para * * * *-
+title: query user
+description: Tópico de referência para o comando Query User, que exibe informações sobre sessões de usuário em um Host da Sessão da Área de Trabalho Remota Server.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,57 +9,76 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8c095226a5445e976e47e461044ec002dc007fe
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7885df2287134cca9935926abd926a077ac8fdb3
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722688"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471941"
 ---
-# <a name="query-user"></a>consultar usuário
+# <a name="query-user"></a>query user
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe informações sobre sessões de usuário em um servidor de Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
+Exibe informações sobre sessões de usuário em um servidor Host da Sessão da Área de Trabalho Remota. Você pode usar esse comando para descobrir se um usuário específico está conectado a um servidor Host da Sessão da Área de Trabalho Remota específico. Esse comando retorna as informações a seguir:
+
+- Nome do usuário
+
+- Nome da sessão no servidor de Host da Sessão da Área de Trabalho Remota
+
+- ID da sessão
+
+- Estado da sessão (ativa ou desconectada)
+
+- Tempo ocioso (o número de minutos desde o último pressionamento da tecla ou o movimento do mouse na sessão)
+
+- Data e hora em que o usuário fez logon
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
-> ## <a name="syntax"></a>Sintaxe
-> ```
-> query user [<UserName> | <SessionName> | <SessionID>] [/server:<ServerName>]
-> ```
-> ### <a name="parameters"></a>Parâmetros
-> 
-> |      Parâmetro       |                                                     Descrição                                                     |
-> |----------------------|---------------------------------------------------------------------------------------------------------------------|
-> |      <UserName>      |                            Especifica o nome de logon do usuário que você deseja consultar.                             |
-> |    <SessionName>     |                              Especifica o nome da sessão que você deseja consultar.                              |
-> |     <SessionID>      |                               Especifica a ID da sessão que você deseja consultar.                               |
-> | /server:<ServerName> | Especifica o servidor de host da sessão da área de trabalho remota que você deseja consultar. Caso contrário, o servidor host da Sessão RD atual será usado. |
-> |          /?          |                                        Exibe a ajuda no prompt de comando.                                         |
-> 
-> ## <a name="remarks"></a>Comentários
-> - Você pode usar esse comando para descobrir se um usuário específico está conectado a um servidor host de sessão da área de trabalho remota. o **usuário de consulta** retorna as seguintes informações:
->   -   O nome do usuário
->   -   O nome da sessão no servidor de host da sessão da área de trabalho remota
->   -   A ID da sessão
->   -   O estado da sessão (ativa ou desconectada)
->   -   O tempo ocioso (o número de minutos desde o último pressionamento da tecla ou o movimento do mouse na sessão)
->   -   A data e a hora em que o usuário fez logon
-> - Para usar o **usuário de consulta**, você deve ter permissão de controle total ou permissão de acesso especial para informações de consulta.
-> - Se você usar o **usuário de consulta** sem especificar <*UserName*>, <*SessionName*> ou <*SessionID*>, será retornada uma lista de todos os usuários que fizeram logon no servidor. Como alternativa, você também pode usar a **sessão de consulta** para exibir uma lista de todas as sessões em um servidor.
-> - Quando o **usuário da consulta** retorna informações, um símbolo maior que (>) é exibido antes da sessão atual.
-> - O parâmetro **/Server** será necessário somente se você usar o **usuário de consulta** de um servidor remoto.
->   ## <a name="examples"></a>Exemplos
-> - Para exibir informações sobre todos os usuários conectados ao sistema, digite:
->   ```
->   query user
->   ```
-> - Para exibir informações sobre o usuário usuário1 no servidor SERver1, digite:
->   ```
->   query user USER1 /server:SERver1
->   ```
->   ## <a name="additional-references"></a>Referências adicionais
->   - [Command-Line Syntax Key](command-line-syntax-key.md)
->   Referência de comando de serviços de área de trabalho remota de[consulta](query.md)
->   de chave de sintaxe de linha de comando[(serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+> Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
+
+## <a name="syntax"></a>Sintaxe
+
+```
+query user [<username> | <sessionname> | <sessionID>] [/server:<servername>]
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+|--|--|
+| `<username>` | Especifica o nome de logon do usuário que você deseja consultar. |
+| `<sessionname>` | Especifica o nome da sessão que você deseja consultar. |
+| `<sessionID>` | Especifica a ID da sessão que você deseja consultar. |
+| /server:`<servername>` | Especifica o servidor de Host da Sessão da Área de Trabalho Remota que você deseja consultar. Caso contrário, o servidor de Host da Sessão da Área de Trabalho Remota atual será usado. Esse parâmetro só será necessário se você estiver usando esse comando de um servidor remoto. |
+| /? | Exibe a ajuda no prompt de comando. |
+
+#### <a name="remarks"></a>Comentários
+
+- Para usar esse comando, você deve ter permissão de controle total ou permissão de acesso especial.
+
+- Se você não especificar um usuário usando o <*nome* de usuário>, <*SessionName*> ou parâmetros *SessionID* , uma lista de todos os usuários que estão conectados ao servidor será retornada. Como alternativa, você também pode usar o comando **Query Session** para exibir uma lista de todas as sessões em um servidor.
+
+- Quando o **usuário da consulta** retorna informações, um símbolo maior que `(>)` é exibido antes da sessão atual.
+
+### <a name="examples"></a>Exemplos
+
+Para exibir informações sobre todos os usuários conectados ao sistema, digite:
+
+```
+query user
+```
+
+Para exibir informações sobre o usuário *Usuário1* no servidor *Server1*, digite:
+
+```
+query user USER1 /server:Server1
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando de consulta](query.md)
+
+- [Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)](remote-desktop-services-terminal-services-command-reference.md)

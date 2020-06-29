@@ -8,16 +8,16 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: Este tópico descreve o namespaces do DFS, que é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente.
-ms.openlocfilehash: 07f6ac857164257810b297f9e2b83db4e4bd42be
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd02f0b65cc57300c673d72c7879a80d48747fa2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858979"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471880"
 ---
 # <a name="dfs-namespaces-overview"></a>Visão geral de Namespaces DFS
 
-> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows Server (canal semestral)
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows Server (Canal Semestral)
 
 O Namespaces do DFS é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente. Isso torna possível dar aos usuários uma exibição virtual de pastas compartilhadas, onde um único caminho leva a arquivos localizados em vários servidores, conforme mostrado na figura a seguir:
 
@@ -26,9 +26,9 @@ O Namespaces do DFS é um serviço de função no Windows Serve que permite que 
 Aqui está uma descrição dos elementos que compõem um namespace DFS:
 
 - **Servidor de Namespace** - Um servidor de namespace hospeda um namespace. O servidor de namespace pode ser um servidor membro ou um controlador de domínio.
-- **Namespace raiz** - O namespace raiz é o ponto inicial do namespace. Na figura anterior, o nome da raiz é público e o caminho do namespace é \\\\contoso\\Public. Esse tipo de namespace é um namespace baseado em domínio, pois ele começa com um nome de domínio (por exemplo, contoso) e seus metadados são armazenados em Active Directory Domain Services (AD DS). Embora um servidor de namespace é mostrado na figura anterior, um namespace baseado em domínio pode ser hospedado em vários servidores de namespace para aumentar a disponibilidade do namespace.
+- **Namespace raiz** - O namespace raiz é o ponto inicial do namespace. Na figura anterior, o nome da raiz é público e o caminho do namespace é público da \\ \\ Contoso \\ . Esse tipo de namespace é um namespace baseado em domínio porque ele começa com um nome de domínio (por exemplo, Contoso) e seus metadados são armazenados nos Serviços de Domínio do Active Directory (AD DS). Embora um servidor de namespace é mostrado na figura anterior, um namespace baseado em domínio pode ser hospedado em vários servidores de namespace para aumentar a disponibilidade do namespace.
 - **Pasta** - pastas sem destinos de pasta adicionam estrutura e hierarquia ao namespace, e pastas com destinos de pasta fornecem aos usuários com conteúdo em si. Quando os usuários pesquisam uma pasta com destinos de pasta no namespace, o computador cliente recebe uma referência que redireciona transparentemente o computador cliente para um dos destinos de pasta.
-- **Destino de pasta** - Um destino de pasta é o caminho UNC de uma pasta compartilhada ou outro namespace associado a uma pasta em um namespace. A pasta destino é onde os dados e conteúdo está armazenado. Na figura anterior, a pasta chamada Tools tem dois destinos de pasta, um em Londres e outro em Nova York, e a pasta denominada guias de treinamento tem um destino de pasta única em são Paulo. Um usuário que procura \\\\contoso\\Public\\software\\ferramentas é Redirecionado de forma transparente para a pasta compartilhada \\\\LDN-SVR-01\\Tools ou \\\\NYC-SVR-01\\Tools, dependendo de qual site o usuário está localizado no momento.
+- **Destino de pasta** - Um destino de pasta é o caminho UNC de uma pasta compartilhada ou outro namespace associado a uma pasta em um namespace. A pasta destino é onde os dados e conteúdo está armazenado. Na figura anterior, a pasta chamada Tools tem dois destinos de pasta, um em Londres e outro em Nova York, e a pasta denominada guias de treinamento tem um destino de pasta única em são Paulo. Um usuário que navega para \\ \\ \\ as ferramentas de software público da Contoso \\ \\ é Redirecionado de forma transparente para a pasta compartilhada \\ \\ LDN-SVR-01 \\ Tools ou \\ \\ ferramentas NYC-SVR-01 \\ , dependendo de qual site o usuário está localizado no momento.
 
 Este tópico discute como instalar o DFS, o que há de novo e onde encontrar informações de avaliação e implantação.
 
@@ -40,18 +40,18 @@ Não há requisitos de hardware ou software adicionais para executar o Gerenciam
 
 Um servidor de namespace é um controlador de domínio ou servidor membro que hospeda um namespace. O número de namespaces que você pode hospedar em um servidor é determinado pelo sistema operacional em execução no servidor do namespace.
 
-Servidores que executam os seguintes sistemas operacionais podem hospedar vários namespaces baseados em domínio, além de um único namespace autônomo. 
+Servidores que executam os seguintes sistemas operacionais podem hospedar vários namespaces baseados em domínio, além de um único namespace autônomo.
 
 - Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2 Datacenter e Enterprise Editions
-- Windows Server (canal semestral)
+- Windows Server (Canal semestral)
 
 Servidores que executam os seguintes sistemas operacionais podem hospedar um único namespace autônomo:
 
-- Windows Server 2008 R2 Standard
+- Windows Server 2008 R2 Standard
 
 A tabela a seguir descreve os fatores adicionais a serem considerados ao escolher servidores para hospedar um namespace.
 
@@ -69,15 +69,15 @@ Instale os namespaces do DFS usando o [centro de administração do Windows](../
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS usando o Gerenciador do Servidor
 
-1. Abra o Gerenciador do Servidor, clique em **Gerenciar** e em **Adicionar Funções e Recursos**. O Assistente para Adicionar Funções e Recursos é aberto.
+1. Abra o Gerenciador do Servidor, clique em **Gerenciar**e em **Adicionar Funções e Recursos**. O Assistente para Adicionar Funções e Recursos é aberto.
 
-2. Na página **Seleção de Servidor**, selecione o servidor no VHD (disco rígido virtual) de uma máquina virtual offline na qual deseja instalar o DFS.
+2. Na página **Seleção de Servidor** , selecione o servidor no VHD (disco rígido virtual) de uma máquina virtual offline na qual deseja instalar o DFS.
 
 3. Selecione os serviços de função e os recursos que deseja instalar.
 
     - Para instalar o serviço de Namespaces de DFS, o **funções de servidor** página, selecione **Namespaces DFS**.
 
-    - Para instalar apenas as Ferramentas de Gerenciamento de DFS, na página **Recursos**, expanda **Ferramentas de Administração do Servidor Remoto**, **Ferramentas de Administração de Funções**, expanda **Ferramentas de Serviços de Arquivo** e selecione **Ferramentas de Gerenciamento de DFS**.
+    - Para instalar apenas as Ferramentas de Gerenciamento de DFS, na página **Recursos** , expanda **Ferramentas de Administração do Servidor Remoto**, **Ferramentas de Administração de Funções**, expanda **Ferramentas de Serviços de Arquivo**e selecione **Ferramentas de Gerenciamento de DFS**.
 
          **Ferramentas de Gerenciamento de DFS** instala o snap-in Gerenciamento de DFS, o módulo de Namespaces do DFS para Windows PowerShell e as ferramentas de linha de comando, mas não instala servidos de DFS no servidor.
 
@@ -89,7 +89,7 @@ Abra uma sessão do Windows PowerShell com direitos de usuário elevados e digit
 Install-WindowsFeature <name>
 ```
 
-| Serviço de função ou recurso | {1&gt;Nome&lt;1} |
+| Serviço de função ou recurso | Nome |
 | ----------------------- | ---- |
 | Namespaces DFS          | `FS-DFS-Namespace` |
 | Ferramentas de Gerenciamento de DFS    | `RSAT-DFS-Mgmt-Con` |
@@ -116,16 +116,16 @@ O uso de Namespaces em uma máquina virtual no Microsoft Azure foi testado; no e
 
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, consulte [Documentação de máquinas virtuais do Windows Azure](https://docs.microsoft.com/azure/virtual-machines/).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 Para obter informações adicionais relacionadas, consulte os seguintes recursos.
 
 | Tipo de conteúdo        | Referências |
 | ------------------  | ----------------|
-| **Avaliação do produto** | [O que há de novo nos namespaces do DFS e Replicação do DFS no Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **Implantação**    | [Considerações sobre escalabilidade de namespace do DFS](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **Avaliação do produto** | [Novidades no Namespaces DFS e Replicação DFS no Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **Implantação**    | [Considerações de escalabilidade do Namespace DFS](https://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **Operações**    | [Namespaces do DFS: perguntas frequentes](https://technet.microsoft.com/library/ee404780.aspx) |
-| **Recursos da comunidade** | [O fórum serviços de arquivos e armazenamento do TechNet](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **Recursos da comunidade** | [The File Services and Storage TechNet Forum (O Fórum TechNet para serviços e armazenamento de arquivos)](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
 | **Protocolos**        | [Protocolos de serviços de arquivos no Windows Server](https://msdn.microsoft.com/library/cc239318.aspx) (preterido) |
 | **Tecnologias relacionadas** | [Clustering de failover](../../failover-clustering/failover-clustering-overview.md)|
 | **Suporte** | [Suporte do Windows IT Pro](https://www.microsoft.com/itpro/windows/support)|

@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c836da8f83510e6547e0e182ac06fd2151dd9c41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9eb93e46adb0e8a7c956bd8db2795fe06bc04724
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857059"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85472943"
 ---
 # <a name="credentials-protection-and-management"></a>Proteção e gerenciamento de credenciais
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico para o profissional de ti discute os recursos e os métodos introduzidos no Windows Server 2012 R2 e Windows 8.1 para proteção de credenciais e controles de autenticação de domínio para reduzir o roubo de credenciais.
 
@@ -68,7 +68,7 @@ Para obter mais informações, consulte [Políticas de Autenticação e Silos de
 
 Para obter mais informações sobre como configurar as contas protegidas, consulte [Como configurar contas protegidas](how-to-configure-protected-accounts.md).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 Para obter mais informações sobre o LSA e o LSASS, confira a [Visão geral técnica de autenticação e Logon do Windows](https://technet.microsoft.com/library/dn169029(v=ws.10).aspx).
 
 
