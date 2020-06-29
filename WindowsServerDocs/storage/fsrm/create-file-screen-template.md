@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 63824f016180ce5a92d9a16b9ee0d26a46e5db72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 87df941015b240fd34028e59b8aea489e9410834
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394212"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475623"
 ---
 # <a name="create-a-file-screen-template"></a>Criar um modelo de triagem de arquivo
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Um *Modelo de triagem de arquivo* define um conjunto de grupos de arquivos para triagem, o tipo de triagem a ser realizada (ativa ou passiva) e, opcionalmente, um conjunto de notificações que serão geradas automaticamente quando um usuário salva, ou tentar salvar, um arquivo não autorizado.
 
@@ -54,9 +54,9 @@ Ao criar triagens de arquivo exclusivamente a partir de modelos, você pode gere
 
     Na guia **Email**, defina as seguintes opções:
 
-    -   Para notificar os administradores quando um usuário ou aplicativo tenta salvar um arquivo não autorizado, selecione o **Enviar email para os seguintes administradores** caixa de seleção e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o formato *account*@*domain* e use ponto e vírgula para separar várias contas.
+    -   Para notificar os administradores quando um usuário ou aplicativo tenta salvar um arquivo não autorizado, selecione o **Enviar email para os seguintes administradores** caixa de seleção e, em seguida, digite os nomes das contas administrativas que receberão as notificações. Use o domínio da *conta*de formato @ *domain*e use ponto e vírgula para separar várias contas.
     -   Para enviar email para o usuário que tentou salvar o arquivo, selecione a caixa de seleção **Enviar um email para o usuário que tentou salvar um arquivo não autorizado**.
-    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de triagem de arquivo que causou a notificação. Por exemplo, a variável de**proprietário de e/s de origem**\[ \] insere o nome do usuário que tentou salvar um arquivo não autorizado. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
+    -   Para configurar a mensagem, edite o padrão assunto linha e corpo da mensagem que são fornecidas. O texto entre colchetes insere informações variáveis sobre o evento de triagem de arquivo que causou a notificação. Por exemplo, a \[ variável de **proprietário de e/s de origem** \] insere o nome do usuário que tentou salvar um arquivo não autorizado. Para inserir variáveis adicionais no texto, clique em **Inserir variável**.
     -   Para configurar cabeçalhos adicionais (inclusive de, Cc, Cco e para resposta), clique em **Cabeçalhos de email adicionais**.
 
 8.  Para registrar um erro ao log de eventos quando um usuário tenta salvar um arquivo não autorizado:
@@ -75,7 +75,7 @@ Ao criar triagens de arquivo exclusivamente a partir de modelos, você pode gere
 
 11. Após selecionar todas as propriedades do modelo de arquivo que você deseja usar, clique em **OK** para salvar o modelo.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de triagem de arquivos](file-screening-management.md)
 -   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)

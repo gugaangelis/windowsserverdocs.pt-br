@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: 26454881279e1d33392a827f794788370def2cab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858969"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475603"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimitar a alocação de volumes no Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019
@@ -19,9 +19,9 @@ ms.locfileid: "80858969"
 O Windows Server 2019 apresenta uma opção para delimitar manualmente a alocação de volumes no Espaços de Armazenamento Diretos. Isso pode aumentar significativamente a tolerância a falhas sob determinadas condições, mas impõe algumas considerações e complexidade de gerenciamento adicionais. Este tópico explica como ele funciona e fornece exemplos no PowerShell.
 
    > [!IMPORTANT]
-   > Esse recurso é novo no Windows Server 2019. Ele não está disponível no Windows Server 2016. 
+   > Esse recurso é novo no Windows Server 2019. Ele não está disponível no Windows Server 2016.
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 ### <a name="green-checkmark-icon-consider-using-this-option-if"></a>![Ícone de marca de seleção verde.](media/delimit-volume-allocation/supported.png) Considere o uso desta opção se:
 
@@ -68,13 +68,13 @@ A alocação delimitada impõe algumas considerações e complexidade de gerenci
 
 1. O administrador é responsável por delimitar a alocação de cada volume para balancear a utilização de armazenamento entre os servidores e defender a alta probabilidade de sobrevivência, conforme descrito na seção [práticas recomendadas](#best-practices) .
 
-2. Com a alocação delimitada, Reserve o equivalente de **uma unidade de capacidade por servidor (sem máximo)** . Isso é mais do que a [recomendação publicada](plan-volumes.md#choosing-the-size-of-volumes) para alocação regular, que maximizar em quatro unidades de capacidade total.
+2. Com a alocação delimitada, Reserve o equivalente de **uma unidade de capacidade por servidor (sem máximo)**. Isso é mais do que a [recomendação publicada](plan-volumes.md#choosing-the-size-of-volumes) para alocação regular, que maximizar em quatro unidades de capacidade total.
 
 3. Se um servidor falhar e precisar ser substituído, conforme descrito em [remover um servidor e suas unidades](remove-servers.md#remove-a-server-and-its-drives), o administrador será responsável por atualizar a deslimitação dos volumes afetados adicionando o novo servidor e removendo o que falhou um – exemplo abaixo.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Você pode usar o cmdlet `New-Volume` para criar volumes em Espaços de Armazenamento Diretos.
+Você pode usar o `New-Volume` cmdlet para criar volumes em espaços de armazenamento diretos.
 
 Por exemplo, para criar um volume de espelhamento de três vias regular:
 
@@ -86,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 Para criar um volume de espelho de três vias e delimitar sua alocação:
 
-1. Primeiro, atribua os servidores em seu cluster à variável `$Servers`:
+1. Primeiro, atribua os servidores no cluster à variável `$Servers` :
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -95,7 +95,7 @@ Para criar um volume de espelho de três vias e delimitar sua alocação:
    > [!TIP]
    > No Espaços de Armazenamento Diretos, o termo "unidade de escala de armazenamento" refere-se a todo o armazenamento bruto conectado a um servidor, incluindo unidades conectadas diretamente e compartimentos externos conectados diretamente a unidades. Nesse contexto, ele é o mesmo que ' Server '.
 
-2. Especifique quais servidores usar com o novo parâmetro `-StorageFaultDomainsToUse` e indexação em `$Servers`. Por exemplo, para delimitar a alocação para o primeiro, o segundo, o terceiro e o quarto servidores (índices 0, 1, 2 e 3):
+2. Especifique quais servidores usar com o novo `-StorageFaultDomainsToUse` parâmetro e indexação em `$Servers` . Por exemplo, para delimitar a alocação para o primeiro, o segundo, o terceiro e o quarto servidores (índices 0, 1, 2 e 3):
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
@@ -103,21 +103,21 @@ Para criar um volume de espelho de três vias e delimitar sua alocação:
 
 ### <a name="see-a-delimited-allocation"></a>Ver uma alocação delimitada
 
-Para ver como o *myvolume* é alocado, use o script `Get-VirtualDiskFootprintBySSU.ps1` no [Apêndice](#appendix):
+Para ver como *myvolume* é alocado, use o `Get-VirtualDiskFootprintBySSU.ps1` script no [Apêndice](#appendix):
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0
 ```
 
 Observe que somente Server1, server2, Server3 e Server4 contêm Slabs de *myvolume*.
 
 ### <a name="change-a-delimited-allocation"></a>Alterar uma alocação delimitada
 
-Use os novos cmdlets `Add-StorageFaultDomain` e `Remove-StorageFaultDomain` para alterar como a alocação é delimitada.
+Use os novos `Add-StorageFaultDomain` `Remove-StorageFaultDomain` cmdlets e para alterar como a alocação é delimitada.
 
 Por exemplo, para mover *myvolume* por um servidor:
 
@@ -139,7 +139,7 @@ Por exemplo, para mover *myvolume* por um servidor:
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-Você pode monitorar o progresso do reequilíbrio com `Get-StorageJob`.
+Você pode monitorar o progresso do rebalanceamento com `Get-StorageJob` .
 
 Após a conclusão, verifique se *myvolume* foi movido executando `Get-VirtualDiskFootprintBySSU.ps1` novamente.
 
@@ -148,7 +148,7 @@ PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0
 ```
 
 Observe que Server1 não contém mais Slabs de *myvolume* – em vez disso, Server5.
@@ -167,11 +167,11 @@ Equilibre a quantidade de armazenamento alocada para cada servidor, a contabiliz
 
 ### <a name="stagger-delimited-allocation-volumes"></a>Volumes de alocação delimitados escalonados
 
-Para maximizar a tolerância a falhas, torne a alocação de cada volume exclusiva, o que significa que ele não compartilha *todos os* seus servidores com outro volume (alguma sobreposição está ok). 
+Para maximizar a tolerância a falhas, torne a alocação de cada volume exclusiva, o que significa que ele não compartilha *todos os* seus servidores com outro volume (alguma sobreposição está ok).
 
 Por exemplo, em um sistema de oito nós: volume 1: servidores 1, 2, 3, 4 volume 2: servidores 5, 6, 7, 8 volume 3: servidores 3, 4, 5, 6 volume 4: servidores 1, 2, 7, 8
 
-## <a name="analysis"></a>Analisa
+## <a name="analysis"></a>Análise
 
 Esta seção deriva a probabilidade matemática de que um volume permaneça online e acessível (ou, de forma equivalente, a fração esperada do armazenamento geral que permanece online e acessível) como uma função do número de falhas e do tamanho do cluster.
 
@@ -200,7 +200,7 @@ Sim. Você pode escolher por volume se deseja ou não delimitar a alocação.
 
 Não, é o mesmo que com a alocação regular.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Tolerância a falhas no Espaços de Armazenamento Diretos](storage-spaces-fault-tolerance.md)
@@ -209,7 +209,7 @@ Não, é o mesmo que com a alocação regular.
 
 Esse script ajuda a ver como os volumes são alocados.
 
-Para usá-lo conforme descrito acima, copie/cole e salve como `Get-VirtualDiskFootprintBySSU.ps1`.
+Para usá-lo conforme descrito acima, copie/cole e salve como `Get-VirtualDiskFootprintBySSU.ps1` .
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

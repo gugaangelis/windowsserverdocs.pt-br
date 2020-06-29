@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: b6fac7792b91e7415d0714b43201c404da2155bf
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: 84bf134ac5224f224339cc1ec216bded8cbcc792
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203410"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475673"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>Criar um grupo de segurança para hosts protegidos e registrar o grupo com o HGS
 
@@ -56,6 +56,6 @@ Este tópico descreve as etapas intermediárias para preparar hosts Hyper-V para
 > [Confirmar atestado](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Implantar o Serviço Guardião de Host para hosts protegidos e VMs blindadas](guarded-fabric-deploying-hgs-overview.md)

@@ -8,19 +8,19 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 481647c1b655a5ddd0ed05507ad474ab56ce3c4c
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: 301541b42398ab517940af987e7ed6f3a7a54b0d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775341"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475543"
 ---
 # <a name="whats-new-in-dhcp"></a>Novidades no DHCP
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a funcionalidade DHCP (protocolo de configuração dinâmica de hosts) que é nova ou alterada no Windows Server 2016.
-  
+
 O DHCP é um padrão IETF (Internet Engineering Task Force), projetado para reduzir a carga administrativa e a complexidade da configuração de hosts em uma \- rede baseada em TCP/IP, como uma intranet privada. Usando o serviço de servidor DHCP, o processo de configuração de TCP/IP em clientes DHCP é automático.
 
 As seções a seguir fornecem informações sobre novos recursos e alterações na funcionalidade do DHCP.
@@ -42,26 +42,26 @@ Para obter mais informações, consulte [eventos de log do DHCP para registros d
 
 ## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>Não há suporte para NAP do DHCP no Windows Server 2016
 
-A NAP de proteção de acesso à rede \( \) foi preterida no windows Server 2012 R2 e no windows Server 2016 a função de servidor DHCP não oferece mais suporte a NAP. Para obter mais informações, consulte [recursos removidos ou preteridos no Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx).  
-  
-O suporte a NAP foi introduzido na função de servidor DHCP com o Windows Server 2008 e tem suporte em sistemas operacionais de cliente e servidor do Windows antes do Windows 10 e do Windows Server 2016. A tabela a seguir resume o suporte para NAP no Windows Server.  
-  
-|Sistema operacional|Suporte a NAP|  
-|--------------------|---------------|  
-| Windows Server 2008 |Com suporte|  
-| Windows Server 2008 R2 |Com suporte|  
-| Windows Server 2012 |Com suporte|  
-| Windows Server 2012 R2 |Com suporte|  
-| Windows Server 2016|Sem suporte|  
-  
-Em uma implantação de NAP, um servidor DHCP que executa um sistema operacional que dá suporte a NAP pode funcionar como um ponto de imposição de NAP para o método de imposição de DHCP NAP. Para obter mais informações sobre o DHCP em NAP, consulte [lista de verificação: Implementando um design de imposição de DHCP](https://technet.microsoft.com/library/dd314186.aspx).  
-  
-No Windows Server 2016, os servidores DHCP não impõem políticas NAP e os escopos DHCP não podem ser \- habilitados para NAP. Os computadores cliente DHCP que também são clientes NAP enviam uma declaração de soh de integridade \( \) com a solicitação DHCP. Se o servidor DHCP estiver executando o Windows Server 2016, essas solicitações serão processadas como se nenhuma SoH estiver presente. O servidor DHCP concede uma concessão DHCP normal ao cliente. 
+A NAP de proteção de acesso à rede \( \) foi preterida no windows Server 2012 R2 e no windows Server 2016 a função de servidor DHCP não oferece mais suporte a NAP. Para obter mais informações, consulte [recursos removidos ou preteridos no Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx).
+
+O suporte a NAP foi introduzido na função de servidor DHCP com o Windows Server 2008 e tem suporte em sistemas operacionais de cliente e servidor do Windows antes do Windows 10 e do Windows Server 2016. A tabela a seguir resume o suporte para NAP no Windows Server.
+
+|Sistema operacional|Suporte a NAP|
+|--------------------|---------------|
+| Windows Server 2008 |Com suporte|
+| Windows Server 2008 R2 |Com suporte|
+| Windows Server 2012 |Com suporte|
+| Windows Server 2012 R2 |Com suporte|
+| Windows Server 2016|Sem suporte|
+
+Em uma implantação de NAP, um servidor DHCP que executa um sistema operacional que dá suporte a NAP pode funcionar como um ponto de imposição de NAP para o método de imposição de DHCP NAP. Para obter mais informações sobre o DHCP em NAP, consulte [lista de verificação: Implementando um design de imposição de DHCP](https://technet.microsoft.com/library/dd314186.aspx).
+
+No Windows Server 2016, os servidores DHCP não impõem políticas NAP e os escopos DHCP não podem ser \- habilitados para NAP. Os computadores cliente DHCP que também são clientes NAP enviam uma declaração de soh de integridade \( \) com a solicitação DHCP. Se o servidor DHCP estiver executando o Windows Server 2016, essas solicitações serão processadas como se nenhuma SoH estiver presente. O servidor DHCP concede uma concessão DHCP normal ao cliente.
 
 Se servidores que executam o Windows Server 2016 são proxies RADIUS que encaminham solicitações de autenticação para um NPS de servidor de diretivas de rede \( \) que dá suporte a NAP, esses clientes NAP são avaliados pelo NPS como sem \- capacidade de NAP e o processamento de NAP falha.
-  
-## <a name="see-also"></a>Veja também  
-  
--   [Protocolo DHCP](Dynamic-Host-Configuration-Protocol--DHCP-.md)  
-  
+
+## <a name="additional-references"></a>Referências adicionais
+
+-   [Protocolo DHCP](Dynamic-Host-Configuration-Protocol--DHCP-.md)
+
 

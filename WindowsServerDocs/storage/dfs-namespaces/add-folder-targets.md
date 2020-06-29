@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: d2f3845a612556a51692aaf51d256bbedd518e7a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854099"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475553"
 ---
 # <a name="add-folder-targets"></a>Adicionar destinos de pasta
 
@@ -39,7 +39,7 @@ Para adicionar uma pasta usando gerenciamento DFS, use o procedimento a seguir:
 > [!NOTE]
 > As pastas podem conter destinos de pasta ou outras pastas DFS, mas não ambos, no mesmo nível na hierarquia de pastas.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

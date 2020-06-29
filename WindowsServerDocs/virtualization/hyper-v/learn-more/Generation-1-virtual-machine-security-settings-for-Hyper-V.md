@@ -9,12 +9,12 @@ ms.assetid: f8f8c569-8b74-4c19-876e-1c7d00cce308
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: f86c4fe9222f08b3ef3719080deeb4fbda6edd33
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f745ccd9e5a82aa79fb58798f233bf2662b00a70
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860809"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475633"
 ---
 # <a name="generation-1-virtual-machine-security-settings"></a>Configurações de segurança de máquina virtual de geração 1
 
@@ -43,7 +43,7 @@ Para saber mais sobre malhas protegidas, confira a seção Introdução a VMs bl
 
 Você pode adicionar uma unidade de armazenamento de chaves a um slot vazio em um dos controladores do IDE da máquina virtual. Para fazer isso, clique em **Adicionar Unidade de Armazenamento de Chaves** para adicionar uma unidade de armazenamento de chaves ao primeiro slot do controlador do IDE gratuito dessa máquina virtual.
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Configurações de segurança de máquina virtual de geração 2 no gerenciador do Hyper-V](Generation-2-virtual-machine-security-settings-for-hyper-v.md)
 - [Segurança e garantia](../../../security/Security-and-Assurance.md)

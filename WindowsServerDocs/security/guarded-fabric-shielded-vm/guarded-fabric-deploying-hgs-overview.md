@@ -8,34 +8,34 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: a74dd84a0dbefa134a7ead6c9296dd00a38b599e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9244dd8c9a567813c5732571de5dddc42d23be2a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856759"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475583"
 ---
-# <a name="deploying-the-host-guardian-service"></a>Implantando o serviço guardião de host 
+# <a name="deploying-the-host-guardian-service"></a>Implantando o serviço guardião de host
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
 Uma das metas mais importantes de fornecer um ambiente hospedado é garantir a segurança das máquinas virtuais em execução no ambiente. Como um provedor de serviços de nuvem ou um administrador de nuvem privada corporativa, você pode usar uma malha protegida para fornecer um ambiente mais seguro para as VMs. Uma malha protegida consiste em um HGS (Serviço de Guardião de Host), em geral, um cluster de três nós, além de um ou mais hosts protegidos e um conjunto de VMs (máquinas virtuais) protegidas.
 
-## <a name="video-deploying-a-guarded-fabric"></a>Vídeo: Implantando uma malha protegida 
+## <a name="video-deploying-a-guarded-fabric"></a>Vídeo: Implantando uma malha protegida
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/dcd8e99f-36f1-4bc8-b3d2-9576da38d9f1?autoplay=false]
 
 ## <a name="deployment-tasks-for-guarded-fabrics-and-shielded-vms"></a>Tarefas de implantação para malhas protegidas e VMs blindadas
 
-A tabela a seguir divide as tarefas para implantar uma malha protegida e criar VMs blindadas de acordo com diferentes funções de administrador. Observe que quando o administrador do HGS configura o HGS com hosts Hyper-V autorizados, um administrador de malha coletará e fornecerá informações de identificação sobre os hosts ao mesmo tempo.    
+A tabela a seguir divide as tarefas para implantar uma malha protegida e criar VMs blindadas de acordo com diferentes funções de administrador. Observe que quando o administrador do HGS configura o HGS com hosts Hyper-V autorizados, um administrador de malha coletará e fornecerá informações de identificação sobre os hosts ao mesmo tempo.
 
 |<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-hgs-administrator-tasks.png" alt="Host Guardian Service administrator tasks" width="238" height="62" align="left" /> | <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-fabric-administrator-tasks.png" alt="Fabric administrator tasks" width="300" height="62" align="left" /> | <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-tenant-administrator-tasks.png" alt="Tenant administrator tasks" width="184" height="66" align="left" /> |
 |-------------------------------------|--------------------------------|-----------------------------------------|
 |(1) [verificar os pré-requisitos de HgS](guarded-fabric-prepare-for-hgs.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 1" hspace="8" align="right" />| | |
-|(2) [Configurar o nó de&nbsp;do primeiro HGS](guarded-fabric-choose-where-to-install-hgs.md)&nbsp;<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-first-hgs-node.png" alt="Step 2" hspace="8" align="right" />| | |
-|(3) [Configurar nós de&nbsp;HgS adicionais](guarded-fabric-configure-additional-hgs-nodes.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-secondary-hgs-nodes.png" alt="Step 3" hspace="8" align="right" />| | |
+|(2) [Configurar o primeiro &nbsp; nó HgS](guarded-fabric-choose-where-to-install-hgs.md)&nbsp;<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-first-hgs-node.png" alt="Step 2" hspace="8" align="right" />| | |
+|(3) [Configurar &nbsp; nós HgS adicionais](guarded-fabric-configure-additional-hgs-nodes.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-secondary-hgs-nodes.png" alt="Step 3" hspace="8" align="right" />| | |
 | &nbsp; |(4) [Configurar o DNS de malha](guarded-fabric-configuring-fabric-dns.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-fabric-dns.png" alt="Step 4" hspace="8" align="right" />| |
-| &nbsp; |(5) [verificar pré-requisitos de&nbsp;do host (chave)](guarded-fabric-guarded-host-prerequisites.md#host-key-attestation)<br>[Verificar pré-requisitos do host&nbsp;(TPM)](guarded-fabric-guarded-host-prerequisites.md#tpm-trusted-attestation)<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 5" hspace="8" align="right" />| |
+| &nbsp; |(5) [verificar &nbsp; pré-requisitos do host (chave)](guarded-fabric-guarded-host-prerequisites.md#host-key-attestation)<br>[Verificar &nbsp; pré-requisitos de host (TPM)](guarded-fabric-guarded-host-prerequisites.md#tpm-trusted-attestation)<img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-verify.png" alt="Step 5" hspace="8" align="right" />| |
 |(7) [Configurar o HgS com informações do host](guarded-fabric-add-host-information-to-hgs.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-hgs-with-host-info.png" alt="Step 7" hspace="8" align="right" />|(6) [criar chave de host (chave)](guarded-fabric-create-host-key.md)<br>[Coletar informações do host (TPM)](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-collect-info-from-hosts.png" alt="Step 6" hspace="8" align="right" />| |
 | &nbsp; |(8) [confirmar que os hosts podem atestar](guarded-fabric-confirm-hosts-can-attest-successfully.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-confirm-hosts-attest.png" alt="Step 8" hspace="8" align="right" />| |
 | &nbsp; |(9) [Configurar o VMM (opcional)](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-configure-vmm.png" alt="Step 9" hspace="8" align="right" />| |
@@ -46,6 +46,6 @@ A tabela a seguir divide as tarefas para implantar uma malha protegida e criar V
 | &nbsp; | &nbsp; |(14) [criar VMs blindadas usando pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 14" hspace="8" align="right" /><br>[Criar VMs blindadas usando o VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms) <img src="../media/Guarded-Fabric-Shielded-VM/guarded-host-shielded-vms.png" alt="Step 15" hspace="8" align="right" />|
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

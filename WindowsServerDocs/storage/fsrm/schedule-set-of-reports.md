@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b718ceed7a378649c51e1ca64bffaaddf051c292
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc0c155afe62a22c9a39b2c1dd89730246709221
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394064"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475493"
 ---
 # <a name="schedule-a-set-of-reports"></a>Agende um conjunto de relatórios
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Para gerar um conjunto de relatórios regularmente, você agenda uma *tarefa de relatório*. A tarefa de relatório especifica os relatórios para gerar e quais parâmetros devem ser usados; os volumes e pastas a serem incluídos no relatório; frequência para gerar os relatórios e em quais formatos de arquivo salvá-los.
 
@@ -55,7 +55,7 @@ Relatórios agendados são salvos em um local padrão, que você pode especifica
 
 6. Para fornecer cópias dos relatórios aos administradores por email:
 
-   - Na guia **Entrega**, marque a caixa de seleção **Enviar relatórios para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão relatórios. 
+   - Na guia **Entrega**, marque a caixa de seleção **Enviar relatórios para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão relatórios.
    - Use o formato <em>account@domain</em> e use ponto e vírgula para separar várias contas.
 
 7. Para agendar os relatórios:
@@ -68,7 +68,7 @@ Relatórios agendados são salvos em um local padrão, que você pode especifica
        Essas opções são alteradas com base no intervalo que você escolher. Por exemplo, para um relatório semanal, você pode especificar o número de semanas entre os relatórios e em quais dias da semana eles serão gerados.
    -   Para especificar a hora do dia quando você deseja gerar o relatório, digite ou selecione o valor na caixa **Hora de início**.
    -   Para acessar opções de agendamento adicionais (incluindo uma data de início e final para a tarefa), clique em **Avançado**.
-   -   Para salvar a programação, clique em **OK**.
+   -   Para salvar o agendamento, clique em **OK**.
    -  Para criar um agendamento adicional para uma tarefa (ou modificar um agendamento existente), na guia **Agendamento**, clique em **Editar agendamento**.
 
 8. Para salvar uma tarefa de relatório, clique em **OK**.
@@ -77,7 +77,7 @@ A tarefa de relatório é adicionada ao nó **Gerenciamento de relatórios de ar
 
 Além disso, você pode exibir o status atual do relatório (esteja o relatório sendo executado ou não), o último tempo de execução e o resultado de funcionamento e a próxima hora agendada de execução.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de relatórios de armazenamento](storage-reports-management.md)
 -   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)

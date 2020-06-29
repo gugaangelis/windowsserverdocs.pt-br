@@ -9,12 +9,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a5ca3ab29b83d0cb6cb2d55507471790f65800a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c6753ae5d767f0c71b86fc47c1d8bf9971a2a5cc
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856719"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475523"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>VMs blindadas para locatários-criando uma nova VM blindada localmente e movendo-a para uma malha protegida
 
@@ -34,7 +34,7 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
     - Recursos
 
-        - Ferramentas de administração de recursos do Ferramentas de Administração de Servidor Remoto\\\\ferramentas de VM blindadas
+        - Ferramentas de \\ Administração de recursos ferramentas de administração de servidor remoto ferramentas de \\ VM blindadas
 
     > [!NOTE]
     > O host usado aqui *não* deve ser um host na malha protegida. Esse é um host separado em que as VMs são preparadas antes de serem movidas para a malha protegida.
@@ -51,9 +51,9 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 4.  Para importar a chave do guardião, que será necessária em um procedimento posterior, execute o comando a seguir.
 
-    Para &lt;caminho&gt;&lt;nome do arquivo&gt;, substitua o caminho e o nome do arquivo XML que você salvou na etapa anterior, por exemplo: **C:\\temp\\GuardianKey. xml**
+    Para &lt; caminho nome de arquivo &gt; &lt; &gt; , substitua o caminho e o nome do arquivo XML que você salvou na etapa anterior, por exemplo: **C: \\ temp \\GuardianKey.xml**
 
-    Para &lt;Guardianname&gt;, especifique um nome para seu provedor de hospedagem ou Datacenter corporativo, por exemplo, **HostingProvider1**. Registre o nome para o próximo procedimento.
+    Para &lt; o guardianname &gt; , especifique um nome para seu provedor de hospedagem ou Datacenter corporativo, por exemplo, **HostingProvider1**. Registre o nome para o próximo procedimento.
 
     Include **-AllowUntrustedRoot** somente se o servidor HgS tiver sido configurado com certificados autoassinados. (Esses certificados fazem parte do serviço de proteção de chave no HGS.)
 
@@ -73,11 +73,11 @@ Para uma ilustração que mostra o protetor de chave, que é um elemento em um a
 
 1. Em um host Hyper-V de locatário, para criar uma nova máquina virtual de geração 2, execute o comando a seguir.
 
-   Para &lt;ShieldedVMname&gt;, especifique um nome para a VM, por exemplo: **ShieldVM1**
-    
-   Para &lt;VHDPath&gt;, especifique um local para armazenar o VHDX da VM, por exemplo: **C:\\VMs\\ShieldVM1\\ShieldVM1. VHDX**
-    
-   Para &lt;nnGB&gt;, especifique um tamanho para o VHDX, por exemplo: **60 GB**
+   Para &lt; ShieldedVMname &gt; , especifique um nome para a VM, por exemplo: **ShieldVM1**
+
+   Para &lt; VHDPath &gt; , especifique um local para armazenar o VHDX da VM, por exemplo: **C: \\ VMs \\ ShieldVM1 \\ ShieldVM1. VHDX**
+
+   Para &lt; nnGB &gt; , especifique um tamanho para o VHDX, por exemplo: **60 GB**
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ Para uma ilustração que mostra o protetor de chave, que é um elemento em um a
 
 4. Para criar um novo protetor de chave (descrito no início desta seção), execute o comando a seguir.
 
-   Para &lt;Guardianname&gt;, use o nome especificado no procedimento anterior, por exemplo: **HostingProvider1**
+   Para o &lt; guardianname &gt; , use o nome especificado no procedimento anterior, por exemplo: **HostingProvider1**
 
    Include **-AllowUntrustedRoot** para permitir certificados autoassinados.
 
@@ -97,9 +97,9 @@ Para uma ilustração que mostra o protetor de chave, que é um elemento em um a
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   Se desejar que mais de um datacenter seja capaz de executar sua VM blindada (por exemplo, um site de recuperação de desastre e um provedor de nuvem pública), você poderá fornecer uma lista de guardiões para o parâmetro **-guardião** . Para obter mais informações, consulte [New-HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps.
+   Se desejar que mais de um datacenter seja capaz de executar sua VM blindada (por exemplo, um site de recuperação de desastre e um provedor de nuvem pública), você poderá fornecer uma lista de guardiões para o parâmetro **-guardião** . Para obter mais informações, consulte [New-HgsKeyProtector] ( https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps .
 
-5. Para habilitar o vTPM usando o protetor de chave, execute o comando a seguir. Para &lt;ShieldedVMname&gt;, use o mesmo nome de VM usado nas etapas anteriores.
+5. Para habilitar o vTPM usando o protetor de chave, execute o comando a seguir. Para &lt; ShieldedVMname &gt; , use o mesmo nome de VM usado nas etapas anteriores.
 
        $VMName="<ShieldedVMname>"
 
@@ -130,7 +130,7 @@ Para uma ilustração que mostra o protetor de chave, que é um elemento em um a
 
     Importe a VM blindada usando o Gerenciador do Hyper-V ou o Windows PowerShell. Você deve importar o arquivo de configuração da VM do proprietário da VM para iniciar a VM. Isso ocorre porque o protetor de chave e o TPM virtual da VM estão armazenados no arquivo de configuração. Se a VM estiver configurada para ser executada na malha protegida, ela deverá ser capaz de iniciar com êxito.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)
