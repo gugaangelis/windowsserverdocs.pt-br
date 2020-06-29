@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68967ff920f25c05affc206ed45bad9275e781b6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 38354a6c6e39f58574a64c752bb86800f3fc3039
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394241"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474063"
 ---
 # <a name="create-an-auto-apply-quota"></a>Crie uma cota de aplicação automática
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Usando as cotas de aplicação automática, você pode atribuir um modelo de cota a um volume ou pasta pai. Em seguida, o Gerenciador de recursos do servidor de arquivos gera automaticamente cotas que se baseiam no modelo. Cotas são geradas para cada uma das subpastas existentes e subpastas que você criar no futuro.
 
@@ -40,7 +40,7 @@ Por exemplo, você pode definir uma cota de aplicação automática de subpastas
 > [!Note]
 > Você pode verificar todas as cotas geradas automaticamente, selecionando o nó **Cotas** e, em seguida, selecionando **Atualizar**. Uma cota individual para cada subpasta e o perfil de cota com aplicação automática no volume pai ou pasta são listados.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de cota](quota-management.md)
 -   [Editar propriedades de cota de aplicação automática](edit-auto-apply-quota-properties.md)

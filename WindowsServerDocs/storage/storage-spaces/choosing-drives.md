@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c623049c33e02dd99974723d4cd257ca9304219
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858999"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475253"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
@@ -32,7 +32,7 @@ Os Espaços de Armazenamento Diretos atualmente funcionam com três tipos de uni
             <img src="media/understand-the-cache/NVMe-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b> (Non-Volatile Memory Express) refere-se a unidades de estado sólido que ficam diretamente no barramento PCIe. Os fatores forma comuns são U.2 de 2,5", PCIe Add-In-Card (AIC) e M.2. O NVMe oferece taxa de transferência IOPS e E/S mais alta com menor latência do que qualquer outro tipo de unidade com suporte atualmente.
+            <b>NVMe</b> (memória não volátil Express) refere-se a unidades de estado sólido que ficam diretamente no barramento PCIe. Os fatores forma comuns são U.2 de 2,5", PCIe Add-In-Card (AIC) e M.2. O NVMe oferece taxa de transferência IOPS e E/S mais alta com menor latência do que qualquer outro tipo de unidade com suporte atualmente.
         </td>
     </tr>
     <tr style="border: 0;">
@@ -53,9 +53,9 @@ Os Espaços de Armazenamento Diretos atualmente funcionam com três tipos de uni
     </tr>
 </table>
 
-## <a name="built-in-cache"></a>Cache interno
+## <a name="built-in-cache"></a>Cache embutido
 
-Os Espaços de Armazenamento Diretos têm um cache no servidor interno. Trata-se de um cache de leitura e gravação grande, persistente e em tempo real. Em implantações com vários tipos de unidades, ele é configurado automaticamente para usar todas as unidades do tipo "mais rápido". As unidades restantes são usadas para capacidade.
+Os Espaços de Armazenamento Diretos têm um cache no servidor interno. Trata-se de um cache de leitura e gravação grande, persistente e em tempo real. Em implantações com vários tipos de unidades, ele é configurado automaticamente para usar todas as unidades do tipo "mais rápido". As unidades restantes são usadas para a capacidade.
 
 Para obter mais informações, consulte [Noções básicas sobre o cache em Espaços de Armazenamento Diretos](understand-the-cache.md).
 
@@ -99,12 +99,12 @@ Para cargas de trabalho que exijam grande capacidade e gravem com pouca frequên
 
 ![Opções de implantação para maximizar a capacidade](media/choosing-drives-and-resiliency-types/maximizing-capacity.png)
 
-1. **SSD + HDD**. O SSDs armazenam leituras e gravações em cache para absorver picos e oferecer um desempenho de gravação estilo SSD, com desescalonamento otimizado posterior para os HDDs.
+1. **SSD + HDD**. Os SSDs armazenam leituras e gravações em cache para absorver picos e oferecer um desempenho de gravação estilo SSD, com desescalonamento otimizado posterior para os HDDs.
 
 >[!IMPORTANT]
 >Não há suporte para a configuração com HDDs somente. Não é recomendável o cache SSDs de endurance alto para SSDs Endurance baixo.
 
-## <a name="sizing-considerations"></a>Considerações sobre o dimensionamento
+## <a name="sizing-considerations"></a>Considerações de dimensionamento
 
 ### <a name="cache"></a>Cache
 
@@ -116,10 +116,10 @@ O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplic
 
 É recomendável limitar a capacidade de armazenamento total por servidor a aproximadamente 400 terabytes (TB). Quanto maior a capacidade de armazenamento por servidor, mais tempo é necessário para ressincronizar os dados após a inatividade ou reinicialização, como na aplicação de atualizações de software. O tamanho máximo atual por pool de armazenamento é de 4 petabyte (PB) (4.000 TB) para o Windows Server 2019 ou 1 petabyte para Windows Server 2016.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
-- [Entender o cache em Espaços de Armazenamento Diretos](understand-the-cache.md)
+- [Noções básicas sobre o cache nos Espaços de Armazenamento Diretos](understand-the-cache.md)
 - [Requisitos de hardware Espaços de Armazenamento Diretos](storage-spaces-direct-hardware-requirements.md)
-- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
 - [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

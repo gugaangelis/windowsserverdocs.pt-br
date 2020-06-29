@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: 105225736d6b883e8451aa599af1937068ebe43d
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: fac7e780fc584f0ce4dde8bb87ce37035840a40a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546554"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474873"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Visão geral do TLS-SSL (Schannel SSP)
 
@@ -49,7 +49,7 @@ Para obter informações sobre a retomada de sessão TLS sem estado, consulte o 
 ### <a name="application-protocol-negotiation"></a>Negociação de protocolos de aplicativos
  O Windows Server 2012 R2 e o Windows 8.1 oferecem suporte à negociação do protocolo de aplicativo TLS do lado do cliente para que os aplicativos possam aproveitar os protocolos como parte do desenvolvimento padrão HTTP 2,0 e os usuários possam acessar serviços online como o Google e o Twitter usando aplicativos que executam o protocolo SPDY.
 
-**Como funciona**
+**Como ele funciona**
 
 Os aplicativos de cliente e servidor permitem a extensão da negociação de protocolos de aplicativos fornecendo listas das IDs de protocolos de aplicativos com suporte, em ordem decrescente de preferência. O cliente do TLS indica que ele dá suporte à negociação de protocolos de aplicativos incluindo a extensão da negociação de protocolos de camada de aplicativos (ALPN) com uma lista de protocolos com suporte cliente na mensagem ClientHello.
 
@@ -58,7 +58,7 @@ Quando o cliente do TLS faz a solicitação ao servidor, o servidor do TLS lê s
 ### <a name="management-of-trusted-issuers-for-client-authentication"></a><a name="BKMK_TrustedIssuers"></a>Gerenciamento de emissores confiáveis para autenticação de cliente
 Quando a autenticação do computador cliente é necessária usando SSL ou TLS, você pode configurar o servidor para enviar uma lista de emissores de certificado confiáveis. Essa lista contém o conjunto de emissores de certificado em que o servidor vai confiar e fornece uma dica para o computador cliente quanto a qual certificado de cliente selecionar se houver vários certificados presentes. Além disso, a cadeia de certificados que o computador cliente envia ao servidor deve ser validada em relação à lista de emissores confiáveis configurada.
 
-Antes do Windows Server 2012 e do Windows 8, os aplicativos ou processos que usaram o SSP do Schannel (incluindo HTTP. sys e IIS) poderiam fornecer uma lista dos emissores confiáveis com suporte para a autenticação de cliente por meio de uma CTL (lista de certificados confiáveis).
+Antes do Windows Server 2012 e do Windows 8, os aplicativos ou processos que usaram o SSP do Schannel (incluindo HTTP.sys e IIS) podem fornecer uma lista dos emissores confiáveis com suporte para autenticação de cliente por meio de uma CTL (lista de certificados confiáveis).
 
 No Windows Server 2012 e no Windows 8, foram feitas alterações no processo de autenticação subjacente para que:
 
@@ -127,7 +127,7 @@ Esta funcionalidade adicional:
 
 -   Permite que você forneça dicas para usuários finais através da interface do computador para selecionar o certificado correto durante um processo de autenticação do cliente.
 
-**Como funciona**
+**Como ele funciona**
 
 O SSP Schannel mantém um cache na memória dos estados de conexão permitidos para clientes. Isso permite que os computadores cliente se reconectem rapidamente ao servidor SSL sem se sujeitarem a um handshake SSL completo em visitas subsequentes.  Esse uso eficiente do gerenciamento de certificados permite que mais sites sejam hospedados em um único Windows Server 2012 em comparação com versões anteriores do sistema operacional.
 
@@ -140,14 +140,14 @@ O protocolo DTLS versão 1.0 foi adicionado ao Provedor de Suporte de Segurança
 
 Os datagramas são comuns em mídia de streaming, como jogos ou videoconferências de vídeo protegido. Adicionar o protocolo DTLS ao provedor Schannel possibilita usar o modelo de SSPI familiar do Windows para proteger as comunicações entre computadores cliente e servidores. O DTLS foi deliberadamente concebido para ser o mais semelhante possível ao TLS, tanto para minimizar novas invenções de segurança quanto para maximizar a reutilização de código e infraestrutura.
 
-**Como funciona**
+**Como ele funciona**
 
 Os aplicativos que usam DTLS sobre UDP podem usar o modelo SSPI no Windows Server 2012 e no Windows 8. Alguns pacotes de codificações estão disponíveis para configuração, de maneira semelhante à forma como se configura o TLS. O Schannel continua a usar o provedor de criptografia CNG, que usa a certificação FIPS 140, introduzida no Windows Vista.
 
 ### <a name="deprecated-functionality"></a><a name="BKMK_Deprecated"></a>Funcionalidades preteridas
 No SSP do Schannel para Windows Server 2012 e Windows 8, não há recursos ou funcionalidades preteridos.
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 -   [Modelo de segurança de nuvem privada - funcionalidade Wrapper](https://social.technet.microsoft.com/wiki/contents/articles/6756.private-cloud-security-model-wrapper-functionality.aspx)
 
 

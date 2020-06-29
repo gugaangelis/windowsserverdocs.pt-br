@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 89e6696c286cae7c3e89346d2044869082cdd8bc
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2faf67f71d5bb04e23f034e738b64c62a7df4f05
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861729"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475243"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Arquitetura de Interface SSPI
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico de referência para o profissional de ti descreve os protocolos de autenticação do Windows que são usados na arquitetura do SSPI (Security Support Provider interface).
 
@@ -77,7 +77,7 @@ Como o protocolo Kerberos foi o protocolo de autenticação padrão desde o Wind
 
 -   Solicitações de certificado para Active Directory serviços de certificados para usuários e computadores do domínio
 
-Local:%windir%\Windows\System32\kerberos.dll
+Local:% WINDIR% \Windows\System32\kerberos.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, além do windows Server 2003 e do Windows XP.
 
@@ -85,15 +85,15 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Microsoft Kerberos (Windows)](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [\[MS-KILE\]: extensões de protocolo Kerberos](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[MS-KILE \] : extensões de protocolo Kerberos](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [\[MS-SFU\]: extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-SFU \] : extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [SSP/PA Kerberos (Windows)](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
 -   [Aprimoramentos do Kerberos](https://technet.microsoft.com/library/cc749438(v=ws.10).aspx) para o Windows Vista
 
--   [Alterações na autenticação Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) para o Windows 7 
+-   [Alterações na autenticação Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) para o Windows 7
 
 -   [Referência técnica de autenticação Kerberos](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx)
 
@@ -110,7 +110,7 @@ Os sistemas operacionais Windows com suporte podem usar o SSP do NTLM para o seg
 
 -   Serviço de chamada de procedimento remoto seguro ou serviço DCOM
 
-Local:%windir%\Windows\System32\ msv1_0. dll
+Local:% WINDIR% \Windows\System32\msv1_0.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, além do windows Server 2003 e do Windows XP.
 
@@ -118,22 +118,22 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Pacote de autenticação MSV1_0 (Windows)](https://msdn.microsoft.com/library/aa378753(VS.85).aspx)
 
--   [Alterações na autenticação NTLM](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) no Windows 7 
+-   [Alterações na autenticação NTLM](https://technet.microsoft.com/library/dd566199(v=ws.10).aspx) no Windows 7
 
--   [NTLM da Microsoft (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
+-   [Microsoft NTLM (Windows)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)
 
--   [Auditando e restringindo o guia de uso do NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
+-   [Auditing and restricting NTLM usage guide (Guia de uso do NTLM para auditoria e restrição)](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)
 
 ### <a name="digest-security-support-provider"></a><a name="BKMK_DigestSSP"></a>Provedor de suporte de segurança Digest
 A autenticação Digest é um padrão da indústria que é usado para o protocolo LDAP e a autenticação na Web. A autenticação Digest transmite as credenciais pela rede como um hash MD5 ou um resumo de mensagem.
 
-O SSP de resumo (WDigest. dll) é usado para o seguinte:
+O SSP de resumo (Wdigest.dll) é usado para o seguinte:
 
 -   Acesso ao Internet Explorer e Serviços de Informações da Internet (IIS)
 
 -   Consultas LDAP
 
-Local:%windir%\Windows\System32\Digest.dll
+Local:% WINDIR% \Windows\System32\Digest.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, além do windows Server 2003 e do Windows XP.
 
@@ -141,7 +141,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Autenticação de Microsoft Digest (Windows)](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [\[MS-DPSP\]: extensões de protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[MS-DPSP \] : extensões de protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Provedor de suporte de segurança Schannel
 O canal seguro (Schannel) é usado para autenticação de servidor baseada na Web, como quando um usuário tenta acessar um servidor Web seguro.
@@ -166,7 +166,7 @@ O protocolo selecionado é o protocolo de autenticação preferencial ao qual o 
 
 DTLS é usado quando chamado explicitamente pelo aplicativo. Para obter mais informações sobre o DTLS e os outros protocolos usados pelo provedor Schannel, consulte [referência técnica do provedor de suporte de segurança Schannel](../tls/schannel-security-support-provider-technical-reference.md).
 
-Local:%windir%\Windows\System32\Schannel.dll
+Local:% WINDIR% \Windows\System32\Schannel.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, além do windows Server 2003 e do Windows XP.
 
@@ -179,7 +179,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Referência técnica de TLS/SSL](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [\[MS-TLSP\]: perfil de TLS (segurança da camada de transporte)](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[MS-TLSP \] : perfil de protocolo TLS](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>Negociar provedor de suporte de segurança
 O mecanismo de negociação de GSS-API simples e protegido (SPNEGO) constitui a base para o Negotiate SSP, whichcan ser usado para negociar um protocolo de autenticação específico. Quando um aplicativo chama o SSPI para fazer logon em uma rede, ele pode especificar um SSP para processar a solicitação. Se o aplicativo especificar o Negotiate SSP, ele analisará a solicitação e selecionará o provedor apropriado para lidar com a solicitação, com base nas políticas de segurança configuradas pelo cliente.
@@ -188,7 +188,7 @@ SPNEGO é especificado no RFC 2478.
 
 Em versões com suporte dos sistemas operacionais Windows, o provedor de suporte Negotiate Security seleciona entre o protocolo Kerberos e o NTLM. Negotiate seleciona o protocolo Kerberos por padrão, a menos que esse protocolo não possa ser usado por um dos sistemas envolvidos na autenticação ou o aplicativo de chamada não forneceu informações suficientes para usar o protocolo Kerberos.
 
-Local:%windir%\Windows\System32\lsasrv.dll
+Local:% WINDIR% \Windows\System32\lsasrv.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, além do windows Server 2003 e do Windows XP.
 
@@ -196,20 +196,20 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Microsoft Negotiate (Windows)](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [\[MS-SPNG\]: extensões do mecanismo de negociação do GSS-API (SPNEGO) simples e protegidas](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[MS-SPNG \] : extensões do mecanismo de negociação do GSS-API (SPNEGO) simples e protegidas](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [\[MS-N2HT\]: especificação de protocolo de autenticação HTTP Negotiate e Nego2](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[MS-N2HT \] : especificação de protocolo de autenticação http Negotiate e Nego2](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>Provedor de suporte à segurança de credenciais
 O Credential Security Service Provider (CredSSP) fornece uma experiência de usuário SSO (logon único) ao iniciar novos serviços de terminal e Serviços de Área de Trabalho Remota sessões. O CredSSP permite que os aplicativos deleguem as credenciais dos usuários do computador cliente (usando o SSP do lado do cliente) para o servidor de destino (por meio do SSP do lado do servidor), com base nas políticas do cliente. As políticas de CredSSP são configuradas usando Política de Grupo, e a delegação de credenciais é desativada por padrão.
 
-Local:%windir%\Windows\System32\credssp.dll
+Local:% WINDIR% \Windows\System32\credssp.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico.
 
 **Recursos adicionais para o SSP de credenciais**
 
--   [\[MS-CSSP\]: especificação de protocolo CredSSP (provedor de suporte à segurança de credencial)](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[MS-CSSP \] : especificação do protocolo CredSSP (provedor de suporte à segurança de credencial)](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [Provedor de serviços de segurança de credenciais e SSO para logon de serviços de terminal](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 
@@ -226,18 +226,18 @@ Essa extensão para o pacote Negotiate permite os seguintes cenários:
 
 -   **Disponibilidade de cliente avançada entre computadores cliente e servidores.** Os componentes de autenticação e de rede do sistema operacional são usados.
 
-O pacote de negociação do Windows trata o SSP do NegoExts da mesma maneira que faz para Kerberos e NTLM. NegoExts. dll é carregado na autoridade de sistema local (LSA) na inicialização. Quando uma solicitação de autenticação é recebida, com base na origem da solicitação, o NegoExts negocia entre os SSPs com suporte. Ele coleta as credenciais e as políticas, criptografa-as e as envia para o SSP apropriado, no qual o token de segurança é criado.
+O pacote de negociação do Windows trata o SSP do NegoExts da mesma maneira que faz para Kerberos e NTLM. NegoExts.dll é carregado na autoridade de sistema local (LSA) na inicialização. Quando uma solicitação de autenticação é recebida, com base na origem da solicitação, o NegoExts negocia entre os SSPs com suporte. Ele coleta as credenciais e as políticas, criptografa-as e as envia para o SSP apropriado, no qual o token de segurança é criado.
 
 Os SSPs com suporte do NegoExts não são SSPs autônomos, como Kerberos e NTLM. Portanto, no SSP do NegoExts, quando o método de autenticação falhar por algum motivo, uma mensagem de falha de autenticação será exibida ou registrada. Nenhum método de autenticação de renegociação ou de fallback é possível.
 
-Local:%windir%\Windows\System32\negoexts.dll
+Local:% WINDIR% \Windows\System32\negoexts.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, excluindo o windows Server 2008 e o Windows Vista.
 
 ### <a name="pku2u-security-support-provider"></a><a name="BKMK_PKU2USSP"></a>Provedor de suporte de segurança do PKU2U
 O protocolo PKU2U foi introduzido e implementado como um SSP no Windows 7 e no Windows Server 2008 R2. Esse SSP habilita a autenticação ponto a ponto, especialmente por meio do recurso de compartilhamento de mídia e de arquivos chamado grupo doméstico, que foi introduzido no Windows 7. O recurso permite o compartilhamento entre computadores que não são membros de um domínio.
 
-Local:%windir%\Windows\System32\pku2u.dll
+Local:% WINDIR% \Windows\System32\pku2u.dll
 
 Esse provedor é incluído por padrão nas versões designadas na lista **aplica-se a** no início deste tópico, excluindo o windows Server 2008 e o Windows Vista.
 
@@ -280,7 +280,7 @@ A opção Negotiate pode ser usada para permitir que o cliente e o servidor tent
 
     -   Se o computador cliente não oferecer suporte a nenhum dos protocolos listados, a troca de autenticação falhará.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 [Arquitetura de autenticação do Windows](https://technet.microsoft.com/library/dn169024(v=ws.10).aspx)
 
 

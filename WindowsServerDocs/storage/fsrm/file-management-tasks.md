@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 257ee2955c4f521d14f01ec197fd45e5194eef02
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 402af4bd7c00bedfc3d01d43071af4fcd374d428
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394096"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473993"
 ---
 # <a name="file-management-tasks"></a>Tarefas de Gerenciamento de Arquivos
 
@@ -33,7 +33,7 @@ Tarefas de gerenciamento de arquivo também podem ser configuradas para notifica
 > Tarefas de gerenciamento de arquivos individuais são executadas em agendamentos independentes.
 
 <br />
-Esta seção inclui os seguintes tópicos:
+Esta seção inclui os tópicos a seguir:
 
 -   [Criar uma tarefa de expiração de arquivos](create-file-expiration-task.md)
 -   [Criar uma tarefa de gerenciamento de arquivo personalizada](create-custom-file-management-task.md)
@@ -41,7 +41,7 @@ Esta seção inclui os seguintes tópicos:
 > [!Note]
 > Para definir notificações por email e determinados recursos de relatório, você deve configurar primeiro as opções gerais do Gerenciador de recursos do servidor de arquivos.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 

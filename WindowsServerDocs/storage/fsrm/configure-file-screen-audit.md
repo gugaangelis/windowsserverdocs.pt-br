@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a9444e158a935f4e931aa7a5d634d970c5acc88e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cf1824e514c34ee89870daa6d15190bffd822a8b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394572"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475313"
 ---
 # <a name="configure-file-screen-audit"></a>Configurar auditoria da triagem de arquivo
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Usando o Gerenciador de recursos do servidor de arquivos, você pode gravar atividade de triagem de arquivo em um banco de dados de auditoria. As informações salvas neste banco de dados são usadas para gerar o relatório de auditoria de triagem de arquivo.
 
@@ -32,7 +32,7 @@ Usando o Gerenciador de recursos do servidor de arquivos, você pode gravar ativ
 
 3.  Clique em **OK**. Todos os arquivos de atividade de triagem agora serão armazenados no banco de dados de auditoria e podem ser exibidos executando um relatório de auditoria de triagem de arquivo.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 -   [Gerenciamento de relatórios de armazenamento](storage-reports-management.md)

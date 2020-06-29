@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: f55b7a81f57c2f7087f3f236813c3ef3c6508036
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90803df1ea8ce98ba94b4d1d27ed5678acc33d4d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856379"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474966"
 ---
 # <a name="troubleshooting-a-guarded-fabric"></a>Solução de problemas de uma malha protegida
 
@@ -23,7 +23,7 @@ Os tópicos a seguir abordam como solucionar problemas de uma malha protegida:
 - [Solucionando problemas de hosts protegidos](guarded-fabric-troubleshoot-hosts.md)
 - [Solucionando problemas de VMs blindadas](guarded-fabric-troubleshoot-shielded-vms.md)
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
-- [Implantando o serviço guardião de host para hosts protegidos e VMs blindadas](guarded-fabric-deploying-hgs-overview.md)
+- [Implantar o Serviço Guardião de Host para hosts protegidos e VMs blindadas](guarded-fabric-deploying-hgs-overview.md)
 - [Gerenciando uma malha protegida](guarded-fabric-manage-overview.md)

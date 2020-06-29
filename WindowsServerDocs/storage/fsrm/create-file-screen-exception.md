@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c496151ed1f38cd1f2c604bd227627a586e582c6
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403149"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473693"
 ---
 # <a name="create-a-file-screen-exception"></a>Criar uma exceção de triagem de arquivo
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Ocasionalmente, você precisará permitir exceções à triagem de arquivo. Por exemplo, você talvez queira bloquear arquivos de vídeo de um servidor de arquivos, mas precisa permitir que seu grupo de treinamento salve os arquivos de vídeo para o treinamento baseado no computador. Para permitir arquivos que outros arquivos estão bloqueando, crie uma *exceção de triagem de arquivo*.
 
@@ -45,7 +45,7 @@ Atribuir grupos de arquivos para determinar quais tipos de arquivo serão permit
 
 5.  Clique em **OK**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de triagem de arquivos](file-screening-management.md)
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)

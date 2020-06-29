@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4a33b7f125479da1e7b701f5427a0f15903caf66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 32728fc9b19fca458b7ac4b86f3b550d9ff29490
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401950"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474163"
 ---
 # <a name="configure-notification-limits"></a>Configurar limites de notificação
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Para reduzir o número de notificações acumuladas por exceder repetidamente um limite de cota ou tentar salvar um arquivo não autorizado, o Gerenciador de recursos do servidor de arquivos aplica os limites de tempo para os seguintes tipos de notificação:
 
@@ -41,7 +41,7 @@ Um limite de 60 minutos padrão é definido para cada tipo de notificação, mas
 > [!Note]
 > Para personalizar limites de tempo que são associados com notificações de uma cota ou triagem de arquivo específico, você pode usar as ferramentas de linha de comando do Gerenciador de Recursos de Servidor de Arquivos **Dirquota.exe** e **Filescrn.exe**, ou uso o cmdlets do [Gerenciador de Recursos de Servidor de Arquivos](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)
 -   [Ferramentas de linha de comando](command-line-tools.md)

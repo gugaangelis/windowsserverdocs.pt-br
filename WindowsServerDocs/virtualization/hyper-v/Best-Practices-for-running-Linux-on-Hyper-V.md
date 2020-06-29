@@ -9,12 +9,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 04/15/2020
-ms.openlocfilehash: d8861369abe24ea0d34dce209a5d98e854c4c95d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 75b471d4083ef1597d5edcc775ea6fc847992483
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82072232"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474463"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Práticas recomendadas para executar o Linux no Hyper-V
 
@@ -78,7 +78,7 @@ Configure e use o adaptador Ethernet virtual, que é uma placa de rede específi
 
 O kernel do Linux oferece dois conjuntos de agendadores de e/s de disco para reordenar solicitações.  Um conjunto é para o subsistema ' BLK ' mais antigo e um conjunto é para o subsistema ' BLK-MQ ' mais recente. Em ambos os casos, com os discos de estado sólido de hoje, é recomendável usar um Agendador que passa as decisões de agendamento para o hipervisor do Hyper-V subjacente. Para kernels do Linux usando o subsistema ' BLK ', esse é o Agendador de "NOOP". Para kernels do Linux usando o subsistema ' BLK-MQ ', esse é o Agendador "nenhum".
 
-Para um disco específico, os agendadores disponíveis podem ser vistos neste local do sistema de arquivos:`<diskname>`/sys/Class/Block//Queue/Scheduler, com o Agendador selecionado no momento entre colchetes. Você pode alterar o Agendador gravando nesse local do sistema de arquivos. A alteração deve ser adicionada a um script de inicialização para persistir entre reinicializações. Consulte a documentação do Linux distribuição para obter detalhes.
+Para um disco específico, os agendadores disponíveis podem ser vistos neste local do sistema de arquivos:/sys/Class/Block/ `<diskname>` /Queue/Scheduler, com o Agendador selecionado no momento entre colchetes. Você pode alterar o Agendador gravando nesse local do sistema de arquivos. A alteração deve ser adicionada a um script de inicialização para persistir entre reinicializações. Consulte a documentação do Linux distribuição para obter detalhes.
 
 ## <a name="numa"></a>NUMA
 
@@ -94,7 +94,7 @@ O Hyper-V permite a redução de arquivos de VHDX (disco virtual) sem considerar
 
 Depois de redimensionar um VHD ou VHDX, os administradores devem usar um utilitário como o fdisk ou parcialmente para atualizar a partição, o volume e as estruturas do sistema de arquivos para refletir a alteração no tamanho do disco. Reduzir ou expandir o tamanho de um VHD ou VHDX que tenha uma tabela de partição GUID (GPT) causará um aviso quando uma ferramenta de gerenciamento de partição for usada para verificar o layout da partição, e o administrador será avisado para corrigir os cabeçalhos GPT primeiros e secundários. Essa etapa manual é segura para ser executada sem perda de dados.
 
-## <a name="see-also"></a>Confira também
+## <a name="additional-references"></a>Referências adicionais
 
 * [Máquinas virtuais Linux e FreeBSD com suporte para Hyper-V no Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
@@ -104,4 +104,4 @@ Depois de redimensionar um VHD ou VHDX, os administradores devem usar um utilit�
 
 * [Criar imagens do Linux para o Azure](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 
-* [Otimizar sua VM Linux no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)
+* [Otimizar sua VM do Linux no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)

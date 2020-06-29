@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0825c531913d134cc5711e3c8668fd6dedc4998f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5c45b68f18fe3126867a9b6608b0911bb3f63b2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856179"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474753"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planejamento de volumes nos Espaços de Armazenamento Diretos
 
@@ -31,7 +31,7 @@ Os volumes são onde você coloca os arquivos de que suas cargas de trabalho pre
 
 ![o que são volumes](media/plan-volumes/what-are-volumes.png)
 
-Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criadas, elas aparecem em **C:\ClusterStorage\\** em todos os servidores.
+Todos os volumes são acessíveis por todos os servidores do cluster ao mesmo tempo. Depois de criadas, elas aparecem em **C:\ClusterStorage \\ ** em todos os servidores.
 
 ![pasta de captura de tela csv](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -67,7 +67,7 @@ Com dois servidores no cluster, você pode usar o espelhamento bidirecional. Se 
 
 O espelhamento bidirecional mantém duas cópias de todos os dados, uma cópia nas unidades de cada servidor. Sua eficiência de armazenamento é de 50% – para gravar 1 TB de dados, você precisa de pelo menos 2 TB de capacidade de armazenamento físico no pool de armazenamento. O espelhamento bidirecional pode tolerar com segurança uma falha de hardware por vez (um servidor ou unidade).
 
-![espelhamento bidirecional](media/plan-volumes/two-way-mirror.png)
+![espelhamento de duas vias](media/plan-volumes/two-way-mirror.png)
 
 A resiliência aninhada (disponível somente no Windows Server 2019) fornece resiliência de dados entre servidores com espelhamento bidirecional e, em seguida, adiciona resiliência em um servidor com espelhamento bidirecional ou paridade acelerada por espelho. O aninhamento fornece resiliência de dados mesmo quando um servidor está reiniciando ou indisponível. Sua eficiência de armazenamento é de 25% com espelhamento bidirecional aninhado e cerca de 35-40% para paridade com aceleração de espelho aninhado. A resiliência aninhada pode tolerar com segurança duas falhas de hardware por vez (duas unidades ou um servidor e uma unidade no servidor restante). Por causa dessa resiliência de dados adicionada, recomendamos o uso de resiliência aninhada em implantações de produção de clusters de dois servidores, se você estiver executando o Windows Server 2019. Para obter mais informações, consulte [resiliência aninhada](nested-resiliency.md).
 
@@ -77,7 +77,7 @@ A resiliência aninhada (disponível somente no Windows Server 2019) fornece res
 
 Com três servidores, você deve usar o espelhamento de três voas para melhor tolerância de falhas e melhor desempenho. O espelhamento de três vias mantém três cópias de todos os dados, uma cópia nas unidades em cada servidor. A eficiência de armazenamento é de 33,3% – para gravar 1 TB de dados, é necessário ter pelo menos 3 TB de capacidade de armazenamento físico no pool de armazenamento. O espelhamento de três vias pode tolerar com segurança [pelo menos dois problemas de hardware (unidade ou servidor) por vez](storage-spaces-fault-tolerance.md#examples). Se 2 nós ficarem indisponíveis, o pool de armazenamento perderá o quorum, uma vez que 2/3 dos discos não estão disponíveis e os discos virtuais ficarão inacessíveis. No entanto, um nó pode estar inoperante e um ou mais discos em outro nó podem falhar e os discos virtuais permanecerão online. Por exemplo, se você estiver reiniciando um servidor quando, de repente, outra unidade ou servidor falhar, todos os dados permanecem seguros e continuamente acessíveis.
 
-![espelhamento triplo](media/plan-volumes/three-way-mirror.png)
+![espelhamento de três vias](media/plan-volumes/three-way-mirror.png)
 
 ### <a name="with-four-or-more-servers"></a>Com quatro ou mais servidores
 
@@ -151,7 +151,7 @@ Deixar alguma capacidade não alocada no pool de armazenamento oferece espaço a
 
 É recomendável reservar o equivalente a uma unidade de capacidade por servidor, até 4 unidades. Você pode reservar mais a seu critério, mas essa recomendação mínima garante que um reparo imediato, in-loco e paralelo pode ter sucesso após a falha de qualquer unidade.
 
-![reserve](media/plan-volumes/reserve.png)
+![reserva](media/plan-volumes/reserve.png)
 
 Por exemplo, se você tiver 2 servidores e estiver usando unidades de 1 TB de capacidade, separe 2 x 1 = 2 TB do pool como reserva. Se você tiver 3 servidores e unidades de 1 TB de capacidade, separe 3 x 1 = 3 TB como reserva. Se você tiver 4 ou mais servidores e unidades de 1 TB de capacidade, separe 4 x 1 = 4 TB como reserva.
 
@@ -199,8 +199,8 @@ Para simplificar, este exemplo usa unidades decimais (base 10), ou seja, 1 TB = 
 
 Consulte [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md).
 
-### <a name="see-also"></a>Consulte também
+### <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
-- [Escolhendo unidades para Espaços de Armazenamento Diretos](choosing-drives.md)
+- [Escolher unidades para Espaços de Armazenamento Diretos](choosing-drives.md)
 - [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)

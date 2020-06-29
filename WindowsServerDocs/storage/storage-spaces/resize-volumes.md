@@ -8,12 +8,12 @@ ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 03/10/2020
-ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
-ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
+ms.openlocfilehash: 4526bdc87bfbb8cdaf6cc3b0e8f3cd1cd80f4a9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/11/2020
-ms.locfileid: "79089355"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474603"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Estendendo volumes em Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
@@ -64,7 +64,7 @@ Para seguir associações entre objetos na pilha, redirecione um cmdlet **Get -*
 Por exemplo, veja aqui como ir de um disco virtual para seu volume:
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
+Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume
 ```
 
 ### <a name="step-1--resize-the-virtual-disk"></a>Etapa 1 –Redimensionar o disco virtual
@@ -74,7 +74,7 @@ O disco virtual pode usar camadas de armazenamento, ou não, dependendo de como 
 Para verificar, execute o seguinte cmdlet:
 
 ```PowerShell
-Get-VirtualDisk <FriendlyName> | Get-StorageTier 
+Get-VirtualDisk <FriendlyName> | Get-StorageTier
 ```
 
 Se o cmdlet retornar nada, o disco virtual não usa camadas de armazenamento.
@@ -129,7 +129,7 @@ $VirtualDisk = Get-VirtualDisk <FriendlyName>
 # Get its partition
 $Partition = $VirtualDisk | Get-Disk | Get-Partition | Where PartitionNumber -Eq 2
 
-# Resize to its maximum supported size 
+# Resize to its maximum supported size
 $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).SizeMax
 ```
 
@@ -137,14 +137,14 @@ Quando você redimensiona a **Partição**, o **Volume** e o **Volume Compartilh
 
 ![Redimensionar partição](media/resize-volumes/Resize-Partition.gif)
 
-É só isso!
+Pronto!
 
 > [!TIP]
 > Você pode verificar se o volume tem o novo tamanho executando **Get-Volume**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
-- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
-- [Criando volumes no Espaços de Armazenamento Diretos](create-volumes.md)
+- [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md)
 - [Excluindo volumes no Espaços de Armazenamento Diretos](delete-volumes.md)

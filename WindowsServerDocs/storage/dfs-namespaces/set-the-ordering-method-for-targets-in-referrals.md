@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bb42a98666941c5dfa50a8dfbf45635ad25dc767
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386136"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475153"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Defina o método de ordenação dos destinos nas referências
 
@@ -38,10 +38,10 @@ Use o procedimento a seguir para definir o método de ordenação na raiz do nam
 > Para usar o Windows PowerShell para definir o método de ordenação de destinos em referências de raiz do namespace, use o [conjunto DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) cmdlet com um dos seguintes parâmetros:
 >    -   **EnableSiteCosting** Especifica o **ordenação de custo mais baixo** método
 >    -   **EnableInsiteReferrals** especifica o método de ordenação **Excluir destinos fora do site do cliente**
->    -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência. 
+>    -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência.
 
-O módulo DFSN do Windows PowerShell foi introduzido no Windows Server 2012.
-   
+O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
+
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>Para definir o método de ordenação para alvos nas referências de pasta
 
 Pastas com destinos herdam o método de ordenação da raiz do namespace. Você pode substituir o método de ordenação usando o seguinte procedimento:
@@ -67,7 +67,7 @@ Os três métodos de ordenação são:
 
 Nesse método, os destinos são ordenados da seguinte maneira:
 
-1.  Os destinos no mesmo site de AD DS (serviços de diretório Active Directory) como o cliente são listados em ordem aleatória na parte superior da referência.
+1.  Os destinos no mesmo site de serviços de diretório do Active Directory (AD DS) como o cliente são listados em ordem aleatória na parte superior da referência.
 2.  Os destinos fora do site do cliente são listados em ordem aleatória.
 
 Se não houver servidores de destino mesmo site disponíveis, o computador cliente é chamado em um servidor de destino aleatório, independentemente de quanto a conexão custa ou distante como o destino.
@@ -89,7 +89,7 @@ Nesse método, a referência contém apenas os alvos que estão no mesmo site qu
 > [!NOTE]
 > Os destinos que têm prioridade de destino definida como "primeiro entre todos os destinos" ou "última entre todos os destinos" ainda são listados na referência, mesmo que o método de ordenação é definido como **excluir destinos fora do site do cliente**.
 
-## <a name="see-also"></a>Consulte também 
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

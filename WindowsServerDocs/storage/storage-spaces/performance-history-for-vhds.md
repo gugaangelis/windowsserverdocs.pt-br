@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d917c2d75c1e4078438b94e8aa4a6f921019af5a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 18694975e48d199f2f690aebe8af2a4613a4b1f0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856159"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474703"
 ---
 # <a name="performance-history-for-virtual-hard-disks"></a>Histórico de desempenho para discos rígidos virtuais
 
@@ -55,7 +55,7 @@ Essas séries são coletadas para cada disco rígido virtual qualificado:
 
 ## <a name="where-they-come-from"></a>De onde vêm
 
-As séries `iops.*`, `throughput.*`e `latency.*` são coletadas do contador de desempenho `Hyper-V Virtual Storage Device` definido no servidor em que a máquina virtual está em execução, uma instância por VHD ou VHDX.
+As `iops.*` `throughput.*` séries, e `latency.*` são coletadas do `Hyper-V Virtual Storage Device` contador de desempenho definido no servidor em que a máquina virtual está em execução, uma instância por VHD ou VHDX.
 
 | Série                    | Contador de origem         |
 |---------------------------|------------------------|
@@ -68,7 +68,7 @@ As séries `iops.*`, `throughput.*`e `latency.*` são coletadas do contador de d
 | `vhd.latency.average`     | `Latency`              |
 
    > [!NOTE]
-   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o VHD estiver inativo por 9 segundos, mas concluir 30 IOs no décimo segundo, seu `vhd.iops.total` será gravado como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
+   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o VHD estiver inativo por 9 segundos, mas concluir 30 IOs no décimo segundo, seu `vhd.iops.total` será registrado como 3 Ios por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
@@ -87,6 +87,6 @@ Para obter o caminho de cada VHD da máquina virtual:
    > [!NOTE]
    > O cmdlet Get-VHD requer que um caminho de arquivo seja fornecido. Ele não oferece suporte à enumeração.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Histórico de desempenho para Espaços de Armazenamento Diretos](performance-history.md)

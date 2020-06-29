@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b56d7b0439e3dc6f1a2e0a1c96f761dbb77cb0a0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e38dee0381b33bb9d11b038de715a4420906e131
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394393"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474323"
 ---
 # <a name="define-file-groups-for-screening"></a>Definir grupos de arquivos para triagem
 
@@ -41,11 +41,11 @@ Um *grupo de arquivo* é usado para definir um namespace de uma triagem de arqui
 
     -   Para cada conjunto de arquivos que você deseja incluir no grupo de arquivos, na caixa **Arquivos a serem incluídos**, insira um padrão de nome de arquivo e clique em **Adicionar**.
     -   Para cada conjunto de arquivos que você deseja excluir do grupo de arquivos, na caixa **Arquivos a serem excluídos**, insira um padrão de nome de arquivo e clique em **Adicionar**.
-        Observe que as regras de curinga padrão se aplicam, por exemplo, **\*. exe** seleciona todos os arquivos executáveis.
+        Observe que as regras de curinga padrão se aplicam, por exemplo, ** \* . exe** seleciona todos os arquivos executáveis.
 
 5.  Clique em **OK**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de triagem de arquivos](file-screening-management.md)
 -   [Criar uma triagem de arquivo](create-file-screen.md)

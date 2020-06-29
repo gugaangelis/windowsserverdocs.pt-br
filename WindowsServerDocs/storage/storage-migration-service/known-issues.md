@@ -8,18 +8,18 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 638f4d122b25c870ed323b94d32b6cefca4be5ff
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: 934dbc181131d395ea4fdeb79c5f32121746b5e8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372193"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475293"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
 Este tópico contém respostas a problemas conhecidos ao usar o [serviço de migração de armazenamento](overview.md) para migrar servidores.
 
-O serviço de migração de armazenamento é lançado em duas partes: o serviço no Windows Server e a interface do usuário no centro de administração do Windows. O serviço está disponível no Windows Server, no canal de manutenção de longo prazo, bem como no Windows Server, canal semestral; enquanto o centro de administração do Windows está disponível como um download separado. Também incluímos periodicamente alterações em atualizações cumulativas para o Windows Server, lançadas por meio de Windows Update. 
+O serviço de migração de armazenamento é lançado em duas partes: o serviço no Windows Server e a interface do usuário no centro de administração do Windows. O serviço está disponível no Windows Server, no canal de manutenção de longo prazo, bem como no Windows Server, canal semestral; enquanto o centro de administração do Windows está disponível como um download separado. Também incluímos periodicamente alterações em atualizações cumulativas para o Windows Server, lançadas por meio de Windows Update.
 
 Por exemplo, o Windows Server, versão 1903 inclui novos recursos e correções para o serviço de migração de armazenamento, que também estão disponíveis para o Windows Server 2019 e o Windows Server, versão 1809, instalando [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
@@ -32,15 +32,15 @@ O serviço de migração de armazenamento contém logs de eventos para o serviç
 
 Se você precisar reunir esses logs para exibição offline ou para enviar para Suporte da Microsoft, há um script do PowerShell de código aberto disponível no GitHub:
 
- [Auxiliar do serviço de migração de armazenamento](https://aka.ms/smslogs) 
+ [Auxiliar do serviço de migração de armazenamento](https://aka.ms/smslogs)
 
 Examine o LEIAme para uso.
 
 ## <a name="storage-migration-service-doesnt-show-up-in-windows-admin-center-unless-managing-windows-server-2019"></a>O serviço de migração de armazenamento não aparece no centro de administração do Windows, a menos que o gerenciamento do Windows Server 2019
 
-Ao usar a versão 1809 do centro de administração do Windows para gerenciar um Orchestrator do Windows Server 2019, você não vê a opção de ferramenta para o serviço de migração de armazenamento. 
+Ao usar a versão 1809 do centro de administração do Windows para gerenciar um Orchestrator do Windows Server 2019, você não vê a opção de ferramenta para o serviço de migração de armazenamento.
 
-A extensão de serviço de migração de armazenamento do Windows Admin Center é associada à versão somente para gerenciar o Windows Server 2019 versão 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas operacionais Windows Server mais antigos ou visualizações Insider, a ferramenta não será exibida. Este comportamento ocorre por design. 
+A extensão de serviço de migração de armazenamento do Windows Admin Center é associada à versão somente para gerenciar o Windows Server 2019 versão 1809 ou sistemas operacionais posteriores. Se você usá-lo para gerenciar sistemas operacionais Windows Server mais antigos ou visualizações Insider, a ferramenta não será exibida. Este comportamento ocorre por design.
 
 Para resolver, use ou atualize para o Windows Server 2019 Build 1809 ou posterior.
 
@@ -48,17 +48,17 @@ Para resolver, use ou atualize para o Windows Server 2019 Build 1809 ou posterio
 
 Ao executar a validação de transferência, você receberá o erro "falha: acesso negado para a política de filtro de token no computador de destino". Isso ocorre mesmo que você tenha fornecido credenciais de administrador local corretas para os computadores de origem e de destino.
 
-Esse problema foi corrigido na atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) . 
+Esse problema foi corrigido na atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) .
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>O serviço de migração de armazenamento não está incluído na avaliação do Windows Server 2019 ou no Windows Server 2019 Essentials Edition
 
 Ao usar o centro de administração do Windows para se conectar a uma versão de avaliação do Windows [server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019) ou do windows Server 2019 Essentials, não há uma opção para gerenciar o serviço de migração de armazenamento. O serviço de migração de armazenamento também não está incluído em funções e recursos.
 
-Esse problema é causado por um problema de manutenção na mídia de avaliação do Windows Server 2019 e do Windows Server 2019 Essentials. 
+Esse problema é causado por um problema de manutenção na mídia de avaliação do Windows Server 2019 e do Windows Server 2019 Essentials.
 
-Para contornar esse problema para avaliação, instale uma versão comercial, MSDN, OEM ou licença de volume do Windows Server 2019 e não a ative. Sem a ativação, todas as edições do Windows Server operam no modo de avaliação por 180 dias. 
+Para contornar esse problema para avaliação, instale uma versão comercial, MSDN, OEM ou licença de volume do Windows Server 2019 e não a ative. Sem a ativação, todas as edições do Windows Server operam no modo de avaliação por 180 dias.
 
-Corrigimos esse problema em uma versão posterior do Windows Server.  
+Corrigimos esse problema em uma versão posterior do Windows Server.
 
 ## <a name="storage-migration-service-times-out-downloading-the-transfer-error-csv"></a>O serviço de migração de armazenamento atinge o tempo limite de download do CSV de erro de transferência
 
@@ -66,7 +66,7 @@ Ao usar o centro de administração do Windows ou o PowerShell para baixar o log
 
  >   Log de transferência-Verifique se o compartilhamento de arquivos é permitido em seu firewall. : Esta operação de solicitação enviada para net. TCP://localhost: 28940/SMS/Service/1/Transfer não recebeu uma resposta dentro do tempo limite configurado (00:01:00). O tempo determinado para essa operação pode ter sido uma parte de um tempo limite maior. Isso pode ocorrer porque o serviço ainda está processando a operação ou porque o serviço não pôde enviar uma mensagem de resposta. Considere aumentar o tempo limite da operação (convertendo o canal/proxy para IContextChannel e definindo a propriedade OperationTimeout) e verifique se o serviço é capaz de se conectar ao cliente.
 
-Esse problema é causado por um número muito grande de arquivos transferidos que não podem ser filtrados no tempo limite de um minuto padrão permitido pelo serviço de migração de armazenamento. 
+Esse problema é causado por um número muito grande de arquivos transferidos que não podem ser filtrados no tempo limite de um minuto padrão permitido pelo serviço de migração de armazenamento.
 
 Para contornar este problema:
 
@@ -79,21 +79,21 @@ Para contornar este problema:
                  sendTimeout="00:01:00"
    ```
 
-2. Reinicie o serviço "serviço de migração de armazenamento" no computador do Orchestrator. 
+2. Reinicie o serviço "serviço de migração de armazenamento" no computador do Orchestrator.
 3. No computador do Orchestrator, inicie o Regedit.exe
-4. Localize e clique na seguinte subchave do Registro: 
+4. Localize e clique na seguinte subchave do Registro:
 
    `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
-5. No menu Editar, aponte para Novo e clique em Valor DWORD. 
+5. No menu Editar, aponte para Novo e clique em Valor DWORD.
 6. Digite "WcfOperationTimeoutInMinutes" para o nome do DWORD e pressione ENTER.
-7. Clique com o botão direito do mouse em "WcfOperationTimeoutInMinutes" e clique em Modificar. 
+7. Clique com o botão direito do mouse em "WcfOperationTimeoutInMinutes" e clique em Modificar.
 8. Na caixa dados base, clique em "decimal"
 9. Na caixa dados do valor, digite "10" e clique em OK.
 10. Saia do Editor do Registro.
-11. Tente baixar o arquivo CSV somente erros novamente. 
+11. Tente baixar o arquivo CSV somente erros novamente.
 
-Pretendemos alterar esse comportamento em uma versão posterior do Windows Server 2019.  
+Pretendemos alterar esse comportamento em uma versão posterior do Windows Server 2019.
 
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>Avisos de validação para proxy de destino e privilégios administrativos de credencial
 
@@ -104,7 +104,7 @@ Ao validar um trabalho de transferência, você verá os seguintes avisos:
  > **O proxy de destino está registrado.**
  > Aviso: o proxy de destino não foi encontrado.
 
-Se você não tiver instalado o serviço de proxy de serviço de migração de armazenamento no computador de destino do Windows Server 2019 ou o computador de destino for o Windows Server 2016 ou o Windows Server 2012 R2, esse comportamento será por design. É recomendável migrar para um computador com Windows Server 2019 com o proxy instalado para melhorar significativamente o desempenho da transferência.  
+Se você não tiver instalado o serviço de proxy de serviço de migração de armazenamento no computador de destino do Windows Server 2019 ou o computador de destino for o Windows Server 2016 ou o Windows Server 2012 R2, esse comportamento será por design. É recomendável migrar para um computador com Windows Server 2019 com o proxy instalado para melhorar significativamente o desempenho da transferência.
 
 ## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>Determinados arquivos não fazem inventário ou transferência, erro 5 "acesso negado"
 
@@ -116,7 +116,7 @@ Ao inventariar ou transferir arquivos da origem para os computadores de destino,
     Event ID:      10000
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      srv1.contoso.com
     Description:
@@ -128,11 +128,11 @@ Ao inventariar ou transferir arquivos da origem para os computadores de destino,
      at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(FileInfo file)
      at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()
      at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer()
-     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()   
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()
 
-Esse problema é causado por um defeito de código no serviço de migração de armazenamento em que o privilégio de backup não estava sendo invocado. 
+Esse problema é causado por um defeito de código no serviço de migração de armazenamento em que o privilégio de backup não estava sendo invocado.
 
-Para resolver esse problema, instale [Windows Update 2 de abril de 2019 — KB4490481 (Build do sistema operacional 17763,404)](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) no computador do Orchestrator e no computador de destino se o serviço de proxy estiver instalado lá. Verifique se a conta de usuário de migração de origem é um administrador local no computador de origem e o orquestrador do serviço de migração de armazenamento. Verifique se a conta de usuário de migração de destino é um administrador local no computador de destino e o orquestrador do serviço de migração de armazenamento. 
+Para resolver esse problema, instale [Windows Update 2 de abril de 2019 — KB4490481 (Build do sistema operacional 17763,404)](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) no computador do Orchestrator e no computador de destino se o serviço de proxy estiver instalado lá. Verifique se a conta de usuário de migração de origem é um administrador local no computador de origem e o orquestrador do serviço de migração de armazenamento. Verifique se a conta de usuário de migração de destino é um administrador local no computador de destino e o orquestrador do serviço de migração de armazenamento.
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Hashes DFSR incompatíveis ao usar o serviço de migração de armazenamento para propagar dados
 
@@ -150,25 +150,25 @@ Arquivo de destino:
 
 Log de depuração DFSR:
 
-    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found. 
+    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found.
 
-    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 
-    LastWriteTime:20190308 18:09:44.876 
-    FileSizeLow:1131654 
-    FileSizeHigh:0 
-    Attributes:32 
+    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6
+    LastWriteTime:20190308 18:09:44.876
+    FileSizeLow:1131654
+    FileSizeHigh:0
+    Attributes:32
 
-    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** 
-    LastWriteTime:20190308 18:09:44.876 
-    FileSizeLow:1131654 
-    FileSizeHigh:0 
-    Attributes:32 
+    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B**
+    LastWriteTime:20190308 18:09:44.876
+    FileSizeLow:1131654
+    FileSizeHigh:0
+    Attributes:32
 
 Esse problema é corrigido pela atualização do [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Erro "não foi possível transferir o armazenamento em nenhum dos pontos de extremidade" ao transferir do Windows Server 2008 R2
 
-Ao tentar transferir dados de um computador de origem do Windows Server 2008 R2, não há transferências de dados e você recebe o erro:  
+Ao tentar transferir dados de um computador de origem do Windows Server 2008 R2, não há transferências de dados e você recebe o erro:
 
     Couldn't transfer storage on any of the endpoints.
     0x9044
@@ -191,10 +191,10 @@ Examinar o log de eventos de StorageMigrationService/admin mostra:
     Couldn't transfer storage.
 
     Job: Job1
-    ID:  
+    ID:
     State: Failed
     Error: 36931
-    Error Message: 
+    Error Message:
 
    Orientação: Verifique o erro detalhado e verifique se os requisitos de transferência foram atendidos. O trabalho de transferência não pôde transferir nenhum computador de origem e de destino. Isso pode ser devido ao fato de o computador Orchestrator não conseguir acessar os computadores de origem ou de destino, possivelmente devido a uma regra de firewall ou permissões ausentes.
 
@@ -202,23 +202,23 @@ Examinar o log StorageMigrationService-proxy/Debug mostra:
 
     07/02/2019-13:35:57.231 [Error] Transfer validation failed. ErrorCode: 40961, Source endpoint is not reachable, or doesn't exist, or source credentials are invalid, or authenticated user doesn't have sufficient permissions to access it.
     at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate()
-    at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)    
+    at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)
 
-Esse era um defeito de código que seria manifestado se sua conta de migração não tiver pelo menos permissões de leitura para os compartilhamentos SMB. Esse problema foi corrigido primeiro na atualização cumulativa [4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062). 
+Esse era um defeito de código que seria manifestado se sua conta de migração não tiver pelo menos permissões de leitura para os compartilhamentos SMB. Esse problema foi corrigido primeiro na atualização cumulativa [4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062).
 
 ## <a name="error-0x80005000-when-running-inventory"></a>Erro 0x80005000 ao executar o inventário
 
 Depois de instalar o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) e tentar executar o inventário, o inventário falhará com erros:
 
     EXCEPTION FROM HRESULT: 0x80005000
-  
+
     Log Name:      Microsoft-Windows-StorageMigrationService/Admin
     Source:        Microsoft-Windows-StorageMigrationService
     Date:          9/9/2019 5:21:42 PM
     Event ID:      2503
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      FS02.TailwindTraders.net
     Description:
@@ -229,14 +229,14 @@ Depois de instalar o [KB4512534](https://support.microsoft.com/help/4512534/wind
     Error: 36934
     Error Message: Inventory failed for all devices
     Guidance: Check the detailed error and make sure the inventory requirements are met. The job couldn't inventory any of the specified source computers. This could be because the orchestrator computer couldn't reach it over the network, possibly due to a firewall rule or missing permissions.
-  
+
     Log Name:      Microsoft-Windows-StorageMigrationService/Admin
     Source:        Microsoft-Windows-StorageMigrationService
     Date:          9/9/2019 5:21:42 PM
     Event ID:      2509
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      FS02.TailwindTraders.net
     Description:
@@ -245,28 +245,28 @@ Depois de instalar o [KB4512534](https://support.microsoft.com/help/4512534/wind
     Computer: FS01.TailwindTraders.net
     State: Failed
     Error: -2147463168
-    Error Message: 
+    Error Message:
     Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
-  
+
     Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
     Source:        Microsoft-Windows-StorageMigrationService-Proxy
     Date:          2/14/2020 1:18:21 PM
     Event ID:      10000
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      2019-rtm-orc.ned.contoso.com
     Description:
-    02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
-  
+    02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)
+
 Esse erro é causado por um defeito de código no serviço de migração de armazenamento quando você fornece credenciais de migração na forma de um UPN (nome principal do usuário), como ' meghan@contoso.com '. O serviço Orchestrator do serviço de migração de armazenamento não analisa corretamente esse formato, o que leva a uma falha em uma pesquisa de domínio que foi adicionada para suporte de migração de cluster em KB4512534 e 19H1.
 
 Para contornar esse problema, forneça credenciais no formato domínio \ usuário, como ' Contoso\Meghan '.
 
 ## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>Erro "ServiceError0x9006" ou "o proxy não está disponível no momento". ao migrar para um cluster de failover do Windows Server
 
-Ao tentar transferir dados para um servidor de arquivos clusterizado, você recebe erros como: 
+Ao tentar transferir dados para um servidor de arquivos clusterizado, você recebe erros como:
 
     Make sure the proxy service is installed and running, and then try again. The proxy isn't currently available.
     0x9006
@@ -279,7 +279,7 @@ Como alternativa, mova o recurso de servidor de arquivos de destino de volta par
 Como alternativa alternativa:
 
 1. Instale o recurso de proxy de serviço de migração de armazenamento em todos os nós em um cluster.
-2. Execute o seguinte comando do PowerShell do serviço de migração de armazenamento no computador do Orchestrator: 
+2. Execute o seguinte comando do PowerShell do serviço de migração de armazenamento no computador do Orchestrator:
 
    ```PowerShell
    Register-SMSProxy -ComputerName *destination server* -Force
@@ -289,15 +289,15 @@ Como alternativa alternativa:
 Ao tentar executar o inventário com o serviço de migração de armazenamento e direcionar para uma fonte de servidor de arquivos de uso geral do cluster de failover do Windows Server, você receberá os seguintes erros:
 
     DLL not found
-    [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   
+    [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)
 
-Para contornar esse problema, instale o "ferramentas de gerenciamento de cluster de failover" (RSAT-clustering-MGMT) no servidor que executa o Orchestrator do serviço de migração de armazenamento. 
+Para contornar esse problema, instale o "ferramentas de gerenciamento de cluster de failover" (RSAT-clustering-MGMT) no servidor que executa o Orchestrator do serviço de migração de armazenamento.
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Erro "não há mais pontos de extremidade disponíveis no mapeador de ponto de extremidades" ao executar o inventário em um computador de origem do Windows Server 2003
 
 Ao tentar executar o inventário com o Orchestrator do serviço de migração de armazenamento em um computador de origem do Windows Server 2003, você receberá o seguinte erro:
 
-    There are no more endpoints available from the endpoint mapper  
+    There are no more endpoints available from the endpoint mapper
 
 Esse problema é resolvido pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) .
 
@@ -309,7 +309,7 @@ A desinstalação de atualizações cumulativas do Windows Server pode impedir q
 
      ```
      TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
-     
+
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
@@ -322,7 +322,7 @@ A desinstalação de atualizações cumulativas do Windows Server pode impedir q
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA) /T /C
      ```
-   
+
 2.  Inicie o serviço de serviço de migração de armazenamento, que criará um novo banco de dados.
 
 ## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>Erro "falha na CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO em relação ao recurso do NetName" e a transferência de cluster do Windows Server 2008 R2 falha
@@ -335,7 +335,7 @@ Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a
     Event ID:      10000
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      WIN-RNS0D0PMPJH.contoso.com
     Description:
@@ -343,9 +343,9 @@ Ao tentar executar o corte de uma origem de cluster do Windows Server 2008 R2, a
        at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
-Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso do servidor de arquivos de origem do cluster e o endereço IP, alterando o endereço IP e o nome do cluster de destino para corresponder à origem original. 
+Esse problema é causado por uma API ausente em versões mais antigas do Windows Server. Atualmente, não há como migrar clusters do Windows Server 2008 e do Windows Server 2003. Você pode executar o inventário e a transferência sem problemas em clusters do Windows Server 2008 R2 e, em seguida, executar a transferência manualmente alterando manualmente o recurso do servidor de arquivos de origem do cluster e o endereço IP, alterando o endereço IP e o nome do cluster de destino para corresponder à origem original.
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar IPs estáticos 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar IPs estáticos
 
 Ao tentar executar o recorte de um computador de origem, ter definido o computador de origem para usar um novo endereço IP estático (não DHCP) em uma ou mais interfaces de rede, o corte é paralisado na fase "38% mapeando interfaces de rede no computador de origem..." e você receberá o seguinte erro no log de eventos do serviço de migração de armazenamento:
 
@@ -355,7 +355,7 @@ Ao tentar executar o recorte de um computador de origem, ter definido o computad
     Event ID:      20494
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      orc2019-rtm.corp.contoso.com
     Description:
@@ -370,15 +370,15 @@ Ao tentar executar o recorte de um computador de origem, ter definido o computad
 
     Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
 
-Examinar o computador de origem mostra que o endereço IP original não é alterado. 
+Examinar o computador de origem mostra que o endereço IP original não é alterado.
 
-Esse problema não ocorrerá se você selecionou "usar DHCP" na tela do centro de administração do Windows "configurar a transferência", somente se você especificar um novo endereço IP estático. 
+Esse problema não ocorrerá se você selecionou "usar DHCP" na tela do centro de administração do Windows "configurar a transferência", somente se você especificar um novo endereço IP estático.
 
-Há duas soluções para esse problema: 
+Há duas soluções para esse problema:
 
 1. Esse problema foi resolvido primeiro pela atualização do [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) . Esse código anterior removeu todo o uso de endereços IP estáticos.
 
-2. Se você não tiver especificado um endereço IP de gateway padrão nas interfaces de rede do computador de origem, esse problema ocorrerá mesmo com a atualização KB4537818. Para contornar esse problema, defina um endereço IP padrão válido nas interfaces de rede usando o applet Network Connections (NCPA.CPL) ou o cmdlet Set-netroute do PowerShell.   
+2. Se você não tiver especificado um endereço IP de gateway padrão nas interfaces de rede do computador de origem, esse problema ocorrerá mesmo com a atualização KB4537818. Para contornar esse problema, defina um endereço IP padrão válido nas interfaces de rede usando o applet Network Connections (NCPA.CPL) ou o cmdlet Set-netroute do PowerShell.
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>Mais lento do que o esperado desempenho de retransferência
 
@@ -394,14 +394,14 @@ Depois de iniciar a transferência de ou para um controlador de domínio:
  2. Há um símbolo de erro vermelho mostrado no centro de administração do Windows sem mensagem de erro
  3. Um ou mais usuários do AD e grupos locais de domínio têm seu nome e/ou atributo de logon anterior ao Windows 2000 alterado
  4. Você verá o evento 3509 no Orchestrator do serviço de migração de armazenamento:
- 
+
         Log Name:      Microsoft-Windows-StorageMigrationService/Admin
         Source:        Microsoft-Windows-StorageMigrationService
         Date:          1/10/2020 2:53:48 PM
         Event ID:      3509
         Task Category: None
         Level:         Error
-        Keywords:      
+        Keywords:
         User:          NETWORK SERVICE
         Computer:      orc2019-rtm.corp.contoso.com
         Description:
@@ -415,35 +415,35 @@ Depois de iniciar a transferência de ou para um controlador de domínio:
         Error Message: Local accounts migration failed with error System.Exception: -2147467259
            at Microsoft.StorageMigration.Service.DeviceHelper.MigrateSecurity(IDeviceRecord sourceDeviceRecord, IDeviceRecord destinationDeviceRecord, TransferConfiguration config, Guid proxyId, CancellationToken cancelToken)
 
-Esse é o comportamento esperado se você tentou migrar do ou para um controlador de domínio com o serviço de migração de armazenamento e usou a opção "migrar usuários e grupos" para renomear ou reutilizar contas. em vez de selecionar "não transferir usuários e grupos". [Não há suporte para a migração de DC com o serviço de migração de armazenamento](faq.md). Como um controlador de domínio não tem usuários e grupos locais verdadeiros, o serviço de migração de armazenamento trata essas entidades de segurança como faria ao migrar entre dois servidores membros e tenta ajustar as ACLs conforme instruído, levando a erros e contas descontadas ou copiadas. 
+Esse é o comportamento esperado se você tentou migrar do ou para um controlador de domínio com o serviço de migração de armazenamento e usou a opção "migrar usuários e grupos" para renomear ou reutilizar contas. em vez de selecionar "não transferir usuários e grupos". [Não há suporte para a migração de DC com o serviço de migração de armazenamento](faq.md). Como um controlador de domínio não tem usuários e grupos locais verdadeiros, o serviço de migração de armazenamento trata essas entidades de segurança como faria ao migrar entre dois servidores membros e tenta ajustar as ACLs conforme instruído, levando a erros e contas descontadas ou copiadas.
 
 Se você já executou a transferência uma ou mais vezes:
 
- 1. Use o seguinte comando do PowerShell do AD em um DC para localizar usuários ou grupos modificados (alterando SearchBase para corresponder ao nome distinto do domínio): 
+ 1. Use o seguinte comando do PowerShell do AD em um DC para localizar usuários ou grupos modificados (alterando SearchBase para corresponder ao nome distinto do domínio):
 
     ```PowerShell
     Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
     ```
-   
+
  2. Para todos os usuários retornados com seu nome original, edite seu "nome de logon do usuário (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento, para que esse usuário possa fazer logon.
  3. Para todos os grupos retornados com seu nome original, edite seu "nome de grupo (anterior ao Windows 2000)" para remover o sufixo de caractere aleatório adicionado pelo serviço de migração de armazenamento.
  4. Para todos os usuários ou grupos desabilitados com nomes que agora contêm um sufixo adicionado pelo serviço de migração de armazenamento, você pode excluir essas contas. Você pode confirmar que as contas de usuário foram adicionadas posteriormente, pois elas só conterão o grupo de usuários de domínio e terão uma data/hora de criação que corresponda à hora de início da transferência do serviço de migração de armazenamento.
- 
+
  Se você quiser usar o serviço de migração de armazenamento com controladores de domínio para fins de transferência, certifique-se de sempre selecionar "não transferir usuários e grupos" na página Configurações de transferência no centro de administração do Windows.
- 
-## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>Erro 53, "falha ao inventariar todos os dispositivos especificados" ao executar o inventário, 
+
+## <a name="error-53-failed-to-inventory-all-specified-devices-when-running-inventory"></a>Erro 53, "falha ao inventariar todos os dispositivos especificados" ao executar o inventário,
 
 Ao tentar executar o inventário, você recebe:
 
-    Failed to inventory all specified devices 
-    
+    Failed to inventory all specified devices
+
     Log Name:      Microsoft-Windows-StorageMigrationService/Admin
     Source:        Microsoft-Windows-StorageMigrationService
     Date:          1/16/2020 8:31:17 AM
     Event ID:      2516
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      ned.corp.contoso.com
     Description:
@@ -464,7 +464,7 @@ Ao tentar executar o inventário, você recebe:
     Event ID:      10004
     Task Category: None
     Level:         Critical
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      ned.corp.contoso.com
     Description:
@@ -476,8 +476,8 @@ Ao tentar executar o inventário, você recebe:
        at Microsoft.StorageMigration.Proxy.EndpointScanOperation.Run()
        at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(EndpointScanRequest scanRequest, Guid operationId)
        at Microsoft.StorageMigration.Proxy.Service.Discovery.EndpointScanRequestHandler.ProcessRequest(Object request)
-       at Microsoft.StorageMigration.Proxy.Common.ProducerConsumerManager`3.Consume(CancellationToken token)    
-       
+       at Microsoft.StorageMigration.Proxy.Common.ProducerConsumerManager`3.Consume(CancellationToken token)
+
     01/16/2020-08:31:10.015 [Erro] Endpoint Scan failed. Error: (53) The network path was not found.
     Stack trace:
        at Microsoft.Win32.RegistryKey.Win32ErrorStatic(Int32 errorCode, String str)
@@ -489,8 +489,8 @@ Neste estágio, o orquestrador do serviço de migração de armazenamento está 
  - o firewall não permite conexões de registro remoto para o servidor de origem do Orchestrator.
  - A conta de migração de origem não tem permissões de registro remoto para se conectar ao computador de origem.
  - A conta de migração de origem não tem permissões de leitura no registro do computador de origem, em "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" ou em "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\LanmanServer"
- 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..." 
+
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>A transferência trava em "38% mapeando interfaces de rede no computador de origem..."
 
 Ao tentar executar o corte em um computador de origem, o sobreCorte fica preso na fase "38% mapeando interfaces de rede no computador de origem..." e você receberá o seguinte erro no log de eventos do serviço de migração de armazenamento:
 
@@ -500,7 +500,7 @@ Ao tentar executar o corte em um computador de origem, o sobreCorte fica preso n
     Event ID:      20505
     Task Category: None
     Level:         Error
-    Keywords:      
+    Keywords:
     User:          NETWORK SERVICE
     Computer:      nedwardo.contosocom
     Description:
@@ -516,28 +516,28 @@ Ao tentar executar o corte em um computador de origem, o sobreCorte fica preso n
 Esse problema é causado por Política de Grupo que define o seguinte valor do registro no computador de origem:
 
  "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System LocalAccountTokenFilterPolicy = 0"
- 
+
 Essa configuração não faz parte do Política de Grupo padrão, é um complemento configurado usando o [Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319):
- 
+
  - Windows Server 2012 R2: "computador \ Configuração do Computador\modelos Templates\SCM: passar as restrições de Mitigations\Apply de hash do UAC para contas locais em logons de rede"
  - Servidor do viúvas 2016: "computador \ Configuração do Computador\modelos Templates\MS segurança Guide\Apply restrições de UAC para contas locais em logons de rede"
- 
+
 Ele também pode ser definido usando preferências de Política de Grupo com uma configuração de registro Personalizada. Você pode usar a ferramenta GPRESULT para determinar qual política está aplicando essa configuração ao computador de origem.
 
 O serviço de migração de armazenamento habilita temporariamente o [LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows) como parte do processo de sobreCorte e, em seguida, remove-o quando terminar. Quando Política de Grupo aplica um objeto de Política de Grupo conflitante (GPO), ele substitui o serviço de migração de armazenamento e impede a transferência.
 
 Para contornar esse problema, use uma das seguintes opções:
 
-1. Mova temporariamente o computador de origem do Active Directory OU que aplica esse GPO conflitante. 
+1. Mova temporariamente o computador de origem do Active Directory OU que aplica esse GPO conflitante.
 2. Desabilite temporariamente o GPO que aplica essa política conflitante.
 3. Crie temporariamente um novo GPO que defina essa configuração como desabilitada e se aplique a uma UO específica de servidores de origem, com precedência mais alta do que quaisquer outros GPOs.
 
 ## <a name="inventory-or-transfer-fail-when-using-credentials-from-a-different-domain"></a>Falha no inventário ou na transferência ao usar as credenciais de um domínio diferente
 
-Ao tentar executar o inventário ou a transferência com o serviço de migração de armazenamento e direcionar um servidor Windows ao usar credenciais de migração de um domínio diferente do servidor de destino, você receberá os seguintes erros 
+Ao tentar executar o inventário ou a transferência com o serviço de migração de armazenamento e direcionar um servidor Windows ao usar credenciais de migração de um domínio diferente do servidor de destino, você receberá os seguintes erros
 
     The server was unable to process the request due to an internal error
-    
+
     04/28/2020-11:31:01.169 [Erro] Failed device discovery stage SystemInfo with error: (0x490) Could not find computer object 'myserver' in Active Directory    [d:\os\src\base\dms\proxy\discovery\discoveryproxy\DeviceDiscoveryOperation.cs::TryStage::1042]
 
 Esse problema é causado por um defeito de código no serviço de migração de armazenamento. Para contornar esse problema, use as credenciais de migração do mesmo domínio ao qual o computador de origem e de destino pertence. Por exemplo, se o computador de origem e de destino pertencer ao domínio "corp.contoso.com" na floresta "contoso.com", use "corp\myaccount" para executar a migração, não uma credencial "contoso\myaccount".

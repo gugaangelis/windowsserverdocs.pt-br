@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: a144479c196f42939aee6eb26227ed2e2b22d87a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34df5ecc2ff085535878133db98cf345990165e0
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402860"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475223"
 ---
 # <a name="deleting-volumes-in-storage-spaces-direct"></a>Excluindo volumes no Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
@@ -31,9 +31,9 @@ Para excluir um volume no centro de administração do Windows:
 4. Na parte superior da página de detalhes de volumes, selecione **excluir**.
 5. No diálogo confirmações, marque a caixa de seleção para confirmar que deseja excluir o volume e selecione **excluir**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
-- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
-- [Criando volumes no Espaços de Armazenamento Diretos](create-volumes.md)
-- [Estendendo volumes no Espaços de Armazenamento Diretos](resize-volumes.md)
+- [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Criando volumes em Espaços de Armazenamento Diretos](create-volumes.md)
+- [Estendendo volumes em Espaços de Armazenamento Diretos](resize-volumes.md)

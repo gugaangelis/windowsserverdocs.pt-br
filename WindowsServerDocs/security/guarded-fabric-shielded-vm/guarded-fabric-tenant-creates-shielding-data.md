@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 6ff502e7246c899a7b4f29125266bf05d07e40ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 30f8f4db8f6bbfd4ead6ce2a31af3b2f6adbf72c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856449"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475093"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
 
@@ -52,11 +52,11 @@ Uma maneira de verificar se você está se conectando ao servidor pretendido é 
 > [!TIP]
 > Ao selecionar um certificado RDP para incluir em seu arquivo de dados de blindagem, certifique-se de usar um certificado curinga. Um arquivo de dados de blindagem pode ser usado para criar um número ilimitado de VMs. Como cada VM compartilhará o mesmo certificado, um certificado curinga garante que o certificado será válido, independentemente do nome de host da VM.
 
-## <a name="create-an-answer-file"></a>Crie um arquivo de resposta
+## <a name="create-an-answer-file"></a>Criar um arquivo de resposta
 
 Como o disco de modelo assinado no VMM é generalizado, os locatários são necessários para fornecer um arquivo de resposta para especializar suas VMs blindadas durante o processo de provisionamento. O arquivo de resposta (geralmente chamado de arquivo autônomo) pode configurar a VM para sua função pretendida – ou seja, ele pode instalar recursos do Windows, registrar o certificado RDP criado na etapa anterior e executar outras ações personalizadas. Ele também fornecerá as informações necessárias para a instalação do Windows, incluindo a senha do administrador padrão e a chave do produto (Product Key).
 
-Para obter informações sobre como obter e usar a função **New-ShieldingDataAnswerFile** para gerar um arquivo de resposta (arquivo Unattend. xml) para a criação de VMs blindadas, consulte [gerar um arquivo de resposta usando a função New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md). Usando a função, você pode gerar mais facilmente um arquivo de resposta que reflita opções como as seguintes:
+Para obter informações sobre como obter e usar a função **New-ShieldingDataAnswerFile** para gerar um arquivo de resposta (arquivo de Unattend.xml) para criar VMs blindadas, consulte [gerar um arquivo de resposta usando a função New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md). Usando a função, você pode gerar mais facilmente um arquivo de resposta que reflita opções como as seguintes:
 
 - A VM deve estar ingressada no domínio no final do processo de inicialização?
 - Você usará uma licença por volume ou uma chave de produto específica por VM?
@@ -66,7 +66,7 @@ Para obter informações sobre como obter e usar a função **New-ShieldingDataA
 
 Os arquivos de resposta usados em arquivos de dados de blindagem serão usados em todas as VMs criadas usando esse arquivo de dados de blindagem. Portanto, você deve certificar-se de não embutir nenhuma informação específica da VM no arquivo de resposta. O VMM dá suporte a algumas cadeias de caracteres de substituição (consulte a tabela abaixo) no arquivo Unattend para lidar com valores de especialização que podem mudar de VM para VM. Não é necessário usá-los; no entanto, se eles estiverem presentes, o VMM aproveitará eles.
 
-Ao criar um arquivo Unattend. xml para VMs blindadas, tenha em mente as seguintes restrições:
+Ao criar um arquivo de unattend.xml para VMs blindadas, tenha em mente as seguintes restrições:
 
 - Se você estiver usando o VMM para gerenciar seu datacenter, o arquivo autônomo deverá fazer com que a VM seja desligada após ter sido configurada. Isso é para permitir que o VMM saiba quando deve relatar ao locatário que a VM concluiu o provisionamento e está pronta para uso. O VMM ligará automaticamente a VM quando detectar que ela foi desativada durante o provisionamento.
 
@@ -77,7 +77,7 @@ Ao criar um arquivo Unattend. xml para VMs blindadas, tenha em mente as seguinte
     | Elemento substituível | Cadeia de caracteres de substituição |
     |-----------|-----------|
     | ComputerName        | @ComputerName@      |
-    | Fuso horário            | @TimeZone@          |
+    | TimeZone            | @TimeZone@          |
     | ProductKey          | @ProductKey@        |
     | IPAddr4-1           | @IP4Addr-1@         |
     | IPAddr6-1           | @IP6Addr-1@         |
@@ -100,12 +100,12 @@ Ao criar um arquivo Unattend. xml para VMs blindadas, tenha em mente as seguinte
     | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 
-Ao usar cadeias de caracteres de substituição, é importante garantir que as cadeias de caracteres serão preenchidas durante o processo de provisionamento da VM. Se uma cadeia de caracteres como @ProductKey@ não for fornecida no momento da implantação, deixando o nó &lt;ProductKey&gt; no arquivo autônomo em branco, o processo de especialização falhará e você não poderá se conectar à sua VM.
+Ao usar cadeias de caracteres de substituição, é importante garantir que as cadeias de caracteres serão preenchidas durante o processo de provisionamento da VM. Se uma cadeia de caracteres como @ProductKey @ não for fornecida no momento da implantação, deixando o &lt; &gt; nó ProductKey no arquivo autônomo em branco, o processo de especialização falhará e você não poderá se conectar à sua VM.
 
 Além disso, observe que as cadeias de caracteres de substituição relacionadas à rede em direção ao final da tabela só serão usadas se você estiver aproveitando os pools de endereços IP estáticos do VMM. Seu provedor de serviços de hospedagem deve ser capaz de informá-lo se essas cadeias de substituição forem necessárias. Para obter mais informações sobre endereços IP estáticos em modelos do VMM, consulte o seguinte na documentação do VMM:
 
 - [Diretrizes para pools de endereços IP](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
-- [Configurar pools de endereços IP estáticos na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
+- [Configurar pools de endereços IP estáticos na malha VMM](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
 
 Por fim, é importante observar que o processo de implantação de VM blindada criptografará apenas a unidade do sistema operacional. Se você implantar uma VM blindada com uma ou mais unidades de dados, é altamente recomendável que você adicione um comando autônomo ou Política de Grupo configuração no domínio do locatário para criptografar automaticamente as unidades de dados.
 
@@ -161,13 +161,13 @@ Obtenha os arquivos de metadados do guardião para cada malha protegida na qual 
 
 Execute o assistente de arquivo de dados de blindagem para criar um arquivo de dados de blindagem (PDK). Aqui, você adicionará o certificado RDP, o arquivo autônomo, os catálogos de assinatura de volume, o guardião de proprietário e os metadados do guardião baixados obtidos na etapa anterior.
 
-1. Instale **Ferramentas de Administração de Servidor Remoto &gt; ferramentas de administração de recursos &gt; ferramentas de VM blindadas** em seu computador usando Gerenciador do servidor ou o seguinte comando do Windows PowerShell:
+1. Instale as **ferramentas de administração de recurso ferramentas de administração de servidor remoto ferramentas de &gt; &gt; VM blindadas** em seu computador usando Gerenciador do servidor ou o seguinte comando do Windows PowerShell:
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. Abra o assistente de arquivo de dados de blindagem na seção ferramentas do administrador no menu iniciar ou executando o seguinte executável **C:\\Windows\\System32\\ShieldingDataFileWizard. exe**.
+2. Abra o assistente de arquivo de dados de blindagem na seção ferramentas do administrador no menu iniciar ou executando o seguinte executável **C: \\ Windows \\ System32 \\ShieldingDataFileWizard.exe**.
 
 3. Na primeira página, use a caixa de seleção de segundo arquivo para escolher um local e nome de arquivo para o arquivo de dados de blindagem. Normalmente, você deve nomear um arquivo de dados de blindagem após a entidade que possui qualquer VM criada com esses dados de blindagem (por exemplo, RH, ti, Finanças) e a função de carga de trabalho que está executando (por exemplo, servidor de arquivos, servidor Web ou qualquer outra pessoa configurada pelo arquivo autônomo). Deixe o botão de opção definido como **blindar dados para modelos blindados**.
 
@@ -198,9 +198,9 @@ Execute o assistente de arquivo de dados de blindagem para criar um arquivo de d
 
 5. Na página qualificadores de ID de volume, clique em **Adicionar** para autorizar um disco de modelo assinado em seu arquivo de dados de blindagem. Quando você seleciona um VSC na caixa de diálogo, ele mostra informações sobre o nome do disco, a versão e o certificado que foi usado para conectá-lo. Repita esse processo para cada disco de modelo que você deseja autorizar.
 
-6. Na página **valores de especialização** , clique em **procurar** para selecionar o arquivo Unattend. XML que será usado para especializar suas VMs.
+6. Na página **valores de especialização** , clique em **procurar** para selecionar o arquivo de unattend.xml que será usado para especializar suas VMs.
 
-    Use o botão **Adicionar** na parte inferior para adicionar arquivos adicionais ao PDK que são necessários durante o processo de especialização. Por exemplo, se o arquivo autônomo estiver instalando um certificado RDP na VM (conforme descrito em [gerar um arquivo de resposta usando a função New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), você deverá adicionar o arquivo PFX do certificado RDP e o script RDPCertificateConfig. ps1 aqui. Observe que todos os arquivos que você especificar aqui serão automaticamente copiados para C:\\\\ Temp na VM que é criada. O arquivo autônomo deve esperar que os arquivos estejam nessa pasta ao fazer referência a eles por caminho.
+    Use o botão **Adicionar** na parte inferior para adicionar arquivos adicionais ao PDK que são necessários durante o processo de especialização. Por exemplo, se o arquivo autônomo estiver instalando um certificado RDP na VM (conforme descrito em [gerar um arquivo de resposta usando a função New-ShieldingDataAnswerFile](guarded-fabric-sample-unattend-xml-file.md)), você deverá adicionar o arquivo PFX do certificado RDP e o script RDPCertificateConfig.ps1 aqui. Observe que todos os arquivos que você especificar aqui serão automaticamente copiados para C: \\ temp \\ na VM que é criada. O arquivo autônomo deve esperar que os arquivos estejam nessa pasta ao fazer referência a eles por caminho.
 
 7. Examine suas seleções na próxima página e clique em **gerar**.
 
@@ -230,7 +230,7 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 ```
 
 > [!TIP]
-> Se você usou certificados autoassinados ou se os certificados registrados com o HGS expirarem, talvez seja necessário usar os sinalizadores `-AllowUntrustedRoot` e/ou `-AllowExpired` com o comando Import-HgsGuardian para ignorar as verificações de segurança.
+> Se você usou certificados autoassinados ou se os certificados registrados com o HGS expirarem, talvez seja necessário usar os `-AllowUntrustedRoot` sinalizadores e/ou `-AllowExpired` com o comando Import-HgsGuardian para ignorar as verificações de segurança.
 
 Você também precisará [obter um catálogo de assinatura de volume](#get-the-volume-signature-catalog-file) para cada disco de modelo que deseja usar com esse arquivo de dados de blindagem e um arquivo de resposta de dados de [blindagem](#create-an-answer-file) para permitir que o sistema operacional conclua automaticamente suas tarefas de especialização.
 Por fim, decida se você deseja que sua VM seja totalmente blindada ou apenas vTPM.
@@ -244,18 +244,18 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 ```
 
 > [!TIP]
-> Se você estiver usando um certificado RDP personalizado, chaves SSH ou outros arquivos que precisam ser incluídos com o arquivo de dados de blindagem, use o parâmetro `-OtherFile` para incluí-los. Você pode fornecer uma lista separada por vírgulas de caminhos de arquivo, como `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
+> Se você estiver usando um certificado RDP personalizado, chaves SSH ou outros arquivos que precisam ser incluídos com o arquivo de dados de blindagem, use o `-OtherFile` parâmetro para incluí-los. Você pode fornecer uma lista separada por vírgulas de caminhos de arquivo, como`-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 No comando acima, o guardião chamado "proprietário" (obtido de Get-HgsGuardian) poderá alterar a configuração de segurança da VM no futuro, enquanto "o datacenter do leste dos EUA" pode executar a VM, mas não alterar suas configurações.
-Se você tiver mais de um guardião, separe os nomes dos Guardiões com vírgulas, como `'EAST-US Datacenter', 'EMEA Datacenter'`.
+Se você tiver mais de um guardião, separe os nomes dos Guardiões com vírgulas como `'EAST-US Datacenter', 'EMEA Datacenter'` .
 O qualificador de ID de volume especifica se você confia apenas na versão exata (Equals) do disco de modelo ou nas versões futuras (GreaterThanOrEquals) também.
 O nome do disco e o certificado de autenticação devem corresponder exatamente à comparação de versão a ser considerada no momento da implantação.
-Você pode confiar em mais de um disco de modelo fornecendo uma lista separada por vírgulas de qualificadores de ID de volume para o parâmetro `-VolumeIDQualifier`.
-Por fim, se você tiver outros arquivos que precisam acompanhar o arquivo de resposta com a VM, use o parâmetro `-OtherFile` e forneça uma lista separada por vírgulas de caminhos de arquivo.
+Você pode confiar em mais de um disco de modelo fornecendo uma lista separada por vírgulas de qualificadores de ID de volume para o `-VolumeIDQualifier` parâmetro.
+Por fim, se você tiver outros arquivos que precisam acompanhar o arquivo de resposta com a VM, use o `-OtherFile` parâmetro e forneça uma lista separada por vírgulas de caminhos de arquivo.
 
 Consulte a documentação do cmdlet para [New-ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) e [New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para saber mais sobre maneiras adicionais de configurar o arquivo de dados de blindagem.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Implantar VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

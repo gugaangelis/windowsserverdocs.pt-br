@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ab9b6016d49725b7f25d2ad3c40bd6265ac811a9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0c8adf5f5586bd9f86ed3c4cd42b6172ff3f91e7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856149"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474693"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Histórico de desempenho para Espaços de Armazenamento Diretos
 
@@ -31,7 +31,7 @@ Para ver o histórico de desempenho do cluster graficamente, use o [centro de ad
 
 ![Histórico de desempenho no centro de administração do Windows](media/performance-history/perf-history-in-wac.png)
 
-Para consultá-lo e processá-lo programaticamente, use o cmdlet New `Get-ClusterPerf`. Consulte [uso no PowerShell](#usage-in-powershell).
+Para consultá-lo e processá-lo programaticamente, use o novo `Get-ClusterPerf` cmdlet. Consulte [uso no PowerShell](#usage-in-powershell).
 
 ## <a name="whats-collected"></a>O que é coletado
 
@@ -43,17 +43,17 @@ Cada tipo de objeto tem muitas séries: por exemplo, `ClusterNode.Cpu.Usage` é 
 
 Para obter detalhes sobre o que é coletado para cada tipo de objeto e como interpretá-los, consulte estes subtópicos:
 
-| Object             | Série                                                                               |
+| Objeto             | Série                                                                               |
 |--------------------|--------------------------------------------------------------------------------------|
 | Unidades             | [O que é coletado para unidades](performance-history-for-drives.md)                     |
-| Adaptadores de Rede   | [O que é coletado para adaptadores de rede](performance-history-for-network-adapters.md) |
+| Adaptadores de rede   | [O que é coletado para adaptadores de rede](performance-history-for-network-adapters.md) |
 | Servidores            | [O que é coletado para servidores](performance-history-for-servers.md)                   |
 | Discos rígidos virtuais | [O que é coletado para discos rígidos virtuais](performance-history-for-vhds.md)           |
-| Máquinas Virtuais   | [O que é coletado para máquinas virtuais](performance-history-for-vms.md)              |
+| Máquinas virtuais   | [O que é coletado para máquinas virtuais](performance-history-for-vms.md)              |
 | Volumes            | [O que é coletado para volumes](performance-history-for-volumes.md)                   |
 | Clusters           | [O que é coletado para clusters](performance-history-for-clusters.md)                 |
 
-Muitas séries são agregadas em objetos pares ao seu pai: por exemplo, `NetAdapter.Bandwidth.Inbound` é coletada para cada adaptador de rede separadamente e agregada ao servidor geral; da mesma forma `ClusterNode.Cpu.Usage` é agregado ao cluster geral; e assim por diante.
+Muitas séries são agregadas em objetos pares ao seu pai: por exemplo, `NetAdapter.Bandwidth.Inbound` são coletadas para cada adaptador de rede separadamente e agregadas para o servidor geral; da mesma forma, `ClusterNode.Cpu.Usage` é agregada ao cluster geral e assim por diante.
 
 ## <a name="timeframes"></a>Períodos
 
@@ -63,11 +63,11 @@ No centro de administração do Windows, você pode selecionar o período de tem
 
 ![Períodos de tempo no centro de administração do Windows](media/performance-history/timeframes-in-honolulu.png)
 
-No PowerShell, use o parâmetro `-TimeFrame`.
+No PowerShell, use o `-TimeFrame` parâmetro.
 
 Estes são os períodos de tempo disponíveis:
 
-| Prazo   | Frequência de medição | Retido para |
+| Período de tempo   | Frequência de medição | Retido para |
 |-------------|-----------------------|--------------|
 | `LastHour`  | A cada 10 segundos         | 1 hora       |
 | `LastDay`   | A cada 5 minutos       | 25 horas     |
@@ -77,7 +77,7 @@ Estes são os períodos de tempo disponíveis:
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
-Use o cmdlet `Get-ClusterPerformanceHistory` para consultar e processar o histórico de desempenho no PowerShell.
+Use o `Get-ClusterPerformanceHistory` cmdlet para consultar e processar o histórico de desempenho no PowerShell.
 
 ```PowerShell
 Get-ClusterPerformanceHistory
@@ -86,7 +86,7 @@ Get-ClusterPerformanceHistory
    > [!TIP]
    > Use o alias **Get-ClusterPerf** para salvar alguns pressionamentos de tecla.
 
-### <a name="example"></a>{1&gt;Exemplo&lt;1}
+### <a name="example"></a>Exemplo
 
 Obtenha o uso da CPU da máquina virtual *MyVM* na última hora:
 
@@ -100,7 +100,7 @@ Para obter exemplos mais avançados, consulte os [scripts de exemplo](performanc
 
 Você pode especificar o objeto desejado pelo pipeline. Isso funciona com sete tipos de objetos:
 
-| Objeto do pipeline | {1&gt;Exemplo&lt;1}     |
+| Objeto do pipeline | Exemplo     |
 |----------------------|-------------|
 | `Get-PhysicalDisk`   | <code>Get-PhysicalDisk -SerialNumber "XYZ456" &#124; Get-ClusterPerf</code>         |
 | `Get-NetAdapter`     | <code>Get-NetAdapter "Ethernet" &#124; Get-ClusterPerf</code>                       |
@@ -117,7 +117,7 @@ Se você não especificar, o histórico de desempenho para o cluster geral será
 Você pode especificar a série que deseja com estes parâmetros:
 
 
-| Parâmetro                 | {1&gt;Exemplo&lt;1}                       | Lista                                                                                 |
+| Parâmetro                 | Exemplo                       | Lista                                                                                 |
 |---------------------------|-------------------------------|--------------------------------------------------------------------------------------|
 | `-PhysicalDiskSeriesName` | `"PhysicalDisk.Iops.Read"`    | [O que é coletado para unidades](performance-history-for-drives.md)                     |
 | `-NetAdapterSeriesName`   | `"NetAdapter.Bandwidth.Outbound"` | [O que é coletado para adaptadores de rede](performance-history-for-network-adapters.md) |
@@ -135,18 +135,18 @@ Se você não especificar, todas as séries disponíveis para o objeto especific
 
 ### <a name="specify-the-timeframe"></a>Especificar o período de tempo
 
-Você pode especificar o período de tempo do histórico desejado com o parâmetro `-TimeFrame`.
+Você pode especificar o período de tempo do histórico desejado com o `-TimeFrame` parâmetro.
 
    > [!TIP]
    > Use o preenchimento com Tab para descobrir os períodos de tempo disponíveis.
 
-Se você não especificar, a medida `MostRecent` será retornada.
+Se você não especificar, a `MostRecent` medida será retornada.
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 ### <a name="performance-history-storage"></a>Armazenamento de histórico de desempenho
 
-Logo após o Espaços de Armazenamento Diretos ser habilitado, um volume de aproximadamente 10 GB chamado `ClusterPerformanceHistory` é criado e uma instância do mecanismo de armazenamento extensível (também conhecido como Microsoft JET) é provisionada lá. Esse banco de dados leve armazena o histórico de desempenho sem qualquer envolvimento ou gerenciamento de administrador.
+Logo após o Espaços de Armazenamento Diretos ser habilitado, um volume de aproximadamente 10 GB chamado `ClusterPerformanceHistory` é criado e uma instância do mecanismo de armazenamento extensível (também conhecido como Microsoft Jet) é provisionada lá. Esse banco de dados leve armazena o histórico de desempenho sem qualquer envolvimento ou gerenciamento de administrador.
 
 ![Volume para armazenamento de histórico de desempenho](media/performance-history/perf-history-volume.png)
 
@@ -162,7 +162,7 @@ A coleção é manipulada pelo Serviço de Integridade, que é altamente dispon�
 
 ### <a name="handling-measurement-gaps"></a>Lidando com lacunas de medida
 
-Quando as medidas são mescladas em séries menos granulares que abrangem mais tempo, conforme [descrito em períodos de período,](#timeframes)os pontos de dados ausentes são excluídos. Por exemplo, se o servidor esteve inoperante por 30 minutos, em execução às 50% da CPU nos próximos 30 minutos, a `ClusterNode.Cpu.Usage` média da hora será registrada corretamente como 50% (não 25%).
+Quando as medidas são mescladas em séries menos granulares que abrangem mais tempo, conforme [descrito em períodos de período,](#timeframes)os pontos de dados ausentes são excluídos. Por exemplo, se o servidor esteve inoperante por 30 minutos e, em seguida, em execução às 50% da CPU nos próximos 30 minutos, a `ClusterNode.Cpu.Usage` média da hora será registrada corretamente como 50% (não 25%).
 
 ### <a name="extensibility-and-customization"></a>Extensibilidade e personalização
 
@@ -176,7 +176,7 @@ A frequência de medição e o período de retenção não são configuráveis n
 
 ### <a name="how-do-i-enable-this-feature"></a>Como fazer habilitar esse recurso?
 
-A menos que você `Stop-ClusterPerformanceHistory`, o histórico de desempenho é habilitado por padrão.
+A menos que você `Stop-ClusterPerformanceHistory` , o histórico de desempenho é habilitado por padrão.
 
 Para reabilitá-lo, execute este cmdlet do PowerShell como administrador:
 
@@ -192,14 +192,14 @@ Para parar de coletar o histórico de desempenho, execute este cmdlet do PowerSh
 Stop-ClusterPerformanceHistory
 ```
 
-Para excluir as medições existentes, use o sinalizador `-DeleteHistory`:
+Para excluir as medições existentes, use o `-DeleteHistory` sinalizador:
 
 ```PowerShell
 Stop-ClusterPerformanceHistory -DeleteHistory
 ```
 
    > [!TIP]
-   > Durante a implantação inicial, você pode impedir que o histórico de desempenho seja iniciado definindo o parâmetro `-CollectPerformanceHistory` de `Enable-ClusterStorageSpacesDirect` como `$False`.
+   > Durante a implantação inicial, você pode impedir que o histórico de desempenho seja iniciado definindo o `-CollectPerformanceHistory` parâmetro de `Enable-ClusterStorageSpacesDirect` para `$False` .
 
 ## <a name="troubleshooting"></a>Solução de problemas
 
@@ -210,7 +210,7 @@ Uma mensagem de erro como "*o termo ' Get-ClusterPerf ' não é reconhecida como
    > [!NOTE]
    > Este recurso não está disponível no Windows Server 2016 ou anterior.
 
-### <a name="no-data-available"></a>Não há dados disponíveis 
+### <a name="no-data-available"></a>Não há dados disponíveis
 
 Se um gráfico Mostrar "*nenhum dado disponível*", conforme a imagem, veja como solucionar problemas:
 
@@ -222,10 +222,10 @@ Se um gráfico Mostrar "*nenhum dado disponível*", conforme a imagem, veja como
 
 3. Determinados objetos especiais são excluídos do histórico de desempenho – por exemplo, máquinas virtuais que não são clusterizadas e volumes que não usam o sistema de arquivos de Volume Compartilhado Clusterizado (CSV). Verifique o subtópico para o tipo de objeto, como o [histórico de desempenho dos volumes](performance-history-for-volumes.md), para impressão refinada.
 
-4. Se o problema persistir, abra o PowerShell como administrador e execute o cmdlet `Get-ClusterPerf`. O cmdlet inclui a lógica de solução de problemas para identificar problemas comuns, como se o volume ClusterPerformanceHistory estiver ausente e fornecer instruções de correção.
+4. Se o problema persistir, abra o PowerShell como administrador e execute o `Get-ClusterPerf` cmdlet. O cmdlet inclui a lógica de solução de problemas para identificar problemas comuns, como se o volume ClusterPerformanceHistory estiver ausente e fornecer instruções de correção.
 
 5. Se o comando na etapa anterior não retornar nada, você poderá tentar reiniciar o Serviço de Integridade (que coleta o histórico de desempenho) executando `Stop-ClusterResource Health ; Start-ClusterResource Health` no PowerShell.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)

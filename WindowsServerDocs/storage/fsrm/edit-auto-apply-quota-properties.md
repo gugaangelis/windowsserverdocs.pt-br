@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4b4fda5cdfeed8df02fee922c8dc5fddc75c56ff
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2d520d80dc06969f21211d461fc33e2e9336df12
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403120"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474933"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>Editar propriedades de cota de aplicação automática
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Quando você faz alterações em uma cota aplicada automaticamente, você tem a opção de ampliar essas alterações para cotas existentes no demarcador de cota com aplicação automática. Você pode optar por modificar somente as cotas que ainda correspondem à cota de aplicação automática original ou todas as cotas no demarcador de cota com aplicação automática, independentemente de quaisquer modificações que foram feitas às cotas desde que elas foram criadas. Esse recurso simplifica o processo de atualização das propriedades de cotas derivadas de uma cota com aplicação automática fornecendo um ponto central onde você pode realizar todas as alterações.
 
@@ -42,7 +42,7 @@ Quando você faz alterações em uma cota aplicada automaticamente, você tem a 
 
 6.  Clique em **OK**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de cota](quota-management.md)
 -   [Criar uma cota de aplicação automática](create-auto-apply-quota.md)

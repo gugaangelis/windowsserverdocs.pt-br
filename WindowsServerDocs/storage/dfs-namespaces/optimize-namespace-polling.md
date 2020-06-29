@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8b5a80324851674c8d980bc1b6cda3a5ea51483f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402154"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475453"
 ---
 # <a name="optimize-namespace-polling"></a>Otimizar sondagem de namespace
 
 > Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Para manter um namespace baseado em domínio consistente em todos os servidores, é necessário que os servidores de namespace realizem chamada seletiva periodicamente nos Serviços de Domínio Active Directory (AD DS) para obter os dados mais atuais do namespace. 
+Para manter um namespace baseado em domínio consistente em todos os servidores, é necessário que os servidores de namespace realizem chamada seletiva periodicamente nos Serviços de Domínio Active Directory (AD DS) para obter os dados mais atuais do namespace.
 
 ## <a name="to-optimize-namespace-polling"></a>Para otimizar a chamada seletiva do namespace
 
@@ -35,9 +35,9 @@ Use o procedimento a seguir para otimizar como essa sondagem de namespace ocorre
     -   Escolha **Otimizar para escalabilidade** se houver mais de 16 servidores de namespace. Isso reduz a carga no emulador PDC (Primary Domain Controller, controlador de domínio primário), mas aumenta o tempo necessário para que as alterações no namespace sejam replicadas para todos os servidores de namespace. Até que as alterações sejam replicadas em todos os servidores, os usuários podem ter uma visão inconsistente do namespace.
 
 > [!NOTE]
-> Para definir o modo de sondagem do namespace usando o Windows PowerShell, use o cmdlet [set-DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) , que foi introduzido no Windows Server 2012.
+> Para definir o modo de sondagem do namespace usando o Windows PowerShell, use o [conjunto DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) cmdlet, que foi introduzida no Windows Server 2012.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

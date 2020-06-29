@@ -8,12 +8,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 920c5fa5919fd2c35edb99cc4e724745715091c7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858419"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473663"
 ---
 # <a name="system-insights-data-sources"></a>Fontes de dados de informações do sistema
 
@@ -24,8 +24,8 @@ As informações do sistema introduzem a funcionalidade de coleta de dados exten
 ## <a name="data-sources"></a>Fontes de dados
 Ao escrever um novo recurso, você deve identificar as fontes de dados específicas a serem coletadas para cada recurso. As fontes de dados que você especificar serão coletadas e mantidas diretamente em seu computador, e você poderá escolher entre três tipos de fontes de dados:
 
-- **Contadores de desempenho**: 
-    - Especifique o caminho, o nome e as instâncias do contador, e o System insights coleta os dados relevantes relatados por esses contadores de desempenho. 
+- **Contadores de desempenho**:
+    - Especifique o caminho, o nome e as instâncias do contador, e o System insights coleta os dados relevantes relatados por esses contadores de desempenho.
 
 - **Eventos do sistema**:
     - Especifique o nome do canal e a ID do evento, e o System insights registrará quantas vezes esse evento ocorreu.
@@ -33,7 +33,7 @@ Ao escrever um novo recurso, você deve identificar as fontes de dados específi
 - **Série conhecida**
     - O System insights coleta algumas informações básicas em seu computador para alguns recursos bem definidos. Essas séries são usadas para os recursos padrão, mas também podem ser usadas por qualquer recurso personalizado. Eles coletam as seguintes informações:
 
-        - **Disco**: 
+        - **Disco**:
             - *Propriedades*: GUID
             - *Dados*: tamanho
         - **Volume**:
@@ -42,11 +42,11 @@ Ao escrever um novo recurso, você deve identificar as fontes de dados específi
         - **Adaptador de rede**:
             - *Propriedades*: InterfaceGuid, InterfaceDescription, Speed
             - *Dados*: bytes recebidos/s, bytes enviados/s, total de bytes/s
-        - **CPU**: 
+        - **CPU**:
             - *Propriedades*:-
             - *Dados*:% de tempo do processador
 
-    - Especifique uma série conhecida e as informações do sistema retornarão os dados coletados por essa série. 
+    - Especifique uma série conhecida e as informações do sistema retornarão os dados coletados por essa série.
 
 
 ## <a name="retention-timelines-and-collection-intervals"></a>Linhas do tempo de retenção e intervalos de coleta
@@ -68,7 +68,7 @@ Como cada série registra apenas um ponto de dados para cada intervalo de coleta
 | Fonte de dados | Tipos de agregação |
 | --------------- | --------------- |
 | Contadores de desempenho | Sum, Average, Max, min |
-| Eventos do sistema | {1&gt;{2&gt;Contagem&lt;2}&lt;1} |
+| Eventos do sistema | Contagem |
 | Série bem conhecida de disco | Último (valor mais recente no intervalo de coleta) |
 | Série bem conhecida de volume | Último (valor mais recente no intervalo de coleta) |
 | Série bem conhecida de CPU | Média |
@@ -88,12 +88,12 @@ O System insights coleta todos os dados localmente em sua unidade C (C:). Em ger
 | Série bem conhecida de rede | 300 KB por adaptador de rede |
 
 >[!NOTE]
->**Para os recursos de previsão padrão, a superfície máxima deve ser inferior a 10 MB para a maioria das máquinas autônomas.** 
+>**Para os recursos de previsão padrão, a superfície máxima deve ser inferior a 10 MB para a maioria das máquinas autônomas.**
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 Para saber mais sobre o System insights, use os seguintes recursos:
 
-- [Visão geral do System insights](overview.md)
+- [Visão geral dos insights do sistema](overview.md)
 - [Noções básicas dos recursos](understanding-capabilities.md)
 - [Gerenciar recursos](managing-capabilities.md)
 - [Adicionar e desenvolver recursos](adding-and-developing-capabilities.md)

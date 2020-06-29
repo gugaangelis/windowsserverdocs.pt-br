@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b3cde8a01c40a04df1bc433687029a2e0e7c394
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1802ab4fdabafd0a0344922fd861087c166d4499
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403002"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474213"
 ---
 # <a name="generate-reports-on-demand"></a>Gerar relatórios sob demanda
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Durante as operações diárias, você pode usar a opção **Gerar relatórios agora** para gerar relatórios de um ou mais sob demanda. Com esses relatórios, você pode analisar os diferentes aspectos de uso de disco atual no servidor. Dados atuais são coletados antes dos relatórios são gerados.
 
@@ -47,14 +47,14 @@ Quando você gera relatórios sob demanda, os relatórios são salvos em um loca
    -   Clique no rótulo do relatório e em **Editar parâmetros**.
    -   Na caixa de diálogo **Parâmetros de relatório**, edite os parâmetros conforme necessário e clique em **OK**.
    -  Para ver uma lista de parâmetros de todos relatórios selecionados, clique em **Rever relatórios selecionados** e depois clique em **Fechar**.
- 
+
 5. Para especificar os formatos para salvar os relatórios:
 
    -  Em **Relatar formatos**, selecione um ou mais formatos para os relatórios agendados. Por padrão, os relatórios são gerados em HTML dinâmico (DHTML). Você também pode selecionar formatos de texto, HTML, XML e CSV. Os relatórios são salvos no local padrão para relatórios sob demanda.
 
 6. Para fornecer cópias dos relatórios aos administradores por email:
 
-   - Na guia **Entrega**, marque a caixa de seleção **Enviar relatórios para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão relatórios. 
+   - Na guia **Entrega**, marque a caixa de seleção **Enviar relatórios para os seguintes administradores** e, em seguida, digite os nomes das contas administrativas que receberão relatórios.
    - Use o formato <em>account@domain</em> e use ponto e vírgula para separar várias contas.
 
 7. Para coletar os dados e gerar os relatórios, clique em **OK**. Isso abre a caixa de diálogo **Gerar Relatórios de Armazenamento**.
@@ -66,7 +66,7 @@ Quando você gera relatórios sob demanda, os relatórios são salvos em um loca
 
    Ambas as opções salvar os relatórios e se você habilitou a entrega por email, enviar relatórios para administradores nos formatos que você selecionou.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de relatórios de armazenamento](storage-reports-management.md)
 -   [Definir opções do Gerenciador de Recursos de Servidor de Arquivos](setting-file-server-resource-manager-options.md)

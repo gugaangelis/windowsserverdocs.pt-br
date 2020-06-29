@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 766ea9688b7f08914ca68a960cc21393963bd0e9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 82725e654fb4c7296b092019db111f9d3debad6d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856769"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475383"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada do Windows
 
@@ -26,19 +26,19 @@ Para entender como este tópico se encaixa no processo geral de implantação de
 
 ## <a name="prepare-an-operating-system-vhdx"></a>Preparar um VHDX do sistema operacional
 
-Primeiro, prepare um disco do sistema operacional que será executado por meio do assistente de criação de disco de modelo blindado. Esse disco será usado como o disco do sistema operacional nas VMs de seu locatário. Você pode usar qualquer ferramenta existente para criar esse disco, como o Microsoft Desktop Image Service Manager (DISM), ou configurar manualmente uma VM com um VHDX em branco e instalar o sistema operacional nesse disco. Ao configurar o disco, ele deve aderir aos seguintes requisitos específicos para VMs de geração 2 e/ou blindadas: 
+Primeiro, prepare um disco do sistema operacional que será executado por meio do assistente de criação de disco de modelo blindado. Esse disco será usado como o disco do sistema operacional nas VMs de seu locatário. Você pode usar qualquer ferramenta existente para criar esse disco, como o Microsoft Desktop Image Service Manager (DISM), ou configurar manualmente uma VM com um VHDX em branco e instalar o sistema operacional nesse disco. Ao configurar o disco, ele deve aderir aos seguintes requisitos específicos para VMs de geração 2 e/ou blindadas:
 
-| Requisito para VHDX | Reason |
+| Requisito para VHDX | Motivo |
 |-----------|----|
 |Deve ser um disco de tabela de partição GUID (GPT) | Necessário para máquinas virtuais de geração 2 para dar suporte a UEFI|
 |O tipo de disco deve ser **básico** em oposição ao **dinâmico**. <br>Observação: isso se refere ao tipo de disco lógico, não ao recurso VHDX "de expansão dinâmica" com suporte do Hyper-V. | O BitLocker não dá suporte a discos dinâmicos.|
 |O disco tem pelo menos duas partições. Uma partição deve incluir a unidade na qual o Windows está instalado. Esta é a unidade que o BitLocker irá criptografar. A outra partição é a partição ativa, que contém o carregador de inicialização e permanece descriptografada para que o computador possa ser iniciado.|Necessário para o BitLocker|
 |O sistema de arquivos é NTFS | Necessário para o BitLocker|
 |O sistema operacional instalado no VHDX é um dos seguintes:<br>-Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necessário para dar suporte a máquinas virtuais de geração 2 e ao modelo de inicialização segura da Microsoft|
-|O sistema operacional deve ser generalizado (executar Sysprep. exe) | O provisionamento de modelo envolve a especialização de VMs para a carga de trabalho de um locatário específico| 
+|O sistema operacional deve ser generalizado (executar sysprep.exe) | O provisionamento de modelo envolve a especialização de VMs para a carga de trabalho de um locatário específico|
 
 > [!NOTE]
-> Se você usar o VMM, não copie o disco de modelo na biblioteca do VMM neste estágio. 
+> Se você usar o VMM, não copie o disco de modelo na biblioteca do VMM neste estágio.
 
 ## <a name="run-windows-update-on-the-template-operating-system"></a>Executar Windows Update no sistema operacional do modelo
 
@@ -58,7 +58,7 @@ Execute as etapas a seguir em um computador que esteja executando o Windows Serv
 2. Para administrar o servidor localmente, instale o recurso **ferramentas de VM blindada** de **ferramentas de administração de servidor remoto** no servidor.
 
         Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
-        
+
     Você também pode administrar o servidor de um computador cliente no qual você instalou o [Windows 10 ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520).
 
 3. Obtenha ou crie um certificado para assinar o VSC para o VHDX que se tornará o disco de modelo para novas VMs blindadas. Os detalhes sobre esse certificado serão mostrados aos locatários quando criarem seus arquivos de dados de blindagem e estiverem autorizando discos em que confiam. Portanto, é importante obter esse certificado de uma autoridade de certificação mutuamente confiável por você e seus locatários. Em cenários empresariais em que você é o hoster e o locatário, você pode considerar a emissão desse certificado de sua PKI.
@@ -67,7 +67,7 @@ Execute as etapas a seguir em um computador que esteja executando o Windows Serv
 
         New-SelfSignedCertificate -DnsName publisher.fabrikam.com
 
-4. Inicie o **Assistente de disco de modelo** na pasta **Ferramentas administrativas** no menu iniciar ou digitando **TemplateDiskWizard. exe** em um prompt de comando.
+4. Inicie o **Assistente de disco de modelo** na pasta **Ferramentas administrativas** no menu iniciar ou digitando **TemplateDiskWizard.exe** em um prompt de comando.
 
 5. Na página **certificado** , clique em **procurar** para exibir uma lista de certificados. Selecione o certificado com o qual deseja preparar o modelo de disco. Clique em **OK** e clique em **Avançar**.
 
@@ -87,13 +87,13 @@ Execute as etapas a seguir em um computador que esteja executando o Windows Serv
 
 9. Na página **Resumo** , informações sobre o modelo de disco, o certificado usado para assinar o VSC e o emissor do certificado são mostrados. Clique em **Fechar** para sair do assistente.
 
-Se você usar o VMM, siga as etapas nas seções restantes neste tópico para incorporar um disco de modelo em um modelo de VM blindada no VMM. 
+Se você usar o VMM, siga as etapas nas seções restantes neste tópico para incorporar um disco de modelo em um modelo de VM blindada no VMM.
 
 ## <a name="copy-the-template-disk-to-the-vmm-library"></a>Copiar o disco de modelo para a biblioteca do VMM
 
 Se você usar o VMM, depois de criar um disco de modelo, você precisará copiá-lo para um compartilhamento de biblioteca do VMM para que os hosts possam baixar e usar o disco ao provisionar novas VMs. Use o procedimento a seguir para copiar o disco de modelo na biblioteca do VMM e, em seguida, atualizar a biblioteca.
 
-1. Copie o arquivo VHDX para a pasta de compartilhamento de biblioteca do VMM. Se você usou a configuração padrão do VMM, copie o disco do modelo para _\\<vmmserver>\MSSCVMMLibrary\VHDs_.
+1. Copie o arquivo VHDX para a pasta de compartilhamento de biblioteca do VMM. Se você usou a configuração padrão do VMM, copie o disco do modelo para _ \\ <vmmserver> \MSSCVMMLibrary\VHDs_.
 
 2. Atualize o servidor de biblioteca. Abra o espaço de trabalho **biblioteca** , expanda **servidores de biblioteca**, clique com o botão direito do mouse no servidor de biblioteca que você deseja atualizar e clique em **Atualizar**.
 
@@ -117,7 +117,7 @@ Com um disco de modelo preparado em sua biblioteca do VMM, você está pronto pa
 
 1. No espaço de trabalho **biblioteca** , clique em **criar modelo de VM** na guia início na parte superior.
 
-2. Na página **Selecionar origem**, clique em **Usar um modelo de VM existente ou um disco rígido virtual armazenado na biblioteca** e, em seguida, clique em **Procurar**.
+2. Na página **Selecionar Origem**, clique em **Usar um modelo de VM existente um ou disco rígido virtual armazenado na biblioteca** e, em seguida, clique em **Procurar**.
 
 3. Na janela que aparece, selecione um disco de modelo preparado na biblioteca do VMM. Para identificar mais facilmente quais discos estão preparados, clique com o botão direito do mouse em um cabeçalho de coluna e habilite a coluna **blindada** . Clique em **OK** e em **Avançar**.
 
@@ -125,9 +125,9 @@ Com um disco de modelo preparado em sua biblioteca do VMM, você está pronto pa
 
 5. Na página **Configurar hardware** , especifique os recursos das VMs criadas com base neste modelo. Verifique se pelo menos uma NIC está disponível e configurada no modelo de VM. A única maneira de um locatário se conectar a uma VM blindada é por meio de Conexão de Área de Trabalho Remota, Gerenciamento Remoto do Windows ou outras ferramentas de gerenciamento remoto pré-configuradas que funcionam em protocolos de rede.
 
-    Se você optar por aproveitar pools de IP estáticos no VMM em vez de executar um servidor DHCP na rede de locatário, será necessário alertar seus locatários para essa configuração. Quando um locatário fornece o arquivo de dados de blindagem, que contém o arquivo autônomo do VMM, ele precisará fornecer valores especiais de espaço reservado para as informações de pool de IP estático. Para obter mais informações sobre espaços reservados do VMM em arquivos autônomos de locatário, consulte [criar um arquivo de resposta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file). 
+    Se você optar por aproveitar pools de IP estáticos no VMM em vez de executar um servidor DHCP na rede de locatário, será necessário alertar seus locatários para essa configuração. Quando um locatário fornece o arquivo de dados de blindagem, que contém o arquivo autônomo do VMM, ele precisará fornecer valores especiais de espaço reservado para as informações de pool de IP estático. Para obter mais informações sobre espaços reservados do VMM em arquivos autônomos de locatário, consulte [criar um arquivo de resposta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file).
 
-6. Na página **Configurar sistema operacional** , o VMM mostrará apenas algumas opções para VMs blindadas, incluindo a chave do produto, o fuso horário e o nome do computador. Algumas informações seguras, como a senha de administrador e o nome de domínio, são especificadas pelo locatário por meio de um arquivo de dados de blindagem (. Arquivo PDK). 
+6. Na página **Configurar sistema operacional** , o VMM mostrará apenas algumas opções para VMs blindadas, incluindo a chave do produto, o fuso horário e o nome do computador. Algumas informações seguras, como a senha de administrador e o nome de domínio, são especificadas pelo locatário por meio de um arquivo de dados de blindagem (. Arquivo PDK).
 
     > [!NOTE]
     > Se você optar por especificar uma chave do produto (Product Key) nessa página, verifique se ela é válida para o sistema operacional no disco do modelo. Se uma chave de produto incorreta for usada, a criação da VM falhará.
@@ -139,7 +139,7 @@ Depois que o modelo é criado, os locatários podem usá-lo para criar novas má
 Como alternativa para executar o assistente de disco de modelo, você pode copiar o disco de modelo e o certificado para um computador que esteja executando o RSAT e executar [Protect-TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps
 ) para iniciar o processo de assinatura.
 O exemplo a seguir usa as informações de nome e versão especificadas pelos parâmetros _TemplateName_ e _version_ .
-O VHDX que você fornecer ao parâmetro `-Path` será substituído pelo disco de modelo atualizado, portanto, certifique-se de fazer uma cópia antes de executar o comando.
+O VHDX que você fornecer ao `-Path` parâmetro será substituído pelo disco de modelo atualizado, portanto, certifique-se de fazer uma cópia antes de executar o comando.
 
 ```powershell
 # Replace "THUMBPRINT" with the thumbprint of your template disk signing certificate in the line below
@@ -162,12 +162,12 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 ```
 
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 > [!div class="nextstepaction"]
 > [Criar um arquivo de dados de blindagem](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

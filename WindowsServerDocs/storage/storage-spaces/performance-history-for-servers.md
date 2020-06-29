@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cf4bdabb132c832370e5dffec215c24b54aebdd7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ed910aba376ba7f78c628d7f47bdd21b366459d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856189"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474733"
 ---
 # <a name="performance-history-for-servers"></a>Histórico de desempenho para servidores
 
@@ -38,7 +38,7 @@ Essas séries são coletadas para todos os servidores qualificados:
 | `clusternode.memory.usage.guest` | bytes   |
 | `clusternode.memory.usage.host`  | bytes   |
 
-Além disso, as séries de unidades, como `physicaldisk.size.total`, são agregadas para todas as unidades qualificadas anexadas ao servidor, e a série de adaptadores de rede, como `networkadapter.bytes.total`, são agregadas para todos os adaptadores de rede qualificados anexados ao servidor.
+Além disso, as séries de unidades, como `physicaldisk.size.total` são agregadas para todas as unidades qualificadas anexadas ao servidor, e a série de adaptadores de rede, como `networkadapter.bytes.total` são agregadas para todos os adaptadores de rede qualificados anexados ao servidor.
 
 ## <a name="how-to-interpret"></a>Como interpretar
 
@@ -55,7 +55,7 @@ Além disso, as séries de unidades, como `physicaldisk.size.total`, são agrega
 
 ## <a name="where-they-come-from"></a>De onde vêm
 
-A série `cpu.*` é coletada de diferentes contadores de desempenho, dependendo se o Hyper-V está habilitado ou não.
+A `cpu.*` série é coletada de diferentes contadores de desempenho, dependendo se o Hyper-V está habilitado ou não.
 
 Se o Hyper-V estiver habilitado:
 
@@ -65,7 +65,7 @@ Se o Hyper-V estiver habilitado:
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.host`     | `Hyper-V Hypervisor Root Virtual Processor` > `_Total` > `% Total Run Time` |
 
-O uso dos contadores de `% Total Run Time` garante que todos os atributos de histórico de desempenho tenham todos os usos.
+O uso dos `% Total Run Time` contadores garante que todos os atributos de histórico de desempenho tenham todos os usos.
 
 Se o Hyper-V não estiver habilitado:
 
@@ -75,14 +75,14 @@ Se o Hyper-V não estiver habilitado:
 | `clusternode.cpu.usage.guest`    | *zero* |
 | `clusternode.cpu.usage.host`     | *igual ao uso total* |
 
-Não obstante a sincronização imperfeita, `clusternode.cpu.usage` sempre é `clusternode.cpu.usage.host` mais `clusternode.cpu.usage.guest`.
+Não obstante a sincronização imperfeita, `clusternode.cpu.usage` é sempre `clusternode.cpu.usage.host` mais `clusternode.cpu.usage.guest` .
 
-Com a mesma limitação, `clusternode.cpu.usage.guest` sempre é a soma de `vm.cpu.usage` para todas as máquinas virtuais no servidor host.
+Com a mesma limitação, `clusternode.cpu.usage.guest` sempre é a soma de `vm.cpu.usage` todas as máquinas virtuais no servidor host.
 
-As séries de `memory.*` são (em breve).
+A `memory.*` série será (em breve).
 
   > [!NOTE]
-  > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o servidor estiver ocioso por 9 segundos, mas picos para 100% de CPU no décimo segundo, sua `clusternode.cpu.usage` será registrada como 10% em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
+  > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o servidor estiver ocioso por 9 segundos, mas picos para 100% da CPU no décimo segundo, seu `clusternode.cpu.usage` será registrado como 10% em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
 
 ## <a name="usage-in-powershell"></a>Uso no PowerShell
 
@@ -92,6 +92,6 @@ Use o cmdlet [Get-ClusterNode](https://docs.microsoft.com/powershell/module/fail
 Get-ClusterNode <Name> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Histórico de desempenho para Espaços de Armazenamento Diretos](performance-history.md)

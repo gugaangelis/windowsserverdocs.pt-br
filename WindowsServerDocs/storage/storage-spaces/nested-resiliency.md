@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: ac4edccf0c1f8882dd2544b2544c3d8555bbc716
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857339"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474903"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resiliência aninhada para Espaços de Armazenamento Diretos
 
@@ -20,7 +20,7 @@ ms.locfileid: "80857339"
 
 A resiliência aninhada é um novo recurso de [espaços de armazenamento diretos](storage-spaces-direct-overview.md) no Windows Server 2019 que permite que um cluster de dois servidores resista a várias falhas de hardware ao mesmo tempo sem perda de disponibilidade de armazenamento, de modo que os usuários, aplicativos e máquinas virtuais continuem a ser executados sem interrupções. Este tópico explica como ele funciona, fornece instruções passo a passo para começar e responde às perguntas mais frequentes.
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 ### <a name="green-checkmark-icon-consider-nested-resiliency-if"></a>![Ícone de marca de seleção verde.](media/nested-resiliency/supported.png) Considere a resiliência aninhada se:
 
@@ -40,7 +40,7 @@ Os volumes que usam resiliência aninhada podem **permanecer online e acessívei
 
 A desvantagem é que a resiliência aninhada tem **eficiência de capacidade menor do que o espelhamento bidirecional clássico**, o que significa que você obtém um pouco menos de espaço utilizável. Para obter detalhes, consulte a seção [eficiência da capacidade](#capacity-efficiency) abaixo.
 
-## <a name="how-it-works"></a>Como funciona
+## <a name="how-it-works"></a>Como ele funciona
 
 ### <a name="inspiration-raid-51"></a>Inspiração: RAID 5 + 1
 
@@ -73,7 +73,7 @@ A eficiência da capacidade é a taxa de espaço utilizável para a [superfície
   | 4                          | 35,7%      | 34,1%      | 32,6%      |
   | 5                          | 37,7%      | 35,7%      | 33,9%      |
   | 6                          | 39,1%      | 36,8%      | 34,7%      |
-  | 7 +                         | 40,0%      | 37,5%      | 35,3%      |
+  | 7+                         | 40,0%      | 37,5%      | 35,3%      |
 
   > [!NOTE]
   > **Se você estiver curioso, aqui está um exemplo da matemática completa.** Suponha que tenhamos seis unidades de capacidade em cada um dos dois servidores e desejamos criar um volume de 1 100 GB composto de 10 GB de espelho e 90 GB de paridade. O espelho bidirecional local do servidor é de 50,0% eficiente, o que significa que os 10 GB de dados de espelho levam 20 GB para serem armazenados em cada servidor. Espelhado em ambos os servidores, seu espaço total é de 40 GB. A paridade única local do servidor, nesse caso, é 5/6 = 83,3% eficiente, o que significa que o 90 GB de dados de paridade leva 108 GB para armazenar em cada servidor. Espelhado em ambos os servidores, seu espaço total é de 216 GB. A superfície total é, portanto, [(10 GB/50,0%) + (90 GB/83,3%)] × 2 = 256 GB, para a eficiência da capacidade geral de 39,1%.
@@ -88,30 +88,30 @@ Você pode usar cmdlets de armazenamento conhecidos no PowerShell para criar vol
 
 ### <a name="step-1-create-storage-tier-templates"></a>Etapa 1: criar modelos de camada de armazenamento
 
-Primeiro, crie novos modelos de camada de armazenamento usando o cmdlet `New-StorageTier`. Você só precisa fazer isso uma vez e, em seguida, todos os novos volumes criados podem fazer referência a esse modelo. Especifique a `-MediaType` de suas unidades de capacidade e, opcionalmente, a `-FriendlyName` de sua escolha. Não modifique os outros parâmetros.
+Primeiro, crie novos modelos de camada de armazenamento usando o `New-StorageTier` cmdlet. Você só precisa fazer isso uma vez e, em seguida, todos os novos volumes criados podem fazer referência a esse modelo. Especifique a `-MediaType` de suas unidades de capacidade e, opcionalmente, a `-FriendlyName` de sua escolha. Não modifique os outros parâmetros.
 
 Se suas unidades de capacidade forem unidades de disco rígido (HDD), inicie o PowerShell como administrador e execute:
 
-```PowerShell 
+```PowerShell
 # For mirror
 New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedMirror -ResiliencySettingName Mirror -MediaType HDD -NumberOfDataCopies 4
 
 # For parity
-New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk 
-``` 
+New-StorageTier -StoragePoolFriendlyName S2D* -FriendlyName NestedParity -ResiliencySettingName Parity -MediaType HDD -NumberOfDataCopies 2 -PhysicalDiskRedundancy 1 -NumberOfGroups 1 -FaultDomainAwareness StorageScaleUnit -ColumnIsolation PhysicalDisk
+```
 
-Se suas unidades de capacidade forem unidades de estado sólido (SSD), defina o `-MediaType` como `SSD`. Não modifique os outros parâmetros.
+Se suas unidades de capacidade forem unidades de estado sólido (SSD), defina `-MediaType` como `SSD` em vez disso. Não modifique os outros parâmetros.
 
 > [!TIP]
-> Verifique se as camadas foram criadas com êxito com `Get-StorageTier`.
+> Verifique se as camadas foram criadas com êxito com `Get-StorageTier` .
 
 ### <a name="step-2-create-volumes"></a>Etapa 2: criar volumes
 
-Em seguida, crie novos volumes usando o cmdlet `New-Volume`.
+Em seguida, crie novos volumes usando o `New-Volume` cmdlet.
 
 #### <a name="nested-two-way-mirror"></a>Espelho bidirecional aninhado
 
-Para usar o espelhamento bidirecional aninhado, referencie o modelo de camada de `NestedMirror` e especifique o tamanho. Por exemplo:
+Para usar o espelhamento bidirecional aninhado, faça referência ao `NestedMirror` modelo de camada e especifique o tamanho. Por exemplo:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFriendlyNames NestedMirror -StorageTierSizes 500GB
@@ -119,7 +119,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume01 -StorageTierFrie
 
 #### <a name="nested-mirror-accelerated-parity"></a>Espelhamento aninhado-paridade acelerada
 
-Para usar a paridade com aceleração de espelhamento aninhada, referencie os modelos de camada `NestedMirror` e `NestedParity` e especificar dois tamanhos, um para cada parte do volume (espelho primeiro, paridade segundo). Por exemplo, para criar um volume de 1 500 GB que seja de 20% de espelho bidirecional aninhado e 80% de paridade aninhada, execute:
+Para usar a paridade com aceleração de espelho aninhado, referencie os `NestedMirror` modelos de camada e e `NestedParity` especifique dois tamanhos, um para cada parte do volume (espelho primeiro, paridade segundo). Por exemplo, para criar um volume de 1 500 GB que seja de 20% de espelho bidirecional aninhado e 80% de paridade aninhada, execute:
 
 ```PowerShell
 New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFriendlyNames NestedMirror, NestedParity -StorageTierSizes 100GB, 400GB
@@ -145,9 +145,9 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.N
 
 Uma vez definido como **true**, o comportamento do cache é:
 
-| Ocorrer                       | Comportamento do cache                           | Pode tolerar a perda da unidade de cache? |
+| Situação                       | Comportamento do cache                           | Pode tolerar a perda da unidade de cache? |
 |---------------------------------|------------------------------------------|--------------------------------|
-| Ambos os servidores                 | Leituras e gravações de cache, desempenho completo | Sim                            |
+| Ambos os servidores                 | Leituras e gravações de cache, desempenho completo | Yes                            |
 | Servidor inativo, primeiros 30 minutos   | Leituras e gravações de cache, desempenho completo | Não (temporariamente)               |
 | Após os primeiros 30 minutos          | Somente leituras de cache, desempenho afetado   | Sim (depois que o cache tiver sido gravado em unidades de capacidade)                           |
 
@@ -159,7 +159,7 @@ Não, os volumes não podem ser convertidos entre os tipos de resiliência. Para
 
 ### <a name="can-i-use-nested-resiliency-with-multiple-types-of-capacity-drives"></a>Posso usar resiliência aninhada com vários tipos de unidades de capacidade?
 
-Sim, basta especificar o `-MediaType` de cada camada adequadamente durante a [etapa 1](#step-1-create-storage-tier-templates) acima. Por exemplo, com NVMe, SSD e HDD no mesmo cluster, o NVMe fornece o cache enquanto os dois últimos fornecem capacidade: defina a camada de `NestedMirror` como `-MediaType SSD` e a camada de `NestedParity` como `-MediaType HDD`. Nesse caso, observe que a eficiência da capacidade de paridade depende do número de unidades de HDD apenas, e você precisa de pelo menos 4 delas por servidor.
+Sim, basta especificar o `-MediaType` de cada camada adequadamente durante a [etapa 1](#step-1-create-storage-tier-templates) acima. Por exemplo, com NVMe, SSD e HDD no mesmo cluster, o NVMe fornece o cache enquanto os dois últimos fornecem capacidade: defina a `NestedMirror` camada como `-MediaType SSD` e a `NestedParity` camada como `-MediaType HDD` . Nesse caso, observe que a eficiência da capacidade de paridade depende do número de unidades de HDD apenas, e você precisa de pelo menos 4 delas por servidor.
 
 ### <a name="can-i-use-nested-resiliency-with-3-or-more-servers"></a>Posso usar resiliência aninhada com três ou mais servidores?
 
@@ -184,9 +184,9 @@ Não. Para substituir um nó de servidor e suas unidades, siga esta ordem:
 
 Para obter detalhes, consulte o tópico [remover servidores](remove-servers.md) .
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Entender a tolerância a falhas no Espaços de Armazenamento Diretos](storage-spaces-fault-tolerance.md)
 - [Planejar volumes em Espaços de Armazenamento Diretos](plan-volumes.md)
-- [Criar volumes no Espaços de Armazenamento Diretos](create-volumes.md)
+- [Criar volumes em Espaços de Armazenamento Diretos](create-volumes.md)

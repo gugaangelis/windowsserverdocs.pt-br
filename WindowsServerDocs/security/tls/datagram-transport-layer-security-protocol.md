@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: d0c066b063cbfc8def54c2e0d02cbb0eaf7f1d40
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 79477aa441b82854852fe35a9b45bafdee664532
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852919"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475263"
 ---
 # <a name="datagram-transport-layer-security-protocol"></a>Protocolo DTLS
 
@@ -29,9 +29,8 @@ Os datagramas são comuns em mídia de streaming, como jogos ou videoconferênci
 
 Os conjuntos de codificação que estão disponíveis para configuração são padronizados após aqueles que você pode configurar para TLS. RC4 não é permitido. O Schannel continua a usar a CNG (Cryptography Next Generation). Isso aproveita a certificação FIPS 140, que foi introduzida no Windows Vista.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 [Segurança da camada de transporte de datagrama IETF RFC 4347](http://tools.ietf.org/html/rfc4347)
 
 
-                                        

@@ -8,37 +8,37 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1f51a0f90f60847929f6fe46732c98f355a6a859
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d5cdaf915de94e73374459c41b090f197b8f56ef
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856439"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475073"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>VMs blindadas para locatários – criando um disco de modelo (opcional)
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
-Para criar uma nova VM blindada, você precisará usar um disco de modelo assinado especialmente preparado. Os metadados de discos de modelo assinados ajudam a garantir que os discos não sejam modificados após terem sido criados e permite que você restrinja quais discos podem ser usados para criar suas VMs blindadas. Uma maneira de fornecer esse disco é para você, o locatário, para criá-lo, conforme descrito neste tópico. 
+Para criar uma nova VM blindada, você precisará usar um disco de modelo assinado especialmente preparado. Os metadados de discos de modelo assinados ajudam a garantir que os discos não sejam modificados após terem sido criados e permite que você restrinja quais discos podem ser usados para criar suas VMs blindadas. Uma maneira de fornecer esse disco é para você, o locatário, para criá-lo, conforme descrito neste tópico.
 
 > [!IMPORTANT]
 > Se preferir, você pode usar um disco de modelo fornecido pelo provedor de serviços de hospedagem. Se você fizer isso, será importante implantar uma VM de teste usando esse disco de modelo e executar suas próprias ferramentas (antivírus, verificadores de vulnerabilidade e assim por diante) para validar se o disco é, na verdade, em um estado em que você confia.
 
 ## <a name="prepare-an-operating-system-vhdx"></a>Preparar um VHDX do sistema operacional
 
-Para criar um disco de modelo blindado, primeiro você precisa preparar um disco do sistema operacional que será executado por meio do assistente de disco de modelo. Esse disco será usado como o disco do sistema operacional em VMs blindadas. Você pode usar qualquer ferramenta existente para criar esse disco, como o Microsoft Desktop Image Service Manager (DISM), ou configurar manualmente uma VM com um VHDX em branco e instalar o sistema operacional nesse disco. Ao configurar o disco, ele deve aderir aos seguintes requisitos específicos para VMs de geração 2 e/ou blindadas: 
+Para criar um disco de modelo blindado, primeiro você precisa preparar um disco do sistema operacional que será executado por meio do assistente de disco de modelo. Esse disco será usado como o disco do sistema operacional em VMs blindadas. Você pode usar qualquer ferramenta existente para criar esse disco, como o Microsoft Desktop Image Service Manager (DISM), ou configurar manualmente uma VM com um VHDX em branco e instalar o sistema operacional nesse disco. Ao configurar o disco, ele deve aderir aos seguintes requisitos específicos para VMs de geração 2 e/ou blindadas:
 
-| Requisito para VHDX | Reason |
+| Requisito para VHDX | Motivo |
 |-----------|----|
 |Deve ser um disco de tabela de partição GUID (GPT) | Necessário para máquinas virtuais de geração 2 para dar suporte a UEFI|
 |O tipo de disco deve ser **básico** em oposição ao **dinâmico**. <br>Observação: isso se refere ao tipo de disco lógico, não ao recurso VHDX "de expansão dinâmica" com suporte do Hyper-V. | O BitLocker não dá suporte a discos dinâmicos.|
 |O disco tem pelo menos duas partições. Uma partição deve incluir a unidade na qual o Windows está instalado. Esta é a unidade que o BitLocker irá criptografar. A outra partição é a partição ativa, que contém o carregador de inicialização e permanece descriptografada para que o computador possa ser iniciado.|Necessário para o BitLocker|
 |O sistema de arquivos é NTFS | Necessário para o BitLocker|
 |O sistema operacional instalado no VHDX é um dos seguintes:<br>-Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 ou Windows Server 2012 <br>-Windows 10, Windows 8.1, Windows 8| Necessário para dar suporte a máquinas virtuais de geração 2 e ao modelo de inicialização segura da Microsoft|
-|O sistema operacional deve ser generalizado (executar Sysprep. exe) | O provisionamento de modelo envolve a especialização de VMs para a carga de trabalho de um locatário específico| 
+|O sistema operacional deve ser generalizado (executar sysprep.exe) | O provisionamento de modelo envolve a especialização de VMs para a carga de trabalho de um locatário específico|
 
 > [!NOTE]
-> Não copie o disco de modelo na biblioteca do VMM neste estágio. 
+> Não copie o disco de modelo na biblioteca do VMM neste estágio.
 
 ### <a name="required-packages-to-create-a-nano-server-template-disk"></a>Pacotes necessários para criar um disco de modelo do nano Server
 
@@ -72,7 +72,7 @@ Execute as seguintes etapas em um computador que executa o Windows Server 2016 (
 
         New-SelfSignedCertificate -DnsName publisher.fabrikam.com
 
-4. Inicie o **Assistente de disco de modelo** na pasta **Ferramentas administrativas** no menu iniciar ou digitando **TemplateDiskWizard. exe** em um prompt de comando.
+4. Inicie o **Assistente de disco de modelo** na pasta **Ferramentas administrativas** no menu iniciar ou digitando **TemplateDiskWizard.exe** em um prompt de comando.
 
 5. Na página **certificado** , clique em **procurar** para exibir uma lista de certificados. Selecione o certificado com o qual assinar o modelo de disco. Clique em **OK** e clique em **Avançar**.
 
@@ -84,14 +84,14 @@ Execute as seguintes etapas em um computador que executa o Windows Server 2016 (
 
 8. Examine suas seleções na página Configurações de revisão do assistente. Quando você clica em **gerar**, o assistente habilitará o BitLocker no disco de modelo, computará o hash do disco e criará o catálogo de assinatura de volume, que é armazenado nos metadados VHDX.
 
-    Aguarde até que o processo de assinatura seja concluído antes de tentar montar ou mover o disco de modelo. Esse processo pode demorar um pouco para ser concluído, dependendo do tamanho do disco. 
+    Aguarde até que o processo de assinatura seja concluído antes de tentar montar ou mover o disco de modelo. Esse processo pode demorar um pouco para ser concluído, dependendo do tamanho do disco.
 
 9. Na página **Resumo** , informações sobre o modelo de disco, o certificado usado para assinar o modelo e o emissor do certificado são mostrados. Clique em **Fechar** para sair do assistente.
 
 
 Forneça o modelo de disco blindado para o provedor de serviços de hospedagem, junto com um arquivo de dados de blindagem que você cria, conforme descrito em [criando dados de blindagem para definir uma VM blindada](guarded-fabric-tenant-creates-shielding-data.md).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Implantar VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

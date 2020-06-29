@@ -8,19 +8,19 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9972ec77b78c6c4efa2d52fffd44d27d71a1afe0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 85cfdbe5e95c9177194a2b6ac7b5d22e1fd9fc0e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856359"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475009"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>VMs blindadas-preparando um VHD auxiliar de blindagem de VM
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
 > [!IMPORTANT]
-> Antes de iniciar esses procedimentos, verifique se você instalou a atualização cumulativa mais recente do Windows Server 2016 ou está usando o Windows 10 [ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520)mais recente. Caso contrário, os procedimentos não funcionarão. 
+> Antes de iniciar esses procedimentos, verifique se você instalou a atualização cumulativa mais recente do Windows Server 2016 ou está usando o Windows 10 [ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520)mais recente. Caso contrário, os procedimentos não funcionarão.
 
 Esta seção descreve as etapas executadas por um provedor de serviços de hospedagem para habilitar o suporte para a conversão de VMs existentes em VMs blindadas.
 
@@ -59,7 +59,7 @@ No console do VMM, abra o painel configurações e, em seguida, **hospede as con
 
 ![VMM-configurações do serviço guardião de host](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

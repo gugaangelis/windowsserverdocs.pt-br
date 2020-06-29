@@ -8,41 +8,41 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 0dd4e24197d5a8c438d70a849e435ce28792dfce
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 891edb108bc2c298c70b29c596fb8d0ca0e06b7e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858429"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475183"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>Adicionando e desenvolvendo novos recursos
 
 >Aplica-se a: Windows Server 2019
 
-O System insights permite que você adicione novos recursos de previsão ao System insights, sem a necessidade de qualquer atualização do sistema operacional. Isso permite que os desenvolvedores, incluindo a Microsoft e terceiros, criem e forneçam novos recursos de lançamento médio para atender aos cenários que você preocupa. 
+O System insights permite que você adicione novos recursos de previsão ao System insights, sem a necessidade de qualquer atualização do sistema operacional. Isso permite que os desenvolvedores, incluindo a Microsoft e terceiros, criem e forneçam novos recursos de lançamento médio para atender aos cenários que você preocupa.
 
 Qualquer nova funcionalidade pode ser integrada com e estender a infraestrutura existente do insights do sistema:
 
-- Novos recursos podem **especificar qualquer contador de desempenho ou evento do sistema**, que será coletado, persistido localmente e retornado para a capacidade de análise quando o recurso for invocado.  
-- Novos recursos podem **aproveitar os planos de gerenciamento do PowerShell e do centro de administração do Windows existentes**. Não apenas as novas funcionalidades serão detectáveis no System insights, elas também se beneficiarão de Agendamentos personalizados e ações de correção. 
+- Novos recursos podem **especificar qualquer contador de desempenho ou evento do sistema**, que será coletado, persistido localmente e retornado para a capacidade de análise quando o recurso for invocado.
+- Novos recursos podem **aproveitar os planos de gerenciamento do PowerShell e do centro de administração do Windows existentes**. Não apenas as novas funcionalidades serão detectáveis no System insights, elas também se beneficiarão de Agendamentos personalizados e ações de correção.
 
 ## <a name="manage-new-capabilities"></a>Gerenciar novos recursos
-- [Saiba](add-remove-update-capabilities.md) como adicionar, remover e atualizar recursos usando o PowerShell. 
+- [Saiba](add-remove-update-capabilities.md) como adicionar, remover e atualizar recursos usando o PowerShell.
 
 ## <a name="develop-a-capability"></a>Desenvolver um recurso
 Use os recursos a seguir para ajudá-lo a começar a escrever seus próprios recursos personalizados:
 - [Saiba mais](data-sources.md) sobre as fontes de dados que você pode coletar.
 - [Baixe](https://www.nuget.org/packages/Microsoft.WindowsServer.SystemInsights/) o pacote NuGet do System insights, que contém as classes e interfaces necessárias para escrever um recurso.
-- [Visite](https://aka.ms/systeminsights-api) a documentação da API para saber mais sobre as classes e interfaces do System insights. 
+- [Visite](https://aka.ms/systeminsights-api) a documentação da API para saber mais sobre as classes e interfaces do System insights.
 - [Use](https://aka.ms/systeminsights-samplecapability) o recurso de exemplo do System insights para ajudá-lo a começar. Isso mostra como registrar um recurso, especificar as fontes de dados a serem coletadas e começar a analisar os dados do sistema.
 
 >[!NOTE]
 >Essa é a funcionalidade de pré-lançamento. Ele está sujeito a alterações, à medida que adicionamos nova funcionalidade e incorporamos comentários.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 Para saber mais sobre o System insights, use os seguintes recursos:
 
-- [Visão geral do System insights](overview.md)
+- [Visão geral dos insights do sistema](overview.md)
 - [Noções básicas dos recursos](understanding-capabilities.md)
 - [Gerenciar recursos](managing-capabilities.md)
 - [Adicionar, remover e atualizar recursos](add-remove-update-capabilities.md)

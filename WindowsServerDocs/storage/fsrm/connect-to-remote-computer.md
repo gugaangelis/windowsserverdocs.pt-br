@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4d813933ec3073ecb3348468ca4b8f2e124c403d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 562164b461b4cd5db939b116feeb1bf21f78bad4
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402017"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474123"
 ---
-# <a name="connect-to-a-remote-computer"></a>Conectar a um computador remoto 
+# <a name="connect-to-a-remote-computer"></a>Conectar a um computador remoto
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Para gerenciar recursos de armazenamento em um computador remoto, você pode conectar ao computador a partir do Gerenciador de Recursos de Servidor de Arquivos. Enquanto estiver conectado, o Gerenciador de Recursos de Servidor de Arquivos permite que você gerencie cotas, arquivos de triagem, gerencie classificações, agende tarefas de gerenciamento de arquivo e gere relatórios com esses recursos remotos.
 
@@ -45,6 +45,6 @@ Para gerenciar recursos remotos com o Gerenciador de Recursos de Servidor de Arq
 -   O computador remoto deve estar executando o Windows Server e Gerenciador de recursos do servidor de arquivos deve estar instalado.
 -   A exceção **Gerenciamento do Gerenciador de Recursos de Servidor de Arquivos remoto** no computador remoto deve ser habilitada. Habilite essa exceção usando o Firewall do Windows no Painel de Controle.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciar recursos de armazenamento remoto](managing-remote-storage-resources.md)

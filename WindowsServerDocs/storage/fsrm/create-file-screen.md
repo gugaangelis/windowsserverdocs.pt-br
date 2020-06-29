@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e049162e7aff449774928d6a1d25cc1116f9aee9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7827f1e80b1cfe2288bee968cc3c4e3cd428e15
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403161"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474373"
 ---
 # <a name="create-a-file-screen"></a>Criar uma triagem de arquivo
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de triagem de arquivo com base nas propriedades de triagem de arquivo personalizado que você definir. A vantagem disso é que um link é mantido entre triagens de arquivo e o modelo é usado para criá-los, para que no futuro, as alterações no modelo podem ser aplicadas a todas as triagens de arquivo derivados dele. Esse é um recurso que simplifica a implementação das alterações de políticas de armazenamento, fornecendo um ponto central no qual todas as atualizações podem ser feitas.
 
@@ -54,7 +54,7 @@ Ao criar uma nova triagem de arquivo, você pode optar por salvar um modelo de t
 
 12. Clique em **OK**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de triagem de arquivos](file-screening-management.md)
 -   [Definir grupos de arquivos para triagem](define-file-groups-for-screening.md)

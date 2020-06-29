@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d759af575f98d305a67734d0e23680f701f6b72
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4632c218f0638885e3094446704a91c442859d4c
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856709"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473963"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>VMs blindadas – provedor de serviços de hospedagem configura o Pacote do Microsoft Azure
 
@@ -27,7 +27,7 @@ Você concluirá as seguintes tarefas para configurar Pacote do Microsoft Azure 
 
 1. Conclua a configuração do System Center 2016-Virtual Machine Manager (VMM) para sua malha de hospedagem. Isso inclui a configuração de modelos de VM e uma nuvem de VM, que serão expostos por meio de Pacote do Microsoft Azure:
 
-    [Cenário-implantar hosts protegidos e máquinas virtuais blindadas no VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [Cenário - implantar hosts protegidos e máquinas virtuais blindadas no VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
 
 2. Instalar e configurar o System Center 2016-Service Provider Foundation (SPF). Este software permite que Pacote do Microsoft Azure se comunique com seus servidores do VMM:
 
@@ -52,7 +52,7 @@ Instale e configure o Pacote do Microsoft Azure (WAP) no computador em que você
 
 3.  Abra o Web Platform Installer e localize **pacote do Microsoft Azure: portal e API Express** na guia **produtos** . clique em **Adicionar**e **Instale** na parte inferior da janela.
 
-4.  Continue com a instalação. Após a conclusão da instalação, o site de configuração (*https://&lt;wapserver&gt;: 30101/* ) é aberto no navegador da Web. Neste site, forneça informações sobre o SQL Server e conclua a configuração de WAP.
+4.  Continue com a instalação. Após a conclusão da instalação, o site de configuração (*https:// &lt; wapserver &gt; : 30101/*) é aberto no navegador da Web. Neste site, forneça informações sobre o SQL Server e conclua a configuração de WAP.
 
 Para obter ajuda sobre como configurar Pacote do Microsoft Azure, consulte [instalar uma implantação expressa do pacote do Microsoft Azure](https://technet.microsoft.com/dn296439.aspx).
 
@@ -63,7 +63,7 @@ Para obter ajuda sobre como configurar Pacote do Microsoft Azure, consulte [inst
 
 Antes de usar Pacote do Microsoft Azure, você já deve tê-lo instalado e configurado para sua infraestrutura.
 
-1.  Navegue até o portal de administração do Pacote do Microsoft Azure em *https://&lt;wapserver&gt;: 30091*e, em seguida, faça logon usando suas credenciais de administrador.
+1.  Navegue até o portal de administração do Pacote do Microsoft Azure em *https:// &lt; wapserver &gt; : 30091*e faça logon usando suas credenciais de administrador.
 
 2.  No painel esquerdo, clique em **nuvens de VM**.
 
@@ -77,7 +77,7 @@ Antes de usar Pacote do Microsoft Azure, você já deve tê-lo instalado e confi
 
 Para permitir que os locatários criem VMs em WAP, você deve primeiro criar um plano de hospedagem para o qual os locatários podem assinar. Os planos definem as nuvens de VM permitidas, os modelos, as redes e as entidades de cobrança para seus locatários.
 
-1. No painel inferior do portal, clique em **+ novo** **plano** de &gt; &gt; **criar plano**.
+1. No painel inferior do portal, clique em **+ novo** &gt; **plano** &gt; **criar plano**.
 
 2. Na primeira etapa do assistente, escolha um nome para seu plano. Esse é o nome que seus locatários verão ao assinar.
 
@@ -98,7 +98,7 @@ Para permitir que os locatários criem VMs em WAP, você deve primeiro criar um 
 9. Selecione as cotas que você deseja aplicar neste plano. (Por exemplo, limites de núcleo de CPU e uso de RAM). Lembre-se de deixar a caixa de seleção **permitir que máquinas virtuais sejam blindadas** selecionada.
 
    ![Configurações para nuvens de máquina virtual no Pacote do Microsoft Azure](../media/Guarded-Fabric-Shielded-VM/guarded-host-azure-pack-03-virtual-machine-clouds.png)
-    
+
 10. Role para baixo até a seção de **modelos**e selecione um ou mais modelos para oferecer aos seus locatários. Você pode oferecer modelos blindados e não blindados a locatários, mas um modelo blindado deve ser oferecido para dar aos locatários garantias de ponta a ponta sobre a integridade da VM e seus segredos.
 
 11. Na seção **redes** , adicione uma ou mais redes para seus locatários.
@@ -113,7 +113,7 @@ Para permitir que os locatários criem VMs em WAP, você deve primeiro criar um 
 
     Neste ponto, Pacote do Microsoft Azure está configurado e os locatários poderão assinar o plano que você acabou de criar e implantar VMs blindadas. Para obter etapas adicionais que os locatários precisam concluir, consulte [VMs blindadas para locatários-implantando uma VM blindada usando pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Etapas de configuração do provedor de serviços de hospedagem para hosts protegidos e VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)

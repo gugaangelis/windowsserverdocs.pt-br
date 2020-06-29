@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 433fe53a3d580aafc50b152ec20156436b05481f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402137"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475143"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>Usando permissões herdadas com Enumeração baseada em acesso
 
 > Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Por padrão, as permissões utilizadas para uma pasta DFS são herdadas do sistema de arquivos local do servidor do namespace. As permissões são herdadas do diretório raiz da unidade do sistema e concedem ao domínio\\permissões de leitura do grupo usuários. Como resultado, mesmo após a habilitação da enumeração baseada em acesso, todas as pastas no namespace permanecem visíveis para todos os usuários de domínio.
+Por padrão, as permissões utilizadas para uma pasta DFS são herdadas do sistema de arquivos local do servidor do namespace. As permissões são herdadas do diretório raiz da unidade do sistema e concedem \\ permissões de leitura ao grupo usuários do domínio. Como resultado, mesmo após a habilitação da enumeração baseada em acesso, todas as pastas no namespace permanecem visíveis para todos os usuários de domínio.
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>Vantagens e limitações das permissões herdadas
 
@@ -42,7 +42,7 @@ Apesar dos benefícios, permissões herdadas nos Namespaces DFS têm muitas limi
 
 Para limitar quais usuários podem exibir uma pasta DFS, você deve executar uma das seguintes tarefas:
 
--   **Defina permissões explícitas para a pasta, desabilitando a herança.** Para definir permissões explícitas em uma pasta com destinos (um link) usando o Gerenciamento DFS ou o **Dfsutil** de comando, consulte [Enable Access-Based enumeração em um Namespace](enable-access-based-enumeration-on-a-namespace.md).
+-   **Definir permissões explícitas para a pasta, desabilitando a herança.** Para definir permissões explícitas em uma pasta com destinos (um link) usando o Gerenciamento DFS ou o **Dfsutil** de comando, consulte [Enable Access-Based enumeração em um Namespace](enable-access-based-enumeration-on-a-namespace.md).
 -   **Modificar permissões herdadas no pai no sistema de arquivos local**. Para modificar as permissões herdadas por uma pasta com destinos, se você já tiver definido permissões explícitas na pasta, alterne para as permissões herdadas de permissões explícitas, conforme discutido no procedimento a seguir. Use o Windows Explorer ou o **Icacls** comando para modificar as permissões da pasta da qual a pasta com destinos herda suas permissões.
 
 > [!NOTE]
@@ -58,6 +58,6 @@ Para limitar quais usuários podem exibir uma pasta DFS, você deve executar uma
 
 4.  Para alterar as permissões herdadas para raízes de namespace em um namespace DFS ou pastas, use o Windows Explorer ou o **ICacls** comando.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Criar um namespace do DFS](create-a-dfs-namespace.md)

@@ -6,16 +6,16 @@ ms.author: cosdar
 ms.prod: windows-server
 ms.technology: manage
 ms.date: 11/04/2019
-ms.openlocfilehash: 62bf21dd0afcb99aa77cff8a733e80fc4cffe2fb
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 088fb7b8f03ab7e575b562572f2e29e1b5774760
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73587226"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474483"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>Implantar a infraestrutura de hiperconvergente com o centro de administração do Windows
 
-> Aplica-se a: centro de administração do Windows, versão prévia do centro de administração do Windows
+> Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 Você pode usar o centro de administração do Windows [versão 1910](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) ou posterior para implantar a infraestrutura de hiperconvergente usando dois ou mais servidores Windows adequados. Esse novo recurso assume a forma de um fluxo de trabalho de vários estágios que orienta você na instalação de recursos, na configuração de rede, na criação do cluster e na implantação de Espaços de Armazenamento Diretos e/ou SDN (rede definida pelo software), se selecionado.
 
@@ -26,12 +26,12 @@ Você pode usar o centro de administração do Windows [versão 1910](https://do
 
 ## <a name="preview-the-workflow"></a>Visualizar o fluxo de trabalho
 
-### <a name="1-prerequisites"></a>1. pré-requisitos
+### <a name="1-prerequisites"></a>1. Pré-requisitos
 
 O fluxo de trabalho de criação de cluster no centro de administração do Windows não executa a instalação do sistema operacional bare-metal, portanto, você precisa instalar o Windows Server em cada servidor primeiro. As versões com suporte são o Windows Server 2016, o Windows Server 2019 e o Windows Server Insider Preview. Você também precisa ingressar cada servidor no mesmo domínio Active Directory em que o centro de administração do Windows está em execução antes de iniciar o fluxo de trabalho.
 
 ### <a name="2-install-windows-admin-center"></a>2. instalar o centro de administração do Windows
- 
+
 Siga as instruções para [baixar e instalar](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) a versão mais recente do centro de administração do Windows.
 
 ### <a name="3-install-the-cluster-creation-extension"></a>3. instalar a extensão de criação de cluster
@@ -68,7 +68,7 @@ Além de abordar essas limitações, há inúmeros recursos potenciais que poder
 
 Use estes cmdlets do Windows PowerShell para acompanhar e ver o que o fluxo de trabalho está fazendo.
 
-Para ver quais recursos do Windows estão instalados, use o cmdlet `Get-WindowsFeature`. Por exemplo:
+Para ver quais recursos do Windows estão instalados, use o `Get-WindowsFeature` cmdlet. Por exemplo:
 
 ```PowerShell
 Get-WindowsFeature "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "BitLocker"
@@ -176,7 +176,7 @@ Get-VMSwitch | Remove-VMSwitch
 ```
 
 > [!Note]
-> O cmdlet `Remove-VMSwitch` remove automaticamente todos os adaptadores virtuais e desfaz o agrupamento de adaptadores físicos inseridos na opção.
+> O `Remove-VMSwitch` cmdlet Remove automaticamente todos os adaptadores virtuais e desfaz o agrupamento de adaptadores físicos inseridos na opção.
 
 Se você tiver modificado as propriedades do adaptador de rede, como nome, endereço IPv4 e ID de VLAN:
 
@@ -191,14 +191,14 @@ Get-NetAdapter | Where Name -Ne "Management" | Set-NetAdapter -VlanID 0
 
 Agora você está pronto para iniciar o fluxo de trabalho.
 
-## <a name="feedback"></a>Feedback
+## <a name="feedback"></a>Comentários
 
 Esta versão de visualização é sobre seus comentários. Aqui estão algumas maneiras que você pode acessar nossa equipe:
 
 - [Enviar e votar em solicitações de recursos no UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Participe do fórum do centro de administração do Windows na Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - Email HCI-implantação [em] microsoft.com
-- Tweet para [@servermgmt](https://twitter.com/servermgmt)
+- Tweet para[@servermgmt](https://twitter.com/servermgmt)
 
 ## <a name="report-an-issue"></a>Relatar um problema
 
@@ -206,13 +206,13 @@ Use os canais listados acima para relatar um problema com o fluxo de trabalho de
 
 Se possível, inclua as seguintes informações para nos ajudar a reproduzir e resolver rapidamente o problema:
 
-- Tipo de cluster selecionado (exemplo: *"hiperconvergente"* )
-- Etapa em que você encontrou o problema (exemplo: *"3,2 criar cluster"* )
-- Versão da extensão de criação de cluster. Acesse **configurações** > **extensões** > **extensões instaladas** e veja a coluna **versão** (exemplo: *"1.0.30"* ).
+- Tipo de cluster selecionado (exemplo: *"hiperconvergente"*)
+- Etapa em que você encontrou o problema (exemplo: *"3,2 criar cluster"*)
+- Versão da extensão de criação de cluster. Vá para **configurações**  >  **extensões**versões  >  **instaladas** e veja a coluna **versão** (exemplo: *"1.0.30"*).
 - Mensagens de erro, se na tela ou no console do navegador, que você pode abrir pressionando **F12**.
-- Quaisquer outras informações relevantes sobre seu ambiente 
+- Quaisquer outras informações relevantes sobre seu ambiente
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Olá, centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center)
 - [Implantar Espaços de Armazenamento Diretos](https://docs.microsoft.com/windows-server/storage/storage-spaces/deploy-storage-spaces-direct)

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e200901d8ddd59f0c0bc45b34681f3aa41b44923
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402148"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474413"
 ---
 # <a name="overview-of-disk-management"></a>Visão geral do Gerenciamento de disco
 
@@ -49,7 +49,7 @@ Caso esteja curioso (lemos os seus comentários!), o Windows normalmente inclui 
 
 Embora o gerenciamento de disco possa mostrar a partição de sistema EFI e a partição de recuperação como 100% livre, isso não é verdade. Essas partições ficam geralmente bem cheias de arquivos realmente importantes que o PC precisa para operar corretamente. É melhor deixá-las como estão para realizar os trabalhos delas, iniciando seu PC e ajudando você a se recuperar de problemas.
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Gerenciar discos](manage-disks.md)
 - [Gerenciar volumes básicos](manage-basic-volumes.md)

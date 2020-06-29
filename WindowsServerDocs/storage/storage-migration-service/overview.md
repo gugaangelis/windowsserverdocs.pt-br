@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fab7dff1efc8b21a3b8fdacdeb9d446d7bc0cc30
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310500"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475303"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -44,21 +44,21 @@ A migração é um processo de três etapas:
 2. **Transfira (Copie) os dados** dos servidores de origem para os servidores de destino.
 3. **Recortar para os novos servidores** (opcional).<br>Os servidores de destino assumem as identidades anteriores dos servidores de origem para que os aplicativos e os usuários não precisem alterar nada. <br>Os servidores de origem entram em um estado de manutenção em que eles ainda contêm os mesmos arquivos que sempre têm (nunca removemos arquivos dos servidores de origem), mas não estão disponíveis para usuários e aplicativos. Em seguida, você pode encerrar os servidores de sua conveniência.
 
-![captura de tela mostrando um servidor pronto para ser examinado](media/migrate/inventory.png)
-**Figura 2: servidores de inventário do serviço de migração de armazenamento**
+![Captura de tela mostrando um servidor pronto para ser examinado ](media/migrate/inventory.png)
+ **Figura 2: servidores de inventário do serviço de migração de armazenamento**
 
 Veja um vídeo mostrando como usar o serviço de migração de armazenamento para pegar um servidor, como um servidor Windows Server 2008 R2 que agora não tem suporte e mover o armazenamento para um servidor mais recente.
 
 > [!VIDEO https://www.youtube.com/embed/h-Xc9j1w144]
 
-## <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
+## <a name="requirements"></a>Requisitos
 
 Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 
 - Um **servidor de origem** ou **cluster de failover** para migrar arquivos e dados de
 - Um **servidor de destino** que executa o Windows Server 2019 (clusterizado ou autônomo) para migrar para o. O Windows Server 2016 e o Windows Server 2012 R2 funcionam bem, mas estão em cerca de 50% mais lento
 - Um **servidor do Orchestrator** que executa o Windows Server 2019 para gerenciar a migração  <br>Se estiver migrando apenas alguns servidores e um dos servidores estiver executando o Windows Server 2019, você poderá usá-lo como o Orchestrator. Se você estiver migrando mais servidores, recomendamos o uso de um servidor Orchestrator separado.
-- Um **PC ou servidor que executa o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md)**  para executar a interface do usuário do serviço de migração de armazenamento, a menos que você prefira usar o PowerShell para gerenciar a migração. O centro de administração do Windows e a versão 2019 do Windows Server devem ter, no mínimo, a versão 1809.
+- Um **PC ou servidor que executa o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) ** para executar a interface do usuário do serviço de migração de armazenamento, a menos que você prefira usar o PowerShell para gerenciar a migração. O centro de administração do Windows e a versão 2019 do Windows Server devem ter, no mínimo, a versão 1809.
 
 É altamente recomendável que os computadores Orchestrator e de destino tenham pelo menos dois núcleos ou dois vCPUs, e pelo menos 2 GB de memória. As operações de inventário e transferência são significativamente mais rápidas com mais processadores e memória.
 
@@ -71,8 +71,8 @@ Para usar o serviço de migração de armazenamento, você precisa do seguinte:
   - Compartilhamento de arquivos e de impressora (SMB-Entrada)
   - Serviço Netlogon (NP-in)
   - DCOM-In (Instrumentação de Gerenciamento do Windows)
-  - Instrumentação de Gerenciamento do Windows (WMI-In)
-  
+  - WMI-In (Instrumentação de Gerenciamento do Windows)
+
   > [!TIP]
   > A instalação do serviço de proxy de serviço de migração de armazenamento em um computador com Windows Server 2019 abre automaticamente as portas de firewall necessárias nesse computador. Para fazer isso, conecte-se ao servidor de destino no centro de administração do Windows e vá para **Gerenciador do servidor** (no centro de administração do windows) > **funções e recursos**, selecione **proxy de serviço de migração de armazenamento**e, em seguida, selecione **instalar**.
 
@@ -105,7 +105,7 @@ O servidor de origem deve executar um dos seguintes sistemas operacionais:
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
-Observação: o Windows Small Business Server e o Windows Server Essentials são controladores de domínio. O serviço de migração de armazenamento ainda não pode ser reduzido dos controladores de domínio, mas pode inventariar e transferir arquivos deles.   
+Observação: o Windows Small Business Server e o Windows Server Essentials são controladores de domínio. O serviço de migração de armazenamento ainda não pode ser reduzido dos controladores de domínio, mas pode inventariar e transferir arquivos deles.
 
 Você pode migrar os seguintes tipos de fonte adicionais se o Orchestrator estiver executando o Windows Server, versão 1903 ou posterior, ou se o orquestrador estiver executando uma versão anterior do Windows Server com o [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
@@ -132,10 +132,10 @@ O servidor de destino deve executar um dos seguintes sistemas operacionais:
 
 ## <a name="azure-vm-migration"></a>Migração de VM do Azure
 
-O centro de administração do Windows versão 1910 permite implantar máquinas virtuais do Azure. Isso integra a implantação da VM ao serviço de migração de armazenamento. Em vez de criar novos servidores e VMs no portal do Azure manualmente antes de implantar sua carga de trabalho, e possivelmente faltam as etapas necessárias e a configuração-o centro de administração do Windows pode implantar a VM do Azure, configurar seu armazenamento, associá-la ao seu domínio, instalar funções e em seguida, configure seu sistema distribuído. 
+O centro de administração do Windows versão 1910 permite implantar máquinas virtuais do Azure. Isso integra a implantação da VM ao serviço de migração de armazenamento. Em vez de criar novos servidores e VMs no portal do Azure manualmente antes de implantar sua carga de trabalho e, possivelmente, as etapas e configurações necessárias que estão faltando, o centro de administração do Windows pode implantar a VM do Azure, configurar seu armazenamento, associá-la ao seu domínio, instalar funções e configurar o sistema distribuído.
 
    Aqui está um vídeo mostrando como usar o serviço de migração de armazenamento para migrar para VMs do Azure.
-   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
 
 ## <a name="whats-new-in-storage-migration-service"></a>O que há de novo no serviço de migração de armazenamento
 
@@ -149,7 +149,7 @@ Os novos recursos a seguir estão disponíveis ao executar o Storage Migration S
 - Sincronização mais fácil de compartilhamentos integrados no Azure usando a Sincronização de Arquivos do Azure
 - Migrar para novas redes, como o Azure
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Migrar um servidor de arquivos usando o serviço de migração de armazenamento](migrate-data.md)
 - [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)

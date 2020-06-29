@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0f678172d397ff61fd336b7c844d43f77bea7fad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 59b6aaa22fa89620df2ce6757b2d9f5ffe91c652
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856829"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475343"
 ---
 # <a name="deploy-guarded-hosts"></a>Implantar hosts protegidos
 
@@ -28,16 +28,16 @@ Os tópicos nesta seção descrevem as etapas que um administrador de malha usa 
 
 **Para atestado de chave de host**:
 1. [Criar uma chave de host](guarded-fabric-create-host-key.md#create-a-host-key): informa como configurar um encaminhador DNS do domínio de malha para o domínio HgS.
-2. [Adicionar a chave de host ao serviço de atestado](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service): informa como configurar um grupo de segurança Active Directory no domínio de malha, adicionar hosts protegidos como membros desse grupo e fornecer esse identificador de grupo ao administrador do HgS. 
+2. [Adicionar a chave de host ao serviço de atestado](guarded-fabric-create-host-key.md#add-the-host-key-to-the-attestation-service): informa como configurar um grupo de segurança Active Directory no domínio de malha, adicionar hosts protegidos como membros desse grupo e fornecer esse identificador de grupo ao administrador do HgS.
 3. [Confirmar que os hosts protegidos podem atestar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
 **Para o atestado confiável de administrador**:
 1. [Configurar o DNS de malha](guarded-fabric-configuring-fabric-dns.md): informa como configurar um encaminhador DNS do domínio de malha para o domínio HgS.
-2. [Criar um grupo de segurança](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md): informa como configurar um grupo de segurança Active Directory no domínio de malha, adicionar hosts protegidos como membros desse grupo e fornecer esse identificador de grupo ao administrador do HgS. 
+2. [Criar um grupo de segurança](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md): informa como configurar um grupo de segurança Active Directory no domínio de malha, adicionar hosts protegidos como membros desse grupo e fornecer esse identificador de grupo ao administrador do HgS.
 3. [Confirmar que os hosts protegidos podem atestar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Tarefas de implantação para malhas protegidas e VMs blindadas](guarded-fabric-deploying-hgs-overview.md#deployment-tasks-for-guarded-fabrics-and-shielded-vms)

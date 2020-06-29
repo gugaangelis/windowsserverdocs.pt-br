@@ -8,30 +8,30 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: b133e518c4226c516974ca89a457cf0aa64cac7e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c74e8744c22e2be174c1f1297e0472e5f32e1fe8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861349"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475403"
 ---
 # <a name="block-cloning-on-refs"></a>Clonagem de blocos em ReFS
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
-A clonagem de blocos instrui o sistema de arquivos a copiar um intervalo de bytes do arquivo em nome de um aplicativo, onde o arquivo de destino pode ser igual ao ou diferente do arquivo de origem. As operações de cópia, infelizmente, são caras, pois disparam leituras e gravações caras para os dados físicos subjacentes. 
+A clonagem de blocos instrui o sistema de arquivos a copiar um intervalo de bytes do arquivo em nome de um aplicativo, onde o arquivo de destino pode ser igual ao ou diferente do arquivo de origem. As operações de cópia, infelizmente, são caras, pois disparam leituras e gravações caras para os dados físicos subjacentes.
 
-No entanto, a clonagem de blocos no ReFS executa cópias como uma operação de metadados de baixo custo, em vez de ler e gravar dados do arquivo. Como o ReFS permite que vários arquivos compartilhem os mesmo clusters lógicos (locais físicos em um volume), as operações de cópia só precisam remapear uma região de um arquivo para um local físico à parte, convertendo uma operação física cara em uma operação rápida e lógica. Isso permite que as cópias terminem mais rapidamente e gerem menos E/S para o armazenamento subjacente. Essa melhoria também beneficia cargas de trabalho de virtualização, pois as operações de mesclagem de pontos de verificação de .vhdx são aceleradas drasticamente quando as operações de clonagem de blocos são usadas. Além disso, como vários arquivos podem compartilhar os mesmo clusters lógicos, os dados idênticos não são armazenados fisicamente várias vezes, melhorando a capacidade de armazenamento. 
-  
-## <a name="how-it-works"></a>Como funciona 
+No entanto, a clonagem de blocos no ReFS executa cópias como uma operação de metadados de baixo custo, em vez de ler e gravar dados do arquivo. Como o ReFS permite que vários arquivos compartilhem os mesmo clusters lógicos (locais físicos em um volume), as operações de cópia só precisam remapear uma região de um arquivo para um local físico à parte, convertendo uma operação física cara em uma operação rápida e lógica. Isso permite que as cópias terminem mais rapidamente e gerem menos E/S para o armazenamento subjacente. Essa melhoria também beneficia cargas de trabalho de virtualização, pois as operações de mesclagem de pontos de verificação de .vhdx são aceleradas drasticamente quando as operações de clonagem de blocos são usadas. Além disso, como vários arquivos podem compartilhar os mesmo clusters lógicos, os dados idênticos não são armazenados fisicamente várias vezes, melhorando a capacidade de armazenamento.
+
+## <a name="how-it-works"></a>Como ele funciona
 
 A clonagem de blocos do ReFS converte uma operação de dados de arquivo em uma operação de metadados. Para fazer essa otimização, o ReFS introduz contagens de referências em seus metadados para regiões copiadas. Essa contagem de referência registra o número de regiões distintas de arquivos referenciam as mesmas regiões físicas. Isso permite que vários arquivos compartilhem os mesmos dados físicos:
 
 ![Mostrar atualizações da contagem de referência quando vários arquivos referenciam a mesma região](media/ref-count-example.gif)
 
-Ao manter uma contagem de referência para cada cluster lógico, o ReFS não interrompe o isolamento entre arquivos: as gravações em regiões compartilhadas disparam um mecanismo de alocação mediante gravação, onde o ReFS aloca uma nova região para a gravação de entrada. Esse mecanismo preserva a integridade dos clusters lógicos compartilhados. 
+Ao manter uma contagem de referência para cada cluster lógico, o ReFS não interrompe o isolamento entre arquivos: as gravações em regiões compartilhadas disparam um mecanismo de alocação mediante gravação, onde o ReFS aloca uma nova região para a gravação de entrada. Esse mecanismo preserva a integridade dos clusters lógicos compartilhados.
 
-### <a name="example"></a>{1&gt;Exemplo&lt;1}
+### <a name="example"></a>Exemplo
 Suponhamos que haja dois arquivos, X e Y, onde cada arquivo é composto por três regiões, e cada região é mapeada para clusters lógicos separados.
 
 ![Dois arquivos com três regiões distintas cada que são mapeadas para regiões que têm a contagem de referência 1](media/block-clone-1.png)
@@ -40,9 +40,9 @@ Agora, vamos supor que um aplicativo emita uma operação de clonagem de blocos 
 
 ![A contagem de referência mostra 2 para a região do clone do bloco](media/block-clone-2.png)
 
-Esse estado do sistema de arquivo revela uma duplicação bem-sucedida da região do clone do bloco. Como o ReFS executa essa operação de cópia atualizando apenas os mapeamentos de VCN para LCN, nenhum dado físico foi lido, nem os dados físicos no Arquivo Y foram substituídos. Agora os arquivos X e Y compartilham clusters lógicos, refletidos pelas contagens de referência na tabela. Como nenhum dado foi copiado fisicamente, o ReFS reduz o consumo de capacidade no volume. 
+Esse estado do sistema de arquivo revela uma duplicação bem-sucedida da região do clone do bloco. Como o ReFS executa essa operação de cópia atualizando apenas os mapeamentos de VCN para LCN, nenhum dado físico foi lido, nem os dados físicos no Arquivo Y foram substituídos. Agora os arquivos X e Y compartilham clusters lógicos, refletidos pelas contagens de referência na tabela. Como nenhum dado foi copiado fisicamente, o ReFS reduz o consumo de capacidade no volume.
 
-Agora vamos supor que o aplicativo tente substituir a região A no Arquivo X. O ReFS duplicará a região compartilhada, atualizará as contagens de referência adequadamente e executará a gravação de entrada na região recém-duplicada. Isso garante que o isolamento entre os arquivos seja preservado.   
+Agora vamos supor que o aplicativo tente substituir a região A no Arquivo X. O ReFS duplicará a região compartilhada, atualizará as contagens de referência adequadamente e executará a gravação de entrada na região recém-duplicada. Isso garante que o isolamento entre os arquivos seja preservado.
 
 ![Isolamento preservado pela gravação em uma nova região G e atualização de contagens de referência](media/block-clone-3.png)
 
@@ -50,18 +50,18 @@ Após a gravação de modificação, a região B ainda é compartilhada pelos do
 
 
 ## <a name="functionality-restrictions-and-remarks"></a>Restrições e comentários sobre a funcionalidade
-- As regiões de origem e de destino devem começar e terminar em um limite de cluster. 
-- A região clonada deve ter menos de 4 GB. 
+- As regiões de origem e de destino devem começar e terminar em um limite de cluster.
+- A região clonada deve ter menos de 4 GB.
 - O número máximo de regiões de arquivo que podem ser mapeadas para a mesma região física é 8175.
-- A região de destino não deve ultrapassar o final do arquivo. Se o aplicativo quiser estender o destino com dados clonados, ele deverá chamar [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx) primeiro. 
+- A região de destino não deve ultrapassar o final do arquivo. Se o aplicativo quiser estender o destino com dados clonados, ele deverá chamar [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx) primeiro.
 - Se as regiões de origem e de destino estiverem no mesmo arquivo, elas não deverão se sobrepor. (O aplicativo poderá continuar dividindo a operação de clonagem de blocos em vários clones de blocos que não se sobrepõem mais.)
-- Os arquivos de origem e de destino devem estar no mesmo volume do ReFS. 
-- Os arquivos de origem e de destino devem ter a mesma configuração de [Fluxos de Integridade](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx). 
-- Se o arquivo de origem for esparso, o arquivo de destino também deverá ser esparso. 
+- Os arquivos de origem e de destino devem estar no mesmo volume do ReFS.
+- Os arquivos de origem e de destino devem ter a mesma configuração de [Fluxos de Integridade](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx).
+- Se o arquivo de origem for esparso, o arquivo de destino também deverá ser esparso.
 - A operação de clonagem de blocos interromperá os bloqueios oportunistas compartilhados (também conhecidos como [bloqueios oportunistas de nível 2](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx)).
-- O volume do ReFS deverá ter sido formatado com o Windows Server 2016 e, se o Clustering de Failover estiver em uso, o Nível Funcional de Clustering deve ter sido o Windows Server 2016 ou posterior no momento da formatação. 
+- O volume do ReFS deverá ter sido formatado com o Windows Server 2016 e, se o Clustering de Failover estiver em uso, o Nível Funcional de Clustering deve ter sido o Windows Server 2016 ou posterior no momento da formatação.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Visão geral do ReFS](refs-overview.md)
 -   [Fluxos de integridade ReFS](integrity-streams.md)

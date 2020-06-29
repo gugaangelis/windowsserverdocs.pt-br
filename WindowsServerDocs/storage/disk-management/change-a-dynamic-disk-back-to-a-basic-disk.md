@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 8ad14225592d627b6ff88b9e2286b686aa549392
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f8ad7ca8fedfa3493a7f5369f8f603913879b50d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75351949"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475423"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Reverter um disco dinâmico em um disco básico
 
@@ -68,6 +68,6 @@ Este tópico descreve como excluir tudo em um disco dinâmico e, em seguida, con
 -   O disco não deve conter quaisquer volumes ou dados antes de você poder revertê-lo para um disco básico. Se quiser manter seus dados, faça o backup ou transfira-os para outro volume antes de converter o disco em um disco básico.
 -   Ao alterar um disco dinâmico para um disco básico, será possível criar somente partições e unidades lógicas existentes nele.
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)

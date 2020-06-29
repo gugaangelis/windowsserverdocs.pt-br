@@ -8,12 +8,12 @@ ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
-ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
+ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77608805"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473823"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Criando volumes em Espaços de Armazenamento Diretos
 
@@ -26,7 +26,7 @@ Este tópico descreve como criar volumes em um cluster Espaços de Armazenamento
 
 ## <a name="create-a-three-way-mirror-volume"></a>Criar um volume de espelho de três vias
 
-Para criar um volume de espelho de três vias no centro de administração do Windows: 
+Para criar um volume de espelho de três vias no centro de administração do Windows:
 
 1. No centro de administração do Windows, conecte-se a um cluster Espaços de Armazenamento Diretos e, em seguida, selecione **volumes** no painel **ferramentas** .
 2. Na página volumes, selecione a guia **inventário** e, em seguida, selecione **criar volume**.
@@ -151,9 +151,9 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 Concluído! Repita conforme necessário para criar mais de um volume.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
-- [Planejando volumes no Espaços de Armazenamento Diretos](plan-volumes.md)
-- [Estendendo volumes no Espaços de Armazenamento Diretos](resize-volumes.md)
+- [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
+- [Estendendo volumes em Espaços de Armazenamento Diretos](resize-volumes.md)
 - [Excluindo volumes no Espaços de Armazenamento Diretos](delete-volumes.md)

@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6acf062d2dba7c2a1a04d8a3f7cb4d7bd51a4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e8e8b6ce7a6ab676e1fca32f360370180b38eae2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856129"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474643"
 ---
 # <a name="performance-history-for-volumes"></a>Histórico de desempenho de volumes
 
@@ -59,7 +59,7 @@ Essas séries são coletadas para cada volume elegível:
 
 ## <a name="where-they-come-from"></a>De onde vêm
 
-As séries `iops.*`, `throughput.*`e `latency.*` são coletadas do contador de desempenho `Cluster CSVFS` conjunto. Cada servidor no cluster tem uma instância para cada volume CSV, independentemente da propriedade. O histórico de desempenho registrado para o volume `MyVolume` é a agregação das instâncias de `MyVolume` em cada servidor no cluster.
+As `iops.*` `throughput.*` séries, e `latency.*` são coletadas do `Cluster CSVFS` conjunto de contadores de desempenho. Cada servidor no cluster tem uma instância para cada volume CSV, independentemente da propriedade. O histórico de desempenho registrado para o volume `MyVolume` é a agregação das `MyVolume` instâncias em cada servidor no cluster.
 
 | Série                    | Contador de origem         |
 |---------------------------|------------------------|
@@ -74,14 +74,14 @@ As séries `iops.*`, `throughput.*`e `latency.*` são coletadas do contador de d
 | `volume.latency.average`  | *média dos itens acima* |
 
    > [!NOTE]
-   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o volume estiver ocioso por 9 segundos, mas concluir 30 IOs no décimo segundo, seu `volume.iops.total` será gravado como 3 IOs por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
+   > Os contadores são medidos em todo o intervalo, não amostras. Por exemplo, se o volume estiver ocioso por 9 segundos, mas concluir 30 IOs em 10 de segundo, seu `volume.iops.total` será registrado como 3 Ios por segundo em média durante esse intervalo de 10 segundos. Isso garante que seu histórico de desempenho Capture todas as atividades e seja robusto para ruído.
 
    > [!TIP]
    > Esses são os mesmos contadores usados pela estrutura de benchmark de [frota de VM](https://github.com/Microsoft/diskspd/blob/master/Frameworks/VMFleet/watch-cluster.ps1) popular.
 
-A série `size.*` é coletada da classe `MSFT_Volume` no WMI, uma instância por volume.
+A `size.*` série é coletada da `MSFT_Volume` classe no WMI, uma instância por volume.
 
-| Série                    | Propriedade Source |
+| Série                    | propriedade Source |
 |---------------------------|-----------------|
 | `volume.size.total`       | `Size`          |
 | `volume.size.available`   | `SizeRemaining` |
@@ -94,6 +94,6 @@ Use o cmdlet [Get-volume](https://docs.microsoft.com/powershell/module/storage/g
 Get-Volume -FriendlyName <FriendlyName> | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Histórico de desempenho para Espaços de Armazenamento Diretos](performance-history.md)

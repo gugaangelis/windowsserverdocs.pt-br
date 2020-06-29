@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 37719656e107869b97045af98c1a63744e4f6b38
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403030"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474033"
 ---
 # <a name="edit-quota-template-properties"></a>Editar propriedades de modelo de cota
 
-> Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Quando você faz alterações a um modelo de cota, você tem a opção de ampliar essas alterações para cotas que foram criadas com o modelo de cota original. Você pode optar por modificar somente as cotas que ainda correspondem ao modelo original ou todas as cotas que foram derivadas do modelo original, independentemente de quaisquer modificações que foram feitas às cotas desde que eles foram criadas. Esse recurso simplifica o processo de atualização das propriedades de suas cotas fornecendo um ponto central onde você pode realizar todas as alterações.
 
@@ -42,7 +42,7 @@ Quando você faz alterações a um modelo de cota, você tem a opção de amplia
 
 6.  Clique em **OK**.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Gerenciamento de cota](quota-management.md)
 -   [Criar um modelo de cota](create-quota-template.md)

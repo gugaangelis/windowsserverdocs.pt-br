@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 246df5b13a1dbea614886ab7fe445dd448ae1763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402175"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474923"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar a enumeração baseada em acesso em um Namespace
 
@@ -21,12 +21,12 @@ ms.locfileid: "71402175"
 
 A enumeração baseada em acesso esconde arquivos e pastas que os usuários não têm permissão para acessar. Por padrão, esse recurso não está habilitado para namespaces DFS. Você pode habilitar a enumeração baseada em acesso de pastas DFS usando o Gerenciamento DFS. Para controlar a enumeração baseada em acesso de arquivos e pastas em destinos de pasta, você deve habilitar a enumeração baseada em acesso em cada pasta compartilhada usando o gerenciamento de compartilhamento e armazenamento.
 
-Para habilitar a enumeração baseada em acesso em um namespace, todos os servidores de namespace devem estar executando o Windows Server 2008 ou mais recente. Além disso, os namespaces baseados em domínio devem usar o modo Windows Server 2008. Para obter informações sobre os requisitos do modo do Windows Server 2008, consulte [escolher um tipo de namespace](choose-a-namespace-type.md).
+Para habilitar a enumeração baseada em acesso em um namespace, todos os servidores de namespace devem estar executando o Windows Server 2008 ou mais recente. Além disso, namespaces baseados em domínio devem usar o modo Windows Server 2008. Para obter mais informações sobre o modo Windows Server 2008, consulte [Escolha um tipo de namespace](choose-a-namespace-type.md).
 
 Em alguns ambientes, a habilitação de enumeração baseada em acesso pode causar alta utilização da CPU no servidor e tempo de resposta lento para os usuários.
 
 > [!NOTE]
-> Se você atualizar o nível funcional do domínio para o Windows Server 2008 enquanto houver Namespaces baseados em domínio existentes, o Gerenciamento DFS permitirá que você habilite a enumeração baseada em acesso nesses namespaces. No entanto, você não poderá editar permissões para ocultar pastas de grupos ou usuários, a menos que migre os namespaces para o modo do Windows Server 2008. Para obter mais informações, consulte [Migrar um Namespace Baseado em Domínio para o Modo Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md).
+> Se você fizer upgrade no nível do domínio funcional para o Windows Server 2008 enquanto existirem namespaces baseados em domínio, o Gerenciamento DFS permitirá que você habilite a enumeração baseada em acesso nesses namespaces. No entanto, você não conseguirá editar permissões para ocultar pastas de quaisquer grupos ou usuários, a menos que você migre os namespaces para o modo Windows Server 2008. Para obter mais informações, consulte [Migrar um Namespace Baseado em Domínio para o Modo Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md).
 
 
 Para usar a enumeração baseada em acesso aos Namespaces DFS, você deve seguir estas etapas:
@@ -49,11 +49,11 @@ Você pode habilitar a enumeração baseada em acesso em um namespace usando a i
 
 ## <a name="to-enable-access-based-enumeration-by-using-a-command-line"></a>Para habilitar a enumeração baseada em acesso usando uma linha de comando
 
-1.  Abra uma janela de prompt de comando em um servidor que tem o **Distributed File System** serviço de função ou **ferramentas do sistema de arquivos distribuído** recurso instalado.
+1.  Abra uma janela de prompt de comando em um servidor que tenha o **sistema de arquivos distribuído** serviço de função ou o recurso de **Ferramentas do sistema de arquivos distribuído** instalado.
 
-2.  Digite o seguinte comando, em que *< namespace\_raiz >* é a raiz do namespace:
+2.  Digite o seguinte comando, em que *<\_>raiz do namespace* é a raiz do namespace:
 
-    ```  
+    ```
     dfsutil property abe enable \\ <namespace_root>
     ```
 
@@ -80,16 +80,16 @@ Você pode controlar quais usuários e grupos podem exibir pastas DFS individuai
 
 1. Abra uma janela de prompt de comando em um servidor que tem o **Distributed File System** serviço de função ou **ferramentas do sistema de arquivos distribuído** recurso instalado.
 
-2. Digite o seguinte comando, em que *&lt;DFSPath&gt;* é o caminho da pasta DFS (link), *< conta de\\de domínio >* é o nome do grupo ou da conta de usuário, e *(...)* é substituído por ACEs (entradas de controle de acesso) adicionais:
+2. Digite o seguinte comando, em que * &lt; &gt; DFSPath* é o caminho da pasta DFS (link), *<conta de domínio \\>* é o nome do grupo ou da conta de usuário e *(...)* é substituído por ACEs (entradas de controle de acesso) adicionais:
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   Por exemplo, para substituir as permissões existentes por permissões que permitem que os administradores de domínio e o CONTOSO\\os estagiários agrupem o acesso de leitura (R) para a pasta \\contoso. office\public\training, digite o seguinte comando:
+   Por exemplo, para substituir as permissões existentes por permissões que permitem que os administradores de domínio e os estagiários da CONTOSO tenham \\ acesso de leitura (R) à \\ pasta contoso. office\public\training, digite o seguinte comando:
 
    ```
-   dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
+   dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace
    ```
 
 3. Para executar tarefas adicionais no prompt de comando, use os seguintes comandos:
@@ -97,11 +97,11 @@ Você pode controlar quais usuários e grupos podem exibir pastas DFS individuai
 
 | Comando | Descrição |
 |---|---|
-|[Propriedade Dfsutil SD Deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|Nega a um grupo ou a usuário a capacidade de exibir a pasta.|
-|[Configuração de SD da propriedade Dfsutil](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Remove todas as permissões da pasta.|
-|[DFSUtil Propriedade SD REVOKE](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Remove um grupo ou usuário ACE de uma pasta. |
+|[Propriedade Dfsutil sd negar](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|Nega a um grupo ou a usuário a capacidade de exibir a pasta.|
+|[Propriedade Dfsutil sd redefinir](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Remove todas as permissões da pasta.|
+|[Propriedade Dfsutil sd revogar](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Remove um grupo ou usuário ACE de uma pasta. |
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Criar um namespace do DFS](create-a-dfs-namespace.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

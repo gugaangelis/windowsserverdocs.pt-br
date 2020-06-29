@@ -8,12 +8,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d9ebc40b69373dafbebdb87f2abe624a5a7a4375
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858949"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85474233"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>Usando Espaços de Armazenamento Diretos com o cache de leitura na memória CSV
 > Aplica-se a: Windows Server 2016, Windows Server 2019
@@ -24,7 +24,7 @@ Espaços de Armazenamento Diretos é compatível com o cache de leitura na memó
 
 Como o cache na memória é servidor local, ele melhora a localidade de dados para implantações de Espaços de Armazenamento Diretos hiperconvergentes: as leituras recentes são armazenadas em cache na memória no mesmo host em que a máquina virtual está em execução, reduzindo a frequência com que as leituras passam pela rede. Isso resulta em menor latência e melhor desempenho de armazenamento.
 
-## <a name="planning-considerations"></a>Considerações de planejamento
+## <a name="planning-considerations"></a>Considerações sobre planejamento
 
 O cache de leitura na memória é mais eficaz para cargas de trabalho com uso intensivo de leitura, como o Virtual Desktop Infrastructure (VDI). Por outro lado, se a carga de trabalho for extremamente de gravação intensa, o cache poderá introduzir mais sobrecarga que o valor e deverá ser desabilitado.
 
@@ -51,7 +51,7 @@ Para ver a quantidade de memória alocada usando o PowerShell, execute:
 (Get-Cluster).BlockCacheSize
 ```
 
-O valor retornado está em mebibytes (MiB) por servidor. Por exemplo, `1024` representa 1 Gibibyte (GiB).
+O valor retornado está em mebibytes (MiB) por servidor. Por exemplo, `1024` representa 1 Gibibyte (GIB).
 
 Para alterar a quantidade de memória alocada, modifique esse valor usando o PowerShell. Por exemplo, para alocar 2 GiB por servidor, execute:
 
@@ -69,6 +69,6 @@ Get-ClusterSharedVolume | ForEach {
 }
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
