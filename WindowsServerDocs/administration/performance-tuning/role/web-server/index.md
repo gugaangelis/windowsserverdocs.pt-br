@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ec36d87957e5bbe897597e330e766c3193cd30d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851689"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471201"
 ---
 # <a name="performance-tuning-web-servers"></a>Ajuste de desempenho de servidores Web
 
@@ -57,7 +57,7 @@ Desabilitar as atualizações é útil ao utilizar grandes conjuntos de dados (o
 >[!Warning]
 > Alguns aplicativos, como utilitários de backup incrementais, dependem dessas informações de atualização e não funcionam corretamente sem elas.
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 - [Ajuste de desempenho do IIS 10.0](tuning-iis-10.md)
 - [Ajuste do HTTP 1.1/2](http-performance.md)
 

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5f2e8a0816fdd78491c18e196a57a38734e3368e
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950252"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094504"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel
 
@@ -135,4 +135,4 @@ Para obter informações adicionais relacionadas, consulte os seguintes recursos
 | Implantação | [Implantar Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](deploy-folder-redirection.md)<br>[Como implementar uma solução de centralização de dados do usuário final: validação e implantação da tecnologia de Arquivos Offline e Redirecionamento de Pastas](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Guia de implantação de como gerenciar a implantação de dados de usuário de roaming](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guia Passo a Passo de Configuração de Novos Recursos de Arquivos Offline para Computadores com o Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Como implantar o Redirecionamento de Pastas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Como implementar o Redirecionamento de Pastas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | Ferramentas e configurações | [Arquivos Offline no MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referência de Política de Grupo de Arquivos Offline](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
 | Recursos da comunidade | [Fórum de Armazenamento e Serviços de Arquivo](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Hey, Scripting Guy! Como trabalhar com o recurso Arquivos Offline no Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy! Como habilitar e desabilitar Arquivos Offline?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
-| Tecnologias relacionadas|[Identidade e Acesso no Windows Server](../../identity/identity-and-access.md)<br>[Armazenamento no Windows Server](../storage.md)<br>[Acesso remoto e gerenciamento de servidor](../../remote/index.md) |
+| Tecnologias relacionadas|[Identidade e Acesso no Windows Server](../../identity/identity-and-access.yml)<br>[Armazenamento no Windows Server](../storage.yml)<br>[Acesso remoto e gerenciamento de servidor](../../remote/index.md) |

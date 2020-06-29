@@ -7,18 +7,18 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 17551da6cd270f05cf2d6b1a8147958f82b2c9b3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dcf43bf41edada0a2e3df6fde825ff128a119a8f
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851799"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471351"
 ---
 # <a name="hyper-v-network-io-performance"></a>Desempenho de e/s de rede do Hyper-V
 
 O servidor 2016 contém vários aprimoramentos e novas funcionalidades para otimizar o desempenho da rede no Hyper-V.  A documentação sobre como otimizar o desempenho da rede será incluída em uma versão futura deste artigo.
 
-## <a name="live-migration"></a>Migração ao vivo
+## <a name="live-migration"></a>Migração dinâmica
 
 Migração ao Vivo permite mover de forma transparente as máquinas virtuais em execução de um nó de um cluster de failover para outro nó no mesmo cluster sem uma conexão de rede descartada ou tempo de inatividade percebido.
 
@@ -35,7 +35,7 @@ Além disso, aumentar o número de buffers de envio e recebimento em cada adapta
 
 O Windows Server 2012 R2 introduziu uma opção para acelerar a Migração ao Vivo compactando a memória antes de transferi-la pela rede ou usar o RDMA (acesso remoto direto à memória), se o hardware oferecer suporte a ela.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

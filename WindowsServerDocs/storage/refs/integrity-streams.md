@@ -8,21 +8,21 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 5e4ce1870d8aea01de0ab621d7efe197026643db
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55611be13333c36201aad149be87207564d4ac97
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861329"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471141"
 ---
 # <a name="refs-integrity-streams"></a>Fluxos de integridade ReFS
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semestral), Windows 10
 
 Os fluxos de integridade são um recurso opcional do ReFS que valida e mantém a integridade dos dados usando somas de verificação. Embora o ReFS sempre use somas de verificação para metadados, por padrão, o ReFS não gera ou valida somas de verificação para dados de arquivos. Fluxos de integridade é um recurso opcional que permite que os usuários utilizam somas de verificação para dados de arquivo. Quando fluxos de integridade estiverem habilitados, ReFS pode determinar claramente se os dados são válidos ou corrompidos. Além disso, o ReFS e os Espaços de Armazenamento podem corrigir dados e metadados corrompidos automaticamente em conjunto.
 
-## <a name="how-it-works"></a>Como funciona 
+## <a name="how-it-works"></a>Como ele funciona
 
-Os fluxos de integridade podem ser habilitados para arquivos individuais, diretórios ou todo o volume, as configurações de fluxo de integridade podem ser ativadas e desativadas a qualquer momento. Além disso, as configurações de fluxo de integridade para arquivos e diretórios são herdadas dos diretórios pai. 
+Os fluxos de integridade podem ser habilitados para arquivos individuais, diretórios ou todo o volume, as configurações de fluxo de integridade podem ser ativadas e desativadas a qualquer momento. Além disso, as configurações de fluxo de integridade para arquivos e diretórios são herdadas dos diretórios pai.
 
 Depois que os fluxos de integridade são habilitados, o ReFS criam e mantêm uma soma de verificação para os arquivos especificados nos metadados do arquivo. Essa soma de verificação permite que o ReFS valide a integridade dos dados antes de acessá-los. Antes de retornar dados que tenham fluxos de integridade habilitados, o ReFS calculam a soma de verificação primeiro:
 
@@ -30,22 +30,22 @@ Depois que os fluxos de integridade são habilitados, o ReFS criam e mantêm uma
 
 Em seguida, essa soma de verificação é comparada com a soma de verificação contida nos metadados do arquivo. Se as somas de verificação coincidirem, os dados serão marcados como válidos e retornados ao usuário. Se as somas de verificação não coincidirem, então os dados estão corrompidos. A resiliência do volume determina como o ReFS responde a danos:
 
-- Se o ReFS for montado em um espaço simples não resiliente ou em uma unidade básica, o ReFS retornará um erro para o usuário sem retornar os dados corrompidos. 
-- Se o ReFS for montado em um espaço de espelhamento ou paridade resiliente, o ReFS tentará corrigir dano. 
+- Se o ReFS for montado em um espaço simples não resiliente ou em uma unidade básica, o ReFS retornará um erro para o usuário sem retornar os dados corrompidos.
+- Se o ReFS for montado em um espaço de espelhamento ou paridade resiliente, o ReFS tentará corrigir dano.
     - Se a tentativa for bem-sucedida, o ReFS aplicará a uma gravação de corretiva para restaurar a integridade dos dados e retornará os dados válidos para o aplicativo. O aplicativo continuará não ciente dos danos.
-    - Se a tentativa for malsucedida, o ReFS retornará um erro. 
+    - Se a tentativa for malsucedida, o ReFS retornará um erro.
 
-O ReFS registrará todos os danos no Log de Eventos do Sistema, e no log constará se os danos foram corrigidos. 
+O ReFS registrará todos os danos no Log de Eventos do Sistema, e no log constará se os danos foram corrigidos.
 
 ![Integridade de dados das restaurações de gravação corretivas](media/corrective-write.gif)
 
-## <a name="performance"></a>Desempenho 
+## <a name="performance"></a>Desempenho
 
 Embora os fluxos de integridade forneçam maior integridade de dados para o sistema, eles também geram um custo de desempenho. Há alguns motivos diferentes para isso:
-- Se os fluxos de integridade forem habilitados, todas as operações de gravação se tornarão operações de alocação mediante gravação. Embora isso evite quaisquer afunilamentos de leitura/modificação/gravação pois o ReFS não precisa ler ou modificar qualquer dado existente, os dados de arquivo frequentemente tornam-se fragmentados, o que atrasa as leituras. 
-- Dependendo da carga de trabalho e do armazenamento subjacente do sistema, o custo da computação e validação da soma de verificação pode causar o aumento da latência de E/S. 
+- Se os fluxos de integridade forem habilitados, todas as operações de gravação se tornarão operações de alocação mediante gravação. Embora isso evite quaisquer afunilamentos de leitura/modificação/gravação pois o ReFS não precisa ler ou modificar qualquer dado existente, os dados de arquivo frequentemente tornam-se fragmentados, o que atrasa as leituras.
+- Dependendo da carga de trabalho e do armazenamento subjacente do sistema, o custo da computação e validação da soma de verificação pode causar o aumento da latência de E/S.
 
-Como os fluxos de integridade têm um custo de desempenho, recomendamos deixar os fluxos de integridade desabilitados em sistemas de desempenho sensível. 
+Como os fluxos de integridade têm um custo de desempenho, recomendamos deixar os fluxos de integridade desabilitados em sistemas de desempenho sensível.
 
 ## <a name="integrity-scrubber"></a>Depurador de integridade
 
@@ -54,46 +54,46 @@ Conforme descrito acima, ReFS validará automaticamente a integridade dos dados 
   >[!NOTE]
   >O depurador de integridade de dados pode validar apenas dados de arquivo para arquivos onde os fluxos de integridade estão habilitado.
 
-Por padrão, o depurador é executado a cada quatro semanas, embora esse intervalo possa ser configurado no Agendador de tarefas em Microsoft\Windows\Verificação de Integridade de Dados. 
+Por padrão, o depurador é executado a cada quatro semanas, embora esse intervalo possa ser configurado no Agendador de tarefas em Microsoft\Windows\Verificação de Integridade de Dados.
 
 ## <a name="examples"></a>Exemplos
 Para monitorar e alterar as configurações de integridade de dados de arquivos, o ReFS usa os cmdlets **Get-FileIntegrity** e **Set-FileIntegrity**.
 
 ### <a name="get-fileintegrity"></a>Get-FileIntegrity
-Para ver se os fluxos de integridade estão habilitados para dados de arquivos, use o cmdlet **Get-FileIntegrity**. 
+Para ver se os fluxos de integridade estão habilitados para dados de arquivos, use o cmdlet **Get-FileIntegrity**.
 
 ```PowerShell
 PS C:\> Get-FileIntegrity -FileName 'C:\Docs\TextDocument.txt'
 ```
 
-Você também pode usar o cmdlet **Get-Item** para obter as configurações de fluxo integridade para todos os arquivos do diretório especificado. 
+Você também pode usar o cmdlet **Get-Item** para obter as configurações de fluxo integridade para todos os arquivos do diretório especificado.
 
 ```PowerShell
 PS C:\> Get-Item -Path 'C:\Docs\*' | Get-FileIntegrity
 ```
 
 ### <a name="set-fileintegrity"></a>Set-FileIntegrity
-Para habilitar/desabilitar fluxos de integridade para dados de arquivos, use o cmdlet **Set-FileIntegrity**. 
+Para habilitar/desabilitar fluxos de integridade para dados de arquivos, use o cmdlet **Set-FileIntegrity**.
 
 ```PowerShell
 PS C:\> Set-FileIntegrity -FileName 'H:\Docs\TextDocument.txt' -Enable $True
 ```
 
-Você também pode usar o cmdlet **Get-Item** para definir as configurações de fluxo integridade para todos os arquivos da pasta especificada. 
+Você também pode usar o cmdlet **Get-Item** para definir as configurações de fluxo integridade para todos os arquivos da pasta especificada.
 
 ```PowerShell
-PS C:\> Get-Item -Path 'H\Docs\*' | Set-FileIntegrity -Enable $True 
+PS C:\> Get-Item -Path 'H\Docs\*' | Set-FileIntegrity -Enable $True
 ```
 
-O cmdlet **Set-FileIntegrity** também pode ser usado diretamente em volumes e diretórios. 
+O cmdlet **Set-FileIntegrity** também pode ser usado diretamente em volumes e diretórios.
 
 ```PowerShell
 PS C:\> Set-FileIntegrity H:\ -Enable $True
 PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Visão geral do ReFS](refs-overview.md)
--   [Clonagem de bloco ReFS](block-cloning.md)
+-   [Clonagem de blocos ReFS](block-cloning.md)
 -   [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)

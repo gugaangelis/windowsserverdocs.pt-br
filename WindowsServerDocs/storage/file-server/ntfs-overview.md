@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b98877d0a94ff8033b65bf74d0118e2a5f1ea092
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 450e5a4e800a8631adacb9826db63e747ecce4e1
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71402072"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070534"
 ---
 # <a name="ntfs-overview"></a>Visão geral do NTFS
 
@@ -100,4 +100,4 @@ Se o espaço em um volume for limitado, o NTFS fornecerá as seguintes maneiras 
 - [Integridade do NTFS e Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
 - [Autorrecuperação do NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)) (introduzida no Windows Server 2008)
 - [NTFS Transacional](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (introduzido no Windows Server 2008)
-- [Armazenamento no Windows Server](../storage.md)
+- [Armazenamento no Windows Server](../storage.yml)

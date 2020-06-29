@@ -1,5 +1,5 @@
 ---
-title: Arquitetura Hyper-V
+title: Arquitetura do Hyper-V
 description: Condsiderations de arquitetura do Hyper-v para ajuste de desempenho
 ms.prod: windows-server
 ms.technology: performance-tuning-guide
@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 47ff4a25f67e2b03655d17ab5a57aeaa3274a835
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd154ef12bd356d872229cc5cb67a7b8d3e0e628
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851829"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471491"
 ---
-# <a name="hyper-v-architecture"></a>Arquitetura Hyper-V
+# <a name="hyper-v-architecture"></a>Arquitetura do Hyper-V
 
 O Hyper-V apresenta uma arquitetura baseada em hipervisor tipo 1. O hipervisor virtualiza processadores e memória e fornece mecanismos para a pilha de virtualização na partição raiz para gerenciar partições filho (máquinas virtuais) e expor serviços como dispositivos de e/s para as máquinas virtuais.
 
@@ -28,7 +28,7 @@ A partir do Windows Server 2008, o sistema operacional apresenta esclarecimentos
 
 As seções a seguir sugerem práticas recomendadas que produzem maior desempenho em servidores que executam a função do Hyper-V.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

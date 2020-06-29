@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: ivanpash; gmonte
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e62f7428f015193896aba5c7d9c146bd11e7225
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a0a4464d7a13911ec9cc7d104b6fe9292a64586e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851679"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471241"
 ---
 # <a name="performance-tuning-http-112"></a>Ajuste de desempenho HTTP 1.1/2
 
@@ -20,6 +20,6 @@ O HTTP/2 destina-se a melhorar o desempenho no lado do cliente (por exemplo, o t
 
 Algumas situações exigem um fallback de HTTP/1.1 (redefinindo a conexão HTTP/2 e, em vez disso, estabelecendo uma nova conexão para usar HTTP/1.1). Em particular, a renegociação de TLS e a autenticação HTTP (além de básica e Digest) exigem fallback de HTTP/1.1. Embora isso adicione sobrecarga, essas operações já implicam algum atraso e, portanto, não são particularmente sensíveis ao desempenho.
 
-## <a name="see-also"></a>Consulte também
-- [Ajuste de desempenho do servidor Web](index.md) 
+## <a name="additional-references"></a>Referências adicionais
+- [Ajuste de desempenho do servidor Web](index.md)
 - [Ajuste de desempenho do IIS 10.0](tuning-iis-10.md)

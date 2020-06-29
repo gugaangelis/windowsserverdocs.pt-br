@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c3eb62d53ef11d5531590e1a6d46cd6cacaf2e4a
+ms.sourcegitcommit: 5bc5aaf341c711113ca03d1482f933b05b146007
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822709"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85094542"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novidades no Windows Server 2016
 
@@ -59,7 +59,7 @@ O Windows Server 2016 fornece uma nova máquina virtual blindada com base em Hyp
 
 Para obter mais detalhes e instruções para trabalhar com máquinas virtuais blindadas, consulte [Guia de validação de VMs blindadas e malha protegida para Windows Server 2016 (TPM)](https://aka.ms/shieldedvms).  
 
-## <a name="identity-and-access"></a>[Identidade e acesso](../identity/Identity-and-Access.md)  
+## <a name="identity-and-access"></a>[Identidade e acesso](../identity/Identity-and-Access.yml)  
 Novos recursos na identidade melhoram a capacidade para as organizações protegerem ambientes do Active Directory e ajuda a migrar para implantações apenas na nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados no local.  
 
 ### <a name="active-directory-certificate-services"></a>Serviços de Certificados do Active Directory  
@@ -74,7 +74,7 @@ Novidades nos Serviços de Federação do Active Directory. O AD FS (Serviços d
 ### <a name="web-application-proxy"></a>Proxy de aplicativo Web  
 A versão mais recente do Proxy de aplicativo Web se concentra em novos recursos que habilitam a publicação e a pré-autenticação para mais aplicativos e experiência do usuário aprimorada. Confira a lista completa dos novos recursos que incluem a pré-autenticação para aplicativos de cliente avançado como o Exchange ActiveSync e domínios curinga para a publicação mais fácil de aplicativos do SharePoint. Para obter mais informações, confira [Proxy de aplicativo Web no Windows Server 2016](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).  
 
-##  <a name="administration"></a>[Administração](../administration/manage-windows-server.md)  
+##  <a name="administration"></a>[Administração](../administration/manage-windows-server.yml)  
 A área de gerenciamento e automação concentra-se na ferramenta e nas informações de referência para profissionais de TI que desejam executar e gerenciar o Windows Server 2016, incluindo o Windows PowerShell.
 
 O Windows PowerShell 5.1 contém novos recursos significativos, incluindo suporte para o desenvolvimento com classes e novos recursos de segurança, que ampliam seu uso, melhoram sua usabilidade e permitem controlar e gerenciar ambientes baseados em Windows de forma mais fácil e abrangente. Confira [Novos cenários e recursos no WMF 5.1](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features) para obter mais detalhes.
@@ -98,7 +98,7 @@ Para ajudar a equipe responsável pela investigação de sistemas comprometidos 
 
 Para obter mais informações, confira [PowerShell ♥ a equipe azul](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/).
 
-## <a name="networking"></a>[Rede](../networking/Networking.md)  
+## <a name="networking"></a>[Rede](../networking/index.yml)  
 Esta área aborda os produtos e recursos de rede para o profissional de TI desenvolver, implantar e manter o Windows Server 2016.  
 
 ### <a name="software-defined-networking"></a>Redes definidas por software
@@ -132,7 +132,7 @@ O Device Guard fornece KMCI (integridade de código no modo kernel) e UMCI (inte
 O CFG (Proteção de Fluxo de Controle) é um recurso de segurança de plataforma que foi criado para combater as vulnerabilidades de corrupção da memória. Para saber mais, confira [Control Flow Guard (Proteção de Fluxo de Controle)](https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx).
 
 
-## <a name="storage"></a>[Armazenamento](../storage/storage.md)
+## <a name="storage"></a>[Armazenamento](../storage/storage.yml)
 
 O armazenamento no Windows Server 2016 inclui novos recursos e aprimoramentos de armazenamento definidos pelo software, bem como para servidores de arquivos tradicionais. Veja abaixo alguns dos recursos novos. Para conferir outros aprimoramentos e detalhes, confira [Novidades no Armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md).
 

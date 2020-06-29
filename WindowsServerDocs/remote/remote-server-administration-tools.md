@@ -8,12 +8,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 510ad2cb1449f161658684eeceec4dbbb7ce6699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 69b31c8ef0ce093604ee9fd8fe382d75f7f88595
+ms.sourcegitcommit: aeefdf7814a4672b2dcd7537204205bb7ee5f9a0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857089"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84514906"
 ---
 # <a name="remote-server-administration-tools"></a>Ferramentas de Administração de Servidor Remoto
 
@@ -52,11 +52,11 @@ O gerenciamento remoto do Windows PowerShell e do Gerenciador do Servidor deve s
         
 ## <a name="install-uninstall-and-turn-offon-rsat-tools"></a>Instalar, desinstalar e desligar/ligar Ferramentas de Administração de Servidor Remoto        
 
-### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-----r-l----ter"></a>Usar o FoD (Recursos Sob Demanda) para instalar ferramentas específicas das Ferramentas de Administração de Servidor Remoto na Atualização de outubro de 2018 para o Windows 10 ou posterior
+### <a name="use-features-on-demand-fod-to-install-specific-rsat-tools-on-windows-10-october-2018-update-or-later"></a>Use o FoD (Recursos Sob Demanda) para instalar ferramentas específicas das Ferramentas de Administração de Servidor Remoto na Atualização de outubro de 2018 para o Windows 10 ou posterior.
 
-Da atualização do Windows 10 de outubro de 2018 em diante, as Ferramentas de Administração de Servidor Remoto está incluída como um conjunto de **Recursos Sob Demanda** diretamente do Windows 10. Agora, em vez de baixar um pacote das Ferramentas de Administração de Servidor Remoto, você pode apenas ir para **Gerenciar recursos opcionais** em **Configurações** e clicar em **Adicionar um recurso** para ver a lista de Ferramentas de Administração de Servidor Remoto disponíveis. Selecione e instale as Ferramentas de Administração de Servidor Remoto específicas de que você precisa. Para ver o progresso da instalação, clique no botão **Voltar** para exibir o status na página **Gerenciar recursos opcionais**.
+Começando na atualização do Windows 10 de outubro de 2018, a Ferramentas de Administração de Servidor Remoto está incluída como um conjunto de **Recursos Sob Demanda** diretamente do Windows 10. Agora, em vez de baixar um pacote das Ferramentas de Administração de Servidor Remoto, você pode apenas ir para **Gerenciar recursos opcionais** em **Configurações** e clicar em **Adicionar um recurso** para ver a lista de Ferramentas de Administração de Servidor Remoto disponíveis. Selecione e instale as Ferramentas de Administração de Servidor Remoto específicas de que você precisa. Para ver o progresso da instalação, clique no botão **Voltar** para exibir o status na página **Gerenciar recursos opcionais**.
         
-Confira a [lista de Ferramentas de Administração de Servidor Remoto disponíveis por meio do **Recursos Sob Demanda**](https://docs.microsoft.co    /wi    dows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Além de instalar por meio do aplicativo gráfico de **Configurações**, você também pode instalar Ferramentas de Administração de Servidor Remoto específicas por meio de linha de comando ou automação usando [**DISM/Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
+Confira a [lista de Ferramentas de Administração de Servidor Remoto disponíveis por meio do **Recursos Sob Demanda**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-non-language-fod#remote-server-administration-tools-rsat). Além de instalar por meio do aplicativo gráfico de **Configurações**, você também pode instalar Ferramentas de Administração de Servidor Remoto específicas por meio de linha de comando ou automação usando [**DISM/Add-Capability**](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities#using-dism-add-capability-to-add-or-remove-fods).
 
 Um benefício dos Recursos Sob Demanda é que os recursos instalados persistem entre atualizações de versão do Windows 10.        
         
@@ -91,7 +91,7 @@ Se você tiver uma versão do Windows 10 anterior à atualização de outubro de
 
 5.  A instalação requer alguns minutos para ser concluída.    
         
-##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-----aft----r-rsat-package-install"></a>Para desinstalar as Ferramentas de Administração de Servidor Remoto para Windows 10 (após a instalação do pacote das Ferramentas de Administração de Servidor Remoto)
+##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar as Ferramentas de Administração de Servidor Remoto para Windows 10 (após a instalação do pacote das Ferramentas de Administração de Servidor Remoto)
         
 1. Na área de trabalho, clique em **Iniciar**, clique em **Todos os Aplicativos**, clique em **Sistema Windows**e, em seguida, clique em **Painel de Controle**.
 
@@ -103,9 +103,9 @@ Se você tiver uma versão do Windows 10 anterior à atualização de outubro de
 
 5. Ao ser perguntado se tem certeza de que deseja desinstalar a atualização, clique em **Sim**.
    S
-   ##### <a name="to-turn----off-specific-tools-after-rsat-package-in----tall"></a>Para desligar ferramentas específicas (após a instalação do pacote das Ferramentas de Administração de Servidor Remoto)
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desligar ferramentas específicas (após a instalação do pacote das Ferramentas de Administração de Servidor Remoto)
         
-6. Na área de trabalho, clique em **Iniciar**, clique em **Todos os Aplicativos**, clique em **Sistema Windows** e, em seguida, clique em **Painel de Controle**.
+6. Na área de trabalho, clique em **Iniciar**, clique em **Todos os Aplicativos**, clique em **Sistema Windows**e, em seguida, clique em **Painel de Controle**.
 
 7. Clique em **Programas**; em seguida, em **Programas e Recursos** , clique em **Ativar ou desativar recursos do Windows**.
 
@@ -131,7 +131,7 @@ As ferramentas instaladas como parte das Ferramentas de Administração de Servi
 
 Em Ferramentas de Administração de Servidor Remoto para Windows 10, todas as ferramentas de gerenciamento do servidor baseadas em GUI, como snap-ins do MMC e caixas de diálogo, são acessadas no menu **Ferramentas** do console do Gerenciador do Servidor. Embora o computador que executa as Ferramentas de Administração de Servidor Remoto para Windows 10 execute um sistema operacional baseado no cliente, depois de instalar as ferramentas, o Gerenciador do Servidor, incluído nas Ferramentas de Administração de Servidor Remoto para Windows 10, é aberto automaticamente por padrão no computador cliente. Observe que não há nenhuma página **Servidor Local** no console do Gerenciador do Servidor executado em um computador cliente.
 
-##### <a name="to-start-server-manager-on-a-clien-----co----puter"></a>Para iniciar o Gerenciador do Servidor em um computador cliente
+##### <a name="to-start-server-manager-on-a-client-computer"></a>Para iniciar o Gerenciador do Servidor em um computador cliente
 
 1.  No menu **Iniciar** , clique em **Todos os Aplicativos**e, em seguida, clique em **Ferramentas Administrativas**.
 

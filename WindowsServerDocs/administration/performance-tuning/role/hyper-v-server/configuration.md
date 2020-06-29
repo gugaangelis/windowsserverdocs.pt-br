@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e3c4fa32b97761ad05c88722ef090f96fff21cf3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fb1001c99e084ab69f37db9779e5d5ae7acf58e
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851789"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471431"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -20,11 +20,11 @@ ms.locfileid: "80851789"
 
 As considerações de hardware para servidores que executam o Hyper-V geralmente são semelhantes aos de servidores não virtualizados, mas os servidores que executam o Hyper-V podem apresentar um aumento no uso da CPU, consumir mais memória e precisar de largura de banda de e/s maior devido à consolidação do servidor.
 
--   **Duo**
+-   **Processadores**
 
     O Hyper-V no Windows Server 2016 apresenta os processadores lógicos como um ou mais processadores virtuais para cada máquina virtual ativa. Agora, o Hyper-V requer processadores que dão suporte a tecnologias de conversão de endereços de segundo nível (SLAT), como EPT (tabelas de páginas estendidas) ou NPT (tabelas de páginas aninhadas).
 
--   **Armazenar**
+-   **Cache**
 
     O Hyper-V pode se beneficiar de caches de processador maiores, especialmente para cargas que têm um grande conjunto de trabalho na memória e em configurações de máquina virtual nas quais a taxa de processadores virtuais para processadores lógicos é alta.
 
@@ -32,15 +32,15 @@ As considerações de hardware para servidores que executam o Hyper-V geralmente
 
     O servidor físico requer memória suficiente para as partições raiz e filho. A partição raiz requer memória para executar e/SS com eficiência em nome das máquinas virtuais e operações como um instantâneo de máquina virtual. O Hyper-V garante que memória suficiente esteja disponível para a partição raiz e permite que a memória restante seja atribuída a partições filho. As partições filho devem ser dimensionadas com base nas necessidades da carga esperada para cada máquina virtual.
 
--   **Armazenamento**
+-   **Storage**
 
     O hardware de armazenamento deve ter largura de banda de e/s suficiente e capacidade para atender às necessidades atuais e futuras das máquinas virtuais que o servidor físico hospeda. Considere esses requisitos ao selecionar os controladores de armazenamento e os discos e escolher a configuração de RAID. Colocar máquinas virtuais com cargas de trabalho com grande volume de disco em discos físicos diferentes provavelmente melhorará o desempenho geral. Por exemplo, se quatro máquinas virtuais compartilharem um único disco e a utilizarem ativamente, cada máquina virtual poderá produzir apenas 25% da largura de banda do disco.
 
 ## <a name="power-plan-considerations"></a>Considerações do plano de energia
 
-Como tecnologia principal, a virtualização é uma poderosa ferramenta útil para aumentar a densidade da carga de trabalho do servidor, reduzindo o número de servidores físicos necessários em seu datacenter, aumentando a eficiência operacional e reduzindo os custos de consumo de energia. O gerenciamento de energia é essencial para o gerenciamento de custos. 
+Como tecnologia principal, a virtualização é uma poderosa ferramenta útil para aumentar a densidade da carga de trabalho do servidor, reduzindo o número de servidores físicos necessários em seu datacenter, aumentando a eficiência operacional e reduzindo os custos de consumo de energia. O gerenciamento de energia é essencial para o gerenciamento de custos.
 
-Em um ambiente de datacenter ideal, o consumo de energia é gerenciado por meio da consolidação de trabalho em computadores até que eles estejam mais ocupados e desligando computadores ociosos. Se essa abordagem não for prática, os administradores poderão aproveitar os planos de energia nos hosts físicos para garantir que eles não consumam mais energia do que o necessário. 
+Em um ambiente de datacenter ideal, o consumo de energia é gerenciado por meio da consolidação de trabalho em computadores até que eles estejam mais ocupados e desligando computadores ociosos. Se essa abordagem não for prática, os administradores poderão aproveitar os planos de energia nos hosts físicos para garantir que eles não consumam mais energia do que o necessário.
 
 As técnicas de gerenciamento de energia do servidor vêm com um custo, especialmente porque as cargas de trabalho de locatário não são confiáveis para ditar a política sobre a infraestrutura física do hoster. O software da camada do host é deixado em inferir como maximizar a taxa de transferência e minimizar o consumo de energia. Em máquinas quase ociosas, isso pode fazer com que a infraestrutura física conclua que o consumo de energia moderado é apropriado, resultando em cargas de trabalho de locatário individuais em execução mais lenta do que de outra forma.
 
@@ -72,22 +72,22 @@ O Hyper-V dá suporte e foi ajustado para vários sistemas operacionais convidad
 
 ## <a name="cpu-statistics"></a>Estatísticas de CPU
 
-O Hyper-V publica contadores de desempenho para ajudar a caracterizar o comportamento do servidor de virtualização e relatar o uso de recursos. O conjunto padrão de ferramentas para exibir contadores de desempenho no Windows inclui o monitor de desempenho e logman. exe, que pode exibir e registrar os contadores de desempenho do Hyper-V. Os nomes dos objetos de contador relevantes são prefixados com o **Hyper-V**.
+O Hyper-V publica contadores de desempenho para ajudar a caracterizar o comportamento do servidor de virtualização e relatar o uso de recursos. O conjunto padrão de ferramentas para exibir contadores de desempenho no Windows inclui o monitor de desempenho e Logman.exe, que pode exibir e registrar os contadores de desempenho do Hyper-V. Os nomes dos objetos de contador relevantes são prefixados com o **Hyper-V**.
 
 Você deve sempre medir o uso da CPU do sistema físico usando os contadores de desempenho do processador lógico do hipervisor do Hyper-V. Os contadores de utilização da CPU que o Gerenciador de tarefas e o monitor de desempenho relatam nas partições raiz e filho não refletem o uso real da CPU física. Use os seguintes contadores de desempenho para monitorar o desempenho:
 
-- **Processador lógico do hipervisor Hyper-V (\*)\\% tempo de execução total** O tempo total não ocioso dos processadores lógicos
+- **Processador lógico do hipervisor do Hyper-V ( \* ) \\ % tempo total de execução** do tempo total não ocioso dos processadores lógicos
 
-- **Processador lógico do hipervisor Hyper-V (\*)\\% tempo de execução do convidado** O tempo gasto na execução de ciclos em um convidado ou dentro do host
+- **Processador lógico do hipervisor Hyper-V ( \* ) \\ % tempo de execução de convidado** o tempo gasto na execução de ciclos em um convidado ou dentro do host
 
-- **Processador lógico do hipervisor do Hyper-V (\*)\\% tempo de execução do hipervisor** O tempo gasto na execução dentro do hipervisor
+- **Processador lógico do hipervisor Hyper-V ( \* ) \\ % tempo de execução do hipervisor** o tempo gasto em execução dentro do hipervisor
 
-- O **processador virtual raiz do hipervisor Hyper-V (\*)\\\\** * mede o uso da CPU da partição raiz
+- **Processador virtual da raiz do hipervisor do Hyper-V ( \* ) \\ \\ *** mede o uso da CPU da partição raiz
 
-- O **processador virtual do hipervisor Hyper-V (\*)\\\\** * mede o uso da CPU de partições de convidado
+- **Processador virtual do hipervisor do Hyper- \* V \\ \\ ()*** mede o uso da CPU de partições de convidado
 
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

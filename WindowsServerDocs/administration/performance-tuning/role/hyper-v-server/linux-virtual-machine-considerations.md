@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7abc1ef5473365dd26dce1167bb685f116822a7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1109eb50bbe052b39fe7a91903fa0aea58b6e4f1
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851739"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471381"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Considerações sobre a máquina virtual do Linux
 
@@ -24,9 +24,9 @@ Mesmo quando o convidado está em execução Integration Services, ele pode ser 
 
 ## <a name="linux-network-performance"></a>Desempenho de rede do Linux
 
-Por padrão, o Linux habilita aceleração e descarregamentos de hardware por padrão. Se o vRSS estiver habilitado nas propriedades de uma NIC no host e o convidado do Linux tiver a capacidade de usar o vRSS, a funcionalidade será habilitada. No PowerShell, esse mesmo parâmetro pode ser alterado com o comando `EnableNetAdapterRSS`.
+Por padrão, o Linux habilita aceleração e descarregamentos de hardware por padrão. Se o vRSS estiver habilitado nas propriedades de uma NIC no host e o convidado do Linux tiver a capacidade de usar o vRSS, a funcionalidade será habilitada. No PowerShell, esse mesmo parâmetro pode ser alterado com o `EnableNetAdapterRSS` comando.
 
-Da mesma forma, o recurso VMMQ (virtual switch RSS) pode ser habilitado na NIC física usada pelas **Propriedades** de convidado > **Configurar...**  > guia **avançado** > definir o **comutador virtual RSS** como **habilitado** ou habilitar VMMQ no PowerShell usando o seguinte:
+Da mesma forma, o recurso VMMQ (RSS switch virtual) pode ser habilitado na NIC física usada pelas **Propriedades**de convidado  >  **Configure...**  >  Guia **avançado** > definir **RSS do comutador virtual** como **habilitado** ou habilitar VMMQ no PowerShell usando o seguinte:
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -49,7 +49,7 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-Uma ferramenta útil para netbenchmarks de rede é o ntttcp, que está disponível no Linux e no Windows. A versão do Linux é de software livre e está disponível [em ntttcp-para-Linux no github.com](https://github.com/Microsoft/ntttcp-for-linux). A versão do Windows pode ser encontrada no [centro de download](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769). Ao ajustar cargas de trabalho, é melhor usar tantos fluxos quantos forem necessários para obter a melhor taxa de transferência. Usando ntttcp para modelar o tráfego, o parâmetro `-P` define o número de conexões paralelas usadas.
+Uma ferramenta útil para netbenchmarks de rede é o ntttcp, que está disponível no Linux e no Windows. A versão do Linux é de software livre e está disponível [em ntttcp-para-Linux no github.com](https://github.com/Microsoft/ntttcp-for-linux). A versão do Windows pode ser encontrada no [centro de download](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769). Ao ajustar cargas de trabalho, é melhor usar tantos fluxos quantos forem necessários para obter a melhor taxa de transferência. Usando ntttcp para modelar o tráfego, o `-P` parâmetro define o número de conexões paralelas usadas.
 
 ## <a name="linux-storage-performance"></a>Desempenho do armazenamento do Linux
 
@@ -57,7 +57,7 @@ Algumas práticas recomendadas, como as seguintes, estão listadas em [práticas
 
 Semelhante à rede, o desempenho de convidado do Linux com o armazenamento beneficia o máximo de várias filas com profundidade suficiente para manter o host ocupado. O desempenho de armazenamento de MicroBenchMark é provavelmente melhor com a ferramenta de benchmark fio com o mecanismo libaio.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

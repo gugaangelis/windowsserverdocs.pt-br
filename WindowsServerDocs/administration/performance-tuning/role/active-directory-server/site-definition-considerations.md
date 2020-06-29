@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: aac7b8f37de2132778bd681d2f2e29ad0ad0810d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19574c859e038374a4cf3fe1e452adae0891e067
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851869"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471481"
 ---
-# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado de controladores de domínio e considerações de site
+# <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado dos controladores de domínio e considerações sobre o local
 
 A definição de site adequada é essencial para o desempenho. Os clientes que estão saindo do site podem experimentar mau desempenho para autenticações e consultas. Além disso, com a introdução do IPv6 em clientes, a solicitação pode vir do endereço IPv4 ou IPv6 e o Active Directory precisa ter sites adequadamente definidos para IPv6. O sistema operacional prefere o IPv6 para IPv4 quando ambos estiverem configurados.
 
@@ -34,7 +34,7 @@ As referências são como as consultas LDAP são redirecionadas quando o control
 
 ## <a name="optimization-considerations-for-trusts"></a>Considerações sobre otimização para relações de confiança
 
-Em um cenário de floresta, as relações de confiança são processadas de acordo com a seguinte hierarquia de domínio: global-filho de domínio-&gt; domínio filho-&gt; domínio raiz da floresta-&gt; domínio filho-&gt; domínio filho principal. Isso significa que os canais seguros na raiz da floresta e cada um deles podem ficar sobrecarregados devido à agregação de solicitações de autenticação que entram em trânsito os DCs na hierarquia de confiança. Isso também pode gerar atrasos em diretórios ativos de grande dispersão geográfica quando a autenticação também tiver que transmitir links altamente latentes para afetar o fluxo acima. Sobrecargas podem ocorrer em cenários de confiança entre florestas e de nível inferior. As seguintes recomendações se aplicam a todos os cenários:
+Em um cenário de floresta, as relações de confiança são processadas de acordo com a seguinte hierarquia de domínio: global-domínio filho-domínio filho-domínio raiz de floresta-domínio &gt; &gt; filho- &gt; &gt; geral-domínio filho. Isso significa que os canais seguros na raiz da floresta e cada um deles podem ficar sobrecarregados devido à agregação de solicitações de autenticação que entram em trânsito os DCs na hierarquia de confiança. Isso também pode gerar atrasos em diretórios ativos de grande dispersão geográfica quando a autenticação também tiver que transmitir links altamente latentes para afetar o fluxo acima. Sobrecargas podem ocorrer em cenários de confiança entre florestas e de nível inferior. As seguintes recomendações se aplicam a todos os cenários:
 
 -   Ajuste corretamente o MaxConcurrentAPI para dar suporte à carga em todo o canal seguro. Para obter mais informações, consulte [como fazer o ajuste de desempenho para autenticação NTLM usando a configuração MaxConcurrentApi](https://support.microsoft.com/kb/2688798/EN-US).
 
@@ -67,18 +67,18 @@ Os cenários de confiança entre domínios são uma área que tem sido consisten
         > [!NOTE]
         > Há um limite prático de cerca de 50 para o número de controladores de domínio que o cliente pode consumir. Eles devem ser os controladores de domínio de capacidade mais altos e ideais do site.
 
-    
+
     -  Considere colocar controladores de domínio de domínios confiáveis e confiantes no mesmo local físico.
 
 Para todos os cenários de confiança, as credenciais são roteadas de acordo com o domínio especificado nas solicitações de autenticação. Isso também é verdadeiro para consultas ao LookupAccountName e LsaLookupNames (bem como a outras, são apenas as APIs mais usadas). Quando os parâmetros de domínio dessas APIs forem passados como um valor nulo, o controlador de domínio tentará localizar o nome de conta especificado em todos os domínios confiáveis disponíveis.
 
 -   Desabilite a verificação de todas as relações de confiança disponíveis quando um domínio nulo for especificado. [Como restringir a pesquisa de nomes isolados em domínios confiáveis externos usando a entrada de registro LsaLookupRestrictIsolatedNameLevel](https://support.microsoft.com/kb/818024)
 
--   Desabilitar a passagem de solicitações de autenticação com um domínio nulo especificado em todas as relações de confiança disponíveis. [O processo Lsass. exe pode parar de responder se você tiver muitas relações de confiança externas em um controlador de domínio Active Directory](https://support.microsoft.com/kb/923241/EN-US)
+-   Desabilitar a passagem de solicitações de autenticação com um domínio nulo especificado em todas as relações de confiança disponíveis. [O processo de Lsass.exe pode parar de responder se você tiver muitas relações de confiança externas em um controlador de domínio Active Directory](https://support.microsoft.com/kb/923241/EN-US)
 
-## <a name="see-also"></a>Consulte também
-- [Ajuste de desempenho Active Directory servidores](index.md)
+## <a name="additional-references"></a>Referências adicionais
+- [Ajuste de desempenho de servidores do Active Directory](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)
 - [Considerações sobre LDAP](ldap-considerations.md)
-- [Solução de problemas de desempenho do ADDS](troubleshoot.md) 
+- [Solução de problemas de desempenho do ADDS](troubleshoot.md)
 - [Planejamento de capacidade para o Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566)

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 83b22c47cb23b02bb9984e03d78fcae93be1ca0a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c77f084e06e71c9aafd658b59ff385af85ef0b9d
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851809"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471311"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Desempenho de e/s de armazenamento do Hyper-V
 
@@ -160,7 +160,7 @@ O VHD aponta para um arquivo VHD pai. Qualquer gravação em blocos não gravado
 
 ## <a name="block-size-considerations"></a>Considerações de tamanho de bloco
 
-O tamanho do bloco pode afetar significativamente o desempenho. É ideal fazer a correspondência entre o tamanho do bloco e os padrões de alocação da carga de trabalho que está usando o disco. Por exemplo, se um aplicativo estiver alocando em partes de 16 MB, seria ideal ter um tamanho de bloco de disco rígido virtual de 16 MB. Um tamanho de bloco de &gt;2 MB só é possível em discos rígidos virtuais com o formato VHDX. Ter um tamanho de bloco maior que o padrão de alocação para uma carga de trabalho de e/s aleatória aumentará significativamente o uso do espaço no host.
+O tamanho do bloco pode afetar significativamente o desempenho. É ideal fazer a correspondência entre o tamanho do bloco e os padrões de alocação da carga de trabalho que está usando o disco. Por exemplo, se um aplicativo estiver alocando em partes de 16 MB, seria ideal ter um tamanho de bloco de disco rígido virtual de 16 MB. Um tamanho de bloco de &gt; 2 MB só é possível em discos rígidos virtuais com o formato VHDX. Ter um tamanho de bloco maior que o padrão de alocação para uma carga de trabalho de e/s aleatória aumentará significativamente o uso do espaço no host.
 
 ## <a name="sector-size-implications"></a>Implicações de tamanho de setor
 
@@ -176,7 +176,7 @@ Um disco 512e pode executar uma gravação somente em termos de um setor físico
 
 -   Os dados no armazenamento em buffer de 4 KB são modificados para incluir o setor de 512 bytes atualizado.
 
--   O disco executa uma gravação do buffer de 4 KB atualizado de volta para seu setor físico no disco.
+-   O disco executa uma gravação do buffer de 4 KB atualizado de volta ao seu setor físico no disco.
 
 Esse processo é chamado de Read-Modify-Write (RMW). O impacto geral no desempenho do processo RMW depende das cargas de trabalho. O processo RMW causa degradação de desempenho em discos rígidos virtuais pelos seguintes motivos:
 
@@ -244,7 +244,7 @@ Os principais aprimoramentos a seguir introduzidos pela primeira vez na pilha de
 
 -   Um mecanismo de conclusão de e/s mais eficiente envolvendo a distribuição de interrupção entre os processadores virtuais para evitar interrupções caras de interprocessador.
 
-Introduzido no Windows Server 2012, há algumas entradas do registro, localizadas em HKLM\\System\\CurrentControlSet\\enum\\VMBUS\\{ID do dispositivo}\\{ID da instância}\\StorChannel, que permitem que o número de canais seja ajustado. Eles também alinham os processadores virtuais que lidam com as conclusões de e/s para as CPUs virtuais que são atribuídas pelo aplicativo para serem os processadores de e/s. As configurações do registro são definidas em uma base por adaptador na chave de hardware do dispositivo.
+Introduzido no Windows Server 2012, há algumas entradas do registro, localizadas em HKLM \\ System \\ CurrentControlSet \\ enum \\ VMBUS \\ {ID do dispositivo} \\ {Instance ID} \\ StorChannel, que permitem que o número de canais seja ajustado. Eles também alinham os processadores virtuais que lidam com as conclusões de e/s para as CPUs virtuais que são atribuídas pelo aplicativo para serem os processadores de e/s. As configurações do registro são definidas em uma base por adaptador na chave de hardware do dispositivo.
 
 -   **ChannelCount (DWORD)** O número total de canais a serem usados, com um máximo de 16. O padrão é um teto, que é o número de processadores virtuais/16.
 
@@ -270,7 +270,7 @@ Somente o SCSI específico do Hyper-V, o IDE habilitado e os controladores de Fi
 
 Por esses motivos, recomendamos que você use arquivos VHDX anexados a um controlador SCSI quando não estiver usando discos Fibre Channel virtuais.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

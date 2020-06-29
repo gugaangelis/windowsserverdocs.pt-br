@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fc1d6bdb848ea9662ba9b3d3119f286af3476688
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d165413dfbf89b2debd77806110ca80e9b6af7c8
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851749"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471291"
 ---
 # <a name="hyper-v-processor-performance"></a>Desempenho do processador do Hyper-V
 
@@ -41,7 +41,7 @@ Minimizar a atividade em segundo plano em máquinas virtuais ociosas libera cicl
 
 -   Examine as tarefas e os serviços agendados que estão habilitados por padrão.
 
--   Examine os provedores de rastreamento ETW que estão ativados por padrão executando o **logman. exe Query-ETS**
+-   Examine os provedores de rastreamento ETW que estão ativados por padrão executando **logman.exe Query-ETS**
 
 -   Melhore os aplicativos de servidor para reduzir atividades periódicas (como temporizadores).
 
@@ -69,7 +69,7 @@ Os recursos de NUMA virtual e memória dinâmica não podem ser usados ao mesmo 
 
 Para obter mais informações sobre NUMA virtual, consulte [visão geral de numa virtual do Hyper-V](https://technet.microsoft.com/library/dn282282.aspx).
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

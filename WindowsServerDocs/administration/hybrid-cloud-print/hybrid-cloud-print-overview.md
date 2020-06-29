@@ -3,15 +3,16 @@ title: Visão geral da impressão de nuvem híbrida do Windows Server
 description: A impressão em nuvem híbrida permite que os profissionais de ti ofereçam suporte aos requisitos de impressão para BYOD ou dispositivos ingressados no domínio.
 ms.prod: windows-server
 ms.technology: server-general
+ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: f448e8709f9e73165ba1a477c59567fcff4a2008
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2585037412dd77435ec056336509dbf9c47c7dd2
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851999"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85469821"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Visão geral da impressão de nuvem híbrida do Windows Server
 
@@ -26,8 +27,8 @@ Para administradores de ti, a **impressão de nuvem híbrida** fornece acesso de
 A **impressão em nuvem híbrida** permite que as pessoas em sua organização imprimam os dispositivos que usam para concluir seu trabalho, mesmo quando estão fora de sua mesa ou local de trabalho.
 
 A **impressão em nuvem híbrida** tem suporte na atualização do Windows 10 para criadores e no Windows 10 S.
- 
-## <a name="feature-summary"></a>Resumo do recurso
+
+## <a name="feature-summary"></a>Resumo de recursos
 A **impressão em nuvem híbrida** consiste em dois componentes principais do lado do servidor: serviço de **descoberta** e serviço de **impressão do Windows** .
 - Ponto de extremidade do serviço de **descoberta** em execução em um serviço IIS que dá suporte ao padrão do setor da Aliança Mopria para a descoberta de impressora na nuvem.
 - Ponto de extremidade do serviço de **impressão do Windows** em execução em um serviço IIS com impressão via Internet suporte para o protocolo IPP para garantir o suporte mais amplo do so cliente.
@@ -40,15 +41,15 @@ A **impressão em nuvem híbrida** dá suporte a algumas opções de implantaç�
 *Diagrama da solução de impressão de nuvem híbrida*
 
 O diagrama mostra:
-- **Impressão em nuvem híbrida** usando Azure Active Directory como o provedor de identidade do usuário. 
-- Os pontos de extremidade do serviço de **impressão do Windows** e do serviço de **descoberta** são registrados com Azure Active Directory para permitir que o dispositivo cliente recupere o token de autenticação de usuário necessário para usar nesses serviços. 
+- **Impressão em nuvem híbrida** usando Azure Active Directory como o provedor de identidade do usuário.
+- Os pontos de extremidade do serviço de **impressão do Windows** e do serviço de **descoberta** são registrados com Azure Active Directory para permitir que o dispositivo cliente recupere o token de autenticação de usuário necessário para usar nesses serviços.
 - Um serviço de MDM, como o **Microsoft Intune**, provisiona o dispositivo cliente com políticas necessárias para conectar Azure Active Directory ao serviço de **impressão do Windows** e serviço de **descoberta** .
 
-Esta tabela tem mais informações sobre os elementos no diagrama.  
+Esta tabela tem mais informações sobre os elementos no diagrama.
 
 | Elemento | Descrição |
 | ------- | ----------- |
-| Active Directory do Azure  | Fornece e controla a identidade do usuário e a funcionalidade de autorização |
+| Azure Active Directory  | Fornece e controla a identidade do usuário e a funcionalidade de autorização |
 | Active Directory        | Fornece e controla a identidade do usuário e a funcionalidade de autorização |
 | Azure AD Connect  | Sincroniza as credenciais do usuário entre o Azure AD e o AD local. |
 | Serviço MDM (Intune) | Fornece a funcionalidade de provisionamento de política de dispositivo para garantir que o dispositivo cliente (dispositivo BYOD) esteja em conformidade com as políticas corporativas. |
@@ -57,8 +58,8 @@ Esta tabela tem mais informações sobre os elementos no diagrama.
 | Dispositivo BYOD/Windows Servidor de Impressão spooler/impressora | Esses são os mesmos. Nenhuma alteração na funcionalidade na implantação. |
 
 Há duas maneiras de instalar a **impressão de nuvem híbrida**:
-- \* * Recursos sob demanda, que confira [configurar recursos sob demanda no Windows Server](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para saber mais sobre como adicionar e remover arquivos de função e recurso. 
-- \* * Configurações do Windows Server 2016, que os administradores podem acessar **configurações** -> **aplicativos** -> **gerenciar recursos opcionais** -> **Adicionar um recurso** e pesquisar o pacote de recursos sob demanda 
+- * * Recursos sob demanda, que confira [configurar recursos sob demanda no Windows Server](https://docs.microsoft.com/windows-server/administration/server-manager/configure-features-on-demand-in-windows-server) para saber mais sobre como adicionar e remover arquivos de função e recurso.
+- * * Configurações do Windows Server 2016, que os administradores podem acessar **configurações**  ->  **aplicativos**  ->  **gerenciar recursos opcionais**  ->  **Adicionar um recurso** e pesquisar o pacote de recursos sob demanda
 - Comandos do PowerShell – em uma janela de administrador do PowerShell, execute estes comandos:
 
 ```PowerShell

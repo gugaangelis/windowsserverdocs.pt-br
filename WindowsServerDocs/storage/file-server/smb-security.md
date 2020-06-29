@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b96574dcfc2a4417aa36780d7bd87c2556f61f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
+ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "75950268"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85070547"
 ---
 # <a name="smb-security-enhancements"></a>Melhorias de segurança do SMB
 
@@ -122,5 +122,5 @@ Set-SmbServerConfiguration –EnableSMB1Protocol $false
 Aqui estão alguns recursos adicionais sobre SMB e tecnologias relacionadas no Windows Server 2012.
 
 - [Protocolo SMB](file-server-smb-overview.md)
-- [Armazenamento no Windows Server](../storage.md)
+- [Armazenamento no Windows Server](../storage.yml)
 - [Servidor de Arquivos de Escalabilidade Horizontal para Dados de Aplicativos](../../failover-clustering/sofs-overview.md)

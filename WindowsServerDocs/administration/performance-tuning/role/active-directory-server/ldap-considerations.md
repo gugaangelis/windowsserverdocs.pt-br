@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 86aef48575388ad76ff22fc6027c5ce2d4b6694a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2ef32b379dcc5d1c2d8217564b639f44d024e5ee
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851889"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471542"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Considerações sobre LDAP no adiciona ajuste de desempenho
 
@@ -47,12 +47,12 @@ Atributos de indexação são úteis ao pesquisar objetos que têm o nome do atr
 
 - Grandes volumes de consultas com altas durações estão causando consumo e esgotamento de threads de LDAP do ATQ. Monitore os seguintes contadores de desempenho:
 
-    - **\\a latência de solicitação de NTDS** – isso está sujeito a quanto tempo a solicitação leva para ser processada. Active Directory expirar solicitações após 120 segundos (padrão), no entanto, a maioria deve ser executada com mais rapidez e as consultas extremamente longas devem ficar ocultas nos números gerais. Procure alterações nesta linha de base, em vez de limites absolutos.
+    - **NTDS \\ Latência da solicitação** – isso está sujeito a quanto tempo a solicitação leva para ser processada. Active Directory expirar solicitações após 120 segundos (padrão), no entanto, a maioria deve ser executada com mais rapidez e as consultas extremamente longas devem ficar ocultas nos números gerais. Procure alterações nesta linha de base, em vez de limites absolutos.
 
         > [!NOTE]
         > Os valores altos aqui também podem ser indicadores de atrasos em solicitações de "proxy" para outros domínios e verificações de CRL.
 
-    - **NTDS\\atraso estimado da fila** – é ideal que isso seja próximo de 0 para o desempenho ideal, pois isso significa que as solicitações não gastam tempo esperando para serem atendidas.
+    - **NTDS \\ Atraso estimado da fila** – é ideal que isso seja próximo de 0 para o desempenho ideal, pois isso significa que as solicitações não gastam tempo aguardando para serem atendidas.
 
 Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens:
 
@@ -64,7 +64,7 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   [Supervisor de desempenho de servidor da Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Pacote Advisor Active Directory
 
--   Pesquisa usando qualquer filtro além de "(objectClass =\*)" que usa o índice ancestrais.
+-   Pesquisa usando qualquer filtro, além de "(objectClass = \* )", que usa o índice ancestrais.
 
 ### <a name="other-index-considerations"></a>Outras considerações de índice
 
@@ -80,11 +80,11 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   Os índices de tupla são necessários para dar suporte a cadeias de caracteres de pesquisa e finais de pesquisa. Os índices de tupla não são necessários para as cadeias de caracteres de pesquisa iniciais.
 
-    -   Cadeia de caracteres de pesquisa inicial – (samAccountName = MYPC\*)
+    -   Cadeia de caracteres de pesquisa inicial – (samAccountName = MYPC \* )
 
-    -   Cadeia de pesquisa medial-(samAccountName =\*MYPC\*)
+    -   Cadeia de pesquisa medial-(samAccountName = \* MYPC \* )
 
-    -   Cadeia de caracteres de pesquisa final – (samAccountName =\*MYPC $)
+    -   Cadeia de caracteres de pesquisa final – (samAccountName = \* MYPC $)
 
 -   A criação de um índice irá gerar e/s de disco enquanto o índice está sendo compilado. Isso é feito em um thread em segundo plano com prioridade mais baixa e solicitações de entrada serão priorizadas sobre a compilação do índice. Se o planejamento de capacidade para o ambiente tiver sido feito corretamente, isso deverá ser transparente. No entanto, cenários de gravação intensa ou um ambiente em que a carga no armazenamento do controlador de domínio é desconhecido pode prejudicar a experiência do cliente e deve ser feito fora do horário de expediente.
 
@@ -98,10 +98,10 @@ Para obter mais informações, consulte o seguinte:
 
 -   [Atributos indexados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
-- [Ajuste de desempenho Active Directory servidores](index.md)
+- [Ajuste de desempenho de servidores do Active Directory](index.md)
 - [Considerações sobre hardware](hardware-considerations.md)
 - [Posicionamento adequado dos controladores de domínio e considerações sobre o local](site-definition-considerations.md)
-- [Solução de problemas de desempenho do ADDS](troubleshoot.md) 
+- [Solução de problemas de desempenho do ADDS](troubleshoot.md)
 - [Planejamento de capacidade para o Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566)

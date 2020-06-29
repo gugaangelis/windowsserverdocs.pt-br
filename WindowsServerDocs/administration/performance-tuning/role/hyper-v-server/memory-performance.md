@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f683b85657b8dd263e93380b71c646ad677950c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b513dd3346d593ec4c823808f540bce68dd472ce
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851719"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471361"
 ---
 # <a name="hyper-v-memory-performance"></a>Desempenho de memória do Hyper-V
 
@@ -41,7 +41,7 @@ A partição raiz deve ter memória suficiente para fornecer serviços como virt
 
 O Hyper-V no Windows Server 2016 monitora a integridade do tempo de execução do sistema operacional de gerenciamento da partição raiz para determinar a quantidade de memória que pode ser alocada com segurança para partições filho, garantindo, ao mesmo tempo, alto desempenho e confiabilidade da partição raiz.
 
-## <a name="see-also"></a>Consulte também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 

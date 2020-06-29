@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 112ec7ed18f75fed802f687ee98eeaa635568aa2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 983481bb1f77e07df5fadd25ecb713d243cebd85
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851770"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85471391"
 ---
 # <a name="performance-tuning-hyper-v-servers"></a>Ajuste de desempenho de servidores Hyper-V
 
 
 O Hyper-V é a função de servidor de virtualização no Windows Server 2016. Os servidores de virtualização podem hospedar várias máquinas virtuais isoladas, mas que compartilham os recursos de hardware subjacentes por meio da virtualização dos processadores, memória e dispositivos de E/S. Ao consolidar servidores em um único computador, a virtualização pode melhorar a eficiência de energia e o uso de recursos, além de reduzir os custos operacionais e de manutenção de servidores. Além disso, as máquinas virtuais e as APIs de gerenciamento oferecem mais flexibilidade para gerenciar recursos, balancear cargas e provisionar sistemas.
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 -   [Terminologia do Hyper-V](terminology.md)
 
