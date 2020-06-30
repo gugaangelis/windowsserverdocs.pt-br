@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/27/2020
+ms.date: 06/23/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d49c49def8b110f42a6d56354c73e5a75b04b7e
-ms.sourcegitcommit: 4fec7d82f0772d03a9e8cac20092a4309b0f796e
+ms.openlocfilehash: 5c3fc20ea42deaa9dd96fd9f7bfabfcb85462bdd
+ms.sourcegitcommit: 6d6a0225b1f83b71fcb494b94d666cd5e54c7566
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84025507"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85267657"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -26,8 +26,21 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Público     |1.2.1026 |
-|Participante do Programa Windows Insider    |1.2.1026 |
+|Público     |1.2.1104 |
+|Participante do Programa Windows Insider    |1.2.1104 |
+
+## <a name="updates-for-version-121104"></a>Atualizações para a versão 1.2.1104
+
+*Data da publicação: 23/06/2020*
+
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
+
+- A lógica de descoberta automática foi atualizada para a opção **Assinar** para dar suporte à atualização da Área de Trabalho Virtual do Windows no primeiro trimestre de 2020. Os clientes com apenas recursos de atualização do primeiro trimestre não precisam mais fornecer consentimento para a versão do terceiro trimestre de 2019.
+- Suporte aprimorado para dispositivos de alto DPI com fator de escala de até 400%.
+- Correção de um problema em que a caixa de diálogo Desconectar não aparecia.
+- Correção de um problema em que as dicas de ferramentas da barra de comandos permaneciam visíveis por mais tempo do que o esperado.
+- Correção de uma falha quando você tentava assinar imediatamente após uma atualização.
+- Correção de uma falha de análise incorreta de data e hora em alguns idiomas.
 
 ## <a name="updates-for-version-121026"></a>Atualizações para a versão 1.2.1026
 
@@ -76,8 +89,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 
 *Data da publicação: 24/03/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSh), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4siSi), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4sllb)
-
 - A ação "Renovar" para workspaces foi renomeada para "Atualizar" para fins de consistência com outros clientes da Área de Trabalho Remota.
 - Agora você pode atualizar um workspace diretamente do respectivo menu de contexto.
 - A atualização manual de um workspace agora verifica se todo o conteúdo local foi atualizado.
@@ -90,8 +101,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 
 *Data da publicação: 25/02/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qeak), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7h), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4qm7g)
-
 - Agora as conexões com a Área de Trabalho Virtual do Windows serão bloqueadas se o arquivo RDP não tiver a assinatura ou se uma das propriedades signscope tiver sido modificada.
 - Quando um workspace está vazio ou foi removido, o Centro de Conexão não parece mais estar vazio.
 - Adição da ID da atividade e do código de erro em mensagens de desconexão para aprimorar a solução de problemas. Você pode copiar a mensagem da caixa de diálogo com **CTRL+C**.
@@ -102,8 +111,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 ## <a name="updates-for-version-12605"></a>Atualizações para a versão 1.2.605
 
 *Data da publicação: 29/01/2020*
-
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - Agora você pode selecionar quais exibições usará para as conexões de área de trabalho. Para alterar essa configuração, clique com o botão direito do mouse no ícone da conexão de área de trabalho e selecione **Configurações**.
 - Correção de um problema em que as configurações de conexão não exibiam os fatores de escala disponíveis corretos.
@@ -116,8 +123,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 
 *Data da publicação: 04/12/2019*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
-
 - Agora, você pode acessar informações sobre atualizações diretamente do botão mais opções na barra de comandos na parte superior do cliente.
 - Agora, você pode fornecer comentários na barra de comandos do cliente.
 - A opção de comentários agora será mostrada apenas se o Hub de Comentários estiver disponível.
@@ -128,8 +133,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 ## <a name="updates-for-version-12431"></a>Atualizações da versão 1.2.431
 
 *Data da publicação: 12/11/2019*
-
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - As versões de 32 bits e ARM64 do cliente já estão disponíveis!
 - Agora o cliente salva todas as alterações feitas na barra de conexão (como a posição, o tamanho e o estado de fixação) e aplica essas alterações em todas as sessões iniciadas.
@@ -148,8 +151,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 ## <a name="updates-for-version-12247"></a>Atualizações para a versão 1.2.247
 
 *Data da publicação: 17/09/2019*
-
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - Melhoria nos idiomas de fallback para a versão localizada. (Por exemplo, FR-CA será exibido corretamente em francês, em vez de inglês.)
 - Ao remover uma assinatura, agora o cliente remove de maneira adequada as credenciais salvas do Gerenciador de Credenciais.

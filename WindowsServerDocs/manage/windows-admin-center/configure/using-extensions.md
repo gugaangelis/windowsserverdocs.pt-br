@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 2b8a9f5ebab22891b8b97c9c56bba3837cbb9371
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
+ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269293"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942305"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar e gerenciar extensões
 
@@ -56,12 +56,12 @@ Se o Windows Admin Center estiver instalado em um computador que não está cone
 
 ### <a name="manually-downloading-extension-packages"></a>Como baixar manualmente pacotes de extensão
 
-1. Em outro computador que tenha conectividade com a Internet, abra um navegador da Web e vá até a seguinte URL: [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
+1. Em outro computador que tenha conectividade com a Internet, abra um navegador da Web e vá até a seguinte URL: [https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) 
 
-   * Talvez seja necessário criar uma conta no msft-sme.myget.org e fazer logon para exibir os pacotes de extensão.
+   * Talvez seja necessário criar uma conta Microsoft e fazer logon para exibir os pacotes de extensão.
 
 2. Clique no nome do pacote que você deseja instalar para exibir a página de detalhes do pacote.
-3. Clique no link **Baixar** no painel do lado direito da página de detalhes do pacote e baixe o arquivo .nupkg para a extensão.
+3. Clique no link **Baixar** na barra de navegação da página de detalhes do pacote e baixe o arquivo .nupkg para a extensão.
 4. Repita as etapas 2 e 3 para todos os pacotes que você deseja baixar.
 5. Copie os arquivos de pacote para um compartilhamento de arquivo que possa ser acessado no computador em que o Windows Admin Center está instalado ou no disco local do computador.
 6. [Siga as instruções para instalar extensões de um feed diferente](#installing-extensions-from-a-different-feed).

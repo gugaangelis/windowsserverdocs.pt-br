@@ -1,34 +1,34 @@
 ---
 title: Alterar a letra da unidade
 description: Como alterar ou atribuir uma letra da unidade no Windows usando o Gerenciamento de disco.
-ms.date: 10/24/2018
+ms.date: 06/08/2020
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3e18092a71e12cadb86052204738fafc8a149ff4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 424fa2c81954e022d7e1b297a60bd3415fdafa39
+ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71386025"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84505768"
 ---
 # <a name="change-a-drive-letter"></a>Alterar a letra da unidade
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows 7, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Se você não gostar a letra da unidade atribuída a uma unidade, ou se tiver uma unidade que ainda não tem uma letra da unidade, é possível usar o Gerenciamento de disco para alterá-la.
+Se você não gostar a letra da unidade atribuída a uma unidade, ou se tiver uma unidade que ainda não tem uma letra da unidade, é possível usar o Gerenciamento de disco para alterá-la. Para montar a unidade em uma pasta vazia, assim ela aparece como apenas outra pasta, confira [Montar uma unidade em uma pasta](assign-a-mount-point-folder-path-to-a-drive.md).
 
 > [!IMPORTANT]
 > Se você alterar a letra da unidade de uma unidade em que o Windows ou aplicativos são instalados, os aplicativos podem ter problemas para executar ou localizar essa unidade. Por esse motivo, sugerimos que você não altere a letra da unidade de uma unidade em que o Windows ou aplicativos estão instalados.
 
-Aqui está como alterar a letra da unidade (para, em vez disso, montar a unidade em uma pasta vazia, de modo que ela apareça assim como qualquer outra pasta, consulte [Atribuir um caminho de pasta do ponto de montagem para uma unidade](assign-a-mount-point-folder-path-to-a-drive.md)).
+Veja como alterar a letra da unidade:
 
-1. Abra o Gerenciamento de disco com permissões de administrador. 
-    Para fazer isso, na caixa de pesquisa na barra de tarefas, digite **Gerenciamento de disco**, selecione e mantenha o cursor (ou clique com botão direito) em **Gerenciamento de disco** e, em seguida, selecione **Executar como administrador** > **Sim**. Se não for possível abrir como um administrador, digite **Gerenciamento do computador** e, em seguida, vá para **Armazenamento** > **Gerenciamento de Disco**.
-1. No Gerenciamento de disco, clique com botão direito na unidade que deseja alterar ou adicionar uma letra de unidade e, em seguida, selecione **Alterar letra de unidade e caminho**.
+1. Abra o Gerenciamento de Disco com permissões de administrador.
+    Para isso, selecione e mantenha o cursor (ou clique com o botão direito do mouse) no botão Iniciar e selecione **Gerenciamento de Disco**.
+1. No Gerenciamento de Disco, selecione e mantenha o cursor (ou clique com o botão direito do mouse) no volume que você deseja alterar ou adicionar uma letra da unidade e escolha **Alterar letra da unidade e caminhos**.
 
     ![Gerenciamento de disco exibindo uma unidade](media/change-drive-letter.png)
     > [!TIP]

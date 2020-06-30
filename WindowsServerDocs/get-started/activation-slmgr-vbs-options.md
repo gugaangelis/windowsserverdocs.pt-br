@@ -1,6 +1,6 @@
 ---
 title: Opções Slmgr.vbs para obter informações de ativação de volume
-description: Lista as opções disponíveis para o script Slmg.vbs e descreve como usá-las
+description: Lista as opções disponíveis para o script Slmgr.vbs e descreve como usá-las
 ms.date: 09/24/2019
 ms.technology: server-general
 ms.topic: article
@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: e3e4b4d236672ce310c8a0eb038d0e19f936a5d2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826339"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85473173"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>Opções Slmgr.vbs para obter informações de ativação de volume
 
@@ -39,28 +39,28 @@ Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativ
 
 > [!IMPORTANT]
 > Por causa de mudanças na WMI no Windows 7 e Windows Server 2008 R2, o script Slmgr.vbs não serve para funcionar entre plataformas. Não há suporte para o uso de Slmgr.vbs com o intuito de gerenciar um sistema Windows 7 ou Windows Server 2008 R2 do sistema operacional Windows Vista&reg;. Se você tentar gerenciar um sistema mais antigo do Windows 7 ou Windows Server 2008 R2, isso gerará um erro específico de incompatibilidade de versão. Por exemplo, executar o **cscript slmgr.vbs \<vista\_machine\_name\> /dlv** produz o seguinte resultado:
->  
+>
 >> Microsoft (R) Windows Script Host versão 5.8 Copyright (C) Microsoft Corporation. Todos os direitos reservados.
->>  
+>>
 >> O computador remoto não dá suporte a esta versão do SLMgr.vbs
 
 ## <a name="general-slmgrvbs-options"></a>Opções gerais do Slmgr.vbs
 
 |Opção |Descrição |
 | - | - |
-|\[\<NomeDoComputador\>] |Nome de um computador remoto (o padrão é o computador local) |
-|\[\<Usuário\>] |Conta no computador remoto com o privilégio pedido |
-|\[\<Senha\>] |Senha da conta no computador remoto com os privilégios pedidos |
+|\[\<ComputerName\>] |Nome de um computador remoto (o padrão é o computador local) |
+|\[\<User\>] |Conta no computador remoto com o privilégio pedido |
+|\[\<Password\>] |Senha da conta no computador remoto com os privilégios pedidos |
 
 ## <a name="global-options"></a>Opções globais
 
 |Opção |Descrição |
 | - | - |
 |\/ipk&nbsp;&lt;ProductKey&gt; |Tenta instalar uma chave do produto (Product Key) 5×5. A chave de produto fornecida pelo parâmetro é confirmada como válida e aplicável para o sistema operacional instalado.<br />Se não, será retornado um erro.<br />Se a chave for válida e aplicável, a chave será instalada. Se uma chave já estiver instalada, ela será substituída silenciosamente.<br />Para evitar instabilidade no serviço de licenças, o sistema ou o Serviço de Proteção de Software deverá ser reiniciado.<br />A operação deverá ser executada de uma janela de prompt de comandos com privilégios elevados ou o valor de Registro das Operações do Usuário Padrão deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
-|/ato&nbsp;\[\<ID de&nbsp;ativação\>] |Em edições de varejo e sistemas de volume com uma chave de host KMS (Serviço de Gerenciamento de Chaves) ou uma chave MAK (chave de ativação múltipla), o **/ato** solicitará ao Windows uma tentativa de ativação online.<br />Para sistemas com uma GVLK (chave de licença de volume genérico) instalada, isso solicitará uma tentativa de ativação KMS. Os sistemas que tiverem sido configurados para suspender tentativas automáticas de ativação do KMS ( **/stao**) ainda tentarão realizar a ativação KMS quando **/ato** for executado.<br />**Observação**: No Windows 8 (e Windows Server 2012), a opção **/stao** foi preterida. Use a opção **/act-type** como substituta.<br />O parâmetro \<**ID de ativação**\> expande o suporte a **/ato** para identificar uma edição do Windows instalada no computador. Especificar o parâmetro \<**ID de ativação**\> isolará os efeitos da opção na edição associada à ID de ativação indicada. Execute **slmgr.vbs /dlv all** para obter os IDs de ativação da versão instalada do Windows. Se você precisar de suporte para outros aplicativos, confira as orientações fornecidas sobre cada aplicativo para ver mais instruções.<br />A ativação KMS não pede privilégios elevados. Mas a ativação online pede elevação, ou o valor de registro das Operações do Usuário Padrão deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
-|\/dli&nbsp;\[<ID de&nbsp;ativação\>&nbsp;\|&nbsp;All\] |Exibe informações sobre a licença.<br />Por padrão, **/dli** exibe as informações sobre a licença da edição do Windows ativa e instalada. Especificar o parâmetro \<**ID de ativação**\> exibirá as informações sobre a licença da edição específica associada à ID de ativação indicada. Especificar **All** como parâmetro exibirá as informações sobre a licença de todos os produtos aplicáveis instalados.<br />A operação não pede privilégios elevados. |
-|\/dlv&nbsp;\[<ID de&nbsp;ativação\>&nbsp;\|&nbsp;All\] |Exibir informações detalhadas sobre a licença.<br />Por padrão, **/dlv** exibe as informações sobre a licença do sistema operacional instalado. Especificar o parâmetro \<**ID de ativação**\> exibirá as informações sobre a licença da edição específica associada à ID de ativação indicada. Especificar o parâmetro **All** exibirá as informações sobre a licença de todos os produtos aplicáveis instalados.<br />A operação não pede privilégios elevados. |
-|\/xpr \[\<ID de&nbsp;ativação\>] |Exibe a data de expiração da ativação do produto. Está, por padrão, relacionada à edição atual do Windows e é útil principalmente para clientes KMS, pois as ativações MAK e de varejo são permanentes.<br />Especificar o parâmetro \<**ID de ativação**\> exibirá a data de validade da ativação da edição específica associada à ID de ativação. A operação não pede privilégios elevados. |
+|/ato&nbsp;\[\<Activation&nbsp;ID\>] |Em edições de varejo e sistemas de volume com uma chave de host KMS (Serviço de Gerenciamento de Chaves) ou uma chave MAK (chave de ativação múltipla), o **/ato** solicitará ao Windows uma tentativa de ativação online.<br />Para sistemas com uma GVLK (chave de licença de volume genérico) instalada, isso solicitará uma tentativa de ativação KMS. Os sistemas que tiverem sido configurados para suspender tentativas automáticas de ativação do KMS ( **/stao**) ainda tentarão realizar a ativação KMS quando **/ato** for executado.<br />**Observação**: No Windows 8 (e Windows Server 2012), a opção **/stao** foi preterida. Use a opção **/act-type** como substituta.<br />O parâmetro \<**Activation ID**\> expande o suporte a **/ato** para identificar uma edição do Windows instalada no computador. Especificar o parâmetro \<**Activation ID**\> isolará os efeitos da opção na edição associada à ID de ativação indicada. Execute **slmgr.vbs /dlv all** para obter os IDs de ativação da versão instalada do Windows. Se você precisar de suporte para outros aplicativos, confira as orientações fornecidas sobre cada aplicativo para ver mais instruções.<br />A ativação KMS não pede privilégios elevados. Mas a ativação online pede elevação, ou o valor de registro das Operações do Usuário Padrão deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
+|\/dli&nbsp;\[<ID de&nbsp;ativação\>&nbsp;\|&nbsp;All\] |Exibe informações sobre a licença.<br />Por padrão, **/dli** exibe as informações sobre a licença da edição do Windows ativa e instalada. Especificar o parâmetro \<**Activation ID**\> exibirá as informações sobre a licença da edição especificada associada à ID de ativação indicada. Especificar **All** como parâmetro exibirá as informações sobre a licença de todos os produtos aplicáveis instalados.<br />A operação não pede privilégios elevados. |
+|\/dlv&nbsp;\[<ID de&nbsp;ativação\>&nbsp;\|&nbsp;All\] |Exibir informações detalhadas sobre a licença.<br />Por padrão, **/dlv** exibe as informações sobre a licença do sistema operacional instalado. Especificar o parâmetro \<**Activation ID**\> exibirá as informações sobre a licença da edição especificada associada à ID de ativação indicada. Especificar o parâmetro **All** exibirá as informações sobre a licença de todos os produtos aplicáveis instalados.<br />A operação não pede privilégios elevados. |
+|\/xpr \[\<Activation&nbsp;ID\>] |Exibe a data de expiração da ativação do produto. Está, por padrão, relacionada à edição atual do Windows e é útil principalmente para clientes KMS, pois as ativações MAK e de varejo são permanentes.<br />Especificar o parâmetro \<**Activation ID**\> exibirá a data de término da ativação da edição especificada associada à ID de ativação. Essa operação não pede privilégios elevados. |
 
 ## <a name="advanced-options"></a>Opções avançadas
 
@@ -72,17 +72,17 @@ Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativ
 |\/rearm |Esta opção redefine os temporizadores de ativação. O processo **/rearm** também é chamado por **sysprep /generalize**.<br />Esta operação não fará nada se a entrada do Registro **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** for definida como **1**. Confira [Configurações do Registro para ativação de volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502532(v=ws.11)) para obter detalhes sobre essa entrada do Registro.<br />A operação deverá ser executada em uma janela de prompt de comandos com privilégios elevados ou o valor de Registro das **Operações do Usuário Padrão** deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
 |\/rearm-app &lt;ID do&nbsp;Aplicativo&gt; |Redefine o status de licença do aplicativo especificado. |
 |\/rearm-sku &lt;ID do&nbsp;Aplicativo&gt; |Redefine o status de licença do SKU (unidade de manutenção de estoque) especificado. |
-|\/upk&nbsp;\[&lt;ID do&nbsp;Aplicativo&gt;] |Esta opção desinstala a chave de produto da edição atual do Windows. Depois de ser reinicializado, o sistema estará no estado não licenciado até que uma nova chave de produto seja instalada.<br />Também há a opção de usar o parâmetro \<**ID de ativação**\> para especificar outro produto instalado.<br />A operação deve ser executada em uma janela de prompt de comandos com privilégios elevados. |
-|\/dti&nbsp;\[\<ID de&nbsp;ativação\>] |Exibe o ID de instalação para a ativação offline. |
+|\/upk&nbsp;\[&lt;ID do&nbsp;Aplicativo&gt;] |Esta opção desinstala a chave de produto da edição atual do Windows. Depois de ser reinicializado, o sistema estará no estado não licenciado até que uma nova chave de produto seja instalada.<br />Também há a opção de usar o parâmetro \<**Activation ID**\> para especificar um produto diferente instalado.<br />A operação deve ser executada em uma janela de prompt de comandos com privilégios elevados. |
+|\/dti&nbsp;\[\<Activation&nbsp;ID\>] |Exibe o ID de instalação para a ativação offline. |
 |\/atp &lt;ID de&nbsp;confirmação&gt; |Ativa o produto usando a ID de confirmação fornecida pelo usuário. |
 
 ## <a name="kms-client-options"></a>opções do cliente KMS
 
 |Opção |Descrição |
 | - | - |
-|\/skms \<Nome\[:Porta]&nbsp;\|&nbsp;\:&nbsp;porta\> \[\<ID de&nbsp;Ativação\>] |Esta opção especifica o nome e opcionalmente a porta do computador host KMS a ser contatado. Definir este valor desativa a detecção automática do host KMS.<br />Se o host KMS usar apenas o IPv6 (protocolo IP versão 6), o endereço deverá ser especificado no formato \<nome_do_host\>:\<porta\>. Os endereços IPv6 contêm dois-pontos (:), que o script Slmgr.vbs não interpreta corretamente.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
-|\/skms-domain&nbsp;&lt;FQDN&gt; \[\<ID de&nbsp;Ativação\>] |Define o domínio DNS específico no qual encontram-se todos os registros SRV do KMS. A configuração não terá qualquer efeito se o host KMS único e específico for definido usando a opção **/skms**. Use esta opção, especialmente em ambientes com namespace não contíguo, para forçar o KMS a ignorar a lista de pesquisa de sufixos de DNS e procurar registros do host KMS no domínio DNS especificado. |
-|\/ckms&nbsp;\[\<ID de&nbsp;ativação\>] |Esta opção remove, do Registro, as informações sobre o nome, endereço e porta do host KSM especificado e restaura o comportamento de descoberta automática do KMS.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
+|\/skms \<Name\[:Port]&nbsp;\|&nbsp;\:&nbsp;port\> \[\<Activation&nbsp;ID\>] |Esta opção especifica o nome e opcionalmente a porta do computador host KMS a ser contatado. Definir este valor desativa a detecção automática do host KMS.<br />Se o host KMS usar apenas o IPv6 (protocolo IP versão 6), o endereço precisará ser especificado no formato \<hostname\>:\<port\>. Os endereços IPv6 contêm dois-pontos (:), que o script Slmgr.vbs não interpreta corretamente.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
+|\/skms-domain&nbsp;&lt;FQDN&gt; \[\<Activation&nbsp;ID\>] |Define o domínio DNS específico no qual encontram-se todos os registros SRV do KMS. A configuração não terá qualquer efeito se o host KMS único e específico for definido usando a opção **/skms**. Use esta opção, especialmente em ambientes com namespace não contíguo, para forçar o KMS a ignorar a lista de pesquisa de sufixos de DNS e procurar registros do host KMS no domínio DNS especificado. |
+|\/ckms&nbsp;\[\<Activation&nbsp;ID\>] |Esta opção remove, do Registro, as informações sobre o nome, endereço e porta do host KSM especificado e restaura o comportamento de descoberta automática do KMS.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
 |\/skhc |Esta opção habilita o armazenamento em cache do host KMS (padrão). Depois que o cliente descobre um host KMS em funcionamento, essa configuração impede que a prioridade e a ponderação do DNS (Sistema de Nomes de Domínio) afetem a comunicação adicional com o host. Se o sistema não puder mais entrar em contato com o host KMS em funcionamento, o cliente tentará descobrir um novo host.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
 |\/ckhc |Esta opção desabilita o armazenamento em cache do host KMS. Esta configuração instrui o cliente a usar a descoberta automática de DNS cada vez que ele tentar uma ativação KMS (recomendada ao usar prioridade e ponderação).<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
 
@@ -97,7 +97,7 @@ Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativ
 |\/cdns |Desabilita a publicação de DNS pelo host KMS.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
 |\/spri |Define a prioridade do KMS como normal (padrão).<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
 |\/cpri |Define a prioridade do KMS como baixa.<br />Use esta opção para minimizar a contenção do KMS em um ambiente de host articulado. Observe que isso pode resultar na privação do KMS, dependendo de quais outros aplicativos ou funções do servidor estiverem ativos. Use com cautela.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
-|\/act-type \[\<Tipo de ativação\>] \[\<ID de&nbsp;ativação\>] |Esta opção define um valor no Registro que limita a ativação de volume a um único tipo. O tipo de ativação **1** limita a ativação apenas ao Active Directory, **2** limita a ativação à ativação do KMS e **3** à ativação baseada em token. A opção **0** permite qualquer tipo de ativação e é o valor padrão. |
+|\/act-type \[\<Activation-Type\>] \[\<Activation&nbsp;ID\>] |Esta opção define um valor no Registro que limita a ativação de volume a um único tipo. O tipo de ativação **1** limita a ativação apenas ao Active Directory, **2** limita a ativação à ativação do KMS e **3** à ativação baseada em token. A opção **0** permite qualquer tipo de ativação e é o valor padrão. |
 
 ## <a name="token-based-activation-configuration-options"></a>Opções de configuração de ativação baseada em token
 
@@ -114,14 +114,14 @@ Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativ
 
 |Opção |Descrição |
 | - | - |
-|\/ad-activation-online &lt;Chave do produto (Product&nbsp;Key)&gt; \[\<Nome do&nbsp;Objeto&nbsp;de Ativação\>] |Coleta dados do Active Directory e inicia sua ativação de floresta usando as credenciais executadas no prompt de comando. O acesso de administrador local não é necessário. No entanto, o acesso de leitura/gravação ao contêiner do objeto de ativação do domínio raiz da floresta é necessário. |
+|\/ad-activation-online &lt;Chave do produto (Product&nbsp;Key)&gt; \[\<Activation&nbsp;Object&nbsp;name\>] |Coleta dados do Active Directory e inicia sua ativação de floresta usando as credenciais executadas no prompt de comando. O acesso de administrador local não é necessário. No entanto, o acesso de leitura/gravação ao contêiner do objeto de ativação do domínio raiz da floresta é necessário. |
 |\/ad-activation-get-IID &lt;Chave do produto (Product&nbsp;Key)&gt; |Esta opção inicia a ativação da floresta do Active Directory no modo de telefone. O resultado é a IID (ID de instalação), que poderá ser usada para ativar a floresta pelo telefone se a conectividade com a Internet não estiver disponível. Ao fornecer o IID na chamada telefônica de ativação, um CID é retornado, sendo usado para concluir a ativação. |
-|\/ad-activation-apply-cid &lt;Chave do produto (Product&nbsp;Key)&gt; &lt;ID de&nbsp;confirmação&gt; \[\<Nome do&nbsp;Objeto de&nbsp;Ativação>] |Ao usar esta opção, digite o CID informado na chamada telefônica de ativação para concluir a ativação |
+|\/ad-activation-apply-cid &lt;Chave do produto (Product&nbsp;Key)&gt; &lt;ID de&nbsp;confirmação&gt; \[\<Activation&nbsp;Object&nbsp;name>] |Ao usar esta opção, digite o CID informado na chamada telefônica de ativação para concluir a ativação |
 |\[/name: &lt;AO_Name&gt;] |Opcionalmente, você pode acrescentar a opção **/name** a qualquer um desses comandos para especificar um nome para o objeto de ativação armazenado no Active Directory. O nome não deve exceder 40 caracteres Unicode. Use aspas duplas para definir explicitamente a cadeia de caracteres de nome.<br />No Windows Server 2012 R2 e Windows 8.1, você pode acrescentar o nome diretamente após **/ad-activation-online &lt;Chave do produto (Product&nbsp;Key)&gt;** e **/ad-activation-apply-cid** sem ter de usar a opção **/name**. |
 |\/ao-list |Exibe todos os objetos de ativação disponíveis para o computador local. |
 |\/del-ao &lt;AO_DN&gt;<br />\/del-ao &lt;AO_RDN&gt; |Exclui, da floresta, o objeto de ativação especificado. |
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 
 - [Referência técnica da ativação de volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
 - [Visão geral da Ativação de Volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)

@@ -1,53 +1,54 @@
 ---
 title: Atribuir um caminho da pasta do ponto de montagem a uma unidade.
 description: Este artigo descreve como atribuir um caminho da pasta do ponto de montagem (em vez de uma letra da unidade) a uma unidade.
-ms.date: 06/07/2019
+ms.date: 06/07/2020
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b2fda216b57fbf036ce20c40b4c8b38d44404f3c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 9757f5f5f68eea0fc1d468a8d8e6fd341e2ecc6a
+ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815529"
+ms.lasthandoff: 06/27/2020
+ms.locfileid: "85475433"
 ---
-# <a name="assign-a-mount-point-folder-path-to-a-drive"></a>Atribuir um caminho da pasta do ponto de montagem a uma unidade
+# <a name="mount-a-drive-in-a-folder"></a>Montar uma unidade em uma pasta
 
-> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Aplica-se a:** Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-É possível usar o Gerenciamento de Disco para atribuir um caminho da pasta do ponto de montagem (em vez de uma letra da unidade) a uma unidade. Os caminhos da pasta do ponto de montagem estão disponíveis somente em pastas vazias nos volumes NTFS básicos ou dinâmicos.
+Se desejar, use o Gerenciamento de Disco para montar (tornar uma unidade acessível) em uma pasta, em vez de uma letra da unidade. Isso faz com que a unidade apareça como apenas outra pasta. Você pode montar unidades somente em pastas vazias em volumes NTFS básicos ou dinâmicos.
 
-## <a name="assigning-a-mount-point-folder-path-to-a-drive"></a>Atribuir um caminho da pasta do ponto de montagem a uma unidade
+## <a name="mounting-a-drive-in-an-empty-folder"></a>Montar uma unidade em uma pasta vazia
 
 > [!NOTE]
 > Para concluir estas etapas, no mínimo, você deve ser um membro do grupo **Operadores de backup** ou **Administradores**.
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-by-using-the-windows-interface"></a>Para atribuir um caminho de pasta do ponto de montagem a uma unidade usando a interface do Windows
+### <a name="to-mount-a-drive-in-an-empty-folder-by-using-the-windows-interface"></a>Para montar uma unidade em uma pasta vazia usando a interface do Windows
 
-1.  No Gerenciador de Discos, clique com botão direito do mouse na partição ou no volume em que você quer atribuir o caminho da pasta do ponto de montagem. 
-2. Clique em **Alterar letra da unidade e caminhos da unidade** e, em seguida, clique em **Adicionar**. 
+1.  No Gerenciador de Discos, clique com o botão direito do mouse na partição ou no volume que contém a pasta na qual você quer montar a unidade.
+2. Clique em **Alterar letra da unidade e caminhos da unidade** e, em seguida, clique em **Adicionar**.
 3. Clique em **Montar na seguinte pasta NTFS vazia**.
 4. Digite o caminho para uma pasta vazia em um volume NTFS ou clique em **Procurar** para localizá-lo.
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-using-a-command-line"></a>Para atribuir um caminho da pasta do ponto de montagem a uma unidade usando uma linha de comando
+### <a name="to-mount-a-drive-in-an-empty-folder-using-a-command-line"></a>Para montar uma unidade em uma pasta vazia usando uma linha de comando
 
 1.  Abra um prompt de comando e digite `diskpart`.
 
 2.  No prompt **DISKPART**, digite `list volume`, anotando o número do volume ao qual você quer atribuir o caminho.
 
-3.  No prompt **DISKPART**, digite `select volume <volumenumber>`. 
-
-4. Selecione o volume simples *volumenumber* que você quer atribuir ao caminho.
+3.  No prompt **DISKPART**, digite `select volume <volumenumber>`, especificando o número do volume ao qual você quer atribuir o caminho.
 
 5.  No prompt **DISKPART**, digite `assign [mount=<path>]`.
 
-#### <a name="to-remove-a-mount-point-folder-path-to-a-drive"></a>Para remover um caminho da pasta do ponto de montagem para uma unidade
+### <a name="to-remove-a-mount-point"></a>Para remover um ponto de montagem
 
--   Para remover o caminho da pasta do ponto de montagem, clique nele e, em seguida, clique em **Remover**.
+Para remover o ponto de montagem para que a unidade não fique mais acessível por meio de uma pasta:
+
+1. Selecione e mantenha o cursor (ou clique com o botão direito do mouse) na unidade montada em uma pasta e escolha **Alterar letra de unidade e caminho**.
+2. Selecione a pasta na lista e escolha **Remover**.
 
 | Valor | Descrição |
 | --- | --- |
@@ -64,7 +65,5 @@ ms.locfileid: "80815529"
 -   Ao atribuir um caminho da pasta do ponto de montagem a uma unidade, use o **Visualizador de Eventos** para verificar no log do sistema se há erros de serviço do Cluster ou avisos indicando falhas de caminho da pasta do ponto de montagem. Esses erros seriam listados como **ClusSvc** na coluna **Origem** e **Recurso de disco físico** na coluna **Categoria**.
 -   Também é possível criar uma unidade montada usando o comando [mountvol](https://go.microsoft.com/fwlink/?linkid=64111).
 
-## <a name="see-also"></a>Veja também
+## <a name="additional-references"></a>Referências adicionais
 -   [Notação da sintaxe de linha de comando](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-
