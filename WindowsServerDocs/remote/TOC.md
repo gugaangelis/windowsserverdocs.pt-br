@@ -1,4 +1,4 @@
-# [Remoto](index.md)
+# [Remoto](index.yml)
 ## [MultiPoint Services](multipoint-services/MultiPoint-Services.md)
 ### [Como planejar uma implantação do MultiPoint Services](multipoint-services/Planning-a-MultiPoint-Services-Deployment.md)
 #### [Introdução ao MultiPoint Services](multipoint-services/Introducing-MultiPoint-services.md)

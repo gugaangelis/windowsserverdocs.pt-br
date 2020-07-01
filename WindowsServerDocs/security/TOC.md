@@ -1,4 +1,4 @@
-# [Segurança e garantia](security-and-assurance.md)
+# [Segurança e garantia](security-and-assurance.yml)
 ## [Como iniciar sua jornada pelo Regulamento Geral sobre a Proteção de Dados (RGPD) para Windows Server 2016](gdpr/gdpr-winserver-whitepaper.md)
 ## [Configurar o HGS para uma malha protegida e VMs blindadas](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)
 ### [Visão geral](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)

@@ -8,12 +8,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e99cceb1acc6df7c9b30cef9f473531a6c35c5c7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2477cac206af4e70d10e28d7b1da637b7b7accff
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470241"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548810"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Transição do Windows Server Essentials para o Windows Server 2012 Standard
 
@@ -75,11 +75,13 @@ ms.locfileid: "85470241"
 ## <a name="turn-off--windows-server-essentials-features"></a>Desativar os recursos do Windows Server Essentials
  Se você não precisar mais do painel do Windows Server Essentials ou de outros recursos de adição de valor para gerenciar o servidor, poderá desativar os recursos e removê-los do servidor.
 
- O **Assistente para desligar recursos do Windows Server Essentials** ajuda a desinstalar os recursos. Ele também limpa o servidor de arquivos que foram criados pelo software do servidor do Windows Server Essentials.  Algumas operações de limpeza são realizadas imediatamente, enquanto outras são iniciadas após a reinicialização do servidor.
+ O **Assistente para desligar recursos do Windows Server Essentials:**
+ 
+- ajuda a desinstalar os recursos. Ele também limpa o servidor de arquivos que foram criados pelo software do servidor do Windows Server Essentials.  Algumas operações de limpeza são realizadas imediatamente, enquanto outras são iniciadas após a reinicialização do servidor.
 
- O **Assistente para desligar recursos do Windows Server Essentials** requer que você desinstale manualmente todos os suplementos antes de poder concluir o assistente. Para exibir uma lista dos suplementos instalados, abra a página Aplicativo do Painel. O assistente o avisará se encontrar suplementos instalados e solicitará sua desinstalação.
+- o requer que você desinstale manualmente todos os suplementos antes de poder concluir o assistente. Para exibir uma lista dos suplementos instalados, abra a página Aplicativo do Painel. O assistente o avisará se encontrar suplementos instalados e solicitará sua desinstalação.
 
- O **Assistente para desligar recursos do Windows Server Essentials** permite que você escolha se deseja manter os arquivos de backup para computadores cliente depois de desativar os recursos do Windows Server Essentials.
+- permite que você escolha se deseja manter os arquivos de backup para computadores cliente depois de desativar os recursos do Windows Server Essentials.
 
  Há duas maneiras de executar o **Assistente para desativar recursos do Windows Server Essentials** no painel:
 

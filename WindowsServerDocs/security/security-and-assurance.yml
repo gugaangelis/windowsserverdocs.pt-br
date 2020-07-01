@@ -1,0 +1,139 @@
+### YamlMime:Landing
+title: Documentação de segurança do Windows Server
+summary: A segurança do Windows Server fornece camadas de proteção incorporadas ao sistema operacional para proteger contra violações de segurança, ajudar a bloquear ataques mal-intencionados e aprimorar a segurança de suas máquinas virtuais, aplicativos e dados.
+metadata:
+  title: Documentação de segurança do Windows Server
+  description: Uma visão geral da segurança no Windows Server.
+  ms.topic: landing-page
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.date: 5/19/2020
+  ms.openlocfilehash: 5e20d4eabc7a9630e6a0eb880ddeabff3735f1ab
+  ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+  ms.translationtype: MT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 06/30/2020
+  ms.locfileid: "85549139"
+landingContent:
+- title: Visão geral da segurança no Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Postagem no blog de segurança do Windows Server
+      url: https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/
+    - text: Blog de segurança de nuvem privada e datacenter
+      url: https://blogs.technet.microsoft.com/datacentersecurity/
+    - text: Abordar ameaças emergentes e mudanças de paisagem
+      url: https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be
+    - text: Postagem do blog sobre como protegendo seu datacenter e nuvem de ameaças emergentes
+      url: https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx
+    - text: Sessão Visão geral sobre garantia e segurança no Ignite
+      url: https://channel9.msdn.com/events/ignite/2015/brk2482
+- title: Virtualização segura com VMs blindadas
+  linkLists:
+  - linkListType: video
+    links:
+    - text: VM blindada no Channel 9
+      url: https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016
+    - text: Demonstração de VM blindada
+      url: https://www.youtube.com/watch?v=xip5Qtk-7d8
+    - text: Passo a passo em vídeo de máquinas virtuais blindadas no Windows Server
+      url: http://microsoft-cloud.cloudguides.com/Guides/Shielded%Virtual%Machines%in%Windows%Server.htm
+    - text: 'Proteção da malha: proteção de segredos de locatário no Hyper-V (vídeo do Ignite)'
+      url: https://channel9.msdn.com/events/ignite/2015/brk3457
+  - linkListType: how-to-guide
+    links:
+    - text: Guia de implantação de malha protegida
+      url: guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md
+    - text: VM blindada e malha protegida em filiais
+      url: guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md
+    - text: Guia de solução de problemas de VM blindada e malha protegida
+      url: guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md
+- title: Proteção do sistema operacional e de aplicativos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Guia de implantação do WDAC (Controle de Aplicativos do Windows Defender)
+      url: https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-contro
+    - text: Configurações do Registro do protocolo TLS
+      url: https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings
+    - text: Proteção de Fluxo de Controle
+      url: https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard
+    - text: Windows Defender
+      url: https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server
+  - linkListType: video
+    links:
+    - text: Vídeo de demonstração do Device Guard
+      url: https://www.youtube.com/watch?v=F-pTkesjkhI
+- title: Gerenciamento de Acesso Privilegiado
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Proteger o acesso privilegiado
+      url: https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access
+    - text: Administração Just in Time com o Microsoft Identity Manager
+      url: https://technet.microsoft.com/library/mt150258.aspx
+    - text: Artigo sobre JEA (Administração Just Enough)
+      url: https://aka.ms/JEA
+  - linkListType: video
+    links:
+    - text: Proteger o Windows e o Microsoft Azure Active Directory com Gerenciamento de Acesso Privilegiado
+      url: https://channel9.msdn.com/events/ignite/2015/brk3873
+    - text: Vídeo de demonstração sobre JEA (Administração Just Enough)
+      url: https://www.youtube.com/watch?v=xnBrbkY9P20
+- title: Proteção de credenciais
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Proteger as credenciais de domínio derivadas com o Credential Guard
+      url: https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard
+    - text: Proteger as credenciais de Área de Trabalho Remota com o Remote Credential Guard
+      url: https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard
+  - linkListType: video
+    links:
+    - text: Vídeo de demonstração do Credential Guard
+      url: https://www.youtube.com/watch?v=eUpKOGSl7yk
+- title: Detectar e responder a ameaças
+  linkLists:
+  - linkListType: video
+    links:
+    - text: Análise de ameaças de segurança usando o Microsoft Operations Management Suite
+      url: https://channel9.msdn.com/events/ignite/2015/brk3464
+    - text: Microsoft Operations Management Suite (OMS)
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+    - text: OMS e Windows Server
+      url: https://www.youtube.com/watch?v=_SaDw1dRy2k
+  - linkListType: overview
+    links:
+    - text: Microsoft Advanced Threat Analytics
+      url: https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx
+- title: Segurança de rede
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visão geral do firewall do datacenter
+      url: https://technet.microsoft.com/library/dn920240.aspx
+    - text: Novidades do DNS no Windows Server
+      url: https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server
+- title: Mapear recursos de segurança com regulamentos de conformidade
+  linkLists:
+  - linkListType: download
+    links:
+    - text: White paper sobre mapeamento da conformidade de VMs blindadas no Hyper-V
+      url: https://download.microsoft.com/download/6/D/0/6D06E149-B4C1-4EED-ACD5-DF6066E93CC0/Coalfire_Branded_Hyper_V_Shielded_VMs_Whitepaper_EN_US.pdf
+    - text: White paper sobre mapeamento de conformidade com JEA e JIT
+      url: https://download.microsoft.com/download/2/7/A/27A2B5BB-6B52-4482-87C1-DA9D6B6D8C8D/Coalfire_Branded_Privileged_Identity_Manager_Whitepaper_EN_US.pdf
+    - text: White paper sobre mapeamento de conformidade do Credential Guard
+      url: https://download.microsoft.com/download/6/9/D/69D9E610-D23C-4F7E-A8CC-D65B87CEB4F8/Coalfire_Branded_Device_Guard_Whitepaper_EN_US.pdf
+    - text: White paper sobre mapeamento de conformidade do Credential Guard
+      url: https://download.microsoft.com/download/8/1/2/812009C9-E4B8-4D4B-AADD-FDC373D0A076/Coalfire_Branded_Credential_Guard_Whitepaper_EN_US.pdf
+    - text: White paper sobre mapeamento de conformidade do Windows Defender
+      url: https://download.microsoft.com/download/C/7/7/C778B7BB-0783-42D7-93A9-B86DFB5A7BAD/Coalfire_Branded_Windows_Defender_Whitepaper_EN_US.pdf
+- title: Versões mais antigas do Windows Server
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Documentação das versões anteriores do Windows
+      url: https://docs.microsoft.com/previous-versions/windows/
+    - text: Pesquisar informações específicas
+      url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

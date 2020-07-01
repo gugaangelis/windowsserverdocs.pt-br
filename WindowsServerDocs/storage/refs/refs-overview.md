@@ -6,13 +6,13 @@ manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
-ms.date: 06/17/2019
-ms.openlocfilehash: 7d33f15aafa432cb3f3174087c3b27855b4f35b2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.date: 06/29/2019
+ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475133"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548891"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Visão geral do ReFS (Sistema de Arquivos Resiliente)
 
@@ -104,7 +104,7 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 
 ## <a name="feature-comparison"></a>Comparação de recursos
 
-### <a name="limits"></a>Limites
+### <a name="limits"></a>limites
 
 | Recurso       | ReFS                                        | NTFS |
 |----------------|------------------------------------------------|-----------------------|
@@ -119,24 +119,24 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 
 | Funcionalidade       | ReFS                                        | NTFS |
 |---------------------------|------------------|-----------------------|
-| Criptografia de BitLocker | Sim | Yes |
+| Criptografia de BitLocker | Sim | Sim |
 | Eliminação de duplicação de dados | Sim<sup>1</sup> | Sim |
-| Suporte para CSV (Volume Compartilhado Clusterizado) | Sim<sup>2</sup> | Yes |
-| Links virtuais | Yes | Yes |
-| Suporte para cluster de failover | Yes | Yes |
-| Listas de controle de acesso | Yes | Yes |
-| Diário USN | Yes | Yes |
-| Notificações de alterações | Yes | Yes |
-| Pontos de junção | Yes | Yes |
-| Pontos de montagem | Yes | Yes |
-| Pontos de nova análise | Yes | Yes |
-| Instantâneos de volume | Yes | Yes |
-| IDs de Arquivo | Yes | Yes |
-| Oplocks | Yes | Yes |
-| Arquivos esparsos | Yes | Yes |
-| Fluxos nomeados | Yes | Yes |
-| Provisionamento dinâmico | Sim<sup>3</sup> | Yes |
-| Aparar/cancelar mapeamento | Sim<sup>3</sup> | Yes |
+| Suporte para CSV (Volume Compartilhado Clusterizado) | Sim<sup>2</sup> | Sim |
+| Links virtuais | Sim | Sim |
+| Suporte para cluster de failover | Sim | Sim |
+| Listas de controle de acesso | Sim | Sim |
+| Diário USN | Sim | Sim |
+| Notificações de alterações | Sim | Sim |
+| Pontos de junção | Sim | Sim |
+| Pontos de montagem | Sim | Sim |
+| Pontos de nova análise | Sim | Sim |
+| Instantâneos de volume | Sim | Sim |
+| IDs de Arquivo | Sim | Sim |
+| Oplocks | Sim | Sim |
+| Arquivos esparsos | Sim | Sim |
+| Fluxos nomeados | Sim | Sim |
+| Provisionamento dinâmico | Sim<sup>3</sup> | Sim |
+| Aparar/cancelar mapeamento | Sim<sup>3</sup> | Sim |
 1. Disponível no Windows Server, versão 1709 e posterior.
 2. Disponível no Windows Server 2012 R2 e posterior.
 3. Somente espaços de armazenamento
@@ -147,7 +147,7 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 |---------------------------|------------------|-----------------------|
 | Clone de blocos | Sim | Não |
 | VDL Esparso | Sim | Não |
-| Paridade acelerada por espelho| Sim (em Espaços de Armazenamento Diretos) | No |
+| Paridade acelerada por espelho| Sim (em Espaços de Armazenamento Diretos) | Não |
 
 #### <a name="the-following-features-are-unavailable-on-refs-at-this-time"></a>Os seguintes recursos não estão disponíveis em ReFS no momento:
 
@@ -172,3 +172,4 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 - [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)
 - [Clonagem de blocos ReFS](block-cloning.md)
 - [Fluxos de integridade ReFS](integrity-streams.md)
+- [Solucionar problemas de ReFS com ReFSUtil](../../administration/windows-commands/refsutil.md)

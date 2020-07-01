@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eae779216724d82ef7ca05026bcfd9725e6ea35
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6e9cd59169922bb6d76b6c65f3381e653df97109
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721539"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548840"
 ---
 # <a name="netstat"></a>netstat
 
@@ -28,7 +28,7 @@ Exibe conexões TCP ativas, portas nas quais o computador está escutando, estat
 ## <a name="syntax"></a>Sintaxe
 
 ```
-netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
+netstat [-a] [-b] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -36,6 +36,7 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<interval>]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | -a | Exibe todas as conexões TCP ativas e as portas TCP e UDP nas quais o computador está escutando. |
+| -b | Exibe o executável envolvido na criação de cada conexão ou porta de escuta. Em alguns casos, executáveis bem conhecidos hospedam vários componentes independentes e, nesses casos, a sequência de componentes envolvidos na criação da conexão ou porta de escuta é exibida. Nesse caso, o nome do executável é [] na parte inferior, na parte superior, o componente que ele chamou e assim por diante até que o TCP/IP fosse atingido. Observe que essa opção pode ser demorada e irá falhar, a menos que você tenha permissões suficientes.
 | -E | Exibe estatísticas de Ethernet, como o número de bytes e de pacotes enviados e recebidos. Esse parâmetro pode ser combinado com **-s**. |
 | -n | Exibe conexões TCP ativas, no entanto, endereços e números de porta são expressos numericamente e nenhuma tentativa é feita para determinar nomes. |
 | -o | Exibe conexões TCP ativas e inclui a ID do processo (PID) para cada conexão. Você pode encontrar o aplicativo com base na PID na guia processos no Gerenciador de tarefas do Windows. Esse parâmetro pode ser combinado com **-a**, **-n**e **-p**. |
