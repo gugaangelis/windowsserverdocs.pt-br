@@ -104,6 +104,7 @@
 ### [Paridade acelerada por espelho](refs/mirror-accelerated-parity.md)
 ### [Bloqueio de clonagem](refs/block-cloning.md)
 ### [Fluxos de integridade](refs/integrity-streams.md)
+### [ReFSUtil](../administration/windows-commands/refsutil.md)
 
 ## Serviço de Migração de Armazenamento
 ### [Visão geral](storage-migration-service/overview.md)
