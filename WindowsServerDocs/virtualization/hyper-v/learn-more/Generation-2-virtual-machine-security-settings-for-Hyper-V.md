@@ -9,12 +9,12 @@ ms.assetid: 06ab4f5f-6b8e-4058-8108-76785aa93d4c
 author: larsiwer
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7eb867529d38ab21ee21c19f92c89ed4128b0ea4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1b3c7b636d9c93ff0392f266d1e6e18d36dfd15f
+ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860799"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85548910"
 ---
 # <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Configurações de segurança de máquina virtual de geração 2 para Hyper-V
 
@@ -83,4 +83,4 @@ Para obter mais segurança de máquina virtual, use a opção **Habilitar a Blin
 
 Você pode executar a máquina virtual blindada localmente sem configurar um Serviço Guardião de Host. Porém, se você migrá-lo para outro host, talvez não seja possível iniciá-lo. Você deve atualizar o protetor de chave para essa máquina virtual para autorizar o novo host a executar a máquina virtual. Para obter mais informações, confira [Malha Protegida e VMs Blindadas](https://go.microsoft.com/fwlink/?LinkId=746381).  
 
-Para obter mais informações sobre a segurança no Windows Server, confira [Garantia e segurança](../../../security/Security-and-Assurance.md).  
+Para obter mais informações sobre a segurança no Windows Server, confira [Garantia e segurança](../../../security/Security-and-Assurance.yml).  
