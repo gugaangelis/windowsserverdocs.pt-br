@@ -7,32 +7,40 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 09/19/2019
+ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 19679a6838d583ef93175f5f95aa21e8aeca9b36
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475253"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833356"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
->Aplica-se a: Windows 2019, Windows Server 2016
+>Aplica-se a: Windows Server 2019, Windows Server 2016
 
 Este tópico fornece diretrizes sobre como escolher unidades para [Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md) para atender às suas necessidades de desempenho e capacidade.
 
 ## <a name="drive-types"></a>Tipos de unidade
 
-Os Espaços de Armazenamento Diretos atualmente funcionam com três tipos de unidades:
+Espaços de Armazenamento Diretos atualmente funciona com quatro tipos de unidades:
 
 <table>
+    <tr style="border: 0;">
+        <td style="padding: 10px; border: 0; width:70px">
+            <img src="media/understand-the-cache/pmem-100px.png">
+        </td>
+        <td style="padding: 10px; border: 0;" valign="middle">O 
+            <b>PMem</b> se refere à memória persistente, um novo tipo de armazenamento de alto desempenho e baixa latência.
+        </td>
+    </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
             <img src="media/understand-the-cache/NVMe-100px.png">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
-            <b>NVMe</b> (memória não volátil Express) refere-se a unidades de estado sólido que ficam diretamente no barramento PCIe. Os fatores forma comuns são U.2 de 2,5", PCIe Add-In-Card (AIC) e M.2. O NVMe oferece taxa de transferência IOPS e E/S mais alta com menor latência do que qualquer outro tipo de unidade com suporte atualmente.
+            <b>NVMe</b> (memória não volátil Express) refere-se a unidades de estado sólido que ficam diretamente no barramento PCIe. Os fatores forma comuns são U.2 de 2,5", PCIe Add-In-Card (AIC) e M.2. O NVMe oferece IOPS e taxa de transferência de e/s maiores com latência menor do que qualquer outro tipo de unidade que damos suporte hoje, exceto a memória persistente.
         </td>
     </tr>
     <tr style="border: 0;">

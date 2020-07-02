@@ -1,5 +1,5 @@
 ---
-title: Requisitos de hardware dos Espaços de Armazenamento Diretos
+title: Requisitos de hardware de Espaços de Armazenamento Diretos
 ms.prod: windows-server
 description: Requisitos mínimos de hardware para testes de Espaços de Armazenamento Diretos.
 ms.author: eldenc
@@ -7,14 +7,14 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 08/05/2019
+ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 42022b6e2e3564d1440e2ba1d45f9f98430242c0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
+ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861049"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85833319"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -27,13 +27,13 @@ Para produção, a Microsoft recomenda a compra de uma solução de hardware/sof
    > [!TIP]
    > Quer avaliar Espaços de Armazenamento Diretos mas não tem hardware? Use as máquinas virtuais Hyper-V ou Azure, conforme descrito em [usando espaços de armazenamento diretos em clusters de máquinas virtuais convidadas](storage-spaces-direct-in-vm.md).
 
-## <a name="base-requirements"></a>Requisitos básicos
+## <a name="base-requirements"></a>Requisitos base
 
 Os sistemas, componentes, dispositivos e drivers devem ser **certificados pelo Windows server 2016 pelo** [catálogo do Windows Server](https://www.windowsservercatalog.com). Além disso, recomendamos que servidores, unidades, adaptadores de barramento de host e adaptadores de rede tenham as qualificações adicionais do **SDDC (Data Center)** e/ou do **Data Center** (AQS) Premium definidas pelo software, conforme mostrado abaixo. Há mais de 1.000 componentes com o SDDC AQs.
 
 ![captura de tela do catálogo do Windows Server mostrando o AQs do SDDC](media/hardware-requirements/sddc-aqs.png)
 
-O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por assistente no Gerenciador de cluster de failover ou com o [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) `Test-Cluster` no PowerShell.
+O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por assistente no Gerenciador de cluster de failover ou com o `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) no PowerShell.
 
 Além disso, os seguintes requisitos se aplicam:
 
@@ -78,15 +78,16 @@ Interconexões de nó alternadas ou alternadas
 
 ## <a name="drives"></a>Unidades
 
-Espaços de Armazenamento Diretos funciona com unidades SATA, SAS ou NVMe com conexão direta que estão fisicamente anexadas a apenas um servidor. Para obter mais ajuda na escolha de unidades, consulte o tópico [Escolhendo unidades](choosing-drives.md).
+Espaços de Armazenamento Diretos funciona com unidades de SATA, SAS, NVMe ou de memória persistente (PMem) conectadas diretamente a apenas um servidor cada. Para obter mais ajuda para escolher unidades, consulte os tópicos [escolhendo unidades](choosing-drives.md) e [entender e implantar a memória persistente](deploy-pmem.md) .
 
-- Unidades SATA, SAS e NVMe (M. 2, U. 2 e add-in-Card) são todas suportadas
+- Todas as unidades SATA, SAS, memória persistente e NVMe (M. 2, U. 2 e suplemento) são todas suportadas
 - todas as unidades nativas 512n, 512e e 4K têm suporte
 - Unidades de estado sólido devem fornecer [proteção contra perda de energia](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - Mesmo número e tipos de unidades em cada servidor – consulte [considerações de simetria da unidade](drive-symmetry-considerations.md)
 - Os dispositivos de cache devem ter 32 GB ou mais
+- Dispositivos de memória persistentes são usados no modo de armazenamento em bloco
 - Ao usar dispositivos de memória persistentes como dispositivos de cache, você deve usar dispositivos de capacidade NVMe ou SSD (não é possível usar HDDs)
-- O driver NVMe é fornecido pela Microsoft, incluído no Windows. (stornvme. sys)
+- O driver NVMe é fornecido pela Microsoft, incluído no Windows (stornvme.sys)
 - Recomendado: o número de unidades de capacidade é um múltiplo completo do número de unidades de cache
 - Recomendado: as unidades de cache devem ter alta Endurance de gravação: pelo menos 3 unidades-gravações por dia (DWPD) ou pelo menos 4 terabytes gravados (TBW) por dia – consulte [noções básicas sobre gravações de unidade por dia (DWPD), terabytes gravados (TBW) e o mínimo recomendado para espaços de armazenamento diretos](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
