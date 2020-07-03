@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peercaching e help
-description: Tópico de referência para **Bitsadmin de cache** e **ajuda**, que exibe o uso de linha de comando para as opções de/peercaching.
+description: Artigo de referência para **Bitsadmin de cache** e **ajuda**, que exibe o uso de linha de comando para as opções de/peercaching.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08cb792989470d7492ff2da4b63ddd686b35b232
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1cef716cd7487868adcd9df32904fda331e49fc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717244"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922928"
 ---
 # <a name="bitsadmin-peercaching-and-help"></a>bitsadmin peercaching e help
 
 Exibe o uso da linha de comando para os comutadores **/peercaching** .
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 bitsadmin /peercaching /help

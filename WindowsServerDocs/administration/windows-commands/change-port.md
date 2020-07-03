@@ -1,6 +1,6 @@
 ---
 title: change port
-description: Tópico de referência para o comando Change Port, que lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.
+description: Artigo de referência para o comando Change Port, que lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dcf1097ea037aff9269edafea6e640054a697e3
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0735c4c21ae8e321da1cfe31c2874f3dcfc540c7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716075"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922507"
 ---
 # <a name="change-port"></a>change port
 
@@ -49,13 +49,13 @@ change port [<portX>=<portY| /d <portX | /query]
 ## <a name="examples"></a>Exemplos
 
 - Para mapear COM12 para COM1 para uso por um aplicativo baseado em MS-dos, digite:
-  
+
   ```
   change port com12=com1
   ```
 
 - Para exibir os mapeamentos de porta atuais, digite:
-  
+
   ```
   change port /query
   ```

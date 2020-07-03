@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getcustomheaders
-description: Tópico de referência para o comando Bitsadmin getcustomheaders, que recupera os cabeçalhos HTTP personalizados do trabalho.
+description: Artigo de referência para o comando Bitsadmin getcustomheaders, que recupera os cabeçalhos HTTP personalizados do trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7fe839cd0e629af88b3ee3642abcce339442d03a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7482c3eb4b259051ebd63677c70dbaabfb013314
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718094"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923071"
 ---
 # <a name="bitsadmin-getcustomheaders"></a>bitsadmin getcustomheaders
 

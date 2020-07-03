@@ -1,6 +1,6 @@
 ---
 title: Diskshadow
-description: Tópico de referência para o comando DiskShadow, que é uma ferramenta que expõe a funcionalidade oferecida pelo VSS (serviço de cópias de sombra de volume).
+description: Artigo de referência para o comando DiskShadow, que é uma ferramenta que expõe a funcionalidade oferecida pelo VSS (serviço de cópias de sombra de volume).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,23 +9,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae3a4ba57d9c29375c560c300a4e4ead807184fc
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: 02e2836cd69b1fe85ea4f86da125c95c9ca1e4ea
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235186"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922796"
 ---
 # <a name="diskshadow"></a>Diskshadow
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-O DiskShadow. exe é uma ferramenta que expõe a funcionalidade oferecida pelo VSS (serviço de cópias de sombra de volume). Por padrão, o DiskShadow usa um interpretador de comando interativo semelhante ao do DiskRAID ou DiskPart. O DiskShadow também inclui um modo programável.
+Diskshadow.exe é uma ferramenta que expõe a funcionalidade oferecida pelo VSS (serviço de cópias de sombra de volume). Por padrão, o DiskShadow usa um interpretador de comando interativo semelhante ao do DiskRAID ou DiskPart. O DiskShadow também inclui um modo programável.
 
 > [!NOTE]
 > A associação no grupo local de administradores, ou equivalente, é o requisito mínimo necessário para executar o DiskShadow.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 Para o modo interativo, digite o seguinte no prompt de comando para iniciar o interpretador de comando do DiskShadow:
 
@@ -33,7 +33,7 @@ Para o modo interativo, digite o seguinte no prompt de comando para iniciar o in
 diskshadow
 ```
 
-Em modo de script, digite o seguinte, em que *script. txt* é um arquivo de script que contém comandos DiskShadow:
+Em modo de script, digite o seguinte, em que *script.txt* é um arquivo de script que contém comandos DiskShadow:
 
 ```
 diskshadow -s script.txt

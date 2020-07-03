@@ -1,6 +1,6 @@
 ---
 title: forfiles
-description: Tópico de referência para o comando Forfiles, que seleciona e executa um comando em um arquivo ou conjunto de arquivos.
+description: Artigo de referência para o comando Forfiles, que seleciona e executa um comando em um arquivo ou conjunto de arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 96ef7d016bd13961a4814ba4cd09095aed4f0e97
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716841"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922393"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -55,7 +55,7 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
     | @FDATE | Carimbo de data da última modificação no arquivo. |
     | @FTIME | Carimbo de data/hora da última modificação no arquivo. |
 
-- O comando **Forfiles** permite executar um comando ou passar argumentos para vários arquivos. Por exemplo, você pode executar o comando **Type** em todos os arquivos em uma árvore com a extensão de nome de arquivo. txt. Ou você pode executar cada arquivo em lotes (*. bat) na unidade C, com o nome de arquivo MyInput. txt como o primeiro argumento.
+- O comando **Forfiles** permite executar um comando ou passar argumentos para vários arquivos. Por exemplo, você pode executar o comando **Type** em todos os arquivos em uma árvore com a extensão de nome de arquivo. txt. Ou você pode executar cada arquivo em lotes (*. bat) na unidade C, com o nome do arquivo Myinput.txt como o primeiro argumento.
 
 - Este comando pode:
 

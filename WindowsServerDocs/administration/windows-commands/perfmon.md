@@ -1,6 +1,6 @@
 ---
 title: perfmon
-description: Tópico de referência para o comando Perfmon, que inicia o monitor de desempenho e confiabilidade do Windows em um modo autônomo específico.
+description: Artigo de referência para o comando Perfmon, que inicia o monitor de desempenho e confiabilidade do Windows em um modo autônomo específico.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 96d1589dcd75814c37c2ad295cf60887eb07739c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5beaa1692f3fc4aa66eae81069f0ead5839d22e3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472472"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922838"
 ---
 # <a name="perfmon"></a>perfmon
 

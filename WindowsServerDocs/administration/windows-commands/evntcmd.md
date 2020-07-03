@@ -1,6 +1,6 @@
 ---
 title: evntcmd
-description: Tópico de referência para o comando evntcmd, que configura a tradução de eventos para interceptações, destinos de interceptação ou ambos com base nas informações de um arquivo de configuração.
+description: Artigo de referência para o comando evntcmd, que configura a tradução de eventos para interceptações, destinos de interceptação ou ambos com base nas informações de um arquivo de configuração.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e922d7876a8065a0e05e9fa7bf2cf8db45bffd25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 291b13163f5c5a13442ed6dc80b769d0170df42e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437091"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922780"
 ---
 # <a name="evntcmd"></a>evntcmd
 

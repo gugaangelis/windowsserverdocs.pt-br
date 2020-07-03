@@ -1,6 +1,6 @@
 ---
 title: Add-ImageDriverPackage
-description: Tópico de referência para Add-ImageDriverPackage, que adiciona um pacote de driver que está no repositório de driver a uma imagem de inicialização existente no servidor.
+description: Artigo de referência para Add-ImageDriverPackage, que adiciona um pacote de driver que está no repositório de driver a uma imagem de inicialização existente no servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c221d77f80cefdcf6e6214cdd7441ecde5cb693
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 450b06c2c935f83a0851fb887f34d7403061fea8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721075"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922060"
 ---
 # <a name="add-imagedriverpackage"></a>Add-ImageDriverPackage
 
@@ -24,7 +24,7 @@ Adiciona um pacote de driver que está no repositório de drivers a uma imagem d
 
 ## <a name="syntax"></a>Sintaxe
 ```
-wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype:Boot /Architecture:{x86 | ia64 | x64} 
+wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype:Boot /Architecture:{x86 | ia64 | x64}
 ```
 ```
 [/Filename:<File name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
@@ -37,9 +37,9 @@ wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype
 |             meio<Image name>             |                                                                                                                                                                                       Especifica o nome da imagem à qual adicionar o driver.                                                                                                                                                                                        |
 |               MediaType: inicialização               |                                                                                                                                                                Especifica o tipo de imagem ao qual adicionar o driver. Os pacotes de driver só podem ser adicionados a imagens de inicialização.                                                                                                                                                                 |
 | /Architecture: {x86 &#124; IA64 &#124; x64} |                                                                                                       Especifica a arquitetura da imagem de inicialização. Como é possível ter o mesmo nome de imagem para imagens de inicialização em diferentes arquiteturas, você deve especificar a arquitetura para garantir que a imagem correta seja usada.                                                                                                        |
-|           /Filename:<File name>]           |                                                                                                                                                        Especifica o nome do arquivo. Se a imagem não puder ser identificada exclusivamente pelo nome, o nome do arquivo deverá ser especificado.                                                                                                                                                        |
+|           /Filename: <File name> ]           |                                                                                                                                                        Especifica o nome do arquivo. Se a imagem não puder ser identificada exclusivamente pelo nome, o nome do arquivo deverá ser especificado.                                                                                                                                                        |
 |           [/DriverPackage:<Name>           |                                                                                                                                                                                   Especifica o nome do pacote de driver a ser adicionado à imagem.                                                                                                                                                                                    |
-|             [/PackageId:<ID>]              | Especifica a ID dos serviços de implantação do Windows do pacote de driver. Você deve especificar essa opção se o pacote de driver não puder ser identificado exclusivamente pelo nome. Para localizar a ID do pacote, clique no grupo de drivers no qual o pacote está (ou no nó **todos os pacotes** ), clique com o botão direito do mouse no pacote e clique em **Propriedades**. A ID do pacote é listada na guia **geral** . Por exemplo: {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}. |
+|             [/PackageId: <ID> ]              | Especifica a ID dos serviços de implantação do Windows do pacote de driver. Você deve especificar essa opção se o pacote de driver não puder ser identificado exclusivamente pelo nome. Para localizar a ID do pacote, clique no grupo de drivers no qual o pacote está (ou no nó **todos os pacotes** ), clique com o botão direito do mouse no pacote e clique em **Propriedades**. A ID do pacote é listada na guia **geral** . Por exemplo: {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}. |
 
 ## <a name="examples"></a>Exemplos
 Para adicionar um pacote de driver a uma imagem de inicialização, digite um dos seguintes:
@@ -50,5 +50,5 @@ wdsutil /add-ImageDriverPackagmedia:WinPE Boot Imagemediatype:Boot /Architecture
 wdsutil /verbose /add-ImageDriverPackagmedia:WinPE Boot Image /Server:MyWDSServemediatype:Boot /Architecture:x64 /PackageId:{4D36E972-E325-11CE-Bfc1-08002BE10318}
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando Add-ImageDriverPackages](using-the-add-imagedriverpackages-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando Add-ImageDriverPackages](using-the-add-imagedriverpackages-command.md)

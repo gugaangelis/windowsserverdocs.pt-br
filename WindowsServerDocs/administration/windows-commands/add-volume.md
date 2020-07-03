@@ -1,6 +1,6 @@
 ---
-title: Adicionar volume
-description: Tópico de referência para o comando Add volume, que adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados por sombra.
+title: add volume
+description: Artigo de referência para o comando Add volume, que adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados por sombra.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8cfd3d8f7d9f008e3136d8f694dc00370b8b0f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3cd80a60fd3215a2234d4eb5be8a62da91e2cba4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719206"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924080"
 ---
-# <a name="add-volume"></a>Adicionar volume
+# <a name="add-volume"></a>add volume
 
 Adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados em sombra. Quando uma cópia de sombra é criada, uma variável de ambiente vincula o alias à ID de sombra, portanto, o alias pode ser usado para scripts.
 

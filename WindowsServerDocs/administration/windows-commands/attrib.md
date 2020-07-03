@@ -1,6 +1,6 @@
 ---
 title: attrib
-description: Tópico de referência para o comando attrib, que exibe, define ou remove atributos atribuídos a arquivos ou diretórios.
+description: Artigo de referência para o comando attrib, que exibe, define ou remove atributos atribuídos a arquivos ou diretórios.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c525fe1dc5b78032f20358492a1bfde4df909add
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc5d780ffd32976df306e2221987f24ec8553854
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719195"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923903"
 ---
 # <a name="attrib"></a>attrib
 
@@ -30,11 +30,11 @@ attrib [{+|-}r] [{+|-}a] [{+|-}s] [{+|-}h] [{+|-}i] [<drive>:][<path>][<filename
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| `{+|-}r` | Define (**+**) ou limpa (**-**) o atributo de arquivo somente leitura. |
-| `{+\|-}a` | Define (**+**) ou limpa (**-**) o atributo de arquivo morto. Este conjunto de atributos marca os arquivos que foram alterados desde a última vez em que foram feitos backups. Observe que o comando **xcopy** usa atributos de arquivo morto. |
-| `{+\|-}s` | Define (**+**) ou limpa (**-**) o atributo de arquivo do sistema. Se um arquivo usar esse conjunto de atributos, você deverá limpar o atributo antes de alterar qualquer outro atributo para o arquivo. |
-| `{+\|-}h` | Define (**+**) ou limpa (**-**) o atributo de arquivo oculto. Se um arquivo usar esse conjunto de atributos, você deverá limpar o atributo antes de alterar qualquer outro atributo para o arquivo. |
-| `{+\|-}i` | Define (**+**) ou limpa (**-**) o atributo de arquivo sem conteúdo indexado. |
+| `{+|-}r` | Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo somente leitura. |
+| `{+\|-}a` | Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo morto. Este conjunto de atributos marca os arquivos que foram alterados desde a última vez em que foram feitos backups. Observe que o comando **xcopy** usa atributos de arquivo morto. |
+| `{+\|-}s` | Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo do sistema. Se um arquivo usar esse conjunto de atributos, você deverá limpar o atributo antes de alterar qualquer outro atributo para o arquivo. |
+| `{+\|-}h` | Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo oculto. Se um arquivo usar esse conjunto de atributos, você deverá limpar o atributo antes de alterar qualquer outro atributo para o arquivo. |
+| `{+\|-}i` | Define ( **+** ) ou limpa ( **-** ) o atributo de arquivo sem conteúdo indexado. |
 | `[<drive>:][<path>][<filename>]` | Especifica o local e o nome do diretório, arquivo ou grupo de arquivos para os quais você deseja exibir ou alterar atributos.<p>Você pode usar o **?** e **&#42;** caracteres curinga no parâmetro *filename* para exibir ou alterar os atributos de um grupo de arquivos. |
 | /s | Aplica **atributos** e opções de linha de comando a arquivos correspondentes no diretório atual e em todos os seus subdiretórios. |
 | /d | Aplica **Atrib** e qualquer opção de linha de comando a diretórios. |
@@ -49,7 +49,7 @@ Para exibir os atributos de um arquivo chamado News86 que está localizado no di
 attrib news86
 ```
 
-Para atribuir o atributo somente leitura ao arquivo chamado Report. txt, digite:
+Para atribuir o atributo somente leitura ao arquivo chamado report.txt, digite:
 
 ```
 attrib +r report.txt

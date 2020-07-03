@@ -1,6 +1,6 @@
 ---
-title: disco de atributos
-description: Tópico de referência do comando atributos de disco, que exibe, define ou limpa os atributos de um disco.
+title: attributes disk
+description: Artigo de referência do comando atributos Disk, que exibe, define ou limpa os atributos de um disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d378439b30328e4df48020fa4b3288f7af31c6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02ad39b84afb2487b388d046d6409a682b58615b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718892"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923891"
 ---
-# <a name="attributes-disk"></a>disco de atributos
+# <a name="attributes-disk"></a>attributes disk
 
 Exibe, define ou limpa os atributos de um disco. Quando esse comando é usado para exibir os atributos atuais de um disco, o atributo de disco de inicialização denota o disco usado para iniciar o computador. Para um espelho dinâmico, ele exibe o disco que contém o Plex de inicialização do volume de inicialização.
 

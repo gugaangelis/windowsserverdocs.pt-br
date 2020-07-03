@@ -1,6 +1,6 @@
 ---
-title: conjunto de Auditpol
-description: Tópico de referência para o comando de conjunto Auditpol, que define a política de auditoria por usuário, a política de auditoria do sistema ou as opções de auditoria.
+title: auditpol set
+description: Artigo de referência para o comando de conjunto Auditpol, que define a política de auditoria por usuário, a política de auditoria do sistema ou as opções de auditoria.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73868d6044d8742d4d9e0ce76e0668402f230f86
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718885"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923697"
 ---
-# <a name="auditpol-set"></a>conjunto de Auditpol
+# <a name="auditpol-set"></a>auditpol set
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

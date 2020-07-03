@@ -1,6 +1,6 @@
 ---
 title: bitsadmin geterrorcount
-description: Tópico de referência para o comando Bitsadmin GetErrorCount, que recupera uma contagem do número de vezes que o trabalho especificado gerou um erro transitório.
+description: Artigo de referência para o comando Bitsadmin GetErrorCount, que recupera uma contagem do número de vezes que o trabalho especificado gerou um erro transitório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 516bd02ed296a2eba75e174c6f084926bde63e90
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 90eaa150f2decba4bbee693ac117cd269d5a7c97
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718004"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923050"
 ---
 # <a name="bitsadmin-geterrorcount"></a>bitsadmin geterrorcount
 

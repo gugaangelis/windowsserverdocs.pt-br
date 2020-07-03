@@ -1,6 +1,6 @@
 ---
-title: backup de Auditpol
-description: Tópico de referência para o comando de backup Auditpol, que faz o backup das configurações da política de auditoria do sistema, das configurações de política de auditoria por usuário para todos os usuários e de todas as opções de auditoria para um arquivo de texto CSV (valores separados por vírgula).
+title: auditpol backup
+description: Artigo de referência para o comando de backup Auditpol, que faz o backup das configurações da política de auditoria do sistema, das configurações de política de auditoria por usuário para todos os usuários e de todas as opções de auditoria para um arquivo de texto CSV (valores separados por vírgula).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddc6bbbc379453c86df27674b57f29f7c0960772
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8678dbc80b664e3ab667f197f708fbbdbbe40dc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719166"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923810"
 ---
-# <a name="auditpol-backup"></a>backup de Auditpol
+# <a name="auditpol-backup"></a>auditpol backup
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -39,7 +39,7 @@ auditpol /backup /file:<filename>
 
 ## <a name="examples"></a>Exemplos
 
-Para fazer backup de configurações de política de auditoria por usuário para todos os usuários, configurações de política de auditoria do sistema e todas as opções de auditoria em um arquivo de texto formatado para CSV chamado Auditpolicy. csv, digite:
+Para fazer backup de configurações de política de auditoria por usuário para todos os usuários, configurações de política de auditoria do sistema e todas as opções de auditoria em um arquivo de texto formatado para CSV chamado auditpolicy.csv, digite:
 
 ```
 auditpol /backup /file:C:\auditpolicy.csv
@@ -52,6 +52,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [restauração de Auditpol](auditpol-restore.md)
+- [auditpol restore](auditpol-restore.md)
 
 - [comandos Auditpol](auditpol.md)

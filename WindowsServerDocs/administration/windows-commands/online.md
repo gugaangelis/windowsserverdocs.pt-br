@@ -1,6 +1,6 @@
 ---
 title: online
-description: Tópico de referência para o comando online, que usa um disco ou volume offline para o estado online.
+description: Artigo de referência para o comando online, que usa um disco ou volume offline para o estado online.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5983e033755cdc9cd28b2b149fea657a06bd164
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d18ba172af7ab003368b36daa89ef0d7ac88a7a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472602"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922592"
 ---
 # <a name="online"></a>online
 

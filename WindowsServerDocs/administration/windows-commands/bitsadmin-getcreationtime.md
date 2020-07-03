@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getcreationtime
-description: Tópico de referência para o comando Bitsadmin GetCreationTime, que recupera a hora de criação para o trabalho especificado.
+description: Artigo de referência para o comando Bitsadmin GetCreationTime, que recupera a hora de criação para o trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc6ca5ad23730e9f57d58e069e0a2daf961930e8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0efc3d2a0f0f2cf3e72a4ff634733b16ef80055d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718110"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923081"
 ---
 # <a name="bitsadmin-getcreationtime"></a>bitsadmin getcreationtime
 

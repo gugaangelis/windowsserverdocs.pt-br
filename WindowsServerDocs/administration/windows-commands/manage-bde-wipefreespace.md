@@ -1,6 +1,6 @@
 ---
 title: Manage-bde wipefreespace
-description: Tópico de referência para o comando Manage-bde wipefreespace, que apaga o espaço livre no volume, removendo quaisquer fragmentos de dados que possam ter existido no espaço.
+description: Artigo de referência para o comando Manage-bde wipefreespace, que apaga o espaço livre no volume, removendo quaisquer fragmentos de dados que possam ter existido no espaço.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09bc59ab631dd1fa2177b50aa4187b30239571bd
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 872c3722028af1612fb80e3b98650ee0a39261ce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222129"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922173"
 ---
 # <a name="manage-bde-wipefreespace"></a>Manage-bde wipefreespace
 
@@ -32,7 +32,7 @@ manage-bde -wipefreespace|-w [<drive>] [-cancel] [-computername <name>] [{-?|/?}
 | --------- | ----------- |
 | `<drive>` | Representa uma letra de unidade seguida de dois-pontos. |
 | -cancelar | Cancela um apagamento de espaço livre em andamento. |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |

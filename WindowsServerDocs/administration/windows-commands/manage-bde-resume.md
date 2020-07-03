@@ -1,6 +1,6 @@
 ---
 title: gerenciar – retomar o BDE
-description: Tópico de referência para o comando de retomada Manage-bde, que retoma a criptografia ou descriptografia do BitLocker depois que ele é pausado.
+description: Artigo de referência para o comando de retomada Manage-bde, que retoma a criptografia ou descriptografia do BitLocker depois que ele é pausado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17a41a0a5c97bb20c1010c968e495ffbc81649cf
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d5bbdf58f290dc18c299a3cfdb8aca7bfd0e69e6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222114"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922296"
 ---
 # <a name="manage-bde-resume"></a>gerenciar – retomar o BDE
 
@@ -31,7 +31,7 @@ manage-bde -resume [<drive>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | `<drive>` | Representa uma letra de unidade seguida de dois-pontos. |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |

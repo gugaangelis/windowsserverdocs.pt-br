@@ -1,6 +1,6 @@
 ---
 title: fsutil 8dot3name
-description: Tópico de referência para o comando fsutil 8dot3name, que consulta ou altera as configurações de comportamento de nome curto (8dot3 Name).
+description: Artigo de referência para o comando fsutil 8dot3name, que consulta ou altera as configurações de comportamento de nome curto (8dot3 Name).
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: a0c6dbfe-d898-496d-9356-825f7fbd90ec
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 02977a33c21560fd2078f0f596f312f4ab4bc408
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 069f7fed72cfe50ef15c869b129dbf98363d9111
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436051"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922386"
 ---
 # <a name="fsutil-8dot3name"></a>fsutil 8dot3name
 

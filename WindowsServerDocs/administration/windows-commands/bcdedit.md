@@ -1,6 +1,6 @@
 ---
 title: bcdedit
-description: Tópico de referência para o comando bcdedit, que cria novas lojas, modifica as lojas existentes e adiciona parâmetros de menu de inicialização.
+description: Artigo de referência para o comando bcdedit, que cria novas lojas, modifica as lojas existentes e adiciona parâmetros de menu de inicialização.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: df68c2c1b1087f7e32dbe270657a54e072261c46
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2e49ed45875b79dfc4d8bbbdad8a1221000bf2b5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718692"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923516"
 ---
 # <a name="bcdedit"></a>bcdedit
 
-Os arquivos BCD (Dados de Configuração da Inicialização) fornecem um repositório usado para descrever os aplicativos de inicialização e as configurações do aplicativo de inicialização. Os objetos e elementos no repositório substituem efetivamente o boot. ini.
+Os arquivos BCD (Dados de Configuração da Inicialização) fornecem um repositório usado para descrever os aplicativos de inicialização e as configurações do aplicativo de inicialização. Os objetos e elementos na loja substituem efetivamente Boot.ini.
 
-BCDEdit é uma ferramenta de linha de comando para gerenciar repositórios BCD. Ele pode ser usado para uma variedade de finalidades, incluindo a criação de novas lojas, a modificação de lojas existentes, a adição de parâmetros de menu de inicialização e assim por diante. O BCDEdit oferece essencialmente a mesma finalidade que o Bootcfg. exe em versões anteriores do Windows, mas com duas melhorias importantes:
+BCDEdit é uma ferramenta de linha de comando para gerenciar repositórios BCD. Ele pode ser usado para uma variedade de finalidades, incluindo a criação de novas lojas, a modificação de lojas existentes, a adição de parâmetros de menu de inicialização e assim por diante. O BCDEdit oferece essencialmente a mesma finalidade que Bootcfg.exe em versões anteriores do Windows, mas com duas melhorias importantes:
 
-- Expõe um intervalo maior de parâmetros de inicialização do que o Bootcfg. exe.
+- Expõe um intervalo maior de parâmetros de inicialização que Bootcfg.exe.
 
 - Melhorou o suporte a scripts.
 
@@ -45,7 +45,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 | Opção | Descrição |
 | ------ | ----------- |
-| /? | Exibe uma lista de comandos BCDEdit. Executar esse comando sem um argumento exibe um resumo dos comandos disponíveis. Para exibir a ajuda detalhada para um comando específico, execute **bcdedit/?** `<command>`, em `<command>` que é o nome do comando no qual você está pesquisando mais informações. Por exemplo, **bcdedit/? CreateStore** exibe ajuda detalhada para o comando CreateStore. |
+| /? | Exibe uma lista de comandos BCDEdit. Executar esse comando sem um argumento exibe um resumo dos comandos disponíveis. Para exibir a ajuda detalhada para um comando específico, execute **bcdedit/?** `<command>`, em que `<command>` é o nome do comando no qual você está pesquisando mais informações. Por exemplo, **bcdedit/? CreateStore** exibe ajuda detalhada para o comando CreateStore. |
 
 #### <a name="parameters-that-operate-on-a-store"></a>Parâmetros que operam em uma loja
 

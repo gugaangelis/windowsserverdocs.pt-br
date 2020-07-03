@@ -1,6 +1,6 @@
 ---
 title: fondue
-description: Tópico de referência para o comando fondue, que habilita os recursos opcionais do Windows baixando os arquivos necessários do Windows Update ou outra fonte especificada por Política de Grupo.
+description: Artigo de referência para o comando fondue, que habilita os recursos opcionais do Windows baixando os arquivos necessários do Windows Update ou outra fonte especificada por Política de Grupo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a9e751a5ad46d557aa2317ebe4c144fa6f004fa
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5d2b7e4b2a8ef3158f5528c43944020274204970
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437201"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922692"
 ---
 # <a name="fondue"></a>fondue
 
@@ -32,8 +32,8 @@ fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-u
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /Enable-Feature`<feature_name>` | Especifica o nome do recurso opcional do Windows que você deseja habilitar. Você só pode habilitar um recurso por linha de comando. Para habilitar vários recursos, use fondue. exe para cada recurso. |
-| /caller-name:`<program_name>` | Especifica o nome do programa ou processo quando você chama fondue. exe de um script ou arquivo em lotes. Você pode usar essa opção para adicionar o nome do programa ao relatório de SQM se houver um erro. |
+| /Enable-Feature`<feature_name>` | Especifica o nome do recurso opcional do Windows que você deseja habilitar. Você só pode habilitar um recurso por linha de comando. Para habilitar vários recursos, use fondue.exe para cada recurso. |
+| /caller-name:`<program_name>` | Especifica o nome do programa ou processo quando você chama fondue.exe de um script ou arquivo em lotes. Você pode usar essa opção para adicionar o nome do programa ao relatório de SQM se houver um erro. |
 | /hide-ux:`{all | rebootrequest}` | Use **tudo** para ocultar todas as mensagens para o usuário, incluindo as solicitações de progresso e permissão para acessar Windows Update. Se a permissão for necessária, a operação falhará.<p>Use **rebootrequest** para ocultar apenas as mensagens do usuário solicitando permissão para reinicializar o computador. Use esta opção se você tiver um script que controla solicitações de reinicialização. |
 
 ### <a name="examples"></a>Exemplos

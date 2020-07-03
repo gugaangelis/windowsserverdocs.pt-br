@@ -1,6 +1,6 @@
 ---
 title: assoc
-description: Tópico de referência para o comando Assoc, que exibe ou modifica associações de extensão de nome de arquivo.
+description: Artigo de referência para o comando Assoc, que exibe ou modifica associações de extensão de nome de arquivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58735201a1a0711db4d0cee9c292363acf5121f3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6e6d72dce2a3e820b52a33bf11dbf38890278fb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819636"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924041"
 ---
 # <a name="assoc"></a>assoc
 
 Exibe ou modifica associações de extensão de nome de arquivo. Se usado sem parâmetros, **assoc** exibe uma lista de todas as associações de extensão de nome de arquivo atuais.
 
 > [!NOTE]
-> Só há suporte para esse comando no cmd. exe e ele não está disponível no PowerShell.
+> Esse comando só tem suporte no cmd.exe e não está disponível no PowerShell.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -68,7 +68,7 @@ Para exibir a saída de **assoc** uma tela por vez, digite:
 assoc | more
 ```
 
-Para enviar a saída de **assoc** para o arquivo Assoc. txt, digite:
+Para enviar a saída de **assoc** para o arquivo assoc.txt, digite:
 
 ```
 assoc>assoc.txt

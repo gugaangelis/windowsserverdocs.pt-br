@@ -1,6 +1,6 @@
 ---
-title: remoção de Auditpol
-description: Tópico de referência para o comando de remoção de Auditpol, que remove a política de auditoria por usuário para uma conta especificada ou todas as contas.
+title: auditpol remove
+description: Artigo de referência para o comando de remoção de Auditpol, que remove a política de auditoria por usuário para uma conta especificada ou todas as contas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9aedde39d44c7640e6aa2516465e1c8ec7d022c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: aada45bdc128c3122f459813d6f015f58532de18
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719084"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923728"
 ---
-# <a name="auditpol-remove"></a>remoção de Auditpol
+# <a name="auditpol-remove"></a>auditpol remove
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: attach vdisk
-description: Tópico de referência para o comando attach VDISK, que anexa (às vezes, chamadas de montagens ou superfícies) um disco rígido virtual (VHD) para que ele apareça no computador host como uma unidade de disco rígido local.
+description: Artigo de referência para o comando attach VDISK, que anexa (às vezes, chamadas de montagens ou superfícies) um disco rígido virtual (VHD) para que ele apareça no computador host como uma unidade de disco rígido local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91f988d1f84869874dbd0d6a25dce43ef5138066
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d0d07af390a025a60fabf53635ce156cab7b71d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718904"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923913"
 ---
 # <a name="attach-vdisk"></a>attach vdisk
 
@@ -36,7 +36,7 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | readonly | Anexa o VHD como somente leitura. Qualquer operação de gravação retorna um erro. |
-| `sd=<SDDL string>` | Define o filtro de usuário no VHD. A cadeia de caracteres de filtro deve estar no formato SDDL (Security Descriptor Definition Language). Por padrão, o filtro de usuário permite acesso como em um disco físico. As cadeias de caracteres SDDL podem ser complexas, mas em sua forma mais simples, um descritor de segurança que protege o acesso é conhecido como DACL (lista de controle de acesso discricionário). Ele usa o formulário: `D:<dacl_flags><string_ace1><string_ace2>`...`<string_acen>`<p>Os sinalizadores comuns de DACL são:<ul><li>**A**. Permitir o acesso</li><li>**D**. Negar acesso</li></ul>Os direitos comuns são:<ul><li>**GA**. Todo o acesso</li><li>**Gr**. Acesso de leitura</li><li> **GW**. Acesso de gravação</li></ul>As contas de usuário comuns são:<ul><li>**BA**. Administradores internos</li><li>**Au**. usuários autenticados</li><li>**Co**. Proprietário criador</li><li>**WD**. Todos</li></ul>Exemplos:<ul><li>**D:P: (A;; GR;;; AU**. Fornece acesso de leitura a todos os usuários autenticados.</li><li>**D:P: (A;; GA;;; WD**. Concede a todos acesso completo.</li></ul> |
+| `sd=<SDDL string>` | Define o filtro de usuário no VHD. A cadeia de caracteres de filtro deve estar no formato SDDL (Security Descriptor Definition Language). Por padrão, o filtro de usuário permite acesso como em um disco físico. As cadeias de caracteres SDDL podem ser complexas, mas em sua forma mais simples, um descritor de segurança que protege o acesso é conhecido como DACL (lista de controle de acesso discricionário). Ele usa o formulário: `D:<dacl_flags><string_ace1><string_ace2>` ...`<string_acen>`<p>Os sinalizadores comuns de DACL são:<ul><li>**A**. Permitir o acesso</li><li>**D**. Negar acesso</li></ul>Os direitos comuns são:<ul><li>**GA**. Todo o acesso</li><li>**Gr**. Acesso de leitura</li><li> **GW**. Acesso de gravação</li></ul>As contas de usuário comuns são:<ul><li>**BA**. Administradores internos</li><li>**Au**. usuários autenticados</li><li>**Co**. Proprietário criador</li><li>**WD**. Todos</li></ul>Exemplos:<ul><li>**D:P: (A;; GR;;; AU**. Fornece acesso de leitura a todos os usuários autenticados.</li><li>**D:P: (A;; GA;;; WD**. Concede a todos acesso completo.</li></ul> |
 | usefilesd | Especifica que o descritor de segurança no arquivo. vhd deve ser usado no VHD. Se o parâmetro **Usefilesd** não for especificado, o VHD não terá um descritor de segurança explícito, a menos que seja especificado com o parâmetro **SD** . |
 | NOERR | Usado somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
@@ -52,16 +52,16 @@ attach vdisk readonly
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [selecionar vdisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
-- [Compact vdisk](compact-vdisk.md)
+- [compact vdisk](compact-vdisk.md)
 
-- [detalhes do VDISK](detail-vdisk.md)
+- [detail vdisk](detail-vdisk.md)
 
 - [detach vdisk](detach-vdisk.md)
 
-- [expandir vdisk](expand-vdisk.md)
+- [expand vdisk](expand-vdisk.md)
 
-- [Mesclar vdisk](merge-vdisk.md)
+- [merge vdisk](merge-vdisk.md)
 
 - [list](list_1.md)

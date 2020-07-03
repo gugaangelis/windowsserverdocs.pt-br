@@ -1,6 +1,6 @@
 ---
 title: cd
-description: Tópico de referência para o comando CD, que exibe o nome ou altera o diretório atual.
+description: Artigo de referência do comando CD, que exibe o nome ou altera o diretório atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c9ee57590cf165ba46f394cab06817c7c13f0a9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 37ce63cd4fce871c615ac64756f8fc17f1d28460
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719653"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922915"
 ---
 # <a name="cd"></a>cd
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe o nome do diretório atual ou altera o diretório atual. Se usado com apenas uma letra de unidade (por exemplo `cd C:`,), **CD** exibe os nomes do diretório atual na unidade especificada. Se usado sem parâmetros, **CD** exibe a unidade e o diretório atuais.
+Exibe o nome do diretório atual ou altera o diretório atual. Se usado com apenas uma letra de unidade (por exemplo, `cd C:` ), **CD** exibe os nomes do diretório atual na unidade especificada. Se usado sem parâmetros, **CD** exibe a unidade e o diretório atuais.
 
 > [!NOTE]
 > Esse comando é o mesmo que o [comando chdir](chdir.md).
@@ -50,14 +50,14 @@ Se as extensões de comando estiverem habilitadas, as seguintes condições se a
 
 - A cadeia de caracteres do diretório atual é convertida para usar o mesmo caso que os nomes no disco. Por exemplo, `cd c:\temp` definiria o diretório atual como C:\temp se esse for o caso no disco.
 
-- Os espaços não são tratados como delimitadores `<path>` , portanto, podem conter espaços sem aspas delimitados. Por exemplo: 
+- Os espaços não são tratados como delimitadores, portanto, `<path>` podem conter espaços sem aspas delimitados. Por exemplo:
 
   ```
   cd username\programs\start menu
   ```
 
-  é igual a:  
-  
+  é igual a:
+
   ```
   cd "username\programs\start menu"
   ```

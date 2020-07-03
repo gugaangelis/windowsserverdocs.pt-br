@@ -1,6 +1,6 @@
 ---
-title: destino BdeHdCfg
-description: Tópico de referência para o comando de destino BdeHdCfg, que prepara uma partição para uso como uma unidade do sistema pelo BitLocker e pela recuperação do Windows.
+title: bdehdcfg target
+description: Artigo de referência para o comando de destino BdeHdCfg, que prepara uma partição para uso como uma unidade do sistema pelo BitLocker e pela recuperação do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7f98f42675a49ab34ca1cf759efb9d40a69c38a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 509c659907878f7b0ddc0b0c601715fa996c5fe7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718593"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923360"
 ---
 # <a name="bdehdcfg-target"></a>BdeHdCfg: destino
 

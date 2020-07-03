@@ -1,6 +1,6 @@
 ---
 title: para
-description: Tópico de referência para o comando for, que executa um comando especificado para cada arquivo, dentro de um conjunto de arquivos.
+description: Artigo de referência para o comando for, que executa um comando especificado para cada arquivo, dentro de um conjunto de arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24ef5bc159e67862d419bd2728b14585f8b095d4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 44b6497af626079b05768fd245c1b86693bdfe61
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437011"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922416"
 ---
 # <a name="for"></a>para
 
@@ -147,7 +147,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
 - **Analisando uma cadeia de caracteres:** Você pode usar a `for /f` lógica de análise em uma cadeia de caracteres imediata encapsulando `<literalstring>` : aspas duplas (*sem* usebackq) ou entre aspas simples (*com* usebackq) – por exemplo, (MyString) ou (' MyString '). `<literalstring>`é tratado como uma única linha de entrada de um arquivo. Durante a análise `<literalstring>` em aspas duplas, os símbolos de comando (como, `\ & | > < ^` ) são tratados como caracteres comuns.
 
-- **Saída de análise:** Você pode usar o `for /f` comando para analisar a saída de um comando, colocando entre parênteses um back-quot `<command>` . Ele é tratado como uma linha de comando, que é passada para um cmd. exe filho. A saída é capturada na memória e analisada como se fosse um arquivo.
+- **Saída de análise:** Você pode usar o `for /f` comando para analisar a saída de um comando, colocando entre parênteses um back-quot `<command>` . Ele é tratado como uma linha de comando, que é passada para um Cmd.exe filho. A saída é capturada na memória e analisada como se fosse um arquivo.
 
 ## <a name="examples"></a>Exemplos
 
@@ -171,7 +171,7 @@ Para analisar um arquivo, ignorando linhas comentadas, digite:
 for /f eol=; tokens=2,3* delims=, %i in (myfile.txt) do @echo %i %j %k
 ```
 
-Esse comando analisa cada linha em *MyFile. txt*. Ele ignora as linhas que começam com um ponto e vírgula e passa o segundo e o terceiro token de cada linha para o corpo **de para** (os tokens são delimitados por vírgulas ou espaços). O corpo da instrução **for** faz referência a **% i** para obter o segundo token, **% j** para obter o terceiro token e **% k** para obter todos os tokens restantes. Se os nomes de arquivo fornecidos contiverem espaços, use aspas em volta do texto (por exemplo, nome de arquivo). Para usar aspas, você deve usar **usebackq**. Caso contrário, as aspas são interpretadas como definição de uma cadeia de caracteres literal para análise.
+Este comando analisa cada linha em *myfile.txt*. Ele ignora as linhas que começam com um ponto e vírgula e passa o segundo e o terceiro token de cada linha para o corpo **de para** (os tokens são delimitados por vírgulas ou espaços). O corpo da instrução **for** faz referência a **% i** para obter o segundo token, **% j** para obter o terceiro token e **% k** para obter todos os tokens restantes. Se os nomes de arquivo fornecidos contiverem espaços, use aspas em volta do texto (por exemplo, nome de arquivo). Para usar aspas, você deve usar **usebackq**. Caso contrário, as aspas são interpretadas como definição de uma cadeia de caracteres literal para análise.
 
 **% i** é declarado explicitamente na instrução **for** . **% j** e **% k** são declarados implicitamente usando **tokens =**. Você pode usar **tokens =** para especificar até 26 tokens, desde que ele não cause uma tentativa de declarar uma variável maior que a letra Z ou z.
 

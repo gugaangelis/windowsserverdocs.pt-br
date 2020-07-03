@@ -1,6 +1,6 @@
 ---
 title: ksetup
-description: Tópico de referência para o comando ksetup, que executa tarefas relacionadas à configuração e à manutenção do protocolo Kerberos e do centro de distribuição de chaves (KDC) para dar suporte a territórios Kerberos.
+description: Artigo de referência para o comando ksetup, que executa tarefas relacionadas à configuração e à manutenção do protocolo Kerberos e do centro de distribuição de chaves (KDC) para dar suporte a territórios Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82b1627a8ddbc9e51ac32825c5a42c3df9effbf7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a0398d53516f81de68a7de5854ed2c996a78d1e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817346"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922630"
 ---
 # <a name="ksetup"></a>ksetup
 
@@ -58,16 +58,16 @@ ksetup
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| [ksetup](ksetup-setrealm.md) | Torna este computador um membro de um realm Kerberos. |
+| [ksetup setrealm](ksetup-setrealm.md) | Torna este computador um membro de um realm Kerberos. |
 | [ksetup addkdc](ksetup-addkdc.md) | Define uma entrada KDC para o realm especificado. |
 | [ksetup delkdc](ksetup-delkdc.md) | Exclui uma entrada KDC para o realm. |
 | [ksetup addkpasswd](ksetup-addkpasswd.md) | Adiciona um endereço de servidor kpasswd para um realm. |
 | [ksetup delkpasswd](ksetup-delkpasswd.md) | Exclui um endereço de servidor kpasswd para um realm. |
-| [servidor ksetup](ksetup-server.md) | Permite especificar o nome de um computador Windows no qual as alterações serão aplicadas. |
+| [ksetup server](ksetup-server.md) | Permite especificar o nome de um computador Windows no qual as alterações serão aplicadas. |
 | [ksetup setcomputerpassword](ksetup-setcomputerpassword.md) | Define a senha para a conta de domínio do computador (ou a entidade de segurança do host). |
 | [ksetup removerealm](ksetup-removerealm.md) | Exclui todas as informações do realm especificado do registro. |
-| [domínio ksetup](ksetup-domain.md) | Permite que você especifique um domínio (se ainda não tiver `<domainname>` sido definido pelo parâmetro **/Domain** ). |
-| [ChangePassword ksetup](ksetup-changepassword.md) | Permite que você use o kpasswd para alterar a senha do usuário conectado. |
+| [ksetup domain](ksetup-domain.md) | Permite que você especifique um domínio (se ainda não tiver `<domainname>` sido definido pelo parâmetro **/Domain** ). |
+| [ksetup changepassword](ksetup-changepassword.md) | Permite que você use o kpasswd para alterar a senha do usuário conectado. |
 | [ksetup listrealmflags](ksetup-listrealmflags.md) | Lista os sinalizadores de realm disponíveis que o **ksetup** pode detectar. |
 | [ksetup setrealmflags](ksetup-setrealmflags.md) | Define os sinalizadores de realm para um realm específico. |
 | [ksetup addrealmflags](ksetup-addrealmflags.md) | Adiciona sinalizadores de realm adicionais a um realm. |

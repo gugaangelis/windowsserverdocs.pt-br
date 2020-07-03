@@ -1,6 +1,6 @@
 ---
 title: at
-description: Tópico de referência para o comando at, que agenda comandos e programas a serem executados em um computador em uma data e hora especificadas.
+description: Artigo de referência para o comando at, que agenda comandos e programas a serem executados em um computador em uma data e hora especificadas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3aafcf4cbc4a6626a3390fe5ad6a305b90dfaec0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1ead4132b70cc98d9bdd7f478a8e3f18ab6da1aa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718925"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85923938"
 ---
 # <a name="at"></a>at
 
@@ -47,7 +47,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 ### <a name="remarks"></a>Comentários
 
-- Esse comando não carrega automaticamente cmd. exe antes de executar comandos. Se você não estiver executando um arquivo executável (. exe), deverá carregar explicitamente cmd. exe no início do comando da seguinte maneira:
+- Este comando não carrega automaticamente cmd.exe antes de executar comandos. Se você não estiver executando um arquivo executável (. exe), deverá carregar explicitamente cmd.exe no início do comando da seguinte maneira:
 
     ```
     cmd /c dir > c:\test.out
@@ -62,7 +62,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     OK      3    Each F     11:59 PM    backup2.bat
     ```
 
-- Se incluir um número de identificação (*ID*) com esse comando, somente as informações de uma única entrada aparecerão em um formato semelhante ao seguinte:  
+- Se incluir um número de identificação (*ID*) com esse comando, somente as informações de uma única entrada aparecerão em um formato semelhante ao seguinte:
 
     ```
     Task ID: 1
@@ -74,7 +74,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - Depois de agendar um comando, especialmente um comando que tenha opções de linha de comando, verifique se a sintaxe do comando está correta digitando sem nenhuma opção de **linha de comando** . Se as informações na coluna **linha de comando** estiverem erradas, exclua o comando e digite-o novamente. Se ainda estiver incorreto, digite novamente o comando usando menos opções de linha de comando.
 
-- Comandos agendados com **em** execução como processos em segundo plano. A saída não é exibida na tela do computador. Para redirecionar a saída para um arquivo, use o símbolo `>`de redirecionamento. Se você redirecionar a saída para um arquivo, precisará usar o `^` símbolo de escape antes do símbolo de redirecionamento, independentemente de estar usando **em** na linha de comando ou em um arquivo em lotes. Por exemplo, para redirecionar a saída para *output. txt*, digite:
+- Comandos agendados com **em** execução como processos em segundo plano. A saída não é exibida na tela do computador. Para redirecionar a saída para um arquivo, use o símbolo de redirecionamento `>` . Se você redirecionar a saída para um arquivo, precisará usar o símbolo de escape `^` antes do símbolo de redirecionamento, independentemente de estar usando **em** na linha de comando ou em um arquivo em lotes. Por exemplo, para redirecionar a saída para *output.txt*, digite:
 
     ```
     at 14:45 c:\test.bat ^>c:\output.txt
@@ -86,13 +86,13 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
 - Os comandos agendados são armazenados no registro. Como resultado, você não perderá as tarefas agendadas se reiniciar o serviço de agendamento.
 
-- Não use uma unidade redirecionada para trabalhos agendados que acessam a rede. O serviço de agendamento pode não ser capaz de acessar a unidade redirecionada, ou a unidade redirecionada pode não estar presente se um usuário diferente estiver conectado no momento em que a tarefa agendada for executada. Em vez disso, use caminhos UNC para trabalhos agendados. Por exemplo:   
+- Não use uma unidade redirecionada para trabalhos agendados que acessam a rede. O serviço de agendamento pode não ser capaz de acessar a unidade redirecionada, ou a unidade redirecionada pode não estar presente se um usuário diferente estiver conectado no momento em que a tarefa agendada for executada. Em vez disso, use caminhos UNC para trabalhos agendados. Por exemplo:
 
     ```
     at 1:00pm my_backup \\server\share
     ```
 
-    Não use a seguinte sintaxe, em que **x:** é uma conexão feita pelo usuário:  
+    Não use a seguinte sintaxe, em que **x:** é uma conexão feita pelo usuário:
 
     ```
     at 1:00pm my_backup x:
@@ -107,7 +107,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
     > [!Caution]
     > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
-    1. Inicie o editor do registro (regedit. exe).
+    1. Inicie o editor do registro (regedit.exe).
 
     2. Localize e clique na seguinte chave no registro:`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Schedule`
 
@@ -115,7 +115,7 @@ at [\computername] <time> [/interactive] [/every:date[,...] | /next:date[,...]] 
 
         - **Nome do valor.** atTaskMaxHours
 
-        - **Tipo de dados.** reg_DWOrd 
+        - **Tipo de dados.** reg_DWOrd
 
         - **Radix.** Decimal
 
@@ -137,7 +137,7 @@ Para saber mais sobre um comando com o número de identificação 3 no servidor 
 at \\corp 3
 ```
 
-Para agendar um comando net share para ser executado no servidor Corp às 8:00 A.M. e redirecionar a listagem para o servidor de manutenção, no diretório compartilhado relatórios e no arquivo Corp. txt, digite:
+Para agendar um comando net share para ser executado no servidor Corp às 8:00 A.M. e redirecione a listagem para o servidor de manutenção, no diretório compartilhado relatórios e no arquivo Corp.txt, digite:
 
 ```
 at \\corp 08:00 cmd /c net share reports=d:\marketing\reports >> \\maintenance\reports\corp.txt
@@ -155,7 +155,7 @@ Para cancelar todos os comandos agendados no servidor atual, desmarque as inform
 at /delete
 ```
 
-Para executar um comando que não é um arquivo executável (. exe), preceda o comando com **cmd/c** para carregar cmd. exe da seguinte maneira:
+Para executar um comando que não é um arquivo executável (. exe), preceda o comando com **cmd/c** para carregar cmd.exe da seguinte maneira:
 
 ```
 cmd /c dir > c:\test.out

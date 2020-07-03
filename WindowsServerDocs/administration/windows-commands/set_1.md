@@ -1,6 +1,6 @@
 ---
 title: set
-description: Tópico de referência para Set, que exibe, define ou remove variáveis de ambiente cmd. exe.
+description: Artigo de referência para Set, que exibe, define ou remove cmd.exe variáveis de ambiente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5de835dd591e1f70acc896772df501d5ddbdf237
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 002ac4624d9ed501fab7816a83c2a0c5fc6a2bce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819386"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922821"
 ---
 # <a name="set"></a>set
 
-Exibe, define ou remove variáveis de ambiente cmd. exe. Se usado sem parâmetros, **set** exibe as configurações de variável de ambiente atuais.
+Exibe, define ou remove cmd.exe variáveis de ambiente. Se usado sem parâmetros, **set** exibe as configurações de variável de ambiente atuais.
 
 
 
@@ -34,12 +34,12 @@ set /a <Variable>=<Expression>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<> de variável|Especifica a variável de ambiente a ser definida ou modificada.|
-|\<Cadeia de caracteres>|Especifica a cadeia de caracteres a ser associada à variável de ambiente especificada.|
+|\<Variable>|Especifica a variável de ambiente a ser definida ou modificada.|
+|\<String>|Especifica a cadeia de caracteres a ser associada à variável de ambiente especificada.|
 |/p|Define o valor da *variável* para uma linha de entrada inserida pelo usuário.|
-|\<> de promptstring|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com a opção de linha de comando **/p** .|
+|\<PromptString>|Opcional. Especifica uma mensagem para solicitar a entrada do usuário. Esse parâmetro é usado com a opção de linha de comando **/p** .|
 |/a|Define a *cadeia de caracteres* para uma expressão numérica que é avaliada.|
-|\<> de expressão|Especifica uma expressão numérica. Consulte comentários para operadores válidos que podem ser usados na *expressão*.|
+|\<Expression>|Especifica uma expressão numérica. Consulte comentários para operadores válidos que podem ser usados na *expressão*.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

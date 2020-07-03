@@ -1,6 +1,6 @@
 ---
 title: Manage-bde protetores
-description: Tópico de referência para o comando protectors Manage-bde, que gerencia os métodos de proteção usados para a chave de criptografia do BitLocker.
+description: Artigo de referência para o comando Manage-bde protectors, que gerencia os métodos de proteção usados para a chave de criptografia do BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 999c92fd9f2bfedad92a9c68c1528ee66836f315
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222625"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922304"
 ---
 # <a name="manage-bde-protectors"></a>Manage-bde protetores
 
@@ -40,7 +40,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 | -adbackup | Faz backup de todas as informações de recuperação da unidade especificada para Active Directory Domain Services (AD DS). Para fazer backup de uma única chave de recuperação para AD DS, acrescente o parâmetro **-ID** e ESPECIFIQUE a ID de uma chave de recuperação específica para fazer backup. |
 | -aadbackup | Faz backup de todas as informações de recuperação da unidade especificada para Azure Active Directory (Azure AD). Para fazer backup de apenas uma única chave de recuperação para o Azure AD, acrescente o parâmetro **-ID** e ESPECIFIQUE a ID de uma chave de recuperação específica para fazer backup. |
 | `<drive>` | Representa uma letra de unidade seguida de dois-pontos. |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |
@@ -94,7 +94,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | recoverypassword | Especifica que qualquer protetor de chave de senha de recuperação deve ser excluído. |
 | externalkey | Especifica que qualquer protetor de chave externa associado à unidade deve ser excluído. |
 | certificado | Especifica que qualquer protetor de chave de certificado associado à unidade deve ser excluído. |
-| tpm | Especifica que qualquer protetor de chave somente TPM associado à unidade deve ser excluído. |
+| TPM | Especifica que qualquer protetor de chave somente TPM associado à unidade deve ser excluído. |
 | tpmandstartupkey | Especifica que qualquer TPM e protetores de chave baseados em chave de inicialização associados à unidade devem ser excluídos. |
 | tpmandpin | Especifica que qualquer protetor de chave com base em TPM e PIN associado à unidade deve ser excluído. |
 | tpmandpinandstartupkey | Especifica que qualquer TPM, PIN e chave de inicialização com base em protetores de chave associados à unidade devem ser excluídos. |
@@ -102,7 +102,7 @@ manage-bde -protectors -delete <drive> [-type {recoverypassword|externalkey|cert
 | identidade | Especifica que qualquer protetor de chave de identidade associado à unidade deve ser excluído. |
 | -ID | Identifica o protetor de chave a ser excluído usando o identificador de chave. Esse parâmetro é uma opção alternativa para o parâmetro **-Type** . |
 | `<keyprotectorID>` | Identifica um protetor de chave individual na unidade a ser excluída. As IDs de protetor de chave podem ser exibidas usando o comando **Manage-bde-protectors-get** . |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |
@@ -117,7 +117,7 @@ manage-bde -protectors -disable <drive> [-rebootcount <integer 0 - 15>] [-comput
 | --------- | ----------- |
 | `<drive>` | Representa uma letra de unidade seguida de dois-pontos. |
 | rebootcount | Especifica que a proteção do volume do sistema operacional foi suspensa e será retomada depois que o Windows tiver sido reiniciado o número de vezes especificado no parâmetro **rebootcount** . Especifique **0** para suspender a proteção indefinidamente. Se esse parâmetro não for especificado, a proteção do BitLocker será retomada automaticamente após a reinicialização do Windows. Você também pode usar **-RC** como uma versão abreviada deste comando. |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |

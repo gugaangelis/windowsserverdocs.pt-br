@@ -1,6 +1,6 @@
 ---
 title: change user
-description: Tópico de referência para o comando Change User, que altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
+description: Artigo de referência do comando Change User, que altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de96280f42f1e3002c4379390367856dcdcb885a
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 42d6a5575ebf732a91477a425d93b10f3293e89e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070178"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85922492"
 ---
 # <a name="change-user"></a>change user
 
