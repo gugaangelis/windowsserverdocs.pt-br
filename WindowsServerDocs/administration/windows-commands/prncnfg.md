@@ -1,6 +1,6 @@
 ---
 title: prncnfg
-description: Tópico de referência para o comando prncnfg, que configura ou exibe informações de configuração sobre uma impressora.
+description: Artigo de referência para o comando prncnfg, que configura ou exibe informações de configuração sobre uma impressora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b60faaa5537ebdf8860c9b0471cf879677b80f1d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 11eb66c3e1d4fb457f9655750d92ab90ad9b473b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472301"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924232"
 ---
 # <a name="prncnfg"></a>prncnfg
 

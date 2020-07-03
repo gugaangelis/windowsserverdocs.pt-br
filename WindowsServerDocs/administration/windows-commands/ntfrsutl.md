@@ -1,6 +1,6 @@
 ---
 title: ntfrsutl
-description: Tópico de referência para o comando NTFRSUTL, que despeja as tabelas internas, thread e informações de memória para o serviço de replicação de arquivo NT (NTFRS).
+description: Artigo de referência para o comando NTFRSUTL, que despeja as tabelas internas, thread e informações de memória para o serviço de replicação de arquivo NT (NTFRS).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f931d916888a372d66a1cc06cb7543067b9b9d3b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56aefc1277f67dc6a06ba4686c26f81592afc2f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472762"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925332"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 

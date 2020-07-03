@@ -1,6 +1,6 @@
 ---
 title: ntbackup
-description: Tópico de referência para o comando Ntbackup, que foi substituído pelo comando Wbadmin.
+description: Artigo de referência para o comando Ntbackup, que foi substituído pelo comando Wbadmin.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ca42abd326c2d5112e4d4a629f93afd814e7d59
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 78ed6980b171616d81a1f1c0589a7e7beeb858fc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472782"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925378"
 ---
 # <a name="ntbackup"></a>ntbackup
 

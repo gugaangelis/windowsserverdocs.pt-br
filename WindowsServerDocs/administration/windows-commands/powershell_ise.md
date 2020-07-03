@@ -1,6 +1,6 @@
 ---
 title: PowerShell_ise
-description: Tópico de referência para o comando PowerShell_ise, que inicia uma sessão de Ambiente de Script Integrado do Windows PowerShell (ISE).
+description: Artigo de referência para o comando PowerShell_ise, que inicia uma sessão de Ambiente de Script Integrado do Windows PowerShell (ISE).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c1b525c0178b08e34851b800be8ce4791f38913
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3f983ea5b8464748d86264108a2ee8660ca0e3f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472331"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926052"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 

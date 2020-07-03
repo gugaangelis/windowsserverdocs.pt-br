@@ -1,6 +1,6 @@
 ---
-title: domínio ksetup
-description: Tópico de referência para o comando de domínio ksetup, que define o nome de domínio para todas as operações Kerberos.
+title: ksetup domain
+description: Artigo de referência para o comando de domínio ksetup, que define o nome de domínio para todas as operações Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d497f2bc76bae8a95b077658c661e0fdc1e93f3
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 70454205f73375b11dc63e3496a2d7fc1bb3e50e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817796"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926107"
 ---
-# <a name="ksetup-domain"></a>domínio ksetup
+# <a name="ksetup-domain"></a>ksetup domain
 
 Define o nome de domínio para todas as operações Kerberos.
 

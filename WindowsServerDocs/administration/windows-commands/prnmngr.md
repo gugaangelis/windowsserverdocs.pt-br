@@ -1,6 +1,6 @@
 ---
 title: prnmngr
-description: Tópico de referência para o comando Prnmngr, que adiciona, exclui e lista impressoras ou conexões de impressora, além de definir e exibir a impressora padrão.
+description: Artigo de referência para o comando Prnmngr, que adiciona, exclui e lista impressoras ou conexões de impressora, além de definir e exibir a impressora padrão.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1ccc04e7e040612d9243fe1e3f5ed67b8131ab9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 562d25a95fa3ccd556b65d0a29b866557c842c55
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472211"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924177"
 ---
 # <a name="prnmngr"></a>prnmngr
 

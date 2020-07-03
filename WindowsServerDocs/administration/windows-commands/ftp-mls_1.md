@@ -1,6 +1,6 @@
 ---
-title: MLS FTP
-description: Tópico de referência para o comando de MLS do FTP, que exibe uma lista abreviada de arquivos e subdiretórios em um diretório remoto.
+title: ftp mls
+description: Artigo de referência para o comando FTP MLS, que exibe uma lista abreviada de arquivos e subdiretórios em um diretório remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 372c0b9a42fdfb8600083a301b71c37ada43c014
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6c2e87cbf0455fccb99435e0a8b67fd30164e35b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820389"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925859"
 ---
-# <a name="ftp-mls"></a>MLS FTP
+# <a name="ftp-mls"></a>ftp mls
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -43,7 +43,7 @@ Para exibir uma lista abreviada de arquivos e subdiretórios para *dir1* e *dir2
 mls dir1 dir2 -
 ```
 
-Para salvar uma lista abreviada de arquivos e subdiretórios para *dir1* e *dir2* no arquivo local *DirList. txt*, digite:
+Para salvar uma lista abreviada de arquivos e subdiretórios para *dir1* e *dir2* no arquivo local *dirlist.txt*, digite:
 
 ```
 mls dir1 dir2 dirlist.txt

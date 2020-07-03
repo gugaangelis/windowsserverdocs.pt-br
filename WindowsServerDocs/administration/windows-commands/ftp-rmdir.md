@@ -1,6 +1,6 @@
 ---
-title: rmdir FTP
-description: Tópico de referência para o comando FTP rmdir, que exclui um diretório raiz.
+title: ftp rmdir
+description: Artigo de referência para o comando FTP rmdir, que exclui um diretório raiz.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1abbc66ee470d7939f45e7e961c502a3b4689f7b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: feaa9d5d2dac1b0ccac3706eb2f8838dc6bd6c07
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821446"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925702"
 ---
-# <a name="ftp-rmdir"></a>rmdir FTP
+# <a name="ftp-rmdir"></a>ftp rmdir
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

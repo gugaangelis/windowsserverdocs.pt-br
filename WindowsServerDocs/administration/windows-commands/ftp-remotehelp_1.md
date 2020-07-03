@@ -1,6 +1,6 @@
 ---
-title: remotehelp FTP
-description: Tópico de referência para o comando FTP remotehelp, que exibe a ajuda para comandos remotos.
+title: ftp remotehelp
+description: Artigo de referência para o comando FTP remotehelp, que exibe a ajuda para comandos remotos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 659de5487890b50aab9004f650e4584085e7306c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 54d784751291515a022a561ca9600e3e967a9d8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820316"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925744"
 ---
-# <a name="ftp-remotehelp"></a>remotehelp FTP
+# <a name="ftp-remotehelp"></a>ftp remotehelp
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -52,8 +52,8 @@ remotehelp feat
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [aspas de FTP](ftp-quote.md)
+- [ftp quote](ftp-quote.md)
 
-- [literal de FTP](ftp-literal_1.md)
+- [ftp literal](ftp-literal_1.md)
 
 - [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

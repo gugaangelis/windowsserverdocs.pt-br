@@ -1,6 +1,6 @@
 ---
 title: fsutil sparse
-description: Tópico de referência para o comando fsutil SPARSE, que gerencia arquivos esparsos.
+description: Artigo de referência para o comando fsutil SPARSE, que gerencia arquivos esparsos.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 77545920-2d13-4f35-a4d1-14dbec8340dc
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e68ac844bb7aa7e22a9df0ddb0c982b3701231d7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c765b096f1b41b211d3a779d8f838aa56f31aeb8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435711"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925217"
 ---
 # <a name="fsutil-sparse"></a>fsutil sparse
 
@@ -41,7 +41,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 | queryrange | Examina um arquivo e procura intervalos que possam conter dados diferentes de zero. |
 | SetFlag | Marca o arquivo indicado como esparso. |
 | SetRange | Preenche um intervalo especificado de um arquivo com zeros. |
-| `<filename>` | Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, *C:\documents\filename.txt*. |
+| `<filename>` | Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo *C:\documents\filename.txt*. |
 | `<beginningoffset>` | Especifica o deslocamento dentro do arquivo a ser marcado como esparso. |
 | `<length>` | Especifica o comprimento da região no arquivo a ser marcado como esparso (em bytes). |
 
@@ -57,7 +57,7 @@ fsutil sparse [setrange] <filename> <beginningoffset> <length>
 
 ### <a name="examples"></a>Exemplos
 
-Para marcar um arquivo chamado *Sample. txt* no diretório *c:\temp* como esparso, digite:
+Para marcar um arquivo chamado *sample.txt* no diretório *c:\temp* como esparso, digite:
 
 ```
 fsutil sparse setflag c:\temp\sample.txt

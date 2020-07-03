@@ -1,6 +1,6 @@
 ---
 title: Referência da ferramenta de linha de comando de impressão
-description: Tópico de referência para usar as ferramentas de linha de comando de impressão.
+description: Artigo de referência para usar as ferramentas de linha de comando de impressão.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1bf07ae3d8033b3e470c130155677c86733eb48
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: aca9b6fd7763c5c9d07a8a741e80bc20131f2297
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472321"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926041"
 ---
 # <a name="print-command-line-tool-reference"></a>Referência da ferramenta de linha de comando de impressão
 

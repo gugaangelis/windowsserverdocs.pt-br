@@ -1,6 +1,6 @@
 ---
 title: gpfixup
-description: Tópico de referência para o comando Gpfixup, que corrige dependências de nome de domínio em objetos Política de Grupo e Política de Grupo links após uma operação de renomeação de domínio.
+description: Artigo de referência para o comando Gpfixup, que corrige dependências de nome de domínio em objetos Política de Grupo e Política de Grupo links após uma operação de renomeação de domínio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14a225209e719707093ddd87918587e24e4572a6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c09efb2fc8b1de124cbefc1b2dff73df29d2a4f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818866"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924652"
 ---
 # <a name="gpfixup"></a>gpfixup
 

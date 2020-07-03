@@ -1,6 +1,6 @@
 ---
-title: GPT
-description: Tópico de referência para o comando GPT, que atribui os atributos GPT à partição com foco.
+title: gpt
+description: Artigo de referência para o comando GPT, que atribui os atributos GPT à partição com foco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b1e33b89c1918fcb83dd9d42c155f845805307d9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818796"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924617"
 ---
-# <a name="gpt"></a>GPT
+# <a name="gpt"></a>gpt
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

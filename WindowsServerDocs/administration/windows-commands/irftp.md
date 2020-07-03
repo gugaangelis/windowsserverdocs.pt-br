@@ -1,6 +1,6 @@
 ---
 title: irftp
-description: Tópico de referência para o comando irftp, que envia arquivos por meio de um link de infravermelho.
+description: Artigo de referência para o comando irftp, que envia arquivos por um link de infravermelho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d19e4f0c325baf46c0a92bf04e39bc63863fe90
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 92bb484650245555597121c8b6f6378d3c09209c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818306"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924343"
 ---
 # <a name="irftp"></a>irftp
 
@@ -42,7 +42,7 @@ irftp [<drive>:\] [[<path>] <filename>] [/h][/s]
 
 ### <a name="examples"></a>Exemplos
 
-Para enviar *c:\example.txt* pelo link de infravermelho, digite:
+Para enviar *c:\example.txt* por meio do link de infravermelho, digite:
 
 ```
 irftp c:\example.txt

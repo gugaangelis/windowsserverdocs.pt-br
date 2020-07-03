@@ -1,6 +1,6 @@
 ---
 title: DiskRAID
-description: Tópico de referência para a ferramenta de linha de comando do DiskRAID, que permite configurar e gerenciar a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
+description: Artigo de referência para a ferramenta de linha de comando do DiskRAID, que permite configurar e gerenciar a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffceb9347921536a1bee59f46a4d5ab4800c1e70
-ms.sourcegitcommit: aed942d11f1a361fc1d17553a4cf190a864d1268
+ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83235212"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924764"
 ---
 # <a name="diskraid"></a>DiskRAID
 
@@ -206,7 +206,7 @@ delete tpgroup [noerr]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| LUN | Exclui o LUN selecionado no momento e todos os dados nele. |
+| lun | Exclui o LUN selecionado no momento e todos os dados nele. |
 | uninstall | Especifica que o disco no sistema local associado ao LUN será limpo antes que o LUN seja excluído. |
 | destino | Excluirá o destino iSCSI atualmente selecionado se nenhum LUN estiver associado ao destino. |
 | TPGROUP | Exclui o grupo do portal de destino iSCSI selecionado no momento. |
@@ -234,7 +234,7 @@ detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 | controlador | Lista informações detalhadas sobre o controlador selecionado no momento. |
 | porta | Lista informações detalhadas sobre a porta do controlador selecionada no momento. |
 | unidade | Lista informações detalhadas sobre a unidade selecionada no momento, incluindo os LUNs que ocupam. |
-| LUN | Lista informações detalhadas sobre o LUN selecionado no momento, incluindo as unidades de contribuição. A saída difere ligeiramente, dependendo se o LUN faz parte de um subsistema Fibre Channel ou iSCSI. Se a lista de hosts sem máscara contiver apenas um asterisco, isso significará que o LUN está sem máscara para todos os hosts. |
+| lun | Lista informações detalhadas sobre o LUN selecionado no momento, incluindo as unidades de contribuição. A saída difere ligeiramente, dependendo se o LUN faz parte de um subsistema Fibre Channel ou iSCSI. Se a lista de hosts sem máscara contiver apenas um asterisco, isso significará que o LUN está sem máscara para todos os hosts. |
 | tportal | Lista informações detalhadas sobre o portal de destino iSCSI selecionado no momento. |
 | destino | Lista informações detalhadas sobre o destino iSCSI selecionado no momento. |
 | TPGROUP | Lista informações detalhadas sobre o grupo do portal de destino iSCSI selecionado no momento. |
@@ -244,7 +244,7 @@ detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 Define a lista especificada de portas do controlador como inativas para o LUN selecionado atualmente (outras portas do controlador não são afetadas) ou dissocia a lista especificada de destinos iSCSI para o LUN selecionado no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 dissociate controllers <n> [,<n> [,...]]
@@ -285,7 +285,7 @@ Controller port associations changed.
 
 Sai do DiskRAID.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 exit
@@ -313,7 +313,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 Limpa o cache no controlador selecionado no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 flushcache controller
@@ -323,7 +323,7 @@ flushcache controller
 
 Exibe uma lista de todos os comandos do DiskRAID.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 help
@@ -333,7 +333,7 @@ help
 
 Recupera ou define o destino de importação de Serviço de Cópias de Sombra de Volume (VSS) atual definido para o subsistema selecionado no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 importtarget subsystem [set target]
@@ -349,7 +349,7 @@ importtarget subsystem [set target]
 
 Recupera informações sobre o iniciador iSCSI local.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 initiator
@@ -359,7 +359,7 @@ initiator
 
 Invalida o cache no controlador selecionado no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 invalidatecache controller
@@ -470,7 +470,7 @@ maintenance <object operation> [count=<iteration>]
 
 Define o nome amigável do subsistema, LUN ou destino iSCSI atualmente selecionado para o nome especificado.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 name {subsystem | lun | target} [<name>]
@@ -486,7 +486,7 @@ name {subsystem | lun | target} [<name>]
 
 Define o estado do objeto selecionado no momento do tipo especificado como **offline**.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 offline <object>
@@ -502,7 +502,7 @@ offline <object>
 
 Define o estado do objeto selecionado do tipo especificado como **online**. Se Object for **hbaport**, o alterará o status dos caminhos para a porta de HBA selecionada no momento para **online**.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 online <object>
@@ -518,7 +518,7 @@ online <object>
 
 Executa as operações necessárias, como ressincronização ou Hot Sparing, para reparar o LUN tolerante a falhas selecionado no momento. Por exemplo, a recuperação pode fazer com que um hot spare seja associado a um conjunto de RAID que tenha um disco com falha ou outra realocação de extensão de disco.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 recover <lun>
@@ -545,7 +545,7 @@ reenumerate {subsystems | drives}
 
 Atualiza os dados internos do provedor selecionado no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 refresh provider
@@ -555,7 +555,7 @@ refresh provider
 
 Usado para comentar scripts.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 Rem <comment>
@@ -565,7 +565,7 @@ Rem <comment>
 
 Remove o portal de destino iSCSI especificado do grupo do portal de destino selecionado no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 remove tpgroup tportal=<tportal> [noerr]
@@ -582,7 +582,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 Substitui a unidade especificada pela unidade selecionada no momento. A unidade especificada pode não ser a unidade selecionada no momento.
 
-#### <a name="syntax"></a>Sintaxe
+#### <a name="syntax"></a>Syntax
 
 ```
 replace drive=<drive_number>
@@ -705,7 +705,7 @@ unmask lun {all | none | [add] wwn=<hexadecimal_number> [;<hexadecimal_number> [
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | all | Especifica que o LUN deve se tornar acessível de todos os hosts. No entanto, não é possível remover a máscara do LUN para todos os destinos em um subsistema iSCSI.<P>Você deve fazer logoff do destino antes de executar o `unmask lun all` comando. |
-| nenhuma | Especifica que o LUN não deve ser acessível a nenhum host.<P>Você deve fazer logoff do destino antes de executar o `unmask lun none` comando. |
+| nenhum | Especifica que o LUN não deve ser acessível a nenhum host.<P>Você deve fazer logoff do destino antes de executar o `unmask lun none` comando. |
 | add | Especifica que os hosts especificados devem ser adicionados à lista existente de hosts do qual esse LUN está acessível. Se esse parâmetro não for especificado, a lista de hosts fornecida substituirá a lista existente de hosts dos quais esse LUN pode ser acessado. |
 | WWN = | Especifica uma lista de números hexadecimais que representam os nomes de todo o mundo dos quais o LUN ou os hosts devem se tornar acessíveis. Para mascarar/remover a máscara para um conjunto específico de hosts em um subsistema Fibre Channel, você pode digitar uma lista separada por ponto-e-vírgula de WWN para as portas nos computadores host de seu interesse. |
 | iniciador = | Especifica uma lista de iniciadores iSCSI para os quais o LUN selecionado no momento deve tornar-se acessível. Para mascarar/remover a máscara para um conjunto específico de hosts em um subsistema iSCSI, você pode digitar uma lista separada por ponto-e-vírgula de nomes de iniciadores iSCSI para os iniciadores nos computadores host de seu interesse. |

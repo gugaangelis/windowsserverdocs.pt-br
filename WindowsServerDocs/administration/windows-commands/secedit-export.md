@@ -1,6 +1,6 @@
 ---
 title: 'secedit: exportar'
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a78e45bda707b946c152bd965bf9d12c4ce151b
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d2093b813a6aca5b03bf94c6f0943bc9ffa00346
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821116"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924165"
 ---
 # <a name="seceditexport"></a>secedit: exportar
 

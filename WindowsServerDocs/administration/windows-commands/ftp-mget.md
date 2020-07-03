@@ -1,6 +1,6 @@
 ---
-title: MGET FTP
-description: Tópico de referência para o comando mget do FTP, que copia arquivos remotos para o computador local usando o tipo de transferência de arquivo atual.
+title: ftp mget
+description: Artigo de referência para o comando mget do FTP, que copia arquivos remotos para o computador local usando o tipo de transferência de arquivo atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 93d562fcdaec0d6609e7be8b3543cd55bb910238
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7239f31fa0a9b40d9bba4db0c3e1e29df5c03108
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820426"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925895"
 ---
-# <a name="ftp-mget"></a>MGET FTP
+# <a name="ftp-mget"></a>ftp mget
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -36,7 +36,7 @@ mget <remotefile>[ ]
 
 ### <a name="examples"></a>Exemplos
 
-Para copiar arquivos remotos a *. exe* e *b. exe* para o computador local usando o tipo de transferência de arquivo atual, digite:
+Para copiar arquivos remotos *a.exe* e *b.exe* no computador local usando o tipo de transferência de arquivo atual, digite:
 
 ```
 mget a.exe b.exe

@@ -1,6 +1,6 @@
 ---
-title: Get de FTP
-description: Tópico de referência para o comando Get do FTP, que copia um arquivo remoto para o computador local usando o tipo de transferência de arquivo atual.
+title: ftp get
+description: Artigo de referência para o comando Get do FTP, que copia um arquivo remoto para o computador local usando o tipo de transferência de arquivo atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7254cac15afc446695f22ee1a63f2f4573d3565
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: de084813ee837ecea2f0871589218d3262b40bba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819706"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925922"
 ---
-# <a name="ftp-get"></a>Get de FTP
+# <a name="ftp-get"></a>ftp get
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -40,13 +40,13 @@ get <remotefile> [<localfile>]
 
 ### <a name="examples"></a>Exemplos
 
-Para copiar *Test. txt* para o computador local usando a transferência de arquivo atual, digite:
+Para copiar *test.txt* para o computador local usando a transferência de arquivo atual, digite:
 
 ```
 get test.txt
 ```
 
-Para copiar *Test. txt* para o computador local como *Test1. txt* usando a transferência de arquivo atual, digite:
+Para copiar *test.txt* para o computador local como *test1.txt* usando a transferência de arquivo atual, digite:
 
 ```
 get test.txt test1.txt

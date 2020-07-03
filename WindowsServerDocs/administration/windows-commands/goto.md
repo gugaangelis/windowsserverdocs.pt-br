@@ -1,6 +1,6 @@
 ---
 title: goto
-description: Tópico de referência para o comando goto, que direciona o cmd. exe para uma linha rotulada em um programa em lotes.
+description: Artigo de referência para o comando goto, que direciona cmd.exe para uma linha rotulada em um programa em lotes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eb1b6b275887de535614fa5df4adabe33406a31
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: afc77f7837ddaeb0552052538537285f0d652682
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818966"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924684"
 ---
 # <a name="goto"></a>goto
 
-Direciona o cmd. exe para uma linha rotulada em um programa em lotes. Em um programa em lotes, esse comando direciona o processamento de comandos para uma linha identificada por um rótulo. Quando o rótulo é encontrado, o processamento continua começando com os comandos que começam na próxima linha.
+Direciona cmd.exe para uma linha rotulada em um programa em lotes. Em um programa em lotes, esse comando direciona o processamento de comandos para uma linha identificada por um rótulo. Quando o rótulo é encontrado, o processamento continua começando com os comandos que começam na próxima linha.
 
 ## <a name="syntax"></a>Sintaxe
 

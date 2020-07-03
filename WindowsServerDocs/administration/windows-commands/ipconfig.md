@@ -1,6 +1,6 @@
 ---
 title: ipconfig
-description: Tópico de referência para o comando ipconfig, que exibe todos os valores atuais de configuração de rede TCP/IP e atualiza as configurações de protocolo DHCP e DNS (sistema de nomes de domínio).
+description: Artigo de referência para o comando ipconfig, que exibe todos os valores atuais de configuração de rede TCP/IP e atualiza as configurações de protocolo DHCP e DNS (sistema de nomes de domínio).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e08e8c493b40475ba61ea76be6b49b9c4e21c1cf
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 3567f855a6066ed318f10daa22f1ca8de0d565c4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818386"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924355"
 ---
 # <a name="ipconfig"></a>ipconfig
 

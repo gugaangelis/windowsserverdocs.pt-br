@@ -1,6 +1,6 @@
 ---
 title: localizar
-description: Tópico de referência para o comando find, que procura uma cadeia de caracteres de texto em arquivos, exibindo a cadeia de caracteres de texto especificada no arquivo.
+description: Artigo de referência para o comando find, que procura uma cadeia de caracteres de texto em arquivos, exibindo a cadeia de caracteres de texto especificada no arquivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0273405ce5e5b4958a347cd1eaddee0a38897f0c
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437001"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925252"
 ---
 # <a name="find"></a>localizar
 
@@ -63,7 +63,7 @@ Para exibir todas as linhas de *Pencil.ad* que contêm o *apontador de lápis*de
 find pencil sharpener pencil.ad
 ```
 
-Para localizar o texto, "os cientistas rotularam seu papel apenas para fins de discussão. Não é um relatório final. " no arquivo *Report. doc* , digite:
+Para localizar o texto, "os cientistas rotularam seu papel apenas para fins de discussão. Não é um relatório final. " no arquivo *report.doc* , digite:
 
 ```
 find ""The scientists labeled their paper for discussion only. It is not a final report."" report.doc

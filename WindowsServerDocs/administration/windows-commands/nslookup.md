@@ -1,6 +1,6 @@
 ---
 title: nslookup
-description: Tópico de referência para o comando Nslookup, que exibe informações que você pode usar para diagnosticar a infraestrutura de DNS (sistema de nomes de domínio).
+description: Artigo de referência para o comando Nslookup, que exibe informações que você pode usar para diagnosticar a infraestrutura de DNS (sistema de nomes de domínio).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 589b8dd5e1244a5aeb27f33b4985f07b776bc7bd
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 87f973349426016b6d62bd1f018f268d4e873c51
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721149"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925387"
 ---
 # <a name="nslookup"></a>nslookup
 

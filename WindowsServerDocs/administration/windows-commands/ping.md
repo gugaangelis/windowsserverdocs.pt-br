@@ -1,6 +1,6 @@
 ---
 title: ping
-description: Tópico de referência para o comando ping, que verifica a conectividade de rede.
+description: Artigo de referência para o comando ping, que verifica a conectividade de rede.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1c1bd15d6536c73feb00decb9ad306f327a6464d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b995edf4943cfbaac8bd96cf098d62687c32396f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472442"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924278"
 ---
 # <a name="ping"></a>ping
 

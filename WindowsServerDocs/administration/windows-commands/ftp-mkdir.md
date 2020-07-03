@@ -1,6 +1,6 @@
 ---
-title: mkdir de FTP
-description: Tópico de referência para o comando mkdir do FTP, que cria um diretório no computador remoto.
+title: ftp mkdir
+description: Artigo de referência para o comando mkdir do FTP, que cria um diretório no computador remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98559664b2288ccf495a039e83e92fb7ba555717
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2741733191b76547d8639d925cf4288efb35a530
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820416"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925881"
 ---
-# <a name="ftp-mkdir"></a>mkdir de FTP
+# <a name="ftp-mkdir"></a>ftp mkdir
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

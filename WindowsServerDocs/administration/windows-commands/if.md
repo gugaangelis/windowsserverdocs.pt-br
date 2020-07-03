@@ -1,6 +1,6 @@
 ---
 title: if
-description: Tópico de referência para o comando IF, que executa o processamento condicional em programas do lote.
+description: Artigo de referência para o comando IF, que executa o processamento condicional em programas do lote.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6f73e784d6fb394db258a056f38045b6a545469
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: dd55ebb6ae3562906efdc710f7a067a7e7514e59
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818546"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924477"
 ---
 # <a name="if"></a>if
 
 Executa o processamento condicional em programas do lote.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 if [not] ERRORLEVEL <number> <command> [else <expression>]
@@ -40,14 +40,14 @@ if defined <variable> <command> [else <expression>]
 
 | Parâmetro | Descrição |
 | --------- |------------ |
-| not | Especifica que o comando deve ser executado somente se a condição for falsa. |
-| ERRORLEVEL`<number>` | Especifica uma condição verdadeira somente se o programa anterior for executado pelo cmd. exe retornou um código de saída igual ou maior que o *número*. |
+| não | Especifica que o comando deve ser executado somente se a condição for falsa. |
+| ERRORLEVEL`<number>` | Especifica uma condição verdadeira somente se o programa anterior for executado por Cmd.exe retornou um código de saída igual ou maior que o *número*. |
 | `<command>` | Especifica o comando que deve ser executado se a condição anterior for atendida. |
 | `<string1>==<string2>` | Especifica uma condição verdadeira somente se *seqüência1* e *seqüência2* forem iguais. Esses valores podem ser cadeias de caracteres literais ou variáveis de lote (por exemplo, `%1` ). Você não precisa colocar cadeias de caracteres literais entre aspas. |
 | existentes`<filename>` | Especifica uma condição verdadeira se o nome de arquivo especificado existir. |
 | `<compareop>` | Especifica um operador de comparação de três letras, incluindo:<ul><li>**Equ** -igual a</li><li>**NEQ** -não é igual a</li><li>**LSS** -menor que</li><li>**Leq** -menor que ou igual a</li><li>**GTR** -maior que</li><li>**GEQ** -maior ou igual a</li></ul> |
 | /i | Força comparações de cadeia de caracteres a ignorar maiúsculas e minúsculas Você pode usar **/i** na `string1==string2` forma de **If**. Essas comparações são genéricas, pois se *seqüência1* e *seqüência2* forem compostas apenas de dígitos numéricos, as cadeias de caracteres serão convertidas em números e uma comparação numérica será executada. |
-| cmdextversion`<number>` | Especifica uma condição verdadeira somente se o número de versão interno associado ao recurso de extensões de comando do cmd. exe for igual ou maior que o número especificado. A primeira versão é 1. Ele aumenta em incrementos de um quando aprimoramentos significativos são adicionados às extensões de comando. A **CMDEXTVERSION** condicional nunca é verdadeira quando as extensões de comando estão desabilitadas (por padrão, as extensões de comando estão habilitadas). |
+| cmdextversion`<number>` | Especifica uma condição verdadeira somente se o número de versão interno associado ao recurso de extensões de comando de Cmd.exe for igual ou maior que o número especificado. A primeira versão é 1. Ele aumenta em incrementos de um quando aprimoramentos significativos são adicionados às extensões de comando. A **CMDEXTVERSION** condicional nunca é verdadeira quando as extensões de comando estão desabilitadas (por padrão, as extensões de comando estão habilitadas). |
 | defined `<variable>` | Especifica uma condição verdadeira se a *variável* for definida. |
 | `<expression>` | Especifica um comando de linha de comando e quaisquer parâmetros a serem passados para o comando em uma cláusula **else** . |
 | /? | Exibe a ajuda no prompt de comando. |
@@ -62,7 +62,7 @@ if defined <variable> <command> [else <expression>]
 
   - **% ERRORLEVEL%**: expande para uma representação de cadeia de caracteres do valor atual da variável de ambiente ERRORLEVEL. Essa variável pressupõe que já não existe uma variável de ambiente existente com o nome ERRORLEVEL. Se houver, você obterá o valor ERRORLEVEL em vez disso.
 
-  - **% CMDCMDLINE%**: expande a linha de comando original que foi passada para cmd. exe antes de qualquer processamento pelo cmd. exe. Isso pressupõe que já não existe uma variável de ambiente existente com o nome CMDCMDLINE. Se houver, você obterá o valor de CMDCMDLINE em vez disso.
+  - **% CMDCMDLINE%**: expande a linha de comando original que foi passada para Cmd.exe antes de qualquer processamento por Cmd.exe. Isso pressupõe que já não existe uma variável de ambiente existente com o nome CMDCMDLINE. Se houver, você obterá o valor de CMDCMDLINE em vez disso.
 
   - **% CMDEXTVERSION%**: expande para a representação de cadeia de caracteres do valor atual de **CMDEXTVERSION**. Isso pressupõe que já não existe uma variável de ambiente existente com o nome CMDEXTVERSION. Se houver, você obterá o valor de CMDEXTVERSION em vez disso.
 

@@ -1,6 +1,6 @@
 ---
-title: pwd de FTP
-description: Tópico de referência para o comando FTP pwd, que exibe o diretório do computador remoto atual.
+title: ftp pwd
+description: Artigo de referência para o comando FTP pwd, que exibe o diretório do computador remoto atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d250dcca53308b99d3d629a8e60e60519a0525de
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 3437dd0c808a9c97db40cbde2d5404c2b0f8186e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820356"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925135"
 ---
-# <a name="ftp-pwd"></a>pwd de FTP
+# <a name="ftp-pwd"></a>ftp pwd
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe o diretório do computador remoto atual.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 pwd

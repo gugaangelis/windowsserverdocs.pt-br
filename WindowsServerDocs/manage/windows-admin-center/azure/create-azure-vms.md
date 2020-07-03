@@ -9,30 +9,32 @@ manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 2249a69f60fe87758c74a58aa13b47124da41361
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 15c9526e4049b218a3fcd7c85bd30dc917629425
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319377"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925949"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>Implantar máquinas virtuais do Azure de dentro do centro de administração do Windows
 
->Aplica-se a: centro de administração do Windows, versão prévia do centro de administração do Windows
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-O centro de administração do Windows versão 1910 permite implantar máquinas virtuais do Azure. Isso integra a implantação de VM no centro de administração do Windows-cargas de trabalho gerenciadas, como [serviço de migração de armazenamento](../../../storage/storage-migration-service/overview.md) e réplica de [armazenamento](../../../storage/storage-replica/storage-replica-overview.md). Em vez de criar novos servidores e VMs no portal do Azure manualmente antes de implantar sua carga de trabalho, e possivelmente faltam as etapas necessárias e a configuração-o centro de administração do Windows pode implantar a VM do Azure, configurar seu armazenamento, associá-la ao seu domínio, instalar funções e em seguida, configure seu sistema distribuído. Você também pode implantar novas VMs do Azure sem uma carga de trabalho na página conexões do centro de administração do Windows.
+O centro de administração do Windows versão 1910 permite implantar máquinas virtuais do Azure. Isso integra a implantação de VM no centro de administração do Windows-cargas de trabalho gerenciadas, como [serviço de migração de armazenamento](../../../storage/storage-migration-service/overview.md) e réplica de [armazenamento](../../../storage/storage-replica/storage-replica-overview.md). Em vez de criar novos servidores e VMs no portal do Azure manualmente antes de implantar sua carga de trabalho e, possivelmente, as etapas e configurações necessárias que estão faltando, o centro de administração do Windows pode implantar a VM do Azure, configurar seu armazenamento, associá-la ao seu domínio, instalar funções e configurar o sistema distribuído. Você também pode implantar novas VMs do Azure sem uma carga de trabalho na página conexões do centro de administração do Windows.
 
 O centro de administração do Windows também gerencia uma variedade de serviços do Azure. [Saiba mais sobre as opções de integração do Azure disponíveis com o centro de administração do Windows](../plan/azure-integration-options.md).
+
+Se você quiser compensar e deslocar máquinas virtuais para o Azure em vez de criar novas, considere o uso de migrações para Azure. Para obter mais informações, consulte [visão geral de migrações para Azure](https://go.microsoft.com/fwlink/?linkid=2056064).
 
 ## <a name="scenarios"></a>Cenários
 
 O centro de administração do Windows versão 1910 implantação de VM do Azure dá suporte aos seguintes cenários:
 
-- [Serviço de migração de armazenamento](../../../storage/storage-migration-service/overview.md)
+- [Serviço de Migração de Armazenamento](../../../storage/storage-migration-service/overview.md)
 - [Réplica de armazenamento](../../../storage/storage-replica/storage-replica-overview.md)
 - [Novo servidor autônomo (sem funções)](index.md#extend-on-premises-capacity-with-azure)
 
-## <a name="requirements"></a>{1&gt;{2&gt;Requisitos&lt;2}&lt;1}
+## <a name="requirements"></a>Requisitos
 
 A criação de uma nova VM do Azure de dentro do centro de administração do Windows exige que você tenha:
 

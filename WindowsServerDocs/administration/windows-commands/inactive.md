@@ -1,6 +1,6 @@
 ---
 title: inativos
-description: Tópico de referência para o comando inativo, que marca a partição do sistema ou a partição de inicialização com foco como inativa em discos básicos de MBR (registro mestre de inicialização).
+description: Artigo de referência para o comando inativo, que marca a partição do sistema ou a partição de inicialização com foco como inativa em discos básicos de MBR (registro mestre de inicialização).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9861a54c284002e53b0a8fc354aa883d80fff0e7
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: db7d279577b8120137b4397551a480ea2d2a0e8a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818436"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924411"
 ---
 # <a name="inactive"></a>inativos
 
@@ -27,7 +27,7 @@ Um sistema ativo ou uma partição de inicialização deve ser selecionada para 
 >
 > Depois de marcar a partição do sistema ou a partição de inicialização como inativa, seu computador será iniciado da próxima opção especificada no BIOS, como a unidade de CD-ROM ou um PXE (Pre-Boot eXecution Environment).
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 inactive

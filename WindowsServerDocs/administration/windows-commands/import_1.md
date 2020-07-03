@@ -1,6 +1,6 @@
 ---
 title: importar o DiskPart
-description: Tópico de referência para o comando de importação, que importa um grupo de discos externos para o grupo de discos do computador local.
+description: Artigo de referência para o comando de importação, que importa um grupo de discos externos para o grupo de discos do computador local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6912aa9698d484501cad5f3cdfb5b19955bb4931
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 072c012e5e2cc8d49811fbfa1cff5140b2c745a1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818446"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924429"
 ---
-# <a name="import-diskpart"></a>importar (DiskPart)
+# <a name="import-diskpart"></a>import (diskpart)
 
 Importa um grupo de discos externos para o grupo de discos do computador local. Esse comando importa todos os discos que estão no mesmo grupo que o disco com foco.
 

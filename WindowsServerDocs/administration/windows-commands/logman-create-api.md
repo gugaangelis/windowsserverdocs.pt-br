@@ -1,6 +1,6 @@
 ---
-title: criar API do logman
-description: Tópico de referência para o comando logman Create API, que cria um coletor de dados de rastreamento de API.
+title: logman create api
+description: Artigo de referência para o comando logman Create API, que cria um coletor de dados de rastreamento de API.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f479fcdf3db4bb5a61b0cd0724220d27c934872f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 2294cb7ba7ab962dbba33b0e2612b8dee2d72004
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222805"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925433"
 ---
-# <a name="logman-create-api"></a>criar API do logman
+# <a name="logman-create-api"></a>logman create api
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -65,19 +65,19 @@ logman create api <[-n] <name>> [options]
 
 ### <a name="examples"></a>Exemplos
 
-Para criar um contador de rastreamento de API chamado trace_notepad, para o arquivo executável c:\Windows\Notepad.exe e colocar os resultados no arquivo c:\notepad.ETL, digite:
+Para criar um contador de rastreamento de API chamado trace_notepad, para o arquivo executável c:\windows\notepad.exe e colocar os resultados no arquivo c:\notepad.ETL, digite:
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -o c:\notepad.etl
 ```
 
-Para criar um contador de rastreamento de API chamado trace_notepad, para o arquivo executável c:\Windows\Notepad.exe, coletando valores produzidos pelo módulo em c:\windows\system32\advapi32.dll, digite:
+Para criar um contador de rastreamento de API chamado trace_notepad, para o arquivo executável c:\windows\notepad.exe, coletando valores produzidos pelo módulo em c:\windows\system32\advapi32.dll, digite:
 
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -mods c:\windows\system32\advapi32.dll
 ```
 
-Para criar um contador de rastreamento de API chamado trace_notepad, para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo Kernel32. dll, digite:
+Para criar um contador de rastreamento de API chamado trace_notepad, para o arquivo executável c:\windows\notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo kernel32.dll, digite:
 ```
 logman create api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue
 ```

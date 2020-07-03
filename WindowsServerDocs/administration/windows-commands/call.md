@@ -1,6 +1,6 @@
 ---
 title: chamada
-description: Tópico de referência para o comando Call, que chama um programa em lotes de outro sem parar o programa do lote pai.
+description: Artigo de referência para o comando Call, que chama um programa em lotes de outro sem parar o programa do lote pai.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 64c4b89d18ab869a7e6c8b1ee8537c4f808bce8f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e73199b9d5633d5b3f1f7b8afd2bd35eb826bfd7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719664"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924833"
 ---
 # <a name="call"></a>chamada
 
@@ -36,7 +36,7 @@ call [drive:][path]<filename> [<batchparameters>] [:<label> [<arguments>]]
 | `[<drive>:][<path>]<filename>` | Especifica o local e o nome do programa em lotes que você deseja chamar. O `<filename>` parâmetro é obrigatório e deve ter uma extensão. bat ou. cmd. |
 | `<batchparameters>` | Especifica qualquer informação de linha de comando exigida pelo programa em lotes. |
 | `:<label>` | Especifica o rótulo para o qual você deseja que um controle de programa do lote salte. |
-| `<arguments>` | Especifica as informações de linha de comando a serem passadas para a nova instância do programa em lotes, `:<label>`começando em.|
+| `<arguments>` | Especifica as informações de linha de comando a serem passadas para a nova instância do programa em lotes, começando em `:<label>` .|
 | /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="batch-parameters"></a>Parâmetros de lote
@@ -84,7 +84,7 @@ Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valore
 
 - Usando pipes e símbolos de redirecionamento:
 
-    Não use pipes `(|)` ou símbolos de redirecionamento`<` ( `>`ou) com **Call**.
+    Não use pipes `(|)` ou símbolos de redirecionamento ( `<` ou `>` ) com **Call**.
 
 - Fazendo uma chamada recursiva
 
@@ -92,17 +92,17 @@ Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valore
 
 - Trabalhando com extensões de comando
 
-    Se as extensões de comando estiverem **call** habilitadas `<label>` , chame aceita como o destino da chamada. A sintaxe correta é`call :<label> <arguments>`
+    Se as extensões de comando estiverem habilitadas, **chame** aceita `<label>` como o destino da chamada. A sintaxe correta é`call :<label> <arguments>`
 
 ## <a name="examples"></a>Exemplos
 
-Para executar o programa checknew. bat de outro programa em lotes, digite o seguinte comando no programa do lote pai:
+Para executar o programa de checknew.bat de outro programa em lotes, digite o seguinte comando no programa do lote pai:
 
 ```
 call checknew
 ```
 
-Se o programa do lote pai aceitar dois parâmetros de lote e você quiser que ele passe esses parâmetros para checknew. bat, digite o seguinte comando no programa do lote pai:
+Se o programa do lote pai aceitar dois parâmetros de lote e você quiser que ele passe esses parâmetros para checknew.bat, digite o seguinte comando no programa do lote pai:
 
 ```
 call checknew %1 %2

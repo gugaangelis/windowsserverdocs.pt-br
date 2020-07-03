@@ -1,6 +1,6 @@
 ---
-title: Reg Unload
-description: Tópico de referência para o comando reg Unload, que remove uma seção do registro carregado usando a operação reg Load.
+title: reg unload
+description: Artigo de referência para o comando reg Unload, que remove uma seção do registro carregado usando a operação reg Load.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,48 +9,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 029b9225f8a437be18c3056d97e153075d9df7c9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6728f898bd8c2c65aff922943ccef58d4d9fd738
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722499"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925987"
 ---
-# <a name="reg-unload"></a>Reg Unload
-
-
+# <a name="reg-unload"></a>reg unload
 
 Remove uma seção do registro que foi carregado usando a operação **reg Load** .
-
-
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-reg unload <KeyName>
+reg unload <keyname>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<KeyName>|Especifica o caminho completo da subchave a ser descarregada. Para especificar computadores remotos, inclua o nome do computador (no \\ \\formato ComputerName\) como parte do *KeyName*. \\ \\Omitir computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. Chaves de raiz válidas para o computador local são HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão HKLM e HKU.|
-|/?|Exibe a ajuda para o **reg Unload** no prompt de comando.|
+| Parâmetro | Descrição |
+|--|--|
+| `<keyname>` | Especifica o caminho completo da subchave. Para especificar um computador remoto, inclua o nome do computador (no formato `\\<computername>\` ) como parte do *KeyName*. Omitir `\\<computername>\` faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: **HKLM**, **HKCU**, **HKCR**, **HKU**e **HKCC**. Se um computador remoto for especificado, as chaves de raiz válidas serão: **HKLM** e **HKU**. Se o nome da chave do registro contiver um espaço, coloque o nome da chave entre aspas. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
-A tabela a seguir lista os valores de retorno para a opção **reg Unload** .
+- Os valores de retorno para a operação **reg Unload** são:
 
-|Valor|Descrição|
-|-----|-----------|
-|0|Sucesso|
-|1|Falha|
+    | Valor | Descrição |
+    |--|--|
+    | 0 | Êxito |
+    | 1 | Falha |
 
 ## <a name="examples"></a>Exemplos
 
 Para descarregar o hive TempHive no arquivo HKLM, digite:
+
 ```
-REG UNLOAD HKLM\TempHive
+reg unload HKLM\TempHive
 ```
 
 > [!CAUTION]

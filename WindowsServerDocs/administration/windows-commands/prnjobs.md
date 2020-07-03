@@ -1,6 +1,6 @@
 ---
 title: prnjobs
-description: Tópico de referência para o comando prnjobs, que pausa, retoma, cancela e lista trabalhos de impressão.
+description: Artigo de referência para o comando prnjobs, que pausa, retoma, cancela e lista trabalhos de impressão.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: e13e217d422aa6d8f2c585c8890915af7e396ddb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 79ad0631a2d1c871664ecebc11c26f2e005ca772
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472261"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924192"
 ---
 # <a name="prnjobs"></a>prnjobs
 

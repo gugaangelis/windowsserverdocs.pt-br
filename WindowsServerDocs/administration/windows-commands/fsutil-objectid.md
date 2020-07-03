@@ -1,6 +1,6 @@
 ---
 title: fsutil objectid
-description: Tópico de referência para o comando fsutil ObjectID, que gerencia identificadores de objeto para controlar outros objetos, como arquivos, diretórios e links.
+description: Artigo de referência para o comando fsutil ObjectID, que gerencia identificadores de objeto para controlar outros objetos, como arquivos, diretórios e links.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cdaa3fb0a8a439e568e4b181890db49923e109e7
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 5ab0b95bdcde8bce51e1d5a2c14888229621fcaa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435801"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925245"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
@@ -46,7 +46,7 @@ fsutil objectid [set] <objectID> <birthvolumeID> <birthobjectID> <domainID> <fil
 | `<birthvolumeID>` | Indica o volume no qual o arquivo foi localizado quando ele obteve pela primeira vez um identificador de objeto. Esse valor é um identificador hexadecimal de 16 bytes que é usado pelo serviço do cliente DLT. |
 | `<birthobjectID>` | Indica o identificador de objeto original do arquivo (o *ObjectID* pode ser alterado quando um arquivo é movido). Esse valor é um identificador hexadecimal de 16 bytes que é usado pelo serviço do cliente DLT. |
 | `<domainID>` | identificador de domínio hexadecimal de 16 bytes. Esse valor não é usado no momento e deve ser definido como todos os zeros. |
-| `<filename>` | Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, *C:\documents\filename.txt*. |
+| `<filename>` | Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo *C:\documents\filename.txt*. |
 
 #### <a name="remarks"></a>Comentários
 

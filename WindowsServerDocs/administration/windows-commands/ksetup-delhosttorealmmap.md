@@ -1,6 +1,6 @@
 ---
 title: ksetup delhosttorealmmap
-description: Tópico de referência para o comando ksetup delhosttorealmmap, que remove um mapeamento de SPN (nome da entidade de serviço) entre o host declarado e o realm.
+description: Artigo de referência para o comando ksetup delhosttorealmmap, que remove um mapeamento de SPN (nome da entidade de serviço) entre o host declarado e o realm.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17fc30e76247c570c653d5ec38501a2199435c7f
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: c55fe25a147c23026ddf97900d6da856f04314a3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817856"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925494"
 ---
 # <a name="ksetup-delhosttorealmmap"></a>ksetup delhosttorealmmap
 

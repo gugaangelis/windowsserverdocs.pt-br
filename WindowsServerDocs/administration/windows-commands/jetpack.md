@@ -1,6 +1,6 @@
 ---
 title: jetpack
-description: Tópico de referência para o comando jetpack, que compacta um WINS (serviço de cadastramento na Internet do Windows) ou um banco de dados DHCP (protocolo de configuração dinâmica de hosts).
+description: Artigo de referência para o comando jetpack, que compacta um WINS (serviço de cadastramento na Internet do Windows) ou um banco de dados DHCP (protocolo de configuração dinâmica de hosts).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d77f9c964f5820fc7a44b803bb765e94cb35637
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b0aa52bad06865641da5fabf25c27ceb8c7a0bbd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818246"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924324"
 ---
 # <a name="jetpack"></a>jetpack
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818246"
 
 Compacta um WINS (serviço de cadastramento na Internet do Windows) ou um banco de dados DHCP (protocolo de configuração dinâmica de hosts). Recomendamos que você compacte o banco de dados do WINS sempre que ele se aproximar de 30 MB.
 
-O Jetpack. exe compacta o banco de dados do:
+Jetpack.exe compacta o banco de dados:
 
 1. Copiar as informações do banco de dados para um arquivo de banco de dados temporário.
 
@@ -41,7 +41,7 @@ jetpack.exe <database_name> <temp_database_name>
 | Parâmetro | Descrição |
 | ------- | -------- |
 | `<database_name>` | Especifica o nome do arquivo de banco de dados original. |
-| `<temp_database_name>` | Especifica o nome do arquivo de banco de dados temporário a ser criado pelo jetpack. exe.<p>Observação: esse arquivo temporário é removido quando o processo de compactação é concluído. Para que esse comando funcione corretamente, você deve verificar se o nome do arquivo temporário é exclusivo e se um arquivo com esse nome ainda não existe. |
+| `<temp_database_name>` | Especifica o nome do arquivo de banco de dados temporário a ser criado por jetpack.exe.<p>Observação: esse arquivo temporário é removido quando o processo de compactação é concluído. Para que esse comando funcione corretamente, você deve verificar se o nome do arquivo temporário é exclusivo e se um arquivo com esse nome ainda não existe. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 ### <a name="examples"></a>Exemplos

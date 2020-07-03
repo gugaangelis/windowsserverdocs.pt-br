@@ -1,6 +1,6 @@
 ---
 title: ftp
-description: Tópico de referência para o comando FTP, que transfere arquivos de e para um computador que executa um serviço de servidor de protocolo FTP (FTP).
+description: Artigo de referência para o comando FTP, que transfere arquivos de e para um computador que executa um serviço de servidor de protocolo FTP (FTP).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3920306ce05aeb1b1e364c8146c461ea187f6560
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e78148e1e7dc4f402d80bb4ebfbcbdac52249407
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820236"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85925613"
 ---
 # <a name="ftp"></a>ftp
 
@@ -65,7 +65,7 @@ Para fazer logon no servidor FTP chamado `ftp.example.microsoft.com` , digite:
 ftp ftp.example.microsoft.com
 ```
 
-Para fazer logon no servidor FTP chamado `ftp.example.microsoft.com` e executar os comandos de **FTP** contidos em um arquivo chamado *Ressync. txt*, digite:
+Para fazer logon no servidor FTP chamado `ftp.example.microsoft.com` e executar os comandos de **FTP** contidos em um arquivo chamado *resync.txt*, digite:
 
 ```
 ftp -s:resync.txt ftp.example.microsoft.com

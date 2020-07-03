@@ -1,6 +1,6 @@
 ---
 title: break
-description: Tópico de referência para o comando break, que Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular.
+description: Artigo de referência para o comando break, que Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e8789ab68ecb98d190a79c3f1088aad05b83562
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707783"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924898"
 ---
 # <a name="break"></a>break
 
@@ -36,7 +36,7 @@ break [writable] <setid>
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | escrita | Habilita o acesso de leitura/gravação no volume. |
-| \<> SetID | Especifica a ID do conjunto de cópias de sombra. O alias da ID da cópia de sombra, que é armazenado como uma variável de ambiente pelo comando **carregar metadados** , pode ser usado no parâmetro *SetID* . |
+| \<setid> | Especifica a ID do conjunto de cópias de sombra. O alias da ID da cópia de sombra, que é armazenado como uma variável de ambiente pelo comando **carregar metadados** , pode ser usado no parâmetro *SetID* . |
 
 ## <a name="examples"></a>Exemplos
 

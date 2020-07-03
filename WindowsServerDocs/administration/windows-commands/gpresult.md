@@ -1,6 +1,6 @@
 ---
 title: gpresult
-description: Tópico de referência para o comando gpresult, que exibe o conjunto resultante de informações de política (RSoP) para um usuário e computador remotos.
+description: Artigo de referência do comando gpresult, que exibe o conjunto resultante de informações de política (RSoP) para um usuário e computador remotos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e88a75a15168baaf2e49ca08ff20d3a8ffb5620c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818856"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924635"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -22,7 +22,7 @@ ms.locfileid: "83818856"
 
 Exibe o conjunto resultante de informações de política (RSoP) para um usuário e computador remoto. Para usar relatórios RSoP para computadores de destino remoto por meio do firewall, você deve ter regras de firewall que habilitem o tráfego de rede de entrada nas portas.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}
@@ -63,7 +63,7 @@ Para recuperar dados RSoP somente para o usuário remoto, *maindom\hiropln* com 
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /scope user /r
 ```
 
-Para salvar todas as informações disponíveis sobre Política de Grupo em um arquivo chamado, *Policy. txt*, somente para o usuário remoto *maindom\hiropln* com a senha *p@ssW23* , no computador *srvmain*, digite:
+Para salvar todas as informações disponíveis sobre Política de Grupo em um arquivo chamado, *policy.txt*, somente para o usuário remoto *maindom\hiropln* com a senha *p@ssW23* , no computador *srvmain*, digite:
 
 ```
 gpresult /s srvmain /u maindom\hiropln /p p@ssW23 /user targetusername /z > policy.txt

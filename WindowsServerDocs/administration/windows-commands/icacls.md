@@ -1,6 +1,6 @@
 ---
 title: icacls
-description: Tópico de referência para o comando icacls, que exibe ou modifica listas de controle de acesso discricional (DACL) em arquivos especificados, e aplica as DACLs armazenadas a arquivos em diretórios especificados.
+description: Artigo de referência para o comando icacls, que exibe ou modifica listas de controle de acesso discricional (DACL) em arquivos especificados, e aplica as DACLs armazenadas a arquivos em diretórios especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: dcf4fa9fa9205a762ead99ac4a8486ac04c23514
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 386e008ef7095cbef8d84b33682b494d8d6c9c52
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82724870"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924525"
 ---
 # <a name="icacls"></a>icacls
 
@@ -40,24 +40,24 @@ icacls <directory> [/substitute <sidold> <sidnew> [...]] [/restore <aclfile> [/c
 | /c | Continua a operação, apesar de quaisquer erros de arquivo. As mensagens de erro ainda serão exibidas. |
 | /l | Executa a operação em um link simbólico em vez de seu destino. |
 | /q | Suprime as mensagens de êxito. |
-| [/Save `<ACLfile>` [/t] [/c] [/l] [/q]] | Armazena as DACLs de todos os arquivos correspondentes no *ACLfile* para uso posterior com **/Restore**. |
-| [/SetOwner `<username>` [/t] [/c] [/l] [/q]] | Altera o proprietário de todos os arquivos correspondentes para o usuário especificado. |
-| [/findsid `<sid>` [/t] [/c] [/l] [/q]] | Localiza todos os arquivos correspondentes que contêm uma DACL mencionando explicitamente o SID (identificador de segurança) especificado. |
+| [/Save `<ACLfile>` /t /c /l [/q]] | Armazena as DACLs de todos os arquivos correspondentes no *ACLfile* para uso posterior com **/Restore**. |
+| [/SetOwner `<username>` /t /c /l [/q]] | Altera o proprietário de todos os arquivos correspondentes para o usuário especificado. |
+| [/findsid `<sid>` /t /c /l [/q]] | Localiza todos os arquivos correspondentes que contêm uma DACL mencionando explicitamente o SID (identificador de segurança) especificado. |
 | [/Verify [/t] [/c] [/l] [/q]] | Localiza todos os arquivos com ACLs que não são canônicas ou têm tamanhos inconsistentes com as contagens de ACE (entrada de controle de acesso). |
 | [/Reset reiniciar [/t] [/c] [/l] [/q]] | Substitui ACLs por ACLs herdadas padrão para todos os arquivos correspondentes. |
-| [/Grant [: r] \<Sid>:<perm>[...]] | Concede direitos de acesso de usuário especificado. As permissões substituem as permissões explícitas concedidas anteriormente.<p>Não adicionar o **: r**, significa que as permissões são adicionadas a quaisquer permissões explícitas concedidas anteriormente. |
-| [/Deny \<Sid>:<perm>[...]] | Nega explicitamente os direitos de acesso de usuário especificados. Uma ACE de negação explícita é adicionada para as permissões declaradas e as mesmas permissões em qualquer concessão explícita são removidas. |
-| [/remove`[:g | :d]]` `<sid>`[...] /t /c /l /q | Remove todas as ocorrências do SID especificado da DACL. Esse comando também pode usar:<ul><li>**: g** -remove todas as ocorrências de direitos concedidos para o SID especificado.</li><li>**:d** -remove todas as ocorrências de direitos negados para o SID especificado. |
-| [/setintegritylevel [(CI) (OI)] `<Level>:<Policy>`[...]] | Adiciona explicitamente uma ACE de integridade a todos os arquivos correspondentes. O nível pode ser especificado como:<ul><li>**l** -baixo</li><li>**m**-médio</li><li>**h** -alta</li></ul>As opções de herança para a ACE de integridade podem preceder o nível e são aplicadas somente a diretórios. |
-| [/substitute `<sidold> <sidnew>` [...]] | Substitui um SID existente (*sidold*) por um novo SID (*sidnew*). Requer o uso do `<directory>` com o parâmetro. |
-| /Restore `<ACLfile>` [/c] [/l] [/q] | Aplica as DACLs armazenadas `<ACLfile>` de em arquivos no diretório especificado. Requer o uso do `<directory>` com o parâmetro. |
+| [/Grant [: r] \<sid> : <perm> [...]] | Concede direitos de acesso de usuário especificado. As permissões substituem as permissões explícitas concedidas anteriormente.<p>Não adicionar o **: r**, significa que as permissões são adicionadas a quaisquer permissões explícitas concedidas anteriormente. |
+| [/Deny \<sid> : <perm> [...]] | Nega explicitamente os direitos de acesso de usuário especificados. Uma ACE de negação explícita é adicionada para as permissões declaradas e as mesmas permissões em qualquer concessão explícita são removidas. |
+| [/remove `[:g | :d]]` `<sid>` [...] /t /c /l /q | Remove todas as ocorrências do SID especificado da DACL. Esse comando também pode usar:<ul><li>**: g** -remove todas as ocorrências de direitos concedidos para o SID especificado.</li><li>**:d** -remove todas as ocorrências de direitos negados para o SID especificado. |
+| [/setintegritylevel [(CI) (OI)] `<Level>:<Policy>` [...]] | Adiciona explicitamente uma ACE de integridade a todos os arquivos correspondentes. O nível pode ser especificado como:<ul><li>**l** -baixo</li><li>**m**-médio</li><li>**h** -alta</li></ul>As opções de herança para a ACE de integridade podem preceder o nível e são aplicadas somente a diretórios. |
+| [/substitute `<sidold> <sidnew>` [...]] | Substitui um SID existente (*sidold*) por um novo SID (*sidnew*). Requer o uso do com o `<directory>` parâmetro. |
+| /Restore `<ACLfile>` [/c] [/l] [/q] | Aplica as DACLs armazenadas de `<ACLfile>` em arquivos no diretório especificado. Requer o uso do com o `<directory>` parâmetro. |
 | /inheritancelevel:`[e | d | r]` | Define o nível de herança, que pode ser:<ul><li>**e** -habilita a herança</li><li>**d** -desabilita a herança e copia as ACEs</li><li>**r** -remove todas as ACEs herdadas</li></ul> |
 
 ## <a name="remarks"></a>Comentários
 
 - Os SIDs podem estar na forma de nome numérico ou amigável. Se você usar um formato numérico, afixará o caractere curinga **&#42;** ao início do Sid.
 
-- Esse comando preserva a ordem canônica das entradas ACE como:  
+- Esse comando preserva a ordem canônica das entradas ACE como:
 
     - Negações explícitas
 

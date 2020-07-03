@@ -1,6 +1,6 @@
 ---
 title: freedisk
-description: Tópico de referência para o comando freedisk, que verifica se a quantidade especificada de espaço em disco está disponível antes de continuar com um processo de instalação.
+description: Artigo de referência para o comando freedisk, que verifica se a quantidade especificada de espaço em disco está disponível antes de continuar com um processo de instalação.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2135bd24e24235de7c687ed58e0603db20c68262
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: d0cfce52c2eaf0917f8169d959b61832bd1779e0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436971"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85924748"
 ---
 # <a name="freedisk"></a>freedisk
 
