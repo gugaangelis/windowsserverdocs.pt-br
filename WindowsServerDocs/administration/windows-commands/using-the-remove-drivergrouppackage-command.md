@@ -1,6 +1,6 @@
 ---
 title: Remove-DriverGroupPackage
-description: Tópico de referência para Remove-DriverGroupPackage, que remove um pacote de driver de um grupo de drivers em um servidor.
+description: Artigo de referência para Remove-DriverGroupPackage, que remove um pacote de driver de um grupo de drivers em um servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c63c6ef0ed9af49506d80a715f23111bfd62070f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a8f4177a9e4a3abfa41eb3db094dc5d6e481678f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720396"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933483"
 ---
 # <a name="remove-drivergrouppackage"></a>Remove-DriverGroupPackage
 
@@ -32,9 +32,9 @@ WDSUTIL /Remove-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Na
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[/Server:\<nome do servidor>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.|
-|[/DriverPackage:\<nome>]|Especifica o nome do pacote de driver a ser removido.|
-|[/PackageId:\<ID>]|Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser removido. Você deve especificar essa opção se o pacote de driver não puder ser identificado exclusivamente pelo nome.|
+|[/Server:\<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se um nome de servidor não for especificado, o servidor local será usado.|
+|[/DriverPackage: \<Name> ]|Especifica o nome do pacote de driver a ser removido.|
+|[/PackageId: \<ID> ]|Especifica a ID dos serviços de implantação do Windows do pacote de driver a ser removido. Você deve especificar essa opção se o pacote de driver não puder ser identificado exclusivamente pelo nome.|
 
 ## <a name="examples"></a>Exemplos
 

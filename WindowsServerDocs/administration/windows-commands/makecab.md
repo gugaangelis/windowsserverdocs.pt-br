@@ -1,6 +1,6 @@
 ---
 title: makecab
-description: Tópico de referência para o comando Makecab, que empacota arquivos existentes em um arquivo de gabinete (. cab).
+description: Artigo de referência para o comando Makecab, que empacota arquivos existentes em um arquivo de gabinete (. cab).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 192471e6045a530e9deedec70cc957b9362b3ae7
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 60203390ab0955e3f8a2c52887b21192d1ec32f2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354656"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933541"
 ---
 # <a name="makecab"></a>makecab
 

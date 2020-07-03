@@ -1,6 +1,6 @@
 ---
-title: Expo
-description: Tópico de referência para o comando de exposição, que expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.
+title: expose
+description: Artigo de referência para o comando de exposição, que expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4e8ebf71f6ddcb457460f8174793586e81c73a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 816aad0ba57a30d9d3a05709941b1915d9a97d03
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437171"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932398"
 ---
-# <a name="expose"></a>Expo
+# <a name="expose"></a>expose
 
 Expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.
 

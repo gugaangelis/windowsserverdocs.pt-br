@@ -1,6 +1,6 @@
 ---
 title: remover-MyImage
-description: Tópico de referência para Remove-Group-Image, que remove um grupo de imagens de um servidor.
+description: Artigo de referência para Remove-Group-Image, que remove um grupo de imagens de um servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f814d83a32a8c739e7462bc77251cf3f3f4fe20e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3d11a24152250786e600332c5eea0a6ffebc4848
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720348"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933332"
 ---
 # <a name="using-the-remove-imagegroup-command"></a>Usando o comando Remove-MyImage
 
@@ -35,11 +35,11 @@ The Media:<Image group name>|Especifica o nome do grupo de imagens a ser removid
 Para remover o grupo de imagens, digite um dos seguintes:
 ```
 wdsutil /remove-ImageGroumediaGroup:ImageGroup1
-wdsutil /verbose /remove-ImageGroumediaGroup:My Image Group /Server:MyWDSServer 
+wdsutil /verbose /remove-ImageGroumediaGroup:My Image Group /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)  
-[Usando o comando Add-Imageus](using-the-add-imagegroup-command.md)  
-[Usando o comando Get-AllImageGroups](using-the-get-allimagegroups-command.md)  
-[Usando o comando Get-Imageus](using-the-get-imagegroup-command.md)  
-[Subcomando: Set-grupo de imagens](subcommand-set-imagegroup.md)  
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-add-imagegroup-command.md) 
+ Add-imageus [Usando o comando](using-the-get-allimagegroups-command.md) 
+ Get-AllImageGroups [Usando o comando](using-the-get-imagegroup-command.md) 
+ Get-imageus [Subcomando: Set-grupo de imagens](subcommand-set-imagegroup.md)

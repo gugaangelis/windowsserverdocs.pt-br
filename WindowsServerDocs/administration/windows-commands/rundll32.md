@@ -1,6 +1,6 @@
 ---
 title: rundll32
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0639206b26ea58c4ec8473c0a736fda3c435021
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c9a0dca06bb3077ec308ae3a9792deb1f72e023b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722243"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932803"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -24,7 +24,7 @@ Carrega e executa bibliotecas de vínculo dinâmico (DLLs) de 32 bits. Não há 
 
 Você deve executar o comando **rundll32** em um prompt de comandos com privilégios elevados. Para abrir um prompt de comando com privilégios elevados, clique em **Iniciar**, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 Rundll32 <DLLname>
@@ -34,7 +34,7 @@ Rundll32 <DLLname>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[Rundll32 printui. dll, PrintUIEntry](rundll32-printui.md)|Exibe a interface do usuário da impressora|
+|[Rundll32 printui.dll, PrintUIEntry](rundll32-printui.md)|Exibe a interface do usuário da impressora|
 
 ## <a name="remarks"></a>Comentários
 

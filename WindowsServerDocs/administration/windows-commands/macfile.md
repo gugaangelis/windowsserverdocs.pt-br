@@ -1,6 +1,6 @@
 ---
 title: macfile
-description: Tópico de referência para o comando MacFile, que gerencia o servidor de arquivos para servidores Macintosh, volumes, diretórios e arquivos.
+description: Artigo de referência para o comando MacFile, que gerencia o servidor de arquivos para servidores Macintosh, volumes, diretórios e arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 740044088bef1537b5b41493f46be9275be84874
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6937e8bbf40ec9ce908be095e5de0e04f793f40e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223016"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933651"
 ---
 # <a name="macfile"></a>macfile
 
@@ -113,7 +113,7 @@ Para criar o arquivo *tree_app* no volume acessível para Macintosh *D:\release*
 macfile forkize /resourcefork:c:\cross\mac\appcode /type:APPL /creator:MAGNOLIA /targetfile:D:\Release\tree_app
 ```
 
-Para alterar o criador do arquivo para o *Microsoft Word 5,1*, para o arquivo *Word. txt* no diretório *D:\Word documents\Group files* *, no servidor ServerName \\ *, digite:
+Para alterar o criador do arquivo para o *Microsoft Word 5,1*, para o arquivo *Word.txt* no diretório *D:\Word documents\Group files* *, no servidor ServerName \\ *, digite:
 
 ```
 macfile forkize /server:\\ServerA /creator:MSWD /type:TEXT /targetfile:d:\Word documents\Group files\Word.txt

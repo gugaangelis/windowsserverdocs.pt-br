@@ -1,6 +1,6 @@
 ---
-title: API de atualização do logman
-description: Tópico de referência para o comando de API de atualização do logman, que atualiza as propriedades de um coletor de dados de rastreamento de API existente.
+title: logman update api
+description: Artigo de referência para o comando da API de atualização do logman, que atualiza as propriedades de um coletor de dados de rastreamento de API existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0087edc7cd96bf2bf7611d9a3975d97384c02949
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222773"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933868"
 ---
-# <a name="logman-update-api"></a>API de atualização do logman
+# <a name="logman-update-api"></a>logman update api
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -65,7 +65,7 @@ logman update api <[-n] <name>> [options]
 
 ### <a name="examples"></a>Exemplos
 
-Para atualizar um contador de rastreamento de API existente chamado *trace_notepad*, para o arquivo executável c:\Windows\Notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo Kernel32. dll, digite:
+Para atualizar um contador de rastreamento de API existente chamado *trace_notepad*, para o arquivo executável c:\windows\notepad.exe, excluindo a chamada de API TlsGetValue produzida pelo módulo kernel32.dll, digite:
 
 ```
 logman update api trace_notepad -exe c:\windows\notepad.exe -exapis kernel32.dll!TlsGetValue

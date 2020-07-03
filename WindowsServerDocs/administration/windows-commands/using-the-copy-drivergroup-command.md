@@ -1,6 +1,6 @@
 ---
 title: copiar-controlador de driver
-description: Tópico de referência para o grupo de drivers de cópia, que duplica um agrupamento de drivers existente no servidor, incluindo os filtros, pacotes de driver e status habilitado/desabilitado.
+description: Artigo de referência para Copy-driver Group, que duplica um grupo de drivers existente no servidor, incluindo os filtros, pacotes de driver e status habilitado/desabilitado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc157e9ef6d07a45efe2a19221fb3a046b2f65c1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d9be90f065cc76e16b7b45135c60b5206c7bf581
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721008"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934085"
 ---
 # <a name="copy-drivergroup"></a>copiar-controlador de driver
 
@@ -30,9 +30,9 @@ WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Nam
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|[/Server:\<nome do servidor>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
-|/DriverGroup:\<nome do grupo de origem>|Especifica o nome do grupo de drivers de origem.|
-|/GroupName:\<novo nome de grupo>|Especifica o nome do novo grupo de drivers.|
+|[/Server:\<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.|
+|/DriverGroup:\<Source Group Name>|Especifica o nome do grupo de drivers de origem.|
+|GroupName\<New Group Name>|Especifica o nome do novo grupo de drivers.|
 
 ## <a name="examples"></a>Exemplos
 

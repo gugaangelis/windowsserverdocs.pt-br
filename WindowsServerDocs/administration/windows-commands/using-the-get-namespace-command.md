@@ -1,6 +1,6 @@
 ---
 title: Get-namespace
-description: Tópico de referência para Get-namespace, que exibe informações sobre um namespace personalizado.
+description: Artigo de referência para Get-namespace, que exibe informações sobre um namespace personalizado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 76980d2add9ee9b7584812c9d366408f8770b681
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a029d56b2aea0a05bb12121cde89a1a731f3e4c5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719750"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932191"
 ---
 # <a name="get-namespace"></a>Get-namespace
 
@@ -22,7 +22,7 @@ ms.locfileid: "82719750"
 
 Exibe informações sobre um namespace personalizado.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 Windows Server 2008 R2
 ```
 wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/Show:Clients]
@@ -35,7 +35,7 @@ wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/det
 
 |               Parâmetro               |                                                                                                                                                                                         Descrição                                                                                                                                                                                          |
 |---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      Namespace<Namespace name>      | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<p>-Servidor de implantação: a sintaxe para o nome do namespace é/namspace<ImageGroup>/<ImageName>/<Index>: WDS:. Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />-Servidor de transporte: esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
+|      Namespace<Namespace name>      | Especifica o nome do namespace. Observe que esse não é o nome amigável e deve ser exclusivo.<p>-Servidor de implantação: a sintaxe para o nome do namespace é/namspace: WDS: <ImageGroup> / <ImageName> / <Index> . Por exemplo: **WDS: ImageGroup1/install. wim/1**<br />-Servidor de transporte: esse valor deve corresponder ao nome fornecido para o namespace quando ele foi criado no servidor. |
 |        [/Server:<Server name>]        |                                                                                                             Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                              |
 | [/Show: clients] ou [/details: clients] |                                                                                                                                                  Exibe informações sobre os computadores cliente que estão conectados ao namespace especificado.                                                                                                                                                  |
 
@@ -48,8 +48,8 @@ Para exibir informações sobre um namespace e os clientes que estão conectados
 - Windows Server 2008:`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /Show:Clients`
 - Windows Server 2008 R2:`wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:Custom Auto 1 /details:Clients`
   ## <a name="additional-references"></a>Referências adicionais
-  - [Chave](command-line-syntax-key.md)
-  de sintaxe de linha de comando[usando o comando](using-the-get-allnamespaces-command.md)
-  get-
-  MyNamespaces[usando o comando New-namespace](using-the-new-namespace-command.md)[usando o subcomando remove-namespace Command](using-the-remove-namespace-command.md)
-  [: Start-namespace](subcommand-start-namespace.md)
+  - Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+   [Usando o comando](using-the-get-allnamespaces-command.md) 
+   Get-MyNamespaces [Usando o comando](using-the-new-namespace-command.md) 
+   New-namespace [Usando o comando](using-the-remove-namespace-command.md) 
+   Remove-namespace [Subcomando: Start-namespace](subcommand-start-namespace.md)

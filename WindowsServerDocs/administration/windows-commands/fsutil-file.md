@@ -1,6 +1,6 @@
 ---
 title: fsutil file
-description: Tópico de referência para o comando fsutil file, que localiza um arquivo por nome de usuário, consulta intervalos alocados para um arquivo, define o nome curto de um arquivo, define o comprimento de dados válido de um arquivo, define zero data para um arquivo ou cria um novo arquivo.
+description: Artigo de referência para o comando fsutil file, que localiza um arquivo por nome de usuário, consulta intervalos alocados para um arquivo, define o nome curto de um arquivo, define o comprimento de dados válido de um arquivo, define zero data para um arquivo ou cria um novo arquivo.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: e9be8f6d21b89d1017371b9697e1227122826a7d
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435871"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932295"
 ---
 # <a name="fsutil-file"></a>fsutil file
 
@@ -116,13 +116,13 @@ Para definir o EOF de um arquivo, digite:
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-Para definir o nome curto do arquivo, *LongFileName. txt* na unidade C para *longfile. txt*, digite:
+Para definir o nome curto do arquivo, *longfilename.txt* na unidade C para *longfile.txt*, digite:
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt
 ```
 
-Para definir o comprimento de dados válido para *4096 bytes* para um arquivo chamado *Testfile. txt* em um volume NTFS, digite:
+Para definir o comprimento de dados válido para *4096 bytes* para um arquivo chamado *testfile.txt* em um volume NTFS, digite:
 
 ```
 fsutil file setvaliddata c:\testfile.txt 4096

@@ -1,6 +1,6 @@
 ---
-title: rundll32 printui. dll, PrintUIEntry
-description: Tópico de referência para o comando rundll32 printui. dll, PrintUIEntry, que automatiza muitas tarefas de configuração de impressora.
+title: rundll32 printui.dll, PrintUIEntry
+description: Artigo de referência para o comando rundll32 printui.dll, PrintUIEntry, que automatiza muitas tarefas de configuração de impressora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/25/2018
-ms.openlocfilehash: 3644af74918089e837b01c531099c0e61a6eb771
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 04678bcaf13bbdc5f325dc56af39c4e0385bcd06
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223060"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932795"
 ---
-# <a name="rundll32-printuidllprintuientry"></a>rundll32 printui. dll, PrintUIEntry
+# <a name="rundll32-printuidllprintuientry"></a>rundll32 printui.dll, PrintUIEntry
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Automatiza muitas tarefas de configuração de impressora. printui. dll é o arquivo executável que contém as funções usadas pelas caixas de diálogo de configuração da impressora. Essas funções também podem ser chamadas de dentro de um script ou de um arquivo em lotes de linha de comando, ou podem ser executadas interativamente no prompt de comando.
+Automatiza muitas tarefas de configuração de impressora. printui.dll é o arquivo executável que contém as funções usadas pelas caixas de diálogo de configuração de impressora. Essas funções também podem ser chamadas de dentro de um script ou de um arquivo em lotes de linha de comando, ou podem ser executadas interativamente no prompt de comando.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 rundll32 printui.dll PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]
@@ -102,7 +102,7 @@ Há dois tipos de parâmetros: parâmetros de base e parâmetros de modificaçã
 
 ## <a name="remarks"></a>Comentários
 - A palavra-chave **PrintUIEntry** diferencia maiúsculas de minúsculas e você deve inserir a sintaxe para esse comando com a capitalização exata mostrada nos exemplos neste tópico.
-- Para obter mais exemplos, em um prompt de comando, digite: **rundll32 printui. dll, PrintUIEntry/?**
+- Para obter mais exemplos, em um prompt de comando, digite: **rundll32 printui.dll, PrintUIEntry/?**
   ## <a name="examples"></a>Exemplos
   Para adicionar uma nova impressora remota, printer1, para um computador, CLIENT1, que é visível para a conta de usuário em que esse comando é executado, digite:
   ```

@@ -1,6 +1,6 @@
 ---
 title: Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 630b2274e96e446af07f7630d95056b40858209f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722438"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933476"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)
 
@@ -23,7 +23,7 @@ ms.locfileid: "82722438"
 Veja a seguir uma lista de Serviços de Área de Trabalho Remota ferramentas de linha de comando.
 > [!NOTE]
 > No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
-> 
+>
 > |                 Comando                 |                                                      Descrição                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 > |           [change](change.md)           | altera as configurações de servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD) para logons, mapeamentos de porta COM e modo de instalação. |
@@ -40,10 +40,10 @@ Veja a seguir uma lista de Serviços de Área de Trabalho Remota ferramentas de 
 > |          [qappsrv](qappsrv.md)          |                             Exibe uma lista de todos os servidores de host da sessão da área de trabalho remota na rede.                             |
 > |         [qprocess](qprocess.md)         |                  Exibe informações sobre os processos que estão sendo executados em um servidor de host de sessão de área de trabalho remota.                   |
 > |            [consulta](query.md)            |                      Exibe informações sobre processos, sessões e servidores host da Sessão RD.                      |
-> |    [processo de consulta](query-process.md)    |                  Exibe informações sobre os processos que estão sendo executados em um servidor de host de sessão de área de trabalho remota.                   |
-> |    [sessão de consulta](query-session.md)    |                           Exibe informações sobre sessões em um servidor de host de sessão de área de trabalho remota.                            |
-> | [termserver de consulta](query-termserver.md) |                             Exibe uma lista de todos os servidores de host da sessão da área de trabalho remota na rede.                             |
-> |       [consultar usuário](query-user.md)       |                         Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.                         |
+> |    [query process](query-process.md)    |                  Exibe informações sobre os processos que estão sendo executados em um servidor de host de sessão de área de trabalho remota.                   |
+> |    [query session](query-session.md)    |                           Exibe informações sobre sessões em um servidor de host de sessão de área de trabalho remota.                            |
+> | [query termserver](query-termserver.md) |                             Exibe uma lista de todos os servidores de host da sessão da área de trabalho remota na rede.                             |
+> |       [query user](query-user.md)       |                         Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.                         |
 > |            [quser](quser.md)            |                         Exibe informações sobre sessões de usuário em um servidor de host de sessão de área de trabalho remota.                         |
 > |          [qwinsta](qwinsta.md)          |                           Exibe informações sobre sessões em um servidor de host de sessão de área de trabalho remota.                            |
 > |          [rdpsign](rdpsign.md)          |                          Permite que você assine digitalmente um arquivo protocolo RDP (. RDP).                          |

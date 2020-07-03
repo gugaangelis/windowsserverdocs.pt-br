@@ -1,6 +1,6 @@
 ---
 title: Aprovar-AutoaddDevices
-description: Tópico de referência para Approve-AutoaddDevices, que aprova computadores que estão com aprovação administrativa pendente.
+description: Artigo de referência para o Approve-AutoaddDevices, que aprova computadores que estão com aprovação administrativa pendente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0143c9ab6221eb5633284bd3f2982312bbcda15c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8c7a4756a90c329ba6cccd1c1b7c1b93d58d06b4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721038"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934128"
 ---
 # <a name="approve-autoadddevices"></a>Aprovar-AutoaddDevices
 
@@ -24,7 +24,7 @@ Aprova computadores que estão com aprovação administrativa pendente. Quando a
 
 ## <a name="syntax"></a>Sintaxe
 ```
-wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>] 
+wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<Request ID>| ALL} [/MachineName:<Device name>] [/OU:<DN of OU>]
 [/User:<Domain\User | User@Domain>] [/JoinRights:{JoinOnly | Full}] [/JoinDomain:{Yes | No}] [/ReferralServer:<Server name>] [/BootProgram:<Relative path>] [/WdsClientUnattend:<Relative path>] [/BootImagepath:<Relative path>]
 ```
 ### <a name="parameters"></a>Parâmetros
@@ -32,15 +32,15 @@ wdsutil [Options] /Approve-AutoaddDevices [/Server:<Server name>] /RequestId:{<R
 |-------|--------|
 |[/Server:<Server name>]|Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se um nome do servidor não for especificado, o servidor local será usado.|
 |/RequestId: {ID da solicitação &#124; todos}|Especifica a ID da solicitação atribuída ao computador pendente. Especifique **All** para aprovar todos os computadores pendentes.|
-|[/MachineName:<Device name>]|Especifica o nome do computador a ser adicionado. Você não pode usar essa opção ao aprovar todos os computadores.|
-|[/OU:<DN of OU>]|Especifica o nome distinto da UO (unidade organizacional) em que o objeto de conta de computador deve ser criado. Por exemplo: **ou = MyOU, CN = test, DC = Domain, DC = com**. O local padrão é o contêiner do computador padrão.|
-|[/User: <domínio \ User@Domain usuário &#124;>]|Define permissões no objeto de conta de computador para atribuir os direitos necessários ao usuário especificado.|
+|[/MachineName: <Device name> ]|Especifica o nome do computador a ser adicionado. Você não pode usar essa opção ao aprovar todos os computadores.|
+|[/OU: <DN of OU> ]|Especifica o nome distinto da UO (unidade organizacional) em que o objeto de conta de computador deve ser criado. Por exemplo: **ou = MyOU, CN = test, DC = Domain, DC = com**. O local padrão é o contêiner do computador padrão.|
+|[/User: <domínio \ usuário &#124; User@Domain>]|Define permissões no objeto de conta de computador para atribuir os direitos necessários ao usuário especificado.|
 |[/JoinRights: {JoinOnly &#124; Full}]|Especifica o tipo de direitos a serem atribuídos ao usuário especificado.<p>-   O **JoinOnly** exige que o administrador redefina a conta de computador antes que o usuário possa ingressar o computador no domínio.<br />-   **Completo** dá acesso completo ao usuário, que inclui o direito de ingressar o computador no domínio.|
 |[/JoinDomain: {Sim &#124; não}]|Especifica se o computador deve ou não ingressar no domínio como esta conta de computador durante a instalação do sistema operacional. O valor padrão é **Sim**.|
-|[/ReferralServer:<Server name>]|Especifica o nome do servidor a ser contatado para baixar o programa de inicialização de rede e a imagem de inicialização usando o trivial protocolo FTP (TFTP).|
-|[/BootProgram:<Relative path>]|Especifica o caminho relativo da pasta remoteInstall para o programa de inicialização de rede que este computador deve receber. Por exemplo: **boot\x86\pxeboot.com**.|
-|[/WdsClientUnattend:<Relative path>]|Especifica o caminho relativo da pasta remoteInstall para o arquivo autônomo que automatiza o cliente dos serviços de implantação do Windows.|
-|[/BootImagepath:<Relative path>]|Especifica o caminho relativo da pasta remoteInstall para a imagem de inicialização que este computador deve receber.|
+|[/ReferralServer: <Server name> ]|Especifica o nome do servidor a ser contatado para baixar o programa de inicialização de rede e a imagem de inicialização usando o trivial protocolo FTP (TFTP).|
+|[/BootProgram: <Relative path> ]|Especifica o caminho relativo da pasta remoteInstall para o programa de inicialização de rede que este computador deve receber. Por exemplo: **boot\x86\pxeboot.com**.|
+|[/WdsClientUnattend: <Relative path> ]|Especifica o caminho relativo da pasta remoteInstall para o arquivo autônomo que automatiza o cliente dos serviços de implantação do Windows.|
+|[/BootImagepath: <Relative path> ]|Especifica o caminho relativo da pasta remoteInstall para a imagem de inicialização que este computador deve receber.|
 ## <a name="examples"></a>Exemplos
 Para aprovar o computador com um RequestId de 12, digite:
 ```
@@ -48,7 +48,7 @@ wdsutil /Approve-AutoaddDevices /RequestId:12
 ```
 Para aprovar o computador com um RequestID de 20 e implantar a imagem com as configurações especificadas, digite:
 ```
-wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:OU=Test,CN=company,DC=Domain,DC=Com /User:Domain\User1 
+wdsutil /Approve-AutoaddDevices /RequestId:20 /MachineName:computer1 /OU:OU=Test,CN=company,DC=Domain,DC=Com /User:Domain\User1
 /JoinRights:Full /ReferralServer:MyWDSServer /BootProgram:boot\x86\pxeboot.n12 /WdsClientUnattend:WDSClientUnattend\Unattend.xml /BootImagepath:boot\x86\images\boot.wim
 ```
 Para aprovar todos os computadores pendentes, digite:
@@ -56,7 +56,7 @@ Para aprovar todos os computadores pendentes, digite:
 wdsutil /verbose /Approve-AutoaddDevices /RequestId:ALL
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando delete-AutoaddDevices](using-the-delete-autoadddevices-command.md)usando o comando[Get-AutoaddDevices](using-the-get-autoadddevices-command.md)
-[usando o comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-delete-autoadddevices-command.md) 
+ delete-AutoaddDevices [Usando o comando](using-the-get-autoadddevices-command.md) 
+ Get-AutoaddDevices [Usando o comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)

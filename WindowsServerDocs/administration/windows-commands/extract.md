@@ -1,6 +1,6 @@
 ---
 title: extract
-description: Tópico de referência para o comando Extract, que extrai arquivos de um local de origem.
+description: Artigo de referência para o comando Extract, que extrai arquivos de um local de origem.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbadcc555fc9bb0b02e568b1126a317a9d59d336
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 1de26d444f8c8fdc838fc2fe0c662afefe8c172c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437181"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932380"
 ---
 # <a name="extract"></a>extract
 
@@ -34,7 +34,7 @@ extract [/y] /c source destination
 | --------- | ----------- |
 | gabinete | Use se você quiser extrair dois ou mais arquivos. |
 | nome do arquivo | Nome do arquivo a ser extraído do gabinete. Caracteres curinga e vários nomes de (separados por espaços em branco) podem ser usados. |
-| origem | Arquivo compactado (um gabinete com apenas um arquivo). |
+| source | Arquivo compactado (um gabinete com apenas um arquivo). |
 | newname | Novo filename para fornecer o arquivo extraído. Se não for fornecido, o nome original será usado. |
 | /a | Processar todos os gabinetes. Segue a cadeia de gabinetes começando no primeiro gabinete mencionado. |
 | /c | Copie o arquivo de origem para o destino (para copiar de discos de DMF). |

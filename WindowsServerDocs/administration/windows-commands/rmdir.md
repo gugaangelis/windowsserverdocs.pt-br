@@ -1,6 +1,6 @@
 ---
 title: rmdir
-description: Tópico de referência para * * * *-
+description: Artigo de referência do comando rmdir, que exclui um diretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,15 +9,71 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca6051f0349078d7d5c62e14de129847831e5412
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 35925ab90fea5f3740a8fd7c6a086ff357feb9ba
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722299"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932906"
 ---
 # <a name="rmdir"></a>rmdir
 
+Exclui um diretório.
 
+O comando **rmdir** também pode ser executado no console de recuperação do Windows, usando parâmetros diferentes. Para obter mais informações, consulte [ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
-Esse comando é o mesmo que o comando **RD** . Consulte [RD](rd.md) para obter a sintaxe e os parâmetros.
+> [!NOTE]
+> Esse comando é o mesmo que o [comando RD](rd.md).
+
+## <a name="syntax"></a>Sintaxe
+
+```
+rmdir [<drive>:]<path> [/s [/q]]
+```
+
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+|--|--|
+| `[<drive>:]<path>` | Especifica o local e o nome do diretório que você deseja excluir. O *caminho* é necessário. Se você incluir uma barra invertida ( \) no início do *caminho*especificado, o *caminho* será iniciado no diretório raiz (independentemente do diretório atual). |
+| /s | Exclui uma árvore de diretórios (o diretório especificado e todos os seus subdiretórios, incluindo todos os arquivos). |
+| /q | Especifica o modo silencioso. Não solicita confirmação ao excluir uma árvore de diretórios. O parâmetro **/q** só funcionará se **/s** também for especificado.<p>**Cuidado:** Quando você executa no modo silencioso, toda a árvore de diretórios é excluída sem confirmação. Certifique-se de que arquivos importantes sejam movidos ou submetidos a backup antes de usar a opção de linha de comando **/q** . |
+| /? | Exibe a ajuda no prompt de comando. |
+
+#### <a name="remarks"></a>Comentários
+
+- Você não pode excluir um diretório que contém arquivos, incluindo arquivos ocultos ou do sistema. Se você tentar fazer isso, a seguinte mensagem será exibida:
+
+    `The directory is not empty`
+
+    Use o comando **dir/a** para listar todos os arquivos (incluindo arquivos ocultos e do sistema). Em seguida, use o comando **attrib** com **-h** para remover atributos de arquivo oculto, **-s** para remover atributos de arquivo do sistema ou **-h-s** para remover os atributos de arquivo ocultos e do sistema. Depois que os atributos ocultos e de arquivo forem removidos, você poderá excluir os arquivos.
+
+- Você não pode usar o comando **rmdir** para excluir o diretório atual. Se você tentar excluir o diretório atual, a seguinte mensagem de erro será exibida:
+
+    `The process can't access the file because it is being used by another process.`
+
+    Se você receber essa mensagem de erro, deverá alterar para um diretório diferente (não um subdiretório do diretório atual) e, em seguida, tentar novamente.
+
+### <a name="examples"></a>Exemplos
+
+Para alterar para o diretório pai para que você possa remover com segurança o diretório desejado, digite:
+
+```
+cd ..
+```
+
+Para remover um diretório chamado *Test* (e todos os seus arquivos e subdiretórios) do diretório atual, digite:
+
+```
+rmdir /s test
+```
+
+Para executar o exemplo anterior no modo silencioso, digite:
+
+```
+rmdir /s /q test
+```
+
+## <a name="additional-references"></a>Referências adicionais
+
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

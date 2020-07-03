@@ -1,6 +1,6 @@
 ---
 title: shift
-description: Tópico de referência para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
+description: Artigo de referência para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 870bda19de3426fd7007020efb2f3db39bf654c8
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433160"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932579"
 ---
 # <a name="shift"></a>shift
 
@@ -32,7 +32,7 @@ shift [/n <N>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/n \< n>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
+|opção\<N>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -45,13 +45,13 @@ shift [/n <N>]
 
 ## <a name="examples"></a>Exemplos
 
-As linhas a seguir de um arquivo em lotes de exemplo chamado mycopy. bat demonstram como usar **Shift** com qualquer número de parâmetros de lote. Neste exemplo, mycopy. bat copia uma lista de arquivos para um diretório específico. Os parâmetros de lote são representados pelos argumentos de nome de arquivo e diretório.
+As linhas a seguir de um arquivo em lotes de exemplo chamado Mycopy.bat demonstram como usar **Shift** com qualquer número de parâmetros de lote. Neste exemplo, Mycopy.bat copia uma lista de arquivos para um diretório específico. Os parâmetros de lote são representados pelos argumentos de nome de arquivo e diretório.
 ```
-@echo off 
+@echo off
 rem MYCOPY.BAT copies any number of files
 rem to a directory.
 rem The command uses the following syntax:
-rem mycopy dir file1 file2 ... 
+rem mycopy dir file1 file2 ...
 set todir=%1
 :getfile
 shift

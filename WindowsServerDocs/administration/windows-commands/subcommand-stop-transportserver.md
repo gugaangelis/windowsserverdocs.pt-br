@@ -1,6 +1,6 @@
 ---
 title: Parada do subcomando-TransportServer
-description: Tópico de referência para Stop-TransportServer
+description: Artigo de referência para Stop-TransportServer
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4321ec991b2c20911f992e4c3c38e5c9cfa5f165
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ea749b9ff2f19b4b7c9e70e0a58024d4dd9e37f9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721617"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933739"
 ---
 # <a name="subcommand-stop-transportserver"></a>Subcomando: Stop-TransportServer
 
@@ -29,16 +29,16 @@ wdsutil [Options] /Stop-TransportServer [/Server:<Server name>]
 |Parâmetro|Descrição|
 |-------|--------|
 |[/Server:<Server name>]|Especifica o nome do servidor de transporte. Pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum servidor de transporte for especificado, o servidor local será usado.|
-## <a name="examples"></a><a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Exemplos
 Para interromper os serviços, digite um dos seguintes:
 ```
 wdsutil /Stop-TransportServer
 wdsutil /verbose /Stop-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando Disable-TransportServer](using-the-disable-transportserver-command.md)
-[usando o comando Enable-TransportServer](using-the-enable-transportserver-command.md)[usando o subcomando Get-TransportServer comando](using-the-get-transportserver-command.md)
-[: Set-TransportServer](subcommand-set-transportserver.md)
-[subcomando: Start-TransportServer](subcommand-start-transportserver.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-disable-transportserver-command.md) 
+ Disable-TransportServer [Usando o comando](using-the-enable-transportserver-command.md) 
+ Enable-TransportServer [Usando o comando](using-the-get-transportserver-command.md) 
+ Get-TransportServer [Subcomando: Set-TransportServer](subcommand-set-transportserver.md) 
+ [Subcomando: Start-TransportServer](subcommand-start-transportserver.md)

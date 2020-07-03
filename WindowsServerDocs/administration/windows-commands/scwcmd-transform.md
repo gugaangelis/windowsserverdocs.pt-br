@@ -1,6 +1,6 @@
 ---
 title: Scwcmd transform
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86c88f0207a53da813f5d4eaed399375bfc5bc02
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: b70557b64a4cb68a0435bee9db033c893186dc0c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820946"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932633"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -39,17 +39,17 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/p: \< policyFile. xml>|Especifica o caminho e o nome de arquivo do arquivo de política. XML que deve ser aplicado. Esse parâmetro deve ser especificado.|
-|/g: \< GPODisplayName>|Especifica o nome de exibição do GPO. Esse parâmetro deve ser especificado.|
+|/p\<Policyfile.xml>|Especifica o caminho e o nome de arquivo do arquivo de política. XML que deve ser aplicado. Esse parâmetro deve ser especificado.|
+|/g\<GPODisplayName>|Especifica o nome de exibição do GPO. Esse parâmetro deve ser especificado.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
+Scwcmd.exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
 ## <a name="examples"></a>Exemplos
 
-Para criar um GPO chamado FileServerSecurity a partir de um arquivo chamado FileServerPolicy. xml, digite:
+Para criar um GPO chamado FileServerSecurity a partir de um arquivo chamado FileServerPolicy.xml, digite:
 ```
 scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 ```

@@ -1,6 +1,6 @@
 ---
-title: árvore
-description: Tópico de referência para árvore, que exibe a estrutura de diretório de um caminho, ou do disco em uma unidade, graficamente.
+title: tree
+description: Artigo de referência para a árvore, que exibe a estrutura de diretório de um caminho, ou do disco em uma unidade, graficamente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94b0429dadc3965c7e41ad5aa881fc902988ec9b
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: dea885a8149c8231f3cb8e24c2128622131206e7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721279"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932388"
 ---
-# <a name="tree"></a>árvore
+# <a name="tree"></a>tree
 
 Exibe a estrutura de diretório de um caminho ou do disco em uma unidade graficamente.
 
@@ -32,8 +32,8 @@ tree [<Drive>:][<Path>] [/f] [/a]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<> da unidade:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
-|\<Caminho>|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
+|\<Drive>:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
+|\<Path>|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
 |/f|Exibe os nomes dos arquivos em cada diretório.|
 |/a|Especifica que a **árvore** deve usar caracteres de texto em vez de caracteres gráficos para mostrar as linhas que vinculam subdiretórios.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -50,11 +50,11 @@ tree \
 ```
 Para exibir uma tela de cada vez, os arquivos em todos os diretórios na unidade C, digite:
 ```
-tree c:\ /f | more 
+tree c:\ /f | more
 ```
 Para imprimir uma lista de todos os diretórios na unidade C, digite:
 ```
-tree c:\ /f  prn 
+tree c:\ /f  prn
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

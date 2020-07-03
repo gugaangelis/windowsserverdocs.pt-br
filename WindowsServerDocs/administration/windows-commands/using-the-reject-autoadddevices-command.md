@@ -1,6 +1,6 @@
 ---
 title: Rejeitar-AutoaddDevices
-description: Tópico de referência para Reject-AutoaddDevices, que rejeita computadores que estão com aprovação administrativa pendente.
+description: Artigo de referência para Reject-AutoaddDevices, que rejeita computadores que estão com aprovação administrativa pendente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e377d4e2d4aecea2e0ba3af023af39ab7695c0a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2b678f7a9fc875dfeebf735475db3adfb7ad9ae7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725921"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932425"
 ---
 # <a name="reject-autoadddevices"></a>Rejeitar-AutoaddDevices
 
@@ -40,7 +40,7 @@ Para rejeitar todos os computadores, digite:
 wdsutil /verbose /Reject-AutoaddDevices /Server:MyWDSServer /RequestId:ALL
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o comando[Approve-AutoaddDevices](using-the-approve-autoadddevices-command.md)
-usando o
-[comando delete-AutoaddDevices](using-the-delete-autoadddevices-command.md)[usando o comando Get-AutoaddDevices](using-the-get-autoadddevices-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-approve-autoadddevices-command.md) 
+ Approve-AutoaddDevices [Usando o comando](using-the-delete-autoadddevices-command.md) 
+ delete-AutoaddDevices [Usando o comando Get-AutoaddDevices](using-the-get-autoadddevices-command.md)

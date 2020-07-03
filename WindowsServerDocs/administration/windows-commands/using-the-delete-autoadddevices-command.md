@@ -1,6 +1,6 @@
 ---
 title: Delete-AutoaddDevices
-description: Tópico de referência para Delete-AutoaddDevices, que exclui os computadores que estão pendentes, rejeitados ou aprovados do banco de dados de adição automática.
+description: Artigo de referência para Delete-AutoaddDevices, que exclui os computadores que estão pendentes, rejeitados ou aprovados do banco de dados de adição automática.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90b5b24b68b2cfe3d387cb02b3715b70edba4300
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60acfbb5ec1bc3f9268044eb0dbcc9ea19ff8ab9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720989"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933974"
 ---
 # <a name="delete-autoadddevices"></a>Delete-AutoaddDevices
 
@@ -41,7 +41,7 @@ Para excluir todos os computadores aprovados, digite:
 wdsutil /verbose /delete-AutoaddDevices /Server:MyWDSServer /Devicetype:ApprovedDevices
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando Approve-AutoaddDevices](using-the-approve-autoadddevices-command.md)usando o comando[Get-AutoaddDevices](using-the-get-autoadddevices-command.md)
-[usando o comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-approve-autoadddevices-command.md) 
+ Approve-AutoaddDevices [Usando o comando](using-the-get-autoadddevices-command.md) 
+ Get-AutoaddDevices [Usando o comando Reject-AutoaddDevices](using-the-reject-autoadddevices-command.md)

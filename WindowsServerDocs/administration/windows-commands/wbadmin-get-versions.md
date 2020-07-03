@@ -1,6 +1,6 @@
 ---
-title: Wbadmin obter versões
-description: Tópico de referência para WBADMIN Get Versions, que lista detalhes sobre os backups disponíveis que são armazenados no computador local ou em outro computador.
+title: wbadmin get versions
+description: Artigo de referência para WBADMIN Get Versions, que lista detalhes sobre os backups disponíveis que são armazenados no computador local ou em outro computador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1eabc053e5cb1bdd517cfb02a13e955707ffacf6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 6729189bb15fd3aeb10172288504e9809b082edb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820506"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932320"
 ---
-# <a name="wbadmin-get-versions"></a>Wbadmin obter versões
+# <a name="wbadmin-get-versions"></a>wbadmin get versions
 
 
 

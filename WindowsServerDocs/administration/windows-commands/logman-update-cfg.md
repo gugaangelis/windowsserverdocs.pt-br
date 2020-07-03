@@ -1,6 +1,6 @@
 ---
-title: cfg de atualização de logman
-description: Tópico de referência para o comando logman update cfg, que atualiza as propriedades de um coletor de dados de configuração existente.
+title: logman update cfg
+description: Artigo de referência para o comando logman update cfg, que atualiza as propriedades de um coletor de dados de configuração existente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af4d61372aa5b10d5bb2a5c93e16df391eadfd2f
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 6e2d50504d8d4b9a92d36e4279a10526ddbd7877
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222783"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933895"
 ---
-# <a name="logman-update-cfg"></a>cfg de atualização de logman
+# <a name="logman-update-cfg"></a>logman update cfg
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

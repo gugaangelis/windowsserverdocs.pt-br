@@ -1,6 +1,6 @@
 ---
 title: ksetup listrealmflags
-description: Tópico de referência para o comando ksetup listrealmflags, que lista os sinalizadores de realm disponíveis que podem ser relatados pelo ksetup.
+description: Artigo de referência para o comando ksetup listrealmflags, que lista os sinalizadores de realm disponíveis que podem ser relatados pelo ksetup.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c5ebbee7f937733286e0354eca1cf5524459e86
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d094b7d627885d25313b73bb51a1bbeeec2832d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817716"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933682"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 

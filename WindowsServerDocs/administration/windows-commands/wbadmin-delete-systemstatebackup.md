@@ -1,6 +1,6 @@
 ---
-title: Wbadmin Delete systemstatebackup
-description: Tópico de referência para WBADMIN Delete systemstatebackup, que exclui os backups de estado do sistema que você especificar.
+title: wbadmin delete systemstatebackup
+description: Artigo de referência para WBADMIN Delete systemstatebackup, que exclui os backups de estado do sistema que você especificar.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a84112191ad1b5873ad09c467fb3668107f2b24e
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a17ed3595f0e1dd369e762150c8f45fe6f983822
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821426"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85933709"
 ---
-# <a name="wbadmin-delete-systemstatebackup"></a>Wbadmin Delete systemstatebackup
+# <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
 
 
 
@@ -29,7 +29,7 @@ Para excluir um backup de estado do sistema com este subcomando, você deve ser 
 
 
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 wbadmin delete systemstatebackup

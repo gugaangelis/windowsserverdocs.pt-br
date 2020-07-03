@@ -1,6 +1,6 @@
 ---
 title: Get-DriverPackageFile
-description: Tópico de referência para Get-DriverPackageFile, que exibe informações sobre um pacote de driver, incluindo os drivers e arquivos que ele contém.
+description: Artigo de referência para Get-DriverPackageFile, que exibe informações sobre um pacote de driver, incluindo os drivers e arquivos que ele contém.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 71fc38e31471a1deb9d6be29b04d3cd911be1bd6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1daa93cb8976229c4c847390416f9332769c5ff5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719928"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932244"
 ---
 # <a name="get-driverpackagefile"></a>Get-DriverPackageFile
 
@@ -30,7 +30,7 @@ WDSUTIL /Get-DriverPackageFile /InfFile:<Inf File path> [/Architecture:{x86 | ia
 
 |         Parâmetro         |                              Descrição                               |
 |---------------------------|------------------------------------------------------------------------|
-| /InfFile:\<caminho do arquivo inf> | Especifica o caminho completo e o nome do arquivo do pacote de driver. inf. |
+| /InfFile:\<Inf File path> | Especifica o caminho completo e o nome do arquivo do pacote de driver. inf. |
 |    [/Architecture: {x86    |                                  Win64                                  |
 |     [/Show: {drivers      |                                 Arquivos                                  |
 

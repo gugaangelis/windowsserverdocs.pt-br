@@ -1,6 +1,6 @@
 ---
 title: Scwcmd register
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7540bb4ba83ebffa12f1f6d9b48f0f9ff787d68
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7917cfe8f71673ad45d8d3e32d29798757367c2a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820966"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932641"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: register
 
@@ -32,19 +32,19 @@ scwcmd register /kbname:<MyApp> [/kbfile:<kb.xml>] [/kb:<path>] [/d]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/kbname: \< MyApp>|Especifica o nome sob o qual a extensão de banco de dados de configuração de segurança será registrada. Esse parâmetro deve ser especificado.|
-|/kbfile: \< KB. xml>|Especifica o caminho e o nome do arquivo de banco de dados de configuração de segurança que será usado para estender ou personalizar o banco de dados de configuração de segurança base. Para validar que o arquivo de banco de dados de configuração de segurança é compatível com o esquema do SCW, use o arquivo de definição de esquema%windir%\security\KBRegistrationInfo.xsd. Essa opção deve ser fornecida a menos que o parâmetro **/d** seja especificado.|
-|/KB: \< caminho>|Especifica o caminho para o diretório que contém os arquivos de banco de dados de configuração de segurança do ACS a serem atualizados. Se essa opção não for especificada,%windir%\security\msscw\kbs será usado.|
+|/kbname:\<MyApp>|Especifica o nome sob o qual a extensão de banco de dados de configuração de segurança será registrada. Esse parâmetro deve ser especificado.|
+|/kbfile:\<Kb.xml>|Especifica o caminho e o nome do arquivo de banco de dados de configuração de segurança que será usado para estender ou personalizar o banco de dados de configuração de segurança base. Para validar que o arquivo de banco de dados de configuração de segurança é compatível com o esquema do SCW, use o arquivo de definição de esquema%windir%\security\KBRegistrationInfo.xsd. Essa opção deve ser fornecida a menos que o parâmetro **/d** seja especificado.|
+|quilobyte\<Path>|Especifica o caminho para o diretório que contém os arquivos de banco de dados de configuração de segurança do ACS a serem atualizados. Se essa opção não for especificada,%windir%\security\msscw\kbs será usado.|
 |/d|Cancela o registro de uma extensão de banco de dados de configuração de segurança do banco de dados de configuração de segurança. A extensão para cancelar o registro é especificada pelo parâmetro/kbname. (O parâmetro **/kbfile** não deve ser especificado.) O banco de dados de configuração de segurança para cancelar o registro da extensão é especificado pelo parâmetro **/KB** .|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
-Scwcmd. exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
+Scwcmd.exe só está disponível em computadores que executam o Windows Server 2008 R2, o Windows Server 2008 ou o Windows Server 2003.
 
 ## <a name="examples"></a>Exemplos
 
-Para registrar o arquivo de banco de dados de configuração de segurança chamado SCWKBForMyApp. XML com o nome MyApp no local \\ \\ kbserver\kb, digite:
+Para registrar o arquivo de banco de dados de configuração de segurança chamado SCWKBForMyApp.xml sob o nome MyApp no local \\ \\ kbserver\kb, digite:
 ```
 scwcmd register /kbfile:d:\SCWKBForMyApp.xml /kbname:MyApp /kb:\\kbserver\kb
 ```

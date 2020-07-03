@@ -1,6 +1,6 @@
 ---
 title: Scwcmd
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9a8c002aa735b188fdd9ad75b0db7dbe06053516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: bb651c2b527d332f70cd0686a7d57f089bc987ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821156"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932618"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
 > Aplica-se a: Windows Server 2012 R2, Windows Server 2012
 
-A ferramenta de linha de comando scwcmd. exe incluída com o ACS (Assistente de configuração de segurança) pode ser usada para executar as seguintes tarefas:
+A ferramenta de linha de comando Scwcmd.exe incluída com o ACS (Assistente de configuração de segurança) pode ser usada para executar as seguintes tarefas:
 -   Configure um ou vários servidores com uma política gerada pelo ACS.
 -   Analise um ou vários servidores com uma política gerada pelo ACS.
 -   Exibir resultados da análise no formato HTML.
