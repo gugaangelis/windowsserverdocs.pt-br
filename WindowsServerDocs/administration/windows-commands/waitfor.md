@@ -1,6 +1,6 @@
 ---
 title: waitfor
-description: Tópico de referência para WAITFOR, que envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
+description: Artigo de referência para WAITFOR, que envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1264fa3bffde303577bd56a0f1f68a6d7b2d98c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9a80b606fc91ec146a6808bde97a8d7f0081d0ff
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720218"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937016"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -35,12 +35,12 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<> do computador     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u [\<domínio>\]<User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
-|   /p [\<senha>]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
+|    /s\<Computer>     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| t\<Domain>\]<User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
+|   /p [ \<Password> ]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
 |          /si          |                                                                        Envia o sinal especificado pela rede.                                                                        |
-|     /t \<Timeout>     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
-|     \<Signalname>     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
+|     /t\<Timeout>     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
+|     \<SignalName>     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
 |          /?           |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 
 ## <a name="remarks"></a>Comentários

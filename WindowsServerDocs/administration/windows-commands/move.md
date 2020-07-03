@@ -1,6 +1,6 @@
 ---
 title: move
-description: Tópico de referência para o comando mover, que move um ou mais arquivos de um diretório para outro diretório.
+description: Artigo de referência para o comando move, que move um ou mais arquivos de um diretório para outro diretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 283ee793769d991c1932eb2271c5117354bdf6a4
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 4cc1f7c04a54b78da7b24dbedad225a7326766cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354497"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936311"
 ---
 # <a name="move"></a>move
 

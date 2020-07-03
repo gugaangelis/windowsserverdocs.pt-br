@@ -1,6 +1,6 @@
 ---
 title: tlntadmn
-description: Tópico de referência para tlntadmn, que administra um computador local ou remoto, executando o serviço do servidor Telnet.
+description: Artigo de referência para o tlntadmn, que administra um computador local ou remoto, executando o serviço do servidor Telnet.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fcade72f7170e94463abb9b473d4c6bd2251f086
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222645"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936916"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -32,7 +32,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                \<computerName>                 |                                                                                                                    Especifica o nome do servidor ao qual se conectar. O padrão é o computador local.                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                Especifica as credenciais administrativas para um servidor remoto que você deseja administrar. Esse parâmetro será necessário se você quiser administrar um servidor remoto no qual você não está conectado com credenciais administrativas.                                                |
-|                     start                      |                                                                                                                                            inicia o serviço do servidor Telnet.                                                                                                                                             |
+|                     iniciar                      |                                                                                                                                            inicia o serviço do servidor Telnet.                                                                                                                                             |
 |                      parar                      |                                                                                                                                             Interrompe o serviço do servidor Telnet                                                                                                                                              |
 |                     pause                      |                                                                                                                          pausa o serviço do servidor Telnet. Nenhuma nova conexão será aceita.                                                                                                                          |
 |                    continue                    |                                                                                                                                            Retoma o serviço do servidor Telnet.                                                                                                                                            |

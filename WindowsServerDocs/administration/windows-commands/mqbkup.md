@@ -1,6 +1,6 @@
 ---
 title: mqbkup
-description: Tópico de referência para o comando Mqbkup, que faz backup de arquivos de mensagens MSMQ e configurações do registro para um dispositivo de armazenamento e restaura as mensagens e configurações armazenadas anteriormente.
+description: Artigo de referência para o comando Mqbkup, que faz backup de arquivos de mensagens do MSMQ e configurações do registro para um dispositivo de armazenamento e restaura as mensagens e configurações armazenadas anteriormente.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c07dd5f912a70157052017fc17875c00eaedd3b
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 131d80f32a3c3324dad08b876dd4f4f8610b93e2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354417"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936304"
 ---
 # <a name="mqbkup"></a>mqbkup
 

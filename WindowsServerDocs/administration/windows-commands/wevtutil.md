@@ -1,6 +1,6 @@
 ---
 title: wevtutil
-description: Tópico de referência para wevtutil, que permite recuperar informações sobre os logs de eventos e publicadores.
+description: Artigo de referência para wevtutil, que permite recuperar informações sobre os logs de eventos e publicadores.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22195f3a163e1a4123b51d005b0367cc61411651
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: f87ab51c0e24f9df421d7540e85d05a534635947
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222619"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936639"
 ---
 # <a name="wevtutil"></a>wevtutil
 
@@ -124,11 +124,11 @@ Exiba informações sobre o Publicador de eventos Microsoft-Windows-EventLog, in
 ```
 wevtutil gp Microsoft-Windows-Eventlog /ge:true
 ```
-Instale Publicadores e logs do arquivo de manifesto mymanifest. xml:
+Instale Publicadores e logs do myManifest.xml arquivo de manifesto:
 ```
 wevtutil im myManifest.xml
 ```
-Desinstalar Publicadores e logs do arquivo de manifesto mymanifest. xml:
+Desinstale editores e logs do arquivo de manifesto myManifest.xml:
 ```
 wevtutil um myManifest.xml
 ```

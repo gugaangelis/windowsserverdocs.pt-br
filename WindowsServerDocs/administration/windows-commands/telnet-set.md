@@ -1,6 +1,6 @@
 ---
-title: conjunto de Telnet
-description: Tópico de referência para o conjunto de Telnet, que define as opções.
+title: telnet set
+description: Artigo de referência para o conjunto de Telnet, que define as opções.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 477c2ee259301af26870339a2c329c2c3502963b
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7415f084e73d87eb767ed0b487f42e103b998c23
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222672"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937363"
 ---
 # <a name="telnet-set"></a>Telnet: definir
 
@@ -46,7 +46,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 1. Você pode usar o comando de **desdefinição** para desativar uma opção que foi definida anteriormente.
 2. Em versões diferentes do inglês do telnet, o **codeset** <option> está disponível. **Código de** <option> define o conjunto de códigos atual como uma opção, que pode ser qualquer um dos seguintes: **Shift JIS**, **EUC japonês**, **JIS kanji**, **JIS kanji (78)**, **Dec kanji**, **NEC kanji**. Você deve definir o mesmo conjunto de código no computador remoto.
    ## <a name="examples"></a>Exemplos
-   Defina o arquivo de log e comece a fazer logon no arquivo local tnlog. txt
+   Defina o arquivo de log e comece a fazer logon no arquivo local tnlog.txt
    ```
    set logfile tnlog.txt
    ```

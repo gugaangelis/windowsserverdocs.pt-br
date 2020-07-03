@@ -1,6 +1,6 @@
 ---
-title: simular restauração
-description: Tópico de referência para simular a restauração, que testa o envolvimento do gravador em sessões de restauração no computador sem emitir eventos prerestore ou createrestore para gravadores.
+title: simulate restore
+description: Artigo de referência para simular a restauração, que testa o envolvimento do gravador em sessões de restauração no computador sem emitir eventos prerestore ou createrestore para gravadores.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bab6c56cddc1d2ac95dc70205b0990b82fbfd12
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7cc247848ef4fac1e3a6537247f640f3533c2bcd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721784"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936352"
 ---
 # <a name="simulate-restore"></a>Simular restauração
 

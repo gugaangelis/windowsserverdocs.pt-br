@@ -1,6 +1,6 @@
 ---
 title: Início do subcomando-TransportServer
-description: Tópico de referência para subcomando Start-TransportServer, que inicia todos os serviços para um servidor de transporte.
+description: Artigo de referência para o subcomando Start-TransportServer, que inicia todos os serviços para um servidor de transporte.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 92bd68421883c49ec29dfb78f06121bff880b01e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2d70b070d11424b31a615cf1a3fd00f3c80b0069
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721645"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936926"
 ---
 # <a name="subcommand-start-transportserver"></a>Subcomando: Start-TransportServer
 
@@ -37,9 +37,9 @@ wdsutil /start-TransportServer
 wdsutil /verbose /start-TransportServer /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando Disable-TransportServer](using-the-disable-transportserver-command.md)
-[usando o comando Enable-TransportServer](using-the-enable-transportserver-command.md)[usando o subcomando Get-TransportServer comando](using-the-get-transportserver-command.md)
-[: Set-TransportServer](subcommand-set-transportserver.md)
-[subcomando: Stop-TransportServer](subcommand-stop-transportserver.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-disable-transportserver-command.md) 
+ Disable-TransportServer [Usando o comando](using-the-enable-transportserver-command.md) 
+ Enable-TransportServer [Usando o comando](using-the-get-transportserver-command.md) 
+ Get-TransportServer [Subcomando: Set-TransportServer](subcommand-set-transportserver.md) 
+ [Subcomando: Stop-TransportServer](subcommand-stop-transportserver.md)

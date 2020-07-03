@@ -1,6 +1,6 @@
 ---
 title: sort
-description: Tópico de referência para classificação, que lê entrada, classifica dados e grava os resultados na tela, em um arquivo ou em outro dispositivo.
+description: Artigo de referência para classificação, que lê entrada, classifica dados e grava os resultados na tela, em um arquivo ou em outro dispositivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6eb86724a6f22f85ebad39b11a79853d0f090574
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a3246745a2dceddec6cb1a66a4316ea7a8acb522
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721775"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937063"
 ---
 # <a name="sort"></a>sort
 
@@ -34,12 +34,12 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 |---------|-----------|
 |/r|Reverte a ordem de classificação (ou seja, classifica de Z a A e de 9 a 0).|
 |/+\<N>|Especifica o número da posição do caractere em que a **classificação** começará cada comparação. *N* pode ser qualquer número inteiro válido.|
-|/m \<kilobytes>|Especifica a quantidade de memória principal a ser usada para a classificação em kilobytes (KB).|
-|/l \<> de localidade|Substitui a ordem de classificação dos caracteres que são definidos pela localidade padrão do sistema (ou seja, o idioma e o país/região selecionados durante a instalação).|
-|> \<caracteres/REC|Especifica o número máximo de caracteres em um registro ou uma linha do arquivo de entrada (o valor padrão é 4.096 e o máximo é 65.535).|
-|[\<Unidade1>:] [\<Caminho1>] \<> de arquivo1|Especifica o arquivo a ser classificado. Se nenhum nome de arquivo for especificado, a entrada padrão será classificada. Especificar o arquivo de entrada é mais rápido do que redirecionar o mesmo arquivo como entrada padrão.|
-|/t [\<unidade2>:] [\<caminho2>]|Especifica o caminho do diretório para manter o armazenamento de trabalho do comando de **classificação** se os dados não couberem na memória principal. Por padrão, o diretório temporário do sistema é usado.|
-|/o [\<Drive3>:] [\<Path3>]\<FileName3>|Especifica o arquivo onde a entrada classificada deve ser armazenada. Se não for especificado, os dados serão gravados na saída padrão. Especificar o arquivo de saída é mais rápido do que redirecionar a saída padrão para o mesmo arquivo.|
+|opção\<Kilobytes>|Especifica a quantidade de memória principal a ser usada para a classificação em kilobytes (KB).|
+|/l\<Locale>|Substitui a ordem de classificação dos caracteres que são definidos pela localidade padrão do sistema (ou seja, o idioma e o país/região selecionados durante a instalação).|
+|/rec\<Characters>|Especifica o número máximo de caracteres em um registro ou uma linha do arquivo de entrada (o valor padrão é 4.096 e o máximo é 65.535).|
+|[\<Drive1>:][\<Path1>]\<FileName1>|Especifica o arquivo a ser classificado. Se nenhum nome de arquivo for especificado, a entrada padrão será classificada. Especificar o arquivo de entrada é mais rápido do que redirecionar o mesmo arquivo como entrada padrão.|
+|/t [ \<Drive2> :] [ \<Path2> ]|Especifica o caminho do diretório para manter o armazenamento de trabalho do comando de **classificação** se os dados não couberem na memória principal. Por padrão, o diretório temporário do sistema é usado.|
+|/o [ \<Drive3> :] [ \<Path3> ]\<FileName3>|Especifica o arquivo onde a entrada classificada deve ser armazenada. Se não for especificado, os dados serão gravados na saída padrão. Especificar o arquivo de saída é mais rápido do que redirecionar a saída padrão para o mesmo arquivo.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -57,7 +57,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
     Atualmente, a única alternativa para a localidade padrão é a localidade C, que é mais rápida do que a classificação de idioma natural (ela classifica caracteres de acordo com suas codificações binárias).
 -   Usando símbolos de redirecionamento com o comando **Sort**
 
-    Você pode usar o símbolo de pipe**|**() para direcionar dados de entrada para o comando de **classificação** de outro comando ou para direcionar a saída classificada para outro comando. Você pode especificar os arquivos de entrada e saída usando símbolos de**<** redirecionamento **>**(ou). Ele pode ser mais rápido e mais eficiente (especialmente com arquivos grandes) para especificar o arquivo de entrada diretamente (conforme definido por *arquivo1* na sintaxe do comando) e, em seguida, especificar o arquivo de saída usando o parâmetro **/o** .
+    Você pode usar o símbolo de pipe ( **|** ) para direcionar dados de entrada para o comando de **classificação** de outro comando ou para direcionar a saída classificada para outro comando. Você pode especificar os arquivos de entrada e saída usando símbolos de redirecionamento ( **<** ou **>** ). Ele pode ser mais rápido e mais eficiente (especialmente com arquivos grandes) para especificar o arquivo de entrada diretamente (conforme definido por *arquivo1* na sintaxe do comando) e, em seguida, especificar o arquivo de saída usando o parâmetro **/o** .
 -   Diferenciar maiúsculas de minúsculas
 
     O comando **Sort** não faz distinção entre letras maiúsculas e minúsculas.
@@ -66,7 +66,7 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
     O comando **Sort** não tem limite no tamanho do arquivo.
 -   Sequência de agrupamento
 
-    O programa de classificação usa a tabela de sequência de agrupamento que corresponde ao código do país/região e às configurações da página de código. Caracteres maiores que o código ASCII 127 são classificados com base nas informações no arquivo Country. sys ou em um arquivo alternativo especificado pelo comando **Country** no seu arquivo config. NT.
+    O programa de classificação usa a tabela de sequência de agrupamento que corresponde ao código do país/região e às configurações da página de código. Caracteres maiores que o código ASCII 127 são classificados com base nas informações do arquivo de Country.sys ou em um arquivo alternativo especificado pelo comando **Country** no seu arquivo config. NT.
 -   Uso de memória
 
     Se a classificação couber no tamanho máximo da memória (conforme definido por padrão ou conforme especificado pelo parâmetro **/m** ), a classificação será executada em uma única passagem. Caso contrário, a classificação é executada em duas passagens de classificação e mesclagem separadas, e as quantidades de memória usadas para ambas as passagens são iguais. Quando duas passagens são executadas, os dados parcialmente classificados são armazenados em um arquivo temporário no disco. Se não houver memória suficiente para executar a classificação em duas passagens, um erro de tempo de execução será emitido. Se a opção de linha de comando **/m** for usada para especificar mais memória do que está verdadeiramente disponível, a degradação do desempenho ou um erro em tempo de execução poderá ocorrer.
@@ -75,13 +75,13 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 
 **Classificando um arquivo**
 
-Para classificar e exibir em ordem inversa, as linhas em um arquivo chamado despesas. txt, digite:
+Para classificar e exibir em ordem inversa, as linhas em um arquivo chamado Expenses.txt, digite:
 
 `sort /r expenses.txt`
 
 **Classificando a saída de um comando**
 
-Para pesquisar um arquivo grande chamado maillist. txt para o texto Jones e classificar os resultados da pesquisa, use o pipe (|) para direcionar a saída de um comando **Find** para o comando **Sort** , da seguinte maneira:
+Para pesquisar um arquivo grande chamado Maillist.txt para o texto Jones e classificar os resultados da pesquisa, use o pipe (|) para direcionar a saída de um comando **Find** para o comando **Sort** , da seguinte maneira:
 
 `find Jones maillist.txt | sort`
 

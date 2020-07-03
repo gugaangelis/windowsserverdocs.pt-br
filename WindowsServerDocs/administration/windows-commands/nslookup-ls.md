@@ -1,6 +1,6 @@
 ---
 title: nslookup ls
-description: Tópico de referência para o comando nslookup ls, que lista informações de domínio DNS.
+description: Artigo de referência para o comando nslookup ls, que lista informações de domínio DNS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87e30ed5d5b44b805c3b3b004feb5ed252b5a760
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 7c0c0aeb01cdffb1f2b779178f0298e1f120348e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721111"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936568"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 

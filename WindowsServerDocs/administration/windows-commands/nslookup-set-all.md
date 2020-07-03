@@ -1,6 +1,6 @@
 ---
 title: nslookup set all
-description: Tópico de referência para o comando Set All do nslookup, que gera os valores de configuração atuais.
+description: Artigo de referência para o comando Set All do nslookup, que gera os valores de configuração atuais.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b541f1f68fd3f43a8e4ab05f8e3e4351b7d8bc71
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 1844e2254a694e39dc12e66bf65182df512601e8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721639"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936544"
 ---
 # <a name="nslookup-set-all"></a>nslookup set all
 

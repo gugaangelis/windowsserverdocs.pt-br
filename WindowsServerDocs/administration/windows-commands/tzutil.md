@@ -1,6 +1,6 @@
 ---
 title: tzutil
-description: Tópico de referência para tzutil, que exibe o utilitário de fuso horário do Windows.
+description: Artigo de referência para tzutil, que exibe o utilitário de fuso horário do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d4a94fa9f776af1ae21ad9057b6f9225691b516
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 99d88057c88a55aaf529d238088f8422c33e9ba7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821296"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937291"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -31,8 +31,8 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|Exibe a ajuda no prompt de comando.|
 |/g|Exibe a ID do fuso horário atual.|
-|/s \< Timezoneid> [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
-|/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<p>-   \<> de nome de exibição<br />-   \<ID de fuso horário>|
+|/s \<timeZoneID> [_dstoff]|Define o fuso horário atual usando a ID de fuso horário especificada. O sufixo **_dstoff** desabilita os ajustes de horário de verão para o fuso horário (quando aplicável).|
+|/l|lista todas as IDs de fuso horário e nomes de exibição válidos. A saída será:<p>-   \<display name><br />-   \<time zone ID>|
 
 ## <a name="remarks"></a>Comentários
 Um código de saída **0** indica que o comando foi concluído com êxito.

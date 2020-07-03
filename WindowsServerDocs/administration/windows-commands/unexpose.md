@@ -1,6 +1,6 @@
 ---
-title: Cancele
-description: Tópico de referência para unexpo, que não expõe uma cópia de sombra que foi exposta usando o comando Expose.
+title: unexpose
+description: Artigo de referência para unexpo, que não expõe uma cópia de sombra que foi exposta usando o comando Expose.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0caa412e5ff7de149f0a2bd8806f7141c368306
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 02edb1f2c9331a22473123f0327dbc84cb05a865
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721194"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937298"
 ---
-# <a name="unexpose"></a>Cancele
+# <a name="unexpose"></a>unexpose
 
 Não expõe uma cópia de sombra que foi exposta usando o comando **Expo** . A cópia de sombra exposta pode ser especificada por sua ID de sombra, letra de unidade, compartilhamento ou ponto de montagem.
 
@@ -32,10 +32,10 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<> shadowid|Revela a cópia de sombra especificada pela ID de sombra fornecida.|
-|\<Unidade: >|Não expõe a cópia de sombra associada à letra da unidade especificada (por exemplo, a unidade P).|
-|\<> de compartilhamento|Revela a cópia de sombra associada ao compartilhamento especificado (por exemplo, \\ \\ *MachineName*\)).|
-|\<> de MountPoint|Não expõe a cópia de sombra associada ao ponto de montagem especificado (por exemplo,\)C:\shadowcopy.|
+|\<ShadowID>|Revela a cópia de sombra especificada pela ID de sombra fornecida.|
+|\<Drive:>|Não expõe a cópia de sombra associada à letra da unidade especificada (por exemplo, a unidade P).|
+|\<Share>|Revela a cópia de sombra associada ao compartilhamento especificado (por exemplo, \\ \\ *MachineName*) \) .|
+|\<MountPoint>|Não expõe a cópia de sombra associada ao ponto de montagem especificado (por exemplo, C:\shadowcopy \) .|
 
 ## <a name="remarks"></a>Comentários
 

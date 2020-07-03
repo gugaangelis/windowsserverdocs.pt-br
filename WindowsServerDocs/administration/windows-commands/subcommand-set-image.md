@@ -1,6 +1,6 @@
 ---
 title: Conjunto de subcomando-imagem
-description: Tópico de referência para subcomando set-Image, que altera os atributos de uma imagem.
+description: Artigo de referência para subcomando set-Image, que altera os atributos de uma imagem.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e24b20093a726e7553474871ef25e6877223e21f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fcf77f34a35a56c872948568071d36c1fcf5940f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721707"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937166"
 ---
 # <a name="subcommand-set-image"></a>Subcomando: Set-Image
 
@@ -22,10 +22,10 @@ ms.locfileid: "82721707"
 
 Altera os atributos de uma imagem.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 para imagens de inicialização:
 ```
-wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<File name>] [/Name:<Name>] 
+wdsutil /Set-Imagmedia:<Image name> [/Server:<Server name>mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<File name>] [/Name:<Name>]
 [/Description:<Description>] [/Enabled:{Yes | No}]
 ```
 para imagens de instalação:
@@ -51,28 +51,28 @@ MediaType: {boot &#124; install}|Especifica o tipo de imagem.|
 |/Name|Especifica o nome da imagem.|
 |[/Description:<Description>]|Define a descrição da imagem.|
 |[/Enabled: {Sim &#124; não}]|Habilita ou desabilita a imagem.|
-|\mediaGroup:<Image group name>]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar o grupo de imagens.|
-|[/UserFilter:<SDDL>]|Define o filtro de usuário na imagem. A cadeia de caracteres de filtro deve estar no formato SDDL (Security Descriptor Definition Language). Observe que, diferentemente da opção **/Security** para grupos de imagens, essa opção apenas restringe quem pode ver a definição de imagem, e não os recursos de arquivo de imagem real. Para restringir o acesso aos recursos de arquivo e, portanto, acessar todas as imagens em um grupo de imagens, você precisará definir a segurança para o próprio grupo de imagens.|
+|\mediaGroup: <Image group name> ]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar o grupo de imagens.|
+|[/UserFilter: <SDDL> ]|Define o filtro de usuário na imagem. A cadeia de caracteres de filtro deve estar no formato SDDL (Security Descriptor Definition Language). Observe que, diferentemente da opção **/Security** para grupos de imagens, essa opção apenas restringe quem pode ver a definição de imagem, e não os recursos de arquivo de imagem real. Para restringir o acesso aos recursos de arquivo e, portanto, acessar todas as imagens em um grupo de imagens, você precisará definir a segurança para o próprio grupo de imagens.|
 |[/UnattendFile:<Unattend file path>]|Define o caminho completo para o arquivo autônomo a ser associado à imagem. Por exemplo: **D:\Files\Unattend\Img1Unattend.xml**|
 |[/OverwriteUnattend: {Sim &#124; não}]|Você pode especificar **/overwrite** para substituir o arquivo Unattend se já houver um arquivo autônomo associado à imagem. Observe que a configuração padrão é **não**.|
 ## <a name="examples"></a>Exemplos
 Para definir valores para uma imagem de inicialização, digite um dos seguintes:
 ```
 wdsutil /Set-Imagmedia:WinPE boot imagemediatype:Boot /Architecture:x86 /Description:New description
-wdsutil /verbose /Set-Imagmedia:WinPE boot image /Server:MyWDSServemediatype:Boot /Architecture:x86 /Filename:boot.wim 
+wdsutil /verbose /Set-Imagmedia:WinPE boot image /Server:MyWDSServemediatype:Boot /Architecture:x86 /Filename:boot.wim
 /Name:New Name /Description:New Description /Enabled:Yes
 ```
 Para definir valores para uma imagem de instalação, digite um dos seguintes:
 ```
-wdsutil /Set-Imagmedia:Windows Vista with Officemediatype:Install /Description:New description 
-wdsutil /verbose /Set-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
+wdsutil /Set-Imagmedia:Windows Vista with Officemediatype:Install /Description:New description
+wdsutil /verbose /Set-Imagmedia:Windows Vista with Office /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1
 /Filename:install.wim /Name:New name /Description:New description /UserFilter:O:BAG:DUD:AI(A;ID;FA;;;SY)(A;ID;FA;;;BA)(A;ID;0x1200a9;;;AU) /Enabled:Yes /UnattendFile:\\server\share\unattend.xml /OverwriteUnattend:Yes
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-
-
-[comando Add-](using-the-add-image-command.md)
-Image[usando o comando copy-Image](using-the-copy-image-command.md)[usando o comando Export-Image](using-the-export-image-command.md)[usando o comando Get-](using-the-get-image-command.md)Image[usando o comando Remove-Image](using-the-remove-image-command.md)
-[usando o comando Replace-](using-the-replace-image-command.md) Image
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-add-image-command.md) 
+ Add-Image [Usando o comando](using-the-copy-image-command.md) 
+ Copy-Image [Usando o comando](using-the-export-image-command.md) 
+ Export-Image [Usando o comando](using-the-get-image-command.md) 
+ Get-Image [Usando o comando](using-the-remove-image-command.md) 
+ Remove-Image [Usando o comando Replace-Image](using-the-replace-image-command.md)

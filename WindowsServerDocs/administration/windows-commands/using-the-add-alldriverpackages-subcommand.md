@@ -1,6 +1,6 @@
 ---
 title: Usando o subcomando Add-AllDriverPackages
-description: Tópico de referência para Add-AllDriverPackages, que adiciona todos os pacotes de driver armazenados em uma pasta a um servidor.
+description: Artigo de referência para Add-AllDriverPackages, que adiciona todos os pacotes de driver armazenados em uma pasta a um servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 31daa8fc3e3304dba5079672ea4619fd085dd74f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a505175b1b2efc56c9be6d77384c71f8c1db7392
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721164"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937263"
 ---
 # <a name="add-alldriverpackages"></a>Add-AllDriverPackages
 
@@ -30,10 +30,10 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 |          Parâmetro           |                                                              Descrição                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|  /FolderPath:\<caminho da pasta>  |                      Especifica o caminho completo para a pasta que contém os arquivos. inf para os pacotes de driver.                      |
-|   [/Server:\<nome do servidor>]   | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
+|  FolderPath\<Folder Path>  |                      Especifica o caminho completo para a pasta que contém os arquivos. inf para os pacotes de driver.                      |
+|   [/Server:\<Server name>]   | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
 |     [/Architecture: {x86      |                                                                 Win64                                                                  |
-| [/DriverGroup:\<nome do grupo>] |                             Especifica o nome do grupo de drivers ao qual os pacotes devem ser adicionados.                             |
+| [/DriverGroup: \<Group Name> ] |                             Especifica o nome do grupo de drivers ao qual os pacotes devem ser adicionados.                             |
 
 ## <a name="examples"></a>Exemplos
 

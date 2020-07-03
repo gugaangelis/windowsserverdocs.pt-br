@@ -1,6 +1,6 @@
 ---
 title: add
-description: Tópico de referência para os vários comandos Add.
+description: Artigo de referência para os vários comandos Add.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3320a6074a1eb385eeca36207ac699287b0258f9
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 23bcfa5d304839094151d8baa9a7ebd77334d469
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721154"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937254"
 ---
 # <a name="add"></a>add
 

@@ -1,6 +1,6 @@
 ---
 title: Add-DriverGroupPackage
-description: Tópico de referência para Add-DriverGroupPackage, que adiciona um pacote de driver a um grupo de drivers.
+description: Artigo de referência para Add-DriverGroupPackage, que adiciona um pacote de driver a um grupo de drivers.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4baf4f16740e65c432cc09ca24270ab479346ac2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5782fe849669619bf46426ad698866c05007e426
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85937216"
 ---
 # <a name="add-drivergrouppackage"></a>Add-DriverGroupPackage
 
@@ -44,7 +44,7 @@ wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /PackageId:{4D36E972
 wdsutil /add-DriverGroupPackage /DriverGroup:printerdrivers /DriverPackage:XYZ
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando Add-DriverGroupPackages](using-the-add-drivergrouppackages-command.md)
-[usando o comando Add-DriverPackage](using-the-add-driverpackage-command.md)[usando o subcomando Add-AllDriverPackages](using-the-add-alldriverpackages-subcommand.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-add-drivergrouppackages-command.md) 
+ Add-DriverGroupPackages [Usando o comando](using-the-add-driverpackage-command.md) 
+ Add-DriverPackage [Usando o subcomando Add-AllDriverPackages](using-the-add-alldriverpackages-subcommand.md)
