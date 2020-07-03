@@ -1,6 +1,6 @@
 ---
 title: get
-description: Tópico de referência para Get, que recupera propriedades ou atributos sobre o objeto especificado.
+description: Artigo de referência para Get, que recupera propriedades ou atributos sobre o objeto especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 981ed8978df3d53505e6da5296dbb25cce38bb71
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 6e61be9480065518cf053966a851458af39f5c5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719969"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935025"
 ---
 # <a name="get"></a>get
 

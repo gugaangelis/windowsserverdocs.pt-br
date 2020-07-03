@@ -1,6 +1,6 @@
 ---
 title: obter dispositivo
-description: Tópico de referência para Get-Device, que recupera as informações dos serviços de implantação do Windows sobre um computador pré-configurado (ou seja, um computador físico que foi embutido em uma conta de computador nos serviços de domínio Active Directory.
+description: Artigo de referência para Get-Device, que recupera as informações dos serviços de implantação do Windows sobre um computador pré-configurado (ou seja, um computador físico que foi embutido em uma conta de computador nos serviços de domínio Active Directory.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f89266a2f70523ec332ed7cfb6a976f87a8e4f2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0367af83ffb826b9bf3a3b94102d02e4d7ee7205
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719964"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935015"
 ---
 # <a name="get-device"></a>obter dispositivo
 
@@ -31,7 +31,7 @@ wdsutil /Get-Device {/Device:<Device name> | /ID:<MAC or UUID>} [/Domain:<Domain
 |-------|--------|
 |Vice<Device name>|Especifica o nome do computador (SAMAccountName).|
 |Sessão<MAC or UUID>|Especifica o endereço MAC ou o UUID (GUID) do computador, conforme mostrado nos exemplos a seguir. Observe que um GUID válido deve estar em um dos dois formatos de cadeia de caracteres binária ou de GUID<p>-   **Cadeia de caracteres binária**:/ID: ACEFA3E81F20694E953EB2DAA1E8B1B6<br />-   **Endereço MAC**: 00B056882FDC (sem traços) ou 00-B0-56-88-2F-DC (com traços)<br />-   **Cadeia de caracteres GUID**:/ID: E8A3EFAC-201F-4E69-953-B2DAA1E8B1B6|
-|[/Domain:<Domain>]|Especifica o domínio a ser procurado para o computador pré-configurado. O valor padrão para esse parâmetro é o domínio local.|
+|[/Domain: <Domain> ]|Especifica o domínio a ser procurado para o computador pré-configurado. O valor padrão para esse parâmetro é o domínio local.|
 |[/Forest: {Sim &#124; não}]|Especifica se os serviços de implantação do Windows devem Pesquisar toda a floresta ou o domínio local. O valor padrão é **não**, o que significa que somente o domínio local será pesquisado.|
 ## <a name="examples"></a>Exemplos
 Para obter informações usando o nome do computador, digite:
@@ -47,7 +47,7 @@ Para obter informações usando a cadeia de caracteres GUID, digite:
 wdsutil /verbose /Get-Device /ID:E8A3EFAC-201F-4E69-953-B2DAA1E8B1B6 /forest:Yes
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-Subcomando de chave de sintaxe de linha de comando[: Set-Device](subcommand-set-device.md)
-
-[usando o comando Add-Device](using-the-add-device-command.md)[usando o comando Get-meus dispositivos](using-the-get-alldevices-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Subcomando: Set-Device](subcommand-set-device.md) 
+ [Usando o comando](using-the-add-device-command.md) 
+ Add-Device [Usando o comando Get-meus dispositivos](using-the-get-alldevices-command.md)

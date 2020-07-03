@@ -1,6 +1,6 @@
 ---
 title: Get-meus dispositivos
-description: Tópico de referência para Get-meus dispositivos, que exibe as propriedades dos serviços de implantação do Windows de todos os computadores pré-configurados.
+description: Artigo de referência para Get-Devices, que exibe as propriedades dos serviços de implantação do Windows de todos os computadores pré-configurados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26e114be7ecf104687da237636b54b79e4114591
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b5eae53c2dcd39a7f3587f4c3c6bf96d4782ea05
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720901"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935218"
 ---
 # <a name="get-alldevices"></a>Get-meus dispositivos
 
@@ -30,7 +30,7 @@ wdsutil [Options] /Get-AllDevices [/forest:{Yes | No}] [/ReferralServer:<Server 
 |Parâmetro|Descrição|
 |-------|--------|
 |[/Forest: {Sim &#124; não}]|Especifica se os serviços de implantação do Windows devem retornar computadores em toda a floresta ou no domínio local. A configuração padrão é **não**, o que significa que somente os computadores no domínio local são retornados.|
-|[/ReferralServer:<Server name>]|Retorna somente os computadores que estão pré-configurados para o servidor especificado.|
+|[/ReferralServer: <Server name> ]|Retorna somente os computadores que estão pré-configurados para o servidor especificado.|
 ## <a name="examples"></a>Exemplos
 Para exibir todos os computadores, digite um dos seguintes:
 ```
@@ -38,7 +38,7 @@ wdsutil /Get-AllDevices
 wdsutil /verbose /Get-AllDevices /forest:Yes /ReferralServer:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-Subcomando de chave de sintaxe de linha de comando[: Set-Device](subcommand-set-device.md)
-
-[usando o comando Add-Device](using-the-add-device-command.md)[usando o comando Get-Device](using-the-get-device-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Subcomando: Set-Device](subcommand-set-device.md) 
+ [Usando o comando](using-the-add-device-command.md) 
+ Add-Device [Usando o comando Get-Device](using-the-get-device-command.md)

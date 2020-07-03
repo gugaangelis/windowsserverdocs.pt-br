@@ -1,6 +1,6 @@
 ---
-title: Wbadmin obter itens
-description: Tópico de referência para WBADMIN Get Items, que lista os itens incluídos em um backup específico.
+title: wbadmin get items
+description: Artigo de referência para WBADMIN Get Items, que lista os itens incluídos em um backup específico.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9987a3628682c47cde53433558ef89c01684ccf5
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d69ac0aa200a694b94d8428e4ae333ae21ed20e1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821196"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934362"
 ---
-# <a name="wbadmin-get-items"></a>Wbadmin obter itens
+# <a name="wbadmin-get-items"></a>wbadmin get items
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: qprocess
-description: Tópico de referência para o comando qprocess, que exibe informações sobre processos que estão sendo executados em um servidor de Host da Sessão da Área de Trabalho Remota.
+description: Artigo de referência para o comando qprocess, que exibe informações sobre processos que estão sendo executados em um servidor de Host da Sessão da Área de Trabalho Remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e27902e363f067619543252552fd2f9ede906b62
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2c7c62c4beb3d501fc6ff4926a054e2ae0bad043
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472031"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934379"
 ---
 # <a name="qprocess"></a>qprocess
 

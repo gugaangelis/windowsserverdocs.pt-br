@@ -1,6 +1,6 @@
 ---
 title: Manage-bde ChangeKey
-description: Tópico de referência para o comando Manage-bde ChangeKey, que modifica a chave de inicialização para uma unidade do sistema operacional.
+description: Artigo de referência para o comando Manage-bde ChangeKey, que modifica a chave de inicialização para uma unidade do sistema operacional.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b6cc92aa20d8c3c0469a5a78bca4bb9b6260132
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 7f6b09dfdb73e019b909f43e14a82465573c1a6f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222991"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934997"
 ---
 # <a name="manage-bde-changekey"></a>Manage-bde ChangeKey
 
@@ -31,7 +31,7 @@ manage-bde -changekey [<drive>] [<pathtoexternalkeydirectory>] [-computername <n
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | `<drive>` | Representa uma letra de unidade seguida de dois-pontos. |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |

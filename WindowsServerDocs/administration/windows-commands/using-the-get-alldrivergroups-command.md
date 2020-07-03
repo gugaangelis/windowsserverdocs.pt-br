@@ -1,6 +1,6 @@
 ---
 title: Get-AllDriverGroups
-description: Tópico de referência para Get-AllDriverGroups, que exibe informações sobre todos os grupos de drivers em um servidor.
+description: Artigo de referência para Get-AllDriverGroups, que exibe informações sobre todos os grupos de drivers em um servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c4ac3e0c7b05c96383714c3a702cffd6aa8df18a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4c254ee19cb7f447d0fb071469c50107205de98b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720886"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935211"
 ---
 # <a name="get-alldrivergroups"></a>Get-AllDriverGroups
 
@@ -40,5 +40,5 @@ wdsutil /Get-AllDriverGroups /Server:MyWdsServer /Show:All
 wdsutil /Get-AllDriverGroups [/Show:PackageMetaData]
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave de sintaxe de linha de comando](command-line-syntax-key.md)
-[usando o comando Get-driver](using-the-get-drivergroup-command.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando Get-driver](using-the-get-drivergroup-command.md)

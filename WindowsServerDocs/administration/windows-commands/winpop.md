@@ -1,6 +1,6 @@
 ---
 title: winpop
-description: O tópico de referência para o winpop, que foi preterido e não tem garantia de suporte em versões futuras do Windows.
+description: Artigo de referência para o winpop, que é preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a11dec60c0f2d68cd4619e423f137ce3577dbcb7
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 90c31ed4da01f0d83bc59ea4e9cb6120c633e8ac
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993414"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936141"
 ---
 # <a name="winpop"></a>winpop
 

@@ -1,6 +1,6 @@
 ---
 title: nfsstat
-description: Tópico de referência para o comando nfsstat, que exibe informações estatísticas sobre o NFS (sistema de arquivos de rede) e chamadas RPC (chamada de procedimento remoto).
+description: Artigo de referência para o comando nfsstat, que exibe informações estatísticas sobre o NFS (sistema de arquivos de rede) e chamadas RPC (chamada de procedimento remoto).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85eb1184d3eb8ee731cf698a6d805e3f11d878ce
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 833081baa3ae9a0c2493623a7d015334087ee26d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721509"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934791"
 ---
 # <a name="nfsstat"></a>nfsstat
 

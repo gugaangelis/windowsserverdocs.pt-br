@@ -1,6 +1,6 @@
 ---
 title: nslookup set d2
-description: Tópico de referência para o comando Set D2 do nslookup, que ativa ou desativa o modo de depuração detalhado.
+description: Artigo de referência para o comando Set D2 do nslookup, que ativa ou desativa o modo de depuração detalhado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8179d91dfbc50ecd60740ad13db66c80a45af6c1
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: ce7de098069dc4536a1516d982bf7107795545b2
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721569"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934435"
 ---
 # <a name="nslookup-set-d2"></a>nslookup set d2
 

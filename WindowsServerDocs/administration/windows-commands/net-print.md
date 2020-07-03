@@ -1,6 +1,6 @@
 ---
-title: NET Print
-description: Tópico de referência para o comando net Print. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
+title: net print
+description: Artigo de referência do comando net Print. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d8744c3ef4540652b495aea0037e97f433238f2
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354306"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934819"
 ---
-# <a name="net-print"></a>NET Print
+# <a name="net-print"></a>net print
 
 > [!IMPORTANT]
 > Este comando foi preterido. No entanto, você pode executar muitas das mesmas tarefas usando o [comando prnjobs](prnjobs.md), [Instrumentação de gerenciamento do Windows (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page), [Gerenciamento de imgestão no PowerShell](https://docs.microsoft.com/powershell/module/printmanagement)ou [recursos de script para profissionais de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing).

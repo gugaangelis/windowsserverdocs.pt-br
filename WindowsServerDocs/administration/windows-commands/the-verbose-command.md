@@ -1,6 +1,6 @@
 ---
 title: verbose
-description: Tópico de referência para detalhado, que exibe a saída detalhada para um comando especificado.
+description: Artigo de referência para detalhado, que exibe a saída detalhada para um comando especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3563673d1f80167e469d98a664a6f96ca49815a1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 079e441ba4a932e23493e7e37fbe36cab4c4971f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721368"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935243"
 ---
 # <a name="verbose"></a>verbose
 
 Exibe a saída detalhada para um comando especificado. Você pode usar **/Verbose** com quaisquer outros comandos do WDSUTIL que você executar. Observe que você deve especificar **/Verbose** e **/Progress** diretamente após **WDSUTIL**.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 WDSUTIL /verbose <commands>

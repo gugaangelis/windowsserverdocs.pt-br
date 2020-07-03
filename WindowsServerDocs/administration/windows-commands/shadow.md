@@ -1,6 +1,6 @@
 ---
 title: shadow
-description: Tópico de referência para sombra, que permite controlar remotamente uma sessão ativa de outro usuário em um servidor de Host da Sessão da Área de Trabalho Remota.
+description: Artigo de referência para sombra, que permite controlar remotamente uma sessão ativa de outro usuário em um servidor de Host da Sessão da Área de Trabalho Remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1330aef40a4bd5ce9fa6f565b92ade3f8c304895
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f4f7d6483e46708cab31d46b917f16b1eba29a58
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721823"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935878"
 ---
 # <a name="shadow"></a>shadow
 
@@ -32,9 +32,9 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 #### <a name="parameters"></a>Parâmetros
 |Parâmetro|Descrição|
 |-------|--------|
-|\<SESSIONNAME>|Especifica o nome da sessão que você deseja controlar remotamente.|
-|\<> SessionID|Especifica a ID da sessão que você deseja controlar remotamente. Use o **usuário de consulta** para exibir a lista de sessões e suas IDs de sessão.|
-|/Server:\<servername>|Especifica o servidor de host da sessão da área de trabalho remota que contém a sessão que você deseja controlar remotamente. Por padrão, o servidor de Host4 da Sessão RD atual é usado.|
+|\<SessionName>|Especifica o nome da sessão que você deseja controlar remotamente.|
+|\<SessionID>|Especifica a ID da sessão que você deseja controlar remotamente. Use o **usuário de consulta** para exibir a lista de sessões e suas IDs de sessão.|
+|/server:\<ServerName>|Especifica o servidor de host da sessão da área de trabalho remota que contém a sessão que você deseja controlar remotamente. Por padrão, o servidor de Host4 da Sessão RD atual é usado.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -45,7 +45,7 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   Antes do início do monitoramento, o servidor avisa ao usuário que a sessão está prestes a ser controlada remotamente, a menos que este aviso seja desabilitado. Sua sessão pode parecer estar congelada por alguns segundos enquanto aguarda uma resposta do usuário. Para configurar o controle remoto para usuários e sessões, use a ferramenta de configuração Serviços de Área de Trabalho Remota ou as extensões de Serviços de Área de Trabalho Remota para usuários e grupos locais e usuários e computadores do Active Directory.
 -   Sua sessão deve ser capaz de dar suporte à resolução de vídeo usada na sessão que você está controlando remotamente ou a operação falha.
 -   A sessão de console não pode controlar remotamente outra sessão nem pode ser controlada remotamente por outra sessão.
--   Quando você quiser encerrar o controle remoto (sombreamento), pressione CTRL +\* (usando \* somente o teclado numérico).
+-   Quando você quiser encerrar o controle remoto (sombreamento), pressione CTRL + \* (usando \* somente o teclado numérico).
 
 ## <a name="examples"></a>Exemplos
 -   Para a sessão de sombra 93, digite:
@@ -58,5 +58,5 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
     ```
 
 ## <a name="additional-references"></a>Referências adicionais
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Referência de comando de serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

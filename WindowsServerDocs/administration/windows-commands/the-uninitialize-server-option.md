@@ -1,6 +1,6 @@
 ---
 title: cancelar inicialização-servidor
-description: Tópico de referência para Uninitialize-Server, que reverte as alterações feitas no servidor durante a configuração inicial do servidor.
+description: Artigo de referência para Uninitialize-Server, que reverte as alterações feitas no servidor durante a configuração inicial do servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d7747a44172b7382bd22a7d48ccc717a89ccacb
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fdbe391a7335c347f05f9f9c06bbade3474fa30e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721391"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935876"
 ---
 # <a name="uninitialize-server"></a>cancelar inicialização-servidor
 
@@ -37,11 +37,11 @@ wdsutil /Uninitialize-Server
 wdsutil /verbose /Uninitialize-Server /Server:MyWDSServer
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando
-[usando o comando Disable-Server](using-the-disable-server-command.md)
-[usando o comando Enable-Server](using-the-enable-server-command.md)
-[usando o comando Get-Server](using-the-get-server-command.md)[usando o comando Initialize-Server Command](using-the-initialize-server-command.md)
-subcomando[: Set-Server](subcommand-set-server.md)
-subcomando[: Start-Server](subcommand-start-server.md)
-[Subcommand: Stop-Server](subcommand-stop-server.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-disable-server-command.md) 
+ Disable-Server [Usando o comando](using-the-enable-server-command.md) 
+ Enable-Server [Usando o comando](using-the-get-server-command.md) 
+ Get-Server [Usando o comando](using-the-initialize-server-command.md) 
+ Initialize-Server [Subcomando: Set-Server](subcommand-set-server.md) 
+ [Subcomando: Start-Server](subcommand-start-server.md) 
+ [Subcomando: Stop-Server](subcommand-stop-server.md)

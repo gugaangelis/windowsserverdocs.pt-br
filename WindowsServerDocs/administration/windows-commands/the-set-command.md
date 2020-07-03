@@ -1,6 +1,6 @@
 ---
 title: set
-description: Tópico de referência para Set, que define propriedades e atributos para servidores de serviços de implantação do Windows, computadores pré-configurados, imagens, grupos de imagens e servidores de transporte.
+description: Artigo de referência para o conjunto, que define as propriedades e os atributos dos servidores de serviços de implantação do Windows, computadores pré-configurados, imagens, grupos de imagens e servidores de transporte.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd406a04fdb704ec8e2ee1e9aa3548c130e1089c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b11c9b349fc1473d1d6ec167528c43ac314b51e9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721420"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934605"
 ---
 # <a name="set"></a>set
 

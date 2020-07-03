@@ -1,6 +1,6 @@
 ---
 title: Manage-bde pausar
-description: Tópico de referência para o comando de pausa Manage-bde, que pausa a criptografia ou descriptografia do BitLocker.
+description: Artigo de referência para o comando de pausa Manage-bde, que pausa a criptografia ou descriptografia do BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8eaa28d6be61c5a06698a39be02cd20ff8b72a8
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 244d18ff9763ccb12c9567fbab68e2fd72f0f076
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222841"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935469"
 ---
 # <a name="manage-bde-pause"></a>Manage-bde pausar
 
@@ -31,7 +31,7 @@ manage-bde -pause [<volume>] [-computername <name>] [{-?|/?}] [{-help|-h}]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | `<volume>` | Especifica uma letra de unidade seguida por dois-pontos, um caminho de GUID de volume ou um volume montado. |
-| -ComputerName | Especifica que o Manage-bde. exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
+| -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |
 | -? ou/? | Exibe a ajuda resumida no prompt de comando. |
 | -Help ou-h | Exibe a ajuda completa no prompt de comando. |

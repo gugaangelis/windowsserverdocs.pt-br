@@ -1,6 +1,6 @@
 ---
 title: mmc
-description: Tópico de referência para o comando do MMC, que permite abrir um console específico do MMC, abrir o MMC no modo de autor ou especificar para abrir a versão de 32 bits ou 64 bits do MMC.
+description: Artigo de referência do comando MMC, que permite abrir um console específico do MMC, abrir o MMC no modo de autor ou especificar para abrir a versão de 32 bits ou 64 bits do MMC.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1de1bc7912b995bf7df0e1acb50cfee18747b700
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 8c93416c9939d37e8d672a7e8d52d01ddfebd48e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354586"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935766"
 ---
 # <a name="mmc"></a>mmc
 

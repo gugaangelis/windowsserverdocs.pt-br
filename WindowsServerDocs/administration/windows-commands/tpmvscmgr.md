@@ -1,6 +1,6 @@
 ---
 title: tpmvscmgr
-description: Tópico de referência para tpmvscmgr, que é uma ferramenta de linha de comando que permite aos usuários com credenciais administrativas criar e excluir cartões inteligentes virtuais do TPM em um computador.
+description: Artigo de referência para tpmvscmgr, que é uma ferramenta de linha de comando que permite aos usuários com credenciais administrativas criar e excluir cartões inteligentes virtuais do TPM em um computador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 60c824de891917a2652776ee86b389f04d8eada8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 8741c947220ce2a3f6852c7374bf0817323bb632
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83821366"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935592"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
 A ferramenta de linha de comando Tpmvscmgr permite que os usuários com credenciais administrativas criem e excluam cartões inteligentes virtuais do TPM em um computador.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | PROMPT] [/PUK DEFAULT | PROMPT] [/generate] [/machine] [/?]
@@ -52,7 +52,7 @@ O comando Destroy exclui com segurança um cartão inteligente virtual do comput
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/instance|Especifica a ID da instância do cartão inteligente virtual a ser removido. A instanceID foi gerada como saída pelo Tpmvscmgr. exe quando o cartão foi criado. O parâmetro/instance é um campo obrigatório para o comando Destroy.|
+|/instance|Especifica a ID da instância do cartão inteligente virtual a ser removido. A instanceID foi gerada como saída por Tpmvscmgr.exe quando o cartão foi criado. O parâmetro/instance é um campo obrigatório para o comando Destroy.|
 |/?|Exibe a ajuda para este comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -79,7 +79,7 @@ O comando a seguir criará um cartão inteligente virtual com uma chave de admin
 ```
 tpmvscmgr.exe destroy /instance <instance ID>
 ```
-em que \< ID de instância> é o valor impresso na tela quando o usuário criou o cartão. Especificamente, para o primeiro cartão criado, a ID da instância é ROOT\SMARTCARDREADER\0000.
+em que \<instance ID> é o valor impresso na tela quando o usuário criou o cartão. Especificamente, para o primeiro cartão criado, a ID da instância é ROOT\SMARTCARDREADER\0000.
 
 ## <a name="additional-references"></a>Referências adicionais
 

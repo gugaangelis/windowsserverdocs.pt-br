@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 13f25252d60cb0bde67cca1e1aa5106435c3f361
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333908"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935545"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>Bloqueio de Extranet do AD FS e Extranet Smart Lockout
 
@@ -285,7 +285,7 @@ R: se os clientes se conectarem diretamente aos servidores ADFS e não por meio 
 R: o ESL funcionará bem para evitar cenários de ataque de força bruta do Exchange Online ou de outras autenticações herdadas. Uma autenticação herdada tem uma "ID da atividade" de 00000000-0000-0000-0000-000000000000.Nesses ataques, o ator inadequado é tirar proveito da autenticação básica do Exchange Online (também conhecida como autenticação herdada) para que o endereço IP do cliente seja exibido como um Microsoft One. Os servidores do Exchange Online no proxy de nuvem a verificação de autenticação em nome do cliente do Outlook. Nesses cenários, o endereço IP do emissor mal-intencionado estará no IP x-MS-encaminhar-Client-IP e o Microsoft Exchange Online Server estará no valor x-MS-Client-IP.
 O bloqueio inteligente de extranet verifica IPs de rede, IPs encaminhados, o x-Forwarded-Client-IP e o valor x-MS-Client-IP. Se a solicitação for bem-sucedida, todos os IPs serão adicionados à lista conhecida. Se uma solicitação chegar e qualquer um dos IPs apresentados não estiver na lista conhecida, a solicitação será marcada como desconhecida. O usuário familiar poderá entrar com êxito enquanto as solicitações dos locais desconhecidos serão bloqueadas.  
 
-* * P: posso estimar o tamanho do ADFSArtifactStore antes de habilitar o ESL?
+**Posso estimar o tamanho do ADFSArtifactStore antes de habilitar o ESL?**
 
 R: com o ESL habilitado, AD FS rastreia a atividade da conta e os locais conhecidos para os usuários no banco de dados ADFSArtifactStore. Esse banco de dados é dimensionado em tamanho em relação ao número de usuários e localizações conhecidas acompanhados. Ao planejar a habilitação do ESL, você pode estimar o aumento do tamanho do banco de dados ADFSArtifactStore a uma taxa de até 1 GB a cada 100.000 usuários. Se o farm de AD FS estiver usando o banco de dados interno do Windows (WID), o local padrão para os arquivos de banco de dados será C:\Windows\WID\Data\. Para evitar o preenchimento desta unidade, verifique se você tem um mínimo de 5 GB de armazenamento livre antes de habilitar o ESL. Além do armazenamento em disco, planeje um aumento da memória total do processo depois de habilitar o ESL em até um 1 GB de RAM adicional para populações de usuário de 500.000 ou menos.
 

@@ -1,6 +1,6 @@
 ---
 title: montagem
-description: Tópico de referência para o comando Mount, que monta os compartilhamentos de rede NFS (Network File System).
+description: Artigo de referência para o comando Mount, que monta os compartilhamentos de rede NFS (Network File System).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 823b88b8ab1168776c25e05e3dbf5ec08d784724
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354556"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935725"
 ---
 # <a name="mount"></a>montagem
 

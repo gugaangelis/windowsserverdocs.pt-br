@@ -1,6 +1,6 @@
 ---
 title: repair-bde
-description: Tópico de referência para * * * *-
+description: Artigo de referência para * * * *-
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 235640cacc6c0cca5ee9e820606082afe5d39d41
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820106"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935638"
 ---
 # <a name="repair-bde"></a>repair-bde
 
@@ -41,8 +41,8 @@ repair-bde <InputVolume> <OutputVolumeorImage> [-rk] [–rp] [-pw] [–kp] [–l
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<> InputVolume|Identifica a letra da unidade da unidade criptografada pelo BitLocker que você deseja reparar. A letra da unidade deve incluir dois-pontos; por exemplo: **C:**.|
-|\<> OutputVolumeorImage|Identifica a unidade na qual armazenar o conteúdo da unidade reparada. Todas as informações na unidade de saída serão substituídas.|
+|\<InputVolume>|Identifica a letra da unidade da unidade criptografada pelo BitLocker que você deseja reparar. A letra da unidade deve incluir dois-pontos; por exemplo: **C:**.|
+|\<OutputVolumeorImage>|Identifica a unidade na qual armazenar o conteúdo da unidade reparada. Todas as informações na unidade de saída serão substituídas.|
 |-r|Identifica o local da chave de recuperação que deve ser usada para desbloquear o volume. Esse comando também pode ser especificado como **-RecoveryKey**.|
 |-RP|Identifica a senha de recuperação numérica que deve ser usada para desbloquear o volume. Esse comando também pode ser especificado como **-RecoveryPassword**.|
 |-PW|Identifica a senha que deve ser usada para desbloquear o volume. Este comando também pode ser especificado como **senha**|
@@ -57,7 +57,7 @@ Se o caminho para um pacote de chaves não for especificado, o **Repair-bde** pe
 
 ## <a name="examples"></a>Exemplos
 
-Para tentar reparar a unidade C e gravar o conteúdo da unidade C na unidade D usando o arquivo de chave de recuperação (RecoveryKey. Bek) armazenado na unidade F e gravar os resultados dessa tentativa no arquivo de log (log. txt) na unidade Z.
+Para tentar reparar a unidade C e gravar o conteúdo da unidade C na unidade D usando o arquivo de chave de recuperação (RecoveryKey. Bek) armazenado na unidade F e gravar os resultados dessa tentativa no arquivo de log (log.txt) na unidade Z.
 ```
 repair-bde C: D: -rk F:\RecoveryKey.bek –lf Z:\log.txt
 ```

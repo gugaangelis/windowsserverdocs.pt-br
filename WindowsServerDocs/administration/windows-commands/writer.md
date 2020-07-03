@@ -1,6 +1,6 @@
 ---
 title: gravador
-description: Tópico de referência para o gravador, que verifica se um gravador ou componente está incluído ou exclui um gravador ou componente do procedimento de backup ou restauração.
+description: Artigo de referência para o gravador, que verifica se um gravador ou componente está incluído ou exclui um gravador ou componente do procedimento de backup ou restauração.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aed202ac774b17041f48df24333565727b110c53
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 16746f2f070b87e0c287f3a49b19a480ba5399c9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720638"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85936094"
 ---
 # <a name="writer"></a>gravador
 
@@ -34,8 +34,8 @@ writer exclude [<Writer> | <Component>]
 | Parâmetro  |                                                                                      Descrição                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |   verificar   | Verifica se o gravador ou o componente especificado está incluído no procedimento de backup ou restauração. O procedimento de backup ou restauração falhará se o gravador ou o componente não estiver incluído. |
-|  exclude   |                                                   Exclui o gravador ou componente especificado do procedimento de backup ou restauração.                                                    |
-| [\<> do gravador |                                                                                     <Component>]                                                                                      |
+|  excluir   |                                                   Exclui o gravador ou componente especificado do procedimento de backup ou restauração.                                                    |
+| [\<Writer> |                                                                                     <Component>]                                                                                      |
 
 ## <a name="examples"></a>Exemplos
 

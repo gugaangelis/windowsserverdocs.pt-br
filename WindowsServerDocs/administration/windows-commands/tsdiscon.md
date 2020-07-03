@@ -1,6 +1,6 @@
 ---
 title: tsdiscon
-description: Tópico de referência para tsdiscon, que desconecta uma sessão de um servidor de host de sessão de área de trabalho remota.
+description: Artigo de referência para tsdiscon, que desconecta uma sessão de um servidor de host de sessão de área de trabalho remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2a97d1b157445fd43acce5a80f3d793ed5ae5af
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 05bf4e05648b0e5dd87657396df763432fab38f0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721258"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934192"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -36,9 +36,9 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 
 |Parâmetro|Descrição|
 |-------|--------|
-|\<> SessionId|Especifica a ID da sessão a ser desconectada.|
-|\<SESSIONNAME>|Especifica o nome da sessão a ser desconectada.|
-|/Server:\<servername>|Especifica o servidor de terminal que contém a sessão que você deseja desconectar. Caso contrário, o servidor host da Sessão RD atual será usado.|
+|\<SessionId>|Especifica a ID da sessão a ser desconectada.|
+|\<SessionName>|Especifica o nome da sessão a ser desconectada.|
+|/server:\<ServerName>|Especifica o servidor de terminal que contém a sessão que você deseja desconectar. Caso contrário, o servidor host da Sessão RD atual será usado.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -63,5 +63,5 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   tsdiscon TERM04
   ```
   ## <a name="additional-references"></a>Referências adicionais
-  - [Command-Line Syntax Key](command-line-syntax-key.md)
-  Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+  - Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+   [Referência de comando de serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

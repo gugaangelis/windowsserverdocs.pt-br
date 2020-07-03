@@ -1,6 +1,6 @@
 ---
 title: Get-myImages
-description: Tópico de referência para as imagens Get-My, que recupera informações sobre todas as imagens em um servidor.
+description: Artigo de referência para as imagens Get-My, que recupera informações sobre todas as imagens em um servidor.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1f32a1789b22d04b7b61979d0ea49d91f0cf157
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9834552ebe6395f13333e81fbc2996a8ff49f39c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720025"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935168"
 ---
 # <a name="get-allimages"></a>Get-myImages
 
@@ -39,10 +39,10 @@ wdsutil /Get-AllImages /Show:Install
 wdsutil /verbose /Get-AllImages /Server:MyWDSServer /Show:All /detailed
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando](using-the-add-image-command.md)
-Add-Image
-[usando o comando copy-Image](using-the-copy-image-command.md)
-[usando o comando Export-Image](using-the-export-image-command.md)
-[usando o comando Remove-](using-the-remove-image-command.md)Image[usando o subcomando Replace-Image Command](using-the-replace-image-command.md)[: Set-Image](subcommand-set-image.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-add-image-command.md) 
+ Add-Image [Usando o comando](using-the-copy-image-command.md) 
+ Copy-Image [Usando o comando](using-the-export-image-command.md) 
+ Export-Image [Usando o comando](using-the-remove-image-command.md) 
+ Remove-Image [Usando o comando](using-the-replace-image-command.md) 
+ replace-Image [Subcomando: Set-Image](subcommand-set-image.md)

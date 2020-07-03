@@ -1,6 +1,6 @@
 ---
 title: Manage-bde em
-description: Tópico de referência para o comando Manage-bde on, que criptografa a unidade e ativa o BitLocker.
+description: Artigo de referência para o comando Manage-bde on, que criptografa a unidade e ativa o BitLocker.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bad56c9ade19d94fc5acc9b34a8cc42fe43b7c0d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: b06c8a37524544201bf9f37a446a8d227f878ee4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84222854"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85935448"
 ---
 # <a name="manage-bde-on"></a>Manage-bde em
 

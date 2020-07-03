@@ -1,6 +1,6 @@
 ---
 title: msiexec
-description: Tópico de referência para o comando msiexec, que fornece os meios para instalar, modificar e executar operações no Windows Installer da linha de comando.
+description: Artigo de referência para o comando msiexec, que fornece os meios para instalar, modificar e executar operações no Windows Installer da linha de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f84df28104f581873fe1fd86a3abd6a51532b020
-ms.sourcegitcommit: 5e313a004663adb54c90962cfdad9ae889246151
+ms.openlocfilehash: aacdc55ac3895efad7dd9499ea1402b538fb8a9b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84354336"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85934959"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -45,7 +45,7 @@ msiexec.exe [/i][/a][/j{u|m|/g|/t}][/x] <path_to_package>
 
 #### <a name="examples"></a>Exemplos
 
-Para instalar um pacote chamado *example. msi* da unidade C:, usando um processo de instalação normal, digite:
+Para instalar um pacote chamado *example.msi* da unidade C:, usando um processo de instalação normal, digite:
 
 ```
 msiexec.exe /i "C:\example.msi"
@@ -231,6 +231,6 @@ Você pode definir propriedades públicas por meio deste comando. Para obter inf
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Opções de linha de comando msiexec. exe](https://docs.microsoft.com/windows/win32/msi/command-line-options)
+- [Opções de linha de comandoMsiexec.exe](https://docs.microsoft.com/windows/win32/msi/command-line-options)
 
 - [Opções de linha de comando do instalador padrão](https://docs.microsoft.com/windows/win32/msi/standard-installer-command-line-options)
