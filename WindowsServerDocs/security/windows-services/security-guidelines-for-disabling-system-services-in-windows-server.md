@@ -8,12 +8,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 314b53d41fde81936b70154feeee407e89d2cca3
-ms.sourcegitcommit: c710fea2c0591febfc1bc9a705d59979be6f699b
+ms.openlocfilehash: 71687bc7090eabfaf690dc526cce013798413fdb
+ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83705587"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85586720"
 ---
 # <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop
 
@@ -42,7 +42,7 @@ Tarefas agendadas:
 1. \Microsoft\XblGameSave\XblGameSaveTask
 2. \Microsoft\XblGameSave\XblGameSaveTaskLogon
 
-(Acesse também as informações sobre todos os serviços detalhados neste artigo exibindo a planilha do Microsoft Excel anexada: [Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
+Acesse também as informações sobre todos os serviços detalhados neste artigo exibindo a planilha do Microsoft Excel anexada: [Diretrizes para desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
 
 
 ### <a name="disabling-services-not-installed-by-default"></a>Como desabilitar serviços não instalados por padrão
@@ -244,7 +244,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 | **Instalação**   | Somente com a Experiência Desktop
 | **Tipo de inicialização**   | Manual
 | **Recomendação** | Pode ser desabilitado
-| **Comentários**       | Pode ser desabilitado se não é usado. Outro mecanismo de desabilitação: https://technet.microsoft.com/library/dd252791.aspx
+| **Comentários**       | Pode ser desabilitado se não é usado. Outro mecanismo de desabilitação: [Desabilitar o Bluetooth e a transmissão por infravermelho](https://docs.microsoft.com/previous-versions/tn-archive/dd252791(v=technet.10))
 |||
 
 
@@ -1321,7 +1321,7 @@ As seguintes tabelas oferecem as diretrizes da Microsoft de como desabilitar ser
 | **Instalação**   | Sempre instalado
 | **Tipo de inicialização**   | Automática
 | **Recomendação** | Pode ser desabilitado se não é um servidor de impressão nem um controlador de domínio
-| **Comentários**       | Em um controlador de domínio, a instalação da função de controlador de domínio adiciona um thread ao serviço de spooler responsável por executar a remoção de impressão – remoção dos objetos obsoletos da fila de impressão do Active Directory.  Se o serviço de spooler não estiver em execução em, pelo menos, um controlador de domínio em cada site, o AD não terá meios para remover as filas antigas que não existem mais. [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
+| **Comentários**       | Em um controlador de domínio, a instalação da função de controlador de domínio adiciona um thread ao serviço de spooler responsável por executar a remoção de impressão – remoção dos objetos obsoletos da fila de impressão do Active Directory.  Se o serviço de spooler não estiver em execução em, pelo menos, um controlador de domínio em cada site, o AD não terá meios para remover as filas antigas que não existem mais. [Pergunte ao blog da equipe de desempenho](https://techcommunity.microsoft.com/t5/ask-the-performance-team/bg-p/AskPerf).
 |||
 
 
