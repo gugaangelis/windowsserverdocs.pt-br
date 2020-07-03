@@ -1,6 +1,6 @@
 ---
 title: bootcfg default
-description: Tópico de referência do comando Bootcfg padrão, que especifica a entrada do sistema operacional a ser designada como padrão.
+description: Artigo de referência do comando Bootcfg padrão, que especifica a entrada do sistema operacional a ser designada como padrão.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43a1c2b4bcbb4062a24d4c72f5856898afecd349
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4913564157ea08fec797dbb49ed55c33245cb254
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709696"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926307"
 ---
 # <a name="bootcfg-default"></a>bootcfg default
 
@@ -33,9 +33,9 @@ bootcfg /default [/s <computer> [/u <domain>\<user> /p <password>]] [/id <osentr
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | `/s <computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. |
-| `/u <domain>\<user>`  | Executa o comando com as permissões de conta do usuário especificado por `<user>` ou `<domain>\<user>`. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
+| `/u <domain>\<user>`  | Executa o comando com as permissões de conta do usuário especificado por `<user>` ou `<domain>\<user>` . O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
 | `/p <password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . |
-| `/id <osentrylinenum>` | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
+| `/id <osentrylinenum>` | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo de Boot.ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="examples"></a>Exemplos

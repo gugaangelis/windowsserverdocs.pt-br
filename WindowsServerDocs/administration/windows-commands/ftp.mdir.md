@@ -1,6 +1,6 @@
 ---
-title: mdir FTP
-description: Tópico de referência para o comando FTP mdir, que exibe uma lista de diretórios de arquivos e subdiretórios em um diretório remoto.
+title: ftp mdir
+description: Artigo de referência para o comando FTP mdir, que exibe uma lista de diretórios de arquivos e subdiretórios em um diretório remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b192e6de23105fcc696d8369ce0280167a201e20
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 5a4d1b00941d350776fd953607a5cc5da433993c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820216"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926151"
 ---
-# <a name="ftp-mdir"></a>mdir FTP
+# <a name="ftp-mdir"></a>ftp mdir
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -43,7 +43,7 @@ Para exibir uma listagem de diretório de *dir1* e *dir2* na tela, digite:
 mdir dir1 dir2 -
 ```
 
-Para salvar a listagem de diretório combinada de *dir1* e *dir2* em um arquivo local chamado *DirList. txt*, digite:
+Para salvar a listagem de diretório combinada de *dir1* e *dir2* em um arquivo local chamado *dirlist.txt*, digite:
 
 ```
 mdir dir1 dir2 dirlist.txt

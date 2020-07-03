@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers e list
-description: Tópico de referência para o comando Bitsadmin Peers e List, que lista todos os pares.
+description: Artigo de referência para o comando Bitsadmin Peers e List, que lista todos os pares.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6c1f8fbcb6ca40c86a1d589ba7217392b9875cf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 056e6734de857da7fc99bb0c7a9f525e9553d3eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717150"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926477"
 ---
 # <a name="bitsadmin-peers-and-list"></a>bitsadmin peers e list
 
 Lista todos os pares.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 bitsadmin /peers /list

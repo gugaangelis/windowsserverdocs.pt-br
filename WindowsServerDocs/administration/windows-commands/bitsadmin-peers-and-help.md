@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers e help
-description: Tópico de referência para os pares Bitsadmin e o comando help, que exibe o uso de linha de comando para as opções de/peers.
+description: Artigo de referência para os pares Bitsadmin e o comando help, que exibe o uso de linha de comando para as opções de/peers.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 405bf6d0641d46a9e7d365bbd9742633df403020
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fe6026acc8b3695dd63309e21716ffd54066fc77
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717155"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928055"
 ---
 # <a name="bitsadmin-peers-and-help"></a>bitsadmin peers e help
 
 Exibe o uso da linha de comando para os comutadores **/Peers** .
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 bitsadmin /peers /help

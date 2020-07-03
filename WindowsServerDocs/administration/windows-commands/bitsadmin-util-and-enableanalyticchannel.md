@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util e enableanalyticchannel
-description: Tópico de referência para o comando Bitsadmin util e enableanalyticchannel, que habilita ou desabilita o canal analítico do cliente BITS.
+description: Artigo de referência para o comando Bitsadmin util e enableanalyticchannel, que habilita ou desabilita o canal analítico do cliente BITS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1f5c8c924d1011928aca6ec1bcebd4d71abb015
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 515402f42dee54baa662f37718841f70b1cd2882
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707768"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927415"
 ---
 # <a name="bitsadmin-util-and-enableanalyticchannel"></a>bitsadmin util e enableanalyticchannel
 
 Habilita ou desabilita o canal analítico do cliente BITS.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 bitsadmin /util /enableanalyticchannel TRUE|FALSE

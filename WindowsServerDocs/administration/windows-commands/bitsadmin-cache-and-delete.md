@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cache and delete
-description: Tópico de referência para o cache Bitsadmin e o comando delete, que exclui uma entrada de cache específica.
+description: Artigo de referência para o cache Bitsadmin e o comando delete, que exclui uma entrada de cache específica.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62c0c3d5b2cc188e8a8987c7ca502cdeaf932410
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 739215722eac761aed45d6b4dba32b2b001450b3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718455"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927044"
 ---
 # <a name="bitsadmin-cache-and-delete"></a>bitsadmin cache and delete
 

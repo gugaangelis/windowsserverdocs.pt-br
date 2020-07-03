@@ -1,6 +1,6 @@
 ---
 title: bitsadmin util e setieproxy
-description: Tópico de referência para o comando Bitsadmin util e setieproxy, que define as configurações de proxy a serem usadas ao transferir arquivos usando uma conta de serviço.
+description: Artigo de referência para o comando Bitsadmin util e setieproxy, que define as configurações de proxy a serem usadas ao transferir arquivos usando uma conta de serviço.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f45ca0a1a27aaf41fc55a82bcbcd3019e73ec6c8
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 018e9400dd2463b61f053d37338740090670f51a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707676"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927318"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util e setieproxy
 
@@ -34,7 +34,7 @@ bitsadmin /util /setieproxy <account> <usage> [/conn <connectionname>]
 | Parâmetro | Descrição |
 | --------- | ---------- |
 | account | Especifica a conta de serviço cujas configurações de proxy você deseja definir. Os valores possíveis incluem:<ul><li>LOCALSYSTEM</li><li>   NETWORKSERVICE</li><li>LocalService.</li></ul> |
-| uso | Especifica a forma de detecção de proxy a ser usada. Os valores possíveis incluem:<ul><li>**NO_PROXY.** Não use um servidor proxy.</li><li>**Detecção automática.** Detectar automaticamente as configurações de proxy.</li><li>**MANUAL_PROXY.** Use uma lista de proxies especificada e a lista de bypass. Você deve especificar suas listas imediatamente após a marca de uso. Por exemplo, `MANUAL_PROXY proxy1,proxy2 NULL`.<ul><li>**Lista de proxies.** Uma lista delimitada por vírgulas de servidores proxy a serem usados.</li><li>**Lista de bypass.** Uma lista delimitada por espaço de nomes de host ou endereços IP, ou ambos, para os quais as transferências não devem ser roteadas por meio de um proxy. Isso pode ser \<> local para se referir a todos os servidores na mesma LAN. Valores de NULL ou podem ser usados para uma lista de bypass de proxy vazia.</li></ul><li>**AutoScript.** O mesmo que **detecção automática**, exceto que ele também executa um script. Você deve especificar a URL do script imediatamente após a marca de uso. Por exemplo, `AUTOSCRIPT http://server/proxy.js`.</li><li>**Definido.** O mesmo que **NO_PROXY**, exceto que ele remove as URLs de proxy manuais (se especificado) e todas as URLs descobertas usando a detecção automática.</li></ul> |
+| uso | Especifica a forma de detecção de proxy a ser usada. Os valores possíveis incluem:<ul><li>**NO_PROXY.** Não use um servidor proxy.</li><li>**Detecção automática.** Detectar automaticamente as configurações de proxy.</li><li>**MANUAL_PROXY.** Use uma lista de proxies especificada e a lista de bypass. Você deve especificar suas listas imediatamente após a marca de uso. Por exemplo, `MANUAL_PROXY proxy1,proxy2 NULL`.<ul><li>**Lista de proxies.** Uma lista delimitada por vírgulas de servidores proxy a serem usados.</li><li>**Lista de bypass.** Uma lista delimitada por espaço de nomes de host ou endereços IP, ou ambos, para os quais as transferências não devem ser roteadas por meio de um proxy. Isso pode ser \<local> referente a todos os servidores na mesma LAN. Valores de NULL ou podem ser usados para uma lista de bypass de proxy vazia.</li></ul><li>**AutoScript.** O mesmo que **detecção automática**, exceto que ele também executa um script. Você deve especificar a URL do script imediatamente após a marca de uso. Por exemplo, `AUTOSCRIPT http://server/proxy.js`.</li><li>**Definido.** O mesmo que **NO_PROXY**, exceto que ele remove as URLs de proxy manuais (se especificado) e todas as URLs descobertas usando a detecção automática.</li></ul> |
 | ConnectionName | Opcional. Usado com o parâmetro **/Conn** para especificar a conexão de modem a ser usada. Se você não especificar o parâmetro **/Conn** , o bits usará a conexão LAN. |
 
 ### <a name="remarks"></a>Comentários

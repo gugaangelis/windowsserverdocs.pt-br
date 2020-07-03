@@ -1,6 +1,6 @@
 ---
 title: bitsadmin rawreturn
-description: Tópico de referência para o comando Bitsadmin rawreturn, que retorna dados adequados para análise.
+description: Artigo de referência para o comando Bitsadmin rawreturn, que retorna dados adequados para análise.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af465bb9f51ab6f43980c43bf2be1f5158429a82
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1b537b21678c100364406d4c59eaa02efd143e21
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717091"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926460"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
@@ -23,7 +23,7 @@ Retorna os dados adequados para análise. Normalmente, você usa esse comando em
 > [!NOTE]
 > Esse comando retira os caracteres de nova linha e a formatação da saída.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 bitsadmin /rawreturn

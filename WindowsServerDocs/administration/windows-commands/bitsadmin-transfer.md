@@ -1,6 +1,6 @@
 ---
 title: bitsadmin transfer
-description: Tópico de referência para o comando Bitsadmin Transfer, que transfere um ou mais arquivos.
+description: Artigo de referência para o comando Bitsadmin Transfer, que transfere um ou mais arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c7011f3ef3e85d7453e63d9a9c2e4a89a52cddf
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 57de6db53433d0da1a4efd8c212a23183edcbcf9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82707752"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927422"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -36,7 +36,7 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | name | O nome do trabalho. Este comando não pode ser um GUID. |
-| type | Opcional. Define o tipo de trabalho, incluindo:<ul><li>**Baixar.** O valor padrão. Escolha esse tipo para baixar trabalhos.</li><li>**Carregar.** Escolha este tipo para trabalhos de carregamento.</li></ul> |
+| tipo | Opcional. Define o tipo de trabalho, incluindo:<ul><li>**Baixar.** O valor padrão. Escolha esse tipo para baixar trabalhos.</li><li>**Carregar.** Escolha este tipo para trabalhos de carregamento.</li></ul> |
 | priority | Opcional. Define a prioridade do trabalho, incluindo:<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 | ACLflags | Opcional. Indica que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Especifique um ou mais dos valores, incluindo:<ul><li>**o** -copie as informações do proprietário com o arquivo.</li><li>**g** -copiar informações do grupo com o arquivo.</li><li>**d** – copiar informações de DACL (lista de controle de acesso discricionário) com o arquivo.</li><li>**s** -copiar informações de SACL (lista de controle de acesso) do sistema com o arquivo.</li></ul> |
 | /DYNAMIC | Configura o trabalho usando [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](https://docs.microsoft.com/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id), que libera os requisitos do lado do servidor. |

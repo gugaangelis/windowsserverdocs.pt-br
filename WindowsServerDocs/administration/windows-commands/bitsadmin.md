@@ -1,6 +1,6 @@
 ---
 title: bitsadmin
-description: Tópico de referência para o comando Bitsadmin, que é uma ferramenta de linha de comando usada para criar, baixar ou carregar trabalhos e monitorar seu progresso.
+description: Artigo de referência para o comando Bitsadmin, que é uma ferramenta de linha de comando usada para criar, baixar ou carregar trabalhos e monitorar seu progresso.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94a829ce21c4571188fb5ffeb9a0a1d991637d07
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710041"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926370"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
@@ -22,7 +22,7 @@ ms.locfileid: "82710041"
 
 Bitsadmin é uma ferramenta de linha de comando usada para criar, baixar ou carregar trabalhos e para monitorar seu progresso. A ferramenta Bitsadmin usa opções para identificar o trabalho a ser executado. Você pode chamar `bitsadmin /?` ou `bitsadmin /help` obter uma lista de opções.
 
-A maioria das opções `<job>` exige um parâmetro, que você define para o nome de exibição do trabalho ou GUID. O nome de exibição de um trabalho não precisa ser exclusivo. As opções **/Create** e **/list** retornam o GUID de um trabalho.
+A maioria das opções exige um `<job>` parâmetro, que você define para o nome de exibição do trabalho ou GUID. O nome de exibição de um trabalho não precisa ser exclusivo. As opções **/Create** e **/list** retornam o GUID de um trabalho.
 
 Por padrão, você pode acessar informações sobre seus próprios trabalhos. Para acessar informações para os trabalhos de outro usuário, você deve ter privilégios de administrador. Se o trabalho tiver sido criado em um estado elevado, você deverá executar o **Bitsadmin** em uma janela com privilégios elevados; caso contrário, você terá acesso somente leitura ao trabalho.
 

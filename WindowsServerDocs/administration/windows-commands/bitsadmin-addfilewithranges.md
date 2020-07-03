@@ -1,6 +1,6 @@
 ---
 title: bitsadmin addfilewithranges
-description: Tópico de referência para o comando Bitsadmin addfilewithranges, que adiciona um arquivo ao trabalho especificado. O BITS baixa os intervalos especificados do arquivo remoto.
+description: Artigo de referência para o comando Bitsadmin addfilewithranges, que adiciona um arquivo ao trabalho especificado. O BITS baixa os intervalos especificados do arquivo remoto.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b878b4f48441808bf971c051397d3af9bd975fe
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5439cfb8330cda7c51150c720fe45faccca8e1ec
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718465"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927071"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -37,7 +37,7 @@ bitsadmin /addfilewithranges <job> <remoteURL> <localname> <rangelist>
 
 ## <a name="remarks"></a>Comentários
 
-- O token **EOF** é um valor de comprimento válido dentro dos pares de deslocamento e comprimento `<rangelist>`no. Ele instrui o serviço a ler até o final do arquivo especificado.
+- O token **EOF** é um valor de comprimento válido dentro dos pares de deslocamento e comprimento no `<rangelist>` . Ele instrui o serviço a ler até o final do arquivo especificado.
 
 - O `addfilewithranges` comando falhará com o código de erro 0x8020002c, se um intervalo de comprimento zero for especificado junto com outro intervalo usando o mesmo deslocamento, como:
 

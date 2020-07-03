@@ -1,6 +1,6 @@
 ---
 title: lpr
-description: Tópico de referência para o comando LPR, que envia um arquivo para um computador ou dispositivo de compartilhamento de impressora que executa o Serviço LPD (daemon de impressora de linha) em preparação para impressão.
+description: Artigo de referência para o comando LPR, que envia um arquivo para um computador ou dispositivo de compartilhamento de impressora que executa o Serviço LPD (daemon de impressora de linha) em preparação para impressão.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d11b72ee807869613505052cfb51e80a89a80d70
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: 9ea40ef71da7804f01c963049f07e1f6b5395354
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223029"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927115"
 ---
 # <a name="lpr"></a>lpr
 
@@ -44,7 +44,7 @@ lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o |
 
 ### <a name="examples"></a>Exemplos
 
-Para imprimir o arquivo de texto *Document. txt* na fila da impressora *Laserprinter1* em um host LPD em *10.0.0.45*, digite:
+Para imprimir o arquivo de texto de *Document.txt* na fila de impressora *Laserprinter1* em um host LPD em *10.0.0.45*, digite:
 
 ```
 lpr -S 10.0.0.45 -P Laserprinter1 -o Document.txt

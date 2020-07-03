@@ -1,6 +1,6 @@
 ---
 title: Bitsadmin getproxylist – recupera a lista de proxy para o trabalho especificado.
-description: Tópico de referência para o comando Bitsadmin getproxylist, que recupera a lista de proxy para o trabalho especificado.
+description: Artigo de referência para o comando Bitsadmin getproxylist, que recupera a lista de proxy para o trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a92703d83cc872204d3dc488c15d703dfd50a780
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 60c66db909b9b62d33ffda09e3b696362b6a65a0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717653"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926810"
 ---
 # <a name="bitsadmin-getproxylist"></a>bitsadmin getproxylist
 

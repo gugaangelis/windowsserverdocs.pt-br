@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gettype
-description: Tópico de referência para o comando Bitsadmin GetType, que recupera o tipo de trabalho do trabalho especificado.
+description: Artigo de referência para o comando Bitsadmin GetType, que recupera o tipo de trabalho do trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 151f9b8e81229a666111ebcd20f060d84160445a
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c7224add1b503d9ec50e84879a47442c12447e5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717473"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926642"
 ---
 # <a name="bitsadmin-gettype"></a>bitsadmin gettype
 
@@ -36,12 +36,12 @@ bitsadmin /gettype <job>
 
 Os valores de saída retornados podem ser:
 
-| Type | Descrição |
+| Type | Description |
 | --------------- | ----------- |
 | Baixar | O trabalho é um download. |
 | Carregar | O trabalho é um upload. |
 | Carregar-responder | O trabalho é um upload-resposta. |
-| Unknown | O trabalho tem um tipo desconhecido. |
+| Unknown (desconhecido) | O trabalho tem um tipo desconhecido. |
 
 ## <a name="examples"></a>Exemplos
 

@@ -1,6 +1,6 @@
 ---
 title: bootcfg addsw
-description: Tópico de referência para o comando Bootcfg addsw, que adiciona opções de carregamento do sistema operacional para uma entrada de sistema operacional especificada.
+description: Artigo de referência para o comando Bootcfg addsw, que adiciona opções de carregamento do sistema operacional para uma entrada de sistema operacional especificada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 17abdc1ba28afad173ea6486519277916f08ad3d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f9d54c2cfdf898e1162d804220ae6dbb4a446fc5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709941"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926358"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 
@@ -33,13 +33,13 @@ bootcfg /addsw [/s <computer> [/u <domain>\<user> /p <password>]] [/mm <maximumr
 | Termo | Definição |
 | ---- | ---------- |
 | `/s <computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. |
-| `/u <domain>\<user>`  | Executa o comando com as permissões de conta do usuário especificado por `<user>` ou `<domain>\<user>`. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
+| `/u <domain>\<user>`  | Executa o comando com as permissões de conta do usuário especificado por `<user>` ou `<domain>\<user>` . O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
 | `/p <password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . |
 | `/mm <maximumram>` | Especifica a quantidade máxima de RAM, em megabytes, que o sistema operacional pode usar. O valor deve ser igual ou maior que 32 megabytes. |
-| /bv | Adiciona a opção **/basevideo** ao especificado `<osentrylinenum>`, direcionando o sistema operacional para usar o modo VGA padrão para o driver de vídeo instalado. |
-| /so | Adiciona a opção **/SOS** ao especificado `<osentrylinenum>`, direcionando o sistema operacional para exibir nomes de driver de dispositivo enquanto eles estiverem sendo carregados. |
-| /ng | Adiciona a opção **/noguiboot** ao especificado `<osentrylinenum>`, desabilitando a barra de progresso que aparece antes do prompt de logon Ctrl + Alt + Del. |
-| `/id <osentrylinenum>` | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
+| /bv | Adiciona a opção **/basevideo** ao especificado `<osentrylinenum>` , direcionando o sistema operacional para usar o modo VGA padrão para o driver de vídeo instalado. |
+| /so | Adiciona a opção **/SOS** ao especificado `<osentrylinenum>` , direcionando o sistema operacional para exibir nomes de driver de dispositivo enquanto eles estiverem sendo carregados. |
+| /ng | Adiciona a opção **/noguiboot** ao especificado `<osentrylinenum>` , desabilitando a barra de progresso que aparece antes do prompt de logon Ctrl + Alt + Del. |
+| `/id <osentrylinenum>` | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo de Boot.ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="examples"></a>Exemplos

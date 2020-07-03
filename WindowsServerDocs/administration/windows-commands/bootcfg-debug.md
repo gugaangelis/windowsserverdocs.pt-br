@@ -1,6 +1,6 @@
 ---
 title: bootcfg debug
-description: Tópico de referência para o comando Bootcfg Debug, que adiciona ou altera as configurações de depuração para uma entrada de sistema operacional especificada.
+description: Artigo de referência para o comando Bootcfg Debug, que adiciona ou altera as configurações de depuração para uma entrada de sistema operacional especificada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8059aaefd1b23b3e74f4c27ba96e322c44b5cb6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: da4179d85d4e84918e75fb4c8490e229230412eb
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82709715"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926317"
 ---
 # <a name="bootcfg-debug"></a>bootcfg debug
 
@@ -35,13 +35,13 @@ bootcfg /debug {on | off | edit}[/s <computer> [/u <domain>\<user> /p <password>
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| `{on | off | edit}` | Especifica o valor para a depuração de porta, incluindo:<ul><li>**no.** Habilita o suporte à depuração remota adicionando a opção/debug ao especificado `<osentrylinenum>`.</li><li>**desconto.** Desabilita o suporte à depuração remota removendo a opção/debug do especificado <osentrylinenum>.</li><li>**editar.** Permite alterações nas configurações de porta e taxa de transmissão alterando os valores associados à opção/debug para o <osentrylinenum>especificado.</li></ul> |
+| `{on | off | edit}` | Especifica o valor para a depuração de porta, incluindo:<ul><li>**no.** Habilita o suporte à depuração remota adicionando a opção/debug ao especificado `<osentrylinenum>` .</li><li>**desconto.** Desabilita o suporte à depuração remota removendo a opção/debug do especificado <osentrylinenum> .</li><li>**editar.** Permite alterações nas configurações de porta e taxa de transmissão alterando os valores associados à opção/debug para o especificado <osentrylinenum> .</li></ul> |
 | `/s <computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. |
-| `/u <domain>\<user>`  | Executa o comando com as permissões de conta do usuário especificado por `<user>` ou `<domain>\<user>`. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
+| `/u <domain>\<user>`  | Executa o comando com as permissões de conta do usuário especificado por `<user>` ou `<domain>\<user>` . O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
 | `/p <password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . |
 | `/port {COM1 | COM2 | COM3 | COM4}` |  Especifica a porta COM a ser usada para depuração. Não use esse parâmetro se a depuração estiver desabilitada. |
 | `/baud {9600 | 19200 | 38400 | 57600 | 115200}` | Especifica a taxa de transmissão a ser usada para depuração. Não use esse parâmetro se a depuração estiver desabilitada. |
-| `/id <osentrylinenum>` | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo boot. ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
+| `/id <osentrylinenum>` | Especifica o número da linha de entrada do sistema operacional na seção [Operating Systems] do arquivo de Boot.ini ao qual as opções de carregamento do sistema operacional são adicionadas. A primeira linha após o cabeçalho da seção [Operating Systems] é 1. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="examples"></a>Exemplos

@@ -1,6 +1,6 @@
 ---
 title: bitsadmin list
-description: Tópico de referência para o comando lista de Bitsadmin, que lista os trabalhos de transferência de Propriedade do usuário atual.
+description: Artigo de referência do comando lista de Bitsadmin, que lista os trabalhos de transferência de Propriedade do usuário atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 262589293a147cc1bae98da8fdca047c5f914094
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 9d9a2c86536ff0910b4e0a8bea15ec43d9371087
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717429"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926564"
 ---
 # <a name="bitsadmin-list"></a>bitsadmin list
 

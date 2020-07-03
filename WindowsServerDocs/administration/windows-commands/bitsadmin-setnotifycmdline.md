@@ -1,6 +1,6 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Tópico de referência para o comando Bitsadmin setnotifycmdline, que define o comando de linha de comando que será executado quando o trabalho terminar de transferir dados ou quando um trabalho entrar em um estado.
+description: Artigo de referência para o comando Bitsadmin setnotifycmdline, que define o comando de linha de comando que será executado quando o trabalho terminar de transferir dados ou quando um trabalho entrar em um estado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b21d7151a5b646a4fe07d073220614f5e3c99539
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c4466a0011f7bb1648cb7e2a51113f0a3d21c7e5
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720128"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927658"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
@@ -39,13 +39,13 @@ bitsadmin /setnotifycmdline <job> <program_name> [program_parameters]
 
 ## <a name="examples"></a>Exemplos
 
-Para executar o notepad. exe na conclusão do trabalho chamado *myDownloadJob*:
+Para executar Notepad.exe na conclusão do trabalho chamado *myDownloadJob*:
 
 ```
 bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
 
-Para mostrar o texto do EULA no Notepad. exe, na conclusão do trabalho chamado myDownloadJob:
+Para mostrar o texto do EULA em Notepad.exe, na conclusão do trabalho chamado myDownloadJob:
 
 ```
 bitsadmin /setnotifycmdline myDownloadJob c:\winnt\system32\notepad.exe notepad c:\eula.txt

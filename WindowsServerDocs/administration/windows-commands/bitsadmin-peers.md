@@ -1,6 +1,6 @@
 ---
 title: bitsadmin peers
-description: Tópico de referência para o comando Bitsadmin Peers, que lista as opções de/peers.
+description: Artigo de referência para o comando Bitsadmin Peers, que lista as opções de/peers.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fa2929b842b64841b7b2d50578133dd040475c80
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3e01a02c2615d353cbdaaa6980e86a965edce018
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717105"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927992"
 ---
 # <a name="bitsadmin-peers"></a>bitsadmin peers
 

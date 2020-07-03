@@ -1,6 +1,6 @@
 ---
 title: bitsadmin info
-description: Tópico de referência para o comando Bitsadmin info, que exibe informações de resumo sobre o trabalho especificado.
+description: Artigo de referência do comando Bitsadmin info, que exibe informações de resumo sobre o trabalho especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 904f70c82ab4bcc4fb25f759898674cc719b1954
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 0b9a284ee1e0ab8501f0fb6bc3417ca399996a08
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717435"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926565"
 ---
 # <a name="bitsadmin-info"></a>bitsadmin info
 

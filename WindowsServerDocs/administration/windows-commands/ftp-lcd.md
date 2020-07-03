@@ -1,6 +1,6 @@
 ---
-title: LCD de FTP
-description: Tópico de referência para o comando de LCD de FTP, que altera o diretório de trabalho no computador local.
+title: ftp lcd
+description: Artigo de referência para o comando de LCD de FTP, que altera o diretório de trabalho no computador local.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c941adcc8c56d2598ad4ff56852309a256656878
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 7a325569717cb60ad0750447b2367ad18965d915
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820126"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85927224"
 ---
-# <a name="ftp-lcd"></a>LCD de FTP
+# <a name="ftp-lcd"></a>ftp lcd
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

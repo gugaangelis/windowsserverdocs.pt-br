@@ -1,6 +1,6 @@
 ---
 title: ksetup delkdc
-description: Tópico de referência para o comando ksetup delkdc, que exclui instâncias de nomes de centro de distribuição de chaves (KDC) para o realm Kerberos.
+description: Artigo de referência para o comando ksetup delkdc, que exclui instâncias de nomes de centro de distribuição de chaves (KDC) para o realm Kerberos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd3901558f1cda0d2e1d4e7c12b0d2b151870fa8
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 2d0477fd7317b0b9424fd6199cfde268c00dd1d6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817846"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926120"
 ---
 # <a name="ksetup-delkdc"></a>ksetup delkdc
 

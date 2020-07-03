@@ -1,6 +1,6 @@
 ---
 title: bitsadmin getreplyfilename
-description: Tópico de referência para o comando Bitsadmin getreplyfilename, que obtém o caminho do arquivo que contém a resposta de upload do servidor para o trabalho.
+description: Artigo de referência para o comando Bitsadmin getreplyfilename, que obtém o caminho do arquivo que contém a resposta de upload do servidor para o trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: daed755e0ddc045174b98a8d4f9ee84da155cba6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: fce592b52b9efe9d3d67c893dd6b2441446c0938
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717599"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85926739"
 ---
 # <a name="bitsadmin-getreplyfilename"></a>bitsadmin getreplyfilename
 
