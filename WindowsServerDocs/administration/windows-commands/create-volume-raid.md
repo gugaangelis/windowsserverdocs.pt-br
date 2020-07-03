@@ -1,6 +1,6 @@
 ---
-title: criar RAID de volume
-description: Tópico de referência para o comando Create volume RAID, que cria um volume RAID-5 usando três ou mais discos dinâmicos especificados.
+title: create volume raid
+description: Artigo de referência para o comando Create volume RAID, que cria um volume RAID-5 usando três ou mais discos dinâmicos especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c773cf4412640759910e8c127a95f7cc34581d4
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 0c3b142e7fd678af04d1bc4e109ac399807da06e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993228"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929543"
 ---
-# <a name="create-volume-raid"></a>criar RAID de volume
+# <a name="create-volume-raid"></a>create volume raid
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

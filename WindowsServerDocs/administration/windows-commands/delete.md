@@ -1,6 +1,6 @@
 ---
 title: excluir
-description: Tópico de referência para o comando excluir, que exclui uma partição ou um volume.
+description: Artigo de referência para o comando delete, que exclui uma partição ou um volume.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d87c3696c9f459098b3b1834f46dbb76a49d5d74
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c3ebd26438836d19f0bcae51a26ba09ebe4fa723
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993093"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929483"
 ---
 # <a name="delete"></a>excluir
 

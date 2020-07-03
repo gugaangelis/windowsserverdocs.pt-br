@@ -1,6 +1,6 @@
 ---
 title: delete volume
-description: Tópico de referência para o comando excluir volume, que exclui o volume selecionado.
+description: Artigo de referência do comando excluir volume, que exclui o volume selecionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59856e89ff96d2881040365d157540dc62c1aeb0
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 217e9ff1ccb470b5431143360286d312b09a1951
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993104"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928717"
 ---
 # <a name="delete-volume"></a>delete volume
 

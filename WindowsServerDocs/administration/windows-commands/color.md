@@ -1,6 +1,6 @@
 ---
 title: cor
-description: Tópico de referência para o comando de cor, que altera as cores de primeiro e segundo plano na janela do prompt de comando da sessão atual.
+description: Artigo de referência para o comando Color, que altera as cores de primeiro e segundo plano na janela do prompt de comando da sessão atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94b5a1e4ca4d4a01ea714adc45e64a6efaa32aa6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 93c51fdbf1909adfda06730c3a517f602f8024b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82711941"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929808"
 ---
 # <a name="color"></a>cor
 
@@ -36,7 +36,7 @@ color [[<b>]<f>]
 
 Em que:
 
-A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores `<b>` para `<f>`e:
+A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores para `<b>` e `<f>` :
 
 | Valor | Cor |
 | ----- | ----- |
@@ -59,13 +59,13 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 
 #### <a name="remarks"></a>Comentários
 
-- Não use caracteres de espaço `<b>` entre `<f>`e.
+- Não use caracteres de espaço entre `<b>` e `<f>` .
 
 - Se você especificar apenas um dígito hexadecimal, a cor correspondente será usada como a cor de primeiro plano e a cor do plano de fundo será definida como a cor padrão.
 
 - Para definir a cor da janela do prompt de comando padrão, selecione o canto superior esquerdo da janela do **prompt de comando** , selecione **padrões**, selecione a guia **cores** e, em seguida, selecione as cores que deseja usar para o **texto da tela** e o plano de **fundo da tela**.
 
-- Se `<b>` e `<f>` for o mesmo valor de cor, ERRORLEVEL será definido como `1`, e nenhuma alteração será feita na cor de primeiro plano ou segundo plano.
+- Se `<b>` e `<f>` for o mesmo valor de cor, ERRORLEVEL será definido como `1` , e nenhuma alteração será feita na cor de primeiro plano ou segundo plano.
 
 ## <a name="examples"></a>Exemplos
 

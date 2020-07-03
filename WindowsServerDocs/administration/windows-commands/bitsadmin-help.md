@@ -1,6 +1,6 @@
 ---
 title: bitsadmin help
-description: Tópico de referência para o comando Bitsadmin Help, que exibe o uso da linha de comando.
+description: Artigo de referência do comando Bitsadmin Help, que exibe o uso da linha de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d899ab94101505b69ac5cc4d86a612a4bbb91348
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b917a1a8ab3f81abe747f27e67a9e3e61104b156
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717445"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928152"
 ---
 # <a name="bitsadmin-help"></a>bitsadmin help
 
 Exibe informações relacionadas à ajuda sobre os parâmetros e opções de linha de comando do Bitsadmin.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 bitsadmin /help | /?

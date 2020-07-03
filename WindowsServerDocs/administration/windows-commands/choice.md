@@ -1,6 +1,6 @@
 ---
 title: opção
-description: Tópico de referência para o comando Choice, que solicita ao usuário que selecione um item de uma lista de opções de caractere único em um programa em lotes e, em seguida, retorna o índice da opção selecionada.
+description: Artigo de referência para o comando Choice, que solicita ao usuário que selecione um item de uma lista de opções de caractere único em um programa em lotes e, em seguida, retorna o índice da opção selecionada.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32c0daa680178c1952015c62c6c6749acf5f6143
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713540"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929979"
 ---
 # <a name="choice"></a>opção
 
@@ -30,7 +30,7 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | Especifica a lista de opções a serem criadas. As opções válidas incluem a-z, A-Z, 0-9 e caracteres ASCII estendidos (128-254). A lista padrão é YN, que é exibida como `[Y,N]?`. |
+| /c`<choice1><choice2><…>` | Especifica a lista de opções a serem criadas. As opções válidas incluem a-z, A-Z, 0-9 e caracteres ASCII estendidos (128-254). A lista padrão é YN, que é exibida como `[Y,N]?` . |
 | /n | Oculta a lista de opções, embora as opções ainda estejam habilitadas e o texto da mensagem (se especificado por **/m**) ainda seja exibido. |
 | /cs | Especifica que as opções diferenciam maiúsculas de minúsculas. Por padrão, as opções não diferenciam maiúsculas de minúsculas. |
 | /t`<timeout>` | Especifica o número de segundos para pausar antes de usar a opção padrão especificada por **/d**. Os valores aceitáveis são de **0** a **9999**. Se **/t** for definido como **0**, a **opção** não será pausada antes de retornar a escolha padrão. |
@@ -40,9 +40,9 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 ## <a name="remarks"></a>Comentários
 
-- A variável de ambiente **ERRORLEVEL** é definida como o índice da chave que o usuário seleciona na lista de opções. A primeira opção na lista retorna um valor de `1`, o segundo valor de `2`e assim por diante. Se o usuário pressionar uma tecla que não seja uma opção válida, **Choice** emitirá um aviso sonoro. 
+- A variável de ambiente **ERRORLEVEL** é definida como o índice da chave que o usuário seleciona na lista de opções. A primeira opção na lista retorna um valor de `1` , o segundo valor de `2` e assim por diante. Se o usuário pressionar uma tecla que não seja uma opção válida, **Choice** emitirá um aviso sonoro.
 
-- Se **Choice** detectar uma condição de erro, retornará um valor **ERRORLEVEL** de `255`. Se o usuário pressionar CTRL + BREAK ou CTRL + C, **Choice** retornará um valor **ERRORLEVEL** de `0`.
+- Se **Choice** detectar uma condição de erro, retornará um valor **ERRORLEVEL** de `255` . Se o usuário pressionar CTRL + BREAK ou CTRL + C, **Choice** retornará um valor **ERRORLEVEL** de `0` .
 
 > [!NOTE]
 > Ao usar valores **ERRORLEVEL** em um programa em lotes, você deve listá-los em ordem decrescente.
@@ -83,7 +83,7 @@ choice /c ync /t 5 /d n
 ```
 
 > [!NOTE]
-> Neste exemplo, se o usuário não pressionar uma tecla em cinco segundos, **Choice** selecionará **N** por padrão e retornará um valor de erro `2`de. Caso contrário, **Choice** retornará o valor correspondente à opção do usuário.
+> Neste exemplo, se o usuário não pressionar uma tecla em cinco segundos, **Choice** selecionará **N** por padrão e retornará um valor de erro de `2` . Caso contrário, **Choice** retornará o valor correspondente à opção do usuário.
 
 ## <a name="additional-references"></a>Referências adicionais
 

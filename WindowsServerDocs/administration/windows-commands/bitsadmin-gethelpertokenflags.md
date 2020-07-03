@@ -1,6 +1,6 @@
 ---
 title: bitsadmin gethelpertokenflags
-description: Tópico de referência para o comando Bitsadmin gethelpertokenflags, que retorna os sinalizadores de uso para um token auxiliar que está associado a um trabalho de transferência de BITS.
+description: Artigo de referência para o comando Bitsadmin gethelpertokenflags, que retorna os sinalizadores de uso para um token auxiliar que está associado a um trabalho de transferência de BITS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -8,16 +8,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 23e93ca71915fc369a940a21ce856b14deced004
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 62c5678c1af22b5970d1367aa514033ab7269148
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82717905"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928238"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
 
-Retorna os sinalizadores de uso para um [token](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs) auxiliar que está associado a um trabalho de transferência de bits.
+Retorna os sinalizadores de uso para um [token auxiliar](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)   que está associado a um trabalho de transferência de bits.
 
 > [!NOTE]
 > Esse comando não tem suporte no BITS 3,0 e versões anteriores.
@@ -40,8 +40,8 @@ Possíveis valores de retorno, incluindo:
 
 - **0x0001.** O token auxiliar é usado para abrir o arquivo local de um trabalho de upload, para criar ou renomear o arquivo temporário de um trabalho de download ou para criar ou renomear o arquivo de resposta de um trabalho de resposta de upload.
 
-- **0x0002.** O token auxiliar é usado para abrir o arquivo remoto de um trabalho de upload ou download do protocolo SMB ou em resposta a um servidor HTTP ou a um desafio de proxy para credenciais NTLM ou Kerberos implícitas. Você deve chamar `/SetCredentialsJob TargetScheme NULL NULL` para permitir que as credenciais sejam enviadas via http.
-  
+- **0x0002.** O token auxiliar é usado para abrir o arquivo remoto de um trabalho de upload ou download do protocolo SMB ou em resposta a um servidor HTTP ou a um desafio de proxy para credenciais NTLM ou Kerberos implícitas. Você deve chamar  `/SetCredentialsJob TargetScheme NULL NULL`   para permitir que as credenciais sejam enviadas via http.
+
 ## <a name="examples"></a>Exemplos
 
 Para recuperar os sinalizadores de uso para um token auxiliar associado a um trabalho de transferência de BITS chamado *myDownloadJob*:

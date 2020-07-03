@@ -1,6 +1,6 @@
 ---
-title: title
-description: Tópico de referência para título, que cria um título para a janela de prompt de comando.
+title: título
+description: Artigo de referência para título, que cria um título para a janela de prompt de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a94fe033bfd43d825c5beb7c915937bc4419b18f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 732a0de30b9495e6281248120d2a90f85734ad8b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721342"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930064"
 ---
-# <a name="title"></a>title
+# <a name="title"></a>título
 
 Cria um título para a janela de prompt de comando.
 
@@ -32,7 +32,7 @@ title [<String>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<Cadeia de caracteres>|Especifica o título da janela do prompt de comando.|
+|\<String>|Especifica o título da janela do prompt de comando.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
@@ -42,7 +42,7 @@ title [<String>]
 
 ## <a name="examples"></a>Exemplos
 
-No script de exemplo a seguir, o título da janela de prompt de comando é alterado para atualizar os arquivos enquanto o arquivo em lotes executa o comando de **cópia** . Depois que o comando é executado, o `Files Updated` texto é exibido e o título da janela do prompt de comando é alterado de volta para o prompt de comando.
+No script de exemplo a seguir, o título da janela de prompt de comando é alterado para atualizar os arquivos enquanto o arquivo em lotes executa o comando de **cópia** . Depois que o comando é executado, o texto `Files Updated` é exibido e o título da janela do prompt de comando é alterado de volta para o prompt de comando.
 ```
 @echo off
 title Updating Files

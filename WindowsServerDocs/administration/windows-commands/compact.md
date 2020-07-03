@@ -1,6 +1,6 @@
 ---
 title: compact
-description: Tópico de referência para o comando Compact, que exibe ou altera a compactação de arquivos ou diretórios em partições NTFS.
+description: Artigo de referência para o comando Compact, que exibe ou altera a compactação de arquivos ou diretórios em partições NTFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52830530fa281025fcfd970b7675b98004e2a918
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c17f7c934ecd4b6988b3ab606059a2acd31b852b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82710944"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929003"
 ---
 # <a name="compact"></a>compact
 
@@ -32,7 +32,7 @@ compact [/c | /u] [/s[:<dir>]] [/a] [/i] [/f] [/q] [<filename>[...]]
 | --------- | ----------- |
 | /c | Compacta o diretório ou arquivo especificado. |
 | /u | Descompacta o diretório ou arquivo especificado. |
-| /s [:`<dir>`] | Aplica o comando **Compact** a todos os subdiretórios do diretório especificado (ou do diretório atual, se nenhum for especificado). |
+| /s [: `<dir>` ] | Aplica o comando **Compact** a todos os subdiretórios do diretório especificado (ou do diretório atual, se nenhum for especificado). |
 | /a | Exibe arquivos ocultos ou do sistema. |
 | /i | Ignora erros. |
 | /f | Força a compactação ou descompactação do diretório ou arquivo especificado. **/f** é usado no caso de um arquivo que foi parcialmente compactado quando a operação foi interrompida por uma falha do sistema. Para forçar o arquivo a ser compactado em sua totalidade, use os parâmetros **/c** e **/f** e especifique o arquivo parcialmente compactado. |
@@ -75,7 +75,7 @@ Para compactar todos os arquivos com a extensão de nome de arquivo. bmp no dire
 compact /c /s:\tmp *.bmp
 ```
 
-Para forçar a compactação completa do arquivo *pretas. bmp*, que foi parcialmente compactado durante uma falha do sistema, digite:
+Para forçar a compactação completa do arquivo *zebra.bmp*, que foi parcialmente compactado durante uma falha do sistema, digite:
 
 ```
 compact /c /f zebra.bmp

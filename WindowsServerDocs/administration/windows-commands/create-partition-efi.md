@@ -1,6 +1,6 @@
 ---
-title: criar partição EFI
-description: Tópico de referência para o comando Create Partition EFI, que cria uma partição de sistema de EFI (Extensible Firmware Interface) em um disco GPT (tabela de partição GUID) em computadores baseados em Itanium.
+title: create partition efi
+description: Artigo de referência para o comando Create Partition EFI, que cria uma partição de sistema de EFI (Extensible Firmware Interface) em um disco GPT (tabela de partição GUID) em computadores baseados em Itanium.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c314d756bebd0d0ec2ed9c844f714f395d04c6b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 05c811e7be32ed9e73b352161ef1e6f043f27048
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993288"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928880"
 ---
-# <a name="create-partition-efi"></a>criar partição EFI
+# <a name="create-partition-efi"></a>create partition efi
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

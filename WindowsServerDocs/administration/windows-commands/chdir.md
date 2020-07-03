@@ -1,6 +1,6 @@
 ---
 title: chdir
-description: Tópico de referência para o comando chdir, que executa as mesmas ações que o comando CD.
+description: Artigo de referência do comando chdir, que executa as mesmas ações que o comando CD.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b2bbd188f28bd1ebd9e869a1eff25e97190ca96
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 942aa9c3be71a40b2bc08856e4cb39550635d20d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819146"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929111"
 ---
 # <a name="chdir"></a>chdir
 

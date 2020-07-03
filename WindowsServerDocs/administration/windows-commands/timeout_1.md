@@ -1,6 +1,6 @@
 ---
 title: tempo limite
-description: Tópico de referência para tempo limite, que pausa o processador de comando para o número de segundos especificado.
+description: Artigo de referência para tempo limite, que pausa o processador de comando para o número de segundos especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ed66342c4f0bbe22e9d2dc6440d291941c769cd7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 62ead9473a9034c02fab18f2318ecb5162511922
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721354"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930088"
 ---
 # <a name="timeout"></a>tempo limite
 
@@ -25,14 +25,14 @@ Pausa o processador de comandos para o número de segundos especificado.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-timeout /t <TimeoutInSeconds> [/nobreak] 
+timeout /t <TimeoutInSeconds> [/nobreak]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/t \<TimeoutInSeconds>|Especifica o número decimal de segundos (entre-1 e 99999) a aguardar antes do processamento do processador de comando continuar. O valor-1 faz com que o computador aguarde indefinidamente por um pressionamento de tecla.|
+|/t\<TimeoutInSeconds>|Especifica o número decimal de segundos (entre-1 e 99999) a aguardar antes do processamento do processador de comando continuar. O valor-1 faz com que o computador aguarde indefinidamente por um pressionamento de tecla.|
 |/nobreak|Especifica para ignorar os traços de tecla do usuário.|
 |/?|Exibe a ajuda no prompt de comando.|
 

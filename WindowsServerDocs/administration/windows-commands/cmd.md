@@ -1,6 +1,6 @@
 ---
 title: cmd
-description: Tópico de referência para o comando cmd, que inicia uma nova instância do interpretador de comando, cmd. exe.
+description: Artigo de referência para o comando cmd, que inicia uma nova instância do interpretador de comando, Cmd.exe.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8d381dd56d6648f749cd4a19d71422897e4b9b05
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712584"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929865"
 ---
 # <a name="cmd"></a>cmd
 
-Inicia uma nova instância do interpretador de comando, cmd. exe. Se usado sem parâmetros, o **cmd** exibirá a versão e as informações de direitos autorais do sistema operacional.
+Inicia uma nova instância do interpretador de comando, Cmd.exe. Se usado sem parâmetros, o **cmd** exibirá a versão e as informações de direitos autorais do sistema operacional.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -47,7 +47,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 | `<string>` | Especifica o comando que você deseja executar. |
 | /? | Exibe a ajuda no prompt de comando. |
 
-A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores `<b>` para `<f>`e:
+A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores para `<b>` e `<f>` :
 
 | Valor | Cor |
 | ----- | ----- |
@@ -70,7 +70,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 
 ## <a name="remarks"></a>Comentários
 
-- Para usar vários comandos para `<string>`, separe-os pelo separador **&&** de comandos e coloque-os entre aspas. Por exemplo: 
+- Para usar vários comandos para `<string>` , separe-os pelo separador de comandos **&&** e coloque-os entre aspas. Por exemplo:
 
     ```
     "<command1>&&<command2>&&<command3>"
@@ -90,7 +90,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 
     Se as condições anteriores não forem atendidas, a *cadeia de caracteres* será processada examinando o primeiro caractere para verificar se é uma aspa de abertura. Se o primeiro caractere for uma aspa de abertura, ele será retirado junto com as aspas de fechamento. Qualquer texto após as aspas de fechamento é preservado.
 
-- Se você não especificar **/d** na *cadeia de caracteres*, o cmd. exe procurará as seguintes subchaves do registro:
+- Se você não especificar **/d** na *cadeia de caracteres*, Cmd.exe procurará as seguintes subchaves do registro:
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
@@ -107,12 +107,12 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 
     - **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    Defina o valor de **REG_DWORD** como **0 × 1** (habilitado) ou **0 × 0** (desabilitado) no registro usando Regedit. exe. As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
+    Defina o valor de **REG_DWORD** como **0 × 1** (habilitado) ou **0 × 0** (desabilitado) no registro usando Regedit.exe. As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
     > [!CAUTION]
     > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
-    Quando você habilita extensões de comando, os seguintes comandos são afetados:  
+    Quando você habilita extensões de comando, os seguintes comandos são afetados:
     - **assoc**
 
     - **call**
@@ -151,7 +151,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 
 - Se você habilitar a expansão de variável de ambiente atrasada, poderá usar o caractere de ponto de exclamação para substituir o valor de uma variável de ambiente em tempo de execução.
 
-- A conclusão do nome de arquivo e diretório não está habilitada por padrão. Você pode habilitar ou desabilitar a conclusão do nome de arquivo para um processo específico do comando **cmd** com **/f:**{**on** | **off**}. Você pode habilitar ou desabilitar a conclusão de nome de arquivo e diretório para todos os processos do comando **cmd** em um computador ou para uma sessão de logon de usuário definindo os seguintes valores de **REG_DWORD** :
+- A conclusão do nome de arquivo e diretório não está habilitada por padrão. Você pode habilitar ou desabilitar a conclusão do nome de arquivo para um processo específico do comando **cmd** com **/f:**{**on**  |  **off**}. Você pode habilitar ou desabilitar a conclusão de nome de arquivo e diretório para todos os processos do comando **cmd** em um computador ou para uma sessão de logon de usuário definindo os seguintes valores de **REG_DWORD** :
 
     - **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\CompletionChar\ REG_DWORD**
 
@@ -161,7 +161,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 
     - **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\PathCompletionChar\ REG_DWORD**
 
-    Para definir o valor de **REG_DWORD** , execute regedit. exe e use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 × 9** é Tab e **0 × 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
+    Para definir o valor de **REG_DWORD** , execute Regedit.exe e use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 × 9** é Tab e **0 × 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
     > [!CAUTION]
     > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.

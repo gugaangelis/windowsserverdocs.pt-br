@@ -1,6 +1,6 @@
 ---
-title: criar espelho de volume
-description: Tópico de referência para o comando criar espelho de volume, que cria um espelho de volume usando os dois discos dinâmicos especificados.
+title: create volume mirror
+description: Artigo de referência para o comando Create volume Mirror, que cria um espelho de volume usando os dois discos dinâmicos especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be6e4496876636351b6e0853626a9ff9bb421f18
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 91f718aab181db7d3cbeb0e4255a43f2924ecd33
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993252"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929551"
 ---
-# <a name="create-volume-mirror"></a>criar espelho de volume
+# <a name="create-volume-mirror"></a>create volume mirror
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -33,7 +33,7 @@ create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | tamanho =`<n>` | Especifica a quantidade de espaço em disco, em megabytes (MB), que o volume ocupará em cada disco. Se nenhum tamanho for fornecido, o novo volume ocupará o espaço livre restante no menor disco e uma quantidade igual de espaço em cada disco subsequente. |
-| disco =`<n>`,`<n>`[`,<n>,...`] | Especifica os discos dinâmicos nos quais o volume espelho é criado. Você precisa de dois discos dinâmicos para criar um volume de espelho. Uma quantidade de espaço igual ao tamanho especificado com o parâmetro de **tamanho** é alocada em cada disco. |
+| disco = `<n>` , `<n>` [ `,<n>,...` ] | Especifica os discos dinâmicos nos quais o volume espelho é criado. Você precisa de dois discos dinâmicos para criar um volume de espelho. Uma quantidade de espaço igual ao tamanho especificado com o parâmetro de **tamanho** é alocada em cada disco. |
 | align =`<n>` | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Esse parâmetro é normalmente usado com matrizes de LUN (número de unidade lógica) de RAID de hardware para melhorar o desempenho. `<n>`é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um erro. |
 

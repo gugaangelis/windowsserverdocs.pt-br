@@ -1,6 +1,6 @@
 ---
 title: defrag
-description: Tópico de referência para o comando de desfragmentação, que localiza e consolida arquivos fragmentados em volumes locais para melhorar o desempenho do sistema.
+description: Artigo de referência para o comando de desfragmentação, que localiza e consolida arquivos fragmentados em volumes locais para melhorar o desempenho do sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf3ca6febfa07c7780b959389ff57fe4f3a0018b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993145"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928799"
 ---
 # <a name="defrag"></a>defrag
 
@@ -79,7 +79,7 @@ defrag <volume> [<parameters>]
 
 - Por padrão, a **desfragmentação** exibirá um resumo dos relatórios de análise e de desfragmentação se você não especificar os parâmetros **/a** ou **/v** .
 
-- Você pode enviar os relatórios para um arquivo de texto digitando **>** <em>filename. txt</em>, em que *filename. txt* é um nome de arquivo que você especifica. Por exemplo: `defrag volume /v > FileName.txt`
+- Você pode enviar os relatórios para um arquivo de texto digitando **>** <em>FileName.txt</em>, em que *FileName.txt* é um nome de arquivo que você especificar. Por exemplo: `defrag volume /v > FileName.txt`
 
 - Para interromper o processo de desfragmentação, na linha de comando, pressione **Ctrl + C**.
 
@@ -139,6 +139,6 @@ O processo de desfragmentação executa a tarefa agendada como uma tarefa de man
 
 - [fsutil](fsutil.md)
 
-- [fsutil Dirty](fsutil-dirty.md)
+- [fsutil dirty](fsutil-dirty.md)
 
 - [Otimização do volume PowerShell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)

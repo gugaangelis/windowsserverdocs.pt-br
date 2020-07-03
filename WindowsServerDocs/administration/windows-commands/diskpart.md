@@ -1,17 +1,17 @@
 ---
 title: diskpart
-description: Tópico de referência para o interpretador de comandos do DiskPart, que ajuda você a gerenciar as unidades do computador.
+description: Artigo de referência do interpretador de comandos do DiskPart, que ajuda você a gerenciar as unidades do computador.
 ms.prod: windows-server
 ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 8b6d36e428daaefd7cf26e42170442373fc7551c
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 87fc3a2e91b2f5ac22e87485d9258ef369ff0da0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992567"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929306"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -43,7 +43,7 @@ Alguns comandos alteram o foco automaticamente. Por exemplo, quando você cria u
 
 Você só pode dar enfoque a uma partição no disco selecionado. Depois que uma partição tiver foco, o volume relacionado (se houver) também terá o foco. Após o foco de um volume, o disco e a partição relacionados também terão foco se o volume for mapeado para uma única partição específica. Se esse não for o caso, o foco no disco e na partição será perdido.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 Para iniciar o interpretador de comandos do DiskPart, no prompt de comando, digite:
 
@@ -68,36 +68,36 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskPa
 | [automount](automount.md) | Habilita ou desabilita o recurso de montagem automática. |
 | [break](break.md) | Quebra o volume espelhado com foco em dois volumes simples. |
 | [clean](clean.md) | Remove toda e qualquer formatação de partição ou volume do disco com foco. |
-| [Compact vdisk](compact-vdisk.md) | Reduz o tamanho físico de um arquivo de disco rígido virtual (VHD) de expansão dinâmica. |
+| [compact vdisk](compact-vdisk.md) | Reduz o tamanho físico de um arquivo de disco rígido virtual (VHD) de expansão dinâmica. |
 | [convert](convert.md) | Converte os volumes FAT (tabela de alocação de arquivo) e FAT32 no sistema de arquivos NTFS, deixando os arquivos e diretórios existentes intactos. |
-| [criada](create.md) | Cria uma partição em um disco, um volume em um ou mais discos ou um VHD (disco rígido virtual). |
+| [create](create.md) | Cria uma partição em um disco, um volume em um ou mais discos ou um VHD (disco rígido virtual). |
 | [delete](delete.md) | Exclui uma partição ou um volume. |
 | [detach vdisk](detach-vdisk.md) | Interrompe a exibição do VHD (disco rígido virtual) selecionado como uma unidade de disco rígido local no computador host. |
-| [detalhes](detail.md) | Exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado. |
+| [detail](detail.md) | Exibe informações sobre o disco, a partição, o volume ou o VHD (disco rígido virtual) selecionado. |
 | [exit](exit.md) | Sai do interpretador de comandos do DiskPart. |
-| [expandir vdisk](expand-vdisk.md) | Expande um VHD (disco rígido virtual) para o tamanho que você especificar. |
-| [estender](extend.md) | Estende o volume ou a partição com foco, juntamente com seu sistema de arquivos, para espaço livre (não alocado) em um disco. |
-| [sistemas](filesystems.md) | Exibe informações sobre o sistema de arquivos atual do volume com foco e lista os sistemas de arquivos com suporte para formatar o volume. |
+| [expand vdisk](expand-vdisk.md) | Expande um VHD (disco rígido virtual) para o tamanho que você especificar. |
+| [extend](extend.md) | Estende o volume ou a partição com foco, juntamente com seu sistema de arquivos, para espaço livre (não alocado) em um disco. |
+| [filesystems](filesystems.md) | Exibe informações sobre o sistema de arquivos atual do volume com foco e lista os sistemas de arquivos com suporte para formatar o volume. |
 | [format](format.md) | Formata um disco para aceitar arquivos do Windows. |
-| [GPT](gpt.md) | Atribui os atributos GPT à partição com foco em discos básicos da tabela de partição GUID (GPT). |
+| [gpt](gpt.md) | Atribui os atributos GPT à partição com foco em discos básicos da tabela de partição GUID (GPT). |
 | [help](help.md) | Exibe uma lista de comandos disponíveis ou informações de ajuda detalhadas sobre um comando especificado. |
 | [import](import.md) | Importa um grupo de discos externos para o grupo de discos do computador local. |
-| [inativo](inactive.md) | Marca a partição do sistema ou a partição de inicialização com foco como inativa em discos básicos de MBR (registro mestre de inicialização). |
+| [inactive](inactive.md) | Marca a partição do sistema ou a partição de inicialização com foco como inativa em discos básicos de MBR (registro mestre de inicialização). |
 | [list](list.md) | Exibe uma lista de discos, de partições em um disco, de volumes em um disco ou de VHDs (discos rígidos virtuais). |
-| [Mesclar vdisk](merge-vdisk.md) | Mescla um VHD (disco rígido virtual) diferencial com seu VHD pai correspondente. |
-| [está](offline.md) | Coloca um disco ou volume online no estado offline. |
-| [conectar](online.md) | Coloca um disco ou volume offline para o estado online. |
+| [merge vdisk](merge-vdisk.md) | Mescla um VHD (disco rígido virtual) diferencial com seu VHD pai correspondente. |
+| [offline](offline.md) | Coloca um disco ou volume online no estado offline. |
+| [online](online.md) | Coloca um disco ou volume offline para o estado online. |
 | [recover](recover.md) | Atualiza o estado de todos os discos em um grupo de discos, tenta recuperar discos em um grupo de discos inválido e sincroniza novamente os volumes espelhados e os volumes RAID-5 que têm dados obsoletos. |
 | [rem](rem.md) | Fornece uma maneira de adicionar comentários a um script. |
-| [remover](remove.md) | Remove uma letra de unidade ou ponto de montagem de um volume. |
-| [corrige](repair.md) | Repara o volume RAID-5 com foco, substituindo a região do disco com falha pelo disco dinâmico especificado. |
-| [examinar novamente](rescan.md) | Localiza novos discos que podem ter sido adicionados ao computador. |
-| [manteve](retain.md) | Prepara um volume simples dinâmico existente para ser usado como um volume do sistema ou de inicialização. |
-| [solução](san.md) | Exibe ou define a política de San (rede de área de armazenamento) para o sistema operacional. |
-| [Não](select.md) | Desloca o foco para um disco, partição, volume ou VHD (disco rígido virtual). |
-| [ID do conjunto](set-id.md) | Altera o campo de tipo de partição para a partição com foco. |
+| [remove](remove.md) | Remove uma letra de unidade ou ponto de montagem de um volume. |
+| [repair](repair.md) | Repara o volume RAID-5 com foco, substituindo a região do disco com falha pelo disco dinâmico especificado. |
+| [rescan](rescan.md) | Localiza novos discos que podem ter sido adicionados ao computador. |
+| [retain](retain.md) | Prepara um volume simples dinâmico existente para ser usado como um volume do sistema ou de inicialização. |
+| [san](san.md) | Exibe ou define a política de San (rede de área de armazenamento) para o sistema operacional. |
+| [select](select.md) | Desloca o foco para um disco, partição, volume ou VHD (disco rígido virtual). |
+| [set id](set-id.md) | Altera o campo de tipo de partição para a partição com foco. |
 | [shrink](shrink.md) | Reduz o tamanho do volume selecionado pelo valor especificado. |
-| [UniqueId](uniqueid.md) | Exibe ou define o identificador GPT (tabela de partição GUID) ou a assinatura MBR (registro mestre de inicialização) para o disco com foco. |
+| [uniqueid](uniqueid.md) | Exibe ou define o identificador GPT (tabela de partição GUID) ou a assinatura MBR (registro mestre de inicialização) para o disco com foco. |
 
 ## <a name="additional-references"></a>Referências adicionais
 

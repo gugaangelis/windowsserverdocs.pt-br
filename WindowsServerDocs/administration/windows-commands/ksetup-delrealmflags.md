@@ -1,6 +1,6 @@
 ---
 title: ksetup delrealmflags
-description: Tópico de referência para o comando ksetup delrealmflags, que remove os sinalizadores de realm do realm especificado.
+description: Artigo de referência para o comando ksetup delrealmflags, que remove os sinalizadores de realm do realm especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8d983a00683fec0fa1bb9801caabe226a4ffeb9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 9d3c81d1b034f6c53c33271c1c9e61a0fc5d4893
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817826"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929178"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 

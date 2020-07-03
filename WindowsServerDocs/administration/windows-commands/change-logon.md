@@ -1,6 +1,6 @@
 ---
 title: change logon
-description: Tópico de referência para o comando Change login, que habilita ou desabilita os logons de sessões de cliente ou exibe o status de logon atual.
+description: Artigo de referência para o comando Change login, que habilita ou desabilita os logons de sessões de cliente ou exibe o status de logon atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a2ebe75f6efa8c3bcfc0018d1f4e6051bb9ebb7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1561434347bc6a56e628f185e0984e33587bd999
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82716127"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929125"
 ---
 # <a name="change-logon"></a>change logon
 
@@ -51,7 +51,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
 ### <a name="examples"></a>Exemplos
 
 - Para exibir o status de logon atual, digite:
-  
+
   ```
   change logon /query
   ```
@@ -67,7 +67,7 @@ change logon {/query | /enable | /disable | /drain | /drainuntilrestart}
   ```
   change logon /disable
   ```
-  
+
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

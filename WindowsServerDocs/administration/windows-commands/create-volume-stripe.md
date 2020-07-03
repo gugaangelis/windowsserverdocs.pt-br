@@ -1,6 +1,6 @@
 ---
-title: criar faixa de volume
-description: Tópico de referência para o comando Create volume Stripe, que cria um volume distribuído usando dois ou mais discos dinâmicos especificados.
+title: create volume stripe
+description: Artigo de referência para o comando Create volume Stripe, que cria um volume distribuído usando dois ou mais discos dinâmicos especificados.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 315d7a08dfcf64ae09501975b5f5bdb72c37754e
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 8cb20a7741d49201b88345374ba1c435e81a77f6
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993213"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929527"
 ---
-# <a name="create-volume-stripe"></a>criar faixa de volume
+# <a name="create-volume-stripe"></a>create volume stripe
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

@@ -1,6 +1,6 @@
 ---
 title: chkdsk
-description: Tópico de referência para o comando chkdsk, que verifica o sistema de arquivos e os metadados do sistema de arquivos de um volume para erros lógicos e físicos.
+description: Artigo de referência para o comando chkdsk, que verifica o sistema de arquivos e os metadados do sistema de arquivos de um volume para erros lógicos e físicos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 10/09/2019
-ms.openlocfilehash: 4843624337e031f81453def78e4df97bdbfe821e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: b98699b7e0925b43c15a602b9c193be9301a14ce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714404"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929990"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -32,7 +32,7 @@ Verifica o sistema de arquivos e os metadados do sistema de arquivos de um volum
 ## <a name="syntax"></a>Sintaxe
 
 ```
-chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]] [/b]  
+chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]] [/b]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -47,10 +47,10 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 | /x | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para a unidade são invalidados. **/x** também inclui a funcionalidade de **/f**.  |
 | /i | Use somente com NTFS. Executa uma verificação menos rigorosa de entradas de índice, o que reduz a quantidade de tempo necessária para executar **chkdsk**. |
 | /c | Use somente com NTFS. Não verifica os ciclos dentro da estrutura de pastas, o que reduz a quantidade de tempo necessária para executar **chkdsk**.  |
-| /l [:`<size>`] | Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual. |
+| /l [: `<size>` ] | Use somente com NTFS. Altera o tamanho do arquivo de log para o tamanho que você digitar. Se você omitir o parâmetro de tamanho, **/l** exibirá o tamanho atual. |
 | /b | Use somente com NTFS. Limpa a lista de clusters inválidos no volume e examina novamente todos os clusters alocados e livres para erros. **/b** inclui a funcionalidade de **/r**. Use esse parâmetro após a geração de imagens de um volume para uma nova unidade de disco rígido. |
 | /Scan | Use somente com NTFS. Executa uma verificação online no volume. |
-| /forceofflinefix | Use somente com NTFS (deve ser usado com **/Scan**). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (por `chkdsk /spotfix`exemplo,). |
+| /forceofflinefix | Use somente com NTFS (deve ser usado com **/Scan**). Ignorar todo o reparo online; todos os defeitos encontrados são enfileirados para reparo offline (por exemplo, `chkdsk /spotfix` ). |
 | /perf | Use somente com NTFS (deve ser usado com **/Scan**). O usa mais recursos do sistema para concluir uma verificação o mais rápido possível. Isso pode afetar o desempenho negativo em outras tarefas em execução no sistema. |
 | /spotfix | Use somente com NTFS. Executa a correção de pontos no volume. |
 | /sdcleanup | Use somente com NTFS. O lixo coleta dados de descritor de segurança desnecessários (implica **/f**). |
@@ -66,7 +66,7 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 - Se você quiser que o **chkdsk** corrija erros de disco, não poderá ter arquivos abertos na unidade. Se os arquivos estiverem abertos, a seguinte mensagem de erro será exibida:
 
   ```
-  Chkdsk cannot run because the volume is in use by another process. Would you like to schedule this volume to be checked the next time the system restarts? (Y/N)  
+  Chkdsk cannot run because the volume is in use by another process. Would you like to schedule this volume to be checked the next time the system restarts? (Y/N)
   ```
 
 - Se você optar por verificar a unidade na próxima vez que reiniciar o computador, o **chkdsk** verificará a unidade e corrigirá os erros automaticamente quando você reiniciar o computador. Se a partição da unidade for uma partição de inicialização, **chkdsk** reinicia automaticamente o computador depois de verificar a unidade.
@@ -80,17 +80,17 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
   Como os reparos em sistemas de arquivos FAT geralmente alteram a tabela de alocação de arquivos de um disco e, às vezes, causam perda de dados, o **chkdsk** pode exibir uma mensagem de confirmação semelhante à seguinte:
 
   ```
-  10 lost allocation units found in 3 chains.  
-  Convert lost chains to files?  
+  10 lost allocation units found in 3 chains.
+  Convert lost chains to files?
   ```
 
-    - Se você pressionar **s**, o Windows salvará cada cadeia perdida no diretório raiz como um arquivo com um nome no formato file`<nnnn>`. chk. Quando **chkdsk** for concluído, você poderá verificar esses arquivos para ver se eles contêm os dados necessários.
+    - Se você pressionar **s**, o Windows salvará cada cadeia perdida no diretório raiz como um arquivo com um nome no formato file `<nnnn>` . chk. Quando **chkdsk** for concluído, você poderá verificar esses arquivos para ver se eles contêm os dados necessários.
 
     - Se você pressionar **N**, o Windows corrigirá o disco, mas não salvará o conteúdo das unidades de alocação perdidas.
 
 - Se você não usar o parâmetro **/f** , **chkdsk** exibirá uma mensagem informando que o arquivo precisa ser corrigido, mas não corrigirá nenhum erro.
 
-- Se você usar `chkdsk /f*` o em um disco muito grande ou um disco com um número muito grande de arquivos (por exemplo, milhões de arquivos) `chkdsk /f` , o pode levar muito tempo para ser concluído.
+- Se você usar o `chkdsk /f*` em um disco muito grande ou um disco com um número muito grande de arquivos (por exemplo, milhões de arquivos), o `chkdsk /f` pode levar muito tempo para ser concluído.
 
 - Use o parâmetro **/r** para localizar erros de disco físico no sistema de arquivos e tentar recuperar dados de quaisquer setores de disco afetados.
 
@@ -104,7 +104,7 @@ chkdsk [<volume>[[<path>]<filename>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<size>]
 
 ### <a name="understanding-exit-codes"></a>Noções básicas sobre códigos de saída
 
-A tabela a seguir lista os códigos de saída que o **chkdsk** relata após a conclusão.  
+A tabela a seguir lista os códigos de saída que o **chkdsk** relata após a conclusão.
 
   | Código de saída | Descrição |
   | --------- | ----------- |
@@ -118,7 +118,7 @@ A tabela a seguir lista os códigos de saída que o **chkdsk** relata após a co
 Para verificar o disco na unidade D e corrigir os erros do Windows, digite:
 
 ```
-chkdsk d: /f  
+chkdsk d: /f
 ```
 
 Se ele encontrar erros, **chkdsk** pausará e exibirá mensagens. **Chkdsk** é concluído exibindo um relatório que lista o status do disco. Você não pode abrir nenhum arquivo na unidade especificada até que **chkdsk** seja concluído.
@@ -126,7 +126,7 @@ Se ele encontrar erros, **chkdsk** pausará e exibirá mensagens. **Chkdsk** é 
 Para verificar se todos os arquivos em um disco FAT no diretório atual são blocos não contíguos, digite:
 
 ```
-chkdsk *.*  
+chkdsk *.*
 ```
 
 **Chkdsk** exibe um relatório de status e lista os arquivos que correspondem às especificações de arquivo que têm blocos não contíguos.

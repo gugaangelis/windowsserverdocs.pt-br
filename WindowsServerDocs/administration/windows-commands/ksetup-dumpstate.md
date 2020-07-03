@@ -1,6 +1,6 @@
 ---
 title: ksetup dumpstate
-description: Tópico de referência para o ksetup dumpstate comando, que exibe o estado atual das configurações de realm para todos os territórios definidos no computador.
+description: Artigo de referência para o comando dumpstate ksetup, que exibe o estado atual das configurações de realm para todos os territórios definidos no computador.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ccb75ac143239d97b823fb7030f9a8020b4b4f6
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 86e3761af14da9e1b8f52f4ce6859128fcda7bb7
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817736"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929160"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 

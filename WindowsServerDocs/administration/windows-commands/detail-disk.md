@@ -1,6 +1,6 @@
 ---
-title: disco de detalhes
-description: Tópico de referência para o comando de disco de detalhes, que exibe as propriedades do disco selecionado e os volumes nesse disco.
+title: detail disk
+description: Artigo de referência para o comando de disco de detalhes, que exibe as propriedades do disco selecionado e os volumes nesse disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 358d6762f382dc8461c73cbd557a906eb5189c6f
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5bb5ec5a51f16aecf1b8ee35c78736f1791d3106
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993073"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929466"
 ---
-# <a name="detail-disk"></a>disco de detalhes
+# <a name="detail-disk"></a>detail disk
 
 Exibe as propriedades do disco selecionado e os volumes existentes nele. Antes de começar, você deve selecionar um disco para que essa operação seja realizada com sucesso. Use o comando [selecionar disco](select-disk.md) para selecionar um disco e deslocar o foco para ele. Se você selecionar um VHD (disco rígido virtual), esse comando mostrará o tipo de barramento do disco como *virtual*.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 detail disk

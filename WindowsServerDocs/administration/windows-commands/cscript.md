@@ -1,6 +1,6 @@
 ---
 title: cscript
-description: Tópico de referência para o comando cscript, que inicia um script para que ele seja executado em um ambiente de linha de comando.
+description: Artigo de referência para o comando cscript, que inicia um script para que ele seja executado em um ambiente de linha de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24d5d46a0a994ca44230076786fbd59c00cbdc57
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: e7f6731c264fc5a22bee2d94b41a555431e48b42
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437051"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928834"
 ---
 # <a name="cscript"></a>cscript
 
@@ -39,8 +39,8 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /b | Especifica o modo de lote, que não exibe alertas, erros de script ou prompts de entrada. |
 | /d | Inicia o depurador. |
 | /e:`<engine>` | Especifica o mecanismo usado para executar o script. |
-| /h: cscript | Registra o cscript. exe como o host de script padrão para executar scripts. |
-| /h: WScript | Registra o WScript. exe como o host de script padrão para executar scripts. Este é o padrão. |
+| /h: cscript | Registra cscript.exe como o host de script padrão para executar scripts. |
+| /h: WScript | Registra wscript.exe como o host de script padrão para executar scripts. Este é o padrão. |
 | /i | Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada. Esse é o padrão e o oposto de `/b` . |
 | /minuto<identifier> | Executa o trabalho identificado pelo *identificador* em um arquivo de script. wsf. |
 | /logo | Especifica que a faixa do host de scripts do Windows é exibida no console do antes de o script ser executado. Esse é o padrão e o oposto de `/nologo` . |
@@ -49,18 +49,18 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /t:<seconds> | Especifica o tempo máximo que o script pode executar (em segundos). Você pode especificar até 32.767 segundos. O padrão é sem limite de tempo. |
 | /u | Especifica o Unicode para entrada e saída que é redirecionado do console do. |
 | /x | Inicia o script no depurador. |
-| /? | Exibe os parâmetros de comando disponíveis e fornece ajuda para usá-los. Isso é o mesmo que digitar **cscript. exe** sem parâmetros e nenhum script. |
+| /? | Exibe os parâmetros de comando disponíveis e fornece ajuda para usá-los. Isso é o mesmo que digitar **cscript.exe** sem parâmetros e nenhum script. |
 | scriptarguments | Especifica os argumentos passados para o script. Cada argumento de script deve ser precedido por uma barra ( **/** ). |
 
 #### <a name="remarks"></a>Comentários
 
-- Cada parâmetro é opcional; no entanto, você não pode especificar argumentos de script sem especificar um script. Se você não especificar um script ou argumentos de script, o cscript. exe exibirá a sintaxe de cscript. exe e as opções de host válidas.
+- Cada parâmetro é opcional; no entanto, você não pode especificar argumentos de script sem especificar um script. Se você não especificar um script ou argumentos de script, cscript.exe exibirá a sintaxe de cscript.exe e as opções de host válidas.
 
 - O parâmetro **/t** impede a execução excessiva de scripts por meio da definição de um temporizador. Quando o tempo de execução excede o valor especificado, o cscript interrompe o mecanismo de script e encerra o processo.
 
 - Os arquivos de script do Windows geralmente têm uma das seguintes extensões de nome de arquivo:. wsf,. vbs,. js. O Windows Script Host pode usar arquivos de script. wsf. Cada arquivo. wsf pode usar vários mecanismos de script e executar vários trabalhos.
 
-- Se você clicar duas vezes em um arquivo de script com uma extensão que não tem associação, a caixa de diálogo **abrir com** será exibida. Selecione Wscript ou Cscript e, em seguida, selecione **sempre usar este programa para abrir este tipo de arquivo**. Isso registra o WScript. exe ou o Cscript como o host de script padrão para arquivos desse tipo de arquivo.
+- Se você clicar duas vezes em um arquivo de script com uma extensão que não tem associação, a caixa de diálogo **abrir com** será exibida. Selecione Wscript ou Cscript e, em seguida, selecione **sempre usar este programa para abrir este tipo de arquivo**. Isso registra wscript.exe ou Cscript como o host de script padrão para arquivos desse tipo de arquivo.
 
 ## <a name="additional-references"></a>Referências adicionais
 

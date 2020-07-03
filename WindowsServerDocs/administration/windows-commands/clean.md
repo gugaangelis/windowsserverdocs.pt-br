@@ -1,6 +1,6 @@
 ---
 title: clean
-description: Tópico de referência para o comando de limpeza do DiskPart, que remove todas as partições ou a formatação de volume do disco com foco.
+description: Artigo de referência para o comando de limpeza do DiskPart, que remove todas as partições ou a formatação de volume do disco com foco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45a23919dc07c8c1525808859471fdcb9f9e9403
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 7a30e1f765959ed60efa662301f95defc21d6587
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712872"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929902"
 ---
 # <a name="clean"></a>clean
 

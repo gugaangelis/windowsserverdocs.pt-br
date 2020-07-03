@@ -1,6 +1,6 @@
 ---
 title: dcgpofix
-description: Tópico de referência para o comando Dcgpofix, que recria os objetos de Política de Grupo padrão (GPOs) para um domínio.
+description: Artigo de referência para o comando Dcgpofix, que recria os objetos de Política de Grupo padrão (GPOs) para um domínio.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f11b7db8110cd2d7dcf08cd250eba411e7ff21a8
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: cf9e3c37c054c34d602e472a2c5f83e9a8b284b9
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993173"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928807"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 

@@ -1,6 +1,6 @@
 ---
 title: clip
-description: Tópico de referência para o comando de clipe, que redireciona a saída de comando da linha de comando para a área de transferência do Windows.
+description: Artigo de referência para o comando de clipe, que redireciona a saída de comando da linha de comando para a área de transferência do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61c905e3dcce52f3a3d35adeac55fc5df574f664
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 3c0e23c18d356740a639af760fc7433db59d012a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712785"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929892"
 ---
 # <a name="clip"></a>clip
 
@@ -49,7 +49,7 @@ Para copiar a saída de um programa chamado *Generic. awk* para a área de trans
 awk -f generic.awk input.txt | clip
 ```
 
-Para copiar o conteúdo de um arquivo chamado *README. txt* para a área de transferência do Windows, digite:
+Para copiar o conteúdo de um arquivo chamado *readme.txt* para a área de transferência do Windows, digite:
 
 ```
 clip < readme.txt

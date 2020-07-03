@@ -1,6 +1,6 @@
 ---
 title: bitsadmin cancel
-description: Tópico de referência para o comando Bitsadmin Cancel, que remove o trabalho da fila de transferência e exclui todos os arquivos temporários associados ao trabalho.
+description: Artigo de referência para o comando Bitsadmin Cancel, que remove o trabalho da fila de transferência e exclui todos os arquivos temporários associados ao trabalho.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 95fefbc4a9731c2ccbac22adc27f8231a7f36138
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 35173fe8b2e4f3888fa3a365ca25da35b8153eb4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718260"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928363"
 ---
 # <a name="bitsadmin-cancel"></a>bitsadmin cancel
 

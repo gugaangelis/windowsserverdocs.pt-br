@@ -1,6 +1,6 @@
 ---
 title: chglogon
-description: Tópico de referência para o comando chglogon, que habilita ou desabilita os logons de sessões de cliente em um servidor Host da Sessão da Área de Trabalho Remota ou exibe o status de logon atual.
+description: Artigo de referência para o comando chglogon, que habilita ou desabilita os logons de sessões de cliente em um servidor Host da Sessão da Área de Trabalho Remota ou exibe o status de logon atual.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ ms.date: 10/16/2017
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f232439e51f2d32f1ef4834a3bba7f4428cce093
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 582dc84e54b491f7deb92c249a258d7f321b3f9c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714545"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929093"
 ---
 # <a name="chglogon"></a>chglogon
 

@@ -1,6 +1,6 @@
 ---
 title: chcp
-description: Tópico de referência para o comando CHCP, que altera a página de código ativa do console.
+description: Artigo de referência para o comando CHCP, que altera a página de código ativa do console.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1291176ed5245b06c68491f0d5cb0ae9b0b600
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82715324"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930025"
 ---
 # <a name="chcp"></a>chcp
 
@@ -56,7 +56,7 @@ A tabela a seguir lista cada página de código com suporte e seu país/região 
 
 - Você não precisa preparar as páginas de código (como no MS-DOS).
 
-- Os programas que você inicia depois de atribuir uma nova página de código usam a nova página de código. No entanto, os programas (exceto cmd. exe) que você iniciou antes de atribuir a nova página de código continuarão a usar a página de código original.
+- Os programas que você inicia depois de atribuir uma nova página de código usam a nova página de código. No entanto, os programas (exceto Cmd.exe) que você iniciou antes de atribuir a nova página de código continuarão a usar a página de código original.
 
 ## <a name="examples"></a>Exemplos
 

@@ -1,6 +1,6 @@
 ---
 title: dfsdiag
-description: Tópico de referência para o comando Dfsdiag, que fornece informações de diagnóstico para namespaces do DFS.
+description: Artigo de referência para o comando Dfsdiag, que fornece informações de diagnóstico para namespaces do DFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e9e0de18b48a4233b950ad6aa8f1e450a99da62
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 97f39d740bc321ebcece69ff0690dfac7aab6567
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82992834"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928667"
 ---
 # <a name="dfsdiag"></a>dfsdiag
 

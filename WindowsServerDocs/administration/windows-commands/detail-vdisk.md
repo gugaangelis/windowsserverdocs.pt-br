@@ -1,6 +1,6 @@
 ---
-title: detalhes do VDISK
-description: Tópico de referência para o comando VDISK do detalhe, que exibe as propriedades do disco rígido virtual (VHD) selecionado.
+title: detail vdisk
+description: Artigo de referência do comando VDISK do detalhe, que exibe as propriedades do VHD (disco rígido virtual) selecionado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe754b5f089900ac97f288bc2cc8c72327a1bc82
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 5d3f061706bef2d4636e9f18ba428e7ddfb90bdd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993021"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929367"
 ---
-# <a name="detail-vdisk"></a>detalhes do VDISK
+# <a name="detail-vdisk"></a>detail vdisk
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Exibe as propriedades do disco rígido virtual (VHD) selecionado. Antes de começar, você deve selecionar um VHD para que essa operação seja realizada com sucesso. Use o comando [Select VDISK](select-vdisk.md) para selecionar um VHD e deslocar o foco para ele.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 detail vdisk
@@ -52,6 +52,6 @@ detail vdisk
 
 - [comando Merge vdisk](merge-vdisk.md)
 
-- [selecionar vdisk](select-vdisk.md)
+- [select vdisk](select-vdisk.md)
 
 - [comando de lista](list.md)

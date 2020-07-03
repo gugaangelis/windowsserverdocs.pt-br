@@ -1,6 +1,6 @@
 ---
 title: chgport
-description: Tópico de referência para o comando chgport, que lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.
+description: Artigo de referência para o comando chgport, que lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 869573f733460bef21c96deb36ef716b7255635c
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5eb2172d607433be922f04e54955d0d636b59355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82714472"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929072"
 ---
 # <a name="chgport"></a>chgport
 

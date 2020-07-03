@@ -1,6 +1,6 @@
 ---
 title: cipher
-description: Tópico de referência para o comando cipher, que exibe ou altera a criptografia de diretórios e arquivos em volumes NTFS.
+description: Artigo de referência para o comando cipher, que exibe ou altera a criptografia de diretórios e arquivos em volumes NTFS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b07a0231b6cff6be9533136bf35ef013c854c2e
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f23e2855c4542cc359d458f6825dd9420581657f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713397"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929978"
 ---
 # <a name="cipher"></a>cipher
 
@@ -45,13 +45,13 @@ cipher /rekey [pathname [...]]
 | /e | Criptografa os arquivos ou diretórios especificados. Os diretórios são marcados de modo que os arquivos adicionados posteriormente serão criptografados. |
 | /h | Exibe arquivos com atributos ocultos ou de sistema. Por padrão, esses arquivos não são criptografados ou descriptografados. |
 | /k | Cria um novo certificado e chave para uso com arquivos de Encrypting File System (EFS). Se o parâmetro **/k** for especificado, todos os outros parâmetros serão ignorados. |
-| /r:`<filename>` [/SmartCard] | Gera uma chave e um certificado do agente de recuperação do EFS, em seguida, grava-os em um arquivo. pfx (que contém o certificado e a chave privada) e um arquivo. cer (que contém apenas o certificado). Se **/SmartCard** for especificado, ele gravará a chave de recuperação e o certificado em um cartão inteligente, e nenhum arquivo. pfx será gerado. |
+| /r: `<filename>` [/SmartCard] | Gera uma chave e um certificado do agente de recuperação do EFS, em seguida, grava-os em um arquivo. pfx (que contém o certificado e a chave privada) e um arquivo. cer (que contém apenas o certificado). Se **/SmartCard** for especificado, ele gravará a chave de recuperação e o certificado em um cartão inteligente, e nenhum arquivo. pfx será gerado. |
 | /s`<directory>` | Executa a operação especificada em todos os subdiretórios no *diretório*especificado. |
 | /u [/n] |  Localiza todos os arquivos criptografados nas unidades locais. Se usado com o parâmetro **/n** , nenhuma atualização é feita. Se usado sem **/n**, **/u** compara a chave de criptografia de arquivo do usuário ou a chave do agente de recuperação com as atuais e as atualiza se elas foram alteradas. Esse parâmetro funciona apenas com **/n**. |
 | /w`<directory>` | Remove dados do espaço em disco não utilizado disponível em todo o volume. Se você usar o parâmetro **/w** , todos os outros parâmetros serão ignorados. O diretório especificado pode estar localizado em qualquer lugar em um volume local. Se for um ponto de montagem ou apontar para um diretório em outro volume, os dados nesse volume serão removidos. |
-| /x [: efsfile] [`<FileName>`] | Faz backup do certificado e das chaves do EFS para o nome de arquivo especificado. Se usado com **: efsfile**, **/x** faz backup dos certificados do usuário que foram usados para criptografar o arquivo. Caso contrário, será feito backup do certificado e das chaves atuais do EFS do usuário. |
+| /x [: efsfile] [ `<FileName>` ] | Faz backup do certificado e das chaves do EFS para o nome de arquivo especificado. Se usado com **: efsfile**, **/x** faz backup dos certificados do usuário que foram usados para criptografar o arquivo. Caso contrário, será feito backup do certificado e das chaves atuais do EFS do usuário. |
 | /y | Exibe a miniatura do certificado EFS atual no computador local. |
-| /adduser [/certhash:`<hash>` | /CertFile:`<filename>`] |
+| /adduser [/certhash:`<hash>` | /CertFile: `<filename>` ] |
 | /rekey | Atualiza os arquivos criptografados especificados para usar a chave EFS configurada atualmente. |
 | /removeuser /certhash:`<hash>` | Remove um usuário dos arquivos especificados. O *hash* fornecido para **/certhash** deve ser o hash SHA1 do certificado a ser removido. |
 | /? | Exibe a ajuda no prompt de comando. |

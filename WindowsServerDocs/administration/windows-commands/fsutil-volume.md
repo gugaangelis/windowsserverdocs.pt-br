@@ -1,6 +1,6 @@
 ---
 title: fsutil volume
-description: Tópico de referência para o comando de volume fsutil, que desmonta um volume ou consulta a unidade de disco rígido para determinar a quantidade de espaço livre disponível no momento na unidade de disco rígido ou qual arquivo está usando um cluster específico.
+description: Artigo de referência para o comando de volume fsutil, que desmonta um volume ou consulta a unidade de disco rígido para determinar a quantidade de espaço livre disponível no momento na unidade de disco rígido ou qual arquivo está usando um cluster específico.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: 0397c204-b3f8-4fd8-b71d-b7efb117766d
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 18671447664c47af48b4ca074aab823fd2b78625
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: aef1012cef33aeb2718dac4681b9119ea1a16590
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436831"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929244"
 ---
 # <a name="fsutil-volume"></a>fsutil volume
 

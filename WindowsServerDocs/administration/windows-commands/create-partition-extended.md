@@ -1,6 +1,6 @@
 ---
 title: criar partição estendida
-description: Tópico de referência para o comando criar partição estendida, que cria uma partição estendida no disco com foco.
+description: Artigo de referência para o comando criar partição estendida, que cria uma partição estendida no disco com foco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9d2cc591dca276f70b3ddda1827607d5e2953ed2
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 6acc766a6d9e2fd51bc9c6726d5dec2168ec7eef
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993278"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929688"
 ---
 # <a name="create-partition-extended"></a>criar partição estendida
 

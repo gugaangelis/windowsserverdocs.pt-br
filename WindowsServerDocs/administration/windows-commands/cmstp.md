@@ -1,6 +1,6 @@
 ---
 title: cmstp
-description: Tópico de referência para cmstp, que instala ou remove um perfil de serviço do Gerenciador de conexões.
+description: Artigo de referência para cmstp, que instala ou remove um perfil de serviço do Gerenciador de conexões.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11d2ec5b09cfd9440eb22d66578061ddfb157539
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 8f7bc7bc4b90dced8074fa685ad79c65747e0ded
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712082"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929818"
 ---
 # <a name="cmstp"></a>cmstp
 
@@ -22,9 +22,9 @@ ms.locfileid: "82712082"
 
 Instala ou remove um perfil de serviço do Gerenciador de conexões. Usado sem parâmetros opcionais, o **cmstp** instala um perfil de serviço com as configurações padrão apropriadas para o sistema operacional e para as permissões do usuário.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
-Sintaxe 1-essa é a sintaxe típica usada em um aplicativo de instalação personalizada. Para usar essa sintaxe, você deve executar o **cmstp** a partir do diretório que `<serviceprofilefilename>.exe` contém o arquivo.
+Sintaxe 1-essa é a sintaxe típica usada em um aplicativo de instalação personalizada. Para usar essa sintaxe, você deve executar o **cmstp** a partir do diretório que contém o `<serviceprofilefilename>.exe` arquivo.
 
 ```
 <serviceprofilefilename>.exe /q:a /c:cmstp.exe <serviceprofilefilename>.inf [/nf] [/s] [/u]

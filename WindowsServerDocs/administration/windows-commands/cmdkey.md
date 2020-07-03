@@ -1,6 +1,6 @@
 ---
 title: cmdkey
-description: Tópico de referência para o comando cmdkey, que cria, lista e exclui nomes de usuário e senhas ou credenciais armazenadas.
+description: Artigo de referência para o comando cmdkey, que cria, lista e exclui nomes de usuário e senhas ou credenciais armazenadas.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4005707785101fcc1fb0030ffe895668bd65f730
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: a7a5446a692719a55575853df6aebc78733135b8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712161"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929836"
 ---
 # <a name="cmdkey"></a>cmdkey
 

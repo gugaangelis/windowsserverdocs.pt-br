@@ -1,6 +1,6 @@
 ---
-title: criar partição MSR
-description: Tópico de referência para criar partição MSR, que cria uma partição reservada da Microsoft (MSR) em um disco de tabela de partição GUID (GPT).
+title: create partition msr
+description: Artigo de referência para criar partição MSR, que cria uma partição reservada da Microsoft (MSR) em um disco de tabela de partição GUID (GPT).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d427e9f96023f8b66f72e3895b30519ab7cd2de1
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 2714c47c467fda9c6ca3451331ab9bc7991d4591
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993257"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929642"
 ---
-# <a name="create-partition-msr"></a>criar partição MSR
+# <a name="create-partition-msr"></a>create partition msr
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -37,7 +37,7 @@ create partition msr [size=<n>] [offset=<n>] [noerr]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| tamanho =`<n>` | O tamanho da partição em megabytes (MB). A partição é pelo menos tão longa em bytes quanto o número especificado por `<n>`. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na região atual. |
+| tamanho =`<n>` | O tamanho da partição em megabytes (MB). A partição é pelo menos tão longa em bytes quanto o número especificado por `<n>` . Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na região atual. |
 | deslocamento =`<n>` | Especifica o deslocamento em kilobytes (KB), no qual a partição é criada. O deslocamento é arredondado para preencher completamente qualquer tamanho de setor usado. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la. |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 

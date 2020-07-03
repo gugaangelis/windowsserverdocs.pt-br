@@ -1,6 +1,6 @@
 ---
-title: fsutil Dirty
-description: Tópico de referência para o comando fsutil Dirty, que consulta ou define um bit sujo de volume.
+title: fsutil dirty
+description: Artigo de referência do comando fsutil Dirty, que consulta ou define um bit sujo do volume.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,14 +9,14 @@ ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 72defd974177675f53e89fb8570f028580b7e167
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c61ab5405fb5b469b6f4513459e4096524f4b7fe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435861"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929268"
 ---
-# <a name="fsutil-dirty"></a>fsutil Dirty
+# <a name="fsutil-dirty"></a>fsutil dirty
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8
 

@@ -1,6 +1,6 @@
 ---
-title: excluir sombras
-description: Tópico de referência para o comando excluir sombras, que exclui cópias de sombra.
+title: delete shadows
+description: Artigo de referência do comando excluir sombras, que exclui cópias de sombra.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b757314c96024741795c6770a98d10ac23b5bd0
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: 6d541b50a78d738034204d14441352fff6c5d9fc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993108"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85929503"
 ---
-# <a name="delete-shadows"></a>excluir sombras
+# <a name="delete-shadows"></a>delete shadows
 
 Exclui cópias de sombra.
 

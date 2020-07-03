@@ -1,6 +1,6 @@
 ---
-title: Iniciar backup
-description: Tópico de referência para o comando BEGIN backup, que inicia uma sessão de backup completo.
+title: begin backup
+description: Artigo de referência para o comando BEGIN backup, que inicia uma sessão de backup completo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ecb5d83170d248089e5293ebb8557e7ae0854fac
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 05c192620d58752c746f77ea04a7d30a88c7181f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82718524"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928464"
 ---
-# <a name="begin-backup"></a>Iniciar backup
+# <a name="begin-backup"></a>begin backup
 
 > Aplica-se a: Windows Server 2012 R2, Windows Server 2012
 
 Inicia uma sessão de backup completo. Esse comando substitui a configuração de backup de cópia padrão.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 begin backup
@@ -31,5 +31,5 @@ begin backup
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-  
+
 - [comando Iniciar restauração](begin-restore.md)

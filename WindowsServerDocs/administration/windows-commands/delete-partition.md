@@ -1,6 +1,6 @@
 ---
-title: Excluir partição
-description: Tópico de referência para o comando Excluir partição, que exclui a partição com foco.
+title: delete partition
+description: Artigo de referência do comando Excluir partição, que exclui a partição com foco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13c79b826480171af578334942af8f73b77d796b
-ms.sourcegitcommit: fad2ba64bbc13763772e21ed3eabd010f6a5da34
+ms.openlocfilehash: b45cb060a5d82e254fe371269dbdbcb9d46fee92
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2020
-ms.locfileid: "82993118"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928722"
 ---
-# <a name="delete-partition"></a>Excluir partição
+# <a name="delete-partition"></a>delete partition
 
 Exclui a partição com foco. Antes de começar, você deve selecionar uma partição para que essa operação seja realizada com sucesso. Use o comando [selecionar partição](select-partition.md) para selecionar uma partição e deslocar o foco para ela.
 
@@ -56,7 +56,7 @@ delete partition
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [selecionar partição](select-partition.md)
+- [select partition](select-partition.md)
 
 - [Excluir comando](delete.md)
 

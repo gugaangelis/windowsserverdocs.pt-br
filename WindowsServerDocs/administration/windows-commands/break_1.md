@@ -1,6 +1,6 @@
 ---
 title: break
-description: Tópico de referência para o comando de quebra. Este comando não está mais em uso.
+description: Artigo de referência para o comando de quebra. Este comando não está mais em uso.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 301c526903c95dec90c4883a54713eee20f516d2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 77cf4baa0e0343294e85318015942b39b6d6bfce
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82708779"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85928484"
 ---
 # <a name="break"></a>break
 
@@ -25,7 +25,7 @@ Define ou limpa a verificação estendida CTRL + C em sistemas MS-DOS. Se usado 
 
 Se as extensões de comando estiverem habilitadas e em execução na plataforma Windows, inserir o comando **Break** em um arquivo em lotes entrará em um ponto de interrupção embutido em código, se estiver sendo depurado por um depurador.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 break=[on|off]
@@ -34,5 +34,5 @@ break=[on|off]
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-  
+
 - [comando de quebra](break.md)
