@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: Tópico de referência para TSecImp, que importa informações de atribuição de um arquivo linguagem XML (XML) para o arquivo de segurança do servidor TAPI (Tsec. ini).
+description: Artigo de referência para TSecImp, que importa informações de atribuição de um arquivo linguagem XML (XML) para o arquivo de segurança do servidor TAPI (Tsec.ini).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afd38f7081a9b4674eb6cac26f52849794b8d5e6
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: d221479e23c737529305a2354e6a5a52b957bd8e
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721249"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931486"
 ---
 # <a name="tsecimp"></a>tsecimp
 
-Importa informações de atribuição de um arquivo linguagem XML (XML) para o arquivo de segurança do servidor TAPI (Tsec. ini). Você também pode usar esse comando para exibir a lista de provedores TAPI e os dispositivos de linhas associados a cada um deles, validar a estrutura do arquivo XML sem importar o conteúdo e verificar a associação ao domínio.
+Importa informações de atribuição de um arquivo linguagem XML (XML) para o arquivo de segurança do servidor TAPI (Tsec.ini). Você também pode usar esse comando para exibir a lista de provedores TAPI e os dispositivos de linhas associados a cada um deles, validar a estrutura do arquivo XML sem importar o conteúdo e verificar a associação ao domínio.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -31,15 +31,15 @@ tsecimp /d
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/f \<nome de arquivo>|Obrigatórios. Especifica o nome do arquivo XML que contém as informações de atribuição que você deseja importar.|
-|/v|Valida a estrutura do arquivo XML sem importar as informações para o arquivo Tsec. ini.|
+|/f \<Filename>|Obrigatórios. Especifica o nome do arquivo XML que contém as informações de atribuição que você deseja importar.|
+|/v|Valida a estrutura do arquivo XML sem importar as informações para o arquivo de Tsec.ini.|
 |/u|Verifica se cada usuário é um membro do domínio especificado no arquivo XML. O computador no qual você usa esse parâmetro deve estar conectado à rede. Esse parâmetro poderá reduzir significativamente o desempenho se você estiver processando uma grande quantidade de informações de atribuição de usuário.|
 |/d|Exibe uma lista de provedores de telefonia instalados. Para cada provedor de telefonia, os dispositivos de linha associados são listados, bem como os endereços e usuários associados a cada dispositivo de linha.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários
 
--   O arquivo XML do qual você deseja importar informações de atribuição deve seguir a estrutura descrita abaixo.  
+-   O arquivo XML do qual você deseja importar informações de atribuição deve seguir a estrutura descrita abaixo.
     -   Elemento **UserList**
 
         O **UserList** é o elemento superior do arquivo XML.
@@ -62,16 +62,16 @@ tsecimp /d
         Para cada elemento de **linha** , você pode definir o atributo **Remove** . Se você definir esse atributo, o usuário não será mais atribuído a esse dispositivo de linha. Se esse atributo não estiver definido, o usuário obtém acesso a esse dispositivo de linha. Nenhum erro será fornecido se o dispositivo de linha não estiver disponível para o usuário.
 
 ## <a name="examples"></a>Exemplos
-- Os seguintes segmentos de código XML de exemplo ilustram o uso correto dos elementos definidos acima.  
-  - O código a seguir remove todos os dispositivos de linha atribuídos ao Usuário1.  
+- Os seguintes segmentos de código XML de exemplo ilustram o uso correto dos elementos definidos acima.
+  - O código a seguir remove todos os dispositivos de linha atribuídos ao Usuário1.
     ```
     <UserList>
       <User NoMerge=1>
         <DomainUser>domain1\user1</DomainUser>
       </User>
     </UserList>
-    ```  
-  - O código a seguir remove todos os dispositivos de linha atribuídos ao Usuário1 antes de atribuir uma linha com o endereço 99999. O Usuário1 não terá nenhum outro dispositivo de linhas atribuído, independentemente de os dispositivos de linha terem sido atribuídos anteriormente.  
+    ```
+  - O código a seguir remove todos os dispositivos de linha atribuídos ao Usuário1 antes de atribuir uma linha com o endereço 99999. O Usuário1 não terá nenhum outro dispositivo de linhas atribuído, independentemente de os dispositivos de linha terem sido atribuídos anteriormente.
     ```
     <UserList>
       <User NoMerge=1>
@@ -84,8 +84,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - O código a seguir adiciona um dispositivo de linha para user1 sem excluir nenhum dispositivo de linha atribuído anteriormente.  
+    ```
+  - O código a seguir adiciona um dispositivo de linha para user1 sem excluir nenhum dispositivo de linha atribuído anteriormente.
     ```
     <UserList>
       <User>
@@ -98,8 +98,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - O código a seguir adiciona o endereço de linha 99999 e remove o endereço de linha 88888 do acesso User1's.  
+    ```
+  - O código a seguir adiciona o endereço de linha 99999 e remove o endereço de linha 88888 do acesso User1's.
     ```
     <UserList>
       <User>
@@ -115,8 +115,8 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
-    ```  
-  - O código a seguir adiciona o dispositivo permanente 1000 e remove a linha 88888 do acesso User1's.  
+    ```
+  - O código a seguir adiciona o dispositivo permanente 1000 e remove a linha 88888 do acesso User1's.
     ```
     <UserList>
       <User>
@@ -134,7 +134,7 @@ tsecimp /d
     </UserList>
     ```
 
--   A saída de exemplo a seguir aparece depois que a opção de linha de comando **/d** é especificada para exibir a configuração atual da TAPI. Para cada provedor de telefonia, os dispositivos de linha associados são listados, bem como os endereços e usuários associados a cada dispositivo de linha.  
+-   A saída de exemplo a seguir aparece depois que a opção de linha de comando **/d** é especificada para exibir a configuração atual da TAPI. Para cada provedor de telefonia, os dispositivos de linha associados são listados, bem como os endereços e usuários associados a cada dispositivo de linha.
     ```
     NDIS Proxy TAPI Service Provider
             Line: WAN Miniport (L2TP)

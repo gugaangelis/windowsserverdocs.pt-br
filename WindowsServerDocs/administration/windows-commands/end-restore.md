@@ -1,6 +1,6 @@
 ---
-title: finalizar restauração
-description: Tópico de referência para o comando end Restore, que termina uma sessão de restauração e emite um evento de **restauração** para gravadores envolvidos.
+title: end restore
+description: Artigo de referência para o comando end Restore, que termina uma sessão de restauração e emite um evento de **restauração** para gravadores envolvidos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fc76727a4c668c7440fefe9dfc3ceaa08ee7cd4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 9bf5cb35617a64e07d830fd322b985c89663d2f4
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436891"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930816"
 ---
-# <a name="end-restore"></a>finalizar restauração
+# <a name="end-restore"></a>end restore
 
 Encerra uma sessão de restauração e emite um evento de **restauração** para gravadores envolvidos.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 end restore

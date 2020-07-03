@@ -1,6 +1,6 @@
 ---
 title: doskey
-description: Tópico de referência para o comando do Doskey e o Doskey. exe, que recupera os comandos de linha de comando inseridos anteriormente, edita linhas de comando e cria macros.
+description: Artigo de referência para o comando do Doskey e Doskey.exe, que recupera os comandos de linha de comando inseridos anteriormente, edita linhas de comando e cria macros.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96a47a40463c5cd6af16ab637f96382228f7d0f8
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4a92c9e1d6ffe1f8d7ace5500179697b2a00df1b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437021"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930552"
 ---
 # <a name="doskey"></a>doskey
 
-Chama o Doskey. exe, que recupera comandos de linha de comando inseridos anteriormente, edita linhas de comando e cria macros.
+Chama Doskey.exe, que recupera comandos de linha de comando inseridos anteriormente, edita linhas de comando e cria macros.
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -30,7 +30,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /REINSTALL | Instala uma nova cópia do Doskey. exe e limpa o buffer de histórico de comandos. |
+| /REINSTALL | Instala uma nova cópia de Doskey.exe e limpa o buffer de histórico de comandos. |
 | /ListSize =`<size>` | Especifica o número máximo de comandos no buffer de histórico. |
 | /macros | Exibe uma lista de todas as macros do **doskey** . Você pode usar o símbolo de redirecionamento ( `>` ) com **/macros** para redirecionar a lista para um arquivo. Você pode abreviar **/macros** para **/m**. |
 | /macros: todos | Exibe as macros do **doskey** para todos os executáveis. |
@@ -45,13 +45,13 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
 
 #### <a name="remarks"></a>Comentários
 
-- Determinados programas interativos baseados em caracteres, como depuradores de programa ou FTP (programas de transferência de arquivos), usam automaticamente o Doskey. exe. Para usar o Doskey. exe, um programa deve ser um processo de console e usar uma entrada armazenada em buffer. As atribuições de chave do programa substituem atribuições de chave do **doskey** Por exemplo, se o programa usar a tecla F7 para uma função, você não poderá obter um histórico de comandos do **doskey** em uma janela pop-up.
+- Determinados programas interativos baseados em caracteres, como os depuradores de programa ou FTP (programas de transferência de arquivos), usam Doskey.exe automaticamente. Para usar Doskey.exe, um programa deve ser um processo de console e usar a entrada em buffer. As atribuições de chave do programa substituem atribuições de chave do **doskey** Por exemplo, se o programa usar a tecla F7 para uma função, você não poderá obter um histórico de comandos do **doskey** em uma janela pop-up.
 
-- Você pode usar o Doskey. exe para editar a linha de comando atual, mas não pode usar as opções de linha de comando do prompt de comando de um programa. Você deve executar as opções de linha de comando do **doskey** antes de iniciar um programa. Se você usar o Doskey. exe em um programa, as atribuições de chave do programa têm precedência e algumas chaves de edição do Doskey. exe podem não funcionar.
+- Você pode usar Doskey.exe para editar a linha de comando atual, mas não pode usar as opções de linha de comando do prompt de comando de um programa. Você deve executar as opções de linha de comando do **doskey** antes de iniciar um programa. Se você usar Doskey.exe dentro de um programa, as atribuições de chave do programa têm precedência e algumas Doskey.exe chaves de edição podem não funcionar.
 
-- Com o Doskey. exe, você pode manter um histórico de comandos para cada programa que você inicia ou repete. Você pode editar os comandos anteriores no prompt do programa e iniciar as macros do **doskey** criadas para o programa. Se você sair e reiniciar um programa da mesma janela de prompt de comando, o histórico de comandos da sessão de programa anterior estará disponível.
+- Com Doskey.exe, você pode manter um histórico de comandos para cada programa que você inicia ou repete. Você pode editar os comandos anteriores no prompt do programa e iniciar as macros do **doskey** criadas para o programa. Se você sair e reiniciar um programa da mesma janela de prompt de comando, o histórico de comandos da sessão de programa anterior estará disponível.
 
-- Para lembrar um comando, você pode usar qualquer uma das seguintes chaves depois de iniciar o Doskey. exe:
+- Para recuperar um comando, você pode usar qualquer uma das seguintes chaves depois de iniciar Doskey.exe:
 
   | Chave | Descrição |
   | --- | ----------- |
@@ -72,8 +72,8 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | END | Move o ponto de inserção para o fim da linha. |
   | ESC | Limpa o comando da exibição. |
   | F1 | Copia um caractere de uma coluna no modelo para a mesma coluna na janela de prompt de comando. (O modelo é um buffer de memória que contém o último comando digitado.) |
-  | F2 | Pesquisa adiante no modelo para a próxima chave que você digitar depois de pressionar F2. O Doskey. exe insere o texto do modelo — até, mas não incluindo, o caractere que você especificar. |
-  | F3 | Copia o restante do modelo para a linha de comando. O Doskey. exe começa a copiar os caracteres da posição no modelo que corresponde à posição indicada pelo ponto de inserção na linha de comando. |
+  | F2 | Pesquisa adiante no modelo para a próxima chave que você digitar depois de pressionar F2. Doskey.exe insere o texto do modelo — até, mas não incluindo, o caractere que você especificar. |
+  | F3 | Copia o restante do modelo para a linha de comando. Doskey.exe começa a copiar os caracteres da posição no modelo que corresponde à posição indicada pelo ponto de inserção na linha de comando. |
   | F4 | Exclui todos os caracteres da posição do ponto de inserção atual até, mas não incluindo, a próxima ocorrência do caractere que você digitar depois de pressionar F4. |
   | F5 | Copia o modelo para a linha de comando atual. |
   | F6 | Coloca um caractere de fim de arquivo (CTRL + Z) na posição atual do ponto de inserção. |
@@ -83,13 +83,13 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | F9 | Solicita um número de comando de buffer de histórico e, em seguida, exibe o comando associado ao número que você especificar. Pressione ENTER para executar o comando. Para exibir todos os números e seus comandos associados, pressione F7. |
   | ALT + F10 | Exclui todas as definições de macro. |
 
-- Se você pressionar a tecla INSERT, poderá digitar o texto na linha de comando do **doskey** no meio do texto existente sem substituir o texto. No entanto, depois de pressionar ENTER, o Doskey. exe retorna o teclado para o modo de **substituição** . Você deve pressionar INSERT novamente para retornar ao modo de **inserção** .
+- Se você pressionar a tecla INSERT, poderá digitar o texto na linha de comando do **doskey** no meio do texto existente sem substituir o texto. No entanto, depois de pressionar ENTER, Doskey.exe retorna o teclado para o modo de **substituição** . Você deve pressionar INSERT novamente para retornar ao modo de **inserção** .
 
 - O ponto de inserção muda de forma quando você usa a tecla INSERT para mudar de um modo para outro.
 
-- Se desejar personalizar como o Doskey. exe funciona com um programa e criar macros do **doskey** para esse programa, você poderá criar um programa em lotes que modifique o Doskey. exe e inicie o programa.
+- Se desejar personalizar como Doskey.exe funciona com um programa e criar macros do **doskey** para esse programa, você poderá criar um programa em lotes que modifique Doskey.exe e inicie o programa.
 
-- Você pode usar o Doskey. exe para criar macros que executam um ou mais comandos. A tabela a seguir lista os caracteres especiais que você pode usar para controlar as operações de comando ao definir uma macro.
+- Você pode usar Doskey.exe para criar macros que executam um ou mais comandos. A tabela a seguir lista os caracteres especiais que você pode usar para controlar as operações de comando ao definir uma macro.
 
   | Caractere | Descrição |
   |---------- | ----------- |
@@ -124,7 +124,7 @@ Para usar as macros armazenadas em MACINIT, digite:
 doskey /macrofile=macinit
 ```
 
-Para criar um programa em lotes denominado tmp. bat que contenha comandos usados recentemente, digite:
+Para criar um programa em lotes chamado Tmp.bat que contém comandos usados recentemente, digite:
 
 ```
 doskey /history> tmp.bat
@@ -152,7 +152,7 @@ Para usar a macro anterior para criar e alterar para um diretório chamado *livr
 mc books
 ```
 
-Para criar uma macro do **doskey** para um programa chamado *ftp. exe*, inclua **/EXEName** da seguinte maneira:
+Para criar uma macro do **doskey** para um programa chamado *Ftp.exe*, inclua **/EXEName** da seguinte maneira:
 
 ```
 doskey /exename=ftp.exe go=open 172.27.1.100$tmget *.TXT c:\reports$tbye

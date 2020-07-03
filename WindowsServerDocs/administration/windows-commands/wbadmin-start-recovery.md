@@ -1,6 +1,6 @@
 ---
-title: Wbadmin iniciar recuperação
-description: Tópico de referência para o Wbadmin start Recovery, que executa uma operação de recuperação com base nos parâmetros que você especificar.
+title: wbadmin start recovery
+description: Artigo de referência para o Wbadmin start Recovery, que executa uma operação de recuperação com base nos parâmetros que você especificar.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec116bb69dd70cb58f6cb71ccf9ccfa04dea2e54
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 2a8934d9177d81cd05124175e64746ecdb4a1bc1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82725882"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930950"
 ---
-# <a name="wbadmin-start-recovery"></a>Wbadmin iniciar recuperação
+# <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 
 Executa uma operação de recuperação com base nos parâmetros que você especificar.
 
@@ -79,12 +79,12 @@ Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:
 ```
 wbadmin start recovery -version:03/31/2013-09:00 -itemType:File -items:d:\folder -recursive
 ```
-Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:00 A.M., do volume \\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\, Type:
+Para executar uma recuperação do backup de 31 de março de 2013, obtido às 9:00 A.M., do volume \\ \\ ? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963} \, Type:
 ```
-wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume 
+wbadmin start recovery -version:03/31/2013-09:00 -itemType:Volume
 -items:\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
 ```
-Para executar uma recuperação do backup de 30 de abril de 2013, obtido às 9:00 A.M., da pasta \\ \\compartilhada servername\share de Server01, digite:
+Para executar uma recuperação do backup de 30 de abril de 2013, obtido às 9:00 A.M., da pasta compartilhada \\ \\ servername\share de Server01, digite:
 ```
 wbadmin start recovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

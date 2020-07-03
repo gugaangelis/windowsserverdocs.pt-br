@@ -1,6 +1,6 @@
 ---
-title: carregar metadados
-description: Tópico de referência para o comando carregar metadados, que carrega um arquivo Metadata. cab antes de importar uma cópia de sombra transportável ou carrega os metadados do gravador no caso de uma restauração.
+title: load metadata
+description: Artigo de referência para o comando carregar metadados, que carrega um arquivo Metadata. cab antes de importar uma cópia de sombra transportável ou carrega os metadados do gravador no caso de uma restauração.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7dc967476412261e7afc228088566f74ec4208c
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 01e782d0214da70f831b81120aff3c5097895036
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820186"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931682"
 ---
 # <a name="load-metadata"></a>Carregar metadados
 
@@ -31,7 +31,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | `[<drive>:][<path>]` | Especifica o local do arquivo de metadados. |
-| Metadata. cab | Especifica o arquivo Metadata. cab a ser carregado. |
+| metadata.cab | Especifica o arquivo Metadata. cab a ser carregado. |
 
 ## <a name="remarks"></a>Comentários
 
@@ -41,7 +41,7 @@ load metadata [<drive>:][<path>]<metadata.cab>
 
 ## <a name="examples"></a>Exemplos
 
-Para carregar um arquivo de metadados chamado Metafile. cab do local padrão, digite:
+Para carregar um arquivo de metadados chamado metafile.cab do local padrão, digite:
 
 ```
 load metadata metafile.cab

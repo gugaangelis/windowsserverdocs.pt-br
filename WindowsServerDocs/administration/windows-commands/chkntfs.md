@@ -1,6 +1,6 @@
 ---
 title: chkntfs
-description: Tópico de referência para o comando chkntfs, que exibe ou modifica a verificação automática de disco quando o computador é iniciado.
+description: Artigo de referência do comando chkntfs, que exibe ou modifica a verificação automática de disco quando o computador é iniciado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b8e21a7b43538b6296666d813f2b33daa8045f
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4d2a19a479ec3b00bda83ecded91f5fbb7941ca0
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82713655"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930712"
 ---
 # <a name="chkntfs"></a>chkntfs
 
@@ -39,7 +39,7 @@ chkntfs [/c <volume> [...]]
 | --------- | ----------- |
 | `<volume>` [...] | Especifica um ou mais volumes a serem verificados quando o computador for iniciado. Os volumes válidos incluem letras de unidade (seguidas por dois-pontos), pontos de montagem ou nomes de volume. |
 | /d | Restaura todas as configurações padrão do **chkntfs** , exceto o tempo de contagem regressiva da verificação automática de arquivos. Por padrão, todos os volumes são verificados quando o computador é iniciado e o **chkdsk** é executado naqueles que estão sujos. |
-| /t [`:<time>`] | Altera o tempo de contagem regressiva inicial do autochk. exe para o período de tempo especificado em segundos. Se você não inserir uma hora, **/t** exibirá o tempo de contagem regressiva atual. |
+| /t [ `:<time>` ] | Altera o tempo de contagem regressiva Autochk.exe inicial para a quantidade de tempo especificada em segundos. Se você não inserir uma hora, **/t** exibirá o tempo de contagem regressiva atual. |
 | /x `<volume>` [...] | Especifica um ou mais volumes a serem excluídos da verificação quando o computador é iniciado, mesmo que o volume seja marcado como exigindo **chkdsk**. |
 | /c `<volume>` [...] | Agenda um ou mais volumes a serem verificados quando o computador é iniciado e executa o **chkdsk** naqueles que estão sujos. |
 | /? | Exibe a ajuda no prompt de comando. |
@@ -55,20 +55,20 @@ chkntfs c:
 > [!NOTE]
 > Se a verificação automática de arquivos estiver agendada para execução, a saída adicional será exibida, indicando se a unidade está suja ou se foi agendada manualmente para ser verificada na próxima vez em que o computador for iniciado.
 
-Para exibir o tempo de contagem regressiva inicial de autochk. exe, digite:
+Para exibir o tempo de contagem regressiva inicial Autochk.exe, digite:
 
 ```
 chkntfs /t
 ```
 
-Para alterar o tempo de contagem regressiva inicial de autochk. exe para 30 segundos, digite:
+Para alterar o tempo de contagem regressiva inicial Autochk.exe para 30 segundos, digite:
 
 ```
 chkntfs /t:30
 ```
 
 > [!NOTE]
-> Embora seja possível definir o tempo de contagem regressiva inicial de autochk. exe como zero, isso impedirá que você cancele uma verificação de arquivo automática potencialmente demorada.
+> Embora você possa definir o tempo de contagem regressiva de Autochk.exe inicial como zero, isso impedirá que você cancele uma verificação de arquivo automática potencialmente demorada.
 
 Para excluir vários volumes de serem verificados, você deve listá-los em um único comando. Por exemplo, para excluir os volumes D e E, digite:
 

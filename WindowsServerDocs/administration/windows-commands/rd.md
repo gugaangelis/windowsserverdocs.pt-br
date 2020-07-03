@@ -1,6 +1,6 @@
 ---
 title: rd
-description: Tópico de referência para * * * *-
+description: Artigo de referência para o comando Rd, que exclui um diretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,71 +9,70 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cb169a44f9613b237af71321f9619d9ea93a6912
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 21f2828466bd8b41583ed4400856654cd53f4b49
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722641"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931980"
 ---
 # <a name="rd"></a>rd
 
+Exclui um diretório.
 
+O comando **RD** também pode ser executado no console de recuperação do Windows, usando parâmetros diferentes. Para obter mais informações, consulte [ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
-Exclui um diretório. Esse comando é o mesmo que o comando **rmdir** .
-
-
+> [!NOTE]
+> Esse comando é o mesmo que o [comando rmdir](rmdir.md).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-rd [<Drive>:]<Path> [/s [/q]]
-rmdir [<Drive>:]<Path> [/s [/q]]
+rd [<drive>:]<path> [/s [/q]]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|     Parâmetro     |                                                                 Descrição                                                                  |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Unidade>:]<Path> |                      Especifica o local e o nome do diretório que você deseja excluir. O *caminho* é necessário.                       |
-|        /s         |                     Exclui uma árvore de diretórios (o diretório especificado e todos os seus subdiretórios, incluindo todos os arquivos).                      |
-|        /q         | Especifica o modo silencioso. Não solicita confirmação ao excluir uma árvore de diretórios. (Observe que **/q** só funcionará se **/s** for especificado.) |
-|        /?         |                                                     Exibe a ajuda no prompt de comando.                                                     |
+| Parâmetro | Descrição |
+|--|--|
+| `[<drive>:]<path>` | Especifica o local e o nome do diretório que você deseja excluir. O *caminho* é necessário. Se você incluir uma barra invertida ( \) no início do *caminho*especificado, o *caminho* será iniciado no diretório raiz (independentemente do diretório atual). |
+| /s | Exclui uma árvore de diretórios (o diretório especificado e todos os seus subdiretórios, incluindo todos os arquivos). |
+| /q | Especifica o modo silencioso. Não solicita confirmação ao excluir uma árvore de diretórios. O parâmetro **/q** só funcionará se **/s** também for especificado.<p>**Cuidado:** Quando você executa no modo silencioso, toda a árvore de diretórios é excluída sem confirmação. Certifique-se de que arquivos importantes sejam movidos ou submetidos a backup antes de usar a opção de linha de comando **/q** . |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
--   Você não pode excluir um diretório que contém arquivos, incluindo arquivos ocultos ou do sistema. Se você tentar fazer isso, a seguinte mensagem será exibida:
+- Você não pode excluir um diretório que contém arquivos, incluindo arquivos ocultos ou do sistema. Se você tentar fazer isso, a seguinte mensagem será exibida:
 
     `The directory is not empty`
 
     Use o comando **dir/a** para listar todos os arquivos (incluindo arquivos ocultos e do sistema). Em seguida, use o comando **attrib** com **-h** para remover atributos de arquivo oculto, **-s** para remover atributos de arquivo do sistema ou **-h-s** para remover os atributos de arquivo ocultos e do sistema. Depois que os atributos ocultos e de arquivo forem removidos, você poderá excluir os arquivos.
--   Se você inserir uma barra invertida\) (no início do *caminho*, o *caminho* será iniciado no diretório raiz (independentemente do diretório atual).
--   Você não pode usar o **RD** para excluir o diretório atual. Se você tentar excluir o diretório atual, a seguinte mensagem de erro será exibida:
 
-    `The process cannot access the file because it is being used by another process.`
+- Você não pode usar o comando **RD** para excluir o diretório atual. Se você tentar excluir o diretório atual, a seguinte mensagem de erro será exibida:
 
-    Se você receber essa mensagem de erro, deverá alterar para um diretório diferente (não um subdiretório do diretório atual) e, em seguida, usar **RD** (especifique o *caminho* , se necessário).
--   O comando **RD** , com parâmetros diferentes, está disponível no console de recuperação.
+    `The process can't access the file because it is being used by another process.`
 
-## <a name="examples"></a>Exemplos
+    Se você receber essa mensagem de erro, deverá alterar para um diretório diferente (não um subdiretório do diretório atual) e, em seguida, tentar novamente.
 
-Não é possível excluir o diretório no qual você está trabalhando no momento. Você deve alterar para um diretório que não esteja dentro do diretório atual. Por exemplo, para alterar para o diretório pai, digite:
+### <a name="examples"></a>Exemplos
+
+Para alterar para o diretório pai para que você possa remover com segurança o diretório desejado, digite:
+
 ```
 cd ..
 ```
-Agora você pode remover com segurança o diretório desejado.
 
-Use a opção **/s** para remover uma árvore de diretórios. Por exemplo, para remover um diretório chamado Test (e todos os seus arquivos e subdiretórios) do diretório atual, digite:
+Para remover um diretório chamado *Test* (e todos os seus arquivos e subdiretórios) do diretório atual, digite:
+
 ```
 rd /s test
 ```
+
 Para executar o exemplo anterior no modo silencioso, digite:
+
 ```
 rd /s /q test
 ```
-
-> [!CAUTION]
-> Quando você executa o **RD/s** no modo silencioso, toda a árvore de diretórios é excluída sem confirmação. Certifique-se de que arquivos importantes sejam movidos ou submetidos a backup antes de usar a opção de linha de comando **/q** .
 
 ## <a name="additional-references"></a>Referências adicionais
 

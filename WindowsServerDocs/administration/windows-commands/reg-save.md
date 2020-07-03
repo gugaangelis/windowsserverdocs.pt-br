@@ -1,6 +1,6 @@
 ---
-title: Reg salvar
-description: Tópico de referência para * * * *-
+title: reg save
+description: Artigo de referência do comando reg Save, que salva uma cópia de subchaves, entradas e valores especificados do registro em um arquivo especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,53 +9,53 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dd3e932e67df7eb972bd625ecec24f986cf3f3d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 4051d69819cfd3550d094de8e9d4bc73f77c4e4b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722508"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931030"
 ---
-# <a name="reg-save"></a>Reg salvar
-
-
+# <a name="reg-save"></a>reg save
 
 Salva uma cópia de subchaves, entradas e valores especificados do registro em um arquivo especificado.
-
-
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-reg save <KeyName> <FileName> [/y]
+reg save <keyname> <filename> [/y]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<KeyName>|Especifica o caminho completo da subchave. Para especificar computadores remotos, inclua o nome do computador (no \\ \\formato ComputerName\) como parte do *KeyName*. \\ \\Omitir computername \ faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: HKLM, HKCU, HKCR, HKU e HKCC. Se um computador remoto for especificado, as chaves de raiz válidas serão: HKLM e HKU.|
-|\<Nome de arquivo>|Especifica o nome e o caminho do arquivo que é criado. Se nenhum caminho for especificado, o caminho atual será usado.|
-|/y|Substitui um arquivo existente pelo *nome nome do arquivo sem solicitar* confirmação.|
-|/?|Exibe a ajuda para o **reg Save** no prompt de comando.|
+| Parâmetro | Descrição |
+|--|--|
+| `<keyname>` | Especifica o caminho completo da subchave. Para especificar um computador remoto, inclua o nome do computador (no formato `\\<computername>\` ) como parte do *KeyName*. Omitir `\\<computername>\` faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: **HKLM**, **HKCU**, **HKCR**, **HKU**e **HKCC**. Se um computador remoto for especificado, as chaves de raiz válidas serão: **HKLM** e **HKU**. Se o nome da chave do registro contiver um espaço, coloque o nome da chave entre aspas. |
+| `<filename>` | Especifica o nome e o caminho do arquivo criado. Se nenhum caminho for especificado, o caminho atual será usado. |
+| /y | Substitui um arquivo existente pelo *nome nome do arquivo sem solicitar* confirmação. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks-optional-section"></a>Comentários \<da seção opcional>
+#### <a name="remarks"></a>Comentários
 
--   A tabela a seguir lista os valores de retorno para a operação **reg Save** .
+- Antes de editar as entradas do registro, você deve salvar a subchave pai usando o comando **reg Save** . Se a edição falhar, você poderá restaurar a subchave original usando a operação **reg Restore** .
 
-|Valor|Descrição|
-|-----|-----------|
-|0|Sucesso|
-|1|Falha|
--   Antes de editar as entradas do registro, salve a subchave pai com a operação **reg Save** . Se a edição falhar, restaure a subchave original com a operação **reg Restore** .
+- Os valores de retorno para a operação **reg Save** são:
 
-## <a name="examples"></a>Exemplos
+    | Valor | Descrição |
+    |--|--|
+    | 0 | Êxito |
+    | 1 | Falha |
+
+### <a name="examples"></a>Exemplos
 
 Para salvar o hive MyApp na pasta atual como um arquivo chamado AppBkUp. HIV, digite:
+
 ```
-REG SAVE HKLM\Software\MyCo\MyApp AppBkUp.hiv
+reg save HKLM\Software\MyCo\MyApp AppBkUp.hiv
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [comando reg Restore](reg-restore.md)

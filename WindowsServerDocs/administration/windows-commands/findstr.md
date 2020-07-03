@@ -1,6 +1,6 @@
 ---
 title: findstr
-description: Tópico de referência para o comando Findstr, que procura padrões de texto em arquivos.
+description: Artigo de referência para o comando Findstr, que procura padrões de texto em arquivos.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f8d353b6d3aee77960b208d89372aee5dca07e3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: f0cf30f19ef23c1b3275b6b7632b03f0dd8e433a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436112"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931432"
 ---
 # <a name="findstr"></a>findstr
 
@@ -99,7 +99,7 @@ Para procurar *Olá* no arquivo *x. y*, digite:
 findstr /c:hello there x.y
 ```
 
-Para localizar todas as ocorrências da palavra *Windows* (com uma letra maiúscula W) no arquivo *proposta. txt*, digite:
+Para localizar todas as ocorrências da palavra *Windows* (com uma letra inicial maiúscula W) no arquivo *proposal.txt*, digite:
 
 ```
 findstr Windows proposal.txt
@@ -117,7 +117,7 @@ Para localizar todas as ocorrências de linhas que começam com *for* e são pre
 findstr /b /n /r /c:^ *FOR *.bas
 ```
 
-Para listar os arquivos exatos que você deseja pesquisar em um arquivo de texto, use os critérios de pesquisa no arquivo *StringList. txt*, para pesquisar os arquivos listados em *FileList. txt*e, em seguida, para armazenar os resultados no arquivo *Results. out*, digite:
+Para listar os arquivos exatos que você deseja pesquisar em um arquivo de texto, use os critérios de pesquisa no arquivo *stringlist.txt*, para pesquisar os arquivos listados em *filelist.txt*e, em seguida, para armazenar os resultados no arquivo *Results. out*, digite:
 
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out

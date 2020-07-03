@@ -1,6 +1,6 @@
 ---
 title: lodctr
-description: Tópico de referência para o comando Lodctr, que permite registrar ou salvar o nome do contador de desempenho e as configurações do registro em um arquivo e designar serviços confiáveis.
+description: Artigo de referência do comando Lodctr, que permite registrar ou salvar o nome do contador de desempenho e as configurações do registro em um arquivo e designar serviços confiáveis.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 221737d68280dabf34c270fccff02071ebf9b5a2
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: e8b1cae87818d3f77474e4193b03836bf1c84990
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820176"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931653"
 ---
 # <a name="lodctr"></a>lodctr
 
@@ -45,7 +45,7 @@ lodctr <filename> [/s:<filename>] [/r:<filename>] [/t:<servicename>]
 
 ### <a name="examples"></a>Exemplos
 
-Para salvar as configurações atuais do registro de desempenho e o texto explicativo em arquivo *perf backup1. txt*, digite:
+Para salvar as configurações atuais do registro de desempenho e o texto explicativo em *backup1.txtde desempenho *do arquivo, digite:
 
 ```
 lodctr /s:perf backup1.txt

@@ -1,6 +1,6 @@
 ---
 title: nslookup set timeout
-description: Tópico de referência para o comando set timeout do nslookup, que altera o número inicial de segundos para aguardar uma resposta a uma solicitação de pesquisa.
+description: Artigo de referência para o comando set timeout do nslookup, que altera o número inicial de segundos para aguardar uma resposta a uma solicitação de pesquisa.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d8fd0d96226e193ba723cc0a726ddf5362a538c
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 6df8d1229dd57a84cb0dced3829bb328e41f092c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721381"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930345"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 

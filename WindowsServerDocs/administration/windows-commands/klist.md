@@ -1,6 +1,6 @@
 ---
 title: klist
-description: Tópico de referência para o comando klist, que exibe uma lista de tíquetes Kerberos atualmente armazenados em cache.
+description: Artigo de referência para o comando klist, que exibe uma lista de tíquetes Kerberos atualmente armazenados em cache.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 58a3ae0ffc223710f62355180ba590ff6b34b188
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d1a8d3d18cbf008efab203bfcef39179da39e109
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83818136"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931421"
 ---
 # <a name="klist"></a>klist
 

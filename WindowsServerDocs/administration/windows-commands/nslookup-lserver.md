@@ -1,6 +1,6 @@
 ---
 title: nslookup lserver
-description: Tópico de referência para o comando do lserver do nslookup, que altera o servidor inicial para o domínio DNS (sistema de nomes de domínio) especificado.
+description: Artigo de referência para o comando do lserver do nslookup, que altera o servidor inicial para o domínio DNS (sistema de nomes de domínio) especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 868142f251d62ebc3efd7913aded8e22aa077bd3
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 1f8d40a39abb6f96e900aee6dc029963ed7c0486
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721579"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931269"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 

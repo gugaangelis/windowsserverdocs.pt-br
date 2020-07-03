@@ -1,6 +1,6 @@
 ---
 title: fsutil behavior
-description: Tópico de referência para o comando de comportamento fsutil, que consulta ou define o comportamento do volume NTFS.
+description: Artigo de referência para o comando de comportamento fsutil, que consulta ou define o comportamento do volume NTFS.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.topic: article
 ms.date: 10/16/2017
 ms.assetid: 84eaba2c-c0af-49e1-bbbd-2ed2928e5e4b
-ms.openlocfilehash: f1196169ea1d198c4855f06edef542ef34876a2a
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 74a974bcb7f8138d28e563db35bbde7ae689e110
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436001"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931831"
 ---
 # <a name="fsutil-behavior"></a>fsutil behavior
 

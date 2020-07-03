@@ -1,6 +1,6 @@
 ---
-title: hash de FTP
-description: Tópico de referência para o comando FTP hash, que alterna a impressão de sinal numérico (#) para cada bloco de dados transferido.
+title: ftp hash
+description: Artigo de referência do comando FTP hash, que alterna a impressão de sinal numérico (#) para cada bloco de dados transferido.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,20 +9,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aad92feb49e3ce8ab5bc0865c73983edf25e4a9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 38f53b06b9351c0c5d37c88bc29790767f55a23f
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819688"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931293"
 ---
-# <a name="ftp-hash"></a>hash de FTP
+# <a name="ftp-hash"></a>ftp hash
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Alterna a impressão de sinal numérico (#) para cada bloco de dados transferido. Por padrão, o comando de hash é desativado. O tamanho de um bloco de dados é de 2048 bytes.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 hash

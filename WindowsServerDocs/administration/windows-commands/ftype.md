@@ -1,6 +1,6 @@
 ---
 title: ftype
-description: Tópico de referência para o comando ftype, que exibe ou modifica o tipo de arquivo usado em associações de extensão de nome de arquivo.
+description: Artigo de referência para o comando ftype, que exibe ou modifica o tipo de arquivo usado em associações de extensão de nome de arquivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1387a9f8cb607d3563a381c757ea237104e6032
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 0ab401c4dd4707cf05c69c1746368927c0bfaa83
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820206"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930460"
 ---
 # <a name="ftype"></a>ftype
 
 Exibe ou modifica os tipos de arquivo que são usados em associações de extensão de nome de arquivo. Se usado sem um operador de atribuição (=), esse comando exibirá a cadeia de caracteres do comando Open atual para o tipo de arquivo especificado. Se usado sem parâmetros, esse comando exibe os tipos de arquivo que têm cadeias de caracteres de comando abertas definidas.
 
 > [!NOTE]
-> Só há suporte para esse comando no cmd. exe e ele não está disponível no PowerShell.
+> Esse comando só tem suporte no cmd.exe e não está disponível no PowerShell.
 > Embora você possa usar `cmd /c ftype` como solução alternativa.
 
 ## <a name="syntax"></a>Sintaxe
@@ -73,7 +73,7 @@ Para excluir a cadeia de comando Open para um tipo de arquivo chamado *example*,
 ftype example=
 ```
 
-Para associar a extensão de nome de arquivo. pl ao tipo de arquivo PerlScript e habilitar o tipo de arquivo PerlScript para executar o PERL. EXE, digite os seguintes comandos:
+Para associar a extensão de nome de arquivo. pl ao tipo de arquivo PerlScript e habilitar o tipo de arquivo PerlScript para executar PERL.EXE, digite os seguintes comandos:
 
 ```
 assoc .pl=PerlScript

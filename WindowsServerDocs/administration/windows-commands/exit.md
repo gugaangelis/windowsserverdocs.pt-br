@@ -1,6 +1,6 @@
 ---
 title: exit
-description: Tópico de referência para Exit, que sai do interpretador de comando.
+description: Artigo de referência para Exit, que sai do interpretador de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdfec9861e63f7484a9c45c45a22d19873cabbe9
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: d28f15ba1453b32d8e464fd768a3b7895819d11c
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83819496"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931454"
 ---
 # <a name="exit"></a>exit
 
@@ -32,7 +32,7 @@ exit [/b] [<exitcode>]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /b | Sai do script do lote atual em vez de sair do cmd. exe. Se executado de fora de um script em lotes, o fechará cmd. exe. |
+| /b | Sai do script do lote atual em vez de sair do Cmd.exe. Se executado de fora de um script em lote, sairá Cmd.exe. |
 | `<exitcode>` | Especifica um número numérico. Se **/b** for especificado, a variável de ambiente ERRORLEVEL será definida para esse número. Se você estiver encerrando o interpretador de comandos, o código de saída do processo será definido como esse número. |
 | /? | Exibe a ajuda no prompt de comando. |
 

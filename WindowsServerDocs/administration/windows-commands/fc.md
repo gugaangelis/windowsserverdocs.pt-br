@@ -1,6 +1,6 @@
 ---
 title: fc
-description: Tópico de referência para o comando FC, que compara dois arquivos ou conjuntos de arquivos e exibe as diferenças entre eles.
+description: Artigo de referência para o comando FC, que compara dois arquivos ou conjuntos de arquivos e exibe as diferenças entre eles.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 146ae51334f40284e15c2a4564de8dd04660bf25
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 6d9e12853d2634f7e7bcbd976b6c301f8e02c0dc
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437151"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930481"
 ---
 # <a name="fc"></a>fc
 
@@ -48,7 +48,7 @@ fc /b [<drive1:>][<path1>]<filename1> [<drive2:>][<path2>]<filename2>
 
 #### <a name="remarks"></a>Comentários
 
-- Este comando é implemeted por c:\WINDOWS\fc.exe. Você pode usar esse comando no PowerShell, mas certifique-se de soletrar o executável completo (FC. exe), pois "FC" também é um alias para Format-Custom.
+- Esse comando é implemeted por c:\WINDOWS\fc.exe. Você pode usar esse comando no PowerShell, mas certifique-se de soletrar o executável completo (fc.exe), já que "FC" também é um alias para Format-Custom.
 
 - Quando você usa o **FC** para uma comparação ASCII, o **FC** exibe as diferenças entre dois arquivos na seguinte ordem:
 
@@ -86,7 +86,7 @@ Para fazer uma comparação ASCII de dois arquivos de texto, *Monthly. RPT* e *S
 fc /a monthly.rpt sales.rpt
 ```
 
-Para fazer uma comparação binária de dois arquivos em lotes, *lucros. bat* e *ganhos. bat*, digite:
+Para fazer uma comparação binária de dois arquivos em lotes, *profits.bat* e *earnings.bat*, digite:
 
 ```
 fc /b profits.bat earnings.bat
@@ -102,20 +102,20 @@ Resultados semelhantes aos seguintes são exibidos:
 FC: earnings.bat longer than profits.bat
 ```
 
-Se os arquivos lucros. bat e ganhos. bat forem idênticos, o **FC** exibirá a seguinte mensagem:
+Se os arquivos de profits.bat e earnings.bat forem idênticos, o **FC** exibirá a seguinte mensagem:
 
 ```
 Comparing files profits.bat and earnings.bat
 FC: no differences encountered
 ```
 
-Para comparar cada arquivo. bat no diretório atual com o arquivo *New. bat*, digite:
+Para comparar cada arquivo. bat no diretório atual com o arquivo *new.bat*, digite:
 
 ```
 fc *.bat new.bat
 ```
 
-Para comparar o arquivo *New. bat* na unidade C com o arquivo *New. bat* na unidade D, digite:
+Para comparar o arquivo *new.bat* na unidade C com o arquivo *new.bat* na unidade D, digite:
 
 ```
 fc c:new.bat d:*.bat

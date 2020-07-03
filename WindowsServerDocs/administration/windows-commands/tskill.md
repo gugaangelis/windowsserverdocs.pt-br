@@ -1,6 +1,6 @@
 ---
 title: tskill
-description: Tópico de referência para tskill, que encerra um processo em execução em uma sessão em um servidor de Host da Sessão da Área de Trabalho Remota.
+description: Artigo de referência para tskill, que encerra um processo em execução em uma sessão em um servidor de Host da Sessão da Área de Trabalho Remota.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13bd18a84dccbbeee88c24b9b07208b3174bc558
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 496d5d4e0002ba2c9f8ae6916aafcd08e686ce99
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721236"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931470"
 ---
 # <a name="tskill"></a>tskill
 
@@ -36,9 +36,9 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |Parâmetro|Descrição|
 |-------|--------|
 |\<ProcessID>|Especifica a ID do processo que você deseja encerrar.|
-|\<> do ProcessName|Especifica o nome do processo que você deseja encerrar. Esse parâmetro pode incluir caracteres curinga.|
-|/Server:\<servername>|Especifica o servidor de terminal que contém o processo que você deseja encerrar. Se **/Server** não for especificado, o servidor de host da Sessão RD atual será usado.|
-|/ID:\<SessionID>|Encerra o processo que está sendo executado na sessão especificada.|
+|\<ProcessName>|Especifica o nome do processo que você deseja encerrar. Esse parâmetro pode incluir caracteres curinga.|
+|/server:\<ServerName>|Especifica o servidor de terminal que contém o processo que você deseja encerrar. Se **/Server** não for especificado, o servidor de host da Sessão RD atual será usado.|
+|/ID\<SessionID>|Encerra o processo que está sendo executado na sessão especificada.|
 |/a|Encerra o processo que está sendo executado em todas as sessões.|
 |/v|Exibe informações sobre as ações que estão sendo executadas.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -58,5 +58,5 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   tskill explorer /id:5
   ```
   ## <a name="additional-references"></a>Referências adicionais
-  - [Command-Line Syntax Key](command-line-syntax-key.md)
-  Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+  - Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+   [Referência de comando de serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

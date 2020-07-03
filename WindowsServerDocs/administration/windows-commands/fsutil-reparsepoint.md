@@ -1,6 +1,6 @@
 ---
 title: fsutil reparsepoint
-description: Tópico de referência para o comando fsutil reparsepoint, que consulta ou exclui pontos de nova análise.
+description: Artigo de referência para o comando fsutil reparsepoint, que consulta ou exclui pontos de nova análise.
 ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 56ca18cc4f3b4cdfd9021eb8361d980bb855bdc3
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: edbbc578b6a84ebd4e342493e29cbe2bd5c5a2cd
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83435721"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931211"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 
@@ -43,7 +43,7 @@ fsutil reparsepoint [delete] <filename>
 | --------- | ----------- |
 | Consulta | Recupera os dados do ponto de nova análise que estão associados ao arquivo ou diretório identificado pelo identificador especificado. |
 | excluir | Exclui um ponto de nova análise do arquivo ou diretório que é identificado pelo identificador especificado, mas não exclui o arquivo ou diretório. |
-| `<filename>` | Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo, *C:\documents\filename.txt*. |
+| `<filename>` | Especifica o caminho completo para o arquivo, incluindo o nome do arquivo e a extensão, por exemplo *C:\documents\filename.txt*. |
 
 #### <a name="remarks"></a>Comentários
 

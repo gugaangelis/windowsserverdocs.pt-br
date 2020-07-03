@@ -1,6 +1,6 @@
 ---
-title: listar provedores
-description: Tópico de referência para o comando list providers, que lista os provedores de cópia de sombra que estão atualmente registrados no sistema.
+title: list providers
+description: Artigo de referência para o comando list providers, que lista os provedores de cópia de sombra que estão atualmente registrados no sistema.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 98615dfa92c24b91babb55ae3545065834887e5d
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: 64996c7a85fa7ad20a5ffbb1c22ae3396820b676
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817236"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931803"
 ---
-# <a name="list-providers"></a>listar provedores
+# <a name="list-providers"></a>list providers
 
 Lista os provedores de cópia de sombra que estão registrados atualmente no sistema.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
 
 ```
 list providers

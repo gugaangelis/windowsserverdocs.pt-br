@@ -1,6 +1,6 @@
 ---
 title: Get-TransportServer
-description: Tópico de referência para Get-TransportServer, que exibe informações sobre um servidor de transporte especificado.
+description: Artigo de referência para Get-TransportServer, que exibe informações sobre um servidor de transporte especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ab5f901240f964bd22e7fb8053ed95b1c6fe51
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 115942290679decd8b8c660e4113576efb30123d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82719731"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932171"
 ---
 # <a name="get-transportserver"></a>Get-TransportServer
 
@@ -41,9 +41,9 @@ Para exibir informações de configuração, digite:
 wdsutil /Get-TransportServer /Server:MyWDSServer /Show:Config
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando[usando o comando](using-the-disable-transportserver-command.md)
-Disable-TransportServer[usando o subcomando Enable-TransportServer comando](using-the-enable-transportserver-command.md)
-[: Set-TransportServer](subcommand-set-transportserver.md)
-subcomando[: Start-TransportServer](subcommand-start-transportserver.md)
-[subcomando: Stop-TransportServer](subcommand-stop-transportserver.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-disable-transportserver-command.md) 
+ Disable-TransportServer [Usando o comando](using-the-enable-transportserver-command.md) 
+ Enable-TransportServer [Subcomando: Set-TransportServer](subcommand-set-transportserver.md) 
+ [Subcomando: Start-TransportServer](subcommand-start-transportserver.md) 
+ [Subcomando: Stop-TransportServer](subcommand-stop-transportserver.md)

@@ -1,6 +1,6 @@
 ---
 title: pubprn
-description: Tópico de referência para o comando Pubprn, que publica uma impressora no Active Directory Domain Services.
+description: Artigo de referência para o comando Pubprn, que publica uma impressora no Active Directory Domain Services.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d45291b22978dd3fe2781699eaf616b9d08a4bf
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c73c79450d4feb4d2567f29bfed56364dea9b5a8
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472141"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932013"
 ---
 # <a name="pubprn"></a>pubprn
 

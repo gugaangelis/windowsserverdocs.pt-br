@@ -1,6 +1,6 @@
 ---
-title: caminho
-description: Tópico de referência para definir o caminho de comando na variável de ambiente PATH, especificando o conjunto de diretórios usado para pesquisar arquivos executáveis (. exe).
+title: path
+description: Artigo de referência para definir o caminho de comando na variável de ambiente PATH, especificando o conjunto de diretórios usado para pesquisar arquivos executáveis (. exe).
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fadeb2108f0e59ee2f45f3cf45338046a345006
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f324c2b0fc84d2df05f7df93d83799b3ac463d5d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472562"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85932019"
 ---
-# <a name="path"></a>caminho
+# <a name="path"></a>path
 
 Define o caminho de comando na variável de ambiente PATH, especificando o conjunto de diretórios usados para pesquisar arquivos executáveis (. exe). Se usado sem parâmetros, este comando exibe o caminho do comando atual.
 

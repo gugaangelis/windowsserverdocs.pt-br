@@ -1,6 +1,6 @@
 ---
 title: ksetup setrealmflags
-description: Tópico de referência para o comando ksetup setrealmflags, que define os sinalizadores de realm para o realm especificado.
+description: Artigo de referência para o comando ksetup setrealmflags, que define os sinalizadores de realm para o realm especificado.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2de568ae3df522f43d7a84e22d76ee3975d8e209
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: a28fa3e0ae99a2a4bd3384915b43e63ed0e66c0b
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817316"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930430"
 ---
 # <a name="ksetup-setrealmflags"></a>ksetup setrealmflags
 

@@ -1,6 +1,6 @@
 ---
 title: echo
-description: Tópico de referência para o comando echo, que exibe mensagens ou ativa ou desativa o recurso de eco de comando.
+description: Artigo de referência para o comando echo, que exibe mensagens ou ativa ou desativa o recurso de eco de comando.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca2a10a5d52c9d175d453a164f3ab4f47ca0841d
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: bc463efef38e07c1ce8b9ebee1ddd7bdfd7d3066
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855660"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930519"
 ---
 # <a name="echo"></a>echo
 
@@ -104,7 +104,7 @@ Se não forem encontrados arquivos. txt quando o arquivo em lotes for executado,
 This directory contains no text files.
 ```
 
-Se arquivos. txt forem encontrados quando o arquivo em lotes for executado, a saída a seguir será exibida (para este exemplo, suponha que os arquivos arquivo1. txt, arquivo2. txt e arquivo3. txt existam):
+Se arquivos. txt forem encontrados quando o arquivo em lotes for executado, a saída a seguir será exibida (para este exemplo, suponha que os arquivos File1.txt, File2.txt e File3.txt existam):
 
 ```
 This directory contains the following text files:

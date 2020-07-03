@@ -1,6 +1,6 @@
 ---
 title: pathping
-description: Tópico de referência para o comando pathping, que obtém informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino.
+description: Artigo de referência para o comando pathping, que obtém informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6f3f90be7be29f1c50e70fa8ec49685ee1843c45
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 887a819c28d546f8c73d07fedbefbe27b65e7a5a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472552"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931393"
 ---
 # <a name="pathping"></a>pathping
 

@@ -1,6 +1,6 @@
 ---
 title: extend
-description: Tópico de referência para o comando Extend, que estende o volume ou a partição com foco e seu sistema de arquivos para o espaço livre (não alocado) em um disco.
+description: Artigo de referência para o comando Extend, que estende o volume ou a partição com foco e seu sistema de arquivos para o espaço livre (não alocado) em um disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd10e2ad4d6d647f37e1ad113f1516104e66315f
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 4749b2ddcd47aa5445d9d77ff86c3473ae37b355
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437191"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931440"
 ---
 # <a name="extend"></a>extend
 
@@ -35,7 +35,7 @@ extend filesystem [noerr]
 | --------- | ----------- |
 | tamanho =`<n>` | Especifica a quantidade de espaço em megabytes (MB) a ser adicionada ao volume ou à partição atual. Se nenhum tamanho for fornecido, todo o espaço livre contíguo disponível no disco será usado. |
 | disco =`<n>` | Especifica o disco no qual o volume ou a partição é estendida. Se nenhum disco for especificado, o volume ou a partição será estendido no disco atual. |
-| WPD | Estende o sistema de arquivos do volume com foco. Para uso somente em discos em que o sistema de arquivos não foi estendido com o volume. |
+| filesystem | Estende o sistema de arquivos do volume com foco. Para uso somente em discos em que o sistema de arquivos não foi estendido com o volume. |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
 #### <a name="remarks"></a>Comentários

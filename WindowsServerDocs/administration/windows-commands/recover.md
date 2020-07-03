@@ -1,6 +1,6 @@
 ---
 title: recover
-description: Tópico de referência para * * * *-
+description: Artigo de referência para o comando de recuperação, que recupera informações legíveis de um disco defeituoso ou defeituoso.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,46 +9,38 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b316ed26f008a62f88aaeb4a7a7f3030d08f1588
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: ab7f502b046bf30a40b1fdd386c7faddc5c8f15a
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722620"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931931"
 ---
 # <a name="recover"></a>recover
 
+Recupera informações legíveis de um disco defeituoso ou defeituoso. Esse comando lê um arquivo, setor por setor e recupera dados de setores bons. Os dados em setores inválidos são perdidos. Como todos os dados em setores inválidos são perdidos quando você recupera um arquivo, você deve recuperar apenas um arquivo de cada vez.
 
-
-Recupera informações legíveis de um disco defeituoso ou defeituoso.
-
-
+Os setores inválidos relatados pelo comando **chkdsk** foram marcados como ruins quando o disco estava preparado para operação. Eles não apresentam nenhum perigo e a **recuperação** não os afeta.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-recover [<Drive>:][<Path>]<FileName>
+recover [<drive>:][<path>]<filename>
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|           Parâmetro           |                                          Descrição                                          |
-|-------------------------------|-----------------------------------------------------------------------------------------------|
-| [\<Unidade>:] [<Path>]<FileName> | Especifica o local e o nome do arquivo que você deseja recuperar. O *nome do arquivo* é obrigatório. |
-|              /?               |                             Exibe a ajuda no prompt de comando.                              |
+| Parâmetro | Descrição |
+|--|--|
+| `[<drive>:][<path>]<filename>` | Especifica o nome do arquivo (e o local do arquivo se ele não estiver no diretório atual) que você deseja recuperar. O *nome de arquivo* é obrigatório e não há suporte para caracteres curinga. |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+### <a name="examples"></a>Exemplos
 
--   O comando de **recuperação** lê um arquivo, setor por setor e recupera dados de setores bons. Os dados em setores inválidos são perdidos.
--   Os setores inválidos relatados por **chkdsk** foram marcados como ruins quando o disco estava preparado para operação. Eles não apresentam nenhum perigo e a **recuperação** não os afeta.
--   Como todos os dados em setores inválidos são perdidos quando você recupera um arquivo, você deve recuperar apenas um arquivo de cada vez.
--   Você não pode usar caracteres curinga (**&#42;** e **?**) com o comando de **recuperação** . Você deve especificar um arquivo (e o local do arquivo se ele não estiver no diretório atual).
+Para recuperar o arquivo *story.txt* no diretório *\Fiction* na unidade D, digite:
 
-## <a name="examples"></a>Exemplos
-
-Para recuperar o arquivo Story. txt no diretório \Fiction na unidade D, digite:
 ```
-recover d:\fiction\story.txt 
+recover d:\fiction\story.txt
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

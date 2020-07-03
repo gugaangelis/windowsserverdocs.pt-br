@@ -1,6 +1,6 @@
 ---
 title: prnqctl
-description: Tópico de referência para o comando prnqctl, que imprime uma página de teste e pausa ou retoma uma impressora.
+description: Artigo de referência para o comando prnqctl, que imprime uma página de teste e pausa ou retoma uma impressora.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: b8a551e34754771a69af1b41e5da3fd726df1185
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7bcc6a36fb2387a82e25afd41be2d22615565bfe
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472191"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931156"
 ---
 # <a name="prnqctl"></a>prnqctl
 

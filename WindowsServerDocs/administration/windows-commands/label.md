@@ -1,6 +1,6 @@
 ---
 title: label
-description: Tópico de referência para o comando de rótulo, que cria, altera ou exclui o rótulo de volume (ou seja, o nome) de um disco.
+description: Artigo de referência para o comando de rótulo, que cria, altera ou exclui o rótulo de volume (ou seja, o nome) de um disco.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2d09328f79215c497bcb0ea4549b1f6ac227994
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: f8c13285c5dc5030e96d7d334bb65d15f04dff86
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83817256"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931813"
 ---
 # <a name="label"></a>label
 

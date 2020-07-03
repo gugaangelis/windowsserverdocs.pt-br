@@ -1,6 +1,6 @@
 ---
-title: tipo de FTP
-description: Tópico de referência para o comando de tipo FTP, que define ou exibe o tipo de transferência de arquivo.
+title: ftp type
+description: Artigo de referência para o comando de tipo FTP, que define ou exibe o tipo de transferência de arquivo.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02b6d5b4bd7944c9f4126ba4877360de02586cfb
-ms.sourcegitcommit: 4f407b82435afe3111c215510b0ef797863f9cb4
+ms.openlocfilehash: ea0b2a319dae65104db8a215e17fa4b579ee6ffa
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/24/2020
-ms.locfileid: "83820266"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931190"
 ---
-# <a name="ftp-type"></a>tipo de FTP
+# <a name="ftp-type"></a>ftp type
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

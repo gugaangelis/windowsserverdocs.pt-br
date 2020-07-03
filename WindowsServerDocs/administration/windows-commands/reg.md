@@ -1,6 +1,6 @@
 ---
 title: reg
-description: Tópico de referência para * * * *-
+description: Artigo de referência para os comandos reg, que executam operações em valores e informações da subchave do registro em entradas do registro.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,39 +9,54 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42f40c2bc51d786f66743ab3e7d2cfc378aa4da1
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 47ceea315b3d172c766e749e3447f56907eab945
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722488"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931021"
 ---
 # <a name="reg"></a>reg
 
+Executa operações em valores e informações da subchave do registro em entradas do registro.
 
+Algumas operações permitem que você exiba ou configure entradas de registro em computadores locais ou remotos, enquanto outros permitem que você configure apenas computadores locais. Usar **reg** para configurar o registro de computadores remotos limita os parâmetros que você pode usar em algumas operações. Verifique a sintaxe e os parâmetros de cada operação para verificar se eles podem ser usados em computadores remotos.
 
-Executa operações em valores e informações da subchave do registro em entradas do registro. Os comandos **reg** incluem:
+> [!CAUTION]
+> Não edite o registro diretamente, a menos que você não tenha nenhuma alternativa. O editor do registro ignora as proteções padrão, permitindo que as configurações possam prejudicar o desempenho, danificar o sistema ou até mesmo exigir que você reinstale o Windows. Você pode alterar com segurança a maioria das configurações do registro usando os programas no painel de controle ou no console de gerenciamento Microsoft (MMC). Se você precisar editar o registro diretamente, faça o backup primeiro.
 
-[Reg add](reg-add.md)
+## <a name="syntax"></a>Sintaxe
 
-[Reg compare](reg-compare.md)
+```
+reg add
+reg compare
+reg copy
+reg delete
+reg export
+reg import
+reg load
+reg query
+reg restore
+reg save
+reg unload
+```
 
-[Reg copy](reg-copy.md)
+### <a name="parameters"></a>Parâmetros
 
-[Reg delete](reg-delete.md)
+| Parâmetro | Descrição |
+|--|--|
+| [reg add](reg-add.md) | Adiciona uma nova subchave ou entrada ao registro. |
+| [reg compare](reg-compare.md) | Compara as entradas ou subchaves do registro especificadas. |
+| [reg copy](reg-copy.md) | Copia uma entrada de registro para um local especificado no computador local ou remoto. |
+| [reg delete](reg-delete.md) | Exclui uma subchave ou entradas do registro. |
+| [reg export](reg-export.md) | Copia as subchaves, entradas e valores especificados do computador local em um arquivo para transferência para outros servidores. |
+| [reg import](reg-import.md) | Copia o conteúdo de um arquivo que contém subchaves de registro exportadas, entradas e valores no registro do computador local. |
+| [reg load](reg-load.md) | Grava subchaves e entradas salvas em uma subchave diferente no registro. |
+| [reg query](reg-query.md) | Retorna uma lista da próxima camada de subchaves e entradas localizadas em uma subchave especificada no registro. |
+| [reg restore](reg-restore.md) | Grava subchaves e entradas salvas de volta no registro. |
+| [reg save](reg-save.md) | Salva uma cópia de subchaves, entradas e valores especificados do registro em um arquivo especificado. |
+| [reg unload](reg-unload.md) | Remove uma seção do registro que foi carregado usando a operação **reg Load** . |
 
-[Reg export](reg-export.md)
+## <a name="additional-references"></a>Referências adicionais
 
-[Reg import](reg-import.md)
-
-[Reg load](reg-load.md)
-
-[Reg query](reg-query.md)
-
-[Reg restore](reg-restore.md)
-
-[Reg save](reg-save.md)
-
-[Reg unload](reg-unload.md)
-
-Algumas operações permitem que você exiba ou configure entradas de registro em computadores locais ou remotos, enquanto outros permitem que você configure apenas computadores locais. Usar **reg** para configurar o registro de computadores remotos limita os parâmetros que você pode usar em algumas operações. Verifique a sintaxe e os parâmetros de cada operação para verificar se eles podem ser usados em computadores remotos
+- [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

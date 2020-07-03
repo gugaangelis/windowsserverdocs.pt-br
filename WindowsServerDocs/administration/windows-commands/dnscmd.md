@@ -1,6 +1,6 @@
 ---
 title: dnscmd
-description: Tópico de referência para o comando dnscmd, que é uma interface de linha de comando para gerenciar servidores DNS.
+description: Artigo de referência para o comando dnscmd, que é uma interface de linha de comando para gerenciar servidores DNS.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c279513549ba149974933c33044fa861fa89a62
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 47be29e55c4626f5c05498074f10418730c6a6f3
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83437031"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931300"
 ---
 # <a name="dnscmd"></a>Dnscmd
 
@@ -355,7 +355,7 @@ dnscmd [<servername>] /enumzones [/primary | /secondary | /forwarder | /stub | /
 
 ## <a name="dnscmd-exportsettings-command"></a>comando/ExportSettings do DNSCmd
 
-Cria um arquivo de texto que lista os detalhes de configuração de um servidor DNS. O arquivo de texto é denominado *DnsSettings. txt*. Ele está localizado no `%systemroot%\system32\dns` diretório do servidor. Você pode usar as informações no arquivo que o **dnscmd/ExportSettings** cria para solucionar problemas de configuração ou para garantir que você tenha configurado vários servidores de forma idêntica.
+Cria um arquivo de texto que lista os detalhes de configuração de um servidor DNS. O arquivo de texto é nomeado *DnsSettings.txt*. Ele está localizado no `%systemroot%\system32\dns` diretório do servidor. Você pode usar as informações no arquivo que o **dnscmd/ExportSettings** cria para solucionar problemas de configuração ou para garantir que você tenha configurado vários servidores de forma idêntica.
 
 ### <a name="syntax"></a>Sintaxe
 

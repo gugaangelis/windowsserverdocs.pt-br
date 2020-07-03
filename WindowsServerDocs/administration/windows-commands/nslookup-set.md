@@ -1,6 +1,6 @@
 ---
 title: nslookup set
-description: Tópico de referência para o comando set do nslookup, que altera as definições de configuração que afetam a forma como as pesquisas se comportam.
+description: Artigo de referência para o comando set do nslookup, que altera as definições de configuração que afetam a forma como as pesquisas se comportam.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 579334b3b6b0cd5e9373876144f46fa21d57c745
-ms.sourcegitcommit: 99d548141428c964facf666c10b6709d80fbb215
+ms.openlocfilehash: 4b8b8fc0c27f283d88ca6645ffd92704c34eba9d
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721179"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930266"
 ---
 # <a name="nslookup-set"></a>nslookup set
 

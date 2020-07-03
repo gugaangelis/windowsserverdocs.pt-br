@@ -1,6 +1,6 @@
 ---
 title: editar
-description: Tópico de referência para o comando Editar, que inicia o editor do MS-DOS, para que você possa criar e alterar arquivos de texto ASCII.
+description: Artigo de referência para o comando Editar, que inicia o editor do MS-DOS, para que você possa criar e alterar arquivos de texto ASCII.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a9f6c78889f466015d60149c27a87dcefe840133
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: a28af13c5f627010dce1321027b8a246560829f1
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436911"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930495"
 ---
 # <a name="edit"></a>editar
 
@@ -52,7 +52,7 @@ Para abrir o editor do MS-DOS, digite:
 edit
 ```
 
-Para criar e editar um arquivo chamado *newtextfile. txt* no diretório atual, digite:
+Para criar e editar um arquivo chamado *newtextfile.txt* no diretório atual, digite:
 
 ```
 edit newtextfile.txt

@@ -1,6 +1,6 @@
 ---
 title: dir
-description: Tópico de referência para o comando dir, que exibe uma lista de arquivos e subdiretórios de um diretório.
+description: Artigo de referência para o comando dir, que exibe uma lista de arquivos e subdiretórios de um diretório.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6d5b99e905d70d81962f96a303e0bcaae0bd9e9
-ms.sourcegitcommit: 5e10afbd128befb7400a6bcf576f0239cf2ed47f
+ms.openlocfilehash: 2372476e153a6dc37b7d068201a40ba17c11fa54
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84302821"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85930818"
 ---
 # <a name="dir"></a>dir
 
@@ -65,7 +65,7 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
   - `dir read *.*`lista todos os arquivos no diretório atual que começam com ler com qualquer extensão.
 
-  O curinga asterisco sempre usa mapeamento de nome de arquivo curto, portanto, você pode obter resultados inesperados. Por exemplo, o diretório a seguir contém dois arquivos (t. txt2 e T97. txt):
+  O curinga asterisco sempre usa mapeamento de nome de arquivo curto, portanto, você pode obter resultados inesperados. Por exemplo, o diretório a seguir contém dois arquivos (t.txt2 e t97.txt):
 
   ```
   C:\test>dir /x
@@ -80,9 +80,9 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
   11/30/2004  01:16 PM 0 t97.txt
   ```
 
-  Você pode esperar que a digitação `dir t97\*` retorne o arquivo T97. txt. No entanto, a digitação `dir t97\*` retorna ambos os arquivos, porque o curinga asterisco corresponde ao arquivo t. txt2 para T97. txt usando seu mapa de nome curto *T97B4 ~ 1. txt*. Da mesma forma, a digitação `del t97\*` excluiria ambos os arquivos.
+  Você pode esperar que a digitação `dir t97\*` retorne o arquivo t97.txt. No entanto, a digitação `dir t97\*` retorna os dois arquivos, porque o curinga asterisco corresponde ao arquivo t.txt2 para t97.txt usando seu mapa de nome curto *T97B4 ~1.TXT*. Da mesma forma, a digitação `del t97\*` excluiria ambos os arquivos.
 
-- Você pode usar o ponto de interrogação (?) como um substituto para um único caractere em um nome. Por exemplo, a digitação `dir read???.txt` lista todos os arquivos no diretório atual com a extensão. txt que começam com Read e são seguidos por até três caracteres. Isso inclui Read. txt, Read1. txt, Read12. txt, Read123. txt e Readme1. txt, mas não Readme12. txt.
+- Você pode usar o ponto de interrogação (?) como um substituto para um único caractere em um nome. Por exemplo, a digitação `dir read???.txt` lista todos os arquivos no diretório atual com a extensão. txt que começam com Read e são seguidos por até três caracteres. Isso inclui Read.txt, Read1.txt, Read12.txt, Read123.txt e Readme1.txt, mas não Readme12.txt.
 
 - Se você usar **/a** com mais de um valor em *atributos*, esse comando exibirá os nomes somente desses arquivos com todos os atributos especificados. Por exemplo, se você usar a **opção/a** com **r** e **-h** como atributos (usando `/a:r-h` ou `/ar-h` ), esse comando exibirá apenas os nomes dos arquivos somente leitura que não estão ocultos.
 
@@ -114,13 +114,13 @@ dir > prn
 
 Quando você especifica **PRN**, a lista de diretórios é enviada para a impressora que está conectada à porta LPT1. Se a impressora estiver conectada a uma porta diferente, você deverá substituir **PRN** pelo nome da porta correta.
 
-Você também pode redirecionar a saída do comando **dir** para um arquivo, substituindo **PRN** por um nome de arquivo. Você também pode digitar um caminho. Por exemplo, para direcionar a saída de **dir** para o arquivo dir. doc no diretório de registros, digite:
+Você também pode redirecionar a saída do comando **dir** para um arquivo, substituindo **PRN** por um nome de arquivo. Você também pode digitar um caminho. Por exemplo, para direcionar a saída de **dir** para o arquivo dir.doc no diretório de registros, digite:
 
 ```
 dir > \records\dir.doc
 ```
 
-Se dir. doc não existir, o **dir** o criará, a menos que o diretório de **registros** não exista. Nesse caso, a seguinte mensagem é exibida:
+Se dir.doc não existir, **dir** o criará, a menos que o diretório de **registros** não exista. Nesse caso, a seguinte mensagem é exibida:
 
 ```
 File creation error

@@ -1,6 +1,6 @@
 ---
 title: Remove-MulticastTransmission
-description: Tópico de referência para Remove-MulticastTransmission, que desabilita a transmissão multicast para uma imagem.
+description: Artigo de referência para Remove-MulticastTransmission, que desabilita a transmissão multicast para uma imagem.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
 ms.topic: article
@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41dea341216979d6ed7298f11c16458e4d3f2f50
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 5f695e4743b06eb8a2e1c59081a4661e616c8711
+ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720344"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85931228"
 ---
 # <a name="using-the-remove-multicasttransmission-command"></a>Usando o comando Remove-MulticastTransmission
 
@@ -22,8 +22,8 @@ ms.locfileid: "82720344"
 
 Desabilita a transmissão multicast para uma imagem. A menos que você especifique **/Force**, os clientes existentes concluirão a transferência de imagem, mas novos clientes não terão permissão para ingressar.
 
-## <a name="syntax"></a>Sintaxe
-**Windows Server 2008**
+## <a name="syntax"></a>Syntax
+**Windows Server 2008**
 ```
 wdsutil /remove-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image Group>] [/Filename:<File name>] [/force]
 ```
@@ -50,7 +50,7 @@ meio<Image name>|Especifica o nome da imagem.|
 |[/Server:<Server name>]|Especifica o nome do servidor. Esse pode ser o nome NetBIOS ou o FQDN (nome de domínio totalmente qualificado). Se nenhum nome de servidor for especificado, o servidor local será usado.|
 MediaType: {instalar&#124;inicialização}|Especifica o tipo de imagem. Observe que essa opção deve ser definida como **instalar** para o Windows Server 2008.|
 |/Architecture: {x86 &#124; IA64 &#124; x64}|Especifica a arquitetura da imagem de inicialização associada à transmissão a ser iniciada. Como é possível ter o mesmo nome de imagem para imagens de inicialização em diferentes arquiteturas, você deve especificar a arquitetura para garantir que a transmissão correta seja usada.|
-|\mediaGroup:<Image group name>]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar o nome do grupo de imagens.|
+|\mediaGroup: <Image group name> ]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar o nome do grupo de imagens.|
 |[/Filename:<File name>]|especifica o nome do arquivo. Se a imagem de origem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.|
 |/Force|Remove a transmissão e encerra todos os clientes. A menos que você especifique um valor para a opção **/Force** , os clientes existentes podem concluir a transferência de imagem, mas novos clientes não podem ingressar.|
 ## <a name="examples"></a>Exemplos
@@ -70,8 +70,8 @@ wdsutil /remove-MulticastTransmission /Server:MyWDSServer
 /Filename:install.wim /force
 ```
 ## <a name="additional-references"></a>Referências adicionais
-- [Chave](command-line-syntax-key.md)
-de sintaxe de linha de comando usando o
-[comando Get-AllMulticastTransmissions](using-the-get-allmulticasttransmissions-command.md)
-[usando o comando Get-MulticastTransmission](using-the-get-multicasttransmission-command.md)[usando o subcomando New-MulticastTransmission comando](using-the-new-multicasttransmission-command.md)
-[: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Usando o comando](using-the-get-allmulticasttransmissions-command.md) 
+ Get-AllMulticastTransmissions [Usando o comando](using-the-get-multicasttransmission-command.md) 
+ Get-MulticastTransmission [Usando o comando](using-the-new-multicasttransmission-command.md) 
+ New-MulticastTransmission [Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)
