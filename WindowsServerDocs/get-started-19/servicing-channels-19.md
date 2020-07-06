@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: a4b8f2f21a7d13c31d6c952a74d3026a750466ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2bf56e69d1a28007c35c320d1d5cc73c2ba9fa53
+ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472912"
+ms.lasthandoff: 06/30/2020
+ms.locfileid: "85586693"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canais de manutenção do Windows Server: LTSC e SAC
 
@@ -25,21 +25,21 @@ Há dois canais de versão principal disponíveis para clientes do Windows Serve
 
 ## <a name="long-term-servicing-channel-ltsc"></a>LTSC (Canal de Manutenção em Longo Prazo)
 
-É o modelo de versão que você já conhece (anteriormente chamado de "*Branch* de Manutenção de Longo Prazo") em que uma nova versão principal do Windows Server é liberada a cada dois ou três anos. Os usuários têm direito a cinco anos de suporte base e a cinco anos de suporte estendido. O canal é apropriado para sistemas que exigem uma opção de manutenção mais longa e estabilidade funcional. As implantações do Windows Server 2016 e versões anteriores do Windows Server não serão afetadas pelas novas versões do Canal Semestral. O Canal de Manutenção em Longo Prazo continuará a receber atualizações de segurança e não relacionadas à segurança, mas não receberá os novos recursos e funcionalidade.
+É o modelo de versão que você já conhece (anteriormente chamado de "*Branch* de Manutenção de Longo Prazo") em que uma nova versão principal do Windows Server é liberada a cada dois ou três anos. Os usuários têm direito a cinco anos de suporte base e a cinco anos de suporte estendido. O canal é apropriado para sistemas que exigem uma opção de manutenção mais longa e estabilidade funcional. As implantações do Windows Server 2019 e versões anteriores do Windows Server não serão afetadas pelas novas versões do Canal Semestral. O Canal de Manutenção em Longo Prazo continuará a receber atualizações de segurança e não relacionadas à segurança, mas não receberá os novos recursos e funcionalidade.
 
 > [!Note]
 > **O produto LTSC atual é o Windows Server 2019**. Se quiser ficar nesse canal, você deverá instalar (ou continuar a usar) o Windows Server 2019, que pode ser instalado na opção de instalação Server Core ou na opção de instalação Servidor com Experiência Desktop.
 
 ## <a name="semi-annual-channel"></a>Canal Semestral
 
-O Canal Semestral é perfeito para os clientes que estão inovando rapidamente aproveitarem os novos recursos do sistema operacional em um ritmo mais rápido, tanto em aplicativos, especialmente aqueles criados em contêineres e microsserviços, bem como no datacenter híbrido definido por software. Os produtos do Windows Server no Canal Semestral disponibilizarão novos lançamentos duas vezes por ano, no primeiro e segundo semestres. Cada versão neste canal será compatível por 18 meses a partir do lançamento inicial.
+O Canal Semestral é perfeito para que clientes que estão inovando rapidamente aproveitem as novas funcionalidades do sistema operacional em um ritmo mais rápido, com foco em contêineres e microsserviços. Os produtos do Windows Server no Canal Semestral disponibilizarão novos lançamentos duas vezes por ano, no primeiro e segundo semestres. Cada versão neste canal será compatível por 18 meses a partir do lançamento inicial.
 
 A maioria dos recursos introduzidos no Canal Semestral será acumulada na próxima versão do Canal de Manutenção em Longo Prazo do Windows Server. As edições, a funcionalidade e o conteúdo de suporte podem variar de versão para versão dependendo de comentários de clientes.
 
 O Canal Semestral estará disponível para clientes de licença de volume com [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx), bem como por meio do Azure Marketplace ou outro provedor de nuvem/serviços de hospedagem e programas de fidelidade como as Assinaturas do Visual Studio.
 
-> [!Note]
-> **A versão atual do Canal Semestral é para o Windows Server, versão 1903**. Se quiser colocar servidores nesse canal, instale o Windows Server, versão 1903, que pode ser instalado no modo Server Core ou Nano Server executado em um contêiner. As atualizações in-loco de uma versão do Canal de Manutenção em Longo Prazo não são compatíveis, porque estão em **canais de versões diferentes**. As versões do Canal Semestral não são atualizações – são a próxima versão do Windows Server no Canal Semestral.
+> [!Note]  
+> **A versão atual do Canal Semestral é a versão 1909 do Windows Server**. Se você deseja colocar servidores nesse canal, instale o Windows Server, versão 1909, que pode ser instalado no modo Server Core ou como um Nano Server executado em um contêiner. As atualizações in-loco de uma versão do Canal de Manutenção em Longo Prazo não são compatíveis, porque estão em **canais de versões diferentes**. As versões do Canal Semestral não são atualizações – são a próxima versão do Windows Server no Canal Semestral.
 
 Nesse modelo, as versões do Windows Server são identificadas por ano e mês de lançamento: por exemplo, em 2017, uma versão do nono mês (setembro) seria identificada como **versão 1709**. Novas versões do Windows Server no Canal Semestral ocorrerão duas vezes por ano. O ciclo de vida de suporte para cada versão é 18 meses.
 
@@ -47,8 +47,8 @@ Nesse modelo, as versões do Windows Server são identificadas por ano e mês de
 
 Estas são as principais diferenças para levar em consideração:
 
-- Você precisa inovar com rapidez? Você precisa de acesso antecipado aos recursos mais recentes do Windows Server? Você precisa dar suporte a aplicativos híbridos de ritmo rápido, a operações de desenvolvimento e a malhas do Hyper-V? Nesse caso, considere **ingressar no Canal Semestral** ao instalar o **Windows Server, versão 1903**. Conforme descrito neste tópico, você receberá novas versões duas vezes por ano, com 18 meses de suporte base de produção por versão. Você pode obtê-lo por meio de licenciamento por volume, do Azure ou dos Serviços de Assinatura do Visual Studio. Atualmente, as versões no Canal Semestral exigem licenciamento por volume e Software Assurance se você pretende executar o produto na produção.
-- Você precisa de estabilidade e de previsibilidade? Você precisa executar máquinas virtuais e cargas de trabalho tradicionais em servidores físicos? Nesse caso, considere **manter esses servidores no Canal de Manutenção em Longo Prazo**. A versão atual do LTSC é o **Windows Server 2019**. Conforme descrito neste tópico, você terá acesso às novas versões a cada dois ou três anos, com cinco anos de suporte base seguidos de cinco anos de suporte estendido por versão. As versões LTSC estão disponíveis em todos os mecanismos de lançamento. As versões do LTSC estão disponíveis para qualquer pessoa, independentemente do modelo de licenciamento usado.
+- Você precisa fazer upgrade para uma nova tecnologia no DevOps, nos contêineres e nos microsserviços? Nesse caso, considere **ingressar no Canal Semestral** ao instalar o **Windows Server, versão 1909**. Conforme descrito neste tópico, você receberá novas versões duas vezes por ano, com 18 meses de suporte base de produção por versão. Você pode obtê-lo por meio de licenciamento por volume, do Azure ou dos Serviços de Assinatura do Visual Studio. Atualmente, as versões no Canal Semestral exigem licenciamento por volume e Software Assurance se você pretende executar o produto na produção.
+- Você precisa de estabilidade e de previsibilidade? Você precisa executar máquinas virtuais e cargas de trabalho tradicionais em servidores físicos? Nesse caso, considere **manter esses servidores no Canal de Manutenção em Longo Prazo**. A versão atual do LTSC é o **Windows Server 2019**. Conforme descrito neste tópico, você terá acesso às novas versões a cada dois ou três anos, com cinco anos de suporte base seguidos de cinco anos de suporte estendido por versão. As versões LTSC estão disponíveis em todos os mecanismos de lançamento. As versões do LTSC estão disponíveis para qualquer pessoa, independentemente do modelo de licenciamento usado. 
 
 A tabela a seguir resume as principais diferenças entre os canais:
 
