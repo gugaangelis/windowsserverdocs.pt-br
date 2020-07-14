@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 978c42b70f1c74a009640f7feda8dee7a82c9cff
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 4eae1c991b3ce418f95b6b47eda485845a336e2f
+ms.sourcegitcommit: 9a72fa784206a4b780d6d1d630ec6f21fecb8db3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269231"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052581"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -167,7 +167,7 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 | Ponteiro do mouse | Clique com o botão direito em          | Tocar com dois dedos                                              |
 | Ponteiro do mouse | Clicar com o botão direito do mouse e arrastar | Tocar duas vezes e segurar com dois dedos e arrastar                    |
 | Ponteiro do mouse | Botão de rolagem do mouse          | Dar um toque duplo e segurar com dois dedos e arrastar para cima ou para baixo                |
-| Ponteiro do mouse | Zoom                 | Com dois dedos, pinçar para ampliar a tela e abrir os dedos para reduzi-la |
+| Ponteiro do mouse | Zoom                 | Com dois dedos, pinçar para reduzir e abrir os dedos para ampliar |
 
 ## <a name="supported-input-devices"></a>Dispositivos de entrada com suporte
 
