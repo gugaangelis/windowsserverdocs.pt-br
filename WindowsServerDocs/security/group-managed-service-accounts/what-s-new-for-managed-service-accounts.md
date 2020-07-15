@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 1411f312def0da79de4c18d6d652e0223ea27b48
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0932493c157bc9de39d3b3c819fa03b9a760a059
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474443"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384646"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>O que&#39;s novo para contas de serviço gerenciado
 
@@ -53,6 +53,6 @@ Para o Windows Server 2012, os cmdlets do Windows PowerShell assumem como padrã
 
 -   [Visão geral do Active Directory Domain Services](active-directory-domain-services-overview.md)
 
--   [Contas de Serviços Gerenciados: compreendendo, implementando, práticas recomendadas e solução de problemas](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [Contas de Serviços Gerenciados: compreendendo, implementando, práticas recomendadas e solução de problemas](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/managed-service-accounts-understanding-implementing-best/ba-p/397009)
 
 

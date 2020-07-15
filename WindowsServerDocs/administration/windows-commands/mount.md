@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 505094251ab6b0053cc3d46801ba5f6170201ecd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a81e5d6583eeb6859d5c82065b5bab5fff7c6c9f
+ms.sourcegitcommit: 102a929be3523dbd6523079f0a5738844cef81b4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935725"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86384636"
 ---
 # <a name="mount"></a>montagem
 
@@ -43,7 +43,7 @@ mount [-o <option>[...]] [-u:<username>] [-p:{<password> | *}] {\\<computername>
 | -o CaseSensitive | Força a pesquisa de arquivos no servidor a diferenciar maiúsculas de minúsculas. |
 | -o FileAccess =`<mode>` | Especifica o modo de permissão padrão de novos arquivos criados no compartilhamento NFS. Especifique o *modo* como um número de três dígitos no formato *ogw*, em *que o*, *g*e *w* são cada um dos dígitos que representam o acesso concedido ao proprietário do arquivo, ao grupo e ao mundo, respectivamente. Os dígitos devem estar no intervalo de 0-7, incluindo:<ul><li>**0:** Sem acesso</li><li>**1:** x (executar acesso)</li><li>**2:** w (acesso de gravação)</li><li>**3:** WX (acesso de gravação e execução)</li><li>**4:** r (acesso de leitura)</li><li>**5:** RX (acesso de leitura e execução)</li><li>**6:** RW (acesso de leitura e gravação)</li><li>**7:** rwx (leitura, gravação e acesso de execução)</li></ul> |
 | -o Lang =`{euc-jp|euc-tw|euc-kr|shift-jis|Big5|Ksc5601|Gb2312-80|Ansi)` | Especifica a codificação de linguagem a ser configurada em um compartilhamento NFS. Você pode usar apenas um idioma no compartilhamento. Esse valor pode incluir qualquer um dos seguintes valores:<ul><li>**EUC-JP:** Japonês</li><li>**EUC-TW:** Chinês</li><li>**EUC-Kr:** Coreano</li><li>**Shift-JIS:** Japonês</li><li>**Big5:** Chinês</li><li>**Ksc5601:** Coreano</li><li>**Gb2312-80:** Chinês simplificado</li><li>**ANSI:** Codificado em ANSI</li></ul> |
-| t`<username>` | Especifica o nome de usuário a ser usado para montar o compartilhamento. Se *username* não for precedido por uma barra invertida (* *\** ), ele será tratado como um nome de usuário do UNIX. |
+| t`<username>` | Especifica o nome de usuário a ser usado para montar o compartilhamento. Se *username* não for precedido por uma barra invertida ( **\\** ), ele será tratado como um nome de usuário do UNIX. |
 | DTI`<password>` | A senha a ser usada para montar o compartilhamento. Se você usar um asterisco (**&#42;**), a senha será solicitada. |
 | `<computername>` | Especifica o nome do servidor NFS. |
 | `<sharename>` | Especifica o nome do sistema de arquivos. |

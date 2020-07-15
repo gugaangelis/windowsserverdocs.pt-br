@@ -1,5 +1,5 @@
 ---
-title: Implantar dispositivos gráficos usando vGPU RemoteFX
+title: Implantar dispositivos gráficos usando um vGPU do RemoteFX
 description: Saiba como implantar e configurar vGPU RemoteFX no Windows Server
 ms.prod: windows-server
 ms.reviewer: rickman
@@ -7,17 +7,20 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 4ae185232ec39d92997929f8f916ff49caf26dcf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80310518"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390083"
 ---
-# <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>Implantar dispositivos gráficos usando vGPU RemoteFX
+# <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>Implantar dispositivos gráficos usando um vGPU do RemoteFX
 
 > Aplica-se a: Windows Server 2016, Microsoft Hyper-V Server 2016
+
+> [!NOTE]
+> Devido a questões de segurança, o vGPU RemoteFX está desabilitado por padrão em todas as versões do Windows a partir da atualização de segurança de 14 de julho de 2020. Para saber mais, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
 
 O recurso vGPU para o RemoteFX possibilita que várias máquinas virtuais compartilhem uma GPU física. Os recursos de renderização e de computação são compartilhados dinamicamente entre máquinas virtuais, tornando o RemoteFX vGPU apropriado para cargas de trabalho de alta intermitência em que os recursos de GPU dedicados não são necessários. Por exemplo, em um serviço de VDI, o vGPU RemoteFX pode ser usado para descarregar os custos de renderização de aplicativo para a GPU, com o efeito de diminuir a carga da CPU e melhorar a escalabilidade do serviço.
 
@@ -78,15 +81,15 @@ Use os seguintes cmdlets do PowerShell para adicionar, revisar e configurar o ad
 - [Set-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
 - [Get-VMRemoteFXPhysicalVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
 
-## <a name="monitor-performance"></a>Monitorar o desempenho
+## <a name="monitor-performance"></a>Monitorar desempenho
 
-O desempenho e a escala de um serviço habilitado para vGPU do RemoteFX são determinados por uma variedade de fatores, como o número de GPUs em seu sistema, memória da GPU total, quantidade de memória do sistema e velocidade da memória, número de núcleos de CPU e frequência de relógio de CPU, velocidade de armazenamento e NUMA implementação.
+O desempenho e a escala de um serviço habilitado para vGPU do RemoteFX são determinados por uma variedade de fatores, como o número de GPUs em seu sistema, memória de GPU total, quantidade de memória do sistema e velocidade de memória, número de núcleos de CPU e frequência de relógio de CPU, velocidade de armazenamento e implementação NUMA.
 
 ### <a name="host-system-memory"></a>Memória do sistema de host
 
 Para cada VM habilitada com uma vGPU, o RemoteFX usa a memória do sistema no sistema operacional convidado e no servidor host. O hipervisor garante a disponibilidade da memória do sistema para um sistema operacional convidado. No host, cada área de trabalho virtual habilitada para vGPU precisa anunciar seu requisito de memória do sistema para o hipervisor. Quando a área de trabalho virtual habilitada para vGPU é iniciada, o hipervisor reserva memória de sistema adicional no host.
 
-O requisito de memória para o servidor habilitado para RemoteFX é dinâmico porque a quantidade de memória consumida no servidor habilitado para RemoteFX depende do número de monitores associados às áreas de trabalho virtuais habilitadas para vGPU e à resolução máxima de esses monitores.
+O requisito de memória para o servidor habilitado para RemoteFX é dinâmico porque a quantidade de memória consumida no servidor habilitado para RemoteFX depende do número de monitores associados às áreas de trabalho virtuais habilitadas para vGPU e à resolução máxima para esses monitores.
 
 ### <a name="host-gpu-video-memory"></a>Memória de vídeo da GPU do host
 
@@ -94,7 +97,7 @@ Cada área de trabalho virtual habilitada para vGPU usa a memória de vídeo de 
 
 ### <a name="host-cpu"></a>CPU do host
 
-O hipervisor agenda o host e as VMs na CPU. A sobrecarga é aumentada em um host habilitado para RemoteFX porque o sistema executa um processo adicional (rdvgm. exe) por área de trabalho virtual habilitada para vGPU. Esse processo usa o driver de dispositivo de gráficos para executar comandos na GPU. O codec também usa a CPU para compactar dados de tela que precisam ser enviados de volta ao cliente.
+O hipervisor agenda o host e as VMs na CPU. A sobrecarga é aumentada em um host habilitado para RemoteFX porque o sistema executa um processo adicional (rdvgm.exe) por área de trabalho virtual habilitada para vGPU. Esse processo usa o driver de dispositivo de gráficos para executar comandos na GPU. O codec também usa a CPU para compactar dados de tela que precisam ser enviados de volta ao cliente.
 
 Mais processadores virtuais significam uma melhor experiência do usuário. É recomendável alocar pelo menos duas CPUs virtuais por área de trabalho virtual habilitada para vGPU. Também é recomendável usar a arquitetura x64 para áreas de trabalho virtuais habilitadas para vGPU porque o desempenho em máquinas virtuais x64 é melhor em comparação com as máquinas virtuais x86.
 

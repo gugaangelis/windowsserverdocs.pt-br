@@ -7,13 +7,13 @@ author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
-ms.date: 08/21/2019
-ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.date: 07/14/2020
+ms.openlocfilehash: c8e0e8798da9cb4a2b3ca317d9632450ade82504
+ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80307852"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86390093"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Planejar a aceleração de GPU no Windows Server
 
@@ -25,7 +25,7 @@ Este artigo apresenta os recursos de virtualização de gráficos disponíveis n
 
 Dependendo de sua carga de trabalho, talvez você queira considerar a aceleração da GPU. Veja o que você deve considerar antes de escolher a aceleração de GPU:
 
-- **Cargas de trabalho de aplicativos e de comunicação remota (VDI/DaaS)** : se você estiver criando um aplicativo ou um serviço de comunicação remota de área de trabalho com o Windows Server, considere o catálogo de aplicativos que você espera que os usuários executem. Alguns tipos de aplicativos, como aplicativos CAD/CAM, aplicativos de simulação, jogos e aplicativos de renderização/visualização, dependem muito da renderização 3D para fornecer interatividade contínua e responsiva. A maioria dos clientes considera as GPUs uma necessidade por uma experiência de usuário razoável com esses tipos de aplicativos.
+- **Cargas de trabalho de aplicativos e de comunicação remota (VDI/DaaS)**: se você estiver criando um aplicativo ou um serviço de comunicação remota de área de trabalho com o Windows Server, considere o catálogo de aplicativos que você espera que os usuários executem. Alguns tipos de aplicativos, como aplicativos CAD/CAM, aplicativos de simulação, jogos e aplicativos de renderização/visualização, dependem muito da renderização 3D para fornecer interatividade contínua e responsiva. A maioria dos clientes considera as GPUs uma necessidade por uma experiência de usuário razoável com esses tipos de aplicativos.
 - **Cargas de trabalho de renderização, codificação e visualização remotas**: essas cargas de trabalho orientadas por gráficos tendem a depender muito dos recursos especializados de uma GPU, como a renderização 3D eficiente e a codificação/decodificação de quadros, a fim de obter metas de produtividade e economia. Para esse tipo de carga de trabalho, uma única VM habilitada para GPU pode ser capaz de corresponder à taxa de transferência de várias VMs somente de CPU.
 - **Cargas de trabalho do HPC e do ml**: para cargas de trabalho computacionais de alto desempenho, como treinamento ou inferência de modelo de computação e aprendizado de máquina, as GPUs podem reduzir drasticamente o tempo para resultar, o tempo de inferência e o tempo de treinamento. Como alternativa, eles podem oferecer melhor relação custo-benefício do que uma arquitetura somente de CPU em um nível de desempenho comparável. Muitas estruturas do HPC e do Machine Learning têm uma opção para habilitar a aceleração de GPU; Considere se isso pode beneficiar sua carga de trabalho específica.
 
@@ -46,7 +46,7 @@ A atribuição de dispositivo discreta (DDA), também conhecida como passagem de
 
 Uma implantação DDA pode acelerar apenas um número limitado de máquinas virtuais, já que cada GPU física pode fornecer aceleração para, no máximo, uma VM. Se você estiver desenvolvendo um serviço cuja arquitetura dá suporte a máquinas virtuais compartilhadas, considere hospedar várias cargas de trabalho aceleradas por VM. Por exemplo, se você estiver criando um serviço de comunicação remota de área de trabalho com RDS, poderá melhorar a escala do usuário aproveitando os recursos de várias sessões do Windows Server para hospedar vários desktops de usuário em cada VM. Esses usuários irão compartilhar os benefícios da aceleração de GPU.
 
-Para saber mais, consulte estes tópicos:
+Para saber mais, consulte esses tópicos:
 
 - [Planejar a implantação de uma atribuição de dispositivo discreta](plan-for-deploying-devices-using-discrete-device-assignment.md)
 - [Implantar dispositivos gráficos usando a atribuição de dispositivo discreta](../deploy/Deploying-graphics-devices-using-dda.md)
@@ -54,14 +54,14 @@ Para saber mais, consulte estes tópicos:
 ## <a name="remotefx-vgpu"></a>vGPU do RemoteFX
 
 > [!NOTE]
-> O vGPU RemoteFX tem suporte total no Windows Server 2016, mas não tem suporte no Windows Server 2019.
+> Devido a questões de segurança, o vGPU RemoteFX está desabilitado por padrão em todas as versões do Windows a partir da atualização de segurança de 14 de julho de 2020. Para saber mais, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
 
 O RemoteFX vGPU é uma tecnologia de virtualização de gráficos que permite que uma única GPU física seja compartilhada entre várias máquinas virtuais. Em uma implantação de vGPU do RemoteFX, as cargas de trabalho virtualizadas são executadas no adaptador 3D RemoteFX da Microsoft, que coordena as solicitações de processamento de GPU entre o host e os convidados. O vGPU RemoteFX é mais adequado para o Worker de conhecimento e cargas de trabalho de alta intermitência em que os recursos de GPU dedicados não são necessários. VGPU RemoteFX só pode fornecer aceleração de GPU para VMs do Windows.
 
-Para saber mais, consulte estes tópicos:
+Para saber mais, consulte esses tópicos:
 
 - [Implantar dispositivos gráficos usando um vGPU do RemoteFX](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
-- [Suporte a vGPU (adaptador de vídeo 3D) do RemoteFX](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
+- [Suporte para a vGPU (Adaptador de vídeo RemoteFX 3D)](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>Comparando DDA e vGPU RemoteFX
 
