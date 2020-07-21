@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 855eb8d45297f15afceedf6cc11c2175c899ae45
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3cb02bf2ca6aa254a0f1895367abdb90c5c34e6a
+ms.sourcegitcommit: c1a5e46f64f25e1a0e658721130d87661b1d59a3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818789"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86543380"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configurar túneis de dispositivo VPN no Windows 10
 
@@ -30,7 +30,7 @@ Ao contrário do _encapsulamento do usuário_, que se conecta somente depois que
 
 O túnel do usuário tem suporte em dispositivos ingressados no domínio, não ingressados no domínio (grupo de trabalho) ou no Azure AD – para permitir cenários empresariais e BYOD. Ele está disponível em todas as edições do Windows, e os recursos de plataforma estão disponíveis para terceiros por meio do suporte de plug-in de VPN UWP.
 
-O túnel de dispositivo só pode ser configurado em dispositivos ingressados no domínio que executam o Windows 10 Enterprise ou o Education versão 1709 ou posterior. Não há suporte para controle de terceiros do túnel do dispositivo.
+O túnel de dispositivo só pode ser configurado em dispositivos ingressados no domínio que executam o Windows 10 Enterprise ou o Education versão 1709 ou posterior. Não há suporte para controle de terceiros do túnel do dispositivo. O túnel de dispositivo não dá suporte ao uso da tabela de políticas de resolução de nomes (NRPT). O túnel de dispositivo não dá suporte ao túnel forçado. Você deve configurá-lo como túnel dividido.
 
 
 ## <a name="device-tunnel-requirements-and-features"></a>Recursos e requisitos de túnel de dispositivo
@@ -96,11 +96,11 @@ Dependendo das necessidades de cada cenário de implantação específico, outro
   <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection>
 ```
 
-## <a name="deployment-and-testing"></a>Implantação e teste
+## <a name="deployment-and-testing"></a>Implantação e Teste
 
 Você pode configurar os túneis de dispositivo usando um script do Windows PowerShell e usando a ponte Instrumentação de Gerenciamento do Windows (WMI). O túnel de dispositivo VPN Always On deve ser configurado no contexto da conta do **sistema local** . Para fazer isso, será necessário usar o [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), um dos [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluídos no pacote de utilitários do [Sysinternals](https://docs.microsoft.com/sysinternals/) .
 
-Para obter diretrizes sobre como implantar um `(.\Device)` por dispositivo versus um perfil por usuário `(.\User)`, consulte [usando o script do PowerShell com o provedor de ponte WMI](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
+Para obter diretrizes sobre como implantar um perfil por dispositivo `(.\Device)` versus um por usuário `(.\User)` , consulte [usando o script do PowerShell com o provedor de ponte WMI](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
 
 Execute o seguinte comando do Windows PowerShell para verificar se você implantou com êxito um perfil de dispositivo:
 
@@ -108,7 +108,7 @@ Execute o seguinte comando do Windows PowerShell para verificar se você implant
   Get-VpnConnection -AllUserConnection
   ```
 
-A saída exibe uma lista do dispositivo\-perfis de VPN largos que são implantados no dispositivo.
+A saída exibe uma lista de \- perfis VPN de todo o dispositivo implantados no dispositivo.
 
 ### <a name="example-windows-powershell-script"></a>Exemplo de script do Windows PowerShell
 
@@ -187,4 +187,3 @@ A seguir estão os recursos de gateway de RAS (servidor de acesso remoto).
 
 >[!IMPORTANT]
 >Ao usar o túnel de dispositivo com um gateway de RAS da Microsoft, você precisará configurar o servidor RRAS para dar suporte à autenticação de certificado de computador IKEv2 habilitando o método **Permitir autenticação de certificado de computador para autenticação IKEv2** , conforme descrito [aqui](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Quando essa configuração é habilitada, é altamente recomendável que o cmdlet **set-VpnAuthProtocol** do PowerShell, juntamente com o parâmetro opcional **RootCertificateNameToAccept** , seja usado para garantir que as conexões RRAS IKEv2 sejam permitidas somente para certificados de cliente VPN que se encadeadom a uma autoridade de certificação raiz interna/privada definida explicitamente. Como alternativa, o armazenamento de **autoridades de certificação raiz confiáveis** no servidor RRAS deve ser alterado para garantir que ele não contenha autoridades de certificação públicas, conforme discutido [aqui](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). Métodos semelhantes também podem precisar ser considerados para outros gateways de VPN.
-
