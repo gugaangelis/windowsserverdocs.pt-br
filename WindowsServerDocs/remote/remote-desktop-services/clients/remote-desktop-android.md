@@ -8,14 +8,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 03/12/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a9cb49f2570b297c81f41412ad041215090538d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b76ded74b311265a22e32d836cb7a5dd5fe03f0d
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856229"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445720"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -76,7 +76,9 @@ Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessã
 
 1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Feed de Recursos Remotos**.
 2. Insira a **URL do Feed**. Ela pode ser uma URL ou endereço de email:
-   - A **URL** é o servidor de Acesso via Web da RD fornecida a você por seu administrador. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, você poderá usar `https://rdweb.wvd.microsoft.com`.
+   - A **URL** é o servidor de Acesso via Web da RD fornecida a você por seu administrador. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar uma das seguintes URLs dependendo de qual versão você está usando:
+     - Se você estiver usando a versão Fall 2019, use: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+     - Se você estiver usando a versão Spring 2020, use: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Se você planeja usar **Email**, insira seu endereço de email nesse campo. Isso instrui o cliente a procurar um servidor de Acesso via Web da Área de Trabalho Remota associado ao endereço de email se ele foi configurado pelo administrador.
 3. Toque em **Avançar**.
 4. Forneça suas informações de entrada quando solicitado. Isso pode variar com base na implantação e pode incluir:

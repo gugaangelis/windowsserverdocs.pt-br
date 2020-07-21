@@ -8,14 +8,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2020
+ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c219a6dbc5922e9d7240b3004c1dd92eb7d057a
-ms.sourcegitcommit: 67116322915066b85decb4261d47cedec2cfe12f
+ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
+ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82903459"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86445700"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -50,7 +50,9 @@ Para assinar um feed:
 
 1. Selecione **Adicionar feed** na página principal para se conectar ao serviço e recuperar seus recursos.
 2. Insira a URL do Feed. Ela pode ser uma URL ou endereço de email:
-   - Se você usar uma URL, use a que o administrador lhe forneceu. Normalmente, a URL é <https://rdweb.wvd.microsoft.com>.
+   - Essa URL é geralmente uma URL da Área de Trabalho Virtual do Windows. A que você usa depende de qual versão da Área de Trabalho Virtual do Windows que você está usando.
+      - Para a versão Fall 2019, use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+      - Para a versão Spring 2020, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Para usar email, insira seu endereço de email. Isso informa ao cliente para pesquisar uma URL associada ao seu endereço de email, caso o administrador tenha configurado o servidor dessa maneira.
 3. Selecione **Inscrever-se**.
 4. Entre com sua conta quando solicitado.
@@ -61,17 +63,19 @@ Após a assinatura de um feed, o conteúdo dele será atualizado automaticamente
 
 ### <a name="export-and-import-connections"></a>Exporte e importe conexões
 
-Você pode exportar uma definição de conexão de área de trabalho remota e usá-la em um dispositivo diferente. Áreas de trabalho remotas são salvas em arquivos .RDP separados.
+Você pode exportar uma definição de conexão de área de trabalho remota e usá-la em um dispositivo diferente. Áreas de trabalho remotas são salvas em arquivos RDP separados.
+
+Para exportar um arquivo RDP:
 
 1. No Centro de Conexão, clique com botão direito do mouse na área de trabalho remota.
 2. Selecione **Exportar**.
-3. Navegue até o local onde você deseja salvar o arquivo .RDP da área de trabalho remota.
+3. Procure o local em que você deseja salvar o arquivo RDP de área de trabalho remota.
 4. Selecione **OK**.
 
-Use as etapas a seguir para importar um arquivo .RDP de área de trabalho remota.
+Para importar um arquivo RDP:
 
 1. Na barra de menus, selecione **Arquivo** > **Importar**.
-2. Navegue até o arquivo .RDP.
+2. Procure o arquivo RDP.
 3. Selecione **Abrir**.
 
 ## <a name="add-a-remote-resource"></a>Adicionar um recurso remoto
@@ -83,7 +87,7 @@ Os recursos remotos são programas RemoteApp, áreas de trabalho baseadas em ses
 
 Para adicionar um recurso remoto:
 
-1. Na Central de Conexão, selecione **+** e **Adicionar Recursos Remotos**. 
+1. Na Central de Conexão, selecione **+** e **Adicionar Recursos Remotos**.
 2. Insira informações para o recurso remoto:
    - **URL do Feed** – a URL do servidor de Acesso via Web à Área de Trabalho Remota. Você também pode inserir sua conta de email corporativo nesse campo – isso instrui o cliente a pesquisar pelo servidor de Acesso via Web à Área de Trabalho Remota associado com seu endereço de email.
    - **Nome de usuário** – o nome de usuário a ser usado para o servidor de Acesso via Web à Área de Trabalho Remota ao qual você está se conectando.
@@ -128,7 +132,9 @@ Você pode especificar a resolução de vídeo para a sessão de área de trabal
 
 Para excluir a resolução, selecione-a e, sem seguida, selecione **-** .
 
-**Monitores têm espaços separados** Se você estiver executando o Mac OS X 10.9 e desabilitado **Monitores têm espaços separados** no Mavericks (**Preferências do Sistema > Controle de Missão**), você precisa definir essa configuração no cliente de área de trabalho remota usando a mesma opção.
+## <a name="displays-have-separate-spaces"></a>Monitores têm espaços separados
+
+Se estiver executando o Mac OS X 10.9 e tiver desabilitado **Monitores têm espaços separados** no Mavericks (**Preferências do Sistema > Controle de Missão**), você precisará definir essa configuração no cliente de Área de Trabalho Remota usando a mesma opção.
 
 ### <a name="drive-redirection-for-remote-resources"></a>Redirecionamento de unidade para recursos remotos
 
@@ -139,18 +145,18 @@ O redirecionamento de unidade tem suporte para recursos remotos, para que você 
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>Usar um teclado em uma sessão remota
 
-Os layouts de teclado do Mac são diferentes dos layouts de teclado do Windows. 
+Os layouts de teclado do Mac são diferentes dos layouts de teclado do Windows.
 
 - A tecla Command no teclado do Mac é igual à tecla Windows.
-- Para executar ações que usam o botão Command no Mac, você precisará usar o botão Ctrl no Windows (por exemplo: Copiar = Ctrl+C).
-- As teclas de função podem ser ativadas na sessão pressionando a tecla FN (por exemplo: FN+F1).
+- Para executar ações que usam o botão Command no Mac, você precisará usar o botão Ctrl no Windows (por exemplo, Copiar = Ctrl+C).
+- As teclas de função podem ser ativadas na sessão pressionando a tecla FN (por exemplo, FN+F1).
 - A tecla Alt à direita da barra de espaço no teclado Mac é igual à tecla Alt Gr/Alt à direita no Windows.
 
 Por padrão, a sessão remota usará a mesma localidade do teclado do sistema operacional no qual você estiver executando o cliente. (Caso seu Mac esteja executando um sistema operacional em inglês dos EUA, o idioma também será usado nas sessões remotas.) Caso a localidade de teclado do sistema operacional não seja usada, verifique a configuração de teclado no computador remoto e altere-a manualmente. Confira as [Perguntas Frequentes de Cliente de Área de Trabalho Remota](remote-desktop-client-faq.md) para obter mais informações sobre teclados e localidades.
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Suporte para autorização e autenticação conectável do gateway de Área de Trabalho Remota
 
-O Windows Server 2012 R2 apresentou o suporte para um novo método de autenticação, a autenticação conectável do Gateway de Área de Trabalho Remota e autorização, que oferece mais flexibilidade para rotinas de autenticação personalizada. Agora, você pode experimentar esse modelo de autenticação com o cliente Mac. 
+O Windows Server 2012 R2 apresentou o suporte para um novo método de autenticação, a autenticação conectável do Gateway de Área de Trabalho Remota e autorização, que oferece mais flexibilidade para rotinas de autenticação personalizada. Agora, você pode experimentar esse modelo de autenticação com o cliente Mac.
 
 > [!IMPORTANT]
 > Os modelos personalizados de autenticação e autorização antes do Windows 8.1 não têm suporte, embora o artigo acima fale sobre eles.
