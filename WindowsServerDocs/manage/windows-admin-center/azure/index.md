@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: ec01431b320c710eddedc2f9c5e174bea1355b1c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 49b07845003208dc9c0bd3aaab4082a3e7d6a83a
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475693"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891351"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Como conectar o Windows Server aos serviços híbridos do Azure
 
@@ -33,11 +33,11 @@ Embora seja possível configurar a maioria dos serviços híbridos do Azure baix
 
 A ferramenta de serviços híbridos do Azure no [Windows Admin Center](../overview.md) consolida todos os serviços do Azure integrados em um hub centralizado em que você pode descobrir com facilidade todos os serviços do Azure disponíveis que agregam valor ao seu ambiente local ou híbrido.
 
-![Captura de tela do Windows Admin Center mostrando a ferramenta de Serviços Híbridos do Azure](../media/azure-services/ahs-discover.png)
+![Captura de tela do Windows Admin Center mostrando a ferramenta de Serviços Híbridos do Azure](../media/azure-services/Azure-Hybrid-Services-Discover.png)
 
 Se você se conectar a um servidor com os serviços do Azure já habilitados, a ferramenta de serviços híbridos do Azure funcionará como um único painel para ver todos os serviços habilitados nesse servidor. É possível obter facilmente a ferramenta relevante no Windows Admin Center, iniciar no portal do Azure para obter um gerenciamento mais aprofundado desses serviços do Azure ou ler mais com a documentação ao seu alcance.
 
-![Captura de tela do Windows Admin Center mostrando os serviços do Azure que já foram instalados no servidor](../media/azure-services/ahs-dayN.png)
+![Captura de tela do Windows Admin Center mostrando os serviços do Azure que já foram instalados no servidor](../media/azure-services/Azure-Hybrid-Services-DayN.png)
 
 Na ferramenta de serviços híbridos do Azure, é possível:
 
