@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1786b7c9a10e11e95f736d1db20bdc12eb4844b7
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: eaad015d0097d9b65a4aba8a5846c7782b6966d1
+ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372213"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86866035"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implantando os Serviços de Federação do Active Directory no Azure
 O AD FS fornece recursos simplificados e seguros de federação de identidade e de logon único (SSO) da Web. A federação com o Azure AD ou o O365 habilita os usuários a se autenticar usando credenciais locais e acessar todos os recursos na nuvem. Como resultado, é importante ter uma infraestrutura altamente disponível do AD FS para garantir o acesso a recursos locais e na nuvem. Implantar o AD FS no Azure pode ajudar a atingir a alta disponibilidade necessária com esforço mínimo.
@@ -61,7 +61,7 @@ A próxima etapa é adicionar outra sub-rede à rede, ou seja, a sub-rede de per
 
 **1.2. Criar grupos de segurança de rede**
 
-Um NSG (Grupo de segurança de rede) contém uma lista de regras de ACL (Lista de Controle de Acesso) que permitem ou negam o tráfego de rede para suas instâncias de VM em uma Rede Virtual. Os NSGs podem ser associados a sub-redes ou instâncias de VM individuais dentro dessa sub-rede. Quando um NSG é associado a uma sub-rede, as regras de ACL se aplicam a todas as instâncias de VM na sub-rede.
+Um NSG (Grupo de segurança de rede) contém uma lista de regras de ACL (Lista de Controle de Acesso) que permitem ou negam o tráfego de rede para suas instâncias de VM em uma Rede Virtual. Os NSGs podem ser associados a sub-redes ou instâncias de VM individuais dentro dessa sub-rede. Quando um grupo de segurança de rede é associado a uma sub-rede, as regras de ACL se aplicam a todas as instâncias de VM nessa sub-rede.
 Para os fins deste guia, vamos criar dois NSGs: um para uma rede interna e uma rede de perímetro. Eles serão rotulados como NSG_INT e NSG_DMZ, respectivamente.
 
 ![Criar NSG](./media/how-to-connect-fed-azure-adfs/creatensg1.png)
@@ -85,7 +85,7 @@ Após a configuração, o painel Sub-redes deverá ser semelhante ao exemplo aba
 
 Será necessária uma conexão local para implantar o DC (controlador de domínio) no Azure. O Azure oferece várias opções de conectividade para conectar a infraestrutura local à infraestrutura do Azure.
 
-* Point-to-site
+* Ponto a site
 * Rede virtual Site a Site
 * ExpressRoute
 
@@ -181,7 +181,13 @@ Selecione o ILB recém-criado no painel Balanceadores de Carga. Isso abrirá o p
 No painel de configurações doe ILB, selecione Investigações de Integridade.
 
 1. Clique em adicionar
-2. Fornecer detalhes para investigação a. **Nome**: nome de investigação b. **Protocolo**: http c. **Porta**: 80 (HTTP) d. **Caminho**: /adfs/probe e. **Intervalo**: 5 (valor padrão) – é o intervalo em que o ILB investigará as máquinas no pool de back-end f. **Limite não íntegro**: 2 (valor padrão) – esse é o limite de falhas de investigação consecutivas após o qual o ILB declarará que uma máquina no pool de back-end não está respondendo e interromperá o envio de tráfego para ela.
+2. Fornecer detalhes para investigação  
+   a. **Nome**: nome da investigação  
+   b. **Protocolo**: HTTP  
+   c. **Porta**: 80 (http)  
+   d. **Caminho**:/ADFS/Probe   
+   e. **Intervalo**: 5 (valor padrão) – esse é o intervalo no qual o ILB investigará os computadores no pool de back-end  
+   f. **Limite não íntegro**: 2 (valor padrão) – esse é o limite de falhas de investigação consecutivas após o qual o ILB declarará que uma máquina no pool de back-end não está respondendo e interromperá o envio de tráfego para ela.
 
 
 Estamos usando o ponto de extremidade /adfs/probe criado explicitamente para verificações de integridade em um ambiente do AD FS em que uma verificação completa do caminho HTTPS não pode ocorrer.  Isso é consideravelmente melhor que uma verificação básica da porta 443, que não reflete com precisão o status de uma implantação moderna do AD FS.  Encontre mais informações sobre esse tópico em https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/.
@@ -192,7 +198,13 @@ Para equilibrar o tráfego de modo eficiente, o ILB deve ser configurado com reg
 
 1. Selecione a regra de balanceamento de carga no painel de configurações do ILB
 2. Clique em Adicionar no painel de regra de balanceamento de carga
-3. No painel adicionar regra de balanceamento de carga a. **Nome**: forneça um nome para a regra b. **Protocolo**: selecione TCP c. **Porta**: 443 d. **Porta de back-end**: 443 e. **Pool de back-end**: selecione o pool criado para o cluster do AD FS anteriormente f. **Investigação**: selecione a investigação criada anteriormente para os servidores do AD FS
+3. No painel Adicionar regra de balanceamento de carga  
+   a. **Nome**: forneça um nome para a regra  
+   b. **Protocolo**: selecione TCP  
+   c. **Porta**: 443  
+   d. **Porta de back-end**: 443  
+   e. **Pool de back-end**: selecione o pool que você criou para o cluster de AD FS anterior  
+   f. **Investigação**: selecione a investigação criada anteriormente para os servidores do AD FS
 
 ![Configurar regras de balanceamento ILB](./media/how-to-connect-fed-azure-adfs/ilbdeployment5.png)
 
@@ -201,15 +213,21 @@ Para equilibrar o tráfego de modo eficiente, o ILB deve ser configurado com reg
 Usando seu servidor DNS interno, crie um registro A para o ILB. O registro a deve ser para o serviço de Federação com o endereço IP apontando para o endereço IP do ILB. Por exemplo, se o endereço IP ILB for 10.3.0.8 e o serviço de Federação instalado for fs.contoso.com, crie um registro A para fs.contoso.com apontando para 10.3.0.8.
 Isso garantirá que todos os dados trasmitted para fs.contoso.com acabem no ILB e sejam adequadamente roteados. 
 
+> [!WARNING]
+> Se você estiver usando o WID (banco de dados interno do Windows) para seu banco de dados AD FS, esse valor deverá ser definido temporariamente para apontar para o servidor de AD FS primário ou o proxy de aplicativo Web falhará registro. Depois de registrar com êxito todos os servidores proxy Application da Web, altere essa entrada DNS para apontar para o balanceador de carga.
+
 > [!NOTE]
->Se sua implantação também estiver usando IPv6, certifique-se de criar um registro AAAA correspondente.
->
+> Se sua implantação também estiver usando IPv6, certifique-se de criar um registro AAAA correspondente.
 >
 
 ### <a name="7-configuring-the-web-application-proxy-server"></a>7. Configurando o servidor proxy de aplicativo Web
 **7.1. Configurar os servidores de Proxy de Aplicativo Web para acessar os servidores do AD FS**
 
 Para garantir que os servidores de Proxy de Aplicativo Web possam acessar os servidores do AD FS por trás do ILB, crie um registro em %systemroot%\system32\drivers\etc\hosts para o ILB. Observe que o DN (nome diferenciado) deve ser o nome de serviço de federação, por exemplo, fs.contoso.com. E a entrada IP deve ser a do endereço IP do ILB (10.3.0.8 como no exemplo).
+
+> [!WARNING]
+> Se você estiver usando o WID (banco de dados interno do Windows) para seu banco de dados AD FS, esse valor deverá ser definido temporariamente para apontar para o servidor de AD FS primário ou o proxy de aplicativo Web falhará registro. Depois de registrar com êxito todos os servidores proxy Application da Web, altere essa entrada DNS para apontar para o balanceador de carga.
+
 
 **7.2. Instalar a função de Proxy de Aplicativo Web**
 
@@ -266,7 +284,7 @@ Siga as mesmas etapas usadas no ILB para configurar a regra de balanceamento de 
 
 Em geral, você precisa das regras a seguir para proteger com eficiência sua sub-rede interna (na ordem listada abaixo)
 
-| Regra | Description | Flow |
+| Regra | Descrição | Fluxo |
 |:--- |:--- |:---:|
 | AllowHTTPSFromDMZ |Permitir a comunicação HTTPS de rede de perímetro |Entrada |
 | DenyInternetOutbound |Sem acesso à Internet |Saída |
@@ -275,7 +293,7 @@ Em geral, você precisa das regras a seguir para proteger com eficiência sua su
 
 **9.2. Proteger a sub-rede de perímetro**
 
-| Regra | Description | Flow |
+| Regra | Descrição | Fluxo |
 |:--- |:--- |:---:|
 | AllowHTTPSFromInternet |Permitir HTTPS da Internet para a rede de perímetro |Entrada |
 | DenyInternetOutbound |Tudo para a Internet é bloqueado, exceto HTTPS |Saída |
@@ -283,7 +301,7 @@ Em geral, você precisa das regras a seguir para proteger com eficiência sua su
 ![Regras de acesso EXT (entrada)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
 
 > [!NOTE]
-> Se a autenticação de certificado de usuário do cliente (autenticação do clientTLS usando certificados de usuário X509) for necessária, o AD FS exigirá que a porta TCP 49443 seja habilitada para acesso de entrada.
+> Se a autenticação de certificado de usuário do cliente (autenticação clientTLS usando os certificados de usuário X. 509) for necessária, AD FS exigirá que a porta TCP 49443 seja habilitada para acesso de entrada.
 > 
 > 
 
@@ -339,10 +357,10 @@ Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar es
 ## <a name="additional-resources"></a>Recursos adicionais
 * [Conjuntos de disponibilidade](https://aka.ms/Azure/Availability) 
 * [Azure Load Balancer](https://aka.ms/Azure/ILB)
-* [Balanceador de Carga Interno](https://aka.ms/Azure/ILB/Internal)
+* [Load Balancer interno](https://aka.ms/Azure/ILB/Internal)
 * [Balanceador de Carga para a Internet](https://aka.ms/Azure/ILB/Internet)
 * [Contas de Armazenamento](https://aka.ms/Azure/Storage)
-* [Redes Virtuais do Azure](https://aka.ms/Azure/VNet)
+* [Redes virtuais do Azure](https://aka.ms/Azure/VNet)
 * [AD FS e Links de Proxy de Aplicativo Web](https://aka.ms/ADFSLinks) 
 
 ## <a name="next-steps"></a>Próximas etapas
