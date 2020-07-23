@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6ec1093a77b036cada9e54c82234d653362ce4d3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1403e0ecd12c4c15924781d75bd9127874018451
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930100"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953888"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -58,7 +58,7 @@ Para usar o serviço de migração de armazenamento, você precisa do seguinte:
 - Um **servidor de origem** ou **cluster de failover** para migrar arquivos e dados de
 - Um **servidor de destino** que executa o Windows Server 2019 (clusterizado ou autônomo) para migrar para o. O Windows Server 2016 e o Windows Server 2012 R2 funcionam bem, mas estão em cerca de 50% mais lento
 - Um **servidor do Orchestrator** que executa o Windows Server 2019 para gerenciar a migração  <br>Se estiver migrando apenas alguns servidores e um dos servidores estiver executando o Windows Server 2019, você poderá usá-lo como o Orchestrator. Se você estiver migrando mais servidores, recomendamos o uso de um servidor Orchestrator separado.
-- Um **PC ou servidor que executa o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) ** para executar a interface do usuário do serviço de migração de armazenamento, a menos que você prefira usar o PowerShell para gerenciar a migração. O centro de administração do Windows e a versão 2019 do Windows Server devem ter, no mínimo, a versão 1809.
+- Um **PC ou servidor que executa o [centro de administração do Windows](../../manage/windows-admin-center/overview.md) ** para executar a interface do usuário do serviço de migração de armazenamento, a menos que você prefira usar o PowerShell para gerenciar a migração. O centro de administração do Windows e a versão 2019 do Windows Server devem ter, no mínimo, a versão 1809.
 
 É altamente recomendável que os computadores Orchestrator e de destino tenham pelo menos dois núcleos ou dois vCPUs, e pelo menos 2 GB de memória. As operações de inventário e transferência são significativamente mais rápidas com mais processadores e memória.
 
