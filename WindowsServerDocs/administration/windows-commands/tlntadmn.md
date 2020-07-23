@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 602f3aa99f9d0e47fbbde1ab5c09b193446d8a7c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 995b2332f98906a1a5b9cb53f504a87fb831c3e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936916"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958798"
 ---
 # <a name="tlntadmn"></a>tlntadmn
 
@@ -32,7 +32,7 @@ tlntadmn [<computerName>] [-u <UserName>] [-p <Password>] [{start | stop | pause
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                \<computerName>                 |                                                                                                                    Especifica o nome do servidor ao qual se conectar. O padrão é o computador local.                                                                                                                    |
 |         -u \<UserName> -p\<Password>          |                                                Especifica as credenciais administrativas para um servidor remoto que você deseja administrar. Esse parâmetro será necessário se você quiser administrar um servidor remoto no qual você não está conectado com credenciais administrativas.                                                |
-|                     iniciar                      |                                                                                                                                            inicia o serviço do servidor Telnet.                                                                                                                                             |
+|                     start                      |                                                                                                                                            inicia o serviço do servidor Telnet.                                                                                                                                             |
 |                      parar                      |                                                                                                                                             Interrompe o serviço do servidor Telnet                                                                                                                                              |
 |                     pause                      |                                                                                                                          pausa o serviço do servidor Telnet. Nenhuma nova conexão será aceita.                                                                                                                          |
 |                    continue                    |                                                                                                                                            Retoma o serviço do servidor Telnet.                                                                                                                                            |
@@ -65,5 +65,5 @@ tlntadmn -s
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
--   [Guia de operações de Telnet](https://technet.microsoft.com/library/cc753164(v=ws.10).aspx)
+-   [Guia de operações de Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753164(v=ws.10))
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b420e311c98477d369c81f10eca274e665dae3a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a993d53611382dcd0007bfecae95da6221cf6016
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475153"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966798"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Defina o método de ordenação dos destinos nas referências
 
@@ -35,7 +35,7 @@ Use o procedimento a seguir para definir o método de ordenação na raiz do nam
 3.  Sobre o **indicações**, selecione um método de ordenação.
 
 > [!NOTE]
-> Para usar o Windows PowerShell para definir o método de ordenação de destinos em referências de raiz do namespace, use o [conjunto DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) cmdlet com um dos seguintes parâmetros:
+> Para usar o Windows PowerShell para definir o método de ordenação de destinos em referências de raiz do namespace, use o [conjunto DfsnRoot](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) cmdlet com um dos seguintes parâmetros:
 >    -   **EnableSiteCosting** Especifica o **ordenação de custo mais baixo** método
 >    -   **EnableInsiteReferrals** especifica o método de ordenação **Excluir destinos fora do site do cliente**
 >    -   Omitir o parâmetro especifica o **ordem aleatória** ordenação de método de referência.
@@ -53,7 +53,7 @@ Pastas com destinos herdam o método de ordenação da raiz do namespace. Você 
 3.  Sobre o **indicações**, selecione o **excluir destinos fora do site do cliente** caixa de seleção.
 
 > [!NOTE]
-> Para usar o Windows PowerShell para excluir destinos de pasta fora do site do cliente, use o [conjunto DfsnFolder – EnableInsiteReferrals](https://technet.microsoft.com/library/jj884283.aspx) cmdlet.
+> Para usar o Windows PowerShell para excluir destinos de pasta fora do site do cliente, use o [conjunto DfsnFolder – EnableInsiteReferrals](/powershell/module/dfsr/update-dfsrconfigurationfromad?view=win10-ps) cmdlet.
 
 ## <a name="target-referral-ordering-methods"></a>Métodos de ordenação de referência de destino
 

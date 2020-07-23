@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec2c35fc8a279c604f76c71dc6ed9aeb50a0ffd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cc64ac7537ee97c763410639870083712ec31ee4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933722"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954678"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 
@@ -45,4 +45,4 @@ Se você excluir o catálogo de backup de um computador, não poderá acessar os
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Remove-WBCatalog](https://technet.microsoft.com/library/jj902445.aspx)
+-   [Remove-WBCatalog](/powershell/module/windowserverbackup/?view=winserver2012r2-ps)

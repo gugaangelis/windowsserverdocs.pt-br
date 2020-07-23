@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbfc9a0238d258f11233b0e48a30048c1d62cef4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e453ef94aedb8920c0310123ff6033fafbaddab
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80833409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958618"
 ---
 # <a name="tcmsetup"></a>tcmsetup
 
@@ -35,9 +35,9 @@ tcmsetup  [/q] /c /d
 |---------|-----------|
 |/q|Impede a exibição de caixas de mensagem.|
 |/x|Especifica que os retornos de chamada orientados a conexão serão usados para redes de tráfego pesado em que a perda de pacotes está alta. Quando esse parâmetro for omitido, os retornos de chamada sem conexão serão usados.|
-|/c|Obrigatório. Especifica a configuração do cliente.|
-|\<Server1 >|Obrigatório. Especifica o nome do servidor remoto que tem os provedores de serviços TAPI que o cliente usará. O cliente usará as linhas e os telefones dos provedores de serviços. O cliente deve estar no mesmo domínio que o servidor ou em um domínio que tenha uma relação de confiança bidirecional com o domínio que contém o servidor.|
-|> \<Servidor2...|Especifica qualquer servidor adicional ou servidores que estarão disponíveis para esse cliente. Se você especificar uma lista de servidores, use um espaço para separar os nomes de servidor.|
+|/c|Obrigatórios. Especifica a configuração do cliente.|
+|\<Server1>|Obrigatórios. Especifica o nome do servidor remoto que tem os provedores de serviços TAPI que o cliente usará. O cliente usará as linhas e os telefones dos provedores de serviços. O cliente deve estar no mesmo domínio que o servidor ou em um domínio que tenha uma relação de confiança bidirecional com o domínio que contém o servidor.|
+|\<Server2>…|Especifica qualquer servidor adicional ou servidores que estarão disponíveis para esse cliente. Se você especificar uma lista de servidores, use um espaço para separar os nomes de servidor.|
 |/d|Limpa a lista de servidores remotos. Desabilita o cliente TAPI impedindo-o de usar os provedores de serviços TAPI que estão nos servidores remotos.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -52,9 +52,8 @@ tcmsetup  [/q] /c /d
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-[Visão geral do Shell de comando](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[Visão geral do Shell de comando](/previous-versions/windows/it-pro/windows-server-2003/cc737438(v=ws.10))
 
-[Especificar servidores de telefonia em um computador cliente](https://technet.microsoft.com/library/cc759226(v=ws.10).aspx)
+[Especificar servidores de telefonia em um computador cliente](/previous-versions/windows/it-pro/windows-server-2003/cc759226(v=ws.10))
 
-[Atribuir um usuário de telefonia a uma linha ou telefone](https://technet.microsoft.com/library/cc736875(v=ws.10).aspx)
-
+[Atribuir um usuário de telefonia a uma linha ou telefone](/previous-versions/windows/it-pro/windows-server-2003/cc736875(v=ws.10))

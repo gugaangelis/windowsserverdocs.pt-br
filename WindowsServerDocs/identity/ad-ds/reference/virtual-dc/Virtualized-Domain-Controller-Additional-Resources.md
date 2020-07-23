@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 34160a00378d0974d1b8147ed0c86e650eb04260
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 512b0098af0882bed49d5c750477cd4383ab4869
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853219"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958888"
 ---
 # <a name="virtualized-domain-controller-additional-resources"></a>Recursos adicionais do controlador de domínio virtualizado
 
@@ -22,17 +22,15 @@ ms.locfileid: "80853219"
   
 -   [Virtualização de AD DS (melhorias seguras de clonagem e virtualização)](https://go.microsoft.com/fwlink/p/?LinkID=238316)  
   
--   [Referência técnica do modelo de replicação do Active Directory](https://technet.microsoft.com/library/cc782376(v=ws.10).aspx)  
+-   [Referência técnica do modelo de replicação do Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc782376(v=ws.10))  
   
--   [Executando controladores de domínio no Hyper-V (comportamentos do Windows Server 2008 R2)](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)  
+-   [Executando controladores de domínio no Hyper-V (comportamentos do Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))  
   
--   [Proteção de reversão USN e USN (Windows Server 2008 R2)](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))  
+-   [Proteção de reversão USN e USN (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))  
   
--   [Active Directory a administração com o Windows PowerShell (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
+-   [Administração do Active Directory com o Windows PowerShell (Windows Server 2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378937(v=ws.10))  
   
--   [Hyper-V no Windows Server 2012](https://technet.microsoft.com/library/hh831531.aspx)  
+-   [Hyper-V no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))  
   
--   [Pergunte à equipe de serviços de diretório (blog oficial de suporte técnico comercial da Microsoft)](https://blogs.technet.com/b/askds)  
+-   [Pergunte à equipe de serviços de diretório (Blog de suporte técnico oficial comercial da Microsoft)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))  
   
-
-

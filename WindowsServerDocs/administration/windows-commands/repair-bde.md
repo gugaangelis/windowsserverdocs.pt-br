@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2ba82708acd9c5830e2dc8a09cd804ade342066
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5aaa915ef416130dd2017b8f0f35cd255d207678
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935638"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956278"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 
 
-Acessa dados criptografados em um disco rígido danificado severamente se a unidade foi criptografada usando o BitLocker. Repair-bde pode reconstruir partes críticas da unidade e recuperar dados recuperáveis desde que uma senha ou chave de recuperação válida seja usada para descriptografar os dados. Se os dados de metadados do BitLocker na unidade estiverem corrompidos, você deverá fornecer um pacote de chaves de backup, além da senha ou da chave de recuperação. O backup desse pacote de chaves será feito no AD DS (Serviços de Domínio Active Directory), se você tiver usado a configuração padrão de backup do AD DS. Com esse pacote de chaves e a senha ou a chave de recuperação, você poderá descriptografar partes de uma unidade protegida pelo BitLocker, se o disco for danificado. Cada pacote de chaves funcionará apenas para uma unidade que tenha o identificador de unidade correspondente. Você pode usar o [Visualizador de senha de recuperação do BitLocker para Active Directory](https://technet.microsoft.com/library/dd875531(v=ws.10).aspx) para obter esse pacote de chaves do AD DS.
+Acessa dados criptografados em um disco rígido danificado severamente se a unidade foi criptografada usando o BitLocker. Repair-bde pode reconstruir partes críticas da unidade e recuperar dados recuperáveis desde que uma senha ou chave de recuperação válida seja usada para descriptografar os dados. Se os dados de metadados do BitLocker na unidade estiverem corrompidos, você deverá fornecer um pacote de chaves de backup, além da senha ou da chave de recuperação. O backup desse pacote de chaves será feito no AD DS (Serviços de Domínio Active Directory), se você tiver usado a configuração padrão de backup do AD DS. Com esse pacote de chaves e a senha ou a chave de recuperação, você poderá descriptografar partes de uma unidade protegida pelo BitLocker, se o disco for danificado. Cada pacote de chaves funcionará apenas para uma unidade que tenha o identificador de unidade correspondente. Você pode usar o [Visualizador de senha de recuperação do BitLocker para Active Directory](/previous-versions/windows/it-pro/windows-7/dd875531(v=ws.10)) para obter esse pacote de chaves do AD DS.
 
 > [!NOTE]
 > O Visualizador de senha de recuperação do BitLocker é incluído como um dos recursos de gerenciamento opcionais instaláveis usando o gerenciamento do servidor no Windows Server 2012.

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0859d3989a054d03421f08f5df7823a690dc85c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dad75921ce6878d5a255edf92c5877238ffe899a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933112"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957588"
 ---
 # <a name="ftp-prompt"></a>ftp prompt
 
@@ -25,7 +25,7 @@ Ativa e desativa o modo de prompt. Por padrão, o modo de prompt é ativado. Se 
 > [!NOTE]
 > Você pode usar os comandos [FTP MGET](ftp-mget.md) e [FTP mput](ftp-mput_1.md) para transferir todos os arquivos quando o modo de solicitação estiver desativado.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 prompt
@@ -43,4 +43,4 @@ prompt
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

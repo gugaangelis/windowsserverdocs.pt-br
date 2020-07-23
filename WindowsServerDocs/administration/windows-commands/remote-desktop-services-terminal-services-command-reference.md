@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55466409517b63c52f88a7acec3a8f4aba7d258d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: dd054e59c7245eddfb66725bd5d95333f602b2c6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933476"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956298"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>Referência aos comandos dos Serviços de Área de Trabalho Remota (Serviços de Terminal)
 
@@ -22,7 +22,7 @@ ms.locfileid: "85933476"
 
 Veja a seguir uma lista de Serviços de Área de Trabalho Remota ferramentas de linha de comando.
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
 >
 > |                 Comando                 |                                                      Descrição                                                       |
 > |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|

@@ -9,12 +9,12 @@ ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: a0a0e4f50134102bab7c258e47e63bf7d24e60c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858709"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959268"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Migração de serviços do MultiPoint no Windows Server 2016
 >Aplica-se a: Windows Server 2016
@@ -29,7 +29,7 @@ Antes de começar o processo de migração, observe o seguinte:
 - O processo de migração não coleta automaticamente ou registra configurações para aplicativos na função de serviços do MultiPoint. Você deve criar um plano de migração personalizado para todos os aplicativos que deseja migrar. Isso também é verdadeiro ao usar o recurso de áreas de trabalho virtuais no MultiPoint Services.
 - Este guia não fornece orientação para mover dados salvos em pastas de usuário ou compartilhadas no servidor MultiPoint. Isso se aplica a estações regulares e estações de área de trabalho virtuais.
 - Este guia não contém instruções sobre como migrar quando o servidor de origem estiver executando várias funções. Se o servidor estiver executando várias funções, você precisará criar um procedimento de migração personalizado específico para seu ambiente de servidor, com base nas informações fornecidas nos guias de migração de função.
-- Este guia não contém informações para migrar Serviços de Área de Trabalho Remota CALS. Para obter essas informações, consulte [migrar serviços de área de trabalho remota licenças de acesso para cliente (RDS CALs)](https://technet.microsoft.com/library/dd851844.aspx).
+- Este guia não contém informações para migrar Serviços de Área de Trabalho Remota CALS. Para obter essas informações, consulte [migrar serviços de área de trabalho remota licenças de acesso para cliente (RDS CALs)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd851844(v=ws.11)).
 
 ## <a name="supported-migration-scenarios-for-multipoint-services-in-windows-server-2016"></a>Cenários de migração com suporte para os serviços do MultiPoint no Windows Server 2016
 Os serviços de função de serviço do MultiPoint estão disponíveis no Windows Server 2016 Standard e no datacenter. Este guia de migração descreve como migrar os serviços de função dos serviços do MultiPoint de um servidor de origem que executa o Windows Server 2016 para um servidor de destino que executa a mesma versão.

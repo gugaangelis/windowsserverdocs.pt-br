@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ea867cbb36286297ff3c5274d11c36b5815ab9ac
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4ffcf974bd809d1692e16d632153c213081041c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475453"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961228"
 ---
 # <a name="optimize-namespace-polling"></a>Otimizar sondagem de namespace
 
@@ -35,7 +35,7 @@ Use o procedimento a seguir para otimizar como essa sondagem de namespace ocorre
     -   Escolha **Otimizar para escalabilidade** se houver mais de 16 servidores de namespace. Isso reduz a carga no emulador PDC (Primary Domain Controller, controlador de domínio primário), mas aumenta o tempo necessário para que as alterações no namespace sejam replicadas para todos os servidores de namespace. Até que as alterações sejam replicadas em todos os servidores, os usuários podem ter uma visão inconsistente do namespace.
 
 > [!NOTE]
-> Para definir o modo de sondagem do namespace usando o Windows PowerShell, use o [conjunto DfsnRoot EnableRootScalability](https://technet.microsoft.com/library/jj884281.aspx) cmdlet, que foi introduzida no Windows Server 2012.
+> Para definir o modo de sondagem do namespace usando o Windows PowerShell, use o [conjunto DfsnRoot EnableRootScalability](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) cmdlet, que foi introduzida no Windows Server 2012.
 
 ## <a name="additional-references"></a>Referências adicionais
 

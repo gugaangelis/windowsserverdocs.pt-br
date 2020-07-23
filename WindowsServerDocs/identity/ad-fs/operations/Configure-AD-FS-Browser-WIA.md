@@ -8,18 +8,18 @@ ms.date: 03/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0c64d90fcbeaf2aa03312b9707bcfa43379271f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1bcd4268444f49489d3e7a04c55d10cddaf92e00
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859929"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966528"
 ---
 # <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>Configurar navegadores para usar a autenticação integrada do Windows (WIA) com AD FS
 
 Por padrão, a autenticação integrada do Windows (WIA) é habilitada no Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2 para solicitações de autenticação que ocorrem na rede interna da organização (intranet) para qualquer aplicativo que use um navegador para sua autenticação.
 
-O AD FS 2016 agora tem uma configuração padrão aprimorada que permite que o navegador do Microsoft Edge faça a WIA, embora não também (incorretamente) a captura de Windows Phone:
+O AD FS 2016 agora tem uma configuração padrão aprimorada que permite que o navegador do Edge faça a WIA, embora não também (incorretamente) a captura de Windows Phone:
 
     =~Windows\s*NT.*Edge
 
@@ -77,4 +77,4 @@ O comando acima garantirá que AD FS abrange apenas os seguintes casos de uso pa
 
 ### <a name="additional-links"></a>Links adicionais
 
-[Documentação do Microsoft Edge](https://docs.microsoft.com/microsoft-edge/web-platform/user-agent-string)
+[Documentação do Microsoft Edge](/microsoft-edge/web-platform/user-agent-string)

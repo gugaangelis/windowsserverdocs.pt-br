@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6388fd43ee21d68ac48888ed2e950b2aeca5a5c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b603a187f7be91daea8a7d7dfd317a24380b01b1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925911"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957808"
 ---
 # <a name="ftp-glob"></a>ftp glob
 
@@ -22,7 +22,7 @@ ms.locfileid: "85925911"
 
 Alterna a permissão de expansão de curinga para nomes de arquivo locais. Por padrão, o mascaramento (expansão de curinga) é ativado. Se o mascaramento estiver ativado, você poderá usar o asterisco (*) e o ponto de interrogação (?) como caracteres curinga no arquivo local ou nos nomes de caminho.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 glob
@@ -40,4 +40,4 @@ glob
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

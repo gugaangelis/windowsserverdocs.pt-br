@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ba1320171e4e305209f06fbee617e54c979d30
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b5f00f34da20e9e151f093b919244fe3b49a85d6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925027"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956888"
 ---
 # <a name="msdt"></a>msdt
 
@@ -30,14 +30,14 @@ msdt </id <name> | /path <name> | /cab < name>> <</parameter> [options] … <par
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /ID`<packagename>` | Especifica qual pacote de diagnóstico deve ser executado. Para obter uma lista de pacotes disponíveis, consulte [pacotes de solução de problemas disponíveis](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs). |
+| /ID`<packagename>` | Especifica qual pacote de diagnóstico deve ser executado. Para obter uma lista de pacotes disponíveis, consulte [pacotes de solução de problemas disponíveis](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs). |
 | /Path`<directory|.diagpkg file|.diagcfg file>` | Especifica o caminho completo para um pacote de diagnóstico. Se você especificar um diretório, o diretório deverá conter um pacote de diagnóstico. Você não pode usar o parâmetro **/path** em conjunto com os parâmetros * */ID * *, **/DCI**ou **/cab** . |                                                                                   |
 | /dci`<passkey>` | Popula o campo de chave de acesso. Esse parâmetro só é usado quando um provedor de suporte forneceu uma chave de acesso. |
 | /DT`<directory>` | Exibe o histórico de solução de problemas no diretório especificado. Os resultados de diagnóstico são armazenados nos diretórios **%LocalAppData%\Diagnostics** ou **%LocalAppData%\ElevatedDiagnostics** do usuário. |
 | /af`<answerfile>` | Especifica um arquivo de resposta em formato XML que contém respostas a uma ou mais interações de diagnóstico. |
 | /modal`<ownerHWND>` | Torna o pacote de solução de problemas modal para uma janela designada pelo HWND (identificador de janela do console) pai. Esse parâmetro é normalmente usado por aplicativos que iniciam um pacote de solução de problemas. Para obter mais informações sobre como obter identificadores de janela de console, consulte [como obter um identificador de janela de console (HWND)](https://support.microsoft.com/help/124103/how-to-obtain-a-console-window-handle-hwnd). |
 | /moreoptions`<true|false>` | Habilita (true) ou suprime (false) a tela final de solução de problemas que pergunta se o usuário deseja explorar opções adicionais. Esse parâmetro é normalmente usado quando o pacote de solução de problemas é iniciado por um solucionador de problemas que não faz parte do sistema operacional. |
-| /param`<parameters>` | Especifica um conjunto de respostas de interação na linha de comando, semelhante a um arquivo de resposta. Esse parâmetro normalmente não é usado dentro do contexto de pacotes de solução de problemas criados com o designer do TSP. Para obter mais informações sobre como desenvolver parâmetros personalizados, consulte [plataforma de solução de problemas do Windows](https://docs.microsoft.com/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal). |
+| /param`<parameters>` | Especifica um conjunto de respostas de interação na linha de comando, semelhante a um arquivo de resposta. Esse parâmetro normalmente não é usado dentro do contexto de pacotes de solução de problemas criados com o designer do TSP. Para obter mais informações sobre como desenvolver parâmetros personalizados, consulte [plataforma de solução de problemas do Windows](/previous-versions/windows/desktop/wintt/windows-troubleshooting-toolkit-portal). |
 | /Advanced | Expande o link avançado na página de boas-vindas por padrão quando o pacote de solução de problemas é iniciado. |
 | /custom | Solicita que o usuário confirme cada resolução possível antes de ser aplicada. |
 
@@ -56,6 +56,6 @@ Os pacotes de solução de problemas compreendem um conjunto de causas raiz, cad
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Pacotes de solução de problemas disponíveis](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
+- [Pacotes de solução de problemas disponíveis](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ee424379(v=ws.11)#available-troubleshooting-packs)
 
-- [Referência do PowerShell do TroubleshootingPack](https://docs.microsoft.com/powershell/module/troubleshootingpack/?view=win10-ps)
+- [Referência do PowerShell do TroubleshootingPack](/powershell/module/troubleshootingpack/?view=win10-ps)

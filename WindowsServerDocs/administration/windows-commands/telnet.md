@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5f588328deb51109ee9139b6e7dfaad8f0166dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 70c4eb44a654094410432dd9d37d0ad0082f5874
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934224"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958808"
 ---
 # <a name="telnet"></a>telnet
 
@@ -38,7 +38,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |/?|Exibe a ajuda no prompt de comando. Como alternativa, você pode digitar/h.|
 
 ## <a name="remarks"></a>Comentários
--   Você deve instalar o software cliente Telnet antes de poder executar este comando. Para obter mais informações, consulte [instalando o Telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx).
+-   Você deve instalar o software cliente Telnet antes de poder executar este comando. Para obter mais informações, consulte [instalando o Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10)).
 -   Você pode executar o Telnet sem parâmetros para inserir o contexto de Telnet, indicado pelo prompt Telnet (**Microsoft telnet>**). No prompt de Telnet, você pode usar comandos Telnet para gerenciar o computador que executa o cliente Telnet.
 
 ## <a name="examples"></a>Exemplos
@@ -52,6 +52,6 @@ telnet /f telnetlog.txt telnet.microsoft.com 44
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
--   [Instalando o Telnet](https://technet.microsoft.com/library/cc754293(v=ws.10).aspx)
--   [Referência técnica de Telnet](https://technet.microsoft.com/library/cc754987(v=ws.10).aspx)
+-   [Instalando o Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754293(v=ws.10))
+-   [Referência técnica de Telnet](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754987(v=ws.10))
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b4addd18629bd54cd9d5fc2df5c660c621e735de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473783"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953728"
 ---
 # <a name="choose-a-namespace-type"></a>Escolha um tipo de namespace
 
@@ -30,7 +30,7 @@ Escolha um namespace autônomo se alguma das seguintes condições se aplicar ao
 -   Você precisa criar um único namespace com mais de 5.000 pastas DFS em um domínio que não atende aos requisitos para um namespace baseado em domínio (modo Windows Server 2008), conforme descrito posteriormente neste tópico.
 
 > [!NOTE]
-> Para verificar o tamanho de um namespace, clique com botão direito do namespace na árvore de console de Gerenciamento DFS, clique em **Propriedades** e depois exibe o tamanho de namespace na caixa de diálogo **Propriedades de Namespace**. Para saber mais sobre a escalabilidade do Namespace de DFS, consulte o site da Microsoft [Serviços de arquivo](https://technet.microsoft.com/library/cc771548.aspx).
+> Para verificar o tamanho de um namespace, clique com botão direito do namespace na árvore de console de Gerenciamento DFS, clique em **Propriedades** e depois exibe o tamanho de namespace na caixa de diálogo **Propriedades de Namespace**. Para saber mais sobre a escalabilidade do Namespace de DFS, consulte o site da Microsoft [Serviços de arquivo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771548(v=ws.10)).
 
 Escolha um namespace baseado em domínio se alguma das seguintes condições se aplicar ao seu ambiente:
 
@@ -67,11 +67,9 @@ As características de cada tipo de namespace e o modo são descritos na tabela 
 |Servidores de namespace com suporte mínimo|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
 |Suporte para enumeração baseada em acesso (se habilitado)|Sim, requer o servidor de namespace do Windows Server 2008|Não|Sim|
 |Métodos com suporte para garantir a disponibilidade de namespace|Crie um namespace autônomo em um cluster de failover.|Use vários servidores de namespace para hospedar o namespace. (Os servidores de namespace devem ser no mesmo domínio.)|Use vários servidores de namespace para hospedar o namespace. (Os servidores de namespace devem ser no mesmo domínio.)|
-|Suporte para usar replicação de DFS para replicar alvos de pasta|Suportado quando tiver ingressado em um domínio do AD DS|Com suporte|Com suporte|
+|Suporte para usar replicação de DFS para replicar alvos de pasta|Suportado quando tiver ingressado em um domínio do AD DS|Suportado|Suportado|
 
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
 -   [Migrar um namespace baseado em domínio para o modo Windows 2008 Server](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
-
-

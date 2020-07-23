@@ -8,12 +8,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 622ff33437a3aef14a185c9a4157dba68db0a2ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a8061aa6488c97211506d321d0b38b1360be97eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824779"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960578"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Limpar os metadados do servidor do controlador Domínio do Active Directory
 
@@ -42,7 +42,7 @@ A associação em **Admins**. do domínio, ou equivalente, é o mínimo necessá
 
 ## <a name="clean-up-server-metadata-using-activedirectory-users-and-computers"></a>Limpar os metadados do servidor usando Active Directory usuários e computadores
 
-1. Abra **Usuários e Computadores do Active Directory**.
+1. Abra **Computadores e Usuários do Active Directory**.
 2. Se você tiver identificado parceiros de replicação em preparação para este procedimento e se não estiver conectado a um parceiro de replicação do controlador de domínio removido cujos metadados você está limpando, clique com o botão direito do mouse **Active Directory nó usuários e computadores** e clique em **alterar controlador de domínio**. Clique no nome do controlador de domínio do qual você deseja remover os metadados e, em seguida, clique em **OK**.
 3. Expanda o domínio do controlador de domínio que foi removida forçosamente e clique em **controladores de domínio**.
 4. No painel de detalhes, clique com o botão direito do mouse no objeto de computador do controlador de domínio cujos metadados você deseja limpar e clique em **excluir**.
@@ -65,7 +65,7 @@ A associação em **Admins**. do domínio, ou equivalente, é o mínimo necessá
 
 ## <a name="clean-up-server-metadata-using-the-command-line"></a>Limpar os metadados do servidor usando a linha de comando
 
-Como alternativa, você pode limpar os metadados usando ntdsutil. exe, uma ferramenta de linha de comando que é instalada automaticamente em todos os controladores de domínio e servidores que têm o Active Directory Lightweight Directory Services (AD LDS) instalado. O Ntdsutil. exe também está disponível em computadores que têm o RSAT instalado.
+Como alternativa, você pode limpar os metadados usando o Ntdsutil.exe, uma ferramenta de linha de comando que é instalada automaticamente em todos os controladores de domínio e servidores que têm o Active Directory Lightweight Directory Services (AD LDS) instalado. Ntdsutil.exe também está disponível em computadores que têm o RSAT instalado.
 
 ## <a name="to-clean-up-server-metadata-by-using-ntdsutil"></a>Para limpar os metadados do servidor usando ntdsutil
 
@@ -86,15 +86,15 @@ Como alternativa, você pode limpar os metadados usando ntdsutil. exe, uma ferra
 
    Neste ponto, o Ntdsutil confirma que o controlador de domínio foi removido com êxito. Se você receber uma mensagem de erro indicando que o objeto não pode ser encontrado, o controlador de domínio poderá ter sido removido anteriormente.
 
-6. No `metadata cleanup:` e `ntdsutil:` prompts, digite `quit`e pressione ENTER.
+6. Nos `metadata cleanup:` `ntdsutil:` prompts, digite `quit` e pressione Enter.
 
 7. Para confirmar a remoção do controlador de domínio:
 
-   Abra Active Directory usuários e computadores. No domínio do controlador de domínio removido, clique em **controladores de domínio**. No painel de detalhes, um objeto para o controlador de domínio que você removeu não deve aparecer.
+   Abra Computadores e Usuários do Active Directory. No domínio do controlador de domínio removido, clique em **controladores de domínio**. No painel de detalhes, um objeto para o controlador de domínio que você removeu não deve aparecer.
 
    Abra Active Directory sites e serviços. Navegue até o contêiner **servidores** e confirme se o objeto de servidor para o controlador de domínio que você removeu não contém um objeto de configurações NTDS. Se nenhum dos objetos filho aparecer abaixo do objeto de servidor, você poderá excluir o objeto de servidor. Se um objeto filho for exibido, não exclua o objeto de servidor porque outro aplicativo está usando o objeto.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 * [Como rebaixar controladores de domínio](Demoting-Domain-Controllers-and-Domains--Level-200-.md)
-* [Referência de comando Ntdsutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753343(v=ws.10))
+* [Referência de comando Ntdsutil](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753343(v=ws.10))

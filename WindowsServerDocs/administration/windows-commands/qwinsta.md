@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9b79495d3fa142fd343b9c521563e093d20fc68
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 45590cf9b6fdb5de40e4ab25bd444f847d203670
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932005"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956368"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -23,7 +23,7 @@ Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Serv
 Exibe informações sobre sessões em um servidor Host da Sessão da Área de Trabalho Remota. A lista inclui informações não apenas sobre sessões ativas, mas também sobre outras sessões que o servidor executa.
 
 > [!NOTE]
-> Esse comando é o mesmo que o [comando de sessão de consulta](query-session.md). Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
+> Esse comando é o mesmo que o [comando de sessão de consulta](query-session.md). Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxe
 

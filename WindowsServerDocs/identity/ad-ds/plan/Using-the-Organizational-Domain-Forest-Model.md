@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1788989d3f2e3ceae46b59e393c925e3b5a7b588
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 4216dea74b72d2257db32045ffda1a21ba6a4f43
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623815"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965508"
 ---
 # <a name="using-the-organizational-domain-forest-model"></a>Usando o modelo de floresta de domínio organizacional
 
@@ -57,4 +57,4 @@ Observe que, se um proprietário de floresta delegar o gerenciamento de serviço
 Todos os proprietários de domínio devem estar cientes de que, se qualquer uma dessas condições mudar no futuro, poderá ser necessário mover os domínios organizacionais para uma implantação de várias florestas.
 
 > [!NOTE]
-> Outra maneira de minimizar os riscos de segurança para um domínio de Active Directory do Windows Server 2008 é empregar a separação de funções de administrador, o que exige a implantação de um RODC (controlador de domínio somente leitura) em sua infraestrutura de Active Directory. Um RODC é um novo tipo de controlador de domínio no sistema operacional Windows Server 2008 que hospeda partições somente leitura do banco de dados do Active Directory. Antes do lançamento do Windows Server 2008, qualquer trabalho de manutenção de servidor em um controlador de domínio precisava ser executado por um administrador de domínio. No Windows Server 2008, você pode delegar permissões administrativas locais para um RODC a qualquer usuário de domínio sem conceder a esse usuário quaisquer direitos administrativos para o domínio ou outros controladores de domínio. Isso permite que o usuário delegado faça logon em um RODC e execute o trabalho de manutenção, como a atualização de um driver, no servidor. No entanto, esse usuário delegado não pode fazer logon em nenhum outro controlador de domínio nem executar outra tarefa administrativa no domínio. Dessa forma, qualquer usuário confiável pode ser delegado a capacidade de gerenciar o RODC com eficiência sem comprometer a segurança do restante do domínio. Para obter mais informações sobre RODCs, consulte [AD DS: controladores de domínio somente leitura](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732801(v=ws.10)).
+> Outra maneira de minimizar os riscos de segurança para um domínio de Active Directory do Windows Server 2008 é empregar a separação de funções de administrador, o que exige a implantação de um RODC (controlador de domínio somente leitura) em sua infraestrutura de Active Directory. Um RODC é um novo tipo de controlador de domínio no sistema operacional Windows Server 2008 que hospeda partições somente leitura do banco de dados do Active Directory. Antes do lançamento do Windows Server 2008, qualquer trabalho de manutenção de servidor em um controlador de domínio precisava ser executado por um administrador de domínio. No Windows Server 2008, você pode delegar permissões administrativas locais para um RODC a qualquer usuário de domínio sem conceder a esse usuário quaisquer direitos administrativos para o domínio ou outros controladores de domínio. Isso permite que o usuário delegado faça logon em um RODC e execute o trabalho de manutenção, como a atualização de um driver, no servidor. No entanto, esse usuário delegado não pode fazer logon em nenhum outro controlador de domínio nem executar outra tarefa administrativa no domínio. Dessa forma, qualquer usuário confiável pode ser delegado a capacidade de gerenciar o RODC com eficiência sem comprometer a segurança do restante do domínio. Para obter mais informações sobre RODCs, consulte [AD DS: controladores de domínio somente leitura](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732801(v=ws.10)).

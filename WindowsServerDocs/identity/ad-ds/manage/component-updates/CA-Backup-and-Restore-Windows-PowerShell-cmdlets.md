@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d1dd406780dc61e1ce52d423ca6148d2a9dd2c3d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 02393a7f34e20b50b60a738ceb0f5f3a2ac17990
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823079"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958638"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>Cmdlets do Windows PowerShell de backup e restauração de AC
 
@@ -32,7 +32,7 @@ O módulo ADCSAdministration do Windows PowerShell foi introduzido no servidor d
 -   Restore-CARoleService  
   
 ## <a name="backup-caroleservice"></a>Backup-CARoleService  
-**Tabela SEQ \\\* árabe 17: backup e restauração de cmdlets do Windows PowerShell**  
+**Tabela SEQ tabela \\ \* árabe 17: backup e restauração de cmdlets do Windows PowerShell**  
   
 **Cmdlet ADCSAdministration: backup-CARoleService**  
   
@@ -79,9 +79,9 @@ Um backup não protegido por senha será obtido se a função ConvertTo-SecureSt
   
 ![Backup e restauração de CA](media/CA-Backup-and-Restore-Windows-PowerShell-cmdlets/GTR_ADDS_BackupCARole.gif)  
   
-**Tabela SEQ tabela \\\* árabe 18: erros comuns**  
+**Tabela SEQ tabela \\ \* árabe 18: erros comuns**  
   
-|Ação|Error|Comentário|  
+|Ação|Erro|Comentário|  
 |----------|---------|-----------|  
 |**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: o processo não pode acessar o arquivo porque ele está sendo usado por outro processo. (Exceção de HRESULT:<p>0x80070020|Pare o serviço de serviços de certificados Active Directory antes de executar o cmdlet Restore-CARoleService|  
 |**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: o diretório não está vazio. (Exceção de HRESULT: 0x80070091)|Usar o parâmetro-Force para substituir chaves preexistentes|  
@@ -90,11 +90,11 @@ Um backup não protegido por senha será obtido se a função ConvertTo-SecureSt
 |**Restore-CARoleService C:\ADCSBack14-Password (leitura-host-prompt "senha:"-assegurastring)**|Restore-CARoleService: o sistema não pode localizar o arquivo especificado. (Exceção de HRESULT: 0x80070002)|O caminho especificado não contém um backup de banco de dados válido.  Talvez o caminho seja inválido ou o backup tenha sido feito com a opção-KeysOnly?|  
   
 ## <a name="additional-resources"></a>Recursos adicionais  
-[Guia de Migração de Serviços de Certificados do Active Directory](https://technet.microsoft.com/library/ee126170(v=ws.10).aspx)  
+[Guia de Migração de Serviços de Certificados do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126170(v=ws.10))  
   
-[Fazendo backup do banco de dados e da chave privada de uma AC](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_BackUpDB)  
+[Fazendo backup do banco de dados e da chave privada de uma AC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_BackUpDB)  
   
-[Restaurando o banco de dados e a configuração da autoridade de certificação no servidor de destino](https://technet.microsoft.com/library/ee126140(v=ws.10).aspx#BKMK_RestoreCA)  
+[Restaurando o banco de dados e a configuração da autoridade de certificação no servidor de destino](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126140(v=ws.10)#BKMK_RestoreCA)  
   
 ## <a name="try-this-backup-the-ca-in-your-lab-using-windows-powershell"></a>Experimente: faça backup da autoridade de certificação em seu laboratório usando o Windows PowerShell  
   
@@ -102,5 +102,3 @@ Um backup não protegido por senha será obtido se a função ConvertTo-SecureSt
   
 2.  Aguarde a restauração da autoridade de certificação no momento.  
   
-
-

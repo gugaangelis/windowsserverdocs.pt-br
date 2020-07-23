@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1d1cf36139f00f3d61e400cb38960d2c8551532
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cee11d52db784477b0b4ffeecc307d395f910a92
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925162"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958078"
 ---
 # <a name="ftp-append"></a>ftp append
 
@@ -53,4 +53,4 @@ append file1.txt
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

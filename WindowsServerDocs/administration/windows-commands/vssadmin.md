@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc3f40b5d1e7e83f1aecdc26a54ffc4f1839bc7
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: f3618841eb2f511323873d2ea962838f9ab777d0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720227"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954688"
 ---
 # <a name="vssadmin"></a>Vssadmin
 
@@ -23,13 +23,13 @@ Exibe os backups de cópia de sombra de volume atuais e todos os provedores e gr
 
 |Comando|Descrição|Disponibilidade
 |---|---|---
-|[Vssadmin Add ShadowStorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|Adiciona uma associação de armazenamento de cópias de sombra de volume.| Somente servidor
-|[Vssadmin criar sombra](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|Cria uma nova cópia de sombra de volume.| Somente servidor
-|[Vssadmin excluir sombras](vssadmin-delete-shadows.md)|Exclui cópias de sombra de volume.| Cliente e Servidor
-|[Vssadmin Delete ShadowStorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc785461(v%3dws.11))|Exclui associações de armazenamento de cópias de sombra de volume.| Somente servidor
-|[Vssadmin list providers](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788108(v%3dws.11))|Lista os provedores de cópias de sombra de volume registrados.| Cliente e Servidor
-|[Vssadmin da lista de sombras](vssadmin-list-shadows.md)|Lista as cópias de sombra de volume existentes.| Cliente e Servidor
-|[VSSadmin list ShadowStorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788045(v%3dws.11))|Lista todas as associações de armazenamento de cópia de sombra no sistema.| Cliente e Servidor
-|[Vssadmin listar volumes](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788064(v%3dws.11))|Lista os volumes que são elegíveis para cópias de sombra.| Cliente e Servidor
-|[VSSadmin list writers](vssadmin-list-writers.md)|Lista todos os gravadores de cópia de sombra de volume assinados no sistema.| Cliente e Servidor
-|[Vssadmin redimensionar ShadowStorage](vssadmin-resize-shadowstorage.md)|Redimensiona o tamanho máximo para uma associação de armazenamento de cópia de sombra.| Cliente e Servidor
+|[Vssadmin Add ShadowStorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|Adiciona uma associação de armazenamento de cópias de sombra de volume.| Somente servidor
+|[Vssadmin criar sombra](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|Cria uma nova cópia de sombra de volume.| Somente servidor
+|[Vssadmin excluir sombras](vssadmin-delete-shadows.md)|Exclui cópias de sombra de volume.| Cliente e servidor
+|[Vssadmin Delete ShadowStorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc785461(v%3dws.11))|Exclui associações de armazenamento de cópias de sombra de volume.| Somente servidor
+|[Vssadmin list providers](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788108(v%3dws.11))|Lista os provedores de cópias de sombra de volume registrados.| Cliente e servidor
+|[Vssadmin da lista de sombras](vssadmin-list-shadows.md)|Lista as cópias de sombra de volume existentes.| Cliente e servidor
+|[VSSadmin list ShadowStorage](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788045(v%3dws.11))|Lista todas as associações de armazenamento de cópia de sombra no sistema.| Cliente e servidor
+|[Vssadmin listar volumes](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788064(v%3dws.11))|Lista os volumes que são elegíveis para cópias de sombra.| Cliente e servidor
+|[VSSadmin list writers](vssadmin-list-writers.md)|Lista todos os gravadores de cópia de sombra de volume assinados no sistema.| Cliente e servidor
+|[Vssadmin redimensionar ShadowStorage](vssadmin-resize-shadowstorage.md)|Redimensiona o tamanho máximo para uma associação de armazenamento de cópia de sombra.| Cliente e servidor

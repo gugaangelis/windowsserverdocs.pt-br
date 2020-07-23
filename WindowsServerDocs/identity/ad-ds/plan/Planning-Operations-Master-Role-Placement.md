@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e6142d3facb32a81d8d7c54afe9c2f60fc9eb674
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ad4e89be7eeb6190d27ee0e15e370bcaa1806cb8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623804"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959368"
 ---
 # <a name="planning-operations-master-role-placement"></a>Planejando posicionamento da função de mestre das operações
 
@@ -55,9 +55,9 @@ Mesmo se todos os controladores de domínio forem atualizados para o Windows 200
 
 Coloque o emulador de PDC em um local que contenha um grande número de usuários desse domínio para operações de encaminhamento de senha, se necessário. Além disso, verifique se o local está bem conectado a outros locais para minimizar a latência de replicação.
 
-Para uma planilha para ajudá-lo a documentar as informações sobre onde você planeja colocar emuladores de PDC e o número de usuários para cada domínio representado em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4. doc).
+Para uma planilha para ajudá-lo a documentar as informações sobre onde você planeja colocar emuladores de PDC e o número de usuários para cada domínio representado em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4.doc).
 
-Você precisa consultar as informações sobre os locais nos quais você precisa inserir emuladores de PDC ao implantar domínios regionais. Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).
+Você precisa consultar as informações sobre os locais nos quais você precisa inserir emuladores de PDC ao implantar domínios regionais. Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)).
 
 ## <a name="requirements-for-infrastructure-master-placement"></a>Requisitos para o posicionamento do mestre de infraestrutura
 
@@ -82,9 +82,9 @@ Embora essa configuração resulte em uma replicação bem-sucedida entre todos 
 - Os controladores de domínio nos sites C e D não podem adicionar ou remover diretórios, DNS ou partições de aplicativo personalizadas.
 - Os controladores de domínio nos sites C e D não podem fazer alterações de esquema.
 
-Para obter uma planilha para ajudá-lo a planejar o posicionamento da função mestre de operações, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4. doc).
+Para obter uma planilha para ajudá-lo a planejar o posicionamento da função mestre de operações, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4.doc).
 
-Você precisará consultar essas informações ao criar o domínio raiz da floresta e os domínios regionais. Para obter mais informações sobre como implantar o domínio raiz da floresta, consulte Implantando um [domínio raiz da floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx). Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).
+Você precisará consultar essas informações ao criar o domínio raiz da floresta e os domínios regionais. Para obter mais informações sobre como implantar o domínio raiz da floresta, consulte Implantando um [domínio raiz da floresta do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)). Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)).
 
 ## <a name="next-steps"></a>Próximas etapas
 

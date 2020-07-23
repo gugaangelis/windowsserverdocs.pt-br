@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7f011bc12c26567ed3a0e912dca3c3a8de9bfff9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474923"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964068"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar a enumeração baseada em acesso em um Namespace
 
@@ -36,7 +36,7 @@ Para usar a enumeração baseada em acesso aos Namespaces DFS, você deve seguir
 
 
 > [!WARNING]
-> A enumeração baseada em acesso não impede que os usuários obtenham uma referência para um destino de pasta se eles já conhecem o caminho DFS. Somente as permissões de compartilhamento ou permissões do sistema NTFS de arquivos do destino da pasta (pasta compartilhada) em si podem impedir que os usuários acessem um destino de pasta. Permissões de pasta DFS são usadas apenas para exibir ou ocultar as pastas DFS, não para controlar o acesso, tornando acesso de Leitura a única permissão relevante no nível da pasta DFS. Para obter mais informações, consulte [Usando permissões herdadas com enumeração baseada em acesso](https://technet.microsoft.com/library/dd834874(v=ws.11).aspx)
+> A enumeração baseada em acesso não impede que os usuários obtenham uma referência para um destino de pasta se eles já conhecem o caminho DFS. Somente as permissões de compartilhamento ou permissões do sistema NTFS de arquivos do destino da pasta (pasta compartilhada) em si podem impedir que os usuários acessem um destino de pasta. Permissões de pasta DFS são usadas apenas para exibir ou ocultar as pastas DFS, não para controlar o acesso, tornando acesso de Leitura a única permissão relevante no nível da pasta DFS. Para obter mais informações, consulte [Usando permissões herdadas com enumeração baseada em acesso](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11))
 
 <br />
 Você pode habilitar a enumeração baseada em acesso em um namespace usando a interface do Windows ou usando uma linha de comando.
@@ -58,7 +58,7 @@ Você pode habilitar a enumeração baseada em acesso em um namespace usando a i
     ```
 
 > [!TIP]
-> Para gerenciar a enumeração baseada em acesso em um namespace usando o Windows PowerShell, use o [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx), [Grant-DfsnAccess](https://technet.microsoft.com/library/jj884272.aspx), e [Revoke-DfsnAccess](https://technet.microsoft.com/library/jj884273.aspx) cmdlets. O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
+> Para gerenciar a enumeração baseada em acesso em um namespace usando o Windows PowerShell, use o [Set-DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)), [Grant-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)), e [Revoke-DfsnAccess](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd834874(v=ws.11)) cmdlets. O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
 
 Você pode controlar quais usuários e grupos podem exibir pastas DFS individuais usando a interface do Windows ou usando uma linha de comando.
 
@@ -97,13 +97,13 @@ Você pode controlar quais usuários e grupos podem exibir pastas DFS individuai
 
 | Comando | Descrição |
 |---|---|
-|[Propriedade Dfsutil sd negar](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|Nega a um grupo ou a usuário a capacidade de exibir a pasta.|
-|[Propriedade Dfsutil sd redefinir](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Remove todas as permissões da pasta.|
-|[Propriedade Dfsutil sd revogar](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Remove um grupo ou usuário ACE de uma pasta. |
+|[Propriedade Dfsutil sd negar](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))|Nega a um grupo ou a usuário a capacidade de exibir a pasta.|
+|[Propriedade Dfsutil sd redefinir](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11)) |Remove todas as permissões da pasta.|
+|[Propriedade Dfsutil sd revogar](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759150(v=ws.11))| Remove um grupo ou usuário ACE de uma pasta. |
 
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [Criar um namespace do DFS](create-a-dfs-namespace.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
--   [Instalando o DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
+-   [Instalando o DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11))
 -   [Usando permissões herdadas com enumeração baseada em acesso](using-inherited-permissions-with-access-based-enumeration.md)

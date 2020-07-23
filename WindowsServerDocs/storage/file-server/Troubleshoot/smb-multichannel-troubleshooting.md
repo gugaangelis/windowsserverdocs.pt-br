@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 210bc2057f25dc196fe9d76495c42f76c8b36311
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 662a58fdeb3cda14a0e54c8d0ab7bd0b85387fd7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815339"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960128"
 ---
 # <a name="smb-multichannel-troubleshooting"></a>Solução de problemas de multicanal do SMB
 
@@ -19,7 +19,7 @@ Este artigo descreve como solucionar problemas relacionados ao SMB multicanal.
 
 ## <a name="check-the-network-interface-status"></a>Verificar o status da interface de rede
 
-Verifique se a associação para a interface de rede está definida como **true** no cliente SMB (MS\_Client) e no servidor SMB (MS\_Server). Quando você executar o comando a seguir, a saída deverá mostrar **true** em **habilitado** para ambas as interfaces de rede:
+Verifique se a associação para a interface de rede está definida como **true** no cliente SMB (MS \_ Client) e no servidor SMB (MS \_ Server). Quando você executar o comando a seguir, a saída deverá mostrar **true** em **habilitado** para ambas as interfaces de rede:
 
 ```PowerShell
 Get-NetAdapterBinding -ComponentID ms_server,ms_msclient
@@ -51,7 +51,7 @@ No grupo **compartilhamento de arquivos e impressoras** , verifique as regras de
 
 Você também pode habilitar o **compartilhamento de arquivos e impressoras** na janela **central de rede e compartilhamento** . Para fazer isso, selecione **alterar configurações de compartilhamento avançadas** no menu à esquerda e, em seguida, selecione **ativar o compartilhamento de arquivos e impressoras** para o perfil. Essa opção habilita as regras de firewall de compartilhamento de arquivos e impressoras.
 
-![Alterar as configurações de compartilhamento avançadas](media/smb-multichannel-troubleshooting-2.png)
+![Alterar configurações de compartilhamento avançadas](media/smb-multichannel-troubleshooting-2.png)
 
 ## <a name="capture-client-and-server-sided-traffic-for-troubleshooting"></a>Capturar o tráfego do cliente e do servidor para solução de problemas
 
@@ -59,23 +59,23 @@ Você precisa das informações de rastreamento de conexão SMB que começam do 
 
 Verifique se a conexão SMBv3.*x* está sendo negociada e se nada entre o servidor e o cliente está afetando a negociação de dialeto. SMBv2 e versões anteriores não oferecem suporte a multicanal.
 
-Procure a INTERFACE de\_de rede\_pacotes de informações. É aí que o cliente SMB solicita uma lista de adaptadores do servidor SMB. Se esses pacotes não forem trocados, o multicanal não funcionará.
+Procure os pacotes de \_ informações de interface de rede \_ . É aí que o cliente SMB solicita uma lista de adaptadores do servidor SMB. Se esses pacotes não forem trocados, o multicanal não funcionará.
 
 O servidor responde retornando uma lista de interfaces de rede válidas. Em seguida, o cliente SMB adiciona-os à lista de adaptadores disponíveis para multicanal. Neste ponto, o multicanal deve iniciar e, pelo menos, tentar iniciar a conexão.
 
 Para obter mais informações, consulte os seguintes artigos:
 
-- [Solicitações de aplicativos 3.2.4.20.10 consultando interfaces de rede do servidor](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
+- [Solicitações de aplicativos 3.2.4.20.10 consultando interfaces de rede do servidor](/openspecs/windows_protocols/ms-smb2/147adde4-d936-4597-924a-8caa3429c6b0)
 
-- [Resposta de informações\_INTERFACE de\_de rede do 2.2.32.5](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
+- [Resposta de \_ informações de interface de rede 2.2.32.5 \_](/openspecs/windows_protocols/ms-smb2/fcd862d1-1b85-42df-92b1-e103199f531f)
 
-- [3.2.5.14.11 manipulando uma resposta de interfaces de rede](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
+- [3.2.5.14.11 manipulando uma resposta de interfaces de rede](/openspecs/windows_protocols/ms-smb2/5459722b-1eaa-4ead-b465-284363264cad)
 
 Nos cenários a seguir, um adaptador não pode ser usado:
 
 - Há um problema de roteamento no cliente. Isso geralmente é causado por uma tabela de roteamento incorreta que força o tráfego na interface errada.
 
-- Restrições de multicanal foram definidas. Para obter mais informações, consulte [New-SmbMultichannelConstraint](https://docs.microsoft.com/powershell/module/smbshare/new-smbmultichannelconstraint).
+- Restrições de multicanal foram definidas. Para obter mais informações, consulte [New-SmbMultichannelConstraint](/powershell/module/smbshare/new-smbmultichannelconstraint).
 
 - Algo bloqueou os pacotes de solicitação e resposta da interface de rede.
 

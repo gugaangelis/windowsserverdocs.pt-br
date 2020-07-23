@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a6418f7ac317f060adb72f32e231e1577a5f8b92
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2d3f0f7f0fa611ab34145aa35291ff9d07b0b205
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861139"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955948"
 ---
 # <a name="scenario-access-denied-assistance"></a>Cenário: assistência para acesso negado
 
@@ -32,7 +32,7 @@ A assistência de acesso negado é um novo recurso do Windows Server 2012, que f
   
 A assistência com acesso negado no Windows Server 2012 fornece aos administradores de servidor de arquivos os detalhes de acesso relevantes para que eles possam determinar o problema e as ferramentas apropriadas para que possam fazer alterações de configuração para atender à solicitação de acesso. Por exemplo, um usuário pode seguir este processo para acessar um arquivo ao qual atualmente não têm acesso:  
   
--   O usuário tenta ler um arquivo na pasta compartilhada \\\financeshares, mas o servidor exibe uma mensagem de acesso negado.  
+-   O usuário tenta ler um arquivo na \\ pasta compartilhada \financeshares, mas o servidor exibe uma mensagem de acesso negado.  
   
 -    O Windows Server 2012 exibe as informações de assistência de acesso negado ao usuário com uma opção para solicitar assistência.  
   
@@ -40,7 +40,7 @@ A assistência com acesso negado no Windows Server 2012 fornece aos administrado
   
 Você pode encontrar informações de planejamento para a configuração de assistência para acesso negado em [Planejar assistência para acesso negado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1).  
   
-Você pode encontrar etapas sobre como configurar a assistência de acesso negado em [implantar etapas &#40;&#41;de demonstração de assistência de acesso negado](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md).  
+Você pode encontrar etapas sobre como configurar a assistência de acesso negado em [implantar a assistência de acesso negado &#40;etapas de demonstração&#41;](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md).  
   
 ## <a name="in-this-scenario"></a>Neste cenário  
 Este cenário faz parte do cenário de Controle de Acesso Dinâmico. Para obter informações adicionais sobre o Controle de Acesso Dinâmico, consulte:  
@@ -55,8 +55,6 @@ A tabela a seguir lista os recursos que fazem parte deste cenário e descreve co
   
 |Recurso|Como este cenário tem suporte|  
 |-----------|---------------------------------|  
-|[Visão geral do Gerenciador de recursos do servidor de arquivos](https://technet.microsoft.com/library/hh831701.aspx)|A assistência para acesso negado pode ser configurada usando o console do Gerenciador de Recursos de Servidor de Arquivos.|  
-|[Visão geral dos Serviços de Arquivo e Armazenamento](https://technet.microsoft.com/library/hh831487.aspx)|O Gerenciador de Recursos de Servidor de Arquivos é um serviço da função Serviços de Arquivo e Armazenamento e é composto por um conjunto de recursos que podem ser usados​para administrar os servidores de arquivos em sua rede.|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|A assistência para acesso negado pode ser configurada usando o console do Gerenciador de Recursos de Servidor de Arquivos.|  
+|[Visão geral dos Serviços de Arquivo e Armazenamento](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|O Gerenciador de Recursos de Servidor de Arquivos é um serviço da função Serviços de Arquivo e Armazenamento e é composto por um conjunto de recursos que podem ser usados​para administrar os servidores de arquivos em sua rede.|  
   
-
-

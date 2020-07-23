@@ -8,18 +8,18 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: f3cf9c784c35f04f9232bb05e79acdbd8ed7a09a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4b79cf89c1363ba35ba6567139e119e0afeec905
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937320"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954853"
 ---
 # <a name="type"></a>tipo
 
 No Shell de comando do Windows, **tipo** é um comando interno que exibe o conteúdo de um arquivo de texto. Use o comando **Type** para exibir um arquivo de texto sem modificá-lo.
 
-No PowerShell, o **tipo** é um alias interno para o cmdlet **[Get-Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** , que também exibe o conteúdo de um arquivo, mas com uma sintaxe diferente.
+No PowerShell, o **tipo** é um alias interno para o cmdlet **[Get-Content](/powershell/module/microsoft.powershell.management/get-content)** , que também exibe o conteúdo de um arquivo, mas com uma sintaxe diferente.
 
 ## <a name="syntax"></a>Sintaxe
 

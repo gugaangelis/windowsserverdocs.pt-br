@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 654cb1b0eea65457d521d201739721ed8c3c0203
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21b090e8e70f287e9609d28588403e3aa0988ce4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815189"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966298"
 ---
 # <a name="advanced-troubleshooting-server-message-block-smb"></a>Solução de problemas avançada do protocolo SMB
 
@@ -30,7 +30,7 @@ Por exemplo, se você usar o Windows Server 2016 para alcançar um compartilhame
 
 ### <a name="collect-data"></a>Coletar dados
 
-Antes de solucionar problemas de SMB, recomendamos que você primeiro colete um rastreamento de rede nos lados do cliente e do servidor. As diretrizes a seguir se aplicam:
+Antes de solucionar problemas de SMB, recomendamos que você primeiro colete um rastreamento de rede nos lados do cliente e do servidor. As seguintes diretrizes se aplicam:
 
 - Em sistemas Windows, você pode usar o NetShell (netsh), Monitor de Rede, o analisador de mensagens ou o Wireshark para coletar um rastreamento de rede.
 
@@ -49,7 +49,7 @@ Para descobrir a origem do problema, você pode verificar os rastreamentos bilat
 Esta seção fornece as etapas para usar o NetShell para coletar o rastreamento de rede.
 
 > [!NOTE]  
-> Um rastreamento netsh cria um arquivo ETL. Os arquivos ETL podem ser abertos somente no analisador de mensagens (MA) e Monitor de Rede 3,4 (defina o analisador para Monitor de Rede analisadores \> Windows).
+> Um rastreamento netsh cria um arquivo ETL. Os arquivos ETL podem ser abertos somente no analisador de mensagens (MA) e Monitor de Rede 3,4 (defina o analisador para Monitor de Rede analisadores de análise \> ).
 
 1. No servidor SMB e no cliente SMB, crie uma pasta **temporária** na unidade **C**. Em seguida, execute o seguinte comando:
 
@@ -99,17 +99,17 @@ Verifique se o TCP/IP apresenta qualquer um desses problemas:
 
 4. A janela de recepção TCP está diminuindo. Isso pode ser causado por um armazenamento lento ou por algum outro problema que impede que os dados sejam recuperados do buffer do Winsock do driver de função auxiliar (AFD).
 
-Se não houver problema de TCP/IP perceptível, procure erros de SMB. Para fazer isso, execute estas etapas:
+Se não houver problema de TCP/IP perceptível, procure erros de SMB. Para fazer isso, siga estas etapas:
 
 1. Sempre verifique os erros de SMB em relação à especificação do protocolo MS-SMB2. Muitos erros de SMB são benignos (não prejudiciais). Consulte as informações a seguir para determinar por que o SMB retornou o erro antes de concluir que o erro está relacionado a qualquer um dos seguintes problemas:
 
-   - O tópico de [sintaxe da mensagem MS-SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/6eaf6e75-9c23-4eda-be99-c9223c60b181) detalha cada comando SMB e suas opções.
+   - O tópico de [sintaxe da mensagem MS-SMB2](/openspecs/windows_protocols/ms-smb2/6eaf6e75-9c23-4eda-be99-c9223c60b181) detalha cada comando SMB e suas opções.
     
-   - O tópico de [processamento de cliente MS-SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/df0625a5-6516-4fbe-bf97-01bef451cab2) detalha como o cliente SMB cria solicitações e responde a mensagens do servidor.
+   - O tópico de [processamento de cliente MS-SMB2](/openspecs/windows_protocols/ms-smb2/df0625a5-6516-4fbe-bf97-01bef451cab2) detalha como o cliente SMB cria solicitações e responde a mensagens do servidor.
 
-   - O tópico [processamento de servidor MS-SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e1d08834-42e0-41ca-a833-fc26f5132a6f) detalha como o servidor SMB cria solicitações e responde às solicitações do cliente.
+   - O tópico [processamento de servidor MS-SMB2](/openspecs/windows_protocols/ms-smb2/e1d08834-42e0-41ca-a833-fc26f5132a6f) detalha como o servidor SMB cria solicitações e responde às solicitações do cliente.
 
-2. Verifique se um comando TCP Reset é enviado imediatamente após um FSCTL\_validar\_o comando NEGOTIAte\_INFO (Validate Negotiate). Nesse caso, consulte as seguintes informações:
+2. Verifique se um comando TCP Reset é enviado imediatamente após um \_ comando fsctl Validate \_ Negotiate \_ info (Validate Negotiate). Nesse caso, consulte as seguintes informações:
 
    - A sessão SMB deve ser encerrada (redefinição TCP) quando o processo de negociação de validação falha no cliente ou no servidor.
 
@@ -128,7 +128,7 @@ Examine os detalhes reais do protocolo SMB no rastreamento de rede para entender
 
 - Você pode aprender muito sobre o que o aplicativo está tentando fazer examinando os comandos SMB.
 
-Compare os comandos e as operações com a especificação de protocolo para garantir que tudo esteja operando corretamente. Se não estiver, colete dados que estejam mais próximos ou em um nível mais baixo para procurar mais informações sobre a causa raiz. Para fazer isso, execute estas etapas:
+Compare os comandos e as operações com a especificação de protocolo para garantir que tudo esteja operando corretamente. Se não estiver, colete dados que estejam mais próximos ou em um nível mais baixo para procurar mais informações sobre a causa raiz. Para fazer isso, siga estas etapas:
 
 1. Colete uma captura de pacote padrão.
 
@@ -159,33 +159,33 @@ Tanto o cliente SMB quanto o servidor SMB têm uma estrutura detalhada do log de
 
 Esta seção lista os arquivos do sistema relacionados ao SMB. Para manter os arquivos do sistema atualizados, verifique se o [pacote cumulativo de atualizações](https://support.microsoft.com/help/4498140/windows-10-update-history) mais recente está instalado.
 
-Os binários de cliente SMB listados em **% windir%\\system32\\drivers**:
+Binários de cliente SMB listados em **% windir% \\ System32 \\ drivers**:
 
-- RDBSS. sys
+- RDBSS.sys
 
-- MRXSMB. sys
+- MRXSMB.sys
 
-- MRXSMB10. sys
+- MRXSMB10.sys
 
-- MRXSMB20. sys
+- MRXSMB20.sys
 
-- MUP. sys
+- MUP.sys
 
-- SMBdirect. sys
+- SMBdirect.sys
 
-Os binários do servidor SMB listados em **% windir%\\system32\\drivers**:
+Os binários do servidor SMB listados em **% windir% \\ System32 \\ drivers**:
 
-- SRVNET. sys
+- SRVNET.sys
 
-- SRV. sys
+- SRV.sys
 
-- SRV2. sys
+- SRV2.sys
 
-- SMBdirect. sys
+- SMBdirect.sys
 
-- Em **% windir%\\system32**
+- Em **% windir% \\ System32**
 
-- srvsvc. dll
+- srvsvc.dll
 
 ![Componentes SMB](media/troubleshooting-smb-2.png)
 
@@ -201,4 +201,4 @@ Recomendamos que você atualize os seguintes componentes antes de solucionar pro
 
 ## <a name="reference"></a>Referência
 
-[Cenário de intercâmbio de pacotes do protocolo SMB da Microsoft](https://docs.microsoft.com/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)
+[Cenário de intercâmbio de pacotes do protocolo SMB da Microsoft](/windows/win32/fileio/microsoft-smb-protocol-packet-exchange-scenario)

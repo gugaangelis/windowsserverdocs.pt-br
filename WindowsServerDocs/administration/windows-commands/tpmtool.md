@@ -8,16 +8,16 @@ author: ashleytqy
 ms.author: ashleytqy
 manager: ronaldai
 ms.date: 05/07/2019
-ms.openlocfilehash: a6b092f9242f76092cb45e484ef59d8bb29147dc
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 843361a9b3844ecb29e2f9ac723d22e3fc14730f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936901"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955018"
 ---
 # <a name="tpmtool"></a>tpmtool
 
-Esse utilitário pode ser usado para obter informações sobre o [Trusted Platform Module (TPM)](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-overview).
+Esse utilitário pode ser usado para obter informações sobre o [Trusted Platform Module (TPM)](/windows/security/information-protection/tpm/trusted-platform-module-overview).
 
 >[!IMPORTANT]
 >Algumas informações dizem respeito a produtos de pré-lançamento que poderão ser substancialmente modificados antes do lançamento comercial. A Microsoft não oferece garantias, expressas ou implícitas, quanto às informações fornecidas aqui.
@@ -33,7 +33,7 @@ tpmtool /parameter [<arguments>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|getdeviceinformation|Exibe as informações básicas do TPM. O significado dos valores do sinalizador de informações pode ser encontrado [aqui](https://docs.microsoft.com/windows/desktop/SecProv/win32-tpm-isreadyinformation#parameters).|
+|getdeviceinformation|Exibe as informações básicas do TPM. O significado dos valores do sinalizador de informações pode ser encontrado [aqui](/windows/desktop/secprov/win32-tpm-isreadyinformation#parameters).|
 |GatherLogs [caminho do diretório de saída]|Coleta logs do TPM e os coloca no diretório especificado. Se esse diretório não existir, ele será criado. Por padrão, eles são colocados no diretório atual. Os arquivos possíveis gerados são: </br>-TpmEvents. evtx</br>-TpmInformation.txt</br>-SRTMBoot. dat</br>-SRTMResume. dat</br>-DRTMBoot. dat</br>-DRTMResume. dat</br>|
 |drivertracing [iniciar/parar]|Iniciar/parar a coleta de rastreamentos de driver do TPM. O log de rastreamento, TPMTRACE. ETL, será gerado e colocado no diretório atual.|
 |/?|Exibe a ajuda no prompt de comando.|
@@ -61,4 +61,4 @@ tpmtool drivertracing stop
 
 ## <a name="decoding-error-codes"></a>Decodificando códigos de erro
 
-Os códigos de erro específicos do TPM estão documentados [aqui](https://docs.microsoft.com/windows/desktop/com/com-error-codes-6).
+Os códigos de erro específicos do TPM estão documentados [aqui](/windows/desktop/com/com-error-codes-6).

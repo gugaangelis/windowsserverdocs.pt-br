@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 734d5eaef97b23b774eb286134d07a17dc380da1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 72abc2b5b45ec1eefbff3ca82b619649ffd0fda9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623904"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959758"
 ---
 # <a name="understanding-ad-ds-design"></a>Noções básicas do design do AD DS
 
@@ -25,6 +25,6 @@ Um projeto de implantação AD DS envolve três fases: uma fase de design, uma f
 
 Embora as estratégias de design e implantação do Windows Server AD DS que são apresentadas neste guia se baseiam em testes extensivos de laboratório e de programa piloto e na implementação bem-sucedida em ambientes de clientes, talvez seja necessário personalizar o design e a implantação de AD DS para melhor atender a ambientes específicos e complexos.
 
-- Para obter mais informações sobre a implantação de AD DS em um ambiente de filial, consulte o [Guia de planejamento de filiais do RODC (controlador de domínio somente leitura)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd734758(v=ws.10)).
-- Para obter mais informações sobre como implantar AD DS em um ambiente do Exchange, consulte o artigo [Active Directory em organizações do Exchange Server](https://docs.microsoft.com/Exchange/plan-and-deploy/active-directory/active-directory).
-- Para obter mais informações sobre a implantação de AD DS em um ambiente de várias florestas, consulte o artigo [várias considerações sobre floresta no windows 2000 e no Windows Server 2003](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10)).
+- Para obter mais informações sobre a implantação de AD DS em um ambiente de filial, consulte o [Guia de planejamento de filiais do RODC (controlador de domínio somente leitura)](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd734758(v=ws.10)).
+- Para obter mais informações sobre como implantar AD DS em um ambiente do Exchange, consulte o artigo [Active Directory em organizações do Exchange Server](/exchange/plan-and-deploy/active-directory/active-directory).
+- Para obter mais informações sobre a implantação de AD DS em um ambiente de várias florestas, consulte o artigo [várias considerações sobre floresta no windows 2000 e no Windows Server 2003](/previous-versions/windows/it-pro/windows-server-2003/cc739395(v=ws.10)).

@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1abf845ce69b395bf46a0f155db2c683c359207c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 451a0b46cd45d0dd28ceb3634da9d847864bd519
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623874"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953768"
 ---
 # <a name="selecting-the-forest-root-domain"></a>Selecionando o domínio raiz da floresta
 
@@ -25,7 +25,7 @@ O domínio raiz da floresta contém os grupos Administradores de empresa e admin
 
 Selecionar o domínio raiz da floresta envolve determinar se um dos domínios Active Directory em seu design de domínio pode funcionar como o domínio raiz da floresta ou se você precisa implantar um domínio raiz de floresta dedicada.
 
-Para obter informações sobre como implantar um domínio raiz de floresta, consulte [implantando um domínio raiz de floresta do Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)).
+Para obter informações sobre como implantar um domínio raiz de floresta, consulte [implantando um domínio raiz de floresta do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)).
 
 ## <a name="choosing-a-regional-or-dedicated-forest-root-domain"></a>Escolhendo um domínio raiz de floresta ou de região dedicada
 
@@ -88,4 +88,4 @@ A tabela a seguir lista as regras para selecionar um prefixo para um nome DNS re
 
 ## <a name="documenting-the-forest-root-domain-name"></a>Documentando o nome de domínio raiz da floresta
 
-Documente o prefixo e o sufixo DNS que você selecionar para o domínio raiz da floresta. Neste ponto, identifique qual domínio será a raiz da floresta. Você pode adicionar as informações de nome de domínio raiz da floresta à planilha "planejamento de domínio" que você criou para documentar seu plano para domínios novos e atualizados e seus nomes de domínio. Para abri-lo, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [auxílios de trabalho para o kit de implantação do Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) e abra "planejamento de domínio" (DSSLOGI_5. doc).
+Documente o prefixo e o sufixo DNS que você selecionar para o domínio raiz da floresta. Neste ponto, identifique qual domínio será a raiz da floresta. Você pode adicionar as informações de nome de domínio raiz da floresta à planilha "planejamento de domínio" que você criou para documentar seu plano para domínios novos e atualizados e seus nomes de domínio. Para abri-lo, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de [auxílios de trabalho para o kit de implantação do Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) e abra o "planejamento de domínio" (DSSLOGI_5.doc).

@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e86fac2a7d8251d6baf4f676d41ee7e9798005ab
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: db49a7e3c99e468e27c390acd58002eb09e72b3e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623914"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959358"
 ---
 # <a name="reviewing-the-domain-models"></a>Examinando os modelos de domínio
 
@@ -37,7 +37,7 @@ O design de domínio mais simples é um domínio único. Em um único design de 
 | Maior probabilidade de movimentação de objetos entre domínios | Quanto maior o número de domínios, maior será a probabilidade de que os usuários precisem passar de um domínio para outro. Essa mudança pode afetar potencialmente os usuários finais. |
 
 > [!NOTE]
-> As políticas de bloqueio de conta e senha refinadas do Windows Server também podem afetar o modelo de design de domínio selecionado. Antes desta versão do Windows Server 2008, você pode aplicar apenas uma política de bloqueio de conta e senha, que é especificada na política de domínio padrão de domínio, para todos os usuários no domínio. Como resultado, se você quisesse configurações de bloqueio de senha e conta diferentes para diferentes conjuntos de usuários, era necessário criar um filtro de senha ou implantar vários domínios. Agora você pode usar políticas de senha refinadas para especificar várias políticas de senha e aplicar restrições de senha e políticas de bloqueio de conta diferentes a diferentes conjuntos de usuários em um único domínio. Para obter mais informações sobre políticas de bloqueio de conta e senha refinadas, consulte o artigo [AD DS guia passo a passo da política de bloqueio de conta e senha](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770842(v=ws.10))refinada.
+> As políticas de bloqueio de conta e senha refinadas do Windows Server também podem afetar o modelo de design de domínio selecionado. Antes desta versão do Windows Server 2008, você pode aplicar apenas uma política de bloqueio de conta e senha, que é especificada na política de domínio padrão de domínio, para todos os usuários no domínio. Como resultado, se você quisesse configurações de bloqueio de senha e conta diferentes para diferentes conjuntos de usuários, era necessário criar um filtro de senha ou implantar vários domínios. Agora você pode usar políticas de senha refinadas para especificar várias políticas de senha e aplicar restrições de senha e políticas de bloqueio de conta diferentes a diferentes conjuntos de usuários em um único domínio. Para obter mais informações sobre políticas de bloqueio de conta e senha refinadas, consulte o artigo [AD DS guia passo a passo da política de bloqueio de conta e senha](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770842(v=ws.10))refinada.
 
 ## <a name="single-domain-model"></a>Modelo de domínio único
 

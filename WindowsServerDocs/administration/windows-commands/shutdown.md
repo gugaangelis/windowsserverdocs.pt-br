@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64bfd5ceed29bff5d9ae39e03a99aba2f7a2f39e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936385"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956118"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -51,8 +51,8 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 -   Os usuários devem ser atribuídos ao direito **de usuário desligar o sistema** para desligar um computador local ou administrado remotamente que está usando o comando de **desligamento** .
 -   Os usuários devem ser membros do grupo Administradores para anotar um desligamento inesperado de um computador local ou administrado remotamente. Se o computador de destino tiver ingressado em um domínio, os membros do grupo Administradores de domínio poderão executar esse procedimento. Para obter mais informações, consulte:
-    -   [Grupos locais padrão](https://technet.microsoft.com/library/cc785098(v=ws.10).aspx)
-    -   [Grupos padrão](https://technet.microsoft.com/library/cc756898(v=ws.10).aspx)
+    -   [Grupos locais padrão](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    -   [Grupos padrão](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
 -   Se você quiser desligar mais de um computador por vez, poderá chamar o **desligamento** para cada computador usando um script ou pode usar **Shutdown** **/i** para exibir a caixa de diálogo de desligamento remoto.
 -   Se você especificar códigos de motivo principal e secundário, deverá primeiro definir esses códigos de motivo em cada computador em que você planeja usar os motivos. Se os códigos de motivo não estiverem definidos no computador de destino, o controlador de eventos de desligamento não poderá registrar o texto de motivo correto.
 -   Lembre-se de indicar que um desligamento é planejado usando o parâmetro **p:** . Omitir **p:** indica que um desligamento não está planejado. Se você digitar **p:** seguido pelo código de motivo para um desligamento não planejado, o comando não realizará o desligamento. Por outro lado, se você omitir **p:** e digitar o código de motivo para um desligamento planejado, o comando não realizará o desligamento.

@@ -8,26 +8,26 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 149e3d3fc4d4eee22fa9330475f0eed9d945f8b9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 785a2a7c425e80b8f41e2c567826c34471cce9e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359312"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959808"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Preparar para migrar o servidor de Federação AD FS 2,0 para AD FS no Windows Server 2012 R2
 
 Este documento descreve como migrar um farm de servidores de Federação AD FS 2,0 ou Windows Server 2012 para um farm de AD FS do Windows Server 2012 R2.  As etapas podem ser usadas com AD FS farms que usam o WID ou SQL Server como o banco de dados subjacente.  
   
--   [Estrutura do processo de migração](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
+-   [Estrutura de tópicos do processo de migração](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
--   [Nova funcionalidade de AD FS no Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
+-   [Novas funcionalidades do AD FS no Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
--   [Requisitos de AD FS no Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
+-   [Requisitos do AD FS no Windows Server 2012 R2](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
   
 -   [Aumentando os limites do Windows PowerShell](prepare-migrate-ad-fs-server-r2.md#increasing-your-windows-powershell-limits)  
   
--   [Outras tarefas e considerações de migração](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
+-   [Outras considerações e tarefas de migração](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
 ##  <a name="migration-process-outline"></a>Estrutura de tópicos do processo de migração
 
@@ -86,7 +86,7 @@ Para obter mais informações, consulte [Migração do Servidor de Federação d
         -   Ignorar a descoberta de realm da página inicial para intranet.  
         -   Criar temas da Web personalizados.  
   
-Para obter instruções detalhadas sobre como configurar a aparência das páginas de entrada do AD FS, consulte [Customizing the AD FS Sign-in Pages](../operations/AD-FS-Customization-in-Windows-Server-2016.md).  
+Para obter instruções detalhadas sobre como configurar a aparência das páginas de entrada do AD FS, consulte [Customizing the AD FS Sign-in Pages](../operations/ad-fs-customization-in-windows-server.md).  
   
 Se você tiver personalização de página da Web no farm de AD FS existente que deseja migrar para o Windows Server 2012 R2, poderá recriá-las como parte do processo de migração usando os novos recursos de personalização do Windows Server 2012 R2.  
   
@@ -151,7 +151,7 @@ Durante a instalação do controlador de domínio, talvez seja necessário espec
 -   Se você deseja migrar um farm do AD FS do SQL Server, observe que o processo de migração envolve a criação de uma nova instância de banco de dados do SQL para a qual é preciso importar os dados de configuração originais.  
   
 ## <a name="next-steps"></a>Próximas etapas
- [Migrar serviços de Federação do Active Directory (AD FS) serviços de função para o Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [Migrando o servidor de federação AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migrando o proxy do servidor de federação AD FS](migrate-fed-server-proxy-r2.md)   
- [Verificando a migração de AD FS para o Windows Server 2012 R2](verify-ad-fs-migration.md)
+ [Migrar Serviços de Federação do Active Directory (AD FS) serviços de função para o Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Migrando o servidor de Federação de AD FS](migrate-ad-fs-fed-server-r2.md)   
+ [Migrando o proxy do servidor de Federação AD FS](migrate-fed-server-proxy-r2.md)   
+ [Verificação da migração do AD FS para o Windows Server 2012 R2](verify-ad-fs-migration.md)

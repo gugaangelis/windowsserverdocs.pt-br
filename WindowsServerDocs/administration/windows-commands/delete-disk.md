@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ba9f3c965d4746a5a61f06b99e4601a131ed79e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 55eabb19e10a7ca6fe4dd705ab91961919bb2b7c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928733"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958398"
 ---
 # <a name="delete-disk"></a>delete disk
 
 Exclui um disco dinâmico ausente da lista de discos.
 
 > [!NOTE]
-> Para obter instruções detalhadas sobre como usar esse comando, consulte [remover um disco dinâmico ausente](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753029(v=ws.11)).
+> Para obter instruções detalhadas sobre como usar esse comando, consulte [remover um disco dinâmico ausente](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753029(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxe
 

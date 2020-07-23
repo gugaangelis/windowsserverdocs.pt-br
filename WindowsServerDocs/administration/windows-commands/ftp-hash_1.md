@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38f53b06b9351c0c5d37c88bc29790767f55a23f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8cd55576c033ec1e54a8db8c16a9f6825cfa59c0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931293"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957798"
 ---
 # <a name="ftp-hash"></a>ftp hash
 
@@ -22,7 +22,7 @@ ms.locfileid: "85931293"
 
 Alterna a impressão de sinal numérico (#) para cada bloco de dados transferido. Por padrão, o comando de hash é desativado. O tamanho de um bloco de dados é de 2048 bytes.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 hash
@@ -40,4 +40,4 @@ hash
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

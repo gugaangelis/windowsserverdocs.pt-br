@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57f0026aebd7ff2119c7de49a03679792c3e5f0c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: fe1ae558da0a4cb19159c68c67e1e72970e3b502
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928777"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958408"
 ---
 # <a name="del"></a>del
 
 Exclui um ou mais arquivos. Esse comando executa as mesmas ações que o comando **Erase** .
 
-O comando **del** também pode ser executado no console de recuperação do Windows, usando parâmetros diferentes. Para obter mais informações, consulte [ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
+O comando **del** também pode ser executado no console de recuperação do Windows, usando parâmetros diferentes. Para obter mais informações, consulte [ambiente de recuperação do Windows (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 > [!WARNING]
 > Se você usar **del** para excluir um arquivo do disco, não poderá recuperá-lo.
@@ -100,4 +100,4 @@ del /a:r *.*
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Ambiente de recuperação do Windows (WinRE)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)
+- [Ambiente de recuperação do Windows (WinRE)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference)

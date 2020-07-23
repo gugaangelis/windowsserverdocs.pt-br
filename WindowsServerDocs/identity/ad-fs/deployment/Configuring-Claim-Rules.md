@@ -8,16 +8,16 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2ae0c64cd108cd80418451120766eebc9dd282ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ff9a17cb54889834e3bb652f89621169daa148ed
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855499"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966018"
 ---
 # <a name="configuring-claim-rules"></a>Configurando regras de declaração
 
-Em um modelo de identidade baseado em declarações\-, a função de Serviços de Federação do Active Directory (AD FS) \(AD FS\) como serviços de Federação é emitir um token que contenha um conjunto de declarações. As regras de declarações regem a decisão em relação às declarações que AD FS problemas. As regras de declaração e todos os dados de configuração do servidor são armazenados no banco de dado de configuração do AD FS.  
+Em um \- modelo de identidade baseado em declarações, a função de Serviços de Federação do Active Directory (AD FS) \( AD FS \) como serviços de Federação é emitir um token que contenha um conjunto de declarações. As regras de declarações regem a decisão em relação às declarações que AD FS problemas. As regras de declaração e todos os dados de configuração do servidor são armazenados no banco de dado de configuração do AD FS.  
   
 AD FS toma decisões de emissão baseadas em informações de identidade fornecidas a ela na forma de declarações e outras informações contextuais. Em um alto nível, AD FS Opera como um processador de regras, adotando um conjunto de declarações como entrada, realiza um número de transformações e, em seguida, retorna um conjunto diferente de declarações como saída.  
   
@@ -41,4 +41,4 @@ AD FS toma decisões de emissão baseadas em informações de identidade forneci
 
 ## <a name="additional-references"></a>Referências adicionais  
 
-[Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operações do AD FS](../ad-fs-operations.md)

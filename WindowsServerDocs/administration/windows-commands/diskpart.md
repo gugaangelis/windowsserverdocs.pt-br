@@ -6,12 +6,12 @@ ms.technology: storage
 author: jasongerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 87fc3a2e91b2f5ac22e87485d9258ef369ff0da0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1df6abc3ab3ef99139ca50701bd45feab1e28f42
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929306"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958268"
 ---
 # <a name="diskpart"></a>diskpart
 
@@ -43,7 +43,7 @@ Alguns comandos alteram o foco automaticamente. Por exemplo, quando você cria u
 
 Você só pode dar enfoque a uma partição no disco selecionado. Depois que uma partição tiver foco, o volume relacionado (se houver) também terá o foco. Após o foco de um volume, o disco e a partição relacionados também terão foco se o volume for mapeado para uma única partição específica. Se esse não for o caso, o foco no disco e na partição será perdido.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 Para iniciar o interpretador de comandos do DiskPart, no prompt de comando, digite:
 
@@ -103,6 +103,6 @@ Você pode executar os seguintes comandos no interpretador de comandos do DiskPa
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Visão geral do gerenciamento de disco](https://docs.microsoft.com/windows-server/storage/disk-management/overview-of-disk-management)
+- [Visão geral do gerenciamento de disco](../../storage/disk-management/overview-of-disk-management.md)
 
-- [Cmdlets de armazenamento no Windows PowerShell](https://docs.microsoft.com/powershell/module/storage/)
+- [Cmdlets de armazenamento no Windows PowerShell](/powershell/module/storage/)

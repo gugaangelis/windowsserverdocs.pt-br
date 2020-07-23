@@ -9,17 +9,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af02ca14156c8a85ee54700983e2af6807752f91
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ac91d2226e9a5394d6f7ea00ab6f268eb99015b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934819"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956798"
 ---
 # <a name="net-print"></a>net print
 
 > [!IMPORTANT]
-> Este comando foi preterido. No entanto, você pode executar muitas das mesmas tarefas usando o [comando prnjobs](prnjobs.md), [Instrumentação de gerenciamento do Windows (WMI)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page), [Gerenciamento de imgestão no PowerShell](https://docs.microsoft.com/powershell/module/printmanagement)ou [recursos de script para profissionais de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing).
+> Este comando foi preterido. No entanto, você pode executar muitas das mesmas tarefas usando o [comando prnjobs](prnjobs.md), [Instrumentação de gerenciamento do Windows (WMI)](/windows/win32/wmisdk/wmi-start-page), [Gerenciamento de imgestão no PowerShell](/powershell/module/printmanagement)ou [recursos de script para profissionais de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing).
 
 Exibe informações sobre uma fila de impressora especificada ou um trabalho de impressão especificado, ou controla um trabalho de impressão especificado.
 
@@ -101,8 +101,8 @@ net print \\Production 263 /release
 
 - [comando prnjobs](prnjobs.md)
 
-- [WMI (Instrumentação de Gerenciamento do Windows)](https://docs.microsoft.com/windows/win32/wmisdk/wmi-start-page)
+- [WMI (Instrumentação de Gerenciamento do Windows)](/windows/win32/wmisdk/wmi-start-page)
 
-- [Gerenciamento de imgestão no PowerShell](https://docs.microsoft.com/powershell/module/printmanagement)
+- [Gerenciamento de imgestão no PowerShell](/powershell/module/printmanagement)
 
 - [Recursos de script para profissionais de ti](https://gallery.technet.microsoft.com/ScriptCenter/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=printing&f%5B0%5D.Text=Printing)

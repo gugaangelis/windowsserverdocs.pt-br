@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 2f4e0deb82f16c905f580c13115a5214556d4f5f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e5a81f2967953b985028407d53d6a039fd8990eb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475553"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961268"
 ---
 # <a name="add-folder-targets"></a>Adicionar destinos de pasta
 
@@ -34,7 +34,7 @@ Para adicionar uma pasta usando gerenciamento DFS, use o procedimento a seguir:
 4.  Se a pasta é replicada usando a replicação DFS, você pode especificar se você deseja adicionar o novo destino de pasta para o grupo de replicação.
 
 > [!TIP]
-> Para adicionar um alvo de pasta usando o Windows PowerShell, use o [New-DfsnFolderTarget](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfoldertarget). O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
+> Para adicionar um alvo de pasta usando o Windows PowerShell, use o [New-DfsnFolderTarget](/powershell/module/dfsn/new-dfsnfoldertarget). O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
 
 > [!NOTE]
 > As pastas podem conter destinos de pasta ou outras pastas DFS, mas não ambos, no mesmo nível na hierarquia de pastas.

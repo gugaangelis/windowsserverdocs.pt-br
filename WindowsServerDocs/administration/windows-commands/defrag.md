@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c952ff78147d3b4c6097aaf9dd87e55ecc7911ad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 65c1d22bd45734a667bfc46840fe652e3f2f5314
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928799"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958428"
 ---
 # <a name="defrag"></a>defrag
 
@@ -141,4 +141,4 @@ O processo de desfragmentação executa a tarefa agendada como uma tarefa de man
 
 - [fsutil dirty](fsutil-dirty.md)
 
-- [Otimização do volume PowerShell](https://docs.microsoft.com/powershell/module/storage/optimize-volume?view=win10-ps)
+- [Otimização do volume PowerShell](/powershell/module/storage/optimize-volume?view=win10-ps)

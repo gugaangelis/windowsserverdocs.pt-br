@@ -9,12 +9,12 @@ ms.assetid: e4331370-ba07-4529-92ab-db14a41bfc3b
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: f8fe5ac8b57105d421af431b12c8dc17250b622d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7aa2c422151247d13dcb1dafd474fb70873f54e1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820329"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966908"
 ---
 # <a name="install-server-backup-on-your-multipoint-server"></a>Instalar o backup do servidor no MultiPoint Server
 É recomendável que você considere um plano de backup e recuperação para seus servidores MultiPoint.
@@ -56,4 +56,4 @@ Use os procedimentos a seguir para configurar o tipo de backup que você precisa
   
 ## <a name="configure-backups-using-windows-server-backup"></a>Configurar backups usando o Backup do Windows Server  
   
--   Siga as orientações em [fazendo backup do servidor](https://technet.microsoft.com/library/cc753528.aspx). 
+-   Siga as orientações em [fazendo backup do servidor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753528(v=ws.11)). 

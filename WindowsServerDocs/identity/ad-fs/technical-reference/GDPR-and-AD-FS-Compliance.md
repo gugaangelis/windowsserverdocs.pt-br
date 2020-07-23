@@ -7,24 +7,24 @@ ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1620a63658a8c78975b8ccab955177d3562bf6ba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ffaac0200609cdfbc91fce4520365621922cbeee
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860209"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965878"
 ---
 # <a name="user-privacy-and-ad-fs"></a>Privacidade do usuário e do AD FS
 
 
 
 >[!Note] 
-> Este artigo fornece etapas sobre como excluir dados pessoais do dispositivo e pode ser usado para dar suporte às suas obrigações no GDPR. Se você estiver procurando informações gerais sobre GDPR, consulte a [seção GDPR da central de confiabilidade de serviço](https://www.microsoft.com/TrustCenter/Privacy/gdpr/default.aspx).
+> Este artigo mostra as etapas de como excluir dados pessoais do dispositivo e pode ser usado para dar suporte às suas obrigações de acordo com o GDPR. Se você estiver procurando informações gerais sobre GDPR, consulte a [seção GDPR da central de confiabilidade de serviço](https://www.microsoft.com/TrustCenter/Privacy/gdpr/default.aspx).
 
 >[!Note] 
->Se você estiver interessado em exibir ou excluir dados pessoais, consulte as [solicitações de entidade de dados do Azure para o artigo GDPR](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure) . Se você estiver procurando informações gerais sobre GDPR, consulte a [seção GDPR da central de confiabilidade de serviço](https://www.microsoft.com/TrustCenter/Privacy/gdpr/default.aspx).
+>Se você tiver interesse em exibir ou excluir dados pessoais, confira o artigo [Solicitações de Titulares de Dados do Azure para o GDPR](/microsoft-365/compliance/gdpr-dsr-azure). Se você estiver procurando informações gerais sobre GDPR, consulte a [seção GDPR da central de confiabilidade de serviço](https://www.microsoft.com/TrustCenter/Privacy/gdpr/default.aspx).
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
-* [Examinar a política de privacidade da Microsoft na central de confiabilidade](https://www.microsoft.com/trustcenter)
+## <a name="next-steps"></a>Próximas etapas
+* [Revise a Política de Privacidade da Microsoft na Central de Confiabilidade](https://www.microsoft.com/trustcenter)
 
  

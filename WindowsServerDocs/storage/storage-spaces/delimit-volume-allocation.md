@@ -6,12 +6,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: ce3b32bdb0dfb51237f934f23207167a215a0024
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ccce763b437b461d33dd72cb3d656b825746e6da
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475603"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953839"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimitar a alocação de volumes no Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019
@@ -37,7 +37,7 @@ O Windows Server 2019 apresenta uma opção para delimitar manualmente a alocaç
 
 ### <a name="review-regular-allocation"></a>Revisão: alocação regular
 
-Com o espelhamento de três vias regular, o volume é dividido em muitas "Slabs" pequenas que são copiadas três vezes e distribuídas uniformemente em cada unidade em cada servidor no cluster. Para obter mais detalhes, leia [este blog aprofundado](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/).
+Com o espelhamento de três vias regular, o volume é dividido em muitas "Slabs" pequenas que são copiadas três vezes e distribuídas uniformemente em cada unidade em cada servidor no cluster. Para obter mais detalhes, leia [este blog aprofundado](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959).
 
 ![Diagrama que mostra o volume que está sendo dividido em três pilhas de Slabs e distribuída uniformemente em todos os servidores.](media/delimit-volume-allocation/regular-allocation.png)
 

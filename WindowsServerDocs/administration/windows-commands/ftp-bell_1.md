@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9481911f9de9eb62baea492964987908daa94ce1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 047778013ba341f31f01c7c806e5d36390967be8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933298"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958028"
 ---
 # <a name="ftp-bell"></a>ftp bell
 
@@ -22,7 +22,7 @@ ms.locfileid: "85933298"
 
 Alterna a ocorrência de um som audível após a conclusão de cada comando de transferência de arquivo. Por padrão, esse comando é desativado.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 bell
@@ -40,4 +40,4 @@ bell
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

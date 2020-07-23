@@ -1,5 +1,5 @@
 ---
-title: Rede Virtual Privada (VPN)
+title: VPN (rede virtual privada)
 description: Você pode usar este tópico para aprender sobre recursos e funcionalidades de VPN do Windows Server 2016 e do Windows 10.
 ms.prod: windows-server
 ms.technology: networking
@@ -9,16 +9,16 @@ ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f8362b5581dbd6c08f3f708f435e8625784e8fe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 35293f98dd36fc48750a811981dafe37a06af7c9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818719"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959168"
 ---
-# <a name="virtual-private-networking-vpn"></a>Rede Virtual Privada (VPN)
+# <a name="virtual-private-networking-vpn"></a>VPN (rede virtual privada)
 
->Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
 ## <a name="ras-gateway-as-a-single-tenant-vpn-server"></a>Gateway RAS como um servidor VPN de locatário único
 
@@ -26,16 +26,16 @@ No Windows Server 2016, a função de servidor de acesso remoto é um agrupament
 
 - Serviço de acesso remoto (RAS)
 - Roteamento
-- Proxy de Aplicativo Web
+- Proxy de aplicativo Web
 
-Essas tecnologias são os serviços de função da função de servidor de acesso remoto.
+Essas tecnologias são os serviços de função da função do servidor de acesso remoto.
 
 Ao instalar a função de servidor de acesso remoto com o assistente para adicionar funções e recursos ou o Windows PowerShell, você pode instalar um ou mais desses três serviços de função.
 
 Ao instalar o serviço de função **DirectAccess e VPN (RAS)** , você está implantando o gateway de serviço de acesso remoto (**Gateway de Ras**). Você pode implantar o gateway RAS como um servidor de rede virtual privada (VPN) de gateway de RAS de locatário único que fornece muitos recursos avançados e funcionalidade aprimorada.
 
 >[!NOTE]
->Você também pode implantar o gateway RAS como um servidor VPN multilocatário para uso com o SDN (rede definida pelo software) ou como um servidor DirectAccess. Para obter mais informações, consulte [Gateway de Ras](https://docs.microsoft.com/windows-server/remote/remote-access/ras-gateway/ras-gateway), [rede definida por software (SDN)](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)e [DirectAccess](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/directaccess).
+>Você também pode implantar o gateway RAS como um servidor VPN multilocatário para uso com o SDN (rede definida pelo software) ou como um servidor DirectAccess. Para obter mais informações, consulte [Gateway de Ras](../ras-gateway/ras-gateway.md), [rede definida por software (SDN)](../../../networking/sdn/software-defined-networking.md)e [DirectAccess](../directaccess/directaccess.md).
 
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Always on recursos e funcionalidades de VPN](vpn-map-da.md): neste tópico, você aprende sobre os recursos e a funcionalidade de Always on VPN. 
@@ -44,10 +44,10 @@ Ao instalar o serviço de função **DirectAccess e VPN (RAS)** , você está im
 
 - [Always on implantação de VPN para Windows Server 2016 e Windows 10](always-on-vpn/deploy/always-on-vpn-deploy.md): fornece instruções sobre como implantar o acesso remoto como um gateway de Ras VPN de locatário único para conexões VPN ponto a site que permitem que seus funcionários remotos se conectem à rede da sua organização com conexões VPN Always on. É recomendável revisar os guias de design e implantação para cada uma das tecnologias usadas nesta implantação.
 
-- [Guia técnico de VPN do Windows 10](https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide): orienta você pelas decisões que você fará para clientes do Windows 10 em sua solução de VPN corporativa e como configurar sua implantação. Você pode encontrar referências ao provedor de serviços de configuração do VPNv2 (CSP) e fornece instruções de configuração de MDM (gerenciamento de dispositivo móvel) usando Microsoft Intune e o modelo de perfil VPN para Windows 10.
+- [Guia técnico de VPN do Windows 10](/windows/access-protection/vpn/vpn-guide): orienta você pelas decisões que você fará para clientes do Windows 10 em sua solução de VPN corporativa e como configurar sua implantação. Você pode encontrar referências ao provedor de serviços de configuração do VPNv2 (CSP) e fornece instruções de configuração de MDM (gerenciamento de dispositivo móvel) usando Microsoft Intune e o modelo de perfil VPN para Windows 10.
 
-- [Como criar perfis VPN no Configuration Manager](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles): neste tópico, você aprende a criar perfis vpn no Configuration Manager.
+- [Como criar perfis VPN no Configuration Manager](/configmgr/protect/deploy-use/create-vpn-profiles): neste tópico, você aprende a criar perfis vpn no Configuration Manager.
 
-- [Configurar conexões VPN Always on cliente do Windows 10](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections): Este tópico descreve as opções e o esquema do ProfileXML e como criar a VPN ProfileXML. Depois de configurar a infraestrutura do servidor, você deve configurar os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN.
+- [Configurar conexões VPN Always on cliente do Windows 10](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md): Este tópico descreve as opções e o esquema do ProfileXML e como criar a VPN ProfileXML. Depois de configurar a infraestrutura do servidor, você deve configurar os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN.
 
-- [Opções de perfil VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options): Este tópico descreve as configurações de perfil VPN no Windows 10 e saiba como configurar perfis VPN usando o Intune ou Configuration Manager. Você pode definir todas as configurações de VPN no Windows 10 usando o nó ProfileXML no CSP VPNv2.
+- [Opções de perfil VPN](/windows/access-protection/vpn/vpn-profile-options): Este tópico descreve as configurações de perfil VPN no Windows 10 e saiba como configurar perfis VPN usando o Intune ou Configuration Manager. Você pode definir todas as configurações de VPN no Windows 10 usando o nó ProfileXML no CSP VPNv2.

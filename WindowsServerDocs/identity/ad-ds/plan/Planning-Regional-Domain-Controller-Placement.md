@@ -8,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f5b88afe50e9cb498eacf1bbc872718d50cd64da
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 574c5a4c0d009a34b1d327ac4aef3b9f5210b0bf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623915"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959388"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>Planejando o posicionamento do controlador de domínio regional
 
 > Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para garantir a eficiência de custos, planeje o posicionamento do máximo possível de controladores de domínio regionais. Primeiro, examine a planilha "locais geográficos e links de comunicação" (DSSTOPO_1. doc) usada na [coleta de informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) para determinar se um local é um Hub.
+Para garantir a eficiência de custos, planeje o posicionamento do máximo possível de controladores de domínio regionais. Primeiro, examine a planilha "locais geográficos e links de comunicação" (DSSTOPO_1.doc) usada na [coleta de informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) para determinar se um local é um Hub.
 
 Planeje o posicionamento de controladores de domínio regionais para cada domínio representado em cada local do Hub. Depois de colocar os controladores de domínio regionais em todos os locais de Hub, avalie a necessidade de colocar controladores de domínio regionais em locais satélite. A eliminação de controladores de domínio regionais desnecessários de locais de satélite reduz os custos de suporte necessários para manter uma infraestrutura de servidor remoto.
 
@@ -79,6 +79,6 @@ Por exemplo, considere uma rede que tem filiais conectadas por meio de links len
 
 Se a redução do custo de manutenção de controladores de domínio for mais importante do que o tráfego de rede, centralize os controladores de domínio para esse domínio e não coloque nenhum controlador de domínio regional no local ou considere colocar os RODCs no local.
 
-Para uma planilha para ajudá-lo a documentar o posicionamento de controladores de domínio regionais e o número de usuários para cada domínio representado em cada local, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir "posicionamento do controlador de domínio" (DSSTOPO_4. doc).
+Para uma planilha para ajudá-lo a documentar o posicionamento dos controladores de domínio regionais e o número de usuários para cada domínio representado em cada local, consulte [auxílios de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abrir o "posicionamento do controlador de domínio" (DSSTOPO_4.doc).
 
-Você precisará consultar as informações sobre os locais nos quais você precisa inserir controladores de domínio regionais ao implantar domínios regionais. Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](https://technet.microsoft.com/library/cc755118.aspx).
+Você precisará consultar as informações sobre os locais nos quais você precisa inserir controladores de domínio regionais ao implantar domínios regionais. Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755118(v=ws.10)).

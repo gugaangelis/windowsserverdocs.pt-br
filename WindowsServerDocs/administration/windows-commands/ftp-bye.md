@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 430a343c4ae8bd06975a77b2818a8c3bc4d26d19
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f1c4d92a2c7e50ae1f18d425f613d0e01d6773bf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933315"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957998"
 ---
 # <a name="ftp-bye"></a>ftp bye
 
@@ -25,7 +25,7 @@ Encerra a sessão de FTP no computador remoto e, em seguida, sai.
 > [!NOTE]
 > Esse comando é o mesmo que o [comando FTP Quit](ftp-quit.md).
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 bye
@@ -45,4 +45,4 @@ bye
 
 - [comando FTP Quit](ftp-quit.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

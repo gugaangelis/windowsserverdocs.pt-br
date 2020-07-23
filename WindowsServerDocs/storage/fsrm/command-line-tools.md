@@ -8,18 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2acce64aa14d60503a5b443b831a03338c204be2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 793c9d705cc225de2372d65bf92ce924b498032a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472812"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961538"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Ferramentas de linha de comando do Gerenciador de Recursos de Servidor de Arquivos
 
 > Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
-Gerenciador de recursos do servidor de arquivos instala o cmdlets do PowerShell [FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager), bem como as ferramentas de linha de comando a seguir:
+Gerenciador de recursos do servidor de arquivos instala o cmdlets do PowerShell [FileServerResourceManager](/powershell/module/fileserverresourcemanager/?view=win10-ps), bem como as ferramentas de linha de comando a seguir:
 
 -   **Dirquota.exe**. Use para criar e gerenciar cotas, cotas de aplicação automática e modelos de cotas.
 -   **Filescrn.exe**. Use para criar e gerenciar triagens, modelos de triagem de arquivo, exceções de triagem de arquivo e grupos de arquivos.

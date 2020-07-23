@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d2c85bd48adafb7e171754aad9682e89020b95d0
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 99fabb870fecb0957968d2a0e1fd30512b6d0013
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82722226"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956168"
 ---
 # <a name="rwinsta"></a>rwinsta
 
@@ -23,12 +23,12 @@ ms.locfileid: "82722226"
 Permite que você redefina (exclua) uma sessão em um servidor Host da Sessão da Área de Trabalho Remota (host de sessão da área de trabalho remota).
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows server 2012](https://technet.microsoft.com/library/hh831527) na biblioteca do TechNet do Windows Server.
+> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
 
 ## <a name="remarks"></a>Comentários
 Esse comando é o mesmo que o comando **Redefinir sessão** .
 
 ## <a name="additional-references"></a>Referências adicionais
 [reset session](reset-session.md)
-- [Command-Line Syntax Key](command-line-syntax-key.md)
-Referência de comando da chave de sintaxe de linha de comando[serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)
+- Chave de sintaxe [de linha de comando](command-line-syntax-key.md) 
+ [Referência de comando de serviços de área de trabalho remota (serviços de terminal)](remote-desktop-services-terminal-services-command-reference.md)

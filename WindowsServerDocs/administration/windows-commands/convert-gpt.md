@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8025e897a8ce7083b938e984f9a11b6c32ed312
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2384ea5a94de64051dc45caecd88e08960b567b0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928952"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958528"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -24,7 +24,7 @@ Converte um disco básico vazio com o estilo de partição MBR (registro mestre 
 > O disco deve estar vazio para convertê-lo em um disco básico. Faça backup dos dados e exclua todas as partições ou volumes antes de converter o disco. O tamanho mínimo de disco necessário para conversão em GPT é de 128 megabytes.
 
 > [!NOTE]
-> Para obter instruções sobre como usar esse comando, consulte [alterar um disco de registro mestre de inicialização para um disco de tabela de partição GUID](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725671(v=ws.11)).
+> Para obter instruções sobre como usar esse comando, consulte [alterar um disco de registro mestre de inicialização para um disco de tabela de partição GUID](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc725671(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxe
 

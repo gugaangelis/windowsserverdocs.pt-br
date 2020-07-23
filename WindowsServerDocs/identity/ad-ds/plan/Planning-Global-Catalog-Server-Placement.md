@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b424d758d98315ff63f05926880a23970f54e49c
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 5a67e85a239036851d628ad1c261a21f6fbc4566
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623964"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959428"
 ---
 # <a name="planning-global-catalog-server-placement"></a>Planejando posicionamento do servidor de catálogo global
 
@@ -49,6 +49,6 @@ Os usuários móveis precisam entrar em contato com os servidores de catálogo g
 
 ## <a name="enabling-universal-group-membership-caching"></a>Habilitando o cache de associação de grupo universal
 
-Para locais que incluem menos de 100 usuários e que não incluem um grande número de usuários ou aplicativos móveis que exigem um servidor de catálogo global, você pode implantar controladores de domínio que executam o Windows Server 2008 e habilitar o cache de associação de grupo universal. Verifique se os servidores de catálogo global não são mais de um salto de replicação do controlador de domínio no qual o cache de associação de grupo universal está habilitado para que as informações de grupo universal no cache possam ser atualizadas. Para obter informações sobre como funciona o cache de grupo universal, consulte o artigo [como o catálogo global funciona](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10)).
+Para locais que incluem menos de 100 usuários e que não incluem um grande número de usuários ou aplicativos móveis que exigem um servidor de catálogo global, você pode implantar controladores de domínio que executam o Windows Server 2008 e habilitar o cache de associação de grupo universal. Verifique se os servidores de catálogo global não são mais de um salto de replicação do controlador de domínio no qual o cache de associação de grupo universal está habilitado para que as informações de grupo universal no cache possam ser atualizadas. Para obter informações sobre como funciona o cache de grupo universal, consulte o artigo [como o catálogo global funciona](/previous-versions/windows/it-pro/windows-server-2003/cc737410(v=ws.10)).
 
-Para uma planilha para ajudá-lo a documentar onde você planeja colocar os servidores de catálogo global e os controladores de domínio com o cache de grupo universal habilitado, consulte [auxílios de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4. doc). Consulte as informações sobre os locais nos quais você precisa posicionar os servidores de catálogo global ao implantar o domínio raiz da floresta e os domínios regionais.
+Para uma planilha para ajudá-lo a documentar onde você planeja colocar os servidores de catálogo global e controladores de domínio com o cache de grupo universal habilitado, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abrir o posicionamento do controlador de domínio (DSSTOPO_4.doc). Consulte as informações sobre os locais nos quais você precisa posicionar os servidores de catálogo global ao implantar o domínio raiz da floresta e os domínios regionais.

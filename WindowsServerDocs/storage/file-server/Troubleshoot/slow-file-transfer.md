@@ -1,19 +1,19 @@
 ---
-title: Velocidade de transferência de arquivos SMB lentos
+title: Velocidade de transferência de arquivos SMB lenta
 description: Apresenta como solucionar problemas de desempenho de transferência de arquivos SMB.
 author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: af05daa164b5b2c5eca73eff51d97d4c25ba1ca3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb575015ea8a8fc6cbc35358103774a931b0b749
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815389"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958858"
 ---
-# <a name="slow-smb-files-transfer-speed"></a>Velocidade de transferência de arquivos SMB lentos
+# <a name="slow-smb-files-transfer-speed"></a>Velocidade de transferência de arquivos SMB lenta
 
 Este artigo fornece procedimentos de solução de problemas sugeridos para velocidades de transferência de arquivos lentas por meio de SMB.
 
@@ -29,7 +29,7 @@ Se você observar transferências lentas de arquivos grandes, considere as segui
     
   - Isso geralmente ocorre quando a cópia inicial é armazenada em cache ou armazenado em buffer (na memória ou no cache de memória do controlador RAID) e o cache é executado. Isso força os dados a serem gravados diretamente no disco (write-through). Esse é um processo mais lento.
     
-  - Use os contadores do monitor de desempenho de armazenamento para determinar se o desempenho do armazenamento é prejudicado ao longo do tempo. Para obter mais informações, consulte [ajuste de desempenho para servidores de arquivos SMB](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/file-server/smb-file-server).
+  - Use os contadores do monitor de desempenho de armazenamento para determinar se o desempenho do armazenamento é prejudicado ao longo do tempo. Para obter mais informações, consulte [ajuste de desempenho para servidores de arquivos SMB](../../../administration/performance-tuning/role/file-server/smb-file-server.md).
 
 - Use o RAMMap (SysInternals) para determinar se o uso de "arquivo mapeado" na memória pára de crescer devido a esgotamento de memória livre.
 
@@ -37,7 +37,7 @@ Se você observar transferências lentas de arquivos grandes, considere as segui
 
 - Para SMBv3 e versões posteriores, certifique-se de que o SMB multicanal está habilitado e funcionando.
 
-- No cliente SMB, habilite o MTU grande no SMB e desabilite a limitação da largura de banda. Para fazer isso, execute o comando:  
+- No cliente SMB, habilite o MTU grande no SMB e desabilite a limitação da largura de banda. Para fazer isso, execute o seguinte comando:  
   
   ```PowerShell
   Set-SmbClientConfiguration -EnableBandwidthThrottling 0 -EnableLargeMtu 1
@@ -45,7 +45,7 @@ Se você observar transferências lentas de arquivos grandes, considere as segui
 
 ## <a name="small-file-transfer-is-slow"></a>A transferência de arquivo pequena está lenta
 
-A transferência lenta de arquivos pequenos por meio de SMB ocorre com mais frequência se houver muitos arquivos. Esse é um comportamento esperado.
+A transferência lenta de arquivos pequenos por meio de SMB ocorre com mais frequência se houver muitos arquivos. Este é um comportamento esperado.
 
 Durante a transferência de arquivos, a criação de arquivos causa sobrecarga de protocolo alto e sobrecarga do sistema de arquivos alta. Para transferências de arquivos grandes, esses custos ocorrem apenas uma vez. Quando um grande número de arquivos pequenos for transferido, o custo será repetitivo e causará transferências lentas.
 
@@ -65,7 +65,7 @@ Veja a seguir os detalhes técnicos sobre esse problema:
 
 Esse problema geralmente ocorre em uma conexão WAN. Isso é comum e normalmente é causado pela maneira como os aplicativos do Office (Microsoft Excel, em particular) acessam e lêem dados.
 
-É recomendável que você verifique se os binários do Office e do SMB estão atualizados e, em seguida, teste ao conceder o leasing desabilitado no servidor SMB. Para fazer isso, execute estas etapas:
+É recomendável que você verifique se os binários do Office e do SMB estão atualizados e, em seguida, teste ao conceder o leasing desabilitado no servidor SMB. Para fazer isso, siga estas etapas:
    
 1. Execute o seguinte comando do PowerShell no Windows 8 e no Windows Server 2012 ou versões posteriores do Windows:
       
@@ -89,4 +89,4 @@ Esse problema geralmente ocorre em uma conexão WAN. Isso é comum e normalmente
    NET START SERVER
    ```
 
-Para evitar esse problema, você também pode replicar o arquivo para um servidor de arquivos local. Para obter mais informações, consulte [documentos do AVING Office para um servidor de rede é lento ao usar o EFS](https://docs.microsoft.com/office/troubleshoot/office/saving-file-to-network-server-slow).
+Para evitar esse problema, você também pode replicar o arquivo para um servidor de arquivos local. Para obter mais informações, consulte [documentos do AVING Office para um servidor de rede é lento ao usar o EFS](/office/troubleshoot/office/saving-file-to-network-server-slow).

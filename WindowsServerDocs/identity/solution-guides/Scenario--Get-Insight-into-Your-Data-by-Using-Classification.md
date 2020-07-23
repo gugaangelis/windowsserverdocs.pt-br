@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a92f8791d5ceef3a8dbba4541588da1d48c4fbff
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8438a1581bbd774f9368f89ee37306e0474a528a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861109"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959638"
 ---
-# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Scenario: Get Insight into Your Data by Using Classification
+# <a name="scenario-get-insight-into-your-data-by-using-classification"></a>Cenário: aprofunde-se em seus dados por meio da classificação
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -32,14 +32,14 @@ Quando um arquivo é classificado, você pode usar uma tarefa de gerenciamento d
   
 Você pode encontrar informações de planejamento para configurar a classificação automática de arquivos em [Planejar para a classificação automática de arquivos](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955).  
   
-Você pode encontrar etapas sobre como classificar automaticamente os arquivos em [implantar etapas&#41;de demonstração &#40;de classificação automática de arquivos](Deploy-Automatic-File-Classification--Demonstration-Steps-.md).  
+Você pode encontrar etapas sobre como classificar automaticamente os arquivos em [implantar a classificação automática de arquivos &#40;etapas de demonstração&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md).  
   
 ## <a name="in-this-scenario"></a>Neste cenário  
 Este cenário faz parte do cenário de Controle de Acesso Dinâmico. Para obter informações adicionais sobre o Controle de Acesso Dinâmico, consulte:  
   
 -   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicações práticas  
 A infraestrutura de classificação de arquivos no Windows Server 2012 contribui para o controle de acesso dinâmico, permitindo que os proprietários de dados comerciais classifiquem e rotulem dados facilmente. As informações de classificação armazenadas na política de acesso central permitem definir políticas de acesso para classes de dados essenciais aos negócios.  
   
 ## <a name="features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>Recursos incluídos neste cenário  
@@ -47,8 +47,6 @@ A tabela a seguir lista os recursos que fazem parte deste cenário e descreve co
   
 |Recurso|Como este cenário tem suporte|  
 |-----------|---------------------------------|  
-|[Visão geral do Gerenciador de recursos do servidor de arquivos](https://technet.microsoft.com/library/hh831701.aspx)|A Infraestrutura de Classificação de Arquivos é um recurso incluído no Gerenciador de Recursos de Servidor de Arquivos.|  
-|[Visão geral dos Serviços de Arquivo e Armazenamento](https://technet.microsoft.com/library/hh831487.aspx)|O Gerenciador de Recursos de Servidor de Arquivos é um recurso incluído com a função de servidor Serviços de Arquivo.|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|A Infraestrutura de Classificação de Arquivos é um recurso incluído no Gerenciador de Recursos de Servidor de Arquivos.|  
+|[Visão geral dos Serviços de Arquivo e Armazenamento](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|O Gerenciador de Recursos de Servidor de Arquivos é um recurso incluído com a função de servidor Serviços de Arquivo.|  
   
-
-

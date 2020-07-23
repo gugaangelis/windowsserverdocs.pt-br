@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2715332a8a6adff29f31a4dbd7d3e7a27a4a6f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929324"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958288"
 ---
 # <a name="diskpart-scripts-and-examples"></a>scripts e exemplos do DiskPart
 
@@ -57,8 +57,8 @@ Para criar um script do DiskPart, crie um arquivo de texto que contenha os coman
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Exemplo: configurar partições de disco rígido com base em UEFI/GPT usando o Windows PE e o DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
+- [Exemplo: configurar partições de disco rígido com base em UEFI/GPT usando o Windows PE e o DiskPart](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825686(v=win.10))
 
-- [Exemplo: configurar partições de disco rígido com base em BIOS/MBR usando o Windows PE e o DiskPart](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
+- [Exemplo: configurar partições de disco rígido com base em BIOS/MBR usando o Windows PE e o DiskPart](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825677(v=win.10))
 
-- [Cmdlets de armazenamento no Windows PowerShell](https://docs.microsoft.com/powershell/module/storage/?view=win10-ps)
+- [Cmdlets de armazenamento no Windows PowerShell](/powershell/module/storage/?view=win10-ps)

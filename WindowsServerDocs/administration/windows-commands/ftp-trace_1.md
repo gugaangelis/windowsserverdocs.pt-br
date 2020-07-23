@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 554e660fd995febce425b6f56a857cd3048b1b0f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e00eba110951cb679f1e7acac3f011363fcce58c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925668"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957368"
 ---
 # <a name="ftp-trace"></a>ftp trace
 
@@ -22,7 +22,7 @@ ms.locfileid: "85925668"
 
 Alterna o rastreamento de pacotes. Esse comando também exibe a série de chamadas de função FTP internas ao executar um comando **FTP** .
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 trace
@@ -40,4 +40,4 @@ trace
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

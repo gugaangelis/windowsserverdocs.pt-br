@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 581b80fe07043314e573261a6735f121bc30e2e3
-ms.sourcegitcommit: a5badf6b08ec0b25ec73df4b827c4e40b5ccd974
+ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86410360"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961218"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Usando Espaços de Armazenamento Diretos em clusters de máquinas virtuais convidadas
 
@@ -89,4 +89,4 @@ As considerações a seguir se aplicam ao implantar Espaços de Armazenamento Di
 
 - [Modelos adicionais de VM IaaS do Azure para implantar espaços de armazenamento diretos, vídeos e guias passo a passo](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126).
 
-- [Visão geral Espaços de Armazenamento Diretos adicional](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+- [Visão geral Espaços de Armazenamento Diretos adicional](./storage-spaces-direct-overview.md)
