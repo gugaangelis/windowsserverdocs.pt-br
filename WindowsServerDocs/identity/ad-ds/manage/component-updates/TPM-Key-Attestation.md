@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: de5a38ff6f811046d06c52a1ca4598f9650b3cfe
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ae7106e0c0fc1d9caca58b3a9a435886fc56b6f7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823009"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959938"
 ---
 # <a name="tpm-key-attestation"></a>Atestado de chave de TPM
 
@@ -28,7 +28,7 @@ ms.locfileid: "80823009"
 Embora o suporte para chaves protegidas por TPM tenha existido desde o Windows 8, não havia nenhum mecanismo para o CAs atestar criptograficamente que a chave privada do solicitante de certificado está realmente protegida por um Trusted Platform Module (TPM). Essa atualização permite que uma autoridade de certificação execute esse atestado e reflita Esse atestado no certificado emitido.  
   
 > [!NOTE]  
-> Este artigo pressupõe que o leitor esteja familiarizado com o conceito de modelo de certificado (para referência, consulte [modelos de certificado](https://technet.microsoft.com/library/cc730705.aspx)). Ele também pressupõe que o leitor esteja familiarizado com a maneira de configurar CAs corporativas para emitir certificados com base em modelos de certificado (para referência, consulte [lista de verificação: configurar CAS para emitir e gerenciar certificados](https://technet.microsoft.com/library/cc771533.aspx)).  
+> Este artigo pressupõe que o leitor esteja familiarizado com o conceito de modelo de certificado (para referência, consulte [modelos de certificado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))). Ele também pressupõe que o leitor esteja familiarizado com a maneira de configurar CAs corporativas para emitir certificados com base em modelos de certificado (para referência, consulte [lista de verificação: configurar CAS para emitir e gerenciar certificados](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11))).  
   
 ### <a name="terminology"></a>Terminologia  
   
@@ -40,7 +40,7 @@ Embora o suporte para chaves protegidas por TPM tenha existido desde o Windows 8
 |EKCert|Certificado EK. Um certificado de TPM emitido pelo fabricante para EKPub. Nem todos os TPMs têm EKCert.|  
 |TPM|Trusted Platform Module. Um TPM é projetado para fornecer funções relacionadas à segurança com base em hardware. Um chip TPM é um processador de criptografia seguro projetado para desempenhar as operações de criptografia. O chip inclui vários mecanismos de segurança física para torná-lo resistente a adulterações nas funções de segurança do TPM por software mal-intencionado.|  
   
-### <a name="background"></a>Tela de fundo  
+### <a name="background"></a>Segundo plano  
 A partir do Windows 8, um Trusted Platform Module (TPM) pode ser usado para proteger a chave privada de um certificado. O KSP (provedor de armazenamento de chaves) do provedor Microsoft Platform crypto habilita esse recurso. Houve duas preocupações com a implementação:  
 
 -   Não havia nenhuma garantia de que uma chave seja realmente protegida por um TPM (alguém pode facilmente falsificar um KSP de software como um KSP de TPM com credenciais de administrador local).
@@ -83,7 +83,7 @@ Há três etapas para implantar o atestado de chave do TPM:
   
     Observe que é possível escolher uma combinação de modelos de confiança do TPM. Nesse caso, a autoridade de certificação aceitará qualquer um dos métodos de atestado, e os OIDs da política de emissão refletirão todos os métodos de atestado bem-sucedidos.  
   
-2.  **Configure o modelo de certificado:** A configuração do modelo de certificado é descrita na seção [detalhes da implantação](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails) neste tópico. Este artigo não aborda como esse modelo de certificado é atribuído à AC corporativa ou como o acesso de registro é fornecido a um grupo de usuários. Para obter mais informações, consulte [lista de verificação: configurar CAS para emitir e gerenciar certificados](https://technet.microsoft.com/library/cc771533.aspx).  
+2.  **Configure o modelo de certificado:** A configuração do modelo de certificado é descrita na seção [detalhes da implantação](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_DeploymentDetails) neste tópico. Este artigo não aborda como esse modelo de certificado é atribuído à AC corporativa ou como o acesso de registro é fornecido a um grupo de usuários. Para obter mais informações, consulte [lista de verificação: configurar CAS para emitir e gerenciar certificados](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771533(v=ws.11)).  
   
 3.  **Configurar a AC para o modelo de confiança do TPM**  
   
@@ -98,14 +98,14 @@ Há três etapas para implantar o atestado de chave do TPM:
     > -   Não há suporte para o atestado de chave do TPM para KSPs de cartão inteligente de terceiros. O KSP do provedor de criptografia da plataforma Microsoft deve ser usado.  
     > -   O atestado de chave do TPM funciona somente para chaves RSA.  
     > -   O atestado de chave do TPM não tem suporte para uma AC autônoma.  
-    > -   O atestado de chave do TPM não dá suporte ao [processamento de certificado não persistente](https://technet.microsoft.com/library/ff934598).  
+    > -   O atestado de chave do TPM não dá suporte ao [processamento de certificado não persistente](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff934598(v=ws.10)).  
   
-## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>Detalhes da implantação  
+## <a name="deployment-details"></a><a name="BKMK_DeploymentDetails"></a>Detalhes de implantação  
   
 ### <a name="configure-a-certificate-template"></a><a name="BKMK_ConfigCertTemplate"></a>Configurar um modelo de certificado  
 Para configurar o modelo de certificado para o atestado de chave do TPM, execute as seguintes etapas de configuração:  
   
-1.  Guia **compatibilidade**  
+1.  Guia **Compatibilidade**  
   
     Na seção **configurações de compatibilidade** :  
   
@@ -115,7 +115,7 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
   
     ![Atestado de chave de TPM](media/TPM-Key-Attestation/GTR_ADDS_CompatibilityTab.gif)  
   
-2.  Guia **criptografia**  
+2.  Guia **Criptografia**  
   
     Verifique se o **provedor de armazenamento de chaves** está selecionado para a categoria de **provedor** e **RSA** está selecionado para o **nome do algoritmo**. Verifique se as **solicitações devem usar um dos seguintes provedores** está selecionado e a opção **provedor de criptografia de plataforma da Microsoft** está selecionada em **provedores**.  
   
@@ -153,8 +153,8 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
   
     |OID|Tipo de atestado de chave|Descrição|Nível de garantia|  
     |-------|------------------------|---------------|-------------------|  
-    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para lista de EK gerenciada pelo administrador|Alta|  
-    |1.3.6.1.4.1.311.21.31|Certificado de endosso|"Certificado EK verificado": quando a cadeia de certificados EK é validada|Média|  
+    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para lista de EK gerenciada pelo administrador|Alto|  
+    |1.3.6.1.4.1.311.21.31|Certificado de endosso|"Certificado EK verificado": quando a cadeia de certificados EK é validada|Médio|  
     |1.3.6.1.4.1.311.21.32|Credenciais de usuário|"EK confiável em uso": para EK atestado pelo usuário|Baixo|  
   
     Os OIDs serão inseridos no certificado emitido se **incluir políticas de emissão** estiver selecionada (a configuração padrão).  
@@ -193,14 +193,14 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
   
         |Operação|Sintaxe do comando|  
         |-------------|------------------|  
-        |Adicionar locais de pasta|certutil. exe-SetReg CA\EndorsementKeyListDirectories + "<folder>"|  
-        |Remover locais de pasta|certutil. exe-SetReg CA\EndorsementKeyListDirectories-"<folder>"|  
+        |Adicionar locais de pasta|certutil.exe-setreg CA\EndorsementKeyListDirectories + " <folder> "|  
+        |Remover locais de pasta|certutil.exe-setreg CA\EndorsementKeyListDirectories-" <folder> "|  
   
         O EndorsementKeyListDirectories no comando certutil é uma configuração do registro, conforme descrito na tabela a seguir.  
   
         |Nome do valor|Tipo|Dados|  
         |--------------|--------|--------|  
-        |EndorsementKeyListDirectories|REG_MULTI_SZ|< caminho LOCAL ou UNC para EKPUB permitir lista (s) ><p>Exemplo:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
+        |EndorsementKeyListDirectories|REG_MULTI_SZ|<caminho LOCAL ou UNC para EKPUB permitir lista (s) ><p>Exemplo:<p>*\\\blueCA.contoso.com\ekpub*<p>*\\\bluecluster1.contoso.com\ekpub*<p>D:\ekpub|  
   
         HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\\<CA Sanitized Name>  
   
@@ -274,6 +274,6 @@ Use o cmdlet do Windows PowerShell, **Confirm-CAEndorsementKeyInfo**, para verif
         PS C:>new-object System.Security.Cryptography.X509Certificates.X509Certificate2 "c:\diagnose\myEKcert.cer" | Confirm-CAEndorsementKeyInfo  
         ```  
   
-## <a name="see-also"></a>Consulte também  
-[Visão geral da tecnologia Trusted Platform Module](https://technet.microsoft.com/library/jj131725.aspx)  
+## <a name="see-also"></a>Consulte Também  
+[Visão geral da tecnologia Trusted Platform Module](/previous-versions/windows/it-pro/windows-8.1-and-8/jj131725(v=ws.11))  
 [Recurso externo: Trusted Platform Module](http://www.cs.unh.edu/~it666/reading_list/Hardware/tpm_fundamentals.pdf)  

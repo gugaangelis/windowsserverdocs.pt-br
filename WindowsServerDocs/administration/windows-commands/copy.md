@@ -9,19 +9,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ea742ab8fce296a88c8c9e6a41262c7aef88813
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3e15db58ab8fa8c3a0114b695cb85eec7684039e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928892"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958468"
 ---
 # <a name="copy"></a>copy
 
 Copia um ou mais arquivos de um local para outro.
 
 > [!NOTE]
-> Você também pode usar o comando de **cópia** , com parâmetros diferentes, no console de recuperação. Para obter mais informações sobre o console de recuperação, consulte [ambiente de recuperação do Windows (Windows re)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
+> Você também pode usar o comando de **cópia** , com parâmetros diferentes, no console de recuperação. Para obter mais informações sobre o console de recuperação, consulte [ambiente de recuperação do Windows (Windows re)](/windows-hardware/manufacture/desktop/windows-recovery-environment--windows-re--technical-reference).
 
 ## <a name="syntax"></a>Sintaxe
 

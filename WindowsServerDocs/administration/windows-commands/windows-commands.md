@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 8984f20bbd5690abf914a932925218f961212e7c
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: bd2d1f9baa17581cb43ae383c260c938f302a73c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548719"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958978"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -67,14 +67,14 @@ As informações contidas neste tópico aplicam-se a:
 
 O Shell de comando foi o primeiro Shell interno do Windows para automatizar tarefas rotineiras, como o gerenciamento de contas de usuário ou backups noturnos, com arquivos de lote (. bat). Com o Windows Script Host, você poderia executar scripts mais sofisticados no Shell de comando. Para obter mais informações, consulte [cscript](cscript.md) ou [WScript](wscript.md). Você pode executar operações com mais eficiência usando scripts do que é possível usando a interface do usuário. Os scripts aceitam todos os comandos que estão disponíveis na linha de comando.
 
-O Windows tem dois shells de comando: o Shell de comando e o [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
+O Windows tem dois shells de comando: o Shell de comando e o [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
 
 O PowerShell foi projetado para estender os recursos do Shell de comando para executar comandos do PowerShell chamados cmdlets. Os cmdlets são semelhantes aos comandos do Windows, mas fornecem uma linguagem de script mais extensível. Você pode executar comandos do Windows e cmdlets do PowerShell no PowerShell, mas o Shell de comando só pode executar comandos do Windows e não cmdlets do PowerShell.
 
 Para a automação do Windows mais robusta e atualizada, recomendamos o uso do PowerShell em vez de comandos do Windows ou do Windows Script Host para automação do Windows.
 
 > [!NOTE]
->Você também pode baixar e instalar o [PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell.
+>Você também pode baixar e instalar o [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell.
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.

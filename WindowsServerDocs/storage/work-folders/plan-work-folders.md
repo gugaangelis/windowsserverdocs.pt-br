@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: Como planejar uma implantação de Pastas de Trabalho, incluindo os requisitos de sistema e como preparar o ambiente de rede.
-ms.openlocfilehash: 1453ff54c2213445f6f443d34d21747eb875412b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 603711676aa5f35047b0623694f3a16922a2b240
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475593"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959998"
 ---
 # <a name="planning-a-work-folders-deployment"></a>Planejando uma implantação de Pastas de Trabalho
 
@@ -139,9 +139,9 @@ As Pastas de Trabalho têm os seguintes requisitos de software para computadores
 
 Pastas de Trabalho usando proxy de aplicativo Web, proxy de aplicativo Azure AD ou soluções de proxy reversas de terceiros:
 
--  Proxy de aplicativo Web é uma solução de proxy reversa no local. Para saber mais, consulte [Proxy de aplicativo Web no Windows Server 2016](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server).
+-  Proxy de aplicativo Web é uma solução de proxy reversa no local. Para saber mais, consulte [Proxy de aplicativo Web no Windows Server 2016](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).
 
--  Proxy de aplicativo Web do Azure D é uma solução de proxy reversa na nuvem. Para saber mais, consulte [Como fornecer acesso remoto seguro para aplicativos locais](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
+-  Proxy de aplicativo Web do Azure D é uma solução de proxy reversa na nuvem. Para saber mais, consulte [Como fornecer acesso remoto seguro para aplicativos locais](/azure/active-directory/active-directory-application-proxy-get-started)
 
 ## <a name="additional-design-considerations"></a>Considerações de projeto adicionais
  Além de entender cada um dos componentes referidos acima, os clientes precisam dedicar tempo a seus projetos pensando sobre o número de servidores de sincronização e compartilhamentos a operar, bem como se devem ou não usar clustering de failover para fornecer tolerância a falhas nesses servidores de sincronização
@@ -155,7 +155,7 @@ Pastas de Trabalho usando proxy de aplicativo Web, proxy de aplicativo Azure AD 
 
 - Balanceamento de carga – em grandes ambientes, o armazenamento de dados de usuário em vários servidores pode aumentar o desempenho e o tempo de atividade do servidor.
 
-  Para obter informações sobre dimensionamento e desempenho do servidor de Pastas de Trabalho, consulte [Considerações de desempenho para implantações de Pastas de Trabalho](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).
+  Para obter informações sobre dimensionamento e desempenho do servidor de Pastas de Trabalho, consulte [Considerações de desempenho para implantações de Pastas de Trabalho](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md).
 
 > [!NOTE]
 >  Ao usar vários servidores de sincronização, recomendamos configurar a descoberta automática de servidor para usuários. Esse processo conta com a configuração de um atributo em cada conta de usuário no AD DS. O atributo é denominado **msDS-SyncServerURL** e se torna disponível em contas de usuário depois que um controlador de domínio do Windows Server 2012 R2 é adicionado ao domínio ou as atualizações de esquema do Active Directory são aplicadas. Esse atributo deve ser definido para cada usuário, a fim de garantir que os usuários se conectem ao servidor de sincronização apropriado. Usando a descoberta automática de servidor, as organizações podem publicar pastas de trabalho por trás de uma URL "amigável", como *https://workfolders.contoso.com* , independentemente do número de servidores de sincronização em operação.
@@ -219,7 +219,7 @@ O conjunto de perguntas do projeto a seguir foi criado para auxiliar clientes no
 
     -   Os servidores de sincronização precisarão manter vários volumes de dados para hospedar dados do usuário?
 
--   Segurança de Dados
+-   Segurança de dados
 
     -   Vários compartilhamentos de sincronização precisam ser criados em todos os servidores de sincronização?
 
@@ -255,5 +255,5 @@ O conjunto de perguntas do projeto a seguir foi criado para auxiliar clientes no
 
 |Tipo de conteúdo|Referências|
 |------------------|----------------|
-|**Avaliação do produto**|-   [Pastas de trabalho](work-folders-overview.md)<br />-   [Pastas de Trabalho para Windows 7](https://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (postagem de blog)|
-|**Implantação**|-   [Criando uma implementação de pastas de trabalho](plan-work-folders.md)<br />-   [Implantando Pastas de trabalho](deploy-work-folders.md)<br />-   [Implantando Pastas de trabalho com o AD FS e o proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implantando Pastas de Trabalho com proxy de aplicativo do Azure AD](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [Considerações sobre desempenho para implantações de Pastas de Trabalho](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Pastas de Trabalho para Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Pastas de Trabalho para Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implantação do laboratório de teste de pastas de trabalho](https://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (postagem de blog)|
+|**Avaliação do produto**|-   [Pastas de trabalho](work-folders-overview.md)<br />-   [Pastas de Trabalho para Windows 7](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (postagem de blog)|
+|**Implantação**|-   [Criando uma implementação de pastas de trabalho](plan-work-folders.md)<br />-   [Implantando Pastas de trabalho](deploy-work-folders.md)<br />-   [Implantando Pastas de trabalho com o AD FS e o proxy de aplicativo Web (WAP)](deploy-work-folders-adfs-overview.md)<br />- [Implantando Pastas de Trabalho com proxy de aplicativo do Azure AD](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)<br />-   [Considerações sobre desempenho para implantações de Pastas de Trabalho](../../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)<br />-   [Pastas de Trabalho para Windows 7 (download de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Pastas de Trabalho para Windows 7 (download de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [Implantação do laboratório de teste de pastas de trabalho](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (postagem de blog)|

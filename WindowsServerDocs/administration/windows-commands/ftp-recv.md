@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01f9fc1d8e233d8e2c38f606dea12f5d342d5e44
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a2b80a0f27bdb4b966ff66d736f05cb82fb2bb81
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925788"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957508"
 ---
 # <a name="ftp-recv"></a>ftp recv
 
@@ -62,4 +62,4 @@ recv test.txt test1.txt
 
 - [comando Binary FTP](ftp-binary.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

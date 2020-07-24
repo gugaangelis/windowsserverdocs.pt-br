@@ -8,22 +8,22 @@ ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bfcdd58da67f41e84ff0956e3f0a0d9b63fa4f75
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ec06ce13e5199897753a1d581d21211465729a5e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854869"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959208"
 ---
 # <a name="step-2-configure-advanced-directaccess-servers"></a>Etapa 2 configurar servidores DirectAccess avançados
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve como configurar as definições do cliente e do servidor requeridas para uma implantação de Acesso Remoto avançado usando um único servidor de Acesso Remoto em um ambiente misto de IPv4 e IPv6. Antes de começar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas em [planejar uma implantação avançada do DirectAccess](Plan-an-Advanced-DirectAccess-Deployment.md).  
   
-|{1&gt;Tarefa&lt;1}|Descrição|  
+|Tarefa|Descrição|  
 |----|--------|  
-|2.1. Instalar a função de Acesso Remoto|Instalar a função Acesso Remoto.|  
+|2.1. Instalar a função Acesso Remoto|Instalar a função Acesso Remoto.|  
 |2.2. Configurar o tipo de implantação|Configurar o tipo de implantação como DirectAccess e VPN, somente DirectAccess ou somente VPN.|  
 |[Planejar uma implantação do DirectAccess Avançado](Plan-an-Advanced-DirectAccess-Deployment.md)|Configurar o servidor de Acesso Remoto com os grupos de segurança contendo os clientes do DirectAccess.|  
 |2.4. Configurar o servidor de Acesso Remoto|Definir as configurações do servidor de Acesso Remoto.|  
@@ -33,9 +33,9 @@ Este tópico descreve como configurar as definições do cliente e do servidor r
 |2.8. Como configurar o servidor de Acesso Remoto usando o Windows PowerShell|Configurar o acesso remoto usando o Windows PowerShell.|  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, confira [Usando os Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="21-install-the-remote-access-role"></a><a name="BKMK_Role"></a>2,1. Instalar a função de Acesso Remoto  
+## <a name="21-install-the-remote-access-role"></a><a name="BKMK_Role"></a>2.1. Instalar a função Acesso Remoto  
 Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto em um servidor na sua organização que agirá como servidor de Acesso Remoto.  
   
 #### <a name="to-install-the-remote-access-role"></a>Para instalar a função Acesso Remoto.  
@@ -48,19 +48,19 @@ Para implantar o Acesso Remoto, você deverá instalar a função Acesso Remoto 
   
 4.  Clique em **Avançar** cinco vezes.  
   
-5.  Na página **Confirmar seleções de instalação** , clique em **Instalar**.  
+5.  Na página **Confirmar seleções de instalação**, clique em **Instalar**.  
   
 6.  Na página **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
-![de sucesso do progresso da instalação,](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
+![Êxito no progresso da instalação](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="22-configure-the-deployment-type"></a><a name="BKMK_Deploy"></a>2,2. Configurar o tipo de implantação  
+## <a name="22-configure-the-deployment-type"></a><a name="BKMK_Deploy"></a>2.2. Configurar o tipo de implantação  
 É possível implantar o Acesso Remoto com o console de Gerenciamento de Acesso Remoto de três maneiras:  
   
 -   DirectAccess e VPN  
@@ -73,13 +73,13 @@ Este guia usa uma implantação somente DirectAccess nos procedimentos de exempl
   
 #### <a name="to-configure-the-deployment-type"></a>Para configurar o tipo de implantação  
   
-1.  No servidor de acesso remoto, abra o console de gerenciamento de acesso remoto: na tela **Iniciar** , digite**RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
+1.  No servidor de acesso remoto, abra o console de gerenciamento de acesso remoto: na tela **Iniciar** , digite**RAMgmtUI.exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No Console de Gerenciamento de Acesso Remoto, no painel do meio, clique em **Executar o assistente de configuração de acesso remoto**.  
   
 3.  Na caixa de diálogo **Configurar o Acesso Remoto**, clique na opção desejada para implantar DirectAccess e VPN, somente DirectAccess ou somente VPN.  
   
-## <a name="23-configure-directaccess-clients"></a><a name="BKMK_Clients"></a>2,3. Configurar os clientes de DirectAccess  
+## <a name="23-configure-directaccess-clients"></a><a name="BKMK_Clients"></a>2.3. Configurar os clientes de DirectAccess  
 Para que um computador cliente possa ser provisionado para usar o DirectAccess, ele deverá pertencer ao grupo de segurança selecionado. Depois de configurado o DirectAccess, os computadores cliente do grupo de segurança são provisionados para receber a GPO (Política de Grupo de Objeto) do DirectAccess. Você também pode configurar o cenário de implantação, que permite configurar o DirectAccess para acesso ao cliente e gerenciamento remoto, ou somente para gerenciamento remoto.  
   
 #### <a name="to-configure-directaccess-clients"></a>Para configurar os clientes do DirectAccess  
@@ -99,7 +99,7 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
   
 6.  Marque a caixa de seleção **Usar criação de túneis à força** para rotear todo o tráfego cliente (para a rede interna e para a Internet) pelo servidor de Acesso Remoto, se necessário.  
   
-7.  Clique em **Avançar**.  
+7.  Clique em **Próximo**.  
   
 8.  Na página **Assistente de conectividade de rede**:  
   
@@ -119,7 +119,7 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
   
 9. Clique em **Concluir**.  
   
-## <a name="24-configure-the-remote-access-server"></a><a name="BKMK_Server"></a>2,4. Configurar o servidor de Acesso Remoto  
+## <a name="24-configure-the-remote-access-server"></a><a name="BKMK_Server"></a>2.4. Configurar o servidor de Acesso Remoto  
 Para implantar o Acesso Remoto, será necessário configurar o servidor de Acesso Remoto com os adaptadores de rede corretos, uma URL pública para o servidor de Acesso Remoto, à qual os computadores cliente poderão se conectar (o endereço ConnectTo) e um certificado IP-HTTPS com o assunto correspondente ao endereço ConnectTo, configurações IPv6 e autenticação no computador cliente.  
   
 #### <a name="to-configure-the-remote-access-server"></a>Para configurar o servidor de Acesso Remoto  
@@ -137,7 +137,7 @@ Para implantar o Acesso Remoto, será necessário configurar o servidor de Acess
   
 5.  Na página **Autenticação**:  
   
-    -   Em **Autenticação do usuário**, clique em **Credenciais do Active Directory**. Para configurar uma implantação usando o autenticador de dois fatores, clique em **Autenticação de dois fatores**. Para mais informações, consulte [Implantar Acesso Remoto com autenticação OTP](https://technet.microsoft.com/library/hh831379.aspx).  
+    -   Em **Autenticação do usuário**, clique em **Credenciais do Active Directory**. Para configurar uma implantação usando o autenticador de dois fatores, clique em **Autenticação de dois fatores**. Para mais informações, consulte [Implantar Acesso Remoto com autenticação OTP](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11)).  
   
     -   Para implantações multissite e com autenticação de dois fatores, você deverá usar uma autenticação de certificado de computador. Marque a caixa de seleção **Usar certificados de computador** para usar autenticação de certificado de computador e selecione o certificado raiz IPsec.  
   
@@ -148,7 +148,7 @@ Para implantar o Acesso Remoto, será necessário configurar o servidor de Acess
   
 6.  Clique em **Concluir**.  
   
-## <a name="25-configure-the-infrastructure-servers"></a><a name="BKMK_Infra"></a>2,5. Configurar os servidores de infraestrutura  
+## <a name="25-configure-the-infrastructure-servers"></a><a name="BKMK_Infra"></a>2.5. Configurar os servidores de infraestrutura  
 Para configurar os servidores de infraestrutura em uma implantação de Acesso Remoto, você deverá configurar o servidor de local de rede, as configurações de DNS (incluindo a lista de pesquisa do sufixo de DNS) e servidores de gerenciamento que não são detectados automaticamente pelo Acesso Remoto.  
   
 #### <a name="to-configure-the-infrastructure-servers"></a>Para configurar os servidores de infraestrutura  
@@ -159,7 +159,7 @@ Para configurar os servidores de infraestrutura em uma implantação de Acesso R
   
 3.  Na página **DNS**, especifique na tabela os sufixos de nome adicionais que serão aplicados como exceções da NRPT (Tabela de Políticas de Resolução de Nomes). Selecione a opção de resolução de nome local e clique em **Avançar**.  
   
-4.  Na página **Lista de pesquisa de sufixo de DNS**, o servidor de Acesso Remoto detectará automaticamente qualquer sufixo de domínio na implantação. Use os botões **Adicionar** e **Remover** para adicionar e remover os sufixos de domínio da lista de sufixos de domínio a serem usados. Para adicionar um novo sufixo de domínio, em **Novo sufixo**, digite o sufixo e clique em **Adicionar**. Clique em **Avançar**.  
+4.  Na página **Lista de pesquisa de sufixo de DNS**, o servidor de Acesso Remoto detectará automaticamente qualquer sufixo de domínio na implantação. Use os botões **Adicionar** e **Remover** para adicionar e remover os sufixos de domínio da lista de sufixos de domínio a serem usados. Para adicionar um novo sufixo de domínio, em **Novo sufixo**, digite o sufixo e clique em **Adicionar**. Clique em **Próximo**.  
   
 5.  Na página **Gerenciamento**, adicione quaisquer servidores de gerenciamento não detectados automaticamente e clique em **Avançar**. O acesso remoto adiciona automaticamente os controladores de domínio e os servidores de Configuration Manager.  
   
@@ -200,9 +200,9 @@ Uma vez concluída a configuração do Acesso Remoto, a **Revisão de Acesso Rem
 5.  **Servidores de Aplicativo**: é exibido o status de gerenciamento remoto do DirectAccess, além do status da autenticação completa de servidores de aplicativos específicos.  
   
 ## <a name="28-how-to-configure-the-remote-access-server-by-using-windows-powershell"></a><a name="BKMK_PS"></a>2,8. Como configurar o servidor de Acesso Remoto usando o Windows PowerShell  
-![](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes do Windows** PowerShell  
+![](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**Comandos equivalentes** do Windows PowerShell  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 Para executar uma instalação completa em uma topologia de borda de acesso remoto para o DirectAccess somente em um domínio com o **Corp.contoso.com** raiz e usando os seguintes parâmetros: GPO do servidor: **configurações do servidor DirectAccess**, GPO do cliente: configurações do cliente DirectAccess, adaptador de rede interno: **corpnet**, adaptador de rede externo: **Internet**, ConnectTto endereço: **EDGE1.contoso.com**e servidor de local de rede: **NLS.Corp.contoso.com**:  
   
@@ -239,11 +239,9 @@ Set-DAClientExperienceConfiguration -FriendlyName 'Contoso DirectAccess Connecti
   
 ## <a name="previous-step"></a><a name="BKMK_Links"></a>Etapa anterior  
   
--   [Etapa 1: configurar a infraestrutura avançada do DirectAccess](da-adv-configure-s1-infrastructure.md)  
+-   [Etapa 1: Configurar a infraestrutura do DirectAccess Avançado](da-adv-configure-s1-infrastructure.md)  
   
-## <a name="next-step"></a>Próximas etapas  
+## <a name="next-step"></a>Próxima etapa  
   
--   [Etapa 3: verificar a implantação](Step-3-Verify-the-Deployment.md)  
+-   [Etapa 3: Verificar a implantação](Step-3-Verify-the-Deployment.md)  
   
-
-

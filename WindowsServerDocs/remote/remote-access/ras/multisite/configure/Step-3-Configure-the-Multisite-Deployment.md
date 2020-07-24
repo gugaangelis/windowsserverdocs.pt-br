@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 2aaba78a0793ff1d2d81f81f884872aa289cf037
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ce4295c5f99e4a1ddfc868be35cd360ec963b7f4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858359"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958738"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>Etapa 3 configurar a implantação multissite
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Depois de configurar a infraestrutura multissite, siga estas etapas para configurar a implantação multissite de acesso remoto.  
   
-|{1&gt;Tarefa&lt;1}|Descrição|  
+|Tarefa|Descrição|  
 |----|--------|  
 |3.1. Configurar servidores de acesso remoto|Configure servidores de acesso remoto adicionais Configurando endereços IP, unindo-os ao domínio e instalando a função de acesso remoto.|  
 |3.2. Conceder acesso de administrador|Conceda privilégios aos servidores de acesso remoto adicionais para o administrador do DirectAccess.|  
@@ -32,7 +32,7 @@ Depois de configurar a infraestrutura multissite, siga estas etapas para configu
 |3,7. Adicionar pontos de entrada à implantação multissite|Adicione outros pontos de entrada à implantação multissite.|  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, confira [Usando os Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
 ## <a name="31-configure-remote-access-servers"></a><a name="BKMK_ConfigServer"></a>3.1. Configurar servidores de acesso remoto  
 
@@ -59,15 +59,15 @@ Depois de configurar a infraestrutura multissite, siga estas etapas para configu
   
 10. Clique em **Avançar** e, em seguida, clique em **Instalar**.  
   
-11.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem sucedida e, em seguida, clique em **Fechar**.  
+11.  Na caixa de diálogo **Progresso da instalação**, verifique se a instalação foi bem-sucedida e clique em **Fechar**.  
   
   
-![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
+![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> do Windows PowerShell***  
 
   
 As etapas 1-3 devem ser executadas manualmente e não são realizadas usando este cmdlet do Windows PowerShell.  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
@@ -96,11 +96,11 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 9. Repita esse procedimento em todos os servidores de acesso remoto que serão parte da implantação multissite.  
   
 ## <a name="33-configure-ip-https-for-a-multisite-deployment"></a><a name="BKMK_IPHTTPS"></a>3.3. Configurar IP-HTTPS para uma implantação multissite  
-Em cada servidor de acesso remoto que será adicionado à implantação multissite, um certificado SSL será necessário para verificar a conexão HTTPS com o servidor Web IP-HTTPS. A associação no grupo **Administradores** local, ou equivalente, é o mínimo necessário para concluir este procedimento.  
+Em cada servidor de acesso remoto que será adicionado à implantação multissite, um certificado SSL será necessário para verificar a conexão HTTPS com o servidor Web IP-HTTPS. A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.  
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>Para obter um certificado IP-HTTPS  
   
-1.  Em cada servidor de acesso remoto: na tela **Iniciar** , digite **MMC**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
+1.  Em cada servidor de acesso remoto: na tela **Iniciar** , digite **MMC**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  Clique em **Arquivo** e em **Adicionar/Remover Snap-ins**.  
   
@@ -114,7 +114,7 @@ Em cada servidor de acesso remoto que será adicionado à implantação multissi
   
 7.  Na página **solicitar certificados** , clique no modelo de certificado do servidor Web e, em seguida, clique em **mais informações são necessárias para se registrar nesse certificado**.  
   
-    Se o modelo de certificado do servidor Web não for exibido, verifique se a conta de computador do servidor de acesso remoto tem permissões de registro para o modelo de certificado do servidor Web. Para obter mais informações, consulte [configurar permissões no modelo de certificado do servidor Web](https://technet.microsoft.com/library/ee649249(v=ws.10).aspx).  
+    Se o modelo de certificado do servidor Web não for exibido, verifique se a conta de computador do servidor de acesso remoto tem permissões de registro para o modelo de certificado do servidor Web. Para obter mais informações, consulte [configurar permissões no modelo de certificado do servidor Web](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee649249(v=ws.10)).  
   
 8.  Na guia **assunto** da caixa de **diálogo Propriedades do certificado** , em **nome da entidade**, para **tipo**, selecione **nome comum**.  
   
@@ -134,11 +134,11 @@ Em cada servidor de acesso remoto que será adicionado à implantação multissi
 14. Repita esse procedimento em todos os servidores de acesso remoto em sua implantação.  
   
 ## <a name="34-configure-the-network-location-server-for-a-multisite-deployment"></a><a name="BKMK_NLS"></a>3,4. Configurar o servidor de local de rede para uma implantação multissite  
-Se você tiver selecionado configurar o site do servidor de local de rede no servidor de acesso remoto ao configurar seu primeiro servidor, cada novo servidor de acesso remoto que você adicionar precisará ser configurado com um certificado de servidor Web que tenha o mesmo nome de entidade que foi selecionado para o servidor de local de rede para o primeiro servidor. Cada servidor requer um certificado para autenticar a conexão com o servidor de local de rede, e os computadores cliente localizados na rede interna devem ser capazes de resolver o nome do site no DNS.  
+Se você tiver selecionado configurar o site do servidor de local de rede no servidor de acesso remoto ao configurar seu primeiro servidor, cada novo servidor de acesso remoto que você adicionar precisará ser configurado com um certificado de servidor Web que tenha o mesmo nome de entidade selecionado para o servidor de local de rede para o primeiro servidor. Cada servidor requer um certificado para autenticar a conexão com o servidor de local de rede, e os computadores cliente localizados na rede interna devem ser capazes de resolver o nome do site no DNS.  
   
 #### <a name="to-install-a-certificate-for-network-location"></a>Para instalar um certificado para local de rede  
   
-1.  No servidor de acesso remoto: na tela **Iniciar** , digite **MMC**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
+1.  No servidor de acesso remoto: na tela **Iniciar** , digite **MMC**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  Clique em **Arquivo** e em **Adicionar/Remover Snap-ins**.  
   
@@ -155,7 +155,7 @@ Se você tiver selecionado configurar o site do servidor de local de rede no ser
   
 7.  Na página **solicitar certificados** , clique no modelo de certificado do servidor Web e, em seguida, clique em **mais informações são necessárias para se registrar nesse certificado**.  
   
-    Se o modelo de certificado do servidor Web não for exibido, verifique se a conta de computador do servidor de acesso remoto tem permissões de registro para o modelo de certificado do servidor Web. Para obter mais informações, consulte [configurar permissões no modelo de certificado do servidor Web](https://technet.microsoft.com/library/ee649249(v=ws.10).aspx).  
+    Se o modelo de certificado do servidor Web não for exibido, verifique se a conta de computador do servidor de acesso remoto tem permissões de registro para o modelo de certificado do servidor Web. Para obter mais informações, consulte [configurar permissões no modelo de certificado do servidor Web](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee649249(v=ws.10)).  
   
 8.  Na guia **assunto** da caixa de **diálogo Propriedades do certificado** , em **nome da entidade**, para **tipo**, selecione **nome comum**.  
   
@@ -178,7 +178,7 @@ Se você tiver selecionado configurar o site do servidor de local de rede no ser
   
 1.  No servidor DNS: na tela **Iniciar** , digite **DNSMGMT. msc**e pressione Enter.  
   
-2.  No painel esquerdo do console do **Gerenciador de DNS** , abra a zona de pesquisa direta para a rede interna. Clique com o botão direito do mouse na zona relevante e clique em **novo host (A ou aaaa)** .  
+2.  No painel esquerdo do console do **Gerenciador de DNS** , abra a zona de pesquisa direta para a rede interna. Clique com o botão direito do mouse na zona relevante e clique em **novo host (A ou aaaa)**.  
   
 3.  Na caixa de diálogo **novo host** , na caixa **nome (usa o nome de domínio pai se estiver em branco)** , insira o nome que foi usado para o servidor de local de rede para o primeiro servidor de acesso remoto. Na caixa **endereço IP** , digite o endereço IPv4 voltado para a intranet do servidor de acesso remoto e clique em **Adicionar host**. Na caixa de diálogo **DNS**, clique em **OK**.  
   
@@ -197,7 +197,7 @@ Os computadores cliente Windows do DirectAccess devem ser membros de grupos de s
   
 1.  No controlador de domínio primário, clique em **Iniciar**e em **Active Directory usuários e computadores**.  
   
-2.  Para remover computadores do grupo de segurança, clique duas vezes no grupo de segurança e, na caixa de diálogo **Propriedades do < Group_Name >** , clique na guia **Membros** .  
+2.  Para remover computadores do grupo de segurança, clique duas vezes no grupo de segurança e, na caixa de diálogo **Propriedades do<Group_Name>** , clique na guia **Membros** .  
   
 3.  Selecione o computador cliente do Windows 7 e clique em **remover**.  
   
@@ -217,7 +217,7 @@ Para configurar uma implantação multissite, habilite o recurso multissite em s
   
 ### <a name="to-enable-a-multisite-configuration"></a><a name="EnabledMultisite"></a>Para habilitar uma configuração multissite  
   
-1.  Em seu servidor de acesso remoto existente: na tela **Iniciar** , digite **RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
+1.  No servidor de acesso remoto existente: na tela **Iniciar** , digite **RAMgmtUI.exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No console de gerenciamento de acesso remoto, clique em **configuração**e, no painel **tarefas** , clique em **habilitar multissite**.  
   
@@ -227,7 +227,7 @@ Para configurar uma implantação multissite, habilite o recurso multissite em s
   
 5.  Na página **seleção de ponto de entrada** , siga um destes procedimentos:  
   
-    -   Clique em **atribuir pontos de entrada automaticamente e permita que os clientes selecionem manualmente** para rotear automaticamente os computadores cliente para o ponto de entrada mais adequado, permitindo também que os computadores cliente selecionem um ponto de entrada manualmente. A seleção de ponto de entrada manual está disponível somente para computadores com Windows 8. Clique em **Avançar**.  
+    -   Clique em **atribuir pontos de entrada automaticamente e permita que os clientes selecionem manualmente** para rotear automaticamente os computadores cliente para o ponto de entrada mais adequado, permitindo também que os computadores cliente selecionem um ponto de entrada manualmente. A seleção de ponto de entrada manual está disponível somente para computadores com Windows 8. Clique em **Próximo**.  
   
     -   Clique em **atribuir pontos de entrada automaticamente** para rotear automaticamente os computadores cliente para o ponto de entrada mais adequado e clique em **Avançar**.  
   
@@ -256,9 +256,9 @@ Para configurar uma implantação multissite, habilite o recurso multissite em s
   
 10. Na caixa de diálogo **habilitando a implantação** multissite, clique em **fechar** e, em seguida, no assistente habilitar implantação multissite, clique em **Fechar**.  
   
-![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
+![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> do Windows PowerShell***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 Para habilitar uma implantação multissite chamada "contoso" no primeiro ponto de entrada chamado "Edge1-US". A implantação permite que os clientes selecionem manualmente o ponto de entrada e não use um balanceador de carga global.  
   
@@ -285,7 +285,7 @@ Depois de habilitar o multissite em sua implantação, você pode adicionar outr
   
 ### <a name="to-add-entry-points-to-your-multisite-deployment"></a><a name="AddEP"></a>Para adicionar pontos de entrada à implantação multissite  
   
-1.  Em seu servidor de acesso remoto existente: na tela **Iniciar** , digite **RAMgmtUI. exe**e pressione Enter. Se a caixa de diálogo **Controle da Conta de Usuário** for exibida, confirme que a ação exibida é aquela que você deseja e clique em **Sim**.  
+1.  No servidor de acesso remoto existente: na tela **Iniciar** , digite **RAMgmtUI.exe**e pressione Enter. Se a caixa de diálogo **Controle de Conta de Usuário** aparecer, confirme se a ação exibida é a que você deseja e, em seguida, clique em **Sim**.  
   
 2.  No console de gerenciamento de acesso remoto, clique em **configuração**e, no painel **tarefas** , clique em **Adicionar um ponto de entrada**.  
   
@@ -298,7 +298,7 @@ Depois de habilitar o multissite em sua implantação, você pode adicionar outr
   
 5.  Na página **topologia de rede** , clique na topologia que corresponde à topologia de rede do servidor de acesso remoto que você está adicionando e clique em **Avançar**.  
   
-6.  Na página **nome da rede ou endereço IP** , em **digite o nome público ou o endereço IP usado pelos clientes para se conectar ao servidor de acesso remoto**, insira o nome público ou o endereço IP usado pelos clientes para se conectar ao servidor de acesso remoto. O nome público corresponde ao nome da entidade do certificado IP-HTTPS. No caso em que a topologia de rede de borda foi implementada, o endereço IP é o do adaptador externo do servidor de acesso remoto. Clique em **Avançar**.  
+6.  Na página **nome da rede ou endereço IP** , em **digite o nome público ou o endereço IP usado pelos clientes para se conectar ao servidor de acesso remoto**, insira o nome público ou o endereço IP usado pelos clientes para se conectar ao servidor de acesso remoto. O nome público corresponde ao nome da entidade do certificado IP-HTTPS. No caso em que a topologia de rede de borda foi implementada, o endereço IP é o do adaptador externo do servidor de acesso remoto. Clique em **Próximo**.  
   
 7.  Na página **adaptadores de rede** , siga um destes procedimentos:  
   
@@ -306,7 +306,7 @@ Depois de habilitar o multissite em sua implantação, você pode adicionar outr
   
     -   Se você estiver implantando uma topologia com um adaptador de rede, em **adaptador de rede**, selecione o adaptador que está conectado à rede interna.  
   
-8.  Na página **adaptadores de rede** , em **selecionar o certificado usado para autenticar conexões IP-HTTPS**, clique em **procurar** para localizar e selecionar o certificado IP-HTTPS. Clique em **Avançar**.  
+8.  Na página **adaptadores de rede** , em **selecionar o certificado usado para autenticar conexões IP-HTTPS**, clique em **procurar** para localizar e selecionar o certificado IP-HTTPS. Clique em **Próximo**.  
   
 9. Se o IPv6 estiver configurado na rede corporativa, na página **configuração de prefixo** , em **prefixo IPv6 atribuído a computadores cliente**, insira um prefixo IP-HTTPS para atribuir endereços IPv6 aos computadores cliente DirectAccess e clique em **Avançar**.  
   
@@ -338,9 +338,9 @@ Depois de habilitar o multissite em sua implantação, você pode adicionar outr
   
 16. Repita esse procedimento da etapa 2 para cada ponto de entrada que você deseja adicionar à implantação multissite.  
   
-![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
+![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> do Windows PowerShell***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 Para adicionar o computador edge2 do domínio corp2 como um segundo ponto de entrada chamado Edge2-Europa. A configuração de ponto de entrada é: um prefixo IPv6 de cliente ' 2001: DB8:2: 2000::/64 ', um endereço de conexão (o certificado IP-HTTPS no computador edge2) ' edge2.contoso.com ', um GPO de servidor denominado "configurações do servidor DirectAccess-Edge2-Europa" e as interfaces internas e externas chamadas Internet e Corpnet2, respectivamente:  
   
@@ -354,6 +354,6 @@ Para permitir que computadores cliente com Windows 7 acessem por meio do segundo
 Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.com\ DA_W7_Clients_GPO_Europe') -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_Europe')  
 ```  
   
-## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Confira também  
   
 -   [Etapa 2: configurar a infraestrutura multissite](Step-2-Configure-the-Multisite-Infrastructure.md)

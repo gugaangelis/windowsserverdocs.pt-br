@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: daf300598f8a31fc35d5702b5bd42507dd9e8211
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a36d1ca21a1b5d745994b2a311e8265b78369f4e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925955"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958018"
 ---
 # <a name="ftp-binary"></a>ftp binary
 
@@ -22,7 +22,7 @@ ms.locfileid: "85925955"
 
 Define o tipo de transferência de arquivo como Binary. O comando **FTP** dá suporte a tipos ASCII (padrão) e de transferência de arquivo de imagem binária, mas é recomendável usar Binary ao transferir arquivos executáveis. No modo binário, os arquivos são transferidos em unidades de um byte.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 binary
@@ -42,4 +42,4 @@ binary
 
 - [comando FTP ASCII](ftp-ascii.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

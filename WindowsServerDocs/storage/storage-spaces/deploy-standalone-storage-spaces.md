@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 52e6a4d53271a73bc0913e2ac500c4328f2e7009
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8383d93983f6620f15099573e527ad89d250727d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393733"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960098"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
@@ -23,7 +23,7 @@ Este tópico descreve como implantar espaços de armazenamento em um servidor au
 
 Para criar um espaço de armazenamento, você deve primeiramente criar um ou mais pools de armazenamento. Um pool de armazenamento é uma coleção de discos físicos. Um pool de armazenamento permite a agregação de armazenamento, expansão da capacidade elástica e administração delegada.
 
-Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](https://docs.microsoft.com/powershell/module/storage/new-virtualdisk?view=win10-ps) e [quais são as colunas e como os espaços de armazenamento decidem quantas usar?](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx%23what_are_columns_and_how_does_storage_spaces_decide_how_many_to_use) em perguntas frequentes (FAQ) sobre espaços de armazenamento.
+Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) e [O que são colunas e como os espaços de armazenamento decidem quantas usar?](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx%23what_are_columns_and_how_does_storage_spaces_decide_how_many_to_use) nas Perguntas Frequentes (FAQ) sobre espaços de armazenamento.
 
 >[!NOTE]
 >Você não pode usar um espaço de armazenamento para hospedar o sistema operacional Windows.
@@ -37,7 +37,7 @@ A figura a seguir ilustra o fluxo de trabalho dos Espaços de Armazenamento.
 **Figura 1: fluxo de trabalho de espaços de armazenamento**
 
 >[!NOTE]
->Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6).
+>Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -57,9 +57,9 @@ Para planejar o número de discos físicos e o tipo de resiliência desejado par
 
 |Tipo de resiliência|Requisitos de disco|Quando usar|
 |---|---|---|
-|**Único**<br><br>-Distribui dados em discos físicos<br>-Maximiza a capacidade do disco e aumenta a taxa de transferência<br>-Sem resiliência (não protege contra falha de disco)<br><br><br><br><br><br><br>|Requer ao menos um disco físico.|Não use para hospedar dados insubstituíveis. Espaços simples não protegem contra falhas de disco.<br><br>Use para hospedar dados temporários ou recriá-los com baixo custo.<br><br>Adequado para cargas de trabalho de alto desempenho em que a resiliência não é necessária ou já é fornecida pelo aplicativo.|
+|**Simples**<br><br>-Distribui dados em discos físicos<br>-Maximiza a capacidade do disco e aumenta a taxa de transferência<br>-Sem resiliência (não protege contra falha de disco)<br><br><br><br><br><br><br>|Requer ao menos um disco físico.|Não use para hospedar dados insubstituíveis. Espaços simples não protegem contra falhas de disco.<br><br>Use para hospedar dados temporários ou recriá-los com baixo custo.<br><br>Adequado para cargas de trabalho de alto desempenho em que a resiliência não é necessária ou já é fornecida pelo aplicativo.|
 |**Espelho**<br><br>-Armazena duas ou três cópias dos dados no conjunto de discos físicos<br>-Aumenta a confiabilidade, mas reduz a capacidade. A duplicação ocorre a cada gravação. Um espaço espelhado também distribui os dados entre diversas unidades físicas.<br>-Maior taxa de transferência de dados e menor latência de acesso que a paridade<br>– Usa o controle de região sujo (DRT) para controlar as modificações nos discos no pool. Quando o sistema volta de um desligamento inesperado e os espaços ficam novamente online, o DRT torna os discos do pool consistentes entre si.|Ele requer ao menos dois discos para oferecer proteção contra falha de disco único.<br><br>Ele requer ao menos cinco discos para oferecer proteção contra duas falhas de disco simultâneas.|Use para a maioria das implantações. Por exemplo, espaços de espelho são indicados para o compartilhamento de arquivos geral ou para uma biblioteca de VHD (disco rígido virtual).|
-|**Paridade**<br><br>-Distribui dados e informações de paridade em discos físicos<br>-Aumenta a confiabilidade quando comparada a um espaço simples, mas, de certa forma, reduz a capacidade<br>-Aumenta a resiliência por meio do registro em diário. Isso ajuda a prevenir dados corrompidos em caso de desligamento inesperado.|Ele requer ao menos três discos para oferecer proteção contra falha de disco único.|Use para cargas de trabalho que são altamente sequenciais, como arquivos ou backups.|
+|**Parity**<br><br>-Distribui dados e informações de paridade em discos físicos<br>-Aumenta a confiabilidade quando comparada a um espaço simples, mas, de certa forma, reduz a capacidade<br>-Aumenta a resiliência por meio do registro em diário. Isso ajuda a prevenir dados corrompidos em caso de desligamento inesperado.|Ele requer ao menos três discos para oferecer proteção contra falha de disco único.|Use para cargas de trabalho que são altamente sequenciais, como arquivos ou backups.|
 
 ## <a name="step-1-create-a-storage-pool"></a>Etapa 1: criar um pool de armazenamento
 
@@ -242,7 +242,7 @@ Em seguida, você deve criar um volume para o disco virtual. Você pode atribuir
     2. Na lista **Tamanho da unidade de alocação**, deixe a configuração **Padrão** ou defina o tamanho da unidade de alocação.
         
         >[!NOTE]
-        >Para obter mais informações sobre o tamanho da unidade de alocação, consulte [tamanho do cluster padrão para NTFS, Fat e exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
+        >Para obter mais informações sobre o tamanho da unidade de alocação, consulte [Tamanho de cluster padrão para NTFS, FAT e exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
 
     
     3. Opcionalmente, na caixa **Rótulo do volume**, digite um nome de rótulo para o volume, por exemplo, **Dados de RH**.
@@ -266,6 +266,6 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 ## <a name="additional-information"></a>Informações adicionais
 
 - [Espaços de armazenamento](overview.md)
-- [Cmdlets de armazenamento no Windows PowerShell](https://docs.microsoft.com/powershell/module/storage/index?view=win10-ps)
-- [Implantar espaços de armazenamento em cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Perguntas frequentes sobre espaços de armazenamento](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)
+- [Cmdlets de armazenamento no Windows PowerShell](/powershell/module/storage/index?view=win10-ps)
+- [Implantar Espaços de Armazenamento clusterizados](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
+- [Perguntas Frequentes (FAQ) sobre espaços de armazenamento](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)

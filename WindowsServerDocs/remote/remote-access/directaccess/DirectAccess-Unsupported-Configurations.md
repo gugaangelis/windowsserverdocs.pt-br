@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 23d05e61-95c3-4e70-aa83-b9a8cae92304
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 3908989b02f6388c994664aa8679c9198da4eea7
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e59fd85fae3333ec3a5751ba611b615f4af92cb0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309392"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960238"
 ---
 # <a name="directaccess-unsupported-configurations"></a>Configurações sem suporte do DirectAccess
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Examine a seguinte lista de configurações do DirectAccess sem suporte antes de iniciar a implantação para evitar ter que iniciar a implantação novamente.  
 
@@ -30,13 +30,13 @@ Se você implantar o DirectAccess com a replicação SYSVOL do FRS, você arrisc
   
 Se você estiver planejando implantar o DirectAccess, deverá usar controladores de domínio que executam sistemas operacionais posteriores ao Windows Server 2003 R2, e você deve usar o DFS-R.  
   
-Para obter informações sobre como migrar do FRS para o DFS-R, consulte o [Guia de migração de replicação do SYSVOL: FRS para replicação do DFS](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx).  
+Para obter informações sobre como migrar do FRS para o DFS-R, consulte o [Guia de migração de replicação do SYSVOL: FRS para replicação do DFS](../../../storage/dfs-replication/migrate-sysvol-to-dfsr.md).  
   
 ## <a name="network-access-protection-for-directaccess-clients"></a><a name="bkmk_nap"></a>Proteção de acesso à rede para clientes do DirectAccess  
 A NAP (proteção de acesso à rede) é usada para determinar se os computadores cliente remotos atendem às políticas de ti antes de receberem acesso à rede corporativa. A NAP foi preterida no Windows Server 2012 R2 e não está incluída no Windows Server 2016. Por esse motivo, não é recomendável iniciar uma nova implantação do DirectAccess com a NAP. É recomendado um método diferente de controle de ponto de extremidade para a segurança de clientes do DirectAccess.  
   
 ## <a name="multisite-support-for-windows-7-clients"></a><a name="bkmk_multi"></a>Suporte multissite para clientes do Windows 7  
-Quando o DirectAccess é configurado em uma implantação multissite, os clientes do Windows 10&reg;, do Windows&reg; 8,1 e do Windows&reg; 8 têm a capacidade de se conectar ao site mais próximo.  Os computadores cliente do Windows 7&reg; não têm o mesmo recurso. A seleção de site para clientes do Windows 7 é definida para um site específico no momento da configuração da política, e esses clientes sempre se conectarão a esse site designado, independentemente de sua localização.  
+Quando o DirectAccess é configurado em uma implantação multissite, &reg; os clientes Windows 10, windows &reg; 8,1 e Windows &reg; 8 têm a capacidade de se conectar ao site mais próximo.  &reg;Os computadores cliente do Windows 7 não têm o mesmo recurso. A seleção de site para clientes do Windows 7 é definida para um site específico no momento da configuração da política, e esses clientes sempre se conectarão a esse site designado, independentemente de sua localização.  
   
 ## <a name="user-based-access-control"></a><a name="bkmk_user"></a>Controle de acesso baseado no usuário  
 As políticas do DirectAccess são baseadas em computador, não baseadas em usuário. Não há suporte para a especificação de políticas de usuário do DirectAccess para controlar o acesso à rede corporativa.  
@@ -45,7 +45,7 @@ As políticas do DirectAccess são baseadas em computador, não baseadas em usu�
 O DirectAccess pode ser configurado usando o assistente de instalação do DirectAccess, o console de gerenciamento de acesso remoto ou os cmdlets do Windows PowerShell de acesso remoto. O uso de qualquer meio que não seja o assistente de instalação do DirectAccess para configurar o DirectAccess, como a modificação direta de objetos do DirectAccess Política de Grupo ou a modificação manual das configurações de política padrão no servidor ou cliente, não tem suporte. Essas modificações podem resultar em uma configuração inutilizável.  
   
 ## <a name="kerbproxy-authentication"></a><a name="bkmk_kerb"></a>Autenticação KerbProxy  
-Quando você configura um servidor DirectAccess com o assistente de Introdução, o servidor DirectAccess é configurado automaticamente para usar a autenticação KerbProxy para autenticação de computador e de usuário. Por isso, você deve usar apenas o assistente de Introdução para implantações de site único em que somente clientes Windows 10&reg;, Windows 8.1 ou Windows 8 são implantados.  
+Quando você configura um servidor DirectAccess com o assistente de Introdução, o servidor DirectAccess é configurado automaticamente para usar a autenticação KerbProxy para autenticação de computador e de usuário. Por isso, você deve usar apenas o assistente de Introdução para implantações de site único em que somente &reg; clientes Windows 10, Windows 8.1 ou Windows 8 são implantados.  
   
 Além disso, os recursos a seguir não devem ser usados com a autenticação KerbProxy:  
   
@@ -91,5 +91,3 @@ Um controlador de domínio de leitura/gravação é necessário por vários moti
   
 Devido a esses requisitos, não implante o DirectAccess com um RODC.  
   
-
-

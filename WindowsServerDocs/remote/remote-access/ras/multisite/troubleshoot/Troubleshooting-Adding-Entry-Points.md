@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9e8f67709e6059b879eab92fdd06609df90cb9a2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 89d4773e18f6e38999a1c1db1c17a089ee183bbc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858299"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960168"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>Solução de problemas da adição de pontos de entrada
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Add-DAEntryPoint`. Para confirmar que o erro recebido está relacionado à adição de um ponto de entrada, procure a ID de evento 10067 no Log de Eventos do Windows.  
   
@@ -33,7 +33,7 @@ Ao adicionar um novo ponto de entrada a uma implantação multissite, você prec
 Execute o comando especificando o parâmetro *RemoteAccessServer* com o nome do servidor a ser adicionado como um ponto de entrada.  
   
 ## <a name="remote-access-is-not-configured"></a>O Acesso Remoto não está configurado  
-**Erro recebido**. O acesso remoto não está configurado em < server_name >. Especifique o nome de um servidor que pertença a uma implantação multissite.  
+**Erro recebido**. O acesso remoto não está configurado em <server_name>. Especifique o nome de um servidor que pertença a uma implantação multissite.  
   
 **Causa**  
   
@@ -54,7 +54,7 @@ A funcionalidade multissite não está habilitada no servidor especificado pelo 
   
 **Solução**  
   
-Habilite a funcionalidade multissite usando o cmdlet `Enable-DaMultiSite`. Para obter mais informações, consulte [implantar o acesso remoto multissite](https://technet.microsoft.com/library/hh831664.aspx).  
+Habilite a funcionalidade multissite usando o cmdlet `Enable-DaMultiSite`. Para saber mais, consulte o tópico sobre a [implantação do Acesso Remoto em multissite](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831664(v=ws.11)).  
   
 ## <a name="ipv6-prefix-issues"></a>Problemas com o prefixo IPv6  
   
@@ -87,7 +87,7 @@ Habilite a funcionalidade multissite usando o cmdlet `Enable-DaMultiSite`. Para 
     2.  Execute o cmdlet `Add-DAEntryPoint` e especifique o prefixo IP-HTTPS no parâmetro *ClientIPv6Prefix*.  
   
 ## <a name="connectto-address"></a>Endereço ConnectTo  
-**Erro recebido**. O endereço (< connect_to_address >) ao qual os clientes DirectAccess se conectam no servidor RemoteAccess é o mesmo que o endereço do servidor do local de rede. Especifique um valor alternativo.  
+**Erro recebido**. O endereço (<connect_to_address>) ao qual os clientes DirectAccess se conectam no servidor RemoteAccess é o mesmo que o endereço do servidor do local de rede. Especifique um valor alternativo.  
   
 **Causa**  
   
@@ -98,11 +98,11 @@ O endereço ConnectTo e o endereço do servidor de local de rede são iguais.
 Deve ser possível resolver o endereço ConnectTo pela Internet para que os computadores cliente possam se conectar por IP-HTTPS. Deve ser possível resolver o endereço do servidor de local de rede pela rede corporativa, mas não pela Internet. Certifique-se de que o endereço do servidor de local de rede e o endereço ConnectTo não sejam iguais. Selecione endereços diferentes e tente novamente.  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>VPN ou DirectAccess já instalado  
-**Erro recebido**. Foi detectada uma instalação de VPN no servidor < server_name >. Especifique um servidor alternativo que não tenha Acesso Remoto instalado ou remova a configuração de VPN do servidor.  
+**Erro recebido**. Foi detectada uma instalação de VPN no servidor <server_name>. Especifique um servidor alternativo que não tenha Acesso Remoto instalado ou remova a configuração de VPN do servidor.  
   
 Ou  
   
-O acesso remoto já está instalado no servidor < server_name >. Especifique um servidor alternativo que não esteja executando o DirectAccess ou remova a configuração do DirectAccess existente do servidor.  
+O acesso remoto já está instalado no servidor <server_name>. Especifique um servidor alternativo que não esteja executando o DirectAccess ou remova a configuração do DirectAccess existente do servidor.  
   
 **Causa**  
   
@@ -115,7 +115,7 @@ Para adicionar um servidor a uma implantação multissite, você deve instalar a
 Execute o comando de modo que o servidor especificado no parâmetro *RemoteAccessServer* não tenha o DirectAccess ou a VPN configurados.  
   
 ## <a name="ipsec-root-certificate"></a>Certificado raiz IPsec  
-**Erro recebido**. O certificado raiz IPsec configurado não pode ser localizado no servidor < server_name >.  
+**Erro recebido**. O certificado raiz IPsec configurado não pode ser localizado no servidor <server_name>.  
   
 **Causa**  
   
@@ -187,7 +187,7 @@ Quando o DirectAccess é instalado pela primeira vez, o adaptador de rede intern
   
 -   **Problema 1**  
   
-    **Erro recebido**. O domínio especificado no parâmetro ServerGpoName < server_GPO > não existe. Em vez disso, especifique o < de domínio domain_name >.  
+    **Erro recebido**. O domínio especificado no parâmetro ServerGpoName <server_GPO> não existe. Em vez disso, especifique o <de domínio domain_name>.  
   
     **Causa**  
   
@@ -199,7 +199,7 @@ Quando o DirectAccess é instalado pela primeira vez, o adaptador de rede intern
   
 -   **Problema 2**  
   
-    **Erro recebido**. O GPO do servidor deve estar localizado no domínio do servidor de acesso remoto. Especifique o < de domínio domain_name > no parâmetro ServerGpoName.  
+    **Erro recebido**. O GPO do servidor deve estar localizado no domínio do servidor de acesso remoto. Especifique o <de domínio domain_name> no parâmetro ServerGpoName.  
   
     **Causa**  
   
@@ -210,7 +210,7 @@ Quando o DirectAccess é instalado pela primeira vez, o adaptador de rede intern
     O GPO de servidor deve estar localizado no mesmo domínio do servidor de acesso remoto. Use o nome do domínio do servidor para o GPO de servidor e tente novamente.  
   
 ## <a name="split-brain-dns"></a>DNS com partição de rede  
-**Aviso recebido**. A entrada NRPT para o sufixo DNS < DNS_suffix > contém o nome público usado pelos computadores cliente para se conectar ao servidor de acesso remoto. Adicione o nome < connect_to_address > como uma isenção na NRPT.  
+**Aviso recebido**. A entrada NRPT para o sufixo DNS <DNS_suffix> contém o nome público usado pelos computadores cliente para se conectar ao servidor de acesso remoto. Adicione o nome <connect_to_address> como uma isenção na NRPT.  
   
 **Causa**  
   
@@ -231,12 +231,12 @@ Para isentar um endereço das regras de NRPT:
 Quando você adiciona sufixos de nome sem especificar um endereço de servidor, o sufixo é tratado como uma isenção de NRPT.  
   
 ## <a name="saving-server-gpo-settings"></a>Salvando configurações de GPO de servidor  
-**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO < GPO_name >.  
+**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO <GPO_name>.  
   
-Para solucionar esse erro, consulte Salvando configurações de GPO do servidor na [solução de problemas habilitando multissite](https://technet.microsoft.com/library/jj591658.aspx).  
+Para solucionar esse erro, consulte Salvando configurações de GPO do servidor na [solução de problemas habilitando multissite](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj591658(v=ws.11)).  
   
 ## <a name="gpo-updates-cannot-be-applied"></a>Não é possível aplicar atualizações de GPO  
-**Aviso recebido**. As atualizações de GPO não podem ser aplicadas em < server_name >. As alterações só terão efeito após a próxima atualização de política.  
+**Aviso recebido**. As atualizações de GPO não podem ser aplicadas em <server_name>. As alterações só terão efeito após a próxima atualização de política.  
   
 **Causa**  
   
@@ -246,5 +246,3 @@ Ocorreu um erro na tentativa de atualizar políticas no computador especificado.
   
 Para forçar uma atualização de política, execute `gpupdate /force` no computador especificado.  
   
-
-

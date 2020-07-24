@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5cf20abc8322f610106d65c76c3431b9332444a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e1b5844ee9cbdb11629e488e6506ef85b23b537b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936151"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958938"
 ---
 # <a name="winnt32"></a>winnt32
 
@@ -62,14 +62,13 @@ winnt32 [/checkupgradeonly] [/cmd: <CommandLine>] [/cmdcons] [/copydir:{i386|ia6
 |        /?         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              Exibe a ajuda no prompt de comando.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## <a name="remarks"></a>Comentários
-Se você estiver implantando o Windows XP em computadores cliente, poderá usar a versão do winnt32.exe que vem com o Windows XP. Outra maneira de implantar o Windows XP é usar winnt32.msi, que funciona por meio de Windows Installer, parte do conjunto de tecnologias do IntelliMirror. Para obter mais informações sobre implantações de cliente, consulte Windows Server 2003 Deployment Kit, que é descrito em [usando o Windows Deployment and Resource Kits](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx).
+Se você estiver implantando o Windows XP em computadores cliente, poderá usar a versão do winnt32.exe que vem com o Windows XP. Outra maneira de implantar o Windows XP é usar winnt32.msi, que funciona por meio de Windows Installer, parte do conjunto de tecnologias do IntelliMirror. Para obter mais informações sobre implantações de cliente, consulte Windows Server 2003 Deployment Kit, que é descrito em [usando o Windows Deployment and Resource Kits](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10)).
 
 Em um computador baseado em Itanium, o **Winnt32** pode ser executado na EFI (Extensible Firmware Interface) ou no windows Server 2003 Enterprise, windows Server 2003 R2 Enterprise, windows Server 2003 R2 Datacenter ou windows Server 2003 datacenter. Além disso, em um computador baseado em arquitetura Itanium, o **/cmdcons** e o **/syspart** não estão disponíveis, e as opções relacionadas a atualizações não estão disponíveis.
-para obter mais informações sobre compatibilidade de hardware, consulte [compatibilidade de hardware](https://technet.microsoft.com/library/cc757927(v=ws.10).aspx).
-para obter informações mais detalhadas sobre como usar a atualização dinâmica e instalar vários clientes, consulte o kit de implantação do Windows Server 2003, descrito em como [usar os kits de recursos e implantação do Windows](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx).
-para obter informações sobre como modificar as configurações de inicialização, consulte Windows Deployment and Resource Kits for Windows Server 2003. Para obter mais informações, consulte [usando o Windows Deployment and Resource Kits](https://technet.microsoft.com/library/cc779317(v=ws.10).aspx).
+para obter mais informações sobre compatibilidade de hardware, consulte [compatibilidade de hardware](/previous-versions/windows/it-pro/windows-server-2003/cc757927(v=ws.10)).
+para obter informações mais detalhadas sobre como usar a atualização dinâmica e instalar vários clientes, consulte o kit de implantação do Windows Server 2003, descrito em como [usar os kits de recursos e implantação do Windows](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10)).
+para obter informações sobre como modificar as configurações de inicialização, consulte Windows Deployment and Resource Kits for Windows Server 2003. Para obter mais informações, consulte [usando o Windows Deployment and Resource Kits](/previous-versions/windows/it-pro/windows-server-2003/cc779317(v=ws.10)).
 Usar a opção de linha de comando **/Unattend** para automatizar a instalação afirma que você leu e aceitou o contrato de licença da Microsoft para o Windows Server 2003. Antes de usar essa opção de linha de comando para instalar o Windows Server 2003 em nome de uma organização que não seja a sua, você deve confirmar se o usuário final (seja um indivíduo ou uma entidade única) recebeu, leu e aceitou os termos do contrato de licença da Microsoft para esse produto.  Os OEMs não podem especificar essa chave em máquinas que estão sendo vendidas aos usuários finais.
 
 ## <a name="additional-references"></a>Referências adicionais
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
-

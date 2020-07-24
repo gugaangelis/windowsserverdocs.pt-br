@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7313f5b5b8c0594e0706555a203248d760028806
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8b5dc2ec454cd98eb4b03952a400815f4e7ea3b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933554"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956698"
 ---
 # <a name="online-disk"></a>online disk
 
@@ -36,7 +36,7 @@ online disk [noerr]
 
 ### <a name="parameters"></a>Parâmetros
 
-Para obter instruções sobre como usar esse comando, consulte [reativar um disco dinâmico ausente ou offline](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732026(v=ws.11)).
+Para obter instruções sobre como usar esse comando, consulte [reativar um disco dinâmico ausente ou offline](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc732026(v=ws.11)).
 
 | Parâmetro | Descrição |
 |--|--|

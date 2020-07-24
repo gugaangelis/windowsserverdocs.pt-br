@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88e23da66c1c02df140ba809396efd64e39281f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: eebba15cf59c537825dc73c47be9a61b2a552f3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933273"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957938"
 ---
 # <a name="ftp-debug"></a>ftp debug
 
@@ -22,7 +22,7 @@ ms.locfileid: "85933273"
 
 Alterna o modo de depuração. Por padrão, o modo de depuração é desativado. Se o modo de depuração estiver ativado, você verá cada comando enviado ao computador remoto, precedido pelo `>` caractere.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 debug
@@ -40,4 +40,4 @@ debug
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

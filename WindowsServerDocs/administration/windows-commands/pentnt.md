@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8006bf74c26b26575f7e2aea2e928d5db4985580
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5fb2ef97ea623174ad159021c2907f72314222f0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922853"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956658"
 ---
 # <a name="pentnt"></a>pentnt
 
@@ -23,7 +23,7 @@ ms.locfileid: "85922853"
 >[!IMPORTANT]
 > Este comando foi preterido.
 
-Detecta um erro de divisão de ponto flutuante (se presente) no chip Pentium, desabilita o hardware de ponto flutuante e ativa a emulação de ponto flutuante. Para obter descrições e informações de uso, consulte [pentnt](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10)).
+Detecta um erro de divisão de ponto flutuante (se presente) no chip Pentium, desabilita o hardware de ponto flutuante e ativa a emulação de ponto flutuante. Para obter descrições e informações de uso, consulte [pentnt](/previous-versions/orphan-topics/ws.10/cc755868(v=ws.10)).
 
 ## <a name="additional-references"></a>Referências adicionais
 

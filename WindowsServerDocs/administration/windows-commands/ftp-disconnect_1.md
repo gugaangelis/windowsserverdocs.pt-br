@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3287c5714d5174390e6c17e0f6345f2fb25c079b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bd8da3fa16d5fb3fcd6a0eff86b01b5f52701433
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927232"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957848"
 ---
 # <a name="ftp-disconnect"></a>ftp disconnect
 
@@ -22,7 +22,7 @@ ms.locfileid: "85927232"
 
 Desconecta-se do computador remoto e permanece no `ftp>` prompt.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 disconnect
@@ -40,4 +40,4 @@ disconnect
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Diretrizes adicionais de FTP](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))
+- [Diretrizes adicionais de FTP](/previous-versions/orphan-topics/ws.10/cc756013(v=ws.10))

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40d3536f5a6be0bf520095e3ba61f75b7a2addc7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2357f9916aba2eaba6a226fc8addbb13bf5f2f37
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924617"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86957138"
 ---
 # <a name="gpt"></a>gpt
 
@@ -37,7 +37,7 @@ gpt attributes=<n>
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| atributos =`<n>` | Especifica o valor do atributo que você deseja aplicar à partição com foco. O campo atributo GPT é um campo de 64 bits que contém dois subcampos. O campo superior é interpretado apenas no contexto da ID da partição, enquanto o campo inferior é comum a todas as IDs de partição. Os valores aceitos incluem:<ul><li>**0x0000000000000001** -especifica que a partição é exigida pelo computador para funcionar corretamente.</li><li>**0x8000000000000000** -especifica que a partição não receberá uma letra de unidade por padrão quando o disco for movido para outro computador ou quando o disco for visto pela primeira vez por um computador.</li><li>**0x4000000000000000** – oculta o volume de uma partição para que ela não seja detectada pelo Gerenciador de montagem.</li><li>**0x2000000000000000** -especifica que a partição é uma cópia de sombra de outra partição.</li><li>**0x1000000000000000** -especifica que a partição é somente leitura. Esse atributo impede que o volume seja gravado no.</li></ul><p>Para obter mais informações sobre esses atributos, consulte a seção atributos em [Create_PARTITION_PARAMETERS estrutura](https://docs.microsoft.com/windows/win32/api/vds/ns-vds-create_partition_parameters). |
+| atributos =`<n>` | Especifica o valor do atributo que você deseja aplicar à partição com foco. O campo atributo GPT é um campo de 64 bits que contém dois subcampos. O campo superior é interpretado apenas no contexto da ID da partição, enquanto o campo inferior é comum a todas as IDs de partição. Os valores aceitos incluem:<ul><li>**0x0000000000000001** -especifica que a partição é exigida pelo computador para funcionar corretamente.</li><li>**0x8000000000000000** -especifica que a partição não receberá uma letra de unidade por padrão quando o disco for movido para outro computador ou quando o disco for visto pela primeira vez por um computador.</li><li>**0x4000000000000000** – oculta o volume de uma partição para que ela não seja detectada pelo Gerenciador de montagem.</li><li>**0x2000000000000000** -especifica que a partição é uma cópia de sombra de outra partição.</li><li>**0x1000000000000000** -especifica que a partição é somente leitura. Esse atributo impede que o volume seja gravado no.</li></ul><p>Para obter mais informações sobre esses atributos, consulte a seção atributos em [Create_PARTITION_PARAMETERS estrutura](/windows/win32/api/vds/ns-vds-create_partition_parameters). |
 
 #### <a name="remarks"></a>Comentários
 
@@ -57,4 +57,4 @@ gpt attributes=0x8000000000000000
 
 - [Selecionar comando de partição](select-partition.md)
 
-- [Estrutura de create_PARTITION_PARAMETERS](https://docs.microsoft.com/windows/win32/api/vds/ns-vds-create_partition_parameters)
+- [Estrutura de create_PARTITION_PARAMETERS](/windows/win32/api/vds/ns-vds-create_partition_parameters)

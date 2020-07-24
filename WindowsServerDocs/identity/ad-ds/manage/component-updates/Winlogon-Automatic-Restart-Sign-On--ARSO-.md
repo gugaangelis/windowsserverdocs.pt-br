@@ -10,18 +10,18 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 53626c4cfac17cb11402ada9ce3397c487cd0720
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389847"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959868"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Logon automático de reinício do Winlogon (ARSO)
 
 Durante uma Windows Update, há processos específicos do usuário que devem acontecer para que a atualização seja concluída. Esses processos exigem que o usuário esteja conectado ao seu dispositivo. No primeiro logon após a inicialização de uma atualização, os usuários devem aguardar até que esses processos específicos do usuário sejam concluídos antes que possam começar a usar seu dispositivo.
 
-## <a name="how-does-it-work"></a>Como isso funciona?
+## <a name="how-does-it-work"></a>Como ela funciona?
 
 Quando Windows Update inicia uma reinicialização automática, o ARSO extrai as credenciais derivadas do usuário conectado no momento, persiste-as em disco e configura o logon automático para o usuário. Windows Update em execução como sistema com privilégio TCB iniciará a chamada RPC para fazer isso.
 
@@ -31,9 +31,9 @@ Ao fazer logon automaticamente e bloquear o usuário no console do, Windows Upda
 
 O ARSO trata de forma diferente os dispositivos gerenciados e não. Para dispositivos não gerenciados, a criptografia do dispositivo é usada, mas não é necessária para que o usuário obtenha ARSO. Para dispositivos gerenciados, o TPM 2,0, o SecureBoot e o BitLocker são necessários para a configuração do ARSO. Os administradores de ti podem substituir esse requisito por meio de Política de Grupo. O ARSO para dispositivos gerenciados está disponível no momento somente para dispositivos que ingressaram em Azure Active Directory.
 
-|   | Windows Update| Shutdown-g-t 0  | Reinicializações iniciadas pelo usuário | APIs com sinalizadores SHUTDOWN_ARSO/EWX_ARSO |
+|   | Windows Update| Shutdown-g-t 0  | Reinicializações iniciadas pelo usuário | APIs com sinalizadores de SHUTDOWN_ARSO/EWX_ARSO |
 | --- | :---: | :---: | :---: | :---: |
-| Dispositivos gerenciados | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
+| Dispositivos Gerenciados | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
 | Dispositivos não gerenciados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 > [!NOTE]
@@ -51,7 +51,7 @@ No Windows 10, o ARSO está desabilitado para SKUs de servidor e recusa-se para 
 
 **Política do Intune:**
 
-- Plataforma Windows 10 e posterior
+- Plataforma: Windows 10 e posterior
 - Tipo de perfil: Modelos Administrativos
 - Caminho: \Windows do Windows\windows opções de logon
 
@@ -92,7 +92,7 @@ Se você desabilitar essa configuração de política, o dispositivo não config
 
 **Política do Intune:**
 
-- Plataforma Windows 10 e posterior
+- Plataforma: Windows 10 e posterior
 - Tipo de perfil: Modelos Administrativos
 - Caminho: \Windows do Windows\windows opções de logon
 
@@ -114,7 +114,7 @@ Se você desabilitar ou não definir essa configuração, o logon automático us
 
 **Editor do registro**
 
-| Nome do valor | type | Dados |
+| Nome do valor | Tipo | Dados |
 | --- | --- | --- |
 | AutomaticRestartSignOnConfig | DWORD | 0 (habilitar ARSO se seguro) |
 |   |   | 1 (habilitar ARSO Always) |
@@ -172,4 +172,4 @@ Se um dispositivo tiver o Credential Guard habilitado, os segredos derivados de 
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-O logon automático é um recurso que está presente no Windows para várias versões. É um recurso documentado do Windows que até mesmo tem ferramentas como o logon automático para Windows [http:/technet. Microsoft. com/Sysinternals/bb963905. aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx). Ele permite que um único usuário do dispositivo se conecte automaticamente sem inserir as credenciais. As credenciais são configuradas e armazenadas no registro como um segredo de LSA criptografado. Isso pode ser problemático para muitos casos filho em que o bloqueio de conta pode ocorrer entre o tempo e a ativação, especialmente se a janela de manutenção for normalmente durante esse tempo.
+O logon automático é um recurso que está presente no Windows para várias versões. É um recurso documentado do Windows que até mesmo tem ferramentas como o logon automático para Windows [http:/technet. Microsoft. com/Sysinternals/bb963905. aspx](/sysinternals/downloads/autologon). Ele permite que um único usuário do dispositivo se conecte automaticamente sem inserir as credenciais. As credenciais são configuradas e armazenadas no registro como um segredo de LSA criptografado. Isso pode ser problemático para muitos casos filho em que o bloqueio de conta pode ocorrer entre o tempo e a ativação, especialmente se a janela de manutenção for normalmente durante esse tempo.

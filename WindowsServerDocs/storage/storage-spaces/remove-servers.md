@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: Como remover servidores de um cluster de Espaços de Armazenamento Diretos no Windows Server.
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dd888048edc96d6001492e92ba6d519c751bdaa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4fa3fe64cb5d7448a7e71eb344309ecb9990ebcd
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474563"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960018"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>Removendo servidores em Espaços de Armazenamento Diretos
 
@@ -27,7 +27,7 @@ Este tópico descreve como remover servidores em [Espaços de Armazenamento Dire
 
 Se você pretende adicionar o servidor de volta ao cluster em breve, ou se pretende manter as unidades e movê-las para outro servidor, você pode remover o servidor do cluster *sem* remover as unidades do pool de armazenamento. Este é o comportamento padrão se você usar o Gerenciador de Cluster de Failover para remover o servidor.
 
-Use o cmdlet [Remove-ClusterNode](https://technet.microsoft.com/library/hh847251.aspx) do PowerShell:
+Use o cmdlet [Remove-ClusterNode](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)) do PowerShell:
 
 ```PowerShell
 Remove-ClusterNode <Name>

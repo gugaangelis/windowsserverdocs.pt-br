@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 1ab4c0946c1081019747420448a0217359282bf1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b00eb8a4c282cc8bafa9459b319c5c47f2d8c460
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469721"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960338"
 ---
 # <a name="known-issues-with-storage-replica"></a>Problemas conhecidos com a Réplica de Armazenamento
 
@@ -356,7 +356,7 @@ Execute Get-Cluster | fl * em cada nó.
 Se ClusterFunctionalLevel = 9, que é a versão ClusterFunctionalLevel do Windows 2016 necessária para implementar a réplica de armazenamento neste nó.
 Se ClusterFunctionalLevel não for 9, o ClusterFunctionalLevel precisará ser atualizado para implementar a réplica de armazenamento neste nó.
 
-Para resolver o problema, aumente o nível funcional do cluster executando o cmdlet do PowerShell: [Update-ClusterFunctionalLevel](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)
+Para resolver o problema, aumente o nível funcional do cluster executando o cmdlet do PowerShell: [Update-ClusterFunctionalLevel](/powershell/module/failoverclusters/update-clusterfunctionallevel)
 
 ## <a name="small-unknown-partition-listed-in-diskmgmt-for-each-replicated-volume"></a>Pequena partição desconhecida listada em DISKMGMT para cada volume replicado
 
@@ -384,7 +384,7 @@ Esse problema ocorre devido a limitações de arquitetura dentro do mecanismo de
 
 Ao usar Espaços de Armazenamento Diretos com HDDs, você não pode desabilitar ou evitar o cache. Como alternativa, se estiver usando apenas SSD e NVME, você pode configurar apenas as camadas de desempenho e capacidade. Se estiver usando essa configuração e posicionar os logs do SR no nível de desempenho somente com os volumes de dados em que eles estão sendo atendidos apenas na camada de capacidade, você evitará o problema de alta latência descrito acima. O mesmo pode ser feito com uma combinação de SSDs mais rápidos e lentos e sem NVME.
 
-Essa solução alternativa não é ideal e alguns clientes podem não conseguir usá-la. A equipe de réplica de armazenamento está trabalhando em otimizações e um mecanismo de log atualizado para o futuro para reduzir esses afunilamentos artificiais. Esse log v 1.1 primeiro se tornou disponível no Windows Server 2019 e seu desempenho aprimorado é descrito no no [blog de armazenamento do servidor](https://blogs.technet.microsoft.com/filecab/2018/12/13/chelsio-rdma-and-storage-replica-perf-on-windows-server-2019-are-💯/).
+Essa solução alternativa não é ideal e alguns clientes podem não conseguir usá-la. A equipe de réplica de armazenamento está trabalhando em otimizações e um mecanismo de log atualizado para o futuro para reduzir esses afunilamentos artificiais. Esse log v 1.1 primeiro se tornou disponível no Windows Server 2019 e seu desempenho aprimorado é descrito no no [blog de armazenamento do servidor](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 ## <a name="error-could-not-find-file-when-running-test-srtopology-between-two-clusters"></a>Erro "não foi possível encontrar o arquivo" ao executar Test-SRTopology entre dois clusters
 
