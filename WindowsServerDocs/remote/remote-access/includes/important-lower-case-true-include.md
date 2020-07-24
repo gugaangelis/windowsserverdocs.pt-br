@@ -1,5 +1,5 @@
 >[!IMPORTANT]
->Qualquer outra combinação de maiusculas ou minúsculas para 'true' as seguintes marcas resulta em uma configuração parcial do perfil VPN:
+>Qualquer outra combinação de maiúsculas ou minúsculas para ' true ' nas seguintes marcas resulta em uma configuração parcial do perfil de VPN:
 >
->\<AlwaysOn\>**true**\</AlwaysOn><br>
->\<RememberCredentials\>**true**\</RememberCredentials>
+>\</AlwaysOn \> **verdadeiro**AlwaysOn \<><br>
+>\<RememberCredentials \> **true** \< /RememberCredentials>

@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: a317f358c37f607475890efe773b57ee8efaeb14
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473473"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955908"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
 
@@ -27,7 +27,7 @@ Com os Espaços de Armazenamento Diretos, colocar um servidor offline (desativan
 Use os procedimentos a seguir para pausar corretamente um servidor em um cluster de Espaços de Armazenamento Diretos antes de colocá-lo offline.
 
    > [!IMPORTANT]
-   > Para instalar atualizações em um cluster de Espaços de Armazenamento Diretos, use o CAU (Atualização com Suporte a Cluster), que executa automaticamente os procedimentos neste tópico para que você não precise fazê-lo ao instalar atualizações. Para obter mais informações, consulte [CAU (Atualização com Suporte a Cluster)](https://technet.microsoft.com/library/hh831694.aspx).
+   > Para instalar atualizações em um cluster de Espaços de Armazenamento Diretos, use o CAU (Atualização com Suporte a Cluster), que executa automaticamente os procedimentos neste tópico para que você não precise fazê-lo ao instalar atualizações. Para obter mais informações, consulte [CAU (Atualização com Suporte a Cluster)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11)).
 
 ## <a name="verifying-its-safe-to-take-the-server-offline"></a>Verificar se é seguro colocar o servidor offline
 
@@ -82,7 +82,7 @@ Todas as máquinas virtuais começarão a realizar a migração ao vivo para out
 
 Depois que o servidor tiver concluído o esvaziamento, ele aparecerá como **Em Pausa** no Gerenciador de Cluster de Failover e no PowerShell.
 
-![Em Pausa](media/maintain-servers/paused.png)
+![Pausado](media/maintain-servers/paused.png)
 
 Agora você pode reiniciá-lo ou desligá-lo com segurança como faria normalmente (por exemplo, usando os cmdlets Restart-Computer ou Stop-Computer do PowerShell).
 
@@ -186,4 +186,4 @@ Use as etapas a seguir para demarcar o sistema Espaços de Armazenamento Diretos
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
-- [CAU (Atualização com Suporte a Cluster)](https://technet.microsoft.com/library/hh831694.aspx)
+- [CAU (Atualização com Suporte a Cluster)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831694(v=ws.11))

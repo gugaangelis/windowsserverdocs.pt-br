@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: eaad015d0097d9b65a4aba8a5846c7782b6966d1
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866035"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956208"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implantando os Serviços de Federação do Active Directory no Azure
 O AD FS fornece recursos simplificados e seguros de federação de identidade e de logon único (SSO) da Web. A federação com o Azure AD ou o O365 habilita os usuários a se autenticar usando credenciais locais e acessar todos os recursos na nuvem. Como resultado, é importante ter uma infraestrutura altamente disponível do AD FS para garantir o acesso a recursos locais e na nuvem. Implantar o AD FS no Azure pode ajudar a atingir a alta disponibilidade necessária com esforço mínimo.
@@ -232,7 +232,7 @@ Para garantir que os servidores de Proxy de Aplicativo Web possam acessar os ser
 **7.2. Instalar a função de Proxy de Aplicativo Web**
 
 Depois de garantir que os servidores de Proxy de Aplicativo da Web possam acessar os servidores do AD FS por trás do ILB, você pode instalar os servidores de Proxy de Aplicativo Web. Os servidores de Proxy de Aplicativo Web não precisam ser associados ao domínio. Instale as funções de Proxy de Aplicativo Web em dois servidores de Proxy de Aplicativo Web selecionando a função de Acesso Remoto. O gerenciador de servidores o guirá para concluir a instalação do WAP.
-Para obter mais informações sobre como implantar o WAP, leia [Instalar e configurar o servidor de Proxy de Aplicativo Web](https://technet.microsoft.com/library/dn383662.aspx).
+Para obter mais informações sobre como implantar o WAP, leia [Instalar e configurar o servidor de Proxy de Aplicativo Web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11)).
 
 ### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. implantando a Internet (pública) Load Balancer
 **8,1. criar Load Balancer voltados para a Internet (público)**
@@ -364,6 +364,6 @@ Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar es
 * [AD FS e Links de Proxy de Aplicativo Web](https://aka.ms/ADFSLinks) 
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Integração de suas identidades locais com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/hybrid/whatis-hybrid-identity)
+* [Integração de suas identidades locais com o Active Directory do Azure](/azure/active-directory/hybrid/whatis-hybrid-identity)
 * [Configurar e gerenciar o AD FS usando o Azure AD Connect](/azure/active-directory/hybrid/how-to-connect-fed-whatis)
 * [Implantação AD FS de alta disponibilidade entre regiões no Azure com o Gerenciador de tráfego do Azure](active-directory-adfs-in-azure-with-azure-traffic-manager.md)

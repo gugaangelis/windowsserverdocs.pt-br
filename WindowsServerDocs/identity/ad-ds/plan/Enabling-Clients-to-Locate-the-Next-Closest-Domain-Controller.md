@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 75e31a435e8d8411fbe4db242e6d31fd7676fe4e
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: ce946fb0fe581a66f4a4e29cf8491f00294b5bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624244"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953578"
 ---
 # <a name="enabling-clients-to-locate-the-next-closest-domain-controller"></a>Permitindo que os clientes localizem o controlador de domínio mais próximo
 
@@ -31,7 +31,7 @@ Por padrão, a configuração **tentar site mais próximo** não está habilitad
 - Se nenhum controlador de domínio estiver disponível no mesmo site, tente localizar qualquer controlador de domínio no domínio.
 
 > [!NOTE]
-> Esse é o mesmo algoritmo que o localizador de DC usado em versões anteriores do Active Directory. Para obter mais informações, consulte o artigo [como o suporte a DNS para Active Directory funciona](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10)).
+> Esse é o mesmo algoritmo que o localizador de DC usado em versões anteriores do Active Directory. Para obter mais informações, consulte o artigo [como o suporte a DNS para Active Directory funciona](/previous-versions/windows/it-pro/windows-server-2003/cc759550(v=ws.10)).
 
 Se você habilitar a configuração de **experimentar o site mais próximo** , o localizador de DC usará o seguinte algoritmo para localizar um controlador de domínio:
 
@@ -54,4 +54,4 @@ Se a configuração não estiver habilitada, o cliente tentará localizar um con
 > [!NOTE]
 > A configuração **Experimente o site mais próximo** funciona em coordenação com a cobertura automática de site. Por exemplo, se o site mais próximo não tiver nenhum controlador de domínio, o localizador de DC tentará localizar o controlador de domínio que executa a cobertura automática de site para esse site.
 
-Para aplicar a configuração **Experimente o site mais próximo** , você pode criar um objeto de política de grupo (GPO) e vinculá-lo ao objeto apropriado para sua organização ou pode modificar a política de domínio padrão para que ela afete todos os clientes que executam o Windows Vista ou mais recente e o Windows Server 2008 ou mais recente no domínio. Para obter mais informações sobre como definir a configuração do **site try Next mais** próximo, consulte [habilitar clientes para localizar um controlador de domínio no próximo site mais](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772592(v=ws.10))próximo.
+Para aplicar a configuração **Experimente o site mais próximo** , você pode criar um objeto de política de grupo (GPO) e vinculá-lo ao objeto apropriado para sua organização ou pode modificar a política de domínio padrão para que ela afete todos os clientes que executam o Windows Vista ou mais recente e o Windows Server 2008 ou mais recente no domínio. Para obter mais informações sobre como definir a configuração do **site try Next mais** próximo, consulte [habilitar clientes para localizar um controlador de domínio no próximo site mais](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772592(v=ws.10))próximo.

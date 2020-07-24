@@ -8,16 +8,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: b616b9cc80b21c4c6a72fcca55dcdd893fac2730
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3c8ef7502c524994454c697e2fa7d5dee223da5d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928198"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955458"
 ---
 # <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
 
-Retorna o SID de um [token auxiliar](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)do trabalho de transferência de bits, se um estiver definido.
+Retorna o SID de um [token auxiliar](/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)do trabalho de transferência de bits, se um estiver definido.
 
 > [!NOTE]
 > Esse comando não tem suporte no BITS 3,0 e versões anteriores.

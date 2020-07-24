@@ -9,21 +9,21 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: b1316fe2feba674beb915b6ea22b1c0361ae1243
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: a98ed0d8436b057c63b08c1f1476b4392f7911fc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433150"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953928"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>Etapa 7.5. Criar perfis de VPNv2 baseados em OMA-DM para dispositivos Windows 10
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
 - [**Anterior:** Etapa 7,4. Implantar certificados raiz de acesso condicional no AD local](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
-- [**Em seguida:** Saiba como o acesso condicional para VPN funciona](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
+- [**Em seguida:** Saiba como o acesso condicional para VPN funciona](/windows/access-protection/vpn/vpn-conditional-access)
 
-Nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser usar o Microsoft Endpoint Configuration Manager ou o script do PowerShell para criar perfis do VPNv2, consulte [configurações do CSP do VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes. 
+Nesta etapa, você pode criar perfis de VPNv2 baseados em OMA-DM usando o Intune para implantar uma política de configuração de dispositivo VPN. Se você quiser usar o Microsoft Endpoint Configuration Manager ou o script do PowerShell para criar perfis do VPNv2, consulte [configurações do CSP do VPNv2](/windows/client-management/mdm/vpnv2-csp) para obter mais detalhes. 
 
 ## <a name="managed-deployment-using-intune"></a>Implantação gerenciada usando o Intune
 
@@ -45,7 +45,7 @@ O computador cliente do Windows 10 já foi configurado com uma conexão VPN usan
 
     ![Portal do Intune](../../media/Always-On-Vpn/intune-eap-xml.png)
 
-3. Localize a seção que termina com ** \< /AcceptServerName>\< /EapType>** e insira a seguinte cadeia de caracteres entre esses dois valores para fornecer ao cliente VPN a lógica para selecionar o certificado de acesso condicional do AAD:
+3. Localize a seção que termina com **\</AcceptServerName>\</EapType>** e insira a seguinte cadeia de caracteres entre esses dois valores para fornecer ao cliente VPN a lógica para selecionar o certificado de acesso condicional do AAD:
 
     ```XML
     <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
@@ -53,7 +53,7 @@ O computador cliente do Windows 10 já foi configurado com uma conexão VPN usan
 
 4. Selecione a folha **acesso condicional** e alternância **acesso condicional para esta conexão VPN** a ser **habilitada**.
    
-   A habilitação dessa configuração altera o ** \< DeviceCompliance>\< habilitado>configuração true \< /Enabled>** no XML do perfil VPNv2.
+   A habilitação dessa configuração altera a configuração ** \<DeviceCompliance> \<Enabled> true \</Enabled> ** no XML do perfil VPNv2.
 
     ![Acesso condicional para Always On VPN-Properties](../../media/Always-On-Vpn/vpn-conditional-access-azure-ad.png)
 
@@ -86,14 +86,14 @@ Você concluiu a configuração do perfil VPN para usar o acesso condicional do 
 
 |Se desejar...  |Em seguida, consulte...  |
 |---------|---------|
-|Saiba mais sobre como o acesso condicional funciona com VPNs  |[VPN e acesso condicional](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access): Esta página fornece mais informações sobre como o acesso condicional funciona com VPNs.      |
+|Saiba mais sobre como o acesso condicional funciona com VPNs  |[VPN e acesso condicional](/windows/access-protection/vpn/vpn-conditional-access): Esta página fornece mais informações sobre como o acesso condicional funciona com VPNs.      |
 |Saiba mais sobre os recursos avançados de VPN  |[Recursos avançados de VPN](always-on-vpn/deploy/always-on-vpn-adv-options.md#advanced-vpn-features): Esta página fornece orientação sobre como habilitar filtros de tráfego de VPN, como configurar conexões VPN automáticas usando gatilhos de aplicativo e como configurar o NPS para permitir somente conexões VPN de clientes usando certificados emitidos pelo Azure AD.        |
 
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-- [CSP VPNv2](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp): Este tópico fornece uma visão geral do VPNv2 CSP. O provedor de serviços de configuração do VPNv2 permite que o servidor MDM (gerenciamento de dispositivo móvel) Configure o perfil VPN do dispositivo.
+- [CSP VPNv2](/windows/client-management/mdm/vpnv2-csp): Este tópico fornece uma visão geral do VPNv2 CSP. O provedor de serviços de configuração do VPNv2 permite que o servidor MDM (gerenciamento de dispositivo móvel) Configure o perfil VPN do dispositivo.
 
-- [Configurar conexões VPN Always on cliente do Windows 10](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections): Este tópico fornece informações sobre as opções e o esquema do ProfileXML e como criar a VPN ProfileXML. Depois de configurar a infraestrutura do servidor, você deve configurar os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. 
+- [Configurar conexões VPN Always on cliente do Windows 10](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md): Este tópico fornece informações sobre as opções e o esquema do ProfileXML e como criar a VPN ProfileXML. Depois de configurar a infraestrutura do servidor, você deve configurar os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. 
 
-- [Configurar o cliente VPN usando o Intune](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections#configure-the-vpn-client-by-using-intune): Este tópico fornece informações sobre como implantar o acesso remoto do Windows 10 Always on perfis VPN. O Intune agora usa grupos do Azure AD. Se Azure AD Connect tiver sincronizado o grupo de usuários VPN do local para o Azure AD, não haverá necessidade de configurar o cliente VPN usando o Intune.
+- [Configurar o cliente VPN usando o Intune](./always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune): Este tópico fornece informações sobre como implantar o acesso remoto do Windows 10 Always on perfis VPN. O Intune agora usa grupos do Azure AD. Se Azure AD Connect tiver sincronizado o grupo de usuários VPN do local para o Azure AD, não haverá necessidade de configurar o cliente VPN usando o Intune.

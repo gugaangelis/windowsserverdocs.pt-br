@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fea55dc5551198f7bc06afb2ec38077398b9cf77
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824049"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953968"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar como recuperar a floresta
 
@@ -44,19 +44,19 @@ Se você precisar restaurar Active Directory para um hardware diferente, crie ba
 > A partir do Windows Server 2008, não há suporte para restaurar o backup do estado do sistema para uma nova instalação do Windows Server em um novo hardware ou o mesmo hardware. Se o Windows Server for reinstalado no mesmo hardware, conforme recomendado posteriormente neste guia, você poderá restaurar o controlador de domínio nesta ordem:
 >
 > 1. Execute uma restauração completa do servidor para restaurar o sistema operacional e todos os arquivos e aplicativos.
-> 2. Execute uma restauração de estado do sistema usando o Wbadmin. exe para marcar o SYSVOL como autoritativo.
+> 2. Execute uma restauração de estado do sistema usando wbadmin.exe para marcar o SYSVOL como autoritativo.
 >
 > Para obter mais informações, consulte o artigo [249694](https://support.microsoft.com/kb/249694)do Microsoft KB.
 
 Se a hora da ocorrência da falha for desconhecida, investigue mais para identificar os backups que mantêm o último estado de segurança da floresta. Essa abordagem é menos desejável. Portanto, é altamente recomendável que você mantenha logs detalhados sobre o estado de integridade de AD DS diariamente para que, se houver uma falha em toda a floresta, o tempo aproximado de falha possa ser identificado. Você também deve manter uma cópia local dos backups para permitir uma recuperação mais rápida.
 
-Se Active Directory Lixeira estiver habilitada, o tempo de vida do backup será igual ao valor **deletedObjectLifetime** ou ao valor **tombstoneLifetime** , o que for menor. Para obter mais informações, consulte [Active Directory guia passo a passo da lixeira](https://go.microsoft.com/fwlink/?LinkId=178657) (https://go.microsoft.com/fwlink/?LinkId=178657).
+Se Active Directory Lixeira estiver habilitada, o tempo de vida do backup será igual ao valor **deletedObjectLifetime** ou ao valor **tombstoneLifetime** , o que for menor. Para obter mais informações, consulte [Active Directory guia passo a passo da lixeira](https://go.microsoft.com/fwlink/?LinkId=178657) ( https://go.microsoft.com/fwlink/?LinkId=178657) .
 
-Como alternativa, você também pode usar a ferramenta de montagem de banco de dados Active Directory (Dsamain. exe) e uma ferramenta LDAP (Lightweight Directory Access Protocol), como Ldp. exe ou Active Directory usuários e computadores, para identificar qual backup tem o último estado de segurança da floresta. A ferramenta de montagem de banco de dados Active Directory, que está incluída nos sistemas operacionais Windows Server 2008 e posteriores do Windows Server, expõe Active Directory dados armazenados em backups ou instantâneos como um servidor LDAP. Em seguida, você pode usar uma ferramenta LDAP para procurar os dados. Essa abordagem tem a vantagem de não exigir que você reinicie qualquer DC no Modo de Restauração dos Serviços de Diretório (DSRM) para examinar o conteúdo do backup de AD DS.
+Como alternativa, você também pode usar a ferramenta de montagem de banco de dados Active Directory (Dsamain.exe) e uma ferramenta LDAP (Lightweight Directory Access Protocol), como Ldp.exe ou Active Directory usuários e computadores, para identificar qual backup tem o último estado de segurança da floresta. A ferramenta de montagem de banco de dados Active Directory, que está incluída nos sistemas operacionais Windows Server 2008 e posteriores do Windows Server, expõe Active Directory dados armazenados em backups ou instantâneos como um servidor LDAP. Em seguida, você pode usar uma ferramenta LDAP para procurar os dados. Essa abordagem tem a vantagem de não exigir que você reinicie qualquer DC no Modo de Restauração dos Serviços de Diretório (DSRM) para examinar o conteúdo do backup de AD DS.
 
-Para obter mais informações sobre como usar a ferramenta de montagem de banco de dados Active Directory, consulte o [guia passo a passo da ferramenta de montagem de banco de dados do Active Directory](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx).
+Para obter mais informações sobre como usar a ferramenta de montagem de banco de dados Active Directory, consulte o [guia passo a passo da ferramenta de montagem de banco de dados do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).
 
-Você também pode usar o comando **Ntdsutil snapshot** para criar instantâneos do banco de dados Active Directory. Ao agendar uma tarefa para criar instantâneos periodicamente, você pode obter cópias adicionais do banco de dados Active Directory ao longo do tempo. Você pode usar essas cópias para identificar melhor quando a falha em toda a floresta ocorreu e escolher o melhor backup a ser restaurado. Para criar instantâneos, use a versão do **Ntdsutil** fornecida com o windows Server 2008 ou o ferramentas de administração de servidor remoto (RSAT) para Windows Vista ou posterior. O DC de destino pode executar qualquer versão do Windows Server. Para obter mais informações sobre como usar o comando de **instantâneo do Ntdsutil** , consulte [instantâneo](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx).
+Você também pode usar o comando **Ntdsutil snapshot** para criar instantâneos do banco de dados Active Directory. Ao agendar uma tarefa para criar instantâneos periodicamente, você pode obter cópias adicionais do banco de dados Active Directory ao longo do tempo. Você pode usar essas cópias para identificar melhor quando a falha em toda a floresta ocorreu e escolher o melhor backup a ser restaurado. Para criar instantâneos, use a versão do **Ntdsutil** fornecida com o windows Server 2008 ou o ferramentas de administração de servidor remoto (RSAT) para Windows Vista ou posterior. O DC de destino pode executar qualquer versão do Windows Server. Para obter mais informações sobre como usar o comando de **instantâneo do Ntdsutil** , consulte [instantâneo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).
 
 ## <a name="determining-which-domain-controllers-to-restore"></a>Determinando quais controladores de domínio restaurar
 
@@ -81,7 +81,7 @@ Escolha um controlador de domínio que melhor atenda aos seguintes critérios:
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-Mantenha os procedimentos de segurança ao manipular ou restaurar arquivos de backup que incluem Active Directory. A urgência que acompanha a recuperação da floresta pode levar intencionalmente à desprocura de práticas recomendadas de segurança. Para obter mais informações, consulte a seção "estabelecendo estratégias de backup e restauração do controlador de domínio" no [Guia de práticas recomendadas para proteger Active Directory instalações e operações cotidianas: parte II](https://technet.microsoft.com/library/bb727066.aspx).
+Mantenha os procedimentos de segurança ao manipular ou restaurar arquivos de backup que incluem Active Directory. A urgência que acompanha a recuperação da floresta pode levar intencionalmente à desprocura de práticas recomendadas de segurança. Para obter mais informações, consulte a seção "estabelecendo estratégias de backup e restauração do controlador de domínio" no [Guia de práticas recomendadas para proteger Active Directory instalações e operações cotidianas: parte II](/previous-versions/windows/it-pro/windows-2000-server/bb727066(v=technet.10)).
 
 ## <a name="identify-the-current-forest-structure-and-dc-functions"></a>Identificar a estrutura de floresta e as funções de controlador de domínio atuais
 
@@ -89,7 +89,7 @@ Determine a estrutura da floresta atual identificando todos os domínios na flor
 
 Prepare uma tabela que mostra as funções de cada DC no domínio, conforme mostrado no exemplo a seguir. Isso irá ajudá-lo a reverter para a configuração de pré-falha da floresta após a recuperação.
 
-|Nome do DC|Sistema operacional|FSMO|{1&gt;GC&lt;1}|RODC|Backup|DNS|Server Core|VM|VM-GenID|  
+|Nome do DC|Sistema operacional|FSMO|GC|RODC|Backup|DNS|Server Core|VM|VM-GenID|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
 |DC_1|Windows Server 2012|Mestre de esquema, mestre de nomeação de domínio|Sim|Não|Sim|Não|Não|Sim|Sim|  
 |DC_2|Windows Server 2012|Nenhum|Sim|Não|Sim|Sim|Não|Sim|Sim|  
@@ -134,7 +134,7 @@ Os RODCs continuarão a permitir o acesso a recursos locais que são armazenados
   
 Se você estiver usando uma arquitetura de rede hub e spoke, poderá se concentrar primeiro na recuperação dos DCs graváveis nos sites do Hub. Posteriormente, você pode recriar os RODCs em sites remotos.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

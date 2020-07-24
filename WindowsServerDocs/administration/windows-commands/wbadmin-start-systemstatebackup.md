@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e92c508d2c9ca9ae759d81292ec3d511144dbd7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 355dcff0f2b5ef3adc4f064651f0cea23a92d48f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930908"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954468"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -57,4 +57,4 @@ wbadmin start systemstatebackup -backupTarget:f:
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   Cmdlet [Start-WBBackup](https://technet.microsoft.com/library/jj902459.aspx)
+-   Cmdlet [Start-WBBackup](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))

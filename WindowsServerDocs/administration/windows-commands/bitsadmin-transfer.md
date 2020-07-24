@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57de6db53433d0da1a4efd8c212a23183edcbcf9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b2d03fb379c879f445a30dd0f3daf762fed23c7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927422"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955428"
 ---
 # <a name="bitsadmin-transfer"></a>bitsadmin transfer
 
@@ -39,7 +39,7 @@ bitsadmin /transfer <name> [<type>] [/priority <job_priority>] [/ACLflags <flags
 | tipo | Opcional. Define o tipo de trabalho, incluindo:<ul><li>**Baixar.** O valor padrão. Escolha esse tipo para baixar trabalhos.</li><li>**Carregar.** Escolha este tipo para trabalhos de carregamento.</li></ul> |
 | priority | Opcional. Define a prioridade do trabalho, incluindo:<ul><li>FOREGROUND</li><li>HIGH</li><li>NORMAL</li><li>LOW</li></ul> |
 | ACLflags | Opcional. Indica que você deseja manter as informações de proprietário e ACL com o arquivo que está sendo baixado. Especifique um ou mais dos valores, incluindo:<ul><li>**o** -copie as informações do proprietário com o arquivo.</li><li>**g** -copiar informações do grupo com o arquivo.</li><li>**d** – copiar informações de DACL (lista de controle de acesso discricionário) com o arquivo.</li><li>**s** -copiar informações de SACL (lista de controle de acesso) do sistema com o arquivo.</li></ul> |
-| /DYNAMIC | Configura o trabalho usando [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](https://docs.microsoft.com/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id), que libera os requisitos do lado do servidor. |
+| /DYNAMIC | Configura o trabalho usando [**BITS_JOB_PROPERTY_DYNAMIC_CONTENT**](/windows/win32/api/bits5_0/ne-bits5_0-bits_job_property_id), que libera os requisitos do lado do servidor. |
 | remotefilename | O nome do arquivo depois que ele é transferido para o servidor. |
 | localfilename | O nome do arquivo que reside localmente. |
 

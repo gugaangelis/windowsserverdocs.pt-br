@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f97c35eb8a98aedecfd2f5a8dc87d4ddc3a3cd6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1edfb61880e03399da0c8eae34903789ca230057
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928527"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955768"
 ---
 # <a name="begin-restore"></a>begin restore
 
@@ -22,7 +22,7 @@ ms.locfileid: "85928527"
 
 Inicia uma sessão de restauração e emite um evento de **Prerestore** para gravadores envolvidos.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 begin restore
@@ -34,4 +34,4 @@ begin restore
 
 - [comando Iniciar backup](begin-backup.md)
 
-- [Preparar para restaurar](https://docs.microsoft.com/windows/win32/vss/overview-of-preparing-for-restore)
+- [Preparar para restaurar](/windows/win32/vss/overview-of-preparing-for-restore)

@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 7c09ae7a792030152780ce4eb0029cea3ca234d2
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0a9d9c139c721608e9104c4943dda2664432c94d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818919"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955098"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Etapa 2. Configurar a infraestrutura do servidor
 
@@ -43,7 +43,7 @@ Você registra certificados manualmente em servidores VPN.
 
 5. No Editor de Gerenciamento de Política de Grupo, conclua as seguintes etapas para configurar o registro automático do certificado do computador:
 
-    1. No painel de navegação, vá para **configuração do computador** > **políticas** > **configurações do Windows** > **configurações de segurança** > **políticas de chave pública**.
+    1. No painel de navegação, vá para **configuração do computador**  >  **políticas**  >  **configurações do Windows**configurações de  >  **segurança**  >  **políticas de chave pública**.
 
     2. No painel de detalhes, clique com o botão direito do mouse em **cliente de serviços de certificados – registro automático**e selecione **Propriedades**.
 
@@ -55,9 +55,9 @@ Você registra certificados manualmente em servidores VPN.
 
 6. No Editor de Gerenciamento de Política de Grupo, conclua as seguintes etapas para configurar o registro automático de certificado de usuário:
 
-    1. No painel de navegação, vá para **configuração do usuário** > **políticas** > **configurações do Windows** > **configurações de segurança** > **políticas de chave pública**.
+    1. No painel de navegação, vá para políticas de **configuração do usuário**configurações do Windows configurações de  >  **Policies**  >  **Windows Settings**  >  **segurança**  >  **políticas de chave pública**.
 
-    2. No painel de detalhes, clique com o botão direito do mouse em **Registro automático de cliente nos serviços de certificado** e selecione **Propriedades**.
+    2. No painel de detalhes, clique com o botão direito do mouse em **cliente de serviços de certificados – registro automático** e selecione **Propriedades**.
 
     3. Na caixa de diálogo cliente de serviços de certificados – Propriedades de registro automático, em **modelo de configuração**, selecione **habilitado**.
 
@@ -109,7 +109,7 @@ Como o servidor RRAS não está ingressado no domínio, o registro automático n
     certreq -accept VPNGateway.cer
     ```
 
-11. Execute o snap-in do MMC de certificados, conforme descrito [aqui](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) selecionando a opção de **conta de computador** .
+11. Execute o snap-in do MMC de certificados, conforme descrito [aqui](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) selecionando a opção de **conta de computador** .
 
 12. Verifique se existe um certificado válido para o servidor RRAS com as seguintes propriedades:
 
@@ -122,7 +122,7 @@ Como o servidor RRAS não está ingressado no domínio, o registro automático n
 Aqui você pode ver um script de exemplo de uma política de solicitação de certificado usada para solicitar um certificado de gateway de VPN usando um processo fora de banda.
 
 >[!TIP]
->Você pode encontrar uma cópia do script VPNGateway. inf no kit de IP da oferta de VPN na pasta políticas de solicitação de certificado. Somente atualize os ' Subject ' e '\_continuar\_' com valores específicos do cliente.
+>Você pode encontrar uma cópia do script VPNGateway. inf no kit de IP da oferta de VPN na pasta políticas de solicitação de certificado. Atualize apenas ' Subject ' e ' \_ continue \_ ' com valores específicos do cliente.
 
 ```
 [Version] 
@@ -201,10 +201,10 @@ Você também adiciona um grupo que contém servidores VPN e outro grupo que con
 
 ## <a name="create-the-user-authentication-template"></a>Criar o modelo de autenticação de usuário
 
-Neste procedimento, você configura um modelo de autenticação cliente-servidor personalizado. Esse modelo é necessário porque você deseja melhorar a segurança geral do certificado selecionando os níveis de compatibilidade atualizados e escolhendo o provedor Microsoft Platform crypto. Essa última alteração permite que você use o TPM nos computadores cliente para proteger o certificado. Para obter uma visão geral do TPM, consulte [visão geral da tecnologia de Trusted Platform Module](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview).
+Neste procedimento, você configura um modelo de autenticação cliente-servidor personalizado. Esse modelo é necessário porque você deseja melhorar a segurança geral do certificado selecionando os níveis de compatibilidade atualizados e escolhendo o provedor Microsoft Platform crypto. Essa última alteração permite que você use o TPM nos computadores cliente para proteger o certificado. Para obter uma visão geral do TPM, consulte [visão geral da tecnologia de Trusted Platform Module](/windows/device-security/tpm/trusted-platform-module-overview).
 
 >[!IMPORTANT] 
->Provedor de criptografia de plataforma da Microsoft "requer um chip TPM, caso você esteja executando uma VM e receba o seguinte erro:" não é possível encontrar um CSP válido no computador local "ao tentar registrar manualmente o certificado, você precisa verificar" armazenamento de chaves de software da Microsoft Provedor "e o têm em segundo lugar depois de" provedor Microsoft Platform crypto "na guia criptografia nas propriedades do certificado.
+>Provedor de criptografia de plataforma da Microsoft "requer um chip TPM, caso você esteja executando uma VM e receba o seguinte erro:" não é possível encontrar um CSP válido no computador local "ao tentar registrar manualmente o certificado, você precisa verificar" provedor de armazenamento de chaves de software Microsoft "e tê-lo em segundo lugar após" provedor Microsoft Platform crypto "na guia criptografia nas propriedades do certificado.
 
 **Procedure**
 
@@ -277,7 +277,7 @@ Neste procedimento, você pode configurar um novo modelo de autenticação de se
 >[!IMPORTANT]
 >Como os clientes VPN acessam esse servidor da Internet pública, os nomes de assunto e alternativos são diferentes do nome do servidor interno. Como resultado, você não pode registrar automaticamente esse certificado em servidores VPN.
 
-**Pré-requisitos**
+**Pré-requisitos:**
 
 Servidores VPN ingressados no domínio
 
@@ -415,7 +415,7 @@ Ao contrário do certificado de usuário, você deve registrar manualmente o cer
 
 2. Clique com o botão direito do mouse em **pessoal**, selecione **todas as tarefas** e, em seguida, selecione **solicitar novo certificado** para iniciar o assistente de registro de certificado.
 
-3. Na página antes de começar, selecione **Avançar**.
+3. Na página Antes de Começar escolha **Avançar**.
 
 4. Na página Selecionar política de registro de certificado, selecione **Avançar**.
 
@@ -471,6 +471,6 @@ Ao contrário do certificado de usuário, você deve registrar manualmente o cer
 
 7. Abra o snap-in Certificados.
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 [Etapa 3. Configurar o servidor de acesso remoto para Always On VPN](vpn-deploy-ras.md): nesta etapa, você configura a VPN de acesso remoto para permitir conexões VPN IKEv2, negar conexões de outros protocolos VPN e atribuir um pool de endereços IP estáticos para emissão de endereços IP para conectar clientes VPN autorizados.

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 38eda178b6c9e34fec1d63ed6c59f01023b859c4
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: ebe9056e1ae1393cebf0b1e2a719cd0c369b3e3e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436663"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954768"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin da lista de sombras
 
@@ -31,10 +31,10 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 |Parâmetro|Descrição|
 |---|---|
-|/for = \< ForVolumeSpec>|Especifica em qual volume as cópias de sombra serão listadas.|
-|/Shadow = \< shadowid>|Lista a cópia de sombra especificada por Shadowid. Para obter a ID da cópia de sombra, use o comando **VSSadmin list Shadows** . Ao digitar uma ID de cópia de sombra, use o seguinte formato, em que cada *X* representa um caractere hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for =\<ForVolumeSpec>|Especifica em qual volume as cópias de sombra serão listadas.|
+|/Shadow =\<ShadowID>|Lista a cópia de sombra especificada por Shadowid. Para obter a ID da cópia de sombra, use o comando **VSSadmin list Shadows** . Ao digitar uma ID de cópia de sombra, use o seguinte formato, em que cada *X* representa um caractere hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 
 ## <a name="additional-references"></a>Referências adicionais
 
-* [Chave de sintaxe de linha de comando](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [Chave de sintaxe de linha de comando](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [Vssadmin](vssadmin.md)

@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 09b789937c9ff1dad90c3533616a4ed800204267
-ms.sourcegitcommit: 046123d4f2d24dc00b35ea99adee6f8d322c76bf
+ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85416289"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954398"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Criar um aplicativo Web de página única usando OAuth e ADAL.JS com o AD FS 2016 ou posterior
 
@@ -38,7 +38,7 @@ Ao usar um aplicativo de página única, o usuário navega para um local inicial
 Se a ADAL vir um gatilho para autenticação, ela usará as informações fornecidas pelo aplicativo e direcionará a autenticação para seu AD FS STS.  O aplicativo de página única, que é registrado como um cliente público no AD FS, é configurado automaticamente para o fluxo de concessão implícita. A solicitação de autorização resulta em um token de ID que é retornado para o aplicativo por meio de um #fragment. Chamadas adicionais para o WebAPI de back-end terão esse token de ID como o token de portador no cabeçalho para obter acesso ao WebAPI.
 
 ## <a name="setting-up-the-development-box"></a>Configurando a caixa de desenvolvimento
-O passo a passo usa o Visual Studio 2015. O projeto usa a biblioteca do ADAL JS. Para saber mais sobre a ADAL, leia [biblioteca de autenticação do Active Directory .net.](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+O passo a passo usa o Visual Studio 2015. O projeto usa a biblioteca do ADAL JS. Para saber mais sobre a ADAL, leia [biblioteca de autenticação do Active Directory .net.](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)
 
 ## <a name="setting-up-the-environment"></a>Configurando o ambiente
 Neste tutorial, usaremos uma configuração básica de:

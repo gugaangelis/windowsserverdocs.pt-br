@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: Instruções detalhadas para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como uma infraestrutura hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: 50bcdc175610d6e5c5264f9cb62c7d99d2990ac0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472823"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955108"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
@@ -102,7 +102,7 @@ No sistema de gerenciamento, abra um console do PowerShell com privilégios de a
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force
 ```
 
-Se sua conta de administrador de armazenamento não for um membro do grupo Admins. do domínio, adicione sua conta de administrador de armazenamento ao grupo local de administradores em cada nó, ou melhor ainda, adicione o grupo que você usa para administradores de armazenamento. Você pode usar o comando a seguir (ou gravar uma função do Windows PowerShell para fazer isso-consulte [usar o PowerShell para adicionar usuários de domínio a um grupo local](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx) para obter mais informações):
+Se sua conta de administrador de armazenamento não for um membro do grupo Admins. do domínio, adicione sua conta de administrador de armazenamento ao grupo local de administradores em cada nó, ou melhor ainda, adicione o grupo que você usa para administradores de armazenamento. Você pode usar o comando a seguir (ou gravar uma função do Windows PowerShell para fazer isso-consulte [usar o PowerShell para adicionar usuários de domínio a um grupo local](https://devblogs.microsoft.com/scripting/use-powershell-to-add-domain-users-to-a-local-group/) para obter mais informações):
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -119,7 +119,7 @@ A próxima etapa é instalar funções de servidor em cada servidor. Você pode 
 - RSAT-Clustering-PowerShell
 - PowerShell do Hyper-V
 
-Para instalar por meio do PowerShell, use o cmdlet [install-WindowsFeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) . Você pode usá-lo em um único servidor como este:
+Para instalar por meio do PowerShell, use o cmdlet [install-WindowsFeature](/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature) . Você pode usá-lo em um único servidor como este:
 
 ```PowerShell
 Install-WindowsFeature -Name "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "RSAT-Clustering-PowerShell", "Hyper-V-PowerShell", "FS-FileServer"
@@ -384,7 +384,7 @@ CD $ScriptFolder
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois de implantar o servidor de arquivos clusterizado, é recomendável testar o desempenho da sua solução usando cargas de trabalho sintéticas antes de trazer qualquer carga de trabalho real. Isso permite confirmar se a solução está sendo executada corretamente e solucionar quaisquer problemas remanescentes antes de adicionar a complexidade das cargas de trabalho. Para obter mais informações, consulte [testar o desempenho de espaços de armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
+Depois de implantar o servidor de arquivos clusterizado, é recomendável testar o desempenho da sua solução usando cargas de trabalho sintéticas antes de trazer qualquer carga de trabalho real. Isso permite confirmar se a solução está sendo executada corretamente e solucionar quaisquer problemas remanescentes antes de adicionar a complexidade das cargas de trabalho. Para obter mais informações, consulte [testar o desempenho de espaços de armazenamento usando cargas de trabalho sintéticas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11)).
 
 ## <a name="additional-references"></a>Referências adicionais
 
@@ -393,4 +393,4 @@ Depois de implantar o servidor de arquivos clusterizado, é recomendável testar
 -   [Planejamento de volumes nos Espaços de Armazenamento Diretos](plan-volumes.md)
 -   [Tolerância a falhas de espaços de armazenamento](storage-spaces-fault-tolerance.md)
 -   [Requisitos de hardware de Espaços de Armazenamento Diretos](Storage-Spaces-Direct-Hardware-Requirements.md)
--   [To RDMA, or not to RDMA – that is the question](https://blogs.technet.microsoft.com/filecab/2017/03/27/to-rdma-or-not-to-rdma-that-is-the-question/) (blog do TechNet)
+-   [To RDMA, or not to RDMA – that is the question](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (blog do TechNet)

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9fd70e4e74dc25c32ff3a74be2fc1c66d697367
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 51a64b059dd9d07dd6bd0ecccb1cd99382bdfaa5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926370"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955368"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
@@ -26,7 +26,7 @@ A maioria das opções exige um `<job>` parâmetro, que você define para o nome
 
 Por padrão, você pode acessar informações sobre seus próprios trabalhos. Para acessar informações para os trabalhos de outro usuário, você deve ter privilégios de administrador. Se o trabalho tiver sido criado em um estado elevado, você deverá executar o **Bitsadmin** em uma janela com privilégios elevados; caso contrário, você terá acesso somente leitura ao trabalho.
 
-Muitas das opções correspondem aos métodos nas [interfaces bits](https://docs.microsoft.com/windows/win32/bits/bits-interfaces). Para obter detalhes adicionais que podem ser relevantes para o uso de uma opção, consulte o método correspondente.
+Muitas das opções correspondem aos métodos nas [interfaces bits](/windows/win32/bits/bits-interfaces). Para obter detalhes adicionais que podem ser relevantes para o uso de uma opção, consulte o método correspondente.
 
 Use as seguintes opções para criar um trabalho, definir e recuperar as propriedades de um trabalho e monitorar o status de um trabalho. Para obter exemplos que mostram como usar algumas dessas opções para executar tarefas, consulte [exemplos de Bitsadmin](bitsadmin-examples.md).
 

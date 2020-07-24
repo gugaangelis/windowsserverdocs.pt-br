@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: def4052e8aaa4f1e32216b5de837706b5cde3d04
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 84041836c90987e358a6b5624d4f9b4124994263
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923501"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955818"
 ---
 # <a name="bcdboot"></a>bcdboot
 
@@ -36,7 +36,7 @@ bcdboot <source> [/l] [/s]
 
 ## <a name="examples"></a>Exemplos
 
-Para obter informações sobre onde encontrar o BCDboot e exemplos de como usar esse comando, consulte o tópico [Opções de linha de comando do BCDboot](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10)) .
+Para obter informações sobre onde encontrar o BCDboot e exemplos de como usar esse comando, consulte o tópico [Opções de linha de comando do BCDboot](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824874(v=win.10)) .
 
 ## <a name="additional-references"></a>Referências adicionais
 

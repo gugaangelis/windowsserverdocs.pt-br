@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 4a36f27bc64e6e135451818b27dc2319f18655f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e62f64c998e13ca6b64c3a7c89ad8e504ab26e82
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821179"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953568"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementar hosts administrativos seguros
 
@@ -69,7 +69,7 @@ Todos os hosts administrativos, sejam servidores ou estações de trabalho, deve
 Se você implementar os servidores de salto como parte da sua estratégia de host administrativo, deverá usar o assistente de configuração de segurança interno para configurar o serviço, o registro, a auditoria e as configurações de firewall para reduzir a superfície de ataque do servidor. Quando as definições de configuração do assistente de configuração de segurança foram coletadas e configuradas, as configurações podem ser convertidas em um GPO usado para impor uma configuração de linha de base consistente em todos os servidores de salto. Você pode editar o GPO para implementar configurações de segurança específicas a servidores de salto e pode combinar todas as configurações com configurações de linha de base adicionais extraídas do Microsoft Security Compliance Manager.  
   
 ### <a name="microsoft-security-compliance-manager"></a>Microsoft Security Compliance Manager  
-O [Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx) é uma ferramenta disponível gratuitamente que integra as configurações de segurança recomendadas pela Microsoft, com base na versão do sistema operacional e na configuração de função, e as coleta em uma única ferramenta e interface do usuário que podem ser usadas para criar e definir configurações de segurança de linha de base para controladores de domínio. Os modelos do Microsoft Security Compliance Manager podem ser combinados com as configurações do assistente de configuração de segurança para produzir linhas de base de configuração abrangentes para servidores de salto que são implantados e impostos por GPOs implantados nas UOs nas quais os servidores de salto estão localizados em Active Directory.  
+O [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc677002(v=technet.10)) é uma ferramenta disponível gratuitamente que integra as configurações de segurança recomendadas pela Microsoft, com base na versão do sistema operacional e na configuração de função, e as coleta em uma única ferramenta e interface do usuário que podem ser usadas para criar e definir configurações de segurança de linha de base para controladores de domínio. Os modelos do Microsoft Security Compliance Manager podem ser combinados com as configurações do assistente de configuração de segurança para produzir linhas de base de configuração abrangentes para servidores de salto que são implantados e impostos por GPOs implantados nas UOs nas quais os servidores de salto estão localizados em Active Directory.  
   
 > [!NOTE]  
 > No momento em que este artigo foi escrito, o Microsoft Security Compliance Manager não inclui configurações específicas para servidores de salto ou outros hosts administrativos seguros, mas o SCM (Security Compliance Manager) ainda pode ser usado para criar linhas de base iniciais para seus hosts administrativos. No entanto, para proteger adequadamente os hosts, você deve aplicar configurações de segurança adicionais apropriadas a estações de trabalho e servidores altamente protegidos.  
@@ -83,7 +83,7 @@ Embora a configuração específica varie de acordo com a arquitetura de seus si
 Você deve permitir logons interativos por usuários autorizados e deve remover ou até mesmo bloquear outros tipos de logon que não são necessários para o acesso ao servidor.  
   
 ### <a name="patch-and-configuration-management"></a>Gerenciamento de patch e configuração  
-Organizações menores podem contar com ofertas como Windows Update ou [Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) para gerenciar a implantação de atualizações em sistemas Windows, enquanto as organizações maiores podem implementar software de gerenciamento de patches e configurações, como o Microsoft Endpoint Configuration Manager. Independentemente dos mecanismos que você usa para implantar atualizações em seu servidor geral e na população da estação de trabalho, você deve considerar implantações separadas para sistemas altamente seguros, como controladores de domínio, autoridades de certificação e hosts administrativos. Ao separar esses sistemas da infraestrutura de gerenciamento geral, se o software de gerenciamento ou as contas de serviço estiverem comprometidos, o comprometimento não poderá ser facilmente estendido para os sistemas mais seguros em sua infraestrutura.  
+Organizações menores podem contar com ofertas como Windows Update ou [Windows Server Update Services](/windows/deployment/deploy-whats-new) (WSUS) para gerenciar a implantação de atualizações em sistemas Windows, enquanto as organizações maiores podem implementar software de gerenciamento de patches e configurações, como o Microsoft Endpoint Configuration Manager. Independentemente dos mecanismos que você usa para implantar atualizações em seu servidor geral e na população da estação de trabalho, você deve considerar implantações separadas para sistemas altamente seguros, como controladores de domínio, autoridades de certificação e hosts administrativos. Ao separar esses sistemas da infraestrutura de gerenciamento geral, se o software de gerenciamento ou as contas de serviço estiverem comprometidos, o comprometimento não poderá ser facilmente estendido para os sistemas mais seguros em sua infraestrutura.  
   
 Embora você não deva implementar processos de atualização manual para sistemas seguros, configure uma infraestrutura separada para a atualização de sistemas seguros. Mesmo em organizações muito grandes, essa infraestrutura normalmente pode ser implementada por meio de servidores WSUS e GPOs dedicados para sistemas protegidos.  
   
@@ -105,10 +105,10 @@ Para a estação de trabalho de produtividade, a equipe de ti pode receber conta
   
 Se você tiver implementado cartões inteligentes, as estações de trabalho administrativas deverão ser configuradas para exigir logons de cartão inteligente, e a equipe de ti deverá receber contas separadas para uso administrativo, também configurada para exigir cartões inteligentes para logon interativo. O host administrativo deve ser protegido conforme descrito anteriormente e somente usuários de ti designados devem ter permissão para fazer logon localmente na estação de trabalho administrativa.  
   
-#### <a name="pros"></a>Vantagens  
+#### <a name="pros"></a>Prós  
 Ao implementar sistemas físicos separados, você pode garantir que cada computador esteja configurado adequadamente para sua função e que os usuários de ti não possam expor inadvertidamente os sistemas administrativos a riscos.  
   
-#### <a name="cons"></a>Desvantagens  
+#### <a name="cons"></a>Contras  
   
 -   A implementação de computadores físicos separados aumenta os custos de hardware.  
   
@@ -119,13 +119,13 @@ Ao implementar sistemas físicos separados, você pode garantir que cada computa
 ### <a name="implementing-a-secure-physical-workstation-with-a-virtualized-productivity-workstation"></a>Implementando uma estação de trabalho física segura com uma estação de trabalho de produtividade virtualizada  
 Nessa abordagem, os usuários de ti recebem uma estação de trabalho administrativa segura da qual podem executar funções administrativas cotidianas, usando conexões Ferramentas de Administração de Servidor Remoto (RSAT) ou RDP para servidores dentro de seu escopo de responsabilidade. Quando os usuários precisam executar tarefas de produtividade, eles podem se conectar via RDP a uma estação de trabalho de produtividade remota em execução como uma máquina virtual. Credenciais separadas devem ser usadas para cada estação de trabalho e controles como cartões inteligentes devem ser implementados.  
   
-#### <a name="pros"></a>Vantagens  
+#### <a name="pros"></a>Prós  
   
 -   Estações de trabalho administrativas e estações de trabalho de produtividade são separadas.  
   
 -   A equipe de ti que usa estações de trabalho seguras para se conectar a estações de trabalho de produtividade pode usar credenciais separadas e cartões inteligentes, e as credenciais privilegiadas não são depositadas no computador menos seguro.  
   
-#### <a name="cons"></a>Desvantagens  
+#### <a name="cons"></a>Contras  
   
 -   A implementação da solução requer o trabalho de design e implementação e opções de virtualização robustas.  
   
@@ -136,7 +136,7 @@ Nessa abordagem, você pode emitir para os usuários de ti uma única estação 
   
 Você deve exigir um cartão inteligente ou outro logon multifator para as máquinas virtuais, usando contas separadas diferentes da conta usada para fazer logon no computador físico. Depois que um usuário de ti faz logon em um computador físico, ele pode usar o cartão inteligente de produtividade para se conectar ao computador de produtividade remota e uma conta separada e um cartão inteligente para se conectar ao seu computador administrativo remoto.  
   
-#### <a name="pros"></a>Vantagens  
+#### <a name="pros"></a>Prós  
   
 -   Os usuários de ti podem usar uma única estação de trabalho física.  
   
@@ -148,7 +148,7 @@ Você deve exigir um cartão inteligente ou outro logon multifator para as máqu
   
 -   Se o computador físico estiver comprometido, nenhuma credencial privilegiada será armazenada em cache na memória e o uso de cartões inteligentes poderá impedir o comprometimento de credenciais por agentes de pressionamento de tecla.  
   
-#### <a name="cons"></a>Desvantagens  
+#### <a name="cons"></a>Contras  
   
 -   A implementação da solução requer o trabalho de design e implementação e opções de virtualização robustas.  
   
@@ -157,7 +157,7 @@ Você deve exigir um cartão inteligente ou outro logon multifator para as máqu
 ### <a name="implementing-secure-administrative-workstations-and-jump-servers"></a>Implementando estações de trabalho administrativas seguras e servidores de salto  
 Como alternativa para proteger estações de trabalho administrativas, ou em combinação com elas, você pode implementar servidores de salto seguro e os usuários administrativos podem se conectar aos servidores de salto usando o RDP e cartões inteligentes para executar tarefas administrativas.  
   
-Os servidores de salto devem ser configurados para executar a função de gateway Área de Trabalho Remota para permitir que você implemente restrições em conexões com o servidor de destino e com os servidores que serão gerenciados a partir dele. Se possível, você também deve instalar a função Hyper-V e criar [áreas de trabalho virtuais pessoais](https://technet.microsoft.com/library/dd759174.aspx) ou outras máquinas virtuais por usuário para que os usuários administrativos usem para suas tarefas nos servidores de salto.  
+Os servidores de salto devem ser configurados para executar a função de gateway Área de Trabalho Remota para permitir que você implemente restrições em conexões com o servidor de destino e com os servidores que serão gerenciados a partir dele. Se possível, você também deve instalar a função Hyper-V e criar [áreas de trabalho virtuais pessoais](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759174(v=ws.11)) ou outras máquinas virtuais por usuário para que os usuários administrativos usem para suas tarefas nos servidores de salto.  
   
 Ao fornecer aos usuários administrativos máquinas virtuais por usuário no servidor de salto, você fornece segurança física para as estações de trabalho administrativas, e os usuários administrativos podem redefinir ou desligar suas máquinas virtuais quando não estiverem em uso. Se preferir não instalar a função Hyper-V e a função de gateway Área de Trabalho Remota no mesmo host administrativo, você poderá instalá-las em computadores separados.  
   
@@ -165,7 +165,7 @@ Sempre que possível, as ferramentas de administração remota devem ser usadas 
   
 Em casos em que um usuário administrativo deve se conectar via RDP a um servidor de destino para gerenciá-lo diretamente, o gateway de área de trabalho remota deve ser configurado para permitir que a conexão seja feita somente se o usuário e o computador apropriados forem usados para estabelecer a conexão com o servidor de destino. A execução de ferramentas do RSAT (ou semelhantes) deve ser proibida em sistemas não designados para sistemas de gerenciamento, como estações de trabalho de uso geral e servidores membro que não são servidores de salto.  
   
-#### <a name="pros"></a>Vantagens  
+#### <a name="pros"></a>Prós  
   
 -   A criação de servidores de salto permite mapear servidores específicos para "zonas" (coleções de sistemas com requisitos de configuração, conexão e segurança semelhantes) em sua rede e exigir que a administração de cada zona seja obtida pela equipe administrativa que se conecta de hosts administrativos seguros a um servidor de "zona" designado.  
   
@@ -173,11 +173,9 @@ Em casos em que um usuário administrativo deve se conectar via RDP a um servido
   
 -   Ao implementar máquinas virtuais por administrador em servidores de salto, você impõe o desligamento e a redefinição das máquinas virtuais para um estado claro conhecido quando as tarefas administrativas são concluídas. Ao impor o desligamento (ou reiniciar) das máquinas virtuais quando as tarefas administrativas são concluídas, as máquinas virtuais não podem ser direcionadas por invasores, nem os ataques de roubo de credenciais são viáveis porque as credenciais em cache de memória não persistem além de uma reinicialização.  
   
-#### <a name="cons"></a>Desvantagens  
+#### <a name="cons"></a>Contras  
   
 -   Os servidores dedicados são necessários para servidores de salto, sejam físicos ou virtuais.  
   
 -   A implementação de servidores de salto designados e estações de trabalho administrativas requer planejamento cuidadoso e configuração que mapeia para qualquer zona de segurança configurada no ambiente.  
   
-
-

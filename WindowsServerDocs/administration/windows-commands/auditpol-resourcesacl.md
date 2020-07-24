@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c1c33a82b34c803961abff6ee5a9693990a0ca00
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4558d18b065cd668294952131b494342d600aee0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923701"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955488"
 ---
 # <a name="auditpol-resourcesacl"></a>resourceSACL de Auditpol
 
@@ -51,7 +51,7 @@ auditpol /resourceSACL
 | /type | O recurso para o qual a auditoria de acesso ao objeto está sendo configurada. Os valores de argumento com suporte, diferenciam maiúsculas de minúsculas são *arquivos* (para diretórios e arquivos) e *chave* (para chaves do registro). |
 | /success | Especifica a auditoria com êxito. |
 | /failure | Especifica a auditoria de falha. |
-| / | Especifica um usuário em uma das seguintes formas:<ul><li> DomainName\Account (como DOM\Administrators)</li><li>Conta do StandaloneServer\Group (consulte a [função LookupAccountName](https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-lookupaccountnamea))</li><li>{S-1-x-x-x-x} (x é expresso em decimal e o SID inteiro deve estar entre chaves). Por exemplo: {S-1-5-21-5624481-130208933-164394174-1001}<p>**Observação:** Se o formulário SID for usado, nenhuma verificação será feita para verificar a existência dessa conta.</li></ul> |
+| / | Especifica um usuário em uma das seguintes formas:<ul><li> DomainName\Account (como DOM\Administrators)</li><li>Conta do StandaloneServer\Group (consulte a [função LookupAccountName](/windows/win32/api/winbase/nf-winbase-lookupaccountnamea))</li><li>{S-1-x-x-x-x} (x é expresso em decimal e o SID inteiro deve estar entre chaves). Por exemplo: {S-1-5-21-5624481-130208933-164394174-1001}<p>**Observação:** Se o formulário SID for usado, nenhuma verificação será feita para verificar a existência dessa conta.</li></ul> |
 | /access | Especifica uma máscara de permissão que pode ser especificada por meio de:<p>Direitos de acesso genéricos, incluindo:<ul><li>GA-TUDO GENÉRICO</li><li>GR-LEITURA GENÉRICA</li><li>GW-GRAVAÇÃO GENÉRICA</li><li>GX-EXECUÇÃO GENÉRICA</li></ul><p>Direitos de acesso para arquivos, incluindo:<ul><li>FA-TODO O ACESSO AO ARQUIVO</li><li>FR-ARQUIVO DE LEITURA GENÉRICA</li><li>FW-ARQUIVO DE GRAVAÇÃO GENÉRICA</li><li>FX-ARQUIVO GENÉRICO EXECUTAR</li></ul><p>Direitos de acesso para chaves do registro, incluindo:<ul><li>KA-CHAVE ALL ACCESS</li><li>KR-CHAVE LIDA</li><li>KW-GRAVAÇÃO DE CHAVE</li><li>KX-EXECUTAR CHAVE</li></ul><p>Por exemplo: `/access:FRFW` habilita eventos de auditoria para operações de leitura e gravação.<p>Um valor hexadecimal que representa a máscara de acesso (como 0x1200a9)<p>Isso é útil ao usar máscaras de bits específicas de recursos que não fazem parte do padrão SDDL (Security Descriptor Definition Language). Se omitido, o acesso completo será usado. |
 
 ## <a name="examples"></a>Exemplos

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 03/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e32fe419899c0f553f36976ecee95fb3a922f1a6
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 8b723fd3768561da7d636dd1724bd0c75ee2ee85
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436621"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954698"
 ---
 # <a name="vssadmin-resize-shadowstorage"></a>Vssadmin redimensionar ShadowStorage
 
@@ -21,7 +21,7 @@ ms.locfileid: "83436621"
 
 Redimensiona a quantidade máxima de espaço de armazenamento que pode ser usada para armazenamento de cópia de sombra.
 
-A quantidade mínima de espaço de armazenamento que pode ser usada para armazenamento de cópia de sombra pode ser especificada usando o valor do registro **MinDiffAreaFileSize** . Para obter mais informações, consulte [MinDiffAreaFileSize](https://docs.microsoft.com/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize).
+A quantidade mínima de espaço de armazenamento que pode ser usada para armazenamento de cópia de sombra pode ser especificada usando o valor do registro **MinDiffAreaFileSize** . Para obter mais informações, consulte [MinDiffAreaFileSize](/windows/win32/backup/registry-keys-for-backup-and-restore#mindiffareafilesize).
 
 > [!WARNING]
 > Redimensionar a associação de armazenamento pode fazer com que as cópias de sombra desapareçam.
@@ -50,5 +50,5 @@ vssadmin Resize ShadowStorage /For=C: /On=C: /MaxSize=20%
 
 ## <a name="additional-references"></a>Referências adicionais
 
-* [Chave de sintaxe de linha de comando](https://docs.microsoft.com/windows-server/administration/windows-commands/command-line-syntax-key)
+* [Chave de sintaxe de linha de comando](./command-line-syntax-key.md)
 * [Vssadmin](vssadmin.md)

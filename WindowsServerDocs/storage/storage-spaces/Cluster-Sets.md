@@ -9,12 +9,12 @@ ms.author: johnmar
 ms.date: 01/30/2019
 description: Este artigo descreve o cenário de conjuntos de clusters
 ms.localizationpriority: medium
-ms.openlocfilehash: 64aeda27d5554e3f348a77b0ae785ddcf05dee00
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: 06cf798a5adfeee1279f564df63c431a77affd18
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436611"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955028"
 ---
 # <a name="cluster-sets"></a>Conjuntos de cluster
 
@@ -287,7 +287,7 @@ WARNING: Report file location: C:\Windows\Cluster\Reports\Update-ClusterVirtualM
 
 Esse aviso pode ser ignorado, pois o aviso é "nenhuma alteração na configuração de armazenamento da função de máquina virtual foi detectada". O motivo do aviso como o local físico real não é alterado; somente os caminhos de configuração.
 
-Para obter mais informações sobre o move-VMStorage, consulte este [link](https://docs.microsoft.com/powershell/module/hyper-v/move-vmstorage?view=win10-ps).
+Para obter mais informações sobre o move-VMStorage, consulte este [link](/powershell/module/hyper-v/move-vmstorage?view=win10-ps).
 
 A migração ao vivo de uma máquina virtual entre diferentes clusters de conjuntos de clusters não é a mesma do passado. Em cenários que não são de conjunto de clusters, as etapas seriam:
 
@@ -376,7 +376,7 @@ Por exemplo, o comando para remover o cluster CLUSTER1 dos conjuntos de clusters
 Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 ```
 
-## <a name="frequently-asked-questions-faq"></a>Perguntas frequentes
+## <a name="frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ)
 
 **Pergunta:** No meu conjunto de clusters, estou limitado a usar apenas clusters hiperconvergentes? <br>
 **Resposta:** Não. Você pode misturar Espaços de Armazenamento Diretos com clusters tradicionais.

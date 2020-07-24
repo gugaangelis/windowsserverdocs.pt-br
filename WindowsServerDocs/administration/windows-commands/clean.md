@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a30e1f765959ed60efa662301f95defc21d6587
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 39029c82dffe004d65b1279e5baafc14fbcc8257
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929902"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955668"
 ---
 # <a name="clean"></a>clean
 
@@ -23,7 +23,7 @@ ms.locfileid: "85929902"
 Remove todas as partições ou a formatação de volume do disco com foco.
 
 >[!NOTE]
-> Para obter uma versão do PowerShell desse comando, consulte [comando clear-Disk](https://docs.microsoft.com/powershell/module/storage/clear-disk).
+> Para obter uma versão do PowerShell desse comando, consulte [comando clear-Disk](/powershell/module/storage/clear-disk).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -55,6 +55,6 @@ clean
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [apagar-comando de disco](https://docs.microsoft.com/powershell/module/storage/clear-disk)
+- [apagar-comando de disco](/powershell/module/storage/clear-disk)
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

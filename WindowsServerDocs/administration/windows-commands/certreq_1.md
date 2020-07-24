@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22fc496eddc17f4e6a1a5f02321c921009f9fd95
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d51cc178ee5b689071336b0dabd1e8d3565bcd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924814"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955358"
 ---
 # <a name="certreq"></a>certreq
 
@@ -124,7 +124,7 @@ Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicita�
 | RenewalCert | Se precisar renovar um certificado que existe no sistema em que a solicitação de certificado é gerada, você deve especificar seu hash de certificado como o valor para essa chave. | O hash de certificado de qualquer certificado disponível no computador em que a solicitação de certificado é criada. Se você não souber o hash de certificado, use o snap-in do MMC de certificados e examine o certificado que deve ser renovado. Abra as propriedades do certificado e veja o `Thumbprint` atributo do certificado. A renovação de certificado requer um `PKCS#7` ou um `CMC` formato de solicitação. | `RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D` |
 | RequesterName | Faz com que a solicitação se registre em nome de outra solicitação de usuário. A solicitação também deve ser assinada com um certificado de agente de registro ou a autoridade de certificação rejeitará a solicitação. Use a `-cert` opção para especificar o certificado do agente de registro. O nome do solicitante pode ser especificado para solicitações de certificado se o `RequestType` for definido como `PKCS#7` ou `CMC` . Se o `RequestType` for definido como `PKCS#10` , essa chave será ignorada. O `Requestername` só pode ser definido como parte da solicitação. Você não pode manipular o `Requestername` em uma solicitação pendente. | `Domain\User` | `Requestername = Contoso\BSmith` |
 | RequestType | Determina o padrão usado para gerar e enviar a solicitação de certificado. | <ul><li>`PKCS10 -- 1`</li><li>`PKCS7 -- 2`</li><li>`CMC -- 3`</li><li>`Cert -- 4`</li><li>`SCEP -- fd00 (64768)`</li></ul>**Dica:** Essa opção indica um certificado autoassinado ou emitido por conta própria. Ele não gera uma solicitação, mas sim um novo certificado e, em seguida, instala o certificado. Auto-assinado é o padrão. Especifique um certificado de assinatura usando a opção – CERT para criar um certificado autoemitido que não tenha assinatura automática. | `RequestType = CMC` |
-| SecurityDescriptor | Contém as informações de segurança associadas a objetos protegíveis. Para a maioria dos objetos protegíveis, você pode especificar o descritor de segurança de um objeto na chamada de função que cria o objeto. Cadeias de caracteres baseadas na [linguagem de definição do descritor de segurança](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx).<p>**Dica:** Isso é relevante apenas para chaves de cartão não inteligente de contexto de computador. | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
+| SecurityDescriptor | Contém as informações de segurança associadas a objetos protegíveis. Para a maioria dos objetos protegíveis, você pode especificar o descritor de segurança de um objeto na chamada de função que cria o objeto. Cadeias de caracteres baseadas na [linguagem de definição do descritor de segurança](/windows/win32/secauthz/security-descriptor-definition-language).<p>**Dica:** Isso é relevante apenas para chaves de cartão não inteligente de contexto de computador. | `SecurityDescriptor = D:P(A;;GA;;;SY)(A;;GA;;;BA)` |
 | AlternateSignatureAlgorithm | Especifica e recupera um valor booliano que indica se o OID (identificador de objeto) de algoritmo de assinatura para uma solicitação PKCS # 10 ou assinatura de certificado é discreto ou combinado. | `true | false` | `AlternateSignatureAlgorithm = false`<p>Para uma assinatura RSA, `false` indica um `Pkcs1 v1.5` , enquanto `true` indica uma `v2.1` assinatura. |
 | Silencioso | Por padrão, essa opção permite que o CSP acesse a área de trabalho do usuário interativo e solicite informações como um PIN do cartão inteligente do usuário. Se essa chave for definida como TRUE, o CSP não deverá interagir com a área de trabalho e será impedido de exibir qualquer interface do usuário para o usuário. | `true | false` | `Silent = true` |
 | SMIME | Se esse parâmetro for definido como TRUE, uma extensão com o valor do identificador de objeto 1.2.840.113549.1.9.15 será adicionada à solicitação. O número de identificadores de objeto depende do na versão do sistema operacional instalada e do recurso CSP, que se refere aos algoritmos de criptografia simétrica que podem ser usados por aplicativos Secure Multipurpose Internet Mail Extensions (S/MIME), como o Outlook. | `true | false` | `SMIME = true` |
@@ -248,7 +248,7 @@ Usar `certreq -policy` sem nenhum parâmetro adicional abre uma janela da caixa 
 
 #### <a name="examples"></a>Exemplos
 
-Localize um exemplo do arquivo Policy. inf na sintaxe do [CAPolicy. inf](https://docs.microsoft.com/windows-server/networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file).
+Localize um exemplo do arquivo Policy. inf na sintaxe do [CAPolicy. inf](../../networking/core-network-guide/cncg/server-certs/prepare-the-capolicy-inf-file.md).
 
 ### <a name="certreq--sign"></a>certreq-assinar
 
@@ -311,7 +311,7 @@ Você só pode renovar certificados válidos. Os certificados expirados não pod
 | -CRL | Inclui listas de certificados revogados (CRLs) na saída para o arquivo de #7 PKCS codificado em base64 especificado por `certchainfileout` ou para o arquivo codificado em base64 especificado por `requestfileout` . |
 | -RPC | Instrui Active Directory serviços de certificados (AD CS) para usar uma conexão de servidor RPC (chamada de procedimento remoto) em vez de COM distribuído. |
 | -adminforcemachine | Use o serviço de chave ou a representação para enviar a solicitação do contexto do sistema local. Requer que o usuário que invoca essa opção seja membro de administradores locais. |
-| -renewonbehalfof | Envie uma renovação em nome do assunto identificado no certificado de autenticação. Isso define CR_IN_ROBO ao chamar o [método ICertRequest:: Submit](https://docs.microsoft.com/windows/win32/api/certcli/nf-certcli-icertrequest-submit) |
+| -renewonbehalfof | Envie uma renovação em nome do assunto identificado no certificado de autenticação. Isso define CR_IN_ROBO ao chamar o [método ICertRequest:: Submit](/windows/win32/api/certcli/nf-certcli-icertrequest-submit) |
 | -f | Forçar os arquivos existentes a serem substituídos. Isso também ignora os modelos de cache e a política. |
 | -Q | Usar o modo silencioso; suprimir todos os prompts interativos. |
 | -Unicode | Grava a saída Unicode quando a saída padrão é redirecionada ou canalizada para outro comando, o que ajuda quando é invocado de scripts do Windows PowerShell. |
@@ -335,9 +335,9 @@ Os artigos a seguir contêm exemplos de uso de Certreq:
 
 - [Como adicionar um nome alternativo da entidade a um certificado LDAP seguro](https://support.microsoft.com/help/931351/how-to-add-a-subject-alternative-name-to-a-secure-ldap-certificate)
 
-- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831348(v=ws.11))
+- [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831348(v=ws.11))
 
-- [Apêndice 3: sintaxe de Certreq.exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
+- [Apêndice 3: sintaxe de Certreq.exe](/previous-versions/windows/it-pro/windows-server-2003/cc736326(v=ws.10))
 
 - [Como criar um certificado SSL do servidor Web manualmente](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 

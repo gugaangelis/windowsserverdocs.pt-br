@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43f72aa6bcc92cdb613cd75c368766e1d62b04e2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f8826c5b89b4881544f483bbc3f5af869c80512b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935467"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956538"
 ---
 # <a name="qappsrv"></a>qappsrv
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exibe uma lista de todos os servidores de Host da Sessão da Área de Trabalho Remota na rede. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn283323(v=ws.11)).
+Exibe uma lista de todos os servidores de Host da Sessão da Área de Trabalho Remota na rede. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 > [!NOTE]
 > Esse comando é o mesmo que o [comando Query termserver](query-termserver.md).

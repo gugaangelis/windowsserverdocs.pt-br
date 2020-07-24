@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: ee4f508cf0a65b59c3253d6865c649cc9652c569
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8a1d98fd6c36876aebaf2f9abe4bed29f5485e8a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856299"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955538"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Réplica de armazenamento de cluster para Cluster cruzar região no Azure
 
@@ -92,13 +92,13 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
 8. Crie um [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) de SKU padrão interno para cada cluster (**azlbr1**, **azlbazcross**).
 
    Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga.
-      - azlbr1 = > IP de front-end: 10.3.0.100 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az-vnet**))
+      - azlbr1 => IP de front-end: 10.3.0.100 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**az2az-vnet**))
       - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
       - Criar investigação de integridade: porta 59999
       - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado.
 
    Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga. 
-      - azlbazcross = > IP de front-end: 10.0.0.10 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**azcross-VNET**))
+      - azlbazcross => IP de front-end: 10.0.0.10 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**azcross-VNET**))
       - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
       - Criar investigação de integridade: porta 59999
       - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado. 
@@ -127,7 +127,7 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
 
     Execute-o uma vez de qualquer nó do cluster, para cada cluster. 
     
-    Em nosso exemplo, certifique-se de alterar o "ILBIP" de acordo com seus valores de configuração. Execute o seguinte comando de um nó **az2az1**/**az2az2**
+    Em nosso exemplo, certifique-se de alterar o "ILBIP" de acordo com seus valores de configuração. Execute o seguinte comando de um nó **az2az1** / **az2az2**
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -137,7 +137,7 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
     ```
 
-12. Execute o seguinte comando de um nó **azcross1**/**azcross2**
+12. Execute o seguinte comando de um nó **azcross1** / **azcross2**
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
@@ -165,7 +165,7 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
 
 14. Executar [testes de validação de cluster](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de passar para a próxima etapa
 
-15. Inicie o Windows PowerShell e use o cmdlet [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar se você atende a todos os requisitos de Réplica de Armazenamento. Você pode usar o cmdlet em um modo somente de requisitos para um teste rápido, assim como um modo de avaliação de desempenho de execução longa.
+15. Inicie o Windows PowerShell e use o cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar se você atende a todos os requisitos de Réplica de Armazenamento. Você pode usar o cmdlet em um modo somente de requisitos para um teste rápido, assim como um modo de avaliação de desempenho de execução longa.
  
 16. Configure a réplica de armazenamento de cluster para cluster.
     Conceder acesso de um cluster para outro cluster em ambas as direções:

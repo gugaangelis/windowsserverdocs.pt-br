@@ -8,12 +8,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 19e139df53cd1c076f8d5597c1c68b8ffe2cfe91
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0962012fa0fc6190df2b0dccdd63664cd5264800
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954388"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configurar o acesso condicional local usando dispositivos registrados
 
@@ -50,10 +50,10 @@ Para usar o acesso condicional local com dispositivos registrados, você deve pr
 Para verificar seu nível de esquema, faça o seguinte:
 
 1.  Você pode usar o ADSIEdit ou o LDP e conectar-se ao contexto de nomenclatura do esquema.  
-2.  Usando o ADSIEdit, clique com o botão direito do mouse em "CN = Schema, CN = Configuration, DC =<domain>, DC =<com> e selecione Propriedades.  Domínio relpace e as partes com com suas informações de floresta.
+2.  Usando o ADSIEdit, clique com o botão direito do mouse em "CN = esquema, CN = Configuração, DC = <domain> , DC = <com> e selecione Propriedades.  Domínio relpace e as partes com com suas informações de floresta.
 3.  No editor de atributos, localize o atributo objectVersion e ele dirá sua versão.  
 
-![Editor ADSI](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
+![ADSI Edit](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
 
 Você também pode usar o seguinte cmdlet do PowerShell (substitua o objeto com suas informações de contexto de nomenclatura de esquema):
 
@@ -64,17 +64,17 @@ Get-ADObject "cn=schema,cn=configuration,dc=domain,dc=local" -Property objectVer
 
 ![PowerShell](media/Configure-Device-Based-Conditional-Access-on-Premises/pshell1.png) 
 
-Para obter informações adicionais sobre a atualização, consulte [Atualizar controladores de domínio para o Windows Server 2016](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2016.md). 
+Para obter informações adicionais sobre a atualização, consulte [Atualizar controladores de domínio para o Windows Server 2016](../../ad-ds/deploy/upgrade-domain-controllers.md). 
 
 ## <a name="enable-azure-ad-device-registration"></a>Habilitar Registro de Dispositivos do Azure AD  
 Para configurar esse cenário, você deve configurar o recurso de registro de dispositivo no Azure AD.  
 
-Para fazer isso, siga as etapas em [Configurando o ingresso no Azure AD em sua organização](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-setup/)  
+Para fazer isso, siga as etapas em [Configurando o ingresso no Azure AD em sua organização](/azure/active-directory/devices/device-management-azure-portal)  
 
 ## <a name="setup-ad-fs"></a>AD FS de instalação  
-1. Crie um [novo farm AD FS 2016](https://technet.microsoft.com/library/dn486775.aspx).   
-2.  Ou [migre](../../ad-fs/deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md) um farm para AD FS 2016 do AD FS 2012 R2  
-4. Implante [Azure ad Connect](https://azure.microsoft.com/documentation/articles/active-directory-aadconnectfed-whatis/) usando o caminho personalizado para conectar AD FS ao Azure AD.  
+1. Crie um [novo farm AD FS 2016](../deployment/deploying-a-federation-server-farm.md).   
+2.  Ou [migre](../deployment/upgrading-to-ad-fs-in-windows-server.md) um farm para AD FS 2016 do AD FS 2012 R2  
+4. Implante [Azure ad Connect](../deployment/upgrading-to-ad-fs-in-windows-server.md) usando o caminho personalizado para conectar AD FS ao Azure AD.  
 
 ## <a name="configure-device-write-back-and-device-authentication"></a>Configurar write-back de dispositivo e autenticação de dispositivo  
 > [!NOTE]
@@ -83,13 +83,13 @@ Para fazer isso, siga as etapas em [Configurando o ingresso no Azure AD em sua o
 ### <a name="create-ad-objects-for-ad-fs-device-authentication"></a>Criar objetos do AD para a autenticação de dispositivo do AD FS  
 Se o farm do AD FS já não estiver configurado para Autenticação de dispositivo (você pode ver isso no console de Gerenciamento do AD FS em Serviço -> Registro de dispositivo), siga estas etapas para criar a configuração e os objetos corretos do AD DS.  
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
 >Observação: os comandos a seguir exigem ferramentas de administração de Active Directory, portanto, se o servidor de Federação não for também um controlador de domínio, primeiro instale as ferramentas usando a etapa 1 abaixo.  Caso contrário, você pode ignorar a etapa 1.  
 
 1.  Execute o assistente de **Adicionar funções e recursos** e selecione recurso **Ferramentas de administração de servidor remoto** -> **Ferramentas de administração de função** -> **Ferramentas do AD DS e AD LDS** -> Escolha o **Módulo do Active Directory para Windows PowerShell** e as **Ferramentas do AD DS**.
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
 2. Em seu AD FS servidor primário, verifique se você está conectado como AD DS usuário com os privilégios de EA (administrador corporativo) e abra um prompt do PowerShell com privilégios elevados.  Em seguida, execute os seguintes comandos do PowerShell:  
     
@@ -99,7 +99,7 @@ Se o farm do AD FS já não estiver configurado para Autenticação de dispositi
 
 >Observação: se o serviço de AD FS estiver configurado para usar uma conta do GMSA, insira o nome da conta no formato "DOMAIN\ACCOUNTNAME $"
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
 O PSH acima cria os seguintes objetos:  
 
@@ -108,11 +108,11 @@ O PSH acima cria os seguintes objetos:
 - Contêiner de Serviço de registro do dispositivo e o objeto em Configuração--> Serviços --> Configuração do registro de dispositivo  
 - Contêiner DKM de serviço de registro do dispositivo e o objeto em Configuração --> Serviços --> Configuração do registro de dispositivo  
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)  
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)  
 
 4. Depois disso, você verá uma mensagem de conclusão bem-sucedida.
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
 
 ###        <a name="create-service-connection-point-scp-in-ad"></a>Criar ponto de conexão de serviço (SCP) no AD  
 Se você pretende usar o ingresso em domínio no Windows 10 (com o registro automático no Azure AD) como descrito aqui, execute os seguintes comandos para criar um ponto de conexão de serviço no AD DS  
@@ -122,13 +122,13 @@ Se você pretende usar o ingresso em domínio no Windows 10 (com o registro auto
 
 >Observação: se necessário, copie o arquivo AdSyncPrep. psm1 de seu servidor de Azure AD Connect.  O arquivo está localizado em Arquivos de Programas\Microsoft Azure Active Directory Connect\AdPrep
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)   
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device6.png)   
 
 2. Forneça suas credenciais de administrador global do Azure AD  
 
     `PS C:>$aadAdminCred = Get-Credential`
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png) 
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png) 
 
 3. Execute o seguinte comando do PowerShell 
 
@@ -172,7 +172,7 @@ Para referência, veja a seguir uma lista abrangente de dispositivos, contêiner
 - Contêiner CN=Configuração de registro de dispositivo,CN=Serviços,CN=Configuração, DC=&lt;domínio&gt;.  
 - DKM de serviço de registro de dispositivo do contêiner sob o contêiner acima
 
-![Registro do dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device8.png) 
+![Registro de dispositivo](media/Configure-Device-Based-Conditional-Access-on-Premises/device8.png) 
  
 
 
@@ -182,20 +182,20 @@ Para referência, veja a seguir uma lista abrangente de dispositivos, contêiner
   - acesso de leitura/gravação para o nome da conta de conector do AD especificado no novo objeto</br></br> 
 
 
-- objeto do tipo msDS-DeviceRegistrationServiceContainer em CN = Serviços de registro de dispositivo, CN = Configuração de registro de dispositivo, CN = Services, CN = Configuration, DC = & ltdomain >  
+- objeto do tipo msDS-DeviceRegistrationServiceContainer em CN = Serviços de registro de dispositivo, CN = Configuração de registro de dispositivo, CN = Services, CN = Configuration, DC =&ltdomain>  
 
 
 - objeto do tipo msDS-DeviceRegistrationService no contêiner acima  
 
 ### <a name="see-it-work"></a>Veja o trabalho de ti  
-Para avaliar as novas declarações e políticas, primeiro registre um dispositivo.  Por exemplo, você pode ingressar no Azure AD em um computador com Windows 10 usando o aplicativo de configurações em System-> sobre, ou você pode configurar o ingresso no domínio do Windows 10 com o registro de dispositivo automático seguindo as etapas adicionais [aqui](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/).  Para obter informações sobre como ingressar dispositivos Windows 10 Mobile, consulte o documento [aqui](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory).  
+Para avaliar as novas declarações e políticas, primeiro registre um dispositivo.  Por exemplo, você pode ingressar no Azure AD em um computador com Windows 10 usando o aplicativo de configurações em System-> sobre, ou você pode configurar o ingresso no domínio do Windows 10 com o registro de dispositivo automático seguindo as etapas adicionais [aqui](/azure/active-directory/devices/hybrid-azuread-join-plan).  Para obter informações sobre como ingressar dispositivos Windows 10 Mobile, consulte o documento [aqui](/windows/client-management/join-windows-10-mobile-to-azure-active-directory).  
 
 Para uma avaliação mais fácil, faça logon para AD FS usando um aplicativo de teste que mostra uma lista de declarações. Você poderá ver novas declarações, incluindo isgerencied, IsCompliant e TrustType.  Se você habilitar Microsoft Passport para o trabalho, você também verá a declaração de PRT.  
  
 
 ## <a name="configure-additional-scenarios"></a>Configurar cenários adicionais  
 ### <a name="automatic-registration-for-windows-10-domain-joined-computers"></a>Registro automático para computadores ingressados no domínio do Windows 10  
-Para habilitar o registro de dispositivo automático para computadores ingressados no domínio do Windows 10, siga as etapas 1 e 2 [aqui](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/).   
+Para habilitar o registro de dispositivo automático para computadores ingressados no domínio do Windows 10, siga as etapas 1 e 2 [aqui](/azure/active-directory/devices/hybrid-azuread-join-plan).   
 Isso irá ajudá-lo a obter o seguinte:  
 
 1. Verifique se o ponto de conexão de serviço no AD DS existe e se tem as permissões corretas (criamos este objeto acima, mas isso não prejudica a verificação dupla).  
@@ -204,13 +204,13 @@ Isso irá ajudá-lo a obter o seguinte:
 4. Definir as configurações de política de grupo necessárias para o registro automático de dispositivo de computadores ingressados no domínio   
 
 ### <a name="microsoft-passport-for-work"></a>Microsoft Passport for Work   
-Para obter informações sobre como habilitar o Windows 10 com o Microsoft Passport for Work, consulte [habilitar Microsoft Passport for Work em sua organização.](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)  
+Para obter informações sobre como habilitar o Windows 10 com o Microsoft Passport for Work, consulte [habilitar Microsoft Passport for Work em sua organização.](/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
 
 ### <a name="automatic-mdm-enrollment"></a>Registro automático do MDM   
-Para habilitar o registro automático de MDM de dispositivos registrados para que você possa usar a declaração IsCompliant em sua política de controle de acesso, siga as etapas [aqui.](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
+Para habilitar o registro automático de MDM de dispositivos registrados para que você possa usar a declaração IsCompliant em sua política de controle de acesso, siga as etapas [aqui.](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)  
 
 ## <a name="troubleshooting"></a>Solução de problemas  
-1.  Se você receber um erro em `Initialize-ADDeviceRegistration` que reclama sobre um objeto já existente no estado incorreto, como "o objeto do serviço DRS foi encontrado sem todos os atributos necessários", você pode ter executado Azure AD Connect comandos do PowerShell anteriormente e ter uma configuração parcial no AD DS.  Tente excluir manualmente os objetos em **CN = Configuração de registro de dispositivo, CN = Services, CN = Configuration, DC =&lt;domínio&gt;** e tente novamente.  
+1.  Se você receber um erro em reclamações `Initialize-ADDeviceRegistration` sobre um objeto já existente no estado incorreto, como "o objeto do serviço DRS foi encontrado sem todos os atributos necessários", você poderá ter executado Azure ad Connect comandos do PowerShell anteriormente e ter uma configuração parcial no AD DS.  Tente excluir manualmente os objetos em **CN = Configuração de registro de dispositivo, CN = Serviços, CN = Configuração, DC = &lt; domínio &gt; ** e tente novamente.  
 2.  Para clientes ingressados no domínio do Windows 10  
     1. Para verificar se a autenticação do dispositivo está funcionando, entre no cliente ingressado no domínio como uma conta de usuário de teste. Para disparar o provisionamento rapidamente, bloqueie e desbloqueie a área de trabalho pelo menos uma vez.   
     2. Instruções para verificar o link de credenciais de chave STK no objeto AD DS (a sincronização ainda precisa ser executada duas vezes?)  
@@ -221,7 +221,7 @@ Para habilitar o registro automático de MDM de dispositivos registrados para qu
     4. Experimente o registro ou registro do dispositivo novamente  
 
 ### <a name="related-articles"></a>Artigos relacionados  
-* [Protegendo o acesso ao Office 365 e a outros aplicativos conectados ao Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)  
-* [Políticas de dispositivo de acesso condicional para serviços do Office 365](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-policies/)  
-* [Configurando o acesso condicional local usando Registro de Dispositivos do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)  
-* [Conectar dispositivos ingressados no domínio ao Azure AD para experiências do Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)  
+* [Proteger o acesso ao Office 365 e a outros aplicativos conectados ao Active Directory do Azure](/azure/active-directory/conditional-access/overview)  
+* [Políticas de dispositivo de acesso condicional para serviços do Office 365](/azure/active-directory/conditional-access/overview)  
+* [Configurando o acesso condicional no local usando o registro do dispositivo do Active Directory do Azure](/azure/active-directory/active-directory-device-registration-on-premises-setup)  
+* [Conectar dispositivos ingressados no domínio ao AD do Azure para experiências com o Windows 10](/azure/active-directory/devices/hybrid-azuread-join-plan)  

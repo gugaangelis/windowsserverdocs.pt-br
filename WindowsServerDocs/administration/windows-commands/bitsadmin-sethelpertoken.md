@@ -8,16 +8,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 21dee45610823cd70e8b7209ec99e080746316f9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e9fe469b8ae4a8a553245b1e22d48ee2cacf23e3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927788"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955698"
 ---
 # <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
 
-Define o token primário do prompt de comando atual (ou um token de conta de usuário local arbitrário, se especificado) como um [token auxiliar](https://docs.microsoft.com/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)do trabalho de transferência de bits.
+Define o token primário do prompt de comando atual (ou um token de conta de usuário local arbitrário, se especificado) como um [token auxiliar](/windows/win32/bits/helper-tokens-for-bits-transfer-jobs)do trabalho de transferência de bits.
 
 > [!NOTE]
 > Esse comando não tem suporte no BITS 3,0 e versões anteriores.

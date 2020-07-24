@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Uma discussão sobre opções de resiliência em Espaços de Armazenamento Diretos incluindo espelhamento e paridade.
 ms.localizationpriority: medium
-ms.openlocfilehash: 540398e78b35d7cd61464e012d0f3ccfa85d7152
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 517b5484bc02e377f40df84422a1910014c9b830
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475483"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955388"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
 
@@ -33,7 +33,7 @@ Assim como ocorre com o RAID, há algumas maneiras diferentes pelas quais os Esp
 
 ## <a name="mirroring"></a>Espelhamento
 
-O espelhamento fornece tolerância a falhas por manter várias cópias de todos os dados. Isso é mais parecido com RAID-1. A maneira pela qual esses dados são distribuídos e colocados não é comum, (consulte [este blog](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/) para saber mais), mas é absolutamente verdade dizer que todos os dados armazenados que usam o espelhamento são gravados em sua totalidade várias vezes. Cada cópia é gravada em um hardware físico diferente (unidades diferentes em servidores diferentes) que supostamente falhariam de forma independente.
+O espelhamento fornece tolerância a falhas por manter várias cópias de todos os dados. Isso é mais parecido com RAID-1. A maneira pela qual esses dados são distribuídos e colocados não é comum, (consulte [este blog](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959) para saber mais), mas é absolutamente verdade dizer que todos os dados armazenados que usam o espelhamento são gravados em sua totalidade várias vezes. Cada cópia é gravada em um hardware físico diferente (unidades diferentes em servidores diferentes) que supostamente falhariam de forma independente.
 
 No Windows Server 2016, os Espaços de Armazenamento oferecem dois tipos de espelhamento: 'duas vias' e 'três vias'.
 
@@ -89,11 +89,11 @@ Com unidades de disco rígido (HDD), o tamanho do grupo é de quatro símbolos; 
 
 ![local-reconstruction-codes](media/Storage-Spaces-Fault-Tolerance/local-reconstruction-codes-180px.png)
 
-É recomendável que este passo a passo detalhado, mas eminentemente legível, de [como os códigos de reconstrução local lidam com vários cenários de falha e por que eles são atraentes](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/), por nosso próprio [Joergensen Claus](https://twitter.com/clausjor).
+É recomendável que este passo a passo detalhado, mas eminentemente legível, de [como os códigos de reconstrução local lidam com vários cenários de falha e por que eles são atraentes](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB), por nosso próprio [Joergensen Claus](https://twitter.com/clausjor).
 
 ## <a name="mirror-accelerated-parity"></a>Paridade acelerada por espelho
 
-A partir do Windows Server 2016, um volume de Espaços de Armazenamento Diretos pode ser parte espelho e parte paridade. As gravações são feitas primeiro na parte espelhada e, depois, são gradualmente movidas para a parte de paridade. Na verdade, isso [usa o espelhamento para acelerar a codificação de eliminação](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/).
+A partir do Windows Server 2016, um volume de Espaços de Armazenamento Diretos pode ser parte espelho e parte paridade. As gravações são feitas primeiro na parte espelhada e, depois, são gradualmente movidas para a parte de paridade. Na verdade, isso [usa o espelhamento para acelerar a codificação de eliminação](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 Para misturar o espelhamento de três vias e a paridade dupla, você precisa de pelo menos quatro domínios de falha, o que significa quatro servidores.
 
@@ -216,7 +216,7 @@ Cada link abaixo está embutido em algum lugar no corpo deste tópico.
 - [Espaços de Armazenamento Diretos no Windows Server 2016](storage-spaces-direct-overview.md)
 - [Reconhecimento de domínio de falha no Windows Server 2016](../../failover-clustering/fault-domains.md)
 - [Codificação de eliminação no Azure pela Microsoft Research](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrução local e acelerando volumes de paridade](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volumes na API de Gerenciamento de Armazenamento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Códigos de reconstrução local e acelerando volumes de paridade](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
+- [Volumes na API de Gerenciamento de Armazenamento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
 - [Demonstração de eficiência de armazenamento no Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
 - [PRÉVIA da calculadora de capacidade para Espaços de Armazenamento Diretos](https://aka.ms/s2dcalc)

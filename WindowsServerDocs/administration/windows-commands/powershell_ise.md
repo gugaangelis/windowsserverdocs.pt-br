@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f983ea5b8464748d86264108a2ee8660ca0e3f2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24fc3c6dca5ba3fea872f625b2ef81f1c78f59fb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926052"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86956568"
 ---
 # <a name="powershell_ise"></a>PowerShell_ise
 
@@ -58,16 +58,12 @@ A ferramenta de **PowerShell_ISE.exe** inicia uma sessão de ISE do Windows Powe
 
 ### <a name="remarks"></a>Comentários
 
-- Para obter uma lista completa dos parâmetros de linha de comando **PowerShell_ISE.exe** , consulte [about_PowerShell_Ise.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe).
+- Para obter uma lista completa dos parâmetros de linha de comando **PowerShell_ISE.exe** , consulte [about_PowerShell_Ise.Exe](/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe).
 
-- Para obter informações sobre outras maneiras de iniciar o Windows PowerShell, consulte [iniciando o Windows PowerShell](https://docs.microsoft.com/powershell/scripting/windows-powershell/starting-windows-powershell).
+- Para obter informações sobre outras maneiras de iniciar o Windows PowerShell, consulte [iniciando o Windows PowerShell](/powershell/scripting/windows-powershell/starting-windows-powershell).
 
 - O Windows PowerShell é executado na opção de instalação Server Core dos sistemas operacionais Windows Server. No entanto, como ISE do Windows PowerShell requer uma interface gráfica do usuário, ela não é executada em instalações do Server Core.
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [about_PowerShell_Ise.exe] (https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe
-
-- [about_PowerShell.Exe](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
-
-- [Windows PowerShell](https://docs.microsoft.com/powershell/)
+- [about_PowerShell_Ise.exe](/powershell/module/microsoft.powershell.core/about/about_powershell_exe)
