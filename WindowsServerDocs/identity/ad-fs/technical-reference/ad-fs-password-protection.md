@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 68624e2307e5ddefc6e32160cabfcd140f609966
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8c1b3141b6afa375ad6029b89f55d99f1122e90d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407247"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965488"
 ---
 # <a name="ad-fs-password-attack-protection"></a>Proteção contra ataques de senha AD FS
 
@@ -27,7 +27,7 @@ No entanto, isso também significa que alguns atores ruins podem aproveitar os p
 Há dois tipos de ataques de senha comuns. Ataque de irrigação de senha & ataque de senha de força bruta. 
 
 ### <a name="password-spray-attack"></a>Ataque de irrigação de senha
-Em um ataque de irrigação de senha, esses atores inválidos tentarão as senhas mais comuns em várias contas e serviços diferentes para obter acesso a quaisquer ativos protegidos por senha que eles possam encontrar. Normalmente, eles abrangem muitas organizações e provedores de identidade diferentes. Por exemplo, um invasor usará um kit de ferramentas comumente disponível para enumerar todos os usuários em várias organizações e, em seguida, tentar "P @ $ $w 0rd" e "password1" em relação a todas essas contas. Para lhe dar a ideia, um ataque pode ser semelhante a:
+Em um ataque de irrigação de senha, esses atores inválidos tentarão as senhas mais comuns em várias contas e serviços diferentes para obter acesso a quaisquer ativos protegidos por senha que eles possam encontrar. Normalmente, eles abrangem muitas organizações e provedores de identidade diferentes. Por exemplo, um invasor usará um kit de ferramentas comumente disponível para enumerar todos os usuários em várias organizações e, em seguida, tentar "P@ $ $w 0rd" e "password1" em relação a todas essas contas. Para lhe dar a ideia, um ataque pode ser semelhante a:
 
 
 |  Usuário de destino   | Senha de destino |
@@ -37,10 +37,10 @@ Em um ataque de irrigação de senha, esses atores inválidos tentarão as senha
 | User1@org2.com |    Password1    |
 | User2@org2.com |    Password1    |
 |       …        |        …        |
-| User1@org1.com |    P @ $ $w 0rd     |
-| User2@org1.com |    P @ $ $w 0rd     |
-| User1@org2.com |    P @ $ $w 0rd     |
-| User2@org2.com |    P @ $ $w 0rd     |
+| User1@org1.com |    P@$$w0rd     |
+| User2@org1.com |    P@$$w0rd     |
+| User1@org2.com |    P@$$w0rd     |
+| User2@org2.com |    P@$$w0rd     |
 
 Esse padrão de ataque evita a maioria das técnicas de detecção porque, do ponto privilegiando de um usuário individual ou empresa, o ataque parece ser um logon com falha isolado.
 
@@ -58,17 +58,17 @@ Esse tipo de ataque também poderia resultar em padrões de DOS. Isso pode estar
 Mas, ao fazer algumas etapas para configurar o AD FS e a rede corretamente, AD FS pontos de extremidade podem ser protegidos contra esses tipos de ataques. Este artigo aborda três áreas que precisam ser configuradas corretamente para ajudar a proteger contra esses ataques. 
 
 
-- Nível 1, linha de base: Essas são as configurações básicas que devem ser configuradas em um servidor AD FS para garantir que os atores inválidos não possam atacar os usuários federados do ataque de força bruta. 
-- Nível 2, protegendo a extranet: Essas são as configurações que devem ser configuradas para garantir que o acesso à extranet esteja configurado para usar protocolos seguros, políticas de autenticação e aplicativos apropriados. 
-- Nível 3, mova para a menos senha para acesso à extranet: Essas são configurações avançadas e diretrizes para habilitar o acesso a recursos federados com credenciais mais seguras, em vez de senhas que estão sujeitas a ataques. 
+- Nível 1, linha de base: essas são as configurações básicas que devem ser configuradas em um servidor AD FS para garantir que os atores inválidos não possam atacar os usuários federados de ataque de força bruta. 
+- Nível 2, protegendo a extranet: essas são as configurações que devem ser configuradas para garantir que o acesso à extranet esteja configurado para usar protocolos seguros, políticas de autenticação e aplicativos apropriados. 
+- Nível 3, mover para o acesso de extranet sem senha: essas são configurações avançadas e diretrizes para habilitar o acesso a recursos federados com credenciais mais seguras em vez de senhas que estão sujeitas a ataques. 
 
-## <a name="level-1-baseline"></a>Nível 1: base
+## <a name="level-1-baseline"></a>Nível 1: linha de base
 
 1. Se o ADFS 2016, implementar o bloqueio inteligente da extranet de [bloqueio inteligente de extranet](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md) rastreia locais familiares e permitirá que um usuário válido chegue se tiver feito logon com êxito nesse local. Usando o bloqueio inteligente de extranet, você pode garantir que os atores ruins não sejam capazes de atacar a força bruta dos usuários e, ao mesmo tempo, permitir que o usuário legítimo seja produtivo.
     - Se você não estiver no AD FS 2016, é altamente recomendável [Atualizar](../../ad-fs/deployment/upgrading-to-ad-fs-in-windows-server.md) para AD FS 2016. É um caminho de atualização simples do AD FS 2012 R2. Se você estiver no AD FS 2012 R2, implemente o [bloqueio de extranet](../../ad-fs/operations/Configure-AD-FS-Extranet-Soft-Lockout-Protection.md). Uma desvantagem dessa abordagem é que os usuários válidos podem ser impedidos de acesso à extranet se você estiver em um padrão de força bruta. O AD FS no servidor 2016 não tem essa desvantagem.
 
 2. Monitorar & bloquear endereços IP suspeitos 
-    - Se você tiver Azure AD Premium, implemente o Connect Health para ADFS e use as notificações de [relatório de IP arriscadas](https://docs.microsoft.com/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview) que ele fornece.
+    - Se você tiver Azure AD Premium, implemente o Connect Health para ADFS e use as notificações de [relatório de IP arriscadas](/azure/active-directory/connect-health/active-directory-aadconnect-health-adfs#risky-ip-report-public-preview) que ele fornece.
 
         a. O licenciamento não é para todos os usuários e requer 25 licenças/servidor ADFS/WAP, o que pode ser fácil para um cliente.
 
@@ -82,13 +82,13 @@ Mas, ao fazer algumas etapas para configurar o AD FS e a rede corretamente, AD F
 
     b. Se você estiver no AD FS 2012 R2 ou inferior, bloqueie o endereço IP diretamente no Exchange Online e, opcionalmente, no firewall.
 
-4. Se você tiver Azure AD Premium, use a [proteção de senha do Azure ad](https://docs.microsoft.com/azure/active-directory/authentication/concept-password-ban-bad-on-premises) para impedir que senhas que sejam adivinhadas entrem no Azure AD  
+4. Se você tiver Azure AD Premium, use a [proteção de senha do Azure ad](/azure/active-directory/authentication/concept-password-ban-bad-on-premises) para impedir que senhas que sejam adivinhadas entrem no Azure AD  
 
     a. Observe que, se você tiver senhas que possam ser adivinhadas, poderá decifra-las com apenas 1-3 tentativas. Esse recurso impede que eles sejam definidos. 
 
     b. De nossas estatísticas de visualização, quase 20-50% das novas senhas são impedidas de serem definidas. Isso implica que% dos usuários estão vulneráveis a senhas facilmente adivinhadas.
 
-## <a name="level-2-protect-your-extranet"></a>Nível 2: Proteja sua extranet
+## <a name="level-2-protect-your-extranet"></a>Nível 2: proteger sua extranet
 
 5. Vá para a autenticação moderna para todos os clientes que acessam a partir da extranet. Os clientes de email são uma grande parte disso. 
 
@@ -98,13 +98,13 @@ Mas, ao fazer algumas etapas para configurar o AD FS e a rede corretamente, AD F
 
 6. Habilite a MFA para todos os acessos à extranet. Isso permite que você adicione proteção para qualquer acesso à extranet.
 
-   a.  Se você tiver o Azure AD Premium, use [as políticas de acesso condicional do Azure ad](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) para controlar isso.  Isso é melhor do que implementar as regras em AD FS.  Isso ocorre porque os aplicativos cliente modernos são impostos com frequência.  Isso ocorre, no Azure AD, ao solicitar um novo token de acesso (normalmente a cada hora) usando um token de atualização.  
+   a.  Se você tiver o Azure AD Premium, use [as políticas de acesso condicional do Azure ad](/azure/active-directory/conditional-access/overview) para controlar isso.  Isso é melhor do que implementar as regras em AD FS.  Isso ocorre porque os aplicativos cliente modernos são impostos com frequência.  Isso ocorre, no Azure AD, ao solicitar um novo token de acesso (normalmente a cada hora) usando um token de atualização.  
 
    b.  Se você não tiver o Azure AD Premium ou tiver aplicativos adicionais em AD FS que permita o acesso baseado na Internet, implemente o MFA (pode ser o Azure MFA, bem como o AD FS 2016) e faça uma [política de MFA global](../../ad-fs/operations/configure-authentication-policies.md#to-configure-multi-factor-authentication-globally) para todos os acessos à extranet.
 
-## <a name="level-3-move-to-password-less-for-extranet-access"></a>Nível 3: Mover para senha menos para acesso à extranet
+## <a name="level-3-move-to-password-less-for-extranet-access"></a>Nível 3: mover para a senha menos para acesso à extranet
 
-7. Vá para a janela 10 e use [Olá para empresas](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification).
+7. Vá para a janela 10 e use [Olá para empresas](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
 8. Para outros dispositivos, se estiver no AD FS 2016, você poderá usar a [OTP do Azure MFA](../../ad-fs/operations/configure-ad-fs-and-azure-mfa.md) como o primeiro fator e a senha como o 2º fator. 
 
@@ -122,5 +122,5 @@ Se o ambiente de AD FS estiver sob ataque ativo, as etapas a seguir devem ser im
 
 - [Atualizar para o AD FS Server 2016](../../ad-fs/deployment/upgrading-to-ad-fs-in-windows-server.md) 
 - [Bloqueio inteligente de extranet no AD FS 2016](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md)
-- [Configurar políticas de acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-- [Proteção de senha do Azure AD](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises)
+- [Configurar políticas de acesso condicional](/azure/active-directory/conditional-access/overview)
+- [Proteção de senha do Azure AD](/azure/active-directory/authentication/howto-password-ban-bad-on-premises)

@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: f0222226191719fd11e68def8970c0e83529f801
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 78636aa1f245450f6c5f133fb1a11a38de17dc22
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145902"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965728"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a quarta etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho](deploy-work-folders-adfs-step3.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
 
 > [!NOTE]
->   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
 
 Para configurar o Proxy de aplicativo Web para uso com Pastas de Trabalho, use os procedimentos a seguir.  
   
@@ -43,11 +43,11 @@ Como você está instalando os certificados autoassinados que não podem ser ras
   
 Para instalar os certificados, siga estas etapas:  
   
-1.  Clique em **Iniciar** e em **Executar**.  
+1.  Clique em **Iniciar**e em **Executar**.  
   
 2.  Digite **MMC**.  
   
-3.  No menu **Arquivo**, clique em **Adicionar/Remover Snap-in**.  
+3.  No menu **Arquivo** , clique em **Adicionar/Remover Snap-in**.  
   
 4.  Na lista **Snap-ins disponíveis**, selecione **Certificados** e clique em **Adicionar**. O Assistente de Snap-in de Certificados é iniciado.  
   
@@ -57,7 +57,7 @@ Para instalar os certificados, siga estas etapas:
   
 7.  Clique em **OK**.  
   
-8.  Expanda a pasta **Console Root\Certificates\(Local Computer)\Personal\Certificates**.  
+8.  Expanda o **console de pasta Root\Certificates \( computador local) \Personal\Certificates**.  
   
 9. Clique com o botão direito do mouse em **Certificados**, clique em **Todas as Tarefas** e clique em **Importar**.  
   
@@ -65,7 +65,7 @@ Para instalar os certificados, siga estas etapas:
   
 11. Repita as etapas 9 e 10, desta vez navegando até o certificado de Pastas de Trabalho e importando-o.  
   
-12. Expanda a pasta **Console Root\Certificates\(Local Computer) \Trusted Root Certification Authorities\Certificates**.  
+12. Expanda o **console de pasta Root\Certificates \( local Computer) \Trusted Root Certification Authorities\Certificates**.  
   
 13. Clique com o botão direito do mouse em **Certificados**, clique em **Todas as Tarefas** e clique em **Importar**.  
   
@@ -88,9 +88,9 @@ Para instalar o Proxy de aplicativo Web, siga estas etapas:
   
 6.  Na página **Serviços de Função**, selecione **Proxy de aplicativo Web**, clique em **Adicionar Recursos** e clique em **Avançar**.
 
-7.  Na página **Confirm installation selections**, clique em **Install**.  
+7.  Na página **Confirmar seleções de instalação**, clique em **Instalar**.  
   
-## <a name="configure-web-application-proxy"></a>Configurar o Proxy de aplicativo Web  
+## <a name="configure-web-application-proxy"></a>Configurar o proxy de aplicativo Web  
 Para configurar o Proxy de aplicativo Web, siga estas etapas:  
   
 1.  Clique no sinalizador de aviso na parte superior do Gerenciador do Servidor Proxy Configuration Wizard Application Web e, em seguida, Configuração do Proxy de Aplicativo Web.  
@@ -101,7 +101,7 @@ Para configurar o Proxy de aplicativo Web, siga estas etapas:
   
 4.  Insira as credenciais de uma conta de administrador local nos servidores de federação. Não insira as credenciais de domínio (por exemplo, contoso\administrador), mas as credenciais locais (por exemplo, administrador).  
   
-5.  Na página **Certificado de Proxy do AD FS**, selecione o certificado do AD FS importado anteriormente. No caso de teste, esse certificado é **blueadfs.contoso.com**. Clique em **Avançar**.  
+5.  Na página **Certificado de Proxy do AD FS**, selecione o certificado do AD FS importado anteriormente. No caso de teste, esse certificado é **blueadfs.contoso.com**. Clique em **Próximo**.  
   
 6.  A página de confirmação mostra o comando do Windows PowerShell que será executado para configurar o serviço. Clique em **Configurar**.  
   
@@ -114,7 +114,7 @@ A próxima etapa é publicar um aplicativo Web que disponibilizará Pastas de Tr
   
 3. Em **Tarefas**, clique em **Publicar**. O Assistente para Publicar Novos Aplicativos é aberto.  
   
-4. Na página Bem-vindo, clique em **Avançar**.  
+4. Na página de Boas-vindas, clique em **Avançar**.  
   
 5. Na página **Pré-autenticação**, selecione **Serviços de Federação do Active Directory (AD FS)** e clique em **Avançar**.  
   
@@ -138,11 +138,11 @@ A próxima etapa é publicar um aplicativo Web que disponibilizará Pastas de Tr
   
    Nome: **WorkFolders**  
   
-   URL externa: **https://workfolders.contoso.com**  
+   URL externa:**https://workfolders.contoso.com**  
   
    Certificado externo: **o certificado de Pastas de Trabalho instalado anteriormente**  
   
-   URL do servidor de back-end: **https://workfolders.contoso.com**  
+   URL do servidor de back-end:**https://workfolders.contoso.com**  
   
 9. A página de confirmação mostra o comando do Windows PowerShell que será executado para publicar o aplicativo. Clique em **Publicar**.  
   
@@ -152,7 +152,6 @@ A próxima etapa é publicar um aplicativo Web que disponibilizará Pastas de Tr
   
 Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
   
-## <a name="see-also"></a>Veja também  
-[Visão geral das pastas de trabalho](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Consulte Também  
+[Visão geral de Pastas de Trabalho](Work-Folders-Overview.md)  
   
-

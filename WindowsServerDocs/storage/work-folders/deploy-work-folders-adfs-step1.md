@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: 0920d091d6e8b5f3db9bf945a966fdd577918179
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6b8e9d6885184e2b40a87cae0dc8b8b82f4983fb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365790"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965798"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a primeira etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho](deploy-work-folders-adfs-step3.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
 
 Para configurar o AD FS para uso com Pastas de Trabalho, execute os procedimentos a seguir.  
   
@@ -50,14 +50,14 @@ Há várias ACs (autoridades de certificação) nas quais você pode adquirir o 
 No ambiente de teste, você usará um certificado autoassinado criado por um dos scripts fornecidos.  
   
 > [!NOTE]  
-> O AD FS não oferece suporte a certificados de criptografia CNG (Cryptography Next Generation), que significa que você não pode criar o certificado autoassinado usando o cmdlet New-SelfSignedCertificate do Windows PowerShell. No entanto, você pode usar o script makecert.ps1 incluído na postagem de blog [Implantando Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap). Esse script cria um certificado autoassinado que funciona com o AD FS e solicita os nomes SAN necessários para criar o certificado.  
+> O AD FS não oferece suporte a certificados de criptografia CNG (Cryptography Next Generation), que significa que você não pode criar o certificado autoassinado usando o cmdlet New-SelfSignedCertificate do Windows PowerShell. No entanto, você pode usar o script makecert.ps1 incluído na postagem de blog [Implantando Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318). Esse script cria um certificado autoassinado que funciona com o AD FS e solicita os nomes SAN necessários para criar o certificado.  
   
 Em seguida, realize o trabalho adicional de pré-instalação descrito nas seções a seguir.  
   
 ### <a name="create-an-ad-fs-self-signed-certificate"></a>Criar um certificado autoassinado do AD FS  
 Para criar um certificado autoassinado do AD FS, siga estas etapas:  
   
-1.  Baixe os scripts fornecidos na postagem de blog [Implantando Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap) e copie o arquivo makecert.ps1 para o computador do AD FS.  
+1.  Baixe os scripts fornecidos na postagem de blog [Implantando Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318) e copie o arquivo makecert.ps1 para o computador do AD FS.  
   
 2.  Abra um janela do Windows PowerShell com privilégios de administrador.  
   
@@ -113,7 +113,7 @@ Para instalar o AD FS, siga estas etapas:
   
 2.  Na página **Funções de Servidor**, selecione a função **Serviços de Federação do Active Directory** e clique em **Avançar**.  
   
-3.  Na página **Serviços de Federação do Active Directory (AD FS)** , você verá uma mensagem informando que a função Proxy de aplicativo Web não pode ser instalada no mesmo computador do AD FS. Clique em **Avançar**.  
+3.  Na página **Serviços de Federação do Active Directory (AD FS)**, você verá uma mensagem informando que a função Proxy de aplicativo Web não pode ser instalada no mesmo computador do AD FS. Clique em **Próximo**.  
   
 4.  Clique em **Instalar** na página de confirmação.  
   
@@ -130,7 +130,7 @@ Em seguida, configure o AD FS usando o Gerenciador do Servidor ou o Windows Powe
 ### <a name="configure-ad-fs-by-using-server-manager"></a>Configurar o AD FS usando o Gerenciador do Servidor  
 Para configurar o AD FS usando o Gerenciador do Servidor, siga estas etapas:  
   
-1.  Abra o Gerenciador do Servidor.  
+1.  Abra o Gerenciador de Servidor.  
   
 2.  Clique no sinalizador **Notificações** na parte superior da janela Gerenciador do Servidor e clique em **Configure o serviço de federação neste servidor**.  
   
@@ -138,16 +138,16 @@ Para configurar o AD FS usando o Gerenciador do Servidor, siga estas etapas:
   
 4.  Na página **Especificar Propriedades do Serviço**, insira o nome da entidade do certificado SSL a ser usado na comunicação do AD FS. No exemplo de teste, esse serviço é **blueadfs.contoso.com**.  
   
-5.  Insira o nome do serviço de federação. No exemplo de teste, esse serviço é **blueadfs.contoso.com**. Clique em **Avançar**.  
+5.  Insira o nome do serviço de federação. No exemplo de teste, esse serviço é **blueadfs.contoso.com**. Clique em **Próximo**.  
   
     > [!NOTE]  
     > O nome do serviço de federação não deve usar o nome de um servidor existente no ambiente. Se você usar o nome de um servidor existente, a instalação do AD FS falhará e deverá ser reiniciada.  
   
-6.  Na página **Especificar Conta de Serviço**, insira o nome que você deseja atribuir à conta de serviço gerenciado. No exemplo de teste, selecione **Criar uma Conta de Serviço Gerenciado de Grupo** ,e em **Nome da Conta**, insira **ADFSService**. Clique em **Avançar**.  
+6.  Na página **Especificar Conta de Serviço**, insira o nome que você deseja atribuir à conta de serviço gerenciado. No exemplo de teste, selecione **Criar uma Conta de Serviço Gerenciado de Grupo** ,e em **Nome da Conta**, insira **ADFSService**. Clique em **Próximo**.  
   
-7.  Na página **Especificar Banco de Dados de Configuração**, selecione **Crie um banco de dados neste servidor que utiliza o Banco de Dados Interno do Windows** e clique em **Avançar**.  
+7.  Na página **especificar banco de dados de configuração** , selecione **criar um banco de dados neste servidor usando o banco de dados interno do Windows**e clique em **Avançar**.  
   
-8.  A página **Examinar Opções** mostra uma visão geral das opções que você selecionou. Clique em **Avançar**.  
+8.  A página **Examinar Opções** mostra uma visão geral das opções que você selecionou. Clique em **Próximo**.  
   
 9. A página **Verificações de Pré-requisitos** indica se todas as verificações de pré-requisitos passaram no teste. Se houver problemas, clique em **Configurar**.  
   
@@ -184,7 +184,6 @@ Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayNam
   
 Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
-## <a name="see-also"></a>Consulte também  
-[Visão geral das pastas de trabalho](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Consulte Também  
+[Visão geral de Pastas de Trabalho](Work-Folders-Overview.md)  
   
-

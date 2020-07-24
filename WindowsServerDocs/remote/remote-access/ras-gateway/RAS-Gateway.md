@@ -9,16 +9,16 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: lizross
 author: eross-msft
 ms.date: 05/23/2018
-ms.openlocfilehash: 762ba98a57db1411098c6ae6a8394e9a9b063181
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 28f0dabe56ef91068b96cfa1701dbf4b8cceef53
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308533"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965938"
 ---
 # <a name="ras-gateway"></a>Gateway de RAS
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 O gateway de RAS é um roteador de software e gateway que você pode usar no modo de locatário único ou em modo multilocatário.  
   
@@ -47,7 +47,7 @@ Se você for um administrador de sistema, arquiteto de rede ou outro profissiona
  
 Este tópico, destinado a profissionais de ti (tecnologia da informação), fornece informações gerais sobre o gateway de RAS, incluindo modos de implantação de gateway RAS e recursos. 
   
-Este tópico contém as seguintes seções.  
+Este tópico inclui as seções a seguir.  
   
   
 -   [Modos de implantação de gateway de RAS](#bkmk_modes)  
@@ -85,7 +85,7 @@ A virtualização de rede do Hyper-V fornece a capacidade de implantar uma rede 
   
 No Windows Server 2016, o gateway RAS roteia o tráfego de rede entre a rede física e os recursos da rede VM, independentemente de onde os recursos estão localizados. Você pode usar o gateway de RAS para rotear o tráfego de rede entre redes físicas e virtuais no mesmo local físico ou em vários locais físicos diferentes.  
   
-Por exemplo, se você tiver uma rede física e uma rede virtual no mesmo local físico, poderá implantar um computador que executa o Hyper-V configurado com uma VM de gateway de RAS para atuar como um gateway de encaminhamento e rotear o tráfego entre o virtual e o físico às.  
+Por exemplo, se você tiver uma rede física e uma rede virtual no mesmo local físico, poderá implantar um computador que executa o Hyper-V configurado com uma VM de gateway de RAS para atuar como um gateway de encaminhamento e rotear o tráfego entre as redes virtuais e físicas.  
   
 Em outro exemplo, se suas redes virtuais existirem na nuvem, o CSP poderá implantar um gateway de RAS para que você possa criar uma conexão site a site de VPN (rede virtual privada) entre o servidor VPN e o gateway de RAS do CSP; Quando esse link for estabelecido, você poderá se conectar aos recursos virtuais na nuvem pela conexão VPN.  
   
@@ -109,9 +109,9 @@ O gateway de RAS inclui os seguintes recursos.
   
 -   **VPN ponto a site**. Esse recurso de gateway RAS permite que os funcionários ou administradores da organização se conectem à rede da sua organização a partir de locais remotos. Para implantações de locatário único do gateway de RAS, os funcionários remotos podem se conectar à rede da sua organização usando uma conexão VPN. Essa conexão permite que eles usem recursos de rede internos, como sites da intranet e servidores de arquivos. Para implantações multilocatários, os administradores de rede de locatários podem usar conexões VPN ponto a site para acessar recursos de rede virtual no datacenter do CSP.  
   
--   **Roteamento dinâmico com Border Gateway Protocol (BGP)** . O BGP reduz a necessidade de configuração de roteamento manual em roteadores, porque ele é um protocolo de roteamento dinâmico e aprende rotas entre sites conectados usando conexões VPN site a site automaticamente. Se sua organização tiver vários sites que estão conectados usando roteadores habilitados para BGP, como o gateway RAS, o BGP permitirá que os roteadores calculem e usem automaticamente rotas válidas entre si no caso de interrupção ou falha da rede. Para obter mais informações, consulte [RFC 4271](https://tools.ietf.org/html/rfc4271).  
+-   **Roteamento dinâmico com Border Gateway Protocol (BGP)**. O BGP reduz a necessidade de configuração de roteamento manual em roteadores, porque ele é um protocolo de roteamento dinâmico e aprende rotas entre sites conectados usando conexões VPN site a site automaticamente. Se sua organização tiver vários sites que estão conectados usando roteadores habilitados para BGP, como o gateway RAS, o BGP permitirá que os roteadores calculem e usem automaticamente rotas válidas entre si no caso de interrupção ou falha da rede. Para obter mais informações, consulte [RFC 4271](https://tools.ietf.org/html/rfc4271).  
   
--   **NAT (conversão de endereços de rede)** . A NAT (conversão de endereços de rede) permite que você compartilhe uma conexão com a Internet pública por meio de uma única interface com um único endereço IP público. Os computadores na rede privada usam endereços particulares e não roteáveis. O NAT mapeia os endereços privados para o endereço público. Esse recurso de gateway RAS permite que os funcionários da organização com implantações de locatário único acessem recursos da Internet por trás do gateway. Para CSPs, esse recurso permite que aplicativos que estão sendo executados em VMs de locatário acessem a Internet. Por exemplo, uma VM de locatário configurada como um servidor Web pode contatar recursos financeiros externos para processar transações de cartão de crédito.  
+-   **NAT (conversão de endereços de rede)**. A NAT (conversão de endereços de rede) permite que você compartilhe uma conexão com a Internet pública por meio de uma única interface com um único endereço IP público. Os computadores na rede privada usam endereços particulares e não roteáveis. O NAT mapeia os endereços privados para o endereço público. Esse recurso de gateway RAS permite que os funcionários da organização com implantações de locatário único acessem recursos da Internet por trás do gateway. Para CSPs, esse recurso permite que aplicativos que estão sendo executados em VMs de locatário acessem a Internet. Por exemplo, uma VM de locatário configurada como um servidor Web pode contatar recursos financeiros externos para processar transações de cartão de crédito.  
 
   
 ## <a name="ras-gateway-deployment-scenarios"></a><a name="bkmk_deploy"></a>Cenários de implantação de gateway de RAS  
@@ -124,9 +124,9 @@ A seguir estão os cenários de implantação recomendados para o gateway de RAS
 ## <a name="ras-gateway-management-tools"></a><a name="bkmk_manage"></a>Ferramentas de gerenciamento de gateway RAS  
 A seguir estão as ferramentas de gerenciamento para o gateway de RAS.  
   
--   No Windows Server 2016, para implantar um roteador de gateway de RAS, você deve usar comandos do Windows PowerShell. Para obter mais informações, consulte [cmdlets de acesso remoto](https://docs.microsoft.com/powershell/module/remoteaccess) para windows Server 2016 e Windows 10.  
+-   No Windows Server 2016, para implantar um roteador de gateway de RAS, você deve usar comandos do Windows PowerShell. Para obter mais informações, consulte [cmdlets de acesso remoto](/powershell/module/remoteaccess) para windows Server 2016 e Windows 10.  
   
--   No System Center 2012 R2 Virtual Machine Manager (VMM), o gateway RAS é chamado de gateway do Windows Server. Um conjunto limitado de opções de configuração de Border Gateway Protocol (BGP) está disponível na interface de software do VMM, incluindo o **endereço IP de BGP local** e os **números de sistema autônomo (ASN)** , **lista de endereços IP de pares de BGP**e **valores de ASN**. No entanto, você pode usar os comandos BGP do Windows PowerShell de Acesso Remoto para configurar todos os outros recursos do Gateway do Windows Server. Para obter mais informações, consulte [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) e [cmdlets de acesso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 e Windows 10.  
+-   No System Center 2012 R2 Virtual Machine Manager (VMM), o gateway RAS é chamado de gateway do Windows Server. Um conjunto limitado de opções de configuração de Border Gateway Protocol (BGP) está disponível na interface de software do VMM, incluindo o **endereço IP de BGP local** e os **números de sistema autônomo (ASN)**, **lista de endereços IP de pares de BGP**e **valores de ASN**. No entanto, você pode usar os comandos BGP do Windows PowerShell de Acesso Remoto para configurar todos os outros recursos do Gateway do Windows Server. Para obter mais informações, consulte [Virtual Machine Manager (VMM)](/system-center/vmm/overview?view=sc-vmm-2019) e [cmdlets de acesso remoto](/system-center/vmm/overview?view=sc-vmm-2019) para Windows Server 2016 e Windows 10.  
   
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Alta disponibilidade do gateway de RAS](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  

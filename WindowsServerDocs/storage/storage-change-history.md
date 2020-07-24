@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: Tópicos novos e atualizados na documentação de armazenamento local do Windows Server para profissionais de ti.
-ms.openlocfilehash: 0da79f48b31d299d30ec6f625e892b68abf23a25
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070495"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966258"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
@@ -49,7 +49,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 
 | Tópico novo ou alterado                                        | Descrição |
 | ---                                                         | ---           |
-| [Limpeza de disco](file-server/disk-cleanup.md)                                              | Novo (migrado das [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11)))
+| [Limpeza de disco](file-server/disk-cleanup.md)                                              | Novo (migrado das [versões anteriores](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11)))
 | [FAQ do serviço de migração de armazenamento](storage-migration-service/faq.md#can-i-consolidate-multiple-servers-into-one-server) | Informações de otimização de desempenho adicionadas. |
 
 ## <a name="may-2019"></a>Maio de 2019
@@ -67,7 +67,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 | [Monitorar com o Azure Monitor](storage-spaces/configure-azure-monitor.md) | Novo |
 | [Compreender e implantar memória persistente](storage-spaces/deploy-pmem.md) | Novo |
 | [Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Novo        |
-| [Replicação do DFS](dfs-replication/dfsr-overview.md)        | Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))|
+| [Replicação do DFS](dfs-replication/dfsr-overview.md)        | Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770278(v%3dws.11))|
 
 ## <a name="february-2019"></a>Fevereiro de 2019
 
@@ -96,10 +96,10 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |---                                                         |---           |
 |[Resiliência aninhada](storage-spaces/nested-resiliency.md)    | Novo tópico    |
 |[Problemas conhecidos do serviço de migração de armazenamento](storage-migration-service/known-issues.md)   | Novo tópico    |
-|[Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)|
-|[Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
-|[SMB: portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
-|[Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
+|[Replicação do DFS: perguntas frequentes (FAQ)](dfs-replication/dfsr-faq.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2003/)|
+|[Migrar a replicação do SYSVOL para a replicação do DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/)|
+|[SMB: portas de compartilhamento de arquivo e impressora devem estar abertas](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/)|
+|[Serviço de Cópias de Sombra de Volume](file-server/volume-shadow-copy-service.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/)|
 
 ## <a name="october-2018"></a>Outubro de 2018
 
@@ -115,8 +115,8 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |[Visão geral do serviço de migração de armazenamento](storage-migration-service/overview.md)| Novo tópico |
 |[Usar o serviço de migração de armazenamento para migrar um servidor](storage-migration-service/migrate-data.md)| Novo tópico |
 |[FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento](storage-migration-service/faq.md)| Novo tópico |
-| [Servidor de destino iSCSI](iscsi/iscsi-target-server.md) | Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-| [Limites de escalabilidade do servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+| [Servidor de destino iSCSI](iscsi/iscsi-target-server.md) | Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+| [Limites de escalabilidade do servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
 
 ## <a name="june-2018"></a>Junho de 2018
 
@@ -129,12 +129,12 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[Visão geral do NFS](nfs/nfs-overview.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Implantar NFS](nfs/deploy-nfs.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Implantar espaços de armazenamento em um servidor autônomo](storage-spaces/deploy-standalone-storage-spaces.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Visão geral do NTFS](file-server/ntfs-overview.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Use o Robocopy para propagar arquivos para Replicação do DFS](dfs-replication/preseed-dfsr-with-robocopy.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Vssadmin – ferramenta de linha de comando de versões anteriores](../administration/windows-commands/vssadmin.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Visão geral do NFS](nfs/nfs-overview.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Implantar NFS](nfs/deploy-nfs.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Implantar espaços de armazenamento em um servidor autônomo](storage-spaces/deploy-standalone-storage-spaces.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Visão geral do NTFS](file-server/ntfs-overview.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Use o Robocopy para propagar arquivos para Replicação do DFS](dfs-replication/preseed-dfsr-with-robocopy.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Vssadmin – ferramenta de linha de comando de versões anteriores](../administration/windows-commands/vssadmin.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
 |[Visão geral do Gerenciador de recursos do servidor de arquivos](fsrm/fsrm-overview.md)| Foram adicionadas informações sobre uma nova configuração de registro no Windows Server 2016, versão 1803.|
 |[Replicação de armazenamento de servidor para servidor](storage-replica/server-to-server-storage-replication.md)|Informações adicionadas sobre o uso do centro de administração do Windows.|
 |[Problemas conhecidos da réplica de armazenamento](storage-replica/storage-replica-known-issues.md)|Novas informações adicionadas.|
@@ -145,10 +145,10 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |---|---|
 |[Coletar dados em Espaços de Armazenamento Diretos](storage-spaces/data-collection.md)| Novo tópico.|
 |[Visão geral dos espaços de armazenamento](storage-spaces/overview.md)|Novo tópico.|
-|[Visão geral de Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](folder-redirection/folder-redirection-rup-overview.md)|Vários tópicos migrados da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Compartilhamento de arquivos usando o protocolo SMB 3](file-server/file-server-smb-overview.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Aprimorar o desempenho de um servidor de arquivos com o SMB Direct](file-server/smb-direct.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Melhorias de segurança do SMB](file-server/smb-security.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Visão geral de Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](folder-redirection/folder-redirection-rup-overview.md)|Vários tópicos migrados da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Compartilhamento de arquivos usando o protocolo SMB 3](file-server/file-server-smb-overview.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Aprimorar o desempenho de um servidor de arquivos com o SMB Direct](file-server/smb-direct.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
+|[Melhorias de segurança do SMB](file-server/smb-security.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012) .|
 
 ## <a name="march-2018"></a>Março de 2018
 
@@ -172,7 +172,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |Tópico novo ou alterado|Descrição|
 |---|---|
 |[Considerar considerações de simetria no Espaços de Armazenamento Diretos](storage-spaces/drive-symmetry-considerations.md)| Novo tópico.|
-|[Usando a réplica de armazenamento com o projeto Honolulu](storage-replica/storage-replica-ui.md)|Novo tópico.|
+|[Usando a réplica de armazenamento com o projeto Honolulu](./storage-replica/server-to-server-storage-replication.md)|Novo tópico.|
 
 ## <a name="december-2017"></a>Dezembro de 2017
 
@@ -266,10 +266,10 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 |[Criando volumes](storage-spaces/create-volumes.md)|Novo tópico.|
 |[Estendendo volumes em Espaços de Armazenamento Diretos](storage-spaces/resize-volumes.md)|Novo tópico.|
 |[Visão geral do ReFS](refs/refs-overview.md)|Novo tópico.|
-|[Noções básicas de Espaços de Armazenamento Diretos](storage-spaces/understand-storage-spaces-direct.md)|Nova lista de links.|
-|[Planejar Espaços de Armazenamento Diretos](storage-spaces/plan-storage-spaces-direct.md)|Nova lista de links.|
+|[Noções básicas de Espaços de Armazenamento Diretos](./storage-spaces/understand-the-cache.md)|Nova lista de links.|
+|[Planejar Espaços de Armazenamento Diretos](./storage-spaces/storage-spaces-direct-hardware-requirements.md)|Nova lista de links.|
 |[Implantando Espaços de Armazenamento Diretos](storage-spaces/deploy-storage-spaces-direct.md)|Nova lista de links.|
-|[Gerenciando Espaços de Armazenamento Diretos](storage-spaces/manage-storage-spaces-direct.md)|Novo tópico.|
+|[Gerenciando Espaços de Armazenamento Diretos](./storage-spaces/storage-spaces-direct-overview.md)|Novo tópico.|
 |[Perguntas frequentes sobre réplica de armazenamento](storage-replica/storage-replica-frequently-asked-questions.md)|Requisitos de porta atualizados e esclarecimento sobre como os volumes replicados estendidos funcionam.|
 |[Problemas conhecidos da réplica de armazenamento](storage-replica/storage-replica-known-issues.md)|Adição de informações sobre uma correção na Atualização Cumulativa de 9 de dezembro de 2016 e adição de informações sobre como resolver um erro ao estender um volume replicado.|
 |[Visão geral de Espaços de Armazenamento Diretos](storage-spaces/storage-spaces-direct-overview.md)|Adição da seção Noções básicas/Planejar/Implantar/Gerenciar orientada visualmente para servir como um mapa de aprendizado para nossos tópicos.|

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cf069102f409247832204546f3e1c15de7238bd3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3aeac10b8c92c151fe57bcb935e685f7f1a2bfa2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822269"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965518"
 ---
 # <a name="integrating-ad-ds-into-an-existing-dns-infrastructure"></a>Integrando o AD DS a uma infraestrutura de DNS existente
 
@@ -30,10 +30,10 @@ Ao integrar AD DS com um namespace DNS existente, recomendamos que você faça o
   
 -   Configure os controladores de domínio para cada domínio regional para hospedar as zonas DNS que correspondem aos seus domínios de Active Directory.  
   
--   Configure a zona que contém os Active Directory registros de localizador de toda a floresta (ou seja, o _msdcs. *nomedafloresta* Zone) a ser replicada em todos os servidores DNS na floresta usando a partição de diretório de aplicativo DNS de toda a floresta.  
+-   Configure a zona que contém os Active Directory registros de localizador de toda a floresta (ou seja, o _msdcs.* nomedafloresta* Zone) a ser replicada em todos os servidores DNS na floresta usando a partição de diretório de aplicativo DNS de toda a floresta.  
   
     > [!NOTE]  
-    > Quando o serviço do servidor DNS é instalado com o Assistente para Instalação do Active Directory Domain Services (recomendamos essa opção), todas as tarefas anteriores são executadas automaticamente. Para obter mais informações, consulte [implantando um domínio raiz de floresta do Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
+    > Quando o serviço do servidor DNS é instalado com o Assistente para Instalação do Active Directory Domain Services (recomendamos essa opção), todas as tarefas anteriores são executadas automaticamente. Para obter mais informações, consulte [implantando um domínio raiz de floresta do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731174(v=ws.10)).  
   
     > [!NOTE]  
     > AD DS usa registros de localizador em toda a floresta para permitir que os parceiros de replicação encontrem um ao outro e para permitir que os clientes encontrem servidores de catálogo global. AD DS armazena os registros de localizador de toda a floresta no _msdcs. zona *nomedafloresta* . Como as informações na zona devem estar amplamente disponíveis, essa zona é replicada para todos os servidores DNS na floresta por meio da partição de diretório de aplicativos DNS em toda a floresta.  
@@ -61,5 +61,3 @@ Os clientes ainda podem ser localizados por um dos nomes. Qualquer solução de 
   
 Se você quiser tirar proveito da autenticação Kerberos ao se conectar a um servidor que executa o Windows 2000, o Windows Server 2003 ou o Windows Server 2008, você deve garantir que o cliente se conecte ao servidor usando o nome primário.  
   
-
-

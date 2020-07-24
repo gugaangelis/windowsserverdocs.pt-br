@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1d00ab702ab6b4ff4307f96f9e266a1cb3420197
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2924b04e0853549f86934f0145f2cb46f07a4939
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821139"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966578"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Monitorar o Active Directory em busca de sinais de comprometimento
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Número da lei cinco: a vigilância eternas é o preço da segurança.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número da lei cinco: a vigilância eternas é o preço da segurança.* - [10 leis imutáveis da administração de segurança](/previous-versions//cc722488(v=technet.10))  
   
 Um sistema de monitoramento de log de eventos sólido é uma parte crucial de qualquer design de Active Directory seguro. Muitos comprometimentos de segurança de computador poderiam ser descobertos no início do evento se as vítimas imprometessem o monitoramento e o alerta do log de eventos apropriado. Os relatórios independentes têm muito suporte para essa conclusão. Por exemplo, o [relatório de violação de dados 2009 Verizon](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) informa:  
   
@@ -31,26 +31,26 @@ Essa falta de monitoramento de logs de eventos ativos continua sendo um ponto fr
 
 Veja a seguir links para o blog de suporte do Microsoft Official Enterprise. O conteúdo desses Blogs fornece conselhos, orientações e recomendações sobre auditoria que ajudarão você a aprimorar a segurança de sua infraestrutura de Active Directory e é um recurso valioso ao criar uma diretiva de auditoria.  
   
-* A [auditoria de acesso a objetos globais é mágica](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) -descreve um mecanismo de controle chamado configuração de política de auditoria avançada que foi adicionada ao Windows 7 e ao windows Server 2008 R2 que permite definir quais tipos de dados você deseja auditar facilmente e não para manipular scripts e Auditpol. exe.  
-* [Apresentando alterações de auditoria no windows 2008](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -apresenta as alterações de auditoria feitas no windows Server 2008.  
-* [Truques de auditoria interessantes no Vista e 2008](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -explica os recursos de auditoria interessantes do Windows Vista e do windows Server 2008 que podem ser usados para solucionar problemas ou ver o que está acontecendo em seu ambiente.  
-* A [loja única para auditoria no Windows server 2008 e no Windows Vista](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -contém uma compilação de recursos de auditoria e informações contidas no windows Server 2008 e no Windows Vista.  
+* A [auditoria de acesso a objetos globais é mágica](/archive/blogs/askds/global-object-access-auditing-is-magic) -descreve um mecanismo de controle chamado configuração avançada da política de auditoria que foi adicionada ao Windows 7 e ao windows Server 2008 R2 que permite que você defina quais tipos de dados você deseja auditar facilmente e não faça malabarismos com scripts e auditpol.exe.  
+* [Apresentando alterações de auditoria no windows 2008](/archive/blogs/askds/introducing-auditing-changes-in-windows-2008) -apresenta as alterações de auditoria feitas no windows Server 2008.  
+* [Truques de auditoria interessantes no Vista e 2008](/archive/blogs/askds/cool-auditing-tricks-in-vista-and-2008) -explica os recursos de auditoria interessantes do Windows Vista e do windows Server 2008 que podem ser usados para solucionar problemas ou ver o que está acontecendo em seu ambiente.  
+* A [loja única para auditoria no Windows server 2008 e no Windows Vista](/archive/blogs/askds/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista) -contém uma compilação de recursos de auditoria e informações contidas no windows Server 2008 e no Windows Vista.  
   
 Os links a seguir fornecem informações sobre melhorias na auditoria do Windows no Windows 8 e no Windows Server 2012, além de informações sobre AD DS auditoria no Windows Server 2008.  
   
-* [O que há de novo na auditoria de segurança](https://technet.microsoft.com/library/hh849638.aspx) – fornece uma visão geral dos novos recursos de auditoria de segurança no Windows 8 e no windows Server 2012.  
-* [Guia passo a passo de AD DS auditoria](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) – descreve o novo recurso de auditoria de Active Directory Domain Services (AD DS) no Windows Server 2008. Ele também fornece procedimentos para implementar esse novo recurso.  
+* [O que há de novo na auditoria de segurança](/previous-versions/orphan-topics/ws.11/hh849638(v=ws.11)) – fornece uma visão geral dos novos recursos de auditoria de segurança no Windows 8 e no windows Server 2012.  
+* [Guia passo a passo de AD DS auditoria](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) – descreve o novo recurso de auditoria de Active Directory Domain Services (AD DS) no Windows Server 2008. Ele também fornece procedimentos para implementar esse novo recurso.  
   
 ### <a name="windows-audit-categories"></a>Categorias de auditoria do Windows
 
 Antes do Windows Vista e do Windows Server 2008, o Windows tinha apenas nove categorias de diretiva de auditoria de log de eventos:  
   
 * Eventos de logon de conta  
-* Gerenciamento de contas  
+* Gerenciamento de Contas  
 * Acesso ao serviço de diretório  
 * Eventos de logon  
 * Acesso a objetos  
-* Alteração de Política  
+* Alteração de política  
 * Uso de privilégios  
 * Controle de processos  
 * Eventos do sistema  
@@ -68,12 +68,12 @@ Essa categoria gera muitos "ruídos" porque o Windows está constantemente tendo
 ##### <a name="audit-account-management"></a>Gerenciamento de conta de auditoria  
 Essa configuração de auditoria determina se o gerenciamento de usuários e grupos deve ser acompanhado. Por exemplo, os usuários e grupos devem ser controlados quando uma conta de usuário ou computador, um grupo de segurança ou um grupo de distribuição é criado, alterado ou excluído; Quando uma conta de usuário ou computador é renomeada, desabilitada ou habilitada; ou quando uma senha de usuário ou computador é alterada. Um evento pode ser gerado para usuários ou grupos que são adicionados ou removidos de outros grupos.  
   
-##### <a name="audit-directory-service-access"></a>Auditoria do acesso ao serviço de diretório  
+##### <a name="audit-directory-service-access"></a>Auditoria de acesso do serviço de diretório  
 
 Essa configuração de política determina se deve-se auditar o acesso de entidade de segurança a um objeto Active Directory que tenha sua própria SACL (lista de controle de acesso) do sistema especificada. Em geral, essa categoria só deve ser habilitada em controladores de domínio. Quando habilitada, essa configuração gera muitos "ruídos".  
   
 ##### <a name="audit-logon-events"></a>Eventos de logon de auditoria  
-Os eventos de logon são gerados quando uma entidade de segurança local é autenticada em um computador local. Eventos de logon registra logons de domínio que ocorrem no computador local. Eventos de logoff da conta não são gerados. Quando habilitado, os eventos de logon geram muitos "ruídos", mas devem ser habilitados por padrão em qualquer plano de auditoria de segurança.  
+Os eventos de logon são gerados quando uma entidade de segurança local é autenticada em um computador local. Eventos de logon registra logons de domínio que ocorrem no computador local. Os eventos de logoff da conta não são gerados. Quando habilitado, os eventos de logon geram muitos "ruídos", mas devem ser habilitados por padrão em qualquer plano de auditoria de segurança.  
   
 ##### <a name="audit-object-access"></a>Auditoria de acesso a objetos  
 O acesso ao objeto pode gerar eventos quando os objetos definidos posteriormente com auditoria habilitada são acessados (por exemplo, aberto, lido, renomeado, excluído ou fechado). Depois que a categoria de auditoria principal estiver habilitada, o administrador deverá definir individualmente quais objetos terão a auditoria habilitada. Muitos objetos do sistema Windows vêm com a auditoria habilitada, portanto, habilitar essa categoria normalmente começará a gerar eventos antes que o administrador tenha definido qualquer um.  
@@ -108,46 +108,46 @@ Para obter uma lista de subcategorias de auditoria configuradas no momento em um
   
 `auditpol /get /category:*`
   
-A captura de tela a seguir mostra um exemplo de Auditpol. exe que lista a política de auditoria atual.  
+A captura de tela a seguir mostra um exemplo de auditpol.exe listando a política de auditoria atual.  
   
 ![monitorando o AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_5.gif)  
   
 > [!NOTE]  
-> O Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto o Auditpol. exe faz isso. Consulte [obtendo a política de auditoria efetiva no Windows 7 e 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obter mais detalhes.  
+> Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto auditpol.exe. Consulte [obtendo a política de auditoria efetiva no Windows 7 e 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) para obter mais detalhes.  
   
 Cada categoria principal tem várias subcategorias. Abaixo está uma lista de categorias, suas subcategorias e uma descrição de suas funções.  
   
 ### <a name="auditing-subcategories-descriptions"></a>Descrições das subcategorias de auditoria  
 As subcategorias de política de auditoria habilitam os seguintes tipos de mensagem de log de eventos:  
   
-#### <a name="account-logon"></a>Logon de conta  
+#### <a name="account-logon"></a>Logon da conta  
   
 ##### <a name="credential-validation"></a>Validação de credenciais  
-Essa subcategoria relata os resultados de testes de validação em credenciais enviadas para uma solicitação de logon de conta de usuário. Esses eventos ocorrem no computador autoritativo para as credenciais. Para contas de domínio, o controlador de domínio é autoritativo, enquanto para contas locais, o computador local é autoritativo.  
+Essa subcategoria relata os resultados de testes de validação em credenciais enviadas para uma solicitação de logon de conta de usuário. Esses eventos ocorrem no computador que é autoritativo para as credenciais. Para contas de domínio, o controlador de domínio é autoritativo, enquanto para contas locais, o computador local é autoritativo.  
   
 Em ambientes de domínio, a maioria dos eventos de logon de conta é registrada no log de segurança dos controladores de domínio que são autoritativos para as contas de domínio. No entanto, esses eventos podem ocorrer em outros computadores da organização quando contas locais são usadas para fazer logon.  
   
-##### <a name="kerberos-service-ticket-operations"></a>Auditoria de Operações do Tíquete de Serviço Kerberos  
+##### <a name="kerberos-service-ticket-operations"></a>Operações de tíquete de serviço Kerberos  
 Essa subcategoria relata eventos gerados por processos de solicitação de tíquete Kerberos no controlador de domínio que é autoritativo para a conta de domínio.  
   
 ##### <a name="kerberos-authentication-service"></a>Serviço de autenticação Kerberos  
-Essa subcategoria relata eventos gerados pelo serviço de autenticação Kerberos. Esses eventos ocorrem no computador autoritativo para as credenciais.  
+Essa subcategoria relata eventos gerados pelo serviço de autenticação Kerberos. Esses eventos ocorrem no computador que é autoritativo para as credenciais.  
   
-##### <a name="other-account-logon-events"></a>Outros eventos de Logon de Conta  
-Essa subcategoria relata os eventos que ocorrem em resposta a credenciais enviadas para uma solicitação de logon de conta de usuário que não se relacionam a validação de credencial ou tíquetes Kerberos. Esses eventos ocorrem no computador autoritativo para as credenciais. Para contas de domínio, o controlador de domínio é autoritativo, enquanto para contas locais, o computador local é autoritativo.  
+##### <a name="other-account-logon-events"></a>Outros eventos de logon de conta  
+Essa subcategoria relata os eventos que ocorrem em resposta a credenciais enviadas para uma solicitação de logon de conta de usuário que não se relacionam a validação de credencial ou tíquetes Kerberos. Esses eventos ocorrem no computador que é autoritativo para as credenciais. Para contas de domínio, o controlador de domínio é autoritativo, enquanto para contas locais, o computador local é autoritativo.  
   
-Em ambientes de domínio, a maioria dos eventos de logon de conta é registrada no log de segurança dos controladores de domínio que são autoritativos para as contas de domínio. No entanto, esses eventos podem ocorrer em outros computadores da organização quando contas locais são usadas para fazer logon. Entre os exemplos podem estar os seguintes:  
+Em ambientes de domínio, a maioria dos eventos de logon de conta é registrada no log de segurança dos controladores de domínio que são autoritativos para as contas de domínio. No entanto, esses eventos podem ocorrer em outros computadores da organização quando contas locais são usadas para fazer logon. Os exemplos podem incluir o seguinte:  
   
 * Desconexões de Serviços de Área de Trabalho Remota sessão  
 * Novas sessões de Serviços de Área de Trabalho Remota  
-* Bloqueio e desbloqueio de uma estação de trabalho  
-* Invocação de uma proteção de tela  
-* Descarte de uma proteção de tela  
+* Bloqueando e desbloqueando uma estação de trabalho  
+* Invocando uma proteção de tela  
+* Ignorando uma proteção de tela  
 * Detecção de um ataque de reprodução de Kerberos, no qual uma solicitação de Kerberos com informações idênticas é recebida duas vezes  
-* Acesso a uma rede sem fio concedido a uma conta de usuário ou computador  
-* Acesso a uma rede com fio 802.1x concedido a uma conta de usuário ou computador  
+* Acesso a uma rede sem fio concedida a uma conta de usuário ou de computador  
+* Acesso a uma rede 802.1 x com fio concedida a uma conta de usuário ou de computador  
   
-#### <a name="account-management"></a>Gerenciamento de contas  
+#### <a name="account-management"></a>Gerenciamento de Contas  
   
 ##### <a name="user-account-management"></a>Gerenciamento de contas de usuário  
 Essa subcategoria relata cada evento de gerenciamento de conta de usuário, como quando uma conta de usuário é criada, alterada ou excluída; uma conta de usuário é renomeada, desabilitada ou habilitada; ou uma senha é definida ou alterada. Se essa configuração de diretiva de auditoria estiver habilitada, os administradores poderão rastrear eventos para detectar a criação de contas de usuário maliciosas, acidentais e mal-intencionadas.  
@@ -187,9 +187,9 @@ Esta subcategoria relata eventos de conexão de chamada de procedimento remoto (
 Essa subcategoria relata quando um objeto de AD DS é acessado. Somente objetos com SACLs configuradas causam a geração de eventos de auditoria e somente quando eles são acessados de uma maneira que corresponda às entradas da SACL. Esses eventos são semelhantes aos eventos de acesso do serviço de diretório em versões anteriores do Windows Server. Essa subcategoria se aplica somente aos controladores de domínio.  
   
 ##### <a name="directory-service-changes"></a>Alterações no serviço de diretório  
-Essa subcategoria relata alterações em objetos no AD DS. Os tipos de alterações relatadas são as operações criar, modificar, mover e restaurar que são executadas em um objeto. Auditoria de alteração do serviço de diretório, quando apropriado, indica os valores novos e antigos das propriedades alteradas dos objetos que foram alterados. Somente objetos com SACLs causam a geração de eventos de auditoria e somente quando eles são acessados de uma maneira que corresponde às suas entradas de SACL. Alguns objetos e propriedades não fazem eventos de auditoria serem gerados por causa de configurações na classe de objeto no esquema. Essa subcategoria se aplica somente aos controladores de domínio.  
+Essa subcategoria relata alterações em objetos no AD DS. Os tipos de alterações relatadas são as operações criar, modificar, mover e restaurar que são executadas em um objeto. Auditoria de alteração do serviço de diretório, quando apropriado, indica os valores novos e antigos das propriedades alteradas dos objetos que foram alterados. Somente objetos com SACLs causam a geração de eventos de auditoria e somente quando eles são acessados de uma maneira que corresponde às suas entradas de SACL. Alguns objetos e propriedades não causam a geração de eventos de auditoria devido a configurações na classe de objeto no esquema. Essa subcategoria se aplica somente aos controladores de domínio.  
   
-##### <a name="directory-service-replication"></a>Replicação do serviço de diretório  
+##### <a name="directory-service-replication"></a>Replicação do Serviço de Diretório  
 Essa subcategoria relata quando a replicação entre dois controladores de domínio começa e termina.  
   
 ##### <a name="detailed-directory-service-replication"></a>Replicação detalhada do serviço de diretório  
@@ -212,7 +212,7 @@ Essa subcategoria relata os resultados de AuthIP durante negociações de modo e
 ##### <a name="other-logonlogoff-events"></a>Outros eventos de logon/logoff  
 Essa subcategoria relata outros eventos relacionados ao logon e ao logoff, como Serviços de Área de Trabalho Remota desconexões de sessão e reconexão, usando executar como para executar processos em uma conta diferente, bloqueando e desbloqueando uma estação de trabalho.  
   
-##### <a name="logoff"></a>Logoff  
+##### <a name="logoff"></a>Verbos  
 Essa subcategoria relata quando um usuário faz logoff do sistema. Esses eventos ocorrem no computador acessado. Para logons interativos, a geração desses eventos ocorre no computador que está conectado ao. Se ocorrer um logon de rede para acessar um compartilhamento, esses eventos geram no computador que hospeda o recurso acessado. Se essa configuração estiver definida como **sem auditoria**, é difícil ou impossível determinar qual usuário acessou ou tentou acessar computadores da organização.  
   
 ##### <a name="account-lockout"></a>Bloqueio de conta  
@@ -224,7 +224,7 @@ Essa subcategoria relata os resultados do protocolo IKE e do AuthIP durante nego
 ##### <a name="special-logon"></a>Logon especial  
 Essa subcategoria informa quando um logon especial é usado. Um logon especial é um logon que tem privilégios equivalentes de administrador e pode ser usado para elevar um processo a um nível mais alto.  
   
-#### <a name="policy-change"></a>Alteração de Política  
+#### <a name="policy-change"></a>Alteração de política  
   
 ##### <a name="audit-policy-change"></a>Alterar política de auditoria  
 Essa subcategoria relata alterações na política de auditoria, incluindo alterações de SACL.  
@@ -236,7 +236,7 @@ Essa subcategoria relata alterações na política de autenticação.
 Essa subcategoria relata alterações na política de autorização, incluindo alterações de DACL (permissões).  
   
 ##### <a name="mpssvc-rule-level-policy-change"></a>Alteração de política de nível de regra MPSSVC  
-Essa subcategoria relata as alterações nas regras de política usadas pelo serviço de proteção da Microsoft (MPSSVC. exe). Esse serviço é usado pelo firewall do Windows.  
+Essa subcategoria relata as alterações nas regras de política usadas pelo serviço de proteção da Microsoft (MPSSVC.exe). Esse serviço é usado pelo firewall do Windows.  
   
 ##### <a name="filtering-platform-policy-change"></a>Filtrando alteração de política da plataforma  
 Essa subcategoria relata a adição e a remoção de objetos do WFP, incluindo filtros de inicialização. Esses eventos podem ser muito altos no volume.  
@@ -280,7 +280,7 @@ Essa subcategoria relata quando os aplicativos tentam gerar eventos de auditoria
 ##### <a name="handle-manipulation"></a>Manipulação de identificador  
 Essa subcategoria relata quando um identificador para um objeto é aberto ou fechado. Somente objetos com SACLs fazem com que esses eventos sejam gerados e somente se a operação de identificador tentada corresponder às entradas da SACL. Os eventos de manipulação de identificadores são gerados somente para tipos de objeto em que a subcategoria de acesso a objeto correspondente está habilitada (por exemplo, sistema de arquivos ou registro).  
   
-##### <a name="file-share"></a>Compartilhamento de arquivos  
+##### <a name="file-share"></a>Comp. de Arquivos  
 Essa subcategoria relata quando um compartilhamento de arquivos é acessado. Por si só, essa configuração de política não causará a auditoria de nenhum evento. Ele determina se deve-se auditar o evento de um usuário que acessa um objeto de compartilhamento de arquivo que tem uma SACL (lista de controle de acesso) do sistema especificada, permitindo que a auditoria ocorra com eficiência.  
   
 ##### <a name="filtering-platform-packet-drop"></a>Remoção de pacote de plataforma de filtragem  
@@ -292,7 +292,7 @@ Essa subcategoria relata quando as conexões são permitidas ou bloqueadas pela 
 ##### <a name="other-object-access-events"></a>Outros eventos de acesso de objeto  
 Essa subcategoria relata outros eventos relacionados ao acesso a objetos, como Agendador de Tarefas trabalhos e objetos COM+.  
   
-#### <a name="system"></a>{1&gt;Sistema&lt;1}  
+#### <a name="system"></a>Sistema  
   
 ##### <a name="security-state-change"></a>Alteração do estado de segurança  
 Essa subcategoria relata as alterações no estado de segurança do sistema, como quando o subsistema de segurança é iniciado e interrompido.  
@@ -310,13 +310,13 @@ Essa subcategoria relata as atividades do driver de IPsec (Internet Protocol Sec
 ##### <a name="other-system-events"></a>Outros eventos do sistema  
 Essa subcategoria relata outros eventos do sistema.  
   
-Para obter mais informações sobre as descrições de subcategorias, consulte a [ferramenta Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx).  
+Para obter mais informações sobre as descrições de subcategorias, consulte a [ferramenta Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc677002(v=technet.10)).  
   
 Cada organização deve revisar as categorias e subcategorias cobertas anteriormente e habilitar as que melhor se ajustam ao seu ambiente. As alterações na política de auditoria devem ser sempre testadas antes da implantação em um ambiente de produção.  
   
 ## <a name="configuring-windows-audit-policy"></a>Configurando a política de auditoria do Windows
 
-A política de auditoria do Windows pode ser definida usando políticas de grupo, Auditpol. exe, APIs ou edições do registro. Os métodos recomendados para configurar a diretiva de auditoria para a maioria das empresas são Política de Grupo ou Auditpol. exe. Definir a diretiva de auditoria de um sistema requer permissões de conta de nível de administrador ou permissões delegadas apropriadas.  
+A política de auditoria do Windows pode ser definida usando políticas de grupo, auditpol.exe, APIs ou edições do registro. Os métodos recomendados para configurar a política de auditoria para a maioria das empresas são Política de Grupo ou auditpol.exe. Definir a diretiva de auditoria de um sistema requer permissões de conta de nível de administrador ou permissões delegadas apropriadas.  
   
 > [!NOTE]  
 > O privilégio **gerenciar auditoria e log de segurança** deve ser fornecido a entidades de segurança (os administradores têm isso por padrão) para permitir a modificação de opções de auditoria de acesso a objetos de recursos individuais, como arquivos, Active Directory objetos e chaves do registro.  
@@ -331,15 +331,15 @@ A política de auditoria avançada pode ser definida usando Active Directory ou 
   
 ![monitorando o AD](media/Monitoring-Active-Directory-for-Signs-of-Compromise/SAD_7.gif)  
   
-### <a name="setting-windows-audit-policy-using-auditpolexe"></a>Definindo a política de auditoria do Windows usando Auditpol. exe
+### <a name="setting-windows-audit-policy-using-auditpolexe"></a>Definindo a política de auditoria do Windows usando Auditpol.exe
 
-O Auditpol. exe (para configurar a política de auditoria do Windows) foi introduzido no Windows Server 2008 e no Windows Vista. Inicialmente, somente o Auditpol. exe poderia ser usado para definir a diretiva de auditoria avançada, mas Política de Grupo pode ser usado no Windows Server 2012, no Windows Server 2008 R2 ou no Windows Server 2008, Windows 8 e Windows 7.  
+Auditpol.exe (para configurar a diretiva de auditoria do Windows) foi introduzida no Windows Server 2008 e no Windows Vista. Inicialmente, apenas auditpol.exe pode ser usado para definir a diretiva de auditoria avançada, mas Política de Grupo pode ser usado no Windows Server 2012, no Windows Server 2008 R2 ou no Windows Server 2008, Windows 8 e Windows 7.  
   
-Auditpol. exe é um utilitário de linha de comando. A sintaxe é a seguinte:  
+Auditpol.exe é um utilitário de linha de comando. A sintaxe é mostrada a seguir:  
   
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
   
-Exemplos de sintaxe Auditpol. exe:  
+Exemplos de sintaxe de Auditpol.exe:  
   
 `auditpol /set /subcategory:"user account management" /success:enable /failure:enable`
   
@@ -348,51 +348,51 @@ Exemplos de sintaxe Auditpol. exe:
 `auditpol /set /subcategory:"IPSEC Main Mode" /failure:enable`
   
 > [!NOTE]  
-> Auditpol. exe define a política de auditoria avançada localmente. Se a política local estiver em conflito com Active Directory ou Política de Grupo local, as configurações de Política de Grupo geralmente prevalecem sobre as configurações de Auditpol. exe. Quando houver conflitos de diretiva local ou de vários grupos, somente uma política prevalecerá (ou seja, substituirá). As políticas de auditoria não serão mescladas.  
+> Auditpol.exe define a política de auditoria avançada localmente. Se a política local estiver em conflito com Active Directory ou Política de Grupo local, as configurações de Política de Grupo geralmente prevalecem sobre as configurações de auditpol.exe. Quando houver conflitos de diretiva local ou de vários grupos, somente uma política prevalecerá (ou seja, substituirá). As políticas de auditoria não serão mescladas.  
   
 #### <a name="scripting-auditpol"></a>Script de Auditpol
 
-A Microsoft fornece um [script de exemplo](https://support.microsoft.com/kb/921469) para os administradores que desejam definir a diretiva de auditoria avançada usando um script em vez de digitar manualmente cada comando Auditpol. exe.  
+A Microsoft fornece um [script de exemplo](https://support.microsoft.com/kb/921469) para os administradores que desejam definir a diretiva de auditoria avançada usando um script em vez de digitar manualmente cada comando de auditpol.exe.  
   
-**Observação** O Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto o Auditpol. exe faz isso. Consulte [obtendo a política de auditoria efetiva no Windows 7 e no windows 2008 R2](https://blogs.technet.com/b/askds/archive/2011/03/11/getting-the-effective-audit-policy-in-windows-7-and-2008-r2.aspx) para obter mais detalhes.  
+**Observação** Política de Grupo nem sempre relata com precisão o status de todas as políticas de auditoria habilitadas, enquanto auditpol.exe. Consulte [obtendo a política de auditoria efetiva no Windows 7 e no windows 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731607(v=ws.10)) para obter mais detalhes.  
   
 #### <a name="other-auditpol-commands"></a>Outros comandos Auditpol
 
-Auditpol. exe pode ser usado para salvar e restaurar uma política de auditoria local e para exibir outros comandos relacionados à auditoria. Aqui estão os outros comandos **Auditpol** .  
+Auditpol.exe pode ser usado para salvar e restaurar uma política de auditoria local e para exibir outros comandos relacionados à auditoria. Aqui estão os outros comandos **Auditpol** .  
   
-`auditpol /clear`-usado para limpar e redefinir políticas de auditoria local  
+`auditpol /clear`-Usado para limpar e redefinir políticas de auditoria local  
   
-`auditpol /backup /file:<filename>`-usado para fazer backup de uma política de auditoria local atual em um arquivo binário  
+`auditpol /backup /file:<filename>`-Usado para fazer backup de uma política de auditoria local atual em um arquivo binário  
   
-`auditpol /restore /file:<filename>`-usado para importar um arquivo de política de auditoria salvo anteriormente para uma política de auditoria local  
+`auditpol /restore /file:<filename>`-Usado para importar um arquivo de política de auditoria salvo anteriormente para uma política de auditoria local  
   
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-se essa configuração de diretiva de auditoria estiver habilitada, ela fará com que o sistema pare imediatamente (com a mensagem STOP: C0000244 {Audit Failed}) se uma auditoria de segurança não puder ser registrada por algum motivo. Normalmente, um evento não é registrado quando o log de auditoria de segurança está cheio e o método de retenção especificado para o log de segurança **não substitui eventos** nem **substitui eventos por dias**. Normalmente, ele só é habilitado por ambientes que precisam de maior garantia de que o log de segurança está registrando em log. Se habilitada, os administradores devem observar com atenção o tamanho do log de segurança e girar os logs conforme necessário. Ele também pode ser definido com Política de Grupo modificando a opção de segurança **auditoria: desligar o sistema imediatamente se não for possível registrar auditorias de segurança** (padrão = desabilitado).  
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-Se essa configuração de diretiva de auditoria estiver habilitada, ela fará com que o sistema pare imediatamente (com a mensagem STOP: C0000244 {Audit Failed}) se uma auditoria de segurança não puder ser registrada por qualquer motivo. Normalmente, um evento não é registrado quando o log de auditoria de segurança está cheio e o método de retenção especificado para o log de segurança **não substitui eventos** nem **substitui eventos por dias**. Normalmente, ele só é habilitado por ambientes que precisam de maior garantia de que o log de segurança está registrando em log. Se habilitada, os administradores devem observar com atenção o tamanho do log de segurança e girar os logs conforme necessário. Ele também pode ser definido com Política de Grupo modificando a opção de segurança **auditoria: desligar o sistema imediatamente se não for possível registrar auditorias de segurança** (padrão = desabilitado).  
   
-`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>` – essa configuração de política de auditoria determina se o acesso de objetos do sistema global deve ser auditado. Se essa política estiver habilitada, ela fará com que os objetos do sistema, como mutexes, eventos, semáforos e dispositivos DOS, sejam criados com uma SACL (lista de controle de acesso) do sistema padrão. A maioria dos administradores consideram a auditoria de objetos do sistema global como "ruidosa", e eles só serão habilitados se suspeitarem de hackers mal-intencionados. Somente objetos nomeados recebem uma SACL. Se a política de auditoria de acesso a objetos de auditoria (ou a subcategoria de auditoria de objeto de kernel) também estiver habilitada, o acesso a esses objetos do sistema será auditado. Ao definir essa configuração de segurança, as alterações não terão efeito até que você reinicie o Windows. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança auditar o acesso de objetos do sistema global (padrão = desabilitado).  
+`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`– Essa configuração de política de auditoria determina se o acesso de objetos do sistema global deve ser auditado. Se essa política estiver habilitada, ela fará com que os objetos do sistema, como mutexes, eventos, semáforos e dispositivos DOS, sejam criados com uma SACL (lista de controle de acesso) do sistema padrão. A maioria dos administradores consideram a auditoria de objetos do sistema global como "ruidosa", e eles só serão habilitados se suspeitarem de hackers mal-intencionados. Somente objetos nomeados recebem uma SACL. Se a política de auditoria de acesso a objetos de auditoria (ou a subcategoria de auditoria de objeto de kernel) também estiver habilitada, o acesso a esses objetos do sistema será auditado. Ao definir essa configuração de segurança, as alterações não terão efeito até que você reinicie o Windows. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança auditar o acesso de objetos do sistema global (padrão = desabilitado).  
   
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-essa configuração de diretiva de auditoria Especifica que os objetos de kernel nomeados (como mutexes e semáforos) devem receber SACLs quando forem criados. AuditBaseDirectories afeta objetos de contêiner enquanto AuditBaseObjects afeta objetos que não podem conter outros objetos.  
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`– Essa configuração de diretiva de auditoria Especifica que os objetos de kernel nomeados (como mutexes e semáforos) devem receber SACLs quando são criados. AuditBaseDirectories afeta objetos de contêiner enquanto AuditBaseObjects afeta objetos que não podem conter outros objetos.  
   
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>` – essa configuração de política de auditoria Especifica se o cliente gera um evento quando um ou mais desses privilégios são atribuídos a um token de segurança do usuário: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege e TcbPrivilege. Se essa opção não estiver habilitada (padrão = desabilitada), os privilégios de BackupPrivilege e RestorePrivilege não serão registrados. Habilitar essa opção pode tornar o log de segurança extremamente ruidosa (às vezes, centenas de eventos por segundo) durante uma operação de backup. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança **auditoria: auditar o uso do privilégio de backup e restauração**.  
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`– Essa configuração de política de auditoria Especifica se o cliente gera um evento quando um ou mais desses privilégios são atribuídos a um token de segurança do usuário: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege e TcbPrivilege. Se essa opção não estiver habilitada (padrão = desabilitada), os privilégios de BackupPrivilege e RestorePrivilege não serão registrados. Habilitar essa opção pode tornar o log de segurança extremamente ruidosa (às vezes, centenas de eventos por segundo) durante uma operação de backup. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança **auditoria: auditar o uso do privilégio de backup e restauração**.  
   
 > [!NOTE]  
-> Algumas informações fornecidas aqui foram tiradas do [tipo de opção de auditoria](https://msdn.microsoft.com/library/dd973862(prot.20).aspx) da Microsoft e da ferramenta Microsoft SCM.  
+> Algumas informações fornecidas aqui foram tiradas do [tipo de opção de auditoria](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) da Microsoft e da ferramenta Microsoft SCM.  
   
 ## <a name="enforcing-traditional-auditing-or-advanced-auditing"></a>Impondo auditoria tradicional ou auditoria avançada
 
 No Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows 8, Windows 7 e Windows Vista, os administradores podem optar por habilitar as nove categorias tradicionais ou usar as subcategorias. É uma opção binária que deve ser feita em cada sistema Windows. As categorias principais podem ser habilitadas ou o subcategoriesit não pode ser ambos.  
   
-Para impedir que a política de categoria tradicional herdada substitua as subcategorias de política de auditoria, você deve habilitar as configurações de política de **política de auditoria forçada (Windows Vista ou posterior) para substituir as configurações de categoria** de política de auditoria localizadas em **computador \** \ \ instalar opções.  
+Para impedir que a política de categoria tradicional herdada substitua as subcategorias de política de auditoria, você deve habilitar as configurações de política de **política de auditoria forçada (Windows Vista ou posterior) para substituir as configurações de categoria** de política de auditoria localizadas em **computador \**\ \ instalar opções.  
   
 Recomendamos que as subcategorias sejam habilitadas e configuradas em vez das nove categorias principais. Isso requer que uma configuração de Política de Grupo seja habilitada (para permitir que as subcategorias substituam as categorias de auditoria) junto com a configuração de diferentes subcategorias que dão suporte a políticas de auditoria.  
   
-As subcategorias de auditoria podem ser configuradas usando vários métodos, incluindo Política de Grupo e o programa de linha de comando, Auditpol. exe.  
+As subcategorias de auditoria podem ser configuradas usando vários métodos, incluindo Política de Grupo e o programa de linha de comando, auditpol.exe.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
   
 * [Auditoria de segurança avançada no Windows 7 e no Windows Server 2008 R2](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   
-* [Auditoria e conformidade no Windows Server 2008](https://technet.microsoft.com/magazine/2008.03.auditing.aspx)  
+* [Auditoria e conformidade no Windows Server 2008](/previous-versions/technet-magazine/cc194392(v=msdn.10))  
   
 * [Como usar Política de Grupo para definir configurações de auditoria de segurança detalhadas para computadores baseados no Windows Vista e no Windows Server 2008 em um domínio do Windows Server 2008, em um domínio do Windows Server 2003 ou em um domínio do Windows 2000](https://support.microsoft.com/kb/921469)  
   
-* [Guia passo a passo da política de auditoria de segurança avançada](https://technet.microsoft.com/library/dd408940(WS.10).aspx)  
+* [Guia Passo a Passo de Política de Auditoria de Segurança Avançada](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  

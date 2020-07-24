@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 19a7a4a6-9a04-42ea-a5d0-ecb28a34dbaa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d8720c71efba6f461aa0789fc2a143d1b1dab3f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 03cddb638277f04a79cf4f41d6d2df308a1cf50e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855579"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966138"
 ---
 # <a name="step-2-configure-app1"></a>ETAPA 2 configurar o APP1
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Use as etapas a seguir para preparar o APP1 para o suporte a OTP:  
   
@@ -59,7 +59,7 @@ Use as etapas a seguir para preparar o APP1 para o suporte a OTP:
 4.  Na guia **geral** , em **nome de exibição do modelo**, digite **DAOTPLogon**. Em **período de validade**, na lista suspensa, clique em **horas**, na caixa de diálogo **modelos de certificado** , clique em **OK**e verifique se o número de horas está definido como 1. Em **período de renovação**, digite **0**.  
   
     > [!IMPORTANT]  
-    > **AC do Windows Server 2003**. Em situações em que a autoridade de certificação (CA) está em um computador que está executando o Windows Server 2003, o modelo de certificado deve ser configurado em um computador diferente. Isso é necessário porque a definição do **período de validade** em horas não é possível ao executar versões do Windows antes do windows Server 2008 e do Windows Vista. Se o computador que você usa para configurar o modelo não tiver a função de servidor de serviços de certificados Active Directory instalada, ou se for um computador cliente, talvez seja necessário instalar o snap-in de modelos de certificado. Para obter mais informações, consulte [instalar o snap-in de modelos de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
+    > **AC do Windows Server 2003**. Em situações em que a autoridade de certificação (CA) está em um computador que está executando o Windows Server 2003, o modelo de certificado deve ser configurado em um computador diferente. Isso é necessário porque a definição do **período de validade** em horas não é possível ao executar versões do Windows antes do windows Server 2008 e do Windows Vista. Se o computador que você usa para configurar o modelo não tiver a função de servidor de serviços de certificados Active Directory instalada, ou se for um computador cliente, talvez seja necessário instalar o snap-in de modelos de certificado. Para obter mais informações, consulte [instalar o snap-in de modelos de certificado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11)).  
     >   
     > **AC do Windows Server 2008 R2**. Se você já tiver implantado uma autoridade de certificação (CA) que executa o Windows Server 2008 R2, deverá configurar o **período de renovação** do modelo de certificado para 1 ou 2 horas, e o **período de validade** será maior do que o **período de renovação**, mas não mais de 4 horas. Se você configurar um período de **validade** de um modelo de certificado de mais de 4 horas com uma AC que esteja executando o Windows Server 2008 R2, o assistente de instalação do DirectAccess não poderá detectar o modelo de certificado e a instalação do DirectAccess falhará.  
   
@@ -87,9 +87,7 @@ Use as etapas a seguir para preparar o APP1 para o suporte a OTP:
   
 16. Feche a console da Autoridade de Certificação.  
   
-17. Abra um prompt de comandos com privilégios elevados. Digite **certutil. exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**e pressione Enter.  
+17. Abra um prompt de comandos com privilégios elevados. Digite **CertUtil.exe-SetReg DBFlags + DBFLAGS_ENABLEVOLATILEREQUESTS**e pressione Enter.  
   
 18. Deixe a janela de prompt de comando aberta para a próxima etapa.  
   
-
-

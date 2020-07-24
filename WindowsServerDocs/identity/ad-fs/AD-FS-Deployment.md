@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1b54052397df275ee04bfce320d9b1e9908628a9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a6c2cbed1be7e1667caee2f0be116ecd0122a992
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853969"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965068"
 ---
 # <a name="ad-fs-deployment"></a>Implantação do AD FS
 
@@ -22,7 +22,7 @@ Este documento contém uma lista de toda a documentação para a implantação d
   
 * [Melhores práticas para proteger o AD FS](deployment/Best-Practices-Securing-AD-FS.md)
 
-* [Implantar o Azure AD Connect Health para monitorar sua infraestrutura de identidade local na nuvem](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+* [Implantar o Azure AD Connect Health para monitorar sua infraestrutura de identidade local na nuvem](/azure/active-directory/hybrid/whatis-hybrid-identity)
 
 * [Planejar acesso condicional local com base em dispositivo](deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
@@ -33,9 +33,9 @@ Este documento contém uma lista de toda a documentação para a implantação d
 * [Configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
   
 
-* [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados WID](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
+* [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados WID](./deployment/upgrading-to-ad-fs-in-windows-server.md)  
 
-* [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados SQL](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)  
+* [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados SQL](./deployment/upgrading-to-ad-fs-in-windows-server-sql.md)  
 
 * [Implantar o AD FS no Azure](deployment/how-to-connect-fed-azure-adfs.md)
 
@@ -44,9 +44,3 @@ Este documento contém uma lista de toda a documentação para a implantação d
 * [Guia de implantação do Windows Server 2016 e 2012 R2](deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
 
 * [Guia de implantação do Windows Server 2012](deployment/Windows-Server-2012-AD-FS-Deployment-Guide.md)
-
-
-
-
-
-

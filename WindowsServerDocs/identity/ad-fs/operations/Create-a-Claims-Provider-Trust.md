@@ -8,22 +8,22 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bd5c13dbdf4258b6a87dcf599299dd7969da5acd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 07c5e642ca0198d48b4427c38d7c7bafa7cde62f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817059"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966838"
 ---
 # <a name="create-a-claims-provider-trust"></a>Criar uma relação de confiança do provedor de declarações
 
-Para adicionar uma nova confiança do provedor de declarações usando o snap\-de gerenciamento de AD FS no e configurar manualmente as configurações, execute o procedimento a seguir em um servidor de Federação de parceiro de recurso na organização do parceiro de recurso.  
+Para adicionar uma nova confiança do provedor de declarações usando o snap-in de gerenciamento de AD FS \- e configurar manualmente as configurações, execute o procedimento a seguir em um servidor de Federação de parceiro de recurso na organização do parceiro de recurso.  
   
 A associação em **Administradores**, ou equivalente, no computador local é o requisito mínimo para concluir este procedimento.  Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
 ## <a name="to-create-a-claims-provider-trust-manually"></a>Para criar manualmente uma relação de confiança do provedor de declarações  
   
-1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
+1.  No Gerenciador do Servidor, clique em **Ferramentas** e depois selecione **Gerenciamento do AD FS**.  
   
 2.  Em **ações**, clique em **Adicionar confiança do provedor de declarações**.  
 ![confiança do provedor de declarações](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)   
@@ -56,9 +56,9 @@ A associação em **Administradores**, ou equivalente, no computador local é o 
 Para adicionar uma nova confiança do provedor de declarações, usando o snap-in de gerenciamento de AD FS, importando automaticamente os dados de configuração sobre o parceiro de metadados de Federação que o parceiro publicou em uma rede local ou com a Internet, execute o procedimento a seguir em um servidor de Federação na organização do parceiro de recurso.
 
 >[!NOTE]
->Embora tenha sido uma prática comum usar certificados com nomes de host não qualificados, como https:\//MyServer, esses certificados não têm nenhum valor de segurança e podem permitir que um invasor represente um Serviço de Federação que esteja publicando metadados de Federação. Portanto, ao consultar metadados de Federação, você deve usar apenas um nome de domínio totalmente qualificado, como `https://myserver.contoso.com`.
+>Embora tenha sido uma prática comum usar certificados com nomes de host não qualificados, como https: \/ /MyServer, esses certificados não têm nenhum valor de segurança e podem permitir que um invasor represente um serviço de Federação que esteja publicando metadados de Federação. Portanto, ao consultar metadados de Federação, você deve usar apenas um nome de domínio totalmente qualificado, como `https://myserver.contoso.com` .
 
-1.  Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, selecione **Gerenciamento de AD FS**.  
+1.  No Gerenciador do Servidor, clique em **Ferramentas** e depois selecione **Gerenciamento do AD FS**.  
   
 2.  Em **ações**, clique em **Adicionar confiança do provedor de declarações**.  
 ![confiança do provedor de declarações](media/Create-a-Claims-Provider-Trust/addclaim1.PNG)   
@@ -71,9 +71,9 @@ Para adicionar uma nova confiança do provedor de declarações, usando o snap-i
 
 5.  Na página Especificar nome de exibição, digite um **nome para exibição**, em observações, digite uma descrição para a confiança do provedor de declarações e clique em **Avançar**.
 
-6.  Na página pronto para adicionar confiança, clique em **Avançar** para salvar as informações de confiança do provedor de declarações.
+6.  Na página Pronto para Adicionar Confiança, clique em **Avançar** para salvar as informações sobre confianças do provedor de declarações.
 
-7.  Na página concluir, clique em **fechar**. Essa ação exibirá automaticamente a caixa de diálogo Editar regras de declaração. Para obter mais informações sobre como continuar com a adição de regras de declaração para essa confiança do provedor de declarações, consulte a seção referências adicionais abaixo.
+7.  Na página Concluir , clique em **Fechar**. Essa ação exibirá automaticamente a caixa de diálogo Editar regras de declaração. Para obter mais informações sobre como continuar com a adição de regras de declaração para essa confiança do provedor de declarações, consulte a seção referências adicionais abaixo.
 
 
 
@@ -81,8 +81,8 @@ Para adicionar uma nova confiança do provedor de declarações, usando o snap-i
 ## <a name="additional-references"></a>Referências adicionais  
 [Lista de verificação: Configurando a organização do parceiro de recurso](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)  
   
-[Lista de verificação: Criando regras de declaração para uma confiança do provedor de declarações](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
+[Lista de verificação: Como criar regras de declaração para uma relação de confiança do provedor de declarações](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
   
-## <a name="see-also"></a>Consulte também  
-[Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
+## <a name="see-also"></a>Consulte Também  
+[Operações do AD FS](../ad-fs-operations.md) 
   

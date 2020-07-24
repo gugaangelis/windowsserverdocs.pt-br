@@ -9,12 +9,12 @@ ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: e851d12dad29de8b3498aad220354d31917fadee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9c01bdd45b5aa88a8ce4f8a5876a0f3cbc3c0cc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862179"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966308"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>Configurar políticas de grupo para uma implantação de domínio
 Para garantir que a implantação de domínio dos serviços do MultiPoint funcione corretamente, aplique as seguintes configurações de política de grupo à conta de usuário WMSshell em um sistema MultiPoint Services.  
@@ -26,7 +26,7 @@ Para garantir que a implantação de domínio dos serviços do MultiPoint funcio
 A conta de usuário do WMSshell é uma conta do sistema que o MultiPoint Services usa para entrar no console do, em que as estações reais são criadas. Essa conta não deve ser gerenciada pelo MultiPoint Manager.
   
 > [!NOTE]  
-> Para saber como atualizar as políticas de grupo, consulte [Editor de política de grupo local](https://technet.microsoft.com/library/dn265982.aspx).  
+> Para saber como atualizar as políticas de grupo, consulte [Editor de política de grupo local](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265982(v=ws.11)).  
   
 **Política:** Configuração do usuário > modelos administrativos > painel de controle > **personalização**  
   
@@ -34,11 +34,11 @@ Atribua os seguintes valores:
   
 |Configuração|Valores|  
 |-----------|----------|  
-|Habilitar proteção de tela|Desabilitado|  
+|Enable screen saver|Desabilitado|  
 |Tempo limite de Proteção de Tela|Desabilitado<p>Segundos: xxx|  
 |Proteger com senha a proteção de tela|Desabilitado|  
   
-**Política:** Configuração do computador > configurações do Windows > configurações de segurança > políticas locais > atribuição de direitos de usuário > **Permitir logon local**  
+**Política:** Configuração do computador >configurações do Windows >configurações de segurança >políticas locais >atribuição de direitos de usuário > **Permitir logon local**  
   
 |Configuração|Valores|  
 |-----------|----------|  
@@ -51,21 +51,21 @@ Atribua os seguintes valores:
 Para uma implantação de domínio dos serviços do MultiPoint, você deve atualizar as seguintes subchaves do registro.  
   
 > [!IMPORTANT]  
-> A edição correta do registro pode danificar gravemente o seu sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.  
+> A edição incorreta do Registro pode causar danos graves ao sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>Para atualizar as subchaves do registro para uma implantação de domínio dos serviços do MultiPoint  
   
-1.  Abra o editor do registro. (Em um prompt de comando, digite **regedit. exe**e pressione Enter.)  
+1.  Abra o editor do registro. (Em um prompt de comando, digite **regedit.exe**e pressione Enter.)  
   
 2.  No painel esquerdo, localize e selecione a seguinte subchave do registro:  
   
-    HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
+    HKEY_USERS \<SIDofWMSshell> \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    onde '<SIDofWMSshell>' é o identificador de segurança (SID) para a conta WMSshell. Para descobrir como identificar o SID, consulte [como associar um nome de usuário a um SID (identificador de segurança)](https://support.microsoft.com/kb/154599).  
+    onde ' <SIDofWMSshell> ' é o identificador de segurança (SID) da conta WMSshell. Para descobrir como identificar o SID, consulte [como associar um nome de usuário a um SID (identificador de segurança)](https://support.microsoft.com/kb/154599).  
   
 3.  Na lista à direita, atualize as seguintes subchaves.  
   
-    |Subchave|Nome do valor|os dados de Valor|  
+    |Subchave|Nome do valor|Dados do valor|  
     |----------|--------------|--------------|  
     |ScreenSaveActive|REG_SZ|0 (zero)|  
     |ScreenSaveTimeout|REG_SZ|120|  

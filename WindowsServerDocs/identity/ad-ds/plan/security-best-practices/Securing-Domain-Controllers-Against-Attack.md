@@ -8,18 +8,18 @@ ms.date: 06/18/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 24e5290bcb34860a150c8bb015c3b383c00e34b4
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 1b156701090acc79a63afab26653f42044a23741
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623784"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966538"
 ---
 # <a name="securing-domain-controllers-against-attack"></a>Proteger controladores de domínio contra ataques
 
 > Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Número da lei três: se uma pessoa mal-intencionada tiver acesso físico irrestrito ao seu computador, ele não será mais o seu computador.* - [Dez leis imutáveis de segurança (versão 2,0)](https://technet.microsoft.com/security/hh278941.aspx)
+*Número da lei três: se uma pessoa mal-intencionada tiver acesso físico irrestrito ao seu computador, ele não será mais o seu computador.* - [Dez leis imutáveis de segurança (versão 2,0)](https://www.microsoft.com/en-us/msrc?rtc=1)
 
 Os controladores de domínio fornecem o armazenamento físico para o banco de dados de AD DS, além de fornecer os serviços e os dados que permitem às empresas gerenciar efetivamente seus servidores, estações de trabalho, usuários e aplicativos. Se o acesso privilegiado a um controlador de domínio for obtido por um usuário mal-intencionado, esse usuário poderá modificar, corromper ou destruir o banco de dados AD DS e, por extensão, todos os sistemas e contas que são gerenciados pelo Active Directory.
 
@@ -53,7 +53,7 @@ Sempre que possível, você deve executar controladores de domínio virtuais em 
 
 ### <a name="remote-locations-with-limited-space-and-security"></a>Locais remotos com espaço limitado e segurança
 
-Se sua infraestrutura incluir locais em que apenas um único servidor físico pode ser instalado, um servidor capaz de executar cargas de trabalho de virtualização deve ser instalado no local remoto e Criptografia de Unidade de Disco BitLocker deve ser configurado para proteger todos os volumes no servidor. Uma máquina virtual no servidor deve executar um RODC, com outros servidores em execução como máquinas virtuais separadas no host. Informações sobre o planejamento da implantação do RODC são fornecidas no [Guia de planejamento e implantação do controlador de domínio somente leitura](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771744(v=ws.10)). Para obter mais informações sobre como implantar e proteger controladores de domínio virtualizados, consulte [executando controladores de domínio no Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)). Para obter diretrizes mais detalhadas para proteger o Hyper-V, delegar o gerenciamento de máquinas virtuais e proteger máquinas virtuais, consulte o [Guia de segurança do Hyper-v](https://www.microsoft.com/download/details.aspx?id=16650) Solution Accelerator no site da Microsoft.
+Se sua infraestrutura incluir locais em que apenas um único servidor físico pode ser instalado, um servidor capaz de executar cargas de trabalho de virtualização deve ser instalado no local remoto e Criptografia de Unidade de Disco BitLocker deve ser configurado para proteger todos os volumes no servidor. Uma máquina virtual no servidor deve executar um RODC, com outros servidores em execução como máquinas virtuais separadas no host. Informações sobre o planejamento da implantação do RODC são fornecidas no [Guia de planejamento e implantação do controlador de domínio somente leitura](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771744(v=ws.10)). Para obter mais informações sobre como implantar e proteger controladores de domínio virtualizados, consulte [executando controladores de domínio no Hyper-V](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd363553(v=ws.10)). Para obter diretrizes mais detalhadas para proteger o Hyper-V, delegar o gerenciamento de máquinas virtuais e proteger máquinas virtuais, consulte o [Guia de segurança do Hyper-v](https://www.microsoft.com/download/details.aspx?id=16650) Solution Accelerator no site da Microsoft.
 
 ## <a name="domain-controller-operating-systems"></a>Sistemas operacionais do controlador de domínio
 

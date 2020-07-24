@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e012706eeb9d483f19eff6f4ba2e1f57e0c0852d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475323"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965178"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar o serviço de migração de armazenamento para migrar um servidor
 
@@ -23,7 +23,7 @@ Este tópico discute como migrar um servidor, incluindo seus arquivos e a config
 
 Antes de começar, instale o serviço de migração de armazenamento e verifique se as portas de firewall necessárias estão abertas.
 
-1. Verifique os [requisitos do serviço de migração de armazenamento](overview.md#requirements) e instale o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) no computador ou em um servidor de gerenciamento, se ainda não tiver feito isso. Se estiver migrando computadores de origem ingressados no domínio, você deverá instalar e executar o serviço de migração de armazenamento em um servidor ingressado no mesmo domínio ou floresta que os computadores de origem.
+1. Verifique os [requisitos do serviço de migração de armazenamento](overview.md#requirements) e instale o [centro de administração do Windows](../../manage/windows-admin-center/overview.md) no computador ou em um servidor de gerenciamento, se ainda não tiver feito isso. Se estiver migrando computadores de origem ingressados no domínio, você deverá instalar e executar o serviço de migração de armazenamento em um servidor ingressado no mesmo domínio ou floresta que os computadores de origem.
 2. No centro de administração do Windows, conecte-se ao servidor do Orchestrator que executa o Windows Server 2019. <br>Este é o servidor no qual você instalará o serviço de migração de armazenamento e usará o para gerenciar a migração. Se você estiver migrando apenas um servidor, poderá usar o servidor de destino contanto que ele esteja executando o Windows Server 2019. Recomendamos que você use um servidor de orquestração separado para qualquer migração de vários servidores.
 3. Vá para **Gerenciador do servidor** (no centro de administração do Windows) > **serviço de migração de armazenamento** e selecione **instalar** para instalar o serviço de migração de armazenamento e seus componentes necessários (mostrados na Figura 1).
     ![Captura de tela da página do serviço de migração de armazenamento mostrando o botão instalar ](media/migrate/install.png) **Figura 1: Instalando o serviço de migração de armazenamento**
@@ -43,7 +43,7 @@ Antes de começar, instale o serviço de migração de armazenamento e verifique
 
 Nesta etapa, você especifica quais servidores migrar e, em seguida, os verifica para coletar informações sobre seus arquivos e configurações.
 
-1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Depois, selecione **OK**.
+1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Em seguida, selecione **OK**.
 2. Na página **Inserir credenciais** , digite as credenciais de administrador que funcionam nos servidores dos quais você deseja migrar e, em seguida, selecione **Avançar**. <br>Se você estiver migrando de servidores Linux, insira as credenciais nas páginas **credenciais do samba** e credenciais do **Linux** , incluindo uma senha ssh ou uma chave privada.
 
 3. Selecione **Adicionar um dispositivo**, digite um nome do servidor de origem ou o nome de um servidor de arquivos clusterizado e, em seguida, selecione **OK**. <br>Repita esse procedimento para todos os outros servidores que você deseja inventariar.
@@ -95,7 +95,7 @@ Neste ponto, você tem três opções:
 - **Considere a migração completa** sem assumir as identidades dos servidores de origem.
 - **Transfira novamente**, copiando somente os arquivos que foram atualizados desde a última transferência.
 
-Se seu objetivo for sincronizar os arquivos com o Azure, você poderá configurar os servidores de destino com Sincronização de Arquivos do Azure depois de transferir arquivos ou depois de passar para os servidores de destino (consulte [planejando uma implantação de sincronização de arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)).
+Se seu objetivo for sincronizar os arquivos com o Azure, você poderá configurar os servidores de destino com Sincronização de Arquivos do Azure depois de transferir arquivos ou depois de passar para os servidores de destino (consulte [planejando uma implantação de sincronização de arquivos do Azure](/azure/storage/files/storage-sync-files-planning)).
 
 ## <a name="step-3-cut-over-to-the-new-servers"></a>Etapa 3: recortar para os novos servidores
 
@@ -118,4 +118,4 @@ Nesta etapa, você reduz os servidores de origem para os servidores de destino, 
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)
 - [Perguntas frequentes sobre serviços de migração de armazenamento](faq.md)
-- [Planejando uma implantação da Sincronização de Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)
+- [Planejar uma implantação da Sincronização de Arquivos do Azure](/azure/storage/files/storage-sync-files-planning)

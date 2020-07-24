@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5dcbea1ae0bd84ed517644d7c4fde03852bef304
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 72265f5cb2ff0e1f80d4cca6d789cb2951066557
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821109"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966548"
 ---
 # <a name="planning-for-compromise"></a>Planejar para comprometimento
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Número da lei um: ninguém acredita que algo errado pode acontecer com eles, até mesmo.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número da lei um: ninguém acredita que algo errado pode acontecer com eles, até mesmo.* - [10 leis imutáveis da administração de segurança](/previous-versions//cc722488(v=technet.10))  
   
 Os planos de recuperação de desastres em muitas organizações concentram-se na recuperação de desastres regionais ou falhas que resultam em perda de serviços de computação. No entanto, ao trabalhar com clientes comprometidos, muitas vezes descobrimos que a recuperação de comprometimento intencional está ausente em seus planos de restituição de desastres. Isso é particularmente verdadeiro quando o comprometimento resulta em roubo de propriedade intelectual ou destruição intencional que aproveita os limites lógicos (como a destruição de todos os domínios de Active Directory ou todos os servidores) em vez de limites físicos (como destruição de um datacenter). Embora uma organização possa ter planos de resposta a incidentes que definam atividades iniciais a serem executadas quando um comprometimento for descoberto, esses planos geralmente omitim as etapas para se recuperar de um comprometimento que afeta toda a infraestrutura de computação.  
   
@@ -34,7 +34,7 @@ Para criar defesas efetivas e ainda fornecer serviços aos usuários e às empre
 As recomendações para a recuperação de uma floresta de Active Directory são apresentadas no [Windows Server 2012: planejamento para Active Directory a restauração da floresta](https://www.microsoft.com/download/details.aspx?id=16506). Você pode impedir que seu novo ambiente seja completamente comprometido, mas mesmo que não seja possível, você terá ferramentas para recuperar e reobter o controle do seu ambiente.  
   
 ## <a name="rethinking-the-approach"></a>Relembrando a abordagem  
-*Número da lei oito: a dificuldade de defender uma rede é diretamente proporcional à sua complexidade.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número da lei oito: a dificuldade de defender uma rede é diretamente proporcional à sua complexidade.* - [10 leis imutáveis da administração de segurança](/previous-versions//cc722488(v=technet.10))  
   
 Geralmente, é bem aceito que, se um invasor obtiver acesso de sistema, administrador, raiz ou equivalente a um computador, independentemente do sistema operacional, esse computador não poderá mais ser considerado confiável, não importa quantos esforços são feitos para "limpar" o sistema. Active Directory não é diferente. Se um invasor tiver obtido acesso privilegiado a um controlador de domínio ou uma conta altamente privilegiada no Active Directory, a menos que você tenha um registro de cada modificação que o invasor faz ou um bom backup, você nunca poderá restaurar o diretório para um estado completamente confiável.  
   
@@ -102,12 +102,12 @@ Se você ainda não tiver uma visão clara dos usuários, sistemas, aplicativos 
 ### <a name="leveraging-nonmigratory-migrations"></a>Aproveitando as migrações "Nonmigratory"  
 Quer você saiba que seu ambiente foi comprometido, suspeite de que ele foi comprometido ou simplesmente prefira não migrar dados herdados e objetos de uma instalação herdada de Active Directory para uma nova, considere as abordagens de migração que não tecnicamente "migram" objetos.  
   
-### <a name="user-accounts"></a>Contas de Usuário  
+### <a name="user-accounts"></a>Contas de usuário  
 Em uma migração Active Directory tradicional de uma floresta para outra, o atributo SIDHistory (histórico de SID) em objetos de usuário é usado para armazenar o SID dos usuários e os SIDs de grupos dos quais os usuários eram membros na floresta herdada. Se as contas de usuários forem migradas para uma nova floresta e acessarem recursos na floresta herdada, os SIDs no histórico de SID serão usados para criar um token de acesso que permita que os usuários acessem recursos aos quais tinham acesso antes de as contas serem migradas.  
   
 A manutenção do histórico SID, no entanto, tem um problema comprovado em alguns ambientes porque popular os tokens de acesso dos usuários com os SIDs atuais e históricos pode resultar em inchar de token. O excesso de tokens é um problema no qual o número de SIDs que devem ser armazenados no token de acesso de um usuário usa ou excede a quantidade de espaço disponível no token.  
   
-Embora os tamanhos de token possam ser aumentados para uma extensão limitada, a solução definitiva para o excesso de tokens é reduzir o número de SIDs associados a contas de usuário, independentemente de racionalizar as associações de grupo, eliminar o histórico de SID ou uma combinação de ambos. Para obter mais informações sobre o inchar de token, consulte [MaxTokenSize e o token de Kerberos inflado](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx).  
+Embora os tamanhos de token possam ser aumentados para uma extensão limitada, a solução definitiva para o excesso de tokens é reduzir o número de SIDs associados a contas de usuário, independentemente de racionalizar as associações de grupo, eliminar o histórico de SID ou uma combinação de ambos. Para obter mais informações sobre o inchar de token, consulte [MaxTokenSize e o token de Kerberos inflado](/archive/blogs/shanecothran/maxtokensize-and-kerberos-token-bloat).  
   
 Em vez de migrar usuários de um ambiente herdado (especialmente um em que as associações de grupo e os históricos SID podem ser comprometidos) usando o histórico de SID, considere aproveitar os aplicativos de metadiretório para "migrar" os usuários, sem carregar históricos de SID na nova floresta. Quando as contas de usuário são criadas na nova floresta, você pode usar um aplicativo de metadiretório para mapear as contas para suas contas correspondentes na floresta herdada.  
   
@@ -143,7 +143,7 @@ Na maioria das organizações, os usuários que têm acesso às informações ma
   
 Por exemplo, você pode definir uma política na qual executivos e outros VIPs são necessários para usar estações de trabalho seguras para acessar dados e sistemas confidenciais, permitindo que eles usem seus outros dispositivos para acessar dados menos confidenciais. Esse é um princípio simples para os usuários se lembrarem, mas você pode implementar vários controles de back-end para ajudar a impor a abordagem.  
 
-Você pode usar a [garantia de mecanismo de autenticação](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx) para permitir que os usuários acessem dados confidenciais somente se tiverem feito logon em seus sistemas seguros usando seus cartões inteligentes e puderem usar restrições de direitos de usuário e IPsec para controlar os sistemas dos quais eles podem se conectar a repositórios de dados confidenciais. Você pode usar o [Microsoft Data Classification Toolkit](https://www.microsoft.com/download/details.aspx?id=27123) para criar uma infraestrutura de classificação de arquivos robusta e pode implementar o [controle de acesso dinâmico](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx) para restringir o acesso a dados com base nas características de uma tentativa de acesso, traduzindo as regras de negócio para controles técnicos.  
+Você pode usar a [garantia de mecanismo de autenticação](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10)) para permitir que os usuários acessem dados confidenciais somente se tiverem feito logon em seus sistemas seguros usando seus cartões inteligentes e puderem usar restrições de direitos de usuário e IPsec para controlar os sistemas dos quais eles podem se conectar a repositórios de dados confidenciais. Você pode usar o [Microsoft Data Classification Toolkit](https://www.microsoft.com/download/details.aspx?id=27123) para criar uma infraestrutura de classificação de arquivos robusta e pode implementar o [controle de acesso dinâmico](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391847(v=ws.10)) para restringir o acesso a dados com base nas características de uma tentativa de acesso, traduzindo as regras de negócio para controles técnicos.  
   
 Da perspectiva do usuário, acesso a dados confidenciais de um sistema protegido "apenas funciona" e tentando fazer isso por meio de um sistema desprotegido "simplesmente não". No entanto, da perspectiva de monitoramento e gerenciamento de seu ambiente, você está ajudando a criar padrões identificáveis em como os usuários acessam dados e sistemas confidenciais, facilitando a detecção de tentativas de acesso anômalas.  
   

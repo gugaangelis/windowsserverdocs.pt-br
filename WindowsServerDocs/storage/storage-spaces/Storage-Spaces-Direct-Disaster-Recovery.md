@@ -9,12 +9,12 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: Este artigo descreve os cenários disponíveis hoje para recuperação de desastre do Microsoft HCI (Espaços de Armazenamento Diretos)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3159e0c215d898848df71c6488cd491b7ded38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859159"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966448"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperação de desastre com Espaços de Armazenamento Diretos
 
@@ -55,7 +55,7 @@ A réplica de armazenamento pode ser usada se você tiver máquinas virtuais ou 
 
 ## <a name="hyper-v-replica"></a>Réplica do Hyper-V
 
-[A réplica do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica) fornece replicação em nível de máquina virtual para recuperação de desastre em infraestruturas hiperconvergentes. O que a réplica do Hyper-V pode fazer é pegar uma máquina virtual e duplicá-la em um site secundário ou Azure (réplica). Em seguida, no site secundário, a réplica do Hyper-V pode replicar a máquina virtual para uma terceira (réplica estendida).
+[A réplica do Hyper-V](../../virtualization/hyper-v/manage/set-up-hyper-v-replica.md) fornece replicação em nível de máquina virtual para recuperação de desastre em infraestruturas hiperconvergentes. O que a réplica do Hyper-V pode fazer é pegar uma máquina virtual e duplicá-la em um site secundário ou Azure (réplica). Em seguida, no site secundário, a réplica do Hyper-V pode replicar a máquina virtual para uma terceira (réplica estendida).
 
 ![Diagrama de replicação do Hyper-V](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
@@ -77,7 +77,7 @@ Outras considerações que serão necessárias são:
 - Com que frequência você deseja que o Serviço de Cópias de Sombra de Volume (VSS) replique uma cópia de sombra incremental.
 - Com que frequência as alterações são replicadas (30 segundos, 5 minutos, 15 minutos).
 
-Quando o HCI participa da réplica do Hyper-V, você deve ter o recurso [agente de réplica do Hyper-v](https://blogs.technet.microsoft.com/virtualization/2012/03/27/why-is-the-hyper-v-replica-broker-required/) criado em cada cluster. Esse recurso faz várias coisas:
+Quando o HCI participa da réplica do Hyper-V, você deve ter o recurso [agente de réplica do Hyper-v](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization) criado em cada cluster. Esse recurso faz várias coisas:
 
 1.    Fornece um namespace único para cada cluster para que a réplica do Hyper-V se conecte.
 2.    Determina em qual nó do cluster a réplica (ou réplica estendida) residirá quando receber a cópia pela primeira vez.
@@ -91,7 +91,7 @@ Uma opção de recuperação de desastres tradicional que não é comentada muit
 
 ### <a name="non-authoritative"></a>Não autoritativo
 
-Uma restauração não autoritativa pode ser realizada usando o backup do Windows NT e equivale a uma restauração completa apenas do nó de cluster em si. Se você só precisa restaurar um nó de cluster (e o banco de dados do registro de cluster) e todas as informações de cluster atuais forem válidas, restaure usando não autoritativo. Restaurações não autoritativas podem ser feitas por meio da interface de backup do Windows NT ou da linha de comando WBADMIN. EXE.
+Uma restauração não autoritativa pode ser realizada usando o backup do Windows NT e equivale a uma restauração completa apenas do nó de cluster em si. Se você só precisa restaurar um nó de cluster (e o banco de dados do registro de cluster) e todas as informações de cluster atuais forem válidas, restaure usando não autoritativo. As restaurações não autorizadas podem ser feitas por meio da interface de backup do Windows NT ou da WBADMIN.EXE de linha de comando.
 
 Depois de restaurar o nó, permita que ele ingresse no cluster. O que acontecerá é que ele irá para o cluster em execução existente e atualizará todas as suas informações com o que está atualmente lá.
 
@@ -103,7 +103,7 @@ Quando uma restauração autoritativa é iniciada em um nó de cluster, o servi�
 
 Para executar uma restauração autoritativa, as etapas a seguir podem ser realizadas.
 
-1.    Execute WBADMIN. EXE em um prompt de comando administrativo para obter a versão mais recente dos backups que você deseja instalar e garantir que o estado do sistema seja um dos componentes que você pode restaurar.
+1.    Execute WBADMIN.EXE em um prompt de comando administrativo para obter a versão mais recente dos backups que você deseja instalar e garantir que o estado do sistema seja um dos componentes que você pode restaurar.
 
     ```powershell
     Wbadmin get versions
@@ -126,5 +126,3 @@ Depois que a restauração for feita, esse nó deverá ser o primeiro a iniciar 
 ## <a name="summary"></a>Resumo 
 
 Para somar tudo isso, a recuperação de desastre hiperconvergente é algo que deve ser planejado com cuidado. Há vários cenários que podem atender melhor às suas necessidades e devem ser totalmente testados. Um item a ser observado é que, se você estiver familiarizado com clusters de failover no passado, os clusters de ampliação têm sido uma opção muito popular ao longo dos anos. Houve um pouco de alteração de design com a solução hiperconvergente e ela se baseia na resiliência. Se você perder dois nós em um cluster hiperconvergente, todo o cluster ficará inativo. Com esse ser o caso, em um ambiente hiperconvergente, não há suporte para o cenário de ampliação.
-
-

@@ -8,25 +8,25 @@ manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
-ms.openlocfilehash: 40cc953ce7393781497d957fc8e6690c5c9abc0b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5eff8eab3f6e45b515d71e5043f0cd60be28a384
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365916"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965808"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Os tópicos nesta seção fornecem instruções para implantar Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. As instruções são projetadas para ajudar você a criar uma configuração funcional completa de Pastas de Trabalho, com computadores cliente prontos para começar a usar Pastas de Trabalho localmente ou pela Internet.  
   
-Pastas de Trabalho é um componente introduzido no Windows Server 2012 R2 que permite aos operadores de informações sincronizar arquivos de trabalho entre seus dispositivos. Para obter mais informações sobre Pastas de Trabalho, consulte [Visão geral de Pastas de Trabalho](Work-Folders-Overview.md).  
+Pastas de Trabalho é um componente introduzido no Windows Server 2012 R2 que permite aos operadores de informações sincronizar arquivos de trabalho entre seus dispositivos. Para saber mais sobre Pastas de Trabalho, confira [Visão geral de Pastas de Trabalho](Work-Folders-Overview.md).  
   
 Para habilitar usuários para sincronizar suas Pastas de Trabalho na Internet, você precisa publicar Pastas de Trabalho por meio de um proxy reverso, tornando as Pastas de Trabalho disponíveis externamente na Internet. O Proxy de aplicativo Web, que está incluído no AD FS, é uma opção que você pode usar para fornecer funcionalidade de proxy reverso. O Proxy de aplicativo Web autentica previamente o acesso ao aplicativo Web de Pastas de Trabalho, usando o AD FS para que usuários em qualquer dispositivo possam acessar Pastas de Trabalho fora da rede corporativa. 
 
 > [!NOTE]
->   As instruções abordadas nesta seção destinam-se a um ambiente do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções abordadas nesta seção destinam-se a um ambiente do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
   
 Estes tópicos fornecem os seguintes detalhes:  
   
@@ -58,7 +58,7 @@ Nesse grupo de tópicos, você verá um exemplo passo a passo de como configurar
   
 1.  AD FS  
   
-2.  Pastas de Trabalho  
+2.  Pastas de trabalho  
   
 3.  Proxy de aplicativo Web  
   
@@ -66,22 +66,21 @@ Nesse grupo de tópicos, você verá um exemplo passo a passo de como configurar
   
 Você também usará um Script do Windows PowerShell para criar certificados autoassinados.  
   
-## <a name="deployment-steps"></a>Etapas de implantação  
+## <a name="deployment-steps"></a>Etapas de implantação.  
 Para executar a implantação usando a interface de usuário do Windows Server, siga as etapas nestes tópicos:  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho](deploy-work-folders-adfs-step3.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
 
-## <a name="see-also"></a>Consulte também  
-[Visão geral das pastas de trabalho](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Consulte Também  
+[Visão geral de Pastas de Trabalho](Work-Folders-Overview.md)  
 [Projetar uma implementação de pastas de trabalho](Plan-Work-Folders.md)  
 [Implantar pastas de trabalho](Deploy-Work-Folders.md)  
   
-

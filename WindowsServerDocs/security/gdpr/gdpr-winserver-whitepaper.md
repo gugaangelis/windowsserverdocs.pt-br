@@ -6,21 +6,21 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 51768dc65128f27dcbf78cbfc776500ac3832615
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 6e105171a9d645eb93ce4739514752698cd45c02
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949830"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118647"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Iniciando sua jornada de Regulamento Geral sobre a Proteção de Dados (GDPR) para o Windows Server 
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este artigo fornece informações sobre o GDPR, incluindo o que é, e os produtos que a Microsoft fornece para ajudar você a entrar em conformidade.
 
 ## <a name="introduction"></a>Introdução
-Em 25 de maio de 2018, uma lei de privacidade Europeia entrará em vigor e estabelecerá um novo patamar global para direitos de privacidade, segurança e conformidade.
+Em 25 de maio de 2018, entrará em vigor uma lei de privacidade europeia que estabelecerá um novo padrão global de direitos de privacidade, segurança e conformidade.
 
 O Regulamento Geral sobre a Proteção de Dados, ou GDPR, é fundamentalmente sobre proteger e habilitar os direitos de privacidade dos indivíduos. O GDPR estabelece os requisitos de privacidade globais rígidos que regem como gerenciar e proteger dados pessoais enquanto respeita a escolha individual — não importa onde dados são enviados, processados ou armazenados.
 
@@ -35,9 +35,9 @@ O GDPR é um estatuto complexo que pode exigir alterações significativas na fo
 
 O GDPR impõe regras em organizações que oferecem bens e serviços para pessoas na União Europeia (UE), ou que coletam e analisem dados vinculados a residentes da UE, não importa onde essas empresas estão localizadas. Entre os principais elementos do GDPR, estão os seguintes:
 
-- **Direitos de privacidade pessoal aprimorados.** Proteção de dados reforçada para residentes da UE, garantindo que eles tenham o direito de acessar seus dados pessoais, para corrigir imprecisões nesses dados, para apagar dados, para contestar o processamento de seus dados pessoais e para movê-los.
+- **Direitos de privacidade pessoal avançados.** Proteção de dados reforçada para residentes da UE, garantindo que eles tenham o direito de acessar seus dados pessoais, para corrigir imprecisões nesses dados, para apagar dados, para contestar o processamento de seus dados pessoais e para movê-los.
 
-- **Maior imposto para proteção de dados pessoais.** Responsabilidade reforçada de organizações que processam dados pessoais, fornecendo maior clareza sobre responsabilidade em garantir a conformidade.
+- **Dedicação maior para proteger os dados pessoais.** Responsabilidade reforçada de organizações que processam dados pessoais, fornecendo maior clareza sobre responsabilidade em garantir a conformidade.
 
 - **Relatórios de violação de dados pessoais obrigatórios.** As organizações que controlam os dados pessoais são necessárias para relatar violações de dados pessoais que representam um risco para os direitos e a liberdade de indivíduos para suas autoridades de supervisão sem atrasos desnecessários e, onde possível, não depois de 72 horas após ficarem cientes da violação.
 
@@ -48,7 +48,7 @@ Como parte de seus esforços para estar em conformidade com a GDPR, você precis
 
 O GDPR considera dados pessoais como quaisquer informações relacionadas a uma pessoa identificável ou identificada naturalmente. Que podem incluir identificação direta (como seu nome legal) e identificação indireta (como informações específicas que tornam claro que é você as referências de dados). O GDPR também deixa claro que o conceito de dados pessoais inclui identificadores online (como, endereços IP, IDs de dispositivo móvel) e dados de localização.
 
-O GDPR apresenta definições específicas para dados genéticos (como, a sequência de gene de um indivíduo) e dados biométricos. Dados genéticos e dados biométricos junto com outras subcategorias de dados pessoais (dados pessoais que revelam Racials ou étnicas, opiniões políticas, religiosas ou filosofia crenças ou associação de União comercial: dados relacionados à integridade; ou dados relacionados a um o sexo da vida útil da pessoa ou a orientação sexual) são tratados como dados pessoais confidenciais sob o GDPR. Os dados pessoais confidenciais são proteções aprimoradas e geralmente exigem o consentimento explícito de um indivíduo em que esses dados devem ser processados.
+O GDPR apresenta definições específicas para dados genéticos (como, a sequência de gene de um indivíduo) e dados biométricos. Dados genéticos e dados biométricos juntamente com outras subcategorias de dados pessoais (dados pessoais que revelam a origem racial ou étnica, opiniões políticas, religiosas ou filosofia crenças ou associação de União de comércio: dados relacionados à integridade; ou dados relacionados à vida sexo da pessoa ou à orientação sexual) são tratados como dados pessoais confidenciais sob o GDPR. Os dados pessoais confidenciais são proteções aprimoradas e geralmente exigem o consentimento explícito de um indivíduo em que esses dados devem ser processados.
 
 ### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>Exemplos de informações referentes a uma pessoa natural identificada ou identificável (dados sujeitos)
 Esta lista fornece exemplos de vários tipos de informações que serão controladas por meio de GDPR. Esta não é uma lista cansativa.
@@ -72,9 +72,9 @@ Dada a quantidade é complicado para se tornar GDPR compatível, é altamente re
 
 -   **Descobri.** Identifique quais dados pessoais que você tem e onde estão. 
 
--   **Capacidade.** Gerencie como dados pessoais são usados e acessados.
+-   **Capacidade.** Controlar o acesso e o uso dos dados pessoais.
 
--   **Protegendo.** Estabelece controles de segurança para evitar, detectar e responder a vulnerabilidades e violações de dados.  
+-   **Protegendo.** Estabelecer controles de segurança para prevenir, detectar e reagir a vulnerabilidades e violações de dados.  
 
 -   **Relatar.** Age em solicitações de dados, violações de dados de relatório e mantém a documentação necessária.
 
@@ -107,7 +107,7 @@ Dois princípios principais guiaram e continuarão a guiar o desenvolvimento do 
 
 A Microsoft permaneceu sólido em relação a esses princípios, conforme observado recentemente pelo CEO da Microsoft, Satya Nadella, 
 
-> "À_medida que o mundo continua a mudar e os requisitos de negócios evoluem, algumas coisas são consistentes: a demanda de segurança e privacidade do cliente._ "
+> "À_medida que o mundo continua a mudar e os requisitos de negócios evoluem, algumas coisas são consistentes: a demanda de segurança e privacidade do cliente._"
 
 À medida que você trabalha para cumprir o GDPR, compreender a função dos seus servidores físicos e virtuais na criação, no acesso, no processamento, no armazenamento e no gerenciamento de dados que podem ser qualificados como dados pessoais e potencialmente confidenciais sob o GDPR é importante. O Windows Server fornece recursos que o ajudarão a cumprir os requisitos de GDPR para implementar medidas de segurança técnicas e organizacionais apropriadas para proteger dados pessoais.
 
@@ -152,7 +152,7 @@ O sistema operacional do servidor reside em uma camada estratégica na infraestr
 
 Trabalhando para ajudar a proteger a identidade, o sistema operacional e as camadas de virtualização, o Windows Server 2016 ajuda a bloquear os vetores de ataque comuns usados para obter acesso ilícito aos seus sistemas: credenciais roubadas, malware e uma malha de virtualização comprometida. Além de reduzir os riscos para os negócios, os componentes de segurança incorporados ao Windows Server 2016 ajudam a atender aos requisitos de conformidade para as principais normas governamentais e de segurança do setor. 
 
-Essas proteções de identidade, de sistema operacional e de virtualização permitem que você proteja melhor seu datacenter executando o Windows Server como uma VM em qualquer nuvem e limite a capacidade dos invasores de comprometer credenciais, iniciar malware e permanecer sem detecção no seu rede. Da mesma forma, quando implantado como um host Hyper-V, o Windows Server 2016 oferece garantia de segurança para seus ambientes de virtualização por meio de máquinas virtuais blindadas e recursos de firewall distribuído. Com o Windows Server 2016, o sistema operacional do servidor se torna um participante ativo em sua segurança de datacenter.
+Essas proteções de identidade, de sistema operacional e de virtualização permitem que você proteja melhor seu datacenter executando o Windows Server como uma VM em qualquer nuvem e limite a capacidade dos invasores de comprometer credenciais, iniciar malware e permanecer sem detecção na rede. Da mesma forma, quando implantado como um host Hyper-V, o Windows Server 2016 oferece garantia de segurança para seus ambientes de virtualização por meio de máquinas virtuais blindadas e recursos de firewall distribuído. Com o Windows Server 2016, o sistema operacional do servidor se torna um participante ativo em sua segurança de datacenter.
 
 ### <a name="protect-your-credentials-and-limit-administrator-privileges"></a>Proteger suas credenciais e limitar os privilégios de administrador 
 O controle sobre o acesso a dados pessoais e os sistemas que processam esses dados é uma área com o GDPR que tem requisitos específicos, incluindo o acesso por administradores. Identidades privilegiadas são contas que têm privilégios elevados, como contas de usuário que são membros dos administradores de domínio, administradores de empresa, administradores locais ou até mesmo grupos de usuários avançados. Essas identidades também podem incluir contas que receberam privilégios diretamente, como executar backups, desligar o sistema ou outros direitos listados no nó atribuição de direitos de usuário no console de política de segurança local.
@@ -160,7 +160,7 @@ O controle sobre o acesso a dados pessoais e os sistemas que processam esses dad
 Como princípio de controle de acesso geral e em linha com o GDPR, você precisa proteger essas identidades com privilégios de comprometimento por invasores em potencial. Primeiro, é importante entender como as identidades são comprometidas; em seguida, você pode planejar para impedir que os invasores obtenham acesso a essas identidades privilegiadas.
 
 #### <a name="how-do-privileged-identities-get-compromised"></a>Como as identidades privilegiadas ficam comprometidas?
-As identidades com privilégios podem ficar comprometidas quando as organizações não têm diretrizes para protegê-las. Veja estes exemplos:
+As identidades com privilégios podem ficar comprometidas quando as organizações não têm diretrizes para protegê-las. Os exemplos são os seguintes:
 
 - **Mais privilégios do que o necessário.** Um dos problemas mais comuns é que os usuários têm mais privilégios do que o necessário para executar sua função de trabalho. Por exemplo, um usuário que gerencia o DNS pode ser um administrador do AD. Geralmente, isso é feito para evitar a necessidade de configurar diferentes níveis de administração. No entanto, se essa conta for comprometida, o invasor terá privilégios elevados automaticamente.
 
@@ -189,9 +189,9 @@ Além disso, muitas organizações usam a [solução de senha de administrador l
 
 Conforme observado no [Guia de mitigação de roubo de credenciais do Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095), 
 
-> "_as ferramentas e as técnicas que os criminosos usam para realizar o roubo de credenciais e reutilizar ataques aprimorados, invasores mal-intencionados estão encontrando mais fácil atingir suas metas. O roubo de credenciais geralmente se baseia em práticas operacionais ou exposição de credenciais de usuário, portanto, as atenuações efetivas exigem uma abordagem holística que atenda às pessoas, aos processos e à tecnologia. Além disso, esses ataques dependem do invasor roubar credenciais depois de comprometer um sistema para expandir ou manter o acesso, de modo que as organizações devem conter falhas rapidamente implementando estratégias que impedem que os invasores se movimentem livremente e não sejam detectados em uma rede comprometida._ "
+> "_as ferramentas e as técnicas que os criminosos usam para realizar o roubo de credenciais e reutilizar ataques aprimorados, invasores mal-intencionados estão encontrando mais fácil atingir suas metas. O roubo de credenciais geralmente se baseia em práticas operacionais ou exposição de credenciais de usuário, portanto, as atenuações efetivas exigem uma abordagem holística que atenda às pessoas, aos processos e à tecnologia. Além disso, esses ataques dependem do invasor roubar credenciais depois de comprometer um sistema para expandir ou manter o acesso, de modo que as organizações devem conter falhas rapidamente implementando estratégias que impedem que os invasores se movimentem livremente e não sejam detectados em uma rede comprometida._"
 
-Uma consideração importante de design para o Windows Server foi a mitigação do roubo de credenciais — em particular, as credenciais derivadas. A Credential Guard fornece segurança significativamente aprimorada contra roubo e reutilização de credenciais derivadas implementando uma alteração arquitetônica significativa no Windows, projetada para ajudar a eliminar ataques de isolamento baseados em hardware, em vez de simplesmente tentar Proteja-se contra eles.
+Uma consideração importante de design para o Windows Server foi a mitigação do roubo de credenciais — em particular, as credenciais derivadas. A Credential Guard fornece segurança significativamente aprimorada contra roubo e reutilização de credenciais derivadas implementando uma alteração arquitetônica significativa no Windows projetada para ajudar a eliminar ataques de isolamento baseados em hardware, em vez de simplesmente tentar se defender contra eles.
 
 Embora o uso da proteção de credenciais do Windows Defender, NTLM e credenciais derivadas de Kerberos sejam protegidos usando a segurança baseada em virtualização, as técnicas de ataque de roubo de credenciais e as ferramentas usadas em muitos ataques direcionados são bloqueadas. O malware com privilégios administrativos em execução no sistema operacional não pode extrair segredos protegidos pela segurança baseada em virtualização. Embora o Windows Defender Credential Guard seja uma poderosa mitigação, os ataques de ameaças persistentes provavelmente mudarão para novas técnicas de ataque, e você também deverá incorporar o Device Guard, conforme descrito abaixo, juntamente com outras estratégias de segurança e arquiteturas.
 
@@ -237,7 +237,7 @@ O Windows Server 2016 inclui o Windows Defender Device Guard para garantir que a
 
 O Windows Defender Device Guard também é integrado ao PowerShell para que você possa autorizar quais scripts podem ser executados em seu sistema. Em versões anteriores do Windows Server, os administradores poderiam ignorar a imposição de integridade de código simplesmente excluindo a política do arquivo de código. Com o Windows Server 2016, você pode configurar uma política que é assinada pela sua organização para que apenas uma pessoa com acesso ao certificado que assinou a política possa alterar a política.
 
-#### <a name="control-flow-guard"></a>Proteção de fluxo de controle 
+#### <a name="control-flow-guard"></a>Proteção de Fluxo de Controle 
 O Windows Server 2016 também inclui proteção interna contra algumas classes de ataques de corrupção de memória. A aplicação de patch nos servidores é importante, mas sempre há uma chance de que o malware possa ser desenvolvido para uma vulnerabilidade que ainda não foi identificada. Alguns dos métodos mais comuns para explorar essas vulnerabilidades são fornecer dados incomuns ou extremos a um programa em execução. Por exemplo, um invasor pode explorar uma vulnerabilidade de estouro de buffer fornecendo mais entrada a um programa do que o esperado e saturando a área reservada pelo programa para manter uma resposta. Isso pode corromper a memória adjacente que pode conter um ponteiro de função.
 
 Quando o programa chama essa função, ele pode ir para um local não intencional especificado pelo invasor. Esses ataques também são conhecidos como ataques de JOP (programação orientada a salto). A proteção de fluxo de controle impede ataques JOP, colocando restrições rígidas sobre o código do aplicativo que pode ser executado – especialmente instruções de chamada indiretas. Ele adiciona verificações de segurança leves para identificar o conjunto de funções no aplicativo que são destinos válidos para chamadas indiretas. Quando um aplicativo é executado, ele verifica se esses destinos de chamada indireta são válidos.
@@ -282,7 +282,7 @@ O Windows Server 2016 muda fundamentalmente como as empresas podem proteger a vi
 #### <a name="shielded-virtual-machines"></a>Máquinas virtuais blindadas
 As mesmas coisas que tornam as máquinas virtuais tão fáceis de migrar, fazer backup e replicar, também facilitam a modificação e a cópia. Uma máquina virtual é apenas um arquivo, portanto, não está protegida na rede, no armazenamento, em backups ou em outro lugar. Outro problema é que os administradores de malha – sejam um administrador de armazenamento ou um administrador de rede – têm acesso a todas as máquinas virtuais.
 
-Um administrador comprometido na malha pode resultar facilmente em dados comprometidos entre máquinas virtuais. Tudo o que o invasor deve fazer é usar as credenciais comprometidas para copiar quaisquer arquivos de VM que desejarem em uma unidade USB e extraí-los da organização, onde esses arquivos de VM podem ser acessados de qualquer outro sistema. Se qualquer uma dessas VMs roubadas fosse um controlador de domínio Active Directory, por exemplo, o invasor poderia exibir facilmente o conteúdo e usar técnicas de força bruta prontamente disponíveis para decifrar as senhas no banco de dados Active Directory, permitindo, por fim, acesso para todo o restante dentro de sua infraestrutura.
+Um administrador comprometido na malha pode resultar facilmente em dados comprometidos entre máquinas virtuais. Tudo o que o invasor deve fazer é usar as credenciais comprometidas para copiar quaisquer arquivos de VM que desejarem em uma unidade USB e extraí-los da organização, onde esses arquivos de VM podem ser acessados de qualquer outro sistema. Se qualquer uma dessas VMs roubadas fosse um controlador de domínio Active Directory, por exemplo, o invasor poderia exibir facilmente o conteúdo e usar técnicas de força bruta prontamente disponíveis para decifrar as senhas no banco de dados de Active Directory, concedendo-lhes acesso a todo o resto da sua infraestrutura.
 
 O Windows Server 2016 introduz máquinas virtuais blindadas (VMs blindadas) para ajudar a proteger contra cenários como aquele que acabou de descrever. As VMs blindadas incluem um dispositivo TPM virtual, que permite às organizações aplicar a criptografia BitLocker às máquinas virtuais e garantir que elas sejam executadas somente em hosts confiáveis para ajudar a proteger contra armazenamento comprometido, rede e administradores de host. As VMs blindadas são criadas usando VMs de geração 2, que dão suporte ao firmware de Unified Extensible Firmware Interface (UEFI) e têm o TPM virtual.
 
@@ -299,14 +299,14 @@ O Windows Server 2016 dá suporte a TPM para máquinas virtuais, o que permite q
 Você pode proteger o TPM virtual (vTPM) usando as chaves de criptografia locais armazenadas no host ou armazenadas no serviço guardião de host. Portanto, embora o serviço guardião de host exija mais infraestrutura, ele também fornece mais proteção.
 
 #### <a name="distributed-network-firewall-using-software-defined-networking"></a>Firewall de rede distribuída usando rede definida pelo software
-Uma maneira de melhorar a proteção em ambientes virtualizados é segmentar a rede de forma que permita que as VMs se comuniquem apenas com os sistemas específicos necessários para funcionar. Por exemplo, se seu aplicativo não precisar se conectar à Internet, você poderá particioná-lo, eliminando esses sistemas como destinos de invasores externos. A SDN (rede definida pelo software) no Windows Server 2016 inclui um firewall de rede distribuído que permite que você crie dinamicamente as políticas de segurança que podem proteger seus aplicativos contra ataques provenientes de dentro ou fora de uma rede. Esse firewall de rede distribuída adiciona camadas à sua segurança, permitindo que você Isole seus aplicativos na rede. As políticas podem ser aplicadas em qualquer lugar em sua infraestrutura de rede virtual, isolando o tráfego de VM para VM, tráfego de VM para host ou tráfego de VM para Internet, quando necessário – para sistemas individuais que podem ter sido comprometidos ou programaticamente em várias sub-redes. Os recursos de rede definidos pelo software do Windows Server 2016 também permitem rotear ou espelhar o tráfego de entrada para dispositivos virtuais que não são da Microsoft. Por exemplo, você pode optar por enviar todo o tráfego de email por meio de um dispositivo virtual Barracuda para proteção adicional de filtragem de spam. Isso permite que você facilmente camadas de segurança adicional no local ou na nuvem.
+Uma maneira de melhorar a proteção em ambientes virtualizados é segmentar a rede de forma que permita que as VMs se comuniquem apenas com os sistemas específicos necessários para funcionar. Por exemplo, se seu aplicativo não precisar se conectar à Internet, você poderá particioná-lo, eliminando esses sistemas como destinos de invasores externos. A SDN (rede definida pelo software) no Windows Server 2016 inclui um firewall de rede distribuído que permite que você crie dinamicamente as políticas de segurança que podem proteger seus aplicativos contra ataques provenientes de dentro ou fora de uma rede. Esse firewall de rede distribuída adiciona camadas à sua segurança, permitindo que você Isole seus aplicativos na rede. As políticas podem ser aplicadas em qualquer lugar em sua infraestrutura de rede virtual, isolando o tráfego de VM para VM, o tráfego de VM para host ou o tráfego de VM para Internet, quando necessário – para sistemas individuais que podem ter sido comprometidos ou programaticamente em várias sub-redes. Os recursos de rede definidos pelo software do Windows Server 2016 também permitem rotear ou espelhar o tráfego de entrada para dispositivos virtuais que não são da Microsoft. Por exemplo, você pode optar por enviar todo o tráfego de email por meio de um dispositivo virtual Barracuda para proteção adicional de filtragem de spam. Isso permite que você facilmente camadas de segurança adicional no local ou na nuvem.
 
 ### <a name="other-gdpr-considerations-for-servers"></a>Outras considerações de GDPR para servidores
-O GDPR inclui requisitos explícitos de notificação de violação, onde uma violação de dados pessoais significa "_uma violação de segurança que leva à destruição acidental ou ilegal, perda, alteração, divulgação não autorizada ou acesso a dados pessoais transmitidos, armazenados ou processados de outra forma._ "  Obviamente, você não pode começar a avançar para atender aos rigorosos requisitos de notificação de GDPR em 72 horas se não for possível detectar a violação em primeiro lugar.
+O GDPR inclui requisitos explícitos de notificação de violação, onde uma violação de dados pessoais significa "_uma violação de segurança que leva à destruição acidental ou ilegal, perda, alteração, divulgação não autorizada ou acesso a dados pessoais transmitidos, armazenados ou processados de outra forma._"  Obviamente, você não pode começar a avançar para atender aos rigorosos requisitos de notificação de GDPR em 72 horas se não for possível detectar a violação em primeiro lugar.
 
-Conforme observado na central de segurança do Windows white paper, [pós-violação: lidando com ameaças avançadas](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
+Conforme observado na central de segurança do Windows white paper, [pós-violação: lidando com ameaças avançadas](https://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
-> "_Ao contrário da pré-associação, a pós-violação pressupõe que já ocorreu uma violação – agindo como um Flight Recorder e o CSI (investigadores de cena de crime). A pós-violação fornece às equipes de segurança as informações e o conjunto de ferramentas necessários para identificar, investigar e responder a ataques que, caso contrário, permanecerão não detectados e abaixo do radar._ "
+> "_Ao contrário da pré-associação, a pós-violação pressupõe que já ocorreu uma violação – agindo como um Flight Recorder e o CSI (investigadores de cena de crime). A pós-violação fornece às equipes de segurança as informações e o conjunto de ferramentas necessários para identificar, investigar e responder a ataques que, caso contrário, permanecerão não detectados e abaixo do radar._"
 
 Nesta seção, veremos como o Windows Server pode ajudá-lo a atender suas obrigações de notificação de violação do GDPR. Isso começa com a compreensão dos dados de ameaça subjacentes disponíveis para a Microsoft que são coletados e analisados para seu benefício e como, por meio da ATP (proteção avançada contra ameaças) do Windows Defender, que os dados podem ser fundamentais para você.
 
@@ -317,7 +317,7 @@ Aplicando uma combinação de processos automatizados e manuais, aprendizado de 
 
 ![Grafo de segurança do Microsoft Intelligence](../media/GDPR-Windows-Server-Overview/gdpr-intelligent-security-graph.png)
 
-O escopo da inteligência contra ameaças da Microsoft abrange, literalmente, bilhões de pontos de dados: 35.000.000.000 mensagens verificadas mensalmente, 1.000.000.000 clientes em segmentos corporativos e de consumidores acessando mais de 200 serviços de nuvem e autenticações 14.000.000.000 executadas diário. Todos esses dados são reunidos em seu nome pela Microsoft para criar o Gráfico de Segurança Inteligente que pode ajudá-lo a proteger sua porta frontal de maneira dinâmica de ficar seguro, permanecer produtivo e atender aos requisitos do GDPR.
+O escopo da inteligência contra ameaças da Microsoft abrange, literalmente, bilhões de pontos de dados: 35.000.000.000 mensagens verificadas mensalmente, 1.000.000.000 clientes em segmentos corporativos e de consumidores que acessam mais de 200 serviços de nuvem e as autenticações 14.000.000.000 são realizadas diariamente. Todos esses dados são reunidos em seu nome pela Microsoft para criar o Gráfico de Segurança Inteligente que pode ajudá-lo a proteger sua porta frontal de maneira dinâmica de ficar seguro, permanecer produtivo e atender aos requisitos do GDPR.
 
 #### <a name="detecting-attacks-and-forensic-investigation"></a>Detectar ataques e investigação forense
 Até mesmo as melhores defesas de ponto de extremidade podem ser violadas eventualmente, conforme cyberattacks se tornam mais sofisticados e direcionados. Dois recursos podem ser usados para ajudar com a detecção de possíveis violações – a ATP (proteção avançada contra ameaças) do Windows Defender e o Microsoft Advanced Threat Analytics (ATA).
@@ -342,26 +342,26 @@ O ATA é um produto local que ajuda a detectar o comprometimento de identidade e
 |Tipo de ataque |Descrição |
 |---------|---------|
 |Ataques mal-intencionados |Esses ataques são detectados procurando ataques de uma lista conhecida de tipos de ataque, incluindo:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC Forjado (MS14-068)</li><li>Golden Ticket</li><li>Replicações mal-intencionadas</li><li>Reconhecimento</li><li>Força bruta</li><li>Execução remota</li></ul>Para obter uma lista completa de ataques mal-intencionados que podem ser detectados e sua descrição, consulte [quais atividades suspeitas podem ser detectadas pelo ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
-|Comportamento anômalo |Esses ataques são detectados usando a análise comportamental e usam o Machine Learning para identificar atividades questionáveis, incluindo:<ul><li>Logons anormais</li><li>Ameaças desconhecidas</li><li>Compartilhamento de senha</li><li>Movimentação lateral</li></ul>|
+|Comportamento anômalo |Esses ataques são detectados usando a análise comportamental e usam o Machine Learning para identificar atividades questionáveis, incluindo:<ul><li>Logons anormais</li><li>Ameaças desconhecidas</li><li>Compartilhamento de senha</li><li>Movimento lateral</li></ul>|
 |Problemas de segurança e riscos |Esses ataques são detectados examinando a configuração atual da rede e do sistema, incluindo:<ul><li>Confiança quebrada</li><li>Protocolos fracos</li><li>Vulnerabilidades de protocolo conhecidas</li></ul>|
 
 Você pode usar o ATA para ajudar a detectar invasores tentando comprometer identidades privilegiadas. Para obter mais informações sobre como implantar o ATA, consulte os tópicos planejar, projetar e implantar na [documentação do Advanced Threat Analytics](https://docs.microsoft.com/advanced-threat-analytics/).
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>Conteúdo relacionado para soluções do Windows Server 2016 associadas
 
-- **Windows Defender antivírus:** https://www.youtube.com/watch?v=P1aNEy09NaI e https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
+- **Windows Defender Antivírus:** https://www.youtube.com/watch?v=P1aNEy09NaI e https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
 
-- **Proteção avançada contra ameaças do Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg e https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
+- **Proteção Avançada contra Ameaças do Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg e https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
 
-- **Proteção de dispositivo do Windows Defender:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
+- **Windows Defender Device Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
 
 - **Windows Defender Credential Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI e https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
-- **Proteção de fluxo de controle:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
+- **Proteção de fluxo de controle:**https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
-- **Segurança e garantia:** https://docs.microsoft.com/windows-server/security/security-and-assurance
+- **Segurança e garantia:**https://docs.microsoft.com/windows-server/security/security-and-assurance
 
-## <a name="disclaimer"></a>Aviso de isenção
+## <a name="disclaimer"></a>Isenção de responsabilidade
 Este artigo é um comentário em GDPR, como Microsoft interpreta, a partir da data de publicação. Passamos muito tempo com GDPR e gostam de pensar que temos sido considerados uma consideração sobre sua intenção e significado. Mas a aplicação de GDPR é altamente específica de fato, e nem todos os aspectos e interpretações de GDPR são bem liquidadas.
 
 Como resultado, este artigo é fornecido apenas para fins informativos e não ser considerado como advogado ou para determinar como GDPR podem se aplicar a você e sua organização. Encorajamos você a trabalhar com um profissional legalmente qualificados para discutir GDPR, como ele se aplica especificamente para sua organização e como melhor garantir a conformidade.

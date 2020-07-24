@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15c02897df0710653a6a3663ce6f8e87bfa416b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3896b411ee8b02a0efde6b46484e043b27ffea77
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471801"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966508"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>Habilitar ou desabilitar referências e Failback de cliente
 
@@ -39,15 +39,15 @@ Ao desabilitar uma referência de servidor de namespace ou destino de pasta, voc
 
 
 > [!TIP]
-> Para habilitar ou desabilitar referências usando o Windows PowerShell, use o [DfsnRootTarget conjunto – estado](https://technet.microsoft.com/library/jj884266.aspx) ou [conjunto DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) cmdlets, que foram introduzidos no Windows Server 2012.
+> Para habilitar ou desabilitar referências usando o Windows PowerShell, use o [DfsnRootTarget conjunto – estado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) ou [conjunto DfsnServerConfiguration](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731089(v=ws.11)) cmdlets, que foram introduzidos no Windows Server 2012.
 
 ## <a name="enable-client-failback"></a>Habilitar failback de cliente
 
-Se um destino ficar indisponível, você poderá configurar clientes para fazer failback para o destino depois que ele for restaurado. Para que um failback funcione, os computadores cliente devem atender aos requisitos listados no tópico a seguir: [Examinar requisitos de cliente de namespaces do DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
+Se um destino ficar indisponível, você poderá configurar clientes para fazer failback para o destino depois que ele for restaurado. Para que um failback funcione, os computadores cliente devem atender aos requisitos listados no tópico a seguir: [Examinar requisitos de cliente de namespaces do DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)).
 
 
 > [!NOTE]
-> Para habilitar failback de cliente em uma raiz de namespace usando o Windows PowerShell, use o [conjunto DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) cmdlet. Para habilitar failback de cliente em uma pasta DFS, use o [conjunto DfsnFolder](https://technet.microsoft.com/library/jj884283.aspx) cmdlet.
+> Para habilitar failback de cliente em uma raiz de namespace usando o Windows PowerShell, use o [conjunto DfsnRoot](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) cmdlet. Para habilitar failback de cliente em uma pasta DFS, use o [conjunto DfsnFolder](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11)) cmdlet.
 
 
 ## <a name="to-enable-client-failback-for-a-namespace-root"></a>Para habilitar o failback de cliente para uma raiz do namespace
@@ -71,5 +71,5 @@ Pastas com destinos herdam as configurações de failback de cliente da raiz do 
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
--   [Confira os requisitos do cliente de Namespaces DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [Confira os requisitos do cliente de Namespaces DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771913(v=ws.11))
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)

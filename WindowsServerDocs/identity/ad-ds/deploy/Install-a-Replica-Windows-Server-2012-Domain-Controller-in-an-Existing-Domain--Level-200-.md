@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 12068e5a062358463cf208f777144091e1de8257
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f3f6df567d6c88ed64c48af330e590646493e60f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825199"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965788"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Instalar uma réplica de controlador de domínio do Windows Server 2012 em um domínio existente (nível 200)
 
@@ -36,18 +36,18 @@ O diagrama a seguir ilustra o processo de configuração dos Serviços de Domín
   
 |||  
 |-|-|  
-|**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|Install-AddsDomainController|-SkipPreChecks<p>***-Nome_do_domínio***<p>*-SafeModeAdministratorPassword*<p>*-SiteName*<p>*-ADPrepCredential*<p>-ApplicationPartitionsToReplicate<p>*-AllowDomainControllerReinstall*<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-Force<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>-NoDnsOnNetwork<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>-SiteName<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-UseExistingAccount*<p>*-WhatIf*|  
+|**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em *Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
+|Install-AddsDomainController|-SkipPreChecks<p>***-Nome_do_domínio***<p>*-safemodeadministratorpassword*<p>*-SiteName*<p>*-ADPrepCredential*<p>-ApplicationPartitionsToReplicate<p>*-AllowDomainControllerReinstall*<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>-CriticalReplicationOnly<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-Force<p>*-InstallationMediaPath*<p>*-InstallDNS*<p>*-LogPath*<p>-MoveInfrastructureOperationMasterRoleIfNecessary<p>-NoDnsOnNetwork<p>*-NoGlobalCatalog*<p>-Norebootoncompletion<p>*-ReplicationSourceDC*<p>-SkipAutoConfigureDNS<p>-SiteName<p>*-SystemKey*<p>*-SYSVOLPath*<p>*-UseExistingAccount*<p>*-Whatif*|  
   
 > [!NOTE]  
 > O argumento **-credential** somente é requerido se você ainda não tiver entrado como membro dos grupos Administradores de Empresa e Administradores de Esquema (se você estiver atualizando a floresta) ou o grupo Admins. do Domínio (se você estiver adicionando um novo controlador de domínio a um domínio existente).  
   
-## <a name="deployment"></a><a name="BKMK_Dep"></a>Planta  
+## <a name="deployment"></a><a name="BKMK_Dep"></a>Implantação  
   
 ### <a name="deployment-configuration"></a>Configuração de Implantação  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
   
-O Gerenciador do Servidor começa toda a promoção do controlador de domínio com a página **Configuração de Implantação** . As demais opções e campos exigidos mudam nessa página e nas páginas subsequentes, dependendo da operação de implantação selecionada.  
+O Gerenciador do Servidor começa toda a promoção do controlador de domínio com a página **Configuração de Implantação**. As demais opções e campos exigidos mudam nessa página e nas páginas subsequentes, dependendo da operação de implantação selecionada.  
   
 Para atualizar uma floresta existente ou adicionar um controlador de domínio gravável, clique em **Adicionar um controlador de domínio ou um domínio existente** e clique em **Selecionar** para **Especificar as informações de domínio para este domínio**. O Gerenciador do Servidor solicitará credenciais válidas, se necessário.  
   
@@ -71,7 +71,7 @@ Certos testes são realizados em cada página, sendo que alguns são repetidos p
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeFFLError.png)  
   
-### <a name="domain-controller-options"></a>Opções de controlador de domínio  
+### <a name="domain-controller-options"></a>Opções de Controlador de Domínio  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptions.png)  
   
 A página **Opções do Controlador de Domínio** especifica os recursos de controlador de domínio para o novo controlador de domínio. Os recursos configuráveis do controlador de domínio incluem **Servidor DNS**, **Catálogo Global** e **Controlador de domínio somente leitura**. A Microsoft recomenda que todos os controladores de domínio forneçam serviços DNS e GC para alta disponibilidade em ambientes distribuídos. GC é sempre selecionado por padrão e o servidor DNS é selecionado por padrão se o domínio atual já hospedar o DNS em seus DCs com base na consulta Início de autoridade. A página **Opções do Controlador de Domínio** também permite que você escolha o **nome de site** lógico do Active Directory, na configuração da floresta. Por padrão, o site é selecionado com a sub-rede mais correta. Se houver apenas um site, ele será selecionado automaticamente.  
@@ -95,7 +95,7 @@ Os argumentos ADDSDeployment nas **Opções do Controlador de Domínio** são:
   
 A operação do argumento **SafeModeAdministratorPassword** é especial:  
   
--   Se *nenhum argumento for especificado* , o cmdlet solicitará que você insira e confirme uma senha mascarada. Este é o uso preferencial ao executar o cmdlet interativamente.  
+-   Se *nenhum argumento for especificado*, o cmdlet solicitará que você insira e confirme uma senha mascarada. Este é o uso preferencial ao executar o cmdlet interativamente.  
   
     Por exemplo, para criar um controlador de domínio adicionar no domínio treyresearch.net e ser solicitado a digitar e confirmar uma senha mascarada:  
   
@@ -148,7 +148,7 @@ A página **Opções do Controlador de Domínio** avisa que não é possível cr
 ### <a name="dns-options-and-dns-delegation-credentials"></a>Opções de DNS e credenciais de delegação de DNS  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDNSOptions.png)  
   
-A página **Opções de DNS** permite configurar a delegação de DNS se você selecionou a opção **Servidor de DNS** na página *Opções do Controlador de Domínio* e se apontou para uma zona onde as delegações de DNS são permitidas. Você pode fornecer credenciais alternativas de um usuário membro do grupo **Administradores de DNS** .  
+A página **Opções de DNS** permite configurar a delegação de DNS se você selecionou a opção **Servidor de DNS** na página *Opções do Controlador de Domínio* e se apontou para uma zona onde as delegações de DNS são permitidas. Você pode fornecer credenciais alternativas de um usuário membro do grupo **Administradores de DNS**.  
   
 Os argumentos do cmdlet ADDSDeployment nas **Opções de DNS** são:  
   
@@ -159,7 +159,7 @@ Os argumentos do cmdlet ADDSDeployment nas **Opções de DNS** são:
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeCreds.png)  
   
-Para saber se você precisa criar uma delegação de DNS, consulte [Noções básicas de delegação de zona](https://technet.microsoft.com/library/cc771640.aspx).  
+Para saber se você precisa criar uma delegação de DNS, consulte [Noções básicas de delegação de zona](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11)).  
   
 ### <a name="additional-options"></a>Opções adicionais  
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeAdditionalOptions.png)  
@@ -242,7 +242,7 @@ Install-ADDSDomainController `
 ```  
   
 > [!NOTE]  
-> O Gerenciador do Servidor geralmente preenche todos os argumentos com valores quando promove e não depende de padrões (já que eles podem ser alterados entre versões futuras do Windows ou service packs). A única exceção a isso é o argumento **-safemodeadministratorpassword** . Para forçar um pedido de confirmação, omita o valor ao executar o cmdlet interativamente  
+> O Gerenciador do Servidor geralmente preenche todos os argumentos com valores quando promove e não depende de padrões (já que eles podem ser alterados entre versões futuras do Windows ou service packs). A única exceção a isso é o argumento **-safemodeadministratorpassword**. Para forçar um pedido de confirmação, omita o valor ao executar o cmdlet interativamente  
 >   
 > Use o argumento opcional **Whatif** com o cmdlet **Install-ADDSDomainController** para examinar as informações de configuração. Isso permite que você veja os valores explícitos e implícitos dos argumentos de um cmdlet.  
   
@@ -296,7 +296,7 @@ O cmdlet **Install-AddsDomainController** possui somente duas fases (verificaç�
   
 ![Instalar uma réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSGetCred.png)  
   
-Observe que, assim como o Gerenciador do Servidor, o **Install-ADDSDomainController** informa que a promoção reiniciará o servidor automaticamente. Para aceitar o prompt de reinicialização automática, use os argumentos **-force** ou **-confirm:$false** com qualquer cmdlet ADDSDeployment do Windows PowerShell. Para evitar que o servidor reinicie automaticamente no final da promoção, use o argumento **-norebootoncompletion** .  
+Observe que, assim como o Gerenciador do Servidor, o **Install-ADDSDomainController** informa que a promoção reiniciará o servidor automaticamente. Para aceitar o prompt de reinicialização automática, use os argumentos **-force** ou **-confirm:$false** com qualquer cmdlet ADDSDeployment do Windows PowerShell. Para evitar que o servidor reinicie automaticamente no final da promoção, use o argumento **-norebootoncompletion**.  
   
 > [!WARNING]  
 > Não é recomendável substituir a reinicialização. O controlador de domínio deve reiniciar para funcionar corretamente.  
@@ -325,4 +325,3 @@ A página **Resultados** mostra o sucesso ou o fracasso da promoção e qualquer
   
 Com as versões anteriores do Windows Server, a preparação automatizada de domínio para controladores de domínio que executam o Windows Server 2012 não executa o GPPREP. Execute **adprep.exe /gpprep** manualmente para todos os domínios que não foram previamente preparados para o Windows Server 2003, o Windows Server 2008 ou o Windows Server 2008 R2. Você deve executar GPPrep apenas uma vez no histórico de um domínio, não com cada atualização. O Adprep.exe não executa /gpprep automaticamente porque seu funcionamento pode fazer com que todos os arquivos e pastas na pasta SYSVOL sejam replicados em todos os controladores de domínio.  
   
-

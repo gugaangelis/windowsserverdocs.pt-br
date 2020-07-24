@@ -1,5 +1,5 @@
 ---
-title: Usando o ETW para solucionar problemas de conexões LDAP
+title: Como usar o ETW para solucionar problemas de conexões LDAP
 description: Como ativar e usar o ETW para rastrear conexões LDAP entre AD DS controladores de domínio.
 author: Teresa-Motiv
 manager: dcscontentpm
@@ -9,16 +9,16 @@ audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: f7b7df714dbd02b15555fa20c70c1e995e121a48
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822929"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965648"
 ---
-# <a name="using-etw-to-troubleshoot-ldap-connections"></a>Usando o ETW para solucionar problemas de conexões LDAP
+# <a name="using-etw-to-troubleshoot-ldap-connections"></a>Como usar o ETW para solucionar problemas de conexões LDAP
 
-O [ETW (rastreamento de eventos para Windows)](https://docs.microsoft.com/windows/win32/etw/event-tracing-portal) pode ser uma importante ferramenta de solução de problemas para Active Directory Domain Services (AD DS). Você pode usar o ETW para rastrear as comunicações do protocolo[LDAP](https://docs.microsoft.com/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)entre os clientes do Windows e os servidores LDAP, incluindo AD DS controladores de domínio.
+O [ETW (rastreamento de eventos para Windows)](/windows/win32/etw/event-tracing-portal) pode ser uma importante ferramenta de solução de problemas para Active Directory Domain Services (AD DS). Você pode usar o ETW para rastrear as comunicações do protocolo[LDAP](/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)entre os clientes do Windows e os servidores LDAP, incluindo AD DS controladores de domínio.
 
 ## <a name="how-to-turn-on-etw-and-start-a-trace"></a>Como ativar o ETW e iniciar um rastreamento
 
@@ -26,9 +26,9 @@ O [ETW (rastreamento de eventos para Windows)](https://docs.microsoft.com/window
 
 1. Abra o editor do registro e crie a seguinte subchave do registro:
 
-   **HKEY\_máquina de\_LOCAL\\sistema\\CurrentControlSet\\Services\\rastreamento de\\LDAP\\* processname***
+   **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ \\ rastreamento LDAP \\ * ProcessName***
 
-   Nesta subchave, o *ProcessName* é o nome completo do processo que você deseja rastrear, incluindo sua extensão (por exemplo, "svchost. exe").
+   Nesta subchave, o *ProcessName* é o nome completo do processo que você deseja rastrear, incluindo sua extensão (por exemplo, "Svchost.exe").
 
 1. (**Opcional**) Nessa subchave, crie uma nova entrada denominada **pid**. Para usar essa entrada, atribua uma ID de processo como um valor DWORD.  
 
@@ -44,11 +44,11 @@ O [ETW (rastreamento de eventos para Windows)](https://docs.microsoft.com/window
 
    Os espaços reservados neste comando representam os valores a seguir.
 
-  - \<*sessionname*> é um identificador arbitrário que é usado para rotular a sessão de rastreamento.  
+  - \<*SessionName*>é um identificador arbitrário que é usado para rotular a sessão de rastreamento.  
   > [!NOTE]  
   > Você precisará se referir a esse nome de sessão posteriormente quando parar a sessão de rastreamento.
-  - \<*nome de arquivo*> especifica o arquivo de log no qual os eventos serão gravados.
-  - \<*sinalizadores*> deve ser um ou mais dos valores listados na tabela de sinalizadores de [rastreamento](#values-for-trace-flags).
+  - \<*FileName*>Especifica o arquivo de log no qual os eventos serão gravados.
+  - \<*TraceFlags*>deve ser um ou mais dos valores listados na tabela de sinalizadores de [rastreamento](#values-for-trace-flags).
 
 ## <a name="how-to-end-a-tracing-session-and-turn-off-event-tracing"></a>Como finalizar uma sessão de rastreamento e desativar o rastreamento de eventos
 
@@ -60,18 +60,18 @@ O [ETW (rastreamento de eventos para Windows)](https://docs.microsoft.com/window
    tracelog.exe -stop <SessionName>
    ```
 
-   Neste comando, \<*sessionname*> é o mesmo nome que você usou no comando **tracelog. exe-start** .
+   Nesse comando, \<*SessionName*> é o mesmo nome que você usou no comando **tracelog.exe-Start** .
 
 **Para desativar o ETW**
 
-- No editor do registro, exclua o **HKEY\_computador\_LOCAL\\sistema\\CurrentControlSet\\Services\\ldap\\Tracing\\* ProcessName*** subkey.
+- No editor do registro, exclua a subchave **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ LDAP \\ Tracing \\ * ProcessName***.
 
 ## <a name="values-for-trace-flags"></a>Valores para sinalizadores de rastreamento
 
-Para usar um sinalizador, substitua o valor do sinalizador para o <*sinalizadores*> espaço reservado nos argumentos do comando **tracelog. exe-start** .
+Para usar um sinalizador, substitua o valor do sinalizador para o <*sinalizadores*> espaço reservado nos argumentos do comando **tracelog.exe-Start** .
 
 > [!NOTE]  
-> Você pode especificar vários sinalizadores usando a soma dos valores de sinalizador apropriados. Por exemplo, para especificar os sinalizadores de *sinalizadores* **\_de pesquisa** (0X00000001) e de **cache\_de depuração** (0x00000010), o valor de > de \<apropriado é **0x00000011**.
+> Você pode especificar vários sinalizadores usando a soma dos valores de sinalizador apropriados. Por exemplo, para especificar os sinalizadores de ** \_ pesquisa de depuração** (0x00000001) e ** \_ cache de depuração** (0x00000010), o \<*TraceFlags*> valor apropriado é **0x00000011**.
 
 |Nome do sinalizador |Valor do sinalizador |Descrição do sinalizador |
 | --- | --- | --- |
@@ -106,13 +106,13 @@ Para usar um sinalizador, substitua o valor do sinalizador para o <*sinalizadore
 |**DEBUG_ERRORS** |0x10000000 |Registra erros gerais. A maioria desses erros pode ser categorizada como erros de inicialização de módulo, erros de SSL ou erros de estouro ou Subfluxo. |
 |**DEBUG_PERFORMANCE** |0x20000000 |Registra dados sobre estatísticas de atividade de LDAP global do processo depois de receber uma resposta do servidor para uma solicitação LDAP. |
 
-## <a name="example"></a>{1&gt;Exemplo&lt;1}
+## <a name="example"></a>Exemplo
 
-Considere um aplicativo, App1. exe, que define senhas para contas de usuário. Suponha que App1. exe produz um erro inesperado. Para usar o ETW para ajudar a diagnosticar esse problema, siga estas etapas:
+Considere um aplicativo, App1.exe, que define senhas para contas de usuário. Suponha que App1.exe produz um erro inesperado. Para usar o ETW para ajudar a diagnosticar esse problema, siga estas etapas:
 
 1. No editor do registro, crie a seguinte entrada de registro:
 
-   **HKEY\_computador de\_LOCAL\\sistema\\CurrentControlSet\\Services\\rastreamento de\\LDAP\\App1. exe**
+   **HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ rastreamento de LDAP \\ \\App1.exe**
 
 1. Para iniciar uma sessão de rastreamento, abra uma janela de prompt de comando e execute o seguinte comando:
 
@@ -120,9 +120,9 @@ Considere um aplicativo, App1. exe, que define senhas para contas de usuário. S
    tracelog.exe -start ldaptrace -guid \#099614a5-5dd7-4788-8bc9-e29f43db28fc -f .\ldap.etl -flag 0x80000
    ```
 
-   Depois que esse comando é iniciado, **DEBUG\_BIND** garante que o ETW grave mensagens de rastreamento.\\LDAP. etl.
+   Depois que esse comando é iniciado, **debug \_ BIND** garante que o ETW grave mensagens de rastreamento. \\ LDAP. etl.
 
-1. Inicie o App1. exe e reproduza o erro inesperado.
+1. Inicie o App1.exe e reproduza o erro inesperado.
 
 1. Para interromper a sessão de rastreamento, execute o seguinte comando no prompt de comando:
 
@@ -130,7 +130,7 @@ Considere um aplicativo, App1. exe, que define senhas para contas de usuário. S
     tracelog.exe -stop ldaptrace
    ```
 
-1. Para impedir que outros usuários rastreamentom o aplicativo, exclua o **HKEY\_computador\_LOCAL**\\**sistema**\\**CurrentControlSet**\\**Services**\\**LDAP**\\**Tracing**\\a entrada do registro **App1. exe** .
+1. Para impedir que outros usuários rastreamentom o aplicativo, exclua a entrada de registro **HKEY \_ local \_ ** \\ **System** \\ **CurrentControlSet** \\ **Services** \\ **LDAP** \\ **Tracing** \\ **App1.exe** .
 
 1. Para examinar as informações no log de rastreamento, execute o seguinte comando no prompt de comando:
 
@@ -139,4 +139,4 @@ Considere um aplicativo, App1. exe, que define senhas para contas de usuário. S
     ```
 
    > [!NOTE]  
-   > Neste comando, **Tracerpt. exe** é uma ferramenta de [consumidor de rastreamento](https://go.microsoft.com/fwlink/p/?linkid=83876) .
+   > Neste comando, **tracerpt.exe** é uma ferramenta de [consumidor de rastreamento](https://go.microsoft.com/fwlink/p/?linkid=83876) .

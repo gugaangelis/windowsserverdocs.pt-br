@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cc89e97aacab3b764df7314beeab701df846048a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 67229659540b6d9fddcbcfc993205bee34973427
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861249"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964708"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -27,7 +27,7 @@ Este tópico explica como habilitar as propriedades do recurso no Active Directo
   
 **Neste documento**  
   
--   [Etapa 1: criar definições de propriedade de recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [Etapa 1: criar definições de propriedade do recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
 -   [Etapa 2: criar uma regra de classificação de conteúdo de cadeia de caracteres](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step2)  
   
@@ -36,12 +36,12 @@ Este tópico explica como habilitar as propriedades do recurso no Active Directo
 -   [Etapa 4: verificar se os arquivos estão classificados](Deploy-Automatic-File-Classification--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, confira [Usando os Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="step-1-create-resource-property-definitions"></a><a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade de recurso  
+## <a name="step-1-create-resource-property-definitions"></a><a name="BKMK_Step1"></a>Etapa 1: criar definições de propriedade do recurso  
 As propriedades dos recursos Impacto e Informações de Identificação Pessoal são habilitadas de maneira que a Infraestrutura de Classificação de Arquivos possa usar tais propriedades de recurso para marcar os arquivos que são analisados em uma pasta compartilhada da rede.  
   
-[Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Execute essa etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
 #### <a name="to-create-resource-property-definitions"></a>Para criar definições de propriedade de recurso  
   
@@ -57,7 +57,7 @@ As propriedades dos recursos Impacto e Informações de Identificação Pessoal 
   
 ![guias de solução](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=Impact_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'   
@@ -67,7 +67,7 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
 ## <a name="step-2-create-a-string-content-classification-rule"></a><a name="BKMK_Step2"></a>Etapa 2: criar uma regra de classificação de conteúdo de cadeia de caracteres  
 Uma regra de classificação de conteúdo de cadeia de caracteres analisa um arquivo em busca de uma cadeia de caracteres específica. Se a cadeia de caracteres for encontrada, o valor de uma propriedade de recurso poderá ser configurada. Neste exemplo, examinaremos cada arquivo em uma pasta de rede compartilhada e procuraremos a cadeia de caracteres "contoso Confidential". Se a cadeia de caracteres for encontrada, o arquivo associado é classificado como alto impacto dos negócios.  
   
-[Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Execute essa etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
 #### <a name="to-create-a-string-content-classification-rule"></a>Para criar uma regra de classificação de conteúdo de cadeia de caracteres  
   
@@ -88,7 +88,7 @@ Uma regra de classificação de conteúdo de cadeia de caracteres analisa um arq
 8.  Na guia **Escopo**, clique em **Adicionar** e escolha as pastas que devem ser incluídas nessa regra, como D:\Finance Documents.  
   
     > [!NOTE]  
-    > É possível escolher um namespace dinâmico para o escopo. Para obter mais informações sobre espaços de nome dinâmico para regras de classificação, consulte [novidades no Gerenciador de recursos de servidor de arquivos no Windows server 2012 \[\]Redirecionado ](assetId:///d53c603e-6217-4b98-8508-e8e492d16083).  
+    > É possível escolher um namespace dinâmico para o escopo. Para obter mais informações sobre espaços de nome dinâmico para regras de classificação, consulte [novidades no Gerenciador de recursos de servidor de arquivos no Windows server 2012 \[ Redirecionado \] ](assetId:///d53c603e-6217-4b98-8508-e8e492d16083).  
   
 9. Na guia **Classificação**, configure o seguinte:  
   
@@ -108,7 +108,7 @@ Uma regra de classificação de conteúdo de cadeia de caracteres analisa um arq
   
 ![guias de solução](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 $date = Get-Date  
@@ -120,7 +120,7 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
 ## <a name="step-3-create-a-regular-expression-content-classification-rule"></a><a name="BKMK_Step3"></a>Etapa 3: criar uma regra de classificação de conteúdo de expressão regular  
 Uma regra de expressão regular analisa um arquivo em busca de um padrão correspondente à expressão regular. Se uma cadeia de caracteres que correspode à expressão regular for encontrada, o valor de uma propriedade de recurso poderá ser configurada. Neste exemplo, analisaremos cada arquivo em uma pasta de rede compartilhada buscando por uma cadeia de caracteres correspondente ao número de seguro social (XXX-XX-XXXX). Se o padrão for encontrado, o arquivo associado a ele será classificado como portador de informações de identificação pessoal.  
   
-[Siga esta etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[Execute essa etapa usando o Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
 #### <a name="to-create-a-regular-expression-content-classification-rule"></a>Para criar uma regra de classificação de conteúdo de expressão regular  
   
@@ -148,7 +148,7 @@ Uma regra de expressão regular analisa um arquivo em busca de um padrão corres
   
 9. Na coluna **Tipo de Expressão**, selecione **Expressão regular**.  
   
-10. Na coluna **expressão** , digite **^ (?! 000) ([0-7] \d{2}| 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d{4}$**  
+10. Na coluna **expressão** , digite **^ (?! 000) ([0-7] \d {2} | 7 ([0-7] \d | 7 [012])) ([-]?) (?! 00) \d\d\3 (?! 0000) \d {4} $**  
   
 11. Na coluna **Ocorrências Mínimas**, digite **10** e clique em **OK**.  
   
@@ -156,7 +156,7 @@ Uma regra de expressão regular analisa um arquivo em busca de um padrão corres
   
 ![guias de solução](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 ```  
 New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5000" -Namespace @('D:\Finance Documents') -ClassificationMechanism "Content Classifier" -Parameters @("RegularExpressionEx=Min=10;Expr=^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$") -ReevaluateProperty Overwrite  
@@ -183,13 +183,12 @@ Você pode verificar se os arquivos foram devidamente classificados ao ver as pr
   
 4.  Clique na guia **Classificação** e verifique se o arquivo foi classificado corretamente.  
   
-## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Confira também  
   
--   [Cenário: Obtenha informações sobre seus dados usando a classificação](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [Cenário: aprofunde-se em seus dados por meio da classificação](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
--   [Planejar a classificação automática de arquivos](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
+-   [Planejar-se para a classificação automática de arquivos](/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 
   
 -   [Controle de acesso dinâmico: visão geral do cenário](Dynamic-Access-Control--Scenario-Overview.md)  
   
-

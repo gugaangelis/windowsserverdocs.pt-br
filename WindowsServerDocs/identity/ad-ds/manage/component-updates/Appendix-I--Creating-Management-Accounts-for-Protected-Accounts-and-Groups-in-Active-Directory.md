@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c2141e4fad564579fd687b2dfc7e4a12e1634acb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fefb0681af818e06ad29d7c9fdf6b690cd993cd2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823479"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965758"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apêndice I: Criar o gerenciamento de contas para contas e grupos protegidos no Active Directory
 
@@ -26,7 +26,7 @@ Este apêndice fornece informações que você pode usar para soluções de PIM 
 > [!NOTE]  
 > Os procedimentos descritos neste apêndice fornecem uma abordagem para o gerenciamento de grupos altamente privilegiados no Active Directory. Você pode adaptar esses procedimentos para atender às suas necessidades, adicionar restrições adicionais ou omitir algumas das restrições descritas aqui.  
   
-## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Criando contas de gerenciamento para contas e grupos protegidos no Active Directory
+## <a name="creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Como criar o gerenciamento de contas para contas e grupos protegidos no Active Directory
 
 A criação de contas que podem ser usadas para gerenciar a associação de grupos privilegiados sem exigir que as contas de gerenciamento recebam direitos e permissões excessivas consiste em quatro atividades gerais que são descritas nas instruções passo a passo que seguem:  
   
@@ -38,7 +38,7 @@ A criação de contas que podem ser usadas para gerenciar a associação de grup
   
 4.  Configure permissões no objeto AdminSDHolder em cada domínio para permitir que as contas de gerenciamento alterem a Associação dos grupos privilegiados no domínio.  
   
-Você deve testar exaustivamente todos esses procedimentos e modificá-los conforme necessário para seu ambiente antes de implementá-los em um ambiente de produção. Você também deve verificar se todas as configurações funcionam conforme o esperado (alguns procedimentos de teste são fornecidos neste apêndice) e você deve testar um cenário de recuperação de desastre no qual as contas de gerenciamento não estão disponíveis para serem usadas para preencher grupos protegidos para fins de recuperação. Para obter mais informações sobre como fazer backup e restaurar Active Directory, consulte o guia passo a passo de [backup e recuperação do AD DS](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx).  
+Você deve testar exaustivamente todos esses procedimentos e modificá-los conforme necessário para seu ambiente antes de implementá-los em um ambiente de produção. Você também deve verificar se todas as configurações funcionam conforme o esperado (alguns procedimentos de teste são fornecidos neste apêndice) e você deve testar um cenário de recuperação de desastre no qual as contas de gerenciamento não estão disponíveis para serem usadas para preencher grupos protegidos para fins de recuperação. Para obter mais informações sobre como fazer backup e restaurar Active Directory, consulte o guia passo a passo de [backup e recuperação do AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771290(v=ws.10)).  
   
 > [!NOTE]  
 > Ao implementar as etapas descritas neste apêndice, você criará contas que poderão gerenciar a associação de todos os grupos protegidos em cada domínio, não apenas os grupos Active Directory de maior privilégio, como EAs, DAs e BAs. Para obter mais informações sobre grupos protegidos no Active Directory, consulte o [Apêndice C: contas e grupos protegidos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md).  
@@ -82,11 +82,11 @@ Para criar um grupo para habilitar e desabilitar contas de gerenciamento, execut
   
     -   SELF  
   
-    -   SISTEMA  
+    -   SYSTEM  
   
-    -   Administradores do domínio  
+    -   Administradores de Domínio  
   
-    -   Administrador corporativo  
+    -   Administradores Corporativos  
   
     -   Administradores  
   
@@ -132,7 +132,7 @@ Para criar as contas de gerenciamento, execute as seguintes etapas:
 
 7. Clique com o botão direito do mouse no objeto de usuário que você acabou de criar e clique em **Propriedades**.  
 
-8. Clique na guia **conta** .  
+8. Clique na guia **Conta**.  
 
 9. No campo **Opções de conta** , selecione o sinalizador a **conta é confidencial e não pode ser delegado** , selecione **essa conta dá suporte à criptografia Kerberos AES 128 bits** e/ou a **seguinte conta dá suporte ao sinalizador de criptografia Kerberos AES 256** e clique em **OK**.  
 
@@ -263,7 +263,7 @@ Nesse caso, você concederá as contas de gerenciamento recém-criadas para perm
    ![Criando contas de gerenciamento](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
   
    > [!NOTE]  
-   > Para obter mais informações sobre elevação e controle de conta de usuário (UAC) no Windows, consulte [processos e interações do UAC](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx) no site do TechNet.  
+   > Para obter mais informações sobre elevação e controle de conta de usuário (UAC) no Windows, consulte [processos e interações do UAC](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd835561(v=ws.10)) no site do TechNet.  
   
 4. No prompt de comando, digite (substituindo suas informações específicas de domínio) **Dsacls [nome diferenciado do objeto AdminSDHolder em seu domínio]/g [UPN da conta de gerenciamento]: RPWP; membro**.  
   
@@ -277,7 +277,7 @@ Nesse caso, você concederá as contas de gerenciamento recém-criadas para perm
   
    - /G indica que uma ACE de concessão está sendo configurada  
   
-   - PIM001@tailspintoys.msft é o UPN (nome principal do usuário) da entidade de segurança à qual as ACEs serão concedidas  
+   - PIM001@tailspintoys.msfté o UPN (nome principal do usuário) da entidade de segurança à qual as ACEs serão concedidas  
   
    - RPWP concede as permissões Read Property e Write Property  
   

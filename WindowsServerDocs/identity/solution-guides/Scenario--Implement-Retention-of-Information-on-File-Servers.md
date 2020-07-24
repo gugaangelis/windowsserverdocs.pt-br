@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2f6b55d8a98a0f4fb0c286e16d752a18e61dce1a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 80653fe6d2956b08ee142b2f594648885a250b59
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861099"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964848"
 ---
-# <a name="scenario-implement-retention-of-information-on-file-servers"></a>Scenario: Implement Retention of Information on File Servers
+# <a name="scenario-implement-retention-of-information-on-file-servers"></a>Cenário: implementar a retenção de informações em servidores de arquivos
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -26,7 +26,7 @@ A Infraestrutura de Classificação de Arquivos e o Gerenciador de Recursos de S
   
 Você pode encontrar informações de planejamento para configurar a retenção em [Planejar-se para a retenção de informações em servidores de arquivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c).  
   
-Você pode encontrar etapas para classificar arquivos para retenção legal e configurar um período de retenção em [implantar implementando a retenção de informações em &#40;servidores de&#41;arquivos etapas de demonstração](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md).  
+Você pode encontrar etapas para classificar arquivos para retenção legal e configurar um período de retenção em [implantar implementando retenção de informações em servidores de arquivos &#40;etapas de demonstração&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md).  
   
 > [!NOTE]  
 > Esse cenário discute somente como classificar manualmente um documento para retenção legal. No entanto, é possível no Windows Server 2012 classificar automaticamente os documentos para retenção legal. Uma maneira de fazer isso é criar um classificador do Windows PowerShell que compara o proprietário do arquivo com uma lista de contas de usuário que estão sob retenção legal. Se o proprietário do arquivo fizer parte da lista de conta de usuário, o arquivo será classificado para retenção legal.  
@@ -41,9 +41,7 @@ A tabela a seguir lista os recursos que fazem parte deste cenário e descreve co
   
 |Recurso|Como este cenário tem suporte|  
 |-----------|---------------------------------|  
-|[Visão geral do Gerenciador de recursos do servidor de arquivos](https://technet.microsoft.com/library/hh831701.aspx)|A Infraestrutura de Classificação de Arquivos é um recurso incluído no Gerenciador de Recursos de Servidor de Arquivos.|  
-|[Visão geral dos Serviços de Arquivo e Armazenamento](https://technet.microsoft.com/library/hh831487.aspx)|O Gerenciador de Recursos de Servidor de Arquivos é um recurso incluído com a função de servidor Serviços de Arquivo.|  
+|[File Server Resource Manager Overview](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831701(v=ws.11))|A Infraestrutura de Classificação de Arquivos é um recurso incluído no Gerenciador de Recursos de Servidor de Arquivos.|  
+|[Visão geral dos Serviços de Arquivo e Armazenamento](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))|O Gerenciador de Recursos de Servidor de Arquivos é um recurso incluído com a função de servidor Serviços de Arquivo.|  
   
   
-
-

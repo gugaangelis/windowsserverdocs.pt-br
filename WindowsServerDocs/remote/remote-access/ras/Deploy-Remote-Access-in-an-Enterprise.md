@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6d0a9248865dca4afb3db9609b284048155f9eef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0cf216cb785d01ed08bb3a4490b25d4c4549b1c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857429"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965588"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>Implantar o Acesso Remoto em uma Empresa
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico fornece uma introdução ao cenário do DirectAccess para a Empresa.  
   
@@ -27,11 +27,11 @@ Este tópico fornece uma introdução ao cenário do DirectAccess para a Empresa
   
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>Antes de iniciar a implantação, consulte a lista de configurações sem suporte, de problemas conhecidos e de pré-requisitos  
   
--   [Configurações do DirectAccess sem suporte](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+-   [Configurações do DirectAccess sem suporte](../directaccess/directaccess-unsupported-configurations.md)  
   
--   [Problemas conhecidos do DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+-   [Problemas conhecidos do DirectAccess](../directaccess/directaccess-known-issues.md)  
   
--   [Pré-requisitos para a implantação de pré-requisitos do DirectAccess](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
+-   [Pré-requisitos para a implantação de pré-requisitos do DirectAccess](../directaccess/prerequisites-for-deploying-directaccess.md)  
   
 ## <a name="scenario-description"></a><a name="BKMK_OVER"></a>Descrição do cenário  
 O acesso remoto inclui uma série de recursos corporativos, incluindo diversos servidores de acesso remoto em uma carga de cluster balanceada com o NLB (Balanceamento de Carga da Rede) do Windows ou com um balanceador externo de carga, além de instalação de uma implantação multissite com servidores de acesso remoto situados em locais geograficamente dispersos e implantação do DirectAccess com autenticação de cliente de dois fatores usando OTP (senha de uso único).  
@@ -47,7 +47,7 @@ Cada cenário corporativo é descrito em um documento que inclui instruções de
   
 -   [Implantar o acesso remoto em um ambiente de várias florestas](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicações práticas  
 Os cenários corporativos do acesso remoto fornecem:  
   
 -   **Maior disponibilidade**. Implantar vários servidores de acesso remoto em um cluster fornece escalabilidade e aumenta a capacidade de taxa de transferência e número de usuários. O balanceamento de carga do cluster fornece alta disponibilidade. Se um servidor no cluster falhar, os usuários remotos podem continuar acessando a rede corporativa interna por meio de um servidor diferente no cluster. O failover é transparente quando os clientes se conectam ao cluster utilizando um endereço IP virtual (VIP).  
@@ -69,5 +69,3 @@ A tabela a seguir lista funções e recursos utilizados no cenário corporativo:
   
 
   
-
-

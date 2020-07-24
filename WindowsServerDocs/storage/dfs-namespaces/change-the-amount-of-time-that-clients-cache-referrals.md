@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d421a14c2a6021d45cd16f30c526ff1670ae62e3
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ddbb799cc46da040bfc2f62445cc2b41945d09f1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475193"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966288"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>Mudar o tempo que os clientes armazenam as referências em cache
 
@@ -30,7 +30,7 @@ Uma referência é uma lista ordenada de destinos que um computador cliente rece
 3.  Na guia **Referências**, na caixa **Duração do cache (em segundos)**, digite o período de tempo (em segundos) que os clientes armazenam em cache as referências da raiz do namespace. A configuração padrão é de 300 segundos (cinco minutos).
 
 > [!TIP]
-> Para mudar o tempo que os clientes armazenam as referências de raiz do namespace usando Windows PowerShell, use o [Set-DfsnRoot TimeToLiveSec](https://technet.microsoft.com/library/jj884281.aspx) cmdlet. Esses cmdlets foram introduzidos no Windows Server 2012.
+> Para mudar o tempo que os clientes armazenam as referências de raiz do namespace usando Windows PowerShell, use o [Set-DfsnRoot TimeToLiveSec](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753448(v=ws.11)) cmdlet. Esses cmdlets foram introduzidos no Windows Server 2012.
 
 ## <a name="to-change-the-amount-of-time-that-clients-cache-folder-referrals"></a>Para alterar o período de tempo que os clientes armazenam as referências da pasta
 
@@ -44,5 +44,3 @@ Uma referência é uma lista ordenada de destinos que um computador cliente rece
 
 -   [Ajustar namespaces do DFS](tuning-dfs-namespaces.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
-
-

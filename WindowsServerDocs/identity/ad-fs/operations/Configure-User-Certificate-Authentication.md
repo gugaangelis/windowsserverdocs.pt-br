@@ -8,12 +8,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c443d596e8e35f7ccf4aa23b622323122a2778e9
-ms.sourcegitcommit: 76a3b5f66e47e08e8235e2d152185b304d03b68b
+ms.openlocfilehash: 6fa77276aa41dc59c3dd5a131b5d8fb8a3dd2e58
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663179"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965448"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configurando AD FS para autenticação de certificado de usuário
 
@@ -36,14 +36,14 @@ A autenticação de certificado de usuário é usada principalmente em dois caso
 
 Habilite a autenticação de certificado de usuário como um método de autenticação de intranet ou Extranet no AD FS, usando o console de gerenciamento AD FS ou o cmdlet do PowerShell `Set-AdfsGlobalAuthenticationPolicy` .
 
-Se estiver configurando AD FS para autenticação de certificado do Azure AD, verifique se você definiu as [configurações do Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) e as [regras de declaração de AD FS necessárias](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para o emissor do certificado e o número de série
+Se estiver configurando AD FS para autenticação de certificado do Azure AD, verifique se você definiu as [configurações do Azure ad](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) e as [regras de declaração de AD FS necessárias](/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para o emissor do certificado e o número de série
 
 Além disso, há alguns aspectos opcionais.
 - Se você quiser usar declarações baseadas em campos de certificado e extensões, além do EKU (tipo https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) de declaração, configure as regras adicionais de passagem de declaração na relação de confiança do provedor de declarações Active Directory.  Veja abaixo uma lista completa de declarações de certificado disponíveis.  
 - Se você precisar restringir o acesso com base no tipo de certificado, poderá usar as propriedades adicionais no certificado em AD FS regras de autorização de emissão para o aplicativo. Os cenários comuns são "permitir somente certificados provisionados por um provedor de MDM" ou "permitir somente certificados de cartão inteligente"
 >[!IMPORTANT]
 > Os clientes que usam o fluxo de código de dispositivo para autenticação e execução de autenticação de dispositivo usando um IDP diferente do Azure AD (por exemplo, AD FS) não poderão impor o acesso baseado em dispositivo (por exemplo, permitir somente dispositivos gerenciados usando um serviço MDM de terceiros) para recursos do Azure AD. Para proteger o acesso aos recursos corporativos no Azure AD e evitar qualquer vazamento de dados, os clientes devem configurar o acesso condicional baseado no dispositivo do Azure AD (ou seja, "exigir que o dispositivo seja marcado como reclamação" no acesso condicional do Azure AD).
-- Configure as autoridades de certificação de emissão permitidas para certificados de cliente usando as diretrizes em "gerenciamento de emissores confiáveis para autenticação de cliente" neste [artigo](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx).
+- Configure as autoridades de certificação de emissão permitidas para certificados de cliente usando as diretrizes em "gerenciamento de emissores confiáveis para autenticação de cliente" neste [artigo](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn786429(v=ws.11)).
 - Convém considerar a modificação das páginas de entrada para atender às necessidades de seus usuários finais ao fazer a autenticação do certificado. Os casos comuns são para (a) alterar "entrar com seu certificado X509" para algo mais amigável para o usuário final
 
 ## <a name="configure-seamless-certificate-authentication-for-chrome-browser-on-windows-desktops"></a>Configurar a autenticação de certificado contínuo para o navegador Chrome em áreas de trabalho do Windows
@@ -76,7 +76,7 @@ As listas de certificados revogados (CRL) são pontos de extremidade codificados
 Cada AD FS e servidor WAP precisarão acessar o ponto de extremidade da CRL para validar se o certificado apresentado a ele ainda for válido e não tiver sido revogado. A validação de CRL pode ocorrer via HTTPS, HTTP, LDAP ou via OCSP (protocolo de status de certificado online). Se os servidores AD FS/WAP não puderem alcançar o ponto de extremidade, a autenticação falhará. Siga as etapas abaixo para solucionar o problema. 
 1) Consulte seu engenheiro PKI para determinar os pontos de extremidade da CRL usados para revogar certificados de usuário do seu sistema PKI. 
 2)  Em cada servidor AD FS/WAP, verifique se os pontos de extremidade da CRL estão acessíveis por meio do protocolo usado (normalmente HTTPS ou HTTP)
-3)  Para validação avançada, [habilite o log de eventos CAPI2](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/) em cada servidor AD FS/WAP
+3)  Para validação avançada, [habilite o log de eventos CAPI2](/archive/blogs/benjaminperkins/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues) em cada servidor AD FS/WAP
 4) Verificar a ID do evento 41 (verificar revogação) nos logs operacionais do CAPI2
 5) Verificar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
@@ -136,6 +136,6 @@ Essas ocorrências são raras
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/san           | Outro nome: nome da entidade = user@contoso.com , nome do RFC822 =user@contoso.com |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku           |                          1.3.6.1.4.1.311.10.3.4                          |
 
-## <a name="related-links"></a>Links relacionados
+## <a name="related-links"></a>Links Relacionados
 * [Configurar a associação de nome de host alternativo para autenticação de certificado AD FS](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)
-* [Configurar autoridades de certificação no Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)
+* [Configurar autoridades de certificação no Azure AD](/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)

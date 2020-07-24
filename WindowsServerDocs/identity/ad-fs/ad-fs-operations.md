@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cdedcbd5b9491b57ee31170b781dc821853d058f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815129"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964958"
 ---
 # <a name="ad-fs-operations"></a>Operações do AD FS
 
@@ -21,8 +21,8 @@ ms.locfileid: "80815129"
 
 Este documento contém uma lista de todas as operações de documentação para AD FS. 
 
-## <a name="service-configuration"></a>Configuração do serviço
-- [Atualizar certificados SSL em AD FS e WAP 2016](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+## <a name="service-configuration"></a>Configuração de Serviço
+- [Atualizar certificados SSL em AD FS e WAP 2016](./operations/manage-ssl-certificates-ad-fs-wap.md)
 - [Ferramenta de restauração rápida do AD FS](../ad-fs/operations/AD-FS-Rapid-Restore-Tool.md)
 - [Configurar a associação de nome de host alternativo para autenticação de certificado no AD FS](../ad-fs/operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 - [Adicionar um repositório de atributos](../ad-fs/operations/Add-an-Attribute-Store.md)
@@ -35,7 +35,7 @@ Este documento contém uma lista de todas as operações de documentação para 
 ## <a name="authentication-configuration"></a>Configuração de autenticação
 ### <a name="strong-authentication-mfa--password-less"></a>Autenticação forte (MFA) & sem senha
 - [Configurar provedores de autenticação externa como primário no AD FS (2019 ou posterior)](../ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
-- [Configurar AD FS (2016 ou posterior) e Azure MFA](../ad-fs/operations/Configure-AD-FS-2016-and-Azure-MFA.md)
+- [Configurar AD FS (2016 ou posterior) e Azure MFA](./operations/configure-ad-fs-and-azure-mfa.md)
 - [Configurar métodos de autenticação adicionais para AD FS](../ad-fs/operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)
 
 ### <a name="lockout-protection"></a>Proteção contra bloqueio
@@ -71,22 +71,20 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Configurar AD FS para trabalhar com o provedor de Federação agregado (por exemplo, incomum)](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 
 ## <a name="sign-in-experience-configuration"></a>Configuração da experiência de entrada
-- [Definir configurações de logon único do AD FS 2016](../ad-fs/operations/AD-FS-2016-Single-Sign-On-Settings.md)
+- [Definir configurações de logon único do AD FS 2016](./operations/ad-fs-single-sign-on-settings.md)
 - [Configurar AD FS entrada paginada](../ad-fs/operations/AD-FS-paginated-sign-in.md)
 - [Configurar AD FS personalização de entrada do usuário](../ad-fs/operations/AD-FS-user-sign-in-customization.md)
 - [Configurar o AD FS para enviar declarações de expiração de senha](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [Configurar a autenticação baseada em formulários de intranet para dispositivos que não são compatíveis com a WIA](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Outros
+## <a name="other"></a>Outro
 - [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Gerenciar riscos com Autenticação Multifator adicional para aplicativos confidenciais](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [Gerenciar risco com o Controle de Acesso Condicional](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [Configurar um ambiente de laboratório do AD FS](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
 - [Guia de instruções: gerenciar riscos com autenticação multifator adicional para aplicativos confidenciais](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-- [Guia de instruções: gerenciar riscos com o controle de acesso condicional](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [Walkthrough: Workplace Join com um dispositivo Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [Walkthrough: Workplace Join com um dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [Guia passo a passo: Gerenciar risco com o Controle de Acesso Condicional](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+- [Passo a passo: Ingressar no local de trabalho com um dispositivo do Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [Passo a passo: Ingressar no Local de Trabalho com um dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
-
-

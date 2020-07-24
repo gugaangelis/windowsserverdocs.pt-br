@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 661f1b3f227a3e04c1328798a632b10b55df1c20
-ms.sourcegitcommit: 7200143aa787c7ac05ae0e012263b1c9a95b87ed
+ms.openlocfilehash: a7da23b592f495b45e337520179d414900183a1b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84721744"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966608"
 ---
 # <a name="the-role-of-claims"></a>A função das declarações
 
@@ -90,7 +90,7 @@ Cada descrição de declaração inclui um tipo de declaração URI, nome, estad
 
 - **Publicar esta declaração em metadados de Federação como um tipo de declaração que este serviço de Federação pode enviar** \( Publicar como enviado \) – indica os tipos de declaração que são oferecidos por essa serviço de Federação. Estes são os tipos de declaração que o Serviço de Federação publica para outros como sendo aqueles que está disposto a enviar. Os tipos de declaração reais enviados pelo provedor de declarações muitas vezes são um subconjunto dessa lista.
 
-Para obter mais informações sobre como definir o estado de publicação de um tipo de declaração, consulte [Adicionar uma descrição de declaração](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/add-a-claim-description) no guia de implantação de AD FS.
+Para obter mais informações sobre como definir o estado de publicação de um tipo de declaração, consulte [Adicionar uma descrição de declaração](../operations/add-a-claim-description.md) no guia de implantação de AD FS.
 
 ### <a name="when-generating-federation-metadata"></a>Quando gerar metadados de federação
 

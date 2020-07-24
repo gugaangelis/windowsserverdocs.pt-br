@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9ce9aa052290b82b2f085cb4637fcffbdf7b42ce
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d7f1b5387d82d487e50b217b28367e82617a66ea
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473113"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966248"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -66,7 +66,7 @@ O serviço de migração de armazenamento migra todos os sinalizadores, configur
     - Criptografar Dados
     - Comunicação remota de identidade
     - Infraestrutura
-    - Name
+    - Nome
     - Caminho
     - Com escopo
     - Nome do escopo
@@ -128,7 +128,7 @@ O serviço de migração de armazenamento contém um mecanismo de leitura e cóp
 
 - **Habilite o processamento de alto desempenho.** Verifique se as configurações de BIOS/UEFI para servidores permitem o alto desempenho, como desabilitar C-State, definir a velocidade de QPI, habilitar NUMA e definir a frequência de memória mais alta. Verifique se o gerenciamento de energia no Windows Server está definido como alto desempenho. Reinicie conforme necessário. Não se esqueça de retorná-los para os Estados apropriados depois de concluir a migração.
 
-- **Ajustar o hardware** Examine as [diretrizes de ajuste de desempenho do Windows server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para ajustar o Orchestrator e os computadores de destino que executam o windows Server 2019 e o windows Server 2016. A seção de [ajuste de desempenho do subsistema de rede](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) contém informações especialmente valiosas.
+- **Ajustar o hardware** Examine as [diretrizes de ajuste de desempenho do Windows server 2016](/windows-server/administration/performance-tuning/) para ajustar o Orchestrator e os computadores de destino que executam o windows Server 2019 e o windows Server 2016. A seção de [ajuste de desempenho do subsistema de rede](../../networking/technologies/network-subsystem/net-sub-performance-tuning-nics.md) contém informações especialmente valiosas.
 
 - **Use um armazenamento mais rápido.** Embora possa ser difícil atualizar a velocidade de armazenamento do computador de origem, você deve garantir que o armazenamento de destino seja pelo menos rápido no desempenho de e/s de gravação, pois a origem está em desempenho de e/s de leitura para garantir que não haja nenhum afunilamento desnecessário nas transferências. Se o destino for uma VM, certifique-se de que, pelo menos, para fins de migração, seja executado na camada de armazenamento mais rápida de seus hosts de hipervisor, como na camada flash ou com Espaços de Armazenamento Diretos clusters HCI utilizando espaços em Flash ou híbridos espelhados. Quando a migração do SMS é concluída, a VM pode ser migrada ao vivo para uma camada ou host mais lento.
 
@@ -164,7 +164,7 @@ Ao executar uma transferência, o serviço de migração de armazenamento procur
 
 ## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>O que significam os números de erro no CSV de transferência?
 
-A maioria dos erros encontrados no arquivo CSV de transferência são os códigos de erro do sistema Windows. Você pode descobrir o que cada erro significa examinando a [documentação de códigos de erro do Win32](https://docs.microsoft.com/windows/win32/debug/system-error-codes).
+A maioria dos erros encontrados no arquivo CSV de transferência são os códigos de erro do sistema Windows. Você pode descobrir o que cada erro significa examinando a [documentação de códigos de erro do Win32](/windows/win32/debug/system-error-codes).
 
 ## <a name="what-are-my-options-to-give-feedback-file-bugs-or-get-support"></a><a name="give-feedback"></a>Quais são minhas opções para fornecer comentários, arquivos de erros ou obter suporte?
 

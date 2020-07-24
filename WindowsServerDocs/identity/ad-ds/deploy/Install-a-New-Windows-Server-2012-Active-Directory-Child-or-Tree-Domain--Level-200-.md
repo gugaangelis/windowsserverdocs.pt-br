@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f7244b76364c8e2ce7249af8e76825a08b2a75c8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a3ea43b513535d6b7d5a815039869b71c7d7c92
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80825329"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965778"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>Instalar um novo domínio de árvore ou filho do Active Directory do Windows Server 2012 (nível 200)
 
@@ -21,28 +21,28 @@ ms.locfileid: "80825329"
 
 Este tópico explica como adicionar domínios filho e de árvore a uma floresta existente do Windows Server 2012 usando o Gerenciador do Servidor ou o Windows PowerShell.  
   
--   [Fluxo de trabalho de domínio de árvore e filho](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Workflow)  
+-   [Fluxo de trabalho de domínios filho e de árvore](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Workflow)  
   
--   [Domínio filho e de árvore Windows PowerShell](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)  
+-   [Domínios filho e de árvore no Windows PowerShell](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)  
   
 -   [Implantação](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Deployment)  
   
-## <a name="child-and-tree-domain-workflow"></a><a name="BKMK_Workflow"></a>Fluxo de trabalho de domínio de árvore e filho  
+## <a name="child-and-tree-domain-workflow"></a><a name="BKMK_Workflow"></a>Fluxo de trabalho de domínios filho e de árvore  
 O diagrama a seguir ilustra o processo de configuração dos Serviços de Domínio do Active Directory, na instalação prévia da função AD DS e inicialização do Assistente de Configuração dos Serviços de Domínio do Active Directory com o Gerenciador do Servidor, para criar um novo domínio em uma floresta existente.  
   
 ![Instalar um novo filho do AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/adds_childtreedeploy_beta1.png)  
   
-## <a name="child-and-tree-domain-windows-powershell"></a><a name="BKMK_PS"></a>Domínio filho e de árvore Windows PowerShell  
+## <a name="child-and-tree-domain-windows-powershell"></a><a name="BKMK_PS"></a>Domínios filho e de árvore no Windows PowerShell  
   
 |||  
 |-|-|  
-|**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em*Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
-|**Install-AddsDomain**|-SkipPreChecks<p>***-NewDomainName***<p>***-ParentDomainName***<p>***-SafeModeAdministratorPassword***<p>*-ADPrepCredential*<p>-AllowDomainReinstall<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-NoDNSOnNetwork<p>*-DomainMode*<p>***-DomainType***<p>-Force<p>*-InstallDNS*<p>*-LogPath*<p>*-NewDomainNetBIOSName*<p>*-NoGlobalCatalog*<p>-NoNorebootoncompletion<p>*-ReplicationSourceDC*<p>*-SiteName*<p>-SkipAutoConfigureDNS<p>*-SYSVOLPath*<p>*-WhatIf*|  
+|**Cmdlet ADDSDeployment**|Argumentos (os argumentos em **Negrito** são necessários. Os argumentos em *Itálico* podem ser especificados usando o Windows PowerShell ou o Assistente de Configuração do AD DS.)|  
+|**Install-AddsDomain**|-SkipPreChecks<p>***-NewDomainName***<p>***-ParentDomainName***<p>***-safemodeadministratorpassword***<p>*-ADPrepCredential*<p>-AllowDomainReinstall<p>-Confirm<p>*-CreateDNSDelegation*<p>***-Credential***<p>*-DatabasePath*<p>*-DNSDelegationCredential*<p>-NoDNSOnNetwork<p>*-DomainMode*<p>***-DomainType***<p>-Force<p>*-InstallDNS*<p>*-LogPath*<p>*-NewDomainNetBIOSName*<p>*-NoGlobalCatalog*<p>-NoNorebootoncompletion<p>*-ReplicationSourceDC*<p>*-SiteName*<p>-SkipAutoConfigureDNS<p>*-SYSVOLPath*<p>*-Whatif*|  
   
 > [!NOTE]  
 > O argumento **-credential** será preciso apenas se você não tiver feito logon como membro do grupo Administradores de Empresa, o argumento **-NewDomainNetBIOSName** será necessário se você desejar alterar o nome de 15 caracteres gerado automaticamente com base no prefixo do nome do domínio DNS (Sistema de Nomes de Domínio) ou se o nome exceder 15 caracteres.  
   
-## <a name="deployment"></a><a name="BKMK_Deployment"></a>Planta  
+## <a name="deployment"></a><a name="BKMK_Deployment"></a>Implantação  
   
 ### <a name="deployment-configuration"></a>Configuração de Implantação  
 A captura de tela a seguir mostra as opções para adicionar um domínio filho:  
@@ -53,7 +53,7 @@ A captura de tela a seguir mostra as opções para adicionar um domínio de árv
   
 ![Instalar um novo filho do AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_TreeDeployConfig.png)  
   
-O Gerenciador do Servidor começa toda a promoção do controlador de domínio com a página **Configuração de Implantação** . As demais opções e campos exigidos mudam nessa página e nas páginas subsequentes, dependendo da operação de implantação selecionada.  
+O Gerenciador do Servidor começa toda a promoção do controlador de domínio com a página **Configuração de Implantação**. As demais opções e campos exigidos mudam nessa página e nas páginas subsequentes, dependendo da operação de implantação selecionada.  
   
 Este tópico combina duas operações discretas: promoção de domínio filho e promoção de domínio de árvore. A única diferença entre essas operações será o tipo de domínio que você criar. Todas as outras etapas dessas duas operações são idênticas.  
   
@@ -75,7 +75,7 @@ Install-AddsDomain
 -credential <pscredential>  
 ```  
   
-### <a name="domain-controller-options"></a>Opções de controlador de domínio  
+### <a name="domain-controller-options"></a>Opções de Controlador de Domínio  
 ![Instalar um novo filho do AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_DCOptions_Child.gif)  
   
 A página **Opções do Controlador de Domínio** especifica as opções do novo controlador de domínio. As opções configuráveis de controlador de domínio incluem **Servidor DNS** e **Catálogo Global**; não é possível configurar um controlador de domínio somente leitura como o primeiro controlador de domínio em um novo domínio.  
@@ -101,13 +101,13 @@ Os argumentos do cmdlet ADDSDeployment nas **Opções do Controlador de Domínio
 ```  
   
 > [!IMPORTANT]  
-> O nome do site já deverá existir quando fornecido como um valor para o argumento **sitename** . O cmdlet **install-AddsDomainController** não cria nomes de site. Você pode usar o cmdlet **new-adreplicationsite** para criar novos sites.  
+> O nome do site já deverá existir quando fornecido como um valor para o argumento **sitename**. O cmdlet **install-AddsDomainController** não cria nomes de site. Você pode usar o cmdlet **new-adreplicationsite** para criar novos sites.  
   
 Os argumentos do cmdlet **Install-ADDSDomainController** seguirão os mesmos padrões do Gerenciador do Servidor, se não especificado.  
   
 A operação do argumento **SafeModeAdministratorPassword** é especial:  
   
--   Se *nenhum argumento for especificado* , o cmdlet solicitará que você insira e confirme uma senha mascarada. Este é o uso preferencial ao executar o cmdlet interativamente.  
+-   Se *nenhum argumento for especificado*, o cmdlet solicitará que você insira e confirme uma senha mascarada. Este é o uso preferencial ao executar o cmdlet interativamente.  
   
     Por exemplo, para criar um novo domínio filho chamado NorthAmerica na floresta Contoso.com e ser solicitado a digitar e confirmar uma senha mascarada:  
   
@@ -169,12 +169,12 @@ Os argumentos de ADDSDeployment do Windows PowerShell nas **Opções de DNS** s�
 -dnsdelegationcredential <pscredential>  
 ```  
   
-Para obter mais informações sobre delegação de DNS, consulte [Noções básicas sobre delegação de zona](https://technet.microsoft.com/library/cc771640.aspx).  
+Para obter mais informações sobre delegação de DNS, consulte [Noções básicas sobre delegação de zona](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771640(v=ws.11)).  
   
 ### <a name="additional-options"></a>Opções adicionais  
 ![Instalar um novo filho do AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildAdditionalOptions.png)  
   
-A página **Opções Adicionais** mostra o nome NetBIOS do domínio e permite que você o substitua. Por padrão, o nome de domínio NetBIOS corresponde ao rótulo mais à esquerda do nome de domínio totalmente qualificado fornecido na página **Configuração de Implantação** . Por exemplo, se você forneceu o nome de domínio totalmente qualificado corp.contoso.com, o nome de domínio padrão do NetBIOS é CORP.  
+A página **Opções Adicionais** mostra o nome NetBIOS do domínio e permite que você o substitua. Por padrão, o nome de domínio NetBIOS corresponde ao rótulo mais à esquerda do nome de domínio totalmente qualificado fornecido na página **Configuração de Implantação**. Por exemplo, se você forneceu o nome de domínio totalmente qualificado corp.contoso.com, o nome de domínio padrão do NetBIOS é CORP.  
   
 Se o nome tiver 15 caracteres ou menos e não entrar em conflito com outro nome NetBIOS, ele ficará inalterado. Se ocorrer conflito com outro nome NetBIOS, um número será acrescentado ao nome. Se o nome tiver mais de 15 caracteres, o assistente fornecerá uma sugestão truncada exclusiva. Em ambos os casos, o assistente primeiro valida o nome que ainda não está em uso por meio de uma consulta WINS e difusão de NetBIOS.  
   
@@ -291,7 +291,7 @@ Confira [Domínio filho e de árvore no Windows PowerShell)](../../ad-ds/deploy/
   
 ![Instalar um novo filho do AD](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_PSInstallADDSDomainProgress.png)  
   
-Para aceitar o prompt de reinicialização automática, use os argumentos **-force** ou **-confirm:$false** com qualquer cmdlet ADDSDeployment do Windows PowerShell. Para evitar que o servidor reinicie automaticamente no final da promoção, use o argumento **-norebootoncompletion** .  
+Para aceitar o prompt de reinicialização automática, use os argumentos **-force** ou **-confirm:$false** com qualquer cmdlet ADDSDeployment do Windows PowerShell. Para evitar que o servidor reinicie automaticamente no final da promoção, use o argumento **-norebootoncompletion**.  
   
 > [!WARNING]  
 > Não é recomendável substituir a reinicialização. O controlador de domínio deve reiniciar para funcionar corretamente.  
@@ -301,4 +301,3 @@ Para aceitar o prompt de reinicialização automática, use os argumentos **-for
   
 A página **Resultados** mostra o sucesso ou o fracasso da promoção e qualquer informação administrativa importante. O controlador de domínio reiniciará automaticamente após 10 segundos.  
   
-

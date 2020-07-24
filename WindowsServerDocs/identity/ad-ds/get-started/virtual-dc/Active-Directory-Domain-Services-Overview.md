@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 13d32a4fc11611f030006ad9628d2e84a045e511
-ms.sourcegitcommit: c710fea2c0591febfc1bc9a705d59979be6f699b
+ms.openlocfilehash: 84d28ffec35bdc5dce22d797cb830f8b75068013
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83705573"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966048"
 ---
 # <a name="active-directory-domain-services-overview"></a>Visão geral dos serviços de domínio Active Directory
 
@@ -24,7 +24,7 @@ Um diretório é uma estrutura hierárquica que armazena informações sobre obj
 
 O Active Directory armazena informações sobre objetos na rede e torna essas informações fáceis de serem encontradas e usadas por administradores e usuários. O Active Directory usa um armazenamento de dados estruturado como base para uma organização lógica e hierárquica de informações de diretório.
 
-Esse armazenamento de dados, também conhecido como o diretório, contém informações sobre objetos Active Directory. Esses objetos normalmente incluem recursos compartilhados, como servidores, volumes, impressoras e contas de usuário e computador de rede. Para obter mais informações sobre o armazenamento de dados de Active Directory, consulte [Directory Data Store](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736627(v=ws.10)).
+Esse armazenamento de dados, também conhecido como o diretório, contém informações sobre objetos Active Directory. Esses objetos normalmente incluem recursos compartilhados, como servidores, volumes, impressoras e contas de usuário e computador de rede. Para obter mais informações sobre o armazenamento de dados de Active Directory, consulte [Directory Data Store](/previous-versions/windows/it-pro/windows-server-2003/cc736627(v=ws.10)).
 
 A segurança é integrada com Active Directory por meio de autenticação de logon e controle de acesso a objetos no diretório. Com um único logon de rede, os administradores podem gerenciar dados de diretório e organização em toda a rede, e os usuários de rede autorizados podem acessar recursos em qualquer lugar da rede. A administração baseada em política facilita igualmente o gerenciamento de redes mais complexas. Para obter mais informações sobre Active Directory segurança, consulte [visão geral de segurança](../../plan/security-best-practices/best-practices-for-securing-active-directory.md).
 
@@ -43,15 +43,13 @@ O Active Directory também inclui:
 ## <a name="understanding-active-directory"></a>Noções básicas sobre Active Directory
  Esta seção fornece links para os principais conceitos de Active Directory:
  
-* [Active Directory a estrutura e as tecnologias de armazenamento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
-* [Funções do controlador de domínio](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10)) 
-* [Esquema de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
-* [Noções básicas sobre relações de confiança](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
-* [Tecnologias de replicação Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10)) 
-* [Active Directory tecnologias de pesquisa e publicação](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10)) 
-* [Interoperação com DNS e Política de Grupo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
-* [Compreendendo o esquema](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)) 
+* [Active Directory a estrutura e as tecnologias de armazenamento](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [Funções do controlador de domínio](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10)) 
+* [Esquema de Active Directory](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771796(v=ws.10))
+* [Noções básicas sobre relações de confiança](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771568(v=ws.10)) 
+* [Tecnologias de replicação Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc776877(v=ws.10)) 
+* [Active Directory tecnologias de pesquisa e publicação](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10)) 
+* [Interoperação com DNS e Política de Grupo](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd197486(v=ws.10))
+* [Compreendendo o esquema](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10)) 
 
-Para obter uma lista detalhada dos conceitos de Active Directory, consulte [noções básicas sobre Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10)). 
-
-
+Para obter uma lista detalhada dos conceitos de Active Directory, consulte [noções básicas sobre Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10)). 

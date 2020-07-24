@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ffe34097971f4477f0f536637b49b704678c93e
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: bdd5264394c94748b7720842cf8ff7e01e1375e7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833356"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965418"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
@@ -118,7 +118,7 @@ Para cargas de trabalho que exijam grande capacidade e gravem com pouca frequên
 
 Cada servidor deve ter pelo menos duas unidades de cache (o mínimo necessário para redundância). É recomendável que o número de unidades de capacidade seja um múltiplo do número de unidades de cache. Por exemplo, se você tiver 4 unidades de cache, terá um desempenho mais consistente com 8 unidades de capacidade (proporção 1:2) do que com 7 ou 9.
 
-O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplicativos e cargas de trabalho, ou seja, todos os dados que eles estão lendo e gravando ativamente em um determinado momento. Não há qualquer requisito de dimensionamento de cache além desse. Para implantações com HDDs, um local de início justo é de 10% da capacidade, por exemplo, se cada servidor tiver 4 x 4 TB HDD = 16 TB de capacidade, então 2 x 800 GB SSD = 1,6 TB de cache por servidor. Para todas as implantações-flash, especialmente com SSDs [Endurance muito alto](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/) , pode ser justo começar mais perto de 5% da capacidade – por exemplo, se cada servidor tiver 24 x 1,2 TB SSD = 28,8 TB de capacidade, então 2 x 750 GB NVMe = 1,5 TB de cache por servidor. Você pode adicionar ou remover unidades de cache posteriormente para ajustar.
+O cache deve ser dimensionado para acomodar o conjunto de trabalho de seus aplicativos e cargas de trabalho, ou seja, todos os dados que eles estão lendo e gravando ativamente em um determinado momento. Não há qualquer requisito de dimensionamento de cache além desse. Para implantações com HDDs, um local de início justo é de 10% da capacidade, por exemplo, se cada servidor tiver 4 x 4 TB HDD = 16 TB de capacidade, então 2 x 800 GB SSD = 1,6 TB de cache por servidor. Para todas as implantações-flash, especialmente com SSDs [Endurance muito alto](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024) , pode ser justo começar mais perto de 5% da capacidade – por exemplo, se cada servidor tiver 24 x 1,2 TB SSD = 28,8 TB de capacidade, então 2 x 750 GB NVMe = 1,5 TB de cache por servidor. Você pode adicionar ou remover unidades de cache posteriormente para ajustar.
 
 ### <a name="general"></a>Geral
 

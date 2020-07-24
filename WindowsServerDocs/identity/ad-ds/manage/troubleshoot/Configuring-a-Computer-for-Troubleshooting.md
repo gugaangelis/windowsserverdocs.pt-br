@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d9d279615dc1f70ffdcff9e49a4aa619f0106a93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a71e1b92962ae9904262367f2c2697ecaa206ed8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822969"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965928"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>Configurar um computador para solução de problemas
 
@@ -31,7 +31,7 @@ Para configurar o computador para solução de problemas Active Directory Domain
 
 Quando você instala o AD DS para criar um controlador de domínio, as ferramentas administrativas que você usa para gerenciar o AD DS são instaladas automaticamente. Se você quiser gerenciar controladores de domínio remotamente de um computador que não seja um controlador de domínio, poderá instalar o Ferramentas de Administração de Servidor Remoto (RSAT) em um servidor membro ou estação de trabalho que esteja executando uma versão com suporte do Windows. O RSAT substitui as ferramentas de suporte do Windows do Windows Server 2003.
 
-Para obter informações sobre como instalar o RSAT, consulte o artigo [ferramentas de administração de servidor remoto](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools).
+Para obter informações sobre como instalar o RSAT, consulte o artigo [ferramentas de administração de servidor remoto](../../../../remote/remote-server-administration-tools.md).
 
 ### <a name="configure-reliability-and-performance-monitor"></a>Configurar o monitor de desempenho e confiabilidade
 
@@ -39,7 +39,7 @@ O Windows Server inclui o monitor de desempenho e confiabilidade do Windows, que
 
 O monitor de confiabilidade e desempenho também inclui o monitor de confiabilidade, um snap-in do MMC que controla as alterações no sistema e os compara com as alterações na estabilidade do sistema, fornecendo uma exibição gráfica de sua relação.
 
-### <a name="set-logging-levels"></a>Definir níveis de log
+### <a name="set-logging-levels"></a>Definir os níveis de registros em log
 
 Se as informações recebidas no log do serviço de diretório Visualizador de Eventos não forem suficientes para solução de problemas, aumente os níveis de log usando a entrada de registro apropriada no **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\ntds\diagnostics**.
 
@@ -48,12 +48,12 @@ Por padrão, os níveis de log para todas as entradas são definidos como **0**,
 Use o procedimento a seguir para alterar o nível de log para uma entrada de diagnóstico. A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo exigido para concluir este procedimento.
 
 > [!WARNING]
-> É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa. As modificações no Registro não são validadas pelo editor do Registro nem pelo Windows antes de serem aplicadas e, como resultado, valores incorretos podem ser armazenados. Isso pode resultar em erros irrecuperáveis no sistema. Quando possível, use Política de Grupo ou outras ferramentas do Windows, como snap-ins do MMC, para realizar tarefas, em vez de editar o registro diretamente. Se você deve editar o Registro, tenha muito cuidado.
+> É recomendável não editar diretamente o Registro, a menos que não haja outra alternativa. As modificações no registro não são validadas pelo editor do registro ou pelo Windows antes de serem aplicadas e, como resultado, os valores incorretos podem ser armazenados. Isso pode resultar em erros irrecuperáveis no sistema. Quando possível, use Política de Grupo ou outras ferramentas do Windows, como snap-ins do MMC, para realizar tarefas, em vez de editar o registro diretamente. Se você deve editar o Registro, tenha muito cuidado.
 >
 
 Para alterar o nível de log para uma entrada de diagnóstico
 
-1. Clique em **iniciar** > **executar** > digite **regedit** > clique em **OK**.
+1. Clique em **Iniciar**  >  **execução** > digite **regedit** > clique em **OK**.
 2. Navegue até a entrada para a qual você deseja definir o logon.
    * EXEMPLO: HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServicesNTDSDiagnostics
 3. Clique duas vezes na entrada e, em **base**, clique em **decimal**.

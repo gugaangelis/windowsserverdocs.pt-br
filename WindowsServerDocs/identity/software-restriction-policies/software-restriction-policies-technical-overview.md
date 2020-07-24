@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 38625a8d416345a6a7ed40c021b55aa10d1fd92f
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9a9a44cd4ab1f4c8ee1c4dadf5cc09de2208b46a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855269"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966158"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>Visão geral técnica das políticas de restrição de software
 
@@ -78,30 +78,30 @@ As diretivas de restrição de software só podem ser configuradas e aplicadas a
 > [!NOTE]
 > Determinadas edições do sistema operacional cliente do Windows a partir do Windows Vista não têm diretivas de restrições de software. Os computadores não administrados em um domínio por Política de Grupo podem não receber políticas distribuídas.
 
-**Comparando funções de controle de aplicativo em políticas de restrição de software e AppLocker**
+**Comparando as funções do controle de aplicativo nas Políticas de Restrição de Software e no AppLocker**
 
 A tabela a seguir compara os recursos e as funções do AppLocker e SRP (Políticas de Restrição de Software).
 
 |Função de controle de aplicativo|SRP|AppLocker|
 |----------------|----|-------|
 |Escopo|As políticas SRP podem ser aplicadas a todos os sistemas operacionais Windows, começando no Windows XP e Windows Server 2003.|As políticas do AppLocker se aplicam somente ao Windows Server 2008 R2, ao Windows Server 2012, ao Windows 7 e ao Windows 8.|
-|Criação de política|As políticas SRP são mantidas por meio da Política de Grupo e apenas o administrador do GPO pode atualizar a política SRP. O administrador no computador local pode modificar as políticas SRP definidas no GPO local.|As políticas do AppLocker são mantidas por meio da Política de Grupo e apenas o administrador do GPO pode atualizar a política. O administrador no computador local pode modificar as políticas do AppLocker definidas no GPO local.<p>O AppLocker permite personalização de mensagens de erro para direcionar usuários a uma página da Web para obter ajuda.|
-|Manutenção de política|As políticas SRP devem ser atualizadas por meio do snap-in de política de segurança local (se as políticas forem criadas localmente) ou do GPMC (Console de Gerenciamento de Política de Grupo).|As políticas do AppLocker podem ser atualizadas por meio do snap-in de política de segurança local (se as políticas forem criadas localmente), do GPMC ou dos cmdlets do Windows PowerShell do AppLocker.|
-|Aplicação de políticas|As políticas SRP são distribuídas por meio de Política de Grupo.|As políticas do AppLocker são distribuídas por meio de Política de Grupo.|
+|Criação de política|As políticas de SRP são mantidas por meio de Política de Grupo e somente o administrador do GPO pode atualizar a política de SRP. O administrador no computador local pode modificar as políticas de SRP definidas no GPO local.|As políticas do AppLocker são mantidas por meio de Política de Grupo e somente o administrador do GPO pode atualizar a política. O administrador no computador local pode modificar as políticas do AppLocker definidas no GPO local.<p>O AppLocker permite personalização de mensagens de erro para direcionar usuários a uma página da Web para obter ajuda.|
+|Manutenção de política|As políticas de SRP devem ser atualizadas usando o snap-in Diretiva de segurança local (se as políticas forem criadas localmente) ou o Console de Gerenciamento de Política de Grupo (GPMC).|As políticas do AppLocker podem ser atualizadas usando o snap-in política de segurança local (se as políticas forem criadas localmente) ou o GPMC ou os cmdlets do AppLocker do Windows PowerShell.|
+|Aplicativo de política|As políticas de SRP são distribuídas por meio de Política de Grupo.|As políticas do AppLocker são distribuídas por meio de Política de Grupo.|
 |Modo de imposição|O SRP funciona no "modo de lista de negações", em que os administradores podem criar regras para arquivos que não desejam permitir nesta empresa, enquanto o restante do arquivo pode ser executado por padrão.<p>O SRP também pode ser configurado no "modo de lista de permissões" de forma que o por padrão todos os arquivos sejam bloqueados e os administradores precisem criar regras de permissão para arquivos que desejam permitir.|Por padrão, o AppLocker funciona no "modo de lista de permissões", no qual somente os arquivos podem ser executados para os quais há uma regra de permissão correspondente.|
-|Tipos de arquivo que podem ser controlados|A SRP pode controlar os seguintes tipos de arquivo:<p>-Executáveis<br />-DLLs<br />-Scripts<br />-Instaladores do Windows<p>A SRP não pode controlar cada tipo de arquivo separadamente. Todas as regras SRP estão em uma coleção de regras única.|O AppLocker pode controlar os seguintes tipos de arquivo:<p>-Executáveis<br />-DLLs<br />-Scripts<br />-Instaladores do Windows<br />-Aplicativos e instaladores empacotados (Windows Server 2012 e Windows 8)<p>O AppLocker mantém uma coleção de regras separada para cada um dos cinco tipos de arquivo.|
-|Tipos de arquivo designados|A SRP dá suporte a uma lista extensa de tipos de arquivos que são considerados executáveis. Os administradores podem adicionar extensões de arquivos que devem ser considerados executáveis.|O AppLocker não dá suporte a isso. O AppLocker atualmente aceita as seguintes extensões de arquivo:<p>-Executáveis (. exe,. com)<br />-DLLs (. ocx,. dll)<br />-Scripts (. vbs,. js,. ps1,. cmd,. bat)<br />-Instaladores do Windows (. msi,. MST,. msp)<br />-Instaladores de aplicativo empacotados (. AppX)|
-|Tipos de regra|A SRP aceita quatro tipos de regras:<p>-Hash<br />-Caminho<br />-Assinatura<br />-Zona da Internet|O AppLocker aceita três tipos de regras:<p>-Hash<br />-Caminho<br />-Publicador|
-|Editando o valor de hash|O SRP permite que os administradores forneçam valores de hash personalizados.|O AppLocker calcula o valor de hash em si. Internamente, ele usa o hash de Authenticode SHA1 para executáveis portáteis (exe e dll) e instaladores do Windows e um hash de arquivo simples SHA1 para o restante.|
-|Suporte para diferentes níveis de segurança|Com os administradores do SRP, é possível especificar as permissões com as quais um aplicativo pode ser executado. Portanto, um administrador pode configurar uma regra de modo que o bloco de notas sempre seja executado com permissões restritas e nunca com privilégios administrativos.<p>A SRP no Windows Vista e em versões anteriores dava suporte a vários níveis de segurança. No Windows 7, essa lista foi restrita a apenas dois níveis: não permitido e irrestrito (o usuário básico se traduz para não permitido).|O AppLocker não dá suporte a níveis de segurança.|
-|Gerenciar aplicativos empacotados e instaladores de aplicativo empacotados|Não é possível|.appx é um tipo de arquivo válido que o AppLocker pode gerenciar.|
-|Direcionando uma regra para um usuário ou um grupo de usuários|As regras SRP se aplicam a todos os usuários em um computador específico.|As regras do AppLocker podem ser direcionadas para um usuário ou um grupo de usuários específico.|
-|Suporte às exceções de regra|A SRP não dá suporte às exceções de regra|As regras do AppLocker podem ter exceções que permitem que os administradores criem regras como "permitir tudo do Windows, exceto o regedit. exe".|
-|Suporte ao modo de auditoria|A SRP não dá suporte ao modo de auditoria. A única maneira de testar as políticas SRP é configurar um ambiente de teste e executar algumas experiências.|O AppLocker dá suporte ao modo de auditoria que permite que os administradores testem o efeito de sua política no ambiente de produção real sem afetar a experiência do usuário. Quando estiver satisfeito com os resultados, você pode começar a impor a política.|
-|Suporte para exportar e importar políticas|A SRP não dá suporte à importação/exportação de política.|O AppLocker dá suporte à importação e exportação de políticas. Isso permite que você crie a política do AppLocker em um computador de exemplo, teste-a e, em seguida, exporte essa política e importe-a novamente para o GPO desejado.|
-|Imposição de política|Internamente, a imposição de regras SRP acontece no modo de usuário, que é menos seguro.|Internamente, as regras do AppLocker para EXEs e DLLs são impostas no modo kernel, o que é mais seguro do que aplicá-las no modo de usuário.|
+|Tipos de arquivo que podem ser controlados|O SRP pode controlar os seguintes tipos de arquivo:<p>-Executáveis<br />-DLLs<br />-Scripts<br />-Instaladores do Windows<p>O SRP não pode controlar cada tipo de arquivo separadamente. Todas as regras de SRP estão em uma única coleção de regras.|O AppLocker pode controlar os seguintes tipos de arquivo:<p>-Executáveis<br />-DLLs<br />-Scripts<br />-Instaladores do Windows<br />-Aplicativos e instaladores empacotados (Windows Server 2012 e Windows 8)<p>O AppLocker mantém uma coleção de regras separada para cada um dos cinco tipos de arquivo.|
+|Tipos de arquivo designados|O SRP dá suporte a uma lista extensível de tipos de arquivos que são considerados executáveis. Os administradores podem adicionar extensões para arquivos que devem ser considerados executáveis.|O AppLocker não oferece suporte a isso. Atualmente, o AppLocker dá suporte às seguintes extensões de arquivo:<p>-Executáveis (. exe,. com)<br />-DLLs (. ocx,. dll)<br />-Scripts (. vbs,. js,. ps1,. cmd,. bat)<br />-Instaladores do Windows (. msi,. MST,. msp)<br />-Instaladores de aplicativo empacotados (. AppX)|
+|Tipos de regras|O SRP dá suporte a quatro tipos de regras:<p>-Hash<br />-Caminho<br />-Assinatura<br />-Zona da Internet|O AppLocker dá suporte a três tipos de regras:<p>-Hash<br />-Caminho<br />-Publicador|
+|Editando o valor de hash|O SRP permite que os administradores forneçam valores de hash personalizados.|O AppLocker computa o valor de hash em si. Internamente, ele usa o hash de Authenticode SHA1 para executáveis portáteis (exe e dll) e instaladores do Windows e um hash de arquivo simples SHA1 para o restante.|
+|Suporte para diferentes níveis de segurança|Com os administradores do SRP, é possível especificar as permissões com as quais um aplicativo pode ser executado. Portanto, um administrador pode configurar uma regra de modo que o bloco de notas sempre seja executado com permissões restritas e nunca com privilégios administrativos.<p>O SRP no Windows Vista e versões anteriores ofereciam suporte a vários níveis de segurança. No Windows 7, essa lista foi restrita a apenas dois níveis: não permitido e irrestrito (o usuário básico se traduz para não permitido).|O AppLocker não oferece suporte a níveis de segurança.|
+|Gerenciar aplicativos empacotados e instaladores de aplicativo empacotados|Não habilitado|. Appx é um tipo de arquivo válido que o AppLocker pode gerenciar.|
+|Direcionando uma regra para um usuário ou um grupo de usuários|As regras de SRP se aplicam a todos os usuários em um determinado computador.|As regras do AppLocker podem ser direcionadas a um usuário específico ou a um grupo de usuários.|
+|Suporte para exceções de regra|O SRP não oferece suporte a exceções de regras|As regras do AppLocker podem ter exceções que permitem que os administradores criem regras como "permitir tudo do Windows, exceto Regedit.exe".|
+|Suporte para o modo de auditoria|O SRP não oferece suporte ao modo de auditoria. A única maneira de testar as políticas de SRP é configurar um ambiente de teste e executar alguns experimentos.|O AppLocker dá suporte ao modo de auditoria, que permite aos administradores testar o efeito de sua política no ambiente de produção real sem afetar a experiência do usuário. Quando estiver satisfeito com os resultados, você poderá começar a impor a política.|
+|Suporte para exportar e importar políticas|O SRP não oferece suporte à importação/exportação de política.|O AppLocker dá suporte à importação e à exportação de políticas. Isso permite que você crie a política do AppLocker em um computador de exemplo, teste-a e, em seguida, exporte essa política e importe-a de volta para o GPO desejado.|
+|Imposição de regras|Internamente, a imposição de regras de SRP ocorre no modo de usuário, o que é menos seguro.|Internamente, as regras do AppLocker para EXEs e DLLs são impostas no modo kernel, o que é mais seguro do que aplicá-las no modo de usuário.|
 
-## <a name="system-requirements"></a>Requisitos de sistema
+## <a name="system-requirements"></a>Requisitos do sistema
 As diretivas de restrição de software só podem ser configuradas e aplicadas a computadores que executam pelo menos o Windows Server 2003 e, pelo menos, o Windows XP. Política de Grupo é necessário para distribuir Política de Grupo objetos que contêm políticas de restrição de software.
 
 ## <a name="software-restriction-policies-components-and-architecture"></a>Componentes e arquitetura de diretivas de restrição de software
@@ -123,7 +123,7 @@ Em um alto nível, as políticas de restrição de software consistem nos seguin
 
 -   Conjunto de diretivas resultante (RSoP), que pode ajudar no diagnóstico da política efetiva que será aplicada a um cliente.
 
-Para obter mais informações sobre a arquitetura SRP, como o SRP gerencia regras, processos e interações, consulte [como as diretivas de restrição de software funcionam](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx) na biblioteca técnica do Windows Server 2003.
+Para obter mais informações sobre a arquitetura SRP, como o SRP gerencia regras, processos e interações, consulte [como as diretivas de restrição de software funcionam](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10)) na biblioteca técnica do Windows Server 2003.
 
 ## <a name="best-practices"></a><a name="BKMK_Best_Practices"></a>Práticas recomendadas
 
@@ -173,11 +173,9 @@ Para obter mais informações sobre a arquitetura SRP, como o SRP gerencia regra
 
 |Tipo de conteúdo|Referências|
 |--------|-------|
-|**Planejamento**|[Referência técnica das diretivas de restrição de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
+|**Planejamento**|[Referência técnica das diretivas de restrição de software](/previous-versions/windows/it-pro/windows-server-2003/cc728085(v=ws.10))|
 |**Operações**|[Administrar políticas de restrição de software](administer-software-restriction-policies.md)|
-|**Solução de problemas**|[Solução de problemas de diretivas de restrição de software (2003)](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx)|
-|**Segurança**|[Ameaças e contramedidas para políticas de restrição de software (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<p>[Ameaças e contramedidas para políticas de restrição de software (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
-|**Ferramentas e configurações**|[Ferramentas e configurações de diretivas de restrição de software (2003)](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx)|
-|**Recursos da comunidade**|[Bloqueio de aplicativo com políticas de restrição de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-
-
+|**Solução de problemas**|[Solução de problemas de diretivas de restrição de software (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc737011(v=ws.10))|
+|**Segurança**|[Ameaças e contramedidas para políticas de restrição de software (2008)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349795(v=ws.10))<p>[Ameaças e contramedidas para políticas de restrição de software (2008 R2)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125926(v=ws.10))|
+|**Ferramentas e configurações**|[Ferramentas e configurações de diretivas de restrição de software (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc782454(v=ws.10))|
+|**Recursos da comunidade**|[Bloqueio de Aplicativo com Políticas de Restrição de Software](/previous-versions/technet-magazine/cc510322(v=msdn.10)?pr=blog)|

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dc6cba306a36589d8b585b23ecb43e7d16b7d201
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ca29f1eef61bd11b2ceede4f335c029412e7331
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823069"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966398"
 ---
 # <a name="command-line-process-auditing"></a>Auditoria de processo de linha de comando
 
@@ -38,9 +38,9 @@ ms.locfileid: "80823069"
   
 ![auditoria de linha de comando](media/Command-line-process-auditing/GTR_ADDS_Event4688.gif)  
   
-**Figura SEQ figura \\\* árabe 16 evento 4688**  
+**Figura SEQ figura \\ \* árabe 16 evento 4688**  
   
-Examine a ID de evento 4688 atualizada em REF _Ref366427278 \h Figura 16.  Antes dessa atualização, nenhuma das informações de **linha de comando do processo** é registrada.  Por causa desse log adicional, agora podemos ver que não só o processo WScript. exe foi iniciado, mas também foi usado para executar um script VB.  
+Examine a ID de evento 4688 atualizada em REF _Ref366427278 \h Figura 16.  Antes dessa atualização, nenhuma das informações de **linha de comando do processo** é registrada.  Por causa desse log adicional, agora podemos ver que não só o processo de wscript.exe foi iniciado, mas também foi usado para executar um script VB.  
   
 ## <a name="configuration"></a>Configuração  
 Para ver os efeitos dessa atualização, você precisará habilitar duas configurações de política.  
@@ -60,16 +60,16 @@ Essa configuração de política de segurança determina se o sistema operaciona
   
 Esses eventos de auditoria podem ajudá-lo a entender como um computador está sendo usado e controlar a atividade do usuário.  
   
-Volume de eventos: de baixo para médio, dependendo do uso do sistema  
+Volume do evento: baixo para médio, dependendo do uso do sistema  
   
 **Padrão:** Não configurado  
   
 ### <a name="in-order-to-see-the-additions-to-event-id-4688-you-must-enable-the-new-policy-setting-include-command-line-in-process-creation-events"></a>Para ver as adições à ID de evento 4688, você deve habilitar a nova configuração de política: incluir linha de comando em eventos de criação de processo  
-**Tabela SEQ tabela \\\* configuração de política de processo de linha de comando árabe 19**  
+**Configuração da política de processo de linha de comando da tabela SEQ \\ \* árabe 19**  
   
 |Configuração de política|Detalhes|  
 |------------------------|-----------|  
-|**Multi-Path**|Criação de processo de Templates\System\Audit administrativo|  
+|**Caminho**|Criação de processo de Templates\System\Audit administrativo|  
 |**Configuração**|**Incluir linha de comando em eventos de criação de processo**|  
 |**Configuração padrão**|Não configurado (não habilitado)|  
 |**Com suporte em:**|?|  
@@ -96,14 +96,14 @@ O procedimento a seguir mostra como evitar conflitos, bloqueando a aplicação d
   
 5.  Clique duas vezes em Auditoria: forçar configurações de subcategorias de diretivas de auditoria (Windows Vista ou superior) para substituir configurações de categorias de diretivas de auditoria e clique em Definir esta configuração de política.  
   
-6.  Clique em habilitado e em OK.  
+6.  Clique em Habilitadoe em OK.  
   
 ## <a name="additional-resources"></a>Recursos adicionais  
-[Criação de processo de auditoria](https://technet.microsoft.com/library/dd941613(v=WS.10).aspx)  
+[Auditoria do processo de criação](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941613(v=ws.10))  
   
-[Guia passo a passo da política de auditoria de segurança avançada](https://technet.microsoft.com/library/dd408940(v=WS.10).aspx)  
+[Guia Passo a Passo de Política de Auditoria de Segurança Avançada](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd408940(v=ws.10))  
   
-[AppLocker: perguntas frequentes](https://technet.microsoft.com/library/ee619725(v=ws.10).aspx)  
+[AppLocker: perguntas frequentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee619725(v=ws.10))  
   
 ## <a name="try-this-explore-command-line-process-auditing"></a>Experimente: explorar a auditoria do processo de linha de comando  
   
@@ -122,5 +122,3 @@ O procedimento a seguir mostra como evitar conflitos, bloqueando a aplicação d
   
 4.  Executar o mesmo script anterior e observar os eventos  
   
-
-

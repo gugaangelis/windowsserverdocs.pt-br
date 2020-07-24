@@ -8,12 +8,12 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c43d26868f39896ec8632397dc0fce1dfe2dd2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9882061aad5ec6620cda5a0a288790d34f25c3f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408281"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966668"
 ---
 # <a name="migrate-an-ad-fs-20-wid-farm"></a>Migrar um farm de WID AD FS 2,0  
 Este documento fornece informações detalhadas sobre como migrar um farm do SQL AD FS 2,0 para o Windows Server 2012.
@@ -26,7 +26,7 @@ Este documento fornece informações detalhadas sobre como migrar um farm do SQL
   
 2.  Remova os servidores do seu farm do SQL Server do balanceador de carga.  
   
-3.  Atualize o sistema operacional neste servidor em seu farm de SQL Server do Windows Server 2008 R2 ou do Windows Server 2008 para o Windows Server 2012. Para obter mais informações, consulte [Installing Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).  
+3.  Atualize o sistema operacional neste servidor em seu farm de SQL Server do Windows Server 2008 R2 ou do Windows Server 2008 para o Windows Server 2012. Para obter mais informações, consulte [Instalando o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)).  
   
 > [!IMPORTANT]
 >  Como resultado da atualização do sistema operacional, a configuração do AD FS neste servidor é perdida e a função do servidor do AD FS 2.0 é removida. A função de servidor do Windows Server 2012 AD FS está instalada, mas não está configurada. Você deverá criar manualmente a configuração original do AD FS e restaurar as definições restantes do AD FS para concluir a migração do servidor de federação.  
@@ -47,11 +47,8 @@ Este documento fornece informações detalhadas sobre como migrar um farm do SQL
 7. Quando todos os servidores no farm de SQL Server forem atualizados para o Windows Server 2012, restaure as personalizações restantes do AD FS, como repositórios de atributos personalizados.  
 
 ## <a name="next-steps"></a>Próximas etapas
- [Prepare-se para migrar o servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
- [Preparar para migrar o proxy do servidor de federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [Migrar o servidor de federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
- [Migrar o proxy do servidor de federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Preparar para migrar o servidor de Federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar para migrar o proxy do servidor de Federação AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [Migrar o servidor de Federação AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
+ [Migrar o proxy do servidor de Federação AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar os Agentes Web do AD FS 1.1](migrate-the-ad-fs-web-agent.md)
-
-
-

@@ -8,18 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a22b1a0d776540e8ee2f2c223a1087bd88adaa47
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: dd8c2d4635071a199bdeff6a2bd518d746d82bc3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966318"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>Manter um ambiente mais seguro
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Número da lei dez: a tecnologia não é uma solução.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número da lei dez: a tecnologia não é uma solução.* - [10 leis imutáveis da administração de segurança](/previous-versions//cc722488(v=technet.10))  
   
 Quando você tiver criado um ambiente gerenciável e seguro para seus ativos de negócios críticos, seu foco deverá mudar para garantir que ele seja mantido com segurança. Embora você tenha recebido controles técnicos específicos para aumentar a segurança de suas instalações de AD DS, a tecnologia sozinha não protegerá um ambiente no qual ela não funciona em parceria com a empresa para manter uma infraestrutura segura e utilizável. As recomendações de alto nível nesta seção devem ser usadas como diretrizes que você pode usar para desenvolver não apenas a segurança efetiva, mas o gerenciamento eficiente do ciclo de vida.  
   
@@ -59,7 +59,7 @@ Algumas organizações implementam políticas de classificação de dados que ro
   
 Em seu modelo de classificação de dados, você deve incluir classificação para dados de AD DS, como o seguinte.  
   
-### <a name="systems"></a>Systems  
+### <a name="systems"></a>Sistemas  
 Você não deve apenas classificar dados, mas também suas populações de servidor. Para cada servidor, você deve saber qual sistema operacional está instalado, quais funções gerais o servidor fornece, quais aplicativos estão em execução no servidor, o proprietário do registro e o proprietário comercial do registro, quando aplicável. Para todos os dados ou aplicativos em execução no servidor, você deve precisar de classificação e o servidor deve ser protegido de acordo com os requisitos para as cargas de trabalho que ele suporta e as classificações aplicadas ao sistema e aos dados. Você também pode agrupar servidores pela classificação de suas cargas de trabalho, o que permite identificar rapidamente os servidores que devem ser os mais bem monitorados e mais rigorosamente configurados.  
   
 ### <a name="applications"></a>Aplicativos  
@@ -74,5 +74,3 @@ Ao integrar as informações de negócios à sua infraestrutura, você pode usar
   
 Digamos que o executivo A está localizado normalmente em Chicago e usa uma estação de trabalho protegida para acessar dados críticos para os negócios de sua mesa, e um evento é disparado por uma tentativa com falha de acessar os dados de uma estação de trabalho desprotegida localizada em Atlanta. Se for possível verificar se o executivo está atualmente em Atlanta, você pode resolver o evento entrando em contato com o executivo ou com o assistente do executivo para determinar se a falha de acesso foi o resultado do executivo esquecer de usar a estação de trabalho protegida para acessar os dados. Ao construir um programa que usa as abordagens descritas em [planejamento para o comprometimento](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md), você pode começar a criar um banco de dados de comportamentos esperados para as contas mais "importantes" na instalação do Active Directory que podem ajudá-lo a descobrir e responder a ataques com mais rapidez.  
   
-
-

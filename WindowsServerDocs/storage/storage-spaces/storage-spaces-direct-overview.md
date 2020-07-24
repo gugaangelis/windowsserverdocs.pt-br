@@ -10,12 +10,12 @@ ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: Uma visão geral do Espaços de Armazenamento Diretos, um recurso do Windows Server que permite que você ClusterE servidores com armazenamento interno em uma solução de armazenamento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: f3af42e2dde5b137ab2d49c1385dfa178f224ed8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d2568f068495ec56936c7f14bd286daf77b57bd4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474473"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966498"
 ---
 # <a name="storage-spaces-direct-overview"></a>Visão geral de Espaços de Armazenamento Diretos
 
@@ -31,9 +31,9 @@ Para outros aplicativos de espaços de armazenamento, como clusters SAS comparti
 |   -   |   -   |
 | **Noções básicas**<br><ul><li>Visão geral (você está aqui)</li><li>[Noções básicas sobre o cache](understand-the-cache.md)</li><li>[Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)<li>[Considerações de simetria de unidade](drive-symmetry-considerations.md)</li><li>[Entender e monitorar a ressincronização de armazenamento](understand-storage-resync.md)</li><li>[Noções básicas de quorum de cluster e de pool](understand-quorum.md)</li><li>[Conjuntos de cluster](cluster-sets.md)</li> | **Plano**<br><ul><li>[Requisitos de hardware](storage-spaces-direct-hardware-requirements.md)</li><li>[Usar o cache de leitura na memória de CSV](csv-cache.md)</li><li>[Escolher unidades](choosing-drives.md)</li><li>[Planejar volumes](plan-volumes.md)</li><li>[Usar clusters de VM convidada](storage-spaces-direct-in-vm.md)</li><li>[Recuperação de desastres](storage-spaces-direct-disaster-recovery.md)</li> |
 | **Implantar**<br><ul><li>[Implantar Espaços de Armazenamento Diretos](deploy-storage-spaces-direct.md)</li><li>[Criar volumes](create-volumes.md)</li><li>[Resiliência aninhada](nested-resiliency.md)</li><li>[Configurar quorum](../../failover-clustering/manage-cluster-quorum.md)</li><li>[Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[Compreender e implantar memória persistente](deploy-pmem.md)</li> | **Gerenciar**<br><ul><li>[Gerenciar com o Centro de Administração do Windows](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[Adicionar servidores ou unidades](add-nodes.md)</li><li>[Colocar um servidor offline para manutenção](maintain-servers.md)</li><li>[Remover servidores](remove-servers.md)</li><li>[Estender volumes](resize-volumes.md)</li><li>[Excluir volumes](delete-volumes.md)</li><li>[Atualizar firmware da unidade](../update-firmware.md)</li><li>[Histórico de desempenho](performance-history.md)</li><li>[Delimitar a alocação de volumes](delimit-volume-allocation.md)</li><li>[Usar Azure Monitor em um cluster hiperconvergente](configure-azure-monitor.md)</li> |
-| **Solução de problemas**<br><ul><li>[Cenários de solução de problemas](troubleshooting-storage-spaces.md)</li><li>[Solucionar problemas de integridade e Estados operacionais](storage-spaces-states.md)</li><li>[Coletar dados de diagnóstico com Espaços de Armazenamento Diretos](data-collection.md)</li><li>[Gerenciamento de integridade de memória da classe de armazenamento](Storage-class-memory-health.md)</li> | **Postagens recentes no blog**<br><ul><li>[13,7 milhões IOPS com Espaços de Armazenamento Diretos: o novo registro do setor para a infraestrutura hiperconvergente](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Infraestrutura hiperconvergente no Windows Server 2019-o relógio de contagem regressiva começa agora!](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Cinco anúncios grandes do Windows Server Summit](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10.000 Espaços de Armazenamento Diretos de clusters e contagem...](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
+| **Solução de problemas**<br><ul><li>[Cenários de solução de problemas](troubleshooting-storage-spaces.md)</li><li>[Solucionar problemas de integridade e Estados operacionais](storage-spaces-states.md)</li><li>[Coletar dados de diagnóstico com Espaços de Armazenamento Diretos](data-collection.md)</li><li>[Gerenciamento de integridade de memória da classe de armazenamento](Storage-class-memory-health.md)</li> | **Postagens recentes no blog**<br><ul><li>[13,7 milhões IOPS com Espaços de Armazenamento Diretos: o novo registro do setor para a infraestrutura hiperconvergente](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Infraestrutura hiperconvergente no Windows Server 2019-o relógio de contagem regressiva começa agora!](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Cinco anúncios grandes do Windows Server Summit](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10.000 Espaços de Armazenamento Diretos de clusters e contagem...](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li> |
 
-## <a name="videos"></a>vídeos
+## <a name="videos"></a>Vídeos
 
 **Visão geral de vídeo rápido (5 minutos)**
 
@@ -56,7 +56,7 @@ Para outros aplicativos de espaços de armazenamento, como clusters SAS comparti
 |       |       |
 |   -   |   -   |
 | ![Simplicidade](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   | **Simplicidade.** Passe de servidores padrão do setor que executam o Windows Server 2016 para seu primeiro cluster de Espaços de Armazenamento Diretos em menos de 15 minutos. Para usuários do System Center, a implantação é apenas uma caixa de seleção.       |
-| ![Desempenho inigualável](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **Desempenho inigualável.** Se todos os flash ou híbrida, espaços de armazenamento Direct facilmente exceder [150.000 misto 4K aleatório IOPS por servidor](https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/) com consistente e de baixa latência graças à sua arquitetura de hipervisor interno, seu interno cache de leitura/gravação e suporte para unidades de NVMe ponta montadas diretamente no barramento PCIe.      |
+| ![Desempenho inigualável](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **Desempenho inigualável.** Se todos os flash ou híbrida, espaços de armazenamento Direct facilmente exceder [150.000 misto 4K aleatório IOPS por servidor](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) com consistente e de baixa latência graças à sua arquitetura de hipervisor interno, seu interno cache de leitura/gravação e suporte para unidades de NVMe ponta montadas diretamente no barramento PCIe.      |
 | ![Tolerância a falhas](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   | **Tolerância a falhas.** A resiliência interna manuseia falhas de unidade, servidor ou componente com disponibilidade contínua. Implantações maiores também podem ser configuradas para [a tolerância a falhas de chassis e do rack](../../failover-clustering/fault-domains.md). Quando o hardware falhar, basta trocá-lo; o software se repara sozinho, sem etapas de gerenciamento complicadas.       |
 | ![Eficiência de recursos](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   | **Eficiência de recursos.** A codificação de eliminação oferece eficiência de armazenamento até 2,4 x maior, com inovações exclusivas como Códigos de reconstrução local e camadas em tempo real ReFS para expandir esses ganhos a unidades de disco rígido e cargas de trabalho ativas/passivas mistas, tudo isso enquanto o consumo da CPU é minimizado para devolver recursos para onde eles são mais necessários – nas VMs.       |
 | ![Capacidade de gerenciamento](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **Capacidade de gerenciamento**. Use [Controles QoS de armazenamento](../storage-qos/storage-qos-overview.md) para manter VMs ocupadas excessivamente na verificação dos limites mínimo e máximo de IOPS por VM. O [serviço de integridade](../../failover-clustering/health-service-overview.md) oferece monitoramento e alertas internos contínuos e novas APIs facilitam a coleta de métricas de capacidade e desempenho avançadas em todo o cluster.      |
@@ -96,7 +96,7 @@ Eis uma visão geral da pilha de Espaços de Armazenamento Diretos:
 
 **Cache da Camada do Barramento de Armazenamento.** O Barramento de Armazenamento de Software associa dinamicamente as unidades mais rápidas presentes (por exemplo, SSD) às unidades mais lentas (por exemplo, HDDs) para fornecer o caching de leitura/gravação do lado do servidor que acelera a E/S e aumenta a taxa de transferência.
 
-**Pool de armazenamento.** A coleção de unidades que forma a base do Espaços de Armazenamento é denominada pool de armazenamento. Ele é criado automaticamente e todas as unidades elegíveis são descobertas automaticamente e adicionadas a ele. É altamente recomendável que você use um pool por cluster, com as configurações padrão. Leia [Deep Dive into the Storage Pool](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/) para saber mais.
+**Pool de armazenamento.** A coleção de unidades que forma a base do Espaços de Armazenamento é denominada pool de armazenamento. Ele é criado automaticamente e todas as unidades elegíveis são descobertas automaticamente e adicionadas a ele. É altamente recomendável que você use um pool por cluster, com as configurações padrão. Leia [Deep Dive into the Storage Pool](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deep-dive-the-storage-pool-in-storage-spaces-direct/ba-p/425959) para saber mais.
 
 **Espaços de armazenamento.** Os espaços de armazenamento fornecem tolerância a falhas para "discos" virtuais usando [espelhamento, codificação de apagamento ou ambos](storage-spaces-fault-tolerance.md). Você pode pensar nele como um RAID distribuído e definido pelo software que usa as unidades no pool. Em espaços de armazenamento direto, esses discos virtuais normalmente têm resiliência para duas unidades ou servidor falhas simultâneas (por exemplo, 3 vias espelhamento, com cada cópia de dados em um servidor diferente) embora chassi e tolerância a falhas de rack também está disponível.
 
@@ -108,7 +108,7 @@ Eis uma visão geral da pilha de Espaços de Armazenamento Diretos:
 
 ## <a name="customer-stories"></a>Relatos de clientes
 
-Há [mais de 10.000 clusters](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/) em todo o mundo executando espaços de armazenamento diretos. Organizações de todos os tamanhos, de pequenas empresas implantando apenas dois nós, a grandes empresas e governos implantando centenas de nós dependem de Espaços de Armazenamento Diretos para seus aplicativos e infraestrutura críticos.
+Há [mais de 10.000 clusters](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185) em todo o mundo executando espaços de armazenamento diretos. Organizações de todos os tamanhos, de pequenas empresas implantando apenas dois nós, a grandes empresas e governos implantando centenas de nós dependem de Espaços de Armazenamento Diretos para seus aplicativos e infraestrutura críticos.
 
 Visite [Microsoft.com/HCI](https://www.microsoft.com/hci) para ler suas histórias:
 
@@ -118,23 +118,23 @@ Visite [Microsoft.com/HCI](https://www.microsoft.com/hci) para ler suas históri
 
 As seguintes ferramentas podem ser usadas para gerenciar e/ou monitorar Espaços de Armazenamento Diretos:
 
-| Name | Gráfico ou linha de comando? | Pago ou incluído? |
+| Nome | Gráfico ou linha de comando? | Pago ou incluído? |
 |-----------------|----------------------------|-------------------|
 | [Windows Admin Center](../../manage/windows-admin-center/overview.md)     | Gráfico    | Incluso |
 | Gerenciador do Servidor & Gerenciador de Cluster de Failover                                 | Gráfico    | Incluso |
 | Windows PowerShell                                                        | Linha de comando | Incluso |
-| [System Center Virtual Machine Manager (SCVMM)](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-storage-spaces-direct-vmm) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | Gráfico    | Pago     |
+| [System Center Virtual Machine Manager (SCVMM)](/system-center/vmm/s2d?view=sc-vmm-2019) <br>& [Operations Manager (SCOM)](https://www.microsoft.com/download/details.aspx?id=54700) | Gráfico    | Pago     |
 
 ## <a name="get-started"></a>Introdução
 
-Experimente Espaços de Armazenamento Diretos [no Microsoft Azure](https://blogs.technet.microsoft.com/filecab/2016/05/05/s2dazuretp5/), ou baixe uma cópia de avaliação de 180 dias licenciados do Windows Server em [Avaliações do Windows Server](https://go.microsoft.com/fwlink/?linkid=842602).
+Experimente Espaços de Armazenamento Diretos [no Microsoft Azure](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB), ou baixe uma cópia de avaliação de 180 dias licenciados do Windows Server em [Avaliações do Windows Server](https://go.microsoft.com/fwlink/?linkid=842602).
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Tolerância a falhas e eficiência de armazenamento](storage-spaces-fault-tolerance.md)
 - [Réplica de armazenamento](../storage-replica/storage-replica-overview.md)
-- [Blog do armazenamento no Microsoft](https://blogs.technet.microsoft.com/filecab/)
-- [Taxa de transferência de Espaços de Armazenamento Diretos com iWARP](https://blogs.technet.microsoft.com/filecab/2017/03/13/storage-spaces-direct-throughput-with-iwarp) (blog do TechNet)
+- [Blog do armazenamento no Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)
+- [Taxa de transferência de Espaços de Armazenamento Diretos com iWARP](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) (blog do TechNet)
 - [Novidades em Clustering de Failover no Windows Server](../../failover-clustering/whats-new-in-failover-clustering.md)
 - [Qualidade de serviço do armazenamento](../storage-qos/storage-qos-overview.md)
 - [Suporte do Windows IT Pro](https://www.microsoft.com/itpro/windows/support)

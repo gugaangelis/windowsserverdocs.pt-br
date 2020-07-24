@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cde839feda47d55415b2b6cc1026a7a3e6515a44
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 54a2ef82d5eccabaf8be0971ca0324498e75bb78
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823089"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966408"
 ---
 # <a name="directory-services-component-updates"></a>Atualizações de componentes dos Serviços de Diretório
 
@@ -67,7 +67,7 @@ Com o lançamento, há novos níveis funcionais de domínio e floresta:
   
     -   Renovar tíquetes de usuário (TGTs) além do tempo de vida inicial de quatro horas  
   
-2.  Políticas de Autenticação  
+2.  Políticas de autenticação  
   
     Novas políticas de Active Directory baseadas em floresta que podem ser aplicadas a contas em domínios do Windows Server 2012 R2 para controlar em quais hosts uma conta pode se conectar e aplicar condições de controle de acesso para autenticação em serviços em execução como uma conta  
   
@@ -171,7 +171,7 @@ O algoritmo do otimizador de consulta LDAP foi reavaliado e otimizado ainda mais
 > -   Menos chamadas de suporte em relação a problemas de desempenho do AD  
 > -   Back-Ported para o Windows Server 2008 R2 (KB 2862304)  
   
-### <a name="background"></a>Tela de fundo  
+### <a name="background"></a>Segundo plano  
 A capacidade de Pesquisar Active Directory é um serviço principal fornecido pelos controladores de domínio.  Outros serviços e aplicativos de linha de negócios dependem de Active Directory pesquisas.  As operações de negócios podem deixar de ser interrompidas se esse recurso não estiver disponível.  Como um serviço principal e muito usado, é imperativo que os controladores de domínio manipulem o tráfego de pesquisa LDAP com eficiência.  O algoritmo otimizador de consulta LDAP tenta tornar as pesquisas LDAP mais eficientes possíveis ao mapear filtros de pesquisa LDAP para um conjunto de resultados que pode ser satisfeito por meio de registros já indexados no banco de dados.  Esse algoritmo foi reavaliado e otimizado ainda mais.  O resultado é a melhoria de desempenho na eficiência da pesquisa LDAP e o tempo de pesquisa LDAP de consultas complexas.  
   
 ### <a name="details-of-change"></a>Detalhes da alteração  
@@ -269,7 +269,7 @@ Log Record Bytes Generated: 0
   
 ### <a name="to-enable-the-stats-control-in-ldp"></a><a name="BKMK_EnableStats"></a>Para habilitar o controle Stats no LDP  
   
-1.  Abra o LDP. exe e conecte-se e associe-se a um controlador de domínio.  
+1.  Abra LDP.exe e conecte-se e associe-se a um controlador de domínio.  
   
 2.  No menu **Opções** , clique em **controles**.  
   
@@ -288,7 +288,7 @@ Log Record Bytes Generated: 0
 ### <a name="try-this-use-ldp-to-return-query-statistics"></a>Experimente: usar o LDP para retornar estatísticas de consulta  
 Execute o seguinte em um controlador de domínio ou em um cliente ou servidor ingressado no domínio que tenha as ferramentas de AD DS instaladas.  Repita o seguinte direcionamento para o seu controlador de domínio do Windows Server 2012 e seu controlador de domínio do Windows Server 2012 R2.  
   
-1.  Examine o artigo ["Criando aplicativos habilitados para o Microsoft ad mais eficientes"](https://msdn.microsoft.com/library/ms808539.aspx) e refira-o conforme necessário.  
+1.  Examine o artigo ["Criando aplicativos habilitados para o Microsoft ad mais eficientes"](/previous-versions/ms808539(v=msdn.10)) e refira-o conforme necessário.  
   
 2.  Usando o LDP, habilite estatísticas de pesquisa (consulte [para habilitar o controle Stats no LDP](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_EnableStats))  
   
@@ -299,15 +299,15 @@ Execute o seguinte em um controlador de domínio ou em um cliente ou servidor in
 5.  Tentativa de construir uma pesquisa que leva muito tempo para ser concluída (talvez você queira aumentar a opção de **limite de tempo** para que a pesquisa não tenha tempo limite).  
   
 ### <a name="additional-resources"></a>Recursos adicionais  
-[O que são Active Directory pesquisas?](https://technet.microsoft.com/library/cc783845(v=ws.10).aspx)  
+[O que são Active Directory pesquisas?](/previous-versions/windows/it-pro/windows-server-2003/cc783845(v=ws.10))  
   
-[Como Active Directory pesquisas funcionam](https://technet.microsoft.com/library/cc755809(v=WS.10).aspx)  
+[Como Active Directory pesquisas funcionam](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10))  
   
-[Criando aplicativos mais eficientes habilitados para o Microsoft Active Directory](https://msdn.microsoft.com/library/ms808539.aspx)  
+[Criando aplicativos mais eficientes habilitados para o Microsoft Active Directory](/previous-versions/ms808539(v=msdn.10))  
   
 [951581](https://support.microsoft.com/kb/951581) consultas LDAP são executadas mais lentamente do que o esperado no serviço de diretório ad ou LDS/Adam e a ID de evento 1644 pode ser registrada  
   
-## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>Aprimoramentos de eventos 1644  
+## <a name="1644-event-improvements"></a><a name="BKMK_1644"></a>Melhorias no evento 1644  
   
 ### <a name="overview"></a>Visão geral  
 Esta atualização adiciona estatísticas de resultados de pesquisa LDAP adicionais à ID de evento 1644 para auxiliar na solução de problemas.  Além disso, há um novo valor de registro que pode ser usado para habilitar o registro em log em um limite baseado em tempo.  Esses aprimoramentos foram disponibilizados no Windows Server 2012 e no Windows Server 2008 R2 SP1 por meio do KB [2800945](https://support.microsoft.com/kb/2800945) e serão disponibilizados para o Windows Server 2008 SP2.  
@@ -316,7 +316,7 @@ Esta atualização adiciona estatísticas de resultados de pesquisa LDAP adicion
 > -   Estatísticas de pesquisa LDAP adicionais são adicionadas à ID de evento 1644 para ajudar a solucionar problemas de pesquisas de LDAP ineficientes ou dispendiosas  
 > -   Agora você pode especificar um limite de tempo de pesquisa (por exemplo, Log Event 1644 para pesquisas demorando mais de 100 ms) em vez de especificar os valores de limite de resultados de pesquisa dispendiosos e ineficientes  
   
-### <a name="background"></a>Tela de fundo  
+### <a name="background"></a>Segundo plano  
 Ao solucionar problemas de desempenho Active Directory, fica claro que a atividade de pesquisa LDAP pode estar contribuindo para o problema.  Você decide habilitar o log para que você possa ver consultas LDAP caras ou ineficientes processadas pelo controlador de domínio.  Para habilitar o registro em log, você deve definir o valor de diagnóstico de engenharia de campo e pode, opcionalmente, especificar os valores de limite de resultados de pesquisa caros/ineficientes.  Ao habilitar o nível de log de engenharia de campo para um valor de 5, qualquer pesquisa que atenda a esses critérios será registrada no log de eventos de serviços de diretório com uma ID de evento 1644.  
   
 O evento contém:  
@@ -325,7 +325,7 @@ O evento contém:
   
 -   Nó inicial  
   
--   Filtro  
+-   Filtrar  
   
 -   Escopo da pesquisa  
   
@@ -367,7 +367,7 @@ Windows Registry Editor Version 5.00
 ```  
   
 #### <a name="comparison-of-the-old-and-new-event-id-1644"></a>Comparação entre a ID de evento antiga e a nova 1644  
-ANTIGO  
+OLD  
   
 ![atualizações de serviços de diretório](media/Directory-Services-component-updates/GTR_ADDS_Event1644_2012.gif)  
   
@@ -402,7 +402,5 @@ Essas atualizações aumentam a taxa de transferência máxima para cerca de 600
 > Não há configurações configuráveis para modificar esse comportamento.  
   
 ### <a name="additional-resources"></a>Recursos adicionais  
-[Como funciona o modelo de replicação de Active Directory](https://technet.microsoft.com/library/cc772726(v=WS.10).aspx)  
+[Como funciona o modelo de replicação de Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc772726(v=ws.10))  
   
-
-

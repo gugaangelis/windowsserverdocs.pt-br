@@ -8,12 +8,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 55a4fc94440b763c48735ffe44099da702857489
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0e117b486fd628397bfe36aa897ff64cdd26f98b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820869"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965828"
 ---
 # <a name="updating-drive-firmware"></a>Atualização do firmware da unidade
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows 10
@@ -30,11 +30,11 @@ Para usar o Windows Server para atualizar o firmware da unidade, você deverá t
 Para obter informações sobre se o hardware oferece suporte a atualização do firmware da unidade do Windows, entre em contato com o fornecedor da solução.
 Aqui estão links para os diversos requisitos:
 
--   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) - na seção **[If Implemented\] Firmware Download & Activate**
+-   SATA: [Device.Storage.Hd.Sata](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsata) - na seção **[If Implemented\] Firmware Download & Activate**
     
--   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) - na seção **[If Implemented\] Firmware Download & Activate**
+-   SAS: [Device.Storage.Hd.Sas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragehdsas) - na seção **[If Implemented\] Firmware Download & Activate**
 
--   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) - nas seções **5.7** e **5.8**.
+-   NVMe: [Device.Storage.ControllerDrive.NVMe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)#devicestoragecontrollerdrivenvme) - nas seções **5.7** e **5.8**.
 
 ## <a name="powershell-cmdlets"></a>Cmdlets do PowerShell
 
@@ -43,7 +43,7 @@ Os dois cmdlets adicionados ao Windows são:
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-O primeiro cmdlet fornece informações detalhadas sobre os recursos do dispositivo, as imagens de firmware e as revisões. Nesse caso, a máquina contém apenas um único SSD SATA com 1 slot de firmware. Aqui está um exemplo:
+O primeiro cmdlet fornece informações detalhadas sobre os recursos do dispositivo, as imagens de firmware e as revisões. Nesse caso, a máquina contém apenas um único SSD SATA com 1 slot de firmware. Este é um exemplo:
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -105,7 +105,7 @@ Quando um servidor estiver em produção, é uma boa ideia fazer poucas alteraç
 
 1. Revise as notas de versão de firmware e confirme que a atualização corrige problemas que poderiam afetar seu ambiente e que o firmware não contém os problemas conhecidos que podem prejudicá-lo.
 
-2. Instale o firmware em um servidor em seu laboratório com unidades idênticas (incluindo a revisão da unidade, se houver várias revisões da mesma unidade) e teste a unidade sob carga com o novo firmware. Para obter informações sobre como fazer o teste de carga sintética, consulte [Testar o desempenho dos Espaços de Armazenamento usando cargas de trabalho sintéticas](https://technet.microsoft.com/library/dn894707.aspx).
+2. Instale o firmware em um servidor em seu laboratório com unidades idênticas (incluindo a revisão da unidade, se houver várias revisões da mesma unidade) e teste a unidade sob carga com o novo firmware. Para obter informações sobre como fazer o teste de carga sintética, consulte [Testar o desempenho dos Espaços de Armazenamento usando cargas de trabalho sintéticas](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn894707(v=ws.11)).
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>Atualizações de firmware automatizadas com Espaços de Armazenamento Diretos
 
@@ -164,7 +164,7 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Se você quiser ver a Serviço de Integridade em ação e saber mais sobre seu mecanismo de distribuição, veja este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
+Se você quiser ver a Serviço de Integridade em ação e saber mais sobre seu mecanismo de distribuição, confira este vídeo:https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 

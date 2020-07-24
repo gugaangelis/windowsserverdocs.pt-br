@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 07fdd682683be00ad7643bfa20b6e95270471f62
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859139"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966428"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows
 
@@ -33,7 +33,7 @@ Dispositivos de memória de classe de armazenamento NVDIMM-N compatíveis com JE
 
 Todas as condições listadas aqui devem ser ocorrências raras, mas dependem das condições em que o hardware é usado.
 
-Os vários casos abaixo podem se referir a configurações de espaços de armazenamento. A configuração de maior interesse é quando dois dispositivos NVDIMM-N são utilizados como um cache de write-back espelhado em um espaço de armazenamento. Para definir essa configuração, confira [Configurar espaços de armazenamento com um cache de write-back NVDIMM-N](https://msdn.microsoft.com/library/mt650885.aspx).
+Os vários casos abaixo podem se referir a configurações de espaços de armazenamento. A configuração de maior interesse é quando dois dispositivos NVDIMM-N são utilizados como um cache de write-back espelhado em um espaço de armazenamento. Para definir essa configuração, confira [Configurar espaços de armazenamento com um cache de write-back NVDIMM-N](/sql/relational-databases/performance/configuring-storage-spaces-with-a-nvdimm-n-write-back-cache?view=sql-server-ver15).
 
 No Windows Server 2016, a GUI de Espaços de Armazenamento mostra o tipo de barramento NVDIMM N como DESCONHECIDO. Ele não tem qualquer perda de funcionalidade ou incapacidade na criação do Pool, Armazenamento VD. Você pode verificar o tipo de barramento executando o seguinte comando:
 
@@ -53,7 +53,7 @@ Isso produz esta saída de exemplo:
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Íntegra | OK | |
+| 802c-01-1602-117cb5fc | Íntegros | OK | |
 | 802c-01-1602-117cb64f | Aviso | Falha preditiva | {Limite excedido, erro de NVDIMM\_N} |
 
 > [!NOTE]
@@ -67,7 +67,7 @@ Esta condição é quando você verifica a integridade de um dispositivo de mem�
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Íntegra | OK | |
+| 802c-01-1602-117cb5fc | Íntegros | OK | |
 | 802c-01-1602-117cb64f | Aviso | Falha preditiva | {Limite excedido, erro de NVDIMM\_N} |
 
 A tabela a seguir lista algumas informações sobre essa condição.
@@ -87,8 +87,8 @@ Esta condição ocorre quando você verifica a integridade de um dispositivo de 
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-| 802c-01-1602-117cb5fc | Íntegra | OK | |
-| 802c-01-1602-117cb64f | Não Íntegro | {Metadados obsoletos, erro de E/S, erro temporário} | {Perda da persistência de dados, perda de dados, NV...} |
+| 802c-01-1602-117cb5fc | Íntegros | OK | |
+| 802c-01-1602-117cb64f | Unhealthy | {Metadados obsoletos, erro de E/S, erro temporário} | {Perda da persistência de dados, perda de dados, NV...} |
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
@@ -107,7 +107,7 @@ Esta condição é quando um dispositivo de memória de classe de armazenamento 
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Íntegra|OK||
+|802c-01-1602-117cb5fc|Íntegros|OK||
 ||Aviso|Comunicação perdida||
 
 A tabela a seguir lista algumas informações sobre essa condição.
@@ -127,8 +127,8 @@ Esta condição é quando você verifica a integridade de um dispositivo de mem�
 
 | SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
 | --- | --- | --- | --- |
-|802c-01-1602-117cb5fc|Íntegra|OK|{Desconhecido}|
-|802c-01-1602-117cb64f|Não Íntegro|{Metadados não reconhecidos, metadados obsoletos}|{Desconhecido}|
+|802c-01-1602-117cb5fc|Íntegros|OK|{Desconhecido}|
+|802c-01-1602-117cb64f|Unhealthy|{Metadados não reconhecidos, metadados obsoletos}|{Desconhecido}|
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
@@ -148,5 +148,3 @@ Os conjuntos intercalados com frequência podem ser criados na BIOS de uma plata
 O Windows Server 2016 e o Windows 10 Anniversary Edition não oferecem suporte a conjuntos intercalados de NVDIMM-Ns.
 
 No momento da criação deste artigo, não há nenhum mecanismo para o sistema operacional do host identificar corretamente NVDIMM-Ns individuais nesses conjuntos e comunicar claramente ao usuário que determinado dispositivo pode ter causado um erro ou precisa ser reparado.
-
-

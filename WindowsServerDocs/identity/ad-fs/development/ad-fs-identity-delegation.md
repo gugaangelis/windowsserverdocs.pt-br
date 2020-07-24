@@ -8,12 +8,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36de1c3565be7f0f0e6c6203a21345f3d227e96
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2162937498a5c16ce33b67ba5e478d2a6bb1a687
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857319"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964978"
 ---
 # <a name="identity-delegation-scenario-with-ad-fs"></a>Cenário de delegação de identidade com AD FS
 
@@ -26,7 +26,7 @@ Com o modelo de delegação do Kerberos na plataforma Windows hoje, os recursos 
 
 O diagrama a seguir ilustra um cenário de delegação de identidade típico no qual um funcionário da Fabrikam acessa os recursos expostos em um aplicativo Contoso.com.
 
-![Identity](media/ad-fs-identity-delegation/id1.png)
+![Identidade](media/ad-fs-identity-delegation/id1.png)
 
 Os usuários fictícios que participam desse cenário são:
 
@@ -57,7 +57,7 @@ Conforme mostrado no diagrama anterior, o fluxo nesse cenário é:
 Há três opções disponíveis para o administrador do Fabrikam.com, Frank:
 
 
-1. Adquira e instale um produto STS, como Active Directory&reg; serviços de Federação (AD FS).
+1. Adquira e instale um produto STS, como Active Directory &reg; serviços de Federação (AD FS).
 2. Assine um produto STS de nuvem, como o LiveID STS.
 3. Crie um STS personalizado usando o WIF.
 
@@ -99,9 +99,9 @@ if ( claimsPrincipal != null )
     bootstrapToken = claimsIdentity.BootstrapToken;
 }
 ```
-O WIF fornece um método, [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx), que cria um canal do tipo especificado que aumenta as solicitações de emissão de token com o token de segurança especificado como um elemento actas. Você pode passar o token Bootstrap para esse método e, em seguida, chamar o método de serviço necessário no canal retornado. Neste cenário de exemplo, a identidade de Frank tem a propriedade [actor](https://msdn.microsoft.com/library/microsoft.identitymodel.claims.iclaimsidentity.actor.aspx) definida como web1's Identity.
+O WIF fornece um método, [CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10)), que cria um canal do tipo especificado que aumenta as solicitações de emissão de token com o token de segurança especificado como um elemento actas. Você pode passar o token Bootstrap para esse método e, em seguida, chamar o método de serviço necessário no canal retornado. Neste cenário de exemplo, a identidade de Frank tem a propriedade [actor](/previous-versions/windows-identity-foundation/ee766706(v=msdn.10)) definida como web1's Identity.
 
-O trecho de código a seguir mostra como chamar o serviço Web com [CreateChannelActingAs](https://msdn.microsoft.com/library/ee733863.aspx) e, em seguida, chamar um dos métodos do serviço, ComputeResponse, no canal retornado:
+O trecho de código a seguir mostra como chamar o serviço Web com [CreateChannelActingAs](/previous-versions/windows-identity-foundation/ee733863(v=msdn.10)) e, em seguida, chamar um dos métodos do serviço, ComputeResponse, no canal retornado:
 
 ```
 // Get the channel factory to the backend service from the application state
@@ -182,5 +182,5 @@ using ( ServiceHost host = new ServiceHost( typeof( Service2 ), new Uri( "http:/
 }
 ```
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 [Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  

@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
-ms.openlocfilehash: ef76b87928e696586356c499367051ff0d0e9ab4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 433d981d558cc49cd860a5c05a8d76996d9cdd30
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365774"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965738"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a terceira etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 2, AD FS trabalho de pós-configuração](deploy-work-folders-adfs-step2.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
 
 Para configurar Pastas de Trabalho, use os procedimentos a seguir.  
   
@@ -49,7 +49,7 @@ Para criar o registro CNAME para Pastas de Trabalho, siga estas etapas:
   
 1.  No controlador de domínio, abra o **Gerenciador DNS**.  
   
-2.  Expanda a pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio e clique em **Novo Alias (CNAME)** .  
+2.  Expanda a pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio e clique em **Novo Alias (CNAME)**.  
   
 3.  Na janela **Novo Registro de Recursos**, no campo **Nome do alias**, insira o alias de Pastas de Trabalho. No exemplo de teste, o alias é **workfolders**.  
   
@@ -68,7 +68,7 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ### <a name="install-the-ad-fs-certificate"></a>Instalar o certificado do AD FS  
 Instale o certificado do AD FS criado durante a configuração do AD FS no repositório de certificados do computador local, executando estas etapas:  
   
-1.  Clique em **Iniciar** e em **Executar**.  
+1.  Clique em **Iniciar**e em **Executar**.  
   
 2.  Digite **MMC**.  
   
@@ -82,13 +82,13 @@ Instale o certificado do AD FS criado durante a configuração do AD FS no repos
   
 7.  Clique em **OK**.  
   
-8.  Expanda a pasta **Console Root\Certificates\(Local Computer)\Personal\Certificates**.  
+8.  Expanda o **console de pasta Root\Certificates \( computador local) \Personal\Certificates**.  
   
 9. Clique com o botão direito do mouse em **Certificados**, clique em **Todas as Tarefas** e clique em **Importar**.  
   
 10. Navegue até a pasta que contém o certificado do AD FS, siga as instruções no assistente para importar o arquivo e coloque-o no repositório de certificados.
 
-11. Expanda a pasta **Console Root\Certificates\(Local Computer) \Trusted Root Certification Authorities\Certificates**.  
+11. Expanda o **console de pasta Root\Certificates \( local Computer) \Trusted Root Certification Authorities\Certificates**.  
   
 12. Clique com o botão direito do mouse em **Certificados**, clique em **Todas as Tarefas** e clique em **Importar**.  
   
@@ -97,7 +97,7 @@ Instale o certificado do AD FS criado durante a configuração do AD FS no repos
 ### <a name="create-the-work-folders-self-signed-certificate"></a>Criar o certificado autoassinado de Pastas de Trabalho  
 Para criar o certificado auto-assinado de Pastas de Trabalho, siga estas etapas:  
   
-1.  Baixe os scripts fornecidos na postagem de blog [Implantando Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap) e copie o arquivo makecert.ps1 para o computador de Pastas de Trabalho.  
+1.  Baixe os scripts fornecidos na postagem de blog [Implantando Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web](https://techcommunity.microsoft.com/t5/storage-at-microsoft/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap/ba-p/425318) e copie o arquivo makecert.ps1 para o computador de Pastas de Trabalho.  
   
 2.  Abra um janela do Windows PowerShell com privilégios de administrador.  
   
@@ -150,14 +150,14 @@ Para instalar a função de Pastas de Trabalho, siga estas etapas:
   
 5.  Na página **Assistente Adicionar Função e Recurso** , clique em **Adicionar Recursos** e em **Avançar**.  
   
-6.  Na página **Recursos**, clique em **Avançar**.  
+6.  Na página **recursos** , clique em **Avançar**.  
   
 7.  Na página **Confirmação**, clique em **Instalar**.  
   
 ## <a name="configure-work-folders"></a>Configurar pastas de trabalho  
 Para configurar Pastas de Trabalho, siga estas etapas:  
   
-1.  Abra **Gerenciador do Servidor**.  
+1.  Abra o **Server Manager**.  
   
 2.  Selecione **Serviços de Arquivo e Armazenamento** e, em seguida, selecione **Pastas de Trabalho**.  
   
@@ -169,11 +169,11 @@ Para configurar Pastas de Trabalho, siga estas etapas:
   
 5.  Na página **Usar Estrutura de Pasta**, selecione **Alias de usuário** e clique em **Avançar**.  
   
-6.  Na página **Nome de Compartilhamento de Sincronização**, insira o nome para o compartilhamento de sincronização. No exemplo de teste, esse nome é **WorkFolders**. Clique em **Avançar**.  
+6.  Na página **Nome de Compartilhamento de Sincronização**, insira o nome para o compartilhamento de sincronização. No exemplo de teste, esse nome é **WorkFolders**. Clique em **Próximo**.  
   
-7.  Na página **Acesso à Sincronização**, adicione os usuários ou os grupos que terão acesso ao novo compartilhamento de sincronização. No exemplo de teste, conceda acesso a todos os usuários do domínio. Clique em **Avançar**.  
+7.  Na página **Acesso à Sincronização**, adicione os usuários ou os grupos que terão acesso ao novo compartilhamento de sincronização. No exemplo de teste, conceda acesso a todos os usuários do domínio. Clique em **Próximo**.  
   
-8.  Na página **Políticas de Segurança do Computador**, selecione **Criptografar pastas de trabalho** e **Automatically lock page and require a password**. Clique em **Avançar**.  
+8.  Na página **Políticas de Segurança do Computador**, selecione **Criptografar pastas de trabalho** e **Automatically lock page and require a password**. Clique em **Próximo**.  
   
 9. Na página **Confirmação**, clique em **Criar** para concluir o processo de configuração.  
   
@@ -242,7 +242,7 @@ Exit
 ### <a name="set-up-ad-fs-authentication"></a>Configurar a autenticação do AD FS  
 Para configurar Pastas de Trabalho para usar a autenticação do AD FS, siga estas etapas:  
   
-1.  Abra **Gerenciador do Servidor**.  
+1.  Abra o **Server Manager**.  
   
 2.  Clique em **Servidores**e selecione o servidor de Pastas de Trabalho na lista.  
   
@@ -275,7 +275,6 @@ Para exportar o certificado, siga as mesmas etapas usadas para exportar o certif
   
 Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
-## <a name="see-also"></a>Consulte também  
-[Visão geral das pastas de trabalho](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Consulte Também  
+[Visão geral de Pastas de Trabalho](Work-Folders-Overview.md)  
   
-

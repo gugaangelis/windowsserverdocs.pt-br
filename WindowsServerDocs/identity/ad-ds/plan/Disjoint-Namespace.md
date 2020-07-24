@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c402e5519bc0e5c37cb6d3818c8def40d98d49e5
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 6743a5fb902509d24f8f30d42b919e65fa40ccc0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624254"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965688"
 ---
 # <a name="disjoint-namespace"></a>Namespace não contíguo
 
@@ -77,7 +77,7 @@ O uso de um namespace não contíguo pode ter as seguintes desvantagens:
 - Para otimizar a resolução de nomes, você deve executar etapas manuais para modificar e manter Política de Grupo para configurar computadores membros com sufixos DNS primários alternativos.
 
 > [!NOTE]
-> O WINS (serviço de cadastramento na Internet do Windows) pode ser usado para deslocar essa desvantagem resolvendo nomes de rótulo único. Para obter mais informações sobre o WINS, consulte a [referência técnica do WINS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10)).
+> O WINS (serviço de cadastramento na Internet do Windows) pode ser usado para deslocar essa desvantagem resolvendo nomes de rótulo único. Para obter mais informações sobre o WINS, consulte a [referência técnica do WINS](/previous-versions/windows/it-pro/windows-server-2003/cc736411(v=ws.10)).
 
 - Quando seu ambiente requer vários sufixos DNS primários, você deve configurar a ordem de pesquisa de sufixo DNS para todos os domínios de Active Directory na floresta adequadamente.
 
@@ -85,7 +85,7 @@ O uso de um namespace não contíguo pode ter as seguintes desvantagens:
 
 - Você deve testar cuidadosamente todos os aplicativos para problemas de compatibilidade.
 
-Para obter mais informações sobre as etapas que você pode tomar para resolver essas desvantagens, consulte [criar um namespace não contíguo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10)).
+Para obter mais informações sobre as etapas que você pode tomar para resolver essas desvantagens, consulte [criar um namespace não contíguo](/previous-versions/windows/it-pro/windows-server-2003/cc755926(v=ws.10)).
 
 ### <a name="planning-a-namespace-transition"></a>Planejando uma transição de namespace
 
@@ -93,11 +93,11 @@ Antes de modificar um namespace, examine as seguintes considerações, que se ap
 
 - Os SPNs (nomes da entidade de serviço) configurados manualmente podem não corresponder mais aos nomes DNS após uma alteração no namespace. Isso pode causar falhas de autenticação.
 
-    Para obter mais informações, consulte [falhas de logons de serviço devido a SPNs incorretamente definidos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10)).
+    Para obter mais informações, consulte [falhas de logons de serviço devido a SPNs incorretamente definidos](/previous-versions/windows/it-pro/windows-server-2003/cc772897(v=ws.10)).
 
     - Se você usar computadores baseados no Windows Server 2003 com delegação restrita, esses computadores poderão exigir configuração adicional para alterar os SPNs. Para obter mais informações, consulte o artigo 936628 na base de dados de conhecimento Microsoft, [o SPN não aparece na lista de serviços que podem ser delegados a uma conta quando você tenta configurar a delegação restrita em um computador que esteja executando o Windows Server 2003](https://support.microsoft.com/help/936628) (404).
 
-    - Se você quiser delegar permissões para modificar os SPNs para administradores subordinados, consulte [delegando autoridade para modificar SPNs](https://technet.microsoft.com/library/cc772895(WS.10).aspx).
+    - Se você quiser delegar permissões para modificar os SPNs para administradores subordinados, consulte [delegando autoridade para modificar SPNs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770439(v=ws.10)).
 
 - Se você usar o protocolo LDAP (Lightweight Directory Access Protocol) sobre protocolo SSL (SSL) (conhecido como LDAPs) com uma CA em uma implantação que tem controladores de domínio configurados em um namespace não contíguo, deverá usar o nome de domínio Active Directory apropriado e o sufixo DNS primário ao configurar os certificados LDAPs.
 

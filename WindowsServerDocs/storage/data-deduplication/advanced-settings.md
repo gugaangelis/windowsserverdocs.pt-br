@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: b45e8723066f040268ee174b15af09569af2ff01
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322638"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965388"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configurações avançadas de Eliminação de Duplicação de Dados
 
@@ -21,15 +21,15 @@ ms.locfileid: "79322638"
 
 Este documento descreve como alterar configurações avançadas de [Eliminação de Duplicação de Dados](overview.md). Para [cargas de trabalho recomendadas](install-enable.md#enable-dedup-candidate-workloads), as configurações padrão devem ser suficientes. O principal motivo para alterar essas configurações é melhorar o desempenho da Eliminação de Duplicação de Dados com outros tipos de cargas de trabalho.
 
-## <a id="modifying-job-schedules"></a>Modificando agendas de trabalho de eliminação de duplicação de dados
+## <a name="modifying-data-deduplication-job-schedules"></a><a id="modifying-job-schedules"></a>Alterar o plano de trabalho da Eliminação de Duplicação de Dados
 Os [planos de trabalho de Eliminação de Duplicação de Dados padrão](understand.md#job-info) são projetados para funcionarem bem com cargas de trabalho recomendadas e serem o menos intrusivos possível (exceto o trabalho *Otimização de Prioridade*, que está habilitado para o tipo de uso [**Backup**](understand.md#usage-type-backup)). Quando as cargas de trabalho têm grandes requisitos de recursos, é possível fazer com que os trabalhos sejam executados somente durante horas ociosas, ou reduzir ou aumentar a quantidade de recursos do sistema que um trabalho de Eliminação de Duplicação de Dados pode consumir.
 
-### <a id="modifying-job-schedules-change-schedule"></a>Alterando um agendamento de eliminação de duplicação de dados
+### <a name="changing-a-data-deduplication-schedule"></a><a id="modifying-job-schedules-change-schedule"></a>Alterar um plano de Eliminação de Duplicação de Dados
 Os trabalhos de Eliminação de Duplicação de Dados são programados pelo Agendador de Tarefas do Windows e podem ser exibidos e editados lá no caminho Microsoft\Windows\Deduplication. A Eliminação de Duplicação de Dados inclui vários cmdlets que facilitam o agendamento.
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) mostra os trabalhos agendados atualmente.
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)ria um novo trabalho agendado.
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) modifica um trabalho agendado existente.
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)remove um trabalho agendado.
+* [`Get-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))mostra os trabalhos agendados atuais.
+* [`New-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))Cria um novo trabalho agendado.
+* [`Set-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))modifica um trabalho agendado existente.
+* [`Remove-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))Remove um trabalho agendado.
 
 O motivo mais comum para alterar quando executar trabalhos de Eliminação de Duplicação de Dados é garantir que os trabalhos sejam executados durante fora do horário comercial. O exemplo de passo a passo a seguir mostra como modificar o plano de Eliminação de Duplicação de Dados para um cenário em que *tudo corre bem*: um host hiperconvergido do Hyper-V que fica ocioso nos fins de semana e depois das 19h durante a semana. Para alterar a agenda, execute os cmdlets do PowerShell a seguir em um contexto de Administrador.
 
@@ -62,7 +62,7 @@ O motivo mais comum para alterar quando executar trabalhos de Eliminação de Du
     New-DedupSchedule -Name "WeeklyIntegrityScrubbing" -Type Scrubbing -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(0) -Start (Get-Date "2016-08-14 07:00:00")
     ```
 
-### <a id="modifying-job-schedules-available-settings"></a>Configurações de todo o trabalho disponíveis
+### <a name="available-job-wide-settings"></a><a id="modifying-job-schedules-available-settings"></a>Configurações disponíveis para todos os trabalhos
 Você pode alternar as seguintes configurações para trabalhos de Eliminação de Duplicação de Dados novos ou agendados:
 
 <table>
@@ -80,7 +80,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>O tipo do trabalho que deve ser agendado</td>
             <td>
                 <ul>
-                    <li>Otimização</li>
+                    <li>Optimization</li>
                     <li>Coleta de Lixo</li>
                     <li>Anulação</li>
                 </ul>
@@ -92,15 +92,15 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>A prioridade do sistema do trabalho agendado</td>
             <td>
                 <ul>
-                    <li>Alta</li>
-                    <li>Média</li>
+                    <li>Alto</li>
+                    <li>Médio</li>
                     <li>Baixo</li>
                 </ul>
             </td>
             <td>Esse valor ajuda o sistema a determinar como alocar tempo da CPU. <em>Alta</em> usará mais tempo de CPU; <em>Baixa</em> usará menos.</td>
         </tr>
         <tr>
-            <td>Days</td>
+            <td>Dias</td>
             <td>Os dias em que o trabalho foi agendado</td>
             <td>Uma matriz de números inteiros de 0 a 6 que representa os dias da semana:<ul>
                 <li>0 = Domingo</li>
@@ -123,10 +123,10 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>DurationHours</td>
             <td>O número máximo de horas que um trabalho deve ter permissão de execução</td>
             <td>Números inteiros positivos</td>
-            <td>Para evitar que um trabalho seja executado em&#39;horas não ociosas</td>
+            <td>Para impedir que um trabalho seja executado em uma carga&#39;s horas não ociosas</td>
         </tr>
         <tr>
-            <td>Habilitado</td>
+            <td>habilitado</td>
             <td>Se o trabalho será executado ou não</td>
             <td>Verdadeiro/Falso</td>
             <td>Para desabilitar um trabalho sem removê-lo</td>
@@ -141,7 +141,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>InputOutputThrottle</td>
             <td>Especifica a quantidade de limitação de entrada/saída aplicada ao trabalho</td>
             <td>Números inteiros de 0 a 100 (indica uma porcentagem)</td>
-            <td>A limitação garante que os&#39;trabalhos Don t interfiram com outros processos de e/s intensiva.</td>
+            <td>A limitação garante que os trabalhos Don&#39;t interfiram com outros processos com uso intensivo de e/s.</td>
         </tr>
         <tr>
             <td>Memória</td>
@@ -150,9 +150,9 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Para controlar o nível de impacto que o trabalho terá sobre os recursos de memória do sistema</td>
         </tr>
         <tr>
-            <td>{1&gt;Nome&lt;1}</td>
+            <td>Nome</td>
             <td>O nome do trabalho agendado</td>
-            <td>String</td>
+            <td>Cadeia de caracteres</td>
             <td>Um trabalho deve ter um nome de identificação exclusivo.</td>
         </tr>
         <tr>
@@ -165,7 +165,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Iniciar</td>
             <td>Especifica a hora em que um trabalho deve ser iniciado</td>
             <td><code>System.DateTime</code></td>
-            <td>A parte de <em>Data</em> da <code>System.Datetime</code> fornecida para <em>Iniciar</em> é irrelevante (desde que ela&#39;esteja no passado), mas a parte de <em>hora</em> especifica quando o trabalho deve ser iniciado.</td>
+            <td>A parte de <em>Data</em> do <code>System.Datetime</code> desde o <em>início</em> é irrelevante (desde que&#39;s no passado), mas a parte de <em>hora</em> especifica quando o trabalho deve ser iniciado.</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -176,12 +176,12 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
     </tbody>
 </table>
 
-## <a id="modifying-volume-settings"></a>Modificando as configurações de todo o volume de eliminação de duplicação de dados
-### <a id="modifying-volume-settings-how-to-toggle"></a>Alternando configurações de volume
+## <a name="modifying-data-deduplication-volume-wide-settings"></a><a id="modifying-volume-settings"></a>Alterar configurações de Eliminação de Duplicação de Dados em todo o volume
+### <a name="toggling-volume-settings"></a><a id="modifying-volume-settings-how-to-toggle"></a>Alternar configurações de volume
 Você pode definir as configurações padrão para Eliminação de Duplicação de Dados de todo o volume por meio do [tipo de uso](understand.md#usage-type) que você seleciona quando habilita a eliminação de duplicação de um volume. A Eliminação de Duplicação de Dados inclui cmdlets que facilitam a edição das configurações de todo o volume:
 
-* [`Get-DedupVolume`](https://technet.microsoft.com/library/hh848448.aspx)
-* [`Set-DedupVolume`](https://technet.microsoft.com/library/hh848438.aspx)
+* [`Get-DedupVolume`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))
+* [`Set-DedupVolume`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))
 
 As principais razões para modificar as configurações de volume do tipo de uso selecionado são para melhorar o desempenho de leitura de arquivos específicos (como multimídia ou outros tipos de arquivos já compactados) ou para ajustar a Eliminação de Duplicação de Dados e ter uma otimização melhor da sua carga de trabalho específica. O exemplo a seguir mostra como alterar as configurações de Eliminação de Duplicação de Dados do volume para uma carga de trabalho que se parece mais com uma carga de trabalho do servidor de arquivos para uso geral, mas utiliza arquivos grandes que mudam com frequência.
 
@@ -195,7 +195,7 @@ As principais razões para modificar as configurações de volume do tipo de uso
     Set-DedupVolume -Volume C:\ClusterStorage\Volume1 -OptimizePartialFiles
     ```
 
-### <a id="modifying-volume-settings-available-settings"></a>Configurações disponíveis para todo o volume
+### <a name="available-volume-wide-settings"></a><a id="modifying-volume-settings-available-settings"></a>Configurações de todo o volume disponíveis
 <table>
     <thead>
         <tr>
@@ -208,9 +208,9 @@ As principais razões para modificar as configurações de volume do tipo de uso
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>O número de vezes que uma parte é referenciada antes de ser duplicada na seção do ponto de acesso do Repositório de partes. O valor da seção HotSpot é que, portanto, chamado &quot;partes&quot; que são referenciadas com frequência têm vários caminhos de acesso para melhorar o tempo de acesso.</td>
+            <td>O número de vezes que uma parte é referenciada antes de ser duplicada na seção do ponto de acesso do Repositório de partes. O valor da seção HotSpot é que, portanto, chamadas &quot; de &quot; partes ativas que são referenciadas com frequência têm vários caminhos de acesso para melhorar o tempo de acesso.</td>
             <td>Números inteiros positivos</td>
-            <td>O principal motivo para alterar esse número é o aumento da taxa de economia de volumes com eliminação de duplicação alta. Em geral, o valor padrão (100) é a configuração recomendada, e você&#39;não precisa modificar isso.</td>
+            <td>O principal motivo para alterar esse número é o aumento da taxa de economia de volumes com eliminação de duplicação alta. Em geral, o valor padrão (100) é a configuração recomendada, e você deve ter&#39;t precisa modificar isso.</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -228,7 +228,7 @@ As principais razões para modificar as configurações de volume do tipo de uso
             <td>InputOutputScale</td>
             <td>Especifica o nível da paralelização de E/S (filas E/S) que a Eliminação de Duplicação de Dados usa em um volume durante um trabalho de pós-processamento</td>
             <td>Números inteiros positivos no intervalo de 1 a 36</td>
-            <td>O principal motivo para modificar esse valor é a diminuição do impacto no desempenho de uma carga de trabalho alta de E/S restringindo o número de filas de E/S que a Eliminação de Duplicação de Dados pode usar em um volume. Observe que a modificação dessa configuração a partir do padrão pode fazer com que&#39;os trabalhos de pós-processamento da eliminação de duplicação de dados sejam executados lentamente.</td>
+            <td>O principal motivo para modificar esse valor é a diminuição do impacto no desempenho de uma carga de trabalho alta de E/S restringindo o número de filas de E/S que a Eliminação de Duplicação de Dados pode usar em um volume. Observe que a modificação dessa configuração a partir do padrão pode causar a eliminação de duplicação de dados&#39;os trabalhos de pós-processamento sejam executados lentamente.</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
@@ -258,7 +258,7 @@ As principais razões para modificar as configurações de volume do tipo de uso
             <td>OptimizeInUseFiles</td>
             <td>Quando habilitado, os arquivos que têm identificadores ativos serão considerados na política de otimização.</td>
             <td>Verdadeiro/Falso</td>
-            <td>Habilite essa configuração se sua carga de trabalho mantém os arquivos abertos por longos períodos de tempo. Se essa configuração não estiver habilitada, um arquivo nunca será otimizado se a carga de trabalho tiver um identificador aberto para ele,&#39;mesmo que ele apenas acrescente dados ao final.</td>
+            <td>Habilite essa configuração se sua carga de trabalho mantém os arquivos abertos por longos períodos de tempo. Se essa configuração não estiver habilitada, um arquivo nunca será otimizado se a carga de trabalho tiver um identificador aberto para ele, mesmo se&#39;s apenas anexando dados no final.</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -275,8 +275,8 @@ As principais razões para modificar as configurações de volume do tipo de uso
     </tbody>
 </table>
 
-## <a id="modifying-dedup-system-settings"></a>Modificando configurações de todo o sistema de eliminação de duplicação de dados
-A Eliminação de Duplicação de Dados tem configurações adicionais em todo o sistema que podem ser definidas no [registro](https://technet.microsoft.com/library/cc755256(v=ws.11).aspx). Essas configurações se aplicam a todos os trabalhos e aos volumes que são executados no sistema. Redobre os cuidados ao editar o registro.
+## <a name="modifying-data-deduplication-system-wide-settings"></a><a id="modifying-dedup-system-settings"></a>Alterar configurações de Eliminação de Duplicação de Dados em todo o sistema
+A Eliminação de Duplicação de Dados tem configurações adicionais em todo o sistema que podem ser definidas no [registro](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755256(v=ws.11)). Essas configurações se aplicam a todos os trabalhos e aos volumes que são executados no sistema. Redobre os cuidados ao editar o registro.
 
 Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobre a utilidade disso em seu cenário, confira as [Perguntas frequentes](#faq-why-disable-full-gc). Para editar o registro com o PowerShell:
 
@@ -291,7 +291,7 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
     Set-ItemProperty -Path HKLM:\System\CurrentControlSet\Services\ddpsvc\Settings -Name DeepGCInterval -Type DWord -Value 0xFFFFFFFF
     ```
 
-### <a id="modifying-dedup-system-settings-available-settings"></a>Configurações de todo o sistema disponíveis
+### <a name="available-system-wide-settings"></a><a id="modifying-dedup-system-settings-available-settings"></a>Configurações de todo o sistema disponíveis
 <table>
     <thead>
         <tr>
@@ -310,15 +310,15 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">Coleta de Lixo completa</a>. Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso Backup</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code> poderá ser usado se a coleta de lixo completa for desejada em um volume de backup.</td>
+            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">Coleta de Lixo completa</a>. Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso Backup</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code>poderá ser usado se a coleta de lixo completa for desejada em um volume de backup.</td>
             <td>Números inteiros (-1 indica desabilitada)</td>
             <td>Confira <a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">esta pergunta frequente</a></td>
         </tr>
     </tbody>
 </table>
 
-## <a id="faq"></a>Perguntas frequentes
-<a id="faq-use-responsibly"></a>**Alterei uma configuração de eliminação de duplicação de dados e agora os trabalhos estão lentos ou não foram concluídos ou o desempenho da carga de trabalho foi reduzido. Por?**  
+## <a name="frequently-asked-questions"></a><a id="faq"></a>Perguntas frequentes
+<a id="faq-use-responsibly"></a>**Mudei uma configuração da Eliminação de Duplicação de Dados e agora os trabalhos estão lentos ou não são concluídos, ou o desempenho da carga de trabalho diminuiu. Por que?**  
 Essas configurações dão bastante poder de controle sobre a execução da Eliminação de Duplicação de Dados. Use-as com responsabilidade e [monitore o desempenho](run.md#monitoring-dedup).
 
 <a id="faq-running-dedup-jobs-manually"></a>**Quero executar um trabalho de eliminação de duplicação de dados no momento, mas não quero criar uma nova agenda – posso fazer isso?**  

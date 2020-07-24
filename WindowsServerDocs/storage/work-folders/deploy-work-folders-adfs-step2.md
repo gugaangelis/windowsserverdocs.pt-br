@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/06/2019
 ms.assetid: 0a48852e-48cc-4047-ae58-99f11c273942
-ms.openlocfilehash: 6364c3f8dc35fbafa518a106780ae6b767d4d40c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 42e7477c168b0b7c1230fd37b5fb26d77590ef1c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365784"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965768"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 2, Trabalho de pós-configuração do AD FS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve a segunda etapa da implantação das Pastas de Trabalho com o AD FS (Serviços de Federação do Active Directory) e o Proxy de aplicativo Web. Você encontrará as outras etapas desse processo nestes tópicos:  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: visão geral](deploy-work-folders-adfs-overview.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 1, configurar AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 1, Configurar o AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 3, configurar pastas de trabalho](deploy-work-folders-adfs-step3.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho](deploy-work-folders-adfs-step3.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 4, configurar o proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 4, Configurar o Proxy de aplicativo Web](deploy-work-folders-adfs-step4.md)  
   
--   [Implantar pastas de trabalho com o AD FS e o proxy de aplicativo Web: etapa 5, configurar clientes](deploy-work-folders-adfs-step5.md)  
+-   [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 5, Configurar clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
-> As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+> As instruções abordadas nesta seção são para um ambiente do Windows Server 2019 ou do Windows Server 2016. Se você estiver usando o Windows Server 2012 R2, siga as [instruções do Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn747208(v=ws.11)).
 
 Na etapa 1, você instalou e configurou o AD FS. Agora, você precisa executar as seguintes etapas de pós-configuração do AD FS.  
   
@@ -60,7 +60,7 @@ Para criar registros A e CNAME para o AD FS, siga estas etapas:
   
 1.  No controlador de domínio, abra o Gerenciador DNS.  
   
-2.  Expanda a pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio e selecione **Novo Host (A)** .  
+2.  Expanda a pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio e selecione **Novo Host (A)**.  
   
 3.  A janela **Novo Host** é aberta. No campo **Nome**, insira o alias do nome do serviço AD FS. No exemplo de teste, o alias é **blueadfs**.  
   
@@ -71,7 +71,7 @@ Para criar registros A e CNAME para o AD FS, siga estas etapas:
 
 4.  Em **Endereço IP**, insira o endereço IP do servidor AD FS. No exemplo de teste, o endereço IP é **192.168.0.160**. Clique em **Adicionar Host**.  
   
-5.  Na pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio novamente e selecione **Novo Alias (CNAME)** .  
+5.  Na pasta Zonas de Pesquisa Direta, clique com botão direito do mouse no domínio novamente e selecione **Novo Alias (CNAME)**.  
   
 6.  Na janela **Novo Registro de Recursos**, adicione o nome de alias **enterpriseregistration** e insira o FQDN do servidor AD FS. Esse alias é usado para Adição de Dispositivo e deve ser chamado **enterpriseregistration**.
   
@@ -104,7 +104,7 @@ Para configurar o objeto de confiança de terceira parte confiável:
   
 7.  Na página **Configurar URL**, clique em **Avançar**.  
   
-8. Na página **Configurar identificadores** , adicione o seguinte identificador: `https://windows-server-work-folders/V1`. Esse identificador é um valor embutido em código usado pelas Pastas de Trabalho e enviado pelo serviço Pastas de Trabalho quando ele está se comunicando com o AD FS. Clique em **Avançar**.  
+8. Na página **Configurar identificadores** , adicione o seguinte identificador: `https://windows-server-work-folders/V1` . Esse identificador é um valor embutido em código usado pelas Pastas de Trabalho e enviado pelo serviço Pastas de Trabalho quando ele está se comunicando com o AD FS. Clique em **Próximo**.  
   
 9. Na página Escolher Política de Controle de Acesso, selecione **Permitir Todos** e clique em **Avançar**.  
   
@@ -114,7 +114,7 @@ Para configurar o objeto de confiança de terceira parte confiável:
   
 12. No snap-in do AD FS, selecione o objeto de terceira parte confiável **WorkFolders** e clique em **Editar Política de Emissão de Declaração** em Ações.
 
-13. A janela **Editar Política de Emissão de Declaração para WorkFolders** é aberta. Clique em **Adicionar Regra**.  
+13. A janela **Editar Política de Emissão de Declaração para WorkFolders** é aberta. Clique em **Adicionar regra**.  
   
 14. Na lista suspensa **Modelo de regra de declaração**, selecione **Enviar Atributos LDAP como Declarações** e clique em **Avançar**.  
   
@@ -132,11 +132,11 @@ Para configurar o objeto de confiança de terceira parte confiável:
   
     -   Nome Fornecido: Nome Fornecido  
   
-18. Clique em **Finalizar**. Você verá a regra WorkFolders listada na guia Regras de Transformação de Emissão e clicará em **OK**.  
+18. Clique em **Concluir**. Você verá a regra WorkFolders listada na guia Regras de Transformação de Emissão e clicará em **OK**.  
   
 ### <a name="set-relying-part-trust-options"></a>Definir opções de objeto de confiança de terceira parte confiável
 
-Depois que o objeto de confiança de terceira parte confiável tiver sido configurado para o AD FS, você deverá concluir a configuração executando cinco comandos no Windows PowerShell. Esses comandos definem as opções necessárias para que as Pastas de Trabalho se comuniquem com êxito com o AD FS; elas não podem ser definidas por meio da interface do usuário. Estas são as opções:  
+Depois que o objeto de confiança de terceira parte confiável tiver sido configurado para o AD FS, você deverá concluir a configuração executando cinco comandos no Windows PowerShell. Esses comandos definem as opções necessárias para que as Pastas de Trabalho se comuniquem com êxito com o AD FS; elas não podem ser definidas por meio da interface do usuário. Essas opções são:  
   
 -   Habilitar o uso dos JWTs (tokens web JSON)  
   
@@ -184,7 +184,7 @@ Em seguida, exporte o certificado autoassinado do AD FS para que ele possa ser i
   
 Para exportar o certificado, siga estas etapas:  
   
-1.  Clique em **Iniciar** e em **Executar**.  
+1.  Clique em **Iniciar**e em **Executar**.  
   
 2.  Digite **MMC**.  
   
@@ -198,15 +198,15 @@ Para exportar o certificado, siga estas etapas:
   
 7.  Clique em **OK**.  
   
-8.  Expanda a pasta **Console Root\Certificates\(Local Computer)\Personal\Certificates**.  
+8.  Expanda o **console de pasta Root\Certificates \( computador local) \Personal\Certificates**.  
   
-9.  Clique com o botão direito do mouse em **Certificado AD FS**, clique em **Todas as Tarefas** e clique em **Exportar...** .  
+9.  Clique com o botão direito do mouse em **Certificado AD FS**, clique em **Todas as Tarefas** e clique em **Exportar...**.  
   
 10. O Assistente para Exportação de Certificados é aberto. Selecione **Sim, exportar a chave privada**.  
   
 11. Na página **Formato do Arquivo de Exportação**, deixe as opções padrão selecionadas e clique em **Avançar**.  
   
-12. Crie uma senha para o certificado. Esta é a senha que você usará mais tarde quando importar o certificado para outros dispositivos. Clique em **Avançar**.  
+12. Crie uma senha para o certificado. Esta é a senha que você usará mais tarde quando importar o certificado para outros dispositivos. Clique em **Próximo**.  
   
 13. Insira um local e o nome para o certificado e clique em **Concluir**.  
   
@@ -216,7 +216,7 @@ A instalação do certificado será abordada posteriormente no procedimento de i
 
 Você deve dar permissão à conta de serviço do AD FS para acessar a chave privada do novo certificado. Você precisará conceder essa permissão novamente ao substituir o certificado de comunicação depois que ele expirar. Para conceder permissão, siga estas etapas:  
   
-1.  Clique em **Iniciar** e em **Executar**.  
+1.  Clique em **Iniciar**e em **Executar**.  
   
 2.  Digite **MMC**.  
   
@@ -230,7 +230,7 @@ Você deve dar permissão à conta de serviço do AD FS para acessar a chave pri
   
 7.  Clique em **OK**.  
   
-8.  Expanda a pasta **Console Root\Certificates\(Local Computer)\Personal\Certificates**.  
+8.  Expanda o **console de pasta Root\Certificates \( computador local) \Personal\Certificates**.  
   
 9.  Clique com o botão direito do mouse em **Certificado AD FS**, clique em **Todas as Tarefas** e clique em **Gerenciar Chaves Particulares**.  
   
@@ -242,15 +242,15 @@ Você deve dar permissão à conta de serviço do AD FS para acessar a chave pri
   
 13. Na janela **Permissões**, atribua pelo menos permissões de leitura à conta e clique em **OK**.  
   
-Se você não tiver a opção de gerenciar chaves privadas, talvez seja necessário executar o seguinte comando: `certutil -repairstore my *`  
+Se você não tiver a opção de gerenciar chaves privadas, talvez seja necessário executar o seguinte comando:`certutil -repairstore my *`  
   
 ## <a name="verify-that-ad-fs-is-operational"></a>Verificar se AD FS está operacional
 
-Para verificar se AD FS está operacional, abra uma janela do navegador e vá para `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`, alterando a URL para corresponder ao seu ambiente.
+Para verificar se AD FS está operacional, abra uma janela do navegador e vá para `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` , alterando a URL para corresponder ao seu ambiente.
   
 A janela do navegador exibirá os metadados do servidor de federação sem formatação. Se você conseguir ver os dados sem erros ou avisos de SSL, o servidor de federação está operacional.  
   
 Próxima etapa: [Implantar Pastas de Trabalho com o AD FS e o Proxy de aplicativo Web: Etapa 3, Configurar Pastas de Trabalho](deploy-work-folders-adfs-step3.md)  
   
-## <a name="see-also"></a>Consulte também  
-[Visão geral das pastas de trabalho](Work-Folders-Overview.md)
+## <a name="see-also"></a>Consulte Também  
+[Visão geral de Pastas de Trabalho](Work-Folders-Overview.md)

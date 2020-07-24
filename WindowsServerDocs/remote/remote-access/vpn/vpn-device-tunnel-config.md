@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cb02bf2ca6aa254a0f1895367abdb90c5c34e6a
-ms.sourcegitcommit: c1a5e46f64f25e1a0e658721130d87661b1d59a3
+ms.openlocfilehash: 095e40528d27be4509e3235a0ab4c03e59759f99
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86543380"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966758"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configurar túneis de dispositivo VPN no Windows 10
 
@@ -98,9 +98,9 @@ Dependendo das necessidades de cada cenário de implantação específico, outro
 
 ## <a name="deployment-and-testing"></a>Implantação e Teste
 
-Você pode configurar os túneis de dispositivo usando um script do Windows PowerShell e usando a ponte Instrumentação de Gerenciamento do Windows (WMI). O túnel de dispositivo VPN Always On deve ser configurado no contexto da conta do **sistema local** . Para fazer isso, será necessário usar o [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), um dos [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluídos no pacote de utilitários do [Sysinternals](https://docs.microsoft.com/sysinternals/) .
+Você pode configurar os túneis de dispositivo usando um script do Windows PowerShell e usando a ponte Instrumentação de Gerenciamento do Windows (WMI). O túnel de dispositivo VPN Always On deve ser configurado no contexto da conta do **sistema local** . Para fazer isso, será necessário usar o [PsExec](/sysinternals/downloads/psexec), um dos [PsTools](/sysinternals/downloads/pstools) incluídos no pacote de utilitários do [Sysinternals](/sysinternals/) .
 
-Para obter diretrizes sobre como implantar um perfil por dispositivo `(.\Device)` versus um por usuário `(.\User)` , consulte [usando o script do PowerShell com o provedor de ponte WMI](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
+Para obter diretrizes sobre como implantar um perfil por dispositivo `(.\Device)` versus um por usuário `(.\User)` , consulte [usando o script do PowerShell com o provedor de ponte WMI](/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
 
 Execute o seguinte comando do Windows PowerShell para verificar se você implantou com êxito um perfil de dispositivo:
 
@@ -173,17 +173,17 @@ Veja a seguir os recursos adicionais para ajudá-lo em sua implantação de VPN.
 
 A seguir estão os recursos de configuração de cliente VPN.
 
-- [Como criar perfis VPN no Configuration Manager](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
+- [Como criar perfis VPN no Configuration Manager](/configmgr/protect/deploy-use/create-vpn-profiles)
 - [Configurar conexões VPN Always On cliente do Windows 10](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
-- [Opções de perfil de VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
+- [Opções de perfil de VPN](/windows/access-protection/vpn/vpn-profile-options)
 
 ### <a name="remote-access-server-gateway-resources"></a>Recursos de gateway do servidor de acesso remoto
 
 A seguir estão os recursos de gateway de RAS (servidor de acesso remoto).
 
-- [Configurar o RRAS com um certificado de autenticação de computador](https://technet.microsoft.com/library/dd458982.aspx)
-- [Solucionando problemas de conexões VPN IKEv2](https://technet.microsoft.com/library/dd941612.aspx)
-- [Configurar o acesso remoto baseado em IKEv2](https://technet.microsoft.com/library/ff687731.aspx)
+- [Configurar o RRAS com um certificado de autenticação de computador](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd458982(v=ws.11))
+- [Solucionando problemas de conexões VPN IKEv2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd941612(v=ws.10))
+- [Configurar o acesso remoto baseado em IKEv2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff687731(v=ws.10))
 
 >[!IMPORTANT]
->Ao usar o túnel de dispositivo com um gateway de RAS da Microsoft, você precisará configurar o servidor RRAS para dar suporte à autenticação de certificado de computador IKEv2 habilitando o método **Permitir autenticação de certificado de computador para autenticação IKEv2** , conforme descrito [aqui](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Quando essa configuração é habilitada, é altamente recomendável que o cmdlet **set-VpnAuthProtocol** do PowerShell, juntamente com o parâmetro opcional **RootCertificateNameToAccept** , seja usado para garantir que as conexões RRAS IKEv2 sejam permitidas somente para certificados de cliente VPN que se encadeadom a uma autoridade de certificação raiz interna/privada definida explicitamente. Como alternativa, o armazenamento de **autoridades de certificação raiz confiáveis** no servidor RRAS deve ser alterado para garantir que ele não contenha autoridades de certificação públicas, conforme discutido [aqui](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). Métodos semelhantes também podem precisar ser considerados para outros gateways de VPN.
+>Ao usar o túnel de dispositivo com um gateway de RAS da Microsoft, você precisará configurar o servidor RRAS para dar suporte à autenticação de certificado de computador IKEv2 habilitando o método **Permitir autenticação de certificado de computador para autenticação IKEv2** , conforme descrito [aqui](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ee922682%28v=ws.10%29). Quando essa configuração é habilitada, é altamente recomendável que o cmdlet **set-VpnAuthProtocol** do PowerShell, juntamente com o parâmetro opcional **RootCertificateNameToAccept** , seja usado para garantir que as conexões RRAS IKEv2 sejam permitidas somente para certificados de cliente VPN que se encadeadom a uma autoridade de certificação raiz interna/privada definida explicitamente. Como alternativa, o armazenamento de **autoridades de certificação raiz confiáveis** no servidor RRAS deve ser alterado para garantir que ele não contenha autoridades de certificação públicas, conforme discutido [aqui](/archive/blogs/rrasblog/what-type-of-certificate-to-install-on-the-vpn-server). Métodos semelhantes também podem precisar ser considerados para outros gateways de VPN.

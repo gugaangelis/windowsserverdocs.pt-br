@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5f529e6b0176b7ad416a728163b4ae9671040bf8
-ms.sourcegitcommit: d1fc59d53055952f8e55aacebeb29547eef0bca7
+ms.openlocfilehash: 30667f68b25bda9ae86212be34466762d825ec0b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "80861279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966168"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>Apêndice B: configuração do ambiente de teste
 
@@ -163,16 +163,16 @@ Crie os seguintes usuários usando o Centro Administrativo do Active Directory.
 4. Crie os usuários a seguir com os atributos indicados:  
 
 
-   |       Usuário       |  Nome de Usuário  |     Endereço de email      | department |      Agrupar       | País/Região |
+   |       Usuário       |  Nome de Usuário  |     Endereço de email      | Departamento |      Agrupar       | País/Região |
    |------------------|------------|------------------------|------------|------------------|----------------|
-   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finanças   |                  |       EUA       |
-   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finanças   |   FinanceAdmin   |       EUA       |
+   | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  Finance   |                  |       EUA       |
+   |    Miles Reid    |   MReid    |   MReid@contoso.com    |  Finance   |   FinanceAdmin   |       EUA       |
    |   Esther Valle   |   EValle   |   EValle@contoso.com   | Operações | FinanceException |       EUA       |
    |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       EUA       |
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       EUA       |
    |    Servidor RMS    |    rms     |    rms@contoso.com     |            |                  |                |
 
-   Para obter mais informações sobre como criar grupos de segurança, consulte [Criar um novo grupo](https://technet.microsoft.com/library/dd861305.aspx) no site do Windows Server.  
+   Para obter mais informações sobre como criar grupos de segurança, consulte [Criar um novo grupo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd861305(v=ws.11)) no site do Windows Server.  
 
 ##### <a name="to-create-a-group-policy-object"></a>Para criar um Objeto de Política de Grupo  
 
@@ -381,7 +381,7 @@ Adicione o AD RMS e todos os recursos necessários pelo Gerenciador do Servidor.
 >     -   NLTEST /SC_RESET:contoso.com  
 > 2.  No controlador de domínio (DC1), replique o Active Directory.  
 >   
->     Para obter mais informações sobre as etapas para forçar a replicação do Active Directory, consulte [Replicação do Active Directory](https://technet.microsoft.com/library/cc794809(WS.10).aspx)  
+>     Para obter mais informações sobre as etapas para forçar a replicação do Active Directory, consulte [Replicação do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794809(v=ws.10))  
 
 Opcionalmente, em vez de usar o Assistente de Adição de Funções e Recursos no Gerenciador do Servidor, é possível usar o Windows PowerShell para instalar e configurar a função de servidor do AD RMS como mostrado no procedimento a seguir.  
 
@@ -562,7 +562,7 @@ Configure o Microsoft Exchange Server neste computador. Para obter mais informa�
 -   Conecte a máquina virtual à ID_AD_Network.  
 
 > [!IMPORTANT]  
-> Associar máquinas virtuais a um domínio e implantar tipos de declaração entre florestas requer que as máquinas virtuais possam resolver os FQDNs dos domínios em questão. Para tal, você pode definir as configurações de DNS manualmente nas máquinas virtuais. Para obter mais informações, consulte [Configurando uma rede virtual](https://technet.microsoft.com/library/cc732470%28v=ws.10%29.aspx).  
+> Associar máquinas virtuais a um domínio e implantar tipos de declaração entre florestas requer que as máquinas virtuais possam resolver os FQDNs dos domínios em questão. Para tal, você pode definir as configurações de DNS manualmente nas máquinas virtuais. Para obter mais informações, consulte [Configurando uma rede virtual](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732470(v=ws.10)).  
 >   
 > Todas as imagens de máquina virtual (servidores e clientes) devem ser reconfiguradas para usar um endereço IPv4 (IP versão 4) estático e configurações do cliente do DNS (Sistema de Nome de Domínio). Para obter mais informações, consulte [Configurar um cliente DNS para o endereço IP estático](https://go.microsoft.com/fwlink/?LinkId=150952).  
 
@@ -835,6 +835,3 @@ Crie um novo volume NTFS no FILE1 e crie a seguinte pasta: D:\Ganhos.
 7. Clique na guia **segurança** , clique em **avançado**e, em seguida, clique na guia **política central** . Você deve ver o **AdatumEmployeeAccessRule** listado. Você pode expandir o item para ver todas as permissões definidas ao criar a regra no Active Directory.  
 
 8. Clique em **OK** para retornar ao Windows Explorer.  
-
-
-

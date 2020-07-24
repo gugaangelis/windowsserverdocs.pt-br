@@ -9,12 +9,12 @@ ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: db85d71ed1b7d8d5b3c14ac8ea603789422ea2cb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e97556ab35471c1745c01b6ebd047cd1451ffb27
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818879"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966748"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação de lista de revogação de certificados (CRL)
 
@@ -37,7 +37,7 @@ Como o método de autenticação é EAP-TLS, esse valor de registro só é neces
 
 **Procedure**
 
-1. Abra o **regedit. exe** no servidor NPS.
+1. Abra **regedit.exe** no servidor NPS.
 
 2. Navegue até **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**.
 
@@ -47,7 +47,7 @@ Como o método de autenticação é EAP-TLS, esse valor de registro só é neces
 
 5. Selecione **OK** e reinicialize o servidor. Reiniciar os serviços RRAS e NPS não é suficiente.
 
-Para obter mais informações, consulte [como habilitar ou desabilitar a CRL (verificação de revogação de certificado) em clientes](https://technet.microsoft.com/library/bb680540.aspx).
+Para obter mais informações, consulte [como habilitar ou desabilitar a CRL (verificação de revogação de certificado) em clientes](/previous-versions/system-center/configuration-manager-2007/bb680540(v=technet.10)).
 
 
 |Caminho do Registro  |Extensão EAP  |
@@ -56,6 +56,6 @@ Para obter mais informações, consulte [como habilitar ou desabilitar a CRL (ve
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 [Etapa 7,2. Criar certificados raiz para autenticação VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md): nesta etapa, você configura certificados raiz de acesso condicional para autenticação VPN com o Azure AD, que cria automaticamente um aplicativo de nuvem do servidor VPN no locatário.

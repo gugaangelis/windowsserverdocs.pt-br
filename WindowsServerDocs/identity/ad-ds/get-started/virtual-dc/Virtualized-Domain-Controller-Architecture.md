@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: fa8645198374d91911f8ec7dc15f04bea4865e38
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 864f6c8a103ce753e328426b4205c5e1c64e0bcb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966038"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>Arquitetura do controlador de domínio virtualizado
 
@@ -21,27 +21,27 @@ ms.locfileid: "80824439"
 
 Este tópico aborda a arquitetura da clonagem e da restauração segura de controlador de domínio virtualizado. Ele mostra a clonagem e a restauração segura de processos com fluxogramas. Em seguida, apresenta uma explicação detalhada de cada etapa do processo.  
   
--   [Arquitetura de clonagem do controlador de domínio virtualizado](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneArch)  
+-   [Arquitetura da clonagem de controlador de domínio virtualizado](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneArch)  
   
--   [Arquitetura de restauração segura do controlador de domínio virtualizado](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
+-   [Arquitetura da restauração segura de controlador de domínio virtualizado](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)  
   
-## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>Arquitetura de clonagem do controlador de domínio virtualizado  
+## <a name="virtualized-domain-controller-cloning-architecture"></a><a name="BKMK_CloneArch"></a>Arquitetura da clonagem de controlador de domínio virtualizado  
   
 ### <a name="overview"></a>Visão geral  
 A clonagem de controlador de domínio virtualizado conta com a plataforma de hipervisor para expor um identificador chamado **ID de geração de VM** para detectar a criação de uma máquina virtual. O AD DS armazena inicialmente o valor desse identificador em seu banco de dados (NTDS.DIT) durante a promoção do controlador de domínio. Quando a máquina virtual é inicializada, o valor atual da ID de geração de VM da máquina virtual é comparado com o valor no banco de dados. Se os dois valores forem diferentes, o controlador de domínio redefinirá a ID de invocação e descartará o pool RID, evitando, assim, a reutilização de USN ou a possível criação de entidades de segurança duplicadas. O controlador de domínio pesquisa o arquivo DCCloneConfig.xml nos locais destacados na Etapa 3, em [Processamento detalhado de clonagem](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_CloneProcessDetails). Se ele localizar o arquivo DCCloneConfig.xml, concluirá que ele está sendo implantado como um clone e iniciará a clonagem para provisionar a si mesmo como um controlador de domínio adicional ao refazer a promoção usando o conteúdo existente em NTDS.DIT e SYSVOL, copiado da mídia de origem.  
   
 Em um ambiente misto no qual alguns hipervisores dão suporte de VM-GenerationID, mas outros não, é possível que uma mídia de clone seja implantada acidentalmente em um hipervisor que não dá suporte a VM-GenerationID. A presença do arquivo DCCloneConfig.xml indica a intenção administrativa de clonar um DC (controlador de domínio). Portanto, se o arquivo DCCloneConfig.xml for localizado durante a inicialização, mas um VM-GenerationID não tiver sido fornecido pelo host, o DC de clone será inicializado em DSRM (Modo de Restauração dos Serviços de Diretório) para impedir qualquer impacto no restante do ambiente. A mídia de clone poderá ser movida subsequentemente para um hipervisor que dê suporte à VM-GenerationID e, depois, a tentativa de clonagem poderá ser repetida.  
   
-Se a mídia de clone for implantada em um hipervisor que dê suporte a VM-GenerationID, mas o arquivo DCCloneConfig.xml não for fornecido, conforme o DC detectar uma alteração de VM-GenerationID entre seu DIT e o da nova VM (máquina virtual), ele acionará garantias para impedir a reutilização de USN e evitar SIDs duplicados. Porém, a clonagem não será iniciada e, portanto, o DC secundário continuará em execução sob a mesma identidade como o DC de origem. Esse DC secundário deve ser removido da rede o quanto antes para evitar quaisquer inconsistências no ambiente. Para obter mais informações sobre como recuperar esse DC secundário enquanto assegura que as atualizações sejam replicadas externamente, consulte o artigo [2742970](https://support.microsoft.com/kb/2742970)da base de dados de conhecimento da Microsoft.  
+Se a mídia de clone for implantada em um hipervisor que dê suporte a VM-GenerationID, mas o arquivo DCCloneConfig.xml não for fornecido, conforme o DC detectar uma alteração de VM-GenerationID entre seu DIT e o da nova VM (máquina virtual), ele acionará garantias para impedir a reutilização de USN e evitar SIDs duplicados. Porém, a clonagem não será iniciada e, portanto, o DC secundário continuará em execução sob a mesma identidade como o DC de origem. Esse DC secundário deve ser removido da rede o quanto antes para evitar quaisquer inconsistências no ambiente. Para obter mais informações sobre como recuperar esse controlador de domínio secundário, garantindo que as atualizações sejam replicadas de saída, consulte o artigo [2742970](https://support.microsoft.com/kb/2742970)do Microsoft KB.  
   
-### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>Clonagem de processamento detalhado  
+### <a name="cloning-detailed-processing"></a><a name="BKMK_CloneProcessDetails"></a>Processamento detalhado de clonagem  
 O diagrama a seguir mostra a arquitetura de uma operação de clonagem inicial e de uma operação de repetição de clonagem. Esses processos serão explicados em mais detalhes posteriormente neste tópico.  
   
 **Operação de clonagem inicial**  
   
 ![Arquitetura de DC virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_InitialCloningProcess.png)  
   
-**Clonando operação de repetição**  
+**Operação de repetição de clonagem**  
   
 ![Arquitetura de DC virtualizado](media/Virtualized-Domain-Controller-Architecture/ADDS_VDC_CloningRetryProcess.png)  
   
@@ -61,7 +61,7 @@ As seguintes etapas explicam o processo em mais detalhes:
   
     2.  Se as duas IDs não corresponderem, essa será uma máquina virtual nova que contém um NTDS.DIT de um controlador de domínio anterior (ou será um instantâneo restaurado). Se o arquivo DCCloneConfig.xml existir, o controlador de domínio prosseguirá com as operações de clonagem. Caso contrário, ele continuará com as operações de restauração de instantâneo. Consulte [Arquitetura da restauração segura de controlador de domínio virtualizado](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch).  
   
-    3.  Se o hipervisor não fornecer uma ID de geração de VM para a comparação, mas houver um arquivo DCCloneConfig.xml, o convidado renomeará o arquivo e será inicializado em DSRM para proteger a rede contra um controlador de domínio duplicado. Se não houver um arquivo dccloneconfig.xml, o convidado será inicializado normalmente (com a possibilidade de um controlador de domínio duplicado na rede). Para obter mais informações sobre como recuperar esse controlador de domínio duplicado, consulte o artigo [2742970](https://support.microsoft.com/kb/2742970)da Microsoft KB.  
+    3.  Se o hipervisor não fornecer uma ID de geração de VM para a comparação, mas houver um arquivo DCCloneConfig.xml, o convidado renomeará o arquivo e será inicializado em DSRM para proteger a rede contra um controlador de domínio duplicado. Se não houver um arquivo dccloneconfig.xml, o convidado será inicializado normalmente (com a possibilidade de um controlador de domínio duplicado na rede). Para obter mais informações sobre como recuperar esse controlador de domínio duplicado, consulte o artigo [2742970](https://support.microsoft.com/kb/2742970) da Microsoft KB.  
   
 3.  O serviço NTDS verifica o valor do nome do valor de registro VDCisCloning DWORD (em HKEY_Local_Machine\System\CurrentControlSet\Services\Ntds\Parameters).  
   
@@ -111,7 +111,7 @@ As seguintes etapas explicam o processo em mais detalhes:
   
 15. O convidado força a sincronização de tempo NT5DS (Windows NTP) com outro controlador de domínio (em uma hierarquia padrão do Serviço de Horário do Windows, isso significa usar o PDCE). O convidado contata o PDCE. Todos os tíquetes Kerberos existentes são liberados.  
   
-16. O convidado configura os serviços DFSR ou NTFRS para que sejam executados automaticamente. O convidado exclui todos os arquivos de banco de dados DFSR e NTFRS existentes (padrão: c:\windows\ntfrs e c:\System Volume Information\DFSR\\ *< database_GUID >* ), a fim de forçar a sincronização não AUTORITATIVA de SYSVOL quando o serviço é iniciado pela próxima vez. O convidado não exclui o conteúdo de arquivo de SYSVOL para propagar previamente o SYSVOL quando a sincronização for iniciada depois.  
+16. O convidado configura os serviços DFSR ou NTFRS para que sejam executados automaticamente. O convidado exclui todos os arquivos de banco de dados DFSR e NTFRS existentes (padrão: c:\windows\ntfrs e c:\System Volume Information\DFSR \\ *<database_GUID>*), a fim de forçar a sincronização não autoritativa do SYSVOL quando o serviço é iniciado pela próxima vez. O convidado não exclui o conteúdo de arquivo de SYSVOL para propagar previamente o SYSVOL quando a sincronização for iniciada depois.  
   
 17. O convidado é renomeado. O serviço Servidor de Função de SD no convidado inicia a configuração do AD DS (promoção) usando o arquivo de banco de dados NTDS.DIT existente como uma origem, em vez do banco de dados modelo incluído em c:\windows\system32, como uma promoção normalmente faz.  
   
@@ -141,7 +141,7 @@ As seguintes etapas explicam o processo em mais detalhes:
   
 26. O convidado é reiniciado. Trata-se agora de um controlador de domínio normal e anunciador.  
   
-## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>Arquitetura de restauração segura do controlador de domínio virtualizado  
+## <a name="virtualized-domain-controller-safe-restore-architecture"></a><a name="BKMK_SafeRestoreArch"></a>Arquitetura da restauração segura de controlador de domínio virtualizado  
   
 ### <a name="overview"></a>Visão geral  
 O AD DS conta com a plataforma de hipervisor para expor um identificador chamado **ID de geração de VM** para detectar a restauração de instantâneo de uma máquina virtual. O AD DS armazena inicialmente o valor desse identificador em seu banco de dados (NTDS.DIT) durante a promoção do controlador de domínio. Quando o administrador restaura a máquina virtual de um instantâneo anterior, o valor atual da ID de Geração de VM da máquina virtual é comparado ao valor no banco de dados. Se os dois valores forem diferentes, o controlador de domínio redefinirá a ID de invocação e descartará o pool RID, evitando, assim, a reutilização de USN ou a possível criação de entidades de segurança duplicadas. Existem dois cenários nos quais a restauração segura pode ocorrer:  
@@ -191,10 +191,8 @@ Depois que o convidado emprega garantias de virtualização, o NTDS replica inte
   
 -   Se estiver usando FRS, o convidado interromperá o serviço NTFRS e definirá o valor de registro D2 BURFLAGS. Então, ele iniciará o serviço NTFRS, que é replicado internamente e de modo não autoritativo, reutilizando, onde possível, os dados de SYSVOL existentes e não alterados.  
   
--   Se estiver usando o DFSR, o convidado interromperá o serviço DFSR e excluirá os arquivos de banco de dados DFSR (local padrão:%SystemRoot%\System Volume Information\DFSR\\ *<database GUID>* ). Então, ele iniciará o serviço DFSR, que é replicado internamente e de modo não autoritativo, reutilizando, onde possível, os dados de SYSVOL existentes e não alterados.  
+-   Se estiver usando o DFSR, o convidado interromperá o serviço DFSR e excluirá os arquivos de banco de dados DFSR (local padrão:%SystemRoot%\System Volume Information\DFSR \\ *<database GUID>* ). Então, ele iniciará o serviço DFSR, que é replicado internamente e de modo não autoritativo, reutilizando, onde possível, os dados de SYSVOL existentes e não alterados.  
   
 > [!NOTE]  
-> -   Se o hipervisor não fornecer uma ID de geração de VM para comparação, o hipervisor não suportará as garantias de virtualização e o convidado funcionará como um controlador de domínio virtualizado que executa o Windows Server 2008 R2 ou anterior. O convidado implementa a proteção de quarentena da reversão de USN caso haja uma tentativa de iniciar a replicação com USNs que não ultrapassaram o último USN observado pelo controlador de domínio parceiro. Para obter mais informações sobre proteção de quarentena da reversão de USN, consulte [USN e reversão do USN](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(WS.10).aspx)  
+> -   Se o hipervisor não fornecer uma ID de geração de VM para comparação, o hipervisor não suportará as garantias de virtualização e o convidado funcionará como um controlador de domínio virtualizado que executa o Windows Server 2008 R2 ou anterior. O convidado implementa a proteção de quarentena da reversão de USN caso haja uma tentativa de iniciar a replicação com USNs que não ultrapassaram o último USN observado pelo controlador de domínio parceiro. Para obter mais informações sobre proteção de quarentena da reversão de USN, consulte [USN e reversão do USN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10))  
   
-
-

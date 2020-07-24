@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d22897111588393efc148e6f24affeb243ee9e88
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f3850454f9e2e426ce2d00112adf90f0d2530d8f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855329"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964738"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planejar acesso condicional com base em dispositivo no local
 
@@ -29,28 +29,28 @@ O AD FS fornece o componente local das políticas de acesso condicional em um ce
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
 Há três tipos de dispositivos registrados, todos os quais são representados como objetos de dispositivo no Azure AD e podem ser usados para acesso condicional com AD FS local também.  
 
-| |Adicionar conta corporativa ou de estudante  |Ingressar no Azure AD  |Ingresso no domínio do Windows 10    
+| |Adicionar conta corporativa ou de estudante  |Ingresso no AD do Azure  |Ingresso no domínio do Windows 10    
 | --- | --- |--- | --- |
 |Descrição    |  Os usuários adicionam sua conta corporativa ou de estudante ao seu dispositivo BYOD interativamente.  **Observação:** Adicionar conta corporativa ou de estudante é a substituição para Workplace Join no Windows 8/8.1       | Os usuários ingressam no dispositivo de trabalho do Windows 10 no Azure AD.|Os dispositivos ingressados no domínio do Windows 10 se registram automaticamente no Azure AD.|           
 |Como os usuários fazem logon no dispositivo     |  Não há logon no Windows como a conta corporativa ou de estudante.  Faça logon usando um conta Microsoft.       |   Faça logon no Windows como a conta (corporativa ou de estudante) que registrou o dispositivo.      |     Faça logon usando a conta do AD.|      
 |Como os dispositivos são gerenciados    |      Políticas de MDM (com registro adicional do Intune)   | Políticas de MDM (com registro adicional do Intune)        |   Política de Grupo, Configuration Manager |
-|Tipo de confiança do Azure AD|Ingressado no local de trabalho|Ingressado no Azure AD|Domínios juntos  |     
-|Local das configurações do W10    | Configurações > contas > sua conta > Adicionar uma conta corporativa ou de estudante        | Configurações > > do sistema sobre > ingressar no Azure AD       |   Configurações > > do sistema sobre > ingressar em um domínio |       
+|Tipo de confiança do Azure AD|Ingressado no local de trabalho|Adicionado ao Azure AD|Ingressado no domínio  |     
+|Local das configurações do W10    | Configurações > contas > sua conta > adicionar uma conta corporativa ou de estudante        | Configurações > > do sistema sobre > ingressar no Azure AD       |   Configurações > > do sistema sobre > ingressar em um domínio |       
 |Também disponível para dispositivos iOS e Android?   |    Sim     |       Não  |   Não   |   
 
   
 
 Para obter mais informações sobre as diferentes maneiras de registrar dispositivos, consulte também:  
-* [Usando dispositivos Windows 10 em seu local de trabalho](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
+* [Usando dispositivos com Windows 10 no local de trabalho](/azure/active-directory/devices/overview)  
 * [Configurando dispositivos Windows 10 para trabalho](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
-[Junte-se ao Windows 10 Mobile para Azure Active Directory](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
+[Adicionar o Windows 10 Mobile ao Azure Active Directory](/windows/client-management/join-windows-10-mobile-to-azure-active-directory)  
 
 ### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Como o usuário e o dispositivo Windows 10 entram em diferentes das versões anteriores  
 Para o Windows 10 e o AD FS 2016, há alguns novos aspectos do registro e da autenticação do dispositivo que você deve saber (especialmente se você estiver muito familiarizado com o registro de dispositivos e "ingresso no local de trabalho" em versões anteriores).  
 
 Primeiro, no Windows 10 e no AD FS no Windows Server 2016, o registro e a autenticação do dispositivo não são mais baseados apenas em um certificado de usuário X509.  Há um protocolo novo e mais robusto que fornece melhor segurança e uma experiência de usuário mais direta.  As principais diferenças são que, para ingresso no domínio do Windows 10 e ingresso no Azure AD, há um certificado de computador X509 e uma nova credencial chamada de PRT.  Você pode ler tudo sobre ele [aqui](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/) e [aqui](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/).  
 
-Em segundo lugar, o Windows 10 e o AD FS 2016 dão suporte à autenticação de usuário usando Microsoft Passport for Work, que você pode ler [aqui](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) e [aqui](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/).  
+Em segundo lugar, o Windows 10 e o AD FS 2016 dão suporte à autenticação de usuário usando Microsoft Passport for Work, que você pode ler [aqui](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) e [aqui](/windows/security/identity-protection/hello-for-business/hello-identity-verification).  
 
 O AD FS 2016 fornece um SSO de usuário e dispositivo contínuo com base nas credenciais de PRT e do Passport.  Usando as etapas deste documento, você pode habilitar esses recursos e vê-los funcionando.  
 

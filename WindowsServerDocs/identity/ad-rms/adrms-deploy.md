@@ -1,19 +1,19 @@
 ---
 ms.assetid: e6fa9069-ec9c-4615-b266-957194b49e11
-title: Atualizando o AD RMS para o Windows Server 2016
+title: Como atualizar o AD RMS para o Windows Server 2016
 author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
 ms.prod: windows-server
 ms.topic: article
-ms.openlocfilehash: 88af85f8e670b9c23b503e0f79af2ce8f10d045e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cb27477f71dbded1f1171fde613f55f6267fc2cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854849"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965468"
 ---
-# <a name="upgrading-ad-rms-to-windows-server-2016"></a>Atualizando o AD RMS para o Windows Server 2016
+# <a name="upgrading-ad-rms-to-windows-server-2016"></a>Como atualizar o AD RMS para o Windows Server 2016
 
 ## <a name="introduction"></a>Introdução
 
@@ -22,7 +22,7 @@ O Active Directory Rights Management Services (AD RMS) é um serviço da Microso
 Este documento fornece diretrizes para migrar do Windows Server 2012 R2 com o SQL Server 2012 para o Windows Server 2016 e o SQL Server 2016. O mesmo processo pode ser usado para migrar de versões mais antigas, mas com suporte do AD RMS.
 Observe que Active Directory Rights Management Services não está mais em desenvolvimento ativo e para os recursos mais recentes que os clientes devem considerar migrar para a [proteção de informações do Azure](https://azure.microsoft.com/services/information-protection/), que oferece um conjunto muito mais abrangente de recursos com suporte a dispositivos e aplicativos mais completos. 
 
-Para obter informações sobre como migrar para a proteção de informações do Azure de AD RMS sem precisar proteger novamente seu conteúdo, consulte [a documentação de migração da proteção de informações do Azure](https://docs.microsoft.com/azure/information-protection/migrate-from-ad-rms-to-azure-rms).
+Para obter informações sobre como migrar para a proteção de informações do Azure de AD RMS sem precisar proteger novamente seu conteúdo, consulte [a documentação de migração da proteção de informações do Azure](/azure/information-protection/migrate-from-ad-rms-to-azure-rms).
 
 ## <a name="about-the-environment-used-in-this-guide"></a>Sobre o ambiente usado neste guia
 
@@ -51,7 +51,7 @@ O CNAME é usado para ajudar a garantir que a instalação do Windows Server 201
 
 1.  Faça logon no controlador de domínio do Windows Server 2012 R2 com credenciais de administrador de domínio.
 
-2.  Abra o Server Manager.
+2.  Abra o Gerenciador de Servidor.
 
 3.  Clique em **ferramentas** e selecione **DNS** para abrir o Gerenciador de DNS.
 
@@ -61,7 +61,7 @@ O CNAME é usado para ajudar a garantir que a instalação do Windows Server 201
 
 6.  Para o nome do alias, insira em um nome lógico para diferenciá-lo de outro que possa estar presente (por exemplo, SQLADRMS ou sqladfs)
 
-7.  Depois de inserir o nome, forneça o FQDN para o host de destino que será o novo SQL Server servidor 2016. Estendi. SQL2016.contoso.com)
+7.  Depois de inserir o nome, forneça o FQDN para o host de destino que será o novo SQL Server servidor 2016. (ex. SQL2016.contoso.com)
 
 8.  Depois que todas as informações forem inseridas, clique em **OK**.
 
@@ -83,7 +83,7 @@ O banco de dados dos serviços de diretório não é essencial para AD RMS funci
 
 3.  Na janela **conectar ao servidor** , confirme se o servidor que hospeda os bancos de dados do AD RMS está na caixa **nome do servidor** e clique em **conectar**.
 
-4.  Expanda **bancos de dados**. Clique com o botão direito do mouse no banco de dados apropriado (**DRMs** e **ADFS**), aponte para **tarefas**e selecione **backup**.
+4.  Expanda os **Bancos de dados**. Clique com o botão direito do mouse no banco de dados apropriado (**DRMs** e **ADFS**), aponte para **tarefas**e selecione **backup**.
 
 5.  Repita a etapa 4 para os bancos de dados restantes.
 
@@ -107,7 +107,7 @@ As etapas a seguir demonstram como adicionar as várias contas de serviço para 
 
 5.  Expanda **segurança** e clique com o botão direito do mouse em **logons** e selecione **novo logon** no menu de contexto que aparece.
 
-6.  Depois que a janela for exibida, insira na conta do administrador de domínio no campo **nome de logon** (por exemplo, Contoso\\ContosoAdmin)
+6.  Depois que a janela for exibida, insira na conta do administrador de domínio no campo **nome de logon** (por exemplo, Contoso \\ ContosoAdmin)
 
 7.  No painel de navegação à esquerda, escolha **funções de servidor**.
 
@@ -161,7 +161,7 @@ Você pode implantar servidores AD FS adicionais para dar suporte à implantaç�
 
 8.  Digite a senha do certificado no campo senha e clique em **OK**.
 
-9.  Clique em **Avançar**.
+9.  Clique em **Próximo**.
 
 10. Na página servidores AD FS, insira o nome ou o endereço IP do novo servidor AD FS e clique em **Adicionar**.
 
@@ -179,11 +179,11 @@ Ao implantar um servidor ADFs que exceda o nível de ambiente atual, como, tendo
 
 2.  Abra uma sessão do PowerShell de administrador.
 
-3.  Insira o seguinte comando: **\$cred = Get-Credential**
+3.  Insira o seguinte comando: ** \$ cred = Get-Credential**
 
 4.  Uma janela será exibida solicitando credenciais, insira as credenciais de administrador de domínio.
 
-5.  Em seguida, digite este comando: **Invoke-AdfsFarmBehaviorLevelRaise-Credential \$cred**
+5.  Em seguida, digite este comando: **Invoke-AdfsFarmBehaviorLevelRaise-Credential \$ creds**
 
 6.  Um prompt será exibido perguntando **se deseja continuar com esta operação?** Em seguida, insira **um** para aceitar o prompt.
 
@@ -199,9 +199,9 @@ A extensão de dispositivo móvel pode registrar solicitações recebidas de dis
 
 2.  Digite o seguinte comando e pressione **Enter**: **Import-Module AdRmsAdmin**
 
-3.  Digite o seguinte comando e pressione **Enter**: **New-PSDrive-Name AdrmsCluster-PSProvider AdRmsAdmin-root https://localhost**
+3.  Digite o seguinte comando e pressione **Enter**: **novo-PSDrive-Name AdrmsCluster-PSProvider AdRmsAdmin-root https://localhost **
 
-4.  Digite o seguinte comando e pressione **Enter**: **Set-ItemProperty-Path AdrmsCluster:\\-Name IsLoggingEnabled-Value \$true**
+4.  Digite o seguinte comando e pressione **Enter**: **Set-ItemProperty-Path AdrmsCluster: \\ -Name IsLoggingEnabled-value \$ true**
 
 Se você estiver usando log de MDE para solução de problemas, é recomendável desabilitá-lo depois de resolver o problema.
 
@@ -211,11 +211,11 @@ Se você estiver usando log de MDE para solução de problemas, é recomendável
 
 2.  Digite o seguinte comando e pressione **Enter**: **Import-Module AdRmsAdmin**
 
-3.  Digite o seguinte comando e pressione **Enter**: **New-PSDrive-Name AdrmsCluster-PSProvider AdRmsAdmin-root https://localhost**
+3.  Digite o seguinte comando e pressione **Enter**: **novo-PSDrive-Name AdrmsCluster-PSProvider AdRmsAdmin-root https://localhost **
 
-4.  Digite o seguinte comando e pressione **Enter**: **Set-ItemProperty-Path AdrmsCluster:\\-Name IsLoggingEnabled-Value \$false**
+4.  Digite o seguinte comando e pressione **Enter**: **Set-ItemProperty-Path AdrmsCluster: \\ -Name IsLoggingEnabled-value \$ false**
 
-### <a name="upgrading-ad-rms-to-windows-server-2016"></a>Atualizando o AD RMS para o Windows Server 2016
+### <a name="upgrading-ad-rms-to-windows-server-2016"></a>Como atualizar o AD RMS para o Windows Server 2016
 
 As seções a seguir fornecem orientação sobre como adicionar um servidor de AD RMS baseado no Windows Server 2016 ao cluster atual do Windows Server 2012 R2. O servidor será adicionado ao cluster e as informações serão replicadas para que o servidor de AD RMS anterior possa ser preterido para liberar recursos.
 
@@ -241,7 +241,7 @@ Se o cluster de AD RMS estiver usando um módulo de segurança de hardware em ve
 
 5.  Clique em **lista** na segunda linha e selecione o **DefaultInstance** na lista suspensa.
 
-6.  Em **nome do banco de dados de configuração**, selecione o menu suspenso e escolha a configuração DRMs que aparece. Em seguida, clique em **Avançar**.
+6.  Em **nome do banco de dados de configuração**, selecione o menu suspenso e escolha a configuração DRMs que aparece. Em seguida, clique em **Próximo**.
 
 7.  Na página **informações do banco de dados** , insira a senha de chave do cluster no campo fornecido. Depois disso, clique em **Avançar**.
 
@@ -281,7 +281,7 @@ Você pode implantar servidores de proxy de aplicativo Web adicionais para dar s
 
 6.  Quando a instalação for concluída, clique em **fechar**.
 
-7.  Agora é hora de configurar o servidor. Para fazer isso, abra o console de gerenciamento de acesso remoto no servidor proxy de aplicativo Web. Abra o menu **Iniciar** , digite **RAMgmtUI. exe**e, em seguida, selecione o aplicativo.
+7.  Agora é hora de configurar o servidor. Para fazer isso, abra o console de gerenciamento de acesso remoto no servidor proxy de aplicativo Web. Abra o menu **Iniciar** , digite **RAMgmtUI.exe**e, em seguida, selecione o aplicativo.
 
 8.  No painel de navegação, clique em **Proxy do Aplicativo Web**.
 
@@ -351,7 +351,7 @@ Você pode implantar servidores AD RMS adicionais para configurar a alta disponi
 
 5.  Clique em **lista** na segunda linha e selecione o **DefaultInstance** na lista suspensa.
 
-6.  Em **nome do banco de dados de configuração**, selecione o menu suspenso e escolha a configuração DRMs que aparece. Em seguida, clique em **Avançar**.
+6.  Em **nome do banco de dados de configuração**, selecione o menu suspenso e escolha a configuração DRMs que aparece. Em seguida, clique em **Próximo**.
 
 7.  Na página **informações do banco de dados** , insira a senha de chave do cluster no campo fornecido. Depois disso, clique em **Avançar**.
 
@@ -413,7 +413,7 @@ Você pode implantar servidores WAP adicionais para configurar a alta disponibil
 
 6.  Quando a instalação for concluída, clique em **fechar**.
 
-7.  Agora é hora de configurar o servidor. Para fazer isso, abra o console de gerenciamento de acesso remoto no servidor proxy de aplicativo Web. Abra o menu **Iniciar** , digite **RAMgmtUI. exe**e, em seguida, selecione o aplicativo.
+7.  Agora é hora de configurar o servidor. Para fazer isso, abra o console de gerenciamento de acesso remoto no servidor proxy de aplicativo Web. Abra o menu **Iniciar** , digite **RAMgmtUI.exe**e, em seguida, selecione o aplicativo.
 
 8.  No painel de navegação, clique em **Proxy do Aplicativo Web**.
 
@@ -465,13 +465,13 @@ Você pode implantar servidores SQL adicionais para a instalação Always On alt
 
 15. Clique em **Avançar** e selecione a opção para **selecionar a testemunha de quorum** e clique **em Avançar** novamente.
 
-16. Na página **selecionar testemunha de quorum** , selecione a opção **Configurar uma testemunha de compartilhamento de arquivos** . Em seguida, clique em **Avançar**.
+16. Na página **selecionar testemunha de quorum** , selecione a opção **Configurar uma testemunha de compartilhamento de arquivos** . Em seguida, clique em **Próximo**.
 
-17. Selecione **procurar** e localize o caminho do compartilhamento de arquivos que você deseja usar na caixa de diálogo caminho de compartilhamento de arquivos. Clique em **Avançar**.
+17. Selecione **procurar** e localize o caminho do compartilhamento de arquivos que você deseja usar na caixa de diálogo caminho de compartilhamento de arquivos. Clique em **Próximo**.
 
-18. Na página confirmação, clique em **Avançar**.
+18. Na página Confirmação, clique em **Avançar**.
 
-19. Na página Resumo, clique em **concluir**.
+19. Na página Resumo, clique em **Concluir**.
 
 20. Agora, abra o menu **Iniciar** e procure **SQL Server Configuration Manager**.
 
@@ -479,13 +479,13 @@ Você pode implantar servidores SQL adicionais para a instalação Always On alt
 
 22. Na caixa de diálogo Propriedades, selecione a guia **alta disponibilidade AlwaysOn** . Marque a caixa de seleção **habilitar grupos de disponibilidade AlwaysOn** . Clique em **OK**. **Observação: faça isso nos servidores do SQL Server 2016.**
 
-23. Em seguida, reinicie o serviço SQL Server.
+23. Em seguida, reinicie o serviço do SQL Server.
 
 24. Agora, abra o menu **Iniciar** e procure **SQL Server Management Studio** e, no painel de navegação esquerdo, clique com o botão direito do mouse em **grupos de disponibilidade** e clique em assistente de **novo grupo de disponibilidade** e clique em **Avançar**.
 
-25. Na página **especificar nome do grupo de disponibilidade** , escolha um nome de grupo (por exemplo, SQLAvailabilityGroup2016). Em seguida, clique em **Avançar**.
+25. Na página **especificar nome do grupo de disponibilidade** , escolha um nome de grupo (por exemplo, SQLAvailabilityGroup2016). Em seguida, clique em **Próximo**.
 
-26. Na seção **selecionar bancos de dados** , especifique os bancos de dados. Em seguida, clique em Avançar. **Observação: Talvez seja necessário fazer backup de algum banco de dados novamente ou colocá-lo em modo de recuperação completa**.
+26. Na seção **selecionar bancos de dados** , especifique os bancos de dados. Clique em Avançar. **Observação: Talvez seja necessário fazer backup de algum banco de dados novamente ou colocá-lo em modo de recuperação completa**.
 
 27. Uma vez na página **especificar réplicas** , clique no botão **Adicionar réplica** e escolha o outro SQL Server de 2016.
 

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a3e429d43fd644cd2b8ba3a5b123deecc2696f24
-ms.sourcegitcommit: 912a5a402ecc6b39c1584338ea635a2ac11a4eb9
+ms.openlocfilehash: 7b725d7831325e9db164c3dbb15730f7680e14a4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82219280"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966628"
 ---
 # <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories-in-windows-server-2016-or-later"></a>Configurar AD FS para autenticar usuários armazenados em diretórios LDAP no Windows Server 2016 ou posterior
 
@@ -22,7 +22,7 @@ O tópico a seguir descreve a configuração necessária para habilitar sua infr
 Em muitas organizações, as soluções de gerenciamento de identidades consistem em uma combinação de Active Directory, AD LDS ou diretórios LDAP de terceiros. Com a adição de suporte de AD FS para autenticar usuários armazenados em diretórios compatíveis com LDAP v3, você pode se beneficiar de todo o conjunto de recursos de AD FS de nível empresarial, independentemente de onde suas identidades de usuário estão armazenadas. O AD FS dá suporte a qualquer diretório compatível com LDAP v3.
 
 > [!NOTE]
-> Alguns dos recursos de AD FS incluem SSO (logon único), autenticação de dispositivo, políticas de acesso condicional flexíveis, suporte para trabalho de qualquer lugar por meio da integração com o proxy de aplicativo Web e Federação direta com o Azure AD que, por sua vez, permite que você e seus usuários utilizem a nuvem, incluindo o Office 365 e outros aplicativos SaaS.  Para obter mais informações, consulte [serviços de Federação do Active Directory (AD FS) visão geral](../../ad-fs/AD-FS-2016-Overview.md).
+> Alguns dos recursos de AD FS incluem SSO (logon único), autenticação de dispositivo, políticas de acesso condicional flexíveis, suporte para trabalho de qualquer lugar por meio da integração com o proxy de aplicativo Web e Federação direta com o Azure AD que, por sua vez, permite que você e seus usuários utilizem a nuvem, incluindo o Office 365 e outros aplicativos SaaS.  Para obter mais informações, consulte [serviços de Federação do Active Directory (AD FS) visão geral](../ad-fs-overview.md).
 
 Para AD FS autenticar usuários de um diretório LDAP, você deve conectar esse diretório LDAP ao farm de AD FS criando uma **relação de confiança do provedor de declarações local**.  Uma relação de confiança do provedor de declarações local é um objeto de confiança que representa um diretório LDAP em seu farm de AD FS. Um objeto de confiança do provedor de declarações local consiste em uma variedade de identificadores, nomes e regras que identificam esse diretório LDAP para o serviço de federação local.
 
@@ -49,7 +49,7 @@ Para configurar o farm de AD FS para autenticar usuários de um diretório LDAP,
    > [!NOTE]
    > É recomendável que você crie um novo objeto de conexão para cada servidor LDAP ao qual deseja se conectar. AD FS pode se conectar a vários servidores LDAP de réplica e fazer failover automaticamente caso um servidor LDAP específico esteja inativo. Para esse caso, você pode criar um AdfsLdapServerConnection para cada um desses servidores LDAP de réplica e, em seguida, adicionar a matriz de objetos de conexão usando o parâmetro-**LdapServerConnection** do cmdlet **Add-AdfsLocalClaimsProviderTrust** .
 
-   **Observação:** A tentativa de usar Get-Credential e digitar um DN e uma senha a ser usada para associar a uma instância LDAP pode resultar em uma falha devido ao requisito de interface do usuário para formatos de entrada específicos, por exemplo, user@domain.tlddomínio \ nomedeusuário ou. Em vez disso, você pode usar o cmdlet ConvertTo-SecureString da seguinte maneira (o exemplo abaixo pressupõe que UID = admin, ou = System como o DN das credenciais a serem usadas para ligar à instância LDAP):
+   **Observação:** A tentativa de usar Get-Credential e digitar um DN e uma senha a ser usada para associar a uma instância LDAP pode resultar em uma falha devido ao requisito de interface do usuário para formatos de entrada específicos, por exemplo, domínio \ nomedeusuário ou user@domain.tld . Em vez disso, você pode usar o cmdlet ConvertTo-SecureString da seguinte maneira (o exemplo abaixo pressupõe que UID = admin, ou = System como o DN das credenciais a serem usadas para ligar à instância LDAP):
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -92,8 +92,7 @@ Para configurar o farm de AD FS para autenticar usuários de um diretório LDAP,
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   No exemplo acima, você está criando uma relação de confiança do provedor de declarações local chamada "Vendors". Você está especificando informações de conexão para AD FS se conectar ao diretório LDAP que essa confiança do provedor de declarações local representa, `$vendorDirectory` atribuindo `-LdapServerConnection` ao parâmetro. Observe que, na etapa 1, você atribuiu `$vendorDirectory` uma cadeia de conexão a ser usada ao conectar-se ao seu diretório LDAP específico. Finalmente, você está especificando que os `$GivenName`atributos `$Surname`LDAP, `$CommonName` , e (que você mapeou para as declarações de AD FS) devem ser usados para o controle de acesso condicional, incluindo políticas de autenticação multifator e regras de autorização de emissão, bem como para a emissão por meio de declarações em tokens de segurança emitidos por AD FS. Para usar protocolos ativos como o WS-Trust com AD FS, você deve especificar o parâmetro OrganizationalAccountSuffix, que permite AD FS a ambiguidade entre as relações de confiança do provedor de declarações locais ao atender a uma solicitação de autorização ativa.
+   No exemplo acima, você está criando uma relação de confiança do provedor de declarações local chamada "Vendors". Você está especificando informações de conexão para AD FS se conectar ao diretório LDAP que essa confiança do provedor de declarações local representa, atribuindo `$vendorDirectory` ao `-LdapServerConnection` parâmetro. Observe que, na etapa 1, você atribuiu `$vendorDirectory` uma cadeia de conexão a ser usada ao conectar-se ao seu diretório LDAP específico. Finalmente, você está especificando que os `$GivenName` `$Surname` atributos LDAP,, e `$CommonName` (que você mapeou para as declarações de AD FS) devem ser usados para o controle de acesso condicional, incluindo políticas de autenticação multifator e regras de autorização de emissão, bem como para a emissão por meio de declarações em tokens de segurança emitidos por AD FS. Para usar protocolos ativos como o WS-Trust com AD FS, você deve especificar o parâmetro OrganizationalAccountSuffix, que permite AD FS a ambiguidade entre as relações de confiança do provedor de declarações locais ao atender a uma solicitação de autorização ativa.
 
 ## <a name="see-also"></a>Consulte Também
-[Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)
-
+[Operações do AD FS](../ad-fs-operations.md)

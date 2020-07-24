@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: efb240fabc4272a4dbef4cb7e86d7058cedb9584
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 9fb864bcf74fb0fee921288165b1e042a34f027e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624164"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965528"
 ---
 # <a name="identifying-the-deployment-project-participants"></a>Identificar os participantes do projeto de implantação
 
@@ -201,7 +201,7 @@ As responsabilidades da equipe de design incluem o seguinte:
 
 - Trabalhar com a equipe de implantação para testar o design em um ambiente de laboratório para garantir que ele funcione como planejado e modificando o design conforme necessário para resolver quaisquer problemas que ocorram
 
-- Criar um design de topologia de site que atenda aos requisitos de replicação da floresta, impedindo a sobrecarga da largura de banda disponível. Para obter mais informações sobre como criar a topologia do site, consulte [projetando a topologia do site para o Windows Server 2008 AD DS](https://technet.microsoft.com/library/cc772013.aspx).
+- Criar um design de topologia de site que atenda aos requisitos de replicação da floresta, impedindo a sobrecarga da largura de banda disponível. Para obter mais informações sobre como criar a topologia do site, consulte [projetando a topologia do site para o Windows Server 2008 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772013(v=ws.10)).
 
 - Trabalhando com a equipe de implantação para garantir que o design seja implementado corretamente
 
@@ -251,4 +251,4 @@ A equipe de implantação do Active Directory inclui os seguintes membros:
 A equipe de implantação trabalha com os administradores de serviço e de dados durante a fase de implantação para garantir que os membros da equipe de operações estejam familiarizados com o novo design. Isso ajuda a garantir uma transição tranqüila de propriedade quando a operação de implantação é concluída. Na conclusão do processo de implantação, a responsabilidade de manter o novo ambiente de Active Directory passa para a equipe de operações.
 
 ### <a name="documenting-the-design-and-deployment-teams"></a>Documentando as equipes de design e implantação
-Documente os nomes e as informações de contato das pessoas que farão parte do design e da implantação de AD DS. Identifique quem será responsável por cada função nas equipes de design e implantação. Inicialmente, essa lista inclui os possíveis proprietários da floresta, o gerente de projeto e o arquiteto do projeto. Ao determinar o número de florestas que serão implantadas, talvez seja necessário criar novas equipes de design para florestas adicionais. Observe que você precisará atualizar sua documentação à medida que as associações da equipe forem alteradas e ao identificar os vários proprietários do Active Directory durante o processo de design. Para uma planilha para ajudá-lo a documentar as equipes de design e implantação para cada floresta, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [ajudas de trabalho para o kit de implantação do Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) e abra "informações da equipe de design e implantação" (DSSLOGI_1. doc).
+Documente os nomes e as informações de contato das pessoas que farão parte do design e da implantação de AD DS. Identifique quem será responsável por cada função nas equipes de design e implantação. Inicialmente, essa lista inclui os possíveis proprietários da floresta, o gerente de projeto e o arquiteto do projeto. Ao determinar o número de florestas que serão implantadas, talvez seja necessário criar novas equipes de design para florestas adicionais. Observe que você precisará atualizar sua documentação à medida que as associações da equipe forem alteradas e ao identificar os vários proprietários do Active Directory durante o processo de design. Para uma planilha para ajudá-lo a documentar as equipes de design e implantação para cada floresta, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de [ajudas de trabalho para o kit de implantação do Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) e abra "informações da equipe de design e implantação" (DSSLOGI_1.doc).
