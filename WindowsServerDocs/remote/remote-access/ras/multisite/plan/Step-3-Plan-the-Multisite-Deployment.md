@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 97705e3d6f5a4300c32ec98cc59e849862381607
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1d59e97453e4ecc4cd63a85368c6ea9566677029
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858319"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963718"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Etapa 3 planejar a implantação multissite
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Depois de planejar a infraestrutura multissite, planeje os requisitos de certificado adicionais, como os computadores cliente selecionam pontos de entrada e endereços IPv6 atribuídos em sua implantação.  
 
@@ -88,7 +88,7 @@ Se você hospedar o servidor de local de rede no servidor de acesso remoto, deve
 ## <a name="33-plan-the-ipsec-root-certificate-for-all-remote-access-servers"></a><a name="bkmk_3_3_IPsec"></a>3,3 planejar o certificado raiz IPsec para todos os servidores de acesso remoto  
 Observe o seguinte ao planejar a autenticação de cliente IPsec em uma implantação multissite:  
   
-1.  Se você optou por usar o proxy Kerberos interno para autenticação do computador ao configurar o único servidor de acesso remoto, será necessário alterar a configuração para usar certificados de computador emitidos por uma AC interna, pois o proxy Kerberos não tem suporte em um multissite planta.  
+1.  Se você optou por usar o proxy Kerberos interno para autenticação do computador ao configurar o único servidor de acesso remoto, será necessário alterar a configuração para usar certificados de computador emitidos por uma AC interna, pois o proxy Kerberos não tem suporte para uma implantação multissite.  
   
 2.  Se você usou um certificado autoassinado, deverá reconfigurar a implantação de servidor único para usar um certificado emitido por uma autoridade de certificação interna.  
   
@@ -103,12 +103,12 @@ Em uma implantação multissite, você também pode configurar um balanceador de
   
 2.  O computador cliente Windows 10 ou Windows 8 tenta resolver o FQDN do balanceador de carga do servidor global no DNS público para um endereço IP. Se o endereço IP resolvido estiver listado como o endereço IP do balanceador de carga do servidor global de um ponto de entrada, o computador cliente selecionará automaticamente esse ponto de entrada e se conectará à sua URL IP-HTTPS (endereço connectto) ou ao seu endereço IP do servidor Teredo. Observe que o endereço IP do balanceador de carga do servidor global não precisa ser idêntico ao endereço connectto ou ao endereço do servidor Teredo do ponto de entrada, já que os computadores cliente nunca tentam se conectar ao endereço IP do balanceador de carga do servidor global.  
   
-3.  Se o computador cliente estiver atrás de um proxy da Web (e não puder usar a resolução DNS) ou se o FQDN do balanceador de carga do servidor global não resolver para nenhum endereço IP do balanceador de carga global do servidor configurado, um ponto de entrada será selecionado automaticamente usando uma investigação de HTTPS para as URLs de IP-HTTPS de todos os pontos de entrada. O cliente se conectará ao servidor que responde primeiro.  
+3.  Se o computador cliente estiver protegido por um proxy da Web (e não puder usar a resolução DNS) ou se o FQDN do balanceador de carga do servidor global não resolver para nenhum endereço IP do balanceador de carga global do servidor configurado, um ponto de entrada será selecionado automaticamente usando uma investigação HTTPS para as URLs IP-HTTPS de todos os pontos de entrada. O cliente se conectará ao servidor que responde primeiro.  
   
 Para obter uma lista de dispositivos de balanceamento de carga de servidor global que dão suporte ao acesso remoto, vá para a página localizar um parceiro no [servidor e na plataforma de nuvem da Microsoft](https://www.microsoft.com/server-cloud/).  
   
 ## <a name="35-plan-directaccess-client-entry-point-selection"></a><a name="bkmk_3_5_EP_Selection"></a>seleção de ponto de entrada do cliente do plano 3,5 do DirectAccess  
-Quando você configura uma implantação multissite, por padrão, os computadores cliente com Windows 10 e Windows 8 são configurados com as informações necessárias para se conectar a todos os pontos de entrada na implantação e para se conectar automaticamente a um único ponto de entrada com base em uma seleção algoritmo. Você também pode configurar sua implantação para permitir que computadores cliente com Windows 10 e Windows 8 selecionem manualmente o ponto de entrada ao qual se conectarão. Se um computador cliente Windows 10 ou Windows 8 estiver conectado atualmente à Estados Unidos ponto de entrada e a seleção de ponto de entrada automático estiver habilitada, se o ponto de entrada de Estados Unidos ficar inacessível, depois de alguns minutos o computador cliente tentará se conectar por meio do ponto de entrada da Europa. É recomendável usar a seleção de ponto de entrada automático; no entanto, permitir a seleção de ponto de entrada manual permite que os usuários finais se conectem a um ponto de entrada diferente com base nas condições de rede atuais. Por exemplo, se um computador estiver conectado ao ponto de entrada de Estados Unidos e a conexão com a rede interna se tornar muito mais lenta do que o esperado. Nessa situação, o usuário final pode selecionar manualmente para se conectar ao ponto de entrada da Europa para melhorar a conexão com a rede interna.  
+Quando você configura uma implantação multissite, por padrão, os computadores cliente com Windows 10 e Windows 8 são configurados com as informações necessárias para se conectar a todos os pontos de entrada na implantação e para se conectar automaticamente a um único ponto de entrada com base em um algoritmo de seleção. Você também pode configurar sua implantação para permitir que computadores cliente com Windows 10 e Windows 8 selecionem manualmente o ponto de entrada ao qual se conectarão. Se um computador cliente com Windows 10 ou Windows 8 estiver conectado no momento ao ponto de entrada de Estados Unidos e a seleção de ponto de entrada automático estiver habilitada, se o ponto de entrada de Estados Unidos ficar inacessível, depois de alguns minutos o computador cliente tentará se conectar por meio do ponto de entrada da Europa. É recomendável usar a seleção de ponto de entrada automático; no entanto, permitir a seleção de ponto de entrada manual permite que os usuários finais se conectem a um ponto de entrada diferente com base nas condições de rede atuais. Por exemplo, se um computador estiver conectado ao ponto de entrada de Estados Unidos e a conexão com a rede interna se tornar muito mais lenta do que o esperado. Nessa situação, o usuário final pode selecionar manualmente para se conectar ao ponto de entrada da Europa para melhorar a conexão com a rede interna.  
   
 > [!NOTE]  
 > Depois que um usuário final selecionar um ponto de entrada manualmente, o computador cliente não será revertido para a seleção de ponto de entrada automática. Ou seja, se o ponto de entrada selecionado manualmente ficar inacessível, o usuário final deverá reverter para a seleção de ponto de entrada automática ou selecionar manualmente outro ponto de entrada.  
@@ -158,11 +158,11 @@ Em um roteamento simétrico de implantação multissite é imposta usando Teredo
   
    3. Prefixo Teredo (opcional). Esse prefixo só será relevante se o servidor de acesso remoto estiver configurado com dois endereços IPv4 públicos consecutivos no adaptador externo. O prefixo é baseado no primeiro endereço IPv4 público do par de endereços. Por exemplo, se os endereços externos forem:  
   
-      1. www\.xxx. yyy. zzz  
+      1. www \. xxx. yyy. zzz  
   
-      2. www\.xxx. yyy. zzz + 1  
+      2. www \. xxx. yyy. zzz + 1  
   
-      Em seguida, o prefixo Teredo a ser configurado é 2001:0: WWXX: YYZZ::/64, em que WWXX: YYZZ é a representação hexadecimal do endereço IPv4 www\.xxx. yyy. zzz.  
+      Em seguida, o prefixo Teredo a ser configurado é 2001:0: WWXX: YYZZ::/64, em que WWXX: YYZZ é a representação hexadecimal do endereço IPv4 www \. xxx. yyy. zzz.  
   
       Observe que você pode usar o script a seguir para calcular o prefixo Teredo:  
   
@@ -186,7 +186,7 @@ Em um roteamento simétrico de implantação multissite é imposta usando Teredo
 ### <a name="active-directory-site-specific-ipv6-prefixes"></a>Active Directory prefixos IPv6 específicos do site  
 Quando um computador cliente que executa o Windows 10 ou o Windows 8 está conectado a um ponto de entrada, o computador cliente é imediatamente associado ao site de Active Directory do ponto de entrada e é configurado com prefixos IPv6 associados ao ponto de entrada. A preferência é que os computadores cliente se conectem aos recursos usando esses prefixos IPv6, pois eles são configurados dinamicamente na tabela de diretiva de prefixo IPv6 com maior precedência ao se conectar a um ponto de entrada.  
   
-Se sua organização usa uma topologia de Active Directory com prefixos IPv6 específicos do site (por exemplo, um app.corp.com de recurso interno FQDN é hospedado em América do Norte e na Europa com um endereço IP específico do site em cada local), isso não é configurado pelo o padrão é usar o console de acesso remoto, e os prefixos IPv6 específicos do site não são configurados para cada ponto de entrada. Se você quiser habilitar esse cenário opcional, precisará configurar cada ponto de entrada com os prefixos IPv6 específicos que devem ser preferidos por computadores cliente que se conectam a um ponto de entrada específico. Faça isso da seguinte maneira:  
+Se sua organização usa uma topologia de Active Directory com prefixos IPv6 específicos do site (por exemplo, um FQDN de recurso interno app.corp.com é hospedado em América do Norte e na Europa com um endereço IP específico do site em cada local), isso não é configurado por padrão usando o console de acesso remoto, e os prefixos IPv6 específicos do site não são configurados para cada ponto de entrada. Se você quiser habilitar esse cenário opcional, precisará configurar cada ponto de entrada com os prefixos IPv6 específicos que devem ser preferidos por computadores cliente que se conectam a um ponto de entrada específico. Faça isso da seguinte forma:  
   
 1.  Para cada GPO usado para computadores cliente Windows 10 ou Windows 8, execute o cmdlet Set-DAEntryPointTableItem do PowerShell  
   
@@ -243,7 +243,7 @@ A transição de um somente IPv4 para uma rede corporativa somente IPv6 não pod
     > [!NOTE]  
     > Ao instalar uma implantação adicional do DirectAccess junto com uma atual, verifique se não há dois pontos de entrada que compartilham o mesmo prefixo de cliente.  
     >   
-    > Se você instalar o DirectAccess usando o assistente de Introdução ou com o cmdlet `Install-RemoteAccess`, o acesso remoto definirá automaticamente o prefixo de cliente do primeiro ponto de entrada na implantação para um valor padrão de <\_prefixo de sub-rede IPv6 >: 1000::/64. Se necessário, você deve alterar o prefixo.  
+    > Se você instalar o DirectAccess usando o assistente de Introdução ou com o cmdlet `Install-RemoteAccess` , o acesso remoto definirá automaticamente o prefixo do cliente do primeiro ponto de entrada na implantação para um valor padrão de <prefixo de sub-rede IPv6 \_>:1000::/64. Se necessário, você deve alterar o prefixo.  
   
 2.  Remova os grupos de segurança de cliente escolhidos da primeira implantação.  
   
@@ -256,7 +256,7 @@ A transição de um somente IPv4 para uma rede corporativa somente IPv6 não pod
   
 Quando tiver concluído a transição, você poderá desinstalar a primeira implantação do DirectAccess. Ao desinstalar o, os seguintes problemas podem ocorrer:  
   
--   Se a implantação tiver sido configurada para dar suporte apenas a clientes em computadores móveis, o filtro WMI será excluído. Se os grupos de segurança do cliente da segunda implantação incluírem computadores desktop, o GPO do cliente DirectAccess não filtrará computadores desktop e poderá causar problemas neles. Se um filtro de computadores móveis for necessário, recrie-o seguindo as instruções em [criar filtros WMI para o GPO](https://technet.microsoft.com/library/cc947846.aspx).  
+-   Se a implantação tiver sido configurada para dar suporte apenas a clientes em computadores móveis, o filtro WMI será excluído. Se os grupos de segurança do cliente da segunda implantação incluírem computadores desktop, o GPO do cliente DirectAccess não filtrará computadores desktop e poderá causar problemas neles. Se um filtro de computadores móveis for necessário, recrie-o seguindo as instruções em [criar filtros WMI para o GPO](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10)).  
   
 -   Se ambas as implantações foram originalmente criadas no mesmo domínio Active Directory, a entrada de investigação de DNS que aponta para localhost será excluída e poderá causar problemas de conectividade do cliente. Por exemplo, os clientes podem se conectar usando IP-HTTPS em vez de Teredo ou alternar entre pontos de entrada multissite do DirectAccess. Nesse caso, você deve adicionar a seguinte entrada DNS ao DNS corporativo:  
   
@@ -270,5 +270,3 @@ Quando tiver concluído a transição, você poderá desinstalar a primeira impl
   
   
   
-
-

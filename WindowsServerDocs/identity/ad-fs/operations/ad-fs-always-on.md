@@ -7,12 +7,12 @@ ms.date: 01/20/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8660bcab5719029936588738352e542828081ce8
-ms.sourcegitcommit: 371e59315db0cca5bdb713264a62b215ab43fd0f
+ms.openlocfilehash: 4f6822747902d02313b6aea5c5ca21d9d7ed8a04
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82192612"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961878"
 ---
 # <a name="setting-up-an-ad-fs-deployment-with-alwayson-availability-groups"></a>Configurando uma implantação de AD FS com Grupos de Disponibilidade AlwaysOn
 Uma topologia distribuída geograficamente altamente disponível fornece:
@@ -24,7 +24,7 @@ O guia a seguir apresentará uma visão geral de AD FS com os grupos de disponib
 
 ## <a name="overview---alwayson-availability-groups"></a>Visão geral-Grupos de Disponibilidade AlwaysOn
 
-Para obter mais informações sobre grupos de disponibilidade AlwaysOn, consulte [visão geral de grupos de disponibilidade AlwaysOn (SQL Server)](https://technet.microsoft.com/library/ff877884.aspx)
+Para obter mais informações sobre grupos de disponibilidade AlwaysOn, consulte [visão geral de grupos de disponibilidade AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15)
 
 Da perspectiva dos nós de um farm de AD FS SQL Server, o grupo de disponibilidade AlwaysOn substitui a instância de SQL Server única como banco de dados de política/artefato.O ouvinte do grupo de disponibilidade é o que o cliente (o AD FS serviço de token de segurança) usa para se conectar ao SQL.
 O diagrama a seguir mostra um farm AD FS SQL Server com o grupo de disponibilidade AlwaysOn.
@@ -38,12 +38,12 @@ No caso de um failover, em vez de transferir a propriedade de recursos físicos 
 A qualquer momento, apenas uma única instância de SQL Server pode hospedar a réplica primária dos bancos de dados de um grupo de disponibilidade, todas as réplicas secundárias associadas devem residir em uma instância separada, e cada instância deve residir em nós físicos separados.
 
 > [!NOTE] 
-> Se os computadores estiverem em execução no Azure, configure as máquinas virtuais do Azure para permitir que a configuração do ouvinte se comunique com os grupos de disponibilidade AlwaysOn. Para obter mais informações, [máquinas virtuais: SQL Always on Listener](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).
+> Se os computadores estiverem em execução no Azure, configure as máquinas virtuais do Azure para permitir que a configuração do ouvinte se comunique com os grupos de disponibilidade AlwaysOn. Para obter mais informações, [máquinas virtuais: SQL Always on Listener](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener).
 
-Para obter uma visão geral adicional do Grupos de Disponibilidade AlwaysOn, consulte [visão geral de Always on grupos de disponibilidade (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15).
+Para obter uma visão geral adicional do Grupos de Disponibilidade AlwaysOn, consulte [visão geral de Always on grupos de disponibilidade (SQL Server)](/sql/database-engine/availability-groups/windows/overview-of-always-on-availability-groups-sql-server?view=sql-server-ver15).
 
 > [!NOTE] 
-> Se a organização exigir failover em vários datacenters, é recomendável criar um banco de dados de artefato em cada datacenter, bem como habilitar um cache em segundo plano, o que reduz a latência durante o processamento da solicitação. Siga as instruções para fazer isso no [ajuste fino do SQL e na redução da latência](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/adfs-sql-latency).
+> Se a organização exigir failover em vários datacenters, é recomendável criar um banco de dados de artefato em cada datacenter, bem como habilitar um cache em segundo plano, o que reduz a latência durante o processamento da solicitação. Siga as instruções para fazer isso no [ajuste fino do SQL e na redução da latência](./adfs-sql-latency.md).
 
 ## <a name="deployment-guidance"></a>Diretrizes de implantação
 
@@ -63,7 +63,7 @@ A tabela a seguir descreve as diferenças nos recursos com suporte entre um WID 
 Se você for uma grande organização com mais de 100 relações de confiança que precisam fornecer a usuários internos e usuários externos com acesso de logon único a aplicativos ou serviços de Federação, o SQL é a opção recomendada.
 
 Se você for uma organização com 100 ou menos relações de confiança configuradas, o WID fornecerá redundância de dados e de serviço de Federação (em que cada servidor de Federação Replica as alterações para outros servidores de Federação no mesmo farm). O WID não dá suporte à detecção de reprodução de token ou à resolução de artefatos e tem um limite de 30 servidores de Federação.
-Para obter mais informações sobre como planejar sua implantação, visite [aqui](https://docs.microsoft.com/windows-server/identity/ad-fs/design/planning-your-deployment).
+Para obter mais informações sobre como planejar sua implantação, visite [aqui](../design/planning-your-deployment.md).
 
 ## <a name="sql-server-high-availability-solutions"></a>SQL Server soluções de alta disponibilidade
 Se você estiver usando SQL Server como seu banco de dados de configuração do AD FS, poderá configurar a redundância geográfica para seu farm de AD FS usando a replicação SQL Server. A redundância geográfica replica dados entre dois sites distantes geograficamente para que os aplicativos possam mudar de um site para outro. Dessa forma, em caso de falha de um site, você ainda pode ter todos os dados de configuração disponíveis no segundo site. 
@@ -84,21 +84,21 @@ Este guia apresentará o seguinte
 ## <a name="deploy-ad-fs"></a>Implantar AD FS
 
 > [!NOTE] 
-> Se os computadores estiverem em execução no Azure, as máquinas virtuais deverão ser configuradas de uma maneira específica para permitir que o ouvinte se comunique com o grupo de Always On disponibilidade. Para obter informações sobre a configuração, veja [configurar um balanceador de carga para um grupo de disponibilidade em VMs de SQL Server do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)
+> Se os computadores estiverem em execução no Azure, as máquinas virtuais deverão ser configuradas de uma maneira específica para permitir que o ouvinte se comunique com o grupo de Always On disponibilidade. Para obter informações sobre a configuração, veja [configurar um balanceador de carga para um grupo de disponibilidade em VMs de SQL Server do Azure](/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-alwayson-int-listener)
 
 
 Este guia de implantação mostrará um farm de dois nós com dois SQL Servers como exemplo.
 Para implantar AD FS siga os links iniciais abaixo para instalar o serviço de função AD FS. Para configurar o para um grupo AoA, haverá etapas adicionais para a função.
--   [Adicionar um computador a um domínio](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain)
--   [Registrar um certificado SSL do AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/enroll-an-ssl-certificate-for-ad-fs)
--   [Instalar o serviço de função do AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/install-the-ad-fs-role-service)
+-   [Adicionar um computador a um domínio](../deployment/join-a-computer-to-a-domain.md)
+-   [Registrar um certificado SSL do AD FS](../deployment/enroll-an-ssl-certificate-for-ad-fs.md)
+-   [Instalar o serviço de função do AD FS](../deployment/install-the-ad-fs-role-service.md)
 
 
 ## <a name="configuring-ad-fs-to-use-an-alwayson-availability-group"></a>Configurando AD FS para usar um grupo de disponibilidade AlwaysOn
 
-Configurar um farm de AD FS com grupos de disponibilidade AlwaysOn requer uma ligeira modificação no procedimento de implantação de AD FS. Certifique-se de que cada instância de servidor esteja executando a mesma versão do SQL. Para exibir a lista completa de pré-requisitos, restrições e recomendações para grupos de disponibilidade Always On, leia [aqui](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017#PrerequisitesForDbs).
+Configurar um farm de AD FS com grupos de disponibilidade AlwaysOn requer uma ligeira modificação no procedimento de implantação de AD FS. Certifique-se de que cada instância de servidor esteja executando a mesma versão do SQL. Para exibir a lista completa de pré-requisitos, restrições e recomendações para grupos de disponibilidade Always On, leia [aqui](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-2017#PrerequisitesForDbs).
 
-1.  Os bancos de dados que você deseja fazer backup devem ser criados antes que os grupos de disponibilidade AlwaysOn possam ser configurados.  AD FS cria seus bancos de dados como parte da instalação e configuração inicial do primeiro nó de serviço de Federação de um novo farm de SQL Server de AD FS.  Especifique o nome do host do banco de dados para o farm existente usando o SQL Server. Como parte da configuração de AD FS, você deve especificar uma cadeia de conexão SQL, portanto, você precisará configurar o primeiro farm de AD FS para se conectar a uma instância do SQL diretamente (isso é apenas temporário). Para obter diretrizes específicas sobre como configurar um farm de AD FS, incluindo a configuração de um nó de farm de AD FS com uma cadeia de conexão do SQL Server, consulte [configurar um servidor de Federação](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/configure-a-federation-server).
+1.  Os bancos de dados que você deseja fazer backup devem ser criados antes que os grupos de disponibilidade AlwaysOn possam ser configurados.  AD FS cria seus bancos de dados como parte da instalação e configuração inicial do primeiro nó de serviço de Federação de um novo farm de SQL Server de AD FS.  Especifique o nome do host do banco de dados para o farm existente usando o SQL Server. Como parte da configuração de AD FS, você deve especificar uma cadeia de conexão SQL, portanto, você precisará configurar o primeiro farm de AD FS para se conectar a uma instância do SQL diretamente (isso é apenas temporário). Para obter diretrizes específicas sobre como configurar um farm de AD FS, incluindo a configuração de um nó de farm de AD FS com uma cadeia de conexão do SQL Server, consulte [configurar um servidor de Federação](../deployment/configure-a-federation-server.md).
 
 ![especificar farm](media/ad-fs-always-on/deploymentSpecifyFarm.png)
 
@@ -148,19 +148,19 @@ A reinicialização do servidor não é necessária para o recurso de Clustering
 6. Na página confirmação, selecione avançar.
 A página Validando exibe o status dos testes em execução.
 7. Na página Resumo, realize uma destas ações:
-- Se os resultados indicarem que os testes foram concluídos com êxito e a configuração for adequada para clustering e você quiser criar o cluster imediatamente, verifique se a caixa de seleção criar o cluster agora usando os nós validados está marcada e, em seguida, selecione concluir. Em seguida, continue na etapa 4 do [procedimento criar o cluster de failover](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#create-the-failover-cluster).
+- Se os resultados indicarem que os testes foram concluídos com êxito e a configuração for adequada para clustering e você quiser criar o cluster imediatamente, verifique se a caixa de seleção criar o cluster agora usando os nós validados está marcada e, em seguida, selecione concluir. Em seguida, continue na etapa 4 do [procedimento criar o cluster de failover](../../../failover-clustering/create-failover-cluster.md#create-the-failover-cluster).
 
 ![validar imagem de configuração](media/ad-fs-always-on/clusterValidationResults.png)
 
 -   Se os resultados indicarem que houve avisos ou falhas, selecione Exibir relatório para exibir os detalhes e determinar quais problemas devem ser corrigidos. Observe que uma advertência para um teste de validação específico indica que esse aspecto do cluster de failover pode ser aceito, mas pode não atender às melhores práticas recomendadas.
 
 > [!NOTE]
-> Se você receber um aviso para o teste Validar reserva persistente para espaços de armazenamento, consulte a postagem no blog [Aviso de validação de cluster de failover do Windows indica que seus discos não dão suporte a reservas persistentes para espaços de armazenamento](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) para mais informações.
-> Para obter mais informações sobre os testes de validação de hardware, consulte [Validate Hardware for a Failover Cluster (Validar o hardware de um cluster de failover)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)).
+> Se você receber um aviso para o teste Validar reserva persistente para espaços de armazenamento, consulte a postagem no blog [Aviso de validação de cluster de failover do Windows indica que seus discos não dão suporte a reservas persistentes para espaços de armazenamento](https://techcommunity.microsoft.com/t5/failover-clustering/bg-p/FailoverClustering) para mais informações.
+> Para obter mais informações sobre os testes de validação de hardware, consulte [Validate Hardware for a Failover Cluster (Validar o hardware de um cluster de failover)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)).
 
 ## <a name="create-the-failover-cluster"></a>Criar o cluster de failover
 
-Para concluir esta etapa, verifique se a conta de usuário com a qual você fez logon atende aos requisitos destacados na seção [Verificar os pré-requisitos](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#verify-the-prerequisites) deste tópico.
+Para concluir esta etapa, verifique se a conta de usuário com a qual você fez logon atende aos requisitos destacados na seção [Verificar os pré-requisitos](../../../failover-clustering/create-failover-cluster.md#verify-the-prerequisites) deste tópico.
 1.  Inicie o Gerenciador do Servidor.
 2.  No menu ferramentas, selecione Gerenciador de Cluster de Failover.
 3.  No painel de Gerenciador de Cluster de Failover, em gerenciamento, selecione criar cluster.
@@ -171,9 +171,9 @@ O Assistente para Criação de Clusters é aberto.
 ![criar cluster e selecionar servidores](media/ad-fs-always-on/createClusterServers.png)
 
 > [!NOTE]
-> Se você optar por criar o cluster imediatamente após executar a validação no [procedimento de validação de configuração](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#validate-the-configuration), você não verá a página selecionar servidores. Os nós que foram validados são adicionados automaticamente ao Assistente de para Criação de Clusters para que você não precise inseri-los novamente.
+> Se você optar por criar o cluster imediatamente após executar a validação no [procedimento de validação de configuração](../../../failover-clustering/create-failover-cluster.md#validate-the-configuration), você não verá a página selecionar servidores. Os nós que foram validados são adicionados automaticamente ao Assistente de para Criação de Clusters para que você não precise inseri-los novamente.
 
-6.  Se você tiver ignorado a validação anteriormente, a página Advertência de Validação será exibida. É expressamente recomendável realizar a validação do cluster. Apenas os clusters que são aprovados em todos os testes de validação são aceitos pela Microsoft. Para executar os testes de validação, selecione Sim e, em seguida, selecione avançar. Conclua o assistente para validar uma configuração conforme descrito em [validar a configuração](https://docs.microsoft.com/windows-server/failover-clustering/create-failover-cluster#validate-the-configuration).
+6.  Se você tiver ignorado a validação anteriormente, a página Advertência de Validação será exibida. É expressamente recomendável realizar a validação do cluster. Apenas os clusters que são aprovados em todos os testes de validação são aceitos pela Microsoft. Para executar os testes de validação, selecione Sim e, em seguida, selecione avançar. Conclua o assistente para validar uma configuração conforme descrito em [validar a configuração](../../../failover-clustering/create-failover-cluster.md#validate-the-configuration).
 7.  Na página Ponto de Acesso para Administrar o Cluster, faça o seguinte:
 -   Na caixa Nome do Cluster, digite o nome que deseja usar para administrar o cluster. Antes disso, examine as seguintes informações:
  -  Durante a criação do cluster, esse nome é registrado como o objeto de computador do cluster (também conhecido como CNO ou objeto de nome do cluster) no AD DS. Se você especificar um nome NetBIOS para o cluster, o CNO será criado no mesmo local em que residem os objetos de computador dos nós do cluster. Isso pode ser o contêiner de computadores padrão ou uma OU.
@@ -184,7 +184,7 @@ O Assistente para Criação de Clusters é aberto.
 
 8.  Na página Confirmação, examine as configurações. Por padrão, a caixa de seleção Adicione todo o armazenamento qualificado ao cluster é marcada. Desmarque essa caixa de seleção se:
 -   Quiser configurar o armazenamento depois.
--   Estiver planejando criar espaços de armazenamento clusterizados por meio do Gerenciador de Cluster de Failover ou pelos cmdlets de Clustering de Failover do Windows PowerShell, e ainda não tiver criado espaços de armazenamento nos Serviços de Arquivo e Armazenamento. Para obter mais informações, consulte [Deploy Clustered Storage Spaces (Implantar espaços de armazenamento clusterizados)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)).
+-   Estiver planejando criar espaços de armazenamento clusterizados por meio do Gerenciador de Cluster de Failover ou pelos cmdlets de Clustering de Failover do Windows PowerShell, e ainda não tiver criado espaços de armazenamento nos Serviços de Arquivo e Armazenamento. Para obter mais informações, consulte [Deploy Clustered Storage Spaces (Implantar espaços de armazenamento clusterizados)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)).
 9.  Selecione Avançar para criar o cluster de failover.
 10. Na página Resumo, confirme se o cluster de failover foi criado com sucesso. Se houver avisos ou erros, exiba a saída de resumo ou selecione Exibir relatório para exibir o relatório completo. Selecione Concluir.
 11. Para confirmar se o cluster foi criado, verifique se o nome do cluster está listado no Gerenciador de Cluster de Failover, na árvore de navegação. Você pode expandir o nome do cluster e, em seguida, selecionar itens em nós, armazenamento ou redes para exibir os recursos associados.
@@ -196,7 +196,7 @@ Observe que poderá levar algum tempo para que o nome do cluster seja replicado 
 
 1.  Conecte-se ao nó WSFC (cluster de failover do Windows Server) que hospeda a instância de SQL Server em que você deseja habilitar Always On grupos de disponibilidade.
 2.  No menu Iniciar, aponte para todos os programas, aponte para Microsoft SQL Server, aponte para Ferramentas de Configuração e clique em SQL Server Configuration Manager.
-3.  Em SQL Server Configuration Manager, clique em serviços SQL Server, clique com o botão<instance name>direito do mouse <instance name> em SQL Server (), em que é o nome de uma instância de servidor local para a qual você deseja habilitar Always on grupos de disponibilidade e clique em Propriedades.
+3.  Em SQL Server Configuration Manager, clique em serviços SQL Server, clique com o botão direito do mouse em SQL Server ( <instance name> ), em que <instance name> é o nome de uma instância de servidor local para a qual você deseja habilitar Always on grupos de disponibilidade e clique em Propriedades.
 4.  Selecione a guia Alta Disponibilidade AlwaysOn.
 5.  Verifique se o campo Nome do cluster de failover do Windows contém o nome do cluster de failover local. Se esse campo estiver em branco, essa instância de servidor atualmente não oferece suporte a grupos de disponibilidade Always On. Ou o computador local não é um nó de cluster, o Cluster WSFC foi desligado ou esta edição do SQL Server que não oferece suporte a grupos de disponibilidade Always On.
 6.  Marque a caixa de seleção Habilitar Grupos de Disponibilidade AlwaysOn e clique em OK.
@@ -218,18 +218,18 @@ Faça backup do artefato do ADFS e dos bancos de dados de configuração.
 3.  Para iniciar o Assistente de Novo Grupo de Disponibilidade, selecione o comando Assistente de Novo Grupo de Disponibilidade.
 4.  Na primeira vez você executa este assistente, uma página de Introdução é exibida. Para ignorar essa página no futuro, clique em Não mostrar esta página novamente. Depois de ler esta página, clique em Avançar.
 5.  Na página Especificar Opções do Grupo de Disponibilidade, insira o nome do novo grupo de disponibilidade no campo Nome do grupo de disponibilidade. Esse nome deve ser um identificador de SQL Server válido que seja exclusivo no cluster e no seu domínio como um todo. O tamanho máximo de um nome de grupo de disponibilidade é 128 caracteres. e
-6.  Em seguida, especifique o tipo de cluster. Os tipos de cluster possíveis dependem da versão SQL Server e do sistema operacional. Escolha WSFC, EXTERNAL ou NONE. Para obter detalhes, consulte a página [especificar nome do grupo de disponibilidade](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/specify-availability-group-name-page?view=sql-server-ver15)
+6.  Em seguida, especifique o tipo de cluster. Os tipos de cluster possíveis dependem da versão SQL Server e do sistema operacional. Escolha WSFC, EXTERNAL ou NONE. Para obter detalhes, consulte a página [especificar nome do grupo de disponibilidade](/sql/database-engine/availability-groups/windows/specify-availability-group-name-page?view=sql-server-ver15)
 
 ![nome AoA grupo e cluster](media/ad-fs-always-on/createAoAName.png)
 
 7.  Na página Selecionar Bancos de Dados, a grade lista bancos de dados de usuário na instância do servidor conectada que estão qualificados para se tornarem os bancos de dados de disponibilidade. Selecione um ou mais dos bancos de dados listados para participarem do novo grupo de disponibilidade. Inicialmente, esses bancos de dados serão os bancos de dados primários iniciais.
-Para cada banco de dados listado, a coluna Tamanho exibe o tamanho do banco de dados, se conhecido. A coluna status indica se um determinado banco de dados atende aos [pré-requisitos](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver15) para bancos de dados de disponibilidade. Se os pré-requisitos não forem atendidos, uma descrição breve do status indicará o motivo pelo qual o banco de dados não se qualifica, por exemplo, se ele não usar o modelo de recuperação completa. Para obter mais informações, clique na descrição do status.
+Para cada banco de dados listado, a coluna Tamanho exibe o tamanho do banco de dados, se conhecido. A coluna status indica se um determinado banco de dados atende aos [pré-requisitos](/sql/database-engine/availability-groups/windows/prereqs-restrictions-recommendations-always-on-availability?view=sql-server-ver15) para bancos de dados de disponibilidade. Se os pré-requisitos não forem atendidos, uma descrição breve do status indicará o motivo pelo qual o banco de dados não se qualifica, por exemplo, se ele não usar o modelo de recuperação completa. Para obter mais informações, clique na descrição do status.
 Se você alterar um banco de dados para torná-lo qualificado, clique em Atualizar para atualizar a grade de bancos de dados.
 Se o banco de dados contiver uma chave mestra de banco de dados, digite a senha para a chave mestra de banco de dados na coluna Senha.
 
 ![selecionar bancos de dados para AoA](media/ad-fs-always-on/createAoASelectDb.png)
 
-8. na página especificar réplicas, especifique e configure uma ou mais réplicas para o novo grupo de disponibilidade. Essa página contém quatro guias: A tabela a seguir apresenta essas guias. Para obter mais informações, consulte o tópico [especificar réplicas (Assistente de novo grupo de disponibilidade: Assistente para adicionar réplica)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15) .
+8. na página especificar réplicas, especifique e configure uma ou mais réplicas para o novo grupo de disponibilidade. Essa página contém quatro guias: A tabela a seguir apresenta essas guias. Para obter mais informações, consulte o tópico [especificar réplicas (Assistente de novo grupo de disponibilidade: Assistente para adicionar réplica)](/sql/database-engine/availability-groups/windows/specify-replicas-page-new-availability-group-wizard-add-replica-wizard?view=sql-server-ver15) .
 
 | Tab      | Breve descrição       |
 | ------------------ |:-------------:|
@@ -242,15 +242,15 @@ Se o banco de dados contiver uma chave mestra de banco de dados, digite a senha 
 
 9. Na página Selecionar Sincronização de Dados Inicial, escolha como você deseja que seus novos bancos de dados secundários sejam criados e unidos ao grupo de disponibilidade. Escolha uma das seguintes opções:
 -   Propagação automática
- - O SQL Server cria automaticamente as réplicas secundárias para cada banco de dados no grupo. A propagação automática exige que os caminhos do arquivo de dados e de log sejam os mesmos em cada instância do SQL Server que faz parte do grupo. Disponível em SQL Server 2016 (13. x) e posterior. Consulte [inicializar automaticamente Always on grupos de disponibilidade](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15).
+ - O SQL Server cria automaticamente as réplicas secundárias para cada banco de dados no grupo. A propagação automática exige que os caminhos do arquivo de dados e de log sejam os mesmos em cada instância do SQL Server que faz parte do grupo. Disponível em SQL Server 2016 (13. x) e posterior. Consulte [inicializar automaticamente Always on grupos de disponibilidade](/sql/database-engine/availability-groups/windows/automatically-initialize-always-on-availability-group?view=sql-server-ver15).
 - Backup completo de log e de banco de dados
- - Selecione esta opção se o seu ambiente atender aos requisitos para iniciar automaticamente a sincronização de dados inicial (para obter mais informações, consulte [pré-requisitos, restrições e recomendações, anteriormente neste tópico)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio?view=sql-server-ver15#Prerequisites).
+ - Selecione esta opção se o seu ambiente atender aos requisitos para iniciar automaticamente a sincronização de dados inicial (para obter mais informações, consulte [pré-requisitos, restrições e recomendações, anteriormente neste tópico)](/sql/database-engine/availability-groups/windows/use-the-availability-group-wizard-sql-server-management-studio?view=sql-server-ver15#Prerequisites).
 Se você selecionar Total, depois de criar o grupo de disponibilidade, o assistente fará backup de todos os bancos de dados primários e de seu log de transações em um compartilhamento de rede e restaurará os backups em todas as instâncias de servidor que hospedam uma réplica secundária. Em seguida, o assistente unirá cada banco de dados secundário ao grupo de disponibilidade.
 No campo Especifique um local de rede compartilhado acessível por todas as réplicas:, especifique um compartilhamento de backup para o qual todas as instâncias do servidor que hospedam réplicas de host têm acesso de leitura/gravação. Para obter mais informações, consulte Pré-requisitos anteriormente neste tópico. Na etapa de validação, o assistente executará um teste para garantir que o local de rede fornecido é válido, o teste criará um banco de dados na réplica primária denominada "BackupLocDb_" seguindo por um Guid e realizará backup no local de rede fornecido e, em seguida, o restaurará nas réplicas secundárias. É seguro excluir este banco de dados juntamente com seu histórico de backup e o arquivo de backup caso o assistente não pôde excluí-los.
 - Somente junção
  - Se preparou bancos de dados secundários manualmente nas instâncias do servidor que hospedam réplicas secundárias, você poderá selecionar essa opção. O assistente unirá os bancos de dados secundários existentes ao grupo de disponibilidade.
 - Ignorar sincronização de dados inicial
- - Selecione esta opção se desejar usar seus próprios backups de banco de dados e de log de seus bancos de dados primários. Para obter mais informações, consulte [Iniciar movimentação de dados em um banco de Always on secundário (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15).
+ - Selecione esta opção se desejar usar seus próprios backups de banco de dados e de log de seus bancos de dados primários. Para obter mais informações, consulte [Iniciar movimentação de dados em um banco de Always on secundário (SQL Server)](/sql/database-engine/availability-groups/windows/start-data-movement-on-an-always-on-secondary-database-sql-server?view=sql-server-ver15).
 
 ![escolher opção de sincronização de dados](media/ad-fs-always-on/createAoADataSync.png)
 

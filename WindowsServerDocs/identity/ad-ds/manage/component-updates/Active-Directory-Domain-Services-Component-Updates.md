@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
 ms.technology: identity-adds
-ms.openlocfilehash: e7bacf4f238144fca26776a729a5e4d5bf3444ab
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0dfb108067bee1a5f276963116e2a72b99f6aec2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389952"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961118"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Atualizações de Componentes do Active Directory Domain Services
 
@@ -40,7 +40,7 @@ Depois de concluir este módulo, você será capaz de:
 
     -   [Exclusividade de SPN e UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
 
-    -   [ARSO logon automático de inicialização do &#40;Winlogon&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Logon automático de reinicialização do Winlogon &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
 
     -   [Atestado de chave de TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
 
@@ -48,7 +48,7 @@ Depois de concluir este módulo, você será capaz de:
 
     -   [Auditoria de processo de linha de comando](../../../ad-ds/manage/component-updates/Command-line-process-auditing.md)  
 
-    -   [Proteção e gerenciamento de credenciais](https://technet.microsoft.com/library/dn408190.aspx)  
+    -   [Proteção e gerenciamento de credenciais](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408190(v=ws.11))  
 
     -   [Atualizações de componentes dos Serviços de Diretório](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md)  
 
@@ -61,6 +61,3 @@ Depois de concluir este módulo, você será capaz de:
         -   [Melhorias no evento 1644](../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_1644)  
 
         -   [Melhoria da taxa de transferência de replicação do Active Directory](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Directory-Services-component-updates.md#BKMK_ADRepl)  
-
-
-

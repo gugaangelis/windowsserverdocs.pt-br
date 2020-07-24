@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 05/15/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 53a5f2aa403c83d24acde1fc57e793141175d9b6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f3274210ea6c08d63862551570096ab10aa878e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474713"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961808"
 ---
 # <a name="scripting-with-powershell-and-storage-spaces-direct-performance-history"></a>Criando scripts com o PowerShell e Espaços de Armazenamento Diretos histórico de desempenho
 
@@ -48,7 +48,7 @@ Na captura de tela abaixo, vemos que o *servidor-02* teve um pico não explicado
 
 A saída de `Get-ClusterPerf` pipes é bem no cmdlet interno `Measure-Object` , apenas especificamos a `Value` propriedade. Com seus `-Maximum` `-Minimum` sinalizadores,, e `-Average` , `Measure-Object` nos dá as três primeiras colunas quase gratuitas. Para fazer a análise de quartil, podemos canalizar `Where-Object` e contar quantos valores foram `-Gt` (maiores que) 25, 50 ou 75. A última etapa é Beautify com `Format-Hours` `Format-Percent` funções auxiliares e, certamente, opcional.
 
-### <a name="script"></a>script
+### <a name="script"></a>Script
 
 Este é o script:
 
@@ -111,7 +111,7 @@ Implementamos a [fórmula amplamente conhecida](http://www.mathsisfun.com/data/s
 
 Se qualquer unidade for maior do que +3 σ, `Write-Host` em vermelho; se não, em verde.
 
-### <a name="script"></a>script
+### <a name="script"></a>Script
 
 Este é o script:
 
@@ -219,7 +219,7 @@ Ao contrário `Get-PhysicalDisk` do, o `Get-VM` cmdlet não reconhece o cluster 
 
 Os resultados de cada servidor vêm juntos como `$Output` , que podemos `Sort-Object` e depois `Select-Object -First 10` . Observe que `Invoke-Command` decora os resultados com uma `PsComputerName` propriedade que indica de onde eles vieram, que podemos imprimir para saber onde a VM está em execução.
 
-### <a name="script"></a>script
+### <a name="script"></a>Script
 
 Este é o script:
 
@@ -269,7 +269,7 @@ Repetimos nosso `Invoke-Command` truque de acima para `Get-NetAdapter` em cada s
    > [!NOTE]
    > Alguns fornecedores, como o Chelsio, incluem atividade de RDMA (acesso remoto direto à memória) em seus contadores de desempenho do *adaptador de rede* , portanto, ele está incluído na `NetAdapter.Bandwidth.Total` série. Outros, como o Mellanox, talvez não. Se seu fornecedor não, basta adicionar a `NetAdapter.Bandwidth.RDMA.Total` série à sua versão do script.
 
-### <a name="script"></a>script
+### <a name="script"></a>Script
 
 Este é o script:
 
@@ -345,7 +345,7 @@ Dividir a propriedade do volume `SizeRemaining` pela tendência (a inclinação 
    > [!IMPORTANT]
    > Essa estimativa é linear e baseada apenas nas últimas 14 medidas diárias. Existem técnicas mais sofisticadas e precisas. Faça um bom Judgement e não confie nesse script sozinho para determinar se deve investir na expansão do armazenamento. Ele é apresentado aqui apenas para fins educacionais.
 
-### <a name="script"></a>script
+### <a name="script"></a>Script
 
 Este é o script:
 
@@ -453,7 +453,7 @@ Na captura de tela abaixo, vemos as 10 principais máquinas virtuais por uso de 
 
 Repetimos nosso `Invoke-Command` truque, apresentado acima, para `Get-VM` em cada servidor. Usamos `Measure-Object -Average` para obter a média mensal de cada VM e, em seguida, `Sort-Object` seguimos `Select-Object -First 10` para obter nosso placar. (Ou talvez seja nossa lista *mais desejada* ?)
 
-### <a name="script"></a>script
+### <a name="script"></a>Script
 
 Este é o script:
 
@@ -485,10 +485,10 @@ $Output = Invoke-Command (Get-ClusterNode).Name {
 $Output | Sort-Object RawAvgMemoryUsage -Descending | Select-Object -First 10 | Format-Table PsComputerName, VM, AvgMemoryUsage
 ```
 
-Pronto! Espero que esses exemplos inspiram você e o ajudem a começar. Com o histórico de desempenho Espaços de Armazenamento Diretos e o cmdlet poderoso e amigável `Get-ClusterPerf` para scripts, você é capacitado a perguntar – e responder! – perguntas complexas ao gerenciar e monitorar sua infraestrutura do Windows Server 2019.
+É isso! Espero que esses exemplos inspiram você e o ajudem a começar. Com o histórico de desempenho Espaços de Armazenamento Diretos e o cmdlet poderoso e amigável `Get-ClusterPerf` para scripts, você é capacitado a perguntar – e responder! – perguntas complexas ao gerenciar e monitorar sua infraestrutura do Windows Server 2019.
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [Introdução ao Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell)
+- [Introdução ao Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)
 - [Visão geral de Espaços de Armazenamento Diretos](storage-spaces-direct-overview.md)
 - [Histórico de desempenho](performance-history.md)

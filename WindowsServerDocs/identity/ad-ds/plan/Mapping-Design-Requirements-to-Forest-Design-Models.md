@@ -8,12 +8,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dbce6b4332b17d725837c6120e6ae36883c80bc1
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 2a389b00fbf983a24b745431fee98a760f0fc756
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624144"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963558"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Mapeamento de requisitos de design para modelos de design de floresta
 
@@ -99,7 +99,7 @@ As considerações para criar florestas para isolamento de dados incluem o segui
 - Outras florestas podem ser configuradas para confiar na floresta organizacional criada para o isolamento de dados para que os usuários na floresta isolada possam acessar recursos em outras florestas. No entanto, os usuários da floresta isolada nunca devem fazer logon interativamente nas estações de trabalho na floresta confiante. O computador na floresta confiante pode ser potencialmente comprometido por software mal-intencionado e pode ser usado para capturar as credenciais de logon do usuário.
 
    > [!NOTE]
-   > Para impedir que os servidores em uma floresta confiante representem os usuários da floresta isolada e, em seguida, acessarem recursos na floresta isolada, o proprietário da floresta pode desabilitar a autenticação delegada ou usar o recurso de delegação restrita. Para obter mais informações sobre autenticação delegada e delegação restrita, consulte [delegando a autenticação](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739740(v=ws.10)).
+   > Para impedir que os servidores em uma floresta confiante representem os usuários da floresta isolada e, em seguida, acessarem recursos na floresta isolada, o proprietário da floresta pode desabilitar a autenticação delegada ou usar o recurso de delegação restrita. Para obter mais informações sobre autenticação delegada e delegação restrita, consulte [delegando a autenticação](/previous-versions/windows/it-pro/windows-server-2003/cc739740(v=ws.10)).
 
 - Talvez seja necessário estabelecer um firewall entre a floresta organizacional e as outras florestas na organização para limitar o acesso do usuário a informações fora de sua floresta.
 

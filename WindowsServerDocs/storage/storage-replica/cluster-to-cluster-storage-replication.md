@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: Como usar a réplica de armazenamento para replicar volumes em um cluster para outro cluster que executa o Windows Server.
-ms.openlocfilehash: 21e054d42d0264bb22fbd0e02382ee429958a597
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475663"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961238"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicação de armazenamento de cluster para cluster
 
@@ -140,7 +140,7 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
 2. Certifique-se de que os volumes de log SR sempre estará no armazenamento flash mais rápido e os volumes de dados no armazenamento de mais lenta alta capacidade.
 
 3. Inicie o Windows PowerShell e use o cmdlet `Test-SRTopology` para determinar se você atende a todos os requisitos de Réplica de Armazenamento. Você pode usar o cmdlet em um modo somente de requisitos para um teste rápido, assim como um modo de avaliação de desempenho de execução longa.
-   Por exemplo,
+   Por exemplo:
 
    ```PowerShell
    MD c:\temp
@@ -172,11 +172,11 @@ Agora você criará dois clusters de failover normais. Após a configuração, a
     > O WIndows Server agora inclui uma opção de testemunha baseada em nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.
 
     > [!WARNING]
-    > Para obter mais informações sobre a configuração de quorum, consulte a seção **configuração de testemunha** em [configurar e gerenciar quorum](../../failover-clustering/manage-cluster-quorum.md). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).
+    > Para obter mais informações sobre a configuração de quorum, consulte a seção **configuração de testemunha** em [configurar e gerenciar quorum](../../failover-clustering/manage-cluster-quorum.md). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).
 
 5.  Adicione um disco no site **Redmond** ao CSV do cluster. Para fazer isso, clique com botão direito em um disco de origem no nó **Discos** da seção **Armazenamento** e, em seguida, clique em **Adicionar aos Volumes Compartilhados Clusterizados**.
 
-6.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](https://technet.microsoft.com/library/hh831718.aspx)
+6.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))
 
 ### <a name="windows-powershell-method"></a>Método do Windows PowerShell
 
@@ -204,9 +204,9 @@ Agora você criará dois clusters de failover normais. Após a configuração, a
     > O WIndows Server agora inclui uma opção de testemunha baseada em nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.
 
     > [!WARNING]
-    > Para obter mais informações sobre a configuração de quorum, consulte a seção **configuração de testemunha** em [configurar e gerenciar quorum](../../failover-clustering/manage-cluster-quorum.md). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).
+    > Para obter mais informações sobre a configuração de quorum, consulte a seção **configuração de testemunha** em [configurar e gerenciar quorum](../../failover-clustering/manage-cluster-quorum.md). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).
 
-4.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](https://technet.microsoft.com/library/hh831718.aspx)
+4.  Crie o Servidor de Arquivos de Escalabilidade Horizontal clusterizado nos dois clusters usando as instruções em [Configurar Servidor de Arquivos de Escalabilidade Horizontal](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831718(v=ws.11))
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Etapa 3: Configurar a replicação de cluster para cluster usando o Windows PowerShell
 Agora você configurará a replicação de cluster para cluster usando o Windows PowerShell. Você pode executar todas as etapas abaixo nos nós diretamente ou em um computador de gerenciamento remoto que contenha o Windows Server Ferramentas de Administração de Servidor Remoto
@@ -355,7 +355,7 @@ Agora você irá gerenciar e operar a replicação de cluster para cluster. Voc�
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Número de Mensagens Enviadas
 
-    Para saber mais sobre contadores de desempenho no Windows PowerShell, confira [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).
+    Para saber mais sobre contadores de desempenho no Windows PowerShell, confira [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter).
 
 3.  Para mover a direção da replicação de um site, use o cmdlet **Set-SRPartnership**.
 

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41fe13a5083a855a597a693f8cd707e3e211966a
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 70dc69812ae6806c58affdd3961c3ec8f9afd0bc
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81623884"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963538"
 ---
 # <a name="site-functions"></a>Funções do site
 
@@ -31,7 +31,7 @@ Os controladores de domínio usam informações do site para informar Active Dir
 
 Ao localizar um controlador de domínio no mesmo site, o cliente evita as comunicações sobre links WAN. Se nenhum controlador de domínio estiver localizado no site do cliente, um controlador de domínio que tenha as conexões de custo mais baixo em relação a outros sites conectados se anunciará (registra um registro de recurso SRV (serviço específico do site) no DNS) no site que não tem um controlador de domínio. Os controladores de domínio que são publicados no DNS são aqueles do site mais próximo, conforme definido pela topologia do site. Esse processo garante que cada site tenha um controlador de domínio preferencial para autenticação.
 
-Para obter mais informações sobre o processo de localização de um controlador de domínio, consulte [Active Directory coleção](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10)).
+Para obter mais informações sobre o processo de localização de um controlador de domínio, consulte [Active Directory coleção](/previous-versions/windows/it-pro/windows-server-2003/cc780036(v=ws.10)).
 
 ## <a name="sysvol-replication"></a>Replicação do SYSVOL
 O SYSVOL é uma coleção de pastas no sistema de arquivos que existe em cada controlador de domínio em um domínio. As pastas SYSVOL fornecem um local de Active Directory padrão para arquivos que devem ser replicados em todo um domínio, incluindo objetos de Política de Grupo (GPOs), scripts de inicialização e desligamento e scripts de logon e logoff.  O Windows Server 2008 pode usar o FRS (serviço de replicação de arquivos) ou o DFSR (replicação de Sistema de Arquivos Distribuído) para replicar as alterações feitas nas pastas SYSVOL de um controlador de domínio para outros controladores de domínio. O FRS e o DFSR replicam essas alterações de acordo com o agendamento que você cria durante o design da topologia do site.
@@ -40,4 +40,4 @@ O SYSVOL é uma coleção de pastas no sistema de arquivos que existe em cada co
 O DFSN usa informações do site para direcionar um cliente ao servidor que está hospedando os dados solicitados no site. Se DFSN não encontrar uma cópia dos dados no mesmo site que o cliente, o DFSN usará as informações do site em AD DS para determinar qual servidor de arquivos que tem dados compartilhados de DFSN está mais próximo do cliente.
 
 ## <a name="service-location"></a>Local do serviço
-Ao publicar serviços como serviços de arquivo e impressão no AD DS, você permite que Active Directory clientes localizem o serviço solicitado dentro do mesmo site ou mais próximo. Os serviços de impressão usam o atributo local armazenado em AD DS para permitir que os usuários procurem impressoras por local sem saber seu local preciso. Para obter mais informações sobre como criar e implantar servidores de impressão, consulte [projetando e implantando servidores de impressão](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10)).
+Ao publicar serviços como serviços de arquivo e impressão no AD DS, você permite que Active Directory clientes localizem o serviço solicitado dentro do mesmo site ou mais próximo. Os serviços de impressão usam o atributo local armazenado em AD DS para permitir que os usuários procurem impressoras por local sem saber seu local preciso. Para obter mais informações sobre como criar e implantar servidores de impressão, consulte [projetando e implantando servidores de impressão](/previous-versions/windows/it-pro/windows-server-2003/cc785842(v=ws.10)).

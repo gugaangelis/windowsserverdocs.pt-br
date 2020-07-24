@@ -8,26 +8,26 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a82f45772e5e35afffc632de2b40c02c75b5e5e4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b4a896772c477c0d93e5b987a7cbff9a89e07882
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963458"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Novidades no Active Directory Domain Services para Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
-Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes de Active Directory e os ajudam a migrar para implantações híbridas e somente na nuvem, em que alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados localmente. Os aprimoramentos incluem:  
+Os novos recursos a seguir no Active Directory Domain Services (AD DS) melhoram a capacidade das organizações de protegerem os ambientes de Active Directory e os ajudam a migrar para implantações híbridas e somente na nuvem, em que alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados localmente. As melhorias incluem:  
   
-- [Privileged Access Management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
+- [Privileged Access Management](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
-- [Estendendo recursos de nuvem para dispositivos Windows 10 por meio do Azure Active Directory Join](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-overview/)
+- [Estendendo recursos de nuvem para dispositivos Windows 10 por meio do Azure Active Directory Join](/azure/active-directory/devices/overview)
   
-- [Conectando dispositivos ingressados no domínio ao Azure AD para experiências com o Windows 10](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-devices-group-policy/)
+- [Conectando dispositivos ingressados no domínio ao Azure AD para experiências com o Windows 10](/azure/active-directory/devices/hybrid-azuread-join-plan)
   
-- [Habilitar Microsoft Passport for Work em sua organização](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)
+- [Habilitar o Microsoft Passport for Work em sua organização](/windows/security/identity-protection/hello-for-business/hello-identity-verification)
   
 - [Substituição do FRS (serviço de replicação de arquivo) e dos níveis funcionais do Windows Server 2003](ad-ds/active-directory-functional-levels.md)  
   
@@ -52,15 +52,15 @@ O PAM (Privileged Access Management) ajuda a reduzir as preocupações de segura
 
 ### <a name="requirements-for-privileged-access-management"></a>Requisitos para o Privileged Access Management
   
-- Microsoft Identity Manager  
+- Gerenciador de Identidades da Microsoft  
   
 - Active Directory nível funcional de floresta do Windows Server 2012 R2 ou superior.  
   
-## <a name="azure-ad-join"></a>Ingressar no Azure AD
+## <a name="azure-ad-join"></a>Ingresso no AD do Azure
 
 O Azure Active Directory Join aprimora as experiências de identidade para clientes corporativos, empresariais e EDU-com recursos aprimorados para dispositivos corporativos e pessoais.  
   
-Vantagens:  
+Benefícios:  
   
 - **Disponibilidade de configurações modernas** em dispositivos Windows de propriedade corporativa. Os serviços oxigênios não exigem mais um conta Microsoft pessoal: agora eles executam as contas de trabalho existentes dos usuários para garantir a conformidade. Os serviços oxigênios funcionarão em computadores que ingressaram em um domínio local do Windows, e computadores e dispositivos que estão "Unidos" ao seu locatário do Azure AD ("domínio de nuvem"). Essas configurações incluem:  
 
@@ -77,7 +77,7 @@ Vantagens:
 - A **experiência do desenvolvedor** permite que você crie aplicativos que atendem a contextos corporativos e pessoais com uma pilha de programa compartilhada.  
 - A opção de **geração de imagens** permite escolher entre imagens e permitir que os usuários configurem dispositivos corporativos diretamente durante a experiência de primeira execução.  
   
-Para obter mais informações, consulte [introdução ao gerenciamento de dispositivos no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/overview).  
+Para obter mais informações, consulte [introdução ao gerenciamento de dispositivos no Azure Active Directory](/azure/active-directory/devices/overview).  
   
 ## <a name="windows-hello-for-business"></a>Windows Hello para Empresas
 
@@ -85,16 +85,16 @@ O Windows Hello para empresas é uma abordagem de autenticação baseada em chav
   
 O usuário faz logon no dispositivo com um registro biométrico ou PIN em informações vinculadas a um certificado ou a um par de chaves assimétricas. Os provedores de identidade (IDPs) validam o usuário mapeando a chave pública do usuário para IDLocker e fornecem informações de logon por meio de senha de uma vez (OTP), telefone ou outro mecanismo de notificação.  
   
-Para obter mais informações, consulte [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
+Para obter mais informações, consulte [Windows Hello for Business](/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
   
 ## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a>Substituição do FRS (serviço de replicação de arquivo) e dos níveis funcionais do Windows Server 2003
 
 Embora o FRS (serviço de replicação de arquivo) e os níveis funcionais do Windows Server 2003 tenham sido preteridos em versões anteriores do Windows Server, ele deixa repetindo que o sistema operacional Windows Server 2003 não é mais suportado. Como resultado, qualquer controlador de domínio que execute o Windows Server 2003 deve ser removido do domínio. O nível funcional de domínio e floresta deve ser elevado ao mínimo do Windows Server 2008 para impedir que um controlador de domínio que executa uma versão anterior do Windows Server seja adicionado ao ambiente.
 
-Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, você pode seguir [estas etapas](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\)) ou pode consultar o [conjunto simplificado de etapas no blog do gabinete de arquivo da equipe de armazenamento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).  
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, você pode seguir [estas etapas](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640019\(v=ws.10\)) ou pode consultar o [conjunto simplificado de etapas no blog do gabinete de arquivo da equipe de armazenamento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).  
   
 Os níveis funcionais de domínio e floresta do Windows Server 2003 continuam com suporte, mas as organizações devem aumentar o nível funcional para o Windows Server 2008 (ou superior, se possível) para garantir a compatibilidade e o suporte à replicação do SYSVOL no futuro. Além disso, há muitos outros benefícios e recursos disponíveis nos níveis funcionais mais altos. Confira os recursos a seguir para saber mais:  
 
-- [Noções básicas sobre níveis funcionais de Active Directory Domain Services (AD DS)](ad-ds/active-directory-functional-levels.md)  
-- [Aumentar o nível funcional do domínio](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104\(v=ws.11\))  
-- [Aumentar o nível funcional da floresta](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985\(v=ws.11\))  
+- [Compreender o AD DS (Serviços de Domínio Active Directory)](ad-ds/active-directory-functional-levels.md)  
+- [Aumentar o nível funcional do domínio](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc753104\(v=ws.11\))  
+- [Aumentar o nível funcional da floresta](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730985\(v=ws.11\))  

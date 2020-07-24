@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e63d177abd0a6880c1825b821d265c8fa233a22
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ca7ab368c9e15de15f733070a5bcb06584956500
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823159"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961128"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
 
@@ -59,7 +59,7 @@ of starting up or shutting down, and is not available.
 Verify machine is not hung during boot.
 ```
 
-REPADMIN. EXE relata que a tentativa de replicação falhou com o status 1753.
+REPADMIN.EXE relata que a tentativa de replicação falhou com o status 1753.
 Os comandos REPADMIN que normalmente citam o status 1753 incluem, mas não estão limitados a:
 
 * REPADMIN/REPLSUM
@@ -95,7 +95,7 @@ O comando **replicate Now** no Active Directory sites e serviços retorna "não 
 Clicar com o botão direito do mouse no objeto de conexão de um controlador de domínio de origem e escolher **replicar agora** falha com "não há mais pontos de extremidade disponíveis no mapeador de Endpoint".
 A mensagem de erro na tela é mostrada abaixo:
 
-Texto do título da caixa de diálogo: replicar agora texto da mensagem de diálogo: o seguinte erro ocorreu durante a tentativa de sincronizar o contexto de nomenclatura \<% nome da partição de diretório% > do controlador de domínio \<> do DC de origem para o controlador de domínio \<DC de destino >:
+Texto do título da caixa de diálogo: replicar agora texto da mensagem de diálogo: o seguinte erro ocorreu durante a tentativa de sincronizar o contexto \<%directory partition name%> de nomenclatura do controlador de domínio \<Source DC> para o controlador de domínio \<Destination DC> :
 
 Não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.
 A operação não continuará
@@ -104,7 +104,7 @@ Os eventos NTDS KCC, NTDS General ou Microsoft-Windows-ActiveDirectory_DomainSer
 
 Active Directory eventos que normalmente citam o status-2146893022 incluem, mas não estão limitados a:
 
-| ID de evento | Origem do Evento | Cadeia de eventos|
+| ID do evento | Origem do Evento | Cadeia de eventos|
 | --- | --- | --- |
 | 1655 | NTDS geral | Active Directory tentou se comunicar com o catálogo global a seguir e as tentativas não foram bem-sucedidas. |
 | 1925 | KCC DO NTDS | Falha na tentativa de estabelecer um link de replicação para a seguinte partição de diretório gravável. |
@@ -149,7 +149,7 @@ Verifique se o serviço que está registrando seu serviço com o mapeador de pon
 
 Verificar se o cliente RPC (DC de destino) está conectado ao servidor RPC pretendido (DC de origem)
 
-Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio na _msdcs. \<domínio raiz da floresta > zona DNS, independentemente de qual domínio eles residem na floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
+Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio na _msdcs. \<forest root domain>Zona DNS, independentemente do domínio no qual residem dentro da floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
 
 Ao executar operações baseadas em replicação, um DC de destino consulta o DNS para o registro CNAME de DCs de origem. O registro CNAME contém o nome do computador totalmente qualificado do DC de origem que é usado para derivar o endereço IP de DCs de origem por meio da pesquisa de cache do cliente DNS, pesquisa de arquivo do host/LMHost, registro A/AAAA do host no DNS ou WINS.
 
@@ -202,8 +202,8 @@ Se os testes acima ou um rastreamento de rede não mostrar uma consulta de nome 
 | Servidor LDAP | 389 | X | X |
 | Microsoft-DS | 445 | X | X |
 | LDAP SSL | 636 | X | X |
-| Servidor de Catálogo Global | 3268 | X |   |
-| Servidor de Catálogo Global | 3269 | X |   |
+| Servidor de catálogo global | 3268 | X |   |
+| Servidor de catálogo global | 3269 | X |   |
 
 As portas conhecidas não são registradas com o mapeador de ponto de extremidade.
 
@@ -239,7 +239,7 @@ Outras maneiras possíveis de resolver esse erro:
 * Verifique se o valor de inicialização e o status do serviço para o serviço RPC e o localizador RPC estão corretos para a versão do sistema operacional do cliente RPC (DC de destino) e do servidor RPC (DC de origem). Se o serviço estiver parado ou não configurado com valores de inicialização padrão, redefina os valores de inicialização padrão, reinicialize o controlador de domínio modificado e repita a operação.
    * Além disso, verifique se o contexto de serviço corresponde às configurações padrão listadas na tabela a seguir.
 
-      | Service | Status padrão (tipo de inicialização) no Windows Server 2003 e posterior | Status padrão (tipo de inicialização) no Windows Server 2000 |
+      | Serviço | Status padrão (tipo de inicialização) no Windows Server 2003 e posterior | Status padrão (tipo de inicialização) no Windows Server 2000 |
       | --- | --- | --- |
       | Chamada de Procedimento Remoto | Iniciado (automático) | Iniciado (automático) |
       | Localizador de chamada de procedimento remoto | Nulo ou parado (manual) | Iniciado (automático) |
@@ -296,20 +296,20 @@ Esses mapeamentos inválidos de host para IP podem ser causados por entradas obs
 
 Resumo: Este exemplo falhou porque um mapeamento de host para IP inválido (no arquivo de HOST, nesse caso) fez com que o DC de destino fosse resolvido para um controlador de domínio de "origem" que não tenha o serviço de Active Directory Domain Services em execução (ou até mesmo instalado para esse assunto) para que o SPN de replicação não tenha sido registrado e o DC de origem retornou o erro 1753. No segundo caso, um mapeamento de host para IP inválido (novamente no arquivo de HOST) fez com que o DC de destino se conectasse a um controlador de domínio que registrou o E351... o SPN de replicação, mas essa origem tinha um nome de host e uma identidade de segurança diferentes do DC de origem pretendido, de modo que as tentativas falharam com Error-2146893022: o nome principal de destino está incorreto.
 
-## <a name="related-topics"></a>Tópicos relacionados
+## <a name="related-topics"></a>Tópicos Relacionados
 
 * [Solução de problemas Active Directory operações que falham com o erro 1753: não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.](https://support.microsoft.com/kb/2089874)
 * [Artigo 839880 da base de problemas ao solucionar erros do mapeador de ponto de extremidade RPC usando as ferramentas de suporte do Windows Server 2003 do CD do produto](https://support.microsoft.com/kb/839880)
 * [Artigo 832017 do KB visão geral do serviço e requisitos de porta de rede para o sistema Windows Server](https://support.microsoft.com/kb/832017/)
 * [Artigo 224196 da base de conhecimento restringindo o tráfego de replicação Active Directory e o tráfego RPC de cliente para uma porta específica](https://support.microsoft.com/kb/224196/)
 * [Artigo 154596 da base de conhecimento como configurar a alocação de porta dinâmica RPC para trabalhar com firewalls](https://support.microsoft.com/kb/154596)
-* [Como funciona o RPC](https://msdn.microsoft.com/library/aa373935(VS.85).aspx)
-* [Como o servidor se prepara para uma conexão](https://msdn.microsoft.com/library/aa373938(VS.85).aspx)
-* [Como o cliente estabelece uma conexão](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
-* [Registrando a interface](https://msdn.microsoft.com/library/aa375357(VS.85).aspx)
-* [Disponibilizando o servidor na rede](https://msdn.microsoft.com/library/aa373974(VS.85).aspx)
-* [Registrando pontos de extremidade](https://msdn.microsoft.com/library/aa375255(VS.85).aspx)
-* [Escutando chamadas de cliente](https://msdn.microsoft.com/library/aa373966(VS.85).aspx)
-* [Como o cliente estabelece uma conexão](https://msdn.microsoft.com/library/aa373937(VS.85).aspx)
+* [Como funciona o RPC](/windows/win32/rpc/how-rpc-works)
+* [Como o servidor se prepara para uma conexão](/windows/win32/rpc/how-the-server-prepares-for-a-connection)
+* [Como o cliente estabelece uma conexão](/windows/win32/rpc/how-the-client-establishes-a-connection)
+* [Registrando a interface](/windows/win32/rpc/registering-the-interface)
+* [Disponibilizando o servidor na rede](/windows/win32/rpc/making-the-server-available-on-the-network)
+* [Registrando pontos de extremidade](/windows/win32/rpc/registering-endpoints)
+* [Escutando chamadas de cliente](/windows/win32/rpc/listening-for-client-calls)
+* [Como o cliente estabelece uma conexão](/windows/win32/rpc/how-the-client-establishes-a-connection)
 * [Restringindo o tráfego de replicação Active Directory e o tráfego RPC de cliente para uma porta específica](https://support.microsoft.com/kb/224196)
-* [SPN para um controlador de domínio de destino no AD DS](https://msdn.microsoft.com/library/dd207688(PROT.13).aspx)
+* [SPN para um controlador de domínio de destino no AD DS](/openspecs/windows_protocols/ms-drsr/41efc56e-0007-4e88-bafe-d7af61efd91f)

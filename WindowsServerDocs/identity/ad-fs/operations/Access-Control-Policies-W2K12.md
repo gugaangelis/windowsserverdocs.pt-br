@@ -8,12 +8,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7355ff9ed49a5e4ee8bca3a3d266a0ec1ecc0780
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b85e6b9d3a63796c75ce10c9cd90ed9c5d11c91f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814889"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962738"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Políticas de controle de acesso no Windows Server 2012 R2 e no Windows Server 2012 AD FS
 
@@ -86,7 +86,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 7.  Para salvar as novas regras, na caixa de diálogo **Editar regras de declaração** , clique em **OK**. A lista resultante deve ser parecida com a seguinte.  
 
-     ![Regras de autenticação de emissão](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
+     ![Regras de Autorização de Emissão](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
 ###  <a name="scenario-2-block-all-external-access-to-office-365-except-exchange-activesync"></a><a name="scenario2"></a>Cenário 2: bloquear todo o acesso externo ao Office 365, exceto o Exchange ActiveSync  
  O exemplo a seguir permite o acesso a todos os aplicativos do Office 365, incluindo o Exchange Online, de clientes internos, incluindo o Outlook. Ele bloqueia o acesso de clientes que residem fora da rede corporativa, conforme indicado pelo endereço IP do cliente, exceto para clientes do Exchange ActiveSync, como Smart Phones.  
@@ -142,7 +142,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 18. Clique em **Concluir**. Verifique se a nova regra aparece imediatamente abaixo da regra anterior e antes da regra padrão permitir acesso a todos os usuários na lista regras de autorização de emissão (a regra de negação terá precedência, embora apareça anteriormente na lista).  </br>Se você não tiver a regra de acesso de permissão padrão, poderá adicionar uma no final da lista usando o idioma da regra de declaração da seguinte maneira:</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. Para salvar as novas regras, na caixa de diálogo **Editar regras de declaração** , clique em OK. A lista resultante deve ser parecida com a seguinte.  
 
-    ![Regras de autorização de emissão](media/Access-Control-Policies-W2K12/clientaccess2.png )  
+    ![Regras de Autorização de Emissão](media/Access-Control-Policies-W2K12/clientaccess2.png )  
 
 ###  <a name="scenario-3-block-all-external-access-to-office-365-except-browser-based-applications"></a><a name="scenario3"></a>Cenário 3: bloquear todo o acesso externo ao Office 365, exceto aplicativos baseados em navegador  
 
@@ -252,19 +252,19 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
 - 10.0.0.1 – 10.0.0.14  
 
-  Primeiro, o padrão básico que corresponderá a um único endereço IP é o seguinte: \b # # #\\. # # #\\. # # #\\. # # # \b  
+  Primeiro, o padrão básico que corresponderá a um único endereço IP é o seguinte: \b # # # \\ . # # # \\ . # # # \\ . # # # \b  
 
-  Estendendo isso, podemos corresponder dois endereços IP diferentes com uma expressão OR da seguinte maneira: \b # # #\\. # # #\\. # # #\\. # #&#124;# \b \b # # #\\. # # #\\. # # #\\. # # # \b  
+  Estendendo isso, podemos corresponder dois endereços IP diferentes com uma expressão or da seguinte maneira: \b # # # \\ . # # # \\ . # # # \\ . # # # \b&#124; \b # # # \\ . # # #. # # \\ # \\ . # # #  
 
-  Portanto, um exemplo para corresponder apenas a dois endereços (como 192.168.1.1 ou 10.0.0.1) seria: \b192\\. 168\\0,1\\0,1 \ b&#124;\b10\\0\\. 0\\. 1 \ b  
+  Portanto, um exemplo para corresponder apenas a dois endereços (como 192.168.1.1 ou 10.0.0.1) seria: \b192 \\ . 168 \\ 0,1 \\ 0,1 \ b&#124; \b10 0. \\ \\ 0 \\ . 1 \ b  
 
-  Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192\\. 168\\. 1\\. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b  
+  Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192 \\ . 168 \\ . 1 \\ . ( [1-9] &#124;1 [0-9] &#124;2 [0-5]) \b  
 
   Observe o seguinte:  
 
 - O endereço IP é tratado como cadeia de caracteres e não como um número.  
 
-- A regra é dividida da seguinte maneira: \b192\\. 168\\. 1\\.  
+- A regra é dividida da seguinte maneira: \b192 \\ . 168 \\ . 1 \\ .  
 
 - Isso corresponde a qualquer valor que comece com 192.168.1.  
 
@@ -274,13 +274,13 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 
   -   &#124;1 [0-9] corresponde a endereços que terminam em 10-19  
 
-  -   &#124;2 [0-5]) corresponde a endereços que terminam em 20-25  
+  -   &#124;2 [0-5]) corresponde aos endereços que terminam em 20-25  
 
 - Observe que os parênteses devem ser posicionados corretamente, para que você não comece a corresponder a outras partes de endereços IP.  
 
-- Com o bloco 192 correspondente, podemos gravar uma expressão semelhante para o bloco 10: \b10\\0\\. 0\\. ([1-9]&#124;1 [0-4]) \b  
+- Com o bloco 192 correspondido, podemos gravar uma expressão semelhante para o 10 bloco: \b10 \\ 0 \\ \\ . ( [1-9] &#124;1 [0-4]) \b  
 
-- E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14": \b192\\. 168\\. 1\\. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b&#124;\b10\\0 a zero\\. 0\\. ([1-9]&#124;1 [0-4]) \b  
+- E colocando-os juntos, a expressão a seguir deve corresponder a todos os endereços de "192.168.1.1 ~ 25" e "10.0.0.1 ~ 14": \b192 \\ . 168 \\ . 1 \\ . ( [1-9] &#124;1 [0-9] &#124;2 [0-5]) \b&#124; \b10 \\ 0 \\ . 0 \\ . ( [1-9] &#124;1 [0-4]) \b  
 
 ### <a name="testing-the-expression"></a>Testando a expressão  
  As expressões Regex podem se tornar muito complicadas, portanto, é altamente recomendável usar uma ferramenta de verificação Regex. Se você fizer uma pesquisa na Internet por "Construtor de expressões de Regex online", encontrará vários bons utilitários online que permitirão experimentar suas expressões em relação aos dados de exemplo.  
@@ -295,7 +295,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
  AD FS no Windows Server 2012 R2 fornece informações de contexto de solicitação usando os seguintes tipos de declaração:  
 
 ### <a name="x-ms-forwarded-client-ip"></a>X-MS-encaminhar-Client-IP  
- Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+ Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
  Essa declaração de AD FS representa uma "melhor tentativa" ao garantir o endereço IP do usuário (por exemplo, o cliente Outlook) fazendo a solicitação. Essa declaração pode conter vários endereços IP, incluindo o endereço de cada proxy que encaminhou a solicitação.  Essa declaração é preenchida a partir de um HTTP. O valor da declaração pode ser um dos seguintes:  
 
@@ -317,7 +317,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
 >  Atualmente, o Exchange Online dá suporte apenas a endereços IPV4; Ele não dá suporte a endereços IPV6.  
 
 ### <a name="x-ms-client-application"></a>X-MS-cliente-aplicativo  
- Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
  Essa declaração de AD FS representa o protocolo usado pelo cliente final, que corresponde livremente ao aplicativo que está sendo usado.  Essa declaração é populada a partir de um cabeçalho HTTP que atualmente só é definido pelo Exchange Online, que popula o cabeçalho ao passar a solicitação de autenticação para AD FS. Dependendo do aplicativo, o valor dessa declaração será um dos seguintes:  
 
@@ -344,7 +344,7 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
     -   Microsoft. Exchange. IMAP  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-Client-User-Agent  
- Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
  Essa declaração de AD FS fornece uma cadeia de caracteres para representar o tipo de dispositivo que o cliente está usando para acessar o serviço. Isso pode ser usado quando os clientes desejarem impedir o acesso a determinados dispositivos (como tipos específicos de Smart Phone).  Os valores de exemplo para essa declaração incluem (mas não estão limitados a) os valores abaixo.  
 
@@ -367,23 +367,23 @@ As políticas descritas neste artigo sempre devem ser usadas com outro método d
   Também é possível que esse valor esteja vazio.  
 
 ### <a name="x-ms-proxy"></a>X-MS-proxy  
- Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+ Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
  Essa declaração de AD FS indica que a solicitação passou pelo proxy de aplicativo Web.  Essa declaração é preenchida pelo proxy de aplicativo Web, que popula o cabeçalho ao passar a solicitação de autenticação para o back-end Serviço de Federação. AD FS, em seguida, converte-o em uma declaração.  
 
  O valor da declaração é o nome DNS do proxy de aplicativo Web que passou na solicitação.  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- Tipo de declaração: `https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ Tipo de declaração:`https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
  Semelhante ao tipo de declaração x-MS-proxy acima, esse tipo de declaração indica se a solicitação passou pelo proxy de aplicativo Web. Ao contrário de x-MS-proxy, insidecorporatenetwork é um valor booliano com true indicando uma solicitação diretamente para o serviço de Federação de dentro da rede corporativa.  
 
 ### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-Absolute-Path (ativo vs passivo)  
- Tipo de declaração: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+ Tipo de declaração:`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
  Esse tipo de declaração pode ser usado para determinar solicitações originadas de clientes "ativos" (ricos) versus clientes "passivos" (baseados em navegador da Web). Isso permite que solicitações externas de aplicativos baseados em navegador, como o Outlook Acesso via Web, o SharePoint Online ou o portal do Office 365, sejam permitidas enquanto as solicitações originadas de clientes avançados, como o Microsoft Outlook, são bloqueadas.  
 
  O valor da declaração é o nome do serviço de AD FS que recebeu a solicitação.  
 
-## <a name="see-also"></a>Consulte também  
- [Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+## <a name="see-also"></a>Consulte Também  
+ [Operações do AD FS](../ad-fs-operations.md)

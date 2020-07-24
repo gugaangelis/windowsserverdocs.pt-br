@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: e7543381-4081-407f-adad-a9de792c6616
 ms.technology: identity-adds
-ms.openlocfilehash: b9ba00939ccb2ee747501733fb9654edb4c8132e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4bf3ec5cb9495e3603c3a5a385f0ff7b65e9d8b7
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824249"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962939"
 ---
 # <a name="ad-forest-recovery---cleaning-metadata-of-removed-writable-domain-controllers"></a>Recuperação de floresta do AD-limpeza de metadados de controladores de domínio graváveis removidos
 
@@ -31,7 +31,7 @@ Quando você usa a versão do Active Directory usuários e computadores ou Centr
 
 Como alternativa, você também pode usar Active Directory sites e serviços no RSAT para excluir um objeto DC. Se você usar Active Directory sites e serviços, deverá excluir o objeto de servidor associado e o objeto de configurações NTDS antes de excluir o objeto DC.  
 
-Para obter informações sobre como instalar o RSAT, consulte o artigo [ferramentas de administração de servidor remoto](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools).
+Para obter informações sobre como instalar o RSAT, consulte o artigo [ferramentas de administração de servidor remoto](../../../remote/remote-server-administration-tools.md).
   
 O procedimento a seguir é o mesmo para DCs que executam o Windows Server 2016, 2012, 2008 R2 ou 2008. O DC de destino da operação de limpeza de metadados pode executar qualquer versão do Windows Server.  
   
@@ -40,11 +40,11 @@ O procedimento a seguir é o mesmo para DCs que executam o Windows Server 2016, 
 1. Clique em **Iniciar**, **Ferramentas Administrativas** e em **Usuários e Computadores do Active Directory**.  
 2. Na árvore de console, clique duas vezes no contêiner de domínio e clique duas vezes na UO (unidade organizacional) dos **controladores de domínio** .  
 3. No painel de detalhes, clique com o botão direito do mouse no controlador de domínio que você deseja excluir e clique em **excluir**.
-   ![Excluir](media/AD-Forest-Recovery-Cleaning-Metadata/delete1.png) 
+   ![Delete (excluir)](media/AD-Forest-Recovery-Cleaning-Metadata/delete1.png) 
 4. Clique em **Sim** para confirmar a exclusão. Selecione o **controlador de domínio está permanentemente offline e não pode mais ser rebaixado usando a caixa de seleção assistente para instalação do Active Directory Domain Services (Dcpromo)** e clique em **excluir**.  
 5. Se o controlador de domínio for um servidor de catálogo global, clique em **Sim** confirmar que a exclusão.  
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 - [Guia de recuperação de floresta do AD](AD-Forest-Recovery-Guide.md)
 - [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)

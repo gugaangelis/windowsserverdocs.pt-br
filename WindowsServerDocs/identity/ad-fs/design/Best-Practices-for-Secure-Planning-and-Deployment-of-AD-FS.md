@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bcddb3cc7534f45f0a84e25a6174648f1e3b82af
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 55f68886bc5e782feb76b5005b15622881f42f6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858409"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964458"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>Práticas recomendadas para o planejamento e a implantação seguros do AD FS
 
@@ -25,10 +25,10 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
 
 -   **Proteger AD FS como um sistema de "camada 0"** 
 
-    O AD FS é, fundamentalmente, um sistema de autenticação.  Portanto, ele deve ser tratado como um sistema de "camada 0" como outro sistema de identidade em sua rede.  [Microsoft docs](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) tem mais informações sobre o modelo de camada administrativa do Active Directory. 
+    O AD FS é, fundamentalmente, um sistema de autenticação.  Portanto, ele deve ser tratado como um sistema de "camada 0" como outro sistema de identidade em sua rede.  [Microsoft docs](../../securing-privileged-access/securing-privileged-access-reference-material.md) tem mais informações sobre o modelo de camada administrativa do Active Directory. 
 
 
--   **Use o assistente de configuração de segurança para aplicar práticas recomendadas de segurança específicas de AD FS a servidores de Federação e a computadores proxy de servidor de Federação**  
+-   **Use o Assistente de Configuração de Segurança para aplicar as práticas recomendadas de segurança específicas do AD FS aos servidores de federação e computadores de proxy do servidor de federação**  
   
     O ACS (Assistente de configuração de segurança) é uma ferramenta que vem pré-instalado em todos os computadores com Windows Server 2008, Windows Server 2008 R2 e Windows Server 2012. Você pode usá-lo para aplicar as práticas recomendadas de segurança que podem ajudar a reduzir a superfície de ataques de um servidor com base nas funções do servidor instalado.  
   
@@ -50,33 +50,33 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
   
     2.  Registre o arquivo de extensão de função apropriado usando a ferramenta de linha de comando Scwcmd. Confira a tabela abaixo para ver mais detalhes sobre como usar esta ferramenta na função para qual o computador foi configurado.  
   
-    3.  Verifique se o comando foi concluído com êxito examinando o arquivo SCWRegister_log. xml, que está localizado no diretório WindowssecurityMsscwLogs  
+    3.  Verifique se o comando foi concluído com êxito examinando o arquivo SCWRegister_log.xml, que está localizado no diretório WindowssecurityMsscwLogs  
   
     Você deve executar todas essas etapas em cada servidor de federação ou computador de proxy do servidor de federação aos quais deseja aplicar políticas de segurança do AD FS com o SCW.  
   
     A tabela a seguir explica como registrar a extensão de função de SCW apropriada com base na função do servidor AD FS escolhida no computador onde o AD FS foi instalado.  
   
-    |Função do servidor AD FS|Banco de dados de configuração do AD FS usado|Digite o seguinte comando em um prompt de comando:|  
+    |Função do servidor AD FS|Banco de dados de configuração do AD FS usado|Digite o comando a seguir em um prompt de comando:|  
     |---------------------|-------------------------------------|---------------------------------------------------|  
     |Servidor de federação autônomo|Banco de Dados Interno do Windows|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |Servidor de federação ingressado em farm|Banco de Dados Interno do Windows|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |Servidor de federação ingressado em farm|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |Proxy do servidor de federação|{1&gt;N/A&lt;1}|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |Proxy do servidor de federação|N/D|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     Para saber mais sobre os bancos de dados que podem ser usados com o AD FS, confira [A função do banco de dados de configuração do AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
   
--   **Use a detecção de reprodução de token em situações em que a segurança é uma preocupação muito importante, por exemplo, quando os quiosques são usados.**  
+-   **Use a detecção de reprodução de token em situações em que a segurança é uma questão muito importante, por exemplo, ao usar quiosques.**  
     A detecção de reprodução de token é um recurso de AD FS que garante que qualquer tentativa de reprodução de uma solicitação de token feita ao Serviço de Federação é detectada e a solicitação é descartada. A detecção de reprodução de token é habilitada por padrão. Ela funciona tanto no perfil passivo do Web Services Federation quanto no perfil de WebSSO SAML (Security Assertion Markup Language) ao garantir que o mesmo token nunca seja usado mais de uma vez.  
   
     Quando o Serviço de federação é iniciado, ele começa a criar um cache com quaisquer solicitações de token executadas. Com o passar do tempo, as solicitações de token seguintes são adicionadas ao cache, multiplicando a capacidade de detectar qualquer tentativa de reproduzir uma solicitação de token para o serviço de federação. Se você desabilitar a detecção de reprodução de token e posteriormente decidir reativá-la, lembre-se de que o serviço de federação ainda aceitará tokens pelo período que possa ter sido usado anteriormente, até que o cache de reprodução tenha tido tempo suficiente para reconstruir seu conteúdo. Para saber mais, confira [A função do banco de dados de configuração de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
   
--   **Use a criptografia de token, especialmente se você estiver usando a resolução de artefato SAML de suporte.**  
+-   **Use criptografia de token, especialmente se usar resolução de artefato de SAML de suporte.**  
   
     A criptografia de tokens é altamente recomendável para aumentar a segurança e a proteção contra ataques MITM (Man-in-the-Middle) potenciais que podem ser testados em sua implantação de AD FS. Usar criptografia de uso pode representar um ligeiro impacto no resultado geral, porém este geralmente não é notado em muitas implantações, e os benefícios oferecidos por uma segurança mais elevada ultrapassam e muito qualquer custo em termos de desempenho do sistema.  
   
-    Para habilitar a criptografia de token, primeiramente adicione um certificado de criptografia à sua terceira parte confiável. Você pode configurar um certificado de criptografia ao criar um objeto de confiança de terceira parte confiável ou posteriormente. Para adicionar um certificado de criptografia posteriormente a uma relação de confiança de terceira parte confiável existente, você pode definir um certificado para uso na guia **criptografia** em Propriedades de confiança ao usar o snap-in de AD FS. Para especificar um certificado para uma relação de confiança existente usando os cmdlets AD FS, use o parâmetro EncryptionCertificate dos cmdlets **set-ClaimsProviderTrust** ou **set-RelyingPartyTrust** . Para definir um certificado para o Serviço de Federação a ser usado ao descriptografar tokens, use o cmdlet **set-ADFSCertificate** e especifique "`Token-Encryption`" para o parâmetro *certificatetype* . É possível habilitar e desativar a criptografia para um objeto de confiança de terceira parte confiável usando o parâmetro *EncryptClaims* do cmdlet **Set-RelyingPartyTrust**.  
+    Para habilitar a criptografia de token, primeiramente adicione um certificado de criptografia à sua terceira parte confiável. Você pode configurar um certificado de criptografia ao criar um objeto de confiança de terceira parte confiável ou posteriormente. Para adicionar um certificado de criptografia posteriormente a uma relação de confiança de terceira parte confiável existente, você pode definir um certificado para uso na guia **criptografia** em Propriedades de confiança ao usar o snap-in de AD FS. Para especificar um certificado para uma relação de confiança existente usando os cmdlets AD FS, use o parâmetro EncryptionCertificate dos cmdlets **set-ClaimsProviderTrust** ou **set-RelyingPartyTrust** . Para definir um certificado para o Serviço de Federação a ser usado ao descriptografar tokens, use o cmdlet **set-ADFSCertificate** e especifique " `Token-Encryption` " para o parâmetro *certificatetype* . É possível habilitar e desativar a criptografia para um objeto de confiança de terceira parte confiável usando o parâmetro *EncryptClaims* do cmdlet **Set-RelyingPartyTrust**.  
   
--   **Utilizar a proteção estendida para autenticação**  
+-   **Utilize proteção estendida para autenticação**  
   
     Para ajudar a proteger suas implantações, você pode definir e usar o recurso proteção estendida para autenticação com o AD FS. Essa configuração especifica o nível de proteção estendida para autenticação com suporte de um servidor de Federação.  
   
@@ -84,13 +84,13 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
   
     Para habilitar o recurso de proteção estendida, use o parâmetro **ExtendedProtectionTokenCheck** no cmdlet **Set-ADFSProperties**. Os possíveis valores desta configuração e o nível de segurança fornecido por esses valores são descritos na tabela a seguir.  
   
-    |Valor do Parâmetro|Nível de segurança|Configuração de proteção|  
+    |Valor de Parâmetro|Nível de segurança|Configuração de proteção|  
     |-------------------|------------------|----------------------|  
-    |Requerer|O servidor está totalmente protegido.|A proteção estendida é imposta e sempre necessária.|  
-    |Permitir|O servidor está parcialmente protegido.|A proteção estendida é imposta nos casos em que os sistemas envolvidos foram atualizados para dar suporte a ela.|  
+    |Exigir|O servidor está totalmente protegido.|A proteção estendida é imposta e sempre necessária.|  
+    |Allow|O servidor está parcialmente protegido.|A proteção estendida é imposta nos casos em que os sistemas envolvidos foram atualizados para dar suporte a ela.|  
     |Nenhum|O servidor está vulnerável.|A proteção estendida não é imposta.|  
   
--   **Se você estiver usando registro em log e rastreamento, garanta a privacidade de qualquer informação confidencial.**  
+-   **Se você usar registro em log e rastreamento, certifique-se de manter a privacidade de informações confidenciais.**  
   
     O AD FS não, por padrão, expõe ou rastreia informações de identificação pessoal (PII) diretamente como parte das operações de Serviço de Federação ou normal. No entanto, quando o log de eventos e o log de rastreamento de depuração estão habilitados no AD FS, dependendo da política de declarações que você configura alguns tipos de declarações e seus valores associados podem conter PII que podem ser registradas no evento AD FS ou nos logs de rastreamento.  
   
@@ -113,32 +113,32 @@ As seguintes práticas recomendadas principais são comuns a todas as instalaç�
      Para bloqueio inteligente de extranet para AD FS no Windows Server 2016, consulte [AD FS proteção de bloqueio inteligente de extranet](../../ad-fs/operations/Configure-AD-FS-Extranet-Smart-Lockout-Protection.md).  
   
 ## <a name="sql-serverspecific-security-best-practices-for-ad-fs"></a>Práticas recomendadas de segurança do AD FS específicas para SQL Server  
-As práticas recomendadas de segurança a seguir são específicas para o uso de Microsoft SQL Server&reg; ou banco de dados interno do Windows (WID) quando essas tecnologias de banco de dados são usadas para gerenciar o design e a implantação de AD FS.  
+As práticas recomendadas de segurança a seguir são específicas do uso de Microsoft SQL Server &reg; ou do banco de dados interno do Windows (wid) quando essas tecnologias de banco de dados são usadas para gerenciar os dados no design e na implantação de AD FS.  
   
 > [!NOTE]  
-> Essas recomendações visam ampliar, e não substituir, o guia de segurança de produto do SQL Server. Para obter mais informações sobre como planejar uma instalação segura do SQL Server, consulte [considerações de segurança para uma instalação segura do SQL](https://go.microsoft.com/fwlink/?LinkID=139831) (https://go.microsoft.com/fwlink/?LinkID=139831).  
+> Essas recomendações visam ampliar, e não substituir, o guia de segurança de produto do SQL Server. Para obter mais informações sobre como planejar uma instalação segura do SQL Server, consulte [considerações de segurança para uma instalação segura do SQL](https://go.microsoft.com/fwlink/?LinkID=139831) ( https://go.microsoft.com/fwlink/?LinkID=139831) .  
   
--   **Sempre implante SQL Server atrás de um firewall em um ambiente de rede fisicamente seguro.**  
+-   **Sempre implante o SQL Server atrás de um firewall em um ambiente de rede fisicamente seguro.**  
   
-    Uma instalação do SQL Server nunca deverá estar diretamente exposta à Internet. Somente os computadores que estão dentro de seu datacenter devem ser capazes de acessar a instalação do SQL Server que dá suporte a AD FS. Para obter mais informações, consulte [lista de verificação de práticas recomendadas de segurança](https://go.microsoft.com/fwlink/?LinkID=189229) (https://go.microsoft.com/fwlink/?LinkID=189229).  
+    Uma instalação do SQL Server nunca deverá estar diretamente exposta à Internet. Somente os computadores que estão dentro de seu datacenter devem ser capazes de acessar a instalação do SQL Server que dá suporte a AD FS. Para obter mais informações, consulte [lista de verificação de práticas recomendadas de segurança](https://go.microsoft.com/fwlink/?LinkID=189229) ( https://go.microsoft.com/fwlink/?LinkID=189229) .  
   
--   **Execute SQL Server em uma conta de serviço em vez de usar as contas de serviço do sistema padrão internas.**  
+-   **Execute o SQL Server em uma conta de serviço em vez de usar contas de serviço padrão integradas do sistema.**  
   
     Por padrão, o SQL Server geralmente é instalado e configurado para usar uma das contas integradas do sistema com suporte, tal como as contas LocalSystem ou NetworkService. Para aprimorar a segurança de sua instalação do SQL Server para AD FS, sempre que possível, use uma conta de serviço separada para acessar seu serviço de SQL Server e habilitar a autenticação Kerberos registrando o SPN (nome da entidade de segurança) dessa conta em sua implantação do Active Directory. Isso habilita a autenticação mútua entre o cliente e o servidor. Sem registrar o SPN de uma conta de serviço separada, o SQL Server usará NTLM para autenticação do Windows, na qual somente o cliente é autenticado.  
   
 -   **Minimize a área da superfície do SQL Server.**  
   
-    Habilite somente os terminais do SQL Server necessários. Por padrão, o SQL Server fornece um único ponto de extremidade TCP integrado que não pode ser removido. Por AD FS, você deve habilitar esse ponto de extremidade TCP para autenticação Kerberos. Para analisar os terminais de TCP atuais para ver se portas TCP definidas pelo usuário adicionais foram adicionados a uma instalação do SQL, use a instrução de consulta "SELECT * FROM sys.tcp_endpoints" em uma sessão Transact-SQL (T-SQL). Para obter mais informações sobre SQL Server configuração de ponto de extremidade, consulte [como configurar o mecanismo de banco de dados para escutar em várias portas TCP](https://go.microsoft.com/fwlink/?LinkID=189231) (https://go.microsoft.com/fwlink/?LinkID=189231).  
+    Habilite somente os terminais do SQL Server necessários. Por padrão, o SQL Server fornece um único ponto de extremidade TCP integrado que não pode ser removido. Por AD FS, você deve habilitar esse ponto de extremidade TCP para autenticação Kerberos. Para analisar os terminais de TCP atuais para ver se portas TCP definidas pelo usuário adicionais foram adicionados a uma instalação do SQL, use a instrução de consulta "SELECT * FROM sys.tcp_endpoints" em uma sessão Transact-SQL (T-SQL). Para obter mais informações sobre SQL Server configuração de ponto de extremidade, consulte [como configurar o mecanismo de banco de dados para escutar em várias portas TCP](https://go.microsoft.com/fwlink/?LinkID=189231) ( https://go.microsoft.com/fwlink/?LinkID=189231) .  
   
--   **Evite usar a autenticação baseada em SQL.**  
+-   **Evite usar autenticação baseada no SQL.**  
   
-    Para evitar transferir senhas como texto simples pela rede ou armazenar senhas nas definições de configuração, use a autenticação do Windows somente com sua instalação do SQL Server. A autenticação do SQL Server é um modo de autenticação legado. Não é recomendado armazenar credenciais de logon em linguagem SQL (ou seja, nomes de usuário e senhas do SQL) ao usar a autenticação do SQL Server. Para obter mais informações, consulte [modos de autenticação](https://go.microsoft.com/fwlink/?LinkID=189232) (https://go.microsoft.com/fwlink/?LinkID=189232).  
+    Para evitar transferir senhas como texto simples pela rede ou armazenar senhas nas definições de configuração, use a autenticação do Windows somente com sua instalação do SQL Server. A autenticação do SQL Server é um modo de autenticação legado. Não é recomendado armazenar credenciais de logon em linguagem SQL (ou seja, nomes de usuário e senhas do SQL) ao usar a autenticação do SQL Server. Para obter mais informações, consulte [modos de autenticação](https://go.microsoft.com/fwlink/?LinkID=189232) ( https://go.microsoft.com/fwlink/?LinkID=189232) .  
   
--   **Avalie com cuidado a necessidade de segurança de canal adicional na instalação do SQL.**  
+-   **Avalie com cautela a necessidade de usar segurança de canal adicional na instalação do SQL.**  
   
     Mesmo com a autenticação do Kerberos em vigor, o SSPI (interface SSPI) do SQL Server não oferece segurança no nível do canal. Contudo, para instalações nas quais o servidor encontra-se em uma rede protegida com segurança por firewall, pode não ser necessário criptografar as comunicações do SQL.  
   
-    Apesar de a criptografia ser uma ferramenta valiosa para ajudar a garantir a segurança, ela não deve ser considerada para todos os dados ou conexões. Quando você está decidindo se deve implementar criptografia, considere quantos usuários acessarão os dados. Se os usuários acessarem os dados de uma rede pública, a criptografia dos dados pode ser necessária para melhorar a segurança. No entanto, se todo o acesso de dados SQL por AD FS envolver uma configuração de intranet segura, a criptografia poderá não ser necessária. Qualquer uso de criptografia também deve incluir uma estratégia de manutenção para senhas, chaves e certificados.  
+    Embora a criptografia seja uma ferramenta valiosa para ajudar a garantir a segurança, não deve ser considerada em todos os dados ou conexões. Quando você estiver decidindo se a criptografia deve ser implementada, considere como os usuários acessarão os dados. Se os usuários acessarem dados por uma rede pública, a criptografia de dados poderá ser necessária para aumentar a segurança. No entanto, se todo o acesso de dados SQL por AD FS envolver uma configuração de intranet segura, a criptografia poderá não ser necessária. Qualquer uso de criptografia deve também incluir uma estratégia de manutenção de senhas, chaves e certificados.  
   
     Se houver alguma preocupação que os dados do SQL podem ser vistos ou violados na sua rede, use o IPsec ou o SSL para ajudar a proteger as conexões do SQL. No entanto, isso pode ter um efeito negativo no desempenho do SQL Server, o que pode afetar ou limitar o desempenho AD FS em algumas situações. Por exemplo, AD FS desempenho na emissão de token pode diminuir quando as pesquisas de atributo de um repositório de atributos baseado em SQL são essenciais para a emissão de tokens. Você pode eliminar a ameaça de violação do SQL com mais eficiência se possuir uma forte configuração de perímetro de segurança. Por exemplo, uma solução melhor para proteger sua instalação do SQL Server seria garantir que esta esteja inacessível a usuários e computadores da Internet, e que esteja acessível somente a usuários ou computadores no ambiente do seu datacenter.  
   
@@ -148,5 +148,5 @@ As práticas recomendadas de segurança a seguir são específicas para o uso de
   
     Para fornecer um melhor serviço e isolamento dos dados, você pode criar procedimentos armazenados para todos os comandos de pesquisa de armazenamento de atributo. Você pode criar uma função de banco de dados que receberá permissão para executar os procedimentos armazenados. Atribua a identidade de serviço do AD FS serviço do Windows a essa função de banco de dados. O serviço do Windows AD FS não deve ser capaz de executar nenhuma outra instrução SQL, além dos procedimentos armazenados apropriados que são usados para pesquisa de atributo. Bloquear o acesso ao banco de dados do SQL Server desta maneira reduz o risco de um ataque de elevação de privilégio.  
   
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 [Guia de design do AD FS no Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

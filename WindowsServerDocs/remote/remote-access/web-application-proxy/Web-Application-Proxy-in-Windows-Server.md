@@ -6,18 +6,18 @@ ms.technology: web-app-proxy
 ms.topic: article
 ms.author: kgremban
 author: eross-msft
-ms.openlocfilehash: 2fef89dc999166a7dcbb0479c28160b14b95340e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84c2c735ee3e6b19816acaa8810c297c487f5250
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818627"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961448"
 ---
 # <a name="web-application-proxy-in-windows-server"></a>Proxy de aplicativo Web no Windows Server
 
 >Aplica-se a: Windows Server&reg; 2016
 
-**Esse conteúdo é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+**Esse conteúdo é relevante para a versão local do proxy de aplicativo Web. Para habilitar o acesso seguro a aplicativos locais na nuvem, consulte o conteúdo de [proxy de aplicativo do AD do Azure](/azure/active-directory/manage-apps/application-proxy).**  
   
 O conteúdo desta seção descreve as novidades e alterações no proxy de aplicativo Web para o Windows Server 2016. Os novos recursos e as alterações listados aqui são os mais prováveis de ter o maior impacto à medida que você trabalha com a versão prévia.  
   
@@ -47,19 +47,17 @@ O conteúdo desta seção descreve as novidades e alterações no proxy de aplic
   
 - Novo log de depuração para melhorar a solução de problemas e o log de serviço aprimorado para a trilha de auditoria completa e tratamento de erro aprimorado  
   
-  Para obter mais informações sobre solução de problemas, consulte [Solucionando problemas de proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
+  Para obter mais informações sobre solução de problemas, consulte [Solucionando problemas de proxy de aplicativo Web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
 - Aprimoramentos da interface do usuário Console do Administrador  
   
 - Propagação de endereço IP do cliente para aplicativos de back-end  
   
-## <a name="see-also"></a>Consulte também  
+## <a name="see-also"></a>Consulte Também  
   
--   [Novidades no Windows Server 2016](https://technet.microsoft.com/library/dn765472.aspx)  
+-   [Novidades no Windows Server 2016](../../../get-started/whats-new-in-windows-server-2016.md)  
   
 -   [Como publicar aplicativos usando a pré-autenticação do AD FS](../web-application-proxy/Publishing-Applications-using-AD-FS-Preauthentication.md)  
   
--   [Como solucionar problemas de proxy de aplicativo Web](https://technet.microsoft.com/library/dn770156.aspx)  
+-   [Como solucionar problemas de proxy de aplicativo Web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn770156(v=ws.11))  
   
-
-

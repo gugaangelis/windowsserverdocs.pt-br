@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 17e5ceec74277c888232d17adca5c2bbb305af97
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e85cc72d2452f7bc9c63bc715339184e612e789f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823619"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960858"
 ---
 # <a name="ad-forest-recovery---redeploy-remaining-dcs"></a>Recuperação de floresta do AD-reimplantar controladores de domínio restantes
 
@@ -27,26 +27,26 @@ Em uma grande empresa enfrentando uma infra-estrutura mundial, é necessário um
   
  Há dois métodos para instalar DCs adicionais, os quais podem ser automatizados:  
   
-- Clonagem  
+- Clonar  
    - Para ambientes virtualizados que executam o Windows Server 2012, a clonagem é a maneira mais rápida e simples de recuperar um grande número de DCs. Você pode automatizar a recuperação de todos os DCs virtualizados em um domínio depois de restaurar um único DC virtualizado a partir do backup.  
-   - Para obter mais informações sobre clonagem e pré-requisitos, consulte [introdução à virtualização de Active Directory Domain Services (AD DS) (nível 100)](https://technet.microsoft.com/library/hh831734.aspx).  
-- Reinstale AD DS usando o Windows PowerShell em servidores que executam o Windows Server 2012 (ou Dcpromo. exe em servidores que executam versões anteriores do Windows Server) ou usando a interface do usuário  
-   - Para agilizar a reinstalação AD DS, você pode usar a opção instalar da mídia (IFM) para reduzir o tráfego de replicação durante a instalação. Para obter mais informações sobre como usar o comando **Ntdsutil IFM** para criar uma mídia de instalação, consulte [instalando o AD DS da mídia](https://technet.microsoft.com/library/cc770654\(WS.10\).aspx).  
+   - Para obter mais informações sobre clonagem e pré-requisitos, consulte [introdução à virtualização de Active Directory Domain Services (AD DS) (nível 100)](./managing-rid-issuance.md).  
+- Reinstale AD DS usando o Windows PowerShell em servidores que executam o Windows Server 2012 (ou Dcpromo.exe em servidores que executam versões anteriores do Windows Server) ou usando a interface do usuário  
+   - Para agilizar a reinstalação AD DS, você pode usar a opção instalar da mídia (IFM) para reduzir o tráfego de replicação durante a instalação. Para obter mais informações sobre como usar o comando **Ntdsutil IFM** para criar uma mídia de instalação, consulte [instalando o AD DS da mídia](./managing-rid-issuance.md).  
 
 Considere os seguintes pontos adicionais para cada DC de réplica que é recuperado na floresta por clonagem de DC virtualizado ou instalando AD DS (em oposição a restaurar do backup):  
   
 - Todo o software em um DC que é usado como a origem para a clonagem deve ser capaz de ser clonado. Os aplicativos e serviços que não podem ser clonados devem ser removidos antes que a clonagem seja iniciada. Se isso não for possível, um controlador de domínio virtualizado alternativo deverá ser escolhido como a origem.  
 - Se você clonar DCs virtualizados adicionais do primeiro controlador de domínio virtualizado a ser restaurado, o controlador de domínio de origem precisará ser desligado enquanto seu arquivo VHDX é copiado. Em seguida, ele precisará estar em execução e disponível online quando os DCs virtuais de clonagem forem iniciados pela primeira vez. Se o tempo de inatividade exigido pelo desligamento não for aceitável para o primeiro controlador de domínio recuperado, implante um controlador de domínio virtualizado adicional instalando AD DS para atuar como a origem para clonagem.  
-- Não há nenhuma restrição no nome do host do controlador de domínio virtualizado clonado ou no servidor no qual você deseja instalar o AD DS. Você pode usar um novo nome de host ou o nome de host que estava em uso anteriormente. Para obter mais informações sobre a sintaxe de nome de host DNS, consulte [CREATING DNS Computer Names](https://technet.microsoft.com/library/cc785282.aspx) ([https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564)).  
-- Configure cada servidor com o primeiro servidor DNS na floresta (o primeiro DC que foi restaurado no domínio raiz) como o servidor DNS preferencial nas propriedades TCP/IP de seu adaptador de rede. Para obter mais informações, consulte [Configurar TCP/IP para usar o DNS](https://technet.microsoft.com/library/cc779282.aspx).  
+- Não há nenhuma restrição no nome do host do controlador de domínio virtualizado clonado ou no servidor no qual você deseja instalar o AD DS. Você pode usar um novo nome de host ou o nome de host que estava em uso anteriormente. Para obter mais informações sobre a sintaxe de nome de host DNS, consulte [CREATING DNS Computer Names](/previous-versions/windows/it-pro/windows-server-2003/cc785282(v=ws.10)) ( [https://go.microsoft.com/fwlink/?LinkId=74564](https://go.microsoft.com/fwlink/?LinkId=74564) ).  
+- Configure cada servidor com o primeiro servidor DNS na floresta (o primeiro DC que foi restaurado no domínio raiz) como o servidor DNS preferencial nas propriedades TCP/IP de seu adaptador de rede. Para obter mais informações, consulte [Configurar TCP/IP para usar o DNS](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10)).  
 - Reimplante todos os RODCs no domínio, seja por clonagem de DC virtualizado se vários RODCs forem implantados em um local central, ou pelo método tradicional de recriá-los removendo e reinstalando AD DS se eles forem implantados individualmente em locais isolados localizados, como filiais.  
    - A recriação de RODCs garante que eles não contenham objetos remanescentes e possam ajudar a impedir que conflitos de replicação ocorram posteriormente. Ao remover AD DS de um RODC, *escolha a opção para reter os metadados do DC*. O uso dessa opção mantém a conta krbtgt para o RODC e retém as permissões para a conta de administrador do RODC delegado e o Política de Replicação de Senha (PRP) e impede que você precise usar credenciais de administrador de domínio para remover e reinstalar AD DS em um RODC. Ele também retém o servidor DNS e as funções de catálogo global se eles estiverem instalados no RODC originalmente.  
-   - Ao recriar DCs (RODCs ou DCs graváveis), pode haver um aumento no tráfego de replicação durante a reinstalação. Para ajudar a reduzir esse impacto, você pode escalonar a agenda das instalações do RODC e usar a opção instalar da mídia (IFM). Se você usar a opção IFM, execute o comando **Ntdsutil IFM** em um controlador de domínio gravável que você confia para liberar dados danificados. Isso ajuda a impedir a exibição de possíveis danos no RODC após a conclusão da reinstalação do AD DS. Para obter mais informações sobre o IFM, consulte [instalando o AD DS da mídia](https://technet.microsoft.com/library/cc770654\(WS.10\).aspx).  
-   - Para obter mais informações sobre como recompilar RODCs, consulte [remoção e reinstalação do RODC](https://technet.microsoft.com/library/cc835490\(WS.10\).aspx).  
+   - Ao recriar DCs (RODCs ou DCs graváveis), pode haver um aumento no tráfego de replicação durante a reinstalação. Para ajudar a reduzir esse impacto, você pode escalonar a agenda das instalações do RODC e usar a opção instalar da mídia (IFM). Se você usar a opção IFM, execute o comando **Ntdsutil IFM** em um controlador de domínio gravável que você confia para liberar dados danificados. Isso ajuda a impedir a exibição de possíveis danos no RODC após a conclusão da reinstalação do AD DS. Para obter mais informações sobre o IFM, consulte [instalando o AD DS da mídia](./managing-rid-issuance.md).  
+   - Para obter mais informações sobre como recompilar RODCs, consulte [remoção e reinstalação do RODC](/previous-versions/windows/it-pro/windows-server-2003/cc779282(v=ws.10)).  
 - Se um controlador de domínio estava executando o serviço do servidor DNS antes da falha da floresta, instale e configure o serviço do servidor DNS durante a instalação do AD DS. Caso contrário, configure seus clientes DNS antigos com outros servidores DNS.  
 - Se você precisar de catálogos globais adicionais para compartilhar autenticação ou carregamento de consulta para usuários ou aplicativos, poderá adicionar o catálogo global ao controlador de domínio virtualizado de origem antes da clonagem ou pode tornar um controlador de domínio um servidor de catálogo global durante a instalação do AD DS.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

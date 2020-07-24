@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2589e21c54fa864629f81b5889d0442c6f0de254
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070558"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961318"
 ---
 # <a name="network-file-system-overview"></a>Visão geral de sistema de arquivos de rede
 
@@ -91,7 +91,7 @@ Observe que o Server for NFS dá suporte a failover transparente somente quando 
 
 A implantação e o gerenciamento do NFS foram aprimorados das seguintes maneiras:
 
-- Mais de 40 novos cmdlets do Windows PowerShell facilitam a configuração e o gerenciamento de compartilhamentos de arquivos NFS. Para obter mais informações, consulte [cmdlets de NFS no Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps).
+- Mais de 40 novos cmdlets do Windows PowerShell facilitam a configuração e o gerenciamento de compartilhamentos de arquivos NFS. Para obter mais informações, consulte [cmdlets de NFS no Windows PowerShell](/powershell/module/nfs/?view=win10-ps).
 - O mapeamento de identidade é melhorado com um repositório de mapeamento de arquivo simples local e novos cmdlets do Windows PowerShell para configurar o mapeamento de identidade.
 - A interface gráfica do usuário do Gerenciador do Servidor é mais fácil de usar.
 - O novo provedor WMI versão 2 está disponível para facilitar o gerenciamento.
@@ -99,7 +99,7 @@ A implantação e o gerenciamento do NFS foram aprimorados das seguintes maneira
 
 ## <a name="server-manager-information"></a>Informações sobre o Gerenciador do Servidor
 
-No Gerenciador do Servidor-ou no [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md) mais recente-use o assistente para adicionar funções e recursos para adicionar o servidor para o serviço de função NFS (na função de serviços de arquivo e iSCSI). Para obter informações gerais sobre como instalar recursos, consulte [Instalar ou desinstalar funções, serviços de função ou recursos](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). As ferramentas do servidor para NFS incluem os serviços para o snap-in do MMC do sistema de arquivos de rede para gerenciar o servidor NFS e o cliente para componentes NFS. Usando o snap-in, você pode gerenciar o servidor para componentes NFS instalados no computador. O Server for NFS também contém várias ferramentas de administração de linha de comando do Windows:
+No Gerenciador do Servidor-ou no [centro de administração do Windows](../../manage/windows-admin-center/overview.md) mais recente-use o assistente para adicionar funções e recursos para adicionar o servidor para o serviço de função NFS (na função de serviços de arquivo e iSCSI). Para obter informações gerais sobre como instalar recursos, consulte [Instalar ou desinstalar funções, serviços de função ou recursos](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). As ferramentas do servidor para NFS incluem os serviços para o snap-in do MMC do sistema de arquivos de rede para gerenciar o servidor NFS e o cliente para componentes NFS. Usando o snap-in, você pode gerenciar o servidor para componentes NFS instalados no computador. O Server for NFS também contém várias ferramentas de administração de linha de comando do Windows:
 
 - A **montagem** monta um compartilhamento NFS remoto (também conhecido como exportação) localmente e o mapeia para uma letra de unidade local no computador cliente do Windows.
 - O **nfsadmin** gerencia as definições de configuração do servidor para os componentes NFS e Client for NFS.
@@ -108,7 +108,7 @@ No Gerenciador do Servidor-ou no [centro de administração do Windows](../../ma
 - O **conmount** exibe sistemas de arquivos montados exportados pelo servidor para NFS.
 - **Umount** remove as unidades montadas com NFS.
 
-O NFS no Windows Server 2012 apresenta o módulo NFS para o Windows PowerShell com vários cmdlets novos, especificamente para NFS. Esses cmdlets fornecem uma maneira fácil de automatizar tarefas de gerenciamento de NFS. Para obter mais informações, consulte [cmdlets de NFS no Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps).
+O NFS no Windows Server 2012 apresenta o módulo NFS para o Windows PowerShell com vários cmdlets novos, especificamente para NFS. Esses cmdlets fornecem uma maneira fácil de automatizar tarefas de gerenciamento de NFS. Para obter mais informações, consulte [cmdlets de NFS no Windows PowerShell](/powershell/module/nfs/?view=win10-ps).
 
 ## <a name="additional-information"></a>Informações adicionais
 
@@ -117,5 +117,5 @@ A tabela a seguir fornece recursos adicionais para avaliar o NFS.
 |Tipo de conteúdo|Referências|
 |---|---|
 |Implantação|[Implantar o Network File System](deploy-nfs.md)|
-|Operações|[Cmdlets do NFS no Windows PowerShell](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
+|Operações|[Cmdlets do NFS no Windows PowerShell](/powershell/module/nfs/?view=win10-ps)|
 |Tecnologias relacionadas|[Armazenamento no Windows Server](../storage.yml)|

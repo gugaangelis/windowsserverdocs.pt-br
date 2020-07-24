@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c8adf5f5586bd9f86ed3c4cd42b6172ff3f91e7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474693"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961788"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Histórico de desempenho para Espaços de Armazenamento Diretos
 
@@ -27,7 +27,7 @@ O histórico de desempenho é um novo recurso que oferece aos administradores de
 
 O histórico de desempenho é coletado por padrão com Espaços de Armazenamento Diretos no Windows Server 2019. Você não precisa instalar, configurar nem iniciar nada. Uma conexão com a Internet não é necessária, o System Center não é necessário e um banco de dados externo não é necessário.
 
-Para ver o histórico de desempenho do cluster graficamente, use o [centro de administração do Windows](../../manage/windows-admin-center/understand/windows-admin-center.md):
+Para ver o histórico de desempenho do cluster graficamente, use o [centro de administração do Windows](../../manage/windows-admin-center/overview.md):
 
 ![Histórico de desempenho no centro de administração do Windows](media/performance-history/perf-history-in-wac.png)
 

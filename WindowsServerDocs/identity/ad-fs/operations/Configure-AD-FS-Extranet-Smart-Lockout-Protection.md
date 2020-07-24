@@ -8,12 +8,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 77e3b48874d2b8898b7510ff04ebb133b9358a73
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5cb6246b00d891bd18f30b75b591dd4aaae021f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935545"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962648"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>Bloqueio de Extranet do AD FS e Extranet Smart Lockout
 
@@ -236,7 +236,7 @@ Esse comportamento pode ser substituído passando o parâmetro-Server.
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>Log de eventos & informações de atividade do usuário para AD FS bloqueio de extranet
 
 ### <a name="connect-health"></a>Connect Health
-A maneira recomendada para monitorar a atividade de conta de usuário é por meio do Connect Health. O Connect Health gera relatórios para download em IPs arriscados e tentativas de senha inadequadas. Cada item no Relatório de IP arriscado mostra informações agregadas sobre atividades de entrada do AD FS com falha que excedem o limite designado. As notificações por email podem ser definidas para alertar os administradores assim que isso ocorrer com as configurações de email personalizáveis. Para obter informações adicionais e instruções de instalação, visite a [documentação do Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs).
+A maneira recomendada para monitorar a atividade de conta de usuário é por meio do Connect Health. O Connect Health gera relatórios para download em IPs arriscados e tentativas de senha inadequadas. Cada item no Relatório de IP arriscado mostra informações agregadas sobre atividades de entrada do AD FS com falha que excedem o limite designado. As notificações por email podem ser definidas para alertar os administradores assim que isso ocorrer com as configurações de email personalizáveis. Para obter informações adicionais e instruções de instalação, visite a [documentação do Connect Health](/azure/active-directory/hybrid/how-to-connect-health-adfs).
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS eventos de bloqueio inteligente da extranet.
 
@@ -293,6 +293,6 @@ R: com o ESL habilitado, AD FS rastreia a atividade da conta e os locais conheci
 ## <a name="additional-references"></a>Referências adicionais  
 [Práticas recomendadas para proteger Serviços de Federação do Active Directory (AD FS)](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
-[Set-Adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
+[Set-Adfsproperties](/powershell/module/adfs/set-adfsproperties?view=win10-ps)
 
-[Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operações do AD FS](../ad-fs-operations.md)

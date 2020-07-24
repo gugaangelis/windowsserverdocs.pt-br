@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e7b6267946217d5c5fb57496eb6bf54911b61e8a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 23c80ffa3137f5609abdba9abea08ea62d305573
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80822589"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963788"
 ---
 # <a name="designing-the-site-topology"></a>Criar a topologia de site
 
@@ -31,7 +31,7 @@ A criação de uma topologia de site ajuda você a rotear com eficiência as con
   
 -   Otimize a capacidade dos computadores cliente de localizar os recursos mais próximos, como controladores de domínio e servidores de Sistema de Arquivos Distribuído (DFS). Isso ajuda a reduzir o tráfego de rede em links de WAN (rede de longa distância), melhorar os processos de logon e logoff e acelerar as operações de download de arquivos.  
   
-Antes de começar a projetar sua topologia de site, você deve entender sua estrutura de rede física. Além disso, você deve primeiro criar seu Active Directory estrutura lógica, incluindo a hierarquia administrativa, o plano de floresta e o plano de domínio para cada floresta. Você também deve concluir seu design de infraestrutura de DNS (sistema de nomes de domínio) para AD DS. Para obter mais informações sobre como projetar a estrutura lógica do Active Directory e a infraestrutura do DNS, consulte [criando a estrutura lógica para o Windows Server 2008 AD DS](https://technet.microsoft.com/library/cc770806.aspx).  
+Antes de começar a projetar sua topologia de site, você deve entender sua estrutura de rede física. Além disso, você deve primeiro criar seu Active Directory estrutura lógica, incluindo a hierarquia administrativa, o plano de floresta e o plano de domínio para cada floresta. Você também deve concluir seu design de infraestrutura de DNS (sistema de nomes de domínio) para AD DS. Para obter mais informações sobre como projetar a estrutura lógica do Active Directory e a infraestrutura do DNS, consulte [criando a estrutura lógica para o Windows Server 2008 AD DS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770806(v=ws.10)).  
   
 Depois de concluir o design da topologia do site, você deve verificar se os controladores de domínio atendem aos requisitos de hardware do Windows Server 2008 Standard, Windows Server 2008 Enterprise e Windows Server 2008 Datacenter.  
   
@@ -51,5 +51,3 @@ Depois de concluir o design da topologia do site, você deve verificar se os con
   
 -   [Encontrando recursos adicionais para o Windows Server 2008 Active Directory Design da topologia do site](../../ad-ds/plan/Finding-Additional-Resources-for-Windows-Server-2008-Active-Directory-Site-Topology-Design.md)  
   
-
-

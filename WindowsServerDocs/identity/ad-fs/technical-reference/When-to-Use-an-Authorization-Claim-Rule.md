@@ -8,15 +8,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e8be891a8f09e38809503c40469e21a7e99687a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c73b68d67742321ddb79d14b1e24eb574bb22b8c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853759"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961608"
 ---
 # <a name="when-to-use-an-authorization-claim-rule"></a>Quando usar uma regra de declaração de autorização
-Você pode usar essa regra em Serviços de Federação do Active Directory (AD FS) \(AD FS\) quando precisar pegar um tipo de declaração de entrada e, em seguida, aplicar uma ação que determinará se um usuário terá o acesso permitido ou negado com base no valor especificado na regra. Quando você usa essa regra, você passa ou transforma quaisquer declarações que correspondem à lógica da regra a seguir, com base em uma das opções configuradas na regra:  
+Você pode usar essa regra em Serviços de Federação do Active Directory (AD FS) \( AD FS \) quando precisar obter um tipo de declaração de entrada e aplicar uma ação que determinará se um usuário terá o acesso permitido ou negado com base no valor especificado na regra. Quando você usa essa regra, você passa ou transforma quaisquer declarações que correspondem à lógica da regra a seguir, com base em uma das opções configuradas na regra:  
   
 |Opção de regras|Lógica de regras|  
 |---------------|--------------|  
@@ -26,12 +26,12 @@ Você pode usar essa regra em Serviços de Federação do Active Directory (AD F
   
 As seções a seguir fornecem uma introdução básica às regras de declaração e mais detalhes sobre quando usar essa regra.  
   
-## <a name="about-claim-rules"></a>Sobre regras de declaração  
-Uma regra de declaração representa uma instância da lógica de negócios que usará uma declaração de entrada, aplicará uma condição a ela \(se x, y\) e produzir uma declaração de saída com base nos parâmetros de condição. A lista a seguir descreve dicas importantes que você deve conhecer sobre as regras de declaração antes de ler mais neste tópico:  
+## <a name="about-claim-rules"></a>Sobre as regras de declaração  
+Uma regra de declaração representa uma instância da lógica de negócios que usará uma declaração de entrada, aplicará uma condição a ela \( se x depois y \) e produzir uma declaração de saída com base nos parâmetros de condição. A lista a seguir descreve dicas importantes que você deve conhecer sobre as regras de declaração antes de ler mais neste tópico:  
   
--   No snap\-de gerenciamento de AD FS no, as regras de declaração só podem ser criadas usando modelos de regra de declaração  
+-   No snap in de gerenciamento de AD FS \- , as regras de declaração só podem ser criadas usando modelos de regra de declaração  
   
--   As regras de declaração processam declarações de entrada diretamente de um provedor de declarações \(como Active Directory ou outro Serviço de Federação\) ou da saída das regras de transformação de aceitação em uma confiança do provedor de declarações.  
+-   As regras de declaração processam declarações de entrada diretamente de um provedor de declarações \( , como Active Directory ou outro serviço de Federação \) ou da saída das regras de transformação de aceitação em uma confiança do provedor de declarações.  
   
 -   As regras de declaração são processadas pelo mecanismo de emissão de declarações em ordem cronológica dentro de um determinado conjunto de regras. Ao definir a precedência em regras, você pode refinar ou filtrar mais as declarações geradas pelas regras anteriores dentro de um determinado conjunto de regras.  
   
@@ -57,7 +57,7 @@ Se você quiser usar a condição negar, mas ainda permitir acesso à parte conf
 Se um usuário tiver acesso negado quando o mecanismo de emissão de declarações processar o conjunto de regras, o processamento de regras adicionais será encerrado e AD FS retornará um erro de "acesso negado" à solicitação do usuário.  
   
 ## <a name="authorizing-users"></a>Autorizando usuários  
-No AD FS, as regras de autorização são usadas para emitir uma declaração de permissão ou negação que determinará se um usuário ou um grupo de usuários \(dependendo do tipo de declaração usado\) terá permissão para acessar recursos baseados na Web\-em uma determinada parte confiável ou não. As regras de autorização só podem ser definidas em objetos de confiança da terceira parte confiável.  
+No AD FS, as regras de autorização são usadas para emitir uma declaração de permissão ou negação que determinará se um usuário ou um grupo de usuários \( dependendo do tipo de declaração usado \) terá permissão para acessar \- recursos baseados na Web em uma determinada parte confiável ou não. As regras de autorização só podem ser definidas em objetos de confiança da terceira parte confiável.  
   
 ### <a name="authorization-rule-sets"></a>Conjuntos de regras de autorização  
 Existem conjuntos de regras de autorização diferentes, dependendo do tipo de operação de permissão ou negação que você precisa configurar. Esses conjuntos de regra incluem:  
@@ -70,15 +70,15 @@ Existem conjuntos de regras de autorização diferentes, dependendo do tipo de o
   
 Para obter mais detalhes sobre como o processo de regra de autorização se encaixa no pipeline de emissão de declarações, consulte A função do mecanismo de emissão de declarações.  
   
-### <a name="supported-claim-types"></a>Tipos de declaração compatíveis  
-AD FS define dois tipos de declaração que são usados para determinar se um usuário é permitido ou negado. Esses identificadores de recursos uniformes de tipo de declaração \(URIs\) são os seguintes:  
+### <a name="supported-claim-types"></a>Tipos de declaração com suporte  
+AD FS define dois tipos de declaração que são usados para determinar se um usuário é permitido ou negado. Esses URIs de identificadores de recursos \( uniformes \) de tipo de declaração são os seguintes:  
   
-1.  **Permitir**: http:\/\/schemas.Microsoft.com\/autorização\/declarações\/permitir  
+1.  **Permitir**: http: \/ \/ schemas.Microsoft.com \/ de \/ declarações de autorização \/ permitido  
   
-2.  **Deny**: http:\/\/schemas.Microsoft.com\/autorização\/declarações\/negar  
+2.  **Deny**: http: \/ \/ \/ \/ negação de declarações de autorização de schemas.Microsoft.com \/  
   
 ## <a name="how-to-create-this-rule"></a>Como criar essa regra  
-Você pode criar ambas as regras de autorização usando o idioma da regra de declaração ou usando o modelo de regra **permitir todos os usuários** ou os **usuários permitir ou negar com base em um** modelo de regra de declaração de entrada no\-snap de gerenciamento de AD FS no. O modelo de regra Permitir todos os usuários não oferece opções de configuração. No entanto, o modelo de regra Permitir ou negar usuários com base em um modelo de regra de declaração de entrada fornece as seguintes opções de configuração:  
+Você pode criar ambas as regras de autorização usando o idioma da regra de declaração ou usando o modelo de regra **permitir todos os usuários** ou os **usuários permitir ou negar com base em um** modelo de regra de declaração de entrada no snap-in de gerenciamento de AD FS \- . O modelo de regra Permitir todos os usuários não oferece opções de configuração. No entanto, o modelo de regra Permitir ou negar usuários com base em um modelo de regra de declaração de entrada fornece as seguintes opções de configuração:  
   
 -   Especificar um nome de regra de declaração  
   
@@ -90,7 +90,7 @@ Você pode criar ambas as regras de autorização usando o idioma da regra de de
   
 -   Negar o acesso a usuários com esta declaração de entrada  
   
-Para obter mais instruções sobre como criar esse modelo, consulte [criar uma regra para permitir que todos os usuários](https://technet.microsoft.com/library/ee913577.aspx) ou [criar uma regra para permitir ou negar usuários com base em uma declaração de entrada](https://technet.microsoft.com/library/ee913594.aspx) no guia de implantação de AD FS.  
+Para obter mais instruções sobre como criar esse modelo, consulte [criar uma regra para permitir que todos os usuários](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913577(v=ws.11)) ou [criar uma regra para permitir ou negar usuários com base em uma declaração de entrada](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/ee913594(v=ws.11)) no guia de implantação de AD FS.  
   
 ## <a name="using-the-claim-rule-language"></a>Usando linguagem de regra de declaração  
 Se uma declaração dever ser enviada apenas quando o valor da declaração corresponder a um padrão personalizado, você deverá usar uma regra personalizada. Para obter mais informações, consulte [When to Use a Custom Claim Rule](When-to-Use-a-Custom-Claim-Rule.md).  
@@ -114,13 +114,13 @@ Para que um Serviço de Federação possa usar um proxy de servidor de federaç�
   
 Quando você deseja especificar qual usuário ou usuários podem criar uma relação de confiança de proxy para determinado Serviço de Federação, você pode usar qualquer um dos seguintes métodos de delegação. Essa lista de métodos está em ordem de prioridade, com base nas recomendações da equipe do produto AD FS dos métodos de delegação mais seguros e menos problemáticos. É necessário usar apenas um desses métodos, dependendo das necessidades da sua organização:  
   
-1.  Crie um grupo de segurança de domínio no Active Directory \(por exemplo, FSProxyTrustCreators\), adicione esse grupo ao grupo local de administradores em cada um dos servidores de Federação no farm e, em seguida, adicione somente as contas de usuário às quais você deseja delegar esse direito ao novo grupo. Essa é a opção preferencial.  
+1.  Crie um grupo de segurança de domínio em Active Directory \( por exemplo, FSProxyTrustCreators \) , adicione esse grupo ao grupo local de administradores em cada um dos servidores de Federação no farm e, em seguida, adicione somente as contas de usuário às quais você deseja delegar esse direito ao novo grupo. Este é o método preferencial.  
   
 2.  Adicione a conta de domínio do usuário ao grupo de administradores em cada um dos servidores de Federação no farm.  
   
 3.  Se por alguma razão você não pode usar nenhum desses métodos, também pode criar uma regra de autorização para essa finalidade. Embora não seja recomendado, devido a possíveis complicações que poderão ocorrer se essa regra não estiver escrita corretamente, você pode usar uma regra de autorização personalizada para delegar quais domínio do Active Directory as contas de usuário também podem criar ou até mesmo remover relações de confiança entre todos os proxies do servidor de federação associados a determinado Serviço de Federação.  
   
-    Se você escolher o método 3, poderá usar a sintaxe de regra a seguir para emitir uma declaração de autorização que permitirá que um usuário especificado \(nesse caso, contoso\\frankm\) para criar relações de confiança para um ou mais proxies de servidor de Federação para o Serviço de Federação. Você deve aplicar essa regra usando o conjunto de comandos do Windows PowerShell **\-adfsproperties AddProxyAuthorizationRules**.  
+    Se você escolher o método 3, poderá usar a seguinte sintaxe de regra para emitir uma declaração de autorização que permitirá a um usuário especificado \( , nesse caso, a Contoso \\ Frank \) para criar relações de confiança para um ou mais proxies de servidor de federação para o serviço de Federação. Você deve aplicar essa regra usando o comando do Windows PowerShell **set \- adfsproperties AddProxyAuthorizationRules**.  
   
     ```  
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", issuer=~"^AD AUTHORITY$" value == "contoso\frankm" ] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true")  
@@ -133,7 +133,7 @@ Quando você deseja especificar qual usuário ou usuários podem criar uma rela�
     c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/proxytrustid", Issuer =~ "^SELF AUTHORITY$" ] => issue(store="_ProxyCredentialStore",types=("https://schemas.microsoft.com/authorization/claims/permit"),query="isProxyTrustProvisioned({0})", param=c.Value );  
     ```  
   
-    Posteriormente, se você quiser remover o usuário para que ele não possa mais criar relações de confiança de proxy, poderá reverter para a regra de autorização de confiança de proxy padrão para remover o direito de usuário de criar relações de confiança do proxy para o Serviço de Federação. Você também deve aplicar essa regra usando o conjunto de comandos do Windows PowerShell **\-adfsproperties AddProxyAuthorizationRules**.  
+    Posteriormente, se você quiser remover o usuário para que ele não possa mais criar relações de confiança de proxy, poderá reverter para a regra de autorização de confiança de proxy padrão para remover o direito de usuário de criar relações de confiança do proxy para o Serviço de Federação. Você também deve aplicar essa regra usando o comando do Windows PowerShell **set \- adfsproperties AddProxyAuthorizationRules**.  
   
     ```  
     exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-544", Issuer =~ "^AD AUTHORITY$"])   
@@ -146,4 +146,3 @@ Quando você deseja especificar qual usuário ou usuários podem criar uma rela�
   
 Para obter mais informações sobre como usar o idioma da regra de declaração, consulte [a função do idioma da regra de declaração](The-Role-of-the-Claim-Rule-Language.md).  
   
-

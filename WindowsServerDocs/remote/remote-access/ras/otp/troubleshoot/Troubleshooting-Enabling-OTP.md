@@ -8,21 +8,21 @@ ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9be7ef4c4d07b522f683a403e46a11e109dbd226
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0ee3e30699c920a252646de67005675bdaeb849d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853639"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964288"
 ---
 # <a name="troubleshooting-enabling-otp"></a>Solução de problemas da habilitação de OTP
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico contém informações de solução de problemas relacionados à habilitação da autenticação de OTP do DirectAccess usando o cmdlet **Enable-DAOtpAuthentication** do PowerShell ou o console de gerenciamento de acesso remoto.
   
 ## <a name="failed-to-enroll-the-otp-signing-certificate"></a>Falha ao registrar o certificado de assinatura de OTP  
-**Erro recebido** (log de eventos do servidor). Um certificado de assinatura de OTP não pode ser registrado usando o modelo de certificado < OTP_signing_template_name >  
+**Erro recebido** (log de eventos do servidor). Um certificado de assinatura de OTP não pode ser registrado usando o modelo de certificado <OTP_signing_template_name>  
   
 **Causa**  
   
@@ -45,7 +45,7 @@ Há três causas possíveis para esse erro:
 2.  Se o modelo não existir, crie-o conforme descrito em 3,3 planejar o certificado de autoridade de registro ou se outro modelo de correspondência existir, reconfigure a OTP do DirectAccess com o novo nome de modelo.  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>Falha ao habilitar a OTP do DirectAccess quando o WebDAV está instalado  
-**Cenário**. Ao tentar aplicar a configuração de OTP do DirectAccess no console de gerenciamento de acesso remoto ou usando o cmdlet `Enable-DAOtpAuthentication` PowerShell, a operação falhará.  
+**Cenário**. Ao tentar aplicar a configuração de OTP do DirectAccess no console de gerenciamento de acesso remoto ou usando o `Enable-DAOtpAuthentication` cmdlet do PowerShell, a operação falha.  
   
 **Erro recebido** (log de eventos do servidor). As configurações de OTP do DirectAccess não podem ser aplicadas porque a extensão do IIS do WebDAV está em execução no servidor. Remova o WebDAV e aplique as configurações novamente.  
   
@@ -99,7 +99,5 @@ O snap-in MMC de modelos de certificado no Windows Server 2003 não permite que 
   
 **Solução**  
   
-Instalar o snap-in de modelos de certificado em um servidor posterior ao Windows Server 2003 e usá-lo para configurar o modelo de logon de OTP, consulte [instalar o snap-in de modelos de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
+Instalar o snap-in de modelos de certificado em um servidor posterior ao Windows Server 2003 e usá-lo para configurar o modelo de logon de OTP, consulte [instalar o snap-in de modelos de certificado](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732445(v=ws.11)).  
   
-
-

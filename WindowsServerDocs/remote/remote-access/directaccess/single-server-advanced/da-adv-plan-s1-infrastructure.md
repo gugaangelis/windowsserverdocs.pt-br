@@ -8,39 +8,39 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 80f6a06eefeccb727071432d4c519f42128da3c4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9f713ae791964190ed88b20b61db5d6dad296327
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819649"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963888"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura avançada do DirectAccess
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 O primeiro passo do planejamento da implantação avançada do DirectAccess em um único servidor é planejar a infraestrutura necessária para a implantação. Este tópico descreve as etapas de planejamento da infraestrutura. Essas tarefas de planejamento não precisam ser concluídas em uma ordem específica.  
   
-|{1&gt;Tarefa&lt;1}|Descrição|
+|Tarefa|Descrição|
 |----|--------|  
-|[1,1 planejar a topologia de rede e as configurações](#11-plan-network-topology-and-settings)|Decidir onde colocar o servidor do DirectAccess (na borda, atrás de um dispositivo NAT [conversão de endereços de rede] ou de um firewall) e planejar o endereçamento IP, roteamento e criação de túneis à força.|  
-|[requisitos de firewall do plano 1,2](#12-plan-firewall-requirements)|Planejar como permitir o tráfego do DirectAccess através de firewalls de borda.|  
-|[requisitos de certificado do plano 1,3](#13-plan-certificate-requirements)|Decidir entre usar Kerberos ou certificados para autenticação do cliente e planejar seus certificados de site. O IP-HTTPS é um protocolo de transição usado por clientes do DirectAccess para tráfego IPv6 de túnel em redes IPv4. Decidir entre autenticar no servidor IP-HTTPS com um certificado emitido por uma AC (autoridade de certificação) ou com um certificado autoassinado emitido automaticamente pelo servidor do DirectAccess.|  
-|[requisitos de DNS do plano 1,4](#14-plan-dns-requirements)|Planejar as configurações do DNS (Domain Name System) para o servidor do DirectAccess, servidores de infraestrutura, opções de resolução de nome local e conectividade de cliente.|  
-|[1,5 planejar o servidor do local de rede](#15-plan-the-network-location-server)|O servidor de local de rede é usado por clientes DirectAccess para determinar se estão localizados na rede interna. Decidir onde colocar o site do servidor de local de rede na sua organização (no servidor do DirectAccess ou em um servidor alternativo) e planejar os requisitos de certificado caso o servido de local de rede localize-se no servidor do DirectAccess.|  
-|[servidores de gerenciamento de plano 1,6](#16-plan-management-servers)|Você pode gerenciar os computadores cliente do DirectAccess localizados fora da rede corporativa na Internet. Plano para servidores de gerenciamento (como servidores de atualização) que são utilizados durante o gerenciamento de cliente remoto.|  
-|[Active Directory Domain Services de plano de 1,7](#17-plan-active-directory-domain-services)|Planejar os controladores de domínio, seus requisitos de Active Directory, autenticação de cliente e múltiplos domínios.|  
-|[1,8 planejar Política de Grupo objetos](#18-plan-group-policy-objects)|Decida quais GPOs são necessários em sua organização e como criar ou editar os GPOs.|  
+|[1.1 Planejar topologia e configurações de rede](#11-plan-network-topology-and-settings)|Decidir onde colocar o servidor do DirectAccess (na borda, atrás de um dispositivo NAT [conversão de endereços de rede] ou de um firewall) e planejar o endereçamento IP, roteamento e criação de túneis à força.|  
+|[1.2 Planejar requisitos de firewall](#12-plan-firewall-requirements)|Planejar como permitir o tráfego do DirectAccess através de firewalls de borda.|  
+|[1.3 Planejar requisitos de certificado](#13-plan-certificate-requirements)|Decidir entre usar Kerberos ou certificados para autenticação do cliente e planejar seus certificados de site. O IP-HTTPS é um protocolo de transição usado por clientes do DirectAccess para tráfego IPv6 de túnel em redes IPv4. Decidir entre autenticar no servidor IP-HTTPS com um certificado emitido por uma AC (autoridade de certificação) ou com um certificado autoassinado emitido automaticamente pelo servidor do DirectAccess.|  
+|[1.4 Planejar os requisitos de DNS](#14-plan-dns-requirements)|Planejar as configurações do DNS (Domain Name System) para o servidor do DirectAccess, servidores de infraestrutura, opções de resolução de nome local e conectividade de cliente.|  
+|[1.5 Planejar o servidor de local de rede](#15-plan-the-network-location-server)|O servidor de local de rede é usado por clientes DirectAccess para determinar se estão localizados na rede interna. Decidir onde colocar o site do servidor de local de rede na sua organização (no servidor do DirectAccess ou em um servidor alternativo) e planejar os requisitos de certificado caso o servido de local de rede localize-se no servidor do DirectAccess.|  
+|[1.6 Planejar os servidores de gerenciamento](#16-plan-management-servers)|Você pode gerenciar os computadores cliente do DirectAccess localizados fora da rede corporativa na Internet. Plano para servidores de gerenciamento (como servidores de atualização) que são utilizados durante o gerenciamento de cliente remoto.|  
+|[1.7 Planejar Serviços de Domínio Active Directory](#17-plan-active-directory-domain-services)|Planejar os controladores de domínio, seus requisitos de Active Directory, autenticação de cliente e múltiplos domínios.|  
+|[1.8 Planejar objetos de política de grupo](#18-plan-group-policy-objects)|Decida quais GPOs são necessários em sua organização e como criar ou editar os GPOs.|  
   
 ## <a name="11-plan-network-topology-and-settings"></a>1.1 Planejar topologia e configurações de rede
 
 Esta seção explica como planejar sua rede, incluindo:  
   
-- [adaptador de rede do plano 1.1.1 e endereçamento IP](#111-plan-network-adapters-and-ip-addressing)  
+- [1.1.1 Planejar adaptadores de rede e endereçamento IP](#111-plan-network-adapters-and-ip-addressing)  
   
-- [1.1.2 planejar conectividade de intranet IPv6](#112-plan-ipv6-intranet-connectivity)  
+- [1.1.2 Planejar conectividade da intranet IPv6](#112-plan-ipv6-intranet-connectivity)  
   
-- [plano de 1.1.3 para túnel forçado](#113-plan-for-force-tunneling)  
+- [1.1.3 Planejar a criação de túneis à força](#113-plan-for-force-tunneling)  
   
 ### <a name="111-plan-network-adapters-and-ip-addressing"></a>1.1.1 Planejar adaptadores de rede e endereçamento IP  
   
@@ -54,9 +54,9 @@ Esta seção explica como planejar sua rede, incluindo:
   
     O DirectAccess usa IPv6 com IPsec para criar uma conexão segura entre os computadores cliente do DirectAccess e a rede interna corporativa. Contudo, o DirectAccess não precisa necessariamente de uma conectividade IPv6 com a Internet ou suporte IPv6 nativo em redes internas. Em vez disso, ele configura e usa automaticamente tecnologias de transição IPv6 para criar um túnel de tráfego IPv6 pela Internet IPv4 (usando 6to4, Teredo ou IP-HTTPS) e pela intranet somente IPv4 (usando NAT64 ou ISATAP). Para uma visão geral dessas tecnologias de transição, confira os seguintes recursos:  
   
-    - [Tecnologias de transição IPv6](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [Tecnologias de transição IPv6](/previous-versions//bb726951(v=technet.10))  
   
-    - [Especificação de protocolo de túnel IP-HTTPS](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
+    - [Especificação do protocolo de túnel IP-HTTPS](/previous-versions//bb726951(v=technet.10))  
   
 3. Configure os adaptadores e endereços necessários conforme a tabela a seguir. Para implantações que usam um único adaptador de rede e são configurados atrás de um dispositivo NAT, configure os endereços IP usando somente a coluna **Adaptador de rede interna**.  
   
@@ -148,17 +148,17 @@ Ao usar firewalls adicionais, aplique as seguintes exceções do firewall de red
 
 Existem três cenários que pedem certificados ao implantar um único servidor do DirectAccess:  
   
-- [1.3.1 planejar certificados de computador para autenticação IPsec](#131-plan-computer-certificates-for-ipsec-authentication)  
+- [1.3.1 Planejar certificados de computador para autenticação IPsec](#131-plan-computer-certificates-for-ipsec-authentication)  
   
     Os requisitos de certificado para o IPsec incluem: um certificado de computador usado pelos computadores cliente do DirectAccess ao estabelecerem a conexão IPsec entre o cliente e o servidor do DirectAccess e um certificado de computador usado pelos servidores do DirectAccess para estabelecer conexões IPsec com clientes do DirectAccess.  
   
     Para o DirectAccess no Windows Server 2012, o uso desses certificados IPsec não é obrigatório. Como alternativa, o servidor do DirectAccess pode agir como um proxy Kerberos para realizar a autenticação IPsec sem a necessidade de certificados. Se o protocolo Kerberos for usado, ele funciona por SSL, e o proxy do Kerberos usa o certificado configurado para IP-HTTPS para esta finalidade. Alguns cenários empresariais (inclusive implantação em múltiplos sites e autenticação de cliente por OTP [senha única]) requerem o uso de autenticação de certificado e não do protocolo Kerberos.  
   
--   [1.3.2 do plano de certificados para IP-HTTPS](#132-plan-certificates-for-ip-https)  
+-   [1.3.2 Planejar certificados para IP-HTTPS](#132-plan-certificates-for-ip-https)  
   
     Quando você configurar o Acesso Remoto, o servidor do DirectAccess será configurado automaticamente para atuar como um ouvinte IP-HTTPS. O site IP-HTTPS precisa de um certificado de site, e os computadores cliente também devem poder contatar o site da CRL (lista de certificados revogados) do certificado.  
   
--   [1.3.3 planejar certificados de site para o servidor de local de rede](#133-plan-website-certificates-for-the-network-location-server)  
+-   [1.3.3 Planejar certificados de site para o servidor de local da rede](#133-plan-website-certificates-for-the-network-location-server)  
   
     O servidor de local da rede é um site usado para detectar se os computadores cliente encontram-se na rede corporativa. O servidor local da rede precisa de um certificado de site. Clientes do DirectAccess devem poder contatar o site da CRL para o certificado.  
   
@@ -168,10 +168,10 @@ Os requisitos de autoridade de certificação (AC) de cada cenário são resumid
 |------------|----------|--------------|  
 |Uma AC interna é necessária para emitir certificados de computador para o servidor DirectAccess e clientes para autenticação IPsec quando você não usa o proxy Kerberos para autenticação|AC interna:<br/><br/>você pode usar uma AC interna para emitir o certificado de IP-HTTPS; contudo, deverá verificar se o ponto de distribuição de CRL está disponível externamente|AC interna:<br/><br/>Você pode usar uma AC interna para emitir o certificado de site do servidor de local de rede. Certifique-se de que o ponto de distribuição da CRL tenha alta disponibilidade da rede interna.|  
 ||Certificado autoassinado:<br/><br/>Você pode usar um certificado autoassinado para o servidor IP-HTTPS, contudo deverá certificar-se de que o ponto de distribuição da CRL esteja disponível externamente.<br/><br/>Um certificado autoassinado não pode ser usado em implantações em múltiplos sites.|Certificado autoassinado:<br/><br/>Você pode usar um certificado autoassinado para o site do servidor de local de rede.<br/><br/>Um certificado autoassinado não pode ser usado em implantações em múltiplos sites.|  
-||**Aconselhável**<br/><br/>AC pública:<br/><br/>É recomendável usar uma AC pública para emitir o certificado IP-HTTPS. Isso garante que o ponto de distribuição da CRL esteja disponível externamente.|  
+||**Recomendado**<br/><br/>AC pública:<br/><br/>É recomendável usar uma AC pública para emitir o certificado IP-HTTPS. Isso garante que o ponto de distribuição da CRL esteja disponível externamente.|  
   
 ### <a name="131-plan-computer-certificates-for-ipsec-authentication"></a>1.3.1 Planejar certificados de computador para autenticação IPsec  
-Se você estiver usando uma autenticação IPsec baseada em certificados, o servidor e os clientes do DirectAccess precisarão obter um certificado de computador. A maneira mais simples de instalar os certificados é configurar um registro automático baseado em políticas de grupo para certificados de computador. Isso garante que todos os membros do domínio obtenham um certificado de uma AC corporativa. Se você não tiver uma autoridade de certificação corporativa configurada em sua organização, consulte [Active Directory serviços de certificados](https://technet.microsoft.com/library/cc770357.aspx).  
+Se você estiver usando uma autenticação IPsec baseada em certificados, o servidor e os clientes do DirectAccess precisarão obter um certificado de computador. A maneira mais simples de instalar os certificados é configurar um registro automático baseado em políticas de grupo para certificados de computador. Isso garante que todos os membros do domínio obtenham um certificado de uma AC corporativa. Se você não tiver uma AC corporativa configurada na organização, consulte [Serviços de Certificados do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770357(v=ws.10)).  
   
 Esse certificado possui os seguintes requisitos:  
   
@@ -301,9 +301,9 @@ Ao planejar seu site de servidor de local de rede, considere o seguinte:
 ## <a name="14-plan-dns-requirements"></a>1.4 Planejar os requisitos de DNS  
 Esta seção explica os requisitos de DNS para as solicitações de clientes e os servidores de infraestrutura do DirectAccess em uma implantação de Acesso Remoto. Ela inclui as seguintes subseções:  
   
--   [plano de 1.4.1 para os requisitos do servidor DNS](#141-plan-for-dns-server-requirements)  
+-   [1.4.1 Planejar os requisitos do servidor DNS](#141-plan-for-dns-server-requirements)  
   
--   [1.4.2 planejar a resolução de nomes locais](#142-plan-for-local-name-resolution)  
+-   [1.4.2 Planejar a resolução do nome local](#142-plan-for-local-name-resolution)  
   
 **Solicitações de cliente do DirectAccess**  
   
@@ -313,7 +313,7 @@ O DNS é usado para resolver solicitações de computadores cliente do DirectAcc
   
 -   Quando a conexão não é bem-sucedida, entende-se que os clientes encontram-se na Internet, de forma que os clientes do DirectAccess usarão o nome na NRPT (Tabela de Políticas de Resolução de Nomes) para determinar qual servidor DNS deve ser usado ao resolver solicitações de nome.  
   
-Você pode especificar que os clientes devem usar o DirectAccess DNS64 para resolver nomes ou um servidor DNS interno alternativo. Ao realizar a resolução do nome, a NRPT é usada pelos clientes do DirectAccess para identificar como lidar com uma solicitação. Os clientes solicitam um FQDN ou um nome de rótulo único, como <https://internal>. Se um nome de rótulo único for solicitado, um sufixo do DNs é agregado para criar um FQDN. Se a consulta DNS for correspondente a uma entrada da NRPT e o DNS64 ou um servidor DNS na rede interna for especificado para a entrada, a consulta será enviada para resolução de nome usando o servidor especificado. Se houver uma correspondência, mas nenhum servidor DNS tiver sido especificado, isso indicará uma exceção à regra, e a resolução de nome normal será aplicada.  
+Você pode especificar que os clientes devem usar o DirectAccess DNS64 para resolver nomes ou um servidor DNS interno alternativo. Ao realizar a resolução do nome, a NRPT é usada pelos clientes do DirectAccess para identificar como lidar com uma solicitação. Os clientes solicitam um FQDN ou um nome de rótulo único, como <https://internal> . Se um nome de rótulo único for solicitado, um sufixo do DNs é agregado para criar um FQDN. Se a consulta DNS for correspondente a uma entrada da NRPT e o DNS64 ou um servidor DNS na rede interna for especificado para a entrada, a consulta será enviada para resolução de nome usando o servidor especificado. Se houver uma correspondência, mas nenhum servidor DNS tiver sido especificado, isso indicará uma exceção à regra, e a resolução de nome normal será aplicada.  
   
 > [!NOTE]  
 > Quando um novo sufixo for adicionado à NRPT no console de Gerenciamento de Acesso Remoto, os servidores DNS padrão do sufixo poderão ser descobertos automaticamente, clicando em **Detectar**.  
@@ -326,13 +326,13 @@ A detecção automática funciona da seguinte maneira:
   
 **Servidores de infraestrutura**  
   
--   **Servidor de local de rede**  
+-   **Servidor de local da rede**  
   
     Os clientes DirectAccess tentam acessar o servidor de local de rede para determinar se estão em uma rede interna. Os clientes na rede interna devem poder resolver o nome do servidor de local de rede, mas não deverão resolver o nome quando se encontrarem na Internet. Para garantir que isso ocorra, o FQDN do servidor do local de rede é adicionado, por padrão, a uma regra de exceção do NRPT. Quando você configurar o Acesso Remoto, as seguintes regras também serão criadas automaticamente:  
   
     -   Uma regra de sufixo de DNS para o domínio da rede ou nome de domínio do servidor do DirectAccess e os endereços IPv6 que correspondem aos endereços DNS64. Em redes corporativas somente de IPv6, os servidores DNS da intranet são configurados no servidor do DirectAccess. Por exemplo, se o servidor do DirectAccess for membro do domínio corp.contoso.com, é criada uma regra para o sufixo de DNS corp.contoso.com.  
   
-    -   Uma regra de isenção para o FQDN do servidor de local de rede. Por exemplo, se a URL do servidor do local de rede for <https://nls.corp.contoso.com>, uma regra de isenção será criada para o FQDN nls.corp.contoso.com.  
+    -   Uma regra de isenção para o FQDN do servidor de local de rede. Por exemplo, se a URL do servidor de local de rede for <https://nls.corp.contoso.com> , uma regra de isenção será criada para o FQDN NLS.Corp.contoso.com.  
   
 -   **Servidor IP-HTTPS**  
   
@@ -367,11 +367,11 @@ A seguir estão os requisitos para o DNS na implantação do DirectAccess.
 -   Para clientes DirectAccess, você deve usar um servidor DNS que esteja executando o Windows Server 2012 R2, o Windows Server 2012, o Windows Server 2008 R2, o Windows Server 2008 ou qualquer outro servidor DNS que ofereça suporte a IPv6.  
   
     > [!NOTE]  
-    > Não é recomendável que você use servidores DNS que estejam executando o Windows Server 2003, quando estiver implantando o DirectAccess. Embora os servidores DNS do Windows Server 2003 ofereçam suporte a registros IPv6, o Windows Server 2003 não tem mais o suporte da Microsoft. Além disso, você não deve implantar o DirectAccess se os controladores de domínio estiverem executando o Windows Server 2003 devido a um problema com o Serviço de replicação de arquivos. Para obter mais informações, consulte [configurações sem suporte do DirectAccess](https://technet.microsoft.com/library/dn464274.aspx).  
+    > Não é recomendável que você use servidores DNS que estejam executando o Windows Server 2003, quando estiver implantando o DirectAccess. Embora os servidores DNS do Windows Server 2003 ofereçam suporte a registros IPv6, o Windows Server 2003 não tem mais o suporte da Microsoft. Além disso, você não deve implantar o DirectAccess se os controladores de domínio estiverem executando o Windows Server 2003 devido a um problema com o Serviço de replicação de arquivos. Para obter mais informações, consulte [Configurações sem suporte no DirectAccess](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn464274(v=ws.11)).  
   
 -   Use um servidor DNS com suporte a atualizações dinâmicas. Você pode usar servidores DNS que não dão suporte a atualizações dinâmicas, porém será necessário atualizar manualmente as entradas nesses servidores.  
   
--   O FQDN para os pontos de distribuição de CRL acessível pela Internet deve ser resolvível usando os servidores DNS da Internet. Por exemplo, se a URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> estiver no campo **pontos de distribuição da CRL** do certificado IP-HTTPS do servidor DirectAccess, você deverá garantir que o FQDN crld.contoso.com seja resolvido usando servidores DNS da Internet.  
+-   O FQDN para os pontos de distribuição de CRL acessível pela Internet deve ser resolvível usando os servidores DNS da Internet. Por exemplo, se <https://crl.contoso.com/crld/corp-DC1-CA.crl> a URL estiver no campo **pontos de distribuição da CRL** do certificado IP-HTTPS do servidor DirectAccess, você deverá garantir que o FQDN crld.contoso.com seja resolvido usando servidores DNS da Internet.  
   
 ### <a name="142-plan-for-local-name-resolution"></a>1.4.2 Planejar a resolução do nome local  
 Ao planejar a resolução de nome local, considere as questões a seguir:  
@@ -392,7 +392,7 @@ Pode ser necessário criar regras NRPT adicionais nos seguintes casos:
   
 **Nomes de rótulo único**  
   
-Nomes de rótulo único, como <https://paycheck>, às vezes são usados para servidores de intranet. Se um nome de rótulo único for solicitado e uma lista de pesquisa de sufixos DNS estiver configurada os sufixos DNS na lista serão agregados ao nome de rótulo único. Por exemplo, quando um usuário em um computador que é membro dos tipos de domínio corp.contoso.com <https://paycheck> no navegador da Web, o FQDN que é construído como o nome é paycheck.corp.contoso.com. Por padrão, o sufixo agregado é o sufixo de DNS primário do computador cliente.  
+Nomes de rótulo único, como <https://paycheck> , às vezes são usados para servidores de intranet. Se um nome de rótulo único for solicitado e uma lista de pesquisa de sufixos DNS estiver configurada os sufixos DNS na lista serão agregados ao nome de rótulo único. Por exemplo, quando um usuário em um computador que é membro dos tipos de domínio corp.contoso.com <https://paycheck> no navegador da Web, o FQDN que é construído como o nome é Paycheck.Corp.contoso.com. Por padrão, o sufixo agregado é o sufixo de DNS primário do computador cliente.  
   
 > [!NOTE]  
 > Em um cenário de namespace não contíguo (em que um ou mais computadores de domínio possuem um sufixo DNS diferente do domínio do Active Directory ao qual o computador pertence), é necessário garantir que a lista de pesquisa seja personalizada para incluir todos os sufixos necessários. Por padrão, o Assistente de Acesso Remoto configurará o nome do DNS do Active Directory como o sufixo de DNS primário do cliente. Certifique-se de adicionar o sufixo de DNS usado pelos clientes para a resolução de nome.  
@@ -421,9 +421,9 @@ Em geral, a resolução de nomes locais é necessária para a conectividade pont
   
 -   **Usar a resolução de nome local se o nome não existir no DNS**. Esta opção é a mais segura, pois o cliente do DirectAccess executará a resolução de nomes locais somente para os nomes de servidor que não puderem ser resolvidos pelos servidores DNS da intranet. Se os servidores DNS da intranet puderem ser acessados, os nomes dos servidores da intranet serão resolvidos. Se os servidores DNS da intranet não puderem ser acessados ou se houver outros tipos de erros de DNS, não haverá uma perda dos nomes do servidor da intranet para a sub-rede por meio da resolução de nomes locais.  
   
--   **Usar a resolução de nome local se o nome não existir no DNS ou os servidores do DNS estiverem inacessíveis quando o computador cliente está em uma rede privada (recomendado)** . Esta opção é recomendada, pois permite o uso da resolução de nomes locais em uma rede privada somente quando os servidores DNS da intranet não forem acessíveis.  
+-   **Usar a resolução de nome local se o nome não existir no DNS ou os servidores do DNS estiverem inacessíveis quando o computador cliente está em uma rede privada (recomendado)**. Esta opção é recomendada, pois permite o uso da resolução de nomes locais em uma rede privada somente quando os servidores DNS da intranet não forem acessíveis.  
   
--   **Usar a resolução de nome local para qualquer tipo de erro de resolução do DNS (menos segura)** . Esta opção é a menos segura, pois pode haver uma perda dos nomes dos servidores da rede da intranet para a sub-rede local por meio da resolução de nomes locais.  
+-   **Usar a resolução de nome local para qualquer tipo de erro de resolução do DNS (menos segura)**. Esta opção é a menos segura, pois pode haver uma perda dos nomes dos servidores da rede da intranet para a sub-rede local por meio da resolução de nomes locais.  
   
 ## <a name="15-plan-the-network-location-server"></a>1.5 Planejar o servidor de local de rede  
 O servidor de local da rede é um site usado para detectar se os clientes DirectAccess encontram-se na rede corporativa. Clientes na rede corporativa não usam o DirectAccess para acessar recursos internos, conectando-se diretamente.  
@@ -465,7 +465,7 @@ Os clientes DirectAccess iniciam comunicações com os servidores de gerenciamen
   
 Os controladores de domínio e os servidores de Configuration Manager são detectados automaticamente na primeira vez que o DirectAccess é configurado. Os controladores de domínio detectados não são exibidos no console do, mas as configurações podem ser recuperadas usando o cmdlet do Windows PowerShell **Get-DAMgmtServer-tipo All**. Se os servidores do controlador de domínio ou do Configuration Manager forem modificados, clicar em **Atualizar servidores de gerenciamento** no console de gerenciamento de acesso remoto atualizará a lista de servidores de gerenciamento.  
   
-**Requisitos do servidor de gerenciamento**  
+**Requisitos do Management Server**  
   
 -   Os servidores de gerenciamento devem ser acessíveis por meio do primeiro túnel (infraestrutura). Quando você configurar o Acesso Remoto, os servidores adicionados à lista de servidores de gerenciamento poderão ser automaticamente acessados por esse túnel.  
   
@@ -474,9 +474,9 @@ Os controladores de domínio e os servidores de Configuration Manager são detec
 ## <a name="17-plan-active-directory-domain-services"></a>1.7 Planejar Serviços de Domínio Active Directory  
 Esta seção explica como o DirectAccess usa o AD DS (Serviços de Domínio Active Directory) e inclui as seguintes subseções:  
   
--   [autenticação de cliente do plano 1.7.1](#171-plan-client-authentication)  
+-   [1.7.1 Planejar a autenticação do cliente](#171-plan-client-authentication)  
   
--   [vários domínios do 1.7.2 Plan](#172-plan-multiple-domains)  
+-   [1.7.2 Planejar domínios múltiplos](#172-plan-multiple-domains)  
   
 O DirectAccess usa AD DS e Active Directory objetos de política de grupo (GPOs) da seguinte maneira:  
   
@@ -484,7 +484,7 @@ O DirectAccess usa AD DS e Active Directory objetos de política de grupo (GPOs)
   
     O AD DS é usado para autenticação. O túnel de infraestrutura usa a autenticação NTLMv2 para a conta do computador conectada ao servidor do DirectAccess, conta esta que deve estar listada em um domínio do Active Directory. O túnel da intranet usa a autenticação Kerberos para que o usuário crie o segundo túnel.  
   
--   **Objetos Política de Grupo**  
+-   **Objetos de Política de Grupo**  
   
     O DirectAccess reúne as definições de configurações nos GPOs que são aplicadas aos servidores, clientes e servidores de aplicativo internos do DirectAccess.  
   
@@ -492,7 +492,7 @@ O DirectAccess usa AD DS e Active Directory objetos de política de grupo (GPOs)
   
     O DirectAccess usa grupos de segurança para coletar e identificar os computadores cliente do DirectAccess. Os GPOs são aplicados ao grupo de segurança necessário.  
   
--   **Políticas de IPsec estendidas**  
+-   **Políticas IPsec estendidas**  
   
     O DirectAccess pode usar a autenticação e criptografia IPsec entre os clientes e o servidor do DirectAccess. Você pode estender a autenticação e criptografia do cliente para os servidores internos de aplicativo especificados. Para tal, adicione os servidores de aplicativo desejados a um grupo de segurança.  
   
@@ -548,27 +548,27 @@ Se o WINS (Serviço de Cadastramento na Internet do Windows) for implantado em u
 ## <a name="18-plan-group-policy-objects"></a>1.8 Planejar objetos de política de grupo  
 Esta seção explica a função dos GPOs (Objetos de Política de Grupo) na sua infraestrutura de Acesso Remoto e inclui as seguintes subseções:  
   
--   [1.8.1 configurar GPOs criados automaticamente](#181-configure-automatically-created-gpos)  
+-   [1.8.1 Configurar GPOs criados automaticamente](#181-configure-automatically-created-gpos)  
   
--   [1.8.2 configurar GPOs criados manualmente](#182-configure-manually-created-gpos)  
+-   [1.8.2 Configurar GPOs criados manualmente](#182-configure-manually-created-gpos)  
   
--   [1.8.3 gerenciar GPOs em um ambiente de controlador de vários domínios](#183-manage-gpos-in-a-multi-domain-controller-environment)  
+-   [1.8.3 Gerenciar GPOs em um ambiente de controlador de múltiplos domínios](#183-manage-gpos-in-a-multi-domain-controller-environment)  
   
--   [1.8.4 gerenciar GPOs de acesso remoto com permissões limitadas](#184-manage-remote-access-gpos-with-limited-permissions)  
+-   [1.8.4 Gerenciar GPOs de Acesso Remoto com permissões limitadas](#184-manage-remote-access-gpos-with-limited-permissions)  
   
--   [1.8.5 recuperar de um GPO excluído](#185-recover-from-a-deleted-gpo)  
+-   [1.8.5 Recuperação de um GPO excluído](#185-recover-from-a-deleted-gpo)  
   
 As definições do DirectAccess ajustadas com a configuração do Acesso Remoto são coletadas nos GPOs. Os tipos de GPOs a seguir são populados com as configurações do DirectAccess, e são distribuídas da seguinte forma:  
   
--   **GPO do cliente DirectAccess**  
+-   **GPO de cliente do DirectAccess**  
   
     Este GPO contém configurações do cliente, inclusive configurações da tecnologia de transição IPv6, entradas da NRPT e regras de segurança de conexão do Firewall do Windows com Segurança Avançada. O GPO é aplicado a grupos de segurança específicos para os computadores cliente.  
   
--   **GPO do servidor DirectAccess**  
+-   **GPO do servidor do DirectAccess**  
   
     Este GPO contém definições de configurações do DirectAccess aplicadas a qualquer servidor configurado como servidor do DirectAccess na implantação. Ele contém também as regras de segurança de conexão do Firewall do Windows com Segurança Avançada.  
   
--   **GPO servidores de aplicativos**  
+-   **GPO de servidores de aplicativos**  
   
     Este GPO contém configurações para servidores de aplicativos específicos, para os quais são estendidos a autenticação e criptografia dos clientes do DirectAccess. Se a autenticação e a criptografia não forem estendidas, este GPO não será usado.  
   
@@ -584,7 +584,7 @@ Os GPOs podem ser configurados de duas maneiras:
 Seja em GPOs configurados automática ou manualmente, será necessário adicionar uma política para detecção de links lentos se os clientes usarem redes 3G. O caminho para **Política: configurar detecção de vínculo lento de Política de Grupo** é: **Configuração do computador/Políticas/Modelos administrativos/Sistema/Política de Grupo**.  
   
 > [!CAUTION]  
-> Use o procedimento a seguir para fazer backup de todos os GPOs de acesso remoto antes de executar os cmdlets do DirectAccess: [fazer backup e restaurar a configuração de acesso remoto](https://go.microsoft.com/fwlink/?LinkID=257928).  
+> Use o procedimento a seguir para fazer o backup de todos os GPOs de Acesso Remoto antes de executar cmdlets do DirectAccess: [Fazer Backup e Restaurar a Configuração de Acesso Remoto](https://go.microsoft.com/fwlink/?LinkID=257928).  
   
 Se as permissões corretas (listadas nas seções a seguir) para vinculação de GPOs não existirem, um aviso é mostrado. A operação de Acesso Remoto continuará, porém não ocorrerá a vinculação. Se o aviso for emitido, não será possível criar links automaticamente, mesmo se as permissões forem adicionadas posteriormente. Em vez disso, o administrador precisará criar os links manualmente.  
   
@@ -635,7 +635,7 @@ Se você desejar modificar as configurações de GPO, considere o seguinte:
   
 Se você modificar as configurações em um controlador de domínio que não estiver associado ao servidor do DirectAccess (para o GPO de servidor) ou ao controlador de domínio primário (para os GPOs de cliente e servidor de aplicativos), considere também o seguinte:  
   
--   Antes de modificar as configurações, certifique-se de que o controlador de domínio seja replicado com um GPO atualizado e faça backup das suas configurações de GPO. Para obter mais informações, consulte [fazer backup e restaurar a configuração de acesso remoto](https://go.microsoft.com/fwlink/?LinkID=257928). Se o GPO não estiver atualizado, poderão ocorrer conflitos de mesclagem durante a replicação, o que pode corromper a configuração do Acesso Remoto.  
+-   Antes de modificar as configurações, certifique-se de que o controlador de domínio seja replicado com um GPO atualizado e faça backup das suas configurações de GPO. Para saber mais, consulte [Backup e restauração da configuração de acesso remoto](https://go.microsoft.com/fwlink/?LinkID=257928). Se o GPO não estiver atualizado, poderão ocorrer conflitos de mesclagem durante a replicação, o que pode corromper a configuração do Acesso Remoto.  
   
 -   Depois de modificar as configurações, você deve aguardar as alterações serem replicadas para os controladores de domínio associados aos GPOs. Não faça outras alterações usando o console de Gerenciamento de Acesso Remoto ou cmdlets do PowerShell de Acesso Remoto até que a replicação tenha sido concluída. Se um GPO for editado em dois controladores de domínio antes da conclusão da replicação, poderão ocorrer conflitos de mesclagem, o que pode corromper as configurações do Acesso Remoto.  
   
@@ -664,14 +664,14 @@ O administrador do domínio vincula os GPOs em produção ao escopo de gerenciam
   
 Quando são realizadas alterações nos GPOs de preparação, o administrador de domínio pode revisar a configuração da política nesses GPOs para assegurar que esteja de acordo com os requisitos de segurança da organização. O administrador do domínio pode então exportar as configurações dos GPOs em preparação usando o recurso de backup, importando depois as configurações para os GPOs de produção correspondente, que serão aplicados então aos computadores do domínio.  
   
-O diagrama a seguir mostra esta configuração.  
+O diagrama a seguir mostra essa configuração.  
   
 ![Gerenciar GPOs de acesso remoto](../../../media/Step-1-Plan-the-DirectAccess-Infrastructure/DA_Plan_Advanced_Step1_GPOS.png)  
   
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 Recuperação de um GPO excluído  
 Se um GPO de cliente, do servidor do DirectAccess ou do servidor de aplicativos for excluído acidentalmente e não houver backup disponível, será necessário remover as definições de configuração e reconfigurá-las. Se um backup estiver disponível, você poderá usá-lo para restaurar o GPO.  
   
-O console de gerenciamento de acesso remoto exibirá a seguinte mensagem de erro: **não é possível encontrar o GPO (nome do GPO)** . Para remover as definições de configuração, siga essas etapas:  
+O console de gerenciamento de acesso remoto exibirá a seguinte mensagem de erro: **não é possível encontrar o GPO (nome do GPO)**. Para remover as definições de configuração, siga essas etapas:  
   
 1.  Execute o cmdlet **Uninstall-remoteaccess** do Windows PowerShell.  
   
@@ -679,9 +679,7 @@ O console de gerenciamento de acesso remoto exibirá a seguinte mensagem de erro
   
 3.  Você verá uma mensagem de erro indicando que o GPO não foi encontrado. Clique em **Remover definições de configuração**. Depois de concluído, o servidor será restaurado para um estado não configurado.  
   
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}  
+## <a name="next-steps"></a>Próximas etapas  
   
 -   [Etapa 2: planejar implantações do DirectAccess](da-adv-plan-s2-deployments.md)  
   
-
-

@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
 ms.technology: identity-adds
-ms.openlocfilehash: 13153358f50302de722109bfe101911e3bac4708
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 84ce874ea85cce7ea562fcd5169902086732b4c4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823439"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960838"
 ---
 # <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>Recuperação de floresta do AD-recuperando um único domínio em uma floresta de multidomínio
 
@@ -45,9 +45,9 @@ A origem para a limpeza do objeto remanescente deve ser um DC no domínio recupe
 
 A remoção de objetos remanescentes é vantajosa para organizações maiores que não podem arriscar o tempo de inatividade associado às outras opções.  
 
-Para obter mais informações, consulte [usar repadmin para remover objetos remanescentes](https://technet.microsoft.com/library/cc785298.aspx).
+Para obter mais informações, consulte [usar repadmin para remover objetos remanescentes](/previous-versions/windows/it-pro/windows-server-2003/cc785298(v=ws.10)).
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 - [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  

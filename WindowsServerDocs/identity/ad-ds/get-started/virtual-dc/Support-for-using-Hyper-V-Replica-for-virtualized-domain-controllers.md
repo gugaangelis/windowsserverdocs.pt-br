@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d882fc5a8e519c461e17a7a82c8abfc6c16fbe9c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b4c04583452182479064b48e01c6ee495620e040
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824499"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962968"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>Suporte para usar a réplica do Hyper-V para controladores de domínio virtualizados
 
@@ -25,7 +25,7 @@ A Réplica do Hyper-V replica de modo assíncrono as VMs escolhidas em um host H
   
 O failover pode ser planejado ou não planejado. Um failover planejado é iniciado por um administrador na VM primária, e todas as alterações não replicadas são copiadas na VM de réplica para evitar qualquer perda de dados. Um failover não planejado é iniciado na VM de réplica em resposta a uma falha inesperada da VM primária. A perda de dados é possível porque não há oportunidade de transmitir as alterações da VM primária, que podem ainda não ter sido replicadas.  
   
-Para obter mais informações sobre a réplica do Hyper-V, consulte [visão geral da réplica do Hyper-v](https://technet.microsoft.com/library/jj134172.aspx) e [implantar réplica do Hyper-v](https://technet.microsoft.com/library/jj134207.aspx).  
+Para obter mais informações sobre a réplica do Hyper-V, consulte [visão geral da réplica do Hyper-v](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134172(v=ws.11)) e [implantar réplica do Hyper-v](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134207(v=ws.11)).  
   
 > [!NOTE]  
 > A Réplica do Hyper-V só pode ser executada no Hyper-V do Windows Server, e não na versão do Hyper-V executada no Windows 8.  
@@ -35,20 +35,20 @@ Para obter mais informações sobre a réplica do Hyper-V, consulte [visão gera
 O Hyper-V do Windows Server 2012 introduziu VM-Generationid (VMGenID). O VMGenID fornece um caminho para que o hipervisor se comunique com o SO convidado quando ocorrem alterações significativas. Por exemplo, o hipervisor pode comunicar a um DC virtualizado que houve restauração de conteúdo de um instantâneo (tecnologia de restauração de instantâneos do Hyper-V, não de restauração de backup). AD DS no Windows Server 2012 e mais recente estão cientes da tecnologia de VM VMGenID e a usa para detectar quando as operações do hipervisor são executadas, como a restauração de instantâneo, o que permite que ela se proteja melhor.  
   
 > [!NOTE]
-> Somente AD DS nos DCs do Windows Server 2012 ou mais recente fornecem essas medidas de segurança resultantes de VMGenID; Os DCs que executam todas as versões anteriores do Windows Server estão sujeitos a problemas como reversão de USN que podem ocorrer quando um controlador de domínio virtualizado é restaurado usando um mecanismo sem suporte, como a restauração de instantâneo. Para obter mais informações sobre essas proteções e quando elas são disparadas, consulte [arquitetura do controlador de domínio virtualizado](https://technet.microsoft.com/library/jj574118.aspx).  
+> Somente AD DS nos DCs do Windows Server 2012 ou mais recente fornecem essas medidas de segurança resultantes de VMGenID; Os DCs que executam todas as versões anteriores do Windows Server estão sujeitos a problemas como reversão de USN que podem ocorrer quando um controlador de domínio virtualizado é restaurado usando um mecanismo sem suporte, como a restauração de instantâneo. Para obter mais informações sobre essas proteções e quando elas são disparadas, consulte [arquitetura do controlador de domínio virtualizado](./virtualized-domain-controller-architecture.md).  
   
 Quando ocorre um failover de réplica do Hyper-V (planejado ou não planejado), o DC virtualizado detecta uma redefinição de VMGenID, disparando os recursos de segurança mencionados anteriormente. As operações do Active Directory continuarão normalmente. A VM de réplica será executada no lugar da VM primária.  
   
 > [!NOTE]  
 > Como não existirão duas instâncias da mesma identidade de DC, é possível que as instâncias primária e replicada sejam executadas. Embora a Réplica do Hyper-V tenha mecanismos de controle estabelecidos para garantir que as VMs primária e de réplica não sejam executadas simultaneamente, isso será possível caso o link entre elas falhe após a replicação da VM. No caso dessa ocorrência improvável, os DCs virtualizados executando o Windows Server 2012 têm garantias para ajudar a proteger o AD DS, enquanto os DCs virtualizados executando versões anteriores do Windows Server não têm.  
   
-Ao usar a réplica do Hyper-V, certifique-se de seguir as práticas recomendadas para [executar controladores de domínio virtual no Hyper-v](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(v=WS.10).aspx). São discutidas, por exemplo, as recomendações de armazenamento de arquivos do Active Directory em discos SCSI virtuais, o que oferece garantias mais sólidas de durabilidade dos dados.  
+Ao usar a réplica do Hyper-V, certifique-se de seguir as práticas recomendadas para [executar controladores de domínio virtual no Hyper-v](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)). São discutidas, por exemplo, as recomendações de armazenamento de arquivos do Active Directory em discos SCSI virtuais, o que oferece garantias mais sólidas de durabilidade dos dados.  
   
 ## <a name="supported-and-unsupported-scenarios"></a>Cenários com e sem suporte
 
 Somente as VMs que executam o Windows Server 2012 ou mais recente têm suporte para failover não planejado e para teste de failover. Mesmo para o failover planejado, o Windows Server 2012 ou mais recente é recomendado para o DC virtualizado a fim de reduzir os riscos caso um administrador inicie inadvertidamente a VM primária e a VM replicada ao mesmo tempo.  
   
-As VMs executando versões anteriores do Windows Server têm suporte para o failover planejado, mas não para o failover não planejado em virtude da possibilidade de reversão de USN. Para obter mais informações sobre a reversão de USN, consulte [USN e reversão de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).  
+As VMs executando versões anteriores do Windows Server têm suporte para o failover planejado, mas não para o failover não planejado em virtude da possibilidade de reversão de USN. Para obter mais informações sobre a reversão de USN, consulte [USN e reversão de USN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)).  
   
 > [!NOTE]  
 > Não existem requisitos de nível funcional para o domínio ou a floresta. Existem apenas requisitos de sistema operacional para os DCs executados como VMs replicadas usando a Réplica do Hyper-V. As VMs podem ser implantadas em uma floresta que contenha outros DCs físicos ou virtuais executando versões anteriores do Windows Server, podendo ou não ser replicadas com a Réplica do Hyper-V.  
@@ -61,8 +61,8 @@ A tabela a seguir explica o suporte a DCs virtualizados que executam o Windows S
   
 |||  
 |-|-|  
-|Failover planejado|Failover Não Planejado|  
-|Com suporte|Com suporte|  
+|Failover planejado|Failover não planejado|  
+|Suportado|Suportado|  
 |Caso de teste:<p>-DC1 e DC2 estão executando o Windows Server 2012.<p>-DC2 é desligado e um failover é executado em DC2-rec. O failover pode ser planejado ou não planejado.<p>-Depois que DC2-REC é iniciado, ele verifica se o valor de VMGenID que ele tem em seu banco de dados é o mesmo que o valor do driver de máquina virtual salvo pelo servidor de réplica do Hyper-V.<p>-Como resultado, DC2-REC dispara proteções de virtualização; em outras palavras, ele redefine sua invocação, descarta seu pool RID e define um requisito de sincronização inicial antes de assumir uma função de mestre de operações. Para saber mais sobre o requisito de sincronização inicial, confira.<p>-DC2-REC, em seguida, salva o novo valor de VMGenID em seu banco de dados e confirma todas as atualizações subsequentes no contexto da nova invocação.<p>-Como resultado da redefinição de ininvocaid, DC1 convergirá em todas as alterações do AD introduzidas por DC2-REC, mesmo que tenha sido revertida no tempo, o que significa que todas as atualizações do AD executadas no DC2-REC após o failover irão convergir com segurança|O caso de teste é o mesmo do failover planejado, mas com estas exceções:<p>-Quaisquer atualizações do AD recebidas no DC2, mas ainda não foram replicadas pelo AD para um parceiro de replicação antes que o evento de failover seja perdido.<p>-As atualizações do AD recebidas no DC2 após a hora do ponto de recuperação que foram replicadas pelo AD para DC1 serão replicadas de DC1 de volta para DC2-rec.|  
   
 ### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 e versões anteriores
@@ -71,6 +71,6 @@ A tabela a seguir explica o suporte a DCs virtualizados executando o Windows Ser
   
 |||  
 |-|-|  
-|Failover planejado|Failover Não Planejado|  
-|Com suporte, mas não recomendável, porque os DCs que executam essas versões do Windows Server não dão suporte a VMGenID nem usam garantias de virtualização associadas. Isso os coloca em risco para a reversão de USN. Para obter mais informações, consulte [USN e reversão de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|Observação sem suporte **:** o failover não planejado teria suporte quando a reversão de USN não for um risco, como um único controlador de domínio na floresta (uma configuração que não é recomendada).|  
-|Caso de teste:<p>-DC1 e DC2 estão executando o Windows Server 2008 R2.<p>-DC2 é desligado e um failover planejado é executado em DC2-rec. Todos os dados no DC2 são replicados para DC2-REC antes que o desligamento seja concluído.<p>-Depois de DC2-REC ser iniciado, ele retoma a replicação com DC1 usando a mesma invocaid do DC2.|{1&gt;N/A&lt;1}|  
+|Failover planejado|Failover não planejado|  
+|Com suporte, mas não recomendável, porque os DCs que executam essas versões do Windows Server não dão suporte a VMGenID nem usam garantias de virtualização associadas. Isso os coloca em risco para a reversão de USN. Para obter mais informações, consulte [USN e reversão de USN](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553(v=ws.10)).|Observação sem suporte **:** o failover não planejado teria suporte quando a reversão de USN não for um risco, como um único controlador de domínio na floresta (uma configuração que não é recomendada).|  
+|Caso de teste:<p>-DC1 e DC2 estão executando o Windows Server 2008 R2.<p>-DC2 é desligado e um failover planejado é executado em DC2-rec. Todos os dados no DC2 são replicados para DC2-REC antes que o desligamento seja concluído.<p>-Depois de DC2-REC ser iniciado, ele retoma a replicação com DC1 usando a mesma invocaid do DC2.|N/D|  

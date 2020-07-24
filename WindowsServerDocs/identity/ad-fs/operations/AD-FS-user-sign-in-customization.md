@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 265dc24ccdaf261d6c58cb1fa77ea93d71b4007b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: c8b332de4053aa64f3294c3cd68c37773742f9f5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858079"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962718"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>Personalização de entrada de usuário do AD FS
 
@@ -22,7 +22,7 @@ O AD FS fornece várias opções para que os administradores personalizem e adap
 
 
 
-![AD FS personalização](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
+![Personalização do AD FS](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
     
   
 
@@ -34,24 +34,20 @@ O AD FS fornece várias opções para que os administradores personalizem e adap
 
 Tópico|Descrição|
 -----|-----|
-[AD FS personalização no Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)|Novas opções de personalização disponíveis para AD FS no Windows Server 2016|
+[AD FS personalização no Windows Server 2016](./ad-fs-customization-in-windows-server.md)|Novas opções de personalização disponíveis para AD FS no Windows Server 2016|
 [Alterar o nome da empresa](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|Etapas para exibir o nome de suas empresas na página de entrada|
 [Alterar o logotipo da empresa](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|Etapas para alterar o logotipo que aparece na página de entrada|
 [Alterar a ilustração](Change-the-illustration-on-the-AD-FS-sign-in-page.md)|Etapas para alterar a ilustração que aparece na página de entrada|
-[Adicionar Descrição de entrada](Add-sign-in-page-description.md)|Etapas para adicionar uma descrição à página de entrada|
+[Adicionar a descrição de entrada](Add-sign-in-page-description.md)|Etapas para adicionar uma descrição à página de entrada|
 [Adicionar link do suporte técnico](Add-Help-Desk-Link.md)|Etapas para adicionar um link de suporte técnico|
 [Adicionar link inicial](Add-Home-Link.md)|Etapas para adicionar um link inicial|
 [Adicionar link de privacidade](Add-Privacy-Link.md)|Etapas para adicionar um link de privacidade|
 [Temas da Web personalizados](Custom-Web-Themes-in-AD-FS.md)|Informações sobre como usar temas da Web personalizados
 [Mensagens de erro personalizadas](Custom-error-messages-for-AD-FS-sign-in-page.md)|Etapas para personalizar mensagens de erro
-[Descoberta de realm inicial](Home-Realm-Discovery-Customization.md)|Etapas para personalizar a descoberta de realm inicial|
+[Descoberta de Realm Inicial](Home-Realm-Discovery-Customization.md)|Etapas para personalizar a descoberta de realm inicial|
 [Atualizar personalização de senha](Update-password-customization.md)|Etapas para habilitar e personalizar a página de atualização de senha|
 [Personalização de autenticação multifator e provedores de autenticação externa](Multi-factor-authentication-and-external-auth-providers-customization.md)|Informações sobre como usar MFA e provedores de autenticação externa|
 [Personalização para localização](Customization-for-Localization.md)|Informações sobre considerações de localização
 [Removendo os direitos autorais da Microsoft](Remove-the-Microsoft-copyright.md)|Etapas sobre como remover os direitos autorais da Microsoft
-[Personalizando os nomes de exibição e descrições para métodos de autenticação](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|Etapas sobre como personalizar nomes de exibição e descrições para métodos de autenticação
-[Personalização avançada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|Opções de personalização avançadas usando o arquivo OnLoad. js.
-
-
-
-
+[Personalizando as descrições e os nomes de exibição para os métodos de autenticação](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|Etapas sobre como personalizar nomes de exibição e descrições para métodos de autenticação
+[Personalização avançada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|Opções de personalização avançadas usando o arquivo de onload.js.

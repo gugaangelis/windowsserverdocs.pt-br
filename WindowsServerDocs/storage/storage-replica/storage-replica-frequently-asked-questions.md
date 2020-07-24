@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 9978fd3e926ade4680ca6563d9d39b0851d893e9
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: d9e0a3855c324ca9b5c7de90d78535024a0a7a9d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070492"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964048"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Perguntas frequentes sobre Réplica de Armazenamento
 
@@ -35,7 +35,7 @@ Observações importantes:
 
 1. O Azure não dá suporte a clustering de convidado de VHDX compartilhado, portanto, as máquinas virtuais de cluster de failover do Windows devem usar destinos iSCSI para clustering de reserva de disco persistente do armazenamento compartilhado clássico ou Espaços de Armazenamento Diretos.
 2. Há Azure Resource Manager modelos para clustering de réplica de armazenamento baseado em Espaços de Armazenamento Diretos em [criar um espaços de armazenamento diretos clusters SOFS com a réplica de armazenamento para recuperação de desastre em regiões do Azure](https://aka.ms/azure-storage-replica-cluster).  
-3. Cluster para comunicação RPC de cluster no Azure (exigido pelas APIs de cluster para conceder acesso entre clusters) requer a configuração de acesso à rede para o CNO. Você deve permitir a porta TCP 135 e o intervalo dinâmico acima da porta TCP 49152. Referência [criando o cluster de failover do Windows Server na VM IaaS do Azure – parte 2, rede e criação](https://blogs.technet.microsoft.com/askcore/2015/06/24/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation/).  
+3. Cluster para comunicação RPC de cluster no Azure (exigido pelas APIs de cluster para conceder acesso entre clusters) requer a configuração de acesso à rede para o CNO. Você deve permitir a porta TCP 135 e o intervalo dinâmico acima da porta TCP 49152. Referência [criando o cluster de failover do Windows Server na VM IaaS do Azure – parte 2, rede e criação](/archive/blogs/askcore/building-windows-server-failover-cluster-on-azure-iaas-vm-part-2-network-and-creation).  
 4. É possível usar clusters de convidado de dois nós, em que cada nó está usando o iSCSI de loopback para um cluster assimétrico replicado pela réplica de armazenamento. Mas isso provavelmente terá um desempenho muito ruim e deve ser usado apenas para cargas de trabalho ou testes muito limitados.  
 
 ## <a name="how-do-i-see-the-progress-of-replication-during-initial-sync"></a><a name="FAQ2"></a>Como fazer ver o progresso da replicação durante a sincronização inicial?  
@@ -235,7 +235,7 @@ A réplica de armazenamento é uma tecnologia de replicação unidirecional.  El
 - Unidade de origem do Server1 M: com a unidade de log de origem L: replicando para a unidade de destino do Server2 M: com a unidade de log de destino L:
 - Unidade de origem do Server2 O: com a unidade de log de origem N: replicando para Server1 unidade de destino O: com a unidade de log de destino N:
 
-## <a name="related-topics"></a>Tópicos relacionados  
+## <a name="related-topics"></a>Tópicos Relacionados  
 - [Visão geral da Réplica de Armazenamento](storage-replica-overview.md) 
 - [Estender a replicação do cluster usando o armazenamento compartilhado](stretch-cluster-replication-using-shared-storage.md)  
 - [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  

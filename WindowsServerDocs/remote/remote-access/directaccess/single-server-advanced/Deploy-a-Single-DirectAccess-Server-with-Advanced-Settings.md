@@ -1,5 +1,5 @@
 ---
-title: Implantar um servidor DirectAccess único com configurações avançadas
+title: Deploy a Single DirectAccess Server with Advanced Settings
 description: Este tópico faz parte do guia implantar um único servidor DirectAccess com as configurações avançadas do Windows Server 2016
 manager: brianlic
 ms.prod: windows-server
@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 7f6a6724a2ab7bb6da48a11d31fb04461912e388
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 199d4ce3ebb3c9cbc6ec1b8574133104b8129312
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859519"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964618"
 ---
-# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Implantar um servidor DirectAccess único com configurações avançadas
+# <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Deploy a Single DirectAccess Server with Advanced Settings
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico fornece uma introdução ao cenário do DirectAccess que usa um único servidor DirectAccess e permite que você implante o DirectAccess com configurações avançadas.  
   
@@ -37,7 +37,7 @@ Nesse cenário, um único computador executando o Windows Server 2016, o Windows
 ## <a name="in-this-scenario"></a>Neste cenário  
 Para configurar um servidor único de DirectAccess com configurações avançadas, será necessário concluir diversas etapas de planejamento e implantação.  
   
-### <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}  
+### <a name="prerequisites"></a>Pré-requisitos  
 Antes de começar, analise os requisitos a seguir.  
   
 -   O Firewall do Windows deve estar habilitado em todos os perfis.  
@@ -58,7 +58,7 @@ O planejamento está dividido em duas fases:
   
 2.  **Planejando a implantação do DirectAccess**. Esta fase descreve as etapas de planejamento necessárias para preparar a implantação do DirectAccess. Ela inclui o planejamento para computadores cliente de DirectAccess, requisitos de autenticação de servidor e cliente, configurações de VPN, servidores de infraestrutura e servidores de gerenciamento e de aplicativos.  
   
-### <a name="deployment-steps"></a>Etapas de implantação  
+### <a name="deployment-steps"></a>Etapas de implantação.  
 A implantação está dividida em três fases:  
   
 1.  **Configurando a infraestrutura do DirectAccess**. Esta fase inclui a configuração da rede e do roteamento, das definições de firewall se necessário, de certificados, de servidores DNS, das definições do Active Directory e do GPO e do servidor de local de rede do DirectAccess.  
@@ -69,14 +69,14 @@ A implantação está dividida em três fases:
   
 Para ver etapas detalhadas de implantação, consulte [Instalar e configurar o DirectAccess avançado](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md).  
   
-## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicativos práticos  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>Aplicações práticas  
 A implantação de um só servidor de DirectAccess oferece:  
   
 -   **Facilidade de acesso**. Os computadores cliente gerenciados que executam o Windows 10, Windows 8.1, Windows 8 e Windows 7 podem ser configurados como computadores cliente do DirectAccess. Esses clientes podem acessar os recursos da rede interna por meio do DirectAccess sempre que estiverem localizados na Internet sem precisar fazer logon em uma conexão VPN. Computadores cliente que não executam um desses sistemas operacionais podem se conectar à rede interna por meio de VPN.  
   
 -   **Facilidade de gerenciamento**. Os computadores cliente do DirectAccess localizados na Internet podem ser gerenciados remotamente por administradores de Acesso Remoto pelo DirectAccess, mesmo quando não estão localizados na rede corporativa interna. Os computadores cliente que não atendem aos requisitos corporativos podem ser corrigidos automaticamente por servidores de gerenciamento. O DirectAccess e a VPN são gerenciados no mesmo console e com o mesmo conjunto de assistentes. Além disso, um ou mais servidores de DirectAccess podem ser gerenciados em um único console de Gerenciamento de Acesso Remoto.  
   
-## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos necessários para este cenário  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>Funções e recursos requeridos para este cenário  
 A tabela a seguir lista funções e recursos necessários para este cenário:  
   
 |Função/recurso|Como este cenário tem suporte|  
@@ -139,15 +139,13 @@ Há diversos requisitos para este cenário:
         > [!IMPORTANT]  
         > Se você tiver habilitado o Teredo em sua implantação do DirectAccess e desejar fornecer acesso aos clientes do Windows 7, verifique se os clientes são atualizados para o Windows 7 com SP1. Os clientes que usam o Windows 7 RTM não poderão se conectar via Teredo. Contudo, tais clientes ainda poderão conectar-se à rede corporativa com IP-HTTPS.  
   
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Confira também  
 A tabela a seguir fornece links para recursos adicionais.  
   
 |Tipo de conteúdo|Referências|  
 |--------|-------|  
 |**Implantação**|[Caminhos de implantação do DirectAccess no Windows Server](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<p>[Implantar um único servidor DirectAccess usando o assistente de Introdução](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
-|**Ferramentas e configurações**|[Cmdlets do PowerShell de acesso remoto](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**Recursos da comunidade**|[Guia de sobrevivência do DirectAccess](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[Entradas do wiki do DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**Tecnologias relacionadas**|[Como funciona o IPv6](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**Ferramentas e configurações**|[Cmdlets do PowerShell para acesso remoto](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11))|  
+|**Recursos da comunidade**|[Guia de sobrevivência do DirectAccess](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<p>[Entradas de wiki do DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**Tecnologias relacionadas**|[Como o IPv6 funciona](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))|  
   
-
-

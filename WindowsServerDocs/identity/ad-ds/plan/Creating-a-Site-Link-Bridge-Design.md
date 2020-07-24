@@ -8,12 +8,12 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 37115e79044c9ddfd55e646fcde868ad6ac7048f
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 244444cc773e3b69ba09a2050ebaefa11ea9edef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624334"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962278"
 ---
 # <a name="creating-a-site-link-bridge-design"></a>Criar um design de link de site
 
@@ -26,7 +26,7 @@ Por padrão, todos os links de site são transitivos. Recomendamos que você man
 - Sua rede IP não está totalmente roteada. Quando você desabilita a **ponte de todos os links de site**, todos os links de site são considerados intransitivos e você pode criar e configurar objetos de ponte de link de site para modelar o comportamento de roteamento real de sua rede.
 - Você precisa controlar o fluxo de replicação das alterações feitas no Active Directory Domain Services (AD DS). Ao desabilitar a **ponte de todos os links de site** para o transporte de IP do link de site e configurar uma ponte de link de site, a ponte de link de site se tornará o equivalente a uma rede não conjunta. Todos os links de site na ponte de link de site podem rotear transitivamente, mas eles não são roteados para fora da ponte de link de site.
 
-Para obter mais informações sobre como usar o snap-in Active Directory sites e serviços para desabilitar a configuração **ponte de todos os links de site** , consulte o artigo [habilitar ou desabilitar pontes de link de site](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10)).
+Para obter mais informações sobre como usar o snap-in Active Directory sites e serviços para desabilitar a configuração **ponte de todos os links de site** , consulte o artigo [habilitar ou desabilitar pontes de link de site](/previous-versions/windows/it-pro/windows-server-2003/cc738789(v=ws.10)).
 
 ## <a name="controlling-ad-ds-replication-flow"></a>Controlando o fluxo de replicação do AD DS
 

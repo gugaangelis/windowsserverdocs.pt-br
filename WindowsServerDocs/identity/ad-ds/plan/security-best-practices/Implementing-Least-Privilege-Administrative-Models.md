@@ -8,18 +8,18 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8655c7bac977bf94add1531d299e2fa17ef530d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d6a740f0fdc76698114cace8ded8533cebffc5cb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80821239"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964028"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementar modelos administrativos com menos privilégios
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-O trecho a seguir é do [Guia de planejamento de segurança de contas de administrador](https://technet.microsoft.com/library/cc162797.aspx), primeiro publicado em 1º de abril de 1999:
+O trecho a seguir é do [Guia de planejamento de segurança de contas de administrador](/previous-versions/tn-archive/cc162797(v=technet.10)), primeiro publicado em 1º de abril de 1999:
 
 > "Os cursos e a documentação de treinamento mais relacionados à segurança discutem a implementação de um princípio de privilégios mínimos, mas as organizações raramente as acompanham. O princípio é simples, e o impacto de aplicá-lo corretamente aumenta muito sua segurança e reduz seu risco. O princípio determina que todos os usuários devem fazer logon com uma conta de usuário que tenha as permissões mínimas absolutas necessárias para concluir a tarefa atual e nada mais. Isso fornece proteção contra código mal-intencionado, entre outros ataques. Esse princípio se aplica aos computadores e aos usuários desses computadores.   
 > "Um motivo pelo qual esse princípio funciona tão bem é que ele o força a fazer alguma pesquisa interna. Por exemplo, você deve determinar os privilégios de acesso que um computador ou usuário realmente precisa e, em seguida, implementá-los. Para muitas organizações, essa tarefa pode inicialmente parecer uma grande quantidade de trabalho; no entanto, é uma etapa essencial proteger com êxito seu ambiente de rede.
@@ -90,9 +90,9 @@ As contas de administrador internas nunca devem ser usadas como contas de servi�
 
 ##### <a name="configuring-gpos-to-restrict-administrator-accounts-on-domain-joined-systems"></a>Configurando GPOs para restringir contas de administrador em sistemas ingressados no domínio
 
-Em um ou mais GPOs que você cria e vincula a estações de trabalho e a UOs de servidor membro em cada domínio, adicione a conta de administrador aos seguintes direitos de usuário em **computador \** \ \ \ \ \ Configurações de direitos:  
+Em um ou mais GPOs que você cria e vincula a estações de trabalho e a UOs de servidor membro em cada domínio, adicione a conta de administrador aos seguintes direitos de usuário em **computador \**\ \ \ \ \ Configurações de direitos:  
 
-- Negar o acesso a este computador a partir da rede
+- Negar acesso a este computador pela rede
 - Negar o logon como um trabalho em lotes
 - Negar o logon como um serviço
 - Negar o logon por meio dos Serviços de Área de Trabalho Remota
@@ -108,7 +108,7 @@ Se um servidor membro ou estação de trabalho se tornar desassociado do domíni
 
 ### <a name="securing-local-privileged-accounts-and-groups-in-active-directory"></a>Protegendo contas e grupos com privilégios locais no Active Directory
 
-*Número da lei seis: um computador é tão seguro quanto o administrador é confiável.* - [dez leis imutáveis de segurança (versão 2,0)](https://technet.microsoft.com/security/hh278941.aspx)  
+*Número da lei seis: um computador é tão seguro quanto o administrador é confiável.* - [Dez leis imutáveis de segurança (versão 2,0)](https://www.microsoft.com/en-us/msrc?rtc=1)  
 
 As informações fornecidas aqui se destinam a fornecer diretrizes gerais para proteger as contas e grupos internos de privilégio mais alto no Active Directory. Instruções passo a passo detalhadas também são fornecidas no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md), [Apêndice E: protegendo grupos de administradores corporativos no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory.md), [Apêndice F: protegendo grupos de administradores de domínio no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory.md)e no [Apêndice G: protegendo grupos de administradores no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-G--Securing-Administrators-Groups-in-Active-Directory.md).  
 
@@ -136,9 +136,9 @@ Embora a definição do **cartão inteligente seja necessária para** que o sina
 
 Embora a desabilitação da conta de administrador em um domínio torne a conta efetivamente inutilizável, você deve implementar restrições adicionais na conta caso a conta seja habilitada inadvertidamente ou maliciosamente. Embora esses controles possam ser eventualmente revertidos pela conta de administrador, o objetivo é criar controles que prejudiquem o progresso de um invasor e limitar o dano que a conta pode gerar.  
 
-Em um ou mais GPOs que você cria e vincula a estações de trabalho e UOs de servidor membro em cada domínio, adicione a conta de administrador de cada domínio aos seguintes direitos de usuário no **computador \** \ \ \ \ Configurações de direitos:  
+Em um ou mais GPOs que você cria e vincula a estações de trabalho e UOs de servidor membro em cada domínio, adicione a conta de administrador de cada domínio aos seguintes direitos de usuário no **computador \**\ \ \ \ Configurações de direitos:  
 
-- Negar o acesso a este computador a partir da rede  
+- Negar acesso a este computador pela rede  
 - Negar o logon como um trabalho em lotes  
 - Negar o logon como um serviço  
 - Negar o logon por meio dos Serviços de Área de Trabalho Remota  
@@ -152,7 +152,7 @@ Em um ou mais GPOs que você cria e vincula a estações de trabalho e UOs de se
 
 Em cada domínio na floresta, a política de controladores de domínio padrão ou uma política vinculada à UO Controladores de domínio deve ser modificada para adicionar a conta de administrador de cada domínio aos seguintes direitos de usuário no computador \ \ \ \ \ \ \ \ \ **atribuições de direitos**:  
 
-- Negar o acesso a este computador a partir da rede  
+- Negar acesso a este computador pela rede  
 - Negar o logon como um trabalho em lotes  
 - Negar o logon como um serviço  
 - Negar o logon por meio dos Serviços de Área de Trabalho Remota  
@@ -176,7 +176,7 @@ Os administradores corporativos são, por padrão, membros do grupo de administr
 
 - Conforme descrito anteriormente, o grupo Administradores de empresa não deve conter nenhum usuário diariamente, com a possível exceção da conta de administrador do domínio raiz da floresta, que deve ser protegido conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 - Em GPOs vinculados a UOs que contêm servidores membros e estações de trabalho em cada domínio, o grupo EA deve ser adicionado aos seguintes direitos de usuário:  
-   - Negar o acesso a este computador a partir da rede  
+   - Negar acesso a este computador pela rede  
    - Negar o logon como um trabalho em lotes  
    - Negar o logon como um serviço  
    - Negar o logon localmente  
@@ -198,7 +198,7 @@ Para o grupo Admins. do domínio em cada domínio na floresta:
 
 1. Remova todos os membros do grupo DA, com a possível exceção da conta interna de administrador do domínio, desde que ele tenha sido protegido, conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 2. Em GPOs vinculados a UOs que contêm servidores membros e estações de trabalho em cada domínio, o grupo DA deve ser adicionado aos seguintes direitos de usuário:  
-   - Negar o acesso a este computador a partir da rede  
+   - Negar acesso a este computador pela rede  
    - Negar o logon como um trabalho em lotes  
    - Negar o logon como um serviço  
    - Negar o logon localmente  
@@ -208,7 +208,7 @@ Para o grupo Admins. do domínio em cada domínio na floresta:
 
 3. A auditoria deve ser configurada para enviar alertas se qualquer modificação for feita nas propriedades ou associação do grupo DA. Esses alertas devem ser enviados, no mínimo, a usuários ou equipes responsáveis por AD DS a administração e a resposta a incidentes. Você também deve definir processos e procedimentos para popular temporariamente o grupo DA, incluindo procedimentos de notificação quando a população legítima do grupo é executada.  
 
-#### <a name="securing-administrators-groups-in-active-directory"></a>Protegendo grupos de administradores no Active Directory
+#### <a name="securing-administrators-groups-in-active-directory"></a>Como proteger grupos de administradores no Active Directory
 
 Como é o caso com os grupos EA e DA, a associação no grupo Administradores (BA) deve ser necessária somente em cenários de compilação ou recuperação de desastre. Não deve haver contas de usuário do dia a dia no grupo Administradores, com exceção da conta de administrador local do domínio, se ele tiver sido protegido, conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 
@@ -218,7 +218,7 @@ Os administradores são, por padrão, os proprietários da maioria dos objetos A
 
 1. Remova todos os membros do grupo Administradores, com a possível exceção da conta de administrador local para o domínio, desde que ele tenha sido protegido, conforme descrito no [Apêndice D: Protegendo contas de administrador internas no Active Directory](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md).  
 2. Os membros do grupo Administradores do domínio nunca devem precisar fazer logon em servidores membros ou estações de trabalho. Em um ou mais GPOs vinculados a UOs de estação de trabalho e servidor membro em cada domínio, o grupo Administradores deve ser adicionado aos seguintes direitos de usuário:  
-   - Negar o acesso a este computador a partir da rede  
+   - Negar acesso a este computador pela rede  
    - Negar logon como um trabalho em lotes,  
    - Negar o logon como um serviço  
    - Isso impedirá que os membros do grupo Administradores sejam usados para fazer logon ou se conectar a servidores membros ou estações de trabalho (a menos que vários controles sejam violados pela primeira vez), onde suas credenciais podem ser armazenadas em cache e, portanto, comprometidas. Uma conta privilegiada nunca deve ser usada para fazer logon em um sistema com menos privilégios, e impor esses controles proporciona proteção contra vários ataques.  
@@ -260,7 +260,7 @@ Em outros casos, pode ser preferível para uma organização considerar a implan
 2. Composição do ambiente de ti: se o seu ambiente for composto principalmente de sistemas Windows, ou se você já estiver aproveitando Active Directory para o gerenciamento de sistemas e contas que não são do Windows, as soluções nativas personalizadas poderão fornecer a solução ideal para suas necessidades. Se sua infraestrutura contiver muitos sistemas que não estão executando o Windows e não forem gerenciados pelo Active Directory, talvez seja necessário considerar as opções de gerenciamento de sistemas não Windows separadamente do ambiente de Active Directory.  
 3. Modelo de privilégio na solução: se um produto depende do posicionamento de suas contas de serviço em grupos altamente privilegiados no Active Directory e não oferece opções que não exigem privilégios excessivos para o software RBAC, você não reduziu realmente sua superfície de ataque de Active Directory você alterou a composição dos grupos mais privilegiados no diretório. A menos que um fornecedor de aplicativos possa fornecer controles para contas de serviço que minimizem a probabilidade das contas serem comprometidas e usadas de forma mal-intencionada, talvez você queira considerar outras opções.  
 
-### <a name="privileged-identity-management"></a>Gerenciamento de identidades com privilégios
+### <a name="privileged-identity-management"></a>Privileged Identity Management
 
 O PIM (Privileged Identity Management), às vezes chamado de PAM (gerenciamento de conta privilegiada) ou PCM (gerenciamento de credenciais privilegiadas), é o design, a construção e a implementação de abordagens para gerenciar contas privilegiadas em sua infraestrutura. Em termos gerais, o PIM fornece mecanismos pelos quais as contas recebem direitos e permissões temporárias necessárias para executar funções de correção de compilação ou interrupção, em vez de deixar os privilégios anexados permanentemente às contas. Se a funcionalidade PIM é criada manualmente ou implementada por meio da implantação de software de terceiros, um ou mais dos recursos a seguir podem estar disponíveis:  
   
@@ -279,7 +279,7 @@ No entanto, se você implementar o RBAC nativo e o PIM, deverá considerar a cri
 
 ### <a name="implementing-robust-authentication-controls"></a>Implementando controles de autenticação robustos
 
-*Número da lei seis: realmente há alguém tentando adivinhar suas senhas.* - [10 leis imutáveis da administração de segurança](https://technet.microsoft.com/library/cc722488.aspx)  
+*Número da lei seis: realmente há alguém tentando adivinhar suas senhas.* - [10 leis imutáveis da administração de segurança](/previous-versions//cc722488(v=technet.10))  
 
 Os ataques Pass-the-hash e outros roubos de credenciais não são específicos dos sistemas operacionais Windows, nem são novos. O primeiro ataque Pass-the-hash foi criado em 1997. No entanto, historicamente, esses ataques exigiam ferramentas personalizadas, foram atingidos ou perdem em seu sucesso e os invasores precisavam ter um grau relativamente alto de habilidade. A introdução de ferramentas gratuitas disponíveis e fáceis de usar que extraia nativamente as credenciais resultou em um aumento exponencial do número e do sucesso dos ataques de roubo de credenciais nos últimos anos. No entanto, os ataques de roubo de credenciais não são os únicos mecanismos pelos quais as credenciais são destinadas e comprometidas.  
 
@@ -297,7 +297,7 @@ Em casos em que senhas longas e complexas comprovadamente são difíceis de impl
 
 Outro benefício da implementação de cartões inteligentes ou outros mecanismos de autenticação baseados em certificado é a capacidade de aproveitar a garantia do mecanismo de autenticação para proteger dados confidenciais que podem ser acessados por usuários VIP. A garantia do mecanismo de autenticação está disponível em domínios nos quais o nível funcional está definido como Windows Server 2012 ou Windows Server 2008 R2. Quando habilitada, a garantia do mecanismo de autenticação adiciona uma associação de grupo global designada pelo administrador ao token Kerberos de um usuário quando as credenciais do usuário são autenticadas durante o logon usando um método de logon baseado em certificado.  
 
-Isso possibilita que os administradores de recursos controlem o acesso a recursos, como arquivos, pastas e impressoras, com base em se o usuário faz logon usando um método de logon baseado em certificado, além do tipo de certificado usado. Por exemplo, quando um usuário faz logon usando um cartão inteligente, o acesso do usuário aos recursos na rede pode ser especificado como sendo diferente do que o acesso é quando o usuário não usa um cartão inteligente (ou seja, quando o usuário faz logon digitando um nome de usuário e senha). Para obter mais informações sobre a garantia do mecanismo de autenticação, consulte a [garantia do mecanismo de autenticação para AD DS no guia passo a passo do Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897.aspx).  
+Isso possibilita que os administradores de recursos controlem o acesso a recursos, como arquivos, pastas e impressoras, com base em se o usuário faz logon usando um método de logon baseado em certificado, além do tipo de certificado usado. Por exemplo, quando um usuário faz logon usando um cartão inteligente, o acesso do usuário aos recursos na rede pode ser especificado como sendo diferente do que o acesso é quando o usuário não usa um cartão inteligente (ou seja, quando o usuário faz logon digitando um nome de usuário e senha). Para obter mais informações sobre a garantia do mecanismo de autenticação, consulte a [garantia do mecanismo de autenticação para AD DS no guia passo a passo do Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10)).  
 
 #### <a name="configuring-privileged-account-authentication"></a>Configurando a autenticação de conta privilegiada
 

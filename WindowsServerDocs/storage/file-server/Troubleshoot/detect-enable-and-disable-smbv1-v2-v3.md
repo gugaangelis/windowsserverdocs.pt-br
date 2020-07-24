@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: dd2f4c6b6bb17231ac04b3344e9a39df2cad79d0
-ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
+ms.openlocfilehash: 40ab29a115735e6c37bb7c7449980b94090565f3
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740639"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961068"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Como detectar, habilitar e desabilitar SMBv1, SMBv2 e SMBv3 no Windows
 
@@ -53,9 +53,9 @@ O protocolo SMBv3 foi introduzido no Windows 8 e no Windows Server 2012.
 
 Para obter mais informações sobre os recursos dos recursos SMBv2 e SMBv3, consulte os seguintes artigos:
 
-[Visão geral do Protocolo SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))
+[Visão geral do Protocolo SMB](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v=ws.11))
 
-[Novidades do SMB](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff625695(v=ws.10))  
+[Novidades do SMB](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/ff625695(v=ws.10))  
 
 ## <a name="how-to-gracefully-remove-smb-v1-in-windows-81-windows-10-windows-2012-r2-windows-server-2016-and-windows-server-2019"></a>Como remover normalmente o SMB v1 em Windows 8.1, Windows 10, Windows 2012 R2, Windows Server 2016 e Windows Server 2019
 
@@ -215,7 +215,7 @@ Habilitar:
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters" SMB1 -Type DWORD -Value 1 –Force
 ```  
 
-**Observação** Você deve reiniciar o computador depois de fazer essas alterações. Para obter mais informações, consulte [armazenamento do servidor na Microsoft](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/). 
+**Observação** Você deve reiniciar o computador depois de fazer essas alterações. Para obter mais informações, consulte [armazenamento do servidor na Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858). 
 ##### <a name="smb-v2v3-on-smb-server"></a>SMB V2/V3 no servidor SMB
 
 Ocorre  
@@ -298,7 +298,7 @@ Default: 1 = Enabled (No registry key is created)
   sc.exe config mrxsmb10 start= auto
   ```
 
-Para obter mais informações, consulte [armazenamento do servidor na Microsoft](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) 
+Para obter mais informações, consulte [armazenamento do servidor na Microsoft](https://techcommunity.microsoft.com/t5/storage-at-microsoft/stop-using-smb1/ba-p/425858) 
 ##### <a name="smb-v2v3-on-smb-client"></a>SMB V2/V3 no cliente SMB
 
 - Ocorre
@@ -359,7 +359,7 @@ Na caixa de diálogo **Propriedades do novo registro**, selecione o seguinte:
 Isso desabilita os componentes do servidor SMBv1. Esse Política de Grupo deve ser aplicado a todas as estações de trabalho, servidores e controladores de domínio necessários no domínio.
 
 > [!NOTE]
->Os  [filtros WMI](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc947846(v=ws.10)) também podem ser definidos para excluir sistemas operacionais sem suporte ou exclusões selecionadas, como o Windows XP.
+>Os  [filtros WMI](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc947846(v=ws.10)) também podem ser definidos para excluir sistemas operacionais sem suporte ou exclusões selecionadas, como o Windows XP.
 
 > [!IMPORTANT]
 > Tenha cuidado ao fazer essas alterações nos controladores de domínio nos quais o Windows XP herdado ou os sistemas Linux anteriores e de terceiros (que não dão suporte a SMBv2 ou SMBv3) exigem acesso ao SYSVOL ou a outros compartilhamentos de arquivos em que o SMB v1 está sendo desabilitado.     

@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: cbb947c17219d4fe2f6694f0e44e379fc8671e76
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 93b02f79753f4e861c141ced84b29efd078fd227
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401935"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961048"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>Fazer upgrade de controladores de domínio para o Windows Server 2016
 
@@ -31,7 +31,7 @@ A maneira recomendada para atualizar um domínio é promover controladores de do
 1. Verifique as configurações de segurança. Para obter mais informações, consulte [recursos preteridos e alterações de comportamento relacionadas a AD DS no Windows Server 2016](../../../get-started/deprecated-features.md).
 1. Verifique a conectividade com o servidor de destino a partir do computador em que você planeja executar a instalação.
 1. Verifique a disponibilidade das funções mestras de operações necessárias:
-   - Para instalar o primeiro DC que executa o Windows Server 2016 em um domínio e floresta existentes, o computador em que você executa a instalação precisa de conectividade com o **mestre de esquema** para executar adprep/forestprep e o mestre de infraestrutura para executar adprep/ domainprep.
+   - Para instalar o primeiro DC que executa o Windows Server 2016 em um domínio e floresta existentes, o computador em que você executa a instalação precisa de conectividade com o **mestre de esquema** para executar adprep/forestprep e o mestre de infraestrutura para executar adprep/domainprep.
    - Para instalar o primeiro DC em um domínio em que o esquema de floresta já está estendido, você só precisa de conectividade com o **mestre de infraestrutura**.
    - Para instalar ou remover um domínio em uma floresta existente, você precisa de conectividade com o **mestre de nomeação de domínio**.
    - Qualquer instalação do controlador de domínio também requer conectividade com o **mestre de RID.**
@@ -44,14 +44,14 @@ A tabela a seguir fornece um resumo das etapas de atualização e dos requisitos
 |Ação de instalação|Requisitos de credenciais|
 | ----- | ----- |
 |Instalar uma nova floresta|Administrador local no servidor de destino|
-|Instalar um novo domínio em uma floresta existente|Administrador corporativo|
-|Instalar um controlador de domínio adicional em um domínio existente|Administradores do domínio|
+|Instalar um novo domínio em uma floresta existente|Administradores Corporativos|
+|Instalar um controlador de domínio adicional em um domínio existente|Administradores de Domínio|
 |Executar adprep/forestprep|Administradores de esquema, administradores corporativos e administradores do domínio|
-|Executar adprep/domainprep|Administradores do domínio|
-|Executar adprep/domainprep/gpprep|Administradores do domínio|
-|Executar adprep/rodcprep|Administrador corporativo|
+|Executar adprep/domainprep|Administradores de Domínio|
+|Executar adprep/domainprep/gpprep|Administradores de Domínio|
+|Executar adprep/rodcprep|Administradores Corporativos|
 
-Para obter informações adicionais sobre os novos recursos do Windows Server 2016, consulte [o que há de novo no Windows server 2016](../../../get-started/what-s-new-in-windows-server-2016.md).
+Para obter informações adicionais sobre os novos recursos do Windows Server 2016, consulte [o que há de novo no Windows server 2016](../../../get-started/whats-new-in-windows-server-2016.md).
 
 ## <a name="supported-in-place-upgrade-paths"></a>Caminhos de atualização in-loco com suporte
 
@@ -77,7 +77,7 @@ Se você estiver fazendo uma atualização in-loco de um controlador de domínio
 
 Se você estiver promovendo um novo servidor do Windows Server 2016, não precisará executá-lo manualmente.  Eles são integrados às experiências do PowerShell e do Gerenciador do Servidor.
 
-Para obter mais informações sobre como executar a Adprep, consulte [executando adprep](https://technet.microsoft.com/library/dd464018.aspx)
+Para obter mais informações sobre como executar a Adprep, consulte [executando adprep](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))
 
 ## <a name="functional-level-features-and-requirements"></a>Recursos e requisitos em nível funcional
 
@@ -85,7 +85,7 @@ O Windows Server 2016 requer um nível funcional de floresta do Windows Server 2
 
 Os controladores de domínio do Windows 2000 devem ser removidos antes da adição de controladores de domínio do Windows Server 2016 à sua floresta. Neste caso, considere o seguinte fluxo de trabalho:
 
-1. Instale controladores de domínio que executam o Windows Server 2003 ou posterior. Esses controladores de domínio podem ser implantados em uma versão de avaliação do Windows Server. Essa etapa também requer a execução de adprep. exe para essa versão do sistema operacional como um pré-requisito.
+1. Instale controladores de domínio que executam o Windows Server 2003 ou posterior. Esses controladores de domínio podem ser implantados em uma versão de avaliação do Windows Server. Esta etapa também requer executar o adprep.exe para a versão do sistema operacional como um pré-requisito.
 1. Remova os controladores de domínio do Windows 2000. Especificamente, realize o rebaixamento normal ou a remoção forçada dos controladores de domínio do Windows Server 2000 do domínio e dos usuários e computadores do Active Directory utilizados para remover as contas de todos os controladores de domínio removidos.
 1. Eleve o nível funcional da floresta para Windows Server 2003 ou superior.
 1. Instale os controladores de domínio que executam o Windows Server 2016.
@@ -150,7 +150,7 @@ Veja a seguir um exemplo simples de atualização da floresta contoso do Windows
 
    ![Atualizar](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade6.png)
 
-1. Nas janelas do PowerShell, use move-ADDirectoryServerOperationMasterRole para mover as funções FSMO. Você pode digitar o nome de cada-OperationMasterRole ou usar números para especificar as funções. Para obter mais informações [, consulte Move-ADDirectoryServerOperationMasterRole](https://technet.microsoft.com/library/hh852302.aspx)
+1. Nas janelas do PowerShell, use move-ADDirectoryServerOperationMasterRole para mover as funções FSMO. Você pode digitar o nome de cada-OperationMasterRole ou usar números para especificar as funções. Para obter mais informações [, consulte Move-ADDirectoryServerOperationMasterRole](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10))
 
     ``` powershell
     Move-ADDirectoryServerOperationMasterRole -Identity "DC-W2K16" -OperationMasterRole 0,1,2,3,4
@@ -158,7 +158,7 @@ Veja a seguir um exemplo simples de atualização da floresta contoso do Windows
 
     ![Atualizar](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade7.png)
 
-1. Verifique se as funções foram movidas indo para o servidor do Windows Server 2016, em **Gerenciador do servidor**, em **ferramentas**, selecione **Active Directory módulo para o Windows PowerShell**. Use os `Get-ADDomain` cmdlets e `Get-ADForest` para exibir os detentores de função FSMO.
+1. Verifique se as funções foram movidas indo para o servidor do Windows Server 2016, em **Gerenciador do servidor**, em **ferramentas**, selecione **Active Directory módulo para o Windows PowerShell**. Use os `Get-ADDomain` `Get-ADForest` cmdlets e para exibir os detentores de função FSMO.
 
     ![Atualizar](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade8.png)
 
@@ -170,5 +170,5 @@ Veja a seguir um exemplo simples de atualização da floresta contoso do Windows
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Novidades na instalação e na remoção do Active Directory Domain Services](../../ad-ds/deploy/What-s-New-in-Active-Directory-Domain-Services-Installation-and-Removal.md)
-- [Instalar o &#40;nível de Active Directory Domain Services 100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)
-- [Níveis funcionais do Windows Server 2016](../../ad-ds/Windows-Server-2016-Functional-Levels.md)  
+- [Instalar Active Directory Domain Services nível de &#40;100&#41;](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)
+- [Níveis funcionais do Windows Server 2016](../active-directory-functional-levels.md)  

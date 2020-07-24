@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: 570c81d6-c4f4-464c-bee9-0acbd4993584
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ae01a63a494504120ca248ec56dd9bc9648c1ae4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8591cc0b0d9fae75067a8c9937f1e69af572c379
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858289"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962208"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>Solução de problemas da habilitação de multissite
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico contém informações sobre como solucionar problemas relacionados ao comando `Enable-DAMultisite`. Para confirmar que o erro recebido está relacionado à habilitação de multissite, procure a ID de evento 10051 no Log de Eventos do Windows.  
   
@@ -30,7 +30,7 @@ Em uma implantação multissite, os computadores cliente Windows 10 e Windows 8 
   
 **Solução**  
   
-O DirectAccess requer pelo menos um grupo de segurança para todos os computadores cliente com Windows 10 e Windows 8; é recomendável usar um grupo de segurança para todos os computadores com Windows 10 e Windows 8 por domínio. O DirectAccess também requer um grupo de segurança para computadores cliente do Windows 7 para cada ponto de entrada. Cada computador cliente só deve ser incluído em um único grupo de segurança. Portanto, você deve certificar-se de que os grupos de segurança para clientes Windows 10 e Windows 8 contenham apenas computadores que executam o Windows 10 ou o Windows 8 e que cada computador cliente com Windows 7 pertença a um único grupo de segurança dedicado para o ponto de entrada relevante e que nenhum cliente do Windows 10 ou Windows 8 pertença aos grupos de segurança do Windows 7.  
+O DirectAccess requer pelo menos um grupo de segurança para todos os computadores cliente com Windows 10 e Windows 8; é recomendável usar um grupo de segurança para todos os computadores com Windows 10 e Windows 8 por domínio. O DirectAccess também requer um grupo de segurança para computadores cliente do Windows 7 para cada ponto de entrada. Cada computador cliente só deve ser incluído em um único grupo de segurança. Portanto, você deve certificar-se de que os grupos de segurança para clientes Windows 10 e Windows 8 contenham apenas computadores com Windows 10 ou Windows 8, e que cada computador cliente com Windows 7 pertença a um único grupo de segurança dedicado para o ponto de entrada relevante e que nenhum cliente do Windows 10 ou Windows 8 pertença aos grupos de segurança do Windows 7.  
   
 Configure os grupos de segurança do Windows 8 na página **Selecionar grupos** do assistente de **instalação do cliente DirectAccess** . Configure os grupos de segurança do Windows 7 na página **suporte ao cliente** do assistente para **habilitar implantação multissite** ou na página **suporte ao cliente** do assistente para **Adicionar um ponto de entrada** .  
   
@@ -49,7 +49,7 @@ Para habilitar a autenticação de certificado de computador:
   
 2.  No **Assistente para Configuração do Servidor de Acesso Remoto**, na página **Autenticação**, marque a caixa de seleção **Usar certificados de computador** e selecione a autoridade de certificação raiz ou intermediária que emite certificados na sua implantação.  
   
-Para habilitar a autenticação de certificado do computador usando o Windows PowerShell, use o cmdlet `Set-DAServer` e especifique o parâmetro *IPsecRootCertificate* .  
+Para habilitar a autenticação de certificado do computador usando o Windows PowerShell, use o `Set-DAServer` cmdlet e especifique o parâmetro *IPsecRootCertificate* .  
   
 ## <a name="ip-https-certificates"></a>Certificados IP-HTTPS  
 **Erro recebido**. O servidor DirectAccess usa um certificado IP-HTTPS autoassinado. Configure o IP-HTTPS para usar um certificado assinado de uma autoridade de certificação conhecida.  
@@ -111,10 +111,10 @@ Na implantação do DirectAccess existente, o suporte ao cliente do Windows 7 fo
   
 **Solução**  
   
-O DirectAccess requer pelo menos um grupo de segurança para todos os computadores cliente do Windows 8 e um grupo de segurança para computadores cliente do Windows 7 para cada ponto de entrada. Cada computador cliente só deve ser incluído em um único grupo de segurança. Portanto, você deve garantir que o grupo de segurança para clientes do Windows 8 contenha apenas computadores que executam o Windows 8 e que cada computador cliente com Windows 7 pertença a um único grupo de segurança dedicado para o ponto de entrada relevante e que nenhum cliente do Windows 8 pertencer aos grupos de segurança do Windows 7.  
+O DirectAccess requer pelo menos um grupo de segurança para todos os computadores cliente do Windows 8 e um grupo de segurança para computadores cliente do Windows 7 para cada ponto de entrada. Cada computador cliente só deve ser incluído em um único grupo de segurança. Portanto, você deve garantir que o grupo de segurança para clientes do Windows 8 contenha apenas computadores que executam o Windows 8 e que cada computador cliente com Windows 7 pertença a um único grupo de segurança dedicado para o ponto de entrada relevante e que nenhum cliente do Windows 8 pertença aos grupos de segurança do Windows 7.  
   
 ## <a name="active-directory-site"></a>Site do Active Directory  
-**Erro recebido**. O servidor < server_name > não está associado a um site Active Directory.  
+**Erro recebido**. O servidor <server_name> não está associado a um site Active Directory.  
   
 **Causa**  
   
@@ -124,8 +124,8 @@ O DirectAccess não pôde determinar o site do Active Directory. No console Serv
   
 Confirme se é esse mesmo o problema executando o comando `nltest /dsgetsite` no servidor de acesso remoto. Se for, o comando retornará ERROR_NO_SITENAME. Para resolver o problema, no controlador de domínio, assegure-se de que exista uma sub-rede que contenha o endereço IP do servidor interno e de que ela esteja definida com um site do Active Directory.  
   
-## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Salvando configurações de GPO do servidor  
-**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO < GPO_name >.  
+## <a name="saving-server-gpo-settings"></a><a name="SaveGPOSettings"></a>Salvando configurações de GPO de servidor  
+**Erro recebido**. Ocorreu um erro ao salvar as configurações de acesso remoto ao GPO <GPO_name>.  
   
 **Causa**  
   
@@ -135,7 +135,7 @@ As alterações no GPO do servidor não puderam ser salvas devido a problemas de
   
 Assegure-se de que exista conectividade entre o servidor de acesso remoto e o controlador de domínio. Se houver conectividade, verifique no controlador se o arquivo registry.pol foi bloqueado por outro usuário e, se necessário, encerre a sessão desse usuário para desbloquear o arquivo.  
   
-## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Ocorreu um erro interno  
+## <a name="internal-error-occurred"></a><a name="InternalServerError"></a>Ocorrência de um erro interno  
 **Erro recebido**. Ocorreu um erro interno.  
   
 **Causa**  
@@ -146,7 +146,5 @@ Isso pode ser causado por uma configuração inesperada da tabela de pontos de e
   
 Examine a configuração da tabela de pontos de entrada em todos os GPOs de cliente e corrija as inconsistências encontradas na configuração de multissite entre as diversas instâncias dos GPOs de cliente e a configuração do DirectAccess. Use o cmdlet `Get-DaEntryPointTableItem` com o nome do GPO de cliente para obter a tabela de pontos de entrada no cliente. Use o cmdlet `Get-NetIPHttpsConfiguration` para obter todos os perfis IP-HTTPS para todos os pontos de entrada.  
   
-Para obter mais informações, consulte [cmdlets do cliente do DirectAccess no Windows PowerShell](https://technet.microsoft.com/library/hh848426).  
+Para saber mais, consulte o tópico sobre os [cmdlets de cliente do DirectAccess no Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj591658(v=ws.11)).  
   
-
-

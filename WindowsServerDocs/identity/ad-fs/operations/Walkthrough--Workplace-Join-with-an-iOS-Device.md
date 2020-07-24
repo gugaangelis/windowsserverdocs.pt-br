@@ -8,12 +8,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7b1d2a5f5c32d55e482f5f53a04668b34fc9aece
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8c478e31c3a86203f6c5f249185659caf9881723
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815989"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963468"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>Passo a passo: Ingresso no Local de Trabalho com um dispositivo iOS
 
@@ -38,11 +38,11 @@ Nesta demonstração, você ingressa o dispositivo no local de trabalho.
 
 1. -   **Quando registro de dispositivos do Azure Active Directory serviço é o DRS configurado:** Abra o Apple Safari e navegue até Registro de Dispositivos do Azure Active Directory ponto de extremidade de perfil do serviço over-the-Air para dispositivos iOS, <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > em que <`yourdomainname`> é o nome de domínio que você configurou com o Azure Active Directory. Por exemplo, se seu nome de domínio for contoso.com, a URL seria: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-   -   **Quando o DRS local é o DRS configurado**: Abra o Apple Safari e navegue até o ponto de extremidade do perfil do DRS (serviço de registro de dispositivo) por meio do ar para dispositivos iOS, `https://adf1s.contoso.com/enrollmentserver/otaprofile`
+   -   **Quando o DRS local é o DRS configurado**: Abra o Apple Safari e navegue até o ponto de extremidade do perfil do DRS (serviço de registro de dispositivo) por meio do ar para dispositivos IOS,`https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-   Há muitas maneiras de se comunicar esta URL aos usuários. Uma maneira recomendada é publicando a URL em uma mensagem negada de acesso de aplicativo personalizado no AD FS. Isso é abordado na seção a seguir: [Criar uma política de acesso do aplicativo e mensagem negada de acesso personalizado](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+   Há muitas maneiras de se comunicar esta URL aos usuários. Uma maneira recomendada é publicando a URL em uma mensagem de acesso de aplicativo negado personalizada no AD FS. Isso é abordado na próxima seção: [criar uma política de acesso de aplicativo e uma mensagem de acesso negado personalizado](/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2. Faça logon na página da Web usando uma conta de domínio da empresa: <strong>roberth@contoso.com</strong> e senha: <strong>P@ssword</strong>.
+2. Faça logon na página da Web usando uma conta de domínio da empresa: <strong>roberth@contoso.com</strong> e senha: <strong>P@ssword</strong> .
 
 3. Aparecerá um aviso para que você instale um perfil. Na tela **Instalar Perfil**, clique em **Instalar**.
 
@@ -57,12 +57,9 @@ Nesta demonstração, você ingressa o dispositivo no local de trabalho.
 > [!TIP]
 > Para exibir ou remover o perfil do Ingresso no Local de Trabalho, navegue até **Configurações**, clique em **Geral** e em **Perfis** em seu dispositivo iOS.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 
 - [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [Walkthrough: Workplace Join com um dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-
-
-
+- [Passo a passo: Ingressar no local de trabalho com um dispositivo do Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)

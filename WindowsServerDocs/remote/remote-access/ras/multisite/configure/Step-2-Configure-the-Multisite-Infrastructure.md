@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b636396ac7102d52ca5700dd2a4a4f81357b1685
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a0d8d48c4ffd7db8f7d4835e8458d357e8626a86
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858389"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962888"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>Etapa 2 configurar a infraestrutura multissite
 
 >Aplica-se a: Windows Server 2012 R2, Windows Server 2012
 
-Para configurar uma implantação multissite, há uma série de etapas necessárias para modificar as configurações de infraestrutura de rede, incluindo: Configurando sites Active Directory adicionais e controladores de domínio, configurando grupos de segurança adicionais e configurando Objetos de Política de Grupo (GPOs) se você não estiver usando GPOs configurados automaticamente.  
+Para configurar uma implantação multissite, há várias etapas necessárias para modificar as configurações de infraestrutura de rede, incluindo: Configurando sites Active Directory adicionais e controladores de domínio, configurando grupos de segurança adicionais e configurando objetos Política de Grupo (GPOs) se você não estiver usando GPOs configurados automaticamente.  
   
-|{1&gt;Tarefa&lt;1}|Descrição|  
+|Tarefa|Descrição|  
 |----|--------|  
 |2.1. Configurar sites Active Directory adicionais|Configure sites Active Directory adicionais para a implantação.|  
 |2.2. Configurar controladores de domínio adicionais|Configure Active Directory controladores de domínio adicionais conforme necessário.|  
@@ -29,14 +29,14 @@ Para configurar uma implantação multissite, há uma série de etapas necessár
 |2.4. Configurar GPOs|Configure objetos Política de Grupo adicionais, conforme necessário.|  
   
 > [!NOTE]  
-> Este tópico inclui cmdlets de exemplo do Windows PowerShell que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [Usando cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, confira [Usando os Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="21-configure-additional-active-directory-sites"></a><a name="BKMK_ConfigAD"></a>2,1. Configurar sites Active Directory adicionais  
+## <a name="21-configure-additional-active-directory-sites"></a><a name="BKMK_ConfigAD"></a>2.1. Configurar sites Active Directory adicionais  
 Todos os pontos de entrada podem residir em um único site de Active Directory. Portanto, pelo menos um site de Active Directory é necessário para a implementação de servidores de acesso remoto em uma configuração multissite. Use este procedimento se você precisar criar o primeiro site Active Directory ou se desejar usar sites Active Directory adicionais para a implantação multissite. Use o snap-in Active Directory sites e serviços para criar novos sites na rede da sua organização.  
 
 A associação no grupo **Administradores de empresa** na floresta ou no grupo Administradores de **domínio** no domínio raiz da floresta ou equivalente, no mínimo, é necessária para concluir este procedimento. Examine os detalhes sobre como usar as contas apropriadas e as associações de grupo em [grupos padrão e de domínio](https://go.microsoft.com/fwlink/?LinkId=83477).  
 
-Para obter mais informações, consulte [adicionando um site à floresta](https://technet.microsoft.com/library/cc732761.aspx).  
+Para obter mais informações, consulte [adicionando um site à floresta](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732761(v=ws.11)).  
 
 ### <a name="to-configure-additional-active-directory-sites"></a>Para configurar sites Active Directory adicionais  
   
@@ -54,11 +54,11 @@ Para obter mais informações, consulte [adicionando um site à floresta](https:
   
 7.  Repita as etapas 5 e 6 até que você tenha criado todas as sub-redes necessárias na sua implantação.  
   
-8.  Feche Active Directory sites e serviços.  
+8.  Feche Sites e Serviços do Active Directory.  
   
-![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
+![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> do Windows PowerShell***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 Para instalar o recurso do Windows "Módulo Active Directory para Windows PowerShell":  
   
@@ -88,12 +88,12 @@ New-ADReplicationSubnet -Name "10.2.0.0/24" -Site "Second-Site"
 New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"  
 ```  
   
-## <a name="22-configure-additional-domain-controllers"></a><a name="BKMK_AddDC"></a>2,2. Configurar controladores de domínio adicionais  
+## <a name="22-configure-additional-domain-controllers"></a><a name="BKMK_AddDC"></a>2.2. Configurar controladores de domínio adicionais  
 Para configurar uma implantação multissite em um único domínio, é recomendável que você tenha pelo menos um controlador de domínio gravável para cada site em sua implantação.  
   
 Para executar esse procedimento, no mínimo você deve ser um membro do grupo Admins. do domínio no domínio no qual o controlador de domínio está sendo instalado.  
   
-Para obter mais informações, consulte [instalando um controlador de domínio adicional](https://technet.microsoft.com/library/cc733027.aspx).
+Para obter mais informações, consulte [instalando um controlador de domínio adicional](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc733027(v=ws.10)).
   
 ### <a name="to-configure-additional-domain-controllers"></a>Para configurar controladores de domínio adicionais  
   
@@ -117,20 +117,20 @@ Para obter mais informações, consulte [instalando um controlador de domínio a
   
     1.  Faça as seguintes seleções:  
   
-        -   **Servidor DNS (sistema de nomes de domínio)** "esta opção é selecionada por padrão para que o controlador de domínio possa funcionar como um servidor DNS (sistema de nomes de domínio). Se não quiser que o controlador de domínio seja um servidor DNS, desmarque essa opção.  
+        -   **Servidor DNS (sistema de nomes de domínio)**"esta opção é selecionada por padrão para que o controlador de domínio possa funcionar como um servidor DNS (sistema de nomes de domínio). Se não quiser que o controlador de domínio seja um servidor DNS, desmarque essa opção.  
   
             Se a função do servidor DNS não estiver instalada no emulador do controlador de domínio primário (PDC) no domínio raiz da floresta, a opção para instalar o servidor DNS em um controlador de domínio adicional não estará disponível. Como alternativa nessa situação, você pode instalar a função de servidor DNS antes ou depois da instalação do AD DS.  
   
             > [!NOTE]  
             > Se você selecionar a opção para instalar o servidor DNS, poderá receber uma mensagem que indica que uma delegação de DNS para o servidor DNS não pôde ser criada e que você deve criar manualmente uma delegação de DNS para o servidor DNS para garantir a resolução confiável de nomes. Se você estiver instalando um controlador de domínio adicional no domínio raiz da floresta ou em um domínio raiz da árvore, não será necessário criar a delegação de DNS. Nesse caso, clique em **Sim** e Desconsidere a mensagem.  
   
-        -   **Catálogo global (GC)** "esta opção é selecionada por padrão. Ela adiciona o catálogo global, as partições de diretório somente leitura, ao controlador de domínio e habilita a funcionalidade de pesquisa do catálogo global.  
+        -   **Catálogo global (GC)**"esta opção é selecionada por padrão. Ela adiciona o catálogo global, as partições de diretório somente leitura, ao controlador de domínio e habilita a funcionalidade de pesquisa do catálogo global.  
   
-        -   **RODC (controlador de domínio somente leitura)** "essa opção não é selecionada por padrão. Ele torna o controlador de domínio adicional somente leitura; ou seja, ele torna o controlador de domínio um RODC.  
+        -   **RODC (controlador de domínio somente leitura)**"essa opção não é selecionada por padrão. Ele torna o controlador de domínio adicional somente leitura; ou seja, ele torna o controlador de domínio um RODC.  
   
     2.  Em **nome do site**, selecione um site na lista.  
   
-    3.  Em **digite a senha do modo de restauração dos serviços de diretório (DSRM)** , em **senha** e **Confirmar senha**, digite uma senha forte duas vezes e clique em **Avançar**. Essa senha deve ser usada para iniciar AD DS no DSRM para tarefas que devem ser executadas offline.  
+    3.  Em **digite a senha do modo de restauração dos serviços de diretório (DSRM)**, em **senha** e **Confirmar senha**, digite uma senha forte duas vezes e clique em **Avançar**. Essa senha deve ser usada para iniciar AD DS no DSRM para tarefas que devem ser executadas offline.  
   
 10. Na página **Opções de DNS** , marque a caixa de seleção **Atualizar delegação de DNS** se desejar atualizar a delegação de DNS durante a instalação da função e clique em **Avançar**.  
   
@@ -144,7 +144,7 @@ Para obter mais informações, consulte [instalando um controlador de domínio a
   
 15. Reinicie o computador se ele não tiver sido reiniciado automaticamente.  
   
-## <a name="23-configure-security-groups"></a><a name="BKMK_ConfigSG"></a>2,3. Configurar os grupos de segurança  
+## <a name="23-configure-security-groups"></a><a name="BKMK_ConfigSG"></a>2.3. Configurar os grupos de segurança  
 Uma implantação multissite requer um grupo de segurança adicional para computadores cliente do Windows 7 para cada ponto de entrada na implantação que permite o acesso a computadores cliente com o Windows 7. Se houver vários domínios que contenham computadores cliente do Windows 7, é recomendável criar um grupo de segurança em cada domínio para o mesmo ponto de entrada. Como alternativa, um grupo de segurança universal contendo os computadores cliente de ambos os domínios pode ser usado. Por exemplo, em um ambiente com dois domínios, se você quiser permitir o acesso a computadores cliente com Windows 7 nos pontos de entrada 1 e 3, mas não no ponto de entrada 2, crie dois novos grupos de segurança para conter os computadores cliente do Windows 7 para cada ponto de entrada em cada um dos domínios.  
   
 ### <a name="to-configure-additional-security-groups"></a>Para configurar grupos de segurança adicionais  
@@ -157,7 +157,7 @@ Uma implantação multissite requer um grupo de segurança adicional para comput
   
 4.  Em **escopo do grupo**, clique em **Universal**, em **tipo de grupo**, clique em **segurança**e em **OK**.  
   
-5.  Para adicionar computadores ao novo grupo de segurança, clique duas vezes no grupo de segurança e, na caixa de diálogo **Propriedades do < Group_Name >** , clique na guia **Membros** .  
+5.  Para adicionar computadores ao novo grupo de segurança, clique duas vezes no grupo de segurança e, na caixa de diálogo **Propriedades do<Group_Name>** , clique na guia **Membros** .  
   
 6.  Na guia **Membros**, clique em **Adicionar**.  
   
@@ -165,9 +165,9 @@ Uma implantação multissite requer um grupo de segurança adicional para comput
   
 8.  Repita este procedimento para criar um grupo de segurança para cada ponto de entrada, conforme necessário.  
   
-![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows</em> PowerShell***  
+![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Comandos equivalentes</em> do Windows PowerShell***  
   
-O cmdlet ou cmdlets do Windows PowerShell a seguir executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, embora eles apareçam com quebra de linha em várias linhas aqui devido a restrições de formatação.  
+O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que o procedimento anterior. Insira cada cmdlet em uma única linha, mesmo que possa aparecer quebra em várias linhas aqui devido a restrições de formatação.  
   
 Para instalar o recurso do Windows "Módulo Active Directory para Windows PowerShell":  
   
@@ -190,7 +190,7 @@ New-ADGroup -GroupScope universal -Name Win7_Clients_Entrypoint1
 Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$  
 ```  
   
-## <a name="24-configure-gpos"></a><a name="ConfigGPOs"></a>2,4. Configurar GPOs  
+## <a name="24-configure-gpos"></a><a name="ConfigGPOs"></a>2.4. Configurar GPOs  
 Uma implantação de acesso remoto multissite requer os seguintes objetos Política de Grupo:  
   
 -   Um GPO para cada ponto de entrada para o servidor de acesso remoto.  
@@ -207,7 +207,7 @@ Quando você configura o acesso remoto, o assistente cria automaticamente os obj
 > [!IMPORTANT]  
 > Depois de criar manualmente os GPOs para acesso remoto, você deve permitir tempo suficiente para replicação de Active Directory e DFS para o controlador de domínio no site do Active Directory que está associado ao servidor de acesso remoto. Se o acesso remoto criar automaticamente os objetos de Política de Grupo, nenhum tempo de espera será necessário.  
   
-Para criar Política de Grupo objetos, consulte [criar e editar um objeto política de grupo](https://technet.microsoft.com/library/cc754740.aspx).  
+Para criar Política de Grupo objetos, consulte [criar e editar um objeto política de grupo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754740(v=ws.11)).  
   
 ### <a name="domain-controller-maintenance-and-downtime"></a><a name="DCMaintandDowntime"></a>Manutenção e tempo de inatividade do controlador de domínio  
 Quando um controlador de domínio em execução como emulador de PDC ou controladores de domínio Gerenciando GPOs de servidor experimentam tempo de inatividade, não é possível carregar ou modificar a configuração de acesso remoto. Isso não afetará a conectividade do cliente se outros controladores de domínio estiverem disponíveis.  
@@ -218,7 +218,7 @@ Para carregar ou modificar a configuração de acesso remoto, você pode transfe
 > Esta operação só pode ser executada por um administrador de domínio. O impacto da alteração do controlador de domínio primário não é restrito ao acesso remoto; Portanto, tome cuidado ao transferir a função de emulador de PDC.  
   
 > [!NOTE]  
-> Antes de modificar a associação do controlador de domínio, verifique se todos os GPOs na implantação de acesso remoto foram replicados para todos os controladores de domínio no domínio. Se o GPO não estiver sincronizado, as alterações de configuração recentes poderão ser perdidas após a modificação da associação do controlador de domínio, o que pode levar a uma configuração corrompida. Para verificar a sincronização do GPO, consulte [verificar política de grupo status da infraestrutura](https://technet.microsoft.com/library/jj134176.aspx).  
+> Antes de modificar a associação do controlador de domínio, verifique se todos os GPOs na implantação de acesso remoto foram replicados para todos os controladores de domínio no domínio. Se o GPO não estiver sincronizado, as alterações de configuração recentes poderão ser perdidas após a modificação da associação do controlador de domínio, o que pode levar a uma configuração corrompida. Para verificar a sincronização do GPO, consulte [verificar política de grupo status da infraestrutura](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134176(v=ws.11)).  
   
 #### <a name="to-transfer-the-pdc-emulator-role"></a><a name="TransferPDC"></a>Para transferir a função de emulador de PDC  
   
@@ -237,7 +237,7 @@ Para carregar ou modificar a configuração de acesso remoto, você pode transfe
   
 #### <a name="to-change-the-domain-controller-that-manages-server-gpos"></a><a name="ChangeDC"></a>Para alterar o controlador de domínio que gerencia GPOs de servidor  
   
--   Execute o cmdlet do Windows PowerShell [set-DAEntryPointDC](https://docs.microsoft.com/powershell/module/remoteaccess/set-daentrypointdc) no servidor de acesso remoto e especifique o nome do controlador de domínio inacessível para o parâmetro *ExistingDC* . Esse comando modifica a associação do controlador de domínio para os GPOs do servidor dos pontos de entrada que são atualmente gerenciados por esse controlador de domínio.
+-   Execute o cmdlet do Windows PowerShell [set-DAEntryPointDC](/powershell/module/remoteaccess/set-daentrypointdc) no servidor de acesso remoto e especifique o nome do controlador de domínio inacessível para o parâmetro *ExistingDC* . Esse comando modifica a associação do controlador de domínio para os GPOs do servidor dos pontos de entrada que são atualmente gerenciados por esse controlador de domínio.
   
     -   Para substituir o controlador de domínio inacessível "dc1.corp.contoso.com" pelo controlador de domínio "dc2.corp.contoso.com", faça o seguinte:  
   
@@ -296,7 +296,7 @@ As informações de associação do controlador de domínio são armazenadas no 
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="optimization-of-configuration-distribution"></a><a name="ConfigDistOptimization"></a>Otimização da distribuição de configuração  
-Ao fazer alterações de configuração, as alterações são aplicadas somente depois que os GPOs do servidor se propagam para os servidores de acesso remoto. Para reduzir o tempo de distribuição da configuração, o acesso remoto seleciona automaticamente um controlador de domínio gravável que é [mais próximo do servidor de acesso remoto](https://technet.microsoft.com/library/cc978016.aspx) ao criar seu GPO de servidor.  
+Ao fazer alterações de configuração, as alterações são aplicadas somente depois que os GPOs do servidor se propagam para os servidores de acesso remoto. Para reduzir o tempo de distribuição da configuração, o acesso remoto seleciona automaticamente um controlador de domínio gravável que é [mais próximo do servidor de acesso remoto](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10)) ao criar seu GPO de servidor.  
   
 Em alguns cenários, pode ser necessário modificar manualmente o controlador de domínio que gerencia um GPO do servidor para otimizar o tempo de distribuição da configuração:  
   
@@ -309,7 +309,7 @@ Em alguns cenários, pode ser necessário modificar manualmente o controlador de
 Nesses cenários, execute o cmdlet do PowerShell `Set-DAEntryPointDC` no servidor de acesso remoto e especifique o nome do ponto de entrada que você deseja otimizar usando o parâmetro *entrypointname*. Você deve fazer isso somente depois que os dados do GPO do controlador de domínio atualmente armazenando o GPO do servidor já foram totalmente replicados para o novo controlador de domínio desejado.  
   
 > [!NOTE]  
-> Antes de modificar a associação do controlador de domínio, verifique se todos os GPOs na implantação de acesso remoto foram replicados para todos os controladores de domínio no domínio. Se o GPO não estiver sincronizado, as alterações de configuração recentes poderão ser perdidas após a modificação da associação do controlador de domínio, o que pode levar a uma configuração corrompida. Para verificar a sincronização do GPO, consulte [verificar política de grupo status da infraestrutura](https://technet.microsoft.com/library/jj134176.aspx).  
+> Antes de modificar a associação do controlador de domínio, verifique se todos os GPOs na implantação de acesso remoto foram replicados para todos os controladores de domínio no domínio. Se o GPO não estiver sincronizado, as alterações de configuração recentes poderão ser perdidas após a modificação da associação do controlador de domínio, o que pode levar a uma configuração corrompida. Para verificar a sincronização do GPO, consulte [verificar política de grupo status da infraestrutura](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134176(v=ws.11)).  
   
 Para otimizar o tempo de distribuição da configuração, siga um destes procedimentos:  
   
@@ -328,7 +328,7 @@ Para otimizar o tempo de distribuição da configuração, siga um destes proced
     > [!NOTE]  
     > Ao modificar o controlador de domínio associado a um ponto de entrada específico, você deve especificar um servidor de acesso remoto que seja membro desse ponto de entrada para o parâmetro *ComputerName* .  
   
-## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também  
+## <a name="see-also"></a><a name="BKMK_Links"></a>Confira também  
   
 -   [Etapa 3: configurar a implantação multissite](Step-3-Configure-the-Multisite-Deployment.md)  
 -   [Etapa 1: implementar uma implantação de acesso remoto de servidor único](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  

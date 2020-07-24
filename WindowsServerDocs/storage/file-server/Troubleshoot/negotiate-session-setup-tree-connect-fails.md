@@ -1,19 +1,19 @@
 ---
-title: Negociar, configuração de sessão e falhas de conexão de árvore
+title: Falhas de negociação, de configuração de sessão e de conexão de árvore
 description: Apresenta como solucionar problemas de negociar, configuração de sessão e falhas de conexão de árvore.
 author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 13124176e530aa7b74d18a38c906bf5297be511e
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bad602f934d844074ee96df06bf9234fdbf943f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815379"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961158"
 ---
-# <a name="negotiate-session-setup-and-tree-connect-failures"></a>Negociar, configuração de sessão e falhas de conexão de árvore
+# <a name="negotiate-session-setup-and-tree-connect-failures"></a>Falhas de negociação, de configuração de sessão e de conexão de árvore
 
 Este artigo descreve como solucionar problemas de falhas que ocorrem durante uma negociação SMB, configuração de sessão e solicitação de conexão de árvore.
 
@@ -27,7 +27,7 @@ Se você estiver usando o Windows Server 2008 R2, há hotfixes para esse problem
 
 ## <a name="session-setup-fails"></a>Falha na configuração da sessão
 
-O servidor SMB recebe uma sessão SMB\_solicitação de instalação de um cliente SMB, mas falhou ao responder.
+O servidor SMB recebe uma \_ solicitação de configuração de sessão SMB de um cliente SMB, mas falhou ao responder.
 
 Se o nome de domínio totalmente qualificado (FQDN) ou o nome do sistema de entrada/saída básico (NetBIOS) do servidor for ' sed no caminho UNC (Convenção de nomenclatura universal), o Windows usará o Kerberos para autenticação.
 
@@ -38,7 +38,7 @@ Após a resposta de negociação, haverá uma tentativa de obter um tíquete Ker
 
 Além disso, faça as seguintes verificações:
 
-- Examine o blob de segurança na sessão SMB\_solicitação de instalação para certificar-se de que as credenciais corretas sejam enviadas.
+- Examine o blob de segurança na solicitação de configuração da sessão SMB para certificar- \_ se de que as credenciais corretas sejam enviadas.
 
 - Tente desabilitar a proteção de nome do servidor SMB (**SmbServerNameHardeningLevel = 0**).
 
@@ -50,13 +50,13 @@ Além disso, faça as seguintes verificações:
 
 Certifique-se de que as credenciais da conta de usuário tenham permissões de compartilhamento e do sistema de arquivos NT (NTFS) para a pasta.
 
-A causa de erros comuns de conexão de árvore pode ser encontrada no [3.3.5.7 recebendo uma árvore de SMB2\_solicitação de conexão](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87). A seguir estão as soluções para dois códigos de status comuns.
+A causa de erros comuns de conexão de árvore pode ser encontrada no [3.3.5.7 recebendo uma \_ solicitação de conexão de árvore SMB2](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87). A seguir estão as soluções para dois códigos de status comuns.
 
-STATUS de \[\_nome de\_de rede\_inadequado\]
+\[nome de rede de STATUS \_ insatisfatório \_ \_\]
 
 Verifique se o compartilhamento existe no servidor e se está grafado corretamente na solicitação do cliente SMB.
 
-STATUS de \[\_acesso\_NEGAdo\]
+\[STATUS de \_ acesso \_ negado\]
 
 Verifique se o disco e a pasta que são usados pelo compartilhamento existem e estão acessíveis.
 
@@ -88,10 +88,10 @@ Siga estas diretrizes ao solucionar problemas:
 
 ## <a name="references"></a>Referências
 
-Para obter mais informações, consulte os artigos a seguir.
+Para obter mais informações, consulte os seguintes artigos.
 
-[3.3.5.4 recebendo uma solicitação de negociação SMB2](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
+[3.3.5.4 recebendo uma solicitação de negociação SMB2](/openspecs/windows_protocols/ms-smb2/b39f253e-4963-40df-8dff-2f9040ebbeb1)
 
-[3.3.5.5 recebendo uma sessão do SMB2\_solicitação de instalação](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
+[3.3.5.5 recebendo uma solicitação de instalação de sessão SMB2 \_](/openspecs/windows_protocols/ms-smb2/e545352b-9f2b-4c5e-9350-db46e4f6755e)
 
-[3.3.5.7 recebendo uma árvore de SMB2\_solicitação de conexão](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87?redirectedfrom=MSDN)
+[3.3.5.7 recebendo uma solicitação de conexão de árvore SMB2 \_](/openspecs/windows_protocols/ms-smb2/652e0c14-5014-4470-999d-b174d7b2da87)

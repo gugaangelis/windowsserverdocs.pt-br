@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6af511ac1aff488f192f75b31801c6fed751cedd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9b85e6e10f8df3ec4d2c70e9aff687f264e055a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859419"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962818"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Políticas de controle de acesso no AD FS para Windows Server 2016
 
@@ -39,7 +39,7 @@ Para fornecer maior flexibilidade para atender às suas necessidades de negócio
   
 Para criar um modelo de política, um administrador precisa primeiro especificar sob quais condições uma solicitação será autorizada para emissão de token e/ou delegação. As opções de condição e ação são mostradas na tabela a seguir.   As condições em negrito podem ser configuradas ainda mais pelo administrador com valores diferentes ou novos. O administrador também pode especificar exceções se houver alguma. Quando uma condição for atendida, uma ação de permissão não será disparada se houver uma exceção especificada e a solicitação de entrada corresponder à condição especificada na exceção.  
   
-|Permitir usuários|excepção| 
+|Permitir usuários|Except| 
 | --- | --- | 
  |De uma rede **específica**|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
 |De grupos **específicos**|De uma rede **específica**<p>De grupos **específicos**<p>De dispositivos com níveis de confiança **específicos**<p>Com declarações **específicas** na solicitação|  
@@ -51,10 +51,10 @@ Se um administrador selecionar várias condições, elas serão de **e** a rela�
   
 |**Política**|**Regras de política**|
 | --- | --- |  
-|O acesso à extranet requer MFA<p>Todos os usuários são permitidos|**#1 de regra**<p>da **extranet**<p>e com MFA<p>Permissão<p>**Regra n º 2**<p>da **intranet**<p>Permissão|  
-|Acesso externo não é permitido, exceto não FTE<p>O acesso à intranet para FTE no dispositivo ingressado no local de trabalho é permitido|**#1 de regra**<p>da **extranet**<p>e de um grupo **não FTE**<p>Permissão<p>**#2 de regra**<p>da **intranet**<p>e do dispositivo **ingressado no local de trabalho**<p>e do grupo **FTE**<p>Permissão|  
-|O acesso à extranet requer MFA, exceto "administrador do serviço"<p>Todos os usuários têm permissão para acessar|**#1 de regra**<p>da **extranet**<p>e com MFA<p>Permissão<p>**Grupo de administradores de serviço** , exceto<p>**#2 de regra**<p>constante<p>Permissão|  
-|o dispositivo ingressado no local de não trabalho de extranet requer MFA<p>Permitir acesso à infraestrutura de intranet e extranet do AD|**#1 de regra**<p>da **intranet**<p>e do grupo do **ad Fabric**<p>Permissão<p>**#2 de regra**<p>da **extranet**<p>e do dispositivo **não ingressado no local de trabalho**<p>e do grupo do **ad Fabric**<p>e com MFA<p>Permissão<p>**#3 de regra**<p>da **extranet**<p>e do dispositivo **ingressado no local de trabalho**<p>e do grupo do **ad Fabric**<p>Permissão|  
+|O acesso à extranet requer MFA<p>Todos os usuários são permitidos|**#1 de regra**<p>da **extranet**<p>e com MFA<p>Permitir<p>**Regra n º 2**<p>da **intranet**<p>Permitir|  
+|Acesso externo não é permitido, exceto não FTE<p>O acesso à intranet para FTE no dispositivo ingressado no local de trabalho é permitido|**#1 de regra**<p>Da **extranet**<p>e de um grupo **não FTE**<p>Permitir<p>**#2 de regra**<p>da **intranet**<p>e do dispositivo **ingressado no local de trabalho**<p>e do grupo **FTE**<p>Permitir|  
+|O acesso à extranet requer MFA, exceto "administrador do serviço"<p>Todos os usuários têm permissão para acessar|**#1 de regra**<p>da **extranet**<p>e com MFA<p>Permitir<p>**Grupo de administradores de serviço** , exceto<p>**#2 de regra**<p>always<p>Permitir|  
+|o dispositivo ingressado no local de não trabalho de extranet requer MFA<p>Permitir acesso à infraestrutura de intranet e extranet do AD|**#1 de regra**<p>da **intranet**<p>E do grupo do **ad Fabric**<p>Permitir<p>**#2 de regra**<p>da **extranet**<p>e do dispositivo **não ingressado no local de trabalho**<p>e do grupo do **ad Fabric**<p>e com MFA<p>Permitir<p>**#3 de regra**<p>da **extranet**<p>e do dispositivo **ingressado no local de trabalho**<p>e do grupo do **ad Fabric**<p>Permitir|  
   
 ## <a name="parameterized-policy-template-vs-non-parameterized-policy-template"></a>Modelo de política com parâmetros vs. modelo de política não parametrizada  
 As políticas de controle de acesso podem ser  
@@ -179,6 +179,5 @@ A partir daqui, você pode selecionar a política de controle de acesso e aplic�
   
 ![políticas de controle de acesso](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)  
   
-## <a name="see-also"></a>Consulte também  
-[Operações do AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
-
+## <a name="see-also"></a>Consulte Também  
+[Operações do AD FS](../ad-fs-operations.md) 

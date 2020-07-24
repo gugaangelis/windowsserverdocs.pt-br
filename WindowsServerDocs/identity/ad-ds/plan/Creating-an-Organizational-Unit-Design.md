@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8e92ad4b280572fc3b44a0161af9a4ea25653c89
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: 186ad8d63a1d30ce56b1f6a2780893cfb744463d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624314"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962248"
 ---
 # <a name="creating-an-organizational-unit-design"></a>Criar um design de unidade organizacional
 
@@ -21,7 +21,7 @@ ms.locfileid: "81624314"
 
 Os proprietários da floresta são responsáveis por criar designs de UO (unidade organizacional) para seus domínios. A criação de um design de UO envolve a criação da estrutura de UO, a atribuição da função de proprietário da UO e a criação de UOs de contas e recursos.
 
-Inicialmente, projete sua estrutura de UO para habilitar a delegação de administração. Quando o design da UO for concluído, você poderá criar estruturas de UO adicionais para a aplicação de Política de Grupo aos usuários e computadores e limitar a visibilidade dos objetos. Para obter mais informações, consulte [projetando uma infraestrutura de política de grupo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10)).
+Inicialmente, projete sua estrutura de UO para habilitar a delegação de administração. Quando o design da UO for concluído, você poderá criar estruturas de UO adicionais para a aplicação de Política de Grupo aos usuários e computadores e limitar a visibilidade dos objetos. Para obter mais informações, consulte [projetando uma infraestrutura de política de grupo](/previous-versions/windows/it-pro/windows-server-2003/cc786524(v=ws.10)).
 
 ## <a name="ou-owner-role"></a>Função de proprietário da UO
 O proprietário da floresta designa um proprietário da UO para cada UO que você cria para o domínio. Os proprietários da UO são gerenciadores de dados que controlam uma subárvore de objetos no Active Directory Domain Services (AD DS). Os proprietários da UO podem controlar como a administração é delegada e como a política é aplicada aos objetos dentro de sua UO. Eles também podem criar novas subárvores e delegar a administração de UOs dentro dessas subárvores.
@@ -40,7 +40,7 @@ Monte uma equipe para criar a estrutura da UO que você usa para delegar o contr
 
 É importante documentar seu design de UO. Liste os nomes das UOs que você planeja criar. E, para cada UO, documente o tipo de UO, o proprietário da UO, a UO pai (se aplicável) e a origem dessa UO.
 
-Para uma planilha para ajudá-lo a documentar seu design de UO, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de [auxílios de trabalho para o kit de implantação do Windows Server 2003](https://microsoft.com/download/details.aspx?id=9608) e abra "identificando UOs para cada domínio" (DSSLOGI_9. doc).
+Para uma planilha para ajudá-lo a documentar seu design de UO, baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608) e abra "identificando UOs para cada domínio" (DSSLOGI_9.doc).
 
 ## <a name="in-this-section"></a>Nesta seção
 

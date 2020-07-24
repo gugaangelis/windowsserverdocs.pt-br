@@ -8,26 +8,26 @@ ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: cf17c7f1349d5b3ee5b3efe0a872dd433ecbfe8d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 694260d58c8dda136318cd21f553a4b6b2fd31e0
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819570"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963638"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>Etapa 2 planejar implantações avançadas do DirectAccess
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Depois de planejar a infraestrutura do DirectAccess, a próxima etapa para implantar o DirectAccess avançado em um único servidor com IPv4 e IPv6 é planejar as configurações do Assistente de configuração de acesso remoto.  
   
-|{1&gt;Tarefa&lt;1}|Descrição|  
+|Tarefa|Descrição|  
 |----|--------|  
-|[plano 2,1 para implantação de cliente](#21-plan-for-client-deployment)|Planeje como permitir que computadores cliente se conectem usando o DirectAccess. Decida quais computadores gerenciados serão configurados como clientes DirectAccess e planeje a implantação do Assistente de Conectividade de Rede ou do Assistente de Conectividade do DirectAccess em computadores cliente.|  
-|[plano 2,2 para a implantação do servidor DirectAccess](#22-plan-for-directaccess-server-deployment)|Planeje como implantar o servidor do DirectAccess.|  
-|[servidores de infraestrutura do plano 2,3](#23-plan-infrastructure-servers)|Planeje os servidores de infraestrutura para a implantação do DirectAccess, incluindo o servidor local de rede do DirectAccess, os servidores de DNS e os servidores de gerenciamento do DirectAccess.|  
-|[2,4 planejar servidores de aplicativos](#24-plan-application-servers)|Planeje servidores de aplicativos IPv4 e IPv6 e, como opção, considere se a autenticação fim a fim entre computadores cliente DirectAccess e servidores de aplicativos internos é necessária.|  
-|[plano de 2,5 do DirectAccess e clientes VPN de terceiros](#25-plan-directaccess-and-third-party-vpn-clients)|Quando o DirectAccess é implantado com clientes VPN de terceiros, pode ser necessário definir os seguintes valores do Registro para habilitar a coexistência perfeita das duas soluções de acesso remoto.|  
+|[2.1 Planejar a implantação do cliente](#21-plan-for-client-deployment)|Planeje como permitir que computadores cliente se conectem usando o DirectAccess. Decida quais computadores gerenciados serão configurados como clientes DirectAccess e planeje a implantação do Assistente de Conectividade de Rede ou do Assistente de Conectividade do DirectAccess em computadores cliente.|  
+|[2.2 Planejar a implantação do servidor do DirectAccess](#22-plan-for-directaccess-server-deployment)|Planeje como implantar o servidor do DirectAccess.|  
+|[2.3 Planejar os servidores de infraestrutura](#23-plan-infrastructure-servers)|Planeje os servidores de infraestrutura para a implantação do DirectAccess, incluindo o servidor local de rede do DirectAccess, os servidores de DNS e os servidores de gerenciamento do DirectAccess.|  
+|[2.4 Planejar os servidores de aplicativo](#24-plan-application-servers)|Planeje servidores de aplicativos IPv4 e IPv6 e, como opção, considere se a autenticação fim a fim entre computadores cliente DirectAccess e servidores de aplicativos internos é necessária.|  
+|[2.5 Planejar DirectAccess e clientes VPN de terceiros](#25-plan-directaccess-and-third-party-vpn-clients)|Quando o DirectAccess é implantado com clientes VPN de terceiros, pode ser necessário definir os seguintes valores do Registro para habilitar a coexistência perfeita das duas soluções de acesso remoto.|  
   
 ## <a name="21-plan-for-client-deployment"></a>2.1 Planejar a implantação do cliente  
 Existem três decisões que precisam ser tomadas ao planejar a implantação do cliente:  
@@ -54,7 +54,7 @@ Existem três decisões que precisam ser tomadas ao planejar a implantação do 
   
         O nome deverá ser registrado manualmente no DNS. Você pode criar outros verificadores de conectividade usando outros endereços da web em HTTP ou **ping**. Uma entrada de DNS deverá existir para cada verificador de conectividade.  
   
-    -   **Um endereço de email do suporte técnico**  
+    -   **Um endereço de email de assistência técnica**  
   
         Se os usuários finais enfrentarem problemas de conectividade com o DirectAccess, eles poderão enviar um email contendo informações de diagnóstico para que o administrador do DirectAccess possa solucionar o problema.  
   
@@ -62,7 +62,7 @@ Existem três decisões que precisam ser tomadas ao planejar a implantação do 
   
         Especifique um nome de conexão para ajudar os usuários finais a identificarem a conexão do DirectAccess no computador.  
   
-    -   **Permitir que os clientes DirectAccess usem a resolução de nomes locais**  
+    -   **Permitir que os clientes do DirectAccess usem resolução de nome local**  
   
         Os clientes requerem uma maneira de resolver nomes localmente. Se você permitir que os clientes do DirectAccess usem a resolução de nome local, os usuários finais poderão usar os servidores de DNS local para resolver os nomes. Quando os usuários finais escolherem usar os servidores de DNS para resoluções de nome, o DirectAccess não enviará solicitações de resolução para nomes de rótulo único para o servidor de DNS corporativo interno. Ele usará a resolução de nome local (usando o LLMNR (Link-Local Multicast Name Resolution) e o NetBIOS por meio dos protocolos TCP/IP).  
   
@@ -79,7 +79,7 @@ Considere as seguintes decisões ao planejar a implantação do servidor do Dire
   
     Para obter mais informações sobre como selecionar a topologia para sua implantação, consulte [1,1 planejar topologia de rede e configurações](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings).  
   
--   **Endereço do connectto**  
+-   **Endereço ConnectTo**  
   
     Os computadores cliente usam o endereço ConnectTo para conectar-se ao servidor do DirectAccess. O endereço escolhido deve ser correspondente ao nome do assunto do certificado IP-HTTPS implantado para a conexão IP-HTTPS, devendo também estar disponível no DNS público.  
   
@@ -89,9 +89,9 @@ Considere as seguintes decisões ao planejar a implantação do servidor do Dire
   
 -   **Certificado IP-HTTPS**  
   
-    O Assistente de configuração de servidor de acesso remoto detecta automaticamente um certificado adequado para a conexão IP-HTTPS. O nome do assunto do certificado selecionado deve ser correspondente ao endereço ConnectTo. Se você usar certificados autoassinados, poderá selecionar um certificado criado automaticamente pelo servidor do Acesso Remoto.  
+    O Assistente de configuração de servidor de acesso remoto detecta automaticamente um certificado adequado para a conexão IP-HTTPS. O nome da entidade do certificado que você selecionar deve corresponder ao endereço connectto. Se você usar certificados autoassinados, poderá selecionar um certificado criado automaticamente pelo servidor do Acesso Remoto.  
   
--   **Prefixos IPv6**  
+-   **Prefixos do IPv6**  
   
     Se o Assistente de configuração do servidor de acesso remoto detectar que o IPv6 foi implantado nos adaptadores de rede, ele preencherá automaticamente os prefixos de IPv6 para a rede interna, outro para a atribuição dos computadores cliente do DirectAccess e outro para a atribuição aos computadores cliente do VPN. Se os prefixos gerados automaticamente não estiverem corretos para sua infraestrutura IPv6 nativa, será necessário alterá-los manualmente. Para obter mais informações, consulte [configurações e topologia de rede do plano 1,1](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings).  
   
@@ -99,7 +99,7 @@ Considere as seguintes decisões ao planejar a implantação do servidor do Dire
   
     Decida como os clientes do DirectAccess serão autenticados no servidor do DirectAccess:  
   
-    -   **Autenticação do usuário**. Você pode habilitar os usuários para autenticação com credenciais do Active Directory ou com autenticação em dois fatores. Para obter mais informações sobre como autenticar com a autenticação de dois fatores, consulte [implantar acesso remoto com autenticação OTP](https://technet.microsoft.com/library/hh831379.aspx).  
+    -   **Autenticação do usuário**. Você pode habilitar os usuários para autenticação com credenciais do Active Directory ou com autenticação em dois fatores. Para obter mais informações sobre como autenticar com a autenticação de dois fatores, consulte [implantar acesso remoto com autenticação OTP](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831379(v=ws.11)).  
   
     -   **Autenticação do computador**. Você pode configurar autenticação do computador para usar certificados ou o servidor do DirectAccess como proxy Kerberos em nome do cliente. Para obter mais informações, consulte [requisitos de certificado do plano 1,3](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements).  
   
@@ -134,7 +134,7 @@ Por padrão, quando você estende a autenticação a servidores de aplicativos, 
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 Planejar DirectAccess e clientes VPN de terceiros  
 Alguns clientes VPN de terceiros não criam conexões na pasta Conexões de Rede. Isso pode levar o DirectAccess a determinar que não há conectividade de intranet quando a conexão VPN é estabelecida, embora haja conectividade com a Intranet. Isso ocorre quando clientes VPN de terceiros registram as interfaces definindo-as como tipos de ponto de extremidade NDIS (especificação da interface do dispositivo de rede). Você pode habilitar a coexistência com esses tipos de clientes VPN definindo o valor do Registro como 1 nos clientes do DirectAccess:  
   
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
   
 Alguns clientes VPN de terceiros usam uma configuração de túnel dividido, que permite ao computador cliente VPN acessar a Internet diretamente, sem precisar enviar o tráfego pela conexão VPN para a Intranet.  
   
@@ -142,11 +142,9 @@ As configurações de túnel dividido, em geral, deixam a configuração do Gate
   
 Se a conexão do VPN listar o gateway padrão como vazio ou somente zeros (0.0.0.0), seu cliente de VPN está configurado desta maneira. Por padrão, o cliente DirectAccess não identifica configurações de túnel dividido. Para configurar clientes DirectAccess para detectarem esses tipos de configurações de cliente VPN e coexistirem com elas, defina o valor do Registro a seguir como 1:  
   
-**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
 ## <a name="previous-step"></a>Etapa anterior  
   
--   [Etapa 1: planejar a infraestrutura do DirectAccess](da-adv-plan-s1-infrastructure.md)  
+-   [Etapa 1: planejar a Infraestrutura do DirectAccess](da-adv-plan-s1-infrastructure.md)  
   
-
-

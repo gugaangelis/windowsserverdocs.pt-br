@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: O FSRM (Gerenciador de recursos de servidor de arquivos) é uma ferramenta que permite gerenciar e classificar dados em um servidor de arquivos do Windows Server.
-ms.openlocfilehash: af54f08f8acc491553a4d42c1aabe8ea7e26fadd
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473933"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964558"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
 
@@ -57,7 +57,7 @@ Os recursos incluídos no Gerenciador de recursos de servidor de arquivos podem 
 
 A partir do Windows Server, versão 1803, agora você pode impedir que o serviço do Gerenciador de recursos do servidor de arquivos crie um diário de alterações (também conhecido como um diário de USN) em volumes quando o serviço for iniciado. Isso pode conservar um pouco de espaço em cada volume, mas desabilitará a classificação de arquivos em tempo real.
 
-Para novos recursos mais antigos, consulte [novidades no Gerenciador de recursos do servidor de arquivos](https://technet.microsoft.com/library/dn383587.aspx).
+Para novos recursos mais antigos, consulte [novidades no Gerenciador de recursos do servidor de arquivos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383587(v=ws.11)).
 
 Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diário de alterações em alguns ou todos os volumes quando o serviço for iniciado, use as seguintes etapas:
 
@@ -106,4 +106,4 @@ Para impedir que o Gerenciador de recursos do servidor de arquivos crie um diár
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [Controle de Acesso Dinâmico](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx)
+- [Controle de Acesso Dinâmico](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn408191(v=ws.11))

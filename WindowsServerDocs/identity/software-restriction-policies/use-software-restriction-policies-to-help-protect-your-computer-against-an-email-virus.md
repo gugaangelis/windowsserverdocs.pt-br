@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 680d0435d77164e101f045b439be6ccb6601dfef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855729"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964688"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>Usar políticas de restrição de software para ajudar a proteger seu computador contra um vírus de email
 
@@ -33,11 +33,11 @@ A partir do Windows Server 2008 R2 e do Windows 7, o Windows AppLocker pode ser 
 
     -   [Práticas recomendadas](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [Como funcionam as diretivas de restrição de software](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [Como funcionam as diretivas de restrição de software](/previous-versions/windows/it-pro/windows-server-2003/cc786941(v=ws.10))
 
 2.  Abra Políticas de Restrição de Software.
 
-    -   [Para seu computador local](administer-software-restriction-policies.md#BKMK_1)
+    -   [Para o computador local](administer-software-restriction-policies.md#BKMK_1)
 
     -   [Para um domínio, site ou unidade organizacional, e você está em um servidor membro ou em uma estação de trabalho que tenha ingressado em um domínio](administer-software-restriction-policies.md#BKMK_2)
 
@@ -62,5 +62,3 @@ A partir do Windows Server 2008 R2 e do Windows 7, o Windows AppLocker pode ser 
         -   [Para impedir que as diretivas de restrição de software sejam aplicadas a administradores locais](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
 7.  Teste a política.
-
-

@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: be4d7028f1922152b2779e82a7c78d9b3a5b753a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3042b6782ad8d9e0a03a43c1e21c8fe41583f967
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859549"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963518"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura do DirectAccess
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 A primeira etapa do planejamento de uma implantação básica do Acesso Remoto em um único servidor é executar o planejamento para infraestrutura necessária para implantação. Este tópico descreve as etapas de planejamento de infraestrutura:  
   
-|{1&gt;Tarefa&lt;1}|Descrição|  
+|Tarefa|Descrição|  
 |----|--------|  
 |Planejar topologia e configurações de rede|Decidir onde colocar o servidor de Acesso Remoto (na borda, atrás de um dispositivo NAT [Conversão de Endereços de Rede] ou de um firewall) e planejar o endereçamento IP e o roteamento.|  
 |Planejar requisitos de firewall|Planejar como permitir a passagem do Acesso Remoto através de firewalls de borda.|  
@@ -38,7 +38,7 @@ As tarefas de planejamento não precisam ser feitas em uma ordem específica.
   
 1. Identificar a topologia de adaptador de rede que será usada. O Acesso Remoto pode ser configurado com um dos seguintes:  
   
-    - Com dois adaptadores de rede: na borda com um adaptador de rede conectado à Internet e o outro à rede interna ou atrás de um NAT, firewall ou dispositivo de roteador, com um adaptador de rede conectado a uma rede de perímetro e o outro à parte interna rede.  
+    - Com dois adaptadores de rede: na borda com um adaptador de rede conectado à Internet e o outro à rede interna ou atrás de um NAT, firewall ou dispositivo de roteador, com um adaptador de rede conectado a uma rede de perímetro e o outro à rede interna.  
   
     - Atrás de um dispositivo NAT com um adaptador de rede: o servidor de acesso remoto é instalado atrás de um dispositivo NAT e o adaptador de rede único é conectado à rede interna.  
   
@@ -46,9 +46,9 @@ As tarefas de planejamento não precisam ser feitas em uma ordem específica.
   
     O DirectAccess usa IPv6 com IPsec para criar uma conexão segura entre os computadores cliente do DirectAccess e a rede interna corporativa. Contudo, o DirectAccess não precisa necessariamente de uma conectividade IPv6 com a Internet ou suporte IPv6 nativo em redes internas. Em vez disso, ele configura e usa automaticamente tecnologias de transição IPv6 para criar um túnel de tráfego IPv6 pela Internet IPv4 (6to4, Teredo ou IP-HTTPS) e pela Intranet somente IPv4 (NAT64 ou ISATAP). Para uma visão geral dessas tecnologias de transição, confira os seguintes recursos:  
   
-    - [Tecnologias de transição IPv6](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [Tecnologias de transição IPv6](/previous-versions//bb726951(v=technet.10))  
   
-    - [Especificação de protocolo de túnel IP-HTTPS](https://msdn.microsoft.com/library/dd358571.aspx)  
+    - [Especificação do protocolo de túnel IP-HTTPS](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)  
   
 3. Configure os adaptadores e endereçamento necessários conforme a tabela a seguir. Para implantações por trás de um dispositivo NAT usando um único adaptador de rede, configure seus endereços IP usando apenas a coluna ' adaptador de rede interna '.  
   
@@ -139,7 +139,7 @@ Ao planejar o site de servidor de local de rede, considere o seguinte:
 
 Em uma implantação do Acesso Remoto, o DNS é necessário para o seguinte:  
   
-- **Solicitações de cliente do DirectAccess**: o DNS é usado para resolver solicitações de computadores cliente do DirectAccess que não estão localizados na rede interna. Os clientes do DirectAccess tentam se conectar ao servidor de local da rede DirectAccess para determinar se encontram-se na Internet ou na rede corporativa: Se a conexão for efetuada com êxito, os clientes serão determinados como estando na intranet e o DirectAccess não será usado, e as solicitações do cliente serão resolvidas usando o servidor DNS configurado no adaptador de rede do computador cliente. Se a conexão não for bem-sucedida, presume-se que os clientes estejam na Internet. Clientes do DirectAccess usarão a NRPT (tabela de políticas de resolução de nomes) para determinar qual servidor DNS usar ao resolver solicitações de nome. Você pode especificar que os clientes devem usar o DirectAccess DNS64 para resolver nomes ou um servidor DNS interno alternativo. Ao realizar a resolução do nome, a NRPT é usada pelos clientes do DirectAccess para identificar como lidar com uma solicitação. Os clientes solicitam um FQDN ou um nome de rótulo único, como <https://internal>. Se um nome de rótulo único for solicitado, um sufixo do DNS será agregado para criar um FQDN. Se a consulta DNS for correspondente a uma entrada na NRPT, e DNS4 ou um servidor de intranet DNS for especificado para a entrada, então, a consulta é enviada para resolução de nome usando o servidor especificado. Se houver correspondência, mas nenhum servidor DNS foi especificado, isso indicará uma exceção à regra e a resolução de nome normal é aplicada.  
+- **Solicitações de cliente do DirectAccess**: o DNS é usado para resolver solicitações de computadores cliente do DirectAccess que não estão localizados na rede interna. Os clientes do DirectAccess tentam se conectar ao servidor de local da rede DirectAccess para determinar se encontram-se na Internet ou na rede corporativa: Se a conexão for efetuada com êxito, os clientes serão determinados como estando na intranet e o DirectAccess não será usado, e as solicitações do cliente serão resolvidas usando o servidor DNS configurado no adaptador de rede do computador cliente. Se a conexão não for bem-sucedida, presume-se que os clientes estejam na Internet. Clientes do DirectAccess usarão a NRPT (tabela de políticas de resolução de nomes) para determinar qual servidor DNS usar ao resolver solicitações de nome. Você pode especificar que os clientes devem usar o DirectAccess DNS64 para resolver nomes ou um servidor DNS interno alternativo. Ao realizar a resolução do nome, a NRPT é usada pelos clientes do DirectAccess para identificar como lidar com uma solicitação. Os clientes solicitam um FQDN ou um nome de rótulo único, como <https://internal> . Se um nome de rótulo único for solicitado, um sufixo do DNS será agregado para criar um FQDN. Se a consulta DNS for correspondente a uma entrada na NRPT, e DNS4 ou um servidor de intranet DNS for especificado para a entrada, então, a consulta é enviada para resolução de nome usando o servidor especificado. Se houver correspondência, mas nenhum servidor DNS foi especificado, isso indicará uma exceção à regra e a resolução de nome normal é aplicada.  
   
     Observe que quando um novo sufixo for adicionado à NRPT no console de Gerenciamento do Acesso Remoto, os servidores DNS padrão do sufixo poderão ser descobertos automaticamente, clicando no botão **Detectar**. A detecção automática funciona da seguinte maneira:  
   
@@ -153,7 +153,7 @@ Em uma implantação do Acesso Remoto, o DNS é necessário para o seguinte:
   
         1. Uma regra de sufixo DNS para o domínio raiz ou o nome de domínio do servidor de Acesso Remoto e os endereços IPv6 correspondentes aos servidores DNS da intranet configurados no servidor de Acesso Remoto. Por exemplo, se o servidor de Acesso Remoto for membro do domínio corp.contoso.com, é criada uma regra para o sufixo de DNS corp.contoso.com.  
   
-        2. Uma regra de isenção para o FQDN do servidor de local de rede. Por exemplo, se a URL do servidor do local de rede for <https://nls.corp.contoso.com>, uma regra de isenção será criada para o FQDN nls.corp.contoso.com.  
+        2. Uma regra de isenção para o FQDN do servidor de local de rede. Por exemplo, se a URL do servidor de local de rede for <https://nls.corp.contoso.com> , uma regra de isenção será criada para o FQDN NLS.Corp.contoso.com.  
   
         **Servidor IP-HTTPS**: o servidor de acesso remoto atua como um ouvinte IP-HTTPS e usa seu certificado de servidor para autenticar em clientes IP-HTTPS. O nome do IP-HTTPS deve ser resolvível pelos clientes DirectAccess que usam servidores DNS públicos.  
   
@@ -269,11 +269,10 @@ Observe que se as permissões corretas às quais vincular GPOs não existirem, u
 
 Se um GPO de servidor de Acesso Remoto, cliente ou de servidor de aplicativos for excluído por acidente e não houver backup disponível, você deverá remover as definições da configuração e configurá-las novamente. Se um backup estiver disponível, você poderá usá-lo para restaurar o GPO.  
   
-O **Gerenciamento de acesso remoto** exibirá a seguinte mensagem de erro: **não é possível encontrar o GPO (nome do GPO)** . Para remover as definições de configuração, siga essas etapas:  
+O **Gerenciamento de acesso remoto** exibirá a seguinte mensagem de erro: **não é possível encontrar o GPO (nome do GPO)**. Para remover as definições de configuração, siga essas etapas:  
   
 1. Execute o cmdlet PowerShell **Uninstall-remoteaccess**.  
   
 2. Abra novamente o **Gerenciamento de acesso remoto**.  
   
 3. Você verá uma mensagem de erro indicando que o GPO não foi encontrado. Clique em **Remover definições de configuração**. Depois de concluído, o servidor será restaurado a um estado não configurado.  
-

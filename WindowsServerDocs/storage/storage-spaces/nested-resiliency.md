@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 4faf4ade53074677b34b037c5ba6d551beb8542e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474903"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962198"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resiliência aninhada para Espaços de Armazenamento Diretos
 
@@ -56,7 +56,7 @@ Espaços de Armazenamento Diretos no Windows Server 2019 oferece duas novas opç
 
   ![Espelho bidirecional aninhado](media/nested-resiliency/nested-two-way-mirror.png)
 
-- **Paridade com aceleração de espelhamento aninhada.** Combine espelhamento bidirecional aninhado, acima, com paridade aninhada. Dentro de cada servidor, a resiliência local para a maioria dos dados é fornecida por uma [aritmética de paridade de bit](storage-spaces-fault-tolerance.md#parity)único, exceto por novas gravações recentes que usam o espelhamento bidirecional. Em seguida, a resiliência adicional para todos os dados é fornecida pelo espelhamento bidirecional entre os servidores. Para obter mais informações sobre como funciona a paridade acelerada por espelhamento, consulte [paridade acelerada por espelhamento](https://docs.microsoft.com/windows-server/storage/refs/mirror-accelerated-parity).
+- **Paridade com aceleração de espelhamento aninhada.** Combine espelhamento bidirecional aninhado, acima, com paridade aninhada. Dentro de cada servidor, a resiliência local para a maioria dos dados é fornecida por uma [aritmética de paridade de bit](storage-spaces-fault-tolerance.md#parity)único, exceto por novas gravações recentes que usam o espelhamento bidirecional. Em seguida, a resiliência adicional para todos os dados é fornecida pelo espelhamento bidirecional entre os servidores. Para obter mais informações sobre como funciona a paridade acelerada por espelhamento, consulte [paridade acelerada por espelhamento](../refs/mirror-accelerated-parity.md).
 
   ![Espelhamento aninhado-paridade acelerada](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
@@ -127,7 +127,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 ### <a name="step-3-continue-in-windows-admin-center"></a>Etapa 3: continuar no centro de administração do Windows
 
-Os volumes que usam resiliência aninhada aparecem no [centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) com rotulagem clara, como na captura de tela abaixo. Depois que eles forem criados, você poderá gerenciá-los e monitorá-los usando o centro de administração do Windows, assim como qualquer outro volume no Espaços de Armazenamento Diretos.
+Os volumes que usam resiliência aninhada aparecem no [centro de administração do Windows](../../manage/windows-admin-center/overview.md) com rotulagem clara, como na captura de tela abaixo. Depois que eles forem criados, você poderá gerenciá-los e monitorá-los usando o centro de administração do Windows, assim como qualquer outro volume no Espaços de Armazenamento Diretos.
 
 ![](media/nested-resiliency/windows-admin-center.png)
 
@@ -147,7 +147,7 @@ Uma vez definido como **true**, o comportamento do cache é:
 
 | Situação                       | Comportamento do cache                           | Pode tolerar a perda da unidade de cache? |
 |---------------------------------|------------------------------------------|--------------------------------|
-| Ambos os servidores                 | Leituras e gravações de cache, desempenho completo | Yes                            |
+| Ambos os servidores                 | Leituras e gravações de cache, desempenho completo | Sim                            |
 | Servidor inativo, primeiros 30 minutos   | Leituras e gravações de cache, desempenho completo | Não (temporariamente)               |
 | Após os primeiros 30 minutos          | Somente leituras de cache, desempenho afetado   | Sim (depois que o cache tiver sido gravado em unidades de capacidade)                           |
 

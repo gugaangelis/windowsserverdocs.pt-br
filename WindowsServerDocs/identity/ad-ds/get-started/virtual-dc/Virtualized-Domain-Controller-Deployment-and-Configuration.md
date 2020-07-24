@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 97d726f8bfbbe664dfdfd6b7000988f009174631
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 88f4f501e0bfd173d91a55ee60f226482139b6b2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80824689"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963208"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implantação e configuração do controlador de domínio virtualizado
 
@@ -61,11 +61,11 @@ Examine a tabela abaixo para ver os produtos de virtualização e se eles dão s
 |||  
 |-|-|  
 |**Produto de virtualização**|**Dá suporte a controladores de domínio virtualizados e VMGID**|  
-|**Microsoft Windows Server 2012 Server com recurso Hyper-V**|Sim|  
-|**Microsoft Windows Server 2012 Hyper-V Server**|Sim|  
-|**Recurso de cliente do Microsoft Windows 8 com Hyper-V**|Sim|  
+|**Servidor Microsoft Windows Server 2012 com recurso Hyper-V**|Sim|  
+|**Hyper-V Server do Microsoft Windows Server 2012**|Sim|  
+|**Microsoft Windows 8 com recurso Hyper-V Client**|Sim|  
 |**Windows Server 2008 R2 e Windows Server 2008**|Não|  
-|**Soluções de virtualização que não são da Microsoft**|Contate o fornecedor|  
+|**Soluções de virtualização não Microsoft**|Contate o fornecedor|  
   
 Embora a Microsoft dê suporte a Windows 7 Virtual PC, Virtual PC 2007, Virtual PC 2004 e Virtual Server 2005, eles não podem executar convidados de 64 bits, nem dão suporte a VM-GenerationID.  
   
@@ -88,7 +88,7 @@ Nenhuma dessas operações é coberta sob a semântica VM-GenerationID e, portan
 > [!WARNING]  
 > A restauração segura do controlador de domínio virtualizado não é uma substituição para backups de estado do sistema e a Lixeira do AD DS.  
 >   
-> Depois da restauração de um instantâneo, os deltas das alterações não replicadas anteriormente, originárias desse controlador de domínio depois do instantâneo, ficam perdidos de forma permanente. A restauração segura implementa a restauração não autoritativa automatizada para evitar *somente*a quarentena de controlador de domínio acidental.  
+> Depois da restauração de um instantâneo, os deltas das alterações não replicadas anteriormente, originárias desse controlador de domínio depois do instantâneo, ficam perdidos de forma permanente. A restauração segura implementa a restauração não autoritativa automatizada para evitar *somente* a quarentena de controlador de domínio acidental.  
   
 Para obter mais informações sobre bolhas USN e objetos remanescentes, consulte [Troubleshooting Active Directory operations that fail with error 8606: "Insufficient attributes were given to create an object" (Solução de problemas de operações do Active Directory que falham com o erro 8606: “Foram dados atributos insuficientes para criar um objeto”)](https://support.microsoft.com/kb/2028495).  
   
@@ -132,7 +132,7 @@ Verifique se o controlador de domínio de origem está em execução em um hiper
   
 Se o hipervisor estiver Microsoft Hyper-V, verifique se ele está em execução no Windows Server 2012. Você pode validar isso usando o Gerenciamento de Dispositivo  
   
-Abra o **Devmgmt.msc** e examine se há dispositivos e drivers Microsoft Hyper-V nos **Dispositivos do Sistema** . O dispositivo do sistema especifico necessário para um controlador de domínio virtualizado é o **Microsoft Hyper-V Generation Counter** (driver: vmgencounter.sys).  
+Abra o **Devmgmt.msc** e examine se há dispositivos e drivers Microsoft Hyper-V nos **Dispositivos do Sistema**. O dispositivo do sistema especifico necessário para um controlador de domínio virtualizado é o **Microsoft Hyper-V Generation Counter** (driver: vmgencounter.sys).  
   
 ![Implantação de DC virtualizado](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_HyperVVMGenIDCounter.png)  
   
@@ -152,9 +152,9 @@ Antes de tentar clonar um DC, valide que o controlador de domínio que hospeda o
     >   
     > Como esse método RPC é novo, seu software de análise de rede requer analisadores atualizados para incluir campos do novo Opnum 28 no UUID E3514235-4B06-11D1-AB04-00C04FC2DCD2 existente. Caso contrário, não será possível analisar esse tráfego.  
     >   
-    > Para obter mais informações, consulte [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/library/hh554213(v=prot.13).aspx).  
+    > Para obter mais informações, consulte [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786).  
   
-***Isso também significa que, ao usar redes não totalmente roteadas, a clonagem do controlador de domínio virtualizado requer segmentos de rede com acesso ao PDCE***. É aceitável mover um controlador de domínio clonado para uma rede diferente após a clonagem — da mesma forma que um controlador de domínio físico — desde que você tenha o cuidado de atualizar as informações de site lógico do AD DS.  
+***Isso também significa que ao usar redes não completamente roteadas, a clonagem do controlador de domínio virtualizado precisará de segmentos de rede com acesso ao PDCE***. É aceitável mover um controlador de domínio clonado para uma rede diferente após a clonagem — da mesma forma que um controlador de domínio físico — desde que você tenha o cuidado de atualizar as informações de site lógico do AD DS.  
   
 > [!IMPORTANT]  
 > Ao clonar um domínio que contém somente um único controlador de domínio, verifique se o DC de origem está novamente online antes de iniciar as cópias do clone. Um domínio de produção deve sempre conter no mínimo dois controladores de domínio.  
@@ -192,7 +192,7 @@ O controlador de domínio de origem deve ter o CAR (direito de acesso de control
   
 1.  Inicie Dsac.exe, navegue até o DC de origem e abra sua página de detalhes.  
   
-2.  Na seção **Membro de** , adicione o grupo **Controladores de Domínio Clonáveis** para esse domínio.  
+2.  Na seção **Membro de**, adicione o grupo **Controladores de Domínio Clonáveis** para esse domínio.  
   
 #### <a name="windows-powershell-method"></a>Método do Windows PowerShell  
 Você pode combinar os seguintes cmdlets do Módulo Windows PowerShell do Active Directory, **get-adcomputer** e **add-adgroupmember**, para adicionar um controlador de domínio ao grupo **Controladores de Domínio Clonáveis**:  
@@ -210,7 +210,7 @@ Se você remover essa permissão do cabeçalho do domínio, a clonagem falhará.
   
 ##### <a name="active-directory-administrative-center-method"></a>Método do Centro Administrativo do Active Directory  
   
-1.  Abra o **Centro Administrativo do Active Directory**, clique com o botão direito do mouse no cabeçalho do domínio, clique em **Propriedades**, clique na guia **Extensões** , clique em **Segurança**e em **Avançado**. Clique em **Apenas Este Objeto**.  
+1.  Abra o **Centro Administrativo do Active Directory**, clique com o botão direito do mouse no cabeçalho do domínio, clique em **Propriedades**, clique na guia **Extensões**, clique em **Segurança** e em **Avançado**. Clique em **Apenas Este Objeto**.  
   
 2.  Clique em **Adicionar**, sob **Digite o nome do objeto a ser selecionado**, digite o nome do grupo **Controladores de Domínio Clonáveis.**  
   
@@ -244,7 +244,7 @@ Quaisquer programas ou serviços retornados anteriormente pelo Get-ADDCCloningEx
 > [!WARNING]  
 > Todo programa ou serviço incompatível não desinstalado ou adicionado ao CustomDCCloneAllowList.xml impede a clonagem.  
   
-Use o cmdlet Get-AdComputerServiceAccount para localizar quaisquer MSAs (Contas de Serviços Gerenciados) independentes no domínio e se esse computador estiver usando qualquer uma delas. Se alguma MSA estiver instalada, use o cmdlet Uninstall-ADServiceAccount para remover a conta de serviço instalada localmente. Depois de ter tornado o controlador de domínio de origem offline na etapa 6, já poderá adicionar novamente a MSA usando Install-ADServiceAccount quando o servidor voltar a ficar online. Para obter mais informações, consulte [Uninstall-ADServiceAccount](https://technet.microsoft.com/library/hh852310).  
+Use o cmdlet Get-AdComputerServiceAccount para localizar quaisquer MSAs (Contas de Serviços Gerenciados) independentes no domínio e se esse computador estiver usando qualquer uma delas. Se alguma MSA estiver instalada, use o cmdlet Uninstall-ADServiceAccount para remover a conta de serviço instalada localmente. Depois de ter tornado o controlador de domínio de origem offline na etapa 6, já poderá adicionar novamente a MSA usando Install-ADServiceAccount quando o servidor voltar a ficar online. Para obter mais informações, consulte [Uninstall-ADServiceAccount](/openspecs/windows_protocols/ms-drsr/ef0bfb1d-037b-4626-a6d9-cc7589bc5786).  
   
 > [!IMPORTANT]  
 > MSAs independentes — liberadas primeiramente no Windows Server 2008 R2 — foram substituídas no Windows Server 2012 pelas MSAs de grupo. MSAs de grupo dão suporte a clonagem.  
@@ -267,17 +267,17 @@ Execute o cmdlet no controlador de domínio de origem proposto que você pretend
   
 ||||  
 |-|-|-|  
-|**Active**<p>**Cmdlet**|**Argumentos**|**Explica**|  
+|**ActiveDirectory**<p>**Cmdlet**|**Argumentos**|**Explicação**|  
 |**New-ADDCCloneConfigFile**|*<no argument specified>*|Cria um arquivo DcCloneConfig.xml em branco no Diretório de Trabalho DSA (padrão: %systemroot%\ntds)|  
-||-CloneComputerName|Especifica o nome do computador do DC do clone. Tipo de dados String.|  
-||-Path|Especifica a pasta para criar DcCloneConfig.xml. Se não especificado, grava no Diretório de Trabalho DSA (padrão: %systemroot%\ntds). Tipo de dados String.|  
-||-SiteName|Especifica o nome do site lógico do AD a se ingressar durante a criação da conta do computador clonado. Tipo de dados String.|  
-||-IPv4Address|Especifica o endereço IPv4 estático do computador clonado. Tipo de dados String.|  
-||-IPv4SubnetMask|Especifica a máscara de sub-rede do IPv4 estática do computador clonado. Tipo de dados String.|  
-||-IPv4DefaultGateway|Especifica o endereço de gateway padrão do IPv4 estático do computador clonado. Tipo de dados String.|  
+||-CloneComputerName|Especifica o nome do computador do DC do clone. Tipos de dados String.|  
+||-Path|Especifica a pasta para criar DcCloneConfig.xml. Se não especificado, grava no Diretório de Trabalho DSA (padrão: %systemroot%\ntds). Tipos de dados String.|  
+||-SiteName|Especifica o nome do site lógico do AD a se ingressar durante a criação da conta do computador clonado. Tipos de dados String.|  
+||-IPv4Address|Especifica o endereço IPv4 estático do computador clonado. Tipos de dados String.|  
+||-IPv4SubnetMask|Especifica a máscara de sub-rede do IPv4 estática do computador clonado. Tipos de dados String.|  
+||-IPv4DefaultGateway|Especifica o endereço de gateway padrão do IPv4 estático do computador clonado. Tipos de dados String.|  
 ||-IPv4DNSResolver|Especifica as entradas DNS do IPv4 estático do computador clonado em uma lista separada por vírgulas. Tipo de dados Array. Até quatro entradas podem ser fornecidas.|  
-||-PreferredWINSServer|Especifica o endereço IPv4 estático do servidor WINS primário. Tipo de dados String.|  
-||-AlternateWINSServer|Especifica o endereço IPv4 estático do servidor WINS secundário. Tipo de dados String.|  
+||-PreferredWINSServer|Especifica o endereço IPv4 estático do servidor WINS primário. Tipos de dados String.|  
+||-AlternateWINSServer|Especifica o endereço IPv4 estático do servidor WINS secundário. Tipos de dados String.|  
 ||-IPv6DNSResolver|Especifica as entradas DNS do IPv6 estático do computador clonado em uma lista separada por vírgulas. Não há maneiras de configurar informações estáticas do Ipv6 em uma clonagem do controlador de domínio virtualizado. Tipo de dados Array.|  
 ||-Offline|Não executa os testes de validação e substitui qualquer dccloneconfig.xml existente. Não possui parâmetros.|  
 ||*-Estático*|Necessário se especificar argumentos IP estáticos IPv4SubnetMask, IPv4SubnetMask ou IPv4DefaultGateway. Não possui parâmetros.|  
@@ -395,7 +395,7 @@ Get-VMIdeController dc2-sourceclone | Get-VMHardDiskDrive | select-Object {copy-
 > Você não pode usar discos de passagem com clonagem, pois eles não usam um arquivo de disco virtual e sim um disco rígido real.  
   
 > [!NOTE]  
-> Para obter outras informações sobre mais operações do Windows PowerShell com pipelines, consulte [Canalização e pipeline no Windows PowerShell](https://technet.microsoft.com/library/ee176927.aspx).  
+> Para obter outras informações sobre mais operações do Windows PowerShell com pipelines, consulte [Canalização e pipeline no Windows PowerShell](/previous-versions/windows/it-pro/windows-powershell-1.0/ee176927(v=technet.10)).  
   
 #### <a name="exporting-the-vm"></a>Exportando a VM  
 Como uma alternativa para copiar os discos, você pode exportar toda a VM do Hyper-V como uma cópia. A exportação automática cria uma pasta denominada para a VM, contendo todos os discos e informações de configuração.  
@@ -426,7 +426,7 @@ Por exemplo, para exportar uma VM denominada DC2-SOURCECLONE para uma pasta deno
 > O Windows Server 2012 Hyper-V dá suporte a novas funcionalidades de exportação e importação que estão fora do escopo deste treinamento. Examine a TechNet para obter mais informações.  
   
 #### <a name="exporting-merged-disks-using-hyper-v"></a>Exportando discos mesclados usando Hyper-V  
-A opção final é usar a mesclagem de disco e as opções de conversão dentro do Hyper-V. Essas opções permitem que você faça uma cópia de uma estrutura de disco existente — mesmo ao incluir arquivos AVHD/AVHDX de instantâneos — em um único disco novo. Assim como o cenário de cópia manual de disco, isso destina-se principalmente a máquinas virtuais mais simples que usam apenas uma única unidade, como C:\\. Sua única vantagem é que, diferente da cópia manual, ela não requer que você primeiro exclua os instantâneos. Essa operação é necessariamente mais lenta do que simplesmente excluir os instantâneos e copiar os discos.  
+A opção final é usar a mesclagem de disco e as opções de conversão dentro do Hyper-V. Essas opções permitem que você faça uma cópia de uma estrutura de disco existente — mesmo ao incluir arquivos AVHD/AVHDX de instantâneos — em um único disco novo. Assim como o cenário de cópia manual de disco, isso destina-se principalmente a máquinas virtuais mais simples que usam apenas uma única unidade, como C: \\ . Sua única vantagem é que, diferente da cópia manual, ela não requer que você primeiro exclua os instantâneos. Essa operação é necessariamente mais lenta do que simplesmente excluir os instantâneos e copiar os discos.  
   
 ##### <a name="hyper-v-manager-method"></a>Método do Gerenciador Hyper-V  
 Para criar um disco mesclado usando o Gerenciador Hyper-V:  
@@ -565,7 +565,7 @@ Se você copiou o disco do sistema manualmente, crie uma nova máquina virtual u
   
 ##### <a name="hyper-v-manager-method"></a>Método do Gerenciador Hyper-V  
   
-1.  Crie uma nova máquina virtual.  
+1.  Criar uma nova máquina virtual.  
   
 2.  Especifique o nome, a memória e a rede da VM.  
   
@@ -592,7 +592,7 @@ Se você exportou anteriormente sua VM, agora precisa importá-la de volta como 
 Se você pretende criar cópias adicionais a partir da mesma VM exportada, faça quantas cópias da VM exportada forem necessárias. Depois, use Importar para cada cópia.  
   
 > [!IMPORTANT]  
-> É importante usar a opção **Copiar** , pois a exportação preserva todas as informações da origem; importar o servidor com **Mover** ou **In loco** causa colisão de informações se feito no mesmo servidor host do Hyper-V.  
+> É importante usar a opção **Copiar**, pois a exportação preserva todas as informações da origem; importar o servidor com **Mover** ou **In loco** causa colisão de informações se feito no mesmo servidor host do Hyper-V.  
   
 ##### <a name="hyper-v-manager-method"></a>Método do Gerenciador Hyper-V  
 Para importar usando o snap-in do Gerenciador Hyper-V:  
@@ -603,7 +603,7 @@ Para importar usando o snap-in do Gerenciador Hyper-V:
   
 3.  Na página **Selecionar Máquina Virtual**, clique no computador de origem.  
   
-4.  Na página **Escolher Tipo de Importação** , clique em **Copiar a máquina virtual (criar uma nova ID exclusiva)** , e clique em **Concluir**.  
+4.  Na página **Escolher Tipo de Importação**, clique em **Copiar a máquina virtual (criar uma nova ID exclusiva)**, e clique em **Concluir**.  
   
 5.  Renomeie a VM importada se estiver importando no mesmo host Hyper-V, ela terá o mesmo nome que o controlador de domínio de origem exportado.  
   
@@ -647,7 +647,7 @@ Por exemplo:
 > Certifique-se de que, ao importar o computador, os endereços MAC estáticos não foram designados para o controlador de domínio de origem. Se um computador de origem com um MAC estático for clonado, aqueles computadores copiados não enviarão ou receberão corretamente qualquer tráfego de rede. Defina um novo endereço MAC estático ou dinâmico exclusivo, se esse for o caso. Você pode ver se uma VM usa endereços MAC estáticos com o comando:  
 > 
 > **Get-VM-VMName**   
->  ***Test-VM* | Get-VMNetworkAdapter | FL \\** *  
+>  ***Test-VM* | Get-VMNetworkAdapter | Flórida\\***  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>Etapa 9 — Clonar a nova máquina virtual  
 Uma opção antes de iniciar a clonagem é reiniciar o controlador de domínio de origem do clone offline. Independente de qualquer coisa. verifique se o emulador PDC está online.  
@@ -669,7 +669,7 @@ Por exemplo:
   
 Assim que o computador tiver sido reiniciado após a conclusão da clonagem, ele será um controlador de domínio e você poderá fazer logon normalmente para confirmar a operação normal. Se houver erros, o servidor será definido para iniciar no Modo de Restauração dos Serviços de Diretório para investigação.  
   
-## <a name="virtualization-safeguards"></a><a name="BKMK_VDCSafeRestore"></a>Proteções de virtualização  
+## <a name="virtualization-safeguards"></a><a name="BKMK_VDCSafeRestore"></a>Garantias de virtualização  
 Diferente da clonagem do controlador de domínio virtualizado, as garantias de virtualização do Windows Server 2012 não têm etapas de configuração. O recurso funciona sem intervenção desde que você atenda a algumas condições simples:  
   
 -   O hipervisor dá suporte a ID de Geração de VM  
@@ -683,7 +683,7 @@ Examine a seção anterior [Requisitos de plataforma](../../../ad-ds/get-started
   
 Se estiver migrando VMs de um hipervisor de origem para um hipervisor de destino diferente, as garantias de virtualização poderão ou não ser disparadas, dependendo da ID de Geração de VM do suporte de hipervisor, conforme explicado na tabela a seguir.  
   
-|Hipervisor de origem|Hipervisor de destino|Resultado|  
+|Hipervisor de origem|Hipervisor de destino|Result|  
 |---------------------|---------------------|----------|  
 |Dá suporte a ID de Geração de VM|Não dá suporte a ID de Geração de VM|Garantias não disparadas (se um DCCloneConfigFile.xml estiver presente, o DC será inicializado no DSRM)|  
 |Não dá suporte a ID de Geração de VM|Dá suporte a ID de Geração de VM|Garantias disparadas|  
@@ -711,9 +711,9 @@ Não restaure todos os controladores de domínio em um único domínio simultane
 > [!IMPORTANT]  
 > Se todos os controladores de domínio forem restaurados de uma vez, use os artigos a seguir para definir um controlador de domínio — normalmente o emulador PDC — como autoritativo, de forma que os outros controladores de domínio possam retornar para a operação normal:  
 >   
-> [Usando a chave do registro BurFlags para reinicializar os conjuntos de réplicas do serviço de replicação de arquivo](https://support.microsoft.com/kb/290762)  
+> [Usar a chave de registro BurFlags para reinicializar os conjuntos de réplicas do Serviço de Replicação de Arquivos](https://support.microsoft.com/kb/290762)  
 >   
-> [Como forçar uma sincronização autoritativa e não autoritativa para o SYSVOL replicado pelo DFSR (como "D4/D2" para o FRS)](https://support.microsoft.com/kb/2218556)  
+> [Como forçar uma sincronização autoritativa e não autoritativa para SYSVOL replicado por DFSR (como "D4/D2" para FRS)](https://support.microsoft.com/kb/2218556)  
   
 > [!WARNING]  
 > Não execute todos os controladores de domínio em uma floresta ou domínio no mesmo host de hipervisor. Isso introduz um único ponto de falha que causa danos no AD DS, no Exchange, no SQL e em outras operações corporativas cada vez que o hipervisor fica offline. Isso não é diferente de usar somente um controlador de domínio para uma floresta ou um domínio inteiro. Vários controladores de domínio em várias plataformas fornecem redundância e tolerância a falhas.  
@@ -808,5 +808,3 @@ Rename-VMSnapshot
 Restore-VMSnapshot  
 ```  
   
-
-

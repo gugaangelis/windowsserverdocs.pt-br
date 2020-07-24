@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: c74e8744c22e2be174c1f1297e0472e5f32e1fe8
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cd74468029ff973846ddfd10cce8ba0e26a607e9
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475403"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961388"
 ---
 # <a name="block-cloning-on-refs"></a>Clonagem de blocos em ReFS
 
@@ -53,12 +53,12 @@ Após a gravação de modificação, a região B ainda é compartilhada pelos do
 - As regiões de origem e de destino devem começar e terminar em um limite de cluster.
 - A região clonada deve ter menos de 4 GB.
 - O número máximo de regiões de arquivo que podem ser mapeadas para a mesma região física é 8175.
-- A região de destino não deve ultrapassar o final do arquivo. Se o aplicativo quiser estender o destino com dados clonados, ele deverá chamar [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx) primeiro.
+- A região de destino não deve ultrapassar o final do arquivo. Se o aplicativo quiser estender o destino com dados clonados, ele deverá chamar [SetEndOfFile](/windows/win32/api/fileapi/nf-fileapi-setendoffile) primeiro.
 - Se as regiões de origem e de destino estiverem no mesmo arquivo, elas não deverão se sobrepor. (O aplicativo poderá continuar dividindo a operação de clonagem de blocos em vários clones de blocos que não se sobrepõem mais.)
 - Os arquivos de origem e de destino devem estar no mesmo volume do ReFS.
-- Os arquivos de origem e de destino devem ter a mesma configuração de [Fluxos de Integridade](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx).
+- Os arquivos de origem e de destino devem ter a mesma configuração de [Fluxos de Integridade](/windows/win32/fileio/file-attribute-constants).
 - Se o arquivo de origem for esparso, o arquivo de destino também deverá ser esparso.
-- A operação de clonagem de blocos interromperá os bloqueios oportunistas compartilhados (também conhecidos como [bloqueios oportunistas de nível 2](https://msdn.microsoft.com/library/windows/desktop/aa365713(v=vs.85).aspx)).
+- A operação de clonagem de blocos interromperá os bloqueios oportunistas compartilhados (também conhecidos como [bloqueios oportunistas de nível 2](/windows/win32/fileio/types-of-opportunistic-locks)).
 - O volume do ReFS deverá ter sido formatado com o Windows Server 2016 e, se o Clustering de Failover estiver em uso, o Nível Funcional de Clustering deve ter sido o Windows Server 2016 ou posterior no momento da formatação.
 
 ## <a name="additional-references"></a>Referências adicionais
@@ -66,5 +66,5 @@ Após a gravação de modificação, a região B ainda é compartilhada pelos do
 -   [Visão geral do ReFS](refs-overview.md)
 -   [Fluxos de integridade ReFS](integrity-streams.md)
 -   [Visão geral de Espaços de Armazenamento Diretos](../storage-spaces/storage-spaces-direct-overview.md)
--   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
--   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)
+-   [DUPLICATE_EXTENTS_DATA](/windows/win32/api/winioctl/ns-winioctl-duplicate_extents_data)
+-   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](/windows/win32/api/winioctl/ni-winioctl-fsctl_duplicate_extents_to_file)

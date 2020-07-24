@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e34f74226edb56e8db0290fd5dc83f0c6e54221
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833319"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964578"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -33,7 +33,7 @@ Os sistemas, componentes, dispositivos e drivers devem ser **certificados pelo W
 
 ![captura de tela do catálogo do Windows Server mostrando o AQs do SDDC](media/hardware-requirements/sddc-aqs.png)
 
-O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por assistente no Gerenciador de cluster de failover ou com o `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) no PowerShell.
+O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) por assistente no Gerenciador de cluster de failover ou com o `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster?view=win10-ps) no PowerShell.
 
 Além disso, os seguintes requisitos se aplicam:
 
@@ -82,14 +82,14 @@ Espaços de Armazenamento Diretos funciona com unidades de SATA, SAS, NVMe ou de
 
 - Todas as unidades SATA, SAS, memória persistente e NVMe (M. 2, U. 2 e suplemento) são todas suportadas
 - todas as unidades nativas 512n, 512e e 4K têm suporte
-- Unidades de estado sólido devem fornecer [proteção contra perda de energia](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
+- Unidades de estado sólido devem fornecer [proteção contra perda de energia](https://techcommunity.microsoft.com/t5/storage-at-microsoft/don-t-do-it-consumer-grade-solid-state-drives-ssd-in-storage/ba-p/425914)
 - Mesmo número e tipos de unidades em cada servidor – consulte [considerações de simetria da unidade](drive-symmetry-considerations.md)
 - Os dispositivos de cache devem ter 32 GB ou mais
 - Dispositivos de memória persistentes são usados no modo de armazenamento em bloco
 - Ao usar dispositivos de memória persistentes como dispositivos de cache, você deve usar dispositivos de capacidade NVMe ou SSD (não é possível usar HDDs)
 - O driver NVMe é fornecido pela Microsoft, incluído no Windows (stornvme.sys)
 - Recomendado: o número de unidades de capacidade é um múltiplo completo do número de unidades de cache
-- Recomendado: as unidades de cache devem ter alta Endurance de gravação: pelo menos 3 unidades-gravações por dia (DWPD) ou pelo menos 4 terabytes gravados (TBW) por dia – consulte [noções básicas sobre gravações de unidade por dia (DWPD), terabytes gravados (TBW) e o mínimo recomendado para espaços de armazenamento diretos](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- Recomendado: as unidades de cache devem ter alta Endurance de gravação: pelo menos 3 unidades-gravações por dia (DWPD) ou pelo menos 4 terabytes gravados (TBW) por dia – consulte [noções básicas sobre gravações de unidade por dia (DWPD), terabytes gravados (TBW) e o mínimo recomendado para espaços de armazenamento diretos](https://techcommunity.microsoft.com/t5/storage-at-microsoft/understanding-ssd-endurance-drive-writes-per-day-dwpd-terabytes/ba-p/426024)
 
 Veja como as unidades podem ser conectadas para Espaços de Armazenamento Diretos:
 

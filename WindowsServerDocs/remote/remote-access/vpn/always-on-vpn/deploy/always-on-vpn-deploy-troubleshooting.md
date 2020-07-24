@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: 209567ccd88f4b20f98caecc2a13cc671ef09072
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854019"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961778"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas da VPN Always On 
 
@@ -28,7 +28,7 @@ Você pode solucionar problemas de conexão de várias maneiras. Para problemas 
 
 ### <a name="error-code-800"></a>Código de erro: 800
 
-- **Descrição do erro.** A conexão remota não foi feita porque houve falha na tentativa de túneis VPN. O servidor VPN pode estar inacessível. Se essa conexão estiver tentando usar um túnel L2TP/IPsec, talvez os parâmetros de segurança necessários para a negociação IPsec não estejam configurados corretamente.
+- **Descrição do erro.** a conexão remota não foi feita porque a tentativa de túneis VPN falhou. O servidor VPN pode estar inacessível. Se essa conexão estiver tentando usar um túnel L2TP/IPsec, talvez os parâmetros de segurança necessários para a negociação IPsec não estejam configurados corretamente.
 
 - **Possível causa.** Esse erro ocorre quando o tipo de túnel VPN é **automático** e a tentativa de conexão falha para todos os túneis de VPN.
 
@@ -40,7 +40,7 @@ Você pode solucionar problemas de conexão de várias maneiras. Para problemas 
 
     - Esse erro também ocorre quando o servidor VPN não pode ser acessado ou a conexão do túnel falha.
 
-- **Certificar-se:**
+- **Não se esqueça de:**
 
     - As portas IKE (portas UDP 500 e 4500) não estão bloqueadas.
 
@@ -56,7 +56,7 @@ Você pode solucionar problemas de conexão de várias maneiras. Para problemas 
 
 ### <a name="error-code-812"></a>Código de erro: 812
 
-- **Descrição do erro.** Não é possível conectar-se ao Always On VPN. A conexão foi impedida devido a uma política configurada no servidor RAS/VPN. Especificamente, o método de autenticação que o servidor usou para verificar seu nome de usuário e senha pode não corresponder ao método de autenticação configurado em seu perfil de conexão. Entre em contato com o administrador do servidor RAS e notifique-o desse erro.
+- **Descrição do erro.** Não é possível conectar-se ao Always On VPN. a conexão foi impedida devido a uma política configurada no servidor RAS/VPN. Especificamente, o método de autenticação que o servidor usou para verificar seu nome de usuário e senha pode não corresponder ao método de autenticação configurado em seu perfil de conexão. Entre em contato com o administrador do servidor RAS e notifique-o desse erro.
 
 - **Possíveis causas:**
 
@@ -114,11 +114,11 @@ Em geral, o computador cliente VPN é adicionado ao domínio baseado em Active D
 
 Os logs de aplicativo em computadores cliente registram a maioria dos detalhes de nível superior dos eventos de conexão VPN.
 
-Procure eventos da origem RasClient. Todas as mensagens de erro retornam o código de erro no final da mensagem. Alguns dos códigos de erro mais comuns são detalhados abaixo, mas uma lista completa está disponível nos [códigos de erro de roteamento e acesso remoto](https://msdn.microsoft.com/library/windows/desktop/bb530704.aspx).
+Procure eventos da origem RasClient. Todas as mensagens de erro retornam o código de erro no final da mensagem. Alguns dos códigos de erro mais comuns são detalhados abaixo, mas uma lista completa está disponível nos [códigos de erro de roteamento e acesso remoto](/previous-versions//mt728163(v=technet.10)).
 
 ## <a name="nps-logs"></a>Logs do NPS
 
-O NPS cria e armazena os logs de contabilidade do NPS. Por padrão, eles são armazenados na pasta% SYSTEMROOT%\\system32\\LogFiles\\ em um arquivo chamado em*xxxx*. txt, em que *xxxx* é a data em que o arquivo foi criado.
+O NPS cria e armazena os logs de contabilidade do NPS. Por padrão, eles são armazenados em arquivos de log% SYSTEMROOT% \\ System32 \\ \\ em um arquivo chamado em*xxxx*. txt, em que *xxxx* é a data em que o arquivo foi criado.
 
 Por padrão, esses logs estão em formato de valores separados por vírgula, mas não incluem uma linha de cabeçalho. A linha do cabeçalho é:
 
@@ -128,25 +128,25 @@ ComputerName,ServiceName,Record-Date,Record-Time,Packet-Type,User-Name,Fully-Qua
 
 Se você colar essa linha de título como a primeira linha do arquivo de log e, em seguida, importar o arquivo para o Microsoft Excel, as colunas serão rotuladas corretamente.
 
-Os logs do NPS podem ser úteis para diagnosticar problemas relacionados à política. Para obter mais informações sobre logs do NPS, consulte [interpretar arquivos de log de formato de banco de dados NPS](https://technet.microsoft.com/library/cc771748.aspx).
+Os logs do NPS podem ser úteis para diagnosticar problemas relacionados à política. Para obter mais informações sobre logs do NPS, consulte [interpretar arquivos de log de formato de banco de dados NPS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771748(v=ws.10)).
 
-## <a name="vpn_profileps1-script-issues"></a>Problemas de script do VPN_Profile. ps1
+## <a name="vpn_profileps1-script-issues"></a>Problemas do script VPN_Profile.ps1
 
-Os problemas mais comuns ao executar manualmente o script VPN_ Profile. ps1 incluem:
+Os problemas mais comuns ao executar manualmente o script de Profile.ps1 de VPN_ incluem:
 
 - Você usa uma ferramenta de conexão remota?  Certifique-se de não usar o RDP ou outro método de conexão remota, pois ele se bagunça com a detecção de logon do usuário.
 
-- O usuário é um administrador do computador local?  Certifique-se de que, ao executar o script VPN_Profile. ps1, que o usuário tenha privilégios de administrador.
+- O usuário é um administrador do computador local?  Certifique-se de que, ao executar o script VPN_Profile.ps1 que o usuário tenha privilégios de administrador.
 
 - Você tem recursos de segurança adicionais do PowerShell habilitados? Verifique se a política de execução do PowerShell não está bloqueando o script. Você pode considerar desativar o modo de linguagem restrita, se habilitado, antes de executar o script. Você pode ativar o modo de linguagem restrita depois que o script for concluído com êxito.
 
-## <a name="always-on-vpn-client-connection-issues"></a>Problemas de conexão de cliente VPN Always On
+## <a name="always-on-vpn-client-connection-issues"></a>Problemas de conexão de cliente da VPN Always On
 
 Uma pequena configuração incorreta pode fazer com que a conexão do cliente falhe e possa ser desafiadora para encontrar a causa.  Um cliente VPN Always On passa por várias etapas antes de estabelecer uma conexão. Ao solucionar problemas de conexão de cliente, passe pelo processo de eliminação com o seguinte:
 
 1. O computador de modelo está conectado externamente? Uma verificação de **whatismyip** deve mostrar um endereço IP público que não pertence a você.
 
-2. Você pode resolver o nome do servidor de acesso remoto/VPN para um endereço IP? No **painel de controle** > **conexões de rede** > **de rede e** **Internet** , abra as propriedades do seu perfil VPN. O valor na guia **geral** deve ser pode ser resolvido publicamente por meio do DNS.
+2. Você pode resolver o nome do servidor de acesso remoto/VPN para um endereço IP? Em conexões de rede de Internet e rede do **painel de controle**  >  **Network** **Internet**  >  **Network Connections**, abra as propriedades do seu perfil de VPN. O valor na guia **geral** deve ser pode ser resolvido publicamente por meio do DNS.
 
 3. Você pode acessar o servidor VPN de uma rede externa? Considere abrir o protocolo ICMP para a interface externa e executar o ping do nome do cliente remoto. Depois que um ping for bem-sucedido, você poderá remover a regra de permissão ICMP.
 
@@ -170,14 +170,14 @@ Uma pequena configuração incorreta pode fazer com que a conexão do cliente fa
 
   - O usuário tem um certificado de autenticação de cliente válido em seu repositório de certificados pessoal que não foi emitido pelo Azure AD.
 
-  - A seção do perfil VPN \<TLSExtensions\> está ausente ou não contém o **\<EKUName\>AAD condicional access\</EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>\<EKUName > AAD Conditional access </EKUName\>\<EKUOID\>1.3.6.1.4.1.311.87 </EKUOID\>** entradas. As entradas \<EKUName > e \<> do EKUOID dizem ao cliente VPN qual certificado recuperar do repositório de certificados do usuário ao passar o certificado para o servidor VPN. Sem isso, o cliente VPN usa qualquer certificado de autenticação de cliente válido que esteja no repositório de certificados do usuário e a autenticação seja realizada com sucesso. 
+  - A seção de perfil VPN \<TLSExtensions\> está ausente ou não contém o ** \<EKUName\> acesso condicional do AAD \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</Ekuoid \> \<EKUName> AAD acesso condicional</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> ** entradas. As \<EKUName> \<EKUOID> entradas e informam ao cliente VPN qual certificado recuperar do repositório de certificados do usuário ao passar o certificado para o servidor VPN. Sem isso, o cliente VPN usa qualquer certificado de autenticação de cliente válido que esteja no repositório de certificados do usuário e a autenticação seja realizada com sucesso. 
 
   - O servidor RADIUS (NPS) não foi configurado para aceitar somente certificados de cliente que contenham o OID de **acesso condicional do AAD** .
 
 - **Solução possível.** Para escapar desse loop, faça o seguinte:
 
   1. No Windows PowerShell, execute o cmdlet **Get-WmiObject** para despejar a configuração do perfil VPN. 
-  2. Verifique se as seções **\<TLSExtensions >** , **\<>** e **\<EKUOID >** existem e mostram o nome e o OID corretos.
+  2. Verifique se as **\<TLSExtensions>** **\<EKUName>** seções, e **\<EKUOID>** existem e mostram o nome e o OID corretos.
       
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
@@ -279,7 +279,7 @@ Uma pequena configuração incorreta pode fazer com que a conexão do cliente fa
      >[!NOTE]
      >Se um certificado do emissor **CN = Microsoft VPN root CA Gen 1** estiver presente no armazenamento pessoal do usuário, mas o usuário obtiver acesso selecionando **X** para fechar a mensagem do Ops, colete logs de eventos CAPI2 para verificar se o certificado usado para autenticar foi um certificado de autenticação de cliente válido que não foi emitido pela AC raiz VPN da Microsoft.
 
-  4. Se um certificado de autenticação de cliente válido existir no armazenamento pessoal do usuário, a conexão falhará (como deveria) depois que o usuário selecionar o **X** e se as seções **\<TLSExtensions >** , **\<>** e **\<EKUOID** existirem e contiverem as informações corretas.
+  4. Se um certificado de autenticação de cliente válido existir no armazenamento pessoal do usuário, a conexão falhará (como deveria) depois que o usuário selecionar o **X** e se as **\<TLSExtensions>** **\<EKUName>** seções, e **\<EKUOID>** existirem e contiverem as informações corretas.
    
      Uma mensagem de erro que diz "um certificado não encontrado que pode ser usado com o protocolo de autenticação extensível" é exibida.
 
@@ -294,4 +294,4 @@ Uma pequena configuração incorreta pode fazer com que a conexão do cliente fa
     1. Na folha conectividade VPN, selecione o certificado.
     2. Em **primário**, selecione **não**e, em seguida, selecione **salvar**.
     3. Na folha conectividade VPN, selecione o certificado novamente.
-    4. Selecione **excluir**.
+    4. Selecione **Excluir**.

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: e6dbe6ef618f989ed158382ef6c8bd063548d281
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 08b09c9a0684a2938645462875737556d0288c9e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950069"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961038"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicação de cluster estendido usando Armazenamento Compartilhado
 
@@ -36,7 +36,7 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 
 ![Diagrama mostrando dois nós em Redmond sendo replicados com dois nós do mesmo cluster no site Bellevue](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**Figura 1: replicação de armazenamento em um cluster de ampliação**  
+**FIGURA 1: replicação de armazenamento em um cluster estendido**  
 
 ## <a name="prerequisites"></a>Pré-requisitos  
 -   Floresta dos Active Directory Domain Services (não precisa ser executada no Windows Server 2016).  
@@ -44,9 +44,9 @@ Este passo a passo usa o seguinte ambiente como exemplo:
 -   Dois conjuntos de armazenamento compartilhado, usando SAS JBODs (como os Espaços de Armazenamento), SAN Fibre Channel, VHDX compartilhado ou destino iSCSI. O armazenamento deve conter uma mistura de mídia de HDD e SSD e deve oferecer suporte a Reserva Persistente. Você disponibilizará cada conjunto de armazenamento apenas para dois servidores (assimétrico).  
 -   Cada conjunto de armazenamento deve permitir a criação de pelo menos dois discos virtuais, um para dados replicados e outro para logs. O armazenamento físico deve ter os mesmos tamanhos de setor em todos os discos de dados. O armazenamento físico deve ter os mesmos tamanhos de setor em todos os discos de logs.  
 -   Pelo menos uma conexão de 1 GbE em cada servidor para replicação síncrona, mas, preferencialmente, RDMA.   
--   Pelo menos 2GB de RAM e dois núcleos por servidor. Será necessário mais memória e núcleos para mais máquinas virtuais.  
+-   Pelo menos 2 GB de RAM e dois núcleos por servidor. Será necessário mais memória e núcleos para mais máquinas virtuais.  
 -   Regras de firewall e roteador apropriadas para permitir ICMP, SMB (porta 445, além de 5445 para SMB Direct) e tráfego bidirecional de WS-MAN (porta 5985) entre todos os nós.  
--   Uma rede entre servidores com largura de banda suficiente para conter a carga de trabalho de gravação de E/S e uma média de =5 ms de latência de ida e vinda, para replicação síncrona. A replicação assíncrona não tem uma recomendação de latência.  
+-   Uma rede entre servidores com largura de banda suficiente para conter a carga de trabalho de gravação de E/S e uma média de =5 ms de latência de viagem de ida e volta, para replicação síncrona. A replicação assíncrona não tem uma recomendação de latência.  
 -   O armazenamento replicado não pode ser localizado na unidade que contém a pasta do sistema operacional Windows.
 
 Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology`. Você obtém acesso a essa ferramenta se instalar os recursos Ferramentas de Gerenciamento de Réplica de Armazenamento ou Réplica de Armazenamento em pelo menos um servidor. Não é necessário configurar a Réplica de Armazenamento para usar essa ferramenta, apenas para instalar o cmdlet. Mais informações estão incluídas nas seguintes etapas.  
@@ -81,7 +81,7 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
         > [!IMPORTANT]
         > Instale as funções e os recursos de **Clustering de Failover** e **Réplica de Armazenamento** em cada um dos nós e reinicie-os. Se estiver planejando usar outras funções como o Hyper-V, servidor de arquivos etc., instale-os agora também.  
 
-    -   **Usando o método do Windows PowerShell**  
+    -   **Usar o método do Windows PowerShell**  
 
         No **SR-SRV04** ou em um computador de gerenciamento remoto, execute o seguinte comando em um console do Windows PowerShell para instalar os recursos e as funções necessárias para um cluster estendido nos quatro nós e reinicie-os:  
 
@@ -116,13 +116,13 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
 
         2.  Provisione o armazenamento usando Espaços de Armazenamento seguindo as **etapas 1 a 3** fornecidas em [Implantar espaços de armazenamento em um servidor autônomo](../storage-spaces/deploy-standalone-storage-spaces.md) usando o Windows PowerShell ou Gerenciador do Servidor.  
 
-    -   **Para o armazenamento iSCSI:**  
+    -   **Para o armazenamento de iSCSI:**  
 
         1.  Verifique se cada conjunto de nós de servidor emparelhados pode ver apenas os compartimentos de armazenamento do local (ou seja, armazenamento assimétrico). Você deverá usar mais de um único adaptador de rede se usar iSCSI.  
 
         2.  Provisione o armazenamento usando a documentação do fornecedor. Se estiver usando o destino iSCSI baseado em Windows, confira [Armazenamento em bloco de destino iSCSI, Como](../iscsi/iscsi-target-server.md).  
 
-    -   **Para armazenamento SAN FC:**  
+    -   **Para o armazenamento SAN FC:**  
 
         1.  Verifique se cada conjunto de nós de servidor emparelhados pode ver apenas os compartimentos de armazenamento do local (ou seja, armazenamento assimétrico) e se você definiu corretamente as zonas dos hosts.  
 
@@ -131,10 +131,10 @@ Muitos desses requisitos podem ser determinados usando o cmdlet `Test-SRTopology
 ## <a name="configure-a-hyper-v-failover-cluster-or-a-file-server-for-a-general-use-cluster"></a>Configurar um Cluster de Failover de Hyper-V ou um Servidor de arquivos para um Cluster de uso geral
 
 Depois de instalar os nós de servidor, a próxima etapa é criar um dos seguintes tipos de clusters:  
-*  [Cluster de failover do Hyper-V](#BKMK_HyperV)  
-*  [Servidor de arquivos para o cluster de uso geral](#BKMK_FileServer)  
+*  [Cluster de failover de Hyper-V](#BKMK_HyperV)  
+*  [Servidor de arquivos para cluster de uso geral](#BKMK_FileServer)  
 
-### <a name="BKMK_HyperV"></a>Configurar um cluster de failover do Hyper-V  
+### <a name="configure-a-hyper-v-failover-cluster"></a><a name="BKMK_HyperV"></a>Configurar um cluster de failover do Hyper-V  
 
 >[!NOTE]
 > Ignore esta seção e vá para a seção [Configurar um servidor de arquivos para cluster de uso geral](#BKMK_FileServer), se quiser criar um cluster de servidor de arquivos e não um cluster de Hyper-V.  
@@ -158,13 +158,13 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
    > O WIndows Server agora inclui uma opção de testemunha baseada em nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
 
    > [!WARNING]  
-   > Para saber mais sobre a configuração de quorum, confira [Configurar e gerenciar o quorum em uma configuração de testemunha do guia do Cluster de failover do Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).  
+   > Para saber mais sobre a configuração de quorum, confira [Configurar e gerenciar o quorum em uma configuração de testemunha do guia do Cluster de failover do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11)). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).  
 
-5. Revise as [Recomendações de rede para um cluster de Hyper-V no Windows Server 2012](https://technet.microsoft.com/library/dn550728.aspx) e verifique se você configurou corretamente as redes de cluster.  
+5. Revise as [Recomendações de rede para um cluster de Hyper-V no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11)) e verifique se você configurou corretamente as redes de cluster.  
 
 6. Adicione um disco no local de Redmond ao CSV de cluster. Para fazer isso, clique com botão direito em um disco de origem no nó **Discos** da seção **Armazenamento** e, em seguida, clique em **Adicionar aos Volumes Compartilhados Clusterizados**.  
 
-7. Usando o guia [Implantar um cluster do Hyper-V](https://technet.microsoft.com/library/jj863389.aspx), execute as etapas 7 a 10 no local de **Redmond** para criar uma máquina virtual de teste apenas para garantir que o cluster esteja funcionando normalmente dentro dos dois nós que compartilham o armazenamento no primeiro local de teste.  
+7. Usando o guia [Implantar um cluster do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11)), execute as etapas 7 a 10 no local de **Redmond** para criar uma máquina virtual de teste apenas para garantir que o cluster esteja funcionando normalmente dentro de dois nós que compartilham o armazenamento no primeiro local de teste.  
 
 8. Se você estiver criando um cluster estendido de dois nós, deverá adicionar todo o armazenamento antes de continuar. Para fazer isso, abra uma sessão do PowerShell com permissões administrativas em nós de cluster e execute o seguinte comando: `Get-ClusterAvailableDisk -All | Add-ClusterDisk`.
 
@@ -172,14 +172,14 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 9. Inicie o Windows PowerShell e use o cmdlet `Test-SRTopology` para determinar se você atende a todos os requisitos de Réplica de Armazenamento.  
 
-    Por exemplo, para validar dois dos nós de cluster estendido propostos, em que cada um tem um volume **D:** e **E:** , execute o teste por 30 minutos:
+    Por exemplo, para validar dois dos nós de cluster estendido propostos, em que cada um tem um volume **D:** e **E:**, execute o teste por 30 minutos:
    1. Mova todo o armazenamento disponível para **SR-SRV01**.
    2. Clique em **Criar Função Vazia** na seção **Funções** do Gerenciador de Cluster de Failover.
    3. Adicione o armazenamento online à função vazia chamada **Nova Função**.
    4. Mova todo o armazenamento disponível para **SR-SRV03**.
    5. Clique em **Criar Função Vazia** na seção **Funções** do Gerenciador de Cluster de Failover.
    6. Mova a **Nova Função (2)** vazia para **SR-SRV03**.
-   7. Adicione o armazenamento online à função vazia chamada **Nova Função (2)** .
+   7. Adicione o armazenamento online à função vazia chamada **Nova Função (2)**.
    8. Agora você montou todo o seu armazenamento com letras de unidade e pode avaliar o cluster com `Test-SRTopology`.
 
        Por exemplo:
@@ -218,9 +218,9 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
     > [!NOTE]
     > Não há nenhuma opção para configurar o reconhecimento de locais usando o Gerenciador de Cluster de Failover no Windows Server 2016.  
 
-14. **(Opcional)** Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.
+14. **(Opcional)** Configure a rede de cluster e Active Directory para um failover de site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.
 
-    Para obter mais informações, examine a sessão do Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/Events/Ignite/2015/BRK3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
+    Para obter mais informações, examine a sessão do Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/Events/Ignite/2015/BRK3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why).  
 
 15. **(Opcional)** Configure a resiliência de VM para que os convidados não pausem por muitos períodos durante falhas do nó. Em vez disso, eles realizam failover para o novo armazenamento de origem de replicação em 10 segundos.  
 
@@ -258,19 +258,19 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
    > [!NOTE]
    > O WIndows Server agora inclui uma opção de testemunha baseada em nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
     
-   Para saber mais sobre a configuração de quorum, confira [Configurar e gerenciar o quorum em uma configuração de testemunha do guia do Cluster de failover do Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).  
+   Para saber mais sobre a configuração de quorum, confira [Configurar e gerenciar o quorum em uma configuração de testemunha do guia do Cluster de failover do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11)). Para saber mais sobre o cmdlet `Set-ClusterQuorum`, confira [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).  
 
-4. Revise as [Recomendações de rede para um cluster de Hyper-V no Windows Server 2012](https://technet.microsoft.com/library/dn550728.aspx) e verifique se você configurou corretamente as redes de cluster.  
+4. Revise as [Recomendações de rede para um cluster de Hyper-V no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn550728(v=ws.11)) e verifique se você configurou corretamente as redes de cluster.  
 
 5. Se você estiver criando um cluster estendido de dois nós, deverá adicionar todo o armazenamento antes de continuar. Para fazer isso, abra uma sessão do PowerShell com permissões administrativas em nós de cluster e execute o seguinte comando: `Get-ClusterAvailableDisk -All | Add-ClusterDisk`.
 
    Este é o comportamento padrão no Windows Server 2016.
 
-6. Usando o guia [Implantar um cluster do Hyper-V](https://technet.microsoft.com/library/jj863389.aspx), execute as etapas 7 a 10 no local de **Redmond** para criar uma máquina virtual de teste apenas para garantir que o cluster esteja funcionando normalmente dentro dos dois nós que compartilham o armazenamento no primeiro local de teste.  
+6. Usando o guia [Implantar um cluster do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj863389(v=ws.11)), execute as etapas 7 a 10 no local de **Redmond** para criar uma máquina virtual de teste apenas para garantir que o cluster esteja funcionando normalmente dentro de dois nós que compartilham o armazenamento no primeiro local de teste.  
 
 7. Quando estiver satisfeito, remova a máquina virtual de teste. Adicione as máquinas virtuais de teste reais necessárias para avaliação adicional para um nó de origem proposto.  
 
-8. Configure o reconhecimento de sites do cluster estendido para que os servidores **SR-SRV01** e **SR-SRV02** estejam no local **Redmond**, o **SR-SRV03** e o **SRV04 SR** no local **Bellevue** e **Redmond** é preferencial para a propriedade do nó de armazenamento de origem e máquinas virtuais:  
+8. Configure o reconhecimento do site do Stretch cluster para que os servidores **Sr-Srv01** e **Sr-SRV02** estejam no local **Redmond**, **Sr-SRV03** e **Sr-SRV04** estejam no site **Bellevue**e **Redmond** seja preferencial para a propriedade do nó do armazenamento de origem e das máquinas virtuais:  
 
    ```PowerShell  
    New-ClusterFaultDomain -Name Seattle -Type Site -Description "Primary" -Location "Seattle Datacenter"  
@@ -285,9 +285,9 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
    (Get-Cluster).PreferredSite="Seattle"  
    ```  
 
-9. **(Opcional)** Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.  
+9. **(Opcional)** Configure a rede de cluster e Active Directory para um failover de site DNS mais rápido. Você pode usar redes definidas pelo software do Hyper-V, VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.  
 
-   Para obter mais informações, examine a sessão do Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/Events/Ignite/2015/BRK3487) e [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
+   Para obter mais informações, examine a sessão do Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/Events/Ignite/2015/BRK3487) e [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why).  
 
 10. **(Opcional)** Configure a resiliência de VM para que os convidados não pausem por muitos períodos durante falhas do nó. Em vez disso, eles realizam failover para o novo armazenamento de origem de replicação em 10 segundos.  
 
@@ -300,7 +300,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 
 
-### <a name="BKMK_FileServer"></a>Configurar um servidor de arquivos para o cluster de uso geral  
+### <a name="configure-a-file-server-for-general-use-cluster"></a><a name="BKMK_FileServer"></a>Configurar um servidor de arquivos para o cluster de uso geral  
 
 >[!NOTE]
 > Ignore esta seção se você já tiver configurado um cluster de Failover de Hyper-V, conforme descrito em [Configurar um cluster de failover de Hyper-V](#BKMK_HyperV).  
@@ -320,7 +320,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
    >[!NOTE]
    > O WIndows Server agora inclui uma opção de testemunha baseada em nuvem (Azure). Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.                                                                                                                                                                             
    >[!NOTE]
-   >  Para saber mais sobre a configuração de quorum, confira [Configurar e gerenciar o quorum em uma configuração de testemunha do guia do Cluster de failover do Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para saber mais sobre o cmdlet Set-ClusterQuorum, confira [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum). 
+   >  Para saber mais sobre a configuração de quorum, confira [Configurar e gerenciar o quorum em uma configuração de testemunha do guia do Cluster de failover do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612870(v=ws.11)). Para saber mais sobre o cmdlet Set-ClusterQuorum, confira [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum). 
 
 5. Se você estiver criando um cluster estendido de dois nós, deverá adicionar todo o armazenamento antes de continuar. Para fazer isso, abra uma sessão do PowerShell com permissões administrativas em nós de cluster e execute o seguinte comando: `Get-ClusterAvailableDisk -All | Add-ClusterDisk`.
 
@@ -340,7 +340,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 11. Selecione um disco para ser seu volume de dados e clique em **Avançar**.  
 
-12. Revise as configurações e clique em **Avançar**. Clique em **concluir**.  
+12. Revise as configurações e clique em **Avançar**. Clique em **Concluir**.  
 
 13. Clique com o botão direito do mouse na sua nova função de Servidor de Arquivos e clique em **Adicionar Compartilhamento de Arquivos**. Continue com o assistente para configurar compartilhamentos.  
 
@@ -366,7 +366,7 @@ Agora você criará um cluster de failover normal. Após a configuração, a val
 
 16. (Opcional) Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.  
 
-Para obter mais informações, examine a sessão do Microsoft Ignite [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/events/ignite/2015/brk3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).    
+Para obter mais informações, examine a sessão do Microsoft Ignite [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/events/ignite/2015/brk3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why).    
 
 #### <a name="powershell-method"></a>Método do PowerShell
 
@@ -399,7 +399,7 @@ Para obter mais informações, examine a sessão do Microsoft Ignite [Stretching
     >[!NOTE]
     > O Windows Server agora inclui uma opção para a testemunha de nuvem usando o Azure. Você pode escolher essa opção de quorum em vez da testemunha de compartilhamento de arquivos.  
 
-   Para obter mais informações sobre a configuração de quorum, consulte o artigo [noções básicas sobre o cluster e o quorum do pool](../storage-spaces/understand-quorum.md). Para saber mais sobre o cmdlet Set-ClusterQuorum, confira [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).
+   Para obter mais informações sobre a configuração de quorum, consulte o artigo [noções básicas sobre o cluster e o quorum do pool](../storage-spaces/understand-quorum.md). Para saber mais sobre o cmdlet Set-ClusterQuorum, confira [Set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum).
 
 4.  Se você estiver criando um cluster estendido de dois nós, deverá adicionar todo o armazenamento antes de continuar. Para fazer isso, abra uma sessão do PowerShell com permissões administrativas em nós de cluster e execute o seguinte comando: `Get-ClusterAvailableDisk -All | Add-ClusterDisk`.
 
@@ -435,7 +435,7 @@ Para obter mais informações, examine a sessão do Microsoft Ignite [Stretching
 
 8.  (Opcional) Configure redes de cluster e o Active Directory para o failover do site DNS mais rápido. Você pode usar VLANs estendidas, dispositivos de abstração de rede, TTL de DNS reduzida e outras técnicas comuns.  
     
-    Para obter mais informações, examine a sessão do Microsoft Ignite [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/events/ignite/2015/brk3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](https://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).
+    Para obter mais informações, examine a sessão do Microsoft Ignite [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Alongando Clusters de Failover e usando a réplica de armazenamento no Windows Server vNext)](https://channel9.msdn.com/events/ignite/2015/brk3487) e o post do blog [Enable Change Notifications between Sites – How and Why (Habilitar as notificações de alteração entre sites – como e por que)](/archive/blogs/qzaidi/enable-change-notifications-between-sites-how-and-why).
 
 ### <a name="configure-a-stretch-cluster"></a>Configurar um cluster estendido  
 Agora você irá configurar o cluster estendido, usando o Gerenciador de Cluster de Failover ou Windows PowerShell. Você pode executar todas as etapas abaixo nos nós de cluster diretamente ou em um computador de gerenciamento remoto que contenha o Windows Server Ferramentas de Administração de Servidor Remoto.  
@@ -745,7 +745,7 @@ Agora você irá gerenciar e operar o cluster estendido. Você pode executar tod
 
     -   \Estatísticas de Réplica de Armazenamento(*)\Número de Mensagens Enviadas  
 
-    Para saber mais sobre contadores de desempenho no Windows PowerShell, confira [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).  
+    Para saber mais sobre contadores de desempenho no Windows PowerShell, confira [Get-Counter](/powershell/module/microsoft.powershell.diagnostics/get-counter).  
 
 3.  Para alterar a origem e o destino de replicação dentro do cluster estendido, use os seguintes métodos:  
 
@@ -792,13 +792,13 @@ Agora você irá gerenciar e operar o cluster estendido. Você pode executar tod
     > [!NOTE]
     > Se usar um computador de gerenciamento remoto, você precisará especificar o nome do cluster para esses cmdlets e fornecer os dois nomes de RG.  
 
-### <a name="related-topics"></a>Tópicos relacionados  
-- [Visão geral da réplica de armazenamento](storage-replica-overview.md)  
+### <a name="related-topics"></a>Tópicos Relacionados  
+- [Visão geral da Réplica de Armazenamento](storage-replica-overview.md)  
 - [Replicação de armazenamento de servidor para servidor](server-to-server-storage-replication.md)  
 - [Cluster para replicação de armazenamento de cluster](cluster-to-cluster-storage-replication.md)  
 - [Réplica de armazenamento: problemas conhecidos](storage-replica-known-issues.md) 
 - [Réplica de armazenamento: perguntas frequentes](storage-replica-frequently-asked-questions.md)  
 
-## <a name="see-also"></a>Veja também  
+## <a name="see-also"></a>Consulte Também  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)

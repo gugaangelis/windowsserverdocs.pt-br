@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c1b36a98cf7bbb7fed8c221a550f66b74c7df123
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: fb37fe72c69fb0055632e09b7a6c51ce9f5cb561
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624344"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962308"
 ---
 # <a name="creating-a-site-design"></a>Criar um projeto de site
 
@@ -25,7 +25,7 @@ Criar um design de site envolve decidir quais locais se tornarão sites, criando
 
 Decida quais locais criar sites do da seguinte maneira:
 
-- Crie sites para todos os locais em que você planeja posicionar controladores de domínio. Consulte as informações documentadas na planilha "posicionamento do controlador de domínio" (DSSTOPO_4. doc) para identificar os locais que incluem controladores de domínio.
+- Crie sites para todos os locais em que você planeja posicionar controladores de domínio. Consulte as informações documentadas na planilha "posicionamento do controlador de domínio" (DSSTOPO_4.doc) para identificar os locais que incluem controladores de domínio.
 - Crie sites para esses locais que incluem servidores que executam aplicativos que exigem um site a ser criado. Determinados aplicativos, como DFSN (namespaces do Sistema de Arquivos Distribuído), usam objetos do site para localizar os servidores mais próximos aos clientes.
 
 > [!NOTE]
@@ -33,20 +33,20 @@ Decida quais locais criar sites do da seguinte maneira:
 
 - Se um site não for necessário para um local, adicione a sub-rede do local a um site para o qual o local tem a velocidade máxima da WAN (rede de longa distância) e a largura de banda disponível.
 
-Locais de documentos que se tornarão sites e os endereços de rede e máscaras de sub-rede dentro de cada local. Para uma planilha para ajudá-lo a documentar sites, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abrir "associando sub-redes com sites" (DSSTOPO_6. doc).
+Locais de documentos que se tornarão sites e os endereços de rede e máscaras de sub-rede dentro de cada local. Para uma planilha para ajudá-lo a documentar sites, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abrir "associando sub-redes com sites" (DSSTOPO_6.doc).
 
 ## <a name="creating-a-site-object-design"></a>Criando um design de objeto do site
 
 Para cada local em que você decidiu criar sites, planeje criar objetos de site no Active Directory Domain Services (AD DS). Locais de documentos que se tornarão sites na planilha "associando sub-redes com sites".
 
-Para obter mais informações sobre como criar objetos de site, consulte o artigo [criar um site](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772304(v=ws.11)).
+Para obter mais informações sobre como criar objetos de site, consulte o artigo [criar um site](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc772304(v=ws.11)).
 
 ## <a name="creating-a-subnet-object-design"></a>Criando um design de objeto de sub-rede
 
 Para cada sub-rede IP e máscara de sub-rede associada a cada local, planeje criar objetos de sub-rede no AD DS representando todos os endereços IP no site.
 
-Ao criar um objeto de sub-rede Active Directory, as informações sobre a sub-rede IP de rede e a máscara de sub-rede são automaticamente convertidas <IP address> / <prefix length>no formato de notação de comprimento do prefixo de rede. Por exemplo, o endereço IP de rede versão 4 (IPv4) 172.16.4.0 com uma máscara de sub-rede 255.255.252.0 aparece como 172.16.4.0/22. Além dos endereços IPv4, o Windows Server 2008 também dá suporte a prefixos de sub-rede IP versão 6 (IPv6), por exemplo, 3FFE: FFFF: 0: C000::/64. Para obter mais informações sobre sub-redes IP em cada local, consulte a planilha "locais e sub-redes" (DSSTOPO_2. doc) em [coletando informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) e [Apêndice A: locais e prefixos de sub-rede](Appendix-A--Locations-and-Subnet-Prefixes.md).
+Ao criar um objeto de sub-rede Active Directory, as informações sobre a sub-rede IP de rede e a máscara de sub-rede são automaticamente convertidas no formato de notação de comprimento do prefixo de rede <IP address> / <prefix length> . Por exemplo, o endereço IP de rede versão 4 (IPv4) 172.16.4.0 com uma máscara de sub-rede 255.255.252.0 aparece como 172.16.4.0/22. Além dos endereços IPv4, o Windows Server 2008 também dá suporte a prefixos de sub-rede IP versão 6 (IPv6), por exemplo, 3FFE: FFFF: 0: C000::/64. Para obter mais informações sobre sub-redes IP em cada local, consulte a planilha "locais e sub-redes" (DSSTOPO_2.doc) em [coletando informações de rede](../../ad-ds/plan/Collecting-Network-Information.md) e [Apêndice A: locais e prefixos de sub-rede](Appendix-A--Locations-and-Subnet-Prefixes.md).
 
-Associe cada objeto de sub-rede a um objeto de site fazendo referência à planilha "associando sub-redes com sites" (DSSTOPO_6. doc) na seção "decidindo quais locais se tornarão sites" para determinar qual sub-rede deve ser associada a qual site. Documente a Active Directory objeto de sub-rede associado a cada local na planilha "associando sub-redes com sites" (DSSTOPO_6. doc).
+Associe cada objeto de sub-rede a um objeto do site fazendo referência à planilha "associando sub-redes com sites" (DSSTOPO_6.doc) na seção "decidindo quais locais se tornarão sites" para determinar qual sub-rede deve ser associada a qual site. Documente a Active Directory objeto de sub-rede associado a cada local na planilha "associando sub-redes com sites" (DSSTOPO_6.doc).
 
-Para obter mais informações sobre como criar objetos de sub-rede, consulte o artigo [criar uma sub-rede](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770372(v=ws.11)).
+Para obter mais informações sobre como criar objetos de sub-rede, consulte o artigo [criar uma sub-rede](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc770372(v=ws.11)).

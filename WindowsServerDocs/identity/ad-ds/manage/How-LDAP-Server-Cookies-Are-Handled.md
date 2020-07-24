@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f90f53763e7a31ffed1fd820061910742e5cf98a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aa7d30d17d6e7a44daf2c5a65a4e173f25160456
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80823229"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960768"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>Como são tratados os Cookies de servidor LDAP
 
@@ -125,11 +125,9 @@ Os eventos 2898 e 2899 são a única maneira de saber que o servidor LDAP atingi
   
 Se você estiver vendo o evento 2898 no servidor DC/LDAP, é recomendável definir MaxResultSetsPerConn para 25. Mais de 25 pesquisas pagináveis paralelas em uma única conexão LDAP não é algo comum. Se você continuar vendo eventos 2898, investigue o aplicativo de cliente LDAP que encontra o erro. A suspeita seria que ele de alguma forma travou ao recuperar resultados paginados adicionais, deixando o cookie pendente e reiniciando uma nova consulta. Para ver se o aplicativo em algum momento teria cookies suficientes para suas finalidades, você também pode aumentar o valor de MaxResultSetsPerConn para acima de 25. Ao ver eventos 2899 registrados nos controladores de domínio, o plano deve ser diferente. Se o servidor LDAP/DC é executado em um computador com memória suficiente (vários GBs de memória livre), recomendamos que você defina o MaxResultsetSize no servidor LDAP para > = 250 MB. Esse limite é grande o suficiente para acomodar grandes volumes de pesquisas de página LDAP mesmo em diretórios muito grandes.  
   
-Se você ainda estiver vendo eventos 2899 com um pool de 250 MB ou mais, é provável que muitos clientes tenham um número muito alto de objetos retornados, consultados com muita frequência. Os dados que você pode obter com o [Conjunto de coletores de dados de diretório ativo](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) podem ajudar a localizar consultas paginadas repetitivas que mantêm seus servidores LDAP ocupados. Essas consultas serão mostradas com um número de "entradas retornadas" que correspondem ao tamanho da página usada.  
+Se você ainda estiver vendo eventos 2899 com um pool de 250 MB ou mais, é provável que muitos clientes tenham um número muito alto de objetos retornados, consultados com muita frequência. Os dados que você pode obter com o [Conjunto de coletores de dados de diretório ativo](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond) podem ajudar a localizar consultas paginadas repetitivas que mantêm seus servidores LDAP ocupados. Essas consultas serão mostradas com um número de "entradas retornadas" que correspondem ao tamanho da página usada.  
   
-Se possível, você deve examinar o design do aplicativo e implementar uma abordagem diferente com uma frequência menor, um volume de dados e/ou menos instâncias de cliente consultando esses dados. No caso dos aplicativos para os quais você tem acesso ao código-fonte, este guia para [criar aplicativos habilitados para AD eficientes](https://msdn.microsoft.com/library/ms808539.aspx) pode ajudá-lo a entender a maneira ideal para os aplicativos acessarem o AD.  
+Se possível, você deve examinar o design do aplicativo e implementar uma abordagem diferente com uma frequência menor, um volume de dados e/ou menos instâncias de cliente consultando esses dados. No caso dos aplicativos para os quais você tem acesso ao código-fonte, este guia para [criar aplicativos habilitados para AD eficientes](/previous-versions/ms808539(v=msdn.10)) pode ajudá-lo a entender a maneira ideal para os aplicativos acessarem o AD.  
   
 Se o comportamento da consulta não puder ser alterado, uma abordagem também será adicionar mais instâncias replicadas dos contextos de nomenclatura necessários e redistribuir os clientes e eventualmente reduzir a carga nos servidores LDAP individuais.  
   
-
-

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 18e0f1ad19e8c6ce2b6dbffe0d25c940c4f8f985
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4034c3b40a6b409f295875e424668e68bce24cdb
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474273"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962858"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>Criar uma pasta em um namespace DFS
 
@@ -35,12 +35,10 @@ Use o procedimento a seguir para criar uma pasta em um namespace usando o Gerenc
 
 
 > [!TIP]
-> Para criar uma pasta em um namespace usando Windows PowerShell, use o [New-DfsnFolder](https://docs.microsoft.com/powershell/module/dfsn/new-dfsnfolder) cmdlet. O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
+> Para criar uma pasta em um namespace usando Windows PowerShell, use o [New-DfsnFolder](/powershell/module/dfsn/new-dfsnfolder) cmdlet. O módulo do Windows PowerShell de DFSN foi apresentado no Windows Server 2012.
 
 
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [Implantar namespaces do DFS](deploying-dfs-namespaces.md)
 -   [Delegar permissões de gerenciamento para namespaces do DFS](delegate-management-permissions-for-dfs-namespaces.md)
-
-

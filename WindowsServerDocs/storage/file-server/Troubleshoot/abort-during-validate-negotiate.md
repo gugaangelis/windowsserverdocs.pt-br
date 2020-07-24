@@ -6,12 +6,12 @@ manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 36bd49777899870246a19531c6681a5b45bb622d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 762ad3b20c389771a9c0e6783d2a6fb1e73b8f0d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815509"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960998"
 ---
 # <a name="tcp-connection-is-aborted-during-validate-negotiate"></a>A conexão TCP foi anulada durante a validação de negociação
 
@@ -25,17 +25,17 @@ A Microsoft não permite mais modificação do pacote Validate Negotiate por qua
 
 Os seguintes requisitos se aplicam ao pacote Validate Negotiate:
 
-- O processo Validate Negotiate usa o FSCTL\_validar\_comando NEGOTIAte\_INFO.
+- O processo Validate Negotiate usa o \_ comando fsctl Validate \_ Negotiate \_ info.
 
 - A resposta de negociação de validação deve ser assinada. Caso contrário, a conexão será anulada.
 
-- Você deve comparar o FSCTL\_validar\_mensagens de informações de\_de negociação para as mensagens de negociação para certificar-se de que nada foi alterado.
+- Você deve comparar as mensagens de informações de negociação de FSCTL \_ \_ \_ para as mensagens de negociação para garantir que nada tenha sido alterado.
 
 ## <a name="workaround"></a>Solução alternativa
 
 Você pode desabilitar temporariamente o processo de negociação de validação. Para fazer isso, localize a seguinte subchave do registro:
 
-**HKEY\_computador de\_LOCAL\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters**
+**HKEY \_ local \_ Machine \\ System \\ CurrentControlSet \\ Services \\ LanmanWorkstation \\ Parameters**
 
 Na chave **parâmetros** , defina **RequireSecureNegotiate** como **0**.
 
@@ -52,8 +52,8 @@ Se o cliente ou o servidor não puder oferecer suporte ao comando Validate Negot
 
 ## <a name="reference"></a>Referência
 
-Para obter mais informações, consulte os seguintes artigos:
+Para obter mais informações, confira os seguintes artigos:
 
-[3.3.5.15.12 lidando com uma solicitação Validate Negotiate info](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/0b7803eb-d561-48a4-8654-327803f59ec6)
+[3.3.5.15.12 lidando com uma solicitação Validate Negotiate info](/openspecs/windows_protocols/ms-smb2/0b7803eb-d561-48a4-8654-327803f59ec6)
 
-[3.2.5.14.12 manipulando uma resposta de negociar informações de negociação](https://docs.microsoft.com/openspecs/windows_protocols/ms-smb2/6a5bc90d-3c08-4498-905b-e7dab30b2e0e)
+[3.2.5.14.12 manipulando uma resposta de negociar informações de negociação](/openspecs/windows_protocols/ms-smb2/6a5bc90d-3c08-4498-905b-e7dab30b2e0e)

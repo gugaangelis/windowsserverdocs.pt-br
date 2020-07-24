@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: a7e98129c2fb4f2259364c547b426d46f0a24ef3
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d9d24f1ce66ca691bfa31479a00b9ecf719abe1e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859459"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961298"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: portas de compartilhamento de arquivo e impressora devem ser abertas
 
@@ -30,16 +30,16 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><p><strong>Sistema Operacional</strong></p></td>
+<td><p><strong>Sistema operacional</strong></p></td>
 <td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Produto/recurso</strong></p></td>
-<td><p>Serviços de Arquivo</p></td>
+<td><p><strong>Produto/Recurso</strong></p></td>
+<td><p>Serviços de arquivo</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>Severity</strong></p></td>
-<td><p>Error</p></td>
+<td><p><strong>Gravidade</strong></p></td>
+<td><p>Erro</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Categoria</strong></p></td>
@@ -60,7 +60,7 @@ Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 e 
 
 > *Habilite o compartilhamento de arquivos e impressoras para se comunicar por meio do firewall do computador.*
 
-A associação ao grupo **Administradores** , ou equivalente, é o mínimo necessário para concluir esse procedimento.
+A associação ao grupo **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.
 
 ## <a name="to-open-the-firewall-ports-to-enable-file-and-printer-sharing"></a>Para abrir as portas de firewall para habilitar o compartilhamento de arquivos e impressoras
 
@@ -68,11 +68,10 @@ A associação ao grupo **Administradores** , ou equivalente, é o mínimo neces
 
 2.  No painel esquerdo, clique em **Configurações avançadas**e, na árvore de console, clique em **regras de entrada**.
 
-3.  Em **regras de entrada**, localize o arquivo de regras **e compartilhamento de impressora (NB-sessão-in)** e **compartilhamento de arquivos e impressoras (SMB-in)** .
+3.  Em **regras de entrada**, localize o arquivo de regras **e compartilhamento de impressora (NB-sessão-in)** e **compartilhamento de arquivos e impressoras (SMB-in)**.
 
-4.  Para cada regra, clique com o botão direito do mouse na regra e clique em **Habilitar Regra**.
+4.  Para cada regra, clique com botão direito na regra e, em seguida, clique em **Habilitar regra**.
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Noções básicas sobre pastas compartilhadas e o Firewall do Windows](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
-
+[Noções básicas sobre pastas compartilhadas e o Firewall do Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731402(v=ws.11))(https://technet.microsoft.com/library/cc731402.aspx)
