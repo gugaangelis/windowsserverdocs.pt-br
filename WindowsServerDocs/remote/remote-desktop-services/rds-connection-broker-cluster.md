@@ -8,12 +8,12 @@ ms.date: 04/10/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: dc6a9fa0d6834f63c9935518e4b2c26320a04082
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6e7e70b8adfcba78e50757be671d38f4d62c99db
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852959"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86958698"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adicionar o servidor do Agente de Conexão de Área de Trabalho Remota à implantação e configurar a alta disponibilidade
 
@@ -25,7 +25,7 @@ Você pode implantar um cluster do Agente de Conexão RD (Agente de Conexão da 
 
 Configure um servidor para atuar como um segundo Agente de Conexão RD, que pode ser um servidor físico ou estar em uma VM.
 
-Configure um banco de dados para o Agente de Conexão. É possível usar uma instância do [Banco de dados do Azure SQL](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database) ou o SQL Server em seu ambiente local. Falamos a seguir sobre como usar o Azure SQL, mas as etapas também se aplicam ao SQL Server. Você precisará encontrar a cadeia de conexão do banco de dados e verificar se você tem o driver ODBC correto.
+Configure um banco de dados para o Agente de Conexão. É possível usar uma instância do [Banco de dados do Azure SQL](/azure/azure-sql/database/single-database-create-quickstart#create-a-new-aure-sql-database) ou o SQL Server em seu ambiente local. Falamos a seguir sobre como usar o Azure SQL, mas as etapas também se aplicam ao SQL Server. Você precisará encontrar a cadeia de conexão do banco de dados e verificar se você tem o driver ODBC correto.
 
 ## <a name="step-1-configure-the-database-for-the-connection-broker"></a>Etapa 1: configurar um banco de dados para o Agente de Conexão
 
@@ -70,7 +70,7 @@ Se estiver usando a infraestrutura do Azure, você poderá criar um [Balanceador
       4. Selecione **Estático** para a **Atribuição de endereço IP** e insira um **Endereço IP Privado** que não esteja atualmente em uso (por exemplo, 10.0.0.32).   
       5. Selecione a devida **Assinatura**, o **Grupo de recursos** com todos os seus recursos e o **Local** apropriado.   
       6. Selecione **Criar**.   
-2. Crie uma [Investigação](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para monitorar os servidores que estão ativos:   
+2. Crie uma [Investigação](/azure/load-balancer/load-balancer-custom-probe-overview) para monitorar os servidores que estão ativos:   
       1. No portal do Azure, clique em **Procurar > Balanceadores de carga** e no balanceador de carga recém-criado, por exemplo, CBLB. Clique em **Configurações**.   
       2. Clique em **Investigações > Adicionar**.   
       3. Insira um nome para a investigação (por exemplo, **RDP**), selecione **TCP** como o **Protocolo**, digite **3389** na **Porta** e clique em **OK**.   
@@ -83,7 +83,7 @@ Se estiver usando a infraestrutura do Azure, você poderá criar um [Balanceador
       1. Nas **Configurações**, clique em **Regras de balanceamento de carga** e em **Adicionar**.   
       2. Insira um nome (por exemplo, RDP), selecione **TCP** como o **Protocolo**, digite **3389** na **Porta** e na **Porta de back-end** e clique em **OK**.   
 5. Adicione um registro DNS para o balanceador de carga:   
-      1. Conecte-se à máquina virtual de servidor RDMS (por exemplo, Contoso-CB1). Confira o artigo [Preparar a VM do Agente de Conexão de Área de Trabalho Remota](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) para obter as etapas de conexão à VM.   
+      1. Conecte-se à máquina virtual de servidor RDMS (por exemplo, Contoso-CB1). Confira o artigo [Preparar a VM do Agente de Conexão de Área de Trabalho Remota](./rds-prepare-vms.md) para obter as etapas de conexão à VM.   
       2. No Gerenciador do Servidor, clique em **Ferramentas > DNS**.   
       3. No painel esquerdo, expanda **DNS**, clique na máquina DNS, clique em **Zonas de pesquisa direta** e em seu nome de domínio (por exemplo, Contoso.com). Pode levar alguns segundos para o servidor DNS processar a consulta para obter as informações.  
       4. Clique em **Ação > Novo Host (A ou AAAA)** .   
@@ -124,4 +124,3 @@ Por exemplo, se os endereços IP das duas máquinas virtuais de Agente de Conex�
    3. Prossiga no assistente até chegar à Seleção de Servidor, em seguida, selecione o servidor recém-criado (por exemplo, Contoso-CB2) do Agente de Conexão RD.
    4. Conclua o assistente, aceitando os valores padrão.
 4. Configurar certificados confiáveis em clientes e servidores do Agente de Conexão RD.
-

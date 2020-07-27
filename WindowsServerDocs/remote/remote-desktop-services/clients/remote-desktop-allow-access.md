@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0596dbd847ae8e64e1f4c780f142f28e34656ae8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 27f6a361ffd3bc5082cea57f6e09264520110d40
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855899"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959128"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>Área de Trabalho Remota – permitir o acesso ao seu computador
 
@@ -61,6 +61,6 @@ Você deve garantir que cada conta que tenha acesso a seu computador está confi
 
 ## <a name="why-allow-connections-only-with-network-level-authentication"></a>Por que permitir conexões somente com Autenticação no Nível da Rede? 
 
-Se você quiser restringir quem pode acessar seu computador, opte por permitir acesso apenas com a NLA (Autenticação no Nível da Rede). Ao habilitar essa opção, os usuários precisam autenticar-se à rede, antes que possam se conectar a seu computador. Permitir conexões somente de computadores que executam a Área de Trabalho Remota com NLA é um método de autenticação mais seguro que pode ajudar a proteger seu computador contra usuários e softwares mal-intencionados. Para saber mais sobre NLA e a Área de Trabalho Remota, confira [Configurar NLA para conexões do RDS](https://technet.microsoft.com/library/cc732713(v=ws.11).aspx).
+Se você quiser restringir quem pode acessar seu computador, opte por permitir acesso apenas com a NLA (Autenticação no Nível da Rede). Ao habilitar essa opção, os usuários precisam autenticar-se à rede, antes que possam se conectar a seu computador. Permitir conexões somente de computadores que executam a Área de Trabalho Remota com NLA é um método de autenticação mais seguro que pode ajudar a proteger seu computador contra usuários e softwares mal-intencionados. Para saber mais sobre NLA e a Área de Trabalho Remota, confira [Configurar NLA para conexões do RDS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732713(v=ws.11)).
 
 Se você estiver se conectando remotamente a um computador em sua rede doméstica, de fora da rede, não selecione essa opção.

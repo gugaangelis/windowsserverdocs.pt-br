@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 914e6f4507e0fd997a31866b10e3c48e0cd4cbd7
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857259"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963348"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>Configurações de segurança do Windows 10 com suporte para os Serviços de Área de Trabalho Remota VDI
 
@@ -29,9 +29,9 @@ A tabela a seguir descreve qual desses novos recursos têm suporte em uma implan
 
 |  Tipo de coleção do VDI               |  Gerenciamento em pool |  Gerenciamento pessoal |  Sem gerenciamento em pool                                     |  Sem gerenciamento pessoal                                    |
 |-------------------------------------|------------------|--------------------|--------------------------------------------------------|--------------------------------------------------------|
-| [Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)                    | Sim              | Sim                | Sim                                                    | Sim                                                    |
-| [Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)                        | Sim              | Sim                | Sim                                                    | Sim                                                    |
-| [Credential Guard Remoto](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | Não               | Não                 | Não                                                     | Não                                                     |
+| [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)                    | Sim              | Sim                | Sim                                                    | Sim                                                    |
+| [Device Guard](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)                        | Sim              | Sim                | Sim                                                    | Sim                                                    |
+| [Credential Guard Remoto](/windows/security/identity-protection/remote-credential-guard)             | Não               | Não                 | Não                                                     | Não                                                     |
 | [VMs Blindadas e Criptografadas com Suporte](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | Não               | Não                 | VMs com suporte de criptografia com configuração adicional | VMs com suporte de criptografia com configuração adicional |
 
 ## <a name="remote-credential-guard"></a>Credential Guard Remoto:
@@ -47,4 +47,3 @@ O Credential Guard remoto tem suporte apenas para conexões diretas com as máqu
 Para aproveitar VMs com Suporte para Criptografia:
 - Use uma coleção não gerenciada e uma tecnologia de provisionamento fora do processo de criação de coleção de Serviços de Área de Trabalho Remota para provisionar as máquinas virtuais. 
 - Discos de Perfil do Usuário não têm suporte, pois eles dependem de discos diferenciais 
-

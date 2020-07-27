@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 441b0b24fd4b4dc18d3afd65283bbf7ff2417048
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 2635302c79f5bfb8ca446f78d543e19656644102
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818430"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966708"
 ---
 # <a name="remote-desktop-services-architecture"></a>Arquitetura de Serviços de Área de Trabalho Remota
 
@@ -45,13 +45,13 @@ Embora as arquiteturas de implantação de RDS padrão se ajustem a maioria dos 
 
 ### <a name="rds-deployment-with-azure-ad-domain-services"></a>Implantação de RDS com o Azure AD Domain Services
 
-Os dois diagramas de arquitetura padrão acima se baseiam em um AD (Active Directory) tradicional implantado em uma VM do Windows Server. No entanto, se você não tiver um AD tradicional e tiver apenas um locatário do Azure AD, por meio de serviços como o Office365, mas ainda quiser aproveitar o RDS, será possível usar o [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) para criar um domínio totalmente gerenciado no seu ambiente de IaaS do Azure que usa os mesmos usuários existentes no locatário do Azure AD. Isso elimina a complexidade de sincronizar usuários manualmente e gerenciar mais máquinas virtuais. O Azure AD Domain Services pode trabalhar em qualquer implantação: básica ou altamente disponível.
+Os dois diagramas de arquitetura padrão acima se baseiam em um AD (Active Directory) tradicional implantado em uma VM do Windows Server. No entanto, se você não tiver um AD tradicional e tiver apenas um locatário do Azure AD, por meio de serviços como o Office365, mas ainda quiser aproveitar o RDS, será possível usar o [Azure AD Domain Services](/azure/active-directory-domain-services/active-directory-ds-overview) para criar um domínio totalmente gerenciado no seu ambiente de IaaS do Azure que usa os mesmos usuários existentes no locatário do Azure AD. Isso elimina a complexidade de sincronizar usuários manualmente e gerenciar mais máquinas virtuais. O Azure AD Domain Services pode trabalhar em qualquer implantação: básica ou altamente disponível.
 
 ![Implantação de RDS e Azure AD](./media/aadds-rds.png)
 
 ### <a name="rds-deployment-with-azure-ad-application-proxy"></a>Implantação de RDS com o Proxy de Aplicativo do Azure AD
 
-Os dois diagramas de arquitetura padrão acima usam os servidores de Web/Gateway de Área de Trabalho Remota como o ponto de entrada para a Internet no sistema RDS. Em alguns ambientes, os administradores optariam por remover seus próprios servidores do perímetro e, em vez disso, usar tecnologias que também fornecem segurança adicional por meio de tecnologias de proxy reverso. A função PaaS do [Proxy de Aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started) se encaixa perfeitamente a esse cenário.
+Os dois diagramas de arquitetura padrão acima usam os servidores de Web/Gateway de Área de Trabalho Remota como o ponto de entrada para a Internet no sistema RDS. Em alguns ambientes, os administradores optariam por remover seus próprios servidores do perímetro e, em vez disso, usar tecnologias que também fornecem segurança adicional por meio de tecnologias de proxy reverso. A função PaaS do [Proxy de Aplicativo do Azure AD](/azure/active-directory/active-directory-application-proxy-get-started) se encaixa perfeitamente a esse cenário.
 
 Para saber as configurações com suporte e como criar essa configuração, consulte como [publicar a Área de Trabalho Remota com o Proxy de Aplicativo do Azure AD](/azure/active-directory/application-proxy-publish-remote-desktop).
 

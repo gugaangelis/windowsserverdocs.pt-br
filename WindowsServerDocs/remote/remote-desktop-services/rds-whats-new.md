@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 04d52dff-e61b-4633-9908-be8600abc2ba
 author: ChristianMontoya
 manager: scottman
-ms.openlocfilehash: 85d5b1e1c4367cc961ae8ea628f46f224d8dae5c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 43c280996334ea3b371c54f86b1cd4f86072124b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857249"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963308"
 ---
 # <a name="whats-new-in-remote-desktop-services"></a>Novidades nos Serviços de Área de Trabalho Remota
 
@@ -28,22 +28,22 @@ Compilado na mesma base do Windows 10, o Windows Server 2016 não só tem a mesm
 ## <a name="azure-sql-database---the-new-database-for-your-highly-available-environment"></a>Banco de Dados SQL do Azure – o novo banco de dados para o seu ambiente altamente disponível
 O Agente de Conexão de Área de Trabalho Remota é capaz de armazenar todas as informações de implantação (como os estados de conexão e mapeamentos de usuário/host) em um banco de dados SQL compartilhado, como um Banco de Dados SQL do Azure. Elimine o manual de implantação do Grupo de Disponibilidade Always On do SQL Server, obtenha a cadeia de conexão para o Banco de Dados SQL do Azure e comece a usar o seu ambiente altamente disponível.
 
-Informações adicionais: [Usar o banco de dados SQL do Azure para seu ambiente de alta disponibilidade do Agente de Conexão de Área de Trabalho Remota](https://blogs.technet.microsoft.com/enterprisemobility/2016/05/03/new-windows-server-2016-capability-use-azure-sql-db-for-your-remote-desktop-connection-broker-high-availability-environment/)
+Informações adicionais: [Usar o banco de dados SQL do Azure para seu ambiente de alta disponibilidade do Agente de Conexão de Área de Trabalho Remota](https://techcommunity.microsoft.com/t5/microsoft-security-and/new-windows-server-2016-capability-use-azure-sql-db-for-your/ba-p/249787)
 
 ## <a name="graphics---solving-graphics-needs-across-various-scenarios"></a>Gráficos – resolver necessidades de elementos gráficos em vários cenários
 Graças à Atribuição de Dispositivos Discretos do Hyper-V, agora você pode mapear GPUs em um computador host diretamente para uma VM para ser consumida por seus aplicativos que exigem GPU. Também foram realizadas melhorias no vGPU do RemoteFX, incluindo suporte a OpenGL 4.4, OpenCL 1.1, resolução de 4K e máquinas virtuais do Windows Server.
 
-Informações adicionais: [Atribuição de dispositivo discreto](https://blogs.technet.microsoft.com/virtualization/2015/11/)
+Informações adicionais: [Atribuição de dispositivo discreto](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization)
 
 ## <a name="rd-connection-broker---improved-connection-handling-during-logon-storms"></a>Agente de Conexão de Área de Trabalho Remota – manipulação aprimorada de conexão durante tempestades de logon
 Com a manipulação aprimorada de conexão, o Agente de Conexão de Área de Trabalho Remota agora é capaz de lidar com mais de 10.000 solicitações simultâneas de logon, às vezes, observadas durante "tempestades de logon". O Agente de Conexão de Área de Trabalho Remota aprimorado também simplifica a manutenção da implantação ao adicionar mais rapidamente servidores de volta para o ambiente.
 
-Informações adicionais: [Desempenho aprimorado do Agente de Conexão de Área de Trabalho Remota](https://blogs.technet.microsoft.com/enterprisemobility/2015/12/15/improved-remote-desktop-connection-broker-performance-with-windows-server-2016-and-windows-server-2012-r2-hotfix-kb3091411/)
+Informações adicionais: [Desempenho aprimorado do Agente de Conexão de Área de Trabalho Remota](https://techcommunity.microsoft.com/t5/microsoft-security-and/improved-remote-desktop-connection-broker-performance-with/ba-p/249559)
 
 ## <a name="rdp-10---new-capabilities-built-into-the-protocol"></a>RDP 10 – novos recursos incorporados ao protocolo
 Agora o RDP 10 usa o codec H.264/AVC 444, otimizando adequadamente em vídeo e texto. Com essa versão, também há suporte para comunicação remota por caneta. Com essas capacidades, suas sessões remotas começam a se parecer ainda mais com uma sessão local.  
 
-Informações adicionais: [Melhorias de RDP 10 AVC/H.264 no Windows 10 e Windows Server 2016](https://blogs.technet.microsoft.com/enterprisemobility/2016/01/11/remote-desktop-protocol-rdp-10-avch-264-improvements-in-windows-10-and-windows-server-2016-technical-preview/)
+Informações adicionais: [Melhorias de RDP 10 AVC/H.264 no Windows 10 e Windows Server 2016](https://techcommunity.microsoft.com/t5/microsoft-security-and/remote-desktop-protocol-rdp-10-avc-h-264-improvements-in-windows/ba-p/249588)
 
 ## <a name="personal-session-desktops---providing-individual-desktops-to-any-end-user"></a>Áreas de trabalho de sessão pessoal – fornecem áreas de trabalho individuais para qualquer usuário final
 As áreas de trabalho de sessão pessoal são uma nova maneira de ter sua própria área de trabalho pessoal hospedada por você na nuvem. Os privilégios administrativos e os hosts da sessão dedicados eliminam a complexidade dos ambientes de hospedagem em que os usuários desejam gerenciar a área de trabalho como se ela fosse deles.

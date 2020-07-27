@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 140f67a9dab5cf1f10cdb0c5c51a031a0dfb9dd3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4d282e2aa543070fcea0f4931419de0be5745c7d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323638"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959628"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Instalação e atualização do Windows Server
 
@@ -30,7 +30,7 @@ Procurando pelo Windows Server 2019? Confira [Instalar, atualizar ou migrar para
 
 ## <a name="installation"></a>Instalação
 
-Se você deseja mudar para uma versão mais recente do Windows Server no mesmo hardware, uma maneira que sempre funciona é uma **instalação limpa**, em que basta instalar o sistema operacional mais recente diretamente sobre o antigo no mesmo hardware, excluindo assim o sistema operacional anterior. Essa é a maneira mais simples, mas primeiro é necessário fazer backup de seus dados e se preparar para reinstalar seus aplicativos. Há algumas coisas que você deve saber, como os requisitos do sistema, então, verifique os detalhes do [Windows Server 2016](https://go.microsoft.com/fwlink/?LinkID=825558), do [Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418) e do [Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).
+Se você deseja mudar para uma versão mais recente do Windows Server no mesmo hardware, uma maneira que sempre funciona é uma **instalação limpa**, em que basta instalar o sistema operacional mais recente diretamente sobre o antigo no mesmo hardware, excluindo assim o sistema operacional anterior. Essa é a maneira mais simples, mas primeiro é necessário fazer backup de seus dados e se preparar para reinstalar seus aplicativos. Há algumas coisas que você deve saber, como os requisitos do sistema, então, verifique os detalhes do [Windows Server 2016](https://go.microsoft.com/fwlink/?LinkID=825558), do [Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303418(v=ws.11)) e do [Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134246(v=ws.11)).
 
 Mudar de qualquer versão de pré-lançamento (como o Windows Server 2016 Technical Preview) para a versão lançada (Windows Server 2016) sempre requer uma instalação limpa.
 
@@ -39,7 +39,7 @@ Mudar de qualquer versão de pré-lançamento (como o Windows Server 2016 Techni
 A documentação de migração do Windows Server ajuda você a migrar uma função ou um recurso de cada vez de um computador de origem que está executando o Windows Server para outro computador de destino que está executando o Windows Server, com uma versão igual ou mais recente. Para essas finalidades, a migração é definida como mover uma função ou um recurso e seus dados para um computador diferente, e não como atualizar o recurso no mesmo computador. Esse é o modo recomendado para mover seus dados e a carga de trabalho existente para uma versão mais recente do Windows Server. Para começar, verifique a [matriz de atualização e migração da função de servidor](https://go.microsoft.com/fwlink/?LinkId=828595) para Windows Server.
 
 ## <a name="cluster-os-rolling-upgrade"></a>Atualização sem interrupção do sistema operacional do cluster
-A Atualização sem interrupção do sistema operacional do cluster é um novo recurso no Windows Server 2016 que permite ao administrador atualizar o sistema operacional dos nós do cluster do Windows Server 2012 R2 para o Windows Server 2016 sem interromper o Hyper-V ou as cargas de trabalho de Servidor de Arquivos de Escalabilidade Horizontal. Esse recurso permite que você evite o tempo de inatividade que poderia afetar os Contratos de nível de serviço. Esse recurso novo é abordado com mais detalhes em [Atualização sem interrupção do sistema de operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).
+A Atualização sem interrupção do sistema operacional do cluster é um novo recurso no Windows Server 2016 que permite ao administrador atualizar o sistema operacional dos nós do cluster do Windows Server 2012 R2 para o Windows Server 2016 sem interromper o Hyper-V ou as cargas de trabalho de Servidor de Arquivos de Escalabilidade Horizontal. Esse recurso permite que você evite o tempo de inatividade que poderia afetar os Contratos de nível de serviço. Esse recurso novo é abordado com mais detalhes em [Atualização sem interrupção do sistema de operacional do cluster](../failover-clustering/cluster-operating-system-rolling-upgrade.md).
 
 ## <a name="license-conversion"></a>Conversão de licença
 Em algumas versões do sistema operacional, é possível converter uma edição específica da edição para outra edição da mesma versão em uma única etapa, usando um simples comando e com a chave de licença adequada. Isso é chamado de **conversão de licença**. Por exemplo, se o servidor estiver executando o Windows Server 2016 Standard, é possível convertê-lo para o Windows Server 2016 Datacenter. Em algumas versões do Windows Server, também é possível fazer conversões livremente entre as versões OEM, de licença por volume e de varejo com o mesmo comando e a chave apropriada.
@@ -92,7 +92,7 @@ Tabela de referência rápida dos caminhos de atualização permitidos de ediç�
 É possível converter a versão de avaliação do Windows Server 2016 Datacenter em Windows Server 2016 Datacenter (varejo).
  
 ## <a name="upgrading-to-windows-server-2012-r2"></a>Atualização para o Windows Server 2012 R2
-Para saber mais, incluindo limitações e restrições importantes sobre a atualização, a conversão de licença entre as edições do Windows Server 2012 R2 e a conversão das edições de avaliação para varejo, confira [Opções de atualização para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn303416.aspx).
+Para saber mais, incluindo limitações e restrições importantes sobre a atualização, a conversão de licença entre as edições do Windows Server 2012 R2 e a conversão das edições de avaliação para varejo, confira [Opções de atualização para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)).
 
 Tabela de referência rápida dos caminhos de atualização permitidos de edições de varejo mais antigas do Windows Server para edições de varejo do Windows Server 2012 R2:
 
@@ -114,7 +114,7 @@ Tabela de referência rápida dos caminhos de atualização permitidos de ediç�
 É possível converter a versão de avaliação do Windows Server 2012 Standard em Windows Server 2012 Standard (comercial) ou Datacenter (comercial).
 
 ## <a name="upgrading-to-windows-server-2012"></a>Atualização para o Windows Server 2012
-Para saber mais, incluindo limitações e restrições importantes sobre atualização e conversão das edições de avaliação para varejo, confira [Versões de avaliação e opções de atualização para o Windows Server 2012](https://technet.microsoft.com/library/jj574204.aspx).
+Para saber mais, incluindo limitações e restrições importantes sobre atualização e conversão das edições de avaliação para varejo, confira [Versões de avaliação e opções de atualização para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204(v=ws.11)).
  
 Tabela de referência rápida dos caminhos de atualização permitidos de edições de varejo mais antigas do Windows Server para edições de varejo do Windows Server 2012:
 
@@ -148,5 +148,4 @@ Ao planejar sua atualização, esteja ciente das diretrizes a seguir para a etap
 
   - Você não pode migrar de uma instalação Server Core do Windows Server 2008 para o Windows Server 2012 R2 com a GUI do servidor (chamada de "Servidor com área de trabalho completa" no Windows Server). É possível alternar sua instalação de server core atualizada para o servidor com a Área de trabalho completa, mas apenas no Windows Server 2012 R2. O Windows Server 2016 e posteriores *não* dão suporte à troca do Server Core para Área de trabalho completa, portanto, realize essa mudança antes de atualizar para o Windows Server 2016.
   
-Para saber mais, confira [Versões de avaliação e opções de atualização para o Windows Server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204\(v=ws.11\)), que inclui detalhes sobre a atualização específica para funções.
-
+Para saber mais, confira [Versões de avaliação e opções de atualização para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj574204\(v=ws.11\)), que inclui detalhes sobre a atualização específica para funções.

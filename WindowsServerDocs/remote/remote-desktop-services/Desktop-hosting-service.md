@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 2ee11e40d5fb69141ad5dd5342f8574b22232bbd
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 57e9e25881d948ec705dc51d8e61377e0beb78a8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070475"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960388"
 ---
 # <a name="desktop-hosting-service"></a>Serviço de hospedagem da área de trabalho
 
@@ -41,9 +41,9 @@ Há várias maneiras de implantar o AD DS:
 
 Para obter mais informações, confira os seguintes artigos:
 
-* [Documentação do Azure Active Directory Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/)
-* [Guia de Arquitetura de Referência de Hospedagem da Área de Trabalho para Windows Server 2012 R2](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
-* [Criar uma conexão site a site no portal do Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Documentação do Azure Active Directory Domain Services](/azure/active-directory-domain-services/)
+* [Guia de Arquitetura de Referência de Hospedagem da Área de Trabalho para Windows Server 2012 R2](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
+* [Criar uma conexão site a site no portal do Azure](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)
 
 ## <a name="sql-database"></a>Banco de dados SQL
 
@@ -56,8 +56,8 @@ Há várias maneiras de implantar um banco de dados SQL:
 
 Para obter mais informações sobre como configurar uma infraestrutura altamente disponível do banco de dados SQL, consulte os artigos a seguir:
 
-* [O que é o serviço de Banco de Dados SQL do Azure?](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)
-* [Criação e configuração de grupos de disponibilidade (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017).
+* [O que é o serviço de Banco de Dados SQL do Azure?](/azure/sql-database/sql-database-technical-overview)
+* [Criação e configuração de grupos de disponibilidade (SQL Server)](/sql/database-engine/availability-groups/windows/creation-and-configuration-of-availability-groups-sql-server?view=sql-server-2017).
 * [Adicionar o servidor do Agente de Conexão de Área de Trabalho Remota à implantação e configurar a alta disponibilidade](rds-connection-broker-cluster.md).
 
 ## <a name="file-server"></a>Servidor de arquivos
@@ -71,7 +71,7 @@ Locatários pequenos podem reduzir os custos ao combinar o servidor de arquivos 
 Para obter mais informações, confira os seguintes artigos:
 
 * [Armazenamento no Windows Server](../../storage/storage.yml)
-* [Como anexar um disco de dados gerenciado a uma VM do Windows no portal do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Fclassic%2Ftoc.json)
+* [Como anexar um disco de dados gerenciado a uma VM do Windows no portal do Azure](/azure/virtual-machines/windows/attach-managed-disk-portal?toc=/azure/virtual-machines/windows/classic/toc.json)
 
 ### <a name="user-profile-disks"></a>Discos de perfil do usuário
 

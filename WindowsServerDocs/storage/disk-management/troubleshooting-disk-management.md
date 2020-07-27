@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 359b4bed3090463bfb92431e06e325d981568248
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323438"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961018"
 ---
 # <a name="troubleshooting-disk-management"></a>Solução de problemas do Gerenciamento de Disco
 
@@ -119,7 +119,7 @@ Se o status do disco for **Offline** e o nome do disco mudar para **Ausente**, o
 **Para recolocar online um disco que está Offline e ainda nomeado como Disco \# (Não ausente), tente um ou mais dos procedimentos a seguir:**
 
 1. No Gerenciamento de Disco, selecione e mantenha o cursor (ou clique com o botão direito do mouse) no disco e, em seguida, clique em **Reativar Disco** para recolocá-lo online. Se o status do disco permanecer **Offline**, verifique os cabos e o controlador do disco e verifique se o disco físico está íntegro. Corrija quaisquer problemas e tente reativar o disco novamente. Se o disco for reativado com sucesso, todos os volumes no disco devem retornar automaticamente ao status **Íntegro**.
-2. No Visualizador de Eventos, verifique os logs de eventos para ver todos os erros relacionados ao disco, como "Cópias de configuração inadequadas". Se os logs de evento contêm esse erro, contate o [Microsoft Product Support Services](https://msdn.microsoft.com/library/aa263468(v=vs.60).aspx).
+2. No Visualizador de Eventos, verifique os logs de eventos para ver todos os erros relacionados ao disco, como "Cópias de configuração inadequadas". Se os logs de evento contêm esse erro, contate o [Microsoft Product Support Services](/previous-versions/visualstudio/visual-basic-6/aa263468(v=vs.60)).
 
 3. Tente mover o disco para outro computador. Se o disco ficar **Online** em outro computador, o problema ocorreu provavelmente devido à configuração do computador em que o disco não fica **Online**.
 

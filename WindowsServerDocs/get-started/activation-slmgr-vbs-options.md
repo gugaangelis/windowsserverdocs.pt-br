@@ -12,12 +12,12 @@ appliesto:
 - Windows Server 2012 R2
 - Windows 10
 - Windows 8.1
-ms.openlocfilehash: c0d8019812144cc3e4bd33cfaf2ca2c0c1b7eefa
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0de9d7496266afba4b76e5b837dc68e4f9745518
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473173"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962728"
 ---
 # <a name="slmgrvbs-options-for-obtaining-volume-activation-information"></a>Opções Slmgr.vbs para obter informações de ativação de volume
 
@@ -35,7 +35,7 @@ slmgr.vbs [<ComputerName> [<User> <Password>]] [<Options>]
 
 ## <a name="using-slmgr-on-remote-computers"></a>Usando Slmgr em computadores remotos
 
-Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativação de Volume), versão 1.2 ou posterior, ou crie scripts WMI personalizados que considerem as diferenças entre as plataformas. Para saber mais sobre as propriedades da WMI e os métodos para ativação de volume, confira [Propriedades e métodos da WMI para ativação de volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502536(v=ws.11)).
+Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativação de Volume), versão 1.2 ou posterior, ou crie scripts WMI personalizados que considerem as diferenças entre as plataformas. Para saber mais sobre as propriedades da WMI e os métodos para ativação de volume, confira [Propriedades e métodos da WMI para ativação de volume](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502536(v=ws.11)).
 
 > [!IMPORTANT]
 > Por causa de mudanças na WMI no Windows 7 e Windows Server 2008 R2, o script Slmgr.vbs não serve para funcionar entre plataformas. Não há suporte para o uso de Slmgr.vbs com o intuito de gerenciar um sistema Windows 7 ou Windows Server 2008 R2 do sistema operacional Windows Vista&reg;. Se você tentar gerenciar um sistema mais antigo do Windows 7 ou Windows Server 2008 R2, isso gerará um erro específico de incompatibilidade de versão. Por exemplo, executar o **cscript slmgr.vbs \<vista\_machine\_name\> /dlv** produz o seguinte resultado:
@@ -69,7 +69,7 @@ Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativ
 |\/cpky |Algumas operações de manutenção pede que a chave de produto esteja disponível no Registro durante operações OOBE (configuração inicial pelo usuário). A opção **/cpky** remove a chave de produto do Registro para evitar que seja roubada por códigos mal-intencionados.<br />Para instalações de varejo que implantem chaves, a prática recomendada é executar essa opção. A opção não é necessária para chaves de host KMS e chaves MAK, pois esse já é o comportamento padrão dessas chaves. A opção é pedida para outros tipos de chave, cujo comportamento padrão não é apagar a chave do Registro.<br />A operação deve ser executada em uma janela do prompt de comandos com privilégios elevados. |
 |\/ilc&nbsp;&lt;license_file&gt; |Esta opção instala o arquivo de licença especificado pelo parâmetro pedido. Essas licenças podem ser instaladas como medida de solução de problemas, a fim de dar suporte à ativação baseada em token, ou como parte da instalação manual de um aplicativo onboard.<br />As licenças não são validadas durante esse processo: a validação de licenças está fora do escopo do Slmgr.vbs. Em vez disso, a validação é executada pelo Serviço de Proteção de Software, em runtime.<br />A operação deverá ser executada de uma janela de prompt de comandos com privilégios elevados ou o valor de Registro das **Operações do Usuário Padrão** deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
 |\/rilc |Esta opção reinstala todas as licenças armazenadas em %SystemRoot%\system32\oem e %SystemRoot%\System32\spp\tokens. Elas são cópias "em boas condições" armazenadas durante a instalação.<br />As licenças correspondentes no armazenamento confiável são substituídas. As licenças adicionais – por exemplo, ILs (licenças de publicação) de TAs (autoridades confiáveis) e licenças para aplicativos – não são afetadas.<br />A operação deverá ser executada em uma janela de prompt de comandos com privilégios elevados ou o valor de Registro das **Operações do Usuário Padrão** deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
-|\/rearm |Esta opção redefine os temporizadores de ativação. O processo **/rearm** também é chamado por **sysprep /generalize**.<br />Esta operação não fará nada se a entrada do Registro **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** for definida como **1**. Confira [Configurações do Registro para ativação de volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502532(v=ws.11)) para obter detalhes sobre essa entrada do Registro.<br />A operação deverá ser executada em uma janela de prompt de comandos com privilégios elevados ou o valor de Registro das **Operações do Usuário Padrão** deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
+|\/rearm |Esta opção redefine os temporizadores de ativação. O processo **/rearm** também é chamado por **sysprep /generalize**.<br />Esta operação não fará nada se a entrada do Registro **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform\SkipRearm** for definida como **1**. Confira [Configurações do Registro para ativação de volume](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502532(v=ws.11)) para obter detalhes sobre essa entrada do Registro.<br />A operação deverá ser executada em uma janela de prompt de comandos com privilégios elevados ou o valor de Registro das **Operações do Usuário Padrão** deverá estar configurado de modo a permitir que usuários sem privilégios tenham acesso extra ao Serviço de Proteção de Software. |
 |\/rearm-app &lt;ID do&nbsp;Aplicativo&gt; |Redefine o status de licença do aplicativo especificado. |
 |\/rearm-sku &lt;ID do&nbsp;Aplicativo&gt; |Redefine o status de licença do SKU (unidade de manutenção de estoque) especificado. |
 |\/upk&nbsp;\[&lt;ID do&nbsp;Aplicativo&gt;] |Esta opção desinstala a chave de produto da edição atual do Windows. Depois de ser reinicializado, o sistema estará no estado não licenciado até que uma nova chave de produto seja instalada.<br />Também há a opção de usar o parâmetro \<**Activation ID**\> para especificar um produto diferente instalado.<br />A operação deve ser executada em uma janela de prompt de comandos com privilégios elevados. |
@@ -123,6 +123,5 @@ Para gerenciar clientes remotos, use a VAMT (Ferramenta de Gerenciamento de Ativ
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [Referência técnica da ativação de volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502529%28v%3dws.11%29)
-- [Visão geral da Ativação de Volume](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831612%28v%3dws.11%29)
-
+- [Referência técnica da ativação de volume](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502529%28v%3dws.11%29)
+- [Visão geral da Ativação de Volume](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831612%28v%3dws.11%29)

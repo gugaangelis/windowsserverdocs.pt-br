@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: e98bbda5460311dd379eab6f5a5bde0ec3845d5c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c34d0bd2654d36e447053348392b4b9a6957e60f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80860279"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960188"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adicionar alta disponibilidade ao front-end de Gateway Web e Web da Área de Trabalho Remota
 
@@ -96,7 +96,7 @@ Se estiver usando a infraestrutura do Azure, você pode criar um balanceador ext
     4.  Em **Endereço IP público**, selecione **Escolher um endereço IP público** e um endereço IP público existente ou crie um.
     5.  Selecionar as opções apropriadas para **Assinatura**, **Grupo de Recursos** e **Local**.
     6.  Clique em **Criar**.  
-2. Crie uma [Investigação](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para monitorar os servidores que estão ativos:  
+2. Crie uma [Investigação](/azure/load-balancer/load-balancer-custom-probe-overview) para monitorar os servidores que estão ativos:  
     1.  No portal do Azure, selecione **Procurar** > **Balanceadores de Carga** e, em seguida, escolha o balanceador de carga que você criou na etapa anterior.
     2.  Selecione **Todas as configurações** > **Sondas** > **Adicionar**.  
     3.  Digite um nome para a investigação, como **HTTPS**. Selecione **TCP** como o **Protocolo** e insira **443** como a **Porta**, depois clique em **OK**.   

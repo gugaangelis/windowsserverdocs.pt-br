@@ -8,12 +8,12 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: c4676ee720780ac7f347d98048c920bd4ce68e59
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473183"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961138"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novidades no Windows Server, versão 1803
 
@@ -27,7 +27,7 @@ O Project Honolulu agora é o **Windows Admin Center**.
 <br>&nbsp;
 > [!video https://www.youtube.com/embed/WCWxAp27ERk?autoplay=false]
 
-O [Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) consolida todos os aspectos do gerenciamento de servidores locais e remotos. O Windows Admin Center é uma experiência de gerenciamento com base em navegador e implantada localmente que não exige uma conexão com a Internet, proporcionando controle completo de todos os aspectos da implantação do Windows Server.
+O [Windows Admin Center](../manage/windows-admin-center/overview.md) consolida todos os aspectos do gerenciamento de servidores locais e remotos. O Windows Admin Center é uma experiência de gerenciamento com base em navegador e implantada localmente que não exige uma conexão com a Internet, proporcionando controle completo de todos os aspectos da implantação do Windows Server.
 
 ## <a name="windows-server-release-strategy"></a>Estratégia de lançamento do Windows Server
 
@@ -59,7 +59,7 @@ Os cenários específicos para o canal semestral e o canal de manutenção em lo
 
 ### <a name="server-core-container-image"></a>Imagem de contêiner do Server Core
 
-Um contêiner do Server Core menor com melhor compatibilidade do aplicativo agora está disponível. Informações detalhadas estão disponíveis [aqui](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/).
+Um contêiner do Server Core menor com melhor compatibilidade do aplicativo agora está disponível. Informações detalhadas estão disponíveis [aqui](https://techcommunity.microsoft.com/t5/virtualization/bg-p/Virtualization).
 
 - Funções e recursos opcionais não utilizados foram removidos. Para obter mais informações, veja [Funções, serviços de função e recursos não pertencentes a contêineres do Server Core](../administration/server-core/server-core-container-removed-roles.md).
     - Tamanho de download reduzido para 1,58 GB, com redução de 30% em relação ao Windows Server, versão 1709.
@@ -68,7 +68,7 @@ Um contêiner do Server Core menor com melhor compatibilidade do aplicativo agor
 
 ### <a name="windows-subsystem-for-linux-wsl"></a>WSL (Subsistema do Windows para Linux)
 
-O WSL permite que os administradores do servidor usem as ferramentas e scripts existentes do Linux no Windows Server. Vários aprimoramentos apresentados no [blog de linha de comando](https://blogs.msdn.microsoft.com/commandline/tag/wsl/) agora fazem parte do Windows Server, incluindo tarefas em segundo plano, DriveFS, WSLPath e muito mais.
+O WSL permite que os administradores do servidor usem as ferramentas e scripts existentes do Linux no Windows Server. Vários aprimoramentos apresentados no [blog de linha de comando](https://devblogs.microsoft.com/commandline/tag/wsl/) agora fazem parte do Windows Server, incluindo tarefas em segundo plano, DriveFS, WSLPath e muito mais.
 
 ### <a name="kubernetes"></a>Kubernetes
 
@@ -94,7 +94,7 @@ Com o lançamento do Windows Server, versão 1803, mais recursos estarão dispon
 
 ## <a name="storage"></a>Armazenamento
 
-Com essa versão, é possível impedir que o serviço do Gerenciador de Recursos de Servidor de Arquivos crie um diário de alteração (também conhecido como um diário USN) em todos os volumes quando o serviço é iniciado. Isso pode economizar espaço em cada volume, mas desabilita a classificação de arquivos em tempo real. Para obter mais informações, consulte [Visão geral do Gerenciador de Recursos de Servidor de Arquivos](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview).
+Com essa versão, é possível impedir que o serviço do Gerenciador de Recursos de Servidor de Arquivos crie um diário de alteração (também conhecido como um diário USN) em todos os volumes quando o serviço é iniciado. Isso pode economizar espaço em cada volume, mas desabilita a classificação de arquivos em tempo real. Para obter mais informações, consulte [Visão geral do Gerenciador de Recursos de Servidor de Arquivos](../storage/fsrm/fsrm-overview.md).
 
 ## <a name="features-added-to-server-core"></a>Recursos adicionados ao Server Core
 
@@ -110,5 +110,5 @@ Install-WindowsFeature -Name WDS
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Informações sobre versões do Windows Server](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Novidades no conteúdo para profissionais de TI do Windows 10, versão 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Informações sobre versões do Windows Server](./windows-server-release-info.md)<br>
+[Novidades no conteúdo para profissionais de TI do Windows 10, versão 1803](/windows/whats-new/whats-new-windows-10-version-1803)

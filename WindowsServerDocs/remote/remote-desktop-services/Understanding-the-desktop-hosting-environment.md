@@ -8,12 +8,12 @@ ms.date: 08/01/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8fdebcad1370e06c19752944e85363c714f1fbcd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 29d7417ff82be77efeb02d16093c88c53777d1fa
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854689"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118636"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>Noções básicas sobre o ambiente de hospedagem de área de trabalho
 
@@ -46,20 +46,20 @@ Com Serviços de Área de Trabalho Remota, o locatário deve ter um Active Direc
     
 Informações adicionais:  
 [Documentação do Azure Active Directory Domain Services](https://azure.microsoft.com/documentation/services/active-directory-ds/)  
-[Instalar uma nova floresta do Active Directory em uma rede virtual do Azure](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/)  
-[Criar um uma VNet do gerenciador de recursos com uma conexão VPN Site a Site usando o portal do Azure](https://azure.microsoft.com/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)  
+[Instalar uma nova floresta do Active Directory em uma rede virtual do Azure](../../identity/ad-ds/introduction-to-active-directory-domain-services-ad-ds-virtualization-level-100.md)  
+[Criar um uma VNet do gerenciador de recursos com uma conexão VPN Site a Site usando o portal do Azure](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal)  
   
 ## <a name="azure-sql-database"></a>Banco de Dados do SQL Azure  
 O Banco de Dados SQL do Azure permite que hosters estendam a implantação de Serviços de Área de Trabalho Remota sem a necessidade de implantar e manter um cluster AlwaysOn do SQL Server completo. O Banco de Dados SQL do Azure é usado pelo Agente de Conexão da Área de Trabalho Remota para armazenar informações de implantação, como o mapeamento das conexões dos usuários atuais com os servidores host final. Como outros serviços do Azure, o Azure SQL DB segue um modelo de consumo ideal para a implantação de qualquer tamanho.   
   
 Informações adicionais:  
-[O que é o Banco de Dados SQL?](https://azure.microsoft.com/documentation/articles/sql-database-technical-overview/)  
+[O que é o Banco de Dados SQL?](/azure/azure-sql/database/sql-database-paas-overview)  
   
 ## <a name="azure-active-directory-application-proxy"></a>Proxy de Aplicativo do Azure Active Directory  
 Proxy de Aplicativo do Azure Active Directory é um serviço fornecido em SKUs pagas do Azure Active Directory que permite aos usuários conectarem a aplicativos internos por meio do próprio serviço de proxy reverso do Azure. Isso permite que os pontos de extremidade da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota sejam ocultados dentro da rede virtual, eliminando a necessidade de serem expostos à internet por meio de um endereço IP público. Isso ainda permite que hosters condensem o número de máquinas virtuais no ambiente do locatário, enquanto continuam mantendo uma implantação completa.
   
 Informações adicionais:  
-[Habilitar o Proxy de Aplicativo do Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-enable/)  
+[Habilitar o Proxy de Aplicativo do Azure AD](/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)  
     
 ## <a name="file-server"></a>Servidor de arquivos  
 O servidor de arquivos fornece pastas compartilhadas usando o protocolo SMB (Server Message Block) 3.0. As pastas compartilhadas são usadas para criar e armazenar arquivos de disco de perfil do usuário (.vhdx), fazer backup de dados e disponibilizar aos usuários um lugar para compartilhar dados com outros usuários na rede virtual do locatário.
@@ -69,11 +69,9 @@ A VM usada para implantar o servidor de arquivos deve ter um disco de dados do A
 Para locatários pequenos, o custo pode ser reduzido pela combinação do servidor de arquivos com a máquina virtual executando as funções de Agente de Conexão de Área de Trabalho Remota e de Licenciamento de Área de Trabalho Remota em uma única máquina virtual no ambiente do locatário.  
   
 Informações adicionais  
-[Visão geral dos Serviços de Arquivo e Armazenamento](https://technet.microsoft.com/library/hh831487.aspx)  
-[Como anexar um disco de dados a uma Máquina Virtual](http://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
+[Visão geral dos Serviços de Arquivo e Armazenamento](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831487(v=ws.11))  
+[Como anexar um disco de dados a uma Máquina Virtual](https://www.windowsazure.com/manage/windows/how-to-guides/attach-a-disk/)  
   
 ### <a name="user-profile-disks"></a>Discos de Perfil de Usuário  
 Discos de perfil de usuário permitem que os usuários salvem arquivos e configurações pessoais quando estão conectados a uma sessão em um servidor Host da Sessão da Área de Trabalho Remota em uma coleção e, em seguida, têm acesso aos mesmos arquivos e configurações ao entrar em um servidor Host da Sessão da Área de Trabalho Remota diferente na coleção. Quando o usuário entra pela primeira vez, um disco de perfil de usuário é criado no servidor de arquivos do locatário e esse disco é montado no servidor Host da Sessão da Área de Trabalho Remota ao qual o usuário está conectado. Para cada entrada subsequente, o disco de perfil de usuário é montado no servidor Host da Sessão da Área de Trabalho Remota apropriado e, com cada saída, o disco é desmontado. O conteúdo do disco de perfil somente pode ser acessado por esse usuário.  
   
-
-

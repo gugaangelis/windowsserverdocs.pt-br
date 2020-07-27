@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 3965e453483b3515e4957ecfaba39cf9a0b8104f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b792b6734da2fe643862529c0de41e8763117c83
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827069"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961978"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desenvolvimento de cmdlets do PowerShell para Nano Server
 
@@ -123,7 +123,7 @@ Se você não tiver certeza sobre a implementação usada para os cmdlets existe
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<local de instalação do produto>   
+* \<your product installation location>   
     
   Verifique os seguintes detalhes nesses locais:  
   * Cmdlets do CIM têm extensões de arquivo .cdxml.  
@@ -136,7 +136,7 @@ Em geral, esses cmdlets devem funcionar no Nano Server sem a necessidade de qual
 ### <a name="building-c-for-nano-server"></a>Compilação em C++ para Nano Server  
 Para fazer as DLLs de C++ funcionarem no Nano Server, compile-as para Nano Server em vez de para uma edição específica.  
   
-Para conferir os pré-requisitos e uma explicação passo a passo sobre o desenvolvimento em C++ no Nano Server, confira [Developing Native Apps on Nano Server (Desenvolver aplicativos nativos no Nano Server)](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx).  
+Para conferir os pré-requisitos e uma explicação passo a passo sobre o desenvolvimento em C++ no Nano Server, confira [Developing Native Apps on Nano Server (Desenvolver aplicativos nativos no Nano Server)](/archive/blogs/nanoserver/developing-native-apps-on-nano-server).  
   
   
 ## <a name="porting-net-cmdlets"></a>Portabilidade de cmdlets do .NET  
@@ -176,7 +176,7 @@ Você pode pesquisar no catálogo de APIs por .NET Core ou desmontar assemblies 
 ### <a name="pinvoke"></a>PInvoke  
 No Core CLR usado pelo Nano Server, algumas DLLs fundamentais, como Kernel32.dll e Advapi32.dll, foram divididas em vários conjuntos de API, portanto, você precisará garantir que seu PInvokes faça referência à API correta. Qualquer incompatibilidade será manifestada como um erro de runtime.  
   
-Para obter uma lista de APIs nativas com suporte no Nano Server, confira [APIs do Nano Server](https://msdn.microsoft.com/library/mt588480(v=vs.85).aspx).  
+Para obter uma lista de APIs nativas com suporte no Nano Server, confira [APIs do Nano Server](/previous-versions/windows/desktop/legacy/mt588480(v=vs.85)).  
   
 ### <a name="building-c-for-nano-server"></a>Compilação em C# para Nano Server  
   
@@ -240,7 +240,7 @@ Para depurar remotamente um script, conecte-se ao computador remoto usando `Ente
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>Migrar do .NET de WMI para .NET de MI  
   
-Não há suporte para [.NET de WMI](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx), portanto, todos os cmdlets que usam a API antiga deve migrar para a API de WMI com suporte: [MI. NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx). Você pode acessar o .NET de MI diretamente por meio C# ou os cmdlets no módulo CimCmdlets.   
+Não há suporte para [.NET de WMI](/dotnet/api/?view=netframework-4.7.1), portanto, todos os cmdlets que usam a API antiga deve migrar para a API de WMI com suporte: [MI. NET](/previous-versions//dn387184(v=vs.85)). Você pode acessar o .NET de MI diretamente por meio C# ou os cmdlets no módulo CimCmdlets.   
   
 ### <a name="cimcmdlets-module"></a>Módulo de CimCmdlets  
   
@@ -251,5 +251,3 @@ Os cmdlets do WMI v1 (por exemplo, Get-WmiObject) não têm suporte no Nano Serv
 .NET de WMI encapsula a interface WMIv1, enquanto o .NET de MI encapsula a interface WMIv2 (CIM). As classes expostas podem ser diferentes, mas as operações subjacentes são muito semelhantes. Enumere ou obtenha instâncias de objetos e invoque operações nelas para realizar tarefas.   
   
   
-
-

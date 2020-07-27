@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fea4b259986d1ca6e2f992168f7b0c2e1a177916
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 64756756449b811d2f7fbb109ac93837567413d4
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826099"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86955638"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>Notas sobre a versão: Problemas importantes no Windows Server, versão 1709
 
@@ -31,10 +31,10 @@ Os Espaços de Armazenamento Diretos não estão incluídos no Windows Server, v
 
 Também não há suporte para apresentar os servidores que executam o Windows Server, versão 1709, em uma implantação de Espaços de Armazenamento Diretos do Windows Server 2016.
 
-O modelo de lançamento do Windows Server está oferecendo uma nova opção para se alinhar com versão semelhantes e manutenção de modelos de [Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview) e [Office 365 ProPlus](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US). As versões de Canal Semestral oferecem novas funcionalidades para clientes que desejam mover em um ritmo rápido e terão novos lançamentos disponíveis duas vezes por ano, no primeiro e segundo semestres.
+O modelo de lançamento do Windows Server está oferecendo uma nova opção para se alinhar com versão semelhantes e manutenção de modelos de [Windows 10](/windows/deployment/update/waas-overview) e [Office 365 ProPlus](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US). As versões de Canal Semestral oferecem novas funcionalidades para clientes que desejam mover em um ritmo rápido e terão novos lançamentos disponíveis duas vezes por ano, no primeiro e segundo semestres.
 
 O Canal Semestral do Windows Server se concentra em contêineres e cenários de aplicativo, beneficiando-se da inovação mais rápida. Confira este [blog](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update) para obter informações adicionais. Clientes em busca de funções de infraestrutura, como Espaços de Armazenamento Diretos, devem usar as versões de Canal de Manutenção em Longo Prazo, como o Windows Server 2016 (agora disponível) e o [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (a ser lançado posteriormente neste ano). Estamos empenhados em criar a melhor plataforma para infraestrutura hiperconvergente e continuaremos a desenvolver novos recursos e melhorar os existentes com base em seus comentários. 
 
 Os Espaços de Armazenamento Diretos foram introduzidos no Windows Server 2016 e são a base para nossa plataforma com hiperconvergência. Estamos felizes pela adoção positiva da plataforma com hiperconvergência da Microsoft e estamos comprometidos com nossos clientes.
 
-Escutamos os seus comentários e estamos trabalhando para fornecer o [próximo conjunto de inovações](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) para nossa plataforma com hiperconvergência. Esses recursos estão disponíveis atualmente nos builds para [Participantes do Programa Windows Insider](https://insider.windows.com/for-business/) e gostaríamos muito que você experimente-os e compartilhe comentários. Para clientes que buscam uma solução com hiperconvergência validada, recomendamos o programa [definido pelo software do Windows Server](https://microsoft.com/wssd).
+Escutamos os seus comentários e estamos trabalhando para fornecer o [próximo conjunto de inovações](https://cloudblogs.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/) para nossa plataforma com hiperconvergência. Esses recursos estão disponíveis atualmente nos builds para [Participantes do Programa Windows Insider](https://insider.windows.com/for-business/) e gostaríamos muito que você experimente-os e compartilhe comentários. Para clientes que buscam uma solução com hiperconvergência validada, recomendamos o programa [definido pelo software do Windows Server](https://microsoft.com/wssd).

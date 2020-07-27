@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 00335fb2ca7a54031430c6c606fb6ffa23a8f7a2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 08a315dc362d7de872f47ca702c4401eb327245a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855129"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966178"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de camadas administrativas do Active Directory
 
@@ -133,7 +133,7 @@ Por exemplo, é aceitável para o Active Directory controlar um desktop de usuá
 
 A relação de controle pode ser introduzida de várias maneiras, incluindo ACLs (Listas de controle de acesso) de segurança em objetos como sistemas de arquivos, associação no grupo local de administradores em um computador ou agentes instalados em um computador executando como Sistema (com a habilidade de executar código e scripts aleatórios).
 
-Um exemplo frequentemente negligenciado é a exposição pelo logon, que cria uma relação de controle expondo as credenciais administrativas de um sistema para outro sistema. Esse é o motivo subjacente de os ataques de roubo de credencial, como Passagem de hash, serem tão poderosos. Quando um administrador faz logon em um desktop de usuário padrão com credenciais de Camada 0, eles expõem essas credenciais a esse desktop, colocando-o em controle do AD e criando um escalonamento do caminho do privilégio ao AD. Para saber mais sobre esses ataques, consulte [esta página](https://technet.microsoft.com/security/dn785092).
+Um exemplo frequentemente negligenciado é a exposição pelo logon, que cria uma relação de controle expondo as credenciais administrativas de um sistema para outro sistema. Esse é o motivo subjacente de os ataques de roubo de credencial, como Passagem de hash, serem tão poderosos. Quando um administrador faz logon em um desktop de usuário padrão com credenciais de Camada 0, eles expõem essas credenciais a esse desktop, colocando-o em controle do AD e criando um escalonamento do caminho do privilégio ao AD. Para saber mais sobre esses ataques, consulte [esta página](/previous-versions/dn785092(v=msdn.10)).
 
 Devido a grande quantidade de ativos que dependem de sistemas de identidade como o Active Directory, você deve minimizar o número de sistemas dos quais os Controladores de domínio e o Active Directory dependem.
 
@@ -464,7 +464,7 @@ Embora essa abordagem adicione uma floresta a um ambiente do Active Directory, o
 > [!NOTE]
 > Essa abordagem funciona bem para a administração do Active Directory, mas muitos aplicativos não são compatíveis com a administração por contas de uma floresta externa usando uma relação de confiança padrão.
 
-Esta figura mostra uma floresta ESAE usada para administração de ativos de Camada 0 e uma floresta PRIV configurada para ser usada com o recurso Gerenciamento de Acesso Privilegiado do Microsoft Identity Manager. Para saber mais sobre como implantar uma instância de PAM do MIM, consulte o artigo [Privileged Identity Management para Active Directory Domain Services](https://technet.microsoft.com/library/mt150258.aspx).
+Esta figura mostra uma floresta ESAE usada para administração de ativos de Camada 0 e uma floresta PRIV configurada para ser usada com o recurso Gerenciamento de Acesso Privilegiado do Microsoft Identity Manager. Para saber mais sobre como implantar uma instância de PAM do MIM, consulte o artigo [Privileged Identity Management para Active Directory Domain Services](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services).
 
 ![Figura que mostra uma floresta ESAE usada para administração de ativos de Camada 0 e uma floresta PRIV configurada para ser usada com o recurso Gerenciamento de Acesso Privilegiado do Microsoft Identity Manager](../media/securing-privileged-access-reference-material/PAW_RM_Fig14.JPG)
 
@@ -509,12 +509,12 @@ Um design de floresta administrativa deve incluir as seguintes considerações:
    - Criptografia de volume completo para reduzir a perda física de computadores, como laptops administrativos usados remotamente.
 
       > [!NOTE]
-      > Consulte [BitLocker](https://technet.microsoft.com/library/dn641993.aspx)para saber mais.
+      > Consulte [BitLocker](/previous-versions/windows/it-pro/windows-8.1-and-8/dn641993(v=ws.11))para saber mais.
 
    - Restrições de USB para proteger contra vetores de infecção física.
 
       > [!NOTE]
-      > Consulte [Controlar o acesso de leitura ou gravação para dispositivos ou mídias removíveis](https://technet.microsoft.com/library/cc730808(v=ws.10).aspx) para saber mais.
+      > Consulte [Controlar o acesso de leitura ou gravação para dispositivos ou mídias removíveis](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730808(v=ws.10)) para saber mais.
 
    - Isolamento de rede para proteger contra ataques de rede e ações acidentais do administrador. Os firewalls de host devem bloquear todas as conexões de entrada, exceto aquelas explicitamente necessárias, e bloquear todo o acesso à Internet de saída.
 
@@ -608,7 +608,7 @@ Os símbolos nesta tabela são definidos da seguinte forma:
 - (-) indica quando as credenciais não são expostas.
 - (v) indica quando as credenciais são expostas.
 
-Para os aplicativos de gerenciamento que não estão nessa tabela, você pode determinar o tipo de logon no campo tipo de logon nos eventos de logon de auditoria. Para saber mais, consulte [Eventos de logon de auditoria](https://technet.microsoft.com/library/cc787567(v=ws.10).aspx).
+Para os aplicativos de gerenciamento que não estão nessa tabela, você pode determinar o tipo de logon no campo tipo de logon nos eventos de logon de auditoria. Para saber mais, consulte [Eventos de logon de auditoria](/previous-versions/windows/it-pro/windows-server-2003/cc787567(v=ws.10)).
 
 Em computadores baseados em Windows, todas as autenticações são processadas como um dos vários tipos de logon, independentemente de qual protocolo de autenticação ou autenticador é usado. Essa tabela inclui os tipos mais comuns de logon e seus atributos em relação ao roubo de credenciais:
 
@@ -631,4 +631,4 @@ Definições de coluna:
 - **Exemplos** lista cenários comuns nos quais o tipo de logon é usado.
 
 > [!NOTE]
-> Para saber mais sobre tipos de logon, consulte [Enumeração SECURITY_LOGON_TYPE](https://technet.microsoft.com/library/aa380129(VS.85).aspx).
+> Para saber mais sobre tipos de logon, consulte [Enumeração SECURITY_LOGON_TYPE](/windows/win32/api/ntsecapi/ne-ntsecapi-security_logon_type).

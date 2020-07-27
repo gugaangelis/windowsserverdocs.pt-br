@@ -10,12 +10,12 @@ ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: 5f7a8f08ff10102fbc04b6f8272320bd3b77785d
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80825489"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963048"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Níveis funcionais de floresta e domínio
 
@@ -27,7 +27,7 @@ Ao implantar o AD DS, defina os níveis funcionais de domínio e floresta com o 
 
 Com o fim da vida útil do Windows 2003, os DCs (controladores de domínio) do Windows 2003 precisam ser atualizados para o Windows Server 2008, 2008 R2, 2012, 2012 R2, 2016 ou 2019. Como resultado, qualquer controlador de domínio que execute o Windows Server 2003 deve ser removido do domínio.
 
-Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -45,7 +45,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 ### <a name="windows-server-2016-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2016
 
 * Todos os recursos disponíveis no nível funcional de floresta do Windows Server 2012R2 e os seguintes recursos estão disponíveis:
-   * [PAM (Privileged Access Management) usando o MIM (Microsoft Identity Manager)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+   * [PAM (Privileged Access Management) usando o MIM (Microsoft Identity Manager)](../whats-new-active-directory-domain-services.md#privileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Recursos do nível funcional do domínio do Windows Server 2016
 
@@ -54,7 +54,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
    * Os DCs podem dar suporte à permissão de NTLM de rede quando um usuário é restrito a dispositivos específicos ingressados no domínio.
    * Os clientes Kerberos que se autenticam com êxito com a Extensão PKInit Freshness obterão o novo SID de identidade de chave pública.
 
-    Para obter mais informações, consulte [Novidades na autenticação Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication) e [Novidades na proteção de credenciais](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)
+    Para obter mais informações, consulte [Novidades na autenticação Kerberos](../../security/kerberos/whats-new-in-kerberos-authentication.md) e [Novidades na proteção de credenciais](../../security/credentials-protection-and-management/whats-new-in-credential-protection.md)
 
 ## <a name="windows-server-2012r2"></a>Windows Server 2012R2
 
@@ -97,7 +97,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Recursos do nível funcional do domínio do Windows Server 2012
 
 * Todos os recursos padrão do Active Directory, todos os recursos do nível funcional de domínio do Windows Server 2008R2, além destes:
-   * O suporte ao KDC para declarações, autenticação composta e política de modelo administrativo KDC de proteção Kerberos tem duas configurações (Sempre fornecer declarações e Reprovar solicitações de autenticação desprotegidas) que exigem o nível funcional de domínio do Windows Server 2012. Para obter mais informações, consulte [Novidades na autenticação Kerberos](https://technet.microsoft.com/library/hh831747.aspx)
+   * O suporte ao KDC para declarações, autenticação composta e política de modelo administrativo KDC de proteção Kerberos tem duas configurações (Sempre fornecer declarações e Reprovar solicitações de autenticação desprotegidas) que exigem o nível funcional de domínio do Windows Server 2012. Para obter mais informações, consulte [Novidades na autenticação Kerberos](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 
 ## <a name="windows-server-2008r2"></a>Windows Server 2008R2
 
@@ -146,7 +146,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 
   * Namespaces do DFS baseados em domínio em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Os namespaces baseados em domínio no modo Windows Server 2008 também exigem que a floresta use o nível funcional de floresta do Windows Server 2003. Para obter mais informações, consulte [Escolher um tipo de namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
   * Suporte da criptografia AES (AES 128 e AES 256) para o protocolo Kerberos. Para que os TGTs sejam emitidos usando a AES, o nível funcional do domínio deve ser o Windows Server 2008 ou superior e a senha do domínio precisa ser alterada. 
-    * Para obter mais informações, consulte [Aprimoramentos do Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
+    * Para obter mais informações, consulte [Aprimoramentos do Kerberos](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10)).
 
       > [!NOTE]
       >Os erros de autenticação poderão ocorrer em um controlador de domínio depois que o nível funcional do domínio for elevado para o Windows Server 2008 ou superior se o controlador de domínio já tiver replicado a alteração de DFL, mas ainda não tiver atualizado a senha krbtgt. Nesse caso, uma reinicialização do serviço KDC no controlador de domínio vai disparar uma atualização na memória da nova senha krbtgt e resolver os erros de autenticação relacionados.
@@ -226,5 +226,5 @@ Sistemas operacionais do controlador de domínio compatíveis:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Aumentar o nível funcional do domínio](https://technet.microsoft.com/library/cc753104.aspx)  
-* [Aumentar o nível funcional da floresta](https://technet.microsoft.com/library/cc730985.aspx)
+* [Aumentar o nível funcional do domínio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [Aumentar o nível funcional da floresta](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

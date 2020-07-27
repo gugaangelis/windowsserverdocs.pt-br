@@ -8,19 +8,19 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e31cfa892019e4f3bbcd3b67dbb42751cc58dd
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d56b2d002b0403971dc50fab639f77bddf1f8809
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963032"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959878"
 ---
 # <a name="example-troubleshooting-active-directory-based-activation-adba-clients-that-do-not-activate"></a>Exemplo: Solucionar problemas de clientes ADBA (ativação baseada no Active Directory) que não ativam
 
 > [!NOTE]
 > Este artigo foi publicado originalmente como um blog do TechNet em 26 de março de 2018.
 
-Olá, todo mundo! Meu nome é Mike Kammer e sou Platforms PFE com a Microsoft há mais de dois anos agora. Recentemente ajudei um cliente na implantação do Windows Server 2016 em seu ambiente. Aproveitamos essa oportunidade para migrar também sua metodologia de ativação de um Servidor KMS para a [Ativação baseada no Active Directory](https://docs.microsoft.com/previous-versions/windows/hh852637(v=win.10)).
+Olá, todo mundo! Meu nome é Mike Kammer e sou Platforms PFE com a Microsoft há mais de dois anos agora. Recentemente ajudei um cliente na implantação do Windows Server 2016 em seu ambiente. Aproveitamos essa oportunidade para migrar também sua metodologia de ativação de um Servidor KMS para a [Ativação baseada no Active Directory](/previous-versions/windows/hh852637(v=win.10)).
 
 Como procedimento adequado para fazer todas as alterações, iniciamos nossa migração no ambiente de teste do cliente. Iniciamos nossa implantação seguindo as instruções nesta excelente postagem no blog de Charity Shelbourne, [Ativação baseada no Active Directory vs. Serviço de Gerenciamento de Chaves](https://techcommunity.microsoft.com/t5/Core-Infrastructure-and-Security/Active-Directory-Based-Activation-vs-Key-Management-Services/ba-p/256016). Os controladores de domínio em nosso ambiente de teste estavam executando o Windows Server 2012 R2; por isso, não precisamos preparar nossa floresta. Instalamos a função em um Controlador de Domínio do Windows Server 2012 R2 e escolhemos a ativação baseada no Active Directory como nosso método de ativação de volume. Instalamos nossa chave do KMS e a nomeamos "Ativação do AD do KMS (** LAB)". Nós seguimos a postagem no blog passo a passo.
 
@@ -70,7 +70,7 @@ Ao pesquisar esse código, encontrei um artigo que informava que meu código de 
 
 Então soube que não havia nada de errado com o DNS. O Active Directory estava devidamente configurado como uma fonte de ativação do KMS. Meu servidor físico foi ativado corretamente. Isso poderia ser um problema apenas com VMs? Como uma observação interessante neste ponto, meu cliente informa que alguém em um departamento diferente decidiu criar mais de uma dúzia de máquinas virtuais do Windows Server 2016 também. Agora eu suponho que tenho mais dezenas de servidores com os quais lidar que serão ativados. Mas não! Esses servidores foram ativados sem problemas.
 
-Voltei para meu comando **slmgr** para descobrir como fazer esses monstros serem ativados. Desta vez, vou usar a opção **/ipk**, que me permitirá instalar uma chave do produto (Product Key). Acessei [este site](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11)) para obter as chaves adequadas para minha versão Standard do Windows Server 2016. Alguns dos meus servidores são Datacenter, mas eu precisei corrigir este primeiro.
+Voltei para meu comando **slmgr** para descobrir como fazer esses monstros serem ativados. Desta vez, vou usar a opção **/ipk**, que me permitirá instalar uma chave do produto (Product Key). Acessei [este site](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612867(v=ws.11)) para obter as chaves adequadas para minha versão Standard do Windows Server 2016. Alguns dos meus servidores são Datacenter, mas eu precisei corrigir este primeiro.
 
 ![Imagem que mostra a lista de chaves de instalação do cliente KMS](./media/032618_1700_Troubleshoo9.png)
 

@@ -10,12 +10,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 68de1697c8655075041cd9e598ccd2bbc2e6237b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4002126ee6d9919c0a7fbfb3c068587c9acbecef
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826979"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953678"
 ---
 # <a name="install-nano-server"></a>Instalar o Nano Server
 
@@ -45,18 +45,18 @@ Como o Nano Server é otimizado como um sistema operacional leve para execução
 - O Nano Server é sem periféricos; não há capacidade de logon local nem interface gráfica do usuário.
 - Há suporte apenas para agentes, ferramentas e aplicativos de 64 bits.
 - O Nano Server não pode servir como um controlador de domínio do Active Directory.
-- Não há suporte para a Política de Grupo. No entanto, você pode usar a [Configuração de Estado Desejado](https://msdn.microsoft.com/powershell/dsc/nanoDsc) para aplicar as configurações em escala.
+- Não há suporte para a Política de Grupo. No entanto, você pode usar a [Configuração de Estado Desejado](/previous-versions//dn387184(v=vs.85)) para aplicar as configurações em escala.
 - O Nano Server não pode ser configurado para usar um servidor proxy para acessar a Internet.
 - Não há suporte para o Agrupamento NIC (especificamente, balanceamento de carga e failover ou LBFO). Em vez disso, há suporte para o SET (agrupamento incorporado do comutador).
 - Não há suporte para o Microsoft Endpoint Configuration Manager e o System Center Data Protection Manager.
 - Não há suporte para cmdlets do BPA (Analisador de Práticas Recomendadas) nem para a integração do BPA ao Gerenciador do Servidor.
 - O Nano Server não dá suporte a HBAs (adaptadores de barramento do host) virtuais.
-- O Nano Server não precisa ser ativado com uma chave do produto (Product Key). Ao funcionar como um host do Hyper-V, o Nano Server não é compatível com a AVMA [(ativação automática de máquina virtual)](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx). Máquinas virtuais em execução em um host do Nano Server podem ser ativadas usando o KMS [(Serviço de Gerenciamento de Chaves)](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) com uma chave de licença de volume genérico ou usando a [ativação baseada no Active Directory](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx).
+- O Nano Server não precisa ser ativado com uma chave do produto (Product Key). Ao funcionar como um host do Hyper-V, o Nano Server não é compatível com a AVMA [(ativação automática de máquina virtual)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303421(v=ws.11)). Máquinas virtuais em execução em um host do Nano Server podem ser ativadas usando o KMS [(Serviço de Gerenciamento de Chaves)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj612867(v=ws.11)) com uma chave de licença de volume genérico ou usando a [ativação baseada no Active Directory](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502534(v=ws.11)).
 - A versão do Windows PowerShell fornecida com o Nano Server tem diferenças importantes. Para obter detalhes, consulte [PowerShell on Nano Server](PowerShell-on-Nano-Server.md) (PowerShell on Nano Server).
 - Há suporte para o Nano Server apenas no modelo CBB (Branch Atual para Negócios) – não há versão de LTSB (Branch de Manutenção em Longo Prazo) para o Nano Server neste momento. Consulte a subseção a seguir para obter mais informações.
 
 ### <a name="current-branch-for-business"></a>Branch Atual para Negócios
-O Nano Server é atendido com um modelo mais ativo, chamado CBB (Branch Atual para Negócios) para oferecer suporte a clientes que estão migrando em uma cadência de nuvem, usando rápidos ciclos de desenvolvimento. Nesse modelo, espera-se versões de atualização de recurso do Nano Server de duas a três vezes por ano. Esse modelo requer [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) para Nano Servers implantados e operados em produção. Para manter o suporte, os administradores devem usar não mais de duas versões anteriores do CBB. No entanto, essas versões não atualizam automaticamente implantações existentes; os administradores executam a instalação manual de uma nova versão do CBB conforme a conveniência. Para informações adicionais, consulte [Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nova opção de manutenção da Branch Atual para Negócios do Windows Server 2016).
+O Nano Server é atendido com um modelo mais ativo, chamado CBB (Branch Atual para Negócios) para oferecer suporte a clientes que estão migrando em uma cadência de nuvem, usando rápidos ciclos de desenvolvimento. Nesse modelo, espera-se versões de atualização de recurso do Nano Server de duas a três vezes por ano. Esse modelo requer [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx) para Nano Servers implantados e operados em produção. Para manter o suporte, os administradores devem usar não mais de duas versões anteriores do CBB. No entanto, essas versões não atualizam automaticamente implantações existentes; os administradores executam a instalação manual de uma nova versão do CBB conforme a conveniência. Para informações adicionais, consulte [Windows Server 2016 new Current Branch for Business servicing option](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/) (Nova opção de manutenção da Branch Atual para Negócios do Windows Server 2016).
 
 As opções de instalação Server Core e Servidor com Experiência Desktop ainda são atendidas no [modelo LTSB (Branch de Manutenção de Longo Prazo)](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy), que abrange cinco anos de suporte base e cinco anos de suporte estendido.
 

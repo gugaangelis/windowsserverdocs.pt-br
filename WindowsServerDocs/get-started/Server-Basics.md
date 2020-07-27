@@ -9,19 +9,19 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 094e4ffdee8480886700a4967ef2281008aad965
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc38c21435ba3340f5ffb1aab9d274ec9da1620c
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826539"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964058"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Introdução ao Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
 > [!TIP]
-> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](/search/index?dataSource=previousVersions&search=Windows Server).
 
 ![Ícone mostrando uma caixa com uma marca de seleção](../media/landing-icons/getstarted.png) Esta coleção contém informações detalhadas para ajudá-lo a determinar se você está pronto para mudar para o Windows Server 2016. Após verificar os requisitos do sistema, as opções de atualização e outras informações sobre como mover para o Windows Server 2016, você está pronto para voltar ao à página principal do [Windows Server 2016](Windows-Server-2016.md) e começar a instalar a melhor edição e opção de instalação para suas necessidades. 
 
@@ -52,5 +52,3 @@ O SQL funciona no Windows Server 2016? Quais etapas são necessárias para execu
 
 ## <a name="server-activation-guide"></a>[Guia de ativação de servidor](Server-2016-activation.md)
 Informações básicas sobre a ativação do próprio Windows Server 2016 e de outros sistemas operacionais, usando o Windows Server 2016.
-
-

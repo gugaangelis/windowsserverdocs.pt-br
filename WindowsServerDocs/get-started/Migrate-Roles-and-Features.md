@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c1aa654e4c660b4fe2f3305bfaf78b5191220a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 538ea2d6e0f038a98b64a197bd49ed5719fe15ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "70119196"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959568"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Migrando funções e recursos no Windows Server
 
@@ -40,10 +40,10 @@ Para migrar servidores de arquivos e armazenamento para o Windows Server 2019 ou
 
 Aqui estão os guias de migração para Windows Server 2016. Observe que, em muitos casos, você também pode usar os guias de migração do Windows Server 2012 R2.
 
-- [Serviços de área de trabalho remota](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/migrate-rds-role-services)
+- [Serviços de área de trabalho remota](../remote/remote-desktop-services/migrate-rds-role-services.md)
 - [Servidor Web (IIS)](https://www.iis.net/downloads/microsoft/web-deploy)
-- [Windows Server Update Services](https://technet.microsoft.com/library/hh852339.aspx)
-- [MultiPoint Services](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/multipoint-services/multipoint-services-migrate)
+- [Windows Server Update Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
+- [MultiPoint Services](../remote/multipoint-services/multipoint-services-migrate.md)
 
 Para migrar servidores de arquivos para o Windows Server 2019 ou o Windows Server 2016, é recomendável usar o [Serviço de Migração de Armazenamento](../storage/storage-migration-service/overview.md).
 
@@ -51,17 +51,17 @@ Para migrar servidores de arquivos para o Windows Server 2019 ou o Windows Serve
 
 Siga as etapas nestes guias para migrar as funções e recursos de servidores que executam o Windows Server 2003, o Windows Server 2008, o Windows Server 2008 R2, o Windows Server 2012 ou o Windows Server 2012 R2 para o Windows Server 2012 R2. As Ferramentas de Migração do Windows Server no Windows Server 2012 R2 permitem migrações entre sub-redes.
 
-- [Instalar, usar e remover as Ferramentas de Migração do Windows Server](https://technet.microsoft.com/library/jj134202.aspx)
-- [Guia de Migração de Serviços de Certificados do Active Directory para Windows Server 2012 R2](https://technet.microsoft.com/library/dn486797.aspx)
-- [Migração do Serviço da Função Serviços de Federação do Active Directory para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn486815.aspx)
-- [Guia de atualização e migração do Active Directory Rights Management Services](https://technet.microsoft.com/library/cc754277.aspx)
-- [Migrar os Serviços de Arquivo e Armazenamento para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn479292.aspx)
-- [Migrar o Hyper-V para o Windows Server 2012 R2 no Windows Server 2012](https://technet.microsoft.com/library/dn486799.aspx)
-- [Migrar o Servidor de Políticas de Rede para o Windows Server 2012](https://technet.microsoft.com/library/hh831652)
-- [Migrar os Serviços de Área de Trabalho Remota para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn479239.aspx)
-- [Migrar o Windows Server Update Services para o Windows Server 2012 R2](https://technet.microsoft.com/library/hh852339.aspx)
-- [Migrar Funções de Cluster para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn530779.aspx)
-- [Migrar o Servidor DHCP para o Windows Server 2012 R2](https://technet.microsoft.com/library/dn495425.aspx)
+- [Instalar, usar e remover as Ferramentas de Migração do Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134202(v=ws.11))
+- [Guia de Migração de Serviços de Certificados do Active Directory para Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486797(v=ws.11))
+- [Migração do Serviço da Função Serviços de Federação do Active Directory para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486815(v=ws.11))
+- [Guia de atualização e migração do Active Directory Rights Management Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754277(v=ws.10))
+- [Migrar os Serviços de Arquivo e Armazenamento para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn479292(v=ws.11))
+- [Migrar o Hyper-V para o Windows Server 2012 R2 no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486799(v=ws.11))
+- [Migrar o Servidor de Políticas de Rede para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831652(v=ws.11))
+- [Migrar os Serviços de Área de Trabalho Remota para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn479239(v=ws.11))
+- [Migrar o Windows Server Update Services para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
+- [Migrar Funções de Cluster para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn530779(v=ws.11))
+- [Migrar o Servidor DHCP para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn495425(v=ws.11))
 
 Já estão disponíveis um livro eletrônico do Windows Server 2012 R2 e os guias de migração do Windows Server 2012. Para saber mais e baixar o livro eletrônico, confira a [Galeria de livros eletrônicos para Microsoft Technologies](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#MigrateRoles).
 
@@ -69,40 +69,40 @@ Já estão disponíveis um livro eletrônico do Windows Server 2012 R2 e os guia
 
 Siga as etapas nestes guias para migrar as funções e recursos de servidores que executam o Windows Server 2003, o Windows Server 2008, o Windows Server 2008 R2 ou o Windows Server 2012 para o Windows Server 2012. As Ferramentas de Migração do Windows Server no Windows Server 2012 permitem migrações entre sub-redes.
 
-- [Instalar, usar e remover as Ferramentas de Migração do Windows Server](https://technet.microsoft.com/library/jj134202)
-- [Migrar os Serviços de Função dos Serviços de Federação do Active Directory (AD FS) para o Windows Server 2012](https://technet.microsoft.com/library/jj647765)
-- [Migrar a Autoridade de Registro de Integridade para o Windows Server 2012](https://technet.microsoft.com/library/hh831513)
-- [Migrar o Hyper-V para o Windows Server 2012 no Windows Server 2008 R2](https://technet.microsoft.com/library/jj574113)
-- [Migrar a Configuração IP para o Windows Server 2012](https://technet.microsoft.com/library/jj574133)
-- [Migrar o Servidor de Políticas de Rede para o Windows Server 2012](https://technet.microsoft.com/library/hh831652)
-- [Migrar os Serviços de Impressão e Documentos para o Windows Server 2012](https://technet.microsoft.com/library/jj134150)
-- [Migrar o Acesso Remoto para o Windows Server 2012](https://technet.microsoft.com/library/hh831423)
-- [Migrar o Windows Server Update Services para o Windows Server 2012](https://technet.microsoft.com/library/hh852339)
-- [Atualizar os Controladores de Domínio do Active Directory para o Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx)
-- [Migrar Serviços e Aplicativos Clusterizados para o Windows Server 2012](https://technet.microsoft.com/library/dn486790.aspx)
+- [Instalar, usar e remover as Ferramentas de Migração do Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134202(v=ws.11))
+- [Migrar os Serviços de Função dos Serviços de Federação do Active Directory (AD FS) para o Windows Server 2012](../identity/ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
+- [Migrar a Autoridade de Registro de Integridade para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831513(v=ws.11))
+- [Migrar o Hyper-V para o Windows Server 2012 no Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574113(v=ws.11))
+- [Migrar a Configuração IP para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574133(v=ws.11))
+- [Migrar o Servidor de Políticas de Rede para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831652(v=ws.11))
+- [Migrar os Serviços de Impressão e Documentos para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134150(v=ws.11))
+- [Migrar o Acesso Remoto para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831423(v=ws.11))
+- [Migrar o Windows Server Update Services para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
+- [Atualizar os Controladores de Domínio do Active Directory para o Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md)
+- [Migrar Serviços e Aplicativos Clusterizados para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486790(v=ws.11))
  
 
-Para saber mais sobre outros recursos de migração, visite [Migrar funções e recursos do Windows Server 2012](https://technet.microsoft.com/library/jj134039).
+Para saber mais sobre outros recursos de migração, visite [Migrar funções e recursos do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134039(v=ws.11)).
 
 ## <a name="windows-server-2008-r2"></a>Windows Server 2008 R2
 
 Siga as etapas nestes guias para migrar as funções e recursos de servidores que executam o Windows Server 2003, o Windows Server 2008 ou o Windows Server 2008 R2 para o Windows Server 2008 R2. As Ferramentas de Migração do Windows Server no Windows Server 2008 R2 não permitem migrações entre sub-redes.
 
-- [Instalação, acesso e remoção das Ferramentas de Migração do Windows Server](https://technet.microsoft.com/library/dd379545)
-- [Guia de Migração de Serviços de Certificados do Active Directory](https://technet.microsoft.com/library/ee126170)
-- [Guia de Migração de Servidor do Sistema de Nomes de Domínio (DNS) e de Active Directory Domain Services](https://technet.microsoft.com/library/dd379558)
-- [Guia de Migração do BranchCache](https://technet.microsoft.com/library/dd548365)
-- [Guia de Migração de Servidor DHCP (Dynamic Host Configuration Protocol)](https://technet.microsoft.com/library/dd379535)
-- [Guia de Migração de Serviços de Arquivo](https://technet.microsoft.com/library/dd379487)
-- [Guia de Migração de HRA](https://technet.microsoft.com/library/ee791829)
-- [Guia de Migração do Hyper-V](https://technet.microsoft.com/library/ee849855)
-- [Guia de Migração da Configuração de IP](https://technet.microsoft.com/library/dd379537)
-- [Guia de Migração de Usuários e Grupos Locais](https://technet.microsoft.com/library/dd379531)
-- [Guia de Migração do NPS](https://technet.microsoft.com/library/ee791849)
-- [Guia de Migração de Serviços de Impressão](https://technet.microsoft.com/library/dd379488)
-- [Guia de Migração dos Serviços de Área de Trabalho Remota](https://technet.microsoft.com/library/ff849223)
-- [Guia de Migração de RRAS](https://technet.microsoft.com/library/ee822825)
-- [Informações e Tarefas Comuns de Migração do Windows Server](https://technet.microsoft.com/library/ff400258)
-- [Guia de Migração do Windows Server Update Services 3.0 SP2](https://technet.microsoft.com/library/ee822826)
+- [Instalação, acesso e remoção das Ferramentas de Migração do Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379545(v=ws.10))
+- [Guia de Migração de Serviços de Certificados do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee126170(v=ws.10))
+- [Guia de Migração de Servidor do Sistema de Nomes de Domínio (DNS) e de Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379558(v=ws.10))
+- [Guia de Migração do BranchCache](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548365(v=ws.10))
+- [Guia de Migração de Servidor DHCP (Dynamic Host Configuration Protocol)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379535(v=ws.10))
+- [Guia de Migração de Serviços de Arquivo](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379487(v=ws.10))
+- [Guia de Migração de HRA](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee791829(v=ws.10))
+- [Guia de Migração do Hyper-V](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee849855(v=ws.10))
+- [Guia de Migração da Configuração de IP](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379537(v=ws.10))
+- [Guia de Migração de Usuários e Grupos Locais](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379531(v=ws.10))
+- [Guia de Migração do NPS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee791849(v=ws.10))
+- [Guia de Migração de Serviços de Impressão](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379488(v=ws.10))
+- [Guia de Migração dos Serviços de Área de Trabalho Remota](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff849223(v=ws.10))
+- [Guia de Migração de RRAS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822825(v=ws.10))
+- [Informações e Tarefas Comuns de Migração do Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff400258(v=ws.10))
+- [Guia de Migração do Windows Server Update Services 3.0 SP2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822826(v=ws.10))
  
-Para saber mais sobre outros recursos de migração, visite [Migrar funções e recursos do Windows Server 2008 R2](https://technet.microsoft.com/library/dd365353).
+Para saber mais sobre outros recursos de migração, visite [Migrar funções e recursos do Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd365353(v=ws.10)).

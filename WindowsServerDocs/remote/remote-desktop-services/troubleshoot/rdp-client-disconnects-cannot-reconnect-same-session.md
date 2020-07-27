@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d116c99b7c8b1daffc4ec58bd93414781eea321
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 5cb688474482a3d97ebe07ff0ce0122d65efdd31
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857199"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963188"
 ---
 # <a name="remote-desktop-client-disconnects-and-cant-reconnect-to-the-same-session"></a>O cliente de Área de Trabalho Remota se desconecta e não consegue se reconectar à mesma sessão
 
@@ -35,10 +35,10 @@ Esse problema também pode ser corrigido por meio da redefinição de suas defin
 
 > [!NOTE]  
 >  - Quando as comunicações entre clientes e servidores Host da Sessão RD exigem o nível mais alto de criptografia, use a criptografia em conformidade com FIPS.
->  - As configurações de nível de criptografia que você define na Política de Grupo substituem as configurações definidas usando a ferramenta de Configuração de Serviços de Área de Trabalho Remota. Além disso, se você habilitar a política [Criptografia do sistema: Usar algoritmos em conformidade com FIPS para criptografia, hash e assinatura](https://docs.microsoft.com/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing), essa configuração substituirá a política **Definir o nível de criptografia da conexão do cliente**. A política de criptografia do sistema está na pasta **Configuração do computador\\Configurações do Windows\\Configurações de Segurança\\Políticas Locais\\Opções de Segurança**.
+>  - As configurações de nível de criptografia que você define na Política de Grupo substituem as configurações definidas usando a ferramenta de Configuração de Serviços de Área de Trabalho Remota. Além disso, se você habilitar a política [Criptografia do sistema: Usar algoritmos em conformidade com FIPS para criptografia, hash e assinatura](/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing), essa configuração substituirá a política **Definir o nível de criptografia da conexão do cliente**. A política de criptografia do sistema está na pasta **Configuração do computador\\Configurações do Windows\\Configurações de Segurança\\Políticas Locais\\Opções de Segurança**.
 >  - Quando você alterar o nível de criptografia, o novo nível de criptografia terá efeito da próxima vez que um usuário se conectar. Se você necessitar de vários níveis de criptografia em um servidor, instale vários adaptadores de rede e configure cada adaptador separadamente.
 >  - Para verificar se o certificado tem uma chave privada correspondente, na Configuração de Serviços de Área de Trabalho Remota, clique com o botão direito do mouse na conexão para a qual você deseja exibir o certificado, selecione **Geral** e, em seguida, **Editar**. Depois disso, selecione **Exibir certificado**. Quando você acessar a guia **Geral**, deverá ver a instrução "Você tem uma chave privada que corresponde a este certificado", se houver uma. Você também pode exibir essas informações com o snap-in Certificados.
->  - A criptografia em conformidade com FIPS (a política **Criptografia do sistema: Usar algoritmos em conformidade com FIPS para política de criptografia, hash e assinatura** ou a configuração **Em conformidade com FIPS** na Configuração de Servidor de Área de Trabalho Remota criptografa e descriptografa os dados enviados entre o servidor e o cliente com os algoritmos de criptografia 140-1 padrão FIPS, que usam módulos criptográficos da Microsoft. Para obter mais informações, confira [Validação do FIPS 140](https://docs.microsoft.com/windows/security/threat-protection/fips-140-validation).
+>  - A criptografia em conformidade com FIPS (a política **Criptografia do sistema: Usar algoritmos em conformidade com FIPS para política de criptografia, hash e assinatura** ou a configuração **Em conformidade com FIPS** na Configuração de Servidor de Área de Trabalho Remota criptografa e descriptografa os dados enviados entre o servidor e o cliente com os algoritmos de criptografia 140-1 padrão FIPS, que usam módulos criptográficos da Microsoft. Para obter mais informações, confira [Validação do FIPS 140](/windows/security/threat-protection/fips-140-validation).
 >  - A configuração **Alta** criptografa os dados enviados entre o servidor e o cliente usando criptografia forte de 128 bits.
 >  - A configuração **Compatível com o Cliente** criptografa os dados enviados entre o cliente e servidor com a força de chave máxima compatível com o cliente.
 >  - A configuração **Baixa** criptografa os dados enviados do cliente ao servidor usando criptografia de 56 bits.

@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d90030fe183e5cfcb94866e87793c0419b636433
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475443"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966688"
 ---
 # <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume
 
@@ -247,7 +247,7 @@ O sistema operacional Windows inclui um conjunto de gravadores do VSS responsáv
 
 Para obter mais informações sobre esses gravadores, confira a seguinte página da Web do Microsoft Docs:
 
-- [Gravadores do VSS In-Box](https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
+- [Gravadores do VSS In-Box](/windows/win32/vss/in-box-vss-writers) (https://docs.microsoft.com/windows/win32/vss/in-box-vss-writers)
 
 
 ## <a name="how-shadow-copies-are-used"></a>Como as cópias de sombra são usadas
@@ -375,7 +375,7 @@ Para excluir arquivos específicos de cópias de sombra, use a seguinte chave do
 > <UL>
 > <LI>Ela não pode excluir arquivos de uma cópia de sombra criada em um Windows Server usando o recurso Versões Anteriores.<BR><BR>
 > <LI>Ela não pode excluir arquivos de cópias de sombra para pastas compartilhadas.<BR><BR>
-> <LI>Ela pode excluir arquivos de uma cópia de sombra criada usando o utilitário <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">DiskShadow</a>, mas não pode excluir arquivos de uma cópia de sombra criada usando o utilitário <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a>.<BR><BR>
+> <LI>Ela pode excluir arquivos de uma cópia de sombra criada usando o utilitário <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](../../administration/windows-commands/diskshadow.md)">DiskShadow</a>, mas não pode excluir arquivos de uma cópia de sombra criada usando o utilitário <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](../../administration/windows-commands/vssadmin.md)">Vssadmin</a>.<BR><BR>
 > <LI>Os arquivos são excluídos de uma cópia de sombra com base no melhor esforço. Isso significa que não há garantia de exclusão.<BR><BR></LI></UL>
 
 
@@ -622,4 +622,4 @@ A tabela a seguir lista as versões mínimas do sistema operacional compatíveis
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Serviço de Cópias de Sombra de Volume no Centro de Desenvolvedores do Windows](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)
+[Serviço de Cópias de Sombra de Volume no Centro de Desenvolvedores do Windows](/windows/desktop/vss/volume-shadow-copy-service-overview)

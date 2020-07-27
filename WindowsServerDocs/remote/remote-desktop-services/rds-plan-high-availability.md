@@ -9,12 +9,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 86c5f59fcd403e838a316174840b93608d7f06ec
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 36996d7f69c33198587dbe5297650c16ffeb1da2
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858139"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959318"
 ---
 # <a name="remote-desktop-services---high-availability"></a>Serviços de Área de Trabalho Remota – Alta disponibilidade
 
@@ -23,10 +23,10 @@ ms.locfileid: "80858139"
 Falhas e limitação são inevitáveis em sistemas de grande porte. É simples configurar funções de infraestrutura de Área de Trabalho Remota para dar suporte à alta disponibilidade e permitir que os usuários finais se conectem toda vez com perfeição.
 
 Nos Serviços de Área de Trabalho Remota, os itens a seguir representam as funções de infraestrutura de área de trabalho remota, com suas respectivas diretrizes para estabelecer a alta disponibilidade:
-- [Agente de Conexão de Área de Trabalho Remota](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)
-- [Gateway de Área de Trabalho Remota](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [Agente de Conexão de Área de Trabalho Remota](./rds-connection-broker-cluster.md)
+- [Gateway de Área de Trabalho Remota](./rds-rdweb-gateway-ha.md)
 - Licenciamento de Área de Trabalho Remota
-- [Acesso via Web à Área de Trabalho Remota](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
+- [Acesso via Web à Área de Trabalho Remota](./rds-rdweb-gateway-ha.md)
 
 A alta disponibilidade é estabelecida duplicando cada um dos serviços de funções em máquinas secundárias. No Azure, você pode receber um tempo de atividade garantido colocando o conjunto de duas máquinas virtuais (hospedando a mesma função) em conjuntos de disponibilidade.
 

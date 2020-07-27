@@ -9,21 +9,21 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f8bbe4dcf9161686367f7807d522b79bcf99e32
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4b8a674d61379c0a645cc379ab9f9eafa3cc19b1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826399"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86960688"
 ---
 # <a name="updating-nano-server"></a>Como atualizar o Nano Server
 
 > [!IMPORTANT]
 > Começando com o Windows Server, versão 1709, o Nano Server estará disponível somente como uma [imagem de sistema operacional base do contêiner](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Confira [Mudanças no Nano Server](nano-in-semi-annual-channel.md) para saber o que isso significa. 
 
-O Nano Server oferece uma variedade de métodos para se manter atualizado. Em comparação com outras opções de instalação do Windows Server, o Nano Server segue um modelo de manutenção mais ativo semelhante ao do Windows 10. Essas versões periódicas são conhecidas como **CBB (Branch Atual para Negócios)** . Essa abordagem dá suporte aos clientes que desejam fazer inovações mais rapidamente e evoluir a uma cadência de nuvem de ciclos de vida de desenvolvimento rápido. Mais informações sobre o CBB estão disponíveis no [Blog do Windows Server](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/).
+O Nano Server oferece uma variedade de métodos para se manter atualizado. Em comparação com outras opções de instalação do Windows Server, o Nano Server segue um modelo de manutenção mais ativo semelhante ao do Windows 10. Essas versões periódicas são conhecidas como **CBB (Branch Atual para Negócios)** . Essa abordagem dá suporte aos clientes que desejam fazer inovações mais rapidamente e evoluir a uma cadência de nuvem de ciclos de vida de desenvolvimento rápido. Mais informações sobre o CBB estão disponíveis no [Blog do Windows Server](https://cloudblogs.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/).
 
-**Entre essas versões do CBB**, o Nano Server permanece atualizado com uma série de *atualizações cumulativas*. Por exemplo, a primeira atualização cumulativa para o Nano Server foi lançada em 26 de setembro de 2016 com [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120). Com essa e as atualizações cumulativas seguintes, fornecemos várias opções para instalar essas atualizações no Nano Server. Neste artigo, usaremos a atualização KB3192366 como exemplo para ilustrar como obter e aplicar atualizações cumulativas ao Nano Server. Para obter mais informações sobre o modelo de atualização cumulativa, confira o [blog do Microsoft Update](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/).
+**Entre essas versões do CBB**, o Nano Server permanece atualizado com uma série de *atualizações cumulativas*. Por exemplo, a primeira atualização cumulativa para o Nano Server foi lançada em 26 de setembro de 2016 com [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120). Com essa e as atualizações cumulativas seguintes, fornecemos várias opções para instalar essas atualizações no Nano Server. Neste artigo, usaremos a atualização KB3192366 como exemplo para ilustrar como obter e aplicar atualizações cumulativas ao Nano Server. Para obter mais informações sobre o modelo de atualização cumulativa, confira o [blog do Microsoft Update](/archive/blogs/mu/patching-with-windows-server-2016).
 
 > [!NOTE]
 > Se você instalar um pacote opcional do Nano Server por meio de uma mídia ou um repositório online, ele não terá as correções de segurança recentes incluídas. Para evitar uma incompatibilidade de versão entre os pacotes opcionais e o sistema operacional básico, você deve instalar a atualização cumulativa mais recente imediatamente após a instalação de todos os pacotes opcionais e **antes** de reiniciar o servidor.
@@ -154,10 +154,10 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    
 ## <a name="additional-options"></a>Opções adicionais
 Outros métodos para atualizar o Nano Server podem sobrepor ou complementar as opções acima. Essas opções incluem o uso do WSUS (Windows Server Update Services), do System Center VMM (Virtual Machine Manager), do Agendador de Tarefas ou de uma solução não Microsoft.
-- [Configurar o Windows Update para o WSUS](https://msdn.microsoft.com/library/dd939844(v=ws.10).aspx) definindo as chaves do Registro a seguir:
+- [Configurar o Windows Update para o WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939844(v=ws.10)) definindo as chaves do Registro a seguir:
   - WUServer
   - WUStatusServer (geralmente usa o mesmo valor de WUServer)
   - UseWUServer
   - AUOptions
-- [Gerenciando atualizações de malha no VMM](https://technet.microsoft.com/library/gg675084(v=sc.12).aspx)
-- [Registrando uma tarefa agendada](https://technet.microsoft.com/library/jj649811.aspx)
+- [Gerenciando atualizações de malha no VMM](/previous-versions/system-center/system-center-2012-R2/gg675084(v=sc.12))
+- [Registrando uma tarefa agendada](/previous-versions/system-center/system-center-2012-R2/gg675084(v=sc.12))

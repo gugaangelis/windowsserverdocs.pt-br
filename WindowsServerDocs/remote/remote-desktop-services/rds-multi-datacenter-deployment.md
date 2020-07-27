@@ -9,12 +9,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 5c0f5d6937a79f36df264597400fe71af3f3779b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 18ed49472a00790a1c713016c4da9a056066a88a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855589"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953708"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Criar uma implantação do RDS em vários data centers com redundância geográfica para recuperação de desastres
 
@@ -52,7 +52,7 @@ Crie os seguintes recursos no Azure para criar uma implantação do RDS de vári
 2. Uma implantação altamente disponível do Active Directory no GR A. Use o [Novo domínio do AD com dois modelos de controladores de domínio](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/) para criar a implantação.
 3. Uma implantação do RDS altamente disponível no GR A. Use o modelo de [implantação de farm do RDS usando o Active Directory existente](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) para criar a implantação do RDS básica e, em seguida, siga as informações em [Serviços de Área de Trabalho Remota: alta disponibilidade](rds-plan-high-availability.md) para configurar os outros componentes do RDS para alta disponibilidade.
 4. Uma rede virtual no GR B, certifique-se de usar um espaço de endereço que não se sobreponha à implantação no GR A.
-5. Uma [conexão de rede virtual para rede virtual](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps) entre os dois grupos de recursos.
+5. Uma [conexão de rede virtual para rede virtual](/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps) entre os dois grupos de recursos.
 6. Duas máquinas virtuais do AD em um conjunto de disponibilidade no GR B, verifique se os nomes das VMs são diferentes das VMs do AD no GR A. Implante duas VMs com Windows Server 2016 em um único conjunto de disponibilidade, instale a função Active Directory Domain Services e, em seguida, promova-os para o controlador de domínio no domínio que você criou na etapa 1.
 7. Uma segunda implantação do RDS altamente disponível no GR B. 
    1. Use o modelo de [implantação de farm do RDS usando o Active Directory existente](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) novamente, mas desta vez faça as seguintes alterações. (Para personalizar o modelo, selecione-o na galeria, clique em **Implantar no Azure** e, em seguida **Editar modelo**.)
@@ -81,7 +81,7 @@ Quer saber mais sobre como gerenciar a replicação? Confira [Replicação de ar
 
 Para habilitar os UPDs em ambas as implantações, faça o seguinte:
 
-1. Execute o [cmdlet Set-RDSessionCollectionConfiguration](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) para habilitar os discos de perfil do usuário na implantação primária (ativa), forneça um caminho para o compartilhamento de arquivos no volume de origem (criado na etapa 7 das etapas de implantação).
+1. Execute o [cmdlet Set-RDSessionCollectionConfiguration](/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) para habilitar os discos de perfil do usuário na implantação primária (ativa), forneça um caminho para o compartilhamento de arquivos no volume de origem (criado na etapa 7 das etapas de implantação).
 2. Inverta a direção da Réplica de Armazenamento para que o volume de destino se torne o volume de origem (isso monta o volume e o torna acessível pela implantação secundária). Para tanto, execute o cmdlet **Set-SRPartnership**. Por exemplo:
 
    ```powershell
@@ -160,4 +160,4 @@ Embora uma implantação local não possa usar os Modelos de Início Rápido do 
 
 Você pode usar o Gerenciador de Tráfego do Azure com pontos de extremidade locais, mas isso requer uma assinatura do Azure. Como alternativa, ao DNS fornecido aos usuários finais, forneça a eles um registro CNAME que simplesmente direciona os usuários para a implantação primária. No caso de failover, modifique o registro DNS CNAME para redirecionar para a implantação secundária. Dessa forma, o usuário final usa uma única URL, assim como no Gerenciador de Tráfego do Azure, que direciona o usuário para a implantação apropriada. 
 
-Se você estiver interessado na criação de um modelo local-para site do Azure, considere o uso do [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview).
+Se você estiver interessado na criação de um modelo local-para site do Azure, considere o uso do [Azure Site Recovery](/azure/site-recovery/site-recovery-overview).

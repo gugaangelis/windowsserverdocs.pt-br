@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d2a1627a0a941f12da4731291a032e4b2e1ad887
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74945203"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962018"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Recursos removidos ou preteridos no Windows Server 2016
 
@@ -31,7 +31,7 @@ Veja a seguir uma lista de recursos e funcionalidades do Windows Server 2016 que
 Os recursos e funcionalidades a seguir foram retirados desta versão do Windows Server 2016. Aplicativos, códigos ou o uso que dependem desses recursos não funcionarão nesta versão a menos que você implante um método alternativo.  
 
 > [!NOTE]  
-> Se você estiver migrando para o Windows Server 2016 de uma versão de servidor anterior ao Windows Server 2012 R2 ou Windows Server 2012, leia também os tópicos [Recursos removidos ou preteridos no Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx) e [Recursos removidos ou preteridos no Windows Server 2012](https://technet.microsoft.com/library/hh831568.aspx).  
+> Se você estiver migrando para o Windows Server 2016 de uma versão de servidor anterior ao Windows Server 2012 R2 ou Windows Server 2012, leia também os tópicos [Recursos removidos ou preteridos no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)) e [Recursos removidos ou preteridos no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11)).  
 
 ### <a name="share-and-storage-management"></a>Gerenciamento de Compartilhamento e Armazenamento
 
@@ -49,7 +49,7 @@ Journal.dll foi removido do Windows Server 2016. Não há nenhum substituto.
 
 ### <a name="security-configuration-wizard"></a>Assistente de Configuração de Segurança
 
-O Assistente de Configuração de Segurança foi removido. Em vez disso, os recursos são protegidos por padrão. Se você precisar controlar configurações específicas de segurança, pode usar a Política de Grupo ou o [Microsoft Security Compliance Manager](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
+O Assistente de Configuração de Segurança foi removido. Em vez disso, os recursos são protegidos por padrão. Se você precisar controlar configurações específicas de segurança, pode usar a Política de Grupo ou o [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc936627(v=technet.10)).  
 
 ### <a name="sqm"></a>SQM
 
@@ -79,7 +79,7 @@ Os seguintes recursos e funcionalidades foram preteridos a partir desta versão.
 
 -   **Scregedit.exe** foi preterido. Se você tiver scripts que dependem de Scregedit.exe, ajuste-os para usar os métodos Reg.exe ou Windows PowerShell.  
 
--   **Sconfig.exe** foi preterido. Em vez disso, use [Sconfig.cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016). 
+-   **Sconfig.exe** foi preterido. Em vez disso, use [Sconfig.cmd](./sconfig-on-ws2016.md). 
 
 ### <a name="netcfg-custom-apis"></a>APIs personalizadas de NetCfg
 

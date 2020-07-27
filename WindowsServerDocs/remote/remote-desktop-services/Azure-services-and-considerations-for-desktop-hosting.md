@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 0f402ae3-5391-4c7d-afea-2c5c9044de46
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: f73f28500c136ec8bdd32084cc5949f5e9804699
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 434d4910e8718747c07fc7378eb37d9ff4e85710
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80818519"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966698"
 ---
 # <a name="azure-services-and-considerations-for-desktop-hosting"></a>Serviços do Azure e considerações para a hospedagem de área de trabalho
 
@@ -32,7 +32,7 @@ Para obter mais informações, visite o site da Web [Microsoft Azure](https://ww
 
 Os componentes do locatário são executados em máquinas virtuais que se comunicam entre si em uma rede isolada. Durante o processo de implantação, é possível acessar externamente essas máquinas virtuais por meio do Azure Load Balancer usando pontos de extremidade do protocolo RDP ou um ponto de extremidade do PowerShell Remoto. Quando uma implantação for concluída, esses pontos de extremidade normalmente serão excluídos para reduzir a área da superfície de ataque. Os únicos pontos de extremidade serão os pontos de extremidade HTTPS e UDP criados para a máquina virtual executando os componentes da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota. Isso permite que os clientes na Internet conectem às sessões em execução no serviço de hospedagem de área de trabalho do locatário. Se um usuário abre um aplicativo que conecta à Internet, como um navegador da Web, as conexões serão passadas pelo Azure Load Balancer.  
   
-Para obter mais informações, consulte [O que é o Azure Load Balancer?](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-load-balance/)
+Para obter mais informações, consulte [O que é o Azure Load Balancer?](/azure/load-balancer/load-balancer-overview)
   
 ## <a name="security-considerations"></a>Considerações de segurança
 
@@ -45,9 +45,9 @@ Este Guia de Arquitetura de Referência de Hospedagem de Área de Trabalho do Az
   
 Para obter mais informações, confira os seguintes artigos:
 
-- [Segurança e proteção](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831778(v=ws.11))  
-- [Práticas recomendadas de segurança para IIS 8](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635855(v=ws.11))  
-- [Proteger o Windows Server 2012 R2](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831360(v=ws.11))  
+- [Segurança e proteção](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831778(v=ws.11))  
+- [Práticas recomendadas de segurança para IIS 8](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj635855(v=ws.11))  
+- [Proteger o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831360(v=ws.11))  
   
 ## <a name="design-considerations"></a>Consideração sobre design
 
@@ -61,13 +61,13 @@ Para obter mais informações, confira os seguintes artigos:
   
 Para obter mais informações, confira os seguintes artigos:
 
-- [Tamanhos para Serviços de Nuvem](https://docs.microsoft.com/azure/cloud-services/cloud-services-sizes-specs)  
+- [Tamanhos para Serviços de Nuvem](/azure/cloud-services/cloud-services-sizes-specs)  
 - [Detalhes de preços de máquinas de virtuais do Microsoft Azure](https://azure.microsoft.com/pricing/details/virtual-machines/)  
-- [Visão geral do Hyper-V](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))  
-- [Metas de desempenho e escalabilidade do Armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets)  
+- [Visão geral do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831531(v=ws.11))  
+- [Metas de desempenho e escalabilidade do Armazenamento do Azure](/azure/storage/common/storage-scalability-targets)  
 
 ## <a name="azure-active-directory-application-proxy"></a>Proxy de Aplicativo do Azure Active Directory
 
 O Proxy de Aplicativo do Azure AD (Active Directory) é um serviço fornecido em SKUs pagas do Azure AD que permite aos usuários conectarem a aplicativos internos por meio do serviço de proxy reverso do próprio Azure. Isso permite que os pontos de extremidade da Web da Área de Trabalho Remota e do Gateway de Área de Trabalho Remota sejam ocultados dentro da rede virtual, eliminando a necessidade de serem expostos à internet por meio de um endereço IP público. Os hosters podem usar o Proxy de Aplicativo do Azure AD para condensar o número de máquinas virtuais no ambiente do locatário, enquanto continuam mantendo uma implantação completa. O Proxy de Aplicativo do Azure AD também oferece muitos dos benefícios que o AD do Azure fornece, como acesso condicional e autenticação multifator.
 
-Para obter mais informações, consulte [Introdução ao Proxy de Aplicativo e instalação do conector](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-enable).
+Para obter mais informações, consulte [Introdução ao Proxy de Aplicativo e instalação do conector](/azure/active-directory/manage-apps/application-proxy-enable).

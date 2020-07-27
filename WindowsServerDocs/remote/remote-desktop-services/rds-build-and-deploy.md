@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: ce8c6e2089c3130d078513287b661a42e5754690
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857599"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961208"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>Crie e implante sua implantação de Serviços de Área de Trabalho Remota
 
@@ -27,7 +27,7 @@ Confira [Arquitetura de Serviços de Área de Trabalho Remota](desktop-hosting-l
 Você tem uma implantação de Área de Trabalho Remota existente criada em uma versão anterior do Windows Server? Confira as opções para migrar para o Windows Server 2016, em que você pode tirar proveito de funcionalidades novas e melhores para desempenho e escala:
 
 - [Migrar sua implantação do RDS para o Windows Server 2016](migrate-rds-role-services.md)
-- [Atualizar sua implantação do RDS para o Windows Server 2016](upgrade-to-rds-2016.md)
+- [Atualizar sua implantação do RDS para o Windows Server 2016](./upgrade-to-rds.md)
 
 Deseja criar uma nova implantação de Área de Trabalho Remota? Use as informações a seguir para implantar a Área de Trabalho Remota no Windows Server 2016:
 

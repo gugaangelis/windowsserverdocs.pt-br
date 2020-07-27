@@ -8,12 +8,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 09206b90dc8b829aaa70d0cca34bd05a9e0eb693
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: cdd597e77d35b154385cf9de35f3d51a3d9c4e8b
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71963042"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961330"
 ---
 # <a name="troubleshooting-windows-volume-activation"></a>Solução de problemas de ativação de volume do Windows
 
@@ -29,30 +29,30 @@ Os artigos a seguir fornecem informações técnicas e melhores práticas para a
 
 ### <a name="key-management-service-kms"></a>KMS (Serviço de Gerenciamento de Chaves)
 
-- [Planejamento da ativação de volume](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)
-- [Noções básicas sobre o KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793434(v=technet.10))
-- [Implantação da ativação do KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793409%28v=technet.10%29)
-- [Configuração de hosts KMS](https://docs.microsoft.com/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
-- [Configuração do DNS](https://docs.microsoft.com/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)
-- [Ativar usando o Serviço de Gerenciamento de Chaves](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
+- [Planejamento da ativação de volume](/windows/deployment/volume-activation/plan-for-volume-activation-client)
+- [Noções básicas sobre o KMS](/previous-versions/tn-archive/ff793434(v=technet.10))
+- [Implantação da ativação do KMS](/previous-versions/tn-archive/ff793409%28v=technet.10%29)
+- [Configuração de hosts KMS](/previous-versions/tn-archive/ff793407%28v%3dtechnet.10%29)
+- [Configuração do DNS](/previous-versions/tn-archive/ff793405%28v%3dtechnet.10%29)
+- [Ativar usando o Serviço de Gerenciamento de Chaves](/windows/deployment/volume-activation/activate-using-key-management-service-vamt)
 
 ### <a name="active-directory-based-activation-adba"></a>ADBA (ativação baseada no Active Directory)
 
-- [Implantar ativação baseada no Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3Dws.11%29)
-- [Ativar usando a ativação baseada no Active Directory](https://docs.microsoft.com/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
-- [Visão geral da ativação baseada no Active Directory](https://docs.microsoft.com/windows/deployment/volume-activation/active-directory-based-activation-overview)
+- [Implantar ativação baseada no Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn502534%28v%3dws.11%29)
+- [Ativar usando a ativação baseada no Active Directory](/windows/deployment/volume-activation/activate-using-active-directory-based-activation-client)
+- [Visão geral da ativação baseada no Active Directory](/windows/deployment/volume-activation/active-directory-based-activation-overview)
 
 ### <a name="multiple-activation-key-mak-activation"></a>Ativação da MAK (chave de ativação múltipla)
 
-- [Uso da ativação da MAK](https://docs.microsoft.com/previous-versions/tn-archive/ff793438%28v=technet.10%29)
-- [Noções básicas sobre a ativação da MAK](https://docs.microsoft.com/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)
-- [Ativação de clientes MAK](https://docs.microsoft.com/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)
+- [Uso da ativação da MAK](/previous-versions/tn-archive/ff793438%28v=technet.10%29)
+- [Noções básicas sobre a ativação da MAK](/previous-versions/tn-archive/ff793435%28v%3dtechnet.10%29)
+- [Ativação de clientes MAK](/previous-versions/tn-archive/ff793398%28v%3dtechnet.10%29)
 
 ### <a name="subscription-activation"></a>Ativação de assinatura
 
-- [Ativação de assinatura do Windows 10](https://docs.microsoft.com/windows/deployment/windows-10-subscription-activation)
-- [Implantar licenças do Windows 10 Enterprise](https://docs.microsoft.com/windows/deployment/deploy-enterprise-licenses)
-- [Windows 10 Enterprise E3 em CSP](https://docs.microsoft.com/windows/deployment/windows-10-enterprise-e3-overview)
+- [Ativação de assinatura do Windows 10](/windows/deployment/windows-10-subscription-activation)
+- [Implantar licenças do Windows 10 Enterprise](/windows/deployment/deploy-enterprise-licenses)
+- [Windows 10 Enterprise E3 em CSP](/windows/deployment/windows-10-enterprise-e3-overview)
 
 ## <a name="resources-for-troubleshooting-activation-issues"></a>Recursos para solução de problemas de ativação
 

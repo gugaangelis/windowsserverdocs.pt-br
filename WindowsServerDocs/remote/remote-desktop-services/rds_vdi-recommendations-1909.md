@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 44aa465773674625fa392a644ffb188140138bde
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77519591"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963368"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
 
@@ -101,23 +101,23 @@ Dependendo da arquitetura da VM de VDI, itens como PreFetch e SuperFetch não v�
 
 ### <a name="to-sysprep-or-not-sysprep"></a>Para sysprep ou não sysprep
 
-O Windows 10 tem uma funcionalidade interna chamada [Ferramenta de Preparação do Sistema](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (geralmente abreviada para "Sysprep"). A ferramenta Sysprep é usada para preparar uma imagem personalizada do Windows 10 para duplicação. O processo Sysprep garante que o sistema operacional resultante seja adequadamente exclusivo para ser executado no ambiente de produção.
+O Windows 10 tem uma funcionalidade interna chamada [Ferramenta de Preparação do Sistema](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview) (geralmente abreviada para "Sysprep"). A ferramenta Sysprep é usada para preparar uma imagem personalizada do Windows 10 para duplicação. O processo Sysprep garante que o sistema operacional resultante seja adequadamente exclusivo para ser executado no ambiente de produção.
 
 Há argumentos a favor e contra a execução de Sysprep. No caso da VDI, talvez seja conveniente a capacidade de personalizar o perfil do usuário padrão que será usado como o modelo de perfil para usuários subsequentes que fazem logon usando essa imagem. Você pode ter os aplicativos que deseja instalados, mas também pode controlar as configurações por aplicativo.
 
-A alternativa é usar um ISO padrão a partir do qual instalar, possivelmente usando um arquivo de resposta de instalação autônoma, bem como uma sequência de tarefas para instalar ou remover aplicativos. Use também uma sequência de tarefas para definir as configurações da política local na imagem, talvez usando a ferramenta [LGPO (Utilitário de Objeto de Política de Grupo Local)](https://docs.microsoft.com/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0).
+A alternativa é usar um ISO padrão a partir do qual instalar, possivelmente usando um arquivo de resposta de instalação autônoma, bem como uma sequência de tarefas para instalar ou remover aplicativos. Use também uma sequência de tarefas para definir as configurações da política local na imagem, talvez usando a ferramenta [LGPO (Utilitário de Objeto de Política de Grupo Local)](/archive/blogs/secguide/lgpo-exe-local-group-policy-object-utility-v1-0).
 
 ### <a name="supportability"></a>Capacidade de suporte
 
 Sempre que os padrões do Windows são alterados, surgem perguntas em relação à capacidade de suporte. Depois que uma imagem da VDI (VM ou sessão) é personalizada, todas as alterações feitas na imagem precisam ser controladas em um log de alterações. Na solução de problemas, com frequência, uma imagem pode ser isolada em um pool e configurada para análise de problemas. Depois que um problema é acompanhado até a causa raiz, essa alteração pode então ser distribuída para o ambiente de teste primeiro e, finalmente, para a carga de trabalho de produção.
 
-Este documento evita intencionalmente abordar serviços, políticas ou tarefas do sistema que afetam a segurança. Depois disso, vem o Serviço do Windows. A capacidade de atender imagens da VDI fora das janelas de manutenção é removida, pois as janelas de manutenção existem quando a maioria dos eventos de serviço ocorre em ambientes VDI, *com exceção das atualizações de software de segurança*. A Microsoft publicou diretrizes para a Segurança do Windows em ambientes VDI. Para obter mais informações, confira [Guia de implantação do Windows Defender Antivírus em um ambiente VDI (Virtual Desktop Infrastructure)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus).
+Este documento evita intencionalmente abordar serviços, políticas ou tarefas do sistema que afetam a segurança. Depois disso, vem o Serviço do Windows. A capacidade de atender imagens da VDI fora das janelas de manutenção é removida, pois as janelas de manutenção existem quando a maioria dos eventos de serviço ocorre em ambientes VDI, *com exceção das atualizações de software de segurança*. A Microsoft publicou diretrizes para a Segurança do Windows em ambientes VDI. Para obter mais informações, confira [Guia de implantação do Windows Defender Antivírus em um ambiente VDI (Virtual Desktop Infrastructure)](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus).
 
 Considere a capacidade de suporte ao alterar as configurações padrão do Windows. Problemas difíceis podem surgir ao alterar serviços, políticas ou tarefas agendadas do sistema, em nome de proteção, “torná-lo mais leve” etc. Consulte a Base de Dados de Conhecimento Microsoft para obter os atuais problemas conhecidos sobre as configurações padrão alteradas. As diretrizes deste documento e o script associado no GitHub serão mantidos com relação a problemas conhecidos, se surgirem. Além disso, você poderá relatar problemas de várias maneiras à Microsoft.
 
 Use seu mecanismo de pesquisa favorito com os termos “"valor inicial" site:support.microsoft.com” para mostrar os problemas conhecidos relacionados aos valores iniciais padrão dos serviços.
 
-Você poderá observar que este documento e os scripts associados no GitHub não modificam nenhuma permissão padrão. Se estiver interessado em aumentar as configurações de segurança, comece com o projeto conhecido como **AaronLocker**. Para obter mais informações, confira [COMUNICADO: incluir aplicativos na lista de permissões com o “AaronLocker”](https://docs.microsoft.com/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker).
+Você poderá observar que este documento e os scripts associados no GitHub não modificam nenhuma permissão padrão. Se estiver interessado em aumentar as configurações de segurança, comece com o projeto conhecido como **AaronLocker**. Para obter mais informações, confira [COMUNICADO: incluir aplicativos na lista de permissões com o “AaronLocker”](/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker).
 
 #### <a name="vdi-optimization-categories"></a>Categorias de otimização da VDI
 
@@ -176,13 +176,13 @@ Execute o seguinte comando para enumerar os aplicativos UWP provisionados em um 
 
 Os aplicativos UWP que são provisionados para um sistema podem ser removidos durante a instalação do sistema operacional como parte de uma sequência de tarefas, ou posteriormente, depois que o sistema operacional estiver instalado. Esse pode ser o método preferido, pois torna modular todo o processo geral de criar ou manter uma imagem. Depois que você desenvolver os scripts, se algo mudar em um build seguinte, você editará um script existente em vez de repetir o processo do zero. Veja a seguir alguns links para informações sobre este tópico:
 
-[Removendo aplicativos nativos do Windows 10 durante uma sequência de tarefas](https://blogs.technet.microsoft.com/mniehaus/2015/11/11/removing-windows-10-in-box-apps-during-a-task-sequence/)
+[Removendo aplicativos nativos do Windows 10 durante uma sequência de tarefas](/archive/blogs/mniehaus/removing-windows-10-in-box-apps-during-a-task-sequence)
 
 [Removendo aplicativos internos do arquivo WIM do Windows 10 com o Powershell – versão 1.3](https://gallery.technet.microsoft.com/Removing-Built-in-apps-65dc387b)
 
-[Windows 10 1607: impedindo aplicativos de retornarem durante a implantação da atualização de recursos](https://blogs.technet.microsoft.com/mniehaus/2016/08/23/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update/)
+[Windows 10 1607: impedindo aplicativos de retornarem durante a implantação da atualização de recursos](/archive/blogs/mniehaus/windows-10-1607-keeping-apps-from-coming-back-when-deploying-the-feature-update)
 
-Execute o comando do PowerShell [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) para remover o conteúdo do aplicativo UWP:
+Execute o comando do PowerShell [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) para remover o conteúdo do aplicativo UWP:
 
 ```powershell
 Remove-AppxProvisionedPackage -Online -PackageName
@@ -253,7 +253,7 @@ Caso deseje remover o pacote do Windows Media Player (para liberar cerca de 60 M
 
 #### <a name="enable-or-disable-windows-features-using-dism"></a>Habilitar ou desabilitar recursos do Windows usando o DISM
 
-Use a ferramenta Dism.exe para enumerar e controlar os recursos opcionais do Windows. Um script do Dism.exe pode ser desenvolvido e executado durante uma sequência de tarefas de instalação do sistema operacional. A tecnologia do Windows envolvida é chamada [Recursos sob Demanda](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities).
+Use a ferramenta Dism.exe para enumerar e controlar os recursos opcionais do Windows. Um script do Dism.exe pode ser desenvolvido e executado durante uma sequência de tarefas de instalação do sistema operacional. A tecnologia do Windows envolvida é chamada [Recursos sob Demanda](/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities).
 
 #### <a name="default-user-settings"></a>Configurações padrão de usuário
 
@@ -536,13 +536,13 @@ As configurações de política de grupo acima incluem configurações para desa
 | Política do Computador Local \\ Configuração do Usuário \\ Modelos Administrativos |  |  |  |
 | Menu Iniciar e barra de tarefas | Remover o ícone de sistema de rede |  | Habilitada. O ícone de rede não é exibido na área de notificação do sistema. |
 
-Para obter mais informações sobre o NCSI (Indicador de Status da Conexão de Rede), confira [Gerenciar pontos de extremidade de conexão do Windows 10 Enterprise, versão 1903](https://docs.microsoft.com/windows/privacy/manage-windows-1903-endpoints) e [Gerenciar conexões de componentes do sistema operacional Windows 10 para serviços Microsoft](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services).
+Para obter mais informações sobre o NCSI (Indicador de Status da Conexão de Rede), confira [Gerenciar pontos de extremidade de conexão do Windows 10 Enterprise, versão 1903](/windows/privacy/manage-windows-1903-endpoints) e [Gerenciar conexões de componentes do sistema operacional Windows 10 para serviços Microsoft](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services).
 
 ### <a name="system-services"></a>Serviços do sistema
 
 Se você estiver considerando a possibilidade de desabilitar os serviços do sistema para conservar recursos, tome muito cuidado para que o serviço que está sendo considerado não seja de modo algum um componente de outro serviço. disponível Observe que alguns serviços não estão na lista porque não podem ser desabilitados de maneira compatível.
 
-Além disso, a maioria dessas recomendações espelha as recomendações para o Windows Server 2016, instalado com a Experiência Desktop em [Diretrizes sobre como desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop](https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server)
+Além disso, a maioria dessas recomendações espelha as recomendações para o Windows Server 2016, instalado com a Experiência Desktop em [Diretrizes sobre como desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md)
 
 Muitos serviços que possam parecer bons candidatos à desabilitação são definidos com o tipo de início de serviço manual. Isso significa que o serviço não será iniciado automaticamente e não será iniciado, a menos que um processo ou um evento dispare uma solicitação para o serviço que está sendo considerado para desabilitação. Os serviços que já estão definidos para tipo de início manual normalmente são listados aqui.
 
@@ -575,9 +575,9 @@ Muitos serviços que possam parecer bons candidatos à desabilitação são defi
 
 Os serviços por usuário referem-se a serviços que são criados quando um usuário entra no Windows ou no Windows Server e que são interrompidos e excluídos quando o usuário sai do serviço. Esses serviços são executados no contexto de segurança da conta de usuário – isso fornece melhor gerenciamento de recursos que a abordagem anterior de executar esses tipos de serviço no Explorador, associados a uma conta pré-configurada, ou como tarefas.
 
-[Serviços por usuário no Windows 10 e no Windows Server](https://docs.microsoft.com/windows/application-management/per-user-services-in-windows)
+[Serviços por usuário no Windows 10 e no Windows Server](/windows/application-management/per-user-services-in-windows)
 
-Se você pretende alterar o valor inicial de um serviço, o método preferencial é abrir um prompt .cmd com privilégios elevados e executar a ferramenta Gerenciador de Controle de Serviço ‘Sc.exe’. Para obter mais informações sobre como usar o ‘Sc.exe’, confira [Sc](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754599(v=ws.11))
+Se você pretende alterar o valor inicial de um serviço, o método preferencial é abrir um prompt .cmd com privilégios elevados e executar a ferramenta Gerenciador de Controle de Serviço ‘Sc.exe’. Para obter mais informações sobre como usar o ‘Sc.exe’, confira [Sc](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11))
 
 ### <a name="scheduled-tasks"></a>Tarefas Agendadas
 
@@ -653,7 +653,7 @@ Nome da tarefa agendada:
 
 ### <a name="apply-windows-and-other-updates"></a>Aplicar atualizações do Windows (entre outras)
 
-Seja do Microsoft Update, seja de recursos internos, aplique as atualizações disponíveis, incluindo assinaturas do Windows Defender. Esse é um bom momento para aplicar outras atualizações disponíveis, incluindo o Microsoft Office, se instalado, bem como outras atualizações. Se o PowerShell permanecer na imagem, baixe a ajuda mais recente disponível para o PowerShell executando o comando [Update-Help](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7).
+Seja do Microsoft Update, seja de recursos internos, aplique as atualizações disponíveis, incluindo assinaturas do Windows Defender. Esse é um bom momento para aplicar outras atualizações disponíveis, incluindo o Microsoft Office, se instalado, bem como outras atualizações. Se o PowerShell permanecer na imagem, baixe a ajuda mais recente disponível para o PowerShell executando o comando [Update-Help](/powershell/module/microsoft.powershell.core/update-help?view=powershell-7).
 
 #### <a name="servicing-the-operating-system-and-apps"></a>Manutenção do sistema operacional e de aplicativos
 
@@ -704,7 +704,7 @@ Estes são alguns rastreamentos do sistema que podem ser considerados para desab
 
 ### <a name="windows-defender-optimization-with-vdi"></a>Otimização do Windows Defender com VDI
 
-A Microsoft publicou recentemente a documentação relacionada ao Windows Defender em um ambiente VDI. Confira [Guia de implantação do Windows Defender Antivírus em um ambiente VDI (Virtual Desktop Infrastructure)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus) para obter mais informações.
+A Microsoft publicou recentemente a documentação relacionada ao Windows Defender em um ambiente VDI. Confira [Guia de implantação do Windows Defender Antivírus em um ambiente VDI (Virtual Desktop Infrastructure)](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus) para obter mais informações.
 
 O artigo acima contém procedimentos para fazer a manutenção da imagem "ouro" da VDI e de como manter os clientes VDI enquanto estão em execução. Para reduzir a largura de banda da rede quando computadores VDI precisarem atualizar suas assinaturas do Windows Defender, agende as reinicializações para fora do horário comercial quando possível. As atualizações de assinatura do Windows Defender podem estar mantidas internamente em compartilhamentos de arquivos e, quando for conveniente, esses arquivos podem compartilhados nos mesmos segmentos de rede (ou próximos) das máquinas virtuais VDI.
 
@@ -715,7 +715,7 @@ Há algumas configurações do Registro que podem aumentar o desempenho da rede.
 >[!NOTE]
 > Algumas configurações desta seção são somente baseadas no Registro e devem ser incorporadas na imagem base antes que ela seja implantada para uso em produção.
 
-As configurações a seguir estão documentadas nas [Diretrizes de Ajuste de Desempenho do Windows Server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/), publicadas em Microsoft.com pelo Grupo de Produtos do Windows.
+As configurações a seguir estão documentadas nas [Diretrizes de Ajuste de Desempenho do Windows Server 2016](/windows-server/administration/performance-tuning/), publicadas em Microsoft.com pelo Grupo de Produtos do Windows.
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 
@@ -745,15 +745,15 @@ Aplica-se ao Windows 10. O padrão é **128**, com um intervalo válido de 1 a 6
 
 Aplica-se ao Windows 10. O padrão é **1023**. Esse parâmetro especifica o número máximo de arquivos que deve ser aberto em um recurso compartilhado após o aplicativo fechar o arquivo. Onde muitos milhares de clientes estiverem se conectando a servidores SMB, considere a redução desse valor para **256**.
 
-É possível definir muitas configurações SMB usando os cmdlets [Set-SmbClientConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) e [Set-SmbServerConfiguration](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) do Windows PowerShell. As configurações somente de Registro também podem ser definidas com o Windows PowerShell, como no seguinte exemplo:
+É possível definir muitas configurações SMB usando os cmdlets [Set-SmbClientConfiguration](/powershell/module/smbshare/set-smbclientconfiguration?view=win10-ps) e [Set-SmbServerConfiguration](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps) do Windows PowerShell. As configurações somente de Registro também podem ser definidas com o Windows PowerShell, como no seguinte exemplo:
 
 ```powershell
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force
 ```
 
-Configurações adicionais das diretrizes de Linha de Base de Funcionalidade Limitada de Tráfego Restrito do Windows. A Microsoft lançou uma linha de base, criada com os mesmos procedimentos das [Linhas de Base de Segurança do Windows](https://docs.microsoft.com/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps), para ambientes que não estão conectados diretamente à Internet ou que desejam reduzir os dados enviados à Microsoft e a outros serviços.
+Configurações adicionais das diretrizes de Linha de Base de Funcionalidade Limitada de Tráfego Restrito do Windows. A Microsoft lançou uma linha de base, criada com os mesmos procedimentos das [Linhas de Base de Segurança do Windows](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps), para ambientes que não estão conectados diretamente à Internet ou que desejam reduzir os dados enviados à Microsoft e a outros serviços.
 
-As configurações da [Linha de Base de Funcionalidade Limitada de Tráfego Restrita pelo Windows](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) são indicadas na tabela da Política de Grupo com um asterisco.
+As configurações da [Linha de Base de Funcionalidade Limitada de Tráfego Restrita pelo Windows](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) são indicadas na tabela da Política de Grupo com um asterisco.
 
 #### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>Limpeza de disco (incluindo o uso do assistente para Limpeza de Disco)
 

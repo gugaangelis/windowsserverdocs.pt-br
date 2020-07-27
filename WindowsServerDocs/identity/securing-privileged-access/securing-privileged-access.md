@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 806a2aced95421bd469ba885d4a81c219ae1b651
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548830"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86964719"
 ---
 # <a name="securing-privileged-access"></a>Proteger o acesso privilegiado
 
@@ -62,11 +62,11 @@ O roteiro foi projetado para maximizar o uso de tecnologias da Microsoft que voc
 
 O roteiro de recomendações da Microsoft é dividido em três fases:
 
-* [Fase 1: Primeiros 30 dias](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-1-quick-wins-with-minimal-operational-complexity)
+* [Fase 1: Primeiros 30 dias](#phase-1-quick-wins-with-minimal-operational-complexity)
    * WINS rápido com impacto positivo significativo.
-* [Fase 2: 90 dias](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-2-significant-incremental-improvements)
+* [Fase 2: 90 dias](#phase-2-significant-incremental-improvements)
    * Melhorias incrementais significativas.
-* [Fase 3: Em andamento](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access#phase-3-security-improvement-and-sustainment)
+* [Fase 3: Em andamento](#phase-3-security-improvement-and-sustainment)
    * Melhoria e manutenção da segurança.
 
 O roteiro é priorizado para agendar primeiro as implementações mais eficientes e mais rápidas, com base em nossas experiências com esses ataques e na implementação da solução. 

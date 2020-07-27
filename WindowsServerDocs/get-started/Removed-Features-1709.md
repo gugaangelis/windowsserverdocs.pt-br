@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a74f3c6ec629df7d1cc40199091e84989606a50e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826679"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959468"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Recursos removidos ou com substituição planejada do Windows Server versão 1709 em diante
 
@@ -55,14 +55,13 @@ Você também deve começar a migração do IIS 6.0 ou versões anteriores e mov
 
 
 ### <a name="iis-digest-authentication"></a>Autenticação Digest do IIS
-Esse método de autenticação será substituído. Em vez disso, você deve começar a usar outros métodos de autenticação, como o Mapeamento de certificado do cliente (consulte [Configurar mapeamentos de certificado de cliente um-para-um](https://docs.microsoft.com/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings)) ou a Autenticação do Windows (consulte [Configurações do aplicativo](https://docs.microsoft.com/iis-administration/configuration/appsettings.json)).
+Esse método de autenticação será substituído. Em vez disso, você deve começar a usar outros métodos de autenticação, como o Mapeamento de certificado do cliente (consulte [Configurar mapeamentos de certificado de cliente um-para-um](/iis/manage/configuring-security/configuring-one-to-one-client-certificate-mappings)) ou a Autenticação do Windows (consulte [Configurações do aplicativo](/iis-administration/configuration/appsettings.json)).
 
 ### <a name="internet-storage-name-service-isns"></a>iSNS (Internet Storage Name Service)
-O iSNS está sendo considerado para substituição. O recurso do protocolo SMB oferece essencialmente a mesma funcionalidade, com recursos adicionais. Consulte a [Visão geral do protocolo SMB](https://technet.microsoft.com/library/hh831795(v=ws.11).aspx) para obter mais informações sobre esse recurso.
+O iSNS está sendo considerado para substituição. O recurso do protocolo SMB oferece essencialmente a mesma funcionalidade, com recursos adicionais. Consulte a [Visão geral do protocolo SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) para obter mais informações sobre esse recurso.
 
 ### <a name="rsaaes-encryption-for-iis"></a>Criptografia RSA/AES para IIS 
-Esse método de criptografia está sendo considerado para substituição, pois o método superior de Cryptography API: Next Generation (CNG) já está disponível. Para saber mais sobre a criptografia do CNG, confira [Sobre o CNG](https://msdn.microsoft.com/library/windows/desktop/aa375276(v=vs.85).aspx).
+Esse método de criptografia está sendo considerado para substituição, pois o método superior de Cryptography API: Next Generation (CNG) já está disponível. Para saber mais sobre a criptografia do CNG, confira [Sobre o CNG](/windows/win32/seccng/about-cng).
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0
-Essa versão anterior do Windows PowerShell foi substituída por várias versões mais recentes. Para obter o melhor em desempenho e recursos, migre para o Windows PowerShell 5.0 ou posterior. Consulte a [Documentação do PowerShell](https://docs.microsoft.com/powershell/index?view=powershell-5.1) para obter mais informações.
-
+Essa versão anterior do Windows PowerShell foi substituída por várias versões mais recentes. Para obter o melhor em desempenho e recursos, migre para o Windows PowerShell 5.0 ou posterior. Consulte a [Documentação do PowerShell](/powershell/index?view=powershell-5.1) para obter mais informações.

@@ -10,16 +10,16 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: fd9ea63785e8de313d2177113a466fa67c17410b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: d95d02dc9aa4adb2f64e88d2307efd0143225bba
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826639"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959038"
 ---
 # <a name="windows-server-2016-activation"></a>Ativação do Windows Server 2016
 
-As informações a seguir descrevem as considerações iniciais de planejamento que você deve analisar para a ativação do KMS (Serviços de Gerenciamento de Chaves) envolvendo o Windows Server 2016. Para obter informações sobre a ativação do KMS envolvendo sistemas operacionais mais antigos do que os listados aqui, consulte [Etapa 1: Analisar e selecionar métodos de ativação](https://technet.microsoft.com/library/jj134256(WS.11).aspx).
+As informações a seguir descrevem as considerações iniciais de planejamento que você deve analisar para a ativação do KMS (Serviços de Gerenciamento de Chaves) envolvendo o Windows Server 2016. Para obter informações sobre a ativação do KMS envolvendo sistemas operacionais mais antigos do que os listados aqui, consulte [Etapa 1: Analisar e selecionar métodos de ativação](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134256(v=ws.11)).
 
 O KMS usa um modelo cliente-servidor para ativar clientes. Os clientes KMS se conectam a um servidor KMS, chamado de host KMS, para ativação. O host KMS deve residir na rede local.
 

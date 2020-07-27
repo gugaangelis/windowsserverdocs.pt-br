@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 658875f132712d34a2c59967ebd316e8c5edca7c
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070547"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86962129"
 ---
 # <a name="smb-security-enhancements"></a>Melhorias de segurança do SMB
 
@@ -76,7 +76,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 A funcionalidade de negociação de dialeto seguro descrita na próxima seção impede que um ataque man-in-the-middle faça o downgrade de uma conexão do SMB 3.0 para o SMB 2.0 (que usaria acesso não criptografado). No entanto, não impede o downgrade para SMB 1.0, o que também resultaria em acesso não criptografado. Para garantir que os clientes SMB 3.0 sempre usem a criptografia SMB para acessar compartilhamentos criptografados, você deve desabilitar o servidor SMB 1.0. (Para obter instruções, confira a seção [Como desabilitar SMB 1.0](#disabling-smb-10).) Se a configuração **–RejectUnencryptedAccess** for deixada em sua configuração padrão de **$true**, somente os clientes SMB 3.0 com capacidade de criptografia poderão acessar os compartilhamentos de arquivos (os clientes SMB 1.0 também serão rejeitados).
 
 >[!NOTE]
->* A Criptografia SMB usa o algoritmo de criptografia AES-CCM para criptografar e descriptografar os dados. O AES-CCM também fornece validação de integridade de dados (assinatura) para compartilhamentos de arquivos criptografados, independentemente das configurações de assinatura SMB. Se você quiser habilitar a assinatura SMB sem criptografia, poderá continuar fazendo isso. Para saber mais, confira [As noções básicas da assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+>* A Criptografia SMB usa o algoritmo de criptografia AES-CCM para criptografar e descriptografar os dados. O AES-CCM também fornece validação de integridade de dados (assinatura) para compartilhamentos de arquivos criptografados, independentemente das configurações de assinatura SMB. Se você quiser habilitar a assinatura SMB sem criptografia, poderá continuar fazendo isso. Para saber mais, confira [As noções básicas da assinatura SMB](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2).
 >* Você poderá encontrar problemas ao tentar acessar o compartilhamento de arquivo ou o servidor se a sua organização usar dispositivos de aceleração de WAN (rede de longa distância).
 >* Com uma configuração padrão (em que não há nenhum acesso não criptografado permitido para compartilhamentos de arquivos criptografados), se os clientes que não dão suporte ao SMB 3.0 tentarem acessar um compartilhamento de arquivo criptografados, a ID de evento 1003 será registrada no log de eventos Microsoft-Windows-SmbServer/Operational e o cliente receberá uma mensagem de erro de **Acesso negado**.
 >* A criptografia SMB e o EFS (Encrypting File System) no sistema de arquivos NTFS não estão relacionados e a criptografia SMB não exige nem depende do uso do EFS.
@@ -90,7 +90,7 @@ A funcionalidade de negociação de dialeto seguro descrito na próxima seção 
 
 ## <a name="new-signing-algorithm"></a>Novo algoritmo de assinatura
 
-O SMB 3.0 usa um algoritmo de criptografia mais recente para assinatura: CMCA (Message Authentication Code baseado em criptografia)-criptografia AES. O SMB 2.0 usou o algoritmo de criptografia HMAC-SHA256 mais antigo. O AES-CMAC e o AES-CCM podem acelerar significativamente a criptografia de dados na maioria das CPUs modernas compatíveis com instruções AES. Para saber mais, confira [As noções básicas da assinatura SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
+O SMB 3.0 usa um algoritmo de criptografia mais recente para assinatura: CMCA (Message Authentication Code baseado em criptografia)-criptografia AES. O SMB 2.0 usou o algoritmo de criptografia HMAC-SHA256 mais antigo. O AES-CMAC e o AES-CCM podem acelerar significativamente a criptografia de dados na maioria das CPUs modernas compatíveis com instruções AES. Para saber mais, confira [As noções básicas da assinatura SMB](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2).
 
 ## <a name="disabling-smb-10"></a>Como desabilitar o SMB 1.0
 

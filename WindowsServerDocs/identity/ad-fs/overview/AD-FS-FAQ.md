@@ -9,12 +9,12 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 947c34e6c3a3b9a26a225221bbf29e46343b25df
-ms.sourcegitcommit: f22e4d67dd2a153816acf8355e50319dbffc5acf
+ms.openlocfilehash: 2fce4c5669ff78a6d97cd65580db1a68bfe3a390
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546553"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118585"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes do AD FS
 
@@ -28,14 +28,14 @@ Atualize o AD FS usando um dos seguintes procedimentos:
 
 
 - AD FS do Windows Server 2012 R2 para o AD FS do Windows Server 2016 ou posterior. Observe que a metodologia é a mesma se você está atualizando o AD FS do Windows Server 2016 para o AD FS do Windows Server 2019. 
-    - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados WID](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)
-    - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados SQL](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)
+    - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados WID](../deployment/upgrading-to-ad-fs-in-windows-server.md)
+    - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados SQL](../deployment/upgrading-to-ad-fs-in-windows-server-sql.md)
 - AD FS do Windows Server 2012 para o AD FS do Windows Server 2012 R2
-    - [Migração para o AD FS no Windows Server 2012 R2](https://technet.microsoft.com/library/dn486815.aspx)
+    - [Migração para o AD FS no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486815(v=ws.11))
 - AD FS 2.0 para o AD FS do Windows Server 2012
-    - [Migração para o AD FS no Windows Server 2012](https://technet.microsoft.com/library/jj647765.aspx)
+    - [Migração para o AD FS no Windows Server 2012](../deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 - AD FS 1.x para o AD FS 2.0
-    - [Atualização do AD FS 1.x para o AD FS 2.0](https://technet.microsoft.com/library/ff678035.aspx)
+    - [Atualização do AD FS 1.x para o AD FS 2.0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff678035(v=ws.10))
 
 Caso precise atualizar o AD FS 2.0 ou 2.1 (Windows Server 2008 R2 ou Windows Server 2012), use os scripts nativos (localizados em C:\Windows\ADFS).
 
@@ -49,7 +49,7 @@ Sim, há suporte para essa configuração; no entanto, não há suporte para os 
 ### <a name="is-it-possible-to-deploy-ad-fs-for-office-365-without-publishing-a-proxy-to-office-365"></a>É possível implantar o AD FS para o Office 365 sem publicar um proxy no Office 365?
 Sim, há suporte para isso. No entanto, como efeito colateral
 
-1. Você precisará gerenciar manualmente a atualização dos certificados de autenticação de tokens, porque o Azure AD não poderá acessar os metadados de federação. Para obter mais informações sobre como atualizar manualmente o certificado de autenticação de tokens, leia [Renovar certificados de federação para o Office 365 e o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
+1. Você precisará gerenciar manualmente a atualização dos certificados de autenticação de tokens, porque o Azure AD não poderá acessar os metadados de federação. Para obter mais informações sobre como atualizar manualmente o certificado de autenticação de tokens, leia [Renovar certificados de federação para o Office 365 e o Azure Active Directory](/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. Você não poderá aproveitar os fluxos de autenticação herdados (por exemplo, fluxo de autenticação de proxy ExO)
 
 ### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>Quais são os requisitos de balanceamento de carga para servidores AD FS e WAP?
@@ -85,7 +85,7 @@ O AD FS fornece um mecanismo extensível para provedores de MFA de terceiros a s
 A lista de fornecedores que notificaram a Microsoft foi publicada em [Provedores de MFA para o AD FS](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md).  Pode sempre haver provedores disponíveis que desconhecemos, por isso, atualizaremos a lista à medida que ficarmos cientes deles.
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>Há suporte para proxies de terceiros no AD FS?
-Sim, os proxies de terceiros podem ser colocados na frente dos AD FS, mas qualquer proxy de terceiros precisa ser compatível com o [protocolo MS-ADFSPIP](https://msdn.microsoft.com/library/dn392811.aspx) a ser usado no lugar do Proxy de aplicativo Web.
+Sim, os proxies de terceiros podem ser colocados na frente dos AD FS, mas qualquer proxy de terceiros precisa ser compatível com o [protocolo MS-ADFSPIP](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb) a ser usado no lugar do Proxy de aplicativo Web.
 
 Veja abaixo uma lista de provedores de terceiros dos quais estamos cientes.  Pode sempre haver provedores disponíveis que desconhecemos, por isso, atualizaremos a lista à medida que ficarmos cientes deles.
 
@@ -93,7 +93,7 @@ Veja abaixo uma lista de provedores de terceiros dos quais estamos cientes.  Pod
 
 
 ### <a name="where-is-the-capacity-planning-sizing-spreadsheet-for-ad-fs-2016"></a>Em que local se encontra a planilha de dimensionamento do planejamento da capacidade do AD FS 2016?
-A versão do AD FS 2016 da planilha pode ser baixada [aqui](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx).
+A versão do AD FS 2016 da planilha pode ser baixada [aqui](https://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx).
 Isso também pode ser usado para o AD FS no Windows Server 2012 R2.
 
 ### <a name="how-can-i-ensure-my-ad-fs-and-wap-servers-support-apples-atp-requirements"></a>Como garantir que meus servidores AD FS e WAP darão suporte aos requisitos de ATP da Apple?
@@ -103,7 +103,7 @@ Em particular, você deve verificar se os seus servidores AD FS e WAP dão supor
 
 Você pode habilitar e desabilitar o SSL 2.0 e 3.0 e as versões do TLS 1.0, 1.1 e 1.2 usando [Gerenciar protocolos SSL no AD FS](../operations/Manage-SSL-Protocols-in-AD-FS.md).
 
-Para garantir que os servidores AD FS e WAP negociem somente conjuntos de criptografia TLS que dão suporte a ATP, desabilite todos os conjuntos de criptografia que não estejam na [lista de conjuntos de criptografia em conformidade com ATP](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57).  Para fazer isso, use os [cmdlets do PowerShell do TLS no Windows](https://technet.microsoft.com/itpro/powershell/windows/tls/index).
+Para garantir que os servidores AD FS e WAP negociem somente conjuntos de criptografia TLS que dão suporte a ATP, desabilite todos os conjuntos de criptografia que não estejam na [lista de conjuntos de criptografia em conformidade com ATP](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57).  Para fazer isso, use os [cmdlets do PowerShell do TLS no Windows](/powershell/module/tls/?view=win10-ps).
 
 ## <a name="developer"></a>Desenvolvedor
 
@@ -135,9 +135,9 @@ Com o AD FS no Server 2019, agora você pode transmitir o valor do recurso inser
 O AD FS no Server 2019 dá suporte à PKCE (Chave de Prova para Troca de Código) para o fluxo de concessão de código de autorização OAuth
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>Há suporte para quais escopos permitidos no AD FS?
-- aza: se você estiver usando [Extensões de Protocolo OAuth 2.0 para Clientes de Agente](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, além de configurar o campo refresh_token_expires_in para o tempo de vida do novo token de atualização primário, caso um seja imposto.
+- aza: se você estiver usando [Extensões de Protocolo OAuth 2.0 para Clientes de Agente](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, além de configurar o campo refresh_token_expires_in para o tempo de vida do novo token de atualização primário, caso um seja imposto.
 - openid: permite que o aplicativo solicite o uso do protocolo de autorização OpenID Connect.
-- logon_cert: o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon de maneira interativa dos usuários autenticados. O servidor do AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em Base64 ou uma resposta de PKI completa de CMC. Mais detalhes disponíveis [aqui](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
+- logon_cert: o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon de maneira interativa dos usuários autenticados. O servidor do AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em Base64 ou uma resposta de PKI completa de CMC. Mais detalhes disponíveis [aqui](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
 - user_impersonation: o escopo user_impersonation é necessário para solicitar com êxito um token de acesso em nome do AD FS. Para obter detalhes sobre como usar esse escopo, veja [Criar um aplicativo de várias camadas usando o OBO (On-Behalf-Of) no OAuth com o AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
 - vpn_cert: o escopo vpn_cert permite que um aplicativo solicite certificados VPN, que podem ser usados para estabelecer conexões VPN usando a autenticação EAP-TLS. Não há mais suporte para isso.
 - email: permite que o aplicativo solicite a declaração de email para o usuário conectado. Não há mais suporte para isso. 
@@ -149,7 +149,7 @@ O AD FS no Server 2019 dá suporte à PKCE (Chave de Prova para Troca de Código
 ### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>Como fazer para substituir o certificado SSL para o AD FS?
 O certificado SSL do AD FS não é o mesmo que o certificado de comunicações do Serviço do AD FS encontrado no snap-in Gerenciamento do AD FS.  Para alterar o certificado SSL do AD FS, você precisará usar o PowerShell. Siga as diretrizes do artigo abaixo:
 
-[Como gerenciar certificados SSL no AD FS e no WAP 2016](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+[Como gerenciar certificados SSL no AD FS e no WAP 2016](../operations/manage-ssl-certificates-ad-fs-wap.md)
 
 ### <a name="how-can-i-enable-or-disable-tlsssl-settings-for-ad-fs"></a>Como fazer para habilitar ou desabilitar as configurações de TLS/SSL no AD FS?
 Para desabilitar ou habilitar protocolos SSL e conjuntos de criptografia, use o seguinte:
@@ -162,7 +162,7 @@ Use as seguintes diretrizes com relação ao certificado SSL de proxy e ao certi
 
 - Se o proxy for usado para usar um proxy de solicitações do AD FS que usam a Autenticação Integrada do Windows, o certificado SSL do proxy precisará ser igual (usar a mesma chave) o certificado SSL do servidor de federação
 - Se a propriedade “ExtendedProtectionTokenCheck” do AD FS estiver habilitada (a configuração padrão no AD FS), o certificado SSL de proxy precisará ser o mesmo (usar a mesma chave) que o certificado SSL do servidor de federação
-- Caso contrário, o certificado SSL de proxy poderá ter uma chave diferente daquela do certificado SSL do AD FS, mas precisará atender aos mesmos [requisitos](../overview/AD-FS-2016-Requirements.md)
+- Caso contrário, o certificado SSL de proxy poderá ter uma chave diferente daquela do certificado SSL do AD FS, mas precisará atender aos mesmos [requisitos](./ad-fs-requirements.md)
 
 ### <a name="why-do-i-only-see-a-password-login-on-ad-fs-and-not-my-other-authentication-methods-that-i-have-configured"></a>Por que só vejo um logon com senha no AD FS e não meus outros métodos de autenticação que configurei? 
 O AD FS mostra apenas um só método de autenticação na tela de logon quando o aplicativo exige explicitamente um URI de autenticação específico que é mapeado para um método de autenticação configurado e habilitado. Isso é transmitido no parâmetro 'wauth' de solicitações do Web Services Federation e o parâmetro 'RequestedAuthnCtxRef' em uma solicitação do protocolo SAML. Como resultado, apenas o método de autenticação solicitado é exibido (por exemplo, logon com senha).
@@ -183,7 +183,7 @@ Se você não tiver políticas de controle de acesso baseadas no dispositivo no 
 
 ### <a name="how-long-are-ad-fs-tokens-valid"></a>Por quanto tempo os tokens do AD FS são válidos?
 
-Geralmente, essa pergunta significa 'por quanto tempo os usuários obtêm o SSO (logon único) sem precisar inserir novas credenciais e como eu, como administrador, controlo isso?'  Esse comportamento e as definições de configuração que o controlam são descritos no artigo [Configurações de logon único do AD FS](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/operations/ad-fs-2016-single-sign-on-settings).
+Geralmente, essa pergunta significa 'por quanto tempo os usuários obtêm o SSO (logon único) sem precisar inserir novas credenciais e como eu, como administrador, controlo isso?'  Esse comportamento e as definições de configuração que o controlam são descritos no artigo [Configurações de logon único do AD FS](../operations/ad-fs-single-sign-on-settings.md).
 
 Os tempos de vida padrão dos vários cookies e tokens são listados abaixo (bem como os parâmetros que controlam os tempos de vida):
 
@@ -301,7 +301,7 @@ Em servidores WAP, você ainda poderá usar Set-WebApplicationProxySslCertificat
 Execute a atualização no restante dos servidores AD FS e WAP de maneira semelhante.
 
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>Há suporte para o ADFS quando os servidores WAP (Proxy de aplicativo Web) estão atrás do WAF (firewall do aplicativo Web do Azure)?
-Os servidores de aplicativos Web e do ADFS dão suporte a qualquer firewall que não execute a terminação SSL no ponto de extremidade. Além disso, os servidores ADFS/WAP têm mecanismos internos para impedir ataques comuns da Web, como scripts intersite e proxy do ADFS, além de atender a todos os requisitos definidos pelo [protocolo MS-ADFSPIPFSPIP](https://msdn.microsoft.com/library/dn392811.aspx).
+Os servidores de aplicativos Web e do ADFS dão suporte a qualquer firewall que não execute a terminação SSL no ponto de extremidade. Além disso, os servidores ADFS/WAP têm mecanismos internos para impedir ataques comuns da Web, como scripts intersite e proxy do ADFS, além de atender a todos os requisitos definidos pelo [protocolo MS-ADFSPIPFSPIP](/openspecs/windows_protocols/ms-adfspip/76deccb1-1429-4c80-8349-d38e61da5cbb).
 
 ### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>Estou recebendo uma mensagem "Evento 441: Foi encontrado um token com uma chave de associação de token inválida." O que devo fazer para resolver isso?
 No AD FS 2016, a associação de token é habilitada automaticamente e causa vários problemas conhecidos com cenários de proxy e federação que resultam nesse erro. Para resolver isso, execute o comando do PowerShell a seguir e remova o suporte de associação de token.

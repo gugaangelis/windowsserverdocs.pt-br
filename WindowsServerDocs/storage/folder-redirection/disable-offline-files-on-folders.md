@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c2614c0180b32a0215454f2d725d6a962986ef1f
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0219c669a52d961cc98d6b0ee16bcbcfbbb78417
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394397"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961568"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>Desabilitar Arquivos Offline em pastas redirecionadas individuais
 
@@ -22,7 +22,7 @@ ms.locfileid: "71394397"
 Este tópico descreve como desabilitar o armazenamento em cache de Arquivos Offline em pastas individuais redirecionadas para compartilhamentos de rede usando o Redirecionamento de Pastas. Isso permite especificar quais pastas devem ser excluídas do cache localmente, reduzindo o tamanho do cache Arquivos Offline e o tempo necessário para sincronizar Arquivos Offline.
 
 >[!NOTE]
->Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, confira [Noções básicas sobre o Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6).
+>Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, confira [Noções básicas sobre o Windows PowerShell](/powershell/scripting/getting-started/fundamental/windows-powershell-basics?view=powershell-6).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 8feed2adb606edfb6068d7fe10c18baf142077ac
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 514dd9be3f7f634cf021a8a154f4b64c9018743e
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "76822339"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961628"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Como implantar Perfis de Usuários Móveis
 
@@ -54,7 +54,7 @@ Os Perfis de Usuário Móvel possuem os seguintes requisitos de software:
     - Se o compartilhamento de arquivos usar a Replicação do DFS para replicar o conteúdo com outro servidor, os usuários devem poder acessar apenas o servidor de origem para evitar que os usuários façam edições conflitantes em diferentes servidores.
     - Se o compartilhamento de arquivos for clusterizado, desabilite a disponibilidade contínua no compartilhamento de arquivos para evitar problemas de desempenho.
 - Para usar o suporte de computador primário nos Perfis de Usuários Móveis, há requisitos adicionais do computador cliente e do esquema do Active Directory. Para obter mais informações, Confira [Implantar computadores primários para Redirecionamento de Pastas e Perfis de Usuários Móveis](deploy-primary-computers.md).
-- O layout do menu Iniciar de um usuário não será transferido no Windows 10, Windows Server 2019 ou Windows Server 2016 se eles estiverem usando mais de um PC, Host da Sessão da Área de Trabalho Remota ou servidor de VDI (Virtualized Desktop Infrastructure). Como alternativa, você pode especificar um layout do menu Iniciar conforme descrito neste tópico. Ou você pode usar discos de perfil do usuário, que transferem adequadamente as configurações do menu Iniciar quando usados com servidores Host da Sessão da Área de Trabalho Remota ou servidores de VDI. Para obter mais informações, confira [Gerenciamento de dados de usuário mais fácil com discos de perfil do usuário no Windows Server 2012](https://blogs.technet.microsoft.com/enterprisemobility/2012/11/13/easier-user-data-management-with-user-profile-disks-in-windows-server-2012/).
+- O layout do menu Iniciar de um usuário não será transferido no Windows 10, Windows Server 2019 ou Windows Server 2016 se eles estiverem usando mais de um PC, Host da Sessão da Área de Trabalho Remota ou servidor de VDI (Virtualized Desktop Infrastructure). Como alternativa, você pode especificar um layout do menu Iniciar conforme descrito neste tópico. Ou você pode usar discos de perfil do usuário, que transferem adequadamente as configurações do menu Iniciar quando usados com servidores Host da Sessão da Área de Trabalho Remota ou servidores de VDI. Para obter mais informações, confira [Gerenciamento de dados de usuário mais fácil com discos de perfil do usuário no Windows Server 2012](https://techcommunity.microsoft.com/t5/microsoft-security-and/easier-user-data-management-with-user-profile-disks-in-windows/ba-p/247555).
 
 ### <a name="considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows"></a>Considerações ao usar os Perfis de Usuário Móvel em diversas versões do Windows
 
@@ -168,7 +168,7 @@ Veja como criar um GPO para Perfis de Usuários Móveis:
     Esta etapa é necessária devido a alterações de segurança feitas em [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016).
 
 >[!IMPORTANT]
->Devido às alterações de segurança feitas em [MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016), agora você deve conceder ao grupo usuários autenticados permissões de leitura delegadas para o GPO. Caso contrário, o GPO não será aplicado aos usuários ou, se já estiver aplicado, será removido, redirecionando os perfis de usuário de volta para o computador local. Para obter mais informações, confira [Implantar a Atualização de Segurança da Política de Grupo MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
+>Devido às alterações de segurança feitas em [MS16-072A](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016), agora você deve conceder ao grupo usuários autenticados permissões de leitura delegadas para o GPO. Caso contrário, o GPO não será aplicado aos usuários ou, se já estiver aplicado, será removido, redirecionando os perfis de usuário de volta para o computador local. Para obter mais informações, confira [Implantar a Atualização de Segurança da Política de Grupo MS16-072](/archive/blogs/askds/deploying-group-policy-security-update-ms16-072-kb3163622).
 
 ## <a name="step-5-optionally-set-up-roaming-user-profiles-on-user-accounts"></a>Etapa 5: Opcionalmente, configurar perfis de usuário móvel em contas de usuários
 
@@ -185,12 +185,12 @@ Veja como instalar os Perfis de Usuários Móveis em contas de usuário:
     
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
     
-    Para especificar um perfil de usuário móvel obrigatório, especifique o caminho para o arquivo NTuser.man criado por você anteriormente, por exemplo, `fs1.corp.contoso.comUser Profiles$default`. Para obter mais informações, confira [Criar perfis de usuário obrigatórios](https://docs.microsoft.com/windows/client-management/mandatory-user-profile).
+    Para especificar um perfil de usuário móvel obrigatório, especifique o caminho para o arquivo NTuser.man criado por você anteriormente, por exemplo, `fs1.corp.contoso.comUser Profiles$default`. Para obter mais informações, confira [Criar perfis de usuário obrigatórios](/windows/client-management/mandatory-user-profile).
 4. Selecione **OK**.
 
 > [!NOTE]
 > Por padrão, a implantação de todos os aplicativos com base no Runtime do Windows® (Windows Store) é permitida ao usar os Perfis de Usuário Móvel. No entanto, ao usar um perfil especial, os aplicativos não são implantados por padrão. Os perfis especiais são perfis de usuários nos quais as alterações são descartadas após o usuário se registrar:
-> <br><br>Para remover as restrições na implantação do aplicativo para perfis especiais, habilite a configuração de política **Allow deployment operations in special profiles** (localizada em Computer Configuration\Policies\Administrative Templates\Windows Components\App Package Deployment). No entanto, os aplicativos implantados nesse cenário deixarão alguns dados armazenados no computador, que poderia criar acúmulos, por exemplo, se houvesse centenas de usuários em um único computador. Para limpar os aplicativos, localize ou desenvolva uma ferramenta que use a API [CleanupPackageForUserAsync](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.cleanuppackageforuserasync.aspx) para limpar pacotes de aplicativos para usuários que não tenham um perfil no computador.
+> <br><br>Para remover as restrições na implantação do aplicativo para perfis especiais, habilite a configuração de política **Allow deployment operations in special profiles** (localizada em Computer Configuration\Policies\Administrative Templates\Windows Components\App Package Deployment). No entanto, os aplicativos implantados nesse cenário deixarão alguns dados armazenados no computador, que poderia criar acúmulos, por exemplo, se houvesse centenas de usuários em um único computador. Para limpar os aplicativos, localize ou desenvolva uma ferramenta que use a API [CleanupPackageForUserAsync](/uwp/api/Windows.Management.Deployment.PackageManager?view=winrt-19041#windows_management_deployment_packagemanager_cleanuppackageforuserasync_system_string_system_string_) para limpar pacotes de aplicativos para usuários que não tenham um perfil no computador.
 > <br><br>Para mais informações em segundo plano sobre os aplicativos da Windows Store, consulte [Gerenciar o acesso de clientes à Windows Store](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh832040(v=ws.11)>).
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>Etapa 6: Opcionalmente, configurar perfis de usuário móvel em computadores
@@ -216,7 +216,7 @@ Veja como configurar Perfis de Usuários Móveis em computadores:
 
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
 
-    Para especificar um perfil de usuário móvel obrigatório, que é um perfil pré-configurado ao qual os usuários não podem fazer alterações permanentes (as alterações são redefinidas quando o usuário sai), especifique o caminho para o arquivo NTuser.man criado por você anteriormente, por exemplo, `\\fs1.corp.contoso.com\User Profiles$\default`. Para obter mais informações, consulte [Criar um perfil de usuário obrigatório](https://docs.microsoft.com/windows/client-management/mandatory-user-profile).
+    Para especificar um perfil de usuário móvel obrigatório, que é um perfil pré-configurado ao qual os usuários não podem fazer alterações permanentes (as alterações são redefinidas quando o usuário sai), especifique o caminho para o arquivo NTuser.man criado por você anteriormente, por exemplo, `\\fs1.corp.contoso.com\User Profiles$\default`. Para obter mais informações, consulte [Criar um perfil de usuário obrigatório](/windows/client-management/mandatory-user-profile).
 8. Selecione **OK**.
 
 ## <a name="step-7-optionally-specify-a-start-layout-for-windows-10-pcs"></a>Etapa 7: Opcionalmente, especifique um layout do menu Iniciar para PCs com Windows 10
@@ -226,9 +226,9 @@ Você pode usar Política de Grupo para aplicar um layout de menu Iniciar espec�
 Para especificar um layout de menu Iniciar, faça o seguinte:
 
 1. Atualize seus PCs com Windows 10 para o Windows 10 versão 1607 (também conhecida como atualização de aniversário) ou mais recente e instale a atualização cumulativa de 14 de março de 2017 ([KB4013429](https://support.microsoft.com/kb/4013429)) ou mais recente.
-2. Crie um arquivo XML completo ou parcial de layout do menu Iniciar. Para fazer isso, confira [Personalizar e exportar o layout do menu Iniciar](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout).
+2. Crie um arquivo XML completo ou parcial de layout do menu Iniciar. Para fazer isso, confira [Personalizar e exportar o layout do menu Iniciar](/windows/configuration/customize-and-export-start-layout).
     * Se você especificar um layout do menu Iniciar *completo*, os usuários não poderão personalizar nenhuma parte do menu Iniciar. Se você especificar um layout do menu Iniciar *parcial*, os usuários poderão personalizar tudo, exceto os grupos de blocos bloqueados especificados. No entanto, com um layout do menu Iniciar parcial, as personalizações do menu Iniciar não serão transferidas para outros PCs.
-3. Use a Política de Grupo para aplicar o layout do menu Iniciar personalizado ao GPO que você criou para Perfis de Usuários Móveis. Para fazer isso, confira [Usar a Política de Grupo para aplicar um layout de tela inicial personalizado em um domínio](https://docs.microsoft.com/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment).
+3. Use a Política de Grupo para aplicar o layout do menu Iniciar personalizado ao GPO que você criou para Perfis de Usuários Móveis. Para fazer isso, confira [Usar a Política de Grupo para aplicar um layout de tela inicial personalizado em um domínio](/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment).
 4. Use Política de Grupo para definir o valor do Registro a seguir em seus PCs com Windows 10. Para fazer isso, confira [Configurar um item do Registro](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>).
 
 | **Ação**   | **Atualização**                  |
@@ -240,9 +240,9 @@ Para especificar um layout de menu Iniciar, faça o seguinte:
 | os dados de Valor   | **1** (ou **0** para desabilitar) |
 | Base         | **Decimal**                 |
 
-5. (Opcional) Habilite otimizações de primeiro logon para tornar a entrada mais rápida para os usuários. Para fazer isso, confira [Aplicar políticas para aprimorar o tempo de entrada](https://docs.microsoft.com/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time).
+5. (Opcional) Habilite otimizações de primeiro logon para tornar a entrada mais rápida para os usuários. Para fazer isso, confira [Aplicar políticas para aprimorar o tempo de entrada](/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time).
 6. (Opcional) Diminua ainda mais os tempos de entrada removendo aplicativos desnecessários da imagem base do Windows 10 que você usa para implantar computadores cliente. O Windows Server 2019 e o Windows Server 2016 não têm nenhum aplicativo previamente provisionado, portanto, você pode ignorar essa etapa em imagens do servidor.
-    - Para remover aplicativos, use o cmdlet [Remove-AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) no Windows PowerShell para desinstalar os aplicativos a seguir. Se os computadores já estiverem implantados, você poderá gerar scripts para a remoção desses aplicativos usando o [Remove-AppxPackage](https://docs.microsoft.com/powershell/module/appx/remove-appxpackage?view=win10-ps).
+    - Para remover aplicativos, use o cmdlet [Remove-AppxProvisionedPackage](/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps) no Windows PowerShell para desinstalar os aplicativos a seguir. Se os computadores já estiverem implantados, você poderá gerar scripts para a remoção desses aplicativos usando o [Remove-AppxPackage](/powershell/module/appx/remove-appxpackage?view=win10-ps).
     
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe
@@ -328,7 +328,7 @@ Aqui estão algumas maneiras de contornar o problema de os layouts do menu Inici
      > [!NOTE] 
      > A importação de um StartLayout modifica o perfil do usuário padrão. Todos os perfis de usuário criados após a importação receberão o layout do menu Iniciar importado.
  
-- Os administradores de TI podem optar por gerenciar o layout do menu Iniciar com a Política de Grupo. O uso da Política de Grupo fornece uma solução de gerenciamento centralizada para aplicar um layout de menu Iniciar padronizado aos usuários. Há dois modos de usar Política de Grupo para o gerenciamento do menu Iniciar. Bloqueio completo e bloqueio parcial. O cenário de bloqueio completo impede que o usuário faça qualquer alteração no layout do menu Iniciar. O cenário de bloqueio parcial permite que o usuário faça alterações em uma área específica do menu Iniciar. Para obter mais informações, confira [Personalizar e exportar o layout do menu Iniciar](https://docs.microsoft.com/windows/configuration/customize-and-export-start-layout).
+- Os administradores de TI podem optar por gerenciar o layout do menu Iniciar com a Política de Grupo. O uso da Política de Grupo fornece uma solução de gerenciamento centralizada para aplicar um layout de menu Iniciar padronizado aos usuários. Há dois modos de usar Política de Grupo para o gerenciamento do menu Iniciar. Bloqueio completo e bloqueio parcial. O cenário de bloqueio completo impede que o usuário faça qualquer alteração no layout do menu Iniciar. O cenário de bloqueio parcial permite que o usuário faça alterações em uma área específica do menu Iniciar. Para obter mais informações, confira [Personalizar e exportar o layout do menu Iniciar](/windows/configuration/customize-and-export-start-layout).
         
    > [!NOTE]
    > As alterações feitas pelo usuário no cenário de bloqueio parcial ainda serão perdidas durante a atualização.
@@ -359,6 +359,6 @@ A tabela a seguir resume algumas das alterações mais importantes para este tó
 - [Implantar Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](deploy-folder-redirection.md)
 - [Implantar computadores primários para Redirecionamento de Pastas e Perfis de Usuários Móveis](deploy-primary-computers.md)
 - [Implementando gerenciamento de estado do usuário](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc784645(v=ws.10)>)
-- [Declaração de suporte da Microsoft sobre dados de perfil do usuário replicados](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
+- [Declaração de suporte da Microsoft sobre dados de perfil do usuário replicados](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
 - [Realizar o sideload de aplicativos com o DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-- [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em Windows Runtime](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+- [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em Windows Runtime](/windows/win32/appxpkg/troubleshooting)

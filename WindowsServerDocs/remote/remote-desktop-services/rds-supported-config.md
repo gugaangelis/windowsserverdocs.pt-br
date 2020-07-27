@@ -9,12 +9,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 406112eae884b1e34d54eb18700c3ad28c3f52c6
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 1285a63b3b283914a439817886cd84c4b93b59c8
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390073"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86965678"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>Configurações compatíveis para os Serviços de Área de Trabalho Remota
 
@@ -137,4 +137,4 @@ Para obter mais informações sobre a criação de implantação de VDI dos Serv
 
 ## <a name="using-remote-desktop-services-with-application-proxy-services"></a>Usar os Serviços de Área de Trabalho Remota com serviços de proxy de aplicativo
 
-Você pode usar os Serviços de Área de Trabalho Remota, exceto o cliente da Web, com o [Proxy de Aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-remote-desktop). Os Serviços de Área de Trabalho Remota não dão suporte ao uso do [Proxy de Aplicativo Web](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server), que está incluído no Windows Server 2016 e versões anteriores.
+Você pode usar os Serviços de Área de Trabalho Remota, exceto o cliente da Web, com o [Proxy de Aplicativo do Azure AD](/azure/active-directory/application-proxy-publish-remote-desktop). Os Serviços de Área de Trabalho Remota não dão suporte ao uso do [Proxy de Aplicativo Web](../remote-access/web-application-proxy/web-application-proxy-windows-server.md), que está incluído no Windows Server 2016 e versões anteriores.

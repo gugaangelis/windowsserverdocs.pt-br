@@ -9,12 +9,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a424a28be835fa2a941187b110907fff76e6f220
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7e08e4aa0cd1298502c59a1a8275293910345d6a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81650064"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966188"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Use contadores de desempenho para diagnosticar os problemas de desempenho do aplicativo nos Hosts da Sessão da Área de Trabalho Remota
 
@@ -33,7 +33,7 @@ A imagem a seguir mostra uma representação aproximada do fluxo de entrada do u
 
 ![Área de Trabalho Remota – fluxos de entrada do usuário do cliente de Área de Trabalho Remota para o aplicativo](./media/rds-user-input.png)
 
-O contador de Atraso de Entrada do Usuário mede o delta máximo (dentro de um intervalo de tempo) entre a entrada que está sendo enfileirada e quando ela é coletada pelo aplicativo em um [loop de mensagem tradicional](https://docs.microsoft.com/windows/win32/winmsg/about-messages-and-message-queues#message-loop), conforme mostrado no fluxograma a seguir:
+O contador de Atraso de Entrada do Usuário mede o delta máximo (dentro de um intervalo de tempo) entre a entrada que está sendo enfileirada e quando ela é coletada pelo aplicativo em um [loop de mensagem tradicional](/windows/win32/winmsg/about-messages-and-message-queues#message-loop), conforme mostrado no fluxograma a seguir:
 
 ![Área de Trabalho Remota – fluxo de contador de desempenho de Atraso de Entrada do Usuário](./media/rds-user-input-delay.png)
 
@@ -68,7 +68,7 @@ Depois de fazer isso, você deverá ver a caixa de diálogo Adicionar Contadores
 
 Se selecionar **Atraso de Entrada do Usuário por Processo**, você verá as **instâncias do objeto selecionado** (em outras palavras, os processos) no formato ```SessionID:ProcessID <Process Image>```.
 
-Por exemplo, se o aplicativo Calculadora estiver executando uma [ID de Sessão 1](https://docs.microsoft.com/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)), você verá ```1:4232 <Calculator.exe>```.
+Por exemplo, se o aplicativo Calculadora estiver executando uma [ID de Sessão 1](/previous-versions/iis/6.0-sdk/ms524326(v=vs.90)), você verá ```1:4232 <Calculator.exe>```.
 
 > [!NOTE]
 > Nem todos os processos são incluídos. Você não verá todos os processos que estão sendo executados como SYSTEM.
@@ -135,7 +135,7 @@ Eis aqui a aparência que isso teria se você ativasse ambas as chaves:
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Usando os novos contadores com ferramentas não Microsoft
 
-Ferramentas de monitoramento podem consumir esse contador ao [Usar Contadores de Desempenho](https://docs.microsoft.com/windows/win32/perfctrs/using-performance-counters).
+Ferramentas de monitoramento podem consumir esse contador ao [Usar Contadores de Desempenho](/windows/win32/perfctrs/using-performance-counters).
 
 ## <a name="download-windows-server-insider-software"></a>Baixar o software do Windows Server Insider
 
