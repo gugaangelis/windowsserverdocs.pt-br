@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: bd3c15d08b0d4b6f174fd9c790f0dacb2457472e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: fbe523043b905e80559dfb9df799426761709b4e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473283"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177912"
 ---
 # <a name="cluster-aware-updating-overview"></a>Visão geral da Atualização com Suporte a Cluster
 
@@ -136,6 +136,6 @@ Os links a seguir fornecem mais informações sobre como usar a atualização co
 
 -   [\-Cmdlets de atualização com reconhecimento de cluster no Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
--   [\-Referência de plug- \- in de atualização com reconhecimento de cluster](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
+-   [\-Referência de plug- \- in de atualização com reconhecimento de cluster](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 

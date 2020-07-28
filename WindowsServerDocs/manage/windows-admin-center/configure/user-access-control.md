@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "79323588"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182202"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar o controle de acesso do usuário e as permissões
 
@@ -68,7 +68,7 @@ Por padrão, todos os membros do locatário do Azure AD têm acesso de usuário 
 
 Se você quiser conceder a usuários ou grupos específicos do Azure AD acesso de administrador de gateway ou usuário de gateway ao serviço do Windows Admin Center, deverá fazer o seguinte:
 
-1.  Acesse o aplicativo Azure AD do Windows Admin Center no portal do Azure usando o hiperlink fornecido em Configurações de Acesso. Observe que esse hiperlink só está disponível quando a autenticação Azure Active Directory está habilitada. 
+1.  Acesse o aplicativo Azure AD do Windows Admin Center no portal do Azure usando o hiperlink fornecido em Configurações de Acesso. Observe que esse hiperlink só está disponível quando a autenticação Azure Active Directory está habilitada.
     -   Você também pode encontrar seu aplicativo no portal do Azure acessando **Azure Active Directory** > **Aplicativos empresariais** > **Todos os aplicativos** e pesquisando **WindowsAdminCenter** (o aplicativo Azure AD terá o nome WindowsAdminCenter-<gateway name>). Se você não obtiver nenhum resultado da pesquisa, verifique se **Mostrar** está definido como **Todos os aplicativos**, **Status do aplicativo** está definido como **Qualquer**, então clique em Aplicar e tente a pesquisa. Depois de encontrar o aplicativo, acesse **Usuários e grupos**
 2.  Na guia Propriedades, defina **Atribuição de usuário necessária** como Sim.
     Depois de fazer isso, somente os membros listados na guia **Usuários e grupos** poderão acessar o gateway do Windows Admin Center.
@@ -86,22 +86,22 @@ Os usuários e administradores podem exibir a conta conectada no momento e, alé
 
 Se você quiser conceder a usuários ou grupos específicos do Azure AD acesso de administrador de gateway ou usuário de gateway ao serviço do Windows Admin Center, deverá fazer o seguinte:
 
-1.  Vá para seu aplicativo de SME do Azure AD no portal do Azure. 
+1.  Vá para seu aplicativo de SME do Azure AD no portal do Azure.
     -   Ao clicar em **Alterar controle de acesso** e, em seguida, selecionar **Azure Active Directory** nas configurações de Acesso do Windows Admin Center, você pode usar o hiperlink fornecido na interface do usuário para acessar seu aplicativo do Azure AD no portal do Azure. Esse hiperlink também está disponível nas configurações de acesso depois que você clica em Salvar e seleciona o Azure AD como provedor de identidade de controle de acesso.
     -   Você também pode encontrar seu aplicativo no portal do Azure acessando **Azure Active Directory** > **Aplicativos empresariais** > **Todos os aplicativos** e pesquisando **SME** (o aplicativo Azure AD terá o nome SME-<gateway>). Se você não obtiver nenhum resultado da pesquisa, verifique se **Mostrar** está definido como **Todos os aplicativos**, **Status do aplicativo** está definido como **Qualquer**, então clique em Aplicar e tente a pesquisa. Depois de encontrar o aplicativo, acesse **Usuários e grupos**
 2.  Na guia Propriedades, defina **Atribuição de usuário necessária** como Sim.
     Depois de fazer isso, somente os membros listados na guia **Usuários e grupos** poderão acessar o gateway do Windows Admin Center.
 3.  Na guia Usuários e grupos, selecione **Adicionar usuário**. Você deve atribuir uma função de usuário de gateway ou administrador de gateway a cada usuário/grupo adicionado.
 
-Depois de salvar o serviço de controle de acesso do Azure AD no painel **Alterar controle de acesso**, o serviço de gateway será reiniciado e você deverá atualizar o navegador. Você pode atualizar o acesso do usuário para o aplicativo do Azure AD do Windows Admin Center no portal do Azure a qualquer momento. 
+Depois de salvar o serviço de controle de acesso do Azure AD no painel **Alterar controle de acesso**, o serviço de gateway será reiniciado e você deverá atualizar o navegador. Você pode atualizar o acesso do usuário para o aplicativo do Azure AD do Windows Admin Center no portal do Azure a qualquer momento.
 
-Os usuários serão solicitados a entrar usando a identidade do Azure Active Directory quando tentarem acessar a URL do gateway do Windows Admin Center. Lembre-se de que os usuários também devem ser membros dos usuários locais no servidor de gateway para acessarem o Windows Admin Center. 
+Os usuários serão solicitados a entrar usando a identidade do Azure Active Directory quando tentarem acessar a URL do gateway do Windows Admin Center. Lembre-se de que os usuários também devem ser membros dos usuários locais no servidor de gateway para acessarem o Windows Admin Center.
 
 Usando a guia **Azure** das configurações gerais do Windows Admin Center, os usuários e os administradores podem exibir a conta conectada no momento, bem como sair dessa conta do Azure AD.
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>Acesso condicional e autenticação multifator
 
-Um dos benefícios de usar o Azure AD como uma camada adicional de segurança para controlar o acesso ao gateway do Windows Admin Center é que você pode aproveitar os eficientes recursos de segurança do Azure AD, como acesso condicional e autenticação multifator. 
+Um dos benefícios de usar o Azure AD como uma camada adicional de segurança para controlar o acesso ao gateway do Windows Admin Center é que você pode aproveitar os eficientes recursos de segurança do Azure AD, como acesso condicional e autenticação multifator.
 
 [Saiba mais sobre como configurar o acesso condicional com o Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
@@ -109,7 +109,7 @@ Um dos benefícios de usar o Azure AD como uma camada adicional de segurança pa
 
 **Logon único quando implantado como um serviço no Windows Server**
 
-Quando você instala o Windows Admin Center no Windows 10, ele está pronto para usar o logon único. No entanto, se você pretende usar o Windows Admin Center no Windows Server, precisará configurar alguma forma de delegação do Kerberos em seu ambiente para poder usar o logon único. A delegação configura o computador do gateway como confiável para delegar ao nó de destino. 
+Quando você instala o Windows Admin Center no Windows 10, ele está pronto para usar o logon único. No entanto, se você pretende usar o Windows Admin Center no Windows Server, precisará configurar alguma forma de delegação do Kerberos em seu ambiente para poder usar o logon único. A delegação configura o computador do gateway como confiável para delegar ao nó de destino.
 
 Para configurar [Delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, use o seguinte exemplo do PowerShell. Este exemplo mostra como você deve configurar um Windows Server [node01.contoso.com] para aceitar a delegação do gateway do Windows Admin Center [wac.contoso.com] no domínio contoso.com.
 
@@ -159,7 +159,7 @@ Depois que a configuração for aplicada, você poderá atribuir usuários às f
 3.  No painel *Detalhes* na parte inferior, clique em **Adicionar Usuário** e insira o nome de um usuário ou grupo de segurança que deve ter acesso somente leitura ao servidor por meio do Windows Admin Center. Os usuários e grupos podem vir do computador local ou do seu domínio do Active Directory.
 4.  Repita as etapas 2-3 para os grupos de **Administradores do Hyper-V do Windows Admin Center** e **Administradores do Windows Admin Center**.
 
-Você também pode preencher esses grupos de forma consistente em seu domínio configurando um objeto de Política de Grupo com a [Configuração de Política de Grupos Restritos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
+Você também pode preencher esses grupos de forma consistente em seu domínio configurando um objeto de Política de Grupo com a [Configuração de Política de Grupos Restritos](/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
 
 ### <a name="apply-role-based-access-control-to-multiple-machines"></a>Aplicar o controle de acesso baseado em função a vários computadores
 

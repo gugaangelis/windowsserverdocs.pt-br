@@ -2,18 +2,17 @@
 title: Solucionar problemas de conectividade do Acesso Remoto via Web no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d3642575-b3ee-4488-b654-5bf9d3b8c935
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 02563f56cad211d5aa842d7607fa9f6005f18026
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ebb256876114c9c3260311fa09eb30f3067905b8
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470161"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180312"
 ---
 # <a name="troubleshoot-remote-web-access-connectivity-in-windows-server-essentials"></a>Solucionar problemas de conectividade do Acesso Remoto via Web no Windows Server Essentials
 
@@ -67,8 +66,8 @@ ms.locfileid: "85470161"
 
   |Endereço IP|Protocolo (TCP/UDP)|Agenda|Filtro de entrada|
   |----------------|---------------------------|--------------|--------------------|
-  |192.168.0.100|TCP 80|Sempre|Permitir todos|
-  |192.168.0.100|TCP 443|Sempre|Permitir todos|
+  |192.168.0.100|TCP 80|Sempre|Permitir Tudo|
+  |192.168.0.100|TCP 443|Sempre|Permitir Tudo|
 
    Depois de configurar manualmente o roteador, execute o assistente para ativar Acesso via Web remoto, assegurando que você selecione a opção **ignorar a instalação do roteador** na página **introdução** .
 
@@ -77,7 +76,7 @@ ms.locfileid: "85470161"
 > [!TIP]
 >  Certifique-se que o seu roteador tem o firmware de BIOS mais recente instalado. Você pode atualizar o firmware de BIOS para seu roteador na página da Web de configuração para ele. Para obter mais informações, veja a documentação do seu roteador. Após seu roteador ser atualizado, execute o Assistente de Configuração do Acesso em Qualquer Local.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 -   [Usar o Acesso via Web Remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)
 

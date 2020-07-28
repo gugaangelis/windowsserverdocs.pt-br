@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: Requisitos para usar a atualização com suporte a cluster para instalar atualizações em clusters que executam o Windows Server.
-ms.openlocfilehash: 066aca3adb2ceec19663653a7bc2f0f8cd42da16
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a3f00d6f0118b536745be0afdac8b4a7084a6721
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473303"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178353"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>Requisitos e práticas recomendadas para Atualização com Suporte a Cluster
 
@@ -36,7 +36,7 @@ A tabela a seguir resume os requisitos de instalação do recurso CAU para dois 
 |-----------------------|-----------------------|-------------------------|
 |Recurso de cluster de failover|Necessário em todos os nós de cluster|Necessário em todos os nós de cluster|
 |Ferramentas de cluster de failover|Necessário em todos os nós de cluster|-Necessário no \- computador de atualização remota<br />-Necessário em todos os nós de cluster para executar o cmdlet [Save-CauDebugTrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)|
-|Função clusterizada do CAU|Obrigatório|Não obrigatório|
+|Função clusterizada do CAU|Obrigatório|Não é necessária|
 
 ## <a name="obtain-an-administrator-account"></a>Obter uma conta de administrador
 Os requisitos de administrador a seguir são necessários para usar recursos de CAU.
@@ -200,7 +200,7 @@ netsh winhttp set proxy MyProxy.CONTOSO.com:443 "<local>"
 
 -   Você deve definir as permissões apropriadas nos \- scripts pré-atualização e post \- atualizados que são salvos em pastas compartilhadas de rede para evitar a violação potencial desses arquivos por usuários não autorizados.
 
--   Para configurar a CAU no \- modo de autoatualização, um objeto de computador virtual \( VCO \) para a função clusterizada Cau deve ser criado no Active Directory. O CAU pode criar esse objeto automaticamente no momento em que a função clusterizada do CAU for adicionada e o cluster de failover tiver permissões suficientes. Entretanto, por causa das políticas de segurança em certas organizações, pode ser necessário pré-configurar o objeto no Active Directory. Para obter um procedimento para isso, consulte [Etapas para pré-preparar a conta para uma função em cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account).
+-   Para configurar a CAU no \- modo de autoatualização, um objeto de computador virtual \( VCO \) para a função clusterizada Cau deve ser criado no Active Directory. O CAU pode criar esse objeto automaticamente no momento em que a função clusterizada do CAU for adicionada e o cluster de failover tiver permissões suficientes. Entretanto, por causa das políticas de segurança em certas organizações, pode ser necessário pré-configurar o objeto no Active Directory. Para obter um procedimento para isso, consulte [Etapas para pré-preparar a conta para uma função em cluster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731002\(v=ws.10\)#steps-for-prestaging-the-cluster-name-account).
 
 -   Para salvar e reutilizar as configurações de Executar atualização nos clusters de failover com necessidades de atualização similar na organização de TI, você pode criar Perfis de Execução de Atualização. Além disso, dependendo do modo de atualização, você pode salvar e gerenciar os Perfis de Execução de Atualização em um compartilhamento de arquivo que está acessível a todos os computadores do Coordenador de Atualização remoto ou clusters de failover. Para obter mais informações, consulte [Opções avançadas e atualizando perfis de execução para a cau](cluster-aware-updating-options.md).
 

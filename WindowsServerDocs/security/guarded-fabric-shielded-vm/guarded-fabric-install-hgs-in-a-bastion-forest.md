@@ -7,14 +7,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 20e0d5e73713c0d6280e95d51ec8de8fde612350
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 331fc5a4e825dc4e7faf6f0a65605d7aaebf8314
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856579"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181692"
 ---
-# <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalar o HGS em uma floresta de bastiões existente 
+# <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalar o HGS em uma floresta de bastiões existente
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
@@ -27,7 +27,7 @@ Em uma floresta de bastiões existente, o HGS deve ser adicionado ao domínio ra
 
 Execute todos os comandos neste tópico em uma sessão do PowerShell com privilégios elevados.
 
-[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
+[!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)]
 
 Se o seu datacenter tiver uma floresta de bastiões segura em que você deseja ingressar nos nós HGS, siga estas etapas.
 Você também pode usar estas etapas para configurar dois ou mais clusters HGS independentes que ingressaram no mesmo domínio.
@@ -70,7 +70,7 @@ New-ADServiceAccount -Name 'HGSgMSA' -DnsHostName 'HGSgMSA.yourdomain.com' -Prin
 ```
 
 O gMSA precisará do direito de gerar eventos no log de segurança em cada servidor HGS.
-Se você usar Política de Grupo para configurar a atribuição de direitos de usuário, verifique se a conta gMSA recebeu o [privilégio gerar eventos de auditoria](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29) nos servidores HgS.
+Se você usar Política de Grupo para configurar a atribuição de direitos de usuário, verifique se a conta gMSA recebeu o [privilégio gerar eventos de auditoria](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29) nos servidores HgS.
 
 > [!NOTE]
 > Contas de serviço gerenciado de grupo estão disponíveis a partir do esquema de Active Directory do Windows Server 2012.
@@ -100,7 +100,7 @@ O CNO representa o nome do cluster e é usado principalmente internamente pelo c
 O VCO representa o serviço HGS que reside na parte superior do cluster e será o nome registrado no servidor DNS.
 
 > [!IMPORTANT]
-> O usuário que executará `Initialize-HgsServer` exigirá **controle total** sobre os objetos CNO e VCO no Active Directory.
+> O usuário que executará o `Initialize-HgsServer` precisará de **controle total** sobre os objetos CNO e VCO no Active Directory.
 
 Para pré-configurar rapidamente o CNO e o VCO, faça com que um administrador de Active Directory execute os seguintes comandos do PowerShell:
 
@@ -142,11 +142,11 @@ Verifique os objetos do Política de Grupo para as seguintes configurações e s
 
 **Nome da política:** Segurança de rede: configurar tipos de criptografia permitidos para Kerberos
 
-**Ação**: se essa política estiver configurada, você deverá atualizar a conta GMSA com [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar apenas os tipos de criptografia com suporte nesta política. Por exemplo, se sua política permitir apenas AES128\_HMAC\_SHA1 e AES256\_HMAC\_SHA1, você deverá executar o `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`.
+**Ação**: se essa política estiver configurada, você deverá atualizar a conta GMSA com [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar apenas os tipos de criptografia com suporte nesta política. Por exemplo, se sua política permitir somente AES128 \_ HMAC \_ SHA1 e aes256 \_ HMAC \_ SHA1, você deverá executar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` .
 
 
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 - Para as próximas etapas para configurar o atestado baseado em TPM, consulte [inicializar o cluster HgS usando o modo TPM em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-tpm-mode-bastion.md).
 - Para as próximas etapas para configurar o atestado de chave do host, consulte [inicializar o cluster HgS usando o modo de chave em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-key-mode-bastion.md).

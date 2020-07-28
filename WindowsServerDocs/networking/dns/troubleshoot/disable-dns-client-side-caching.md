@@ -1,5 +1,5 @@
 ---
-title: Desabilitar o cache do lado do cliente DNS em clientes DNS
+title: Desabilitar o cache do DNS do lado do cliente em clientes DNS
 description: Este artigo apresenta como desabilitar o cache do lado do cliente DNS em clientes DNS.
 manager: dcscontentpm
 ms.technology: networking-dns
@@ -7,14 +7,14 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 09af41a544cacb0fd0977847b7bc2e6b0d8a59f7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 74e7f3936418bd2f04234d07b2f600197e94b357
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860069"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182342"
 ---
-# <a name="disable-dns-client-side-caching-on-dns-clients"></a>Desabilitar o cache do lado do cliente DNS em clientes DNS
+# <a name="disable-dns-client-side-caching-on-dns-clients"></a>Desabilitar o cache do DNS do lado do cliente em clientes DNS
 
 O Windows contém um cache DNS do lado do cliente. O recurso de cache DNS do lado do cliente pode gerar uma falsa impressão de que o balanceamento de carga do DNS "round robin" não está ocorrendo do servidor DNS para o computador cliente do Windows. Quando você usa o comando ping para pesquisar o mesmo nome de domínio de registro a, o cliente pode usar o mesmo endereço IP.  
 
@@ -66,12 +66,12 @@ O TTL para respostas positivas é o menor dos seguintes valores:
 >[!Note]
 >- O TTL padrão para respostas positivas é de 86.400 segundos (1 dia).
 >- O TTL para respostas negativas é o número de segundos especificado na configuração do registro MaxNegativeCacheTtl.
->- O TTL padrão para respostas negativas é de 900 segundos (15 minutos).
+>- O TTL padrão para respostas negativas é de 5 segundos; antes do Windows 10, a versão 1703 do padrão era 900 segundos (15 minutos).
 Se você não quiser que respostas negativas sejam armazenadas em cache, defina a configuração do registro MaxNegativeCacheTtl como 0.
 
 Para definir o tempo de cache em um computador cliente:
 
-1. Inicie o editor do registro (regedit. exe).
+1. Inicie o editor do registro (Regedit.exe).
 
 2. Localize e clique na seguinte chave no registro:
 
@@ -83,16 +83,16 @@ Para definir o tempo de cache em um computador cliente:
 
      Tipo de dados: REG_DWORD
 
-     Dados do valor: valor padrão de 86400 segundos. 
-     
-     Se você reduzir o valor máximo de TTL no cache DNS do cliente para 1 segundo, isso dará a aparência de que o cache DNS do lado do cliente foi desabilitado.    
+     Dados do valor: valor padrão de 86400 segundos.
+
+     Se você reduzir o valor máximo de TTL no cache DNS do cliente para 1 segundo, isso dará a aparência de que o cache DNS do lado do cliente foi desabilitado.
 
    - Nome do valor: MaxNegativeCacheTtl
 
      Tipo de dados: REG_DWORD
 
-     Dados do valor: valor padrão de 900 segundos. 
-     
+     Dados do valor: valor padrão 5 segundos.
+
      Defina o valor como 0 se você não quiser que respostas negativas sejam armazenadas em cache.
 
 4. Digite o valor que você deseja usar e clique em OK.

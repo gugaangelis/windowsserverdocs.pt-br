@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 41126aa0d054607449d57928c1777679e5087e73
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 406623a86c92fca842fa1056126bb88025cedecb
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394459"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182072"
 ---
 # <a name="smb-direct"></a>SMB Direct
 
@@ -124,5 +124,5 @@ Faça assim para confirmar a capacidade de failover do SMB Direct:
 ## <a name="more-information"></a>Mais informações
 
 - [Visão geral do Protocolo SMB](file-server-smb-overview.md)
-- [Como aumentar a disponibilidade do servidor, do armazenamento e da rede: visão geral do cenário](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [Implantar o Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [Como aumentar a disponibilidade do servidor, do armazenamento e da rede: visão geral do cenário](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Implantar o Hyper-V no SMB](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

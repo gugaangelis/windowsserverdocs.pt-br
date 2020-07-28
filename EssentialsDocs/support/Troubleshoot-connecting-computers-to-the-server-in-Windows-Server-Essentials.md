@@ -2,18 +2,17 @@
 title: Solucionar problemas de computadores que se conectam ao servidor no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7b679ae9d3a3d5f4526edced78d720ca83d3e008
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c05888f52f3fe60d0dde22a70ceb5a3eee94e0ef
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470036"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180232"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de computadores que se conectam ao servidor no Windows Server Essentials
 
@@ -22,7 +21,7 @@ ms.locfileid: "85470036"
  Este tópico contém diretrizes para solução de problemas que você pode encontrar ao conectar um computador ao servidor que está executando o Windows Server Essentials ou o Windows Server Essentials.
 
 > [!NOTE]
->  Para obter as informações mais atuais de solução de problemas da Comunidade do Windows Server Essentials e do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserveressentials). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
+>  Para obter as informações mais atuais de solução de problemas da Comunidade do Windows Server Essentials e do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
 
  Este tópico fornece soluções para os seguintes problemas:
 
@@ -281,6 +280,6 @@ ms.locfileid: "85470036"
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
+- [Gerenciar o Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)
 
--   [Solucionando problemas no Windows 2012 Server Essentials ConnectComputer (Wiki do TechNet)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+- [Solução de problemas do Windows 2012 Server Essentials ConnectComputer](https://docs.microsoft.com/windows-server-essentials/support/troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials)

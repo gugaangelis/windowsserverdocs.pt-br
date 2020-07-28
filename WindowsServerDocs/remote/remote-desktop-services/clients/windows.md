@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 49c1d5a378d6e0be224e02fdd80346ee172ca45b
-ms.sourcegitcommit: 75b4cf49dd918ff98258dcae6e6e8d7825c9adec
+ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84269239"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181942"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introdução ao cliente para Microsoft Store
 
@@ -95,14 +95,14 @@ Para configurar um novo gateway:
 
 1. Na Central de Conexão, toque em **Configurações**.
 2. Ao lado de Gateway, toque em **+** para adicionar um novo gateway.
-      
+
       >[!NOTE]
       >Adicione também um gateway ao adicionar uma nova conexão.
 
 3. Insira as seguintes informações:
    - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. O nome do servidor pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
    - **Conta de usuário**: selecione ou adicione uma conta de usuário a ser usada com o Gateway de Área de Trabalho Remota ao qual você está se conectando. Selecione também a opção **Usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de Área de Trabalho Remota.
-4. Toque em **Salvar**.  
+4. Toque em **Salvar**.
 
 ## <a name="global-app-settings"></a>Configurações globais do aplicativo
 
@@ -203,4 +203,4 @@ Dois modos de mouse estão disponíveis para interagir com a sessão.
 | Ponteiro do mouse | Zoom                 | Com dois dedos, pinçar para ampliar a tela e abrir os dedos para reduzi-la |
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winrdc) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [Hub de Feedback](feedback-hub://?tabid=2&contextid=605).
+> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [Hub de Feedback](feedback-hub://?tabid=2&contextid=605).

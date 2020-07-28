@@ -5,12 +5,12 @@ ms.author: jmesser
 author: jmesser81
 ms.prod: windows-server
 ms.date: 11/05/2018
-ms.openlocfilehash: 4afde574802bd63db8ea8ca8db9f5daf1a53dc93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d665ba431331fbf1f41a0ac4774e58693a5e2
+ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859839"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87295040"
 ---
 # <a name="host-compute-network-hcn-service-api-for-vms-and-containers"></a>API de serviço HCN (rede de computação de host) para VMs e contêineres
 
@@ -56,11 +56,9 @@ As definições de esquema usadas com frequência são [openapi](https://www.ope
 
 Como parte da documentação das APIs do HCN, estamos planejando publicar o esquema de nossos documentos JSON como uma especificação OpenAPI. Com base nessa especificação, representações específicas de idioma do esquema podem permitir o uso seguro de tipo dos objetos de esquema na linguagem de programação usada pelo cliente. 
 
-### <a name="example"></a>{1&gt;Exemplo&lt;1} 
+### <a name="example"></a>Exemplo 
 
 Veja a seguir um exemplo desse fluxo de trabalho para o objeto que representa um controlador SCSI no documento de configuração de uma VM. 
-
-No código-fonte do Windows, definimos esquemas usando arquivos. Mars: onecore/VM/DV/net/HNS/Schema/Mars/esquema/HCN. Schema. Network. Mars
 
 ```
 enum IpamType
@@ -224,7 +222,7 @@ A partir desta definição interna, geramos as especificações de OpenAPI para 
 } 
 ```
 
-Você pode usar ferramentas, como o [Swagger](https://swagger.io/), para gerar representações específicas de idioma da linguagem de programação de esquema usada por um cliente. O Swagger dá suporte a uma variedade de C#linguagens como, go, JavaScript e Python.
+Você pode usar ferramentas, como o [Swagger](https://swagger.io/), para gerar representações específicas de idioma da linguagem de programação de esquema usada por um cliente. O Swagger dá suporte a uma variedade de linguagens, como C#, go, JavaScript e Python.
 
 - [Exemplo de código C# gerado](example-c-sharp.md) para o objeto de sub-rede & o IPAM de nível superior.
 
@@ -278,7 +276,7 @@ class HostComputeLoadBalancer : HCN.Schema.Common.Base
 };
 ```
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 - Saiba mais sobre os [cenários comuns de HCN](hcn-scenarios.md).
 

@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 0208e23b94b5e7c5012bc99eabf71aa0c7ad944c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82037135"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178572"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
@@ -48,8 +48,8 @@ Os requisitos de hardware e de software de banco de dados são orientados pelo n
 
     -   **Adaptador de rede:** 100 Mbps (megabits por segundo) ou mais (1 GB é recomendável)
 
-> [!NOTE] 
-> Essas diretrizes pressupõem que os clientes do WSUS estejam sincronizando com o servidor a cada oito horas para um rollup de 30.000 clientes. Se eles sincronizarem com mais frequência, haverá um incremento correspondente na carga do servidor.  
+> [!NOTE]
+> Essas diretrizes pressupõem que os clientes do WSUS estejam sincronizando com o servidor a cada oito horas para um rollup de 30.000 clientes. Se eles sincronizarem com mais frequência, haverá um incremento correspondente na carga do servidor.
 
 -   Requisitos de software:
 
@@ -103,7 +103,7 @@ Esteja ciente de que configurar computadores cliente (incluindo servidores) para
    > [!NOTE]
    > Configurar uma origem de instalação dos Recursos sob Demanda não envolve WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
 
-3. Os dispositivos corporativos que executam o Windows 10, versão 1709 ou 1803, não podem instalar nenhum Recurso sob Demanda diretamente do WSUS. Para instalar Recursos sob Demanda, [crie um arquivo de recurso (repositório lado a lado)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) ou obtenha o pacote do Recurso sob Demanda de uma das seguintes fontes:
+3. Os dispositivos corporativos que executam o Windows 10, versão 1709 ou 1803, não podem instalar nenhum Recurso sob Demanda diretamente do WSUS. Para instalar Recursos sob Demanda, [crie um arquivo de recurso (repositório lado a lado)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) ou obtenha o pacote do Recurso sob Demanda de uma das seguintes fontes:
    - [VLSC](https://www.microsoft.com/licensing/servicecenter) (Centro de Atendimento de Licenciamento por Volume) – o acesso de VL é necessário
    - Portal OEM – o acesso OEM é necessário
    - Download do MSDN – assinatura do MSDN é obrigatória
@@ -166,7 +166,7 @@ Você pode criar complexas hierarquias dos servidores do WSUS. Como é possível
 
 -   Dimensionar o WSUS para uma organização de grande porte que tem mais computadores clientes do que um único servidor do WSUS pode gerenciar com eficácia.
 
-> [!NOTE] 
+> [!NOTE]
 > É recomendável não criar uma hierarquia de servidores do WSUS com mais de três níveis de profundidade. Cada nível aumenta o tempo para propagar as atualizações nos servidores conectados. Apesar de não haver um limite teórico para uma hierarquia, somente implantações que têm uma hierarquia de cinco níveis de profundidade foram testadas pela Microsoft.
 >
 > Além disso, os servidores downstream devem estar na mesma versão ou em uma versão anterior do WSUS em relação à origem de sincronização do servidor upstream.

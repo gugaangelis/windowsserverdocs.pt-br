@@ -9,16 +9,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 7a19230e0fc1fb96700785fd83e70d501d59b76a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd4aa60c977b09958aebc0087c981efd02f36fed
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861689"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182292"
 ---
 # <a name="windows-authentication-technical-overview"></a>Visão geral técnica de autenticação do Windows
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico para o profissional de ti fornece links para tópicos sobre a visão geral técnica da autenticação do Windows. A autenticação do Windows é o processo para provar a autenticidade de um usuário ou serviço que tenta acessar o Windows.
 
@@ -54,14 +54,14 @@ Para salvar ou imprimir páginas desta biblioteca digitalmente, clique em **Expo
 
     Descreve o uso e o impacto das políticas de grupo no processo de autenticação.
 
-## <a name="what-is-not-covered"></a>O que não é coberto
+## <a name="what-is-not-covered"></a>O que não é abordado
 Esta coleção de tópicos não aborda os procedimentos para projetar, implementar ou monitorar suas tecnologias de autenticação em um ambiente Windows.
 
 -   Para obter informações de design sobre estratégias de autorização do Windows, consulte [criando uma estratégia de autorização de recursos](https://technet.microsoft.com/library/cc783368.aspx).
 
 -   Para obter informações de design sobre estratégias de autenticação do Windows, consulte [criando uma estratégia de autenticação](https://technet.microsoft.com/library/cc758124.aspx).
 
--   Para obter informações de design sobre estratégias de implementação de infraestrutura de chave pública do Windows, consulte [projetando uma infraestrutura de chave pública](https://technet.microsoft.com/library/cc773138.aspx).
+-   Para obter informações de design sobre estratégias de implementação de infraestrutura de chave pública do Windows, consulte [projetando uma infraestrutura de chave pública](/previous-versions/windows/it-pro/windows-server-2003/cc773138(v=ws.10)).
 
 -   Para configurar e monitorar a segurança, incluindo a autenticação do em seu ambiente do Windows, consulte:
 
@@ -71,7 +71,7 @@ Esta coleção de tópicos não aborda os procedimentos para projetar, implement
 
     -   [Linha de base de segurança do Windows Server 2003](https://technet.microsoft.com/library/cc163140.aspx) e o [Guia de ameaças e contramedidas](https://technet.microsoft.com/library/dd162275.aspx)
 
-    -   [Guia de segurança do Windows Server 2008](https://www.microsoft.com/download/details.aspx?id=17606)
+    -   [Guia de Segurança do Windows Server 2008](https://www.microsoft.com/download/details.aspx?id=17606)
 
     -   [Linha de base de segurança do Windows Server 2008 R2](https://technet.microsoft.com/library/gg236605.aspx)
 

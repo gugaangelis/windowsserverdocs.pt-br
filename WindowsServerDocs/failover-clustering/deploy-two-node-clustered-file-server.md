@@ -8,18 +8,18 @@ ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/01/2019
-ms.openlocfilehash: 6b92ab965e94bec5bc7cfa5d068bff601d2f8f6b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 96f4d344aba989136c5010762d385c543c39dac2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827879"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177952"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implantando um servidor de arquivos clusterizado de dois nós
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Um cluster de failover é um conjunto de computadores independentes que trabalham em conjunto para aumentar a disponibilidade de aplicativos e serviços. Os serviços clusterizados (chamados nós) estão conectados por cabos físicos e por software. Se um dos nós do cluster falhar, o outro nó começará a fornecer o serviço (um processo conhecido como failover). Os usuários vivenciam um mínimo de interrupções no serviço.
+Um cluster de failover é um conjunto de computadores independentes que trabalham em conjunto para aumentar a disponibilidade de aplicativos e serviços. Os servidores clusterizados (chamados de nós) são conectados por cabos físicos e por software. Se um dos nós do cluster falhar, o outro nó começará a fornecer o serviço (um processo conhecido como failover). Os usuários vivenciam um mínimo de interrupções no serviço.
 
 Este guia descreve as etapas para instalar e configurar um cluster de failover do servidor de arquivos de uso geral que tem dois nós. Ao criar a configuração neste guia, você pode aprender sobre clusters de failover e se familiarizar com a interface de snap-in de gerenciamento de cluster de failover no Windows Server 2019 ou no Windows Server 2016.
 
@@ -72,18 +72,18 @@ Os itens a seguir serão necessários para um cluster de failover de dois nós.
 
 - **Controladores de dispositivo ou adaptadores apropriados para armazenamento:**
     - **SCSI ou Fibre Channel serial anexados:** Se você estiver usando SCSI anexado serial ou Fibre Channel, em todos os servidores clusterizados, todos os componentes da pilha de armazenamento deverão ser idênticos. É necessário que os componentes de software e DSM (módulo específico de dispositivo) e de software de e/s (MPIO) de vários caminhos sejam idênticos.  É recomendável que os controladores de dispositivo de armazenamento em massa — ou seja, a controladora, os drivers da controladora e o firmware da controladora — que estão conectados ao armazenamento clusterizado sejam idênticos. Se usar HBAs diferentes, você deverá verificar, com o fornecedor de armazenamento, se está cumprindo as configurações com suporte ou recomendadas.
-    - **iSCSI:** Se você estiver usando iSCSI, cada servidor clusterizado deverá ter um ou mais adaptadores de rede ou adaptadores de barramento de host dedicados ao armazenamento ISCSI. A rede usada para iSCSI não deve ser usada para comunicação de rede. Em todos os servidores clusterizados, os adaptadores de rede usados para conexão com o destino de armazenamento iSCSI devem ser idênticos. É recomendável também usar Gigabit Ethernet ou superior.  
+    - **iSCSI:** Se você estiver usando iSCSI, cada servidor clusterizado deverá ter um ou mais adaptadores de rede ou adaptadores de barramento de host dedicados ao armazenamento ISCSI. A rede usada para iSCSI não deve ser usada para comunicação de rede. Em todos os servidores clusterizados, os adaptadores de rede usados para conexão com o destino de armazenamento iSCSI devem ser idênticos. É recomendável também usar Gigabit Ethernet ou superior.
 
 - **Armazenamento:** Você deve usar o armazenamento compartilhado que é certificado para o Windows Server 2016 ou o Windows Server 2019.
-  
-    Para um cluster de failover de dois nós, o armazenamento deve conter pelo menos dois volumes separados (LUNs) se estiver usando um disco de testemunha para quorum. O disco testemunha é um disco no armazenamento de cluster designado para manter uma cópia do banco de dados de configuração do cluster. Para este exemplo de cluster de dois nós, a configuração de quorum será a maioria dos nós e discos. A maioria de nós e discos significa que os nós e o disco de testemunha contêm cópias da configuração do cluster e o cluster tem quorum, desde que a maioria (duas de três) dessas cópias estejam disponíveis. O outro volume (LUN) conterá os arquivos que estão sendo compartilhados para os usuários.
+
+    Para um cluster de failover de dois nós, o armazenamento deve conter pelo menos dois volumes separados (LUNs) se estiver usando um disco de testemunha para quorum. O disco testemunha é um disco no armazenamento de cluster designado para manter uma cópia do banco de dados de configuração do cluster. Para este exemplo de cluster de dois nós, a configuração de quorum será a maioria dos nós e discos. A configuração Maioria dos Nós e Discos significa que os nós e o disco testemunha contêm, cada um, cópias da configuração do cluster, e que o cluster tem quorum desde que a maioria (duas entre três) dessas cópias esteja disponível. O outro volume (LUN) conterá os arquivos que estão sendo compartilhados para os usuários.
 
     Os requisitos de armazenamento incluem o seguinte:
 
     - Para usar o suporte de disco nativo incluído no cluster de failover, use discos básicos, não discos dinâmicos.
     - É recomendável formatar as partições com NTFS (para o disco testemunha, a partição deve ser NTFS).
     - Para o estilo de partição do disco, é possível usar MBR (registro mestre de inicialização) ou GPT (tabela de partição GUID).
-    - O armazenamento deve responder corretamente a comandos SCSI específicos, o armazenamento deve seguir o padrão chamado de comandos primários SCSI-3 (SPC-3). Em particular, o armazenamento deve oferecer suporte a Reservas Persistentes, como especificado no padrão SPC-3. 
+    - O armazenamento deve responder corretamente a comandos SCSI específicos, o armazenamento deve seguir o padrão chamado de comandos primários SCSI-3 (SPC-3). Em particular, o armazenamento deve oferecer suporte a Reservas Persistentes, como especificado no padrão SPC-3.
     -  O driver de miniporta usado para o armazenamento deve funcionar com o driver de armazenamento do Microsoft Storport.
 
 ## <a name="deploying-storage-area-networks-with-failover-clusters"></a>Implantando redes de área de armazenamento com clusters de failover
@@ -114,7 +114,7 @@ Será necessária a infraestrutura de rede a seguir para um cluster de failover 
 
 - **Clientes:** Conforme necessário para o teste, você pode conectar um ou mais clientes em rede ao cluster de failover que você cria e observar o efeito em um cliente quando você move ou faz o failover do servidor de arquivos clusterizado de um nó de cluster para o outro.
 
-- **Conta para administrar o cluster:** Ao criar um cluster ou adicionar servidores a ele pela primeira vez, você deve estar conectado ao domínio com uma conta que tenha direitos de administrador e permissões em todos os servidores desse cluster. A conta não precisa ser uma conta de Admins. do Domínio, mas pode ser uma conta de Usuários do Domínio que esteja no grupo Administradores em cada servidor clusterizado. Além disso, se a conta não for uma conta admins. do domínio, a conta (ou o grupo do qual a conta é membro) deverá receber as permissões **criar objetos de computador** e **ler todas as propriedades** na unidade organizacional do domínio (UO) que residirá no.
+- **Conta para administrar o cluster:** Ao criar um cluster ou adicionar servidores a ele pela primeira vez, você deve estar conectado ao domínio com uma conta que tenha direitos de administrador e permissões em todos os servidores desse cluster. A conta não precisa ser uma conta Admins. do Domínio, mas poderá ser uma conta Usuários do Domínio que estiver no grupo Administradores em cada servidor com cluster. Além disso, se a conta não for uma conta admins. do domínio, a conta (ou o grupo do qual a conta é membro) deverá receber as permissões **criar objetos de computador** e **ler todas as propriedades** na unidade organizacional do domínio (UO) que residirá no.
 
 ## <a name="steps-for-installing-a-two-node-file-server-cluster"></a>Etapas para instalar um cluster de servidores de arquivos com dois nós
 
@@ -184,15 +184,15 @@ Nesta etapa, a função de servidor de arquivos e o recurso de cluster de failov
 
    ![Adicionar recurso](media/Cluster-File-Server/Cluster-FS-Add-WSFC-1.png)
 
-7. Na página confirmação, selecione instalar.
+7. Na página Confirmação, selecione Instalar.
 
 8. Quando a instalação for concluída, reinicie o computador.
 
 9. Repita as etapas no segundo computador.
 
-#### <a name="using-powershell"></a>Uso do PowerShell
+#### <a name="using-powershell"></a>Usando o PowerShell
 
-1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)** .
+1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)**.
 2. Para instalar a função de servidor de arquivos, execute o comando:
 
     ```PowerShell
@@ -224,7 +224,7 @@ Nesta etapa, a função de servidor de arquivos e o recurso de cluster de failov
 
 Antes de criar um cluster, é recomendável validar a configuração. A validação ajuda a confirmar se a configuração dos servidores, da rede e do armazenamento atendem a um conjunto específico de requisitos para clusters de failover.
 
-#### <a name="using-failover-cluster-manager"></a>Usando Gerenciador de Cluster de Failover
+#### <a name="using-failover-cluster-manager"></a>Usando o Gerenciador de Cluster de Failover
 
 1. Em **Gerenciador do servidor**, escolha a lista suspensa **ferramentas** e selecione **Gerenciador de cluster de failover**.
 
@@ -240,28 +240,28 @@ Antes de criar um cluster, é recomendável validar a configuração. A validaç
 
 7. Depois de concluído, a página **Resumo** é exibida após a execução dos testes. Para exibir tópicos da Ajuda para ajudar a interpretar os resultados, clique em **Mais informações sobre os testes de validação de cluster**.
 
-8. Ainda na página Resumo, clique em Exibir relatório e leia os resultados do teste. Faça as alterações necessárias na configuração e execute novamente os testes. <br>Para exibir os resultados dos testes depois de fechar o assistente, veja *data e hora do SystemRoot\Cluster\Reports\Validation Report. html*.
+8. Ainda na página Resumo, clique em Exibir relatório e leia os resultados do teste. Faça as alterações necessárias na configuração e execute novamente os testes. <br>Para exibir os resultados dos testes depois de fechar o assistente, consulte *data do relatório SystemRoot\Cluster\Reports\Validation e time.html*.
 
 9. Para exibir os tópicos da Ajuda sobre a validação de cluster depois de fechar o assistente, em Gerenciamento de Cluster de Failover, clique em Ajuda, Tópicos da Ajuda, guia Conteúdo, expanda o conteúdo da Ajuda do cluster de failover e clique em Validando a Configuração de um Cluster de Failover.
 
-#### <a name="using-powershell"></a>Uso do PowerShell
+#### <a name="using-powershell"></a>Usando o PowerShell
 
-1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)** .
+1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)**.
 
 2. Para validar os computadores (por exemplo, os nomes dos computadores sendo NODE1 e NODE2) para clustering de failover, execute o comando:
 
     ```PowerShell
     Test-Cluster -Node "NODE1","NODE2"
     ```
-4. Para exibir os resultados dos testes depois de fechar o assistente, consulte o arquivo especificado (em SystemRoot\Cluster\Reports\), em seguida, faça as alterações necessárias na configuração e execute novamente os testes.
+4. Para exibir os resultados dos testes depois de fechar o assistente, consulte o arquivo especificado (em SystemRoot\Cluster\Reports \) , faça as alterações necessárias na configuração e execute novamente os testes.
 
-Para obter mais informações, consulte [Validando uma configuração de cluster de failover](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v=ws.11)).
+Para obter mais informações, consulte [Validando uma configuração de cluster de failover](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v=ws.11)).
 
 ### <a name="step-4-create-the-cluster"></a>Etapa 4: criar o cluster
 
 O seguinte procedimento criará um cluster fora dos computadores e da configuração que você tem.
 
-#### <a name="using-failover-cluster-manager"></a>Usando Gerenciador de Cluster de Failover
+#### <a name="using-failover-cluster-manager"></a>Usando o Gerenciador de Cluster de Failover
 
 1. Em **Gerenciador do servidor**, escolha a lista suspensa **ferramentas** e selecione **Gerenciador de cluster de failover**.
 
@@ -276,15 +276,15 @@ O seguinte procedimento criará um cluster fora dos computadores e da configura�
    > [!NOTE]
    > Se você estiver usando endereços IP estáticos, será necessário selecionar a rede a ser usada e inserir o endereço IP que será usado para o nome do cluster.  Se você estiver usando o DHCP para seus endereços IP, o endereço IP será configurado automaticamente para você.
 
-6. Escolha **Avançar**.
+6. Escolha **Próxima**.
 
 7. Na página **confirmação** , verifique o que você configurou e selecione **Avançar** para criar o cluster.
 
 8. Na página **Resumo** , ele fornecerá a configuração que ele criou.  Você pode selecionar Exibir relatório para ver o relatório da criação.
 
-#### <a name="using-powershell"></a>Uso do PowerShell
+#### <a name="using-powershell"></a>Usando o PowerShell
 
-1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)** .
+1. Abra uma sessão administrativa do PowerShell clicando com o botão direito do mouse em Iniciar e selecionando **Windows PowerShell (administrador)**.
 
 2. Execute o comando a seguir para criar o cluster se você estiver usando endereços IP estáticos.  Por exemplo, os nomes de computador são NODE1 e NODE2, o nome do cluster será CLUSTER e o endereço IP será 1.1.1.1.
 
@@ -294,7 +294,7 @@ O seguinte procedimento criará um cluster fora dos computadores e da configura�
 
 3. Execute o comando a seguir para criar o cluster se você estiver usando o DHCP para endereços IP.  Por exemplo, os nomes dos computadores são NODE1 e NODE2, e o nome do cluster será CLUSTER.
 
-   ```PowerShell    
+   ```PowerShell
    New-Cluster -Name CLUSTER -Node "NODE1","NODE2"
    ```
 
@@ -318,12 +318,12 @@ Para configurar um cluster de failover do servidor de arquivos, siga as etapas a
 
    ![Tipo de servidor de arquivos](media/Cluster-File-Server/Cluster-FS-File-Server-Type.png)
 
-8. Na janela **ponto de acesso para cliente** , insira o nome do servidor de arquivos que você usará.  Observe que esse não é o nome do cluster.  Isso é para a conectividade de compartilhamento de arquivos.  Por exemplo, se eu quiser me conectar ao \\Server, o nome reemitido seria servidor.
+8. Na janela **ponto de acesso para cliente** , insira o nome do servidor de arquivos que você usará.  Observe que esse não é o nome do cluster.  Isso é para a conectividade de compartilhamento de arquivos.  Por exemplo, se eu quiser me conectar ao \\ servidor, o nome reemitido seria servidor.
 
    > [!NOTE]
    > Se você estiver usando endereços IP estáticos, será necessário selecionar a rede a ser usada e inserir o endereço IP que será usado para o nome do cluster.  Se você estiver usando o DHCP para seus endereços IP, o endereço IP será configurado automaticamente para você.
 
-6. Escolha **Avançar**.
+6. Escolha **Próxima**.
 
 7. Na janela **selecionar armazenamento** , selecione a unidade adicional (não a testemunha) que manterá seus compartilhamentos e **em seguida**.
 
@@ -345,6 +345,6 @@ Para configurar um cluster de failover do servidor de arquivos, siga as etapas a
 
 13. Na página **resultados** , selecione fechar se ele criou o compartilhamento.  Se não foi possível criar o compartilhamento, ele apresentará os erros incorridos.
 
-14. Escolha **fechar**.
+14. Escolha **Fechar**.
 
 15. Repita esse processo para quaisquer compartilhamentos adicionais.

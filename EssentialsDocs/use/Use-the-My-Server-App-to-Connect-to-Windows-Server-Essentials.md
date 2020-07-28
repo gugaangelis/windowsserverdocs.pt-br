@@ -2,17 +2,16 @@
 title: Usar o aplicativo My Server para se conectar ao Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 4e40b57f-6917-43ef-92e0-030baa9d2b99
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: da125fec78a609aff0d7572cbe448115f03fe501
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b1e6d46013d98970e694176426be2ac1f57195d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469881"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179352"
 ---
 # <a name="use-the-my-server-app-to-connect-to-windows-server-essentials"></a>Usar o aplicativo My Server para se conectar ao Windows Server Essentials
 
@@ -176,7 +175,7 @@ Os aplicativos de servidor para o Windows Server Essentials permitem que você s
 =======
     >  After the installation of the certificate is complete, you can sign in to the My Server app for Windows 8 or Windows 8.1 by using your server name and your network credentials.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 -   [Visão geral da integração de serviços para o Windows Server Essentials-parte 1](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
 

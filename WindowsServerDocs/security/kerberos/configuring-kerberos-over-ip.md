@@ -3,12 +3,12 @@ title: Configurando o Kerberos para o endereço IP
 description: Suporte a Kerberos para SPNs baseados em IP
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: 1061364528100fe005e80f64c6315f9fca69ad98
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 16feb7045508a854657834fcbb4ab850f9b8ac3b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980294"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181912"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Os clientes Kerberos permitem nomes de host de endereço IPv4 e IPv6 em SPNs (nome da entidade de serviço)
 
@@ -28,14 +28,14 @@ Para configurar o suporte para nomes de host de endereço IP em SPNs, crie uma e
 
 ## <a name="configuring-a-service-principal-name-as-ip-address"></a>Configurando um nome da entidade de serviço como endereço IP
 
-Um nome da entidade de serviço é um identificador exclusivo usado durante a autenticação Kerberos para identificar um serviço na rede. Um SPN é composto por um serviço, um nome de host e, opcionalmente, uma `service/hostname[:port]` porta na `host/fs.contoso.com`forma de tal como. O Windows registrará vários SPNs em um objeto de computador quando um computador for ingressado em Active Directory.
+Um nome da entidade de serviço é um identificador exclusivo usado durante a autenticação Kerberos para identificar um serviço na rede. Um SPN é composto por um serviço, um nome de host e, opcionalmente, uma porta na forma de `service/hostname[:port]` tal como `host/fs.contoso.com` . O Windows registrará vários SPNs em um objeto de computador quando um computador for ingressado em Active Directory.
 
 Os endereços IP normalmente não são usados no lugar de nomes de host porque os endereços IP geralmente são temporários. Isso pode levar a conflitos e falhas de autenticação, pois as concessões de endereço expiram e são renovadas. Portanto, o registro de um SPN baseado em endereço IP é um processo manual e só deve ser usado quando for impossível alternar para um nome de host baseado em DNS.
 
-A abordagem recomendada é usar a ferramenta [SetSPN. exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)) . Observe que um SPN só pode ser registrado para uma única conta no Active Directory de cada vez, portanto, é recomendável que os endereços IP tenham concessões estáticas se o DHCP for usado.
+A abordagem recomendada é usar a ferramenta de [Setspn.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)) . Observe que um SPN só pode ser registrado para uma única conta no Active Directory de cada vez, portanto, é recomendável que os endereços IP tenham concessões estáticas se o DHCP for usado.
 
 ```
-Setspn -s <service>/ip.address> <domain-user-account>  
+Setspn -s <service>/ip.address> <domain-user-account>
 ```
 
 Exemplo:

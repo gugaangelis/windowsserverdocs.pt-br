@@ -8,12 +8,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 95ccfec436ba4143ea7ec70120878a29289d14f7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d7bbef54d0ec554c6a3cf184dcb0414f7456547c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966788"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182152"
 ---
 # <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>Solucionar problemas de espaços de armazenamento e de Espaços de Armazenamento Diretos integridade e Estados operacionais
 
@@ -73,7 +73,7 @@ Quando um pool de armazenamento está no estado de integridade **desconhecido** 
 ||Política|Um administrador define o pool de armazenamento como somente leitura.<br><br>**Ação:** Para definir um pool de armazenamento clusterizado para acesso de leitura/gravação em Gerenciador de Cluster de Failover, vá para **pools**, clique com o botão direito do mouse no pool e selecione **colocar online**.<br><br>Para outros servidores e computadores, abra uma sessão do PowerShell com permissões administrativas e, em seguida, digite:<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
 ||Iniciando|Os espaços de armazenamento estão sendo iniciados ou aguardando que as unidades sejam conectadas no pool. Esse deve ser um estado temporário. Uma vez completamente iniciado, o pool deve fazer a transição para um estado operacional diferente.<br><br>**Ação:** Se o pool permanecer no estado de *inicialização* , verifique se todas as unidades no pool estão conectadas corretamente.|
 
-Consulte também [modificando um pool de armazenamento que tem uma configuração somente leitura](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx).
+Consulte também o [Windows Server Storage forum](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
 
 ## <a name="virtual-disk-states"></a>Estados de disco virtual
 

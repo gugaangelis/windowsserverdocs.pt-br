@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 55421cb1f01d654c4c424e8534f4c678ac38e6f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 21af2aae837b7a570638c2eb3f3c96cb8997fa84
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959328"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182062"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implantar Redirecionamento de Pastas com Arquivos Offline
 
@@ -128,7 +128,7 @@ Depois de criar um GPO para as configurações de Redirecionamento de Pastas, ed
 
 > [!NOTE]
 > A opção Arquivos Offline está habilitada por padrão para pastas redirecionadas em computadores cliente do Windows e desabilitada em computadores que executam o Windows Server, a menos que seja alterado pelo usuário. Para usar Política de Grupo para controlar se a opção Arquivos Offline está habilitada, use a configuração de política **Permitir ou proibir o uso do recurso Arquivos Offline**.
-> Para obter informações sobre algumas das outras configurações da Política de Grupo de Arquivos Offline, confira [Habilitar a Funcionalidade de Arquivos Offline Avançada](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>) e [Configurar a Política de Grupo para Arquivos Offline](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
+> Para obter informações sobre algumas das outras configurações da Política de Grupo de Arquivos Offline, confira [Habilitar a Funcionalidade de Arquivos Offline Avançada](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>) e [Configurar a Política de Grupo para Arquivos Offline](</previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
 
 Veja como configurar o Redirecionamento de Pastas na Política de Grupo:
 
@@ -199,5 +199,5 @@ A tabela a seguir resume algumas das alterações mais importantes para este tó
 * [Implantar computadores primários para Redirecionamento de Pastas e Perfis de Usuários Móveis](deploy-primary-computers.md)
 * [Habilitar a funcionalidade de Arquivos Offline avançada](enable-always-offline.md)
 * [Declaração de suporte da Microsoft sobre dados de perfil do usuário replicados](/archive/blogs/askds/microsofts-support-statement-around-replicated-user-profile-data)
-* [Realizar o sideload de aplicativos com o DISM](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
+* [Realizar o sideload de aplicativos com o DISM](</previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
 * [Solução de problemas de empacotamento, implantação e consulta de aplicativos baseados em Windows Runtime](/windows/win32/appxpkg/troubleshooting)

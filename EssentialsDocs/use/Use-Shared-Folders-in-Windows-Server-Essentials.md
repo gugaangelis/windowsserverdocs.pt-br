@@ -2,18 +2,17 @@
 title: Use pastas compartilhadas no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 24b2990631e95d1c0da0eafacb989090969faebb
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c7f042a47dd6f350b79ec17f69ffb87ab7b99259
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470071"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179452"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Use pastas compartilhadas no Windows Server Essentials
 
@@ -90,7 +89,7 @@ ms.locfileid: "85470071"
 ##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a>Usando meu aplicativo de servidor para Windows 8
  Você pode acessar as pastas compartilhadas por meio do Windows 8 usando o aplicativo My Server para o Windows 8. Você pode baixar o aplicativo da e armazenamento da [Loja de Aplicativos do Windows 8](https://windows.microsoft.com/windows-8/apps).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 -   [Gerenciar pastas do servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)
 

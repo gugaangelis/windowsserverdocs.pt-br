@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 159a3d2eb54d6a3040c4a22864a1c90e16bf2247
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955328"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178582"
 ---
 # <a name="certutil"></a>certutil
 
@@ -25,7 +25,7 @@ Se o Certutil for executado em uma autoridade de certificação sem parâmetros 
 > [!IMPORTANT]
 > As versões anteriores do certutil podem não fornecer todas as opções descritas neste documento. Você pode ver todas as opções que uma versão específica do certutil fornece executando o `certutil -?` ou o `certutil <parameter> -?` .
 
-## <a name="parameters"></a>Parâmetros
+## <a name="parameters"></a>parâmetros
 
 ### <a name="-dump"></a>-despejo
 
@@ -1103,7 +1103,7 @@ Em que:
 - A `-f` opção pode ser usada para substituir erros de validação para o **SiteName** especificado ou para excluir todos os sites de autoridade de certificação.
 
 > [!NOTE]
-> Para obter mais informações sobre como configurar o reconhecimento de site de CAs para Active Directory Domain Services (AD DS), consulte [AD DS reconhecimento de site para clientes do AD CS e PKI](https://social.technet.microsoft.com/wiki/contents/articles/14106.ad-ds-site-awareness-for-ad-cs-and-pki-clients.aspx).
+> Para obter mais informações sobre como configurar o reconhecimento de site de CAs para Active Directory Domain Services (AD DS), consulte [AD DS reconhecimento de site para clientes do AD CS e PKI](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)).
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 
@@ -2003,12 +2003,8 @@ Esta seção define todas as opções que você pode especificar, com base no co
 
 Para obter mais exemplos de como usar esse comando, consulte
 
-- [Exemplos de certutil para gerenciar Active Directory serviços de certificados (AD CS) na linha de comando](https://social.technet.microsoft.com/wiki/contents/articles/3063.certutil-examples-for-managing-active-directory-certificate-services-ad-cs-from-the-command-line.aspx)
+- [AD CS (Serviços de Certificados do Active Directory)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 
 - [Tarefas de certutil para gerenciar certificados](/previous-versions/orphan-topics/ws.10/cc772898(v=ws.10))
-
-- [Exportação de solicitação binária usando a ferramenta de linha de comando certutil.exe Walkthrough](https://social.technet.microsoft.com/wiki/contents/articles/7573.active-directory-certificate-services-pki-key-archival-and-management.aspx)
-
-- [Renovação de certificado de AC raiz](https://social.technet.microsoft.com/wiki/contents/articles/2016.root-ca-certificate-renewal.aspx)
 
 - [comando certutil](certutil.md)

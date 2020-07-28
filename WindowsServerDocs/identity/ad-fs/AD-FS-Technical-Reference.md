@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 405d0b6e814212df858cadb615f3251fd2168632
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: db6e8c600276f62fd260c18d680dd2b5112d4bc3
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965028"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182042"
 ---
 # <a name="ad-fs-technical-reference"></a>Referência Técnica do AD FS
 
@@ -26,7 +26,8 @@ ms.locfileid: "86965028"
 -   [Privacidade do usuário e do AD FS](../ad-fs/technical-reference/GDPR-and-AD-FS-Compliance.md)
 
 > [!TIP]
-> Você pode encontrar conteúdo adicional de design do AD FS 2.0 na página do [Mapa de Conteúdo do AD FS 2.0](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx) no Microsoft TechNet Wiki. Essa página é administrada por membros da Comunidade do AD FS 2.0 e é monitorada regularmente pela Equipe de Produto do AD FS.
+> Você pode encontrar conteúdo adicional de design AD FS 2,0 na página de [mapa de conteúdo AD FS 2,0](https://support.microsoft.com/help/974408/availability-and-description-of-active-directory-federation-services-2) .
 
 ## <a name="see-also"></a>Consulte Também
+
 [Visão geral dos Serviços de Federação do Active Directory](./ad-fs-overview.md)

@@ -9,12 +9,12 @@ manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: eb9077f40c33d615c0bbe18f1c02b29ce27165a2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82720519"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181722"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar os objetos de computador do cluster no Active Directory Domain Services
 
@@ -25,7 +25,7 @@ Este tópico mostra como pré-configurar os objetos de computador do cluster em 
 Ao criar um cluster de failover usando o Assistente de Criação de Cluster ou usando o Windows PowerShell, é necessário especificar um nome para o cluster. Se tiver permissões suficientes ao criar o cluster, o processo de criação do cluster criará automaticamente um objeto de computador em AD DS que corresponda ao nome do cluster. Tal objeto é chamado de *objeto do nome do cluster* ou CNO. Por meio do CNO, os VCOs (Objetos de Computador Virtual) são automaticamente criados durante a configuração das funções clusterizadas que utilizam pontos de acesso de cliente. Por exemplo, se você criar um servidor de arquivos altamente disponível com um ponto de acesso de cliente denominado *FileServer1*, o CNO criará um VCO correspondente em AD DS.
 
 >[!NOTE]
->Há a opção de criar um cluster desanexado Active Directory, onde nenhum CNO ou VCOs são criados no AD DS. Isso destina-se a tipos específicos de implantações de cluster. Para obter mais informações, consulte [Implantar um Cluster Desanexado do Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
+>Há a opção de criar um cluster desanexado Active Directory, onde nenhum CNO ou VCOs são criados no AD DS. Isso destina-se a tipos específicos de implantações de cluster. Para obter mais informações, consulte [Implantar um Cluster Desanexado do Active Directory](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
 
 Para criar o CNO automaticamente, o usuário que cria o cluster de failover deve ter permissão para **Criar objetos de computador** para a OU (Unidade Organizacional) ou o contêiner onde ficam os servidores que formarão o cluster. Para habilitar um usuário ou grupo para criar um cluster sem ter essa permissão, um usuário com as permissões adequadas em AD DS (normalmente, um administrador de domínio) poderá pré-configurar o CNO no AD DS. Isso também dá ao administrador do domínio maior controle sobre a convenção de nomenclatura que é utilizada para o cluster e controle sobre qual OU na qual os objetos de cluster são criados.
 
@@ -74,9 +74,9 @@ Veja como conceder as permissões de usuário para criar o cluster:
 3. Na guia **Segurança**, selecione **Adicionar**.
 4. Na caixa de diálogo **Selecionar usuários, computadores ou grupos** , especifique a conta de usuário ou o grupo ao qual você deseja conceder permissões e, em seguida, selecione **OK**.
 5. Selecione a conta de usuário ou grupo que acabou de adicionar e, em seguida, ao lado de **Controle total**, marque a caixa de seleção **Permitir**.
-  
+
    ![Concedendo Controle Total ao usuário ou grupo que criará o cluster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
-  
+
    **Figura 2. Concedendo controle total ao usuário ou grupo que criará o cluster**
 6. Selecione **OK**.
 

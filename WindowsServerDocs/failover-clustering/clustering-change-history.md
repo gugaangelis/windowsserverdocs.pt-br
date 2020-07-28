@@ -9,12 +9,12 @@ author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 73767eb8411523a93f3a4fe2e04106c81cc39f9b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827899"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177892"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>Histórico de alterações dos tópicos do Clustering de Failover
 
@@ -54,7 +54,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [cluster
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[Configuração de contas de cluster no Active Directory](configure-ad-accounts.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
+|[Configuração de contas de cluster no Active Directory](configure-ad-accounts.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)|
 
 ## <a name="october-2018"></a>Outubro de 2018
 
@@ -72,19 +72,19 @@ Este tópico lista os tópicos novos e atualizados na documentação de [cluster
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[Configurar e gerenciar o quórum](manage-cluster-quorum.md) | Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) . |
+|[Configurar e gerenciar o quórum](manage-cluster-quorum.md) | Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) . |
 
 ## <a name="april-2018"></a>Abril de 2018
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
 |[Solução de problemas de um Cluster de Failover usando o Relatório de Erros do Windows](troubleshooting-using-WER-reports.md)| Novo tópico. |
-|[Servidor de arquivos de escalabilidade horizontal para dados de aplicativos](sofs-overview.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Requisitos de hardware](clustering-requirements.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Usar CSVs (Volumes Compartilhados do Cluster)](failover-cluster-csvs.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Criar um cluster de failover](create-failover-cluster.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Pré-configurar um cluster no AD DS](prestage-cluster-adds.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
-|[Implantar uma testemunha de nuvem para um cluster de failover](deploy-cloud-witness.md)|Migrado da biblioteca de [versões anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Servidor de arquivos de escalabilidade horizontal para dados de aplicativos](sofs-overview.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Requisitos de hardware](clustering-requirements.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Usar CSVs (Volumes Compartilhados do Cluster)](failover-cluster-csvs.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Criar um cluster de failover](create-failover-cluster.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Pré-configurar um cluster no AD DS](prestage-cluster-adds.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
+|[Implantar uma testemunha de nuvem para um Cluster de Failover](deploy-cloud-witness.md)|Migrado da biblioteca de [versões anteriores](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
 
 ## <a name="june-2017"></a>Junho de 2017
 
@@ -96,7 +96,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [cluster
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[Visão geral da atualização com suporte a cluster](cluster-aware-updating.md)|Novo tópico.|
+|[Visão geral da Atualização com Suporte a Cluster](cluster-aware-updating.md)|Novo tópico.|
 |[Requisitos e práticas recomendadas para Atualização com Suporte a Cluster](cluster-aware-updating-requirements.md)|Novo tópico.|
 |[Opções avançadas de atualização com suporte a cluster](cluster-aware-updating-options.md)|Novo tópico.|
 |[Perguntas frequentes sobre atualização com suporte a cluster](cluster-aware-updating-faq.md)|Novo tópico.|

@@ -2,18 +2,17 @@
 title: Guia de Início Rápido para usar o Microsoft Office 365 com o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 51a7f1f1-088b-4487-b2c6-4f97aad3004d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b3b41a4dbdcacd9d16f922db6fb5d4140fd23fcc
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0956023d70d99927fcb5b765ff3615782d63f2c5
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469981"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179672"
 ---
 # <a name="quick-start-guide-to-using-microsoft-office-365-with-windows-server-essentials"></a>Guia de Início Rápido para usar o Microsoft Office 365 com o Windows Server Essentials
 

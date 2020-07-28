@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 538ea2d6e0f038a98b64a197bd49ed5719fe15ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 99a684cc90d47e1e80dc84ef9c3705a2ed79728b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959568"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182022"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Migrando funções e recursos no Windows Server
 
@@ -27,7 +27,7 @@ Os guias de migração dão suporte para migrações de funções e recursos esp
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Antes de começar a migrar funções e recursos, verifique se os servidores de origem e destino estão executando os service packs mais recentes disponíveis para seus sistemas operacionais. 
+Antes de começar a migrar funções e recursos, verifique se os servidores de origem e destino estão executando os service packs mais recentes disponíveis para seus sistemas operacionais.
 
 > [!NOTE]
 > Sempre que você migrar ou atualizar para qualquer versão do Windows Server, deve consultar e entender a [política de ciclo de vida de suporte](https://support.microsoft.com/lifecycle) e o período para essa versão, e planejar corretamente. Você pode [procurar as informações sobre o ciclo de vida](https://support.microsoft.com/lifecycle) para a versão específica do Windows Server em que está interessado.
@@ -63,7 +63,7 @@ Siga as etapas nestes guias para migrar as funções e recursos de servidores qu
 - [Migrar Funções de Cluster para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn530779(v=ws.11))
 - [Migrar o Servidor DHCP para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn495425(v=ws.11))
 
-Já estão disponíveis um livro eletrônico do Windows Server 2012 R2 e os guias de migração do Windows Server 2012. Para saber mais e baixar o livro eletrônico, confira a [Galeria de livros eletrônicos para Microsoft Technologies](https://social.technet.microsoft.com/wiki/contents/articles/11608.e-book-gallery-for-microsoft-technologies.aspx#MigrateRoles).
+Já estão disponíveis um livro eletrônico do Windows Server 2012 R2 e os guias de migração do Windows Server 2012. Para saber mais e baixar o livro eletrônico, confira a [Galeria de livros eletrônicos para Microsoft Technologies](https://download.microsoft.com/download/8/D/3/8D33661A-7E21-4FEE-9AAA-C17C3004B5AA/Windows-Migration-and-Upgrade-Guide.pdf).
 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
@@ -80,7 +80,7 @@ Siga as etapas nestes guias para migrar as funções e recursos de servidores qu
 - [Migrar o Windows Server Update Services para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh852339(v=ws.11))
 - [Atualizar os Controladores de Domínio do Active Directory para o Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md)
 - [Migrar Serviços e Aplicativos Clusterizados para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486790(v=ws.11))
- 
+
 
 Para saber mais sobre outros recursos de migração, visite [Migrar funções e recursos do Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134039(v=ws.11)).
 
@@ -104,5 +104,5 @@ Siga as etapas nestes guias para migrar as funções e recursos de servidores qu
 - [Guia de Migração de RRAS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822825(v=ws.10))
 - [Informações e Tarefas Comuns de Migração do Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff400258(v=ws.10))
 - [Guia de Migração do Windows Server Update Services 3.0 SP2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee822826(v=ws.10))
- 
+
 Para saber mais sobre outros recursos de migração, visite [Migrar funções e recursos do Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd365353(v=ws.10)).

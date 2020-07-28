@@ -9,14 +9,15 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 94a7a199bf19179217fff00453ac5542e133bba0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473643"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182032"
 ---
 # <a name="deploying-multipoint-services"></a>Implantação do MultiPoint Services
+
 Este guia descreve como implantar um servidor executando os serviços do MultiPoint e configurar estações do MultiPoint, instalar e configurar seu sistema, configurar contas de usuário e executar algumas tarefas básicas de administração, como ativar a proteção de disco e configurar backups, antes de começar a usar o sistema.
 
 > [!NOTE]
@@ -42,5 +43,3 @@ As informações de implantação são organizadas da seguinte maneira. No míni
 ## <a name="additional-references"></a>Referências adicionais
 
 - [MultiPoint Services](MultiPoint-Services.md)
--   [Fórum do MultiPoint Services](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)
-

@@ -10,12 +10,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be6b7542ca77c80a638df6404aefe77d8d7d19c
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445700"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181952"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -40,7 +40,7 @@ Siga estas etapas para começar a usar a Área de Trabalho Remota em seu disposi
 
 Vamos testar novos recursos em nosso canal de visualização no App Center. Quer conhecer? Acesse [Área de Trabalho Remota da Microsoft para Mac](https://aka.ms/rdmacbeta) e selecione **Baixar**. Você não precisa criar uma conta nem entrar no App Center para baixar o cliente beta.
 
-Se você já tiver o cliente, poderá verificar as atualizações para garantir que tenha a versão mais recente. No cliente beta, selecione **Área de Trabalho Remota Beta da Microsoft** na parte superior e depois selecione **Verificar atualizações**. 
+Se você já tiver o cliente, poderá verificar as atualizações para garantir que tenha a versão mais recente. No cliente beta, selecione **Área de Trabalho Remota Beta da Microsoft** na parte superior e depois selecione **Verificar atualizações**.
 
 ## <a name="add-a-workspace"></a>Adicionar um workspace
 
@@ -102,7 +102,7 @@ Um Gateway de Área de Trabalho Remota permite que você se conecte a um computa
 
 Para configurar um novo gateway nas preferências:
 
-1. Na Central de Conexão, selecione **Preferências > Gateways**. 
+1. Na Central de Conexão, selecione **Preferências > Gateways**.
 2. Selecione o botão **+** na parte inferior da tabela e insira as seguintes informações:
    - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
    - **Nome de usuário** – o nome de usuário e a senha a serem usados para o Gateway de Área de Trabalho Remota ao qual você está se conectando. Você também pode selecionar **Usar credenciais de conexão** para usar o mesmo nome de usuário e senha usados para a conexão à área de trabalho remota.
@@ -164,4 +164,4 @@ O Windows Server 2012 R2 apresentou o suporte para um novo método de autentica�
 Para saber mais sobre esse recurso, confira [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

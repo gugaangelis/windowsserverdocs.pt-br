@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: lizross
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 24be2b39c8130b97d22ee182c0064986b3378549
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5988842ef2a88687bca95781b996babb4e4f3faa
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85472973"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181702"
 ---
 # <a name="failover-clustering-system-log-events"></a>Eventos de log do sistema do clustering de failover
 
@@ -1253,4 +1253,4 @@ Espera-se que os instantâneos sejam excluídos por um aplicativo de backup apó
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Informações detalhadas sobre o evento para componentes de clustering de failover no Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))
+-   [Informações detalhadas sobre o evento para componentes de clustering de failover no Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

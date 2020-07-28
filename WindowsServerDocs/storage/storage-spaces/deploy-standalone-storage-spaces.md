@@ -8,22 +8,22 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8383d93983f6620f15099573e527ad89d250727d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b5f1ccab7e4c0ca2bbd478509a76a4a37559c345
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960098"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181862"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico descreve como implantar espaços de armazenamento em um servidor autônomo. Para obter informações sobre como criar um espaço de armazenamento em cluster, consulte [implantar um cluster de espaços de armazenamento no Windows Server 2012 R2](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
+Este tópico descreve como implantar espaços de armazenamento em um servidor autônomo. Para obter informações sobre como criar um espaço de armazenamento em cluster, consulte [implantar um cluster de espaços de armazenamento no Windows Server 2012 R2](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
 
 Para criar um espaço de armazenamento, você deve primeiramente criar um ou mais pools de armazenamento. Um pool de armazenamento é uma coleção de discos físicos. Um pool de armazenamento permite a agregação de armazenamento, expansão da capacidade elástica e administração delegada.
 
-Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) e [O que são colunas e como os espaços de armazenamento decidem quantas usar?](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx%23what_are_columns_and_how_does_storage_spaces_decide_how_many_to_use) nas Perguntas Frequentes (FAQ) sobre espaços de armazenamento.
+Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) e o [Windows Server Storage forum](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
 
 >[!NOTE]
 >Você não pode usar um espaço de armazenamento para hospedar o sistema operacional Windows.
@@ -44,7 +44,7 @@ A figura a seguir ilustra o fluxo de trabalho dos Espaços de Armazenamento.
 Para usar espaços de armazenamento em um servidor autônomo baseado no Windows Server 2012 −, verifique se os discos físicos que você deseja usar atendem aos seguintes pré-requisitos.
 
 > [!IMPORTANT]
-> Se você quiser saber como implantar espaços de armazenamento em um cluster de failover, consulte [implantar um cluster de espaços de armazenamento no Windows Server 2012 R2](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>). Uma implantação de cluster de failover tem pré-requisitos diferentes, como tipos de barramento de disco com suporte, tipos de resiliência com suporte e o número mínimo necessário de discos.
+> Se você quiser saber como implantar espaços de armazenamento em um cluster de failover, consulte [implantar um cluster de espaços de armazenamento no Windows Server 2012 R2](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>). Uma implantação de cluster de failover tem pré-requisitos diferentes, como tipos de barramento de disco com suporte, tipos de resiliência com suporte e o número mínimo necessário de discos.
 
 |Área|Requisito|Observações|
 |---|---|---|
@@ -68,9 +68,9 @@ Primeiramente, você deve agrupar os discos físicos disponíveis em um ou mais 
 1. No painel de navegação Gerenciador do Servidor, selecione **serviços de arquivo e armazenamento**.
 
 2. No painel de navegação, selecione a página **pools de armazenamento** .
-    
+
     Por padrão, os discos disponíveis são incluídos em um pool chamado pool *primordial*. Se nenhum pool primordial estiver listado nos **POOLS DE ARMAZENAMENTO**, isso indica que o armazenamento não cumpre os requisitos dos Espaços de Armazenamento. Verifique se os discos estão de acordo com os requisitos descritos na seção Pré-requisitos.
-    
+
     >[!TIP]
     >Se você selecionar o pool de armazenamento **Primordial**, os discos físicos disponíveis estarão listados em **DISCOS FÍSICOS**.
 
@@ -81,15 +81,15 @@ Primeiramente, você deve agrupar os discos físicos disponíveis em um ou mais 
 5. Na página **especificar o nome e o subsistema do pool de armazenamento** , insira um nome e uma descrição opcional para o pool de armazenamento, selecione o grupo de discos físicos disponíveis que você deseja usar e, em seguida, selecione **Avançar**.
 
 6. Na página **Selecionar discos físicos para o pool de armazenamento** , faça o seguinte e, em seguida, selecione **Avançar**:
-    
+
     1. Marque a caixa de seleção ao lado de cada disco físico que você deseja incluir no pool de armazenamento.
-    
+
     2. Se você quiser designar um ou mais discos como hot spares, em **alocação**, selecione a seta suspensa e, em seguida, selecione **hot spare**.
 
 7. Na página **confirmar seleções** , verifique se as configurações estão corretas e, em seguida, selecione **criar**.
 
 8. Na página **exibir resultados** , verifique se todas as tarefas foram concluídas e, em seguida, selecione **fechar**.
-    
+
     >[!NOTE]
     >Como opção, para continuar diretamente na próxima etapa, você pode marcar a caixa de seleção **Criar um disco virtual quando esse assistente fecha**.
 
@@ -139,48 +139,48 @@ Em seguida, você deverá criar um ou mais discos virtuais no pool de armazename
 5. Na página **especificar o nome do disco virtual** , insira um nome e uma descrição opcional e, em seguida, selecione **Avançar**.
 
 6. Na página **selecionar o layout de armazenamento** , selecione o layout desejado e, em seguida, selecione **Avançar**.
-    
+
     >[!NOTE]
     >Se você selecionar um layout onde você não tem discos físicos suficientes, receberá uma mensagem de erro quando selecionar **Avançar**. Para obter informações sobre qual layout usar e os requisitos de disco, consulte [Prerequisites](#prerequisites)).
 
 7. Se você selecionou **espelhamento** como o layout de armazenamento e tiver cinco ou mais discos no pool, a página **configurar as configurações de resiliência** será exibida. Selecione uma das seguintes opções:
-    
+
       - **Espelho de duas vias**
       - **Espelho de três vias**
 
 8. Na página **especificar o tipo de provisionamento** , selecione uma das opções a seguir e, em seguida, selecione **Avançar**.
-    
+
    - **Dinâmico**
-        
+
      Com o provisionamento dinâmico, o espaço é alocado conforme a necessidade. Isso otimiza o uso do armazenamento disponível. Contudo, como isso permite a alocação excessiva do armazenamento, é necessário monitorar atentamente quanto espaço em disco está disponível.
-    
-   - **Fixado**
-        
+
+   - **Fixo**
+
      Com o provisionamento fixo, a capacidade de armazenamento é alocada imediatamente, no momento da criação do disco virtual. Portanto o provisionamento fixo usa espaço do pool de armazenamento igual ao tamanho do disco virtual.
-    
+
      >[!TIP]
      >Com os Espaços de Armazenamento, você pode criar discos virtuais com ambos os provisionamentos dinâmico e fixo no mesmo pool de armazenamento. Por exemplo, você poderia usar um disco virtual com provisionamento dinâmico para hospedar um banco de dados e outro com provisionamento fixo para hospedar os arquivos de log associados.
 
 9. Na página **Especificar o tamanho do disco virtual**, execute o seguinte procedimento:
-    
+
     Se você selecionou provisionamento dinâmico na etapa anterior, na caixa Tamanho do **disco virtual** , insira um tamanho de disco virtual, selecione as unidades (**MB**, **GB**ou **TB**) e, em seguida, selecione **Avançar**.
-    
+
     Se você tiver selecionado provisionamento fixo na etapa anterior, selecione uma das seguintes opções:
-    
+
       - **Especificar tamanho**
-        
+
         Para especificar um tamanho, insira um valor na caixa **tamanho do disco virtual** e, em seguida, selecione as unidades (**MB**, **GB**ou **TB**).
-        
+
         Se você usar outro layout de armazenamento que não o simples, o disco virtual usará mais espaço livre do que o tamanho especificado. Para evitar um potencial erro no qual o tamanho do volume excede o espaço livre do pool de armazenamento, marque a caixa de seleção **Criar o maior disco virtual possível, até o tamanho especificado**.
-    
+
       - **Tamanho máximo**
-        
+
         Selecione esta opção para criar um disco virtual que usa a capacidade máxima do pool de armazenamento.
 
 10. Na página **confirmar seleções** , verifique se as configurações estão corretas e, em seguida, selecione **criar**.
 
 11. Na página **exibir resultados** , verifique se todas as tarefas foram concluídas e, em seguida, selecione **fechar**.
-    
+
     >[!TIP]
     >A caixa de seleção **Criar um volume ao fechar o assistente** é marcada por padrão. Isso levará você até a próxima etapa.
 
@@ -220,15 +220,15 @@ New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1
 Em seguida, você deve criar um volume para o disco virtual. Você pode atribuir uma letra de unidade ou pasta opcional e formatar o volume com um sistema de arquivos.
 
 1. Se o assistente de novo volume ainda não estiver aberto, na página **pools de armazenamento** em Gerenciador do servidor, em **discos virtuais**, clique com o botão direito do mouse no disco virtual desejado e selecione **novo volume**.
-    
+
     O Assistente de Novo Volume é aberto.
 
 2. Na página **antes de começar** , selecione **Avançar**.
 
 3. Na página **selecionar o servidor e o disco** , faça o seguinte e, em seguida, selecione **Avançar**.
-    
+
     1. Na área **servidor** , selecione o servidor no qual você deseja provisionar o volume.
-    
+
     2. Na área **disco** , selecione o disco virtual no qual você deseja criar o volume.
 
 4. Na página **especificar o tamanho do volume** , insira um tamanho de volume, especifique as unidades (**MB**, **GB**ou **TB**) e, em seguida, selecione **Avançar**.
@@ -236,15 +236,15 @@ Em seguida, você deve criar um volume para o disco virtual. Você pode atribuir
 5. Na página **atribuir a uma letra da unidade ou pasta** , configure a opção desejada e, em seguida, selecione **Avançar**.
 
 6. Na página **selecionar configurações do sistema de arquivos** , faça o seguinte e, em seguida, selecione **Avançar**.
-    
+
     1. Na lista **sistema de arquivos** , selecione **NTFS** ou **ReFS**.
-    
+
     2. Na lista **Tamanho da unidade de alocação**, deixe a configuração **Padrão** ou defina o tamanho da unidade de alocação.
-        
+
         >[!NOTE]
         >Para obter mais informações sobre o tamanho da unidade de alocação, consulte [Tamanho de cluster padrão para NTFS, FAT e exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
 
-    
+
     3. Opcionalmente, na caixa **Rótulo do volume**, digite um nome de rótulo para o volume, por exemplo, **Dados de RH**.
 
 7. Na página **confirmar seleções** , verifique se as configurações estão corretas e, em seguida, selecione **criar**.
@@ -268,4 +268,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [Espaços de armazenamento](overview.md)
 - [Cmdlets de armazenamento no Windows PowerShell](/powershell/module/storage/index?view=win10-ps)
 - [Implantar Espaços de Armazenamento clusterizados](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Perguntas Frequentes (FAQ) sobre espaços de armazenamento](https://social.technet.microsoft.com/wiki/contents/articles/11382.storage-spaces-frequently-asked-questions-faq.aspx)
+- [Fórum de armazenamento do Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html)

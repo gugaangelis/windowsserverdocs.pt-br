@@ -2,18 +2,17 @@
 title: Trabalhar remotamente no Windows Server Essentials [SBS8]
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0530833b8006302791cbe62f0156c1efb51cbc2f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 873f37d154d36593279584035486212efe9da5c2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469831"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179312"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>Trabalhar remotamente no Windows Server Essentials [SBS8]
 
@@ -82,7 +81,7 @@ ms.locfileid: "85469831"
  Office 365 é um conjunto de fácil de usar ferramentas habilitados para a web que permite acessar seu email, documentos importantes, contatos e calendário de qualquer lugar e de qualquer dispositivo. Para obter mais informações, consulte o [Guia de início rápido para usar Microsoft Office 365](Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).
 
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 -   [Gerenciar o Acesso em Qualquer Local](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)
 

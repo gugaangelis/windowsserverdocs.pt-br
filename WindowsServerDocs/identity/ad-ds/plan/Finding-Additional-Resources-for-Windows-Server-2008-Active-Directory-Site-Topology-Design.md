@@ -7,12 +7,12 @@ manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 5b45970b3402ecfd7976af9b30f22cfd8782cef9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5682eb98854441b35719fc0c2048f07db76cbead
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953468"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181832"
 ---
 # <a name="finding-additional-resources-for-windows-server-2008-active-directory-site-topology-design"></a>Localizar recursos adicionais de design de topologia de site do Active Directory do Windows Server 2008
 
@@ -36,7 +36,7 @@ Você pode encontrar a seguinte documentação sobre Active Directory Domain Ser
 
 - Para obter mais informações sobre como implantar o domínio raiz da floresta, consulte [implantando um domínio raiz da floresta do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731174(v=ws.10)).
 
-- Para obter mais informações sobre como proteger controladores de domínio, consulte [Active Directory: considerações de design e práticas recomendadas](https://social.technet.microsoft.com/wiki/contents/articles/52587.active-directory-design-considerations-and-best-practices.aspx).
+- Para obter mais informações sobre como proteger controladores de domínio, consulte [AD DS Design and Planning](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/ad-ds-design-and-planning).
 
 - Para obter mais informações sobre a implantação de domínios regionais, consulte [implantando domínios regionais do Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc755118(v=ws.10)).
 

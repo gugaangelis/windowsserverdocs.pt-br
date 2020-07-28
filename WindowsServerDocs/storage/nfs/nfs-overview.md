@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f18c880dd673b17f53815a57fa2fcc66558dad71
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aff9fbdfa6dc97cb644e207efdae9c44533c320b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961318"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181742"
 ---
 # <a name="network-file-system-overview"></a>Visão geral de sistema de arquivos de rede
 
@@ -29,7 +29,7 @@ O NFS no Windows Server inclui o Server for NFS e o Client for NFS. Um computado
 
 ## <a name="windows-and-windows-server-versions"></a>Versões do Windows e do Windows Server
 
-O Windows dá suporte a várias versões do cliente e servidor NFS, dependendo da versão e da família do sistema operacional. 
+O Windows dá suporte a várias versões do cliente e servidor NFS, dependendo da versão e da família do sistema operacional.
 
 | Sistemas operacionais | Versões do servidor NFS |Versões de cliente NFS|
 | ----------------- | ------------------- | ----------------- |
@@ -99,7 +99,7 @@ A implantação e o gerenciamento do NFS foram aprimorados das seguintes maneira
 
 ## <a name="server-manager-information"></a>Informações sobre o Gerenciador do Servidor
 
-No Gerenciador do Servidor-ou no [centro de administração do Windows](../../manage/windows-admin-center/overview.md) mais recente-use o assistente para adicionar funções e recursos para adicionar o servidor para o serviço de função NFS (na função de serviços de arquivo e iSCSI). Para obter informações gerais sobre como instalar recursos, consulte [Instalar ou desinstalar funções, serviços de função ou recursos](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). As ferramentas do servidor para NFS incluem os serviços para o snap-in do MMC do sistema de arquivos de rede para gerenciar o servidor NFS e o cliente para componentes NFS. Usando o snap-in, você pode gerenciar o servidor para componentes NFS instalados no computador. O Server for NFS também contém várias ferramentas de administração de linha de comando do Windows:
+No Gerenciador do Servidor-ou no [centro de administração do Windows](../../manage/windows-admin-center/overview.md) mais recente-use o assistente para adicionar funções e recursos para adicionar o servidor para o serviço de função NFS (na função de serviços de arquivo e iSCSI). Para obter informações gerais sobre como instalar recursos, consulte [Instalar ou desinstalar funções, serviços de função ou recursos](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831809(v=ws.11)>). As ferramentas do servidor para NFS incluem os serviços para o snap-in do MMC do sistema de arquivos de rede para gerenciar o servidor NFS e o cliente para componentes NFS. Usando o snap-in, você pode gerenciar o servidor para componentes NFS instalados no computador. O Server for NFS também contém várias ferramentas de administração de linha de comando do Windows:
 
 - A **montagem** monta um compartilhamento NFS remoto (também conhecido como exportação) localmente e o mapeia para uma letra de unidade local no computador cliente do Windows.
 - O **nfsadmin** gerencia as definições de configuração do servidor para os componentes NFS e Client for NFS.
@@ -117,5 +117,5 @@ A tabela a seguir fornece recursos adicionais para avaliar o NFS.
 |Tipo de conteúdo|Referências|
 |---|---|
 |Implantação|[Implantar o Network File System](deploy-nfs.md)|
-|Operações|[Cmdlets do NFS no Windows PowerShell](/powershell/module/nfs/?view=win10-ps)|
+|Operations|[Cmdlets do NFS no Windows PowerShell](/powershell/module/nfs/?view=win10-ps)|
 |Tecnologias relacionadas|[Armazenamento no Windows Server](../storage.yml)|

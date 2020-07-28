@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2723868251f90429fb0ad5e966c9222a6a22ab0c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 92fd335e90aa07a9eb9b76510633b21348732b01
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77520638"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87260235"
 ---
 # <a name="windows-server-2016-improvements"></a>Aprimoramentos do Windows Server 2016
 
@@ -94,13 +94,13 @@ Também é importante observar que, se os controladores de domínio estiverem em
 
 ## <a name="time-accuracy-measurements"></a>Medidas de precisão de tempo
 ### <a name="methodology"></a>Metodologia
-Para medir a precisão de tempo no Windows Server 2016, usamos uma variedade de ferramentas, métodos e ambientes. Você pode usar essas técnicas para medir e ajustar seu ambiente e determinar se os resultados da precisão atendem às suas necessidades. 
+Para medir a precisão de tempo no Windows Server 2016, usamos uma variedade de ferramentas, métodos e ambientes. Você pode usar essas técnicas para medir e ajustar seu ambiente e determinar se os resultados da precisão atendem às suas necessidades.
 
 Nosso relógio de origem de domínio consistiu em dois servidores NTP de alta precisão com hardware de GPS. Também usamos um computador de teste de referência separado para medições, que também tinha um hardware de GPS de alta precisão instalado de outro fabricante. Para alguns dos testes, você precisará de uma fonte de relógio precisa e confiável para usar como referência, além da fonte de relógio do domínio.
 
 Usamos quatro métodos diferentes para medir a precisão com máquinas virtuais e computadores físicos. Vários métodos forneceram meios independentes para validar os resultados.
 
-1. Medir o relógio local, que é condicionado por w32tm, em nosso computador de teste de referência que tem o hardware de GPS separado. 
+1. Medir o relógio local, que é condicionado por w32tm, em nosso computador de teste de referência que tem o hardware de GPS separado.
 2. Medir os pings do NTP do servidor NTP para os clientes usando “stripchart” do W32tm
 3. Medir os pings do NTP do cliente para o servidor NTP usando “stripchart” do W32tm
 4. Medir os resultados do Hyper-V do host para o convidado usando o TSC (Contador de Carimbos de Data/Hora). Esse contador é compartilhado entre ambas as partições e a hora do sistema em ambas as partições. Calculamos a diferença entre a hora do host e a hora do cliente na máquina virtual. Em seguida, usamos o relógio de TSC para interpolar a hora do host por meio do convidado, pois as medidas não acontecem ao mesmo tempo. Além disso, usamos o relógio de TSV para considerar os atrasos e a latência na API.
@@ -119,7 +119,7 @@ Para comparação, testamos uma topologia baseada no Windows Server 2012 R2 e no
 ![Tempo do Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology2.png)
 
 ### <a name="graphical-results-overview"></a>Visão geral dos resultados gráficos
-Os dois grafos a seguir representam a precisão de tempo de dois membros específicos em um domínio baseado na topologia acima. Cada grafo exibe os resultados do Windows Server 2012 R2 e 2016 sobrepostos, o que demonstra os aprimoramentos visualmente. A precisão foi medida no computador convidado em comparação com o host. Os dados gráficos representam um subconjunto de todo o conjunto de testes que fizemos e mostra os cenários de melhor e pior caso. 
+Os dois grafos a seguir representam a precisão de tempo de dois membros específicos em um domínio baseado na topologia acima. Cada grafo exibe os resultados do Windows Server 2012 R2 e 2016 sobrepostos, o que demonstra os aprimoramentos visualmente. A precisão foi medida no computador convidado em comparação com o host. Os dados gráficos representam um subconjunto de todo o conjunto de testes que fizemos e mostra os cenários de melhor e pior caso.
 
 ![Tempo do Windows](../media/Windows-Time-Service/Windows-2016-Accurate-Time/topology3.png)
 
@@ -211,10 +211,10 @@ Em seguida, reinicie o Serviço de Horário do Windows
  net stop w32time && net start w32time
 
 Por fim, indique que esse computador tem uma fonte de horário confiável usando.
-  
+
  w32tm /config /reliable:yes /update
 
-Para verificar se as alterações foram feitas corretamente, execute os comandos a seguir que afetam os resultados mostrados abaixo. 
+Para verificar se as alterações foram feitas corretamente, execute os comandos a seguir que afetam os resultados mostrados abaixo.
 
  w32tm /query /configuration
 
@@ -252,13 +252,14 @@ Em seguida, use a entrada da fonte acima e o parâmetro /StripChart para encontr
  w32tm /stripchart /computer:MySourceEntry /packetinfo /samples:1
 
 Também útil, o comando a seguir lista cada controlador de domínio que ele pode encontrar no domínio especificado e imprime um resultado que permite que você determine cada parceiro. Esse comando incluirá os computadores que foram configurados manualmente.
- 
+
  w32tm /monitor /domain:my_domain
 
 Usando a lista, você pode rastrear os resultados por meio do domínio e entender a hierarquia, bem como a diferença de horário em cada etapa. Ao localizar o ponto em que a diferença de horário fica significativamente pior, você pode identificar a raiz do horário incorreto. Daí em diante, você poderá tentar entender o motivo pelo qual esse horário está incorreto ativando o log do w32tm.
 
 #### <a name="using-group-policy"></a>Como usar a Política de Grupo
-Você pode usar a Política de Grupo para atingir uma precisão mais estrita, por exemplo, atribuir clientes para usar servidores NTP específicos ou controlar como os sistemas operacionais de nível inferior são configurados quando virtualizados. Abaixo está uma lista de possíveis cenários e configurações relevantes da Política de Grupo:
+Você pode usar a Política de Grupo para atingir uma precisão mais estrita, por exemplo, atribuir clientes para usar servidores NTP específicos ou controlar como os sistemas operacionais de nível inferior são configurados quando virtualizados.
+Abaixo está uma lista de possíveis cenários e configurações relevantes da Política de Grupo:
 
 **Domínios Virtualizados**: para controlar os controladores de domínio virtualizados no Windows 2012 R2 para que eles sincronizem a hora com o domínio, não com o host do Hyper-V, você pode desabilitar essa entrada do Registro.  Para o controlador de domínio primário, o ideal é não desabilitar a entrada, pois o host do Hyper-V fornecerá a fonte de horário mais estável. A entrada do Registro exigirá que você reinicie o serviço w32time depois que ele for alterado.
 
@@ -277,7 +278,7 @@ EventLogFlags| 3 – Todo o log de tempo especial|
 > [!NOTE]
 > As configurações de NtpServer e EventLogFlags estão localizadas em System\Windows Time Service\Time Providers usando as configurações Configurar o cliente NTP do Windows. As outras três estão localizadas em System\Windows Time Service usando as definições de Configuração Global.
 
-**Remoto de Cargas Sensíveis à Precisão Remota**: para os sistemas em domínios de filial, por exemplo, para Varejo e PCI (Setor de Crédito de Pagamento), o Windows usa as informações do site atual e o localizador de controlador de domínio para encontrar um controlador de domínio local, a menos que haja uma fonte de horário NTP manual configurada. Esse ambiente exige 1 segundo de precisão, que usa a convergência mais rápida para a hora correta. Essa opção permite que o serviço w32time atrase o relógio. Se isso for aceitável e atender aos seus requisitos, você poderá criar a política a seguir.  Assim como ocorre com qualquer ambiente, lembre-se de testar a sua rede e definir a linha de base dela. 
+**Remoto de Cargas Sensíveis à Precisão Remota**: para os sistemas em domínios de filial, por exemplo, para Varejo e PCI (Setor de Crédito de Pagamento), o Windows usa as informações do site atual e o localizador de controlador de domínio para encontrar um controlador de domínio local, a menos que haja uma fonte de horário NTP manual configurada. Esse ambiente exige 1 segundo de precisão, que usa a convergência mais rápida para a hora correta. Essa opção permite que o serviço w32time atrase o relógio. Se isso for aceitável e atender aos seus requisitos, você poderá criar a política a seguir.  Assim como ocorre com qualquer ambiente, lembre-se de testar a sua rede e definir a linha de base dela.
 
 Configuração da Diretiva de Grupo| Novo valor|
 ----- | ----- |
@@ -322,14 +323,15 @@ Para cumprir as regulamentações de rastreamento de tempo, você poderá arquiv
 Para obter a história completa, você também precisará das informações do log de eventos. Se você coletar o log de eventos do sistema e filtrar em Time-Server, Microsoft-Windows-Kernel-Boot e Microsoft-Windows-Kernel-General, poderá descobrir se há outras influências que alteraram a hora, por exemplo, terceiros. Esses logs podem ser necessários para eliminar a interferência externa. A Política de Grupo pode afetar os logs de eventos que são gravados no log. Confira a seção acima sobre como usar a Política de Grupo para obter mais detalhes.
 
 ### <a name="w32time-debug-logging"></a><a name="W32Logging"></a>Log de depuração do W32Time
-Para habilitar o w32tm para fins de auditoria, o comando a seguir habilita o log que mostra as atualizações periódicas do relógio e indica o relógio de origem. Reinicie o serviço para habilitar o novo log. 
+Para habilitar o w32tm para fins de auditoria, o comando a seguir habilita o log que mostra as atualizações periódicas do relógio e indica o relógio de origem. Reinicie o serviço para habilitar o novo log.
 
 Para obter mais informações, confira [Como ativar o log de depuração no Serviço de Horário do Windows](https://support.microsoft.com/kb/816043).
 
  w32tm /debug /enable /file:C:\Windows\Temp\w32time-test.log /size:10000000 /entries:0-73,103,107,110
 
 ### <a name="performance-monitor"></a>Desempenho do sistema
-O Serviço de Horário do Windows Server 2016 expõe os contadores de desempenho que podem ser usados para coletar logs de auditoria. Eles podem ser registrados em log local ou remotamente. Você pode registrar os contadores Diferença de Horário do Computador e Atraso de Ida e Volta. Além disso, como qualquer contador de desempenho, você pode monitorá-los remotamente e criar alertas usando o System Center Operations Manager. Você pode, por exemplo, usar um alerta para informar quando a Diferença de Horário se desloca da precisão desejada. O [Pacote de Gerenciamento do System Center](https://social.technet.microsoft.com/wiki/contents/articles/15251.system-center-management-pack-authoring-guide.aspx) traz mais informações.
+O Serviço de Horário do Windows Server 2016 expõe os contadores de desempenho que podem ser usados para coletar logs de auditoria. Eles podem ser registrados em log local ou remotamente. Você pode registrar os contadores Diferença de Horário do Computador e Atraso de Ida e Volta.
+Além disso, como qualquer contador de desempenho, você pode monitorá-los remotamente e criar alertas usando o System Center Operations Manager. Você pode, por exemplo, usar um alerta para informar quando a Diferença de Horário se desloca da precisão desejada. O [Pacote de Gerenciamento do System Center](https://www.microsoft.com/download/details.aspx?id=44231) traz mais informações.
 
 ### <a name="windows-traceability-example"></a>Exemplo de rastreabilidade do Windows
 Em arquivos de log do w32tm, o ideal é validar dois tipos de informação. O primeiro é uma indicação de que o arquivo de log tem o relógio da condição no momento. Isso prova que o relógio estava sendo condicionado pelo Serviço de Horário do Windows no momento da controvérsia.
@@ -337,7 +339,7 @@ Em arquivos de log do w32tm, o ideal é validar dois tipos de informação. O pr
  151802 20:18:32,9821765s – ClockDispln Discipline: *SKEW*TIME* - PhCRR:223 CR:156250 UI:100 phcT:65 KPhO:14307 151802 20:18:33,9898460s - ClockDispln Discipline: *SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:64 KPhO:41 151802 20:18:44,1090410s - ClockDispln Discipline: *SKEW*TIME* - PhCRR:1 CR:156250 UI:100 phcT:65 KPhO:38
 
 O ponto principal é que você vê as mensagens prefixadas com ClockDispln Discipline, que é a prova de que o w32time está interagindo com o relógio do sistema.
- 
+
 Em seguida, você precisará localizar o último relatório no log antes do momento da controvérsia que relata o computador de origem que está sendo usado no momento como o relógio de referência. Isso pode ser um endereço IP, um nome do computador ou o provedor VMIC, que indica que ele está sendo sincronizado com o host do Hyper-V. O exemplo a seguir fornece um endereço IPv4 10.197.216.105.
 
  151802 20:18:54,6531515s – Resposta do par 10.197.216.105,0x8 (ntp.m|0x8|0.0.0.0:123->10.197.216.105:123), ofs: +00.0012218s
@@ -345,13 +347,13 @@ Em seguida, você precisará localizar o último relatório no log antes do mome
 Agora que você validou o primeiro sistema na cadeia de tempo de referência, você precisará investigar o arquivo de log na fonte de horário de referência e repetir as mesmas etapas. Isso continuará até que você acesse um relógio físico, como um GPS ou uma fonte de horário conhecida como o NIST. Se o relógio de referência for um hardware de GPS, os logs do fabricante também poderão ser necessários.
 
 ## <a name="network-considerations"></a>Considerações sobre a rede
-Os algoritmos do protocolo NTP têm uma dependência da simetria da rede. À medida que o número de saltos de rede aumenta, a probabilidade de assimetria também aumenta. Portanto, é difícil prever quais tipos de imprecisões você verá nos ambientes específicos. 
+Os algoritmos do protocolo NTP têm uma dependência da simetria da rede. À medida que o número de saltos de rede aumenta, a probabilidade de assimetria também aumenta. Portanto, é difícil prever quais tipos de imprecisões você verá nos ambientes específicos.
 
 O Monitor de Desempenho e os novos contadores de Tempo do Windows no Windows Server 2016 podem ser usados para avaliar a precisão dos ambientes e criar linhas de base. Além disso, você pode executar a solução de problemas para determinar a diferença atual de qualquer computador em sua rede.
 
-Há dois padrões gerais de hora precisa na rede. O PTP ([Protocolo de Tempo de Precisão – IEEE 1588](https://www.nist.gov/el/intelligent-systems-division-73500/introduction-ieee-1588)) tem requisitos mais rígidos referentes à infraestrutura de rede, mas, muitas vezes, pode fornecer a precisão abaixo de microssegundo. O NTP ([protocolo NTP – RFC 1305](https://tools.ietf.org/html/rfc1305)) funciona em uma grande variedade de redes e ambientes, o que facilita o gerenciamento. 
+Há dois padrões gerais de hora precisa na rede. O PTP ([Protocolo de Tempo de Precisão – IEEE 1588](https://www.nist.gov/el/intelligent-systems-division-73500/introduction-ieee-1588)) tem requisitos mais rígidos referentes à infraestrutura de rede, mas, muitas vezes, pode fornecer a precisão abaixo de microssegundo. O NTP ([protocolo NTP – RFC 1305](https://tools.ietf.org/html/rfc1305)) funciona em uma grande variedade de redes e ambientes, o que facilita o gerenciamento.
 
-O Windows dá suporte ao NTP Simples (RFC2030) por padrão em computadores não ingressados no domínio. Para os computadores ingressados no domínio, usamos um NTP seguro chamado [MS-SNTP](https://msdn.microsoft.com/library/cc246877.aspx), que aproveita os segredos negociados no domínio, os quais fornecem uma vantagem de gerenciamento em relação ao NTP Autenticado descrito no RFC1305 e no RFC5905.  
+O Windows dá suporte ao NTP Simples (RFC2030) por padrão em computadores não ingressados no domínio. Para os computadores ingressados no domínio, usamos um NTP seguro chamado [MS-SNTP](https://msdn.microsoft.com/library/cc246877.aspx), que aproveita os segredos negociados no domínio, os quais fornecem uma vantagem de gerenciamento em relação ao NTP Autenticado descrito no RFC1305 e no RFC5905.
 
 Os protocolos ingressados no domínio e não ingressados no domínio exigem a porta UDP 123. Para obter mais informações sobre as melhores práticas do NTP, confira [Versão preliminar da IETF de melhores práticas atuais do protocolo NTP](https://tools.ietf.org/html/draft-ietf-ntp-bcp-00).
 
@@ -361,7 +363,7 @@ O Windows não percorre o tempo, a menos que determinados limites sejam excedido
 Essa é outra razão pela qual você precisará fazer testes e definir a linha de base em seu ambiente. Se o contador de desempenho “Diferença de Horário Calculado” não se estabilizar com a precisão que você tem como meta, o ideal será verificar se o firmware está atualizado. Como outro teste, você pode ver se o hardware duplicado reproduz o mesmo problema.
 
 ### <a name="troubleshooting-time-accuracy-and-ntp"></a>Solução de problemas de precisão de tempo e NTP
-Use a seção Como descobrir a hierarquia acima para entender a origem da hora imprecisa. Observando a diferença de horário, localize o ponto na hierarquia em que o tempo mais diverge da origem NTP. Depois que você entender a hierarquia, o ideal será tentar entender por que essa fonte de horário específica não recebe a hora precisa. 
+Use a seção Como descobrir a hierarquia acima para entender a origem da hora imprecisa. Observando a diferença de horário, localize o ponto na hierarquia em que o tempo mais diverge da origem NTP. Depois que você entender a hierarquia, o ideal será tentar entender por que essa fonte de horário específica não recebe a hora precisa.
 
 Concentrando-se no sistema com o tempo divergente, use estas ferramentas abaixo para coletar mais informações a fim de ajudar a determinar o problema e encontrar uma resolução. A referência de UpstreamClockSource abaixo é o relógio descoberto com “w32tm /config /status”.
 
@@ -378,7 +380,7 @@ Concentrando-se no sistema com o tempo divergente, use estas ferramentas abaixo 
 Problema| Sintomas| Resolução|
 ----- | ----- | ----- |
 | O relógio de TSC local não é estável.| Usando Perfmon – computador físico, sincronize o relógio estável, mas você ainda verá intervalos de 1 ou 2 minutos de vários 100 us. | A atualização do firmware ou a validação de outro hardware não exibe o mesmo problema.|
-| Latência de rede| O stripchart do w32tm exibe um RoundTripDelay de mais de 10 ms. A variação no atraso causa um ruído tão grande quanto ½ do tempo de ida e volta, por exemplo, um atraso que só ocorre em uma direção.<br><br>UpstreamClockSource é de vários saltos, conforme indicado pelo ping. A TTL deve estar próxima a 128.<br><br>Use o Tracert para localizar a latência em cada salto.  | Encontre uma fonte de relógio mais próxima para a hora. Uma solução é instalar um relógio de origem no mesmo segmento ou apontá-lo manualmente para o relógio de origem que está geograficamente mais próximo. Para um cenário de domínio, adicione um computador com a função GTimeServ. | 
+| Latência de rede| O stripchart do w32tm exibe um RoundTripDelay de mais de 10 ms. A variação no atraso causa um ruído tão grande quanto ½ do tempo de ida e volta, por exemplo, um atraso que só ocorre em uma direção.<br><br>UpstreamClockSource é de vários saltos, conforme indicado pelo ping. A TTL deve estar próxima a 128.<br><br>Use o Tracert para localizar a latência em cada salto.  | Encontre uma fonte de relógio mais próxima para a hora. Uma solução é instalar um relógio de origem no mesmo segmento ou apontá-lo manualmente para o relógio de origem que está geograficamente mais próximo. Para um cenário de domínio, adicione um computador com a função GTimeServ. |
 Não é possível acessar a origem NTP de maneira confiável| W32tm /stripchart retorna intermitentemente “Tempo limite de solicitação atingido” |A origem NTP não está respondendo|
 A origem NTP não está respondendo| Verifique os contadores do Perfmon de Contagem de Fontes do Cliente NTP, Solicitações de Entrada do Servidor NTP, Respostas de Saída do Servidor NTP e determine seu uso em comparação com as linhas de base.| Usando contadores de desempenho do servidor, determine se a carga foi alterada em referência às suas linhas de base.<br><br>Há problemas de congestionamento de rede?|
 O controlador de domínio não está usando o relógio mais preciso| Alterações na topologia ou no relógio de tempo mestre adicionado recentemente.| w32tm /resync /rediscover|
@@ -392,13 +394,13 @@ Também é útil definir a linha de base do Windows Server 2016 vs 2012 R2. No e
 Usando todos os contadores de desempenho do w32time, colete dados por, pelo menos, uma semana. Isso garantirá que você tenha uma referência suficiente para consideração para vários na rede ao longo do tempo e uma execução suficiente para ter certeza de que a precisão de tempo é estável.
 
 ### <a name="ntp-server-redundancy"></a>Redundância do servidor NTP
-Para a configuração manual do servidor NTP usada com computadores não ingressados no domínio ou o controlador de domínio primário, ter mais de um servidor é uma boa medida de redundância em caso de disponibilidade. Isso também pode oferecer maior precisão, supondo que todas as fontes sejam precisas e estáveis. No entanto, se a topologia não for bem projetada ou se as fontes de horário não forem estáveis, a precisão resultante poderá ser pior; portanto, tenha cuidado. O limite de servidores de horário compatíveis que o w32time pode referenciar manualmente é 10. 
+Para a configuração manual do servidor NTP usada com computadores não ingressados no domínio ou o controlador de domínio primário, ter mais de um servidor é uma boa medida de redundância em caso de disponibilidade. Isso também pode oferecer maior precisão, supondo que todas as fontes sejam precisas e estáveis. No entanto, se a topologia não for bem projetada ou se as fontes de horário não forem estáveis, a precisão resultante poderá ser pior; portanto, tenha cuidado. O limite de servidores de horário compatíveis que o w32time pode referenciar manualmente é 10.
 
 ## <a name="leap-seconds"></a>Segundos bissextos
 O período de rotação da Terra varia ao longo do tempo, causado por eventos climáticos e geológicos. Normalmente, a variação é de cerca de um segundo a cada dois anos. Sempre que a variação do tempo atômico aumenta muito, uma correção de um segundo (para cima ou para baixo) é inserida, chamada de segundo bissexto. Isso é feito de maneira que a diferença nunca exceda 0,9 segundo. Essa correção é anunciada com seis meses de antecedência da correção real. Antes do Windows Server 2016, o Serviço de Horário da Microsoft não reconhecia os segundos bissextos, mas dependia do serviço de horário externo para cuidar disso. Com o aumento da precisão de tempo do Windows Server 2016, a Microsoft está trabalhando em uma solução mais adequada para o problema de segundo bissexto.
 
 ## <a name="secure-time-seeding"></a>Propagação de Tempo Segura
-O W32Time no Server 2016 inclui o recurso Propagação de Tempo Segura. Esse recurso determina o tempo atual aproximado das conexões SSL de saída. Esse valor temporal é usado para monitorar o relógio do sistema local e corrigir os erros grosseiros. Leia mais sobre o recurso [nesta postagem no blog](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/). Em implantações com fontes de horário confiáveis e computadores bem monitorados que incluem o monitoramento de diferenças de horário, você pode optar por não usar o recurso Propagação de Tempo Segura e, em vez disso, confiar em sua infraestrutura existente. 
+O W32Time no Server 2016 inclui o recurso Propagação de Tempo Segura. Esse recurso determina o tempo atual aproximado das conexões SSL de saída. Esse valor temporal é usado para monitorar o relógio do sistema local e corrigir os erros grosseiros. Leia mais sobre o recurso [nesta postagem no blog](https://blogs.msdn.microsoft.com/w32time/2016/09/28/secure-time-seeding-improving-time-keeping-in-windows/). Em implantações com fontes de horário confiáveis e computadores bem monitorados que incluem o monitoramento de diferenças de horário, você pode optar por não usar o recurso Propagação de Tempo Segura e, em vez disso, confiar em sua infraestrutura existente.
 
 Desabilite o recurso com estas etapas:
 

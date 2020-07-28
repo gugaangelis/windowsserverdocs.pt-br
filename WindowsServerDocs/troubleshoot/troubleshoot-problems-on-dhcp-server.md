@@ -9,12 +9,12 @@ ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: ad70b03fcb6d703a0b99435ee8715319d09af941
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150194"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181892"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solucionar problemas no servidor DHCP
 
@@ -46,38 +46,37 @@ Verifique as seguintes configurações:
 
 ## <a name="event-logs"></a>Logs de eventos
 
-Verifique os logs de eventos do serviço do servidor DHCP e do sistema (**logs de aplicativos e serviços** \> **Microsoft** \> **Windows** \> **DHCP-Server**) para problemas relatados relacionados ao problema observado.  
-Dependendo do tipo de problema, um evento é registrado em um dos seguintes canais de evento:  
-[Eventos operacionais do servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos administrativos do servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos de sistema do servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos de notificação de filtro de servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))  
-[Eventos de auditoria do servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))
+Verifique os logs de eventos do serviço do servidor DHCP e do sistema (**logs de aplicativos e serviços** \> **Microsoft** \> **Windows** \> **DHCP-Server**) para problemas relatados relacionados ao problema observado.
+Dependendo do tipo de problema, um evento é registrado em um dos seguintes canais de eventos: servidor DHCP eventos [operacionais](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\))servidor DHCP eventos administrativos de servidor DHCP eventos do sistema DHCP servidor filtro eventos de 
+ [DHCP Server Administrative Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [DHCP Server System Events](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [notificação](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) 
+ [servidor](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn800668\(v=ws.11\)) DHCP eventos de auditoria
 
 ## <a name="data-collection"></a>Coleta de dados
 
 ### <a name="dhcp-server-log"></a>Log do servidor DHCP
 
-Os logs de depuração do serviço do servidor DHCP fornecem mais informações sobre a atribuição de concessão de endereço IP e as atualizações dinâmicas de DNS feitas pelo servidor DHCP. Esses logs por padrão estão localizados em% windir% \\ System32 \\ DHCP.  
-Para obter mais informações, consulte [analisar arquivos de log do servidor DHCP](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\)).
+Os logs de depuração do serviço do servidor DHCP fornecem mais informações sobre a atribuição de concessão de endereço IP e as atualizações dinâmicas de DNS feitas pelo servidor DHCP. Esses logs por padrão estão localizados em% windir% \\ System32 \\ DHCP.
+Para obter mais informações, consulte [analisar arquivos de log do servidor DHCP](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd183591\(v=ws.10\)).
 
 ### <a name="network-trace"></a>Rastreamento de rede
 
 Um rastreamento de rede correlacionado pode indicar o que o servidor DHCP estava fazendo no momento em que o evento foi registrado. Para criar um rastreamento desse tipo, siga estas etapas:
 
-1.  Acesse o [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)e baixe o arquivo [TSS \_ Tools. zip](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) .
+1.  Acesse o [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)e baixe o arquivo de [ \_tools.zipTSS](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) .
 
-2.  Copie o \_ arquivo TSS Tools. zip e expanda-o para um local no disco local, como a pasta C: \\ Tools.
+2.  Copie o \_ arquivo detools.zip TSS e expanda-o para um local no disco local, como a pasta C: \\ Tools.
 
-3.  Execute o seguinte comando em C: \\ Tools em uma janela de prompt de comandos com privilégios elevados:  
+3.  Execute o seguinte comando em C: \\ Tools em uma janela de prompt de comandos com privilégios elevados:
     ```console
     TSS Ron Trace <Stop:Evt:>20321:<Other:>DhcpAdminEvents NoSDP NoPSR NoProcmon NoGPresult
     ```
-      
-    >[!Note]
-    >Nesse comando, substitua \<*Stop:Evt:*\> e \<*Other:*\> pela ID do evento e pelo canal de evento no qual você vai se concentrar em sua sessão de rastreamento.  
-    >Os arquivos. docx de ajuda do TSS. cmd \_ \_ que estão contidos no \_ arquivo TSS Tools. zip fornecem mais informações sobre todas as configurações disponíveis.
 
-4.  Depois que o evento é disparado, a ferramenta cria uma pasta denominada C: \\ MS \_ Data. Essa pasta conterá alguns arquivos de saída úteis que fornecem informações gerais sobre a configuração de rede e domínio do computador.  
+    >[!Note]
+    >Nesse comando, substitua \<*Stop:Evt:*\> e \<*Other:*\> pela ID do evento e pelo canal de evento no qual você vai se concentrar em sua sessão de rastreamento.
+    >O Leiame do TSS. cmd \_ \_Help.docx arquivos contidos no arquivo TSS \_tools.zip fornece mais informações sobre todas as configurações disponíveis.
+
+4.  Depois que o evento é disparado, a ferramenta cria uma pasta denominada C: \\ MS \_ Data. Essa pasta conterá alguns arquivos de saída úteis que fornecem informações gerais sobre a configuração de rede e domínio do computador.
     O arquivo mais interessante nesta pasta é% ComputerName% \_ Date \_ time \_ packetcapture \_ internetclient \_ DBG. etl.
     Usando o aplicativo [Monitor de rede](https://www.microsoft.com/download/4865) , você pode carregar o arquivo e definir o filtro de exibição no protocolo "DHCP ou DNS" para examinar o que está acontecendo nos bastidores.

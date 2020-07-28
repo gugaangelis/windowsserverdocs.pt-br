@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0047a9f2d4b6b66cec85b2746b1975af2ced3316
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 726b2701e5b84dd17e157283b0ca06c51c7ad2e0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851449"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87178682"
 ---
 # <a name="view-task-details-and-notifications"></a>Exibir detalhes e notificações de tarefas
 
@@ -35,11 +35,11 @@ A área de **notificações** na barra de menus Gerenciador do servidor, marcada
 
 -   Adicionando servidores remotos para gerenciar (as notificações são exibidas para falhas para contatar ou atualizar os dados exibidos para servidores remotos)
 
-Os itens no menu **Notificações** mostram uma barra de progresso, uma breve descrição da tarefa, o nome do servidor de destino da tarefa (ou um dos servidores de destino, se foram selecionados vários servidores de destino), um link para um controle ou uma caixa de diálogo relacionada, se aplicável, e um menu **Tarefas** . O menu **Tarefas** mostra os comandos que se aplicam à notificação ativa (a notificação sobre a qual o cursor do mouse está focalizado). Por exemplo, se você parar um serviço, poderá clicar em **Reiniciar** no menu **Tarefas** na notificação para reiniciar o serviço.
+Os itens no menu **Notificações** mostram uma barra de progresso, uma breve descrição da tarefa, o nome do servidor de destino da tarefa (ou um dos servidores de destino, se foram selecionados vários servidores de destino), um link para um controle ou uma caixa de diálogo relacionada, se aplicável, e um menu **Tarefas**. O menu **Tarefas** mostra os comandos que se aplicam à notificação ativa (a notificação sobre a qual o cursor do mouse está focalizado). Por exemplo, se você parar um serviço, poderá clicar em **Reiniciar** no menu **Tarefas** na notificação para reiniciar o serviço.
 
 As notificações são particularmente úteis para instalar ou desinstalar funções, serviços de função e recursos. Por exemplo, se você iniciar uma instalação de recurso em um servidor remoto, poderá fechar o assistente para adicionar funções e recursos enquanto a instalação ainda estiver em andamento, mas a tarefa ativa permanecerá na lista de **notificações** . O item **notificações** mostra uma barra de progresso para a instalação e permite reabrir o assistente para adicionar funções e recursos, se necessário, clicando em **Adicionar Assistente de funções e recursos**. Os itens nessa lista informam se uma instalação falhou ou se são necessárias etapas de configuração adicionais para concluir a implantação do recurso.
 
-As notificações também desempenham uma parte importante na solução de problemas com tarefas ou processos no Gerenciador do Servidor. Para obter mais informações sobre como usar mensagens na área de **notificações** e na caixa de diálogo **detalhes da tarefa** para solucionar problemas de tarefas ou processos sem êxito, consulte o guia de solução de problemas do [Gerenciador do servidor](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx).
+As notificações também desempenham uma parte importante na solução de problemas com tarefas ou processos no Gerenciador do Servidor. Para obter mais informações sobre como usar mensagens na área de **notificações** e na caixa de diálogo **detalhes da tarefa** para solucionar problemas de tarefas ou processos sem êxito, consulte o [Fórum Gerenciador do servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).
 
 Para excluir uma notificação que você não deseja mais ver na lista de **notificações** , passe o cursor do mouse sobre a notificação e clique em **remover tarefa** (**X**).
 
@@ -48,6 +48,6 @@ O comando **detalhes da tarefa** na parte inferior do menu **notificações** ab
 
 O painel inferior é especialmente útil para solucionar problemas de tarefas com falha. Se Gerenciador do Servidor não puder se conectar ou obter dados para um servidor que seja membro do pool de servidores, as entradas nesse painel geralmente contêm mensagens detalhadas, incluindo o texto completo de problemas subjacentes de gerenciamento remoto do Windows (WinRM), rede ou segurança que impedem Gerenciador do Servidor de se comunicar com um servidor de destino.
 
-## <a name="see-also"></a>Consulte também
-[Filtrar, classificar e consultar dados em blocos de Gerenciador do Servidor](filter-sort-and-query-data-in-server-manager-tiles.md)
-[Gerenciador do servidor guia de solução de problemas](https://social.technet.microsoft.com/wiki/contents/articles/13443.windows-server-2012-server-manager-troubleshooting-guide-part-i-overview.aspx)
+## <a name="see-also"></a>Consulte Também
+[Filtrar, classificar e consultar dados em blocos](filter-sort-and-query-data-in-server-manager-tiles.md) 
+ de Gerenciador do servidor [Gerenciador do servidor Fórum](https://docs.microsoft.com/answers/topics/windows-server-manager.html).

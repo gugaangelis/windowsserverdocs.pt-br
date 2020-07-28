@@ -8,12 +8,12 @@ metadata:
   author: lizap
   ms.author: elizapo
   ms.date: 06/09/2020
-  ms.openlocfilehash: a115a703071b52e7a27d925578d7703f270b925b
-  ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+  ms.openlocfilehash: f04fc0407eb43f78433aca0dda70aa05e951a19d
+  ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
   ms.translationtype: MT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 06/18/2020
-  ms.locfileid: "85070954"
+  ms.lasthandoff: 07/27/2020
+  ms.locfileid: "87179242"
 landingContent:
 - title: Gerenciar sistemas e ambientes do Windows Server
   linkLists:
@@ -59,13 +59,13 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Serviços da área de trabalho Remota
+    - text: Serviços da Área de Trabalho Remota
       url: ../remote/remote-desktop-services/welcome-to-rds.md
 - title: Versões mais antigas do Windows Server
   linkLists:
   - linkListType: overview
     links:
     - text: Documentação das versões anteriores do Windows
-      url: https://docs.microsoft.com/previous-versions/windows/
+      url: /previous-versions/windows/
     - text: Pesquisar informações específicas
       url: https://docs.microsoft.com/search/?search=Windows+Server&dataSource=previousVersions

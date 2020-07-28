@@ -1,5 +1,5 @@
 ---
-title: Ajuste de desempenho de adaptadores de rede
+title: Adaptadores de rede para ajuste do desempenho
 description: Este tópico faz parte do guia de ajuste de desempenho do subsistema de rede para o Windows Server 2016.
 audience: Admin - CI ID 111485 - CSSTroubleshoot
 ms.prod: windows-server
@@ -10,14 +10,14 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: dec88eb81227b62cd0a0ca90810b2598b8f9fd52
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: eb402c9cd7bb4f9ae472859fcd45fcc050d1df85
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854739"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182132"
 ---
-# <a name="performance-tuning-network-adapters"></a>Ajuste de desempenho de adaptadores de rede
+# <a name="performance-tuning-network-adapters"></a>Adaptadores de rede para ajuste do desempenho
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
 
@@ -25,12 +25,12 @@ Use as informações neste tópico para ajustar os adaptadores de rede de desemp
 
 As configurações de ajuste corretas para seus adaptadores de rede dependem das seguintes variáveis:
 
-- O adaptador de rede e seu conjunto de recursos  
-- O tipo de carga de trabalho que o servidor executa  
-- Os recursos de hardware e software do servidor  
-- Seus objetivos de desempenho para o servidor  
+- O adaptador de rede e seu conjunto de recursos
+- O tipo de carga de trabalho que o servidor executa
+- Os recursos de hardware e software do servidor
+- Seus objetivos de desempenho para o servidor
 
-As seções a seguir descrevem algumas de suas opções de ajuste de desempenho.  
+As seções a seguir descrevem algumas de suas opções de ajuste de desempenho.
 
 ##  <a name="enabling-offload-features"></a><a name="bkmk_offload"></a>Habilitando recursos de descarregamento
 
@@ -42,16 +42,16 @@ O ajuste nos recursos de descarregamento do adaptador de rede normalmente é ben
 Por exemplo, considere um adaptador de rede que tenha recursos de hardware limitados.
 Nesse caso, habilitar os recursos de descarregamento de segmentação pode reduzir a taxa de transferência máxima sustentável do adaptador. No entanto, se a taxa de transferência reduzida for aceitável, você deverá seguir um habilitar os recursos de descarga de segmentação.
 
-> [!NOTE]  
+> [!NOTE]
 > Alguns adaptadores de rede exigem que você habilite recursos de descarregamento independentemente para os caminhos de envio e recebimento.
 
 ##  <a name="enabling-receive-side-scaling-rss-for-web-servers"></a><a name="bkmk_rss_web"></a>Habilitando o RSS (recebimento em escala) para servidores Web
 
 O RSS pode melhorar a escalabilidade e o desempenho da Web quando há menos adaptadores de rede do que processadores lógicos no servidor. Quando todo o tráfego da Web está passando por adaptadores de rede compatíveis com RSS, o servidor pode processar solicitações da Web de entrada de diferentes conexões simultaneamente em diferentes CPUs.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Evite usar adaptadores de rede não RSS e adaptadores de rede compatíveis com RSS no mesmo servidor. Devido à lógica de distribuição de carga em RSS e HTTP (Hypertext Transfer Protocol), o desempenho poderá ser seriamente degradado se um adaptador de rede compatível com RSS aceitar o tráfego da Web em um servidor que tenha um ou mais adaptadores de rede compatíveis com RSS. Nesse caso, você deve usar adaptadores de rede habilitados para RSS ou desabilitar RSS na guia **Propriedades Avançadas** das propriedades do adaptador de rede.
->  
+>
 > Para determinar se um adaptador de rede está habilitado para RSS, você pode visualizar as informações RSS na guia **Propriedades Avançadas** das propriedades do adaptador de rede.
 
 ### <a name="rss-profiles-and-rss-queues"></a>Perfis RSS e filas RSS
@@ -62,11 +62,11 @@ Por exemplo, se você abrir o Gerenciador de tarefas e examinar os processadores
 
 ##  <a name="increasing-network-adapter-resources"></a><a name="bkmk_resources"></a>Aumentando os recursos do adaptador de rede
 
-Para adaptadores de rede que permitem configurar manualmente recursos, como buffers de recebimento e envio, você deve aumentar os recursos alocados.  
+Para adaptadores de rede que permitem configurar manualmente recursos, como buffers de recebimento e envio, você deve aumentar os recursos alocados.
 
 Alguns adaptadores de rede configuram seus buffers de recebimento como baixos para preservar a memória alocada do host. O valor baixo resulta em pacotes descartados e desempenho reduzido. Portanto, para cenários de recebimento intenso, recomendamos aumentar o valor do buffer de recebimento para o máximo.
 
-> [!NOTE]  
+> [!NOTE]
 > Se um adaptador de rede não expõe a configuração manual de recursos, ele configura dinamicamente os recursos ou os recursos são definidos com um valor fixo que não pode ser alterado.
 
 ### <a name="enabling-interrupt-moderation"></a>Habilitando a moderação de interrupção
@@ -83,8 +83,8 @@ A seguir estão algumas sugestões de ajuste no desempenho para redes sensíveis
 
 - Defina o BIOS do computador para **Alto Desempenho**, com estados C desabilitados. Entretanto, observe que isso depende do sistema e do BIOS, alguns sistemas fornecerão maior desempenho se o sistema operacional controlar o gerenciamento de energia. Você pode verificar e ajustar suas configurações de gerenciamento de energia de **configurações** ou usando o comando **powercfg** . Para obter mais informações, consulte [Opções de linha de comando powercfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options).
 
-- Defina o perfil de gerenciamento de energia do sistema operacional para **Sistema de alto desempenho**.  
-   > [!NOTE]  
+- Defina o perfil de gerenciamento de energia do sistema operacional para **Sistema de alto desempenho**.
+   > [!NOTE]
    > Essa configuração não funcionará corretamente se o BIOS do sistema tiver sido definido para desabilitar o controle do sistema operacional do gerenciamento de energia.
 
 - Habilitar descarregamentos estáticos. Por exemplo, habilite as somas de verificação de UDP, somas de verificação de TCP e configurações de descarga grande (LSO).
@@ -97,7 +97,7 @@ A seguir estão algumas sugestões de ajuste no desempenho para redes sensíveis
 
 ##  <a name="system-management-interrupts"></a><a name="bkmk_smi"></a>Interrupções de gerenciamento do sistema
 
-Muitos sistemas de hardware usam o SMI (System Management interrupções) para uma variedade de funções de manutenção, como erros de memória ECC (código de correção de erro), mantendo a compatibilidade com USB herdada, controlando o ventilador e gerenciando a energia controlada pelo BIOS Configurações.
+Muitos sistemas de hardware usam o SMI (System Management interrupções) para uma variedade de funções de manutenção, como erros de memória ECC (código de correção de erros), mantendo a compatibilidade com USB herdada, controlando o ventilador e gerenciando configurações de energia controladas por BIOS.
 
 O SMI é a interrupção de prioridade mais alta no sistema e coloca a CPU em um modo de gerenciamento. Esse modo preempção de todas as outras atividades enquanto o SMI executa uma rotina de serviço de interrupção, normalmente contida no BIOS.
 
@@ -105,7 +105,7 @@ Infelizmente, esse comportamento pode resultar em picos de latência de 100 micr
 
 Se for necessário obter a menor latência, você deve solicitar uma versão do BIOS, junto a seu fornecedor de hardware, que reduza as SMIs para o menor nível possível. Essas versões de BIOS são frequentemente chamadas de "BIOS de baixa latência" ou "BIOS gratuito do SMI". Em alguns casos, não é possível para uma plataforma de hardware eliminar a atividade de SMI completamente, ela é usada para controlar funções essenciais (por exemplo, ventiladores de refrigeração).
 
-> [!NOTE]  
+> [!NOTE]
 > O sistema operacional não pode controlar SMIs porque o processador lógico está sendo executado em um modo de manutenção especial, o que impede a intervenção do sistema operacional.
 
 ##  <a name="performance-tuning-tcp"></a><a name="bkmk_tcp"></a>Ajuste de desempenho TCP
@@ -120,9 +120,9 @@ Nas versões anteriores do Windows, a pilha de rede do Windows usava uma janela 
 
 Para uma janela de recepção TCP que tem um tamanho específico, você pode usar a equação a seguir para calcular a taxa de transferência total de uma única conexão.
 
-> *Taxa de transferência atingível total em bytes* = *tamanho da janela de recepção TCP em bytes* \* (1/ *latência de conexão em segundos*)
+> *Taxa de transferência atingível total em bytes*  =  *Tamanho da janela de recepção TCP em bytes* \* (1/ *latência de conexão em segundos*)
 
-Por exemplo, para uma conexão que tem uma latência de 10 ms, a taxa de transferência atingível total é de apenas 51 Mbps. Esse valor é razoável para uma grande infraestrutura de rede corporativa. No entanto, usando a AutoAjuste para ajustar a janela de recebimento, a conexão pode atingir a taxa de linha completa de uma conexão de 1 Gbps.  
+Por exemplo, para uma conexão que tem uma latência de 10 ms, a taxa de transferência atingível total é de apenas 51 Mbps. Esse valor é razoável para uma grande infraestrutura de rede corporativa. No entanto, usando a AutoAjuste para ajustar a janela de recebimento, a conexão pode atingir a taxa de linha completa de uma conexão de 1 Gbps.
 
 Alguns aplicativos definem o tamanho da janela de recepção TCP. Se o aplicativo não definir o tamanho da janela de recebimento, a velocidade do link determinará o tamanho da seguinte maneira:
 
@@ -135,17 +135,17 @@ Por exemplo, em um computador que tem um adaptador de rede de 1 Gbps instalado, 
 
 Esse recurso também faz uso completo de outros recursos para melhorar o desempenho da rede. Esses recursos incluem o restante das opções de TCP que são definidas no [RFC 1323](https://tools.ietf.org/html/rfc1323). Usando esses recursos, os computadores baseados no Windows podem negociar tamanhos de janela de recepção TCP menores, mas são dimensionados em um valor definido, dependendo da configuração. Esse comportamento é mais fácil de lidar com dispositivos de rede.
 
-> [!NOTE]  
-> Você pode enfrentar um problema em que o dispositivo de rede não está em conformidade com a **opção de dimensionamento de janela TCP**, conforme definido no [RFC 1323](https://tools.ietf.org/html/rfc1323) e, portanto, não dá suporte ao fator de escala. Nesses casos, consulte este [KB 934430, a conectividade de rede falha quando você tenta usar o Windows Vista por trás de um dispositivo de firewall](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a) ou entrar em contato com a equipe de suporte para o fornecedor do dispositivo de rede.  
+> [!NOTE]
+> Você pode enfrentar um problema em que o dispositivo de rede não está em conformidade com a **opção de dimensionamento de janela TCP**, conforme definido no [RFC 1323](https://tools.ietf.org/html/rfc1323) e, portanto, não dá suporte ao fator de escala. Nesses casos, consulte este [KB 934430, a conectividade de rede falha quando você tenta usar o Windows Vista por trás de um dispositivo de firewall](https://support.microsoft.com/help/934430/network-connectivity-fails-when-you-try-to-use-windows-vista-behind-a) ou entrar em contato com a equipe de suporte para o fornecedor do dispositivo de rede.
 
 #### <a name="review-and-configure-tcp-receive-window-autotuning-level"></a>Examinar e configurar o nível de ajuste automática da janela de recepção TCP
 
 Você pode usar comandos netsh ou cmdlets do Windows PowerShell para revisar ou modificar o nível de ajuste da janela de recepção TCP.
 
-> [!NOTE]  
+> [!NOTE]
 > Ao contrário das versões do Windows que são anteriores ao Windows 10 ou ao Windows Server 2019, você não pode mais usar o registro para configurar o tamanho da janela de recepção TCP. Para obter mais informações sobre as configurações preteridas, consulte [parâmetros TCP preteridos](#deprecated-tcp-parameters).
 
-> [!NOTE]  
+> [!NOTE]
 > Para obter informações detalhadas sobre os níveis de ajuste automática disponíveis, consulte [níveis de ajuste](#autotuning-levels)automática.
 
 **Para usar o netsh para revisar ou modificar o nível de ajuste automática**
@@ -161,7 +161,7 @@ A saída desse comando deve ser semelhante ao seguinte:
 ```
 Querying active state...
 
-TCP Global Parameters  
+TCP Global Parameters
 -----
 Receive-Side Scaling State : enabled
 Chimney Offload State : disabled
@@ -184,10 +184,10 @@ Para modificar a configuração, execute o seguinte comando no prompt de comando
 netsh interface tcp set global autotuninglevel=<Value>
 ```
 
-> [!NOTE]  
-> No comando anterior, \<*valor*> representa o novo valor para o nível de ajuste automático.
+> [!NOTE]
+> No comando anterior, \<*Value*> representa o novo valor para o nível de ajuste automático.
 
-Para obter mais informações sobre esse comando, consulte [comandos netsh para protocolo de controle de transmissão de interface](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10)).
+Para obter mais informações sobre esse comando, consulte [comandos netsh para protocolo de controle de transmissão de interface](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731258(v=ws.10)).
 
 **Para usar o PowerShell para revisar ou modificar o nível de ajuste automática**
 
@@ -216,8 +216,8 @@ Para modificar a configuração, execute o seguinte cmdlet no prompt de comando 
 Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 ```
 
-> [!NOTE]  
-> No comando anterior, \<*valor*> representa o novo valor para o nível de ajuste automático.
+> [!NOTE]
+> No comando anterior, \<*Value*> representa o novo valor para o nível de ajuste automático.
 
 Para obter mais informações sobre esses cmdlets, consulte os seguintes artigos:
 
@@ -228,13 +228,13 @@ Para obter mais informações sobre esses cmdlets, consulte os seguintes artigos
 
 Você pode definir o ajuste automática da janela de recebimento para qualquer um dos cinco níveis. O nível padrão é **normal**. A tabela a seguir descreve os níveis.
 
-|Nível |Valor hexadecimal |Comments |
+|Nível |Valor hexadecimal |Comentários |
 | --- | --- | --- |
 |Normal (padrão) |0x8 (fator de escala de 8) |Defina a janela de recepção TCP para aumentar para acomodar quase todos os cenários. |
 |Desabilitado |Nenhum fator de escala disponível |Defina a janela de recepção TCP com seu valor padrão. |
-|Restricted (Restrito) |0x4 (fator de escala de 4) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas limite esse crescimento em alguns cenários. |
+|Restritos |0x4 (fator de escala de 4) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas limite esse crescimento em alguns cenários. |
 |Altamente restrito |0x2 (fator de escala de 2) |Defina a janela de recepção TCP para aumentar além do valor padrão, mas faça isso de forma muito conservadora. |
-|Experimental |0xE (fator de escala de 14) |Defina a janela de recepção TCP para aumentar para acomodar cenários extremos. |
+|Habilitação |0xE (fator de escala de 14) |Defina a janela de recepção TCP para aumentar para acomodar cenários extremos. |
 
 Se você usar um aplicativo para capturar pacotes de rede, o aplicativo deverá relatar dados semelhantes aos seguintes para configurações de nível de ajuste automática de janela diferentes.
 
@@ -365,19 +365,19 @@ Se você usar um aplicativo para capturar pacotes de rede, o aplicativo deverá 
 
 As seguintes configurações do registro do Windows Server 2003 não são mais suportadas e são ignoradas em versões posteriores.
 
-- **Valor TcpWindowSize**
-- **NumTcbTablePartitions**  
-- **MaxHashTableSize**  
+- **TcpWindowSize**
+- **NumTcbTablePartitions**
+- **MaxHashTableSize**
 
 Todas essas configurações foram localizadas na seguinte subchave do registro:
 
-> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**  
+> **HKEY_LOCAL_MACHINE \System\CurrentControlSet\Services\Tcpip\Parameters**
 
 ###  <a name="windows-filtering-platform"></a><a name="bkmk_wfp"></a>Plataforma de filtragem do Windows
 
 O Windows Vista e o Windows Server 2008 introduziram a WFP (Windows Filtering Platform). A WFP fornece APIs para fornecedores de software independentes (ISVs) que não são da Microsoft para criar filtros de processamento de pacotes. Exemplos incluem software de firewall e antivírus.
 
-> [!NOTE]  
+> [!NOTE]
 > Um filtro WFP mal escrito pode diminuir significativamente o desempenho de rede de um servidor. Para obter mais informações, consulte [portando drivers de processamento de pacotes e aplicativos para o WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) no centro de desenvolvimento do Windows.
 
 Para obter links para todos os tópicos deste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).

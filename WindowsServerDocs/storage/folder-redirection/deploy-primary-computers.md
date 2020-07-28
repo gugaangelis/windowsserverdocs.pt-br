@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 935d3ccf7de777a71d7c75179629b448dbb73a08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7af3d5c64216f60cca41aa9fb0c3d2c38c74e6c4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966278"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182242"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implantar computadores primários para Redirecionamento de Pastas e Perfis de Usuários Móveis
 
@@ -30,7 +30,7 @@ Este tópico descreve como habilitar o suporte a computador primário e designar
 
 O suporte a computadores primários tem os seguintes requisitos:
 
-- O esquema AD DS (Active Directory Domain Services) deve ser atualizado para incluir adições de esquema do Windows Server 2012 (a instalação de um controlador de domínio do Windows Server 2012 atualizaria o esquema automaticamente). Para obter informações sobre como atualizar o esquema AD DS, confira [Integração do Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) e [Execução do Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
+- O esquema AD DS (Active Directory Domain Services) deve ser atualizado para incluir adições de esquema do Windows Server 2012 (a instalação de um controlador de domínio do Windows Server 2012 atualizaria o esquema automaticamente). Para obter informações sobre como atualizar o esquema AD DS, confira [Integração do Adprep.exe](</previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) e [Execução do Adprep.exe](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
 - Computadores cliente devem executar o Windows 10, o Windows 8.1, o Windows 8, o Windows Server 2019, o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012.
 
 > [!TIP]

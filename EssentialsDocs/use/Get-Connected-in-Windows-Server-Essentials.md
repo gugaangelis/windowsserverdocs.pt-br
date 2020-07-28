@@ -2,18 +2,17 @@
 title: Manter-se conectado no Windows Server Essentials [A_Web_Client_H2]
 description: Descreve como usar o Windows Server Essentials
 ms.date: 05/07/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 149a5d34-43b7-4b9e-99e7-9f2294ab9ddb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3e8c50b94b441f75a5b80d3a46f42a87450496a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c1dafb9fb89109a16f2f28662464494691a2f2f0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470060"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87179942"
 ---
 # <a name="get-connected-in-windows-server-essentials"></a>Manter-se conectado no Windows Server Essentials [A_Web_Client_H2]
 
@@ -192,7 +191,7 @@ ms.locfileid: "85470060"
 
 - Windows 10 Pro
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 
 - Windows 10 Education
 
@@ -240,7 +239,7 @@ ms.locfileid: "85470060"
 
 - Windows 10 Pro
 
-- Windows 10 Enterprise
+- Windows 10 Enterprise
 
 - Windows 10 Education
 
@@ -270,7 +269,7 @@ ms.locfileid: "85470060"
 
     -   Rede Principal
 
-    -   Serviços da área de trabalho Remota
+    -   Serviços da Área de Trabalho Remota
 
 -   Faz as seguintes alterações no computador para facilitar backups:
 

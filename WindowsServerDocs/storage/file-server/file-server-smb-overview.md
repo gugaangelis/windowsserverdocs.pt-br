@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e9aecc439235d9396d764420711109552d89f32
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 055538bc52e11b7fb24f15db51af52e5cf8376d1
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965158"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182082"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Visão geral do compartilhamento de arquivos usando o protocolo SMB 3 no Windows Server
 
@@ -47,7 +47,7 @@ As seções a seguir descrevem a funcionalidade que foi adicionada no SMB 3 e at
 
 | Recurso/funcionalidade  | Novo ou atualizado  | Resumo  |
 | --------- | --------- | --------- |
-| O acesso para convidado aos compartilhamentos de arquivos está desabilitado | Novo | O cliente SMB não permite mais as seguintes ações: Acesso de conta convidado a um servidor remoto; fallback para a conta convidado depois que credenciais inválidas forem fornecidas. Para obter detalhes, confira [Acesso para convidado no SMB2 desabilitado por padrão no Windows](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser). | 
+| O acesso para convidado aos compartilhamentos de arquivos está desabilitado | Novo | O cliente SMB não permite mais as seguintes ações: Acesso de conta convidado a um servidor remoto; fallback para a conta convidado depois que credenciais inválidas forem fornecidas. Para obter detalhes, confira [Acesso para convidado no SMB2 desabilitado por padrão no Windows](https://support.microsoft.com/help/4046019/guest-access-in-smb2-disabled-by-default-in-windows-10-and-windows-ser). |
 | Mapeamento global de SMB | Novo | Mapeia um compartilhamento SMB remoto para uma letra da unidade acessível a todos os usuários no host local, incluindo contêineres. Isso é necessário para habilitar a E/S do contêiner no volume de dados para cruzar o ponto de montagem remoto. Saiba que, ao usar o mapeamento global SMB para contêineres, todos os usuários no host do contêiner poderão acessar o compartilhamento remoto. Qualquer aplicativo em execução no host do contêiner também tem acesso ao compartilhamento remoto mapeado. Para detalhes, confira [Suporte ao armazenamento de contêiner com CSV (Volumes Compartilhados do Cluster), Espaços de Armazenamento Diretos, Mapeamento Global de SMB](https://techcommunity.microsoft.com/t5/failover-clustering/container-storage-support-with-cluster-shared-volumes-csv/ba-p/372140). |
 | Controle de dialeto SMB | Novo | Agora você pode definir valores do Registro para controlar a versão mínima do SMB (dialeto) e a versão máxima do SMB usada. Para obter detalhes, confira [Como controlar dialetos do SMB](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-smb-dialects/ba-p/860024). |
 
@@ -74,7 +74,7 @@ Para obter detalhes adicionais, confira a postagem no blog [Novidades no SMB 3.1
 | SMB Direct     |   Atualizado      | Melhora o desempenho para pequenas cargas de trabalho de E/S, aumentando a eficiência durante a hospedagem de cargas de trabalho com E/S pequenas, como um banco de dados OLTP (transação online) em uma máquina virtual. Esses aprimoramentos são evidentes ao usar interfaces de rede de velocidade mais elevadas, como Ethernet de 40 Gbps e InfiniBand de 56 Gbps.  |
 | Limites de largura de banda do SMB | Novo | Agora você pode usar [Set-SmbBandwidthLimit](/powershell/module/smbshare/set-smbbandwidthlimit) para definir limites de largura de banda em três categorias: VirtualMachine (tráfego do Hyper-V sobre SMB), LiveMigration (tráfego de Migração ao Vivo do Hyper-V sobre SMB) ou padrão (todos os outros tipos de tráfego SMB).
 
-Para obter mais informações sobre a funcionalidade SMB nova e alterada no Windows Server 2012 R2, confira [Novidades no SMB no Windows Server](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>).
+Para obter mais informações sobre a funcionalidade SMB nova e alterada no Windows Server 2012 R2, confira [Novidades no SMB no Windows Server](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>).
 
 ## <a name="features-added-in-smb-30-with-windows-server-2012-and-windows-8"></a>Recursos adicionados no SMB 3.0 com o Windows Server 2012 e Windows 8
 
@@ -122,7 +122,7 @@ A lista a seguir fornece recursos adicionais na Web sobre SMB e tecnologias rela
 * [Armazenamento no Windows Server](../storage.yml)
 * [Servidor de Arquivos de Escalabilidade Horizontal para Dados de Aplicativos](../../failover-clustering/sofs-overview.md)
 * [Aprimorar o desempenho de um servidor de arquivos com o SMB Direct](smb-direct.md)
-* [Implantar o Hyper-V no SMB](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-* [Implantar o SMB Multichannel](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [Como implantar servidores de arquivos rápidos e eficientes em aplicativos para servidores](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB: Guia de solução de problemas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [Implantar o Hyper-V no SMB](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [Implantar o SMB Multichannel](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
+* [Como implantar servidores de arquivos rápidos e eficientes em aplicativos para servidores](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB: Guia de solução de problemas](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
