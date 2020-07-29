@@ -10,12 +10,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b41113f302dad1c9917001bf137da28ef431d38
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f07c6ffd96aabd4bac5a7e34c7bb612df33274f6
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826779"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86961108"
 ---
 # <a name="manage-nano-server"></a>Gerenciar o Nano Server
 
@@ -99,7 +99,7 @@ Agora você pode executar comandos remotamente no Nano Server. Por exemplo:
 winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
 ```
   
-Para saber mais sobre o Gerenciamento Remoto do Windows, confira [Visão geral do WinRM (Gerenciamento Remoto do Windows)](https://technet.microsoft.com/library/dn265971.aspx).  
+Para saber mais sobre o Gerenciamento Remoto do Windows, confira [Visão geral do WinRM (Gerenciamento Remoto do Windows)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11)).  
    
    
   
@@ -113,7 +113,7 @@ Add-NetEventPacketCaptureProvider -SessionName
 Start-NetEventSession [-Name]  
 Stop-NetEventSession [-Name]  
 ```  
-Esses cmdlets estão documentados com detalhes em [Cmdlets de captura de pacote de evento de rede do Windows PowerShell](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx)  
+Esses cmdlets estão documentados com detalhes em [Cmdlets de captura de pacote de evento de rede do Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265971(v=ws.11))  
 
 ## <a name="installing-servicing-packages"></a>Instalar pacotes de serviço  
 Se você quiser instalar pacotes de serviço, use o parâmetro -ServicingPackagePath (você pode passar uma matriz de caminhos para arquivos .cab):  
@@ -134,7 +134,7 @@ O Número de série do volume é B05B-CC3D
       Diretório de C:\KB3157663_expanded  
    
       04/19/2016  01:17 PM    \<DIR>          .  
-      04/19/2016  01:17 PM    \<DIR&gt;          .  
+      04/19/2016  01:17 PM    \<DIR>          ..  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -212,7 +212,7 @@ Get-WindowsPackage -Online
 ---  
 Os comandos listados acima consultarão os serviços Windows Update e Microsoft Update na Internet para localizar e baixar atualizações. Se você usar o WSUS, poderá configurar chaves do Registro no Nano Server para usar o servidor WSUS.  
   
-Confira a tabela Chaves do Registro de opções de ambiente do agente do Windows Update em [Configurar Atualizações Automáticas em um Ambiente que Não é do Active Directory](https://technet.microsoft.com/library/cc708449(v=ws.10).aspx)  
+Confira a tabela Chaves do Registro de opções de ambiente do agente do Windows Update em [Configurar Atualizações Automáticas em um Ambiente que Não é do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc708449(v=ws.10))  
   
 Defina pelo menos as chaves do Registro **WUServer** e **WUStatusServer**, mas dependendo de como você implementou o WSUS, outros valores podem ser necessários. Você sempre pode confirmar essas configurações examinando outro Windows Server no mesmo ambiente.  
 
@@ -227,7 +227,7 @@ Atualmente, a maneira de automatizar a instalação da atualização é converte
 [comment]: # (de Venkat Yalla.)
 O Nano Server é totalmente compatível com a estrutura do ETW ( [Rastreamento de Eventos para Windows](https://aka.ms/u2pa0i)), mas algumas ferramentas conhecidas, usadas para gerenciar o rastreamento e contadores de desempenho, não estão disponíveis atualmente no Nano Server. No entanto, o Nano Server tem ferramentas e cmdlets para realizar cenários mais comuns de análise de desempenho.
 
-O fluxo de trabalho de alto nível permanece o mesmo em qualquer instalação do Windows Server - o rastreamento de baixa sobrecarga é executado no computador de destino (Nano Server) e os arquivos de rastreamento e/ou logs resultantes são processados posteriormente offline em um computador separado, usando ferramentas como o [Analisador de Desempenho do Windows](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx), [Analisador de Mensagem](https://www.microsoft.com/download/details.aspx?id=44226) ou outros.
+O fluxo de trabalho de alto nível permanece o mesmo em qualquer instalação do Windows Server - o rastreamento de baixa sobrecarga é executado no computador de destino (Nano Server) e os arquivos de rastreamento e/ou logs resultantes são processados posteriormente offline em um computador separado, usando ferramentas como o [Analisador de Desempenho do Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)), [Analisador de Mensagem](https://www.microsoft.com/download/details.aspx?id=44226) ou outros.
 
 > [!NOTE]
 > Veja [Como copiar arquivos do Nano Server](https://aka.ms/nri9c8) para ter uma atualização sobre como transferir arquivos usando a comunicação remota do PowerShell.
@@ -235,7 +235,7 @@ O fluxo de trabalho de alto nível permanece o mesmo em qualquer instalação do
 As seções a seguir listam as atividades de coleta de dados de desempenho mais comuns, juntamente com uma forma com suporte de realizá-las no Nano Server.
 
 ### <a name="query-available-event-providers"></a>Consultar os provedores de eventos disponíveis
-[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) é a ferramenta para consultar os provedores de eventos disponíveis da seguinte maneira:
+[Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) é a ferramenta para consultar os provedores de eventos disponíveis da seguinte maneira:
 ```
 wpr.exe -providers
 ```
@@ -252,7 +252,7 @@ PS C:\> wpr.exe -providers | select-string Storage
 ```
 
 ### <a name="record-traces-from-a-single-etw-provider"></a>Rastreamentos de registro de um único provedor ETW
-Você pode usar os novos [cmdlets de Gerenciamento de Rastreamento de Evento](https://technet.microsoft.com/library/dn919247.aspx) para isso. Veja um exemplo de fluxo de trabalho:
+Você pode usar os novos [cmdlets de Gerenciamento de Rastreamento de Evento](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) para isso. Veja um exemplo de fluxo de trabalho:
 
 Crie e inicie o rastreamento, especificando um nome de arquivo para armazenar os eventos.
 ```
@@ -284,7 +284,7 @@ Mode                LastWriteTime         Length Name
 > Este exemplo mostra como adicionar um provedor de rastreamento único à sessão, mas você também pode usar o cmdlet ```Add-EtwTraceProvider``` várias vezes em uma sessão de rastreamento com GUIDs de provedor diferentes a fim de habilitar o rastreamento de várias fontes. Outra alternativa é usar os perfis ```wpr.exe``` descritos abaixo.
 
 ### <a name="record-traces-from-multiple-etw-providers"></a>Rastreamentos de registro de um vários provedores ETW
-A opção ```-profiles``` de [Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) habilita o rastreamento de vários provedores ao mesmo tempo. Há uma série de perfis internos como CPU, Rede e DiskIO para escolher:
+A opção ```-profiles``` de [Windows Performance Recorder](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448229(v=win.10)) habilita o rastreamento de vários provedores ao mesmo tempo. Há uma série de perfis internos como CPU, Rede e DiskIO para escolher:
 ```
 PS C:\Users\Administrator\Documents> wpr.exe -profiles 
 
@@ -321,7 +321,7 @@ Copyright (c) 2015 Microsoft Corporation. All rights reserved.
         WdfTraceLoggingProvider     WDF Driver Activity
 ```
 
-Para obter orientações detalhadas sobre a criação de perfis personalizados, confira a [documentação do WPR.exe](https://msdn.microsoft.com/library/windows/hardware/hh448223.aspx).
+Para obter orientações detalhadas sobre a criação de perfis personalizados, confira a [documentação do WPR.exe](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448223(v=win.10)).
 
 ### <a name="record-etw-traces-during-operating-system-boot-time"></a>Registrar rastreamentos ETW durante o momento de inicialização do sistema operacional
 Use o cmdlet ```New-AutologgerConfig``` para coletar eventos durante a inicialização do sistema. O uso é muito semelhante ao do cmdlet ```New-EtwTraceSession```, mas os provedores adicionados à configuração do Autologger serão habilitados somente no início na próxima inicialização. O fluxo de trabalho geral tem esta aparência:
@@ -376,13 +376,13 @@ Exiting, please wait...
 The command completed successfully.
 ```
 
-Outras opções de linha de comando permitem que você especifique nomes de contador de desempenho de interesse em um arquivo de configuração, redirecionando a saída para um arquivo de log, entre outras coisas. Veja a [documentação sobre typeperf.exe](https://technet.microsoft.com/library/bb490960.aspx) para obter detalhes.
+Outras opções de linha de comando permitem que você especifique nomes de contador de desempenho de interesse em um arquivo de configuração, redirecionando a saída para um arquivo de log, entre outras coisas. Veja a [documentação sobre typeperf.exe](/previous-versions/windows/it-pro/windows-xp/bb490960(v=technet.10)) para obter detalhes.
 
 Você também pode usar a interface gráfica do Perfmon.exe remotamente com destinos do Nano Server. Ao adicionar contadores de desempenho ao modo de exibição, especifique o destino do Nano Server no nome do computador em vez do padrão *<Local computer>* .
 
 ### <a name="interact-with-the-windows-event-log"></a>Interagir com o Log de eventos do Windows
 
-O Nano Server oferece suporte ao cmdlet ```Get-WinEvent```, que fornece recursos de filtragem e consulta do Log de eventos do Windows, tanto localmente como em um computador remoto. Encontre opções detalhadas e exemplos na [página de documentação do Get-WinEvent](https://technet.microsoft.com/library/hh849682.aspx). Este exemplo simples recupera os *Erros* indicados no log *Sistema* durante os últimos dois dias.
+O Nano Server oferece suporte ao cmdlet ```Get-WinEvent```, que fornece recursos de filtragem e consulta do Log de eventos do Windows, tanto localmente como em um computador remoto. Encontre opções detalhadas e exemplos na [página de documentação do Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1). Este exemplo simples recupera os *Erros* indicados no log *Sistema* durante os últimos dois dias.
 ```
 PS C:\> $StartTime = (Get-Date) - (New-TimeSpan -Day 2)
 PS C:\> Get-WinEvent -FilterHashTable @{LogName='System'; Level=2; StartTime=$StartTime} | select TimeCreated, Message
@@ -397,7 +397,7 @@ TimeCreated           Message
 O Nano Server também oferece suporte a ```wevtutil.exe``` que permite recuperar informações sobre os logs de eventos e editores. confira [documentação do wevtutil.exe](https://aka.ms/qvod7p) para obter mais detalhes. 
 
 ### <a name="graphical-interface-tools"></a>Ferramentas de interface gráfica
-As [ferramentas de gerenciamento de servidor baseadas na Web](https://blogs.technet.microsoft.com/servermanagement/2016/08/17/deploy-setup-server-management-tools/) podem ser usadas para gerenciar remotamente os destinos do Nano Server e apresentar um Log de eventos do Nano Server usando um navegador da Web. Por fim, o snap-in MMC Visualizador de Eventos (eventvwr.msc) também pode ser usado para exibir logs- - basta abri-lo em um computador com uma área de trabalho e apontá-lo para um Nano Server remoto.
+As [ferramentas de gerenciamento de servidor baseadas na Web](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog) podem ser usadas para gerenciar remotamente os destinos do Nano Server e apresentar um Log de eventos do Nano Server usando um navegador da Web. Por fim, o snap-in MMC Visualizador de Eventos (eventvwr.msc) também pode ser usado para exibir logs- - basta abri-lo em um computador com uma área de trabalho e apontá-lo para um Nano Server remoto.
 
 
 
@@ -406,4 +406,4 @@ As [ferramentas de gerenciamento de servidor baseadas na Web](https://blogs.tech
   
 É possível gerenciar o Nano Server como nós de destino com a Configuração de Estado Desejado (DSC) do Windows PowerShell. No momento, só é possível gerenciar nós que estejam executando o Nano Server com DSC no modo push. Nem todos os recursos de DSC funcionam com o Nano Server.  
   
-Para obter mais detalhes, confira [Usar DSC no Nano Server](https://msdn.microsoft.com/powershell/dsc/nanoDsc).  
+Para obter mais detalhes, confira [Usar DSC no Nano Server](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog).  

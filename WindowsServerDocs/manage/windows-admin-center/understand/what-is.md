@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: cb4e3ab2bf98a0c2d51483642fe5388e468dbbb4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
+ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "81269263"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86891381"
 ---
 # <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center?
 
@@ -27,7 +27,7 @@ O Windows Admin Center é a evolução moderna das ferramentas de gerenciamento 
 
 ## <a name="how-does-windows-admin-center-work"></a>Como funciona o Windows Admin Center?
 
-O Windows Admin Center é executado em um navegador da Web e gerencia o Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows 10 e mais por meio do **gateway do Windows Admin Center** instalado no Windows Server ou Windows 10 ingressado em domínio. O gateway gerencia servidores por meio do PowerShell Remoto e WMI em WinRM. O gateway está incluído no Windows Admin Center em um único pacote .msi leve que você pode [baixar](https://aka.ms/windowsadmincenter).
+O Windows Admin Center é executado em um navegador da Web e gerencia o Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Azure Stack HCI e mais por meio do **gateway do Windows Admin Center** instalado no Windows Server ou no Windows 10 ingressado em domínio. O gateway gerencia servidores por meio do PowerShell Remoto e WMI em WinRM. O gateway está incluído no Windows Admin Center em um único pacote .msi leve que você pode [baixar](https://aka.ms/windowsadmincenter).
 
 O gateway do Windows Admin Center, depois de publicado no DNS e ter acesso concedido através de firewalls corporativos correspondentes, permite a você conectar com segurança e gerenciar os servidores de qualquer lugar com o Microsoft Edge ou o Google Chrome.
 
@@ -58,6 +58,10 @@ O Windows Admin Center possui vários aprimoramentos para tornar a plataforma de
 ### <a name="azure-integration"></a>**Integração com o Azure**
 
 O Windows Admin Center tem vários pontos de [integração com os serviços do Azure](../plan/azure-integration-options.md), incluindo o Azure Active Directory, o Backup do Azure, o Azure Site Recovery e muito mais.
+
+### <a name="deploy-hyper-converged-and-failover-clusters"></a>**Implantar clusters hiperconvergentes e de failover**
+
+O Windows Admin Center permite a [implantação direta de clusters hiperconvergentes e de failover](../use/deploy-hyperconverged-infrastructure.md) por meio de um assistente fácil de usar. 
 
 ### <a name="manage-hyper-converged-clusters"></a>**Gerencie clusters hiperconvergentes**
 

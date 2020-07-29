@@ -10,12 +10,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e891d4170458018577b39bc83e952bf18d420e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 31bbda5de44e249504551d29c23382d735af146d
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826499"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86954238"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Opções de atualização e conversão para o Windows Server 2016
 
@@ -25,11 +25,11 @@ Este tópico inclui informações sobre como atualizar para o Windows Server&reg
 
 O processo de transição para o Windows Server 2016 pode variar muito, dependendo do sistema operacional com o qual você está começando e do caminho escolhido. Usamos os seguintes termos para distinguir diferentes ações, qualquer uma delas pode estar envolvida em uma nova implantação do Windows Server 2016.
 
-- **Instalação** é o conceito básico de colocar o novo sistema operacional em seu hardware. Especificamente, uma **instalação limpa** requer a exclusão do sistema operacional anterior. Para obter informações sobre a instalação do Windows Server 2016, confira [Requisitos de sistema e informações de instalação do Windows Server 2016](https://technet.microsoft.com/windows-server-docs/get-started/system-requirements--and-installation). Para obter informações sobre a instalação de outras versões do Windows Server, confira [Instalação e Atualização do Windows Server](https://technet.microsoft.com//windowsserver/dn527667).
+- **Instalação** é o conceito básico de colocar o novo sistema operacional em seu hardware. Especificamente, uma **instalação limpa** requer a exclusão do sistema operacional anterior. Para obter informações sobre a instalação do Windows Server 2016, confira [Requisitos de sistema e informações de instalação do Windows Server 2016](./system-requirements.md). Para obter informações sobre a instalação de outras versões do Windows Server, confira [Instalação e Atualização do Windows Server](./installation-and-upgrade.md).
 
-- **Migração** significa mudar seu sistema operacional existente para o Windows Server 2016 transferindo para um conjunto de hardware ou máquina virtual diferente. A migração, que pode variar consideravelmente dependendo das funções de servidor instaladas, é discutida em detalhes em [Instalação, atualização e migração do Windows Server](https://technet.microsoft.com/windowsserver/dn458795).
+- **Migração** significa mudar seu sistema operacional existente para o Windows Server 2016 transferindo para um conjunto de hardware ou máquina virtual diferente. A migração, que pode variar consideravelmente dependendo das funções de servidor instaladas, é discutida em detalhes em [Instalação, atualização e migração do Windows Server](./installation-and-upgrade.md).
 
-- **Atualização sem interrupção do sistema operacional do cluster** é um novo recurso no Windows Server 2016 que permite ao administrador atualizar o sistema operacional dos nós do cluster do Windows Server 2012 R2 para o Windows Server 2016 sem interromper o Hyper-V ou as cargas de trabalho de Servidor de Arquivos de Escalabilidade Horizontal. Esse recurso permite que você evite o tempo de inatividade que poderia afetar os Contratos de nível de serviço. Esse recurso novo é abordado com mais detalhes em [Atualização sem interrupção do sistema de operacional do cluster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).
+- **Atualização sem interrupção do sistema operacional do cluster** é um novo recurso no Windows Server 2016 que permite ao administrador atualizar o sistema operacional dos nós do cluster do Windows Server 2012 R2 para o Windows Server 2016 sem interromper o Hyper-V ou as cargas de trabalho de Servidor de Arquivos de Escalabilidade Horizontal. Esse recurso permite que você evite o tempo de inatividade que poderia afetar os Contratos de nível de serviço. Esse recurso novo é abordado com mais detalhes em [Atualização sem interrupção do sistema de operacional do cluster](../failover-clustering/cluster-operating-system-rolling-upgrade.md).
 
 - **Conversão da licença** em algumas versões do sistema operacional – é possível converter uma edição específica da versão para outra edição da mesma versão em uma única etapa, com um simples comando e com a chave de licença adequada. Chamamos isso de conversão da licença. Por exemplo, se estiver executando o Windows Server 2016 Standard, será possível convertê-lo para o Windows Server 2016 Datacenter.
 
@@ -42,7 +42,7 @@ O processo de transição para o Windows Server 2016 pode variar muito, dependen
 > Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, **somente é possível executar essa conversão de avaliação para versão comercial** com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, é possível converter edições de avaliação em versão comercial, independentemente da opção de instalação usada.
 
 > [!IMPORTANT]  
-> Se o seu servidor usa o Agrupamento NIC, desabilite o Agrupamento NIC antes da atualização e, depois, habilite-o novamente após a conclusão da atualização. confira [Visão geral do Agrupamento NIC](https://technet.microsoft.com/library/hh831648(v=ws.11).aspx) para obter detalhes.
+> Se o seu servidor usa o Agrupamento NIC, desabilite o Agrupamento NIC antes da atualização e, depois, habilite-o novamente após a conclusão da atualização. confira [Visão geral do Agrupamento NIC](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831648(v=ws.11)) para obter detalhes.
 
 ## <a name="upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016"></a>Atualizando versões comerciais anteriores do Windows Server para Windows Server 2016
 
@@ -52,7 +52,7 @@ Observe as seguintes diretrizes gerais para caminhos com suporte:
 
 - Não há suporte para atualizações de arquiteturas de 32 bits para 64 bits. Todas as edições do Windows Server 2016 são apenas 64 bits.
 - Não há suporte para atualizações de um idioma para outro.
-- Se o servidor for um controlador de domínio, confira [Atualizar controladores de domínio para o Windows Server 2012 R2 e o Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx) para saber mais.
+- Se o servidor for um controlador de domínio, confira [Atualizar controladores de domínio para o Windows Server 2012 R2 e o Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md) para saber mais.
 - Não há suporte para atualizações de versões de pré-lançamento (visualizações) do Windows Server 2016. Realize uma instalação limpa do Windows Server 2016.
 - Não há suporte para atualizações que alternam da instalação Server Core para uma instalação de Servidor com Desktop (e vice-versa).
 - Não há suporte para atualizações de uma instalação anterior do Windows Server para uma cópia de avaliação do Windows Server. Versões de avaliação devem ser instaladas como uma instalação limpa.
@@ -99,9 +99,9 @@ Para **Windows Server 2016 Essentials:** É possível realizar a conversão para
 
 Se o servidor estiver executando uma versão de avaliação do Windows Server 2016 Standard ou do Windows Server 2016 Datacenter, será possível convertê-lo em uma versão comercial da seguinte maneira:
 
-1.    Se o servidor for um **controlador de domínio**, não será possível convertê-lo em uma versão comercial. Neste caso, instale um controlador de domínio adicional em um servidor que execute uma versão de avaliação e remova o AD DS do controlador de domínio executado na versão de avaliação. Para saber mais, confira [Atualizar controladores de domínio para o Windows Server 2012 R2 e o Windows Server 2012](https://technet.microsoft.com/library/hh994618.aspx).
+1.    Se o servidor for um **controlador de domínio**, não será possível convertê-lo em uma versão comercial. Neste caso, instale um controlador de domínio adicional em um servidor que execute uma versão de avaliação e remova o AD DS do controlador de domínio executado na versão de avaliação. Para saber mais, confira [Atualizar controladores de domínio para o Windows Server 2012 R2 e o Windows Server 2012](../identity/ad-ds/deploy/upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012.md).
 2.    Leia os termos de licença.
-3.    Em um prompt de comando elevado, determine o nome da edição atual com o comando **DISM /online /Get-CurrentEdition**. Anote a ID da edição (uma forma abreviada do nome da edição). Em seguida, execute **DISM /online /Set-Edition:\<ID da edição\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, fornecendo a ID da edição e uma chave de produto comercial. O servidor será reiniciado duas vezes.
+3.    Em um prompt de comando elevado, determine o nome da edição atual com o comando **DISM /online /Get-CurrentEdition**. Anote a ID da edição (uma forma abreviada do nome da edição). Em seguida, execute **DISM /online /Set-Edition:\<edition ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, fornecendo a ID da edição e uma chave de produto de varejo. O servidor será reiniciado duas vezes.
 
 Para a versão de avaliação do Windows Server 2016 Standard, também é possível realizar a conversão na versão comercial do Windows Server 2016 Datacenter em uma etapa usando o mesmo comando e a chave do produto correta.
 
@@ -113,12 +113,12 @@ Para a versão de avaliação do Windows Server 2016 Standard, também é possí
 A qualquer momento após a instalação do Windows Server 2016, será possível executar a Instalação para reparar a instalação (às vezes chamado de reparo in-loco) ou, em alguns casos, realizar a conversão em uma edição diferente.
 É possível executar a Instalação para realizar um reparo in-loco de qualquer edição do Windows Server 2016; o resultado será a mesma edição com a qual você começou.
 
-No Windows Server 2016 Standard, é possível converter o sistema para o Windows Server 2016 Datacenter como a seguir: Em um prompt de comando elevado, determine o nome da edição atual com o comando **DISM /online /Get-CurrentEdition**. Para o Windows Server 2016 Standard, isso será `ServerStandard`. Execute o comando **DISM /online /Get-TargetEditions** para obter a ID da edição para a qual é possível atualizar. Anote essa ID da edição, uma forma abreviada do nome da edição. Em seguida, execute **DISM /online /Set-Edition:\<ID da edição\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, fornecendo a ID da edição de destino e a chave de produto comercial. O servidor será reiniciado duas vezes.
+No Windows Server 2016 Standard, é possível converter o sistema para o Windows Server 2016 Datacenter como a seguir: Em um prompt de comando elevado, determine o nome da edição atual com o comando **DISM /online /Get-CurrentEdition**. Para o Windows Server 2016 Standard, isso será `ServerStandard`. Execute o comando **DISM /online /Get-TargetEditions** para obter a ID da edição para a qual é possível atualizar. Anote essa ID da edição, uma forma abreviada do nome da edição. Em seguida, execute **DISM /online /Set-Edition:\<edition ID\> /ProductKey:XXXXX-XXXXX-XXXXX-XXXXX-XXXXX /AcceptEula**, fornecendo a ID da edição do destino e a chave de produto de varejo correspondente. O servidor será reiniciado duas vezes.
 
 ## <a name="converting-a-current-retail-version-to-a-current-volume-licensed-version"></a>Conversão de uma versão comercial atual em uma versão licenciada por volume atual
 
 A qualquer momento após instalar o Windows Server 2016, será possível convertê-lo livremente entre uma versão comercial, uma versão licenciada por volume ou uma versão OEM. A edição permanece a mesma durante essa conversão. Se você estiver começando com uma versão de avaliação, faça a conversão dele para a primeira versão comercial e, depois, converta novamente conforme descrito aqui.
 
-Para fazer isso, em um prompt de comandos com privilégios elevados, execute: **slmgr /ipk \<chave\>**
+Para fazer isso, em um prompt de comandos com privilégios elevados, execute: **slmgr /ipk \<key\>**
 
-Em que \<chave\> é a chave de licença de volume, comercial ou chave do produto (Product Key) OEM adequada.
+Em que \<key\> é a chave de produto da licença de volume, comercial ou OEM adequada.

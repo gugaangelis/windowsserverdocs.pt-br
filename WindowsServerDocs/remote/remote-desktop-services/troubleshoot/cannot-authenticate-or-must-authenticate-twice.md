@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fd7cfda8814347f8bab9dc7b3f7632e3b992ecb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 65bf81d80d5cfd5566d66005728cd3677f131085
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857229"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963218"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>O usuário não consegue se autenticar ou deve se autenticar duas vezes
 
@@ -59,7 +59,7 @@ No Windows Server 2016 e versões posteriores, o RCM não consulta mais o objeto
 
 Para habilitar o comportamento herdado do RCM em um servidor Host da Sessão da Área de Trabalho Remota, configure as entradas do Registro a seguir e, em seguida, reinicie o serviço **Serviços de Área de Trabalho Remota**:  
   - **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services**
-  - **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<Nome da Winstation\>\\**  
+  - **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<Winstation name\>\\**  
       - Nome: **fQueryUserConfigFromDC**
       - Tipo: **Reg\_DWORD**
       - Valor: **1** (Decimal)
@@ -168,4 +168,4 @@ Esse problema ocorre em implantações de alta disponibilidade que usam dois ou 
 
 Esse problema ocorre porque o Credential Guard remoto usa o Kerberos para autenticação e restringe o NTLM. No entanto, em uma configuração de alta disponibilidade com balanceamento de carga, os Agentes de Conexão de Área de Trabalho Remota não podem dar suporte a operações do Kerberos.
 
-Se você precisar usar uma configuração de alta disponibilidade com agentes de Conexão de Área de Trabalho Remota com balanceamento de carga, poderá contornar esse problema desabilitando o Credential Guard remoto. Para obter mais informações sobre como gerenciar o Credential Guard remoto do Windows Defender, confira [Proteger credenciais da Área de Trabalho Remota com o Credential Guard remoto do Windows Defender](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard).
+Se você precisar usar uma configuração de alta disponibilidade com agentes de Conexão de Área de Trabalho Remota com balanceamento de carga, poderá contornar esse problema desabilitando o Credential Guard remoto. Para obter mais informações sobre como gerenciar o Credential Guard remoto do Windows Defender, confira [Proteger credenciais da Área de Trabalho Remota com o Credential Guard remoto do Windows Defender](/windows/security/identity-protection/remote-credential-guard#enable-windows-defender-remote-credential-guard).

@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ff800fc2a0885cec39ca104607d7207f0bd8ce0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 746aa953b2226152a1f103fd0b5a974f543ce993
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80815599"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86966108"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>Usar o Robocopy para pré-propagar arquivos para a Replicação do DFS
 
@@ -43,9 +43,9 @@ Como a pré-propagação não envolve diretamente a Replicação do DFS, você s
 - Verifique se há espaço de armazenamento suficiente disponível na unidade de destino. Não crie uma pasta no caminho para o qual você planeja copiar: O Robocopy deve criar a pasta raiz.
     
     >[!NOTE]
-    >Quando você decide quanto espaço deve ser alocado aos arquivos pré-propagados, considere o crescimento de dados esperado com o tempo e os requisitos de armazenamento para a Replicação do DFS. Para obter ajuda sobre o planejamento, confira [Editar o Tamanho da cota da pasta de preparo e da pasta de conflito e excluída](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11)) em [Gerenciar Replicação do DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>).
+    >Quando você decide quanto espaço deve ser alocado aos arquivos pré-propagados, considere o crescimento de dados esperado com o tempo e os requisitos de armazenamento para a Replicação do DFS. Para obter ajuda sobre o planejamento, confira [Editar o Tamanho da cota da pasta de preparo e da pasta de conflito e excluída](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11)) em [Gerenciar Replicação do DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>).
 
-- No servidor de origem, opcionalmente, instale o Monitor do Processo ou o Explorador de Processos, que você pode usar para verificar se há aplicativos que estão bloqueando arquivos. Para obter informações de download, confira [Monitor do Processo](https://docs.microsoft.com/sysinternals/downloads/procmon) e [Explorador de Processos](https://docs.microsoft.com/sysinternals/downloads/process-explorer).
+- No servidor de origem, opcionalmente, instale o Monitor do Processo ou o Explorador de Processos, que você pode usar para verificar se há aplicativos que estão bloqueando arquivos. Para obter informações de download, confira [Monitor do Processo](/sysinternals/downloads/procmon) e [Explorador de Processos](/sysinternals/downloads/process-explorer).
 
 ## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>Etapa 1: Baixar e instalar a versão mais recente do Robocopy
 
@@ -76,7 +76,7 @@ Depois de instalar a versão mais recente do Robocopy no servidor, você deve im
 |Origem do bloqueio|Explicação|Atenuação|
 |---|---|---|
 |Os usuários abrem arquivos remotamente em compartilhamentos.|Os funcionários conectam-se a um servidor de arquivos padrão e editam documentos, conteúdo multimídia ou outros arquivos. Às vezes conhecido como a pasta base tradicional ou cargas de trabalho de dados compartilhados.|Execute apenas operações de Robocopy fora do horário de pico e do horário comercial. Isso minimiza o número de arquivos que o Robocopy deve ignorar durante a pré-propagação.<br><br>Considere a configuração temporária de acesso somente leitura nos compartilhamentos de arquivos que serão replicados usando o Windows PowerShell dos cmdlets **Grant-SmbShareAccess** e **Close-SmbSession**. Se você definir permissões para um grupo comum, como todos ou usuários autenticados para leitura, talvez os usuários padrão tenham menos probabilidade de abrir arquivos com bloqueios exclusivos (se os aplicativos detectarem o acesso somente leitura quando os arquivos forem abertos).<br><br>Você também pode considerar a configuração de uma regra de firewall temporária para a porta SMB 445 de entrada para o servidor bloquear o acesso a arquivos ou usar o cmdlet **Block-SmbShareAccess**. No entanto, esses dois métodos perturbam muito as operações do usuário.|
-|Aplicativos abrem arquivos locais.|As cargas de trabalho de aplicativo em execução em um servidor de arquivos às vezes bloqueiam arquivos.|Desabilite ou desinstale temporariamente os aplicativos que estão bloqueando arquivos. Você pode usar o Monitor do Processo ou o Explorador de Processos para determinar quais aplicativos estão bloqueando arquivos. Para baixar o Monitor do Processo ou o Explorador de Processos, acesse as páginas [Monitor do Processo](https://docs.microsoft.com/sysinternals/downloads/procmon) e [Explorador de Processos](https://docs.microsoft.com/sysinternals/downloads/process-explorer).|
+|Aplicativos abrem arquivos locais.|As cargas de trabalho de aplicativo em execução em um servidor de arquivos às vezes bloqueiam arquivos.|Desabilite ou desinstale temporariamente os aplicativos que estão bloqueando arquivos. Você pode usar o Monitor do Processo ou o Explorador de Processos para determinar quais aplicativos estão bloqueando arquivos. Para baixar o Monitor do Processo ou o Explorador de Processos, acesse as páginas [Monitor do Processo](/sysinternals/downloads/procmon) e [Explorador de Processos](/sysinternals/downloads/process-explorer).|
 
 ## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>Etapa 3: Copiar os arquivos replicados para o servidor de destino
 
@@ -101,8 +101,8 @@ Depois de minimizar os bloqueios nos arquivos que serão replicados, você pode 
     
     |Parâmetro|Descrição|
     |---|---|
-    |"\<caminho da pasta replicada de origem\>"|Especifica a pasta de origem para a pré-propagação no servidor de destino.|
-    |"\<caminho da pasta replicada de destino\>"|Especifica o caminho para a pasta que armazenará os arquivos pré-propagados.<br><br>A pasta de destino ainda não deve existir no servidor de destino. Para obter os hashes de arquivo correspondentes, o Robocopy deve criar a pasta raiz ao pré-propagar os arquivos.|
+    |"\<source replicated folder path\>"|Especifica a pasta de origem para a pré-propagação no servidor de destino.|
+    |"\<destination replicated folder path\>"|Especifica o caminho para a pasta que armazenará os arquivos pré-propagados.<br><br>A pasta de destino ainda não deve existir no servidor de destino. Para obter os hashes de arquivo correspondentes, o Robocopy deve criar a pasta raiz ao pré-propagar os arquivos.|
     |/e|Copia subdiretórios e seus arquivos, bem como subdiretórios vazios.|
     |/b|Copia arquivos no modo de Backup.|
     |/copyall|Copia todas as informações do arquivo, incluindo dados, atributos, carimbos de data/hora, a ACL (lista de controle de acesso) do NTFS, informações de proprietário e informações de auditoria.|
@@ -111,7 +111,7 @@ Depois de minimizar os bloqueios nos arquivos que serão replicados, você pode 
     |MT:64|Copia 64 arquivos simultaneamente.|
     |/xd DfsrPrivate|Exclui a pasta DfsrPrivate.|
     |/tee|Grava a saída de status na janela do console, bem como no arquivo de log.|
-    |/log \<caminho do arquivo de log>|Especifica o arquivo de log a ser gravado. Substitui o conteúdo existente do arquivo. (Para acrescentar as entradas ao arquivo de log existente, use `/log+ <log file path>`.)|
+    |/log \<log file path>|Especifica o arquivo de log a ser gravado. Substitui o conteúdo existente do arquivo. (Para acrescentar as entradas ao arquivo de log existente, use `/log+ <log file path>`.)|
     |/v|Produz uma saída detalhada que inclui arquivos ignorados.|
     
     Por exemplo, o seguinte comando replica arquivos da pasta replicada de origem, E:\\RF01, para a unidade de dados D no servidor de destino:
@@ -121,7 +121,7 @@ Depois de minimizar os bloqueios nos arquivos que serão replicados, você pode 
     ```
     
     >[!NOTE]
-    >Recomendamos usar os parâmetros descritos acima ao usar o Robocopy para pré-propagar arquivos para a Replicação do DFS. No entanto, você pode alterar alguns de seus valores ou adicionar outros parâmetros. Por exemplo, você pode descobrir como testar se tem a capacidade de definir um valor mais alto (contagem de thread) para o parâmetro */MT*. Além disso, se você replicar principalmente arquivos maiores, poderá conseguir aumentar o desempenho da cópia adicionando a opção **/j** para E/S não armazenada em buffer. Para obter mais informações sobre o Robocopy, confira a página de referência de linha de comando [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy).
+    >Recomendamos usar os parâmetros descritos acima ao usar o Robocopy para pré-propagar arquivos para a Replicação do DFS. No entanto, você pode alterar alguns de seus valores ou adicionar outros parâmetros. Por exemplo, você pode descobrir como testar se tem a capacidade de definir um valor mais alto (contagem de thread) para o parâmetro */MT*. Além disso, se você replicar principalmente arquivos maiores, poderá conseguir aumentar o desempenho da cópia adicionando a opção **/j** para E/S não armazenada em buffer. Para obter mais informações sobre o Robocopy, confira a página de referência de linha de comando [Robocopy](../../administration/windows-commands/robocopy.md).
 
     >[!WARNING]
     >Para evitar a possível perda de dados ao usar o Robocopy para pré-propagar os arquivos para a Replicação do DFS, não realize as seguintes alterações nos parâmetros recomendados:

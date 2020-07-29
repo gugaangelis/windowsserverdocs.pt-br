@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c3c8daa8dc4bea0e03ed285a98401f91cdf1cb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7d94b6a2211cd9fbaefb8318ebdcc4eb52ba9ba1
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857209"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86963298"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>Solução de problemas gerais de conexão de Área de Trabalho Remota
 
@@ -23,7 +23,7 @@ Use estas etapas quando um cliente de Área de Trabalho Remota não pode se cone
 
 ### <a name="check-the-status-of-the-rdp-protocol-on-a-local-computer"></a>Verificar o status do protocolo RDP em um computador local
 
-Para verificar e alterar o status do protocolo RDP em um computador local, confira [Como habilitar a Área de Trabalho Remota](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access#how-to-enable-remote-desktop).
+Para verificar e alterar o status do protocolo RDP em um computador local, confira [Como habilitar a Área de Trabalho Remota](../clients/remote-desktop-allow-access.md#how-to-enable-remote-desktop).
 
 > [!NOTE]  
 > Se as opções de Área de Trabalho Remota não estiverem disponíveis, confira [Verifique se um Objeto de Política de Grupo está bloqueando o RDP](#check-whether-a-group-policy-object-gpo-is-blocking-rdp-on-a-local-computer).
@@ -70,11 +70,11 @@ Para verificar a configuração da Política de Grupo em um computador remoto, o
 gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 ```
 
-O arquivo que esse comando gera (**gpresult-\<nome do computador\>.html**) usa o mesmo formato de informações que a versão do computador local (**gpresult.html**).
+O arquivo que esse comando gera (**gpresult-\<computer name\>.html**) usa o mesmo formato de informação que a versão do computador local (**gpresult.html**).
 
 ### <a name="modifying-a-blocking-gpo"></a>Modificar um GPO de bloqueio
 
-Você pode modificar essas configurações no GPE (Editor de Objeto de Política de Grupo) e no GPM (Console de Gerenciamento de Política de Grupo). Para obter mais informações sobre como usar a Política de Grupo, confira [Gerenciamento Avançado de Política de Grupo](https://docs.microsoft.com/microsoft-desktop-optimization-pack/agpm/).
+Você pode modificar essas configurações no GPE (Editor de Objeto de Política de Grupo) e no GPM (Console de Gerenciamento de Política de Grupo). Para obter mais informações sobre como usar a Política de Grupo, confira [Gerenciamento Avançado de Política de Grupo](/microsoft-desktop-optimization-pack/agpm/).
 
 Para modificar a política responsável pelo bloqueio, use um dos seguintes métodos:
 
@@ -144,7 +144,7 @@ Para este procedimento, use uma instância do PowerShell que tenha permissões a
       Restart-Service TermService -Force  
       ```
       
-      Substitua \<filename\> pelo nome do arquivo. reg exportado.
+      Substitua \<filename\> pelo nome do arquivo .reg exportado.
 
 6. Teste a configuração experimentando novamente a Conexão de Área de Trabalho Remota. Se você ainda não conseguir se conectar, reinicie o computador afetado.
 7. Se você ainda não conseguir se conectar, [verifique o status do certificado autoassinado do RDP](#check-the-status-of-the-rdp-self-signed-certificate).
@@ -189,7 +189,7 @@ Para verificar ou alterar a porta do RDP, use o Editor do Registro:
 
 Para este procedimento, use uma instância do PowerShell que tenha permissões administrativas. Para um computador local, você também pode usar um prompt de comando que tenha permissões administrativas. No entanto, esse procedimento usa o PowerShell porque os mesmos cmdlets funcionam local e remotamente.
 
-1. Abra uma janela do PowerShell. Para se conectar a um computador remoto, digite **Enter-PSSession -ComputerName \<nome do computador\>** .
+1. Abra uma janela do PowerShell. Para se conectar a um computador remoto, insira **Enter-PSSession -ComputerName \<computer name\>** .
 2. Digite o seguinte comando:  
    
      ```powershell  
@@ -225,7 +225,7 @@ Use a ferramenta **psping** para testar se você pode alcançar o computador afe
    ```
    
 3. Verifique a saída do comando **psping** para resultados como o seguinte:  
-      - **Conectar-se ao \<IP do computador\>** : O computador remoto está acessível.
+      - **Conectando-se a \<computer IP\>** : O computador remoto está acessível.
       - **(0% de perda)** : Todas as tentativas de conexão foram bem-sucedidas.
       - **O computador remoto recusou a conexão de rede**: O computador remoto não está acessível.
       - **(100% de perda)** : Todas as tentativas de conexão falharam.

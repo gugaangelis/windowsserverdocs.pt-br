@@ -9,12 +9,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 4598c0f60fac98cd14a6f7d920b9c6f31704bd06
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963368"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182092"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
 
@@ -39,7 +39,7 @@ Há algumas configurações de segurança que não são aplicáveis aos ambiente
 
 Em relação às atualizações, o Windows 10 utiliza um algoritmo de atualização mensal, não havendo, portanto, a necessidade de uma tentativa de atualização por parte dos clientes. Na maioria dos casos, os administradores da VDI controlam o processo de atualização por meio de um processo de desligamento de VMs com base em uma imagem “mestre” ou “ouro”, desselam a imagem que é somente leitura, aplicam o patch a ela e, em seguida, selam a imagem novamente e a colocam de novo em produção. Portanto, não é necessário ter VMs da VDI verificando o Windows Update. Em alguns casos, por exemplo, VMs da VDI persistentes, são realizados os procedimentos normais de aplicação de patch. O Windows Update ou o Microsoft Intune também podem ser usados. O System Center Configuration Manager pode ser usado para lidar com a atualização e outros tipos de entrega de pacote. Cabe a cada organização determinar a melhor abordagem para atualizar a VDI.
 
-> [!TIP]  
+> [!TIP]
 > Um script que implementa as otimizações abordadas neste tópico – bem como um arquivo de exportação de GPO que você pode importar com **LGPO.exe** – está disponível em [TheVDIGuys](https://github.com/TheVDIGuys) no GitHub.
 
 Esse script foi projetado de acordo com o ambiente e os requisitos. O código principal é o PowerShell, e o trabalho é feito usando arquivos de entrada (texto sem formatação), com os arquivos de exportação da ferramenta LGPO (Objeto de Política de Grupo Local). Esses arquivos contêm listas de aplicativos a serem removidos e serviços a serem desabilitados. Caso não deseje remover um aplicativo específico nem desabilitar um serviço específico, edite o arquivo de texto correspondente e remova o item. Por fim, há configurações de política local que podem ser importadas para o dispositivo. É melhor ter algumas configurações na imagem base do que aplicar as configurações por meio da Política de Grupo, pois algumas das configurações entram em vigor na próxima reinicialização ou quando um componente é usado pela primeira vez.
@@ -166,9 +166,9 @@ Execute o seguinte comando para enumerar os aplicativos UWP provisionados em um 
     Get-AppxProvisionedPackage -Online
 
     DisplayName  : Microsoft.3DBuilder
-    Version      : 13.0.10349.0  
+    Version      : 13.0.10349.0
     Architecture : neutral
-    ResourceId   : \~ 
+    ResourceId   : \~
     PackageName  : Microsoft.3DBuilder_13.0.10349.0_neutral_\~_8wekyb3d8bbwe
     Regions      :
     ...
@@ -195,7 +195,7 @@ Cada aplicativo UWP deve ser avaliado para aplicabilidade em cada ambiente exclu
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>Gerenciar recursos opcionais do Windows usando o PowerShell
 
-Gerencie recursos opcionais do Windows usando o PowerShell. Para obter mais informações, confira [Windows 10: como gerenciar recursos opcionais com o PowerShell](https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx). Para enumerar os recursos do Windows atualmente instalados, execute o seguinte comando do PowerShell:
+Gerencie recursos opcionais do Windows usando o PowerShell. Para obter mais informações, confira o [fórum do PowerShell no Windows Server](https://docs.microsoft.com/answers/topics/windows-server-powershell.html). Para enumerar os recursos do Windows atualmente instalados, execute o seguinte comando do PowerShell:
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -764,7 +764,7 @@ Veja a seguir algumas sugestões para diversas tarefas de limpeza de disco. Toda
 1. Execute o Assistente para Limpeza de Disco (com privilégios elevados) após a aplicação de todas as atualizações. Inclua as categorias "Otimização de Entrega" e "Limpeza do Windows Update". Esse processo pode ser automatizado usando a linha de comando `Cleanmgr.exe` com a opção `/SAGESET:11`. A opção `/SAGESET` define valores do Registro que podem ser usados posteriormente para automatizar a limpeza de disco, que usa todas as opções disponíveis no Assistente para Limpeza de Disco.
 
     1. Em uma VM de teste, em uma instalação limpa, a execução de `Cleanmgr.exe /SAGESET:11` revela que há apenas duas opções de limpeza de disco automática habilitadas por padrão:
-    
+
         - Arquivos de Programas Baixados
 
         - Arquivos Temporários da Internet
@@ -776,7 +776,7 @@ Veja a seguir algumas sugestões para diversas tarefas de limpeza de disco. Toda
 2. Limpe o armazenamento de Cópias de Sombra de Volume, se houver algum em uso.
 
     - Abra um prompt de comandos com privilégios elevados e execute o comando `vssadmin list shadows` e, em seguida, o comando `vssadmin list shadowstorage`.
-    
+
         Se a saída desses comandos for **Nenhum item encontrado que atenda à consulta**, isso significará que não há nenhum armazenamento de VSS em uso.
 
 3. Limpe arquivos e logs temporários. Em um prompt de comandos com privilégios elevados, execute o comando `Del C:\*.tmp /s`, o comando `Del C:\Windows\Temp\.` e o comando `Del %temp%\.`.
@@ -790,7 +790,7 @@ A remoção do OneDrive envolve a remoção do pacote, a desinstalação e a rem
 ```azurecli
 
 Taskkill.exe /F /IM "OneDrive.exe"
-Taskkill.exe /F /IM "Explorer.exe"` 
+Taskkill.exe /F /IM "Explorer.exe"`
     if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
      { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
          -ArgumentList "/uninstall"`

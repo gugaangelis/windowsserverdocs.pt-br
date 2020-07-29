@@ -10,12 +10,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcb669f64845aaa7a3b0498cd7f793891f6c274
-ms.sourcegitcommit: 9889f20270e8eb7508d06cbf844cba9159e39697
+ms.openlocfilehash: a64896a1efcafec878ea8fd5dda8077a1fdc9c42
+ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83551110"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87118583"
 ---
 # <a name="iis-on-nano-server"></a>IIS do Nano Server
 
@@ -63,7 +63,7 @@ Nesta versão do Nano Server, os seguintes recursos do IIS estão disponíveis:
 |**Ferramentas de gerenciamento**||
 |Módulo de administração de IIS para Windows PowerShell|x|
 
-Uma série de artigos sobre outras configurações do IIS (por exemplo, como usar ASP.NET, PHP e Java), bem como outros conteúdos relacionados, estão publicados em [http://iis.net/learn](https://iis.net/learn).
+Uma série de artigos sobre outras configurações do IIS (por exemplo, como usar ASP.NET, PHP e Java), bem como outros conteúdos relacionados, estão publicados em [https://iis.net/learn](https://iis.net/learn).
 
 ## <a name="installing-iis-on-nano-server"></a>Instalar o IIS no Nano Server
 Você pode instalar essa função de servidor offline (com o Nano Server desativado) ou online (com o Nano Server em execução); a instalação offline é a opção recomendada.
@@ -130,7 +130,7 @@ Embora seja recomendada a instalação offline da função de servidor, talvez s
 6. Inicie o serviço W3SVC com **net start w3svc** ou reiniciando o Nano Server.
 
 ## <a name="starting-iis"></a>Iniciar o IIS
-Após a instalação e execução do IIS, ele estará pronto para atender às solicitações da Web. Verifique se o IIS está em execução procurando a página Web padrão do IIS em http://\<endereço IP do Nano Server>. Em um computador físico, você pode determinar o endereço IP usando o Console de Recuperação. Em uma máquina virtual, você pode obter o endereço IP usando um prompt do Windows PowerShell e executando:
+Após a instalação e execução do IIS, ele estará pronto para atender às solicitações da Web. Verifique se o IIS está em execução navegando até a página da Web padrão do IIS em http://\<IP address of Nano Server>. Em um computador físico, você pode determinar o endereço IP usando o Console de Recuperação. Em uma máquina virtual, você pode obter o endereço IP usando um prompt do Windows PowerShell e executando:
 
 ```PowerShell
 Get-VM -name <VM name> | Select -ExpandProperty networkadapters | select IPAddresses

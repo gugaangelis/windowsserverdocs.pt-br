@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 1bbb8f06ab66ced50024f4ff17b73229d50ec5c6
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1eeaa76af345d3f05effe2afe35c40d594adfc3a
+ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80391715"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86959618"
 ---
 # <a name="kms-client-setup-keys"></a>Chaves de instalação de cliente KMS
 
@@ -25,9 +25,9 @@ Computadores que executam edições licenciadas do Windows Server, Windows 10, W
 > [!NOTE]
 > Nas tabelas a seguir, "LTSC" significa "Canal de Manutenção em Longo Prazo", enquanto "LTSB" refere-se a "Branch de Manutenção de Longo Prazo". 
 
-**Para usar as chaves listadas aqui (que são GVLKs), primeiro você deve ter um host KMS em execução na implantação.** Se você ainda não tiver configurado um host KMS, confira [Implantar Ativação do KMS](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver as etapas para configurá-lo.
+**Para usar as chaves listadas aqui (que são GVLKs), primeiro você deve ter um host KMS em execução na implantação.** Se você ainda não tiver configurado um host KMS, confira [Implantar Ativação do KMS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn502531(v=ws.11)) para ver as etapas para configurá-lo.
 
-Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição comercial do Windows em um cliente KMS, instale a chave de instalação (GVLK) aplicável com base nas tabelas a seguir. Para instalar uma chave de instalação de cliente, abra um prompt de comando administrativo no cliente, digite **slmgr /ipk\<\>setup key** e, em seguida, pressione **Enter**.
+Caso esteja convertendo um computador a partir de um host KMS, MAK ou edição comercial do Windows em um cliente KMS, instale a chave de instalação (GVLK) aplicável com base nas tabelas a seguir. Para instalar uma chave de instalação de cliente, abra um prompt de comando administrativo no cliente, digite **slmgr /ipk \<setup key\>** e, em seguida, pressione **Enter**.
 
 | Se você quiser...    | … usar esses recursos   |
 |--------------------|------------------------|
@@ -209,6 +209,4 @@ Consulte a [Ficha informativa de ciclo de vida do Windows](https://support.micro
 
 Veja também
 
-• [Planejamento para ativação de volume](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
-
-
+• [Planejamento para ativação de volume](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134042(v=ws.11))
