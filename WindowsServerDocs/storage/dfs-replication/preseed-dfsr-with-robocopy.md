@@ -8,18 +8,18 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 746aa953b2226152a1f103fd0b5a974f543ce993
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 54c95a86514e006735bbfe784f3df46eb95e1f94
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966108"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87182252"
 ---
 # <a name="use-robocopy-to-pre-seed-files-for-dfs-replication"></a>Usar o Robocopy para pré-propagar arquivos para a Replicação do DFS
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Este tópico explica como usar a ferramenta de linha de comando, **Robocopy.exe**, para pré-propagar arquivos ao configurar a replicação para a Replicação do DFS (Sistema de Arquivos Distribuído) (também conhecida como DFSR ou DFS-R) no Windows Server. Ao pré-propagar arquivos antes de configurar a Replicação do DFS, de adicionar um novo parceiro de replicação ou de substituir um servidor, você pode acelerar a sincronização inicial e habilitar a clonagem do banco de dados de Replicação do DFS no Windows Server 2012 R2. O método Robocopy é um dos vários métodos de pré-propagação. Para obter uma visão geral, confira [Etapa 1: Pré-propagar arquivos para Replicação do DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>).
+Este tópico explica como usar a ferramenta de linha de comando, **Robocopy.exe**, para pré-propagar arquivos ao configurar a replicação para a Replicação do DFS (Sistema de Arquivos Distribuído) (também conhecida como DFSR ou DFS-R) no Windows Server. Ao pré-propagar arquivos antes de configurar a Replicação do DFS, de adicionar um novo parceiro de replicação ou de substituir um servidor, você pode acelerar a sincronização inicial e habilitar a clonagem do banco de dados de Replicação do DFS no Windows Server 2012 R2. O método Robocopy é um dos vários métodos de pré-propagação. Para obter uma visão geral, confira [Etapa 1: Pré-propagar arquivos para Replicação do DFS](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>).
 
 O utilitário de linha de comando Robocopy (Cópia de Arquivo Robusto) está incluído com o Windows Server. O utilitário fornece amplas opções que incluem a cópia de segurança, suporte à API de backup, recursos de repetição e registro em log. As versões posteriores incluem suporte a E/S com vários threads e sem buffer.
 
@@ -41,9 +41,9 @@ Como a pré-propagação não envolve diretamente a Replicação do DFS, você s
 - Instale a versão mais recente do Robocopy no servidor que você usará para copiar os arquivos, ou seja, o servidor de origem ou o servidor de destino. Será necessário instalar a versão mais recente para a versão do sistema operacional. Confira as instruções na [Etapa 2: Estabilizar os arquivos que serão replicados](#step-2-stabilize-files-that-will-be-replicated). A menos que você esteja pré-propagando arquivos de um servidor que executa o Windows Server 2003 R2, poderá executar o Robocopy no servidor de origem ou de destino. O servidor de destino, que normalmente tem a versão mais recente do sistema operacional, dá acesso à versão mais recente do Robocopy.
 
 - Verifique se há espaço de armazenamento suficiente disponível na unidade de destino. Não crie uma pasta no caminho para o qual você planeja copiar: O Robocopy deve criar a pasta raiz.
-    
+
     >[!NOTE]
-    >Quando você decide quanto espaço deve ser alocado aos arquivos pré-propagados, considere o crescimento de dados esperado com o tempo e os requisitos de armazenamento para a Replicação do DFS. Para obter ajuda sobre o planejamento, confira [Editar o Tamanho da cota da pasta de preparo e da pasta de conflito e excluída](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11)) em [Gerenciar Replicação do DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>).
+    >Quando você decide quanto espaço deve ser alocado aos arquivos pré-propagados, considere o crescimento de dados esperado com o tempo e os requisitos de armazenamento para a Replicação do DFS. Para obter ajuda sobre o planejamento, confira [Editar o Tamanho da cota da pasta de preparo e da pasta de conflito e excluída](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc754229(v=ws.11)) em [Gerenciar Replicação do DFS](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>).
 
 - No servidor de origem, opcionalmente, instale o Monitor do Processo ou o Explorador de Processos, que você pode usar para verificar se há aplicativos que estão bloqueando arquivos. Para obter informações de download, confira [Monitor do Processo](/sysinternals/downloads/procmon) e [Explorador de Processos](/sysinternals/downloads/process-explorer).
 
@@ -60,9 +60,9 @@ Como alternativa, você pode localizar e instalar o hotfix mais recente para um 
 1. Em um navegador da Web, abra [https://support.microsoft.com](https://support.microsoft.com/).
 
 2. No **Suporte de Pesquisa**, insira a seguinte cadeia de caracteres, substituindo `<operating system version>` pelo sistema operacional apropriado e, em seguida, pressione a tecla Enter:
-    
+
     ```robocopy.exe kbqfe "<operating system version>"```
-    
+
     Por exemplo, insira **robocopy.exe kbqfe "Windows Server 2008 R2"** .
 
 3. Localize e baixe o hotfix com o número de ID mais alto (ou seja, a versão mais recente).
@@ -92,13 +92,13 @@ Depois de minimizar os bloqueios nos arquivos que serão replicados, você pode 
 2. Abra um prompt de comando com privilégios elevados.
 
 3. Para pré-propagar os arquivos do servidor de origem para o de destino, execute o seguinte comando, substituindo seus caminhos de origem, destino e arquivo de log pelos valores entre colchetes:
-    
+
     ```PowerShell
     robocopy "<source replicated folder path>" "<destination replicated folder path>" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:<log file path> /v
     ```
-    
+
     Esse comando copia todo o conteúdo da pasta de origem para a pasta de destino com os seguintes parâmetros:
-    
+
     |Parâmetro|Descrição|
     |---|---|
     |"\<source replicated folder path\>"|Especifica a pasta de origem para a pré-propagação no servidor de destino.|
@@ -113,13 +113,13 @@ Depois de minimizar os bloqueios nos arquivos que serão replicados, você pode 
     |/tee|Grava a saída de status na janela do console, bem como no arquivo de log.|
     |/log \<log file path>|Especifica o arquivo de log a ser gravado. Substitui o conteúdo existente do arquivo. (Para acrescentar as entradas ao arquivo de log existente, use `/log+ <log file path>`.)|
     |/v|Produz uma saída detalhada que inclui arquivos ignorados.|
-    
+
     Por exemplo, o seguinte comando replica arquivos da pasta replicada de origem, E:\\RF01, para a unidade de dados D no servidor de destino:
-    
+
     ```PowerShell
     robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\pre-seedsrv02.log
     ```
-    
+
     >[!NOTE]
     >Recomendamos usar os parâmetros descritos acima ao usar o Robocopy para pré-propagar arquivos para a Replicação do DFS. No entanto, você pode alterar alguns de seus valores ou adicionar outros parâmetros. Por exemplo, você pode descobrir como testar se tem a capacidade de definir um valor mais alto (contagem de thread) para o parâmetro */MT*. Além disso, se você replicar principalmente arquivos maiores, poderá conseguir aumentar o desempenho da cópia adicionando a opção **/j** para E/S não armazenada em buffer. Para obter mais informações sobre o Robocopy, confira a página de referência de linha de comando [Robocopy](../../administration/windows-commands/robocopy.md).
 
@@ -132,4 +132,4 @@ Depois de minimizar os bloqueios nos arquivos que serão replicados, você pode 
 
 ## <a name="next-step"></a>Próxima etapa
 
-Depois de concluir a cópia inicial e de usar o Robocopy para resolver problemas com o máximo possível de arquivos ignorados, você usará o cmdlet **Get-DfsrFileHash** no Windows PowerShell ou o comando **Dfsrdiag** para validar os arquivos pré-propagados comparando os hashes de arquivo nos servidores de origem e de destino. Para obter instruções detalhadas, confira a [Etapa 2: Validar arquivos de pré-propagação para a Replicação do DFS](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>).
+Depois de concluir a cópia inicial e de usar o Robocopy para resolver problemas com o máximo possível de arquivos ignorados, você usará o cmdlet **Get-DfsrFileHash** no Windows PowerShell ou o comando **Dfsrdiag** para validar os arquivos pré-propagados comparando os hashes de arquivo nos servidores de origem e de destino. Para obter instruções detalhadas, confira a [Etapa 2: Validar arquivos de pré-propagação para a Replicação do DFS](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>).
