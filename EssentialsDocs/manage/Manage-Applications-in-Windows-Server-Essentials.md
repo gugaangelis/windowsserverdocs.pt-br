@@ -2,18 +2,17 @@
 title: Gerenciar aplicativos no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bc85199849b140aa8d1ef2f98fd009a1d43bb01b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7f83d595b56c1c6e2ae0e2565dd607a403b429b0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470851"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181042"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Gerenciar aplicativos no Windows Server Essentials
 
