@@ -2,18 +2,17 @@
 title: Gerenciar a integridade do sistema no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 145f97ed2b5ac928e8d1988f3dfd47a62f5c1bf0
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 98a4b154a9b3cea9ebc92da1eb807bc73e98d5d2
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470511"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180882"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Gerenciar a integridade do sistema no Windows Server Essentials
 
@@ -34,7 +33,7 @@ ms.locfileid: "85470511"
 
 -   [Organizar os alertas no Visualizador de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Organize)
 
--   [Responder aos alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)
+-   [Responder a alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Respond)
 
 -   [Configurar emails de notificações de alertas](Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email)
 
@@ -289,8 +288,8 @@ ms.locfileid: "85470511"
 
     |Servidor SMTP|SSL necessário|Autenticação necessária|Número da porta|Nome da Conta/Nome de Logon|
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
-    |smtp.gmail.com|Yes|Sim|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
-    |smtp.live.com|Yes|Sim|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
+    |smtp.gmail.com|Sim|Sim|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
+    |smtp.live.com|Sim|Sim|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
     |smtp.comcast.net|Sim|Não|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
     |Yahoo.com|Não|Sim|25|Forneça apenas o endereço de email sem um nome de domínio para o nome de usuário.|
 
@@ -339,8 +338,8 @@ ms.locfileid: "85470511"
 
     |Servidor SMTP|SSL necessário|Autenticação necessária|Número da porta|Nome da Conta/Nome de Logon|
     |-----------------|------------------|-----------------------------|-----------------|------------------------------|
-    |smtp.gmail.com|Yes|Yes|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
-    |smtp.live.com|Yes|Yes|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
+    |smtp.gmail.com|Sim|Sim|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
+    |smtp.live.com|Sim|Sim|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
     |smtp.comcast.net|Sim|Não|587|Fornece o endereço de email completo com nome de domínio e senha para autenticação.|
     |Yahoo.com|Não|Sim|25|Forneça apenas o endereço de email sem um nome de domínio para o nome de usuário.|
 

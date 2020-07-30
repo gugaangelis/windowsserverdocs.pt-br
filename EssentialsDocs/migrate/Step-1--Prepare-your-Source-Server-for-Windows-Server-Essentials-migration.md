@@ -2,18 +2,17 @@
 title: 'Etapa 1: Preparar o servidor de origem para a migração para o Windows Server Essentials'
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5696c473a8fcb04a60b9a4b6c51ac206a6ef0de
-ms.sourcegitcommit: 2f072c0c02e3e0deae331ca64b375d63b89d0522
+ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404581"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180482"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Etapa 1: Preparar o servidor de origem para a migração para o Windows Server Essentials
 
@@ -70,7 +69,7 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
 5.  Limpe a caixa de seleção **Definir estas configurações de política**.
 
-6.  Exclua \\ \localhost\SYSVOL \\<nome_do_domínio \> \scripts\ SBS_LOGIN_SCRIPT. bat.
+6.  Exclua \\ \localhost\SYSVOL \\<domainname \>\scripts\SBS_LOGIN_SCRIPT.bat.
 
 ###  <a name="evaluate-the-health-of-the-source-server"></a><a name="BKMK_EvaluateHealth"></a>Avaliar a integridade do servidor de origem
  É importante avaliar a integridade do servidor de origem antes de começar a migração. Use os procedimentos a seguir para garantir que as atualizações sejam atuais, para gerar um relatório de integridade do sistema e executar o Analisador de Práticas Recomendadas do Windows Server Solutions.

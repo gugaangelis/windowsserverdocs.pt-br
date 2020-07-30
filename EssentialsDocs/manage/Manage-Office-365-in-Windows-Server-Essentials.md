@@ -2,17 +2,16 @@
 title: Gerenciar o Office 365 no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: e21f8b38c126f699fda8245ab620ce5cd210fa11
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470671"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180962"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Gerenciar o Office 365 no Windows Server Essentials
 
@@ -236,7 +235,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 
 3.  Digite as credenciais da conta que você deseja usar para se conectar à sua assinatura do Office 365 e clique em **Avançar**.
 
-4.  Clique em **fechar** O Painel é reiniciado.
+4.  Clique em **Fechar**. O Painel é reiniciado.
 
 ###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>Desabilitar a integração do Office 365
  Se você decidir que não deseja gerenciar seus serviços do Office 365 e contas online no painel, você pode desabilitar a integração do Office 365. Sua assinatura do Office 365 permanece ativa e as alterações de configuração feitas a partir do painel permanecem em vigor. Por exemplo, você receberá email endereçado a um nome de domínio que você vinculou à sua assinatura do Office 365. Você não perderá nenhum email e os controles que você definir para dispositivos móveis ainda serão usados no Exchange Online.

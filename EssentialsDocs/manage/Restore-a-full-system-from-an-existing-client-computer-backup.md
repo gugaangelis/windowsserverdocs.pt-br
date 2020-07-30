@@ -2,18 +2,17 @@
 title: Restaurar um sistema completo de um backup de computador cliente existente
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9228092f91f4fe309d4841680cf3a78bd35f5b00
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470361"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180822"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restaurar um sistema completo de um backup de computador cliente existente
 
@@ -162,7 +161,7 @@ ms.locfileid: "85470361"
 
 3. Na janela **Assistente de Restauração Completa do Sistema**, escolha seu idioma preferencial e clique na seta.
 
-4. Escolha o **Formato de hora e moeda** adequado e o **Teclado ou método de entrada** para esse computador. Clique em **Continue**.
+4. Escolha o **Formato de hora e moeda** adequado e o **Teclado ou método de entrada** para esse computador. Clique em **Continuar**.
 
 5. Se os drivers estiverem ausentes, a mensagem o processo de restauração não poderá verificar se os drivers são exibidos. Clique em **Fechar** e na caixa de diálogo de boas-vindas, clique em **Carregar drivers**.
 

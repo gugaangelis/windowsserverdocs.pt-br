@@ -2,18 +2,17 @@
 title: Visão geral do Painel no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ca60df1066e0a40c4304d7af36133eda58bbd55f
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0b9ec7bf24bd79b324a811446308129dd3c97b2b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470451"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180842"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Visão geral do Painel no Windows Server Essentials
 
@@ -69,7 +68,7 @@ ms.locfileid: "85470451"
 |5|painel Tarefas|O painel de tarefas contém links para ferramentas e informações que ajudam você a gerenciar as propriedades de um objeto específico (por exemplo, uma conta de usuário ou um computador) ou de configurações globais para a categoria de objeto. O painel de tarefas é dividido nessas duas seções:<br /><br /> **Tarefas de objeto** œ contém links para ferramentas e informações que ajudam a gerenciar as propriedades de um objeto selecionado no modo de exibição de lista (como uma conta de usuário ou um computador).<br /><br /> **As tarefas globais** œ contêm links para ferramentas e informações que ajudam a gerenciar tarefas globais para uma área de recurso. As tarefas globais incluem tarefas para adicionar novos objetos, definir políticas e assim por diante.|
 |6|Informações e configurações|Esta seção fornece acesso direto para as configurações do servidor e um link de ajuda para obter informações sobre a página do Painel que você está exibindo.|
 |7|Status de alertas|O status de alertas fornece uma indicação visual rápida sobre a integridade do servidor. Clique na imagem de alerta para exibir alertas críticos e importantes.<br /><br /> **Observação:** No Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials instalada, o status dos alertas está disponível na guia **informações e configurações** .|
-|8|Barra de status|A barra de status exibe o número de objetos que aparecem no modo de exibição de lista. Aplicativos complementares também podem exibir outros status.|
+|8|Barra de Status|A barra de status exibe o número de objetos que aparecem no modo de exibição de lista. Aplicativos complementares também podem exibir outros status.|
 
 ##  <a name="features-of-the-dashboard-home-page"></a><a name="BKMK_Home"></a>Recursos da home page do painel
  Quando você abre o Painel, a página **Inicial** aparece por padrão com a categoria **instalação** exibida. A página **Inicial** do Painel do Windows Server Essentials fornece acesso rápido a tarefas e informações que ajudam você a personalizar o seu servidor e configurar os recursos principais. A página Inicial é composta de quatro áreas funcionais, que expõem as tarefas de configuração e as informações para as opções que você selecionar. A tabela a seguir descreve os recursos.
@@ -88,7 +87,7 @@ ms.locfileid: "85470451"
 
 |Seção|Descrição|
 |-------------|-----------------|
-|Página Inicial|A página **Inicial** aparece por padrão sempre que você abrir o Painel. Ela inclui tarefas e informações nas seguintes categorias:<br /><br /> **Configurar** œ conclua as tarefas nesta categoria para configurar o servidor pela primeira vez. Para obter informações sobre essas tarefas, consulte [instalar e configurar o Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md).<br /><br /> **Email** œ escolha uma opção nessa categoria para integrar um serviço de email ao servidor.<br /><br /> **Observação:** Essa categoria só está disponível no Windows Server Essentials.<br /><br /> **Serviços** œ escolha uma tarefa nessa categoria para integrar o Microsoft serviços online ao servidor.<br /><br /> **Observação:** Essa categoria só está disponível no Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials habilitada.<br /><br /> **Suplementos** œ clique nessa categoria para instalar suplementos valiosos para sua empresa.<br /><br /> **Status rápido** œ exibe o status do servidor de alto nível. Clique em um status para exibir as opções de configuração e as informações para o recurso. Se você executar todas as tarefas na categoria instalação, esta categoria é exibida na parte superior do painel de categoria.<br /><br /> **Help** œ use a caixa de pesquisa para procurar ajuda na Web. Clique no link para visitar o site para a opção de suporte selecionado.|
+|Início|A página **Inicial** aparece por padrão sempre que você abrir o Painel. Ela inclui tarefas e informações nas seguintes categorias:<br /><br /> **Configurar** œ conclua as tarefas nesta categoria para configurar o servidor pela primeira vez. Para obter informações sobre essas tarefas, consulte [instalar e configurar o Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md).<br /><br /> **Email** œ escolha uma opção nessa categoria para integrar um serviço de email ao servidor.<br /><br /> **Observação:** Essa categoria só está disponível no Windows Server Essentials.<br /><br /> **Serviços** œ escolha uma tarefa nessa categoria para integrar o Microsoft serviços online ao servidor.<br /><br /> **Observação:** Essa categoria só está disponível no Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials habilitada.<br /><br /> **Suplementos** œ clique nessa categoria para instalar suplementos valiosos para sua empresa.<br /><br /> **Status rápido** œ exibe o status do servidor de alto nível. Clique em um status para exibir as opções de configuração e as informações para o recurso. Se você executar todas as tarefas na categoria instalação, esta categoria é exibida na parte superior do painel de categoria.<br /><br /> **Help** œ use a caixa de pesquisa para procurar ajuda na Web. Clique no link para visitar o site para a opção de suporte selecionado.|
 |Usuários|Para que os usuários acessem os recursos do Windows Server Essentials, você precisará criar contas de usuário usando o Painel do Windows Server Essentials. Depois de criar contas de usuário, você pode gerenciar as contas usando as tarefas que estão disponíveis na página **Usuários** do Painel. Tarefas que você pode executar nessa página incluem:<br /><br /> -Exibir uma lista de contas de usuário.<br /><br /> -Exibir e gerenciar Propriedades de conta de usuário.<br /><br /> -Ativar ou desativar contas de usuário.<br /><br /> -Adicionar ou remover contas de usuário.<br /><br /> -Atribua contas de rede local a contas do Microsoft serviços online se o servidor estiver integrado ao Office 365.<br /><br /> -Alterar senhas de conta de usuário e gerenciar a política de senha.<br /><br /> Para obter informações sobre como gerenciar contas de usuário, consulte [gerenciar contas de usuário](Manage-User-Accounts-in-Windows-Server-Essentials.md).|
 |Grupos de usuários|**Observação:** Esse recurso está disponível apenas no Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials habilitada.<br /><br /> Tarefas que você pode executar nessa página incluem:<br /><br /> -Exibir uma lista de grupos de usuários.<br /><br /> -Exiba e gerencie grupos de usuários.<br /><br /> -Adicionar ou remover grupos de usuários.|
 |Grupos de distribuição|**Observação:** Esse recurso está disponível apenas no Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials habilitada. Esta guia é exibida apenas quando o Windows Server Essentials é integrado com o Office 365.<br /><br /> Tarefas que você pode executar nessa página incluem:<br /><br /> -Exibir uma lista de grupos de distribuição.<br /><br /> -Adicionar ou remover grupos de distribuição.|

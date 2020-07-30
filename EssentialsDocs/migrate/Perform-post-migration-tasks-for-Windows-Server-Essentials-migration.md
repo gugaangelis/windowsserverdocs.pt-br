@@ -2,18 +2,17 @@
 title: Executar tarefas de pós-implantação para o Windows Server Essentials migration1
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8283dce2c15996dc0b3d42e93765aa2a01afdc2d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 3fda095624260c1f44a5a46887c1e8e1cbdcdca7
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470261"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180522"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Executar tarefas de pós-implantação para o Windows Server Essentials migration1
 
@@ -115,7 +114,7 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
 
 11. Clique em **Verificar Nomes** para verificar se o grupo de administradores interno é exibido e, em seguida, clique em **OK** três vezes para salvar a configuração.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 
 -   [Migrar do Windows SBS 2003](Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)

@@ -2,18 +2,17 @@
 title: Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 13de76ba7e9452e6498479b060712d06c0571c1a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470881"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181062"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 
@@ -336,7 +335,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
    > [!NOTE]
    >  Você deve selecionar o Módulo de Reescrita de URL durante a instalação do ARR.
    >
-   >  Ao fim da instalação do ARR, é possível que você receba um erro dizendo que a instalação do KB 2589179 para ARR 2.5 não foi realizada com êxito. Ignore-o.
+   >  Ao fim da instalação do ARR, é possível que você receba um erro dizendo que a instalação do KB 2589179 para ARR 2.5 não foi realizada com êxito. Você pode ignorar com segurança esse erro.
 
 4. Quando a instalação do ARR for concluída, reinicie o serviço **Gateway de Área de Trabalho Remota**, caso ele não esteja em execução.
 

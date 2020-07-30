@@ -2,18 +2,17 @@
 title: Restaurar ou reparar o servidor que executa o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cfb78f6b451783bec4cc6f20f36a65f0731162e2
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: def936272531c42623dfefb5940339c545ac8cf0
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470351"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180812"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>Restaurar ou reparar o servidor que executa o Windows Server Essentials
 
@@ -229,7 +228,7 @@ ms.locfileid: "85470351"
 
 5.  Clique em **procurar**, navegue até *<unidade \> \\<\> ServerName*\ServerFolders (por exemplo, *d:\Contoso\ServerFolders*), selecione a pasta que deseja compartilhar e clique em **OK**.
 
-6.  Clique em **Avançar**.
+6.  Clique em **Próximo**.
 
 7.  Especifique as permissões que você anotou na etapa 2 e clique em **Adicionar pasta**.
 

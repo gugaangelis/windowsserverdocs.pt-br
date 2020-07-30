@@ -2,18 +2,17 @@
 title: Instalar e configurar o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 06/17/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 504ce971691d85c6d3727bacd6419f548673c88a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470891"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181172"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Instalar e configurar o Windows Server Essentials
 
@@ -124,7 +123,7 @@ ms.locfileid: "85470891"
     > [!IMPORTANT]
     >  O nome do servidor deve ser exclusivo na sua rede. Não é possível alterar o nome do servidor ou o nome de domínio interno depois de concluir esta etapa.
 
-4.  Clique em **Avançar**.
+4.  Clique em **Próximo**.
 
 5.  Na página **Fornecer as informações da conta do administrador**, digite as informações para uma nova conta de administrador.
 
@@ -137,7 +136,7 @@ ms.locfileid: "85470891"
 
 8.  A página **Atualizando e preparando o servidor** exibe o progresso do processo de instalação final. Isso leva tempo para concluir, e o computador reiniciará algumas vezes.
 
-9. Depois de o último servidor reiniciar, a página **Seu servidor está pronto para ser usado** aparece. Clique em **fechar**
+9. Depois de o último servidor reiniciar, a página **Seu servidor está pronto para ser usado** aparece. Clique em **Fechar**.
 
 10. Clique no bloco Dashboard na tela **Inicial** e, no Dashboard, conclua as tarefas de **Configurar meu Servidor** na página **Home**. Você deve concluir essas tarefas imediatamente após a conclusão da instalação do Windows Server Essentials.
 

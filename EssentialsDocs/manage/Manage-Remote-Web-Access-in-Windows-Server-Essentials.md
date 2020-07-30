@@ -2,18 +2,17 @@
 title: Gerenciar o acesso remoto via Web no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2144f66e9c5a5e9384e49a0f5d77796dec9d7429
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470621"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180932"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Gerenciar o acesso remoto via Web no Windows Server Essentials
 
@@ -150,9 +149,9 @@ ms.locfileid: "85470621"
  Durante esta etapa, o Windows Server Essentials tenta configurar automaticamente seu roteador usando comandos UPnP. Para isso, seu roteador deve oferecer suporte aos padrões UPnP e a configuração de UPnP deve estar habilitada no roteador.
 
 > [!NOTE]
->  A configuração da sua rede deve seguir os requisitos de rede com suporte do Windows Server Essentials. Deve haver apenas um roteador na rede.
+> A configuração da sua rede deve seguir os requisitos de rede com suporte do Windows Server Essentials. Deve haver apenas um roteador na rede.
 
- Caso o roteador não seja configurado pelo assistente de configuração de nome de domínio, encaminhe manualmente a porta 443. Para obter informações sobre a configuração do encaminhamento de porta no roteador, consulte [Configuração do roteador](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx).
+ Caso o roteador não seja configurado pelo assistente de configuração de nome de domínio, encaminhe manualmente a porta 443. Para obter informações sobre como configurar o encaminhamento de porta em seu roteador, consulte o [Fórum do Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html).
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>Substituir um roteador
  Substitua o roteador de acordo com as instruções do fabricante e execute o assistente configurar o roteador para configurar o novo roteador.
@@ -442,7 +441,7 @@ ms.locfileid: "85470621"
 
 3.  Clique em **Reparar**. O Assistente **Reparo do Acesso via Web Remoto** é iniciado.
 
-4.  Clique em **Avançar**. O assistente analisa o Acesso via Web Remoto, identifica o problema e tenta repará-lo.
+4.  Clique em **Próximo**. O assistente analisa o Acesso via Web Remoto, identifica o problema e tenta repará-lo.
 
 5.  Se você receber um alerta quando o assistente for concluído, você pode clicar em **Tentar novamente** para tentar reparar o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.
 

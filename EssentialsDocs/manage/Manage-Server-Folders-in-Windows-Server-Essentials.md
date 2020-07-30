@@ -2,18 +2,17 @@
 title: Gerenciar Pastas do Servidor no Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8dba2bb0b282751fbbe584b64dbc92bbe3702979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f748ca62062de616be7c6e2ee495a508d0e38646
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470561"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87180912"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Gerenciar Pastas do Servidor no Windows Server Essentials
 

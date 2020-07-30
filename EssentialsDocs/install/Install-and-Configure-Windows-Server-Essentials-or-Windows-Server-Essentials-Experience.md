@@ -2,18 +2,17 @@
 title: Instalar e configurar o Windows Server Essentials ou a Experiência do Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 338fe421b4ba30afc1b2cd3ee983668b282f3a15
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 804a3ed902606e52f25977601e4edc2e2fc5e04f
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470951"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181182"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Instalar e configurar o Windows Server Essentials ou a Experiência do Windows Server Essentials
 
@@ -209,7 +208,7 @@ Antes de instalar o Windows Server Essentials ou a função de experiência do E
 
     -   Para obter o progresso imediato sem a barra de progresso, execute `Get-WssConfigurationStatus`.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Confira também
 
 -   [O que há de novo no Windows Server Essentials](../get-started/what-s-new.md)
 
