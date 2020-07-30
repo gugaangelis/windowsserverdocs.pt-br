@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 03/07/2019
 description: Este artigo descreve os níveis de afinidade e antiafinidade de cluster de failover
-ms.openlocfilehash: 5a46279a2c8780466617e453ec5263c36a6e0128
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5fdc40e31b61a74965bf60ac907a198c7ef92521
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178592"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409586"
 ---
 # <a name="cluster-affinity"></a>Afinidade de cluster
 
@@ -29,28 +29,37 @@ Affinity é uma regra que você configuraria que estabelece uma relação entre 
 
 Ao examinar as propriedades de um grupo, há o parâmetro AntiAffinityClassNames e ele fica em branco como padrão.  Nos exemplos abaixo, GRUPO1 e group2 devem ser separados da execução no mesmo nó.  Para exibir a propriedade, o comando e o resultado do PowerShell seriam:
 
-    PS> Get-ClusterGroup Group1 | fl AntiAffinityClassNames
+```powershell
+Get-ClusterGroup Group1 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
 
-    PS> Get-ClusterGroup Group2 | fl AntiAffinityClassNames
+Get-ClusterGroup Group2 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
+```
 
 Como AntiAffinityClassNames não são definidos como padrão, essas funções podem ser executadas juntas ou separadas.  O objetivo é mantê-los separados.  O valor de AntiAffinityClassNames pode ser o que você deseja que sejam, eles só precisam ser iguais.  Digamos que GRUPO1 e group2 sejam controladores de domínio em execução em máquinas virtuais e eles seriam mais bem atendidos em execução em nós diferentes.  Como esses são controladores de domínio, usarei o DC para o nome da classe.  Para definir o valor, o comando do PowerShell e os resultados seriam:
 
-    PS> $AntiAffinity = New-Object System.Collections.Specialized.StringCollection
-    PS> $AntiAffinity.Add("DC")
-    PS> (Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
-    PS> (Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
+```powershell
+$AntiAffinity = New-Object System.Collections.Specialized.StringCollection
+$AntiAffinity.Add("DC")
+(Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
+(Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
 
-    PS> Get-ClusterGroup "Group1" | fl AntiAffinityClassNames
+$AntiAffinity = New-Object System.Collections.Specialized.StringCollection
+$AntiAffinity.Add("DC")
+(Get-ClusterGroup -Name "Group1").AntiAffinityClassNames = $AntiAffinity
+(Get-ClusterGroup -Name "Group2").AntiAffinityClassNames = $AntiAffinity
+
+Get-ClusterGroup "Group1" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
 
-    PS> Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
+Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
+```
 
 Agora que elas estão definidas, o clustering de failover tentará mantê-las separadas.
 
-O parâmetro definir antiaffinityclassname é um bloco "soft".  Ou seja, ele tentará mantê-los separados, mas se não puder, ele ainda permitirá que eles sejam executados no mesmo nó.  Por exemplo, os grupos estão sendo executados em um cluster de failover de dois nós.  Se um nó precisar ficar inativo para manutenção, significa que ambos os grupos seriam ativos e em execução no mesmo nó.  Nesse caso, seria bom ter isso.  Talvez não seja o mais ideal, mas as duas máquinas virtial ainda serão executadas dentro de intervalos de desempenho aceitáveis.
+O parâmetro definir antiaffinityclassname é um bloco "soft".  Ou seja, ele tentará mantê-los separados, mas se não puder, ele ainda permitirá que eles sejam executados no mesmo nó.  Por exemplo, os grupos estão sendo executados em um cluster de failover de dois nós.  Se um nó precisar ficar inativo para manutenção, significa que ambos os grupos seriam ativos e em execução no mesmo nó.  Nesse caso, seria bom ter isso.  Talvez não seja o mais ideal, mas ambas as máquinas virtuais ainda serão executadas dentro de intervalos de desempenho aceitáveis.
 
 ## <a name="i-need-more"></a>Preciso de mais
 
@@ -60,13 +69,17 @@ Para esses casos, há uma propriedade de cluster adicional de ClusterEnforcedAnt
 
 Para exibir a propriedade e o valor, o comando do PowerShell (e o resultado) seria:
 
-    PS> Get-Cluster | fl ClusterEnforcedAntiAffinity
+```powershell
+Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
+```
 
 O valor de "0" significa que ele está desabilitado e não deve ser imposto.  O valor de "1" permite e é o bloco físico.  Para habilitar esse bloco físico, o comando (e o resultado) é:
 
-    PS> (Get-Cluster).ClusterEnforcedAntiAffinity = 1
+```powershell
+(Get-Cluster).ClusterEnforcedAntiAffinity = 1
     ClusterEnforcedAntiAffinity : 1
+```
 
 Quando ambos estiverem definidos, o grupo será impedido de ficar online juntos.  Se eles estiverem no mesmo nó, isso será o que você veria em Gerenciador de Cluster de Failover.
 
@@ -74,12 +87,14 @@ Quando ambos estiverem definidos, o grupo será impedido de ficar online juntos.
 
 Em uma listagem do PowerShell dos grupos, você verá isto:
 
-    PS> Get-ClusterGroup
+```powershell
+Get-ClusterGroup
 
-    Name       State
-    ----       -----
-    Group1     Offline(Anti-Affinity Conflict)
-    Group2     Online
+Name       State
+----       -----
+Group1     Offline(Anti-Affinity Conflict)
+Group2     Online
+```
 
 ## <a name="additional-comments"></a>Comentários Adicionais
 

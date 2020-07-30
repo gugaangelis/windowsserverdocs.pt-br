@@ -9,12 +9,12 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-ms.openlocfilehash: 21585ab376830f37ca6432849dd8e9b3773af9ab
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473293"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409576"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>Como funcionam os plug-ins de atualização com suporte a cluster
 
@@ -84,7 +84,7 @@ Os plug- \- ins que o Cau instala \( **Microsoft. WindowsUpdatePlugin** e **Micr
 |Cmdlet|Descrição|
 |----------|---------------|
 |[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|Recupera informações sobre um ou mais plug-ins de atualização de software \- registrados no computador local.|
-|[Register-CauPlugin]((https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin))|Registra um plug-in de atualização de software CAU \- no computador local.|
+|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|Registra um plug-in de atualização de software CAU \- no computador local.|
 |[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|Remove um plug-in de atualização de software \- da lista de plug- \- ins que podem ser usados pela Cau. **Observação:** Os plug- \- ins instalados com a cau \( **Microsoft. WindowsUpdatePlugin** e **Microsoft. HotfixPlugin** \) não podem ter o registro cancelado.|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>Usando o Microsoft. WindowsUpdatePlugin

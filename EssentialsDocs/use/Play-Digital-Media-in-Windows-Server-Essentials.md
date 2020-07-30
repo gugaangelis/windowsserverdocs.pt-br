@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bd14631917a9f0211e39bd44c9d01e11ad2a177f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179882"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409506"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Gerenciar mídia digital no Windows Server Essentials
 
@@ -65,11 +65,9 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
  Você pode usar qualquer uma das seguintes maneiras para pesquisar e executar arquivos de mídia digital armazenados no servidor:
 
-
 -   [Pesquisar e reproduzir arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1)
 
 -   [Enviar arquivos de mídia no Windows Server Essentials para o Windows Media Player, Xbox 360 ou para um player de mídia digital em rede](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)
-
 
 
 ###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>Pesquisar e reproduzir arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede
@@ -87,7 +85,6 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 -   [Pesquisar e executar arquivos de mídia usando o recurso de pastas compartilhadas da Barra Inicial](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SharedFolders)
 
 -   [Procurar e reproduzir mídia compartilhada usando o acesso via Web Remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)
-
 
 
 ####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows Media Center
@@ -260,19 +257,8 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 -   [Gerenciar mídia digital](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md)
 
-
 -   [Conecte-se](Get-Connected-in-Windows-Server-Essentials.md)
 
 -   [Usar pastas compartilhadas](Use-Shared-Folders-in-Windows-Server-Essentials.md)
 
 -   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)
-
-<<<<<<< CABEÇALHO
--   [Conecte-se](../use/Get-Connected-in-Windows-Server-Essentials.md)
-
--   [Usar pastas compartilhadas](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)
-
--   [Trabalhar remotamente](../use/Work-Remotely-in-Windows-Server-Essentials.md)
-
-=======
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88

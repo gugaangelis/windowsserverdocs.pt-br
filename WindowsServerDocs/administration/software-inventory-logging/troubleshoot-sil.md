@@ -8,14 +8,14 @@ author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a02caf63bbd02705aebb8306a7b50a32f3d6c82
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f6ad4686ce5afb86ce60ec0313bd675f8a9a1f4a
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851409"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408795"
 ---
-# <a name="troubleshoot-software-inventory-logging"></a>Solucionar problemas do Log de Inventário de Software 
+# <a name="troubleshoot-software-inventory-logging"></a>Solucionar problemas do Log de Inventário de Software
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
@@ -33,7 +33,7 @@ Antes de iniciar a solução de problemas do SIL, você deve ter uma boa compree
 
 A estrutura SIL tem dois componentes principais e dois canais de comunicação. O fluxo de dados em ambos os canais, e entre ambos os componentes, é necessário para uma implantação bem-sucedida do SIL (isso pressupõe um ambiente virtualizado, ou de nuvem, apenas ambientes físicos que precisam de um dos canais de comunicação). Você precisará entender os componentes e o fluxo de dados do SIL para implantá-lo corretamente. Depois de assistir aos vídeos de visão geral acima, você terá visto o diagrama arquitetônico que ilustra os componentes e o fluxo de dados em ambos os canais. Setas em laranja indicam consultas remotas sobre WinRM, setas tracejadas verdes indicam postagens HTTPS para o agregador SIL de SIL em cada nó WS-end:
 
-![](../media/software-inventory-logging/image1.png)
+![Diagrama do SIL Framework](../media/software-inventory-logging/image1.png)
 
 Se você encontrar um problema com o SIL, é provável que ele esteja relacionado a uma interrupção no fluxo de dados nos canais e entre os componentes. A seguir estão os problemas mais comuns relacionados ao fluxo de dados, seguidos na próxima seção pelas etapas de solução de problemas para resolver cada um dos três problemas:
 
@@ -61,11 +61,11 @@ Se você estiver solucionando problemas de dados no relatório (ou ausente do re
 
 Se ainda não houver dados no relatório, continue com a solução de problemas dos três problemas de fluxo de dados.
 
-### <a name="data-flow-issue-1"></a>Problema de fluxo de dados 1 
+### <a name="data-flow-issue-1"></a>Problema de fluxo de dados 1
 
 #### <a name="no-data-in-the-report-when-using-the-publish-silreport-cmdlet-or-data-is-generally-missing"></a>Não há dados no relatório ao usar o cmdlet Publish-SilReport (ou os dados geralmente estão ausentes)
 
-Se os dados estiverem ausentes, provavelmente porque o cubo de dados SQL ainda não foi processado. Se ele tiver processado recentemente e você acreditar que os dados ausentes devem ter chegado ao agregador antes do processamento do cubo, siga o caminho dos dados na ordem inversa. Escolha um host exclusivo e uma VM exclusiva para solucionar problemas. O caminho de dados em ordem inversa seria o **relatório de SILA** &lt; o **SILA de banco** &lt; **Sila diretório local** &lt; **host físico remoto** ou **WS VM executando o agente/tarefa do Sil**.
+Se os dados estiverem ausentes, provavelmente porque o cubo de dados SQL ainda não foi processado. Se ele tiver processado recentemente e você acreditar que os dados ausentes devem ter chegado ao agregador antes do processamento do cubo, siga o caminho dos dados na ordem inversa. Escolha um host exclusivo e uma VM exclusiva para solucionar problemas. O caminho de dados em ordem inversa seria o **Sila Report** &lt; **Sila Database** &lt; **Sila o diretório local** &lt; **Remote host físico** ou **WS VM running Sil agente/tarefa**.
 
 #### <a name="check-to-see-if-data-is-in-the-database"></a>Verifique se os dados estão no banco de dado
 
@@ -83,30 +83,30 @@ Há duas maneiras de verificar os dados: **PowerShell** ou **SSMS**.
 
 2. Executar **Get-silvmhost**
    - Se não houver nenhum host listado, adicione hosts usando o cmdlet **Add-silvmhost** .
-   - Se os hosts estiverem listados como **desconhecidos**, vá para o problema 2. 
+   - Se os hosts estiverem listados como **desconhecidos**, vá para o problema 2.
    d-se os hosts estiverem listados, mas não houver nenhum **DateTime** na coluna **sondagem recente** , vá para o **problema 2** abaixo.
 
 **Outros comandos relacionados**
 
-**Get-SilAggregator-computername &lt;FQDN de um servidor conhecido enviando dados por push&gt;** : isso produzirá informações do banco de dado sobre um computador (VM) mesmo antes de o cubo ser processado. Portanto, esse cmdlet pode ser usado para verificar os dados no banco de dado para um Windows Server enviando dados SIL por HTTPS, antes ou sem, o processo de cubo em 3AM (ou se você não tiver atualizado o cubo em tempo real, conforme descrito no início desta seção).
+**Get-SilAggregator-ComputerName &lt; FQDN de um servidor conhecido enviando dados &gt; por push**: isso produzirá informações do Database sobre um computador (VM) mesmo antes do processamento do cubo. Portanto, esse cmdlet pode ser usado para verificar os dados no banco de dado para um Windows Server enviando dados SIL por HTTPS, antes ou sem, o processo de cubo em 3AM (ou se você não tiver atualizado o cubo em tempo real, conforme descrito no início desta seção).
 
-**Get-SilAggregator-VmHostName &lt;FQDN de um host físico sondado onde há um valor na coluna de sondagem recente ao usar o cmdlet Get-SilVmHost&gt;** : isso produzirá informações do banco de dados sobre um host físico, mesmo antes de o cubo ter sido processado.
+**Get-SilAggregator-VmHostName &lt; FQDN de um host físico sondado em que há um valor na coluna de sondagem recente ao usar o cmdlet &gt; Get-SilVmHost**: isso produzirá informações do banco de dados sobre um host físico, mesmo antes de o cubo ser processado.
 
 #### <a name="ssms"></a>SSMS
 
 n**verificar se há dados de hosts sendo sondados:**
- 
+
 1. Abra o **SSMS** e conecte-se ao **mecanismo de banco de dados**.
-2. Expanda **bancos**de dados, expanda o **SoftwareInventoryLogging** Database, expanda **tabelas**, clique com o botão direito do mouse na tabela **HostInfo** e selecione as 1000 principais linhas. 
+2. Expanda **bancos**de dados, expanda o **SoftwareInventoryLogging** Database, expanda **tabelas**, clique com o botão direito do mouse na tabela **HostInfo** e selecione as 1000 principais linhas.
 
     Se houver dados para um ou mais hosts na tabela, a sondagem desse (s) host (es) foi bem-sucedida pelo menos uma vez.
 
-   **Verifique se há dados de VMs ou servidores autônomos que tenham enviado dados por HTTPS:** 
+   **Verifique se há dados de VMs ou servidores autônomos que tenham enviado dados por HTTPS:**
 
 3. Abra o **SSMS** e conecte-se ao **mecanismo de banco de dados**.
-   a2. Expanda **bancos**de dados, expanda o banco de **SoftwareInventoryLogging** , expanda **tabelas**, clique com o botão direito do mouse na tabela **VMInfo** e selecione as 1000 linhas superiores. 
+   a2. Expanda **bancos**de dados, expanda o banco de **SoftwareInventoryLogging** , expanda **tabelas**, clique com o botão direito do mouse na tabela **VMInfo** e selecione as 1000 linhas superiores.
 
-    >[!NOTE] 
+    >[!NOTE]
     >Cada linha para uma VM exclusiva representará um arquivo **bmil** processado enviado com êxito por HTTPS e processado pelo agregador Sil. Os arquivos Bmil são arquivos proprietários usados pelo SIL, um é criado cada uma das instâncias de cada SIL Observe que isso só é necessário quando SIL e SILA são usados em ambientes virtuais. Caso contrário, somente o tráfego HTTPS será necessário/esperado).
 
    Todos os dados no banco de dado devem ser refletidos nos relatórios do SIL depois que o cubo for processado.
@@ -124,7 +124,7 @@ Isso provavelmente ocorrerá em ambientes virtuais quando o agregador SIL não s
 
         -   Você precisará aguardar uma hora depois de adicionar o host para que a sondagem ocorra (supondo que esse intervalo esteja definido como padrão – pode ser verificado usando o cmdlet **Get-silaggregator** ).
 
-        -   Se tiver sido uma hora desde que o host foi adicionado, verifique se a tarefa de sondagem está em execução: em **Agendador de tarefas**, selecione **agregador de log de inventário de Software** em **Microsoft** &gt; **Windows** e verifique o histórico da tarefa.
+        -   Se tiver sido uma hora desde que o host foi adicionado, verifique se a tarefa de sondagem está em execução: em **Agendador de tarefas**, selecione **agregador de log de inventário de software** no **Microsoft** &gt; **Windows** e verifique o histórico da tarefa.
 
     -   Se um host estiver listado, mas não houver nenhum valor para **RecentPoll**, **HostType**ou **hipervisortype**, isso poderá ser amplamente ignorado. Isso só ocorrerá em ambientes do HyperV. Esses dados são realmente provenientes da VM do Windows Server, identificando o host físico que está sendo executado via HTTPS. Isso pode ser útil para identificar uma VM específica que está sendo relatada, mas requer a mineração do banco de dados usando o cmdlet **Get-SilAggregatorData** .
 
@@ -140,8 +140,8 @@ Depois que os hosts forem sondados corretamente, você poderá ver os dados para
 
    - Se houver um erro:
      - Verifique se **targetUri** tem **https://** na entrada.
-     - Garantir que todos os pré-requisitos sejam atendidos 
-     - Verifique se todas as atualizações necessárias para o Windows Server estão instaladas (consulte pré-requisitos para SIL). Uma maneira rápida de verificar (somente no WS 2012 R2) é procurar por isso usando o seguinte cmdlet: **Get-SilWindowsUpdate \*3060 \*3000**
+     - Garantir que todos os pré-requisitos sejam atendidos
+     - Verifique se todas as atualizações necessárias para o Windows Server estão instaladas (consulte pré-requisitos para SIL). Uma maneira rápida de verificar (somente no WS 2012 R2) é procurar por eles usando o seguinte cmdlet: **Get-SilWindowsUpdate \* 3060, \* 3000**
      - Verifique se o certificado que está sendo usado para autenticar com o agregador está instalado no armazenamento correto no servidor local para ser inventariado com **SilLogging**.
      - No agregador SIL, certifique-se de que a impressão digital do certificado que está sendo usada para autenticar com o agregador seja adicionada à lista usando o cmdlet **set-SilAggregator** **– AddCertificateThumbprint** .
      - Se estiver usando certificados corporativos, verifique se o servidor com o SIL habilitado está ingressado no domínio para o qual o certificado foi criado ou se ele é, de outro modo, verificável com uma autoridade raiz. Se um certificado não for confiável no computador local que tenta encaminhar/enviar por push os dados para um Agregador, essa ação falhará com um erro.
@@ -152,12 +152,12 @@ Depois que os hosts forem sondados corretamente, você poderá ver os dados para
 
      -  Por fim, você pode verificar o seguinte local para arquivos SIL armazenados em cache no servidor que está tentando encaminhar/enviar por push, **\Windows\System32\Logfiles\SIL**. Se **SilLogging** tiver começado e estiver em execução por mais de uma hora, ou o **Publish-SilData** tiver sido executado recentemente, e não houver nenhum arquivo nesse diretório, o logon no agregador terá sido bem-sucedido.
 
-Se não houver nenhum erro e nenhuma saída no console, os dados enviados/publicados do nó final do Windows Server para o agregador SIL por HTTPS foram bem-sucedidos. Para seguir o caminho dos dados em direção, faça logon no agregador SIL como administrador e examine os arquivos de dados que chegaram. Vá para **arquivos de programas (x86)** &gt; **agregador do Microsoft Sil** &gt; diretório do Sila. Você pode ver os arquivos de dados chegando em tempo real.
+Se não houver nenhum erro e nenhuma saída no console, os dados enviados/publicados do nó final do Windows Server para o agregador SIL por HTTPS foram bem-sucedidos. Para seguir o caminho dos dados em direção, faça logon no agregador SIL como administrador e examine os arquivos de dados que chegaram. Acesse o diretório **arquivos de programas (x86)** &gt; **Microsoft Sil Aggregation** &gt; Sila. Você pode ver os arquivos de dados chegando em tempo real.
 
->[!NOTE] 
+>[!NOTE]
 >Mais de um arquivo de dados pode ter sido transferido com o cmdlet **Publish-SilData** . SIL no nó final ocorrerá um erro de envio por push de cache por até 30 dias. No próximo Push bem-sucedido, todos os arquivos de dados vão para o agregador para processamento. Dessa forma, um novo agregador SIL poderia mostrar dados de um nó final bem antes de sua própria configuração.
 
->[!NOTE] 
+>[!NOTE]
 >Há regras que o SILA segue ao processar arquivos de dados no diretório SILA que são relevantes apenas em situações de tráfego baixo. O tráfego alto sempre irá disparar o processamento em tempo real. O comportamento padrão é que o processamento começará após a chegada de 100 arquivos no diretório ou após 15 minutos. Ao solucionar problemas de ponta a ponta em um ambiente pequeno, geralmente é necessário aguardar 15 minutos.
 
 Depois que esses arquivos forem processados, você verá os dados no banco de dado.

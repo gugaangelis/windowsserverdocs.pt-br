@@ -1,15 +1,17 @@
 ---
-title: Solucionando problemas de cluster com a ID de evento 1135
+title: Como solucionar o problema de cluster com a ID de Evento 1135
 description: Descreve como solucionar o problema de inicialização do serviço de cluster com a ID de evento 1135.
 ms.date: 05/28/2020
-ms.openlocfilehash: d59f8b89e89ea7ff42aecd79670465aee8d63524
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+author: Deland-Han
+ms.author: delhan
+ms.openlocfilehash: 2836fc9385d57ff076828ab5cf6a1e341a7d88a8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306525"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409827"
 ---
-# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Solucionando problemas de cluster com a ID de evento 1135
+# <a name="troubleshooting-cluster-issue-with-event-id-1135"></a>Como solucionar o problema de cluster com a ID de Evento 1135
 
 Este artigo ajuda você a diagnosticar e resolver a ID de evento 1135, que pode ser registrada durante a inicialização do Serviço de cluster no ambiente de clustering de failover.
 
@@ -38,11 +40,11 @@ Siga o comando a seguir de acordo com o sistema operacional Windows para validar
 
 #### <a name="for-windows-server-2008-r2-cluster"></a>Para o cluster do Windows Server 2008 R2
 
-na execução do prompt cmd elevado: **nó do cluster. exe/stat**  
+na execução do prompt cmd elevado: **cluster.exe nó/stat**
 
 #### <a name="for-windows-server-2012-and-windows-server-2012-r2-cluster"></a>Para o Windows Server 2012 \ e o cluster do Windows Server 2012 R2
 
-executar comando PS: **nó de cluster/status**  
+executar comando PS: **nó de cluster/status**
 
 O serviço de cluster está em execução continuamente e disponível em todos os nós?
 
@@ -134,12 +136,12 @@ Configure o componente de verificação em tempo real em seu software antivírus
 
 - Diretórios de instantâneos
 
-- MMS. exe
+- mms.exe
 
     > [!NOTE]
     > Esse arquivo pode ter que ser configurado como uma exclusão de processo dentro do software antivírus.)
 
-- VMWP. exe
+- Vmwp.exe
 
     > [!NOTE]
     > Esse arquivo pode ter que ser configurado como uma exclusão de processo dentro do software antivírus.
@@ -150,7 +152,7 @@ Além disso, ao usar Migração ao Vivo junto com volumes compartilhados do clus
 
 O Serviço de cluster controla as operações de cluster de servidor e gerencia o banco de dados do cluster. Um cluster é uma coleção de computadores independentes que atuam como um único computador. Gerentes, programadores e usuários veem o cluster como um único sistema. O software distribui dados entre os nós do cluster. Se um nó falhar, outros nós fornecerão os serviços e os dados que foram fornecidos anteriormente pelo nó ausente. Quando um nó é adicionado ou reparado, o software de cluster migra alguns dados para esse nó.
 
-Nome do serviço de sistema: **ClusSvc**  
+Nome do serviço de sistema: **ClusSvc**
 
 |Aplicativo|Protocolo|Portas|
 |---|---|---|
@@ -200,13 +202,13 @@ A guia adaptadores e associações lista as conexões na ordem em que as conexõ
 
 Siga as etapas abaixo para alterar a ordem de ligação dos adaptadores de rede:
 
-1. Clique em **Iniciar**, **executar**, digite ncpa. cpl e clique em **OK**. Você pode ver as conexões disponíveis na seção **LAN e Internet de alta velocidade** da janela **conexões de rede** .
+1. Clique em **Iniciar**, **executar**, digite ncpa.cpl e clique em **OK**. Você pode ver as conexões disponíveis na seção **LAN e Internet de alta velocidade** da janela **conexões de rede** .
 
 2. No menu **avançado** , clique em **Configurações avançadas**e, em seguida, clique na guia **adaptadores e associações** .
 
 3. Na área **conexões** , selecione a conexão que você deseja mover para cima na lista. Use os botões de seta para mover a conexão. Como regra geral, o cartão que se comunica com a rede (conectividade de domínio, roteamento para outras redes etc. deve ser o primeiro cartão associado (parte superior da lista).
 
-Os nós de cluster são sistemas de hospedagem múltipla. A prioridade de rede afeta o cliente DNS para a conectividade de rede de saída. Os adaptadores de rede usados para comunicação do cliente devem estar na parte superior da ordem de associação. Redes não roteadas podem ser colocadas em prioridade mais baixa. No Windows Server 2012 e no Windows Server2012 R2, o driver de rede de cluster (NETFT. SYS) é colocado automaticamente na parte inferior da lista de ordem de associação.
+Os nós de cluster são sistemas de hospedagem múltipla. A prioridade de rede afeta o cliente DNS para a conectividade de rede de saída. Os adaptadores de rede usados para comunicação do cliente devem estar na parte superior da ordem de associação. Redes não roteadas podem ser colocadas em prioridade mais baixa. No Windows Server 2012 e no Windows Server2012 R2, o adaptador de driver de rede de cluster (NETFT.SYS) é colocado automaticamente na parte inferior da lista de ordem de associação.
 
 #### <a name="check-the-validate-network-communication"></a>Verificar a comunicação de rede de validação
 
@@ -246,7 +248,7 @@ Verifique se você encontrou qualquer um dos problemas a seguir.
 
 ##### <a name="cluster-installed-in-the-vmware-virtualization-platform"></a>Cluster instalado na plataforma de virtualização VmWare
 
-Verifique os problemas do adaptador VMware no caso do ambiente VMware. 
+Verifique os problemas do adaptador VMware no caso do ambiente VMware.
 
 Esse problema pode ocorrer se os pacotes forem removidos durante altas intermitências de tráfego. Verifique se não há nenhuma filtragem de tráfego ocorrendo (por exemplo, com um filtro de email). Depois de eliminar essa possibilidade, Aumente gradualmente o número de buffers no sistema operacional convidado e verifique.
 
@@ -254,8 +256,8 @@ Para reduzir os descartes de tráfego de intermitência, siga estas etapas:
 
 1. Abra a caixa de execução usando a tecla Windows + R.
 2. Digite devmgmt. msc e pressione **Enter**.
-3. Expandir **adaptadores de rede**  
-4. Clique com o botão direito do mouse em **vmxnet3 e clique em Propriedades.**  
+3. Expandir **adaptadores de rede**
+4. Clique com o botão direito do mouse em **vmxnet3 e clique em Propriedades.**
 5. Clique na guia **Avançado**.
 6. Clique em **buffers RX pequenos** e aumente o valor. O valor padrão é 512 e o máximo é 8192.
 7. Clique em **RX Ring #1** tamanho e aumente o valor. O valor padrão é 1024 e o máximo é 4096.

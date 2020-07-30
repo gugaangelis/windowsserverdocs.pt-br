@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: de384437a1d135aa60cf8d65a8031faa22983bb0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180262"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409516"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar problemas referentes a erros de backup restauração do computador no Windows Server Essentials
 
@@ -117,13 +117,13 @@ Quando um backup tem status Malsucedido, nenhuma parte do backup foi bem-sucedid
 
     - Exclua o conteúdo do volume para disponibilizar mais espaço.
 
-            > [!NOTE]
-            > If you need to free up space on the system reserved volume, you can move the System Recovery Image to a different volume. For instructions, see [Deploy a System Recovery Image](/previous-versions/windows/it-pro/windows-7/dd744280(v=ws.10)).
+        > [!NOTE]
+        > Se você precisar liberar espaço no volume do sistema reservado, você pode mover a imagem de recuperação do sistema para um volume diferente. Para instruções, consulte [Implantar uma imagem de recuperação de sistema](/previous-versions/windows/it-pro/windows-7/dd744280(v=ws.10)).
 
     - Exclua o volume do backup do cliente. Faça isso apenas se não é importante para você manter uma cópia de backup dos dados no volume.
 
-            > [!WARNING]
-            > If you exclude the system reserved volume from a client backup, the client system will not be backed up, and you will not be able to perform a full system restore on the computer.
+        > [!WARNING]
+        > Se você excluir o volume reservado pelo sistema de um backup do cliente, o backup do sistema do cliente não será feito e você não poderá realizar uma restauração completa do sistema no computador.
 
 5. Verifique se há outros alertas no servidor que podem indicar que não há espaço em disco suficiente no servidor para que o backup seja concluído com êxito. Siga as instruções no alerta para corrigir o problema.
 

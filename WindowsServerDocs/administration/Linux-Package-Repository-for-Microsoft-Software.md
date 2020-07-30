@@ -9,16 +9,17 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: b57a1e7243f989a4529a666880572a9ceaa57644
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 28d86981e87184c11eb37981945876e05a83ad62
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80852059"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408875"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositório de software do Linux para produtos da Microsoft
 
 ## <a name="overview"></a>Visão geral
+
 A Microsoft cria e dá suporte a uma variedade de produtos de software para sistemas Linux e os torna disponíveis por meio dos repositórios de pacote APT e YUM padrão. Este documento descreve como configurar o repositório em seu sistema Linux, para que você possa instalar/atualizar o software Linux da Microsoft usando as ferramentas de gerenciamento de pacotes padrão de sua distribuição.
 
 O repositório de software do Linux da Microsoft é composto por vários repositórios:
@@ -27,93 +28,70 @@ O repositório de software do Linux da Microsoft é composto por vários reposit
 
  - MSSQL-Server-esses repositórios contêm pacotes para Microsoft SQL Server em Linux-consulte também: [SQL Server em Linux](https://www.microsoft.com/sql-server/sql-server-vnext-including-Linux).
 
-> [!Note]
-> Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados nos pacotes. Leia os termos de licença antes de usar o pacote. A instalação e o uso do pacote constituem sua aceitação desses termos. Se você não concordar com os termos de licença, não use o pacote.
-
+> [!NOTE]
+> Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados nos pacotes. Leia os termos de licença antes de utilizar o pacote. A instalação e o uso do pacote constitui a aceitação desses termos. Se você não concorda com os termos de licença, não utilize o pacote.
 
 ## <a name="configuring-the-repositories"></a>Configurando os repositórios
+
 Os repositórios podem ser configurados automaticamente instalando o pacote do Linux que se aplica à sua distribuição e versão do Linux. O pacote instalará a configuração do repositório junto com a chave pública GPG usada por ferramentas como apt/yum/zypper para validar os pacotes assinados e/ou os metadados do repositório.
 
 ### <a name="enterprise-linux-rhel-and-variants"></a>Linux corporativo (RHEL e variantes)
 
- - Enterprise Linux 6 (EL6)
+- Enterprise Linux 6 (EL6)<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 
-        sudo rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
-
- - Enterprise Linux 7 (EL7)
-
-        sudo rpm -Uvh https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+- Enterprise Linux 7 (EL7)<p>sudo rpm-Uvhhttps://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
 
 
 ### <a name="ubuntu"></a>Ubuntu
 
- - Ubuntu 14, 4 (confiança)
+ - Ubuntu 14, 4 (confiança)<p>enlaçada https://packages.microsoft.com/keys/microsoft.asc | sudo apt-Key Add-sudo apt-Add-Repositoryhttps://packages.microsoft.com/ubuntu/14.04/prod<p>sudo apt-get update
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/14.04/prod
-        sudo apt-get update
+ - Ubuntu 16, 4 (Xenial)<p>enlaçada https://packages.microsoft.com/keys/microsoft.asc | sudo apt-Key Add-sudo apt-Add-Repositoryhttps://packages.microsoft.com/ubuntu/16.04/prod<p>sudo apt-get update
 
- - Ubuntu 16, 4 (Xenial)
+ - Ubuntu 18, 4 (Bionic)<p>enlaçada https://packages.microsoft.com/keys/microsoft.asc | sudo apt-Key Add-sudo apt-Add-Repositoryhttps://packages.microsoft.com/ubuntu/18.04/prod<p>sudo apt-get update
 
-        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/16.04/prod
-        sudo apt-get update
+ - Ubuntu 18,10 (raios cósmicos)<p>enlaçada https://packages.microsoft.com/keys/microsoft.asc | sudo apt-Key Add-sudo apt-Add-Repositoryhttps://packages.microsoft.com/ubuntu/18.10/prod<p>sudo apt-get update
 
- - Ubuntu 18, 4 (Bionic)
-
-         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
-        sudo apt-get update
-
- - Ubuntu 18,10 (raios cósmicos)
-
-         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
-        sudo apt-get update
-
- - Ubuntu 19, 4 (disco)
-
-         curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-        sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
-        sudo apt-get update
+ - Ubuntu 19, 4 (disco)<p>enlaçada https://packages.microsoft.com/keys/microsoft.asc | sudo apt-Key Add-sudo apt-Add-Repositoryhttps://packages.microsoft.com/ubuntu/19.04/prod<p>sudo apt-get update
 
 ### <a name="suse-linux-enterprise-12"></a>SUSE Linux Enterprise 12
 
-        sudo rpm -Uvh https://packages.microsoft.com/config/sles/12/packages-microsoft-prod.rpm
-
+sudo rpm-Uvhhttps://packages.microsoft.com/config/sles/12/packages-microsoft-prod.rpm
 
 ## <a name="manual-configuration"></a>Configuração manual
+
 Os arquivos de configuração do repositório estão disponíveis em [Packages.Microsoft.com/config](https://packages.microsoft.com/config/). O nome e o local desses arquivos podem ser localizados usando a seguinte convenção de nomenclatura de URI:
 
-        https://packages.microsoft.com/config/<Distribution>/<Version>/prod.(repo|list)
+https://packages.microsoft.com/config/<Distribution>/<Version>prod. (repositório | lista)
 
 **Chave de assinatura de pacote e repositório**
 
- - A chave pública do GPG da Microsoft pode ser baixada aqui: [https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
- - ID da chave pública: Microsoft (assinatura de liberação) <gpgsecurity@microsoft.com>
- - Impressão digital de chave pública: `BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
+- A chave pública do GPG da Microsoft pode ser baixada aqui:[https://packages.microsoft.com/keys/microsoft.asc](https://packages.microsoft.com/keys/microsoft.asc)
+- ID da chave pública: Microsoft (assinatura de liberação)<gpgsecurity@microsoft.com>
+- Impressão digital da chave pública:`BC52 8686 B50D 79E3 39D3 721C EB3E 94AD BE12 29CF`
 
-### <a name="examples"></a>Exemplos:
+### <a name="examples"></a>Exemplos
 
  - RHEL/CentOS 7
 
-        # Install repository configuration
-        curl https://packages.microsoft.com/config/rhel/7/prod.repo > ./microsoft-prod.repo
-        sudo cp ./microsoft-prod.repo /etc/yum.repos.d/
+```
+# Install repository configuration
+curl https://packages.microsoft.com/config/rhel/7/prod.repo > ./microsoft-prod.repo
+sudo cp ./microsoft-prod.repo /etc/yum.repos.d/
 
-        # Install Microsoft's GPG public key
-        curl https://packages.microsoft.com/keys/microsoft.asc > ./microsoft.asc
-        sudo rpm --import ./microsoft.asc
+# Install Microsoft's GPG public key
+curl https://packages.microsoft.com/keys/microsoft.asc > ./microsoft.asc
+sudo rpm --import ./microsoft.asc
+```
 
- - Ubuntu 16.04
+- Ubuntu 16.04
 
-        # Install repository configuration
-        curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
-        sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+```
+# Install repository configuration
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > ./microsoft-prod.list
+sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
 
-        # Install Microsoft GPG public key
-        curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-        sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
-
-
-
+# Install Microsoft GPG public key
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+```

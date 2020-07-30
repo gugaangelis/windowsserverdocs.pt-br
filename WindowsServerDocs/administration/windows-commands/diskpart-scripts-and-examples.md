@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64355bd452934909d0600fa791e7a4c2d2066b6f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ace5b081d9dd362bb1455f9992568f197c815fdf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958288"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409737"
 ---
 # <a name="diskpart-scripts-and-examples"></a>scripts e exemplos do DiskPart
 
@@ -24,28 +24,28 @@ Use `diskpart /s` para executar scripts que automatizam tarefas relacionadas a d
 
 Para criar um script do DiskPart, crie um arquivo de texto que contenha os comandos do DiskPart que você deseja executar, com um comando por linha e nenhuma linha vazia. Você pode iniciar uma linha com `rem` para transformar a linha em um comentário. Por exemplo, aqui está um script que apaga um disco e, em seguida, cria uma partição de 300 MB para o ambiente de recuperação do Windows:
 
-    ```
-    select disk 0
-    clean
-    convert gpt
-    create partition primary size=300
-    format quick fs=ntfs label=Windows RE tools
-    assign letter=T
-    ```
+```
+select disk 0
+clean
+convert gpt
+create partition primary size=300
+format quick fs=ntfs label=Windows RE tools
+assign letter=T
+```
 
 ## <a name="examples"></a>Exemplos
 
 - Para executar um script do DiskPart, no prompt de comando, digite o seguinte comando, em que *scriptname* é o nome do arquivo de texto que contém o script:
 
-    ```
-    diskpart /s scriptname.txt
-    ```
+```
+diskpart /s scriptname.txt
+```
 
 - Para redirecionar a saída de script do Diskpart para um arquivo, digite o seguinte comando, em que *logfile* é o nome do arquivo de texto em que o DiskPart grava sua saída:
 
-    ```
-    diskpart /s scriptname.txt > logfile.txt
-    ```
+```
+diskpart /s scriptname.txt > logfile.txt
+```
 
 ### <a name="remarks"></a>Comentários
 

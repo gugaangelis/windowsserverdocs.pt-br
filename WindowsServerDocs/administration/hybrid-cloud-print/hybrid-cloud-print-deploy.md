@@ -9,12 +9,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: fe1f2b11921950ea725cb996ce58e75033aaae4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cee8a279be2030d4b911a0a7f456c2b855ca15e
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470201"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409086"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implantar o Windows Server Hybrid Cloud Print
 
@@ -235,7 +235,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
     - Se você registrar seu domínio com um provedor de terceiros, será necessário configurar os pontos de extremidade do IIS com o certificado SSL. Consulte este [guia](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/) para obter detalhes.
 
 8. Instale o pacote SQLite.
-   - Abra um prompt de comando com privilégios elevados do PowerShell.
+   - Abra um prompt elevado do PowerShell.
    - Execute o comando a seguir para baixar os pacotes NuGet System. Data. SQLite.
 
         `Register-PackageSource -Name nuget.org -ProviderName NuGet -Location https://www.nuget.org/api/v2/ -Trusted -Force`
@@ -346,7 +346,8 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
     - CloudPrintResourceId = o URI de ID de aplicativo do aplicativo de impressão em nuvem empresarial. Você pode encontrá-lo em Azure Active Directory > Registros de aplicativo > selecione o aplicativo de impressão em nuvem empresarial > visão geral. **Ele deve ser exatamente o mesmo com o à direita/**.
     - DiscoveryMaxPrinterLimit = \<a positive integer\> .
 
-> Observação: se você estiver usando o serviço Microsoft Intune, poderá encontrar essas configurações na categoria impressora de nuvem.
+> [!NOTE]
+> Se você estiver usando o serviço Microsoft Intune, poderá encontrar essas configurações na categoria impressora de nuvem.
 
 |Nome de exibição do Intune                     |Política                         |
 |----------------------------------------|-------------------------------|
@@ -357,21 +358,22 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 |Máximo de impressoras a serem consultadas (somente dispositivos móveis)  |DiscoveryMaxPrinterLimit       |
 |URI de recurso do serviço de descoberta de impressora  |MopriaDiscoveryResourceId      |
 
-> Observação: se o grupo de políticas de impressão em nuvem não estiver disponível, mas o provedor de MDM oferecer suporte a configurações de OMA-URI, você poderá definir as mesmas políticas.  Consulte [isso](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority) para obter informações adicionais.
+> [!NOTE]
+> Se o grupo de política de impressão em nuvem não estiver disponível, mas o provedor de MDM oferecer suporte a configurações de OMA-URI, você poderá definir as mesmas políticas.  Consulte [isso](https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority) para obter informações adicionais.
 
-    - Valores para OMA-URI
-        - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-            - Valor =https://login.microsoftonline.com/<Azure AD Directory ID>
-        - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-            - Valor = <a ID do aplicativo do aplicativo nativo do Azure AD>
-        - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
-            - Valor = URL externa do aplicativo do serviço de descoberta do Mopria (deve ser exatamente o mesmo, mas sem a direita/)
-        - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
-            - Valor = o URI da ID do aplicativo do aplicativo do serviço de descoberta do Mopria
-        - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
-            - Valor = o URI de ID de aplicativo do aplicativo de impressão em nuvem empresarial
-        - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
-            - Valor = um inteiro positivo
+- Valores para OMA-URI
+  - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
+    - Valor =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+  - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
+    - Valor =`<Azure AD Native App's Application ID>`
+  - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
+    - Valor = URL externa do aplicativo do serviço de descoberta do Mopria (deve ser exatamente o mesmo, mas sem a direita `/` )
+  - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
+    - Valor = o URI da ID do aplicativo do aplicativo do serviço de descoberta do Mopria
+  - CloudPrintResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId
+    - Valor = o URI de ID de aplicativo do aplicativo de impressão em nuvem empresarial
+  - DiscoveryMaxPrinterLimit =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit
+    - Valor = um inteiro positivo
 
 ### <a name="step-7---publish-the-shared-printer"></a>Etapa 7 – publicar a impressora compartilhada
 
@@ -381,7 +383,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 4. Salve as alterações e feche a janela Propriedades da impressora.
 5. Prepare uma atualização do criador de outono do Windows 10 ou uma máquina posterior. Ingresse o computador no Azure AD e faça logon como um usuário que está sincronizado com o Active Directory local e tenha recebido a permissão adequada para o arquivo MopriaDeviceDb. DB.
 6. No computador com Windows 10, abra um prompt de comando elevado do Windows PowerShell.
-    - Execute os seguintes comandos:
+    - Execute os seguintes comandos.
         - `find-module -Name PublishCloudPrinter`para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
         - `install-module -Name PublishCloudPrinter`
 

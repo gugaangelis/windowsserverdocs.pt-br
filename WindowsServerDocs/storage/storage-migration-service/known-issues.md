@@ -4,16 +4,16 @@ description: Problemas conhecidos e suporte de solução de problemas para o ser
 author: nedpyle
 ms.author: nedpyle
 manager: tiaascs
-ms.date: 06/02/2020
+ms.date: 07/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d7c76413fbc64ce200ca4c442a30e6f804927f68
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9050d3316ed86538a278dbdc9f2bd51e3dfca377
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182052"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409877"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -549,10 +549,43 @@ Examinar os logs ainda mais mostra que a conta de migração e o servidor que es
     [d:\os\src\base\dms\service\StorageMigrationService.IInventory.cs::CreateJob::133]
     ```
     
-    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66]
-06/25/2020-10:20:45.368 [info] computador ' fileserver75.corp.contoso.com ': versão do sistema operacional 
+    GetOsVersion(fileserver75.**corp**.contoso.com)    [d:\os\src\base\dms\proxy\common\proxycommon\CimSessionHelper.cs::GetOsVersion::66] 06/25/2020-10:20:45.368 [Info] Computer 'fileserver75.corp.contoso.com': OS version 
 
 Esse problema é causado por um defeito de código no serviço de migração de armazenamento. Para contornar esse problema, use as credenciais de migração do mesmo domínio ao qual o computador de origem e de destino pertence. Por exemplo, se o computador de origem e de destino pertencer ao domínio "corp.contoso.com" na floresta "contoso.com", use "corp\myaccount" para executar a migração, não uma credencial "contoso\myaccount".
+
+## <a name="inventory-fails-with-element-not-found"></a>O inventário falha com "elemento não encontrado" 
+
+Consida o seguinte cenário:
+
+Você tem um servidor de origem com um nome de host DNS e Active Directory nome com mais de 15 caracteres Unicode, como "iamaverylongcomputernamefromned". Por design, o Windows não permitia que você definisse o nome NetBIOS herdado para ser definido como longo e avisado quando o servidor era nomeado que o nome NetBIOS seria truncado para 15 caracteres largos Unicode (exemplo: "iamaverylongcom"). Ao tentar inventariar este computador, você recebe no centro de administração do Windows e no log de eventos: 
+
+```DOS
+    "Element not found"
+    
+    ========================
+
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          4/10/2020 10:49:19 AM
+    Event ID:      2509
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-6PJAG3DHPLF.corp.contoso.com
+    Description:
+    Couldn't inventory a computer.
+
+    Job: longnametest
+    Computer: iamaverylongcomputernamefromned.corp.contoso.com
+    State: Failed
+    Error: 1168
+    Error Message: 
+
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
+```
+
+Esse problema é causado por um defeito de código no serviço de migração de armazenamento. Atualmente, a única solução alternativa é renomear o computador para ter o mesmo nome que o nome NetBIOS e, em seguida, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para adicionar um nome de computador alternativo que contenha o nome mais longo que estava em uso antes de iniciar o inventário. O serviço de migração de armazenamento dá suporte à migração de nomes de computador alternativos.   
 
 ## <a name="see-also"></a>Confira também
 

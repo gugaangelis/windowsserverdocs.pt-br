@@ -1,21 +1,20 @@
 ---
 title: Como usar o endereçamento TCP/IP automático sem um servidor DHCP
 description: Apresente como usar o endereçamento TCP/IP automático sem um servidor DHCP.
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: robsmi
-ms.openlocfilehash: 8fbde77381141b76959f70e824eac22ee2121fa3
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: fcd85c29975709053009ec4a2684df88b4bafd69
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150184"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409797"
 ---
 # <a name="how-to-use-automatic-tcpip-addressing-without-a-dhcp-server"></a>Como usar o endereçamento TCP/IP automático sem um servidor DHCP
 
@@ -23,7 +22,7 @@ Este artigo descreve como usar o endereçamento do protocolo TCP/IP (protocolo d
 
 ## <a name="more-information"></a>Mais informações
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.
 
 Um computador baseado no Windows configurado para usar o DHCP pode automaticamente atribuir a si próprio um endereço IP (Internet Protocol) se um servidor DHCP não estiver disponível. Por exemplo, isso pode ocorrer em uma rede sem um servidor DHCP, ou em uma rede se um servidor DHCP estiver temporariamente inativo para manutenção.
@@ -38,8 +37,7 @@ Talvez você queira desabilitá-lo em qualquer um dos seguintes casos:
 
 - Sua rede está conectada à Internet sem um servidor NAT ou de proxy.
 
-A menos que você tenha desabilitado mensagens relacionadas ao DHCP, as mensagens DHCP fornecem notificações quando você altera entre o endereçamento DHCP e o endereçamento IP privado automático. Se o sistema de mensagens DHCP for desabilitado acidentalmente, você poderá ativar as mensagens DHCP novamente alterando o valor do valor PopupFlag na seguinte chave do registro de 00 para 01:  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP` 
+A menos que você tenha desabilitado mensagens relacionadas ao DHCP, as mensagens DHCP fornecem notificações quando você altera entre o endereçamento DHCP e o endereçamento IP privado automático. Se o sistema de mensagens DHCP for desabilitado acidentalmente, você poderá ativar as mensagens DHCP novamente alterando o valor do valor PopupFlag na seguinte chave do registro de 00 para 01:`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
 Observe que você deve reiniciar o computador para que a alteração entre em vigor. Você também pode determinar se o computador está usando o APIPA usando a ferramenta winipcfg no Windows Millennium Edition, no Windows 98 ou no Windows 98 Second Edition:
 
@@ -51,8 +49,7 @@ Você pode desabilitar o endereçamento IP privado automático usando qualquer u
 
 Você pode configurar as informações de TCP/IP manualmente, o que desabilita completamente o DHCP. Você pode desabilitar o endereçamento IP privado automático (mas não o DHCP) editando o registro. Você pode fazer isso adicionando a entrada de Registro DWORD "IPAutoconfigurationEnabled" com um valor de 0x0 para a seguinte chave do registro para Windows Millennium Edition, Windows98 ou Windows 98 Second Edition:`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\VxD\DHCP`
 
-Para o Windows 2000, Windows XP e Windows Server 2003, o APIPA pode ser desabilitado adicionando a entrada de Registro DWORD "IPAutoconfigurationEnabled" com um valor de 0x0 para a seguinte chave do registro:  
-`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`  
+Para o Windows 2000, Windows XP e Windows Server 2003, o APIPA pode ser desabilitado adicionando a entrada de Registro DWORD "IPAutoconfigurationEnabled" com um valor de 0x0 para a seguinte chave do registro:`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\<Adapter GUID>`
 > [!NOTE]
 > A subchave do **GUID do adaptador** é um GUID (identificador global exclusivo) para o adaptador de LAN do computador.
 

@@ -1,5 +1,5 @@
 ---
-title: Habilitar
+title: Usando o comando Enable
 description: Artigo de referência para habilitar, que habilita todos os serviços para os serviços de implantação do Windows.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8808849e58c8f2a359b9f8d25c1ece2bb82d2dfe
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 8c6edee30de94261ff528b308635b3bae7760d3d
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936836"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409777"
 ---
-# <a name="enable"></a>Habilitar
+# <a name="using-the-enable-command"></a>Usando o comando Enable
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 

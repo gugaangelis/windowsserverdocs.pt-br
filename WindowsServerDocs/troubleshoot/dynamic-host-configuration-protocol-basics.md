@@ -1,21 +1,20 @@
 ---
 title: Noções básicas do DHCP (protocolo de configuração de host dinâmico)
 description: ''
-ms.date: 5/26/2020
 ms.prod: windows-server
-ms.service: na
 manager: dcscontentpm
 ms.technology: server-general
-ms.topic: article
+ms.date: 5/26/2020
+ms.topic: troubleshoot
 author: Deland-Han
 ms.author: delhan
 ms.reviewer: ''
-ms.openlocfilehash: c7e4f385472c9078c49fcfd7aeab28b1b70c5a13
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 5a3247fad961f4b2d1cf6e354c29706708c8e330
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150204"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409807"
 ---
 # <a name="dhcp-dynamic-host-configuration-protocol-basics"></a>Noções básicas do DHCP (protocolo de configuração de host dinâmico)
 
@@ -43,7 +42,7 @@ Os seguintes produtos da Microsoft fornecem a funcionalidade de cliente DHCP:
 
 - Microsoft TCP/IP-32 para Windows para Workgroups versões 3,11, 3.11 a e 3.11 b
 
-Diferentes clientes DHCP dão suporte a diferentes opções que podem receber do servidor DHCP. 
+Diferentes clientes DHCP dão suporte a diferentes opções que podem receber do servidor DHCP.
 
 Os seguintes sistemas operacionais de servidor da Microsoft fornecem a funcionalidade de servidor DHCP:
 

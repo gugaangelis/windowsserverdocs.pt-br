@@ -1,5 +1,5 @@
 ---
-title: break
+title: interrupção (volume da cópia de sombra)
 description: Artigo de referência para o comando break, que Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,14 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f3974f183215a42920f7406a62ab335eb101f56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6eb97ff1c539d8c372b4ae0837c41479c5a0f214
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924898"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409747"
 ---
-# <a name="break"></a>break
+# <a name="break-shadow-copy-volume"></a>interrupção (volume da cópia de sombra)
 
 Desassocia um volume de cópia de sombra do VSS e o torna acessível como um volume regular. O volume pode então ser acessado usando uma letra da unidade (se atribuída) ou o nome do volume. Se usado sem parâmetros, **Break** exibe a ajuda no prompt de comando.
 

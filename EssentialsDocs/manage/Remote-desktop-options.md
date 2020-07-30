@@ -7,29 +7,26 @@ ms.assetid: 51076946-ea9b-4ac7-9a6e-d6023816b97d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8d1235e523bf055d1d3ec6aa78780aa8e4f2f44e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7de65cdbed7fc1995f6729a49e9398ce948a63c6
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85470391"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409526"
 ---
 # <a name="remote-desktop-options"></a>Opções de área de trabalho remota
-
 
 ## <a name="connection-speed"></a>Velocidade de conexão
  A velocidade da conexão com um computador da rede usando o Acesso via Web remoto determina as opções de área de trabalho que estão disponíveis para você no computador host. A tabela a seguir informa quais opções de área de trabalho estão disponíveis para velocidade que estão se conectando ao computador remoto por meio do Acesso via Web remoto.
 
-||||||
-|-|-|-|-|-|
-||Modem lento (28,8 Kbps)|Modem rápido (56 Kbps) (padrão)|Banda larga (128 Kbps - 1,5 Mbps)|Rede de área local (1,5 Mbps ou superior)|
-|Plano de fundo da área de trabalho|No|Não|Não|Sim|
-|Suavização de fonte|No|Não|Não|Sim|
-|Composição de área de trabalho|No|Não|Sim|Yes|
-|Mostrar conteúdo da janela ao arrastar|No|Não|Sim|Yes|
-|Animação de menus e janelas|No|Não|Sim|Yes|
-|Temas|Não|Sim|Sim|Yes|
-|Bitmaps em cache|Sim|Sim|Sim|Yes|
+| Opção de área de trabalho | Modem lento (28,8 Kbps) | Modem rápido (56 Kbps) (padrão) | Banda larga (128 Kbps - 1,5 Mbps) | Rede de área local (1,5 Mbps ou superior) |
+|--|--|--|--|--|
+| Suavização de fonte | Não | Não | Não | Sim |
+| Composição de área de trabalho | Não | Não | Sim | Sim |
+| Mostrar conteúdo da janela ao arrastar | Não | Não | Sim | Sim |
+| Animação de menus e janelas | Não | Não | Sim | Sim |
+| Temas | Não | Sim | Sim | Sim |
+| Bitmaps em cache | Sim | Sim | Sim | Sim |
 
 ## <a name="screen-size"></a>Tamanho da tela
  Essa opção determina o tamanho da janela que é aberto no computador local quando você se conecta a um computador remoto por meio do site de Acesso via Web remoto. O tamanho da janela é expresso em pixels.

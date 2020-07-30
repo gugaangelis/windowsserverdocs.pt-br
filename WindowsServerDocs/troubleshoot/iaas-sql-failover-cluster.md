@@ -6,12 +6,12 @@ ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0e2f0309049f0271a223c2a23012eb2efa8d843
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 86a7023f6480e68f917cb8cdd9d0c69c417d3145
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150164"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409787"
 ---
 # <a name="iaas-with-sql-alwayson---tuning-failover-cluster-network-thresholds"></a>IaaS com SQL AlwaysOn - Ajustando Limites de Rede de Cluster de Failover
 
@@ -21,7 +21,7 @@ Este artigo apresenta soluções para ajustar o limite de redes de cluster de fa
 
 Ao executar os nós de cluster de failover do Windows no IaaS com SQL Server AlwaysOn, é recomendável alterar a configuração de cluster para um estado de monitoramento mais relaxado. As configurações de cluster prontas são restritivas e podem causar interrupções desnecessárias. As configurações padrão são projetadas para redes locais altamente ajustadas e não levam em conta a possibilidade de latência induzida causada por um ambiente multilocatário, como o Windows Azure (IaaS).
 
-O clustering de failover do Windows Server está monitorando constantemente as conexões de rede e a integridade dos nós em um cluster do Windows.  Se um nó não puder ser acessado pela rede, uma ação de recuperação será executada para recuperar e colocar os aplicativos e os serviços online em outro nó no cluster. A latência na comunicação entre os nós de cluster pode levar ao seguinte erro:  
+O clustering de failover do Windows Server está monitorando constantemente as conexões de rede e a integridade dos nós em um cluster do Windows.  Se um nó não puder ser acessado pela rede, uma ação de recuperação será executada para recuperar e colocar os aplicativos e os serviços online em outro nó no cluster. A latência na comunicação entre os nós de cluster pode levar ao seguinte erro:
 
 > Erro 1135 (log de eventos do sistema)
 
@@ -91,17 +91,16 @@ C:\Windows\system32> get-cluster | fl *subnet*
 
 Valores padrão, mínimo, máximo e recomendado para cada sistema operacional de suporte
 
-|   |Sistema operacional|Mín|Max|Padrão|Recomendado|
-|---|---|---|---|---|---|
-|CrossSubnetThreshold|2008 R2|3|20|5|20|
-|Limite de CrossSubnet|2012|3|120|5|20|
-|Limite de CrossSubnet|2012 R2|3|120|5|20|
-|Limite de CrossSubnet|2016|3|120|20|20|
-|Limite de SameSubnet|2008 R2|3|10|5|10|
-|Limite de SameSubnet|2012|3|120|5|10
-|Limite de SameSubnet|2012 R2|3|120|5|10|
-|SameSubnetThreshold|2016|3|120|10|10|
-|||||||
+| Descrição | Sistema operacional | Mín | Max | Padrão | Recomendadas |
+|--|--|--|--|--|--|
+| CrossSubnetThreshold | 2008 R2 | 3 | 20 | 5 | 20 |
+| Limite de CrossSubnet | 2012 | 3 | 120 | 5 | 20 |
+| Limite de CrossSubnet | 2012 R2 | 3 | 120 | 5 | 20 |
+| Limite de CrossSubnet | 2016 | 3 | 120 | 20 | 20 |
+| Limite de SameSubnet | 2008 R2 | 3 | 10 | 5 | 10 |
+| Limite de SameSubnet | 2012 | 3 | 120 | 5 | 10 |
+| Limite de SameSubnet | 2012 R2 | 3 | 120 | 5 | 10 |
+| SameSubnetThreshold | 2016 | 3 | 120 | 10 | 10 |
 
 Os valores para limite refletem as recomendações atuais referentes ao escopo da implantação, conforme descrito no seguinte artigo:
 
@@ -141,4 +140,4 @@ O **limite** define o número de pulsações que são perdidas antes que o clust
 
 Para obter mais informações sobre como ajustar as definições de configuração de rede do cluster do Windows, consulte [ajustando limites de rede de cluster de failover](https://techcommunity.microsoft.com/t5/failover-clustering/tuning-failover-cluster-network-thresholds/ba-p/371834).
 
-Para obter informações sobre como usar cluster. exe para ajustar as definições de configuração de rede do cluster do Windows, consulte [como configurar redes de cluster para um cluster de failover](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN).
+Para obter informações sobre como usar cluster.exe para ajustar as definições de configuração de rede do cluster do Windows, consulte [como configurar redes de cluster para um cluster de failover](/previous-versions/office/exchange-server-2007/bb690953(v=exchg.80)?redirectedfrom=MSDN).

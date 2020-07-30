@@ -5,20 +5,20 @@ author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
 ms.prod: windows-server
-ms.technology: storage-file-systems
+ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: c84aaed5b34c535221247dcdd6ab0a5462fd4aad
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931106"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409717"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
->Aplica-se a: Windows Server 2019, Windows 10
+> Aplica-se a: Windows Server 2019, Windows 10
 
-ReFSUtil é uma ferramenta incluída no Windows e no Windows Server que tenta diagnosticar volumes ReFS altamente danificados, identificar arquivos restantes e copiar esses arquivos para outro volume. Isso é fornecido no Windows 10 na `%SystemRoot%\Windows\System32` pasta ou no Windows Server na `%SystemRoot%\\System32` pasta.
+ReFSUtil é uma ferramenta incluída no Windows e no Windows Server que tenta diagnosticar volumes ReFS altamente danificados, identificar arquivos restantes e copiar esses arquivos para outro volume. Isso é fornecido no Windows 10 na `%SystemRoot%\Windows\System32` pasta ou no Windows Server na `%SystemRoot%\System32` pasta.
 
 O ReFS Salvage é a função principal de ReFSUtil e é útil para recuperar dados de volumes que são exibidos como BRUTOs no gerenciamento de disco. O ReFS Salvage tem duas fases: fase de verificação e uma fase de cópia. No modo automático, a fase de verificação e a fase de cópia serão executadas em sequência. No modo manual, cada fase pode ser executada separadamente. O progresso e os logs são salvos em um diretório de trabalho para permitir que as fases sejam executadas separadamente, bem como a fase de verificação para ser pausada e retomada. Você não precisará usar a ferramenta ReFSutil, a menos que o volume seja bruto. Se for somente leitura, os dados ainda estarão acessíveis.
 
@@ -31,7 +31,7 @@ O ReFS Salvage é a função principal de ReFSUtil e é útil para recuperar dad
 | `<target directory>` | Especifica o local onde os arquivos identificados são copiados. Ele **não** deve estar localizado no `<source volume>` . |
 | \-m | Recupera todos os arquivos possíveis, incluindo aqueles excluídos.<p>**AVISO:** Esse parâmetro não apenas faz com que o processo demore mais para ser executado, mas também pode levar a resultados inesperados. |
 | \-l | Especifica o uso do modo detalhado. |
-| \-w.x.y. | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para o volume são, então, inválidos. Por exemplo, `refsutil salvage -QA R: N:\\WORKING N:\\DATA -x`. |
+| \-x | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para o volume são, então, inválidos. Por exemplo, `refsutil salvage -QA R: N:\WORKING N:\DATA -x`. |
 
 ## <a name="usage-and-available-options"></a>Opções de uso e disponíveis
 

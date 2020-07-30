@@ -7,12 +7,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 276e39cc3e17ce74f7fee43c512cc726ff631a5a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 341a7dd217045150e1f637d23378e49a86bb5fbf
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179562"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409476"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Utilizar o acesso remoto via Web no Windows Server Essentials
 
@@ -23,7 +23,6 @@ ms.locfileid: "87179562"
   O Acesso via Web remoto  ajuda você a permanecer conectado à sua rede do Windows Server Essentials quando estiver ausente. Ao fazer logon no Acesso via Web remoto, você pode se conectar aos computadores na rede do Windows Server Essentials, abrir o painel para gerenciar sua rede do Windows Server Essentials e acessar todas as pastas compartilhadas e arquivos de mídia no servidor.
 
  Este tópico inclui as seções a seguir:
-
 
 -   [Conectar-se ao Acesso via Web Remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)
 
@@ -128,7 +127,7 @@ ms.locfileid: "87179562"
 
 #### <a name="upload-files"></a>Carregar arquivos
 
-###### <a name="to-upload-files"></a>Carregar arquivos
+##### <a name="to-upload-files"></a>Carregar arquivos
 
 1. No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
 
@@ -149,7 +148,7 @@ ms.locfileid: "87179562"
 > [!NOTE]
 >  Upload de vários arquivos tem suporte nativo em navegadores da Web compatíveis com HTML5. Essa ferramenta só é necessária quando o navegador da Web não oferece suporte a HTML5.
 
-###### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>Para carregar arquivos usando a ferramenta de carregamento fácil de arquivo
+##### <a name="to-upload-files-using-the-easy-file-upload-tool"></a>Para carregar arquivos usando a ferramenta de carregamento fácil de arquivo
 
 1.  No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
 
@@ -167,7 +166,7 @@ ms.locfileid: "87179562"
 
 #### <a name="download-files-or-folders"></a>Baixe arquivos ou pastas
 
-###### <a name="to-download-a-single-file"></a>Para baixar um único arquivo
+##### <a name="to-download-a-single-file"></a>Para baixar um único arquivo
 
 1. No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
 
@@ -203,7 +202,7 @@ ms.locfileid: "87179562"
 
   Antes de inicia o download, o arquivo exe ou zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.
 
-###### <a name="to-download-multiple-files-or-folders"></a>Para baixar vários arquivos ou pastas
+##### <a name="to-download-multiple-files-or-folders"></a>Para baixar vários arquivos ou pastas
 
 1.  No acesso remoto via Web , clique na guia **pastas compartilhadas** e, em seguida, clique no link da pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
 
@@ -224,13 +223,13 @@ ms.locfileid: "87179562"
 
  Se você selecionar vários arquivos ou pastas para baixar, você poderá receber um arquivo executável compactado auto-extraível (.exe) ou um arquivo compactado (. zip).
 
-###### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>Para recuperar um arquivo do arquivo compactado (.exe)
+##### <a name="to-retrieve-a-file-from-the-compressed-exe-file"></a>Para recuperar um arquivo do arquivo compactado (.exe)
 
 1.  No computador, clique duas vezes no arquivo compactado para abri-lo.
 
 2.  Siga as instruções para extrair os arquivos para uma pasta no computador.
 
-###### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>Para recuperar um arquivo do arquivo compactado (. zip)
+##### <a name="to-retrieve-a-file-from-the-compressed-zip-file"></a>Para recuperar um arquivo do arquivo compactado (. zip)
 
 1.  No computador, clique duas vezes no arquivo compactado para abri-lo.
 
@@ -243,9 +242,9 @@ ms.locfileid: "87179562"
  Você pode usar o acesso remoto via Web para criar novas pastas em uma pasta compartilhada existente para renomear os arquivos e pastas, mover e copiar arquivos e pastas e excluir arquivos e pastas no servidor.
 
 > [!NOTE]
-<<<<<<< HEAD para adicionar novas pastas compartilhadas em um servidor que executa o Windows Server Essentials, você deve usar o painel. Para se conectar ao console do servidor de acesso remoto via Web, em **computadores**, clique no nome do servidor, clique em **conectar**e, em seguida, siga as instruções para fazer logon no servidor. Para obter informações sobre como criar pastas compartilhadas, veja [adicionar ou mover uma pasta no servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
+> Para adicionar novas pastas compartilhadas em um servidor que esteja executando o Windows Server Essentials, você deve usar o Painel geral. Para se conectar ao console do servidor de acesso remoto via Web, em **computadores**, clique no nome do servidor, clique em **conectar**e, em seguida, siga as instruções para fazer logon no servidor. Para obter informações sobre como criar pastas compartilhadas, veja [adicionar ou mover uma pasta no servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
 
-##### <a name="to-create-a-new-folder"></a>Para criar uma nova pasta
+#### <a name="to-create-a-new-folder"></a>Para criar uma nova pasta
 
 1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
 
@@ -261,7 +260,7 @@ ms.locfileid: "87179562"
 
 3.  Digite um novo nome na caixa de texto e, em seguida, clique em **OK**.
 
-##### <a name="to-move-files-or-folders"></a>Para mover arquivos ou pastas
+#### <a name="to-move-files-or-folders"></a>Para mover arquivos ou pastas
 
 1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
 
@@ -355,108 +354,3 @@ ms.locfileid: "87179562"
 
 -   [Utilizar o Windows Server Essentials](../use/Use-Windows-Server-Essentials.md)
 
-=======
->  Para adicionar novas pastas compartilhadas em um servidor que esteja executando o Windows Server Essentials, você deve usar o Painel geral. Para se conectar ao console do servidor de acesso remoto via Web, em **computadores**, clique no nome do servidor, clique em **conectar**e, em seguida, siga as instruções para fazer logon no servidor. Para obter informações sobre como criar pastas compartilhadas, veja [adicionar ou mover uma pasta no servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
-
-##### <a name="to-create-a-new-folder"></a>Para criar uma nova pasta
-
-1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
-
-2.  Na barra de tarefas, clique em **nova pasta**.
-
-3.  Digite um nome para a pasta e, em seguida, clique em **OK**.
-
-##### <a name="to-rename-a-file-or-folder"></a>Renomear um arquivo ou pasta
-
-1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
-
-2.  Com o botão direito no arquivo ou pasta que você deseja renomear e, em seguida, clique em **Renomear**.
-
-3.  Digite um novo nome na caixa de texto e, em seguida, clique em **OK**.
-
-##### <a name="to-move-files-or-folders"></a>Para mover arquivos ou pastas
-
-1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
-
-2.  Marque a caixa de seleção de arquivos ou pastas que você deseja mover, clique em um dos arquivos selecionados ou pastas e, em seguida, clique em **Recortar**.
-
-3.  Clique na pasta que você deseja mover os arquivos ou pastas e, em seguida, clique em **colar**.
-
-##### <a name="to-delete-a-file-or-folder"></a>Para excluir um arquivo ou pasta
-
-1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
-
-2.  Marque a caixa de seleção de arquivos ou pastas que você deseja excluir, clique em um dos arquivos selecionados ou pastas e, em seguida, clique em **excluir**.
-
-3.  Para confirmar que você deseja excluir os arquivos e pastas selecionados, clique em **Sim**.
-
-##### <a name="to-copy-files-or-folders"></a>Para copiar os arquivos ou pastas
-
-1.  No Acesso Remoto via Web, clique na guia **pastas compartilhadas** e, em seguida, clique no link para a pasta compartilhada. Uma lista de arquivos e pastas da pasta compartilhada é exibida.
-
-2.  Marque a caixa de seleção de arquivos ou pastas que deseja copiar, clique em um dos arquivos selecionados ou pastas e, em seguida, clique em **cópia**.
-
-3.  Clique na pasta que você deseja copiar os arquivos ou pastas e, em seguida, clique em **colar**.
-
-##  <a name="connect-from-a-mobile-device"></a><a name="BKMK_ConnectMobile"></a>Conectar-se de um dispositivo móvel
-
-
--   [Usar o Acesso Remoto via Web de um dispositivo móvel](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)
-
--   [Compatível com navegadores Web para dispositivos móveis](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)
-
-
-###  <a name="use-remote-web-access-from-a-mobile-device"></a><a name="BKMK_8"></a>Usar o Acesso via Web remoto de um dispositivo móvel
- Você pode fazer logon no Acesso via Web Remoto de seu smartphone para exibir os arquivos e pastas nas pastas compartilhadas no servidor.
-
-> [!NOTE]
->  Você também pode baixar e usar o aplicativo My Server para Windows Server Essentials do [Windows Phone Marketplace](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a) para acessar seus arquivos de mídia e pastas compartilhados que são armazenados no servidor.
-
-##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para fazer logon no Acesso via Web Remoto de um dispositivo móvel
-
-1.  Abra um navegador da Web e digite **https://** _<\> YourDomainName_**/Remote** na barra de endereços.  Certifique-se de incluir os s em https.
-
-2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso Remoto via Web .
-
-##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Alternar para a versão da área de trabalho do acesso via Web Remoto
-
-1.  Abra um navegador da Web e digite **https://** _<\> YourDomainName_**/Remote** na barra de endereços.  Certifique-se de incluir os s em https.
-
-2.  Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto, clique em **Exibir versão da área de trabalho**e clique na seta. Você está conectado à versão da área de trabalho do acesso remoto via Web .
-
-##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para voltar para a versão móvel do acesso via Web Remoto
-
-1. Dê logoff.
-
-2. Abra um navegador da Web e digite **https://** _<\> YourDomainName_**/Remote/m** na barra de endereços. Certifique-se de incluir os s em https.
-
-3. A versão móvel do Acesso via Web remoto é exibida. Na página logon Acesso via Web remoto, digite seu nome de usuário e senha nas caixas de texto e clique na seta. Você está conectado à versão móvel do Acesso via Web remoto.
-
-   Você pode procurar arquivos e pastas em pastas compartilhadas no servidor.
-
-###  <a name="supported-web-browsers-for-mobile-devices"></a><a name="BKMK_9"></a>Navegadores da Web com suporte para dispositivos móveis
- Os navegadores web compatíveis com dispositivos móveis incluem:
-
--   Internet Explorer Mobile 6.0 ou posterior
-
--   Safari
-
--   BlackBerry
-
--   Symbian 6.0 ou posterior
-
--   Android
-
--   Google Chrome
-
--   Firefox
-
-## <a name="see-also"></a>Confira também
-
--   [Gerenciar o Acesso via Web Remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)
-
--   [Trabalhar remotamente](Work-Remotely-in-Windows-Server-Essentials.md)
-
--   [Utilizar o Windows Server Essentials](Use-Windows-Server-Essentials.md)
-
->>>>>>> 97724df67237ac603cf9eb996732230bdb7c0b88
