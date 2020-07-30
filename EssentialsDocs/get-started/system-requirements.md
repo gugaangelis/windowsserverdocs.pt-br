@@ -2,18 +2,17 @@
 title: Requisitos do Sistema para o Windows Server Essentials
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/31/2013
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 0951a67d-492f-41ad-9ae5-8e4cd25e3041
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef68f4f34e7a543510dbde5dd0b3edbdf221aef9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 295022c45a82d18781df27604d47d58af14b4b2d
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471071"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181632"
 ---
 # <a name="system-requirements-for-windows-server-essentials"></a>Requisitos do Sistema para o Windows Server Essentials
 
@@ -39,7 +38,7 @@ ms.locfileid: "85471071"
 |Adaptador de rede|Adaptador Gigabit Ethernet (10/100/1000baseT PHY/MAC)|
 |Internet|Alguma funcionalidade pode requerer acesso à Internet (tarifas podem ser aplicadas) ou uma conta da Microsoft|
 |Sistemas operacionais cliente suportados|Windows 8.1, Windows 8, Windows 7, versões Macintosh OS X 10.5 a 10.8.<br /><br /> **Observação:** Alguns recursos exigem edições Professional ou superior.<br /><br /> 1 GB de espaço disponível no disco rígido (uma parte desse disco será liberada depois da instalação)|
-|Router|Um roteador ou firewall com suporte para IPv4 NAT ou Ipv6|
+|Roteador|Um roteador ou firewall com suporte para IPv4 NAT ou Ipv6|
 |Requisitos adicionais|Leitor de DVD-ROM|
 
  Os requisitos reais irão variar com base na configuração do seu sistema, nos aplicativos e nos recursos que você optou por instalar. O desempenho do processador depende não apenas da frequência do relógio, mas também do número de núcleos e do tamanho do cache do processador. Os requisitos de espaço de armazenamento para a partição do sistema são aproximados. Talvez seja exigido espaço de armazenamento disponível adicional se você estiver instalando em uma rede.

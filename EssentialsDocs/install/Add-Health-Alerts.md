@@ -2,51 +2,47 @@
 title: Adicionar Alertas de Integridade
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2540c4af032d35f5be71338513030c59cb18953d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a0a9cb5e5a89b7eb5c83c09d49b228f4773ba521
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817620"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181582"
 ---
 # <a name="add-health-alerts"></a>Adicionar Alertas de Integridade
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Um suplemento de integridade fornece definições para alertas, verificações de integridade e reparos de problemas na rede. Um suplemento de integridade consiste em arquivos xml que anotam códigos ou dados usados para avaliar informações de integridade de um recurso específico. Os suplementos de integridade são criados por desenvolvedores e instalados no servidor e nos computadores clientes pelo administrador.  
-  
- Consulte o [SDK do Windows Server Solutions](https://go.microsoft.com/fwlink/?LinkID=248648) para obter detalhes sobre a criação de um suplemento de integridade.  
-  
-## <a name="installing-health-add-in-files"></a>Instalando arquivos de suplemento de integridade  
- É necessário colocar uma cópia dos arquivos xml criados pelo desenvolvedor no local apropriado no servidor e nos computadores clientes.  
-  
-#### <a name="to-install-the-xml-files-on-the-server"></a>Para instalar os arquivos xml no servidor  
-  
-1. Na pasta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , crie uma nova pasta nomeada **MyHealthAddIn**. Você pode atribuir qualquer nome para esta pasta. Sugere-se que o nome da pasta seja o mesmo do recurso.  
-  
-2. Copie os arquivos Definition.xml e Definition.xml.config para a nova pasta.  
-  
-3. Se você criou arquivos binários para condições ou ações, também deverá copiá-los para **%ProgramFiles%\Windows Server\Bin**.  
-  
-   Os computadores clientes executam uma tarefa agendada a cada 6 horas que coloca os arquivos XML no local apropriado. É possível forçar a sincronização entre o computador cliente e o servidor executando manualmente a tarefa.  
-  
-#### <a name="to-install-the-xml-files-on-the-client-computer"></a>Para instalar os arquivos xml no computador cliente  
-  
-1.  Abra o Agendador de Tarefas.  
-  
-2.  Execute o **HealthDefintionUpdateTask** no Agendador de Tarefas.  
-  
+Um suplemento de integridade fornece definições para alertas, verificações de integridade e reparos de problemas na rede. Um suplemento de integridade consiste em arquivos xml que anotam códigos ou dados usados para avaliar informações de integridade de um recurso específico. Os suplementos de integridade são criados por desenvolvedores e instalados no servidor e nos computadores clientes pelo administrador.
+
+ Consulte o [SDK do Windows Server Solutions](https://go.microsoft.com/fwlink/?LinkID=248648) para obter detalhes sobre a criação de um suplemento de integridade.
+
+## <a name="installing-health-add-in-files"></a>Instalando arquivos de suplemento de integridade
+ É necessário colocar uma cópia dos arquivos xml criados pelo desenvolvedor no local apropriado no servidor e nos computadores clientes.
+
+#### <a name="to-install-the-xml-files-on-the-server"></a>Para instalar os arquivos xml no servidor
+
+1. Na pasta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , crie uma nova pasta nomeada **MyHealthAddIn**. Você pode dar a essa pasta qualquer nome. Sugere-se que o nome da pasta seja o mesmo do recurso.
+
+2. Copie os arquivos Definition.xml e Definition.xml.config para a nova pasta.
+
+3. Se você criou arquivos binários para condições ou ações, também deverá copiá-los para **%ProgramFiles%\Windows Server\Bin**.
+
+   Os computadores clientes executam uma tarefa agendada a cada 6 horas que coloca os arquivos XML no local apropriado. É possível forçar a sincronização entre o computador cliente e o servidor executando manualmente a tarefa.
+
+#### <a name="to-install-the-xml-files-on-the-client-computer"></a>Para instalar os arquivos xml no computador cliente
+
+1.  Abra o Agendador de Tarefas.
+
+2.  Execute o **HealthDefintionUpdateTask** no Agendador de Tarefas.
+
     > [!NOTE]
-    >  Essa tarefa não instala arquivos binários. É preciso copiar os arquivos binários manualmente para a pasta **%ProgramFiles%\Windows Server\Bin** no computador cliente.  
-  
-## <a name="see-also"></a>Consulte também  
- [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md)   
- [Personalizações adicionais](Additional-Customizations.md)   
- [Preparando a imagem para implantação](Preparing-the-Image-for-Deployment.md)   
- [Testar a experiência do usuário](Testing-the-Customer-Experience.md)
+    >  Essa tarefa não instala arquivos binários. É preciso copiar os arquivos binários manualmente para a pasta **%ProgramFiles%\Windows Server\Bin** no computador cliente.
+
+## <a name="see-also"></a>Consulte Também
+ [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md) [personalizações adicionais](Additional-Customizations.md) [preparando a imagem para](Preparing-the-Image-for-Deployment.md) [testar a implantação da experiência do cliente](Testing-the-Customer-Experience.md)

@@ -2,18 +2,17 @@
 title: Integração de rede virtual do Azure
 description: Descreve como usar o Windows Server Essentials
 ms.date: 10/03/2016
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d79530b2c4bfb71b23fa984731d624f30e9a3ef6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5ff685960c5690e1bdda47742d81ec44a38aeb8b
+ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80815209"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87181672"
 ---
 # <a name="azure-virtual-network-integration"></a>Integração de rede virtual do Azure
 
@@ -21,9 +20,9 @@ ms.locfileid: "80815209"
 
 À medida que as organizações passam para a computação em nuvem, raramente eles movem todos os seus recursos de 100% ao mesmo tempo, mas, em vez disso, assumem uma abordagem em que alguns recursos estão na nuvem e outros ainda estão no local. Essa abordagem híbrida torna mais fácil para as organizações mover alguns recursos de computação para a nuvem, mas também permite que eles aumentem sua infraestrutura de ti sem precisar adquirir novo hardware.
 
-Ao implementar essa abordagem híbrida para a computação, é necessária uma maneira tranqüila de que os recursos em ambos os locais se comuniquem entre si. A rede virtual do Azure é um serviço do Azure que permite que as organizações criem uma rede virtual privada de ponto a ponto (P2P) ou site a site (S2S) que faz com que os recursos em execução no Azure (como máquinas virtuais e armazenamento) pareçam ser na rede local para acesso contínuo a aplicativos e recursos.
+Ao implementar essa abordagem híbrida para a computação, é necessária uma maneira tranqüila de que os recursos em ambos os locais se comuniquem entre si. A rede virtual do Azure é um serviço do Azure que permite que as organizações criem uma rede virtual privada de ponto a ponto (P2P) ou site a site (S2S) que faz com que os recursos que estão em execução no Azure (como máquinas virtuais e armazenamento) pareçam estar na rede local para acesso contínuo de aplicativos e recursos.
 
-A configuração de uma rede virtual do Azure pode ser complexa. Com o Windows Server Essentials 2016, você pode configurar facilmente sua rede virtual do Azure por meio de um assistente simples que ajuda a escolher os padrões mais apropriados para seu ambiente de rede. Conforme mostrado na captura de tela abaixo, uma nova tarefa de integração de rede virtual do Azure foi adicionada à seção serviços de Microsoft Cloud do painel do Windows Essentials para introduzir a rede virtual do Azure, bem como fornecer um link rápido para iniciar a integração .
+A configuração de uma rede virtual do Azure pode ser complexa. Com o Windows Server Essentials 2016, você pode configurar facilmente sua rede virtual do Azure por meio de um assistente simples que ajuda a escolher os padrões mais apropriados para seu ambiente de rede. Conforme mostrado na captura de tela abaixo, uma nova tarefa de integração de rede virtual do Azure foi adicionada à seção serviços de Microsoft Cloud do painel do Windows Essentials para introduzir a rede virtual do Azure, bem como fornecer um link rápido para iniciar a integração.
 
 ![Uma captura de tela mostrando a guia introdução na home page do painel do Windows Server Essentials. Na guia introdução, a seção serviços foi selecionada e o painel indica em integração de serviços de Microsoft Cloud que a rede virtual do Azure está desabilitada no momento.](media/azure-virtual-network-1.PNG)
 
@@ -39,7 +38,7 @@ Depois de escolher a assinatura do Azure que você deseja usar para a rede virtu
 
 ![Uma captura de tela mostrando a página Configurar rede virtual do Azure do assistente de integração com a rede virtual do Azure.](media/azure-virtual-network-4.PNG)
 
-A última etapa do processo de integração é configurar o dispositivo VPN que será usado para a conexão VPN S2S. Como a maioria das pequenas empresas tem apenas alguns servidores em seu ambiente e não tem a equipe de ti configurar corretamente um roteador VPN para se conectar ao Microsoft Azure, a seleção padrão será configurar o servidor do Windows Server Essentials como o servidor VPN que os recursos em sua rede local se conectará ao para acessar recursos na rede virtual do Azure. No entanto, se você preferir usar outro servidor em seu ambiente como o servidor VPN, ou preferir usar um roteador VPN, poderá selecionar essas opções.
+A última etapa do processo de integração é configurar o dispositivo VPN que será usado para a conexão VPN S2S. Como a maioria das pequenas empresas tem apenas alguns servidores em seu ambiente e não tem a equipe de ti configurar corretamente um roteador VPN para se conectar ao Microsoft Azure, a seleção padrão será configurar o servidor do Windows Server Essentials como o servidor VPN ao qual os recursos em sua rede local se conectarão para acessar recursos na rede virtual do Azure. No entanto, se você preferir usar outro servidor em seu ambiente como o servidor VPN, ou preferir usar um roteador VPN, poderá selecionar essas opções.
 
 Devido à variação em modelos e tipos de roteadores, o Windows Server Essentials não tenta configurar automaticamente o roteador VPN. Selecionar o roteador VPN neste assistente de integração notifica apenas a rede virtual do Azure do tipo de dispositivo para as configurações de roteamento apropriadas necessárias no Azure para conectividade.
 
@@ -65,8 +64,8 @@ No painel tarefas no lado direito do painel estão as várias tarefas que você 
 
 -   **Desabilitar integração VNET do Azure** Desconecta a VNET do Azure e remove a integração do painel do Windows Server Essentials. Observe que isso não exclui a VNET do Azure, as configurações ainda são preservadas no Azure se você quiser novamente integrar a VNET do Azure ao painel.
 
--   **Saiba mais sobre o VNET do Azure** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/).
+-   **Saiba mais sobre a VNET do Azure** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/) .
 
-<a name="see-also"></a>Veja também
+<a name="see-also"></a>Confira também
 --------
 [Introdução ao Windows Server Essentials](get-started.md)
