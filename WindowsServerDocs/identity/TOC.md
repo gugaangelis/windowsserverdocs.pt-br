@@ -46,7 +46,7 @@
 ##### [Diretrizes do teste de clonagem do controlador de domínio virtualizado para fornecedores de aplicativos](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)
 ##### [Suporte para usar a réplica do Hyper-V para controladores de domínio virtualizados](ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)
 
-####[Serviço de data/hora do Windows e AD DS](../networking/windows-time-service/windows-time-service.md)
+#### [Serviço de data/hora do Windows e AD DS](../networking/windows-time-service/windows-time-service.md)
 
 ### [Planejamento e design do AD DS](ad-ds/plan/AD-DS-Design-and-Planning.md)
 
@@ -348,22 +348,22 @@
 #### [Implantar o Azure AD Connect Health](/azure/active-directory/hybrid/whatis-hybrid-identity)
 #### [Migrar os Serviços de Função dos Serviços de Federação do Active Directory (AD FS) para o Windows Server 2012 R2](ad-fs/deployment/migrate-ad-fs-service-role-to-windows-server-r2.md)
 ##### [Prepare-se para migrar o Servidor de Federação do AD FS](ad-fs/deployment/prepare-migrate-ad-fs-server-r2.md)
-#####[Migrar o Servidor de Federação do AD FS](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
-#####[Migrar o Proxy do Servidor de Federação do AD FS](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
-#####[Verificar a migração do AD FS para o Windows Server 2012 R2](ad-fs/deployment/verify-ad-fs-migration.md)
+##### [Migrar o Servidor de Federação do AD FS](ad-fs/deployment/migrate-ad-fs-fed-server-r2.md)
+##### [Migrar o Proxy do Servidor de Federação do AD FS](ad-fs/deployment/migrate-fed-server-proxy-r2.md)
+##### [Verificar a migração do AD FS para o Windows Server 2012 R2](ad-fs/deployment/verify-ad-fs-migration.md)
 
 #### [Migrar os Serviços de Função dos Serviços de Federação do Active Directory (AD FS) para o Windows Server 2012](ad-fs/deployment/migrate-ad-fs-role-services-to-windows-server-2012.md)
 ##### [Preparar a migração do Servidor de Federação do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-server.md)
-######[Preparar a migração do Servidor de Farm de Nós Autônomo ou Único do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
-######[Preparar a migração do Farm WID do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
-######[Preparar a migração do Farm SQL do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
-#####[Preparar a migração do Proxy do Servidor de Federação do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
-#####[Migrar o Servidor de Federação do AD FS 2.0](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
-######[Migrar o Servidor de Farm de Nós Autônomo ou Único do AD FS 2.0](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
-######[Migrar o Farm WID do AD FS 2.0](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
-######[Migrar o Farm SQL do AD FS 2.0](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
-#####[Migrar o Proxy do Servidor de Federação do AD FS 2.0](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
-#####[Migrar os Agentes Web do AD FS 1.1](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
+###### [Preparar a migração do Servidor de Farm de Nós Autônomo ou Único do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)
+###### [Preparar a migração do Farm WID do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-a-wid-farm.md)
+###### [Preparar a migração do Farm SQL do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-a-sql-server-farm.md)
+##### [Preparar a migração do Proxy do Servidor de Federação do AD FS 2.0](ad-fs/deployment/prepare-to-migrate-ad-fs-fed-proxy.md)
+##### [Migrar o Servidor de Federação do AD FS 2.0](ad-fs/deployment/migrate-the-ad-fs-fed-server.md)
+###### [Migrar o Servidor de Farm de Nós Autônomo ou Único do AD FS 2.0](ad-fs/deployment/migrate-ad-fs-stand-alone-server.md)
+###### [Migrar o Farm WID do AD FS 2.0](ad-fs/deployment/migrate-ad-fs-wid-farm.md)
+###### [Migrar o Farm SQL do AD FS 2.0](ad-fs/deployment/migrate-ad-fs-sql-farm.md)
+##### [Migrar o Proxy do Servidor de Federação do AD FS 2.0](ad-fs/deployment/migrate-the-ad-fs-2-fed-server-proxy.md)
+##### [Migrar os Agentes Web do AD FS 1.1](ad-fs/deployment/migrate-the-ad-fs-web-agent.md)
 
 
 

@@ -229,7 +229,7 @@
 #### [Como funciona a política de QoS](technologies/qos/qos-policy-works.md)
 #### [Arquitetura de política de QoS](technologies/qos/qos-policy-architecture.md)
 #### [Cenários de política de QoS](technologies/qos/qos-policy-scenarios.md)
-###[Gerenciar a política de QoS](technologies/qos/qos-policy-manage.md)
+### [Gerenciar a política de QoS](technologies/qos/qos-policy-manage.md)
 #### [Erros e eventos de política de QoS](technologies/qos/qos-policy-errors.md)
 ### [Perguntas frequentes sobre a política de QoS](technologies/qos/qos-policy-faq.md)
 
