@@ -9,25 +9,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c6883513fdc02f4f4d1b874995780639279cc178
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: cd849486e441c8315daa95db351bcd214b929759
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857049"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518002"
 ---
 # <a name="protected-users-security-group"></a>Grupo de segurança de usuários protegidos
 
-> Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico destinado a profissionais de TI descreve o grupo de segurança do Active Directory chamado Usuários Protegidos e explica como ele funciona. Esse grupo foi introduzido nos controladores de domínio do Windows Server 2012 R2.
 
-## <a name="overview"></a><a name="BKMK_ProtectedUsers"></a>Sobre
+## <a name="overview"></a><a name="BKMK_ProtectedUsers"></a>Visão geral
 
 Esse grupo de segurança é projetado como parte de uma estratégia para gerenciar a exposição de credenciais dentro da empresa. Os membros deste grupo possuem proteções não configuráveis automaticamente aplicadas às suas contas. A associação ao grupo Usuários protegidos visa restringir e proteger proativamente por padrão. O único método de modificar tais proteções de uma conta é removê-la do grupo de segurança.
 
 > [!WARNING]
-> As contas para serviços e computadores nunca devem ser membros do grupo usuários protegidos. Esse grupo fornece proteção incompleta mesmo assim, porque a senha ou o certificado está sempre disponível no host. A autenticação falhará com o erro \"o nome de usuário ou a senha estiver incorreta\" para qualquer serviço ou computador adicionado ao grupo de usuários protegidos.
+> As contas para serviços e computadores nunca devem ser membros do grupo usuários protegidos. Esse grupo fornece proteção incompleta mesmo assim, porque a senha ou o certificado está sempre disponível no host. A autenticação falhará com o erro \" o nome de usuário ou a senha está incorreta \" para qualquer serviço ou computador adicionado ao grupo de usuários protegidos.
 
 Esse grupo global relacionado ao domínio dispara proteção não configurável em dispositivos e computadores host que executam o Windows Server 2012 R2 e o Windows 8.1 ou posterior para usuários em domínios com um controlador de domínio primário executando o Windows Server 2012 R2. Isso reduz significativamente a superfície de memória padrão de credenciais quando os usuários entram em computadores com essas proteções.
 
@@ -47,10 +47,10 @@ Os requisitos para fornecer a proteção ao controlador de domínio para membros
 
 ### <a name="adding-protected-user-global-security-group-to-down-level-domains"></a>Adicionando grupo de segurança global de usuário protegido a domínios de nível inferior
 
-Controladores de domínio que executam um sistema operacional anterior ao Windows Server 2012 R2 podem dar suporte à adição de membros ao novo grupo de segurança de usuário protegido. Isso permite que os usuários se beneficiem das proteções de dispositivo antes de o domínio ser atualizado. 
+Controladores de domínio que executam um sistema operacional anterior ao Windows Server 2012 R2 podem dar suporte à adição de membros ao novo grupo de segurança de usuário protegido. Isso permite que os usuários se beneficiem das proteções de dispositivo antes de o domínio ser atualizado.
 
 > [!Note]
-> Os controladores de domínio não oferecerão suporte a proteções de domínio. 
+> Os controladores de domínio não oferecerão suporte a proteções de domínio.
 
 O grupo de usuários protegidos pode ser criado [transferindo a função de emulador de controlador de domínio primário (PDC)](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) para um controlador de domínio que executa o Windows Server 2012 R2. Depois de o objeto do grupo ser replicado para outros controladores de domínio, a função do emulador de PDC pode se hospedada em um controlador de domínio que executa uma versão anterior do Windows Server.
 
@@ -58,7 +58,7 @@ O grupo de usuários protegidos pode ser criado [transferindo a função de emul
 
 A tabela a seguir especifica as propriedades do grupo Usuários protegidos.
 
-|Atributo|{1&gt;Valor&lt;1}|
+|Atributo|Valor|
 |-------|-----|
 |SID/RID conhecido|S-1-5-21-<domain>-525|
 |Tipo|Domínio global|
@@ -108,7 +108,7 @@ As contas que são membros do grupo de usuários protegidos que se autenticam em
 
 As definições não configuráveis para a expiração de TGTs são estabelecidas para cada conta do grupo de Usuários protegidos. Normalmente, o controlador de domínio define o tempo de vida e renovação do TGT com base nas políticas do domínio **Tempo de vida máximo para o tíquete do usuário** e **Tempo de vida máximo para renovação de tíquete do usuário**. Para o grupo de Usuários protegidos, foram definidos 600 minutos para essas políticas de domínio.
 
-Para mais informações, consulte [Como configurar contas protegidas](how-to-configure-protected-accounts.md).
+Para mais informações, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
 
 ## <a name="troubleshooting"></a>Solução de problemas
 Dois logs administrativos operacionais estão disponíveis para ajudar a solucionar problemas de eventos relacionados aos Usuários protegidos. Esses novos logs estão localizados em Visualizador de Eventos e são desabilitados por padrão e estão localizados em **aplicativos e serviços Logs\Microsoft\Windows\Authentication**.
@@ -128,4 +128,4 @@ Dois logs administrativos operacionais estão disponíveis para ajudar a solucio
 
 - [Políticas de autenticação e silos de políticas de autenticação](authentication-policies-and-authentication-policy-silos.md)
 
-- [Como configurar contas protegidas](how-to-configure-protected-accounts.md)
+- [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)

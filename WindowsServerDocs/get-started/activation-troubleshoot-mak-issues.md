@@ -1,19 +1,19 @@
 ---
 title: Problemas conhecidos de ativação da MAK
 description: Descreve problemas comuns que podem ocorrer durante o processo de ativação da MAK e oferece resoluções e diretrizes
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/3/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4153387d740379e66eca9e8069b7a446a1ec71
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 8e8872a5a768973e11c98461fc760055001932b8
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826229"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409967"
 ---
 # <a name="mak-activation-known-issues"></a>Ativação da MAK: problemas conhecidos
 

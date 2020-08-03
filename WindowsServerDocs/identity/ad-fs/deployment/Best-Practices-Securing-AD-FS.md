@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e49939615b02058e543974e3799b5c51b323353c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: da54deaa2d1a583fd8ebb2328027e74da2cac5bc
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953990"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520115"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Práticas recomendadas para proteger Serviços de Federação do Active Directory (AD FS)
 
@@ -38,10 +38,10 @@ O diagrama abaixo ilustra as portas de firewall que devem ser habilitadas entre 
 ![AD FS topologia padrão](media/Best-Practices-Securing-AD-FS/adfssec2.png)
 
 >[!NOTE]
-> A porta 808 (Windows Server 2012R2) ou a porta 1501 (Windows Server 2016 +) é a porta Net. TCP que o AD FS usa para o ponto de extremidade do WCF local para transferir dados de configuração para o processo de serviço e o PowerShell. Essa porta pode ser vista executando Get-Adfsproperties | Selecione NetTcpPort. Essa é uma porta local que não precisará ser aberta no firewall, mas será exibida em uma verificação de porta. 
+> A porta 808 (Windows Server 2012R2) ou a porta 1501 (Windows Server 2016 +) é a porta Net. TCP que o AD FS usa para o ponto de extremidade do WCF local para transferir dados de configuração para o processo de serviço e o PowerShell. Essa porta pode ser vista executando Get-Adfsproperties | Selecione NetTcpPort. Essa é uma porta local que não precisará ser aberta no firewall, mas será exibida em uma verificação de porta.
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect e servidores de Federação/WAP
-Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre o servidor do Azure AD Connect e servidores de Federação/WAP.  
+Esta tabela descreve as portas e protocolos que são necessários para a comunicação entre o servidor do Azure AD Connect e servidores de Federação/WAP.
 
 Protocolo |Portas |Descrição
 --------- | --------- |---------
@@ -70,50 +70,54 @@ Para obter informações detalhadas sobre portas e protocolos necessários para 
 
 ### <a name="endpoints-enabled"></a>Pontos de extremidade habilitados
 
-Quando AD FS e WAP são instalados, um conjunto padrão de pontos de extremidade de AD FS é habilitado no serviço de Federação e no proxy.  Esses padrões foram escolhidos com base nos cenários mais comumente necessários e usados e não é necessário alterá-los.  
+Quando AD FS e WAP são instalados, um conjunto padrão de pontos de extremidade de AD FS é habilitado no serviço de Federação e no proxy.  Esses padrões foram escolhidos com base nos cenários mais comumente necessários e usados e não é necessário alterá-los.
 
 ### <a name="optional-min-set-of-endpoints-proxy-enabled-for-azure-ad--office-365"></a>Adicional Conjunto mínimo de proxy de pontos de extremidade habilitado para o Azure AD/Office 365
 As organizações que implantam AD FS e WAP somente para cenários do Azure AD e do Office 365 podem limitar ainda mais o número de pontos de extremidade de AD FS habilitados no proxy para alcançar uma superfície de ataque mais mínima.
 Abaixo está a lista de pontos de extremidade que devem ser habilitados no proxy nestes cenários:
 
-|Ponto de extremidade|Finalidade
-|-----|-----
-|/adfs/ls|Os fluxos de autenticação baseados em navegador e as versões atuais do Microsoft Office usam esse ponto de extremidade para a autenticação do Azure AD e do Office 365
-|/adfs/services/trust/2005/usernamemixed|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo.
-|/adfs/services/trust/13/usernamemixed|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo.
-|/adfs/oauth2|Este é usado para todos os aplicativos modernos (no local ou na nuvem) que você configurou para autenticar diretamente no AD FS (ou seja, não por meio do AAD)
-|/adfs/services/trust/mex|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo.
-|federationmetadata.xml/adfs/ls/FederationMetadata/2007-06/    |Requisito para qualquer fluxo passivo; e usados pelo Office 365/Azure AD para verificar AD FS certificados
-
+|Ponto de extremidade|Finalidade |
+|-----|----- |
+|/adfs/ls|Os fluxos de autenticação baseados em navegador e as versões atuais do Microsoft Office usam esse ponto de extremidade para a autenticação do Azure AD e do Office 365 |
+|/adfs/services/trust/2005/usernamemixed|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo. |
+|/adfs/services/trust/13/usernamemixed|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo. |
+|/adfs/oauth2|Este é usado para todos os aplicativos modernos (no local ou na nuvem) que você configurou para autenticar diretamente no AD FS (ou seja, não por meio do AAD) |
+|/adfs/services/trust/mex|Usado para o Exchange Online com clientes do Office mais antigos do que o Office 2013 pode ser atualizado em 2015.  Os clientes posteriores usam o ponto de extremidade \adfs\ls passivo.|
+|federationmetadata.xml/adfs/ls/FederationMetadata/2007-06/    |Requisito para qualquer fluxo passivo; e usado pelo Office 365/Azure AD para verificar AD FS certificados. |
 
 AD FS pontos de extremidade podem ser desabilitados no proxy usando o seguinte cmdlet do PowerShell:
-    
-    PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
+
+```powershell
+Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
+```
 
 Por exemplo:
-    
-    PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
-    
+
+```powershell
+Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
+```
 
 ### <a name="extended-protection-for-authentication"></a>Proteção Estendida para Autenticação
 A proteção estendida para autenticação é um recurso que mitiga contra ataques de interceptação (MITM) e é habilitado por padrão com AD FS.
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>Para verificar as configurações, você pode fazer o seguinte:
-A configuração pode ser verificada usando o commandlet do PowerShell abaixo.  
-    
-   `PS:\>Get-ADFSProperties`
+A configuração pode ser verificada usando o cmdlet do PowerShell abaixo.
 
-A propriedade é `ExtendedProtectionTokenCheck`.  A configuração padrão é permitir, para que os benefícios de segurança possam ser obtidos sem as preocupações com a compatibilidade com navegadores que não dão suporte à funcionalidade.  
+```powershell
+Get-ADFSProperties
+```
+
+A propriedade é `ExtendedProtectionTokenCheck`.  A configuração padrão é permitir, para que os benefícios de segurança possam ser obtidos sem as preocupações com a compatibilidade com navegadores que não dão suporte à funcionalidade.
 
 ### <a name="congestion-control-to-protect-the-federation-service"></a>Controle de congestionamento para proteger o serviço de Federação
 O proxy do serviço de Federação (parte do WAP) fornece controle de congestionamento para proteger o serviço de AD FS de uma inundação de solicitações.  O proxy de aplicativo Web rejeitará solicitações de autenticação de cliente externo se o servidor de Federação estiver sobrecarregado conforme detectado pela latência entre o proxy de aplicativo Web e o servidor de Federação.  Esse recurso é configurado por padrão com um nível de limite de latência recomendado.
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>Para verificar as configurações, você pode fazer o seguinte:
-1.    Em seu computador Proxy do Aplicativo Web, abra uma janela de comando privilegiado.
-2.    Navegue até o diretório do ADFS, em%WINDIR%\adfs\config.
-3.    Altere as configurações de controle de congestionamento de seus valores padrão para ' <congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" /> '.
-4.    Salve e feche o arquivo.
-5.    Reinicie o serviço AD FS executando ' net stop adfssrv ' e, em seguida, ' net start adfssrv '.
+1. Em seu computador Proxy do Aplicativo Web, abra uma janela de comando privilegiado.
+2. Navegue até o diretório do ADFS, em%WINDIR%\adfs\config.
+3. Altere as configurações de controle de congestionamento de seus valores padrão para `<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />` .
+4. Salve e feche o arquivo.
+5. Reinicie o serviço AD FS executando `net stop adfssrv` e depois `net start adfssrv`.
 Para sua referência, a orientação sobre esse recurso pode ser encontrada [aqui](/previous-versions/azure/azure-services/dn528859(v=azure.100)).
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>Verificações de solicitação HTTP padrão no proxy
@@ -134,36 +138,41 @@ Informações sobre como instalar Azure AD Connect Health para AD FS podem ser e
 Os recursos adicionais a seguir podem ser configurados opcionalmente para fornecer proteções adicionais àquelas oferecidas na implantação padrão.
 
 ### <a name="extranet-soft-lockout-protection-for-accounts"></a>Proteção de bloqueio "flexível" da extranet para contas
-Com o recurso de bloqueio de extranet no Windows Server 2012 R2, um administrador de AD FS pode definir um número máximo permitido de solicitações de autenticação com falha (ExtranetLockoutThreshold) e um ' período de tempo da janela de observação (ExtranetObservationWindow). Quando esse número máximo (ExtranetLockoutThreshold) de solicitações de autenticação for atingido, AD FS para tentar autenticar as credenciais de conta fornecidas em AD FS para o período de tempo definido (ExtranetObservationWindow). Essa ação protege essa conta de um bloqueio de conta do AD, em outras palavras, protege essa conta contra a perda de acesso a recursos corporativos que dependem de AD FS para autenticação do usuário. Essas configurações se aplicam a todos os domínios que o serviço de AD FS pode autenticar.
+Com o recurso de bloqueio de extranet no Windows Server 2012 R2, um administrador de AD FS pode definir um número máximo permitido de solicitações de autenticação com falha (ExtranetLockoutThreshold) e um `observation window` período de s (ExtranetObservationWindow). Quando esse número máximo (ExtranetLockoutThreshold) de solicitações de autenticação for atingido, AD FS para tentar autenticar as credenciais de conta fornecidas em AD FS para o período de tempo definido (ExtranetObservationWindow). Essa ação protege essa conta de um bloqueio de conta do AD, em outras palavras, protege essa conta contra a perda de acesso a recursos corporativos que dependem de AD FS para autenticação do usuário. Essas configurações se aplicam a todos os domínios que o serviço de AD FS pode autenticar.
 
-Você pode usar o seguinte comando do Windows PowerShell para definir o bloqueio de extranet AD FS (exemplo): 
+Você pode usar o seguinte comando do Windows PowerShell para definir o bloqueio de extranet AD FS (exemplo):
 
-    PS:\>Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
+```powershell
+Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
+```
 
-Para referência, a documentação pública desse recurso está [aqui](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486806(v=ws.11)). 
+Para referência, a documentação pública desse recurso está [aqui](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn486806(v=ws.11)).
 
 ### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>Desabilite pontos de extremidade do Windows do WS-Trust no proxy, ou seja, da extranet
 
 Os pontos de extremidade do Windows do WS-Trust (*/ADFS/Services/Trust/2005/windowstransport* e */ADFS/Services/Trust/13/windowstransport*) são destinados apenas a pontos de extremidade voltados para a intranet que usam a associação WIA em https. Expô-los à extranet podem permitir solicitações nesses pontos de extremidade para ignorar as proteções de bloqueio. Esses pontos de extremidade devem ser desabilitados no proxy (ou seja, desabilitados da extranet) para proteger o bloqueio de conta do AD usando os comandos do PowerShell a seguir. Não há nenhum impacto conhecido do usuário final ao desabilitar esses pontos de extremidade no proxy.
 
-    PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
-    PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Proxy $false
-    
+```powershell
+Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
+Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Proxy $false
+```
+
 ### <a name="differentiate-access-policies-for-intranet-and-extranet-access"></a>Diferenciar políticas de acesso para acesso à intranet e extranet
-AD FS tem a capacidade de diferenciar políticas de acesso para solicitações que se originam na rede corporativa local versus solicitações que chegam da Internet por meio do proxy.  Isso pode ser feito por aplicativo ou globalmente.  Para aplicativos de alto valor de negócios ou aplicativos com informações confidenciais ou de identificação pessoal, considere a necessidade de autenticação multifator.  Isso pode ser feito por meio do snap-in de gerenciamento de AD FS.  
+AD FS tem a capacidade de diferenciar políticas de acesso para solicitações que se originam na rede corporativa local versus solicitações que chegam da Internet por meio do proxy.  Isso pode ser feito por aplicativo ou globalmente.  Para aplicativos de alto valor de negócios ou aplicativos com informações confidenciais ou de identificação pessoal, considere a necessidade de autenticação multifator.  Isso pode ser feito por meio do snap-in de gerenciamento de AD FS.
 
 ### <a name="require-multi-factor-authentication-mfa"></a>Exigir autenticação multifator (MFA)
-Os AD FS podem ser configurados para exigir autenticação forte (como autenticação multifator) especificamente para solicitações recebidas por meio do proxy, para aplicativos individuais e para acesso condicional para o Azure AD/Office 365 e recursos locais.  Os métodos com suporte do MFA incluem Microsoft Azure MFA e provedores de terceiros.  O usuário é solicitado a fornecer as informações adicionais (como um texto SMS que contém um código de uma vez) e AD FS trabalha com o plug-in específico do provedor para permitir o acesso.  
+Os AD FS podem ser configurados para exigir autenticação forte (como autenticação multifator) especificamente para solicitações recebidas por meio do proxy, para aplicativos individuais e para acesso condicional para o Azure AD/Office 365 e recursos locais.  Os métodos com suporte do MFA incluem Microsoft Azure MFA e provedores de terceiros.  O usuário é solicitado a fornecer as informações adicionais (como um texto SMS que contém um código de uma vez) e AD FS trabalha com o plug-in específico do provedor para permitir o acesso.
 
 Os provedores de MFA externa com suporte incluem os listados [nesta página,](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn758113(v=ws.11)) bem como HDI global.
 
 ### <a name="hardware-security-module-hsm"></a>Módulo de segurança de hardware (HSM)
 Em sua configuração padrão, as chaves que o AD FS usa para assinar tokens nunca deixam os servidores de Federação na intranet.  Eles nunca estão presentes na DMZ ou nas máquinas de proxy.  Opcionalmente, para fornecer proteção adicional, essas chaves podem ser protegidas em um módulo de segurança de hardware anexado a AD FS.  A Microsoft não produz um produto HSM, no entanto, há vários no mercado que dão suporte a AD FS.  Para implementar essa recomendação, siga as diretrizes do fornecedor para criar os certificados X509 para assinatura e criptografia e, em seguida, use o AD FS commandlets de instalação do PowerShell, especificando os certificados personalizados da seguinte maneira:
 
-    PS:\>Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprint <String> -FederationServiceName <String> -ServiceAccountCredential <PSCredential> -SigningCertificateThumbprint <String>
+```powershell
+Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprint <String> -FederationServiceName <String> -ServiceAccountCredential <PSCredential> -SigningCertificateThumbprint <String>
+```
 
 onde:
-
 
 - `CertificateThumbprint`é seu certificado SSL
 - `SigningCertificateThumbprint`é seu certificado de autenticação (com chave protegida por HSM)

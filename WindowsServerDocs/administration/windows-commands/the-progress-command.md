@@ -1,5 +1,5 @@
 ---
-title: progress
+title: Usando o comando Progress
 description: Artigo de referência para o progresso, que exibe o progresso enquanto um comando está em execução.
 ms.prod: windows-server
 ms.technology: manage-windows-commands
@@ -9,18 +9,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9e9650a980d74f15bc0ec5c88d8df2dc93a3d8b0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b9284c7330adfbad0115b5b7f6bbab034b42fda4
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934590"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519625"
 ---
-# <a name="progress"></a>progress
+# <a name="using-the-progress-command"></a>Usando o comando Progress
 
 Exibe o progresso enquanto um comando está em execução. Você pode usar o **/Progress** com outros comandos do WDSUTIL que você executar. Observe que você deve especificar **/Verbose** e **/Progress** diretamente após **WDSUTIL**.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 WDSUTIL /progress <commands>

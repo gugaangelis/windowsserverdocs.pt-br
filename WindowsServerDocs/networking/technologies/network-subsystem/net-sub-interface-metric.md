@@ -8,16 +8,16 @@ ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 9e288908df5f5de70f1e369cff08821b8d178de7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 176fa80cd82fdaa3ac76a8661d189b16aa9631ff
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80862209"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517891"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>Configurar a ordem das interfaces de rede
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 No Windows Server 2016 e no Windows 10, você pode usar a métrica de interface para configurar a ordem das interfaces de rede.
 
@@ -29,7 +29,9 @@ Quando as rotas de tráfego de rede são escolhidas e você configurou o parâme
 
 O exemplo de comando do Windows PowerShell a seguir mostra o uso desse parâmetro.
 
-    Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
+```powershell
+Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
+```
 
 A ordem na qual os adaptadores aparecem em uma lista é determinada pela métrica da interface IPv4 ou IPv6.  Para obter mais informações, consulte [função GetAdaptersAddresses](https://msdn.microsoft.com/library/windows/desktop/aa365915%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396).
 

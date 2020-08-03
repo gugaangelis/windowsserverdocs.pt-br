@@ -9,25 +9,24 @@ ms.date: 04/29/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2fce4c5669ff78a6d97cd65580db1a68bfe3a390
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f41f59d0ec3847663e32b33b728d047b04d1cc63
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118585"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519705"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Perguntas frequentes do AD FS
-
 
 A documentação a seguir é uma home page de perguntas frequentes sobre os Serviços de Federação do Active Directory (AD FS).  O documento foi dividido em grupos, de acordo com o tipo de pergunta.
 
 ## <a name="deployment"></a>Implantação
 
 ### <a name="how-can-i-upgrademigrate-from-previous-versions-of-ad-fs"></a>Como posso fazer a atualização/migração de versões anteriores do AD FS?
+
 Atualize o AD FS usando um dos seguintes procedimentos:
 
-
-- AD FS do Windows Server 2012 R2 para o AD FS do Windows Server 2016 ou posterior. Observe que a metodologia é a mesma se você está atualizando o AD FS do Windows Server 2016 para o AD FS do Windows Server 2019. 
+- AD FS do Windows Server 2012 R2 para o AD FS do Windows Server 2016 ou posterior. Observe que a metodologia é a mesma se você está atualizando o AD FS do Windows Server 2016 para o AD FS do Windows Server 2019.
     - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados WID](../deployment/upgrading-to-ad-fs-in-windows-server.md)
     - [Como atualizar para o AD FS no Windows Server 2016 por meio de um banco de dados SQL](../deployment/upgrading-to-ad-fs-in-windows-server-sql.md)
 - AD FS do Windows Server 2012 para o AD FS do Windows Server 2012 R2
@@ -41,7 +40,7 @@ Caso precise atualizar o AD FS 2.0 ou 2.1 (Windows Server 2008 R2 ou Windows Ser
 
 ### <a name="why-does-ad-fs-installation-require-a-reboot-of-the-server"></a>Por que a instalação do AD FS exige uma reinicialização do servidor?
 
-O suporte ao HTTP/2 foi adicionado no Windows Server 2016, mas o HTTP/2 não pode ser usado para autenticação de certificado de cliente.  Como muitos cenários do AD FS usam a autenticação de certificado de cliente e um número significativo de clientes não dá suporte a solicitações de repetição usando o HTTP/1.1, a configuração de farm do AD FS redefine as configurações de HTTP do servidor local como HTTP/1.1.  Isso exige uma reinicialização do servidor.  
+O suporte ao HTTP/2 foi adicionado no Windows Server 2016, mas o HTTP/2 não pode ser usado para autenticação de certificado de cliente.  Como muitos cenários do AD FS usam a autenticação de certificado de cliente e um número significativo de clientes não dá suporte a solicitações de repetição usando o HTTP/1.1, a configuração de farm do AD FS redefine as configurações de HTTP do servidor local como HTTP/1.1.  Isso exige uma reinicialização do servidor.
 
 ### <a name="is-using-windows-2016-wap-servers-to-publish-the-ad-fs-farm-to-the-internet-without-upgrading-the-back-end-ad-fs-farm-supported"></a>Há suporte para o uso de Servidores WAP do Windows 2016 para publicação do farm do AD FS na Internet sem a atualização do farm do AD FS de back-end?
 Sim, há suporte para essa configuração; no entanto, não há suporte para os novos recursos do AD FS 2016 nessa configuração.  Essa configuração destina-se a ser temporária durante a fase de migração do AD FS 2012 R2 para o AD FS 2016 e não deve ser implantada por um longo tempo.
@@ -70,8 +69,8 @@ O AD FS dá suporte a diversas configurações de várias florestas e se baseia 
 - No caso de uma relação de confiança de floresta unidirecional, como uma floresta DMZ que contém identidades de parceiros, recomendamos implantar o ADFS na floresta CORP e tratar a floresta DMZ como outra relação de confiança do provedor de declarações local conectada via LDAP. Nesse caso, a autenticação integrada do Windows não funcionará para os usuários da floresta DMZ. Eles precisarão realizar a autenticação de senha, pois esse é o único mecanismo compatível com o LDAP. Caso não possa escolher essa opção, você precisará configurar outro ADFS na floresta DMZ e adicioná-lo como uma relação de confiança do provedor de declarações ao ADFS na floresta CORP. Os usuários precisarão realizar a descoberta de realm inicial, mas a autenticação integrada do Windows e a autenticação de senha funcionarão. Faça as alterações apropriadas nas regras de emissão no ADFS da floresta DMZ, pois o ADFS na floresta CORP não poderá obter informações extras sobre o usuário da floresta DMZ.
 - Embora as relações de confiança no nível do domínio tenham suporte e possam funcionar, recomendamos expressamente que você migre para um modelo de relação de confiança no nível da floresta. Além disso, você precisará garantir que os roteiros UPN e a resolução de nomes NetBIOS funcionem com precisão.
 
->[!NOTE]  
->Se a autenticação eletiva for usada com uma configuração de relação de confiança bidirecional, garanta que o usuário chamador receba a permissão "permitir autenticação" na conta de serviço de destino. 
+>[!NOTE]
+>Se a autenticação eletiva for usada com uma configuração de relação de confiança bidirecional, garanta que o usuário chamador receba a permissão "permitir autenticação" na conta de serviço de destino.
 
 ### <a name="does-ad-fs-extranet-smart-lockout-support-ipv6"></a>O Bloqueio Inteligente de Extranet do AD FS é compatível com IPv6?
 Sim, os endereços IPv6 são considerados para locais familiares/desconhecidos.
@@ -80,7 +79,7 @@ Sim, os endereços IPv6 são considerados para locais familiares/desconhecidos.
 ## <a name="design"></a>Design
 
 ### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>Quais provedores de autenticação multifator de terceiros estão disponíveis para o AD FS?
-O AD FS fornece um mecanismo extensível para provedores de MFA de terceiros a serem integrados. Não há nenhum programa de certificação definido para isso. Supõe-se que o fornecedor executou as validações necessárias antes do lançamento. 
+O AD FS fornece um mecanismo extensível para provedores de MFA de terceiros a serem integrados. Não há nenhum programa de certificação definido para isso. Supõe-se que o fornecedor executou as validações necessárias antes do lançamento.
 
 A lista de fornecedores que notificaram a Microsoft foi publicada em [Provedores de MFA para o AD FS](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md).  Pode sempre haver provedores disponíveis que desconhecemos, por isso, atualizaremos a lista à medida que ficarmos cientes deles.
 
@@ -98,7 +97,7 @@ Isso também pode ser usado para o AD FS no Windows Server 2012 R2.
 
 ### <a name="how-can-i-ensure-my-ad-fs-and-wap-servers-support-apples-atp-requirements"></a>Como garantir que meus servidores AD FS e WAP darão suporte aos requisitos de ATP da Apple?
 
-A Apple lançou um conjunto de requisitos chamados ATS (App Transport Security) que possam afetar chamadas em aplicativos iOS que se autenticam no AD FS.  Você pode garantir que os seus servidores AD FS e WAP estejam em conformidade verificando se eles dão suporte aos [requisitos de conexão com o ATS](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57).  
+A Apple lançou um conjunto de requisitos chamados ATS (App Transport Security) que possam afetar chamadas em aplicativos iOS que se autenticam no AD FS.  Você pode garantir que os seus servidores AD FS e WAP estejam em conformidade verificando se eles dão suporte aos [requisitos de conexão com o ATS](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57).
 Em particular, você deve verificar se os seus servidores AD FS e WAP dão suporte ao TLS 1.2 e se o pacote de criptografia negociado da conexão TLS dará suporte ao PFS.
 
 Você pode habilitar e desabilitar o SSL 2.0 e 3.0 e as versões do TLS 1.0, 1.1 e 1.2 usando [Gerenciar protocolos SSL no AD FS](../operations/Manage-SSL-Protocols-in-AD-FS.md).
@@ -121,15 +120,18 @@ Um ValueType especial ("<http://www.w3.org/2001/XMLSchema#json>") e um caractere
 
 Regra de emissão da amostra:
 
-    => issue(Type = "array_in_json", ValueType = "http://www.w3.org/2001/XMLSchema#json", Value = "{\x22Items\x22:[{\x22Name\x22:\x22Apple\x22,\x22Price\x22:12.3},{\x22Name\x22:\x22Grape\x22,\x22Price\x22:3.21}],\x22Date\x22:\x2221/11/2010\x22}");
+```
+=> issue(Type = "array_in_json", ValueType = "http://www.w3.org/2001/XMLSchema#json", Value = "{\x22Items\x22:[{\x22Name\x22:\x22Apple\x22,\x22Price\x22:12.3},{\x22Name\x22:\x22Grape\x22,\x22Price\x22:3.21}],\x22Date\x22:\x2221/11/2010\x22}");
+```
 
 Declaração emitida no token de acesso:
 
-    "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
+```
+"array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
+```
 
 ### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>Posso transmitir o valor do recurso como parte do valor do escopo assim como as solicitações são feitas no Azure AD?
-Com o AD FS no Server 2019, agora você pode transmitir o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaço, em que cada entrada é estruturada como recurso/escopo. Por exemplo  
-**< criar uma solicitação de exemplo válida>**
+Com o AD FS no Server 2019, agora você pode transmitir o valor do recurso inserido no parâmetro de escopo. O parâmetro de escopo agora pode ser organizado como uma lista separada por espaço, em que cada entrada é estruturada como recurso/escopo. Por exemplo, **<criar uma solicitação de exemplo válida>**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>O AD FS dá suporte à extensão da PKCE?
 O AD FS no Server 2019 dá suporte à PKCE (Chave de Prova para Troca de Código) para o fluxo de concessão de código de autorização OAuth
@@ -137,11 +139,11 @@ O AD FS no Server 2019 dá suporte à PKCE (Chave de Prova para Troca de Código
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>Há suporte para quais escopos permitidos no AD FS?
 - aza: se você estiver usando [Extensões de Protocolo OAuth 2.0 para Clientes de Agente](/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) e se o parâmetro de escopo contiver o escopo "aza", o servidor emitirá um novo token de atualização primário e o definirá no campo refresh_token da resposta, além de configurar o campo refresh_token_expires_in para o tempo de vida do novo token de atualização primário, caso um seja imposto.
 - openid: permite que o aplicativo solicite o uso do protocolo de autorização OpenID Connect.
-- logon_cert: o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon de maneira interativa dos usuários autenticados. O servidor do AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em Base64 ou uma resposta de PKI completa de CMC. Mais detalhes disponíveis [aqui](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
+- logon_cert: o escopo logon_cert permite que um aplicativo solicite certificados de logon, que podem ser usados para fazer logon de maneira interativa dos usuários autenticados. O servidor do AD FS omite o parâmetro access_token da resposta e, em vez disso, fornece uma cadeia de certificados CMS codificada em Base64 ou uma resposta de PKI completa de CMC. Mais detalhes disponíveis [aqui](/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
 - user_impersonation: o escopo user_impersonation é necessário para solicitar com êxito um token de acesso em nome do AD FS. Para obter detalhes sobre como usar esse escopo, veja [Criar um aplicativo de várias camadas usando o OBO (On-Behalf-Of) no OAuth com o AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
 - vpn_cert: o escopo vpn_cert permite que um aplicativo solicite certificados VPN, que podem ser usados para estabelecer conexões VPN usando a autenticação EAP-TLS. Não há mais suporte para isso.
-- email: permite que o aplicativo solicite a declaração de email para o usuário conectado. Não há mais suporte para isso. 
-- profile: permite que o aplicativo solicite declarações relacionadas ao perfil para o usuário de conexão. Não há mais suporte para isso. 
+- email: permite que o aplicativo solicite a declaração de email para o usuário conectado. Não há mais suporte para isso.
+- profile: permite que o aplicativo solicite declarações relacionadas ao perfil para o usuário de conexão. Não há mais suporte para isso.
 
 
 ## <a name="operations"></a>Operações
@@ -156,7 +158,7 @@ Para desabilitar ou habilitar protocolos SSL e conjuntos de criptografia, use o 
 
 [Gerenciar protocolos SSL no AD FS](../operations/Manage-SSL-Protocols-in-AD-FS.md)
 
-### <a name="does-the-proxy-ssl-certificate-have-to-be-the-same-as-the-ad-fs-ssl-certificate"></a>O certificado SSL de proxy deve ser o mesmo que o certificado SSL do AD FS?  
+### <a name="does-the-proxy-ssl-certificate-have-to-be-the-same-as-the-ad-fs-ssl-certificate"></a>O certificado SSL de proxy deve ser o mesmo que o certificado SSL do AD FS?
 Use as seguintes diretrizes com relação ao certificado SSL de proxy e ao certificado SSL do AD FS:
 
 
@@ -164,10 +166,10 @@ Use as seguintes diretrizes com relação ao certificado SSL de proxy e ao certi
 - Se a propriedade “ExtendedProtectionTokenCheck” do AD FS estiver habilitada (a configuração padrão no AD FS), o certificado SSL de proxy precisará ser o mesmo (usar a mesma chave) que o certificado SSL do servidor de federação
 - Caso contrário, o certificado SSL de proxy poderá ter uma chave diferente daquela do certificado SSL do AD FS, mas precisará atender aos mesmos [requisitos](./ad-fs-requirements.md)
 
-### <a name="why-do-i-only-see-a-password-login-on-ad-fs-and-not-my-other-authentication-methods-that-i-have-configured"></a>Por que só vejo um logon com senha no AD FS e não meus outros métodos de autenticação que configurei? 
+### <a name="why-do-i-only-see-a-password-login-on-ad-fs-and-not-my-other-authentication-methods-that-i-have-configured"></a>Por que só vejo um logon com senha no AD FS e não meus outros métodos de autenticação que configurei?
 O AD FS mostra apenas um só método de autenticação na tela de logon quando o aplicativo exige explicitamente um URI de autenticação específico que é mapeado para um método de autenticação configurado e habilitado. Isso é transmitido no parâmetro 'wauth' de solicitações do Web Services Federation e o parâmetro 'RequestedAuthnCtxRef' em uma solicitação do protocolo SAML. Como resultado, apenas o método de autenticação solicitado é exibido (por exemplo, logon com senha).
 
-Quando AD FS é usado com o Azure AD, é comum que os aplicativos enviem o parâmetro prompt=login ao Azure AD. Por padrão, o Azure AD converte isso para solicitar um novo logon baseado em senha ao AD FS. Esse é o motivo mais comum para ver um logon com senha no AD FS dentro da rede ou não ver uma opção para fazer logon com o certificado. Isso pode ser corrigido com facilidade com uma alteração nas configurações de domínio federado no Azure AD. 
+Quando AD FS é usado com o Azure AD, é comum que os aplicativos enviem o parâmetro prompt=login ao Azure AD. Por padrão, o Azure AD converte isso para solicitar um novo logon baseado em senha ao AD FS. Esse é o motivo mais comum para ver um logon com senha no AD FS dentro da rede ou não ver uma opção para fazer logon com o certificado. Isso pode ser corrigido com facilidade com uma alteração nas configurações de domínio federado no Azure AD.
 
 Para obter informações sobre como configurar isso, confira [Suporte do parâmetro prompt=login do AD FS (Serviços de Federação do Active Directory)](../operations/AD-FS-Prompt-Login.md).
 
@@ -208,7 +210,7 @@ Os tempos de vida padrão dos vários cookies e tokens são listados abaixo (bem
 
 - id_token: igual ao token de acesso
 
-### <a name="does-ad-fs-support-http-strict-transport-security-hsts"></a>O AD FS dá suporte ao HSTS (HTTP Strict Transport Security)?  
+### <a name="does-ad-fs-support-http-strict-transport-security-hsts"></a>O AD FS dá suporte ao HSTS (HTTP Strict Transport Security)?
 
 O HSTS (HTTP Strict Transport Security) é um mecanismo de política de segurança da Web que ajuda a atenuar ataques de downgrade de protocolo e sequestro de cookie nos serviços que têm pontos de extremidade HTTP e HTTPS. Ele permite que os servidores Web declarem que os navegadores da Web (ou outros agentes de usuário em conformidade) só devem interagir com ele usando HTTPS e nunca por meio do protocolo HTTP.
 
@@ -224,7 +226,7 @@ Não é recomendável fazer uma terminação SSL antes do WAP. Caso a terminaç�
  - x-ms-forwarded-client-ip: declaração de vários valores que conterá os valores encaminhados ao ADFS pelo Exchange Online, além do endereço IP do dispositivo que se conectou ao WAP.
  - Userip: para solicitações da extranet, essa declaração conterá o valor de x-ms-forwarded-client-ip.  Para solicitações da intranet, essa declaração conterá o mesmo valor de x-ms-client-ip.
 
- Além disso, o AD FS 2016 (com os patches mais atualizados) e as versões posteriores também dão suporte à captura do cabeçalho x-forwarded-for. Qualquer balanceador de carga ou dispositivo de rede que não faça o encaminhamento na camada 3 (o IP é preservado) deverá adicionar o IP do cliente de entrada ao cabeçalho x-forwarded-for padrão do setor. 
+ Além disso, o AD FS 2016 (com os patches mais atualizados) e as versões posteriores também dão suporte à captura do cabeçalho x-forwarded-for. Qualquer balanceador de carga ou dispositivo de rede que não faça o encaminhamento na camada 3 (o IP é preservado) deverá adicionar o IP do cliente de entrada ao cabeçalho x-forwarded-for padrão do setor.
 
 ### <a name="i-am-trying-to-get-additional-claims-on-the-user-info-endpoint-but-its-only-returning-subject-how-can-i-get-additional-claims"></a>Estou tentando obter declarações adicionais no ponto de extremidade de informações do usuário, mas ele só retorna a entidade. Como posso obter declarações adicionais?
 O ponto de extremidade UserInfo do AD FS sempre retorna a declaração da entidade, conforme especificado nos padrões do OpenID. O AD FS não fornece declarações adicionais solicitadas por meio do ponto de extremidade UserInfo. Caso você precise de declarações adicionais no token de ID, confira [Tokens de ID personalizados no AD FS](../development/custom-id-tokens-in-ad-fs.md).
@@ -253,7 +255,7 @@ Uma solução adequada para esse problema é configurar os servidores AD FS e WA
 
 Ao exportar o certificado SSL, de um computador, para ser importado para o repositório pessoal do computador, do servidor AD FS e WAP, lembre-se de exportar a Chave privada e selecionar **Troca de Informações Pessoais –PKCS nº 12**.
 
-É importante que a caixa de seleção **Incluir todos os certificados no caminho do certificado, se possível** esteja marcada, bem como **Exportar todas as propriedades estendidas**.  
+É importante que a caixa de seleção **Incluir todos os certificados no caminho do certificado, se possível** esteja marcada, bem como **Exportar todas as propriedades estendidas**.
 
 Execute certlm.msc nos servidores Windows e importe o *.PFX no repositório de certificados pessoal do computador. Isso fará com que o servidor transmita toda a cadeia de certificados para a biblioteca ADAL.
 
@@ -270,7 +272,7 @@ Um token de atualização não é emitido se o token emitido pelo IdP tem uma va
 Por padrão, a criptografia de token RP é definida como AES256 e não pode ser alterada para nenhum outro valor.
 
 ### <a name="on-a-mixed-mode-farm-i-get-error-when-trying-to-set-the-new-ssl-certificate-using-set-adfssslcertificate--thumbprint-how-can-i-update-the-ssl-certificate-in-a-mixed-mode-ad-fs-farm"></a>Em um farm de modo misto, recebo um erro ao tentar definir o novo certificado SSL usando Set-AdfsSslCertificate -Thumbprint. Como posso atualizar o certificado SSL em um farm do AD FS de modo misto?
-Os farms do AD FS de modo misto devem ser um estado de transição. É recomendável que, durante o planejamento, o certificado SSL seja substituído antes do processo de atualização ou conclua o processo e aumente o nível de comportamento do farm antes de atualizar o certificado SSL. Caso isso não tenha sido feito, as instruções abaixo fornecerão a capacidade de atualizar o certificado SSL. 
+Os farms do AD FS de modo misto devem ser um estado de transição. É recomendável que, durante o planejamento, o certificado SSL seja substituído antes do processo de atualização ou conclua o processo e aumente o nível de comportamento do farm antes de atualizar o certificado SSL. Caso isso não tenha sido feito, as instruções abaixo fornecerão a capacidade de atualizar o certificado SSL.
 
 Em servidores WAP, você ainda poderá usar Set-WebApplicationProxySslCertificate. Nos servidores ADFS, você precisará usar o netsh. Siga as etapas conforme indicado abaixo:
 

@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e3ddc427d84a79d831c61cad8087dbfa1d3fb564
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 36555336b158fdf7cfaa400f66b9deecbff49c1b
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860239"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519685"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>Informações da propriedade KeySpec AD FS e do certificado
-A especificação de chave ("KeySpec") é uma propriedade associada a um certificado e a uma chave. Especifica se uma chave privada associada a um certificado pode ser usada para assinatura, criptografia ou ambos.   
+A especificação de chave ("KeySpec") é uma propriedade associada a um certificado e a uma chave. Especifica se uma chave privada associada a um certificado pode ser usada para assinatura, criptografia ou ambos.
 
 Um valor KeySpec incorreto pode causar erros de AD FS e de proxy de aplicativo Web, como:
 
@@ -26,31 +26,33 @@ Um valor KeySpec incorreto pode causar erros de AD FS e de proxy de aplicativo W
 
 Você pode ver o seguinte no log de eventos:
 
-    Log Name:      AD FS Tracing/Debug
-    Source:        AD FS Tracing
-    Date:          2/12/2015 9:03:08 AM
-    Event ID:      67
-    Task Category: None
-    Level:         Error
-    Keywords:      ADFSProtocol
-    User:          S-1-5-21-3723329422-3858836549-556620232-1580884
-    Computer:      ADFS1.contoso.com
-    Description:
-    Ignore corrupted SSO cookie.
+```
+Log Name:   AD FS Tracing/Debug
+Source: AD FS Tracing
+Date:   2/12/2015 9:03:08 AM
+Event ID:   67
+Task Category: None
+Level:  Error
+Keywords:   ADFSProtocol
+User:   S-1-5-21-3723329422-3858836549-556620232-1580884
+Computer:   ADFS1.contoso.com
+Description:
+Ignore corrupted SSO cookie.
+```
 
 ## <a name="what-causes-the-problem"></a>O que causa o problema
 A propriedade KeySpec identifica como uma chave gerada ou recuperada pelo Microsoft CryptoAPI (CAPI), de um CSP (provedor de armazenamento criptográfico) herdado da Microsoft, pode ser usada.
 
 Um valor KeySpec de **1**, ou **AT_KEYEXCHANGE**, pode ser usado para assinatura e criptografia.  Um valor de **2**, ou **AT_SIGNATURE**, é usado somente para assinatura.
 
-A configuração de mis de KeySpec mais comum está usando um valor de 2 para um certificado diferente do certificado de autenticação de token.  
+A configuração de mis de KeySpec mais comum está usando um valor de 2 para um certificado diferente do certificado de autenticação de token.
 
 Para certificados cujas chaves foram geradas usando provedores CNG (Cryptography Next Generation), não há nenhum conceito de especificação de chave e o valor KeySpec será sempre zero.
 
-Consulte Como verificar um valor de KeySpec válido abaixo. 
+Consulte Como verificar um valor de KeySpec válido abaixo.
 
-### <a name="example"></a>{1&gt;Exemplo&lt;1}
-Um exemplo de CSP herdado é o provedor criptográfico aprimorado da Microsoft. 
+### <a name="example"></a>Exemplo
+Um exemplo de CSP herdado é o provedor criptográfico aprimorado da Microsoft.
 
 O formato de BLOB da chave RSA CSP da Microsoft inclui um identificador de algoritmo, **CALG_RSA_KEYX** ou **CALG_RSA_SIGN**, respectivamente, para atender a solicitações de <strong>AT_KEYEXCHANGE * * ou * * AT_SIGNATURE</strong> chaves.
 
@@ -71,7 +73,7 @@ A seguir estão os significados dos vários valores KeySpec:
 |2|Para um certificado CAPI (não CNG) herdado, a chave pode ser usada somente para assinatura|Não recomendado|
 
 ## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>Como verificar o valor de KeySpec para seus certificados/chaves
-Para ver um valor de certificados, você pode usar a ferramenta de linha de comando **certutil** .  
+Para ver um valor de certificados, você pode usar a ferramenta de linha de comando **certutil** .
 
 Veja a seguir um exemplo: **certutil – v – Store My**.  Isso irá despejar as informações do certificado na tela.
 
@@ -95,7 +97,7 @@ Em CERT_KEY_PROV_INFO_PROP_ID procure duas coisas:
    Provedor CNG (ProviderType = 0):
 
    |Finalidade do certificado AD FS|Valores de KeySpec válidos|
-   | --- | --- |   
+   | --- | --- |
    |SSL|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>Como alterar o KeySpec do seu certificado para um valor com suporte
@@ -107,7 +109,7 @@ Alterar o valor KeySpec não exige que o certificado seja gerado novamente ou em
 3. Execute as seguintes etapas para cada AD FS e servidor WAP
     1. Excluir o certificado (do servidor AD FS/WAP)
     2. Abra um prompt de comando do PowerShell com privilégios elevados e importe o arquivo PFX em cada AD FS e servidor WAP usando a sintaxe de cmdlet abaixo, especificando o valor de AT_KEYEXCHANGE (que funciona para todas as AD FS finalidades de certificado):
-        1. C:\>certutil – importpfx CertFile. pfx AT_KEYEXCHANGE
+        1. C: \> certutil – importpfx CertFile. pfx AT_KEYEXCHANGE
         2. Inserir senha PFX
     3. Depois de concluir, faça o seguinte
         1. verificar as permissões de chave privada

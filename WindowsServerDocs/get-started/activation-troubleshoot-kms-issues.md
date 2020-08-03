@@ -1,19 +1,19 @@
 ---
 title: Problemas conhecidos da ativação do KMS
 description: Descreve problemas comuns que podem ocorrer durante o processo de ativação do KMS e oferece resoluções e diretrizes
-ms.topic: article
+ms.topic: troubleshooting
 ms.date: 10/3/2019
 ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 3446ad0954510d8c96e9a2d361f24c90d325b782
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 14cdf24bc7a88acbfa226954e10274ee47a64b2a
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826249"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409977"
 ---
 # <a name="kms-activation-known-issues"></a>Ativação do KMS: problemas conhecidos
 
@@ -34,7 +34,7 @@ No computador cliente KMS, abra painel de controle do **Sistema** e procure a me
 
 ## <a name="the-kms-client-computer-does-not-activate"></a>O computador cliente KMS não é ativado
 
-Verifique se o limite de ativação do KMS foi atingido. No computador host KMS, execute Slmgr.vbs e use a opção de linha de comando **/dli** para determinar a contagem atual do host. Até que o host KMS tenha uma contagem de 25, os computadores cliente com Windows 7 não poderão ser ativados. Os clientes KMS do Windows Server 2008 R2 exigem uma contagem do KMS de 5 para ativação. Para obter mais informações sobre os requisitos do KMS, confira o [Guia de planejamento de ativação de volume](https://go.microsoft.com/fwlink/?linkid=155926). 
+Verifique se o limite de ativação do KMS foi atingido. No computador host KMS, execute Slmgr.vbs e use a opção de linha de comando **/dli** para determinar a contagem atual do host. Até que o host KMS tenha uma contagem de 25, os computadores cliente com Windows 7 não poderão ser ativados. Os clientes KMS do Windows Server 2008 R2 exigem uma contagem do KMS de 5 para ativação. Para obter mais informações sobre os requisitos do KMS, confira o [Guia de planejamento de ativação de volume](https://go.microsoft.com/fwlink/?linkid=155926).
 
 Abra o computador cliente KMS e examine se o Log de eventos do aplicativo tem a ID de evento 12289. Confira esse evento para obter as seguintes informações:
 

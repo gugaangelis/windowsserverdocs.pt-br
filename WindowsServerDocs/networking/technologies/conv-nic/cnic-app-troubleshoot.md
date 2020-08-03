@@ -8,20 +8,20 @@ ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c20c21c39e44d7eb3da812bbe71f175d0688d6c0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 90021956ebe85ec2f4abfea0aaafd96daebfd82f
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80309652"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520205"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>Solucionando problemas de configurações de NIC convergida
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar o script a seguir para verificar se a configuração de RDMA está correta no host Hyper-V.
 
-- [Baixar o script Test-Rdma. ps1](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)
+- [Baixar Test-Rdma.ps1de script](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)
 
 Você também pode usar os seguintes comandos do Windows PowerShell para solucionar problemas e verificar a configuração de suas NICs convergidas.
 
@@ -29,9 +29,9 @@ Você também pode usar os seguintes comandos do Windows PowerShell para solucio
 
 Para verificar a configuração de RDMA do adaptador de rede, execute o seguinte comando do Windows PowerShell no servidor Hyper-V.
 
-    
-    Get-NetAdapterRdma | fl *
-    
+```powershell
+Get-NetAdapterRdma | fl *
+```
 
 Você pode usar os seguintes resultados esperados e inesperados para identificar e resolver problemas depois de executar esse comando no host do Hyper-V.
 
@@ -45,7 +45,7 @@ O host vNIC e a NIC física mostram recursos RDMA diferentes de zero.
 
 Execute as etapas a seguir se você receber resultados inesperados ao executar o comando **Get-NetAdapterRdma** .
 
-1. Verifique se os drivers de barramento Mlnx e miniporta Mlnx são mais recentes. Para o Mellanox, use pelo menos a remoção de 42. 
+1. Verifique se os drivers de barramento Mlnx e miniporta Mlnx são mais recentes. Para o Mellanox, use pelo menos a remoção de 42.
 2. Verifique se a miniporta Mlnx e os drivers de barramento correspondem verificando a versão do driver por meio de Device Manager. O driver de barramento pode ser encontrado em dispositivos do sistema. O nome deve começar com Mellanox Connect-X 3 PRO VPI, conforme ilustrado na captura de tela a seguir das propriedades do adaptador de rede.
 
 ![Propriedades do adaptador de rede](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-02.jpg)
@@ -54,14 +54,13 @@ Execute as etapas a seguir se você receber resultados inesperados ao executar o
 5. Verifique se o vSwitch foi criado no adaptador físico correto verificando seus recursos de RDMA.
 6. Verifique o log do sistema do visualizador e filtre por origem "Hyper-V-VmSwitch".
 
---- 
-
 ## <a name="get-smbclientnetworkinterface"></a>Get-SmbClientNetworkInterface
 
 Como uma etapa adicional para verificar a configuração de RDMA, execute o seguinte comando do Windows PowerShell no servidor Hyper-V.
 
-
-    Get-SmbClientNetworkInterface
+```powershell
+Get-SmbClientNetworkInterface
+```
 
 ### <a name="get-smbclientnetworkinterface-expected-results"></a>Resultados esperados de Get-SmbClientNetworkInterface
 
@@ -69,22 +68,21 @@ O host vNIC também deve aparecer como RDMA habilitado da perspectiva do SMB.
 
 ![Propriedades do adaptador de rede](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-03.jpg)
 
-
 ### <a name="get-smbclientnetworkinterface-unexpected-results"></a>Resultados inesperados do Get-SmbClientNetworkInterface
 
-1. Verifique se os drivers de barramento Mlnx e miniporta Mlnx são mais recentes. Para o Mellanox, use pelo menos a remoção de 42. 
+1. Verifique se os drivers de barramento Mlnx e miniporta Mlnx são mais recentes. Para o Mellanox, use pelo menos a remoção de 42.
 2. Verifique se a miniporta Mlnx e os drivers de barramento correspondem verificando a versão do driver por meio de Device Manager. O driver de barramento pode ser encontrado em dispositivos do sistema. O nome deve começar com Mellanox Connect-X 3 PRO VPI, conforme ilustrado na captura de tela a seguir das propriedades do adaptador de rede.
 3. Verifique se a RDMA (rede direta) está habilitada na NIC física e no host vNIC.
 4. Verifique se o comutador virtual do Hyper-V foi criado no adaptador físico correto, verificando seus recursos de RDMA.
 5. Verifique os logs do visualizador para "cliente SMB" em **aplicativos e serviços | Microsoft | Windows**.
 
---- 
-
 ## <a name="get-netadapterqos"></a>Get-NetAdapterQos
 
-Você pode exibir a qualidade do serviço do adaptador de rede \(QoS\) a configuração executando o seguinte comando do Windows PowerShell.
+Você pode exibir a qualidade do adaptador de rede da configuração de QoS do serviço \( \) executando o seguinte comando do Windows PowerShell.
 
-    Get-NetAdapterQos
+```powershell
+Get-NetAdapterQos
+```
 
 ### <a name="get-netadapterqos-expected-results"></a>Resultados esperados de Get-NetAdapterQos
 
@@ -96,17 +94,16 @@ As prioridades e as classes de tráfego devem ser exibidas de acordo com a prime
 
 Se os resultados forem inesperados, execute as etapas a seguir.
 
-1. Verifique se o adaptador de rede física dá suporte à ponte do Data Center \(DCB\) e QoS
+1. Verifique se o adaptador de rede física dá suporte a ponte de data center \( DCB \) e QoS
 2. Verifique se os drivers do adaptador de rede estão atualizados.
-
---- 
 
 ## <a name="get-smbmultichannelconnection"></a>Get-SmbMultiChannelConnection
 
-Você pode usar o seguinte comando do Windows PowerShell para verificar se o endereço IP do nó remoto é RDMA\-com capacidade.
+Você pode usar o seguinte comando do Windows PowerShell para verificar se o endereço IP do nó remoto é \- compatível com RDMA.
 
-    Get-SmbMultiChannelConnection
-
+```powershell
+Get-SmbMultiChannelConnection
+```
 
 ### <a name="get-smbmultichannelconnection-expected-results"></a>Resultados esperados de Get-SmbMultiChannelConnection
 
@@ -121,14 +118,13 @@ Se os resultados forem inesperados, execute as etapas a seguir.
 1. Verifique se o ping funciona de ambas as maneiras.
 2. Verifique se o firewall não está bloqueando o início da conexão SMB. Especificamente, habilite a regra de firewall para a porta SMB Direct 5445 para iWARP e 445 para ROCE.
 
---- 
-
 ## <a name="get-smbclientnetworkinterface"></a>Get-SmbClientNetworkInterface
 
-Você pode usar o comando a seguir para verificar se a NIC virtual habilitada para RDMA é relatada como RDMA\-compatível com o SMB.
+Você pode usar o comando a seguir para verificar se a NIC virtual que você habilitou para RDMA é relatada como compatível com RDMA \- pelo SMB.
 
-    Get-SmbClientNetworkInterface
-
+```powershell
+Get-SmbClientNetworkInterface
+```
 
 ### <a name="get-smbclientnetworkinterface-expected-results"></a>Resultados esperados de Get-SmbClientNetworkInterface
 
@@ -143,11 +139,9 @@ Se os resultados forem inesperados, execute as etapas a seguir.
 1. Verifique se o ping funciona de ambas as maneiras.
 2. Verifique se o firewall não está bloqueando o início da conexão SMB.
 
---- 
+## <a name="vstat-mellanox-specific"></a>específico do VSTA. \( Mellanox\)
 
-## <a name="vstat-mellanox-specific"></a>\) do VSTA \(Mellanox específico
-
-Se você estiver usando adaptadores de rede Mellanox, poderá usar o comando **vstat** para verificar a versão de\) de Ethernet RDMA \(RoCE em nós do Hyper-V.
+Se você estiver usando adaptadores de rede Mellanox, poderá usar o comando **vstat** para verificar a versão de roce Ethernet RDMA \( \) em convergente nos nós do Hyper-V.
 
 ### <a name="vstat-expected-results"></a>resultados esperados do VSTA
 
@@ -162,20 +156,14 @@ Se os resultados forem inesperados, execute as etapas a seguir.
 1. Definir a versão correta do RoCE usando Set-MlnxDriverCoreSetting
 2. Instale o firmware mais recente do site da Mellanox.
 
---- 
-
 ## <a name="perfmon-counters"></a>Contadores Perfmon
 
 Você pode examinar os contadores no monitor de desempenho para verificar a atividade RDMA de sua configuração.
 
 ![Exemplos de resultados do monitor de desempenho](../../media/Converged-NIC/CNIC-Troubleshooting/cnic-tshoot-08.jpg)
 
---- 
-
 ## <a name="related-topics"></a>Tópicos relacionados
 
 - [Configuração de NIC convergida com um único adaptador de rede](cnic-single.md)
 - [Configuração NIC agrupada NIC convergida](cnic-datacenter.md)
 - [Configuração de comutador físico para NIC convergida](cnic-app-switch-config.md)
-
----

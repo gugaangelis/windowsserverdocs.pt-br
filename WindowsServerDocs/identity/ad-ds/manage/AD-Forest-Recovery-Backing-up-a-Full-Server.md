@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows-server
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
 ms.technology: identity-adds
-ms.openlocfilehash: e95c11007548c0e1db77132b6e872b88569d3b47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3792a1e9b5c8978fdc8db5201ff4d439dbfb98d6
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962998"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519013"
 ---
-# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperação de floresta do AD-fazendo backup de um servidor completo  
+# <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperação de floresta do AD-fazendo backup de um servidor completo
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 e 2012 R2, Windows Server 2008 e 2008 R2
 
-Um backup de servidor completo é recomendado para se preparar para uma recuperação de floresta, pois ela pode ser restaurada para um hardware diferente ou para uma instância diferente do sistema operacional.  Usando Backup do Windows Server você pode executar um backup completo do servidor. 
+Um backup de servidor completo é recomendado para se preparar para uma recuperação de floresta, pois ela pode ser restaurada para um hardware diferente ou para uma instância diferente do sistema operacional.  Usando Backup do Windows Server você pode executar um backup completo do servidor.
 
 ## <a name="windows-server-backup"></a>Backup do Windows Server
 
@@ -28,7 +28,7 @@ O Backup do Windows Server não é instalado por padrão. No Windows Server 2016
 >[!NOTE]
 >Esteja ciente de que as etapas podem variar um pouco entre o Windows Server 2016 e o Windows Server 2012 R2.
 
-Para obter as etapas para instalá-lo no Windows Server 2008 e no Windows Server 2008 R2, consulte [instalando backup do Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).  
+Para obter as etapas para instalá-lo no Windows Server 2008 e no Windows Server 2008 R2, consulte [instalando backup do Windows Server](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771232(v=ws.10)).
 
 ### <a name="to-install-windows-server-backup"></a>Para instalar o Backup do Windows Server
 
@@ -47,7 +47,7 @@ Para obter as etapas para instalá-lo no Windows Server 2008 e no Windows Server
 1. Abra **Gerenciador do servidor**, clique em **ferramentas**e, em seguida, clique em **backup do Windows Server**.
    - No Windows Server 2008 R2 e no Windows Server 2008, clique em **Iniciar**, aponte para **Ferramentas administrativas**e clique em **backup do Windows Server**.
 
-   ![Instalar backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png) 
+   ![Instalar backup](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup1.png)
 
 2. Se solicitado, na caixa de diálogo **controle de conta de usuário** , forneça credenciais de operador de backup e clique em **OK**.
 3. Clique em **backup local**.
@@ -75,8 +75,8 @@ Para obter as etapas para instalá-lo no Windows Server 2008 e no Windows Server
 Wbadmin.exe é um utilitário de linha de comando que permite fazer backup e restaurar seu sistema operacional, volumes, arquivos, pastas e aplicativos a partir de um prompt de comando.
 
 ### <a name="to-perform-a-full-server-backup-using-wbadminexe"></a>Para executar um backup completo do servidor usando Wbadmin.exe
-  
-- Abra um prompt de comando com privilégios elevados, digite o seguinte comando e pressione ENTER:  
+
+- Abra um prompt de comando com privilégios elevados, digite o seguinte comando e pressione ENTER:
 
    ```
    wbadmin start backup -backuptarget:<Drive_letter_to store_backup>: -include:<Drive_letter_to_include>:

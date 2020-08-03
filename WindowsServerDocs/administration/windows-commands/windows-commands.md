@@ -9,45 +9,18 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 33b19ba9c6f7d8f12d72876a04dbf8bdfda7ff30
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 3f1af3e2f352c8bbea1540c2d1964ad8536170fe
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409927"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519575"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
 Todas as versões com suporte do Windows (servidor e cliente) têm um conjunto de comandos do console do Win32 internos.
 
 Este conjunto de documentação descreve os comandos do Windows que você pode usar para automatizar tarefas usando scripts ou ferramentas de script.
-
-Para localizar informações sobre um comando específico, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
-
-[Um](#a)  |
- [B](#b)  |
- [C](#c)  |
- [D](#d)  |
- [E](#e)  |
- [F](#f)  |
- [G](#g)  |
- [H](#h)  |
- [I](#i)  |
- [J](#j)  |
- [K](#k)  |
- [L](#l)  |
- [M](#m)  |
- [N](#n)  |
- [O](#o)  |
- [P](#p)  |
- [P](#q)  |
- [R](#r)  |
- [S](#s)  |
- [T](#t)  |
- [U](#u)  |
- [V](#v)  |
- [W](#w)  |
- [X](#x) | Y | Z
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -88,32 +61,9 @@ Para a automação do Windows mais robusta e atualizada, recomendamos o uso do P
 
 ## <a name="command-line-reference-a-z"></a>Referência de linha de comando A-Z
 
-Para encontrar informações sobre um comando específico do Windows, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
+Para localizar informações sobre um comando específico, no menu a-Z a seguir, clique na letra com a qual o comando começa e, em seguida, clique no nome do comando.
 
-[Um](#a)  |
- [B](#b)  |
- [C](#c)  |
- [D](#d)  |
- [E](#e)  |
- [F](#f)  |
- [G](#g)  |
- [H](#h)  |
- [I](#i)  |
- [J](#j)  |
- [K](#k)  |
- [L](#l)  |
- [M](#m)  |
- [N](#n)  |
- [O](#o)  |
- [P](#p)  |
- [P](#q)  |
- [R](#r)  |
- [S](#s)  |
- [T](#t)  |
- [U](#u)  |
- [V](#v)  |
- [W](#w)  |
- [X](#x) | Y | Z
+[Um](#a)  |  [B](#b)  |  [C](#c)  |  [D](#d)  |  [E](#e)  |  [F](#f)  |  [G](#g)  |  [H](#h)  |  [I](#i)  |  [J](#j)  |  [K](#k)  |  [L](#l)  |  [M](#m)  |  [N](#n)  |  [O](#o)  |  [P](#p)  |  [P](#q)  |  [R](#r)  |  [S](#s)  |  [T](#t)  |  [U](#u)  |  [V](#v)  |  [W](#w)  |  [X](#x) | Y | Z
 
 ### <a name="a"></a>Um
 

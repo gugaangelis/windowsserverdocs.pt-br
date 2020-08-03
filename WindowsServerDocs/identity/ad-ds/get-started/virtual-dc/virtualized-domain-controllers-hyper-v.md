@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: 2a4d743f05d9a8cd70197b7a70589ce7eac84273
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 99d470af623be7ccc7ad2a5fe0d63576a406ff57
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966238"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519043"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualizando controladores de domínio usando o Hyper-V
 
@@ -30,20 +30,20 @@ Esta seção aborda os requisitos de hardware para o Hyper-v Server, como evitar
 Para instalar e usar a função Hyper-V, você deve ter o seguinte:
 
    - **Um processador x64**
-      - O Hyper-V está disponível em versões baseadas em x64 do Windows Server 2008 ou posterior.  
+      - O Hyper-V está disponível em versões baseadas em x64 do Windows Server 2008 ou posterior.
    - **Virtualização assistida por hardware**
-      - Esse recurso está disponível em processadores que incluem uma opção de virtualização, especificamente, Tecnologia de Virtualização da Intel (Intel VT) ou Virtualização AMD (AMD-V).  
+      - Esse recurso está disponível em processadores que incluem uma opção de virtualização, especificamente, Tecnologia de Virtualização da Intel (Intel VT) ou Virtualização AMD (AMD-V).
    - **DEP (proteção de execução de dados de hardware)**
-      - Hardware DEP deve estar disponível e habilitado. Especificamente, você deve habilitar o bit Intel XD (bit execute disable) ou o bit AMD NX (bit no execute).  
+      - Hardware DEP deve estar disponível e habilitado. Especificamente, você deve habilitar o bit Intel XD (bit execute disable) ou o bit AMD NX (bit no execute).
 
 ## <a name="avoid-creating-single-points-of-failure"></a>Evitar a criação de pontos de falha únicos
 
 Procure evitar criar pontos únicos de falha em potencial quando planejar a implantação do controlador de domínio virtual. Para isso, implemente a redundância do sistema. Por exemplo, considere as seguintes recomendações e tenha em mente a possibilidade de aumentos no custo de administração:
 
-1. Execute pelo menos dois controladores de domínio virtualizados por domínio em diferentes hosts de virtualização, o que diminui o risco de perder todos os controladores de domínio se um único host de virtualização falhar.  
-2. Conforme recomendável para outras tecnologias, diversifique o hardware (usando diferentes CPUs, placas-mãe, adaptadores de rede ou outros elementos de hardware) no qual os controladores de domínio são executados. A diversificação do hardware limita o dano que pode ocorrer devido a um problema de funcionamento específico de uma configuração de fornecedor, de um driver ou de um único componente ou tipo de hardware.  
-3. Se possível, os controladores de domínio devem ser executados em hardware localizado em diferentes regiões do mundo. Isso ajuda a reduzir o impacto de um desastre ou de uma falha que afeta um site no qual os controladores de domínio estão hospedados.  
-4. Mantenha os controladores de domínio físicos em cada um dos domínios. Isso ameniza o risco de um problema no funcionamento da plataforma de virtualização que afeta todos os sistemas de host que usam a plataforma.  
+1. Execute pelo menos dois controladores de domínio virtualizados por domínio em diferentes hosts de virtualização, o que diminui o risco de perder todos os controladores de domínio se um único host de virtualização falhar.
+2. Conforme recomendável para outras tecnologias, diversifique o hardware (usando diferentes CPUs, placas-mãe, adaptadores de rede ou outros elementos de hardware) no qual os controladores de domínio são executados. A diversificação do hardware limita o dano que pode ocorrer devido a um problema de funcionamento específico de uma configuração de fornecedor, de um driver ou de um único componente ou tipo de hardware.
+3. Se possível, os controladores de domínio devem ser executados em hardware localizado em diferentes regiões do mundo. Isso ajuda a reduzir o impacto de um desastre ou de uma falha que afeta um site no qual os controladores de domínio estão hospedados.
+4. Mantenha os controladores de domínio físicos em cada um dos domínios. Isso ameniza o risco de um problema no funcionamento da plataforma de virtualização que afeta todos os sistemas de host que usam a plataforma.
 
 ## <a name="security-considerations"></a>Considerações de segurança
 
@@ -51,8 +51,8 @@ O computador host no qual os controladores de domínio virtuais são executados 
 
 Certifique-se de manter as seguintes considerações de segurança em mente ao planejar virtualizar controladores de domínio:
 
-   - O administrador local de um computador que hospeda controladores de domínio virtuais e graváveis deve ser considerado equivalente em credenciais ao administrador de domínio padrão de todos os domínios e florestas aos quais esses controladores de domínio pertencem.  
-   - A configuração recomendada para evitar problemas de segurança e desempenho é um host executando uma instalação Server Core do Windows Server 2008 ou posterior, sem aplicativos que não sejam o Hyper-V. Essa configuração limita o número de aplicativos e serviços que estão instalados no servidor, o que deve resultar em um desempenho maior e em menos aplicativos e serviços que poderiam ser explorados de forma mal-intencionada para atacar o computador ou a rede. O efeito desse tipo de configuração é conhecido como uma superfície de ataque reduzida. Em uma filial ou outros locais que não podem ser protegidos satisfatoriamente, é recomendado um controlador de domínio somente leitura (RODC). Se existir uma rede de gerenciamento separada, recomendamos que o host seja conectado apenas à rede de gerenciamento.  
+   - O administrador local de um computador que hospeda controladores de domínio virtuais e graváveis deve ser considerado equivalente em credenciais ao administrador de domínio padrão de todos os domínios e florestas aos quais esses controladores de domínio pertencem.
+   - A configuração recomendada para evitar problemas de segurança e desempenho é um host executando uma instalação Server Core do Windows Server 2008 ou posterior, sem aplicativos que não sejam o Hyper-V. Essa configuração limita o número de aplicativos e serviços que estão instalados no servidor, o que deve resultar em um desempenho maior e em menos aplicativos e serviços que poderiam ser explorados de forma mal-intencionada para atacar o computador ou a rede. O efeito desse tipo de configuração é conhecido como uma superfície de ataque reduzida. Em uma filial ou outros locais que não podem ser protegidos satisfatoriamente, é recomendado um controlador de domínio somente leitura (RODC). Se existir uma rede de gerenciamento separada, recomendamos que o host seja conectado apenas à rede de gerenciamento.
    - Você pode usar o BitLocker com seus controladores de domínio, já que o Windows Server 2016 pode usar o recurso de TPM virtual para também fornecer ao material da chave de convidado para desbloquear o volume do sistema.
    - [Malha protegida e VMs blindadas](/it-server/WindowsServerDocs/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) podem fornecer controles adicionais para proteger seus controladores de domínio.
 
@@ -69,11 +69,11 @@ O uso de máquinas virtuais torna possível ter muitas configurações diferente
 |Host|Computador membro ou do grupo de trabalho|Computador membro ou do grupo de trabalho|
 |Convidado|Controlador de domínio|Computador membro ou do grupo de trabalho|
 
-![](media/virtualized-domain-controller-architecture/Dd363553.f44706fd-317e-4f0b-9578-4243f4db225f(WS.10).gif)
+![Diagrama de limites de segurança](media/virtualized-domain-controller-architecture/Dd363553.f44706fd-317e-4f0b-9578-4243f4db225f(WS.10).gif)
 
-   - O administrador no computador host tem o mesmo acesso que um administrador de domínio nos convidados do controlador de domínio gravável e deve ser tratado dessa forma. No caso de um convidado RODC, o administrador do computador host tem o mesmo acesso que um administrador local no RODC convidado.   
-   - Um controlador de domínio em uma máquina virtual terá os direitos administrativos no host se o host estiver vinculado ao mesmo domínio. Há uma oportunidade para um usuário mal-intencionado comprometer todas as máquinas virtuais se o usuário mal-intencionado obtiver o acesso à máquina virtual 1 pela primeira vez. Isso é conhecido como um vetor de ataque. Se houver controladores de domínio em vários domínios ou florestas, esses domínios deverão ter uma administração centralizada na qual o administrador de um domínio seja confiável em todos os domínios.  
-   - A chance para atacar da Máquina virtual 1 existirá mesmo de ela estiver instalar como um RODC. Embora um administrador de um RODC não tenha explicitamente direitos do administrador de domínio, o RODC pode ser usado para enviar diretivas para o computador host. Essas diretivas podem incluir scripts de inicialização. Se essa operação for bem sucedida, o computador host poderá estar comprometido, e poderá ser usado para comprometer as outras máquinas virtuais no computador host.  
+   - O administrador no computador host tem o mesmo acesso que um administrador de domínio nos convidados do controlador de domínio gravável e deve ser tratado dessa forma. No caso de um convidado RODC, o administrador do computador host tem o mesmo acesso que um administrador local no RODC convidado.
+   - Um controlador de domínio em uma máquina virtual terá os direitos administrativos no host se o host estiver vinculado ao mesmo domínio. Há uma oportunidade para um usuário mal-intencionado comprometer todas as máquinas virtuais se o usuário mal-intencionado obtiver o acesso à máquina virtual 1 pela primeira vez. Isso é conhecido como um vetor de ataque. Se houver controladores de domínio em vários domínios ou florestas, esses domínios deverão ter uma administração centralizada na qual o administrador de um domínio seja confiável em todos os domínios.
+   - A chance para atacar da Máquina virtual 1 existirá mesmo de ela estiver instalar como um RODC. Embora um administrador de um RODC não tenha explicitamente direitos do administrador de domínio, o RODC pode ser usado para enviar diretivas para o computador host. Essas diretivas podem incluir scripts de inicialização. Se essa operação for bem sucedida, o computador host poderá estar comprometido, e poderá ser usado para comprometer as outras máquinas virtuais no computador host.
 
 ## <a name="security-of-vhd-files"></a>Segurança dos arquivos VHD
 
@@ -81,7 +81,7 @@ Um arquivo VHD de um controlador de domínio virtual é equivalente ao disco rí
 
 ## <a name="rodcs"></a>RODCs
 
-Um benefício dos RODCs é a capacidade de colocá-los em locais onde a segurança física não pode ser garantida, como em filiais. Você pode usar o Windows Criptografia de Unidade de Disco BitLocker para proteger os próprios arquivos VHD (não os sistemas de arquivos) de serem comprometidos no host por meio de roubo do disco físico. 
+Um benefício dos RODCs é a capacidade de colocá-los em locais onde a segurança física não pode ser garantida, como em filiais. Você pode usar o Windows Criptografia de Unidade de Disco BitLocker para proteger os próprios arquivos VHD (não os sistemas de arquivos) de serem comprometidos no host por meio de roubo do disco físico.
 
 ## <a name="performance"></a>Desempenho
 
@@ -188,8 +188,8 @@ Há várias práticas de máquina virtual comuns que você deve evitar ao implan
 
 As plataformas de virtualização, como o Hyper-V, oferecem uma série de recursos convenientes que tornam o gerenciamento, a manutenção, o backup e a migração de computadores mais fáceis. No entanto, as seguintes práticas e recursos comuns de implantação não devem ser usados para controladores de domínio virtuais:
 
-- Para garantir a durabilidade das gravações de Active Directory, não implante os arquivos de banco de dados do controlador de domínio virtual (o banco de dados Active Directory (NTDS. DIT), logs e SYSVOL) em discos IDE virtuais. Em vez disso, crie um segundo VHD anexado a um controlador SCSI virtual e verifique se o banco de dados, os logs e o SYSVOL são colocados no disco SCSI da máquina virtual durante a instalação do controlador de domínio.  
-- Não implemente VHDs (discos rígidos virtuais) diferenciais em uma máquina virtual que você esteja configurando como um controlador de domínio. Isso torna a reversão para uma versão anterior muito fácil, e também reduz o desempenho. Para obter mais informações sobre tipos de VHD, consulte [Assistente de novo disco rígido virtual](https://go.microsoft.com/fwlink/?linkid=137279).  
+- Para garantir a durabilidade das gravações de Active Directory, não implante os arquivos de banco de dados do controlador de domínio virtual (o banco de dados Active Directory (NTDS. DIT), logs e SYSVOL) em discos IDE virtuais. Em vez disso, crie um segundo VHD anexado a um controlador SCSI virtual e verifique se o banco de dados, os logs e o SYSVOL são colocados no disco SCSI da máquina virtual durante a instalação do controlador de domínio.
+- Não implemente VHDs (discos rígidos virtuais) diferenciais em uma máquina virtual que você esteja configurando como um controlador de domínio. Isso torna a reversão para uma versão anterior muito fácil, e também reduz o desempenho. Para obter mais informações sobre tipos de VHD, consulte [Assistente de novo disco rígido virtual](https://go.microsoft.com/fwlink/?linkid=137279).
 - Não implante novos domínios Active Directory e florestas em uma cópia de um sistema operacional Windows Server que não foi preparado pela primeira vez usando a ferramenta de preparação do sistema (Sysprep). Para obter mais informações sobre como executar o Sysprep, consulte [visão geral do Sysprep (preparação do sistema)](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
 
    > [!WARNING]
@@ -215,10 +215,9 @@ Isso também ajuda a evitar problemas com problemas relacionados a hardware ou �
 > [!WARNING]
 > Para evitar problemas com a replicação do Active Directory, verifique se apenas uma instância (física ou virtual) de um controlador de domínio específico existe em uma determinada rede a qualquer momento.
 > Você pode diminuir a probabilidade do clone antigo ser um problema:
-> 
+>
 > - Quando o novo controlador de domínio virtual estiver em execução, altere a senha da conta de computador duas vezes usando: Netdom resetpwd/Server: <Domain-Controller>...
 > - Exporte e importe o novo convidado virtual para forçá-lo a se tornar uma nova ID de geração e, portanto, uma ID de invocação de banco de dados.
-> 
 
 ## <a name="using-p2v-migration-to-create-test-environments"></a>Usando a migração P2V para criar ambientes de teste
 
@@ -247,33 +246,33 @@ Para otimizar o desempenho da máquina virtual do controlador de domínio e gara
   > Se você estiver planejando usar o BitLocker para o controlador de domínio de convidado virtual, será necessário verificar se os volumes adicionais estão configurados para "desbloqueio automático".
   > Mais informações sobre como configurar o desbloqueio automático podem ser encontradas em [Enable-BitLockerAutoUnlock](/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-- **Armazenamento do host de arquivos VHD**. Recomendações: as recomendações de armazenamento de hosts abordam o armazenamento de arquivos VHD. Para obter um máximo desempenho, não armazene arquivos VHD em um disco que seja usado frequentemente por outros serviços ou aplicativos, como o disco do sistema no qual o sistema operacional Windows host está instalado. Armazene cada arquivo VHD em uma partição separada do sistema operacional host e de quaisquer outros arquivos VHD. A configuração ideal é armazenar cada arquivo VHD em uma unidade de disco física separada.  
+- **Armazenamento do host de arquivos VHD**. Recomendações: as recomendações de armazenamento de hosts abordam o armazenamento de arquivos VHD. Para obter um máximo desempenho, não armazene arquivos VHD em um disco que seja usado frequentemente por outros serviços ou aplicativos, como o disco do sistema no qual o sistema operacional Windows host está instalado. Armazene cada arquivo VHD em uma partição separada do sistema operacional host e de quaisquer outros arquivos VHD. A configuração ideal é armazenar cada arquivo VHD em uma unidade de disco física separada.
 
-  O sistema de disco físico do host também deve satisfazer **pelo menos um** dos seguintes critérios para atender aos requisitos de integridade de dados de carga de trabalho virtualizada:  
+  O sistema de disco físico do host também deve satisfazer **pelo menos um** dos seguintes critérios para atender aos requisitos de integridade de dados de carga de trabalho virtualizada:
 
-   - O sistema usa discos de classe de servidor (SCSI, Fibre Channel).  
-   - O sistema garante que os discos estejam conectados a um adaptador de barramento de host (HBA) de cache com suporte de bateria.  
-   - O sistema usa um controlador de armazenamento (por exemplo, um sistema RAID) como o dispositivo de armazenamento.  
-   - O sistema garante que a energia para o disco seja protegida por uma fonte de alimentação ininterrupta (UPS).  
-   - O sistema garante que o recurso de gravação em cache do disco esteja desabilitado.  
+   - O sistema usa discos de classe de servidor (SCSI, Fibre Channel).
+   - O sistema garante que os discos estejam conectados a um adaptador de barramento de host (HBA) de cache com suporte de bateria.
+   - O sistema usa um controlador de armazenamento (por exemplo, um sistema RAID) como o dispositivo de armazenamento.
+   - O sistema garante que a energia para o disco seja protegida por uma fonte de alimentação ininterrupta (UPS).
+   - O sistema garante que o recurso de gravação em cache do disco esteja desabilitado.
 
-- **VHD fixo versus discos de passagem**. Há muitas maneiras de configurar o armazenamento para máquinas virtuais. Quando os arquivos VHD são usados, os VHDs de tamanho fixo são mais eficientes que os VHDs dinâmicos, porque a memória dos VHDs de tamanho fixo é alocada quando eles são criados. Os discos de passagem, que as máquinas virtuais podem usar para acessar a mídia de armazenamento físico, estão ainda mais otimizados para desempenho. Os discos de passagem são essencialmente discos físicos ou LUNs (números de unidade lógica) conectados a uma máquina virtual. Os discos de passagem não oferecem suporte ao recurso de instantâneo. Por isso, eles são a configuração de disco rígido preferencial, pois o uso de instantâneos com controladores de domínio não é recomendável.  
+- **VHD fixo versus discos de passagem**. Há muitas maneiras de configurar o armazenamento para máquinas virtuais. Quando os arquivos VHD são usados, os VHDs de tamanho fixo são mais eficientes que os VHDs dinâmicos, porque a memória dos VHDs de tamanho fixo é alocada quando eles são criados. Os discos de passagem, que as máquinas virtuais podem usar para acessar a mídia de armazenamento físico, estão ainda mais otimizados para desempenho. Os discos de passagem são essencialmente discos físicos ou LUNs (números de unidade lógica) conectados a uma máquina virtual. Os discos de passagem não oferecem suporte ao recurso de instantâneo. Por isso, eles são a configuração de disco rígido preferencial, pois o uso de instantâneos com controladores de domínio não é recomendável.
 
 Para reduzir a chance de corrupção de dados de Active Directory, use controladores SCSI virtuais:
 
    - Use unidades físicas SCSI (em oposição às unidades IDE/ATA) nos servidores Hyper-V que hospedam controladores de domínio virtuais. Se você não puder usar unidades SCSI, verifique se o armazenamento de gravação em cache está desabilitado nas unidades ATA/IDE que hospedam controladores de domínio virtuais. Para obter mais informações, consulte [ID do evento 1539 – integridade do banco de dados](https://go.microsoft.com/fwlink/?linkid=162419).
-   - Para garantir a durabilidade das gravações de Active Directory, o banco de dados Active Directory, os logs e o SYSVOL devem ser colocados em um disco SCSI virtual. Discos SCSI virtuais dão suporte a FUA (acesso forçado à unidade). O FUA garante que o sistema operacional grave e leia dados diretamente da mídia, ignorando qualquer e todos os mecanismos de cache.  
+   - Para garantir a durabilidade das gravações de Active Directory, o banco de dados Active Directory, os logs e o SYSVOL devem ser colocados em um disco SCSI virtual. Discos SCSI virtuais dão suporte a FUA (acesso forçado à unidade). O FUA garante que o sistema operacional grave e leia dados diretamente da mídia, ignorando qualquer e todos os mecanismos de cache.
 
 ## <a name="operational-considerations-for-virtualized-domain-controllers"></a>Considerações operacionais para controladores de domínio virtualizados
 
 Os controladores de domínio executados em máquinas virtuais têm restrições operacionais que não se aplicam aos controladores de domínio executados em máquinas físicas. Ao usar um controlador de domínio virtualizado, há alguns recursos e práticas do software de virtualização que você não deve usar:
 
-   - Não pause, interrompa nem armazene o estado salvo de um controlador de domínio em uma máquina virtual por períodos de tempo maiores que o tempo de vida da marca de exclusão da floresta e depois continue a partir do estado pausado ou salvo. Fazer isso pode interferir na replicação. Para saber como determinar o tempo de vida da marca de exclusão para a floresta, consulte [determinar o tempo de vida da marca de exclusão para a floresta](https://go.microsoft.com/fwlink/?linkid=137177).  
+   - Não pause, interrompa nem armazene o estado salvo de um controlador de domínio em uma máquina virtual por períodos de tempo maiores que o tempo de vida da marca de exclusão da floresta e depois continue a partir do estado pausado ou salvo. Fazer isso pode interferir na replicação. Para saber como determinar o tempo de vida da marca de exclusão para a floresta, consulte [determinar o tempo de vida da marca de exclusão para a floresta](https://go.microsoft.com/fwlink/?linkid=137177).
    - Não copie nem clone VHDs (discos rígidos virtuais). Mesmo com as proteções em vigor para a VM convidada, os VHDs individuais ainda podem ser copiados e causam roll-back de USN.
    - Não pegue nem use um instantâneo de um controlador de domínio virtual. É tecnicamente suportado com o Windows Server 2012 e mais recente, não é uma substituição para uma boa estratégia de backup. Há alguns motivos para tirar instantâneos de DC ou restaurar os instantâneos.
-   - Não use um VHD diferencial em uma máquina virtual configurada como um controlador de domínio. Isso torna a reversão para uma versão anterior muito fácil e também reduz o desempenho.  
-   - Não use o recurso Exportar em uma máquina virtual que esteja executando um controlador de domínio.  
-   - Não restaure um controlador de domínio nem tente reverter o conteúdo de um banco de dados do Active Directory de outra forma que não seja usando um backup com suporte. Para obter mais informações, consulte [considerações de backup e restauração para controladores de domínio virtualizados](#backup-and-restore-practices-to-avoid).  
+   - Não use um VHD diferencial em uma máquina virtual configurada como um controlador de domínio. Isso torna a reversão para uma versão anterior muito fácil e também reduz o desempenho.
+   - Não use o recurso Exportar em uma máquina virtual que esteja executando um controlador de domínio.
+   - Não restaure um controlador de domínio nem tente reverter o conteúdo de um banco de dados do Active Directory de outra forma que não seja usando um backup com suporte. Para obter mais informações, consulte [considerações de backup e restauração para controladores de domínio virtualizados](#backup-and-restore-practices-to-avoid).
 
 Todas essas recomendações são feitas para ajudar a evitar a possibilidade de uma reversão do USN (número de sequência de atualização). Para obter mais informações sobre a reversão de USN, consulte USN e reversão de USN.
 
@@ -285,7 +284,7 @@ Com a tecnologia de máquina virtual, determinados requisitos das operações de
 
 Há uma maneira com suporte para executar o backup e a restauração de um controlador de domínio virtualizado:
 
-1. Executar o Backup do Windows Server no sistema operacional convidado.  
+1. Executar o Backup do Windows Server no sistema operacional convidado.
 
 Com os hosts e convidados do Windows Server 2012 e do Hyper-V mais recentes, você pode fazer backups com suporte de controladores de domínio usando instantâneos, exportação e importação de VM convidada e também replicação do Hyper-V. No entanto, todos eles não são uma boa opção para criar um histórico de backup adequado, com a ligeira exceção de exportação de VM convidada.
 
@@ -303,8 +302,8 @@ Embora isso funcione com o Windows Server 2012 e mais recente, há uma incompati
 
 Como mencionado, os controladores de domínio executados em máquinas virtuais têm restrições que não se aplicam aos controladores de domínio executados em máquinas físicas. Ao fazer backup ou restaurar um controlador de domínio virtual, há determinados recursos e práticas do software de virtualização que você não deve usar:
 
-   - Não copie nem clone arquivos VHD de controladores de domínio em vez de executar backups regulares. Se o arquivo VHD for copiado ou clonado, ele se tornará obsoleto. Em seguida, se o VHD for iniciado no modo normal, você encontrará uma reversão de USN. Você deve realizar as operações de backup adequadas que têm suporte dos Serviços de Domínio Active Directory (AD DS), como usar o recurso Backup do Windows Server.  
-   - Não use o recurso Instantâneo como backup para restaurar uma máquina virtual que foi configurada como um controlador de domínio. Ocorrerão problemas com a replicação quando você reverter a máquina virtual para um estado anterior com o Windows Server 2008 R2 e mais antigo. Para obter mais informações, consulte [USN e reversão de USN](#usn-and-usn-rollback). Embora o uso de um instantâneo para restaurar um controlador de domínio somente leitura (RODC) não cause problemas de replicação, esse método de restauração ainda não é recomendado.  
+   - Não copie nem clone arquivos VHD de controladores de domínio em vez de executar backups regulares. Se o arquivo VHD for copiado ou clonado, ele se tornará obsoleto. Em seguida, se o VHD for iniciado no modo normal, você encontrará uma reversão de USN. Você deve realizar as operações de backup adequadas que têm suporte dos Serviços de Domínio Active Directory (AD DS), como usar o recurso Backup do Windows Server.
+   - Não use o recurso Instantâneo como backup para restaurar uma máquina virtual que foi configurada como um controlador de domínio. Ocorrerão problemas com a replicação quando você reverter a máquina virtual para um estado anterior com o Windows Server 2008 R2 e mais antigo. Para obter mais informações, consulte [USN e reversão de USN](#usn-and-usn-rollback). Embora o uso de um instantâneo para restaurar um controlador de domínio somente leitura (RODC) não cause problemas de replicação, esse método de restauração ainda não é recomendado.
 
 ## <a name="restoring-a-virtual-domain-controller"></a>Restaurando um controlador de domínio virtual
 
@@ -312,23 +311,23 @@ Para restaurar um controlador de domínio quando ele falha, você deve fazer bac
 
 Quando uma máquina virtual do controlador de domínio falha e não ocorre uma reversão de USN, há duas situações com suporte para restaurar a máquina virtual:
 
-   - Se um backup de dados do estado do sistema válido que pré-data a falha existir, você poderá restaurar o estado do sistema usando a opção de restauração do utilitário de backup usado para criar o backup. O backup de dados do estado do sistema deve ter sido criado usando um utilitário de backup compatível com Active Directory dentro do tempo de vida da marca de exclusão, que é por padrão, não mais que 180 dias. Você deve fazer backup dos seus controladores de domínio pelo menos a cada meio tempo de vida da marca de exclusão. Para obter instruções sobre como determinar o tempo de vida da marca de exclusão específico para sua floresta, consulte [determinar o tempo de vida da marca de exclusão para a floresta](https://go.microsoft.com/fwlink/?linkid=137177).  
+   - Se um backup de dados do estado do sistema válido que pré-data a falha existir, você poderá restaurar o estado do sistema usando a opção de restauração do utilitário de backup usado para criar o backup. O backup de dados do estado do sistema deve ter sido criado usando um utilitário de backup compatível com Active Directory dentro do tempo de vida da marca de exclusão, que é por padrão, não mais que 180 dias. Você deve fazer backup dos seus controladores de domínio pelo menos a cada meio tempo de vida da marca de exclusão. Para obter instruções sobre como determinar o tempo de vida da marca de exclusão específico para sua floresta, consulte [determinar o tempo de vida da marca de exclusão para a floresta](https://go.microsoft.com/fwlink/?linkid=137177).
    - Se uma cópia funcional do arquivo VHD estiver disponível, mas o backup de estado do sistema estiver indisponível, você poderá remover a máquina virtual existente. Restaure a máquina virtual existente usando uma cópia anterior do VHD, mas certifique-se de iniciá-la no Modo de Restauração dos Serviços de Diretório (DSRM) e configurar o Registro corretamente, conforme descrito na próxima seção. Em seguida, reinicie o controlador de domínio no modo normal.
 
 Use o processo na ilustração a seguir para determinar a melhor maneira de restaurar seu controlador de domínio virtualizado.
 
-![](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
+![Diagrama de como restaurar seu controlador de domínio virtualizado](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
 
 Nos RODCs, o processo de restauração e as decisões são mais simples.
 
-![](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
+![Diagrama como restaurar seu controlador de domínio somente leitura](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
 
 ## <a name="restoring-the-system-state-backup-of-a-virtual-domain-controller"></a>Restaurando o backup de estado do sistema de um controlador de domínio virtual
 
 Se um backup de estado do sistema válido existir na máquina virtual do controlador de domínio, você poderá restaurar de forma segura o backup seguindo o procedimento de restauração descrito pela ferramenta de backup usada para fazer backup do arquivo VHD.
 
 > [!IMPORTANT]
-> Para restaurar corretamente o controlador de domínio, você deve reiniciá-lo no DSRM. Você não deve permitir que o controlador de domínio inicie no modo normal. Se você perder a oportunidade de inserir o DSRM durante a inicialização do sistema, desative a máquina virtual do controlador de domínio antes que ela possa ser totalmente iniciada no modo normal. É importante iniciar o controlador de domínio no DSRM porque iniciá-lo no modo normal incrementará seus USNs, mesmo se o controlador de domínio estiver desconectado da rede. Para obter mais informações sobre a reversão de USN, consulte USN e reversão de USN. 
+> Para restaurar corretamente o controlador de domínio, você deve reiniciá-lo no DSRM. Você não deve permitir que o controlador de domínio inicie no modo normal. Se você perder a oportunidade de inserir o DSRM durante a inicialização do sistema, desative a máquina virtual do controlador de domínio antes que ela possa ser totalmente iniciada no modo normal. É importante iniciar o controlador de domínio no DSRM porque iniciá-lo no modo normal incrementará seus USNs, mesmo se o controlador de domínio estiver desconectado da rede. Para obter mais informações sobre a reversão de USN, consulte USN e reversão de USN.
 
 ## <a name="to-restore-the-system-state-backup-of-a-virtual-domain-controller"></a>Para restaurar o backup de estado do sistema de um controlador de domínio virtual
 
@@ -363,8 +362,8 @@ Se você não tiver um backup de dados de estado do sistema que pré-date a falh
 10. Você deve ver pelo menos uma entrada da ID de evento 1109. Se você não vir essa entrada, vá para a próxima etapa. Caso contrário, clique duas vezes na entrada e analise o texto que confirma que a atualização foi feita no InvocationID:
 
     ```
-    Active Directory has been restored from backup media, or has been configured to host an application partition. 
-    The invocationID attribute for this directory server has been changed. 
+    Active Directory has been restored from backup media, or has been configured to host an application partition.
+    The invocationID attribute for this directory server has been changed.
     The highest update sequence number at the time the backup was created is <time>
 
     InvocationID attribute (old value):<Previous InvocationID value>
@@ -390,8 +389,8 @@ Para cada partição de diretório que um controlador de domínio de destino arm
 
 As duas tabelas de metadados de replicação a seguir contêm USNs. Os controladores de domínio de origem e de destino os usam para filtrar alterações que o controlador de domínio de destino exige.
 
-1. **Vetor de atualização**: uma tabela que o controlador de domínio de destino mantém para acompanhar as atualizações de origem recebidas de todos os controladores de domínio de origem. Quando um controlador de domínio de destino solicita alterações para uma partição de diretório, ela fornece seu vetor atual para o controlador de domínio de origem. O controlador de domínio de origem usa esse valor para filtrar as atualizações que ele envia para o controlador de domínio de destino. O controlador de domínio de origem envia seu vetor de atualização para o destino na conclusão de um ciclo de replicação bem-sucedido para garantir que o controlador de domínio de destino saiba que ele foi sincronizado com todas as atualizações originadas de controladores de domínio e que as atualizações estão no mesmo nível que a origem.  
-2. **Marca d' água alta**: um valor que o controlador de domínio de destino mantém para manter o controle das alterações mais recentes que recebeu de um controlador de domínio de origem específico para uma partição específica. A marca d' água alta impede que o controlador de domínio de origem envie alterações que pelo controlador de domínio de destino já tenha recebido dele.  
+1. **Vetor de atualização**: uma tabela que o controlador de domínio de destino mantém para acompanhar as atualizações de origem recebidas de todos os controladores de domínio de origem. Quando um controlador de domínio de destino solicita alterações para uma partição de diretório, ela fornece seu vetor atual para o controlador de domínio de origem. O controlador de domínio de origem usa esse valor para filtrar as atualizações que ele envia para o controlador de domínio de destino. O controlador de domínio de origem envia seu vetor de atualização para o destino na conclusão de um ciclo de replicação bem-sucedido para garantir que o controlador de domínio de destino saiba que ele foi sincronizado com todas as atualizações originadas de controladores de domínio e que as atualizações estão no mesmo nível que a origem.
+2. **Marca d' água alta**: um valor que o controlador de domínio de destino mantém para manter o controle das alterações mais recentes que recebeu de um controlador de domínio de origem específico para uma partição específica. A marca d' água alta impede que o controlador de domínio de origem envie alterações que pelo controlador de domínio de destino já tenha recebido dele.
 
 ## <a name="directory-database-identity"></a>Identidade do banco de dados do diretório
 
@@ -413,18 +412,18 @@ Quando AD DS é restaurado corretamente em um controlador de domínio, a **invoc
 
 Por exemplo, suponha que VDC1 e DC2 são dois controladores de domínio no mesmo domínio. A figura a seguir mostra a percepção do DC2 sobre o VDC1 quando o valor invocationID é redefinido em uma situação de restauração adequada.
 
-![](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
+![Diagrama quando o valor de invocação é redefinido corretamente](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
 
 ## <a name="usn-rollback"></a>Reversão de USN
 
-A reversão de USN ocorre quando as atualizações normais dos USNs são descartadas e um controlador de domínio tenta usar um USN mais baixo que sua atualização mais recente. A reversão de USN será detectada e a replicação será interrompida antes que a divergência na floresta seja criada, na maioria dos casos. 
+A reversão de USN ocorre quando as atualizações normais dos USNs são descartadas e um controlador de domínio tenta usar um USN mais baixo que sua atualização mais recente. A reversão de USN será detectada e a replicação será interrompida antes que a divergência na floresta seja criada, na maioria dos casos.
 
 A reversão de USN pode ser causada de várias maneiras, por exemplo, quando arquivos antigos do disco rígido virtual (VHD) são usados ou uma conversão físico para virtual (conversão P2V) é realizada sem garantir que a máquina física fique offline permanentemente após a conversão. Tome as seguintes precauções para garantir que a reversão de USN não ocorra:
 
    - Quando o Windows Server 2012 ou mais recente não estiver em execução, não use um instantâneo de uma máquina virtual do controlador de domínio.
-   - Não copie o arquivo VHD do controlador de domínio.  
-   - Quando o Windows Server 2012 ou mais recente não estiver em execução, não exporte a máquina virtual que está executando um controlador de domínio.  
-   - Não restaure um controlador de domínio nem tente reverter o conteúdo de um banco de dados do Active Directory de outra forma que não seja uma solução de backup com suporte, como o Backup do Windows Server.  
+   - Não copie o arquivo VHD do controlador de domínio.
+   - Quando o Windows Server 2012 ou mais recente não estiver em execução, não exporte a máquina virtual que está executando um controlador de domínio.
+   - Não restaure um controlador de domínio nem tente reverter o conteúdo de um banco de dados do Active Directory de outra forma que não seja uma solução de backup com suporte, como o Backup do Windows Server.
 
 Em alguns casos, a reversão de USN pode não ser detectada. Em outros casos, ela pode causar outros erros de replicação. Nesses casos, é necessário identificar a extensão do problema e resolvê-lo em tempo hábil. Para obter informações sobre como remover objetos remanescentes que podem ocorrer como resultado da reversão de USN, consulte [objetos de Active Directory desatualizados geram a ID de evento 1988 no Windows Server 2003](https://go.microsoft.com/fwlink/?linkid=137185) na base de dados de conhecimento Microsoft.
 
@@ -434,13 +433,13 @@ Na maioria dos casos, as reversões de USN sem uma redefinição correspondente 
 
 No Windows Server 2008 e no Windows Server 2003 SP1, quando um controlador de domínio de destino solicita alterações com um USN usado anteriormente, a resposta de seu parceiro de replicação de origem é interpretada pelo controlador de domínio de destino para significar que seus metadados de replicação estão desatualizados. Isso indica que o banco de dados do Active Directory no controlador de domínio de origem foi revertido para um estado anterior. Por exemplo, o arquivo VHD de uma máquina virtual foi revertido para uma versão anterior. Neste caso, o controlador de domínio de destino inicia as seguintes medidas de quarentena no controlador de domínio que enfrentou uma restauração inadequada:
 
-   - O AD DS pausa o serviço de logon de rede, o que evita a mudança de senhas nas contas do usuário e do computador. Essa ação evitará a perda de tais alterações se elas ocorrerem após uma restauração inadequada.  
-   - O AD DS desabilita a replicação de entrada e de saída do Active Directory.  
-   - O AD DS gera a ID do evento 2095 no log de eventos do Serviço de Diretório para indicar a condição.  
+   - O AD DS pausa o serviço de logon de rede, o que evita a mudança de senhas nas contas do usuário e do computador. Essa ação evitará a perda de tais alterações se elas ocorrerem após uma restauração inadequada.
+   - O AD DS desabilita a replicação de entrada e de saída do Active Directory.
+   - O AD DS gera a ID do evento 2095 no log de eventos do Serviço de Diretório para indicar a condição.
 
 A ilustração a seguir mostra a sequência de eventos que ocorre quando a reversão de USN é detectada no VDC2, o controlador de domínio de destino executado em uma máquina virtual. Nesta ilustração, a detecção de reversão de USN ocorre em VDC2 quando um parceiro de replicação detecta que o VDC2 enviou um valor USN atualizado que foi visto anteriormente pelo controlador de domínio de destino, o que indica que o banco de dados VDC2's foi revertido no tempo de forma inadequada.
 
-![](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
+![Diagrama mostrando o que acontece quando a reversão de USN é detectada](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
 
 Se o log de eventos do Serviço de Diretório reportar uma ID do evento 2095, complete o procedimento a seguir imediatamente.
 
@@ -458,14 +457,14 @@ Se o log de eventos do Serviço de Diretório reportar uma ID do evento 2095, c
 
 A reversão de USN pode não ser detectada em uma de duas circunstâncias:
 
-1. O arquivo VHD é anexado a máquinas virtuais diferentes executadas em vários locais simultaneamente.  
-2. O USN no controlador de domínio restaurado aumentou o último USN que o outro controlador de domínio recebeu.  
+1. O arquivo VHD é anexado a máquinas virtuais diferentes executadas em vários locais simultaneamente.
+2. O USN no controlador de domínio restaurado aumentou o último USN que o outro controlador de domínio recebeu.
 
 Na primeira circunstância, outros controladores de domínio podem ser replicados com uma das máquinas virtuais e alterações podem ocorrer nas máquinas virtuais sem serem replicadas na outra. Essa divergência da floresta é difícil de detectar e causará respostas imprevisíveis do diretório. Essa situação poderá ocorrer após uma migração P2V se a máquina física e a virtual forem executadas na mesma rede. Isso poderá acontecer se vários controladores de domínio virtuais forem criados a partir do mesmo controlador de domínio físico e, em seguida, executados na mesma rede.
 
 Na segunda circunstância, uma variedade de USNs aplica-se a dois conjuntos diferentes de alterações. Isso pode continuar em períodos estendidos sem ser detectado. Sempre que um objeto criado durante esse período for modificado, um objeto persistente será detectado e reportado como ID do evento 1988 no Visualizador de Eventos. A ilustração a seguir mostra como a reversão de USN pode não ser detectada em tal circunstância.
 
-![](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
+![Diagrama como a reversão do USN pode não ser detectada](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
 
 ## <a name="read-only-domain-controllers"></a>Controladores de domínio somente leitura
 

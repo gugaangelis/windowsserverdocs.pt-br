@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 71e45622292f7393b19978ec3235492c5065a8a1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474023"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519665"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 
@@ -217,7 +217,7 @@ Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para a
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>Criar uma nova máquina virtual
+### <a name="create-a-new-virtual-machine"></a>Criar uma máquina virtual
 
 1. Clique na ferramenta **máquinas virtuais** no painel de navegação do lado esquerdo.
 2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** e clique em **novo** para criar uma nova máquina virtual.
@@ -278,7 +278,7 @@ Você também pode configurar a rede virtual ao criar uma máquina virtual.
 
 ![Monitorar a infraestrutura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>Comentários
+## <a name="give-us-feedback"></a>Fornecer comentários
 
 Isso é tudo sobre seus comentários! O benefício mais importante das atualizações frequentes é ouvir o que está funcionando e o que precisa ser melhorado. Aqui estão algumas maneiras de nos informar o que você está pensando:
 

@@ -8,31 +8,31 @@ ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d86b93180708c772c052b242412bfdd1fc7e68c7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 39d519f0d588a7c2ba6a671eeace14cfe788f6b0
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860649"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517911"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>Gerenciar recursos em várias florestas do Active Directory
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar este tópico para aprender a usar o IPAM para gerenciar controladores de domínio, servidores DHCP e servidores DNS em várias florestas de Active Directory.  
-  
-Para usar o IPAM para gerenciar recursos em florestas de Active Directory remota, cada floresta que você deseja gerenciar deve ter uma relação de confiança bidirecional com a floresta em que o IPAM está instalado.  
-  
-Para iniciar o processo de descoberta para diferentes Active Directory florestas, abra Gerenciador do Servidor e clique em IPAM. No console do cliente IPAM, clique em **Configurar descoberta de servidor**e em **obter florestas**. Isso inicia uma tarefa em segundo plano que descobre florestas confiáveis e seus domínios. Após a conclusão do processo de descoberta, clique em **Configurar descoberta de servidor**, que abre a caixa de diálogo a seguir.  
-  
-![Configurar descoberta de servidor](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
+Você pode usar este tópico para aprender a usar o IPAM para gerenciar controladores de domínio, servidores DHCP e servidores DNS em várias florestas de Active Directory.
+
+Para usar o IPAM para gerenciar recursos em florestas de Active Directory remota, cada floresta que você deseja gerenciar deve ter uma relação de confiança bidirecional com a floresta em que o IPAM está instalado.
+
+Para iniciar o processo de descoberta para diferentes Active Directory florestas, abra Gerenciador do Servidor e clique em IPAM. No console do cliente IPAM, clique em **Configurar descoberta de servidor**e em **obter florestas**. Isso inicia uma tarefa em segundo plano que descobre florestas confiáveis e seus domínios. Após a conclusão do processo de descoberta, clique em **Configurar descoberta de servidor**, que abre a caixa de diálogo a seguir.
+
+![Configurar descoberta de servidor](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)
 
 >[!NOTE]
->Para o provisionamento baseado em Política de Grupo\-para um cenário de Active Directory entre florestas, certifique-se de executar o seguinte cmdlet do Windows PowerShell no servidor IPAM e não nos controladores de domínio confiantes. Por exemplo, se o servidor IPAM estiver ingressado na floresta corp.contoso.com e a floresta confiante for fabrikam.com, você poderá executar o seguinte cmdlet do Windows PowerShell no servidor IPAM no corp.contoso.com para o provisionamento baseado em Política de Grupo\-na floresta fabrikam.com. Para executar esse cmdlet, você deve ser membro do grupo Admins. do domínio na floresta fabrikam.com.
+>Para o \- provisionamento baseado em política de grupo para um cenário de Active Directory entre florestas, certifique-se de executar o seguinte cmdlet do Windows PowerShell no servidor IPAM e não nos controladores de domínio confiantes. Por exemplo, se o servidor IPAM for ingressado na floresta corp.contoso.com e a floresta confiante for fabrikam.com, você poderá executar o seguinte cmdlet do Windows PowerShell no servidor IPAM no corp.contoso.com para \- o provisionamento baseado em política de grupo na floresta fabrikam.com. Para executar esse cmdlet, você deve ser membro do grupo Admins. do domínio na floresta fabrikam.com.
 
-    
+```powershell
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM
-    
+```
 
 Na caixa de diálogo **Configurar descoberta de servidor** , clique em **selecionar a floresta**e escolha a floresta que você deseja gerenciar com o IPAM. Selecione também os domínios que você deseja gerenciar e clique em **Adicionar**.
 

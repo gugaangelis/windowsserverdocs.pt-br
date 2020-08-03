@@ -10,12 +10,12 @@ ms.date: 08/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3ad6658c504cc90eedef2c1cb6688c6f12233b3c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 68232d0b8ab6f4b7330b746657fc63e30a3c2e74
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959868"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518824"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Logon automático de reinício do Winlogon (ARSO)
 
@@ -31,10 +31,9 @@ Ao fazer logon automaticamente e bloquear o usuário no console do, Windows Upda
 
 O ARSO trata de forma diferente os dispositivos gerenciados e não. Para dispositivos não gerenciados, a criptografia do dispositivo é usada, mas não é necessária para que o usuário obtenha ARSO. Para dispositivos gerenciados, o TPM 2,0, o SecureBoot e o BitLocker são necessários para a configuração do ARSO. Os administradores de ti podem substituir esse requisito por meio de Política de Grupo. O ARSO para dispositivos gerenciados está disponível no momento somente para dispositivos que ingressaram em Azure Active Directory.
 
-|   | Windows Update| Shutdown-g-t 0  | Reinicializações iniciadas pelo usuário | APIs com sinalizadores de SHUTDOWN_ARSO/EWX_ARSO |
-| --- | :---: | :---: | :---: | :---: |
-| Dispositivos Gerenciados | :heavy_check_mark:  | :heavy_check_mark: |   | :heavy_check_mark: |
-| Dispositivos não gerenciados | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| Windows Update | Shutdown-g-t 0 | Reinicializações iniciadas pelo usuário | APIs com sinalizadores de SHUTDOWN_ARSO/EWX_ARSO |
+|--|--|--|--|
+| Dispositivos gerenciados-Sim<p>Dispositivos não gerenciados – Sim | Dispositivos gerenciados-Sim<p>Dispositivos não gerenciados – Sim | Dispositivos gerenciados-não<p>Dispositivos não gerenciados – Sim | Dispositivos gerenciados-Sim<p>Dispositivos não gerenciados – Sim |
 
 > [!NOTE]
 > Após uma reinicialização Windows Update induzida, o último usuário interativo é conectado automaticamente e a sessão é bloqueada. Isso permite que os aplicativos da tela de bloqueio de um usuário ainda sejam executados apesar da Windows Update reinicialização.
@@ -159,12 +158,12 @@ O horário de logon e os controles dos pais podem proibir a criação de uma nov
 
 ### <a name="credentials-stored"></a>Credenciais armazenadas
 
-|   | Hash de senha | Chave de credencial | Tíquete de concessão de tíquete | Token de atualização primário |
-| --- | :---: | :---: | :---: | :---: |
-| Conta local | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Conta MSA | :heavy_check_mark: | :heavy_check_mark: |   |   |
-| Conta unida do Azure AD | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (se híbrido) | :heavy_check_mark: |
-| Conta ingressada no domínio | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | : heavy_check_mark: (se híbrido) |
+| Hash de senha | Chave de credencial | Tíquete de concessão de tíquete | Token de atualização primário |
+|--|--|--|--|
+| Conta local-Sim | Conta local-Sim | Conta local-não | Conta local-não |
+| Conta MSA-Sim | Conta MSA-Sim | Conta MSA-não | Conta MSA-não |
+| Conta unida do Azure AD – Sim | Conta unida do Azure AD – Sim | Conta unida do Azure AD – Sim (se híbrido) | Conta unida do Azure AD – Sim |
+| Conta ingressada no domínio-Sim | Conta ingressada no domínio-Sim | Conta ingressada no domínio-Sim | Conta ingressada no domínio – Sim (se híbrido) |
 
 ### <a name="credential-guard-interaction"></a>Interação do Credential Guard
 

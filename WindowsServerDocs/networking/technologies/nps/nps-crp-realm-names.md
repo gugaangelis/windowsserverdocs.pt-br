@@ -8,29 +8,28 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: dba00395b32980d3139cf88e25571c8001cac24e
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7a855087647b86486eaf5358e0e713d6fab6dd02
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316240"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517871"
 ---
 # <a name="realm-names"></a>Nomes de realm
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
-
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma visão geral do uso de nomes de territórios no processamento de solicitação de conexão do servidor de políticas de rede.
 
 O atributo RADIUS de nome de usuário é uma cadeia de caracteres que normalmente contém um local de conta de usuário e um nome de conta de usuário. O local da conta de usuário também é chamado de realm ou nome de realm, e é sinônimo do conceito de domínio, incluindo domínios DNS, domínios de® de Active Directory e domínios do Windows NT 4,0. Por exemplo, se uma conta de usuário estiver localizada no banco de dados de contas de usuário para um domínio chamado example.com, example.com será o nome do realm.
 
-Em outro exemplo, se o atributo RADIUS de nome de usuário contiver o nome de usuário user1@example.com, user1 será o nome da conta de usuário e example.com será o nome do realm. Os nomes de realm podem ser apresentados no nome de usuário como um prefixo ou como um sufixo:
+Em outro exemplo, se o atributo RADIUS de nome de usuário contiver o nome de usuário user1@example.com , user1 será o nome da conta de usuário e example.com será o nome do realm. Os nomes de realm podem ser apresentados no nome de usuário como um prefixo ou como um sufixo:
 
-- **Example\user1**. Neste exemplo, o **exemplo** de nome de realm é um prefixo; e também é o nome de um Active Directory&reg; serviços de domínio \(AD DS domínio\).
+- **Example\user1**. Neste exemplo, o **exemplo** de nome de realm é um prefixo; e também é o nome de um domínio de AD DS do Active Directory Domain &reg; Services \( \) .
 
 - <strong>user1@example.com</strong>. Neste exemplo, o nome do Realm **example.com** é um sufixo; e é um nome de domínio DNS ou o nome de um domínio AD DS.
 
-Você pode usar nomes de territórios configurados em políticas de solicitação de conexão ao projetar e implantar sua infraestrutura RADIUS para garantir que as solicitações de conexão sejam roteadas de clientes RADIUS, também chamadas de servidores de acesso à rede, para servidores RADIUS que podem autentique e autorize a solicitação de conexão.
+Você pode usar nomes de território configurados em políticas de solicitação de conexão ao criar e implantar sua infraestrutura RADIUS para garantir que as solicitações de conexão sejam roteadas de clientes RADIUS, também chamadas de servidores de acesso à rede, para servidores RADIUS que podem autenticar e autorizar a solicitação de conexão.
 
 Quando o NPS é configurado como um servidor RADIUS com a política de solicitação de conexão padrão, o NPS processa as solicitações de conexão para o domínio no qual o NPS é membro e para domínios confiáveis.
 
@@ -58,11 +57,11 @@ Antes que a mensagem RADIUS seja processada localmente (quando o NPS está sendo
 
 Você pode configurar regras de manipulação de atributo para o atributo User-Name para alterar o seguinte:
 
-- Remova o nome de realm do nome de usuário \(também conhecido como\)de remoção de realm. Por exemplo, o nome de usuário user1@example.com é alterado para Usuário1.
+- Remova o nome de realm do nome de usuário \( também conhecido como remoção de realm \) . Por exemplo, o nome de usuário user1@example.com é alterado para Usuário1.
 
-- Altere o nome do Realm, mas não sua sintaxe. Por exemplo, o nome de usuário user1@example.com é alterado para user1@wcoast.example.com.
+- Altere o nome do Realm, mas não sua sintaxe. Por exemplo, o nome de usuário user1@example.com é alterado para user1@wcoast.example.com .
 
-- Altere a sintaxe do nome do realm. Por exemplo, o nome de usuário example\user1 é alterado para user1@example.com.
+- Altere a sintaxe do nome do realm. Por exemplo, o nome de usuário example\user1 é alterado para user1@example.com .
 
 Depois que o atributo User-Name é modificado de acordo com as regras de manipulação de atributo que você define, as configurações adicionais da primeira política de solicitação de conexão correspondente são usadas para determinar se:
 
@@ -74,11 +73,11 @@ Depois que o atributo User-Name é modificado de acordo com as regras de manipul
 
 Quando o nome de usuário não contiver um nome de domínio, o NPS fornecerá um. Por padrão, o nome de domínio fornecido pelo NPS é o domínio do qual o NPS é membro. Você pode especificar o nome de domínio fornecido pelo NPS por meio da seguinte configuração do registro:
 
-    
-    HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
-    
+```
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\RasMan\PPP\ControlProtocols\BuiltIn\DefaultDomain
+```
 
->[!CAUTION]
->A edição incorreta do Registro pode danificar seriamente o sistema. Antes de fazer mudanças no registro, você deve fazer o backup de quaisquer dados importantes no computador.
+> [!CAUTION]
+> A edição incorreta do Registro pode danificar seriamente o sistema. Antes de alterar o Registro, faça backup de todos os dados importantes do computador.
 
 Alguns servidores de acesso à rede que não são da Microsoft excluem ou modificam o nome de domínio conforme especificado pelo usuário. Como resultado, a solicitação de acesso à rede é autenticada no domínio padrão, que pode não ser o domínio da conta do usuário. Para resolver esse problema, configure os servidores RADIUS para alterar o nome de usuário para o formato correto com o nome de domínio preciso.

@@ -8,16 +8,16 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 73d0d62aac3771c4150a133950085170f7f51cb5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961138"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409556"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novidades no Windows Server, versão 1803
 
->Aplica-se a: Windows Server (Canal semestral)
+> Aplica-se a: Windows Server (Canal semestral)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Para saber mais sobre os recursos mais recentes do Windows, consulte [Novidades no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1803. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também a [atualização do Canal semestral do Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/).
 
@@ -39,14 +39,14 @@ Com base nos comentários e na telemetria, esses canais demonstraram que estão 
 
 Os cenários específicos para o canal semestral e o canal de manutenção em longo prazo são:
 
-|   | Canal de Manutenção em Longo Prazo |  Canal Semestral |
-| ------------- | ------------- | ------------ |
-| Cenários recomendados     | Servidores de arquivos de uso geral, cargas de trabalho primárias e de terceiros, aplicativos tradicionais, funções de infraestrutura, datacenter definido por software e infraestrutura hiperconvergente  | Aplicativos em contêineres, hosts do contêiner e cenários de aplicativos se beneficiando de inovação mais rápida |
-| Lançamentos  | A cada 2 a 3 anos  | A cada 6 meses |
-| Suporte  | Suporte de 5 anos + 5 anos de suporte estendido  | 18 meses |
-| Edições  | Todas as edições disponíveis do Windows Server  | Edições Standard e Datacenter |
-| Quem pode usar  | Todos os clientes por meio de todos os canais | Somente para clientes do Software Assurance e de nuvem |
-| Opções de instalação  | Server Core e Server com Experiência Desktop  | Server Core para o host do contêiner, imagem de contêiner e imagem de contêiner do Nano Server |
+| Descrição | Canal de Manutenção em Longo Prazo | Canal Semestral |
+|--|--|--|
+| Cenários recomendados | Servidores de arquivos de uso geral, cargas de trabalho primárias e de terceiros, aplicativos tradicionais, funções de infraestrutura, datacenter definido por software e infraestrutura hiperconvergente | Aplicativos em contêineres, hosts do contêiner e cenários de aplicativos se beneficiando de inovação mais rápida |
+| Lançamentos | A cada 2 a 3 anos | A cada 6 meses |
+| Suporte | Suporte de 5 anos + 5 anos de suporte estendido | 18 meses |
+| Edições | Todas as edições disponíveis do Windows Server | Edições Standard e Datacenter |
+| Quem pode usar | Todos os clientes por meio de todos os canais | Somente para clientes do Software Assurance e de nuvem |
+| Opções de instalação | Server Core e Server com Experiência Desktop | Server Core para o host do contêiner, imagem de contêiner e imagem de contêiner do Nano Server |
 
 ## <a name="application-platform-and-containers"></a>Plataforma de aplicativos e contêineres
 

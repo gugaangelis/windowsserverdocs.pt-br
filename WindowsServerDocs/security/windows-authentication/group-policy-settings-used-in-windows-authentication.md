@@ -9,12 +9,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d5268a5d95dd99bade89015863ea3eadf1b7913a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9cbf10e9ebce5bbe0865f28001d0c505b42c9742
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475503"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517991"
 ---
 # <a name="group-policy-settings-used-in-windows-authentication"></a>Configurações da Política de Grupo usada na autenticação do Windows
 
@@ -25,7 +25,7 @@ Este tópico de referência para o profissional de ti descreve o uso e o impacto
 Você pode gerenciar a autenticação em sistemas operacionais Windows adicionando contas de usuário, computador e serviço a grupos e, em seguida, aplicando políticas de autenticação a esses grupos. Essas políticas são definidas como políticas de segurança local e como modelos administrativos, também conhecidos como configurações de Política de Grupo. Os dois conjuntos podem ser configurados e distribuídos em toda a sua organização usando Política de Grupo.
 
 > [!NOTE]
-> Os recursos introduzidos no Windows Server 2012 R2 permitem configurar políticas de autenticação para serviços de destino ou aplicativos, normalmente chamados de silos de autenticação, usando contas protegidas. Para obter informações sobre como fazer isso no Active Directory, consulte [como configurar contas protegidas](how-to-configure-protected-accounts.md).
+> Os recursos introduzidos no Windows Server 2012 R2 permitem configurar políticas de autenticação para serviços de destino ou aplicativos, normalmente chamados de silos de autenticação, usando contas protegidas. Para obter informações sobre como fazer isso no Active Directory, consulte [como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
 
 Por exemplo, você pode aplicar as seguintes políticas a grupos, com base em sua função na organização:
 

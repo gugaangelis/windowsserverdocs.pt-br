@@ -8,12 +8,12 @@ ms.date: 01/12/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 09d61292b91c83466f9770184d431b3e6d627dca
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 052a804a61701855fbdf6b6e373314d35b474cf9
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385443"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517591"
 ---
 # <a name="ad-fs-troubleshooting---sql-connectivity"></a>Solução de problemas AD FS-conectividade do SQL
 AD FS fornece a capacidade de usar SQL Server remotos para os dados do AD FS farm.  Você verá problemas se os servidores de AD FS em seu farm não puderem se comunicar com os SQL Servers de back-end.  O documento a seguir fornecerá algumas etapas básicas para testar a comunicação com os servidores de back-end.
@@ -26,7 +26,8 @@ A primeira coisa a ser testada ao verificar a conectividade do SQL é, se AD FS 
 2. Insira o seguinte: `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService` e pressione Enter
 3. Insira o seguinte: `$adfs.ConfigurationDatabaseConnectionString` e pressione Enter.
 4. Você deve ver as informações da cadeia de conexão.
-![](media/ad-fs-tshoot-sql/sql2.png)
+
+![Comando de execução da tela de comando do PowerShell](media/ad-fs-tshoot-sql/sql2.png)
 
 ## <a name="create-a-universal-data-link-udl-file-to-test-connectivity"></a>Criar um arquivo de Universal Data Link (UDL) para testar a conectividade
 Um arquivo de Universal Data Link ou um arquivo UDL é basicamente um arquivo de texto que contém uma cadeia de conexão de banco de dados.  Usando as informações que obtivemos acima, podemos testar se o SQL Server está respondendo a conexões ou não.
@@ -37,9 +38,9 @@ Um arquivo de Universal Data Link ou um arquivo UDL é basicamente um arquivo de
 2. Clique duas vezes em Test. udl
 3. Preencha as seguintes informações: a. **Selecione ou insira um nome de servidor:**  Use a fonte de dados da cadeia de conexão acima de b. **Insira as informações para fazer logon no servidor:**  Use a conta de serviço do AD FS ou uma conta que tenha permissões para fazer logon remotamente.  Se a conta for uma conta do Windows, use a autenticação integrada, caso contrário, digite o nome de usuário e a senha.
     c. **Selecione o banco de dados no servidor:** Use o catálogo inicial da cadeia de caracteres acima.  Exemplo: AdfsConfigurationV3.
-   ![testar conexão](media/ad-fs-tshoot-sql/sql4.png)
-1. Clique em **testar conexão**.</br>
-![êxito](media/ad-fs-tshoot-sql/sql3.png)
+   ![Testar Conexão](media/ad-fs-tshoot-sql/sql4.png)
+1. Clique em **Testar Conexão**.</br>
+![Êxito](media/ad-fs-tshoot-sql/sql3.png)
 
 ## <a name="use-sql-server-management-studio-to-test-connectivity"></a>Usar SQL Server Management Studio para testar a conectividade
 Você também pode [baixar](https://go.microsoft.com/fwlink/?linkid=864329) e instalar o SSMS para testar a conectividade do banco de dados.
@@ -49,9 +50,9 @@ Você também pode [baixar](https://go.microsoft.com/fwlink/?linkid=864329) e in
 ![Instalar](media/ad-fs-tshoot-sql/sql5.png)
 1. Abra o SSMS, insira o nome do servidor.  A fonte de dados acima.
 2. Use a conta de serviço do AD FS ou uma conta que tenha permissões para fazer logon remotamente.  Se a conta for uma conta do Windows, use a autenticação integrada, caso contrário, digite o nome de usuário e a senha.
-![conectar](media/ad-fs-tshoot-sql/sql6.png)
+![Connect](media/ad-fs-tshoot-sql/sql6.png)
 1. Você deve ver o lado esquerdo preenchido.  Expanda bancos de dados e verifique se você vê os bancos de dados do AD FS.
-![AD FS bancos de dados](media/ad-fs-tshoot-sql/sql7.png)
+![Bancos de dados AD FS](media/ad-fs-tshoot-sql/sql7.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

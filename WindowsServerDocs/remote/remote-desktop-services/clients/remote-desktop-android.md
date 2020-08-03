@@ -10,12 +10,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b76ded74b311265a22e32d836cb7a5dd5fe03f0d
-ms.sourcegitcommit: b363d8ceed863c8fd5a464bc8afdc4ef1af9a6f8
+ms.openlocfilehash: 215d69f40c09a11048c3e4c5a5c7cd610da3b9c4
+ms.sourcegitcommit: 25d3b2083405d3e1395355dcc34a032105e9c36d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86445720"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87389633"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -35,7 +35,7 @@ Use as informações a seguir para começar. Não se esqueça de conferir as [Pe
 
 Veja como configurar o cliente da Área de Trabalho Remota no dispositivo Android:
 
-1. Baixe o cliente da Área de Trabalho Remota da Microsoft do [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android).
+1. Baixe o cliente da Área de Trabalho Remota da Microsoft do [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx).
 2. Inicie o **cliente da RD** na sua lista de aplicativos.
 3. Adicione uma [conexão de Área de Trabalho Remota](#add-a-remote-desktop-connection) ou [recursos remotos](#add-remote-resources). Use uma conexão para se conectar diretamente a um computador Windows e a recursos remotos para acessar aplicativos e áreas de trabalho publicados para você por um administrador.
 
@@ -128,12 +128,12 @@ Para alterar as configurações de exibição, toque em **Configurações** e, e
 É possível definir as seguintes configurações de exibição:
 
 - **Orientação** define a orientação preferida (paisagem ou retrato) para a sua sessão.
-  
+
   >[!NOTE]
   > Se você se conectar a um computador executando o Windows 8 ou anterior, a sessão não será dimensionada corretamente se a orientação do dispositivo for alterada. Para que o cliente seja dimensionado corretamente, desconecte-se do computador e reconecte-se na orientação que você deseja usar. Você também pode garantir a escala correta usando um computador com o Windows 10.
 
 - **Resolução** define a resolução remota que você deseja usar para conexões de área de trabalho globalmente. Se você já tiver definido uma resolução personalizada para uma conexão individual, essa configuração não a mudará.
-  
+
   >[!NOTE]
   >Qualquer alteração às configurações de exibição aplicam-se somente a novas conexões. Para aplicar suas alterações à sessão à qual você está conectado no momento, atualize sua sessão desconectando e reconectando.
 

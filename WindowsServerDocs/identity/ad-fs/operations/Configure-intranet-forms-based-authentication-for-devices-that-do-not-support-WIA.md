@@ -8,20 +8,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7db040d98317cee67e78493b2210f33279221aa9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 781f950041666ba184fc522a55cbf23a54e6dd08
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80817039"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519775"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>Configurando a autenticação baseada em formulários de intranet para dispositivos que não dão suporte a WIA
-
 
 Por padrão, a autenticação integrada do Windows (WIA) é habilitada no Serviços de Federação do Active Directory (AD FS) (AD FS) no Windows Server 2012 R2 para solicitações de autenticação que ocorrem na rede interna da organização (intranet) para qualquer aplicativo que use um navegador para sua autenticação. Por exemplo, eles podem ser aplicativos baseados em navegador que usam protocolos WS-Federation ou SAML e aplicativos avançados que usam o protocolo OAuth. O WIA fornece aos usuários finais um logon contínuo para os aplicativos sem precisar inserir manualmente suas credenciais. No entanto, alguns dispositivos e navegadores não são capazes de dar suporte a WIA e, como resultado, solicitações de autenticação desses dispositivos falham. Além disso, a experiência em determinados navegadores que negociam com o NTLM não é desejável. A abordagem recomendada é fazer fallback para a autenticação baseada em formulários para esses dispositivos e navegadores.
 
 AD FS no Windows Server 2016 e no Windows Server 2012 R2 fornece aos administradores a capacidade de configurar a lista de agentes de usuário que dão suporte ao fallback para autenticação baseada em formulários. O fallback se torna possível por duas configurações:
-
 
 - A propriedade **WIASupportedUserAgentStrings** do `Set-ADFSProperties` commandlet
 - A propriedade **WindowsIntegratedFallbackEnabled** do `Set-AdfsGlobalAuthenticationPolicy` commandlet
@@ -30,7 +28,9 @@ O **WIASupportedUserAgentStrings** define os agentes de usuário que dão suport
 
 Por padrão, uma nova instalação do AD FS tem um conjunto de correspondências de cadeias de caracteres do agente do usuário criado. No entanto, elas podem estar desatualizadas com base nas alterações feitas em navegadores e dispositivos. Particularmente, os dispositivos Windows têm cadeias de caracteres de agente do usuário semelhantes com pequenas variações nos tokens. O exemplo do Windows PowerShell a seguir fornece a melhor orientação para o conjunto atual de dispositivos que estão no mercado atualmente que dão suporte a WIA contínuo:
 
-    Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client")
+```powershell
+Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client")
+```
 
 O comando acima garantirá que AD FS abrange apenas os seguintes casos de uso para WIA:
 
@@ -49,7 +49,9 @@ Cliente do Windows Rights Management|Cliente do Windows Rights Management|
 
 Para habilitar o fallback para autenticação baseada em formulário para agentes de usuário diferentes daqueles mencionados na cadeia de caracteres WIASupportedUserAgents, defina o sinalizador WindowsIntegratedFallbackEnabled como true
 
-    Set-AdfsGlobalAuthenticationPolicy -WindowsIntegratedFallbackEnabled $true
+```powershell
+Set-AdfsGlobalAuthenticationPolicy -WindowsIntegratedFallbackEnabled $true
+```
 
 Verifique também se a autenticação baseada em formulários está habilitada para intranet.
 
@@ -58,18 +60,23 @@ Você pode adicionar outros agentes do Chrome ou de outros usuários à configur
 
 Na configuração do AD FS, adicione uma cadeia de caracteres do agente do usuário para o Chrome em plataformas baseadas no Windows:
 
-    Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Windows NT)")
+```powershell
+Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Windows NT)")
+```
 
 E, da mesma forma, para o Chrome no Apple macOS, adicione a seguinte cadeia de caracteres do agente do usuário à configuração do AD FS:
 
-    Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Macintosh; Intel Mac OS X)")
+```powershell
+Set-AdfsProperties -WIASupportedUserAgents ((Get-ADFSProperties | Select -ExpandProperty WIASupportedUserAgents) + "Mozilla/5.0 (Macintosh; Intel Mac OS X)")
+```
 
 Confirme se a cadeia de caracteres do agente do usuário para Chrome agora está definida nas propriedades AD FS:
 
-    Get-AdfsProperties | Select -ExpandProperty WIASupportedUserAgents
+```powershell
+Get-AdfsProperties | Select -ExpandProperty WIASupportedUserAgents
+```
 
-(Você precisaria de uma nova captura de tela aqui) ![configurar a autenticação](media/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA/chrome1.png) 
+(Você precisaria de uma nova captura de tela aqui) ![ configurar autenticação](media/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA/chrome1.png)
 
->[!NOTE]   
+>[!NOTE]
 > À medida que novos dispositivos e navegadores são liberados, é recomendável que você reconcilie os recursos desses agentes de usuário e atualize a configuração de AD FS apropriadamente para otimizar a experiência de autenticação do usuário ao usar o navegador e os dispositivos. Mais especificamente, é recomendável que você reavalie a configuração **WIASupportedUserAgents** em AD FS ao adicionar um novo tipo de dispositivo ou navegador à sua matriz de suporte para WIA.
-

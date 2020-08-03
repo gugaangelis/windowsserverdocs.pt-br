@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 1823816d2218c09c84e5eb61bf8af6bd3411a0d7
-ms.sourcegitcommit: 78b59522234825c43b00c271a04c35f3fd9d65e3
+ms.openlocfilehash: 71f35b7c0dd3e2dc96c0b58ac4438a3c12472832
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86946590"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409997"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canais de manutenção do Windows Server: LTSC e SAC
 
@@ -27,7 +27,7 @@ Há dois canais de versão principal disponíveis para clientes do Windows Serve
 
 É o modelo de versão que você já conhece (anteriormente chamado de "*Branch* de Manutenção de Longo Prazo") em que uma nova versão principal do Windows Server é liberada a cada dois ou três anos. Os usuários têm direito a cinco anos de suporte base e a cinco anos de suporte estendido. O canal é apropriado para sistemas que exigem uma opção de manutenção mais longa e estabilidade funcional. As implantações do Windows Server 2019 e versões anteriores do Windows Server não serão afetadas pelas novas versões do Canal Semestral. O Canal de Manutenção em Longo Prazo continuará a receber atualizações de segurança e não relacionadas à segurança, mas não receberá os novos recursos e funcionalidade.
 
-> [!Note]
+> [!NOTE]
 > **O produto LTSC atual é o Windows Server 2019**. Se quiser ficar nesse canal, você deverá instalar (ou continuar a usar) o Windows Server 2019, que pode ser instalado na opção de instalação Server Core ou na opção de instalação Servidor com Experiência Desktop.
 
 ## <a name="semi-annual-channel"></a>Canal Semestral
@@ -38,7 +38,7 @@ A maioria dos recursos introduzidos no Canal Semestral será acumulada na próxi
 
 O Canal Semestral estará disponível para clientes de licença de volume com [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx), bem como por meio do Azure Marketplace ou outro provedor de nuvem/serviços de hospedagem e programas de fidelidade como as Assinaturas do Visual Studio.
 
-> [!Note]  
+> [!NOTE]
 > **A versão atual do Canal Semestral é a versão 1909 do Windows Server**. Se você deseja colocar servidores nesse canal, instale o Windows Server, versão 1909, que pode ser instalado no modo Server Core ou como um Nano Server executado em um contêiner. As atualizações in-loco de uma versão do Canal de Manutenção em Longo Prazo não são compatíveis, porque estão em **canais de versões diferentes**. As versões do Canal Semestral não são atualizações – são a próxima versão do Windows Server no Canal Semestral.
 
 Nesse modelo, as versões do Windows Server são identificadas por ano e mês de lançamento: por exemplo, em 2017, uma versão do nono mês (setembro) seria identificada como **versão 1709**. Novas versões do Windows Server no Canal Semestral ocorrerão duas vezes por ano. O ciclo de vida de suporte para cada versão é 18 meses.
@@ -48,19 +48,18 @@ Nesse modelo, as versões do Windows Server são identificadas por ano e mês de
 Estas são as principais diferenças para levar em consideração:
 
 - Você precisa fazer upgrade para uma nova tecnologia no DevOps, nos contêineres e nos microsserviços? Nesse caso, considere **ingressar no Canal Semestral** ao instalar o **Windows Server, versão 1909**. Conforme descrito neste tópico, você receberá novas versões duas vezes por ano, com 18 meses de suporte base de produção por versão. Você pode obtê-lo por meio de licenciamento por volume, do Azure ou dos Serviços de Assinatura do Visual Studio. Atualmente, as versões no Canal Semestral exigem licenciamento por volume e Software Assurance se você pretende executar o produto na produção.
-- Você precisa de estabilidade e de previsibilidade? Você precisa executar máquinas virtuais e cargas de trabalho tradicionais em servidores físicos? Nesse caso, considere **manter esses servidores no Canal de Manutenção em Longo Prazo**. A versão atual do LTSC é o **Windows Server 2019**. Conforme descrito neste tópico, você terá acesso às novas versões a cada dois ou três anos, com cinco anos de suporte base seguidos de cinco anos de suporte estendido por versão. As versões LTSC estão disponíveis em todos os mecanismos de lançamento. As versões do LTSC estão disponíveis para qualquer pessoa, independentemente do modelo de licenciamento usado. 
+- Você precisa de estabilidade e de previsibilidade? Você precisa executar máquinas virtuais e cargas de trabalho tradicionais em servidores físicos? Nesse caso, considere **manter esses servidores no Canal de Manutenção em Longo Prazo**. A versão atual do LTSC é o **Windows Server 2019**. Conforme descrito neste tópico, você terá acesso às novas versões a cada dois ou três anos, com cinco anos de suporte base seguidos de cinco anos de suporte estendido por versão. As versões LTSC estão disponíveis em todos os mecanismos de lançamento. As versões do LTSC estão disponíveis para qualquer pessoa, independentemente do modelo de licenciamento usado.
 
 A tabela a seguir resume as principais diferenças entre os canais:
 
-
-|                       |                                                              Canal de Manutenção em Longo Prazo (Windows Server 2019)                                                               |                                   Canal Semestral (Windows Server)                                   |
-|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| Descrição | Canal de Manutenção em Longo Prazo (Windows Server 2019) | Canal Semestral (Windows Server) |
+| -----------------------|--|--|
 | Cenários recomendados | Servidores de arquivos de uso geral, cargas de trabalho da Microsoft ou de terceiros, aplicativos tradicionais, funções de infraestrutura, Datacenter definido por software e infraestrutura hiperconvergente | Aplicativos em contêineres, hosts do contêiner e cenários de aplicativos se beneficiando da inovação mais rápida |
-|     Lançamentos      |                                                                               A cada 2 a 3 anos                                                                                |                                              A cada 6 meses                                              |
-|        Suporte        |                                                       5 anos de suporte base, além de 5 anos de suporte estendido                                                        |                                                18 meses                                                 |
-|       Edições        |                                                                    Todas as edições disponíveis do Windows Server                                                                     |                                     Edições Standard e Datacenter                                     |
-|      Quem pode usar      |                                                                      Todos os clientes por meio de todos os canais                                                                      |                               Somente para clientes do Software Assurance e de nuvem                                |
-| Opções de instalação  |                                                                Server Core e Server com Experiência Desktop                                                                |                 Server Core para imagem e host de contêiner e imagem de contêiner do Nano Server                 |
+| Lançamentos | A cada 2 a 3 anos | A cada 6 meses |
+| Suporte | 5 anos de suporte base, além de 5 anos de suporte estendido | 18 meses |
+| Edições | Todas as edições disponíveis do Windows Server | Edições Standard e Datacenter |
+| Quem pode usar | Todos os clientes por meio de todos os canais | Somente para clientes do Software Assurance e de nuvem |
+| Opções de instalação | Server Core e Server com Experiência Desktop | Server Core para imagem e host de contêiner e imagem de contêiner do Nano Server |
 
 ## <a name="device-compatibility"></a>Compatibilidade de dispositivo
 

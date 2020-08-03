@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ba3cdb8dbd81ee85b0679905444f35174b8138e0
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: d8215f3589e021ec5df6a3a150d09a2388a2f35d
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519458"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518544"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guia de estilo de texto e o design de IU de Windows Admin Center
 
->Aplica-se a: centro de administração do Windows
+>Aplica-se a: Windows Admin Center
 
 Este tópico descreve a abordagem geral para escrita de texto (UI) da interface de usuário para o Windows Admin Center, bem como alguns convenções específicas e abordagens que estamos aproveitando.
 
@@ -33,7 +33,7 @@ Windows Admin Center e qualquer extensão deve seguir [princípios de voz da Mic
 
 Podemos siga o estilo da Microsoft para [capitalização](https://docs.microsoft.com/style-guide/capitalization) - capitalização do estilo sentença de uso para praticamente tudo.
 
-| Elemento de interface do usuário              |Uso de maiúsculas|Comentários|
+| Elemento da interface de usuário              |Uso de maiúsculas|Comentários|
 |-------------------------|--------------|--------|
 |Selos (por exemplo, VISUALIZAÇÃO) |Todo em maiúsculas      ||
 |Todo o resto          |Estilo de frase|No entanto, há algumas exceções onde podemos desvendar propriedades do objeto do PowerShell que está fora do nosso controle ou de WMI.|
@@ -42,10 +42,9 @@ Podemos siga o estilo da Microsoft para [capitalização](https://docs.microsoft
 
 Use dois-pontos para introduzir listas. Por exemplo:
 
-    Choose one of the following:
-    Cats
-    Dogs
-    Quokkas
+Escolha uma destas opções:
+
+Gatos cachorros quokkas
 
 Não use dois-pontos no texto da interface do usuário quando um rótulo estiver em uma linha diferente da coisa que ele rotula ou quando houver uma clara distinção entre o rótulo e o que estiver rotulando.
 
@@ -53,9 +52,9 @@ Use dois-pontos no texto da interface do usuário quando um rótulo estiver na m
 
 ## <a name="confirmation-messages"></a>Mensagens de confirmação
 
-Caixas de diálogo de confirmação são úteis ao continuar podem ter resultados inesperados, como perda de dados. Eles devem conter informações úteis e verificáveis com um resultado claro, especialmente para eventos que não podem ser revertidos. 
+Caixas de diálogo de confirmação são úteis ao continuar podem ter resultados inesperados, como perda de dados. Eles devem conter informações úteis e verificáveis com um resultado claro, especialmente para eventos que não podem ser revertidos.
 
-- Certifique-se de que uma confirmação seja necessária. Se não houver nenhuma informação nova a oferecer (por exemplo, "tem certeza?"), uma mensagem de confirmação poderá não ser necessária.  
+- Certifique-se de que uma confirmação seja necessária. Se não houver nenhuma informação nova a oferecer (por exemplo, "tem certeza?"), uma mensagem de confirmação poderá não ser necessária.
 - Verifique se o cliente deseja prosseguir com a ação.
 - Verifique se a instrução principal (título) e o texto explicativo (corpo) não são redundantes.
 - No título, defina os resultados possíveis como uma pergunta ou uma instrução sobre o que acontecerá em seguida. Por exemplo, "apagar todos os dados nesta unidade? ou "você está prestes a apagar todos os seus dados".
@@ -115,13 +114,13 @@ Aqui estão algumas dicas de nosso guia de estilo do Windows:
 
 Quase nunca. Forneça um link de ajuda somente quando:
 
-- Há uma pergunta óbvia e importante que os clientes provavelmente terão enquanto estão na interface do usuário a resposta para a qual os ajudarão a obter sucesso na tarefa de interface do usuário. 
-- Não há espaço suficiente na interface do usuário para fornecer a quantidade de informações necessárias para que os usuários tenham sucesso na tarefa de interface do usuário. 
+- Há uma pergunta óbvia e importante que os clientes provavelmente terão enquanto estão na interface do usuário a resposta para a qual os ajudarão a obter sucesso na tarefa de interface do usuário.
+- Não há espaço suficiente na interface do usuário para fornecer a quantidade de informações necessárias para que os usuários tenham sucesso na tarefa de interface do usuário.
 
-### <a name="where-should-help-links-appear"></a>Onde os links de ajuda devem ser exibidos? 
+### <a name="where-should-help-links-appear"></a>Onde os links de ajuda devem ser exibidos?
 
-- Os links de texto devem parecer próximos do elemento de interface do usuário para o qual a ajuda é direcionada o mais próximo possível. 
-- Se você precisar fornecer um link de texto que se aplica a uma tela inteira da interface do usuário, coloque-o na parte inferior esquerda da tela. 
+- Os links de texto devem parecer próximos do elemento de interface do usuário para o qual a ajuda é direcionada o mais próximo possível.
+- Se você precisar fornecer um link de texto que se aplica a uma tela inteira da interface do usuário, coloque-o na parte inferior esquerda da tela.
 - Se você fornecer um link por meio de um botão de ajuda (?), a dica de ferramenta deverá ser "ajuda".
 
 ### <a name="what-url-should-we-use"></a>Qual URL devemos usar?
@@ -130,26 +129,26 @@ Nunca vincular diretamente a um endereço da Web — em vez disso, use um servi�
 
 Os desenvolvedores da Microsoft devem usar um FWLink, exceto quando é um link de ajuda que os usuários podem precisar digitar manualmente. nesse caso, use um link aka.ms (desde que o destino da URL seja um site que reconheça automaticamente a localidade do navegador, como Docs.microsoft.com)
 
-### <a name="text-guidelines"></a>Diretrizes de texto 
+### <a name="text-guidelines"></a>Diretrizes de texto
 
 - Use frases completas.
-- Não inclua Pontuação final, exceto pontos de interrogação. 
-- Você não precisa usar o mesmo texto que o título da tarefa; Use o texto que faz sentido no contexto da interface do usuário, mas verifique se há uma conexão lógica entre os dois. Por exemplo: 
-- Link de ajuda: quais são os riscos de permitir exceções? 
+- Não inclua Pontuação final, exceto pontos de interrogação.
+- Você não precisa usar o mesmo texto que o título da tarefa; Use o texto que faz sentido no contexto da interface do usuário, mas verifique se há uma conexão lógica entre os dois. Por exemplo:
+- Link de ajuda: quais são os riscos de permitir exceções?
 - Título do tópico da ajuda: "permitindo que um programa se comunique por meio do firewall do Windows"
-- Seja o mais específico possível sobre o conteúdo do tópico da ajuda. 
+- Seja o mais específico possível sobre o conteúdo do tópico da ajuda.
     - Nosso estilo
         - Como o Firewall do Windows ajuda a proteger meu computador?
         - Por que os destaques podem melhorar uma imagem
     - Não é nosso estilo
         - Mais informações sobre o Firewall do Windows
         - Saiba mais sobre o gerenciamento de cores
-        - Mais informações
-- Use a frase inteira para o texto do link, não apenas as palavras-chave. 
-    - Nosso estilo 
+        - Saiba mais
+- Use a frase inteira para o texto do link, não apenas as palavras-chave.
+    - Nosso estilo
         - [Quais são os riscos de permitir exceções?]()
     - Não é nosso estilo
-        - Quais são os [riscos de permitir exceções]()? 
+        - Quais são os [riscos de permitir exceções]()?
 
 ## <a name="error-messages"></a>Mensagens de erro
 
@@ -161,7 +160,7 @@ Escrever uma mensagem boa é um equilíbrio entre fornecer uma explicação sufi
 
 Use uma mensagem por caso de erro.
 
-#### <a name="headings"></a>Cabeçalho
+#### <a name="headings"></a>Títulos
 
 - Mantenha-o curto e explique concisamente qual é o problema ou **o que fazer**. <br>Algumas superfícies da interface do usuário podem ter títulos que se truncam em vez de serem encapsulados quando forem muito longos, portanto, fique atento para eles.
 - Use a solução no título se for uma etapa simples.
@@ -169,7 +168,7 @@ Use uma mensagem por caso de erro.
 - Evite usar "houve um problema" nos títulos, a menos que você não tenha outra opção. Seja mais específico sobre o problema.
 - Evite usar variáveis (como nomes de arquivos, pastas e aplicativos) em títulos. Coloque-os no corpo.
 
-#### <a name="body"></a>Body
+#### <a name="body"></a>Corpo
 
 - Se o título estiver suficientemente explicando o problema ou a solução, você não precisará do corpo do texto.
 - Não repita o título na mensagem com uma palavra ligeiramente diferente.
@@ -199,12 +198,12 @@ O estado nulo ocorre quando os dados ou o conteúdo do cliente estão ausentes d
 
 ### <a name="guidelines"></a>Diretrizes
 
-- Se possível, use situações de estado nulo como uma oportunidade para instruir as pessoas sobre como usar o recurso (por exemplo, como adicionar música, onde encontrar imagens etc.)  
-  - Se você tiver um título em sua interface do usuário, explique a ação a ser tomada para "corrigir" o estado nulo (por exemplo, "adicionar algumas músicas") 
-  - Divirta-se com o texto. Esse espaço pode ser uma oportunidade para fornecer fascinam, pois provavelmente não será visto várias vezes. 
-  - Evite "está aqui aqui". Isso é triste e foi superutilizado. 
-  - Evite perguntas como "não conectou sua impressora?" É bom usar uma vez, mas esse formato tende a ser utilizado, e as perguntas colocam um fardo/pressão extra no cliente. Isso também pode parecer decrescente. 
-  - A variedade no texto de estado nulo é algo bom. 
+- Se possível, use situações de estado nulo como uma oportunidade para instruir as pessoas sobre como usar o recurso (por exemplo, como adicionar música, onde encontrar imagens etc.)
+  - Se você tiver um título em sua interface do usuário, explique a ação a ser tomada para "corrigir" o estado nulo (por exemplo, "adicionar algumas músicas")
+  - Divirta-se com o texto. Esse espaço pode ser uma oportunidade para fornecer fascinam, pois provavelmente não será visto várias vezes.
+  - Evite "está aqui aqui". Isso é triste e foi superutilizado.
+  - Evite perguntas como "não conectou sua impressora?" É bom usar uma vez, mas esse formato tende a ser utilizado, e as perguntas colocam um fardo/pressão extra no cliente. Isso também pode parecer decrescente.
+  - A variedade no texto de estado nulo é algo bom.
 
 ### <a name="examples"></a>Exemplos
 
@@ -224,7 +223,7 @@ O estado nulo ocorre quando os dados ou o conteúdo do cliente estão ausentes d
 
 Mensagens de status consistem em notificações e mensagens de janela pop-up (proposta).
 
-|Tipo de cadeia de caracteres         | Anotações                               |
+|Tipo de cadeia de caracteres         | Observações                               |
 |------------        |-------------------------------------|
 |Notificação do sistema               |Frases com a mensagem de pontuação - idealmente com uma variável de objeto para que os usuários podem entender qual o objeto de final se aplica ao caso eles tenham navegado para longe do objeto|
 |Título de notificação (título) |Caso de sentença sem pontuação final (é um título)-idealmente com uma variável de objeto|
@@ -232,12 +231,12 @@ Mensagens de status consistem em notificações e mensagens de janela pop-up (pr
 
 Aqui estão algumas recomendações detalhadas para mensagens de notificação:
 
-|Tipo de cadeia de caracteres         | Anotações                               |
+|Tipo de cadeia de caracteres         | Observações                               |
 |------------        |-------------------------------------|
 |Iniciado             |Omita quando possível: geralmente pule apenas a mensagem em andamento para minimizar o número de distrações.|
-|Em andamento         |Comece com o verbo da ação que você estiver realizando e terminarem com reticências para indicar uma operação em andamento. Aqui está um exemplo:<br> *Criando o volume ' dados do cliente '...* <br><br>Quando houver várias variáveis, use esse padrão: <br>*Excluindo a seguinte máquina virtual: {0}; Host: {1}* |
-|Êxito             |Comece com "Com êxito" e termine com o software que acabamos de fazer. Aqui está um exemplo:<br> *O volume ' dados do cliente ' foi criado com êxito.*|
-|Falha             |Comece com "Não pôde" e termine com o que o software não conseguiu realizar. Aqui está um exemplo:<br> *Não foi possível criar o volume ' dados do cliente '.*|
+|Em Andamento         |Comece com o verbo da ação que você estiver realizando e terminarem com reticências para indicar uma operação em andamento. Este é um exemplo:<br> *Criando o volume ' dados do cliente '...* <br><br>Quando houver várias variáveis, use esse padrão: <br>*Excluindo a seguinte máquina virtual: {0} ; Hospedeira{1}* |
+|Sucesso             |Comece com "Com êxito" e termine com o software que acabamos de fazer. Este é um exemplo:<br> *O volume ' dados do cliente ' foi criado com êxito.*|
+|Falha             |Comece com "Não pôde" e termine com o que o software não conseguiu realizar. Este é um exemplo:<br> *Não foi possível criar o volume ' dados do cliente '.*|
 
 ## <a name="tooltips"></a>Dicas de ferramenta
 

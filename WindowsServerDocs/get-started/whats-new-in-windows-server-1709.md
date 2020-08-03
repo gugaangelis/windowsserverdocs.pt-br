@@ -8,22 +8,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: a2e4b17a0f8f38812366dc2913e6c2ee25d4d137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c814098aeb73ca186e0a0db668f477f9cc1f5cf9
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961148"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87409566"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novidades no Windows Server, versão 1709
 
->Aplica-se a: Windows Server (Canal semestral)
+> Aplica-se a: Windows Server (Canal semestral)
 
 <img src=../media/landing-icons/new.png style='float:left; padding:.5em;' alt=Icon showing a newspaper>&nbsp;Para saber mais sobre os recursos mais recentes do Windows, consulte [Novidades no Windows Server](whats-new-in-windows-server.md). O conteúdo desta seção descreve as novidades e as alterações no Windows Server, versão 1709. Os novos recursos e alterações listados aqui são os que têm maior probabilidade de ter um impacto maior ao trabalhar com esta versão. Consulte também [Windows Server, versão 1709](https://cloudblogs.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
 
 > [!IMPORTANT]
 > O Windows Server versão 1709 está sem suporte desde 9 de abril de 2019.
-
 
 ## <a name="new-cadence-of-releases"></a>Nova cadência de versões
 
@@ -33,21 +32,21 @@ Desta versão em diante, você tem duas opções para receber atualizações de 
 
 Os canais de lançamento estão resumidos na tabela a seguir.
 
-|   | Canal Semestral | Canal de Manutenção em Longo Prazo |
-| ------------- | ------------- | ------------ |
-| Cadência de versão  | Duas vezes por ano (primavera e outono)  | A cada 2-3 anos |
-| Cronograma de suporte  | Suporte base de produção de 18 meses  | Suporte base de cinco anos + suporte estendido de cinco anos |
-| Disponibilidade  | Software Assurance ou Azure (hospedado em nuvem)  | Todos os canais |
-| Convenção de nomenclatura  | Windows Server, versão AAMM  | Windows Server AAAA |
+| Descrição | Canal Semestral | Canal de Manutenção em Longo Prazo |
+| ------------- |--| -- |
+| Cadência de versão | Duas vezes por ano (primavera e outono) | A cada 2-3 anos |
+| Cronograma de suporte | Suporte base de produção de 18 meses | Suporte base de cinco anos + suporte estendido de cinco anos |
+| Disponibilidade | Software Assurance ou Azure (hospedado em nuvem) | Todos os canais |
+| Convenção de nomenclatura | Windows Server, versão AAMM | Windows Server AAAA |
 
 Para obter mais informações, confira a [Comparação dos canais de manutenção](../get-started-19/servicing-channels-19.md).
 
 ## <a name="application-containers-and-micro-services"></a>Contêineres de aplicativo e microsserviços
 
-- A imagem de contêiner do Server Core foi otimizada ainda mais para cenários de lift-and-shift, nos quais você pode migrar bases de código ou aplicativos em contêineres com poucas alterações, além de ser 60% menor. 
+- A imagem de contêiner do Server Core foi otimizada ainda mais para cenários de lift-and-shift, nos quais você pode migrar bases de código ou aplicativos em contêineres com poucas alterações, além de ser 60% menor.
 - A imagem de contêiner do servidor Nano é aproximadamente 80% menor.
     - No Canal Semestral do Windows Server, o Nano Server como uma imagem de sistema operacional base do contêiner é reduzida de 390 MB para 80 MB.
-- Contêineres do Linux com isolamento Hyper-V 
+- Contêineres do Linux com isolamento Hyper-V
 
 Para obter mais informações, confira [Alterações ao Nano Server na próxima versão do Windows Server](./nano-in-semi-annual-channel.md) e [Windows Server, versão 1709 para desenvolvedores](https://cloudblogs.microsoft.com/windowsserver/2017/09/13/sneak-peek-3-windows-server-version-1709-for-developers/).
 
@@ -58,7 +57,7 @@ O projeto Honolulu inclui uma nova experiência de gerenciamento intuitiva para 
 
 ## <a name="compute"></a>Computação
 
-**Contêiner Nano e Contêiner do Server Core**: Primeiramente, essa versão é sobre impulsionar a inovação de aplicativo. O Servidor Nano ou Nano como host é preterido e substituído pelo contêiner Nano, que é o Nano funcionando como imagem de contêiner. 
+**Contêiner Nano e Contêiner do Server Core**: Primeiramente, essa versão é sobre impulsionar a inovação de aplicativo. O Servidor Nano ou Nano como host é preterido e substituído pelo contêiner Nano, que é o Nano funcionando como imagem de contêiner.
 
 Para obter mais informações sobre contêineres, confira [Visão geral da rede de contêineres](../networking/sdn/technologies/containers/container-networking-overview.md).
 
@@ -91,15 +90,15 @@ Para obter mais informações, confira [Visão geral de malha e VMs protegidas](
 ## <a name="storage"></a>Armazenamento
 
 **Réplica de Armazenamento**: A proteção de recuperação de desastres adicionada por Réplica de armazenamento no Windows Server 2016 foi agora expandida para incluir:
-- **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup.  Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq). 
+- **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup.  Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
 - **Suporte ao Project Honolulu**: o suporte para gerenciamento gráfico de replicação de servidor para servidor agora está disponível no Project Honolulu. Isso elimina a necessidade de usar o PowerShell para gerenciar uma carga de trabalho de proteção contra desastres comuns.
 
-**SMB**: 
-- **SMB1 e remoção de autenticação de convidado**: o Windows Server versão 1709 não instala mais o cliente SMB1 e o servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, confira [o SMBv1 não é instalado por padrão no Windows 10 versão 1709 e no Windows Server versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server). 
+**SMB**:
+- **SMB1 e remoção de autenticação de convidado**: o Windows Server versão 1709 não instala mais o cliente SMB1 e o servidor por padrão. Além disso, a capacidade de autenticar como um convidado no SMB2 e posterior está desativada por padrão. Para obter mais informações, confira [o SMBv1 não é instalado por padrão no Windows 10 versão 1709 e no Windows Server versão 1709](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server).
 
 - **Compatibilidade e segurança de SMB2/SMB3**: foram adicionadas mais opções de compatibilidade e segurança do aplicativo, incluindo a capacidade de desabilitar os bloqueios em SMB2+ para aplicativos herdados, bem como exigir assinatura ou criptografia de um cliente para cada conexão. Para obter mais informações, confira a ajuda do módulo SMBShare do PowerShell.
 
-**Eliminação de Duplicação de Dados**: 
+**Eliminação de Duplicação de Dados**:
 - **A eliminação de duplicação de dados agora dá suporte a ReFS**: você não precisa mais escolher entre as vantagens de um sistema de arquivos moderno com o ReFS e a eliminação de duplicação de dados: agora, você pode habilitar a eliminação de duplicação de dados, na qual você pode habilitar o ReFS. Aumente a eficiência do armazenamento em mais de 95% com o ReFS.
 - **API de DataPort para entrada/saída otimizada para volumes com eliminação de duplicação**: os desenvolvedores agora podem aproveitar o conhecimento que a eliminação de duplicação de dados tem sobre como armazenar dados de modo eficaz para mover os dados entre volumes, servidores e clusters de forma eficiente.
 
@@ -150,7 +149,7 @@ O **Roteamento de malha do Docker** é compatível. A malha de roteamento de ing
 **Rede definida pelo software**
 
 - A **Criptografia de Rede Virtual** é um novo recurso que oferece a capacidade de criptografar o tráfego de rede virtual entre Máquinas Virtuais que se comunicam entre si em sub-redes marcadas com Criptografia Habilitada. Esse recurso usa o Protocolo DTLS na sub-rede virtual para criptografar os pacotes.  O DTLS oferece proteção contra interceptações, adulteração e falsificação por qualquer pessoa com acesso à rede física.
- 
+
 **Windows 10 VPN**
 
 - **Túneis de infraestrutura de pré-logon**. Por padrão, a VPN do Windows 10 não cria automaticamente Túneis de infraestrutura quando os usuários não estão conectados ao computador ou dispositivo. Você pode configurar a VPN do Windows 10 para criar automaticamente Túneis de infraestrutura de pré-logon usando o recurso de túnel de dispositivo (pré-logon) no perfil da VPN.

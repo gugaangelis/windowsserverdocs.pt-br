@@ -8,20 +8,20 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322868"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518564"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introdução ao centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 > [!Tip]
-> Novo no Windows Admin Center?
-> [Saiba mais sobre o Windows Admin Center](../overview.md) ou [Baixe agora](https://aka.ms/windowsadmincenter).
+> Conhecendo o Windows Admin Center agora?
+> [Saiba mais sobre o Windows Admin Center](../overview.md) ou [baixe-o agora](https://aka.ms/windowsadmincenter).
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>Centro de administração do Windows instalado no Windows 10
 
@@ -33,18 +33,18 @@ ms.locfileid: "79322868"
 Na primeira vez que você abrir o centro de administração do Windows no Windows 10, certifique-se de selecionar o certificado do *cliente do centro de administração do Windows* (caso contrário, você receberá um erro HTTP 403 dizendo "não é possível chegar a esta página").
 
 No Microsoft Edge, quando você receber uma solicitação com esta caixa de diálogo:
- 
+
 1. Clique em **mais opções**
 
-    ![](../media/launch-cert-1.png)
+    ![Selecione uma caixa de certificado com mais opções realçadas](../media/launch-cert-1.png)
 
 2. Selecione o certificado rotulado **cliente do centro de administração do Windows** e clique em **OK**
 
-    ![](../media/launch-cert-2.png)
+    ![Selecione uma caixa de certificado mostrando os certificados disponíveis](../media/launch-cert-2.png)
 
 3. Certifique-se de **que sempre permitir acesso** esteja selecionado e clique em **permitir**
 
-    ![](../media/launch-cert-3.png)
+    ! Caixa de diálogo credencial necessária] (.. launch-cert-3.png/Media/)
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>Conectando-se a nós e clusters gerenciados
 
@@ -54,15 +54,15 @@ Depois de concluir a instalação do centro de administração do Windows, você
 
 1. Clique em **+ Adicionar** em **todas as conexões**.
 
-   ![](../media/launch/addserver0.png)
+   ![Centro de administração do Windows – página todas as conexões](../media/launch/addserver0.png)
 
 2. Escolha Adicionar um servidor, cluster, computador Windows ou uma VM do Azure:
-    
-   ![](../media/launch/ChooseConnectionType.png)
+
+   ![Centro de administração do Windows – página Adicionar recursos](../media/launch/ChooseConnectionType.png)
 
 3. Digite o nome do servidor ou cluster a ser gerenciado e clique em **Enviar**. O servidor ou cluster será adicionado à sua lista de conexões na página Visão geral.
 
-   ![](../media/launch/addserver2.png)
+   ![Centro de administração do Windows-página servidores](../media/launch/addserver2.png)
 
    **--OU--**
 
@@ -70,7 +70,7 @@ Depois de concluir a instalação do centro de administração do Windows, você
 
  1. Na página **Adicionar conexão do servidor** , escolha a guia **importar servidores** .
 
-    ![](../media/launch/import-servers.png)
+    ![Centro de administração do Windows – guia importar servidores](../media/launch/import-servers.png)
 
  2. Clique em **procurar** e selecione um arquivo de texto que contenha uma vírgula ou uma nova linha separada por uma lista de FQDNs para os servidores que você deseja adicionar.
 
@@ -83,7 +83,7 @@ Depois de concluir a instalação do centro de administração do Windows, você
 
  1. Na página **Adicionar conexão do servidor** , escolha a guia **Pesquisar Active Directory** .
 
-    ![](../media/launch/search-ad.png)
+    ![Centro de administração do Windows – guia pesquisa Active Directory](../media/launch/search-ad.png)
 
  2. Insira seus critérios de pesquisa e clique em **Pesquisar**. Há suporte para curingas (*).
 
@@ -95,7 +95,7 @@ O centro de administração do Windows dá suporte a vários mecanismos de auten
 
 **Logon único**
 
-Você pode usar suas credenciais atuais do Windows para autenticar com o nó gerenciado. Esse é o padrão, e o centro de administração do Windows tenta o logon quando você adiciona um servidor. 
+Você pode usar suas credenciais atuais do Windows para autenticar com o nó gerenciado. Esse é o padrão, e o centro de administração do Windows tenta o logon quando você adiciona um servidor.
 
 **Logon único quando implantado como um serviço no Windows Server**
 
@@ -107,11 +107,11 @@ Se você tiver instalado o centro de administração do Windows no Windows Serve
 
 Em **todas as conexões**, selecione um servidor na lista e escolha **gerenciar como** para especificar as credenciais que serão usadas para autenticar o nó gerenciado:
 
-![](../media/launch-use-6.png)
+![Todas as conexões, gerenciar como opção](../media/launch-use-6.png)
 
 Se o centro de administração do Windows estiver sendo executado no modo de serviço no Windows Server, mas você não tiver a delegação Kerberos configurada, deverá inserir novamente suas credenciais do Windows:
 
-![](../media/launch-use-7.png)
+![Página especificar suas credenciais](../media/launch-use-7.png)
 
 Você pode aplicar as credenciais a todas as conexões, que as armazenará em cache para essa sessão específica do navegador. Se você recarregar o navegador, deverá inserir novamente as credenciais de **gerenciar como** .
 
@@ -128,7 +128,7 @@ Você pode usar marcas para identificar e filtrar servidores relacionados na sua
 * Selecione um servidor ou vários servidores na lista todas as conexões
 * Em **todas as conexões**, clique em **Editar marcas**
 
-![](../media/launch/tags-5.png)
+![Centro de administração do Windows – opção Editar marcas](../media/launch/tags-5.png)
 
 O painel **Editar marcas de conexão** permite que você modifique, adicione ou remova marcas de suas conexões selecionadas:
 
@@ -140,16 +140,19 @@ O painel **Editar marcas de conexão** permite que você modifique, adicione ou 
 
 * Se uma marca for aplicada a um subconjunto das conexões selecionadas, a caixa de seleção será mostrada em um estado intermediário. Você pode clicar na caixa para verificá-la e aplicar a marca a todas as conexões selecionadas ou clicar novamente para desmarcar e remover a marca de todas as conexões selecionadas.
 
-![](../media/launch/tags-6.png)
+![Centro de administração do Windows – página Editar marcas de conexão](../media/launch/tags-6.png)
 
 ### <a name="filter-connections-by-tag"></a>Filtrar conexões por marca
 
 Depois que as marcas tiverem sido adicionadas a uma ou mais conexões de servidor, você poderá exibir as marcas na lista de conexões e filtrar a lista de conexões por marcas.
 
 * Para filtrar por uma marca, selecione o ícone de filtro ao lado da caixa de pesquisa.
-![](../media/launch/tags-7.png)
-* Você pode selecionar "or", "and" ou "Not" para modificar o comportamento do filtro das marcas selecionadas.
-![](../media/launch/tags-8.png)
+
+   ![Centro de administração do Windows – filtrar usando a caixa de pesquisa](../media/launch/tags-7.png)
+
+   * Você pode selecionar "or", "and" ou "Not" para modificar o comportamento do filtro das marcas selecionadas.
+
+   ![Central de administração do Windows-página Filtrar conexões](../media/launch/tags-8.png)
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>Usar o PowerShell para importar ou exportar suas conexões (com marcas)
 
@@ -159,4 +162,4 @@ Depois que as marcas tiverem sido adicionadas a uma ou mais conexões de servido
 
 Depois de se conectar a um servidor, cluster ou PC, você pode examinar os scripts do PowerShell que capacitam as ações da interface do usuário no centro de administração do Windows. De dentro de uma ferramenta, clique no ícone do PowerShell na barra de aplicativos superior. Selecione um comando de interesse na lista suspensa para navegar até o script do PowerShell correspondente.
 
-![](../media/launch/showscript.png)
+![Exibir scripts do PowerShell para página de visão geral](../media/launch/showscript.png)

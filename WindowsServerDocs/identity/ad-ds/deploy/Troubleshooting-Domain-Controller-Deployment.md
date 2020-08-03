@@ -8,12 +8,12 @@ ms.date: 03/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee22c55a3c786be4df8f06b2e3c5d33ea620b1e0
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409947"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519404"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solução de problemas de implantação de controlador de domínio
 
@@ -29,13 +29,13 @@ Este tópico abrange metodologia detalhada sobre solução de problemas de confi
 
 Os logs internos são os instrumentos mais importantes para solucionar problemas de promoção e rebaixamento do controlador de domínio. Todos esses logs são habilitados e configurados para o máximo de detalhamento, por padrão.
 
-| Fase | Log |  |
-|--|--|--|
-| Gerenciador do Servidor ou operações ADDSDeployment do Windows PowerShell | - %systemroot%\debug\dcpromoui.log<p>-%SystemRoot%\debug\DCPROMOUI *. log |  |
-| Instalação/Promoção do controlador de domínio | - %systemroot%\debug\dcpromo.log<p>-%SystemRoot%\debug\dcpromo *. log<p>-Evento viewer\Windows Windows\Sistema<p>-Evento viewer\Windows logs\Application<p>-Viewer\Applications de eventos e serviço logs\Directory de serviços<p>-Evento viewer\Applications e serviços de replicação do logs\File<p>-Viewer\Applications de eventos e replicação de serviços logs\DFS |  |
-| Atualização de floresta ou domínio | -%SystemRoot%\debug\adprep \\ <datetime> \adprep.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \csv.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \dspecup.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \ldif.log * |  |
-| Mecanismo de implantação de ADDSDeployment do Windows PowerShell no Gerenciador do Servidor | -Viewer\Applications de eventos e serviços logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |  |
-| Serviço do Windows | - %systemroot%\Logs\CBS\\*<p>-% SystemRoot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% SystemRoot% \winsxs\pending.xml |  |
+| Fase | Log |
+|--|--|
+| Gerenciador do Servidor ou operações ADDSDeployment do Windows PowerShell | - %systemroot%\debug\dcpromoui.log<p>-%SystemRoot%\debug\DCPROMOUI *. log |
+| Instalação/Promoção do controlador de domínio | - %systemroot%\debug\dcpromo.log<p>-%SystemRoot%\debug\dcpromo *. log<p>-Evento viewer\Windows Windows\Sistema<p>-Evento viewer\Windows logs\Application<p>-Viewer\Applications de eventos e serviço logs\Directory de serviços<p>-Evento viewer\Applications e serviços de replicação do logs\File<p>-Viewer\Applications de eventos e replicação de serviços logs\DFS |
+| Atualização de floresta ou domínio | -%SystemRoot%\debug\adprep \\ <datetime> \adprep.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \csv.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \dspecup.log<p>-%SystemRoot%\debug\adprep \\ <datetime> \ldif.log * |
+| Mecanismo de implantação de ADDSDeployment do Windows PowerShell no Gerenciador do Servidor | -Viewer\Applications de eventos e serviços logs\Microsoft\Windows\DirectoryServices-Deployment\Operational |
+| Serviço do Windows | - %systemroot%\Logs\CBS\\*<p>-% SystemRoot% \servicing\sessions\sessions.xml<p>- %systemroot%\winsxs\poqexec.log<p>-% SystemRoot% \winsxs\pending.xml |
 
 ### <a name="tools-and-commands-for-troubleshooting-domain-controller-configuration"></a>Ferramentas e comandos para solução de problemas de configuração do controlador de domínio
 
@@ -217,10 +217,10 @@ Promoção e rebaixamento retornam os seguintes códigos de mensagem de falha. �
 
 A seguir, problemas comuns observados durante o processo de desenvolvimento do Windows Server 2012. Todos esses problemas são estruturais e têm uma solução alternativa válida ou uma técnica mais adequada para evitá-los em primeiro lugar. Muitos desses comportamentos são idênticos no Windows Server 2008 R2 e em sistemas operacionais mais antigos, mas a regravação de implantação do AD DS traz sensibilidade maior aos problemas.
 
-| Problema | O rebaixamento de um controlador de domínio deixa o DNS executando sem zonas |  |
-|--|--|--|
-| Sintomas | O servidor ainda atenderá solicitações de DNS, mas não terá informações sobre a zona |  |
-| Solução e notas | Ao remover a função AD DS, remova também a função Servidor DNS ou defina o serviço Servidor DNS como desabilitado. Lembre-se de apontar o cliente DNS para um servidor diferente. Se estiver usando o Windows PowerShell, execute o seguinte depois de rebaixar o servidor:<p>Código-desinstalar-WindowsFeature DNS<p>ou<p>Conjunto de código-DNS-de-início do serviço desabilitado<br />parar o DNS do serviço |  |
+| Problema | O rebaixamento de um controlador de domínio deixa o DNS executando sem zonas |
+|--|--|
+| Sintomas | O servidor ainda atenderá solicitações de DNS, mas não terá informações sobre a zona |
+| Solução e notas | Ao remover a função AD DS, remova também a função Servidor DNS ou defina o serviço Servidor DNS como desabilitado. Lembre-se de apontar o cliente DNS para um servidor diferente. Se estiver usando o Windows PowerShell, execute o seguinte depois de rebaixar o servidor:<p>Código-desinstalar-WindowsFeature DNS<p>ou<p>Conjunto de código-DNS-de-início do serviço desabilitado<br />parar o DNS do serviço |
 
 | Problema | A promoção de um Windows Server 2012 para um domínio de rótulo único existente não configura updatetopleveldomain=1 ou allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -280,7 +280,7 @@ A seguir, problemas comuns observados durante o processo de desenvolvimento do W
 | Problema | Falha ao promover um RODC para uma conta de computador pré-criada |
 |--|--|
 | Sintomas | Ao usar o ADDSDeployment do Windows PowerShell para promover um novo RODC com uma conta de computador pré-configurada, você recebe o erro:<p>O conjunto de parâmetros de código não pode ser resolvido usando os parâmetros nomeados especificados.    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet, Microsoft. DirectoryServices. Deployment. PowerShell. Commands. Install |
-| Solução e notas | Não forneça parâmetros já definidos em uma conta RODC pré-criada. Elas incluem:<p>Código--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-SiteName<br />-installdns |
+| Solução e notas | Não forneça parâmetros já definidos em uma conta RODC pré-criada. Eles incluem:<p>Código--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-SiteName<br />-installdns |
 
 | Problema | Ao desmarcar/selecionar "Reiniciar cada servidor de destino automaticamente, se necessário" nada ocorre |
 |--|--|

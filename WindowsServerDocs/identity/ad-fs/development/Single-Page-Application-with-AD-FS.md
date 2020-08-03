@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 1bd5d95739bc1c975f5f0c4d7efb8dc6f91e0412
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 934ef170f6cbd5a2bd4031d336907d6b925cff06
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954398"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519895"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Criar um aplicativo Web de página única usando OAuth e ADAL.JS com o AD FS 2016 ou posterior
 
@@ -25,11 +25,10 @@ Nesse cenário, quando o usuário faz logon, o front-end de JavaScript usa a [Bi
 >O exemplo que você pode criar aqui é apenas para fins educacionais. Essas instruções são para a implementação mais simples e mínima possível para expor os elementos necessários do modelo. O exemplo pode não incluir todos os aspectos do tratamento de erros e outras funcionalidades relacionadas.
 
 >[!NOTE]
->Este tutorial é aplicável **somente** ao AD FS Server 2016 e posterior 
+>Este tutorial é aplicável **somente** ao AD FS Server 2016 e posterior
 
 ## <a name="overview"></a>Visão geral
 Neste exemplo, criaremos um fluxo de autenticação em que um cliente de aplicativo de página única será autenticado AD FS para proteger o acesso aos recursos do WebAPI no back-end. Abaixo está o fluxo de autenticação geral
-
 
 ![Autorização de AD FS](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
 
@@ -54,14 +53,14 @@ Como configurar o controlador de domínio e AD FS está além do escopo deste ar
 - [Implantação do AD DS](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [Implantação do AD FS](../AD-FS-Deployment.md)
 
-
-
 ## <a name="clone-or-download-this-repository"></a>Clonar ou baixar este repositório
 Usaremos o aplicativo de exemplo criado para integrar o Azure AD em um aplicativo de página única do AngularJS e modificá-lo para proteger o recurso de back-end usando AD FS.
 
 No shell ou na linha de comando:
 
-    git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
+```
+git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
+```
 
 ## <a name="about-the-code"></a>Sobre o código
 Os arquivos de chave que contêm a lógica de autenticação são os seguintes:
@@ -100,6 +99,7 @@ Configurar ADAL JS
 
 Abra o arquivo **app.js** e altere a definição de **tadalProvider.ini** para:
 
+```
     adalProvider.init(
         {
             instance: 'https://fs.contoso.com/', // your STS URL
@@ -109,6 +109,7 @@ Abra o arquivo **app.js** e altere a definição de **tadalProvider.ini** para:
         },
         $httpProvider
     );
+```
 
 |Configuração|Descrição|
 |--------|--------|
@@ -119,9 +120,10 @@ Abra o arquivo **app.js** e altere a definição de **tadalProvider.ini** para:
 ## <a name="configure-webapi-to-use-ad-fs"></a>Configurar o WebAPI para usar AD FS
 Abra o arquivo **Startup.auth.cs** no exemplo e adicione o seguinte no início:
 
+```
     using System.IdentityModel.Tokens;
 
-exclu
+remove:
 
     app.UseWindowsAzureActiveDirectoryBearerAuthentication(
         new WindowsAzureActiveDirectoryBearerAuthenticationOptions
@@ -131,7 +133,7 @@ exclu
         }
     );
 
-e adicione:
+and add:
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
         new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -144,8 +146,9 @@ e adicione:
             }
         }
     );
+```
 
-|Parâmetro|Descrição|
+|Parâmetro|DESCRIÇÃO|
 |--------|--------|
 |ValidAudience|Isso configura o valor de ' Audience ' que será verificado no token|
 |ValidIssuer|Isso configura o valor de "emissor que será verificado em relação ao token|
@@ -153,6 +156,7 @@ e adicione:
 
 ## <a name="add-application-configuration-for-ad-fs"></a>Adicionar configuração de aplicativo para AD FS
 Altere os appSettings da seguinte maneira:
+
 ```xml
 <appSettings>
     <add key="ida:Audience" value="https://localhost:44326/" />
@@ -181,4 +185,4 @@ Agora, você poderá chamar a API de back-end para adicionar itens de lista de t
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
 ## <a name="next-steps"></a>Próximas etapas
-[Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)  
+[Desenvolvimento do AD FS](../../ad-fs/AD-FS-Development.md)
