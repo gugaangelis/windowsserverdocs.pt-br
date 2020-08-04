@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: cb91b884edfbd105bc9e88a9d11b3b96055247c9
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 2a3655c7efddbbe22f312bab4c9276e88e53481b
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833329"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410007"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -35,19 +35,18 @@ Você pode atualizar as versões que não são prévias do Windows Admin Center 
 
 Aqui estão algumas funções do Windows Admin Center:
 
-|     |     |
-| --- | --- |
-| ![](media/simple-icon.png)| **Simplificar o gerenciamento de servidores** <br/> Gerencie seus servidores e clusters com versões modernizadas de ferramentas familiares, como o Gerenciador do Servidor. Instale-o em menos de cinco minutos e gerencie os servidores no ambiente imediatamente, sem precisar de configuração adicional. Para obter detalhes, confira [O que é o Windows Admin Center?](understand/what-is.md). |
-| ![](media/future-icon.png)| **Trabalhar com soluções híbridas** <br/> A integração com o Azure ajuda a conectar opcionalmente seus servidores locais aos serviços de nuvem relevantes. Para obter detalhes, confira [Serviços híbridos do Azure](azure/index.md) |
-| ![](media/secure-icon.png)| **Simplificar o gerenciamento de hiperconvergentes** <br/> Simplifique o gerenciamento dos clusters hiperconvergentes do Azure Stack HCI ou do Windows Server. Use cargas de trabalho simplificadas para criar e gerenciar VMs, volumes de Espaços de Armazenamento Diretos, redes definidas por software e muito mais. Para obter detalhes, confira [Gerenciar a infraestrutura hiperconvergente com o Windows Admin Center](use/manage-hyper-converged.md)|
+- **Simplificar o gerenciamento do servidor** Gerencie seus servidores e clusters com versões modernizadas de ferramentas conhecidas, como o Gerenciador do Servidor. Instale-o em menos de cinco minutos e gerencie os servidores no ambiente imediatamente, sem precisar de configuração adicional. Para obter detalhes, confira [O que é o Windows Admin Center?](understand/what-is.md).
+
+- **Trabalhar com soluções híbridas** A integração com o Azure ajuda a conectar opcionalmente seus servidores locais aos serviços de nuvem relevantes. Para obter detalhes, confira [Serviços híbridos do Azure](azure/index.md)
+
+- **Simplificar o gerenciamento hiperconvergente** Simplifique o gerenciamento dos clusters hiperconvergentes do Azure Stack HCI ou do Windows Server. Use cargas de trabalho simplificadas para criar e gerenciar VMs, volumes de Espaços de Armazenamento Diretos, redes definidas por software e muito mais. Para obter detalhes, confira [Gerenciar a infraestrutura hiperconvergente com o Windows Admin Center](use/manage-hyper-converged.md)
 
 Veja um vídeo que oferece uma visão geral, seguido de um cartaz com mais detalhes:
->[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+> [!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
 [![Cartaz do Windows Admin Center](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [Baixar o PDF](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
-
 
 ## <a name="contents-at-a-glance"></a>Conceitos básicos
 
@@ -184,6 +183,6 @@ O Windows Admin Center foi projetado para gerenciar um servidor único ou cluste
 
 ## <a name="stay-updated"></a>Fique por dentro
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Siga-nos no Twitter](https://twitter.com/servermgmt)
+[Siga-nos no Twitter](https://twitter.com/servermgmt)
 
-![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Leia nossos blogs](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
+[Leia nossos blogs](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog)
