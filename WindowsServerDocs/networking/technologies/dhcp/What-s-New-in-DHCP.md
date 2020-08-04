@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 301541b42398ab517940af987e7ed6f3a7a54b0d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 204f6079b2d8a8c833afb8a32b4d0ac97ac0912f
+ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475543"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87538508"
 ---
 # <a name="whats-new-in-dhcp"></a>Novidades no DHCP
 
@@ -24,6 +24,12 @@ Este tópico descreve a funcionalidade DHCP (protocolo de configuração dinâmi
 O DHCP é um padrão IETF (Internet Engineering Task Force), projetado para reduzir a carga administrativa e a complexidade da configuração de hosts em uma \- rede baseada em TCP/IP, como uma intranet privada. Usando o serviço de servidor DHCP, o processo de configuração de TCP/IP em clientes DHCP é automático.
 
 As seções a seguir fornecem informações sobre novos recursos e alterações na funcionalidade do DHCP.
+
+## <a name="new-dhcp-client-side-features-in-the-windows-10-may-2020-update"></a>Novos recursos do lado do cliente DHCP no Windows 10 podem ser atualizados 2020 
+
+O cliente DHCP no Windows 10 foi atualizado na atualização de 10 de maio de 2020 (também conhecida como Windows 10, versão 2004). Quando você estiver executando um cliente Windows e se conectar à Internet por meio de um telefone Android conectado, a conexão deverá ser marcada como "limitada". Anteriormente, as conexões foram marcadas como ilimitadas. Observe que nem todos os telefones com compartilhamento de Internet do Android serão detectados como limitados, e algumas outras redes também poderão aparecer como limitadas.
+
+Além disso, o nome tradicional do fornecedor do cliente foi atualizado para alguns dispositivos baseados no Windows. Esse valor costumava ser simplesmente MSFT 5,0. Alguns dispositivos agora aparecerão como MSFT 5,0 XBOX.
 
 ## <a name="dhcp-subnet-selection-options"></a>Opções de seleção de sub-rede DHCP
 

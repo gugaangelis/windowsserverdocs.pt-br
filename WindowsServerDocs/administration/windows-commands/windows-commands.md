@@ -9,12 +9,12 @@ ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
 ms.prod: windows-server
-ms.openlocfilehash: 3f1af3e2f352c8bbea1540c2d1964ad8536170fe
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a4de7f64601ec4c869c2ae0e6b5ec7a0d22aee2c
+ms.sourcegitcommit: 3d56b626dc2d163d2c7847c01e872bfbfcde0e12
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519575"
+ms.locfileid: "87538528"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -40,7 +40,7 @@ As informações contidas neste tópico aplicam-se a:
 
 O Shell de comando foi o primeiro Shell interno do Windows para automatizar tarefas rotineiras, como o gerenciamento de contas de usuário ou backups noturnos, com arquivos de lote (. bat). Com o Windows Script Host, você poderia executar scripts mais sofisticados no Shell de comando. Para obter mais informações, consulte [cscript](cscript.md) ou [WScript](wscript.md). Você pode executar operações com mais eficiência usando scripts do que é possível usando a interface do usuário. Os scripts aceitam todos os comandos que estão disponíveis na linha de comando.
 
-O Windows tem dois shells de comando: o Shell de comando e o [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
+O Windows tem dois shells de comando: o Shell de comando e o [PowerShell](/powershell/scripting/overview). Cada shell é um programa de software que fornece comunicação direta entre você e o sistema operacional ou aplicativo, fornecendo um ambiente para automatizar operações de ti.
 
 O PowerShell foi projetado para estender os recursos do Shell de comando para executar comandos do PowerShell chamados cmdlets. Os cmdlets são semelhantes aos comandos do Windows, mas fornecem uma linguagem de script mais extensível. Você pode executar comandos do Windows e cmdlets do PowerShell no PowerShell, mas o Shell de comando só pode executar comandos do Windows e não cmdlets do PowerShell.
 
