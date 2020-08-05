@@ -7,14 +7,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/14/2020
+ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9449da93e52471d1f21c2b7079a8fed0415a03a
-ms.sourcegitcommit: e6becfd2266fd434b7994455c7782de36af4ff80
+ms.openlocfilehash: 41e4923d64ebacf606f01350a873f6dbce564b4c
+ms.sourcegitcommit: 42cd33c95645321d09d006ff2e7666d6370dfbc3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377000"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87330812"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -26,19 +26,20 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Público     |1.2.1104 |
-|Participante do Programa Windows Insider    |1.2.1185 |
+|Público     |1.2.1186 |
+|Participante do Programa Windows Insider    |1.2.1186 |
 
-## <a name="updates-for-version-121185"></a>Atualizações para a versão 1.2.1185
+## <a name="updates-for-version-121186"></a>Atualizações para a versão 1.2.1186
 
-*Data da publicação: 14/07/2020*
+*Data da publicação: 28/07/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hr), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hs), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4B1Hq)
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - Agora você pode se inscrever em workspaces com várias contas de usuário usando a opção de menu de estouro ( **...** ) na barra de comandos na parte superior do cliente. Para diferenciar workspaces, os títulos de workspace agora incluem o nome de usuário, assim como todos os títulos de atalhos de aplicativos.
 - Foram adicionadas informações adicionais às mensagens de erro de assinatura para aprimorar a solução de problemas.
 - O estado recolhido/expandido dos workspaces agora é preservado durante uma atualização.
 - Foi adicionado um botão **Enviar Diagnóstico e Fechar** à caixa de diálogo **Informações de Conexão**.
+- Corrigido um problema com as teclas CTRL + SHIFT em sessões remotas.
 
 ## <a name="updates-for-version-121104"></a>Atualizações para a versão 1.2.1104
 

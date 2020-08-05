@@ -1,5 +1,5 @@
 ---
-title: Requisitos do Sistema
+title: Requisitos do sistema para Windows Server 2016
 description: Quais são os requisitos mínimos de armazenamento, CPU, rede, memória e RAM em uma instalação limpa para cada opção de instalação.
 ms.prod: windows-server
 ms.date: 10/17/2017
@@ -10,114 +10,114 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: fe2d47622d776b722f0d2d91d027e5f3fd0163c5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d0c9b6730d3ccc83836a64dadaa7c74966bcb0c1
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964218"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87519553"
 ---
 # <a name="system-requirements"></a>Requisitos do Sistema
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016 
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico aborda os requisitos mínimos de sistema para executar o Windows Server&reg; 2016 ou o Windows Server, versão 1709.
 
-> [!NOTE]  
-> Nesta versão, apenas instalações limpas são recomendadas.  
+> [!NOTE]
+> Nesta versão, apenas instalações limpas são recomendadas.
 
-> [!NOTE]  
-> Se, no momento da instalação, você optar por instalar com a opção Server Core, deverá estar ciente de que nenhum componente de GUI está instalado e você não poderá instalá-los ou desinstalá-los com o Gerenciador do Servidor. Se você precisar de recursos de GUI, escolha a opção Servidor com Experiência Desktop ao instalar o Windows Server 2016. Para obter mais informações, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server)  
+> [!NOTE]
+> Se, no momento da instalação, você optar por instalar com a opção Server Core, deverá estar ciente de que nenhum componente de GUI está instalado e você não poderá instalá-los ou desinstalá-los com o Gerenciador do Servidor. Se você precisar de recursos de GUI, escolha a opção Servidor com Experiência Desktop ao instalar o Windows Server 2016. Para obter mais informações, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server)
 
 
-## <a name="review-system-requirements"></a>Examine os requisitos de sistema  
+## <a name="review-system-requirements"></a>Examine os requisitos de sistema
 A seguir apresentamos requisitos de sistema estimados para o Windows Server 2016. Se o seu computador não atender aos requisitos definidos como mínimos, não será possível instalar este produto corretamente. Os requisitos reais variam conforme a configuração do sistema e dos aplicativos e recursos instalados.
 
-Salvo indicação em contrário, esses requisitos mínimos de sistema aplicam-se a todas as opções de instalação (Server Core, Server com Experiência Desktop e Nano Server) e às edições Standard e Datacenter.  
+Salvo indicação em contrário, esses requisitos mínimos de sistema aplicam-se a todas as opções de instalação (Server Core, Server com Experiência Desktop e Nano Server) e às edições Standard e Datacenter.
 
-> [!IMPORTANT]  
-> O escopo muito diversificado de possíveis implantações inviabiliza a determinação de requisitos de sistema recomendados para aplicação geral. Consulte a documentação de cada função de servidor a ser implantada para obter mais detalhes sobre os recursos necessários a determinadas funções de servidor. Para obter os melhores resultados, realize implantações de teste para determinar os requisitos de sistema adequados aos cenários da sua implantação em particular.  
+> [!IMPORTANT]
+> O escopo muito diversificado de possíveis implantações inviabiliza a determinação de requisitos de sistema recomendados para aplicação geral. Consulte a documentação de cada função de servidor a ser implantada para obter mais detalhes sobre os recursos necessários a determinadas funções de servidor. Para obter os melhores resultados, realize implantações de teste para determinar os requisitos de sistema adequados aos cenários da sua implantação em particular.
 
 
-## <a name="processor"></a>Processador  
-O desempenho do processador depende não apenas da frequência do relógio do processador, mas também do número de núcleos e do tamanho do cache do processador. Os requisitos de processador para este produto são:  
+## <a name="processor"></a>Processador
+O desempenho do processador depende não apenas da frequência do relógio do processador, mas também do número de núcleos e do tamanho do cache do processador. Os requisitos de processador para este produto são:
 
-**Mínimo**:  
-- Processador de 1,4 GHz e 64 bits  
-- Compatível com conjunto de instruções de x64  
-- Oferece suporte a NX e DEP  
-- Oferece suporte a CMPXCHG16b, LAHF/SAHF e PrefetchW  
-- Oferece suporte à Conversão de endereços de segundo nível (EPT ou NPT)  
+**Mínimo**:
+- Processador de 1,4 GHz e 64 bits
+- Compatível com conjunto de instruções de x64
+- Oferece suporte a NX e DEP
+- Oferece suporte a CMPXCHG16b, LAHF/SAHF e PrefetchW
+- Oferece suporte à Conversão de endereços de segundo nível (EPT ou NPT)
 
 [Coreinfo](/sysinternals/downloads/coreinfo) é uma ferramenta que você pode usar para confirmar quais destes recursos a CPU tem.
 
-## <a name="ram"></a>RAM  
-Os requisitos estimados de RAM para este produto são:  
+## <a name="ram"></a>RAM
+Os requisitos estimados de RAM para este produto são:
 
-**Mínimo**:  
+**Mínimo**:
 - 512 MB (2 GB para a opção de instalação Servidor com Experiência Desktop)
-- Tipo ECC (código de correção de erro) ou tecnologias semelhantes  
+- Tipo ECC (código de correção de erro) ou tecnologias semelhantes
 
-> [!IMPORTANT]  
-> Se você criar uma máquina virtual com os parâmetros mínimos de hardware com suporte (1 núcleo do processador e 512 MB de RAM) e, em seguida, tentar instalar esta versão na máquina virtual, a instalação falhará.  
->   
-> Para evitar isso, siga um destes procedimentos:  
->   
-> -   Aloque mais de 800 MB de RAM para a máquina virtual em que você pretende instalar esta versão. Uma vez que a instalação for sido concluída, você poderá alterar a alocação para até 512 MB de RAM, dependendo da configuração do servidor real.  
-> -   Interrompa o processo de inicialização desta versão na máquina virtual com SHIFT+F10. No prompt de comando que será aberto, use Diskpart.exe para criar e formatar uma partição de instalação. Execute **Wpeutil createpagefile /path=C:\pf.sys** (presumindo que a partição de instalação que você criou tenha sido C:). Feche o prompt de comando e prossiga com a instalação.  
+> [!IMPORTANT]
+> Se você criar uma máquina virtual com os parâmetros mínimos de hardware com suporte (1 núcleo do processador e 512 MB de RAM) e, em seguida, tentar instalar esta versão na máquina virtual, a instalação falhará.
+>
+> Para evitar isso, siga um destes procedimentos:
+>
+> -   Aloque mais de 800 MB de RAM para a máquina virtual em que você pretende instalar esta versão. Uma vez que a instalação for sido concluída, você poderá alterar a alocação para até 512 MB de RAM, dependendo da configuração do servidor real.
+> -   Interrompa o processo de inicialização desta versão na máquina virtual com SHIFT+F10. No prompt de comando que será aberto, use Diskpart.exe para criar e formatar uma partição de instalação. Execute **Wpeutil createpagefile /path=C:\pf.sys** (presumindo que a partição de instalação que você criou tenha sido C:). Feche o prompt de comando e prossiga com a instalação.
 
-## <a name="storage-controller-and-disk-space-requirements"></a>Controlador de armazenamento e requisitos de espaço em disco  
-Os computadores que executam o Windows Server 2016 devem incluir um adaptador de armazenamento compatível com a especificação de arquitetura PCI Express. Os dispositivos de armazenamento persistentes em servidores classificados como unidades de disco rígido não devem ser PATA. O Windows Server 2016 não permite ATA/PATA/IDE/EIDE para unidades de inicialização, paginação ou dados.  
+## <a name="storage-controller-and-disk-space-requirements"></a>Controlador de armazenamento e requisitos de espaço em disco
+Os computadores que executam o Windows Server 2016 devem incluir um adaptador de armazenamento compatível com a especificação de arquitetura PCI Express. Os dispositivos de armazenamento persistentes em servidores classificados como unidades de disco rígido não devem ser PATA. O Windows Server 2016 não permite ATA/PATA/IDE/EIDE para unidades de inicialização, paginação ou dados.
 
-Estes são os requisitos de espaço em disco **mínimos** estimados para a partição do sistema.  
+Estes são os requisitos de espaço em disco **mínimos** estimados para a partição do sistema.
 
-**Mínimo**: 32 GB  
+**Mínimo**: 32 GB
 
 > [!NOTE]
-> Esteja ciente de que o valor 32 GB deve ser considerado um *valor mínimo absoluto* para uma instalação bem-sucedida. Este mínimo deve permitir que você instale o modo Server Core do Windows Server 2016, com a função de servidor Serviços Web (IIS). Um servidor no modo de Server Core é cerca de 4 GB menor que o mesmo servidor no modo de Servidor com GUI. 
-> 
-> A partição do sistema precisará de espaço extra em qualquer uma das seguintes circunstâncias:  
-> 
-> -   Se você instalar o sistema em uma rede.  
-> -   Computadores com mais de 16 GB de RAM precisarão de mais espaço em disco para arquivos de paginação, hibernação e despejo.  
+> Esteja ciente de que o valor 32 GB deve ser considerado um *valor mínimo absoluto* para uma instalação bem-sucedida. Este mínimo deve permitir que você instale o modo Server Core do Windows Server 2016, com a função de servidor Serviços Web (IIS). Um servidor no modo de Server Core é cerca de 4 GB menor que o mesmo servidor no modo de Servidor com GUI.
+>
+> A partição do sistema precisará de espaço extra em qualquer uma das seguintes circunstâncias:
+>
+> -   Se você instalar o sistema em uma rede.
+> -   Computadores com mais de 16 GB de RAM precisarão de mais espaço em disco para arquivos de paginação, hibernação e despejo.
 
-## <a name="network-adapter-requirements"></a>Requisitos do adaptador de rede  
+## <a name="network-adapter-requirements"></a>Requisitos do adaptador de rede
 
-Os adaptadores de rede usados com essa versão devem incluir estes recursos:  
+Os adaptadores de rede usados com essa versão devem incluir estes recursos:
 
-**Mínimo**:  
-- Um adaptador de Ethernet capaz de pelo menos produtividade de gigabit  
-- Compatível com a especificação de arquitetura PCI Express.  
-- Oferece suporte a PXE (Pre-Boot Execution Environment).  
+**Mínimo**:
+- Um adaptador de Ethernet capaz de pelo menos produtividade de gigabit
+- Compatível com a especificação de arquitetura PCI Express.
+- Oferece suporte a PXE (Pre-Boot Execution Environment).
 
-Um adaptador de rede que oferece suporte à depuração de rede (KDNet) é útil, mas não é um requisito mínimo.   
+Um adaptador de rede que oferece suporte à depuração de rede (KDNet) é útil, mas não é um requisito mínimo.
 
-## <a name="other-requirements"></a>Outros requisitos  
-Os computadores que executam essa versão também devem ter o seguinte:  
+## <a name="other-requirements"></a>Outros requisitos
+Os computadores que executam essa versão também devem ter o seguinte:
 
 
--   Unidade de DVD (caso pretenda instalar o sistema operacional usando mídia de DVD)  
+-   Unidade de DVD (caso pretenda instalar o sistema operacional usando mídia de DVD)
 
-Os itens a seguir não são rigorosamente exigidos, mas são necessários para determinados recursos:  
+Os itens a seguir não são rigorosamente exigidos, mas são necessários para determinados recursos:
 
-- Sistema UEFI baseado em 2.3.1c e firmware que oferece suporte à inicialização segura  
-- Trusted Platform Module  
+- Sistema UEFI baseado em 2.3.1c e firmware que oferece suporte à inicialização segura
+- Trusted Platform Module
 
--   Dispositivo gráfico e monitor capaz de Super VGA (1024 x 768) ou resolução superior  
+-   Dispositivo gráfico e monitor capaz de Super VGA (1024 x 768) ou resolução superior
 
--   Teclado e mouse Microsoft&reg; (ou outro dispositivo apontador compatível)  
+-   Teclado e mouse Microsoft&reg; (ou outro dispositivo apontador compatível)
 
--   Acesso à Internet (tarifas podem ser aplicadas)  
+-   Acesso à Internet (tarifas podem ser aplicadas)
 
-> [!NOTE]  
-> Um chip Trusted Platform Module (TPM) não é estritamente necessário para instalar esta versão, embora seja necessário para usar determinados recursos, como Criptografia de Unidade de Disco BitLocker. Se o computador usar TPM, ele deverá atender a estes requisitos:  
->  
-> - Os TPMs baseados em hardware devem implementar a versão 2.0 da especificação de TPM.  
-> - Os TPMs que implementam a versão 2.0 devem ter um certificado EK que seja previamente provisionado para o TPM pelo fornecedor de hardware ou seja capaz de ser recuperado pelo dispositivo durante a primeira inicialização.  
-> - Os TPMs que implementam a versão 2.0 devem ser enviados com bancos de PCR SHA-256 e implementar PCRs de 0 a 23 para SHA-256. É aceitável enviar os TPMs com um único banco de PCR alternável que possa ser usado para medidas SHA-1 e SHA-256.  
-> - Uma opção de UEFI para desativar o TPM não é um requisito.  
+> [!NOTE]
+> Um chip Trusted Platform Module (TPM) não é estritamente necessário para instalar esta versão, embora seja necessário para usar determinados recursos, como Criptografia de Unidade de Disco BitLocker. Se o computador usar TPM, ele deverá atender a estes requisitos:
+>
+> - Os TPMs baseados em hardware devem implementar a versão 2.0 da especificação de TPM.
+> - Os TPMs que implementam a versão 2.0 devem ter um certificado EK que seja previamente provisionado para o TPM pelo fornecedor de hardware ou seja capaz de ser recuperado pelo dispositivo durante a primeira inicialização.
+> - Os TPMs que implementam a versão 2.0 devem ser enviados com bancos de PCR SHA-256 e implementar PCRs de 0 a 23 para SHA-256. É aceitável enviar os TPMs com um único banco de PCR alternável que possa ser usado para medidas SHA-1 e SHA-256.
+> - Uma opção de UEFI para desativar o TPM não é um requisito.
 
-## <a name="installation-of-nano-server"></a>Instalação do Nano Server  
+## <a name="installation-of-nano-server"></a>Instalação do Nano Server
 Para etapas detalhadas para instalar o Windows Server 2016 como um Nano Server, consulte [Install Nano Server](Getting-Started-with-Nano-Server.md) (Instalar o Nano Server).
 
 ## <a name="additional-resources"></a>Recursos adicionais

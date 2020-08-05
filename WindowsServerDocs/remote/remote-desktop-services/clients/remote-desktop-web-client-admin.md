@@ -8,19 +8,19 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 12ea9226a1656c6b3c800517818e5e950d142c64
+ms.sourcegitcommit: e86ea69254e2f63eaab10010ae3a43622156ab23
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "77125147"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87470689"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar o cliente Web da Área de Trabalho Remota para seus usuários
 
 O cliente da Web de Área de Trabalho Remota permite que os usuários acessem a infraestrutura de Área de Trabalho Remota da sua organização por um navegador da Web compatível. Eles poderão interagir com aplicativos remotos ou áreas de trabalho, como fariam com um computador local, independentemente de onde estiverem. Depois que você configurar seu cliente de Web da Área de Trabalho Remota, tudo que seus usuários precisam para começar é a URL pela qual poderão acessar o cliente, as credenciais e um navegador da Web com suporte.
 
 >[!IMPORTANT]
->O cliente da Web não dá suporte a usar ao Proxy de Aplicativo do Azure e não dá suporte a Proxy de Aplicativo Web. Confira [Usando o RDS com serviços de proxy de aplicativo](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para obter detalhes.
+>O cliente Web dá suporte ao uso do Proxy de Aplicativo do Azure AD e não dá suporte ao Proxy de aplicativo Web. Confira [Usando o RDS com serviços de proxy de aplicativo](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para obter detalhes.
 
 ## <a name="what-youll-need-to-set-up-the-web-client"></a>O que você precisará para configurar o cliente Web
 

@@ -1,19 +1,19 @@
 ---
-title: Configuração do servidor OpenSSH para Windows
-description: Configuração do o servidor OpenSSH para Windows usando as ferramentas do Windows ou o PowerShell.
+title: Gerenciamento de chaves do OpenSSH para Windows
+description: Gerenciamento de chaves do Servidor OpenSSH para Windows usando as ferramentas do Windows ou o PowerShell.
 ms.date: 09/27/2018
 ms.topic: conceptual
 contributor: maertendMSFT
 author: maertendmsft
 ms.product: windows-server
-ms.openlocfilehash: 4acb7893f41207de045af7eeaea15efba8221f4a
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c400d1071b3905b06bd6b6104a810194186ba4cc
+ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469841"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87408865"
 ---
-# <a name="openssh-key-management"></a>Gerenciamento de chaves OpenSSH
+# <a name="openssh-key-management"></a>Gerenciamento de chaves do OpenSSH
 
 A maioria das autenticações em ambientes Windows é feita com um par nome de usuário-senha.
 Isso funciona bem para sistemas que compartilham um domínio comum.

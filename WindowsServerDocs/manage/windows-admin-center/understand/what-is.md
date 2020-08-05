@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 92d8a47c4ac214faeac83ba8ff5a1a746bc8bdb3
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: da2970a8777ddcc95e2e8af0d979341965cb70ad
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891381"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87518524"
 ---
 # <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center?
 
@@ -23,7 +23,7 @@ Windows Admin Center é um novo conjunto de ferramentas de gerenciamento com bas
 
 O Windows Admin Center é a evolução moderna das ferramentas de gerenciamento "nativas", como o Gerenciador de Servidores e o MMC. Ele complementa o System Center, mas não é uma substituição.
 
-![](../media/wac-complements.png)
+![Diagrama do Windows Admin Center trabalhando com outras soluções](../media/wac-complements.png)
 
 ## <a name="how-does-windows-admin-center-work"></a>Como funciona o Windows Admin Center?
 
@@ -31,7 +31,7 @@ O Windows Admin Center é executado em um navegador da Web e gerencia o Windows 
 
 O gateway do Windows Admin Center, depois de publicado no DNS e ter acesso concedido através de firewalls corporativos correspondentes, permite a você conectar com segurança e gerenciar os servidores de qualquer lugar com o Microsoft Edge ou o Google Chrome.
 
-![](../media/architecture.png)
+![Diagrama da arquitetura do Windows Admin Center](../media/architecture.png)
 
 ## <a name="learn-how-windows-admin-center-improves-your-management-environment"></a>Saiba como o Windows Admin Center melhora o ambiente de gerenciamento
 
@@ -61,7 +61,7 @@ O Windows Admin Center tem vários pontos de [integração com os serviços do A
 
 ### <a name="deploy-hyper-converged-and-failover-clusters"></a>**Implantar clusters hiperconvergentes e de failover**
 
-O Windows Admin Center permite a [implantação direta de clusters hiperconvergentes e de failover](../use/deploy-hyperconverged-infrastructure.md) por meio de um assistente fácil de usar. 
+O Windows Admin Center permite a [implantação direta de clusters hiperconvergentes e de failover](../use/deploy-hyperconverged-infrastructure.md) por meio de um assistente fácil de usar.
 
 ### <a name="manage-hyper-converged-clusters"></a>**Gerencie clusters hiperconvergentes**
 

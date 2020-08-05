@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9bf484ab53790c453b0849b1bf8ca91553f82898
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
+ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953718"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87520155"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -29,7 +29,7 @@ Em termos simples, uma PAW é uma estação de trabalho robusta e bloqueada, pro
 > [!NOTE]
 > A arquitetura da PAW não exige um mapeamento 1:1 de contas para as estações de trabalho, embora seja uma configuração comum. A PAW cria um ambiente de estação de trabalho confiável que pode ser usado por uma ou mais contas.
 
-Para fornecer a maior segurança possível, as PAWs sempre devem executar o sistema operacional mais atualizado e seguro disponível: A Microsoft recomenda enfaticamente o Windows 10 Enterprise, que inclui vários recursos de segurança adicionais indisponíveis em outras edições (em particular, o [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) e o [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)).
+Para fornecer a maior segurança possível, as PAWs sempre devem executar o sistema operacional mais atualizado e seguro disponível: A Microsoft recomenda enfaticamente o Windows 10 Enterprise, que inclui vários recursos de segurança adicionais não disponíveis em outras edições (em particular, o [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) e o [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)).
 
 > [!NOTE]
 > As organizações sem acesso ao Windows 10 Enterprise podem usar o Windows 10 Pro, que inclui várias tecnologias de base essenciais para as PAWs, incluindo a Inicialização Confiável, o BitLocker e a Área de Trabalho Remota.  Clientes da área de educação podem usar o Windows 10 Education.  O Windows 10 Home não deve ser usado para uma PAW.
@@ -511,8 +511,10 @@ Nesta seção, você criará um novo GPO "Configuração da PAW – Usuário" qu
 Nesta seção, configuraremos as políticas de grupo para impedir que contas com privilégios administrativos façam logon em hosts de camadas inferiores.
 
 1. Crie o novo GPO **Restringir Logon na Estação de Trabalho** essa configuração restringirá o logon de contas de administrador de Camada 0 e Camada 1 em estações de trabalho padrão.  Esse GPO deve ser vinculado à UO de nível superior das "Estações de Trabalho" e ter as seguintes configurações:
+
    * Em Configuração do Computador\Políticas\Configurações de do Windows\Configurações de Segurança\Atribuição de Direitos de Usuário\Negar logon como um trabalho em lotes, selecione **Definir essas configurações de política** e adicione os grupos de Camada 1 e Camada 0:
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -530,48 +532,50 @@ Nesta seção, configuraremos as políticas de grupo para impedir que contas com
      > [!NOTE]
      > Grupos Internos de Camada 0, consulte a equivalência de Camada 0 para saber mais.
 
-         Other Delegated Groups
+      Outros grupos delegados
 
      > [!NOTE]
      > quaisquer grupos personalizados com acesso efetivo de Camada 0, consulte Equivalência de Camada 0 para saber mais.
 
-         Tier 1 Admins
+      Administradores de Nível 1
 
      > [!NOTE]
      > este grupo foi criado anteriormente na Fase 1.
 
    * (i) Em Configuração do Computador\Políticas\Configurações de do Windows\Configurações de Segurança\Atribuição de Direitos de Usuário\Negar logon como um serviço, selecione **Definir essas configurações de política** e adicione os grupos de Camada 1 e Camada 0:
-     ```
-     Enterprise Admins
-     Domain Admins
-     Schema Admins
-     BUILTIN\Administrators
-     Account Operators
-     Backup Operators
-     Print Operators
-     Server Operators
-     Domain Controllers
-     Read-Only Domain Controllers
-     Group Policy Creators Owners
-     Cryptographic Operators
-     ```
+      ```
+      Enterprise Admins
+      Domain Admins
+      Schema Admins
+      BUILTIN\Administrators
+      Account Operators
+      Backup Operators
+      Print Operators
+      Server Operators
+      Domain Controllers
+      Read-Only Domain Controllers
+      Group Policy Creators Owners
+      Cryptographic Operators
+      ```
 
      > [!NOTE]
      > Observação: Grupos Internos de Camada 0, consulte a equivalência de Camada 0 para saber mais.
 
-         Other Delegated Groups
+      Outros grupos delegados
 
      > [!NOTE]
      > Observação: quaisquer grupos personalizados com acesso efetivo de Camada 0, consulte Equivalência de Camada 0 para saber mais.
 
-         Tier 1 Admins
+      Administradores de Nível 1
 
      > [!NOTE]
      > Observação: este grupo foi criado anteriormente na Fase 1
 
 2. Crie o GPO **Restringir Logon no Servidor** – essa configuração restringirá o logon de contas de administrador de Camada 0 em servidores de Camada 1.  Esse GPO deve ser vinculado à UO de nível superior das "Servidores de Camada 1" e ter as seguintes configurações:
+
    * Em Configuração do Computador\Políticas\Configurações do Windows\Configurações de Segurança\Políticas Locais\Atribuição de Direitos de Usuário\Negar logon como um trabalho em lotes, selecione **Definir essas configurações de política** e adicione os grupos de Camada 0:
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -589,13 +593,14 @@ Nesta seção, configuraremos as políticas de grupo para impedir que contas com
      > [!NOTE]
      > Grupos Internos de Camada 0, consulte a equivalência de Camada 0 para saber mais.
 
-         Other Delegated Groups
+      Outros grupos delegados
 
      > [!NOTE]
      > quaisquer grupos personalizados com acesso efetivo de Camada 0, consulte Equivalência de Camada 0 para saber mais.
 
    * Em Configuração do Computador\Políticas\Configurações do Windows\Configurações de Segurança\Políticas Locais\Atribuição de Direitos de Usuário\Negar logon como um serviço, selecione **Definir essas configurações de política** e adicione os grupos de Camada 0:
-     ```
+
+      ```
      Enterprise Admins
      Domain Admins
      Schema Admins
@@ -608,17 +613,18 @@ Nesta seção, configuraremos as políticas de grupo para impedir que contas com
      Read-Only Domain Controllers
      Group Policy Creators Owners
      Cryptographic Operators
-     ```
+      ```
 
      > [!NOTE]
      > Grupos Internos de Camada 0, consulte a equivalência de Camada 0 para saber mais.
 
-         Other Delegated Groups
+      Outros grupos delegados
 
      > [!NOTE]
      > quaisquer grupos personalizados com acesso efetivo de Camada 0, consulte Equivalência de Camada 0 para saber mais.
 
    * Em Configuração do Computador\Políticas\Configurações do Windows\Configurações de Segurança\Políticas Locais\Atribuição de Direitos de Usuário\Negar logon localmente, selecione **Definir essas configurações de política** e adicione os grupos de Camada 0:
+
      ```
      Enterprise Admins
      Domain Admins
@@ -637,7 +643,7 @@ Nesta seção, configuraremos as políticas de grupo para impedir que contas com
      > [!NOTE]
      > Observação: Grupos Internos de Camada 0, consulte a equivalência de Camada 0 para saber mais.
 
-         Other Delegated Groups
+      Outros grupos delegados
 
      > [!NOTE]
      > Observação: quaisquer grupos personalizados com acesso efetivo de Camada 0, consulte Equivalência de Camada 0 para saber mais.
@@ -777,7 +783,7 @@ Habilite esse recurso nos servidores e estações de trabalho existentes e, em s
       2. Baixe o arquivo *proxy.pac* da PAW na [Galeria do TechNet](https://aka.ms/pawmedia) e publique-o em um site interno.
 
          > [!NOTE]
-         > Será necessário atualizar o arquivo *proxy.pac* após o download, para garantir que ele esteja atualizado e completo.  
+         > Será necessário atualizar o arquivo *proxy.pac* após o download, para garantir que ele esteja atualizado e completo.
          > A Microsoft publica todas as URLs atuais do Office 365 e do Azure [Centro de Suporte do Office](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US). Essas instruções pressupõem que você usará o Internet Explorer (ou Microsoft Edge) para a administração do Office 365, Azure e outros serviços de nuvem. A Microsoft recomenda a configuração de restrições semelhantes para qualquer navegador de terceiros que você precise usar para a administração. Só use navegadores da Web nas PAWs para a administração de serviços de nuvem, nunca para navegação geral.
          >
          > Talvez seja necessário adicionar outros destinos da Internet válidos para aumentar essa lista para outro provedor de IaaS, mas não adicione sites de produtividade, entretenimento, notícias ou pesquisa a esta lista.
@@ -818,36 +824,36 @@ Habilite esse recurso nos servidores e estações de trabalho existentes e, em s
 
          **Políticas:**
 
-         |||
-         |-|-|
-         |CM Windows 10 - Segurança de Domínio|N/A - Não Vincular Agora|
-         |SCM Windows 10 TH2 - Computador|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |SCM Windows 10 TH2- BitLocker|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |SCM Windows 10 - Credential Guard|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |SCM Internet Explorer - Computador|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |Configuração da PAW - Computador|Admin\Camada 0\Dispositivos (existente)|
-         ||Admin\Camada 1\Dispositivos (novo link)|
-         ||Admin\Camada 2\Dispositivos (novo link)|
-         |RestrictedAdmin Required - Computador|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |SCM Windows 10 - Usuário|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |SCM Internet Explorer - Usuário|Admin\Camada 0\Dispositivos|
-         ||Admin\Camada 1\Dispositivos|
-         ||Admin\Camada 2\Dispositivos|
-         |Configuração da PAW - Usuário|Admin\Camada 0\Dispositivos (existente)|
-         ||Admin\Camada 1\Dispositivos (novo link)|
-         ||Admin\Camada 2\Dispositivos (novo link)|
+         | Nome da Política | Link |
+         |--|--|
+         | CM Windows 10 - Segurança de Domínio | N/A - Não Vincular Agora |
+         | SCM Windows 10 TH2 - Computador | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | SCM Windows 10 TH2- BitLocker | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | SCM Windows 10 - Credential Guard | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | SCM Internet Explorer - Computador | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | Configuração da PAW - Computador | Admin\Camada 0\Dispositivos (existente) |
+         |  | Admin\Camada 1\Dispositivos (novo link) |
+         |  | Admin\Camada 2\Dispositivos (novo link) |
+         | RestrictedAdmin Required - Computador | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | SCM Windows 10 - Usuário | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | SCM Internet Explorer - Usuário | Admin\Camada 0\Dispositivos |
+         |  | Admin\Camada 1\Dispositivos |
+         |  | Admin\Camada 2\Dispositivos |
+         | Configuração da PAW - Usuário | Admin\Camada 0\Dispositivos (existente) |
+         |  | Admin\Camada 1\Dispositivos (novo link) |
+         |  | Admin\Camada 2\Dispositivos (novo link) |
 
          > [!NOTE]
          > O "SCM Windows 10 - Segurança" GPO pode ser vinculado ao domínio independentemente da PAW, mas afetará todo o domínio.
@@ -1096,4 +1102,4 @@ Depois que o disco de modelo e o arquivo de dados de blindagem estiverem prontos
 
 [Guia passo a passo da garantia do mecanismo de autenticação para AD DS no Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378897(v=ws.10))
 
-[Trusted Platform Module](C:/sd/docs/p_ent_keep_secure/p_ent_keep_secure/trusted_platform_module_technology_overview.xml)
+[Visão geral da tecnologia Trusted Platform Module](/windows/device-security/tpm/trusted-platform-module-overview)
