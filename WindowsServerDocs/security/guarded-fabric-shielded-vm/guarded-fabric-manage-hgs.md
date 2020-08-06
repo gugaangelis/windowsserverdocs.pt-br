@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 2eb9107427ff005c1b3c27e7064d677429d817ee
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856549"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769454"
 ---
 # <a name="managing-the-host-guardian-service"></a>Gerenciando o serviço guardião de host
 
@@ -28,7 +28,7 @@ As diretrizes nas seções a seguir abordam os problemas operacionais mais comun
 Devido à natureza sensível à segurança do HGS, é importante garantir que seus administradores sejam membros altamente confiáveis da sua organização e, idealmente, sejam separados dos administradores de seus recursos de malha.
 Além disso, é recomendável que você gerencie somente o HGS de estações de trabalho seguras usando protocolos de comunicação seguros, como o WinRM por HTTPS.
 
-### <a name="separation-of-duties"></a>Separação de tarefas
+### <a name="separation-of-duties"></a>Separação de funções
 Ao configurar o HGS, você terá a opção de criar uma floresta Active Directory isolada apenas para o HGS ou para unir o HGS a um domínio confiável existente.
 Essa decisão, bem como as funções que você atribui os administradores em sua organização, determinam o limite de confiança para o HGS.
 Quem tem acesso ao HGS, seja diretamente como um administrador ou indiretamente como administrador de outra coisa (por exemplo, Active Directory) que possa influenciar o HGS, tem controle sobre sua malha protegida.
@@ -50,8 +50,8 @@ O HGS é fornecido com duas funções JEA pré-configuradas:
 - **Revisores HgS** que permitem aos usuários o direito de auditar as políticas existentes. Eles não podem fazer nenhuma alteração na configuração do HGS.
 
 Para usar o JEA, primeiro você precisa criar um novo usuário padrão e torná-lo um membro do grupo Administradores do HGS ou dos revisores HGS.
-Se você usou `Install-HgsServer` para configurar uma nova floresta para o HGS, esses grupos serão nomeados "*ServiceName*Administrators" e "*ServiceName*revisores", respectivamente *, em que ServiceName* é o nome de rede do cluster HgS.
-Se você tiver ingressado em HGS em um domínio existente, deverá consultar os nomes de grupo especificados em `Initialize-HgsServer`.
+Se você usou `Install-HgsServer` para configurar uma nova floresta para o HgS, esses grupos serão nomeados "*ServiceName*Administrators" e "*ServiceName*revisores", respectivamente, em que *ServiceName* é o nome de rede do cluster HgS.
+Se você tiver ingressado em HGS em um domínio existente, deverá consultar os nomes de grupo especificados em `Initialize-HgsServer` .
 
 **Criar usuários padrão para as funções de administrador e revisor HGS**
 
@@ -76,7 +76,7 @@ Em um computador remoto que tenha conectividade de rede com o HGS, execute os se
 Enter-PSSession -ComputerName <hgsnode> -Credential '<hgsdomain>\hgsreviewer01' -ConfigurationName 'microsoft.windows.hgs'
 ```
 
-Em seguida, você pode verificar quais comandos são permitidos na sessão com `Get-Command` e executar quaisquer comandos permitidos para auditar a configuração.
+Em seguida, você pode verificar quais comandos são permitidos na sessão com `Get-Command` e executar os comandos permitidos para auditar a configuração.
 No exemplo abaixo, estamos verificando quais políticas estão habilitadas no HGS.
 
 ```powershell
@@ -85,7 +85,7 @@ Get-Command
 Get-HgsAttestationPolicy
 ```
 
-Digite o comando `Exit-PSSession` ou seu alias, `exit`, quando terminar de trabalhar com a sessão JEA. 
+Digite o comando `Exit-PSSession` ou seu alias, `exit` quando terminar de trabalhar com a sessão Jea.
 
 **Adicionar uma nova política ao HGS usando a função de administrador**
 
@@ -201,7 +201,7 @@ Export-HgsServerState -Path C:\temp\HGSBackup.xml
 
 **Fazendo backup de certificados**
 
-O comando `Export-HgsServerState` fará backup de qualquer certificado baseado em PFX adicionado ao HGS no momento em que o comando for executado.
+O `Export-HgsServerState` comando fará backup de qualquer certificado baseado em pfx adicionado ao HgS no momento em que o comando for executado.
 Se você adicionou certificados ao HGS usando uma impressão digital (típica para certificados não exportáveis e com suporte a hardware), será necessário fazer backup manual das chaves privadas para seus certificados.
 Para identificar quais certificados são registrados com o HGS e precisar fazer backup manual, execute o seguinte comando do PowerShell em qualquer nó de servidor HGS em funcionamento.
 
@@ -220,8 +220,8 @@ Você deve armazenar os backups de certificado junto com seus backups de políti
 O estado do servidor HGS com backup não incluirá o nome do seu cluster HGS, todas as informações de Active Directory ou quaisquer certificados SSL usados para proteger as comunicações com as APIs HGS.
 Essas configurações são importantes para consistência, mas não são críticas para colocar seu cluster HGS online novamente após um desastre.
 
-Para capturar o nome do serviço HGS, execute `Get-HgsServer` e observe o nome simples nas URLs atestado e proteção de chave.
-Por exemplo, se a URL de atestado for "<http://hgs.contoso.com/Attestation>", "HgS" será o nome do serviço HGS.
+Para capturar o nome do serviço HGS, execute `Get-HgsServer` e anote o nome simples nas URLs atestado e proteção de chave.
+Por exemplo, se a URL de atestado for " <http://hgs.contoso.com/Attestation> ", "HgS" é o nome do serviço HgS.
 
 O domínio de Active Directory usado pelo HGS deve ser gerenciado como qualquer outro domínio de Active Directory.
 Ao restaurar o HGS após um desastre, você não precisará necessariamente recriar os objetos exatos que estão presentes no domínio atual.
@@ -260,9 +260,9 @@ Você será solicitado a inserir a senha que você especificou ao criar o backup
 Import-HgsServerState -Path C:\Temp\HGSBackup.xml
 ```
 
-Se você quiser importar políticas de atestado confiável de administrador ou políticas de atestado confiáveis do TPM, poderá fazer isso especificando o `-ImportActiveDirectoryModeState` ou `-ImportTpmModeState` sinalizadores para [Import-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx).
+Se você quiser importar políticas de atestado confiáveis do administrador ou políticas de atestado confiáveis do TPM, poderá fazer isso especificando os `-ImportActiveDirectoryModeState` `-ImportTpmModeState` sinalizadores ou para [Import-HgsServerState](https://technet.microsoft.com/library/mt652168.aspx).
 
-Verifique se a atualização cumulativa mais recente do Windows Server 2016 está instalada antes de executar o `Import-HgsServerState`.
+Verifique se a atualização cumulativa mais recente do Windows Server 2016 está instalada antes de executar `Import-HgsServerState` .
 A falha em fazer isso pode resultar em um erro de importação.
 
 > [!NOTE]
@@ -280,7 +280,7 @@ Como lembrete, os certificados adicionados ao HGS usando impressões digitais ex
 Você precisará repetir essa etapa em cada nó adicional que adicionar ao cluster HGS restaurado.
 
 #### <a name="review-imported-attestation-policies"></a>Examinar as políticas de atestado importadas
-Depois de importar as configurações de um backup, é recomendável examinar de forma minuciosa todas as políticas importadas usando `Get-HgsAttestationPolicy` para garantir que somente os hosts nos quais você confia para executar VMs blindadas possam atestar com êxito.
+Depois de importar as configurações de um backup, é recomendável examinar de forma minuciosa todas as políticas importadas usando o para garantir que `Get-HgsAttestationPolicy` apenas os hosts nos quais você confia para executar VMs blindadas sejam capazes de atestar com êxito.
 Se você encontrar quaisquer políticas que não correspondam mais à sua postura de segurança, poderá [desabilitá-las ou removê-las](#review-attestation-policies).
 
 #### <a name="run-diagnostics-to-check-system-state"></a>Executar o diagnóstico para verificar o estado do sistema
@@ -334,7 +334,7 @@ Para atestado confiável de administrador, há apenas uma política que determin
 O atestado de TPM é mais complicado e envolve várias políticas para medir o código e a configuração de um sistema antes de determinar se ele está íntegro.
 
 Um único HGS pode ser configurado com as políticas Active Directory e TPM de uma só vez, mas o serviço verificará apenas as políticas para o modo atual para o qual ele está configurado quando um host tentar atestar.
-Para verificar o modo do seu servidor HGS, execute `Get-HgsServer`.
+Para verificar o modo do seu servidor HGS, execute `Get-HgsServer` .
 
 ### <a name="default-policies"></a>Políticas padrão
 Para atestado confiável de TPM, há várias políticas internas configuradas no HGS.
@@ -355,13 +355,13 @@ Hgs_BitLockerEnabled           | Requer que o BitLocker esteja habilitado no hos
 Hgs_IommuEnabled               | Requer que o host tenha um dispositivo IOMMU em uso para evitar ataques de acesso direto à memória. Desabilitar essa política e usar hosts sem uma IOMMU habilitada pode expor segredos de VM de locatário para ataques de memória direta.
 Hgs_NoHibernation              | Requer que a hibernação seja desabilitada no host Hyper-V. Desabilitar essa política pode permitir que os hosts salvem a memória da VM blindada em um arquivo de hibernação não criptografado.
 Hgs_NoDumps                    | Requer que os despejos de memória sejam desabilitados no host Hyper-V. Se você desabilitar essa política, é recomendável configurar a criptografia de despejo para impedir que a memória da VM blindada seja salva em arquivos de despejo de falha não criptografados.
-Hgs_DumpEncryption             | Requer despejos de memória, se habilitado no host Hyper-V, para serem criptografados com uma chave de criptografia confiável pelo HGS. Essa política não se aplicará se os despejos não estiverem habilitados no host. Se essa política e *Hgs\_Nodumps* forem desabilitadas, a memória da VM blindada poderá ser salva em um arquivo de despejo não criptografado.
-Hgs_DumpEncryptionKey          | Política negativa para garantir que os hosts configurados para permitir despejos de memória estejam usando uma chave de criptografia de arquivo de despejo definida pelo administrador conhecida como HGS. Esta política não se aplica quando o *Hgs\_DumpEncryption* está desabilitado.
+Hgs_DumpEncryption             | Requer despejos de memória, se habilitado no host Hyper-V, para serem criptografados com uma chave de criptografia confiável pelo HGS. Essa política não se aplicará se os despejos não estiverem habilitados no host. Se essa política e o *HgS \_ nodespejos* estiverem desabilitados, a memória da VM blindada poderá ser salva em um arquivo de despejo não criptografado.
+Hgs_DumpEncryptionKey          | Política negativa para garantir que os hosts configurados para permitir despejos de memória estejam usando uma chave de criptografia de arquivo de despejo definida pelo administrador conhecida como HGS. Esta política não se aplica quando *o \_ DumpEncryption HgS* está desabilitado.
 
 ### <a name="authorizing-new-guarded-hosts"></a>Autorizando novos hosts protegidos
 Para autorizar um novo host a se tornar um host protegido (por exemplo, atestado com êxito), o HGS deve confiar no host e (quando configurado para usar o atestado confiável do TPM) o software em execução.
 As etapas para autorizar um novo host diferem com base no modo de atestado para o qual o HGS está configurado no momento.
-Para verificar o modo de atestado para sua malha protegida, execute `Get-HgsServer` em qualquer nó HGS.
+Para verificar o modo de atestado para sua malha protegida, execute `Get-HgsServer` em qualquer nó HgS.
 
 #### <a name="software-configuration"></a>Configuração de software
 No novo host Hyper-V, verifique se o Windows Server 2016 Datacenter Edition está instalado.
@@ -423,7 +423,7 @@ Get-HgsAttestationBaselinePolicy -Path 'C:\temp\hardwareConfig01.tcglog'
 > Se você receber um erro informando que o host falhou na validação e não será atestado com êxito, não se preocupe.
 > Essa é uma verificação de pré-requisitos para garantir que o host possa executar VMs blindadas e, provavelmente, significa que você ainda não aplicou uma política de integridade de código ou outra configuração necessária.
 > Leia a mensagem de erro, faça as alterações sugeridas por ela e tente novamente.
-> Como alternativa, você pode ignorar a validação no momento adicionando o sinalizador `-SkipValidation` ao comando.
+> Como alternativa, você pode ignorar a validação no momento adicionando o `-SkipValidation` sinalizador ao comando.
 
 Copie a linha de base do TPM para o servidor HGS e registre-a com o comando a seguir.
 Incentivamos você a usar uma Convenção de nomenclatura que ajuda a entender a configuração de hardware e firmware dessa classe de host Hyper-V.
@@ -433,7 +433,7 @@ Add-HgsAttestationTpmPolicy -Name 'HardwareConfig01' -Path 'C:\temp\hardwareConf
 ```
 
 **Adicionando uma nova política de integridade de código** Se você alterou a política de integridade de código em execução nos hosts do Hyper-V, será necessário registrar a nova política com HGS antes que esses hosts possam ser atestados com êxito.
-Em um host de referência, que serve como uma imagem mestra para computadores Hyper-V confiáveis em seu ambiente, Capture uma nova política de CI usando o comando `New-CIPolicy`.
+Em um host de referência, que serve como uma imagem mestra para computadores Hyper-V confiáveis em seu ambiente, Capture uma nova política de CI usando o `New-CIPolicy` comando.
 Incentivamos você a usar o nível de **filepublisher** e o fallback de **hash** para políticas de CI de host do Hyper-V.
 Primeiro, você deve criar uma política de CI no modo de auditoria para garantir que tudo esteja funcionando conforme o esperado.
 Depois de validar uma carga de trabalho de exemplo no sistema, você pode impor a política e copiar a versão imposta para HGS.
@@ -468,10 +468,10 @@ Add-HgsAttestationCiPolicy -Name 'WS2016-Hardware01' -Path 'C:\temp\ws2016-hardw
 
 **Adicionando uma chave de criptografia de despejo de memória**
 
-Quando a política do *hgs\_Nodumps* está desabilitada e a política *DumpEncryption do HgS\_* está habilitada, os hosts protegidos têm permissão para que os despejos de memória (incluindo os despejos de falhas) sejam habilitados, desde que esses despejos sejam criptografados. Os hosts protegidos passarão por atestado apenas se tiverem despejos de memória desabilitados ou estiverem criptografando-os com uma chave conhecida por HGS. Por padrão, nenhuma chave de criptografia de despejo é configurada no HGS.
+Quando a política do *HgS \_ nodumps* está desabilitada e a política *HgS \_ DumpEncryption* está habilitada, os hosts protegidos têm permissão para que os despejos de memória (incluindo despejos de falhas) sejam habilitados, desde que esses despejos sejam criptografados. Os hosts protegidos passarão por atestado apenas se tiverem despejos de memória desabilitados ou estiverem criptografando-os com uma chave conhecida por HGS. Por padrão, nenhuma chave de criptografia de despejo é configurada no HGS.
 
-Para adicionar uma chave de criptografia de despejo ao HGS, use o cmdlet `Add-HgsAttestationDumpPolicy` para fornecer o HGS com o hash de sua chave de criptografia de despejo.
-Se você capturar uma linha de base do TPM em um host Hyper-V configurado com a criptografia de despejo, o hash será incluído no tcglog e poderá ser fornecido para o cmdlet `Add-HgsAttestationDumpPolicy`.
+Para adicionar uma chave de criptografia de despejo ao HGS, use o `Add-HgsAttestationDumpPolicy` cmdlet para fornecer o HgS com o hash de sua chave de criptografia de despejo.
+Se você capturar uma linha de base do TPM em um host Hyper-V configurado com a criptografia de despejo, o hash será incluído no tcglog e poderá ser fornecido ao `Add-HgsAttestationDumpPolicy` cmdlet.
 
 ```powershell
 Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey01' -Path 'C:\temp\TpmBaselineWithDumpEncryptionKey.tcglog'
@@ -490,8 +490,8 @@ Consulte a documentação do Hyper-V para obter mais informações sobre como [C
 
 #### <a name="check-if-the-system-passed-attestation"></a>Verifique se o sistema passou por atestado
 Depois de registrar as informações necessárias com o HGS, você deve verificar se o host passa por atestado.
-No host do Hyper-V recém-adicionado, execute `Set-HgsClientConfiguration` e forneça as URLs corretas para o cluster HGS.
-Essas URLs podem ser obtidas executando `Get-HgsServer` em qualquer nó HGS.
+No host do Hyper-V recém-adicionado, execute `Set-HgsClientConfiguration` e forneça as URLs corretas para o cluster HgS.
+Essas URLs podem ser obtidas executando `Get-HgsServer` em qualquer nó HgS.
 
 ```powershell
 Set-HgsClientConfiguration -KeyProtectionServerUrl 'http://hgs.bastion.local/KeyProtection' -AttestationServerUrl 'http://hgs.bastion.local/Attestation'
@@ -505,7 +505,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 ```
 
 > [!IMPORTANT]
-> Se você estiver usando o Windows Server 2019 ou o Windows 10, versão 1809 e estiver usando políticas de integridade de código, `Get-HgsTrace` poderá retornar uma falha para o diagnóstico **ativo da política de integridade de código** .
+> Se você estiver usando o Windows Server 2019 ou o Windows 10, a versão 1809 e estiver usando políticas de integridade de código, `Get-HgsTrace` o poderá retornar uma falha para o diagnóstico **ativo da política de integridade de código** .
 > Você pode ignorar esse resultado com segurança quando ele for o único diagnóstico com falha.
 
 ### <a name="review-attestation-policies"></a>Examinar políticas de atestado
@@ -525,7 +525,7 @@ Se você encontrar uma política habilitada que não atende mais ao seu requisit
 Disable-HgsAttestationPolicy -Name 'PolicyName'
 ```
 
-Da mesma forma, você pode usar `Enable-HgsAttestationPolicy` para reabilitar uma política.
+Da mesma forma, você pode usar `Enable-HgsAttestationPolicy` o para reabilitar uma política.
 
 Se você não precisar mais de uma política e quiser removê-la de todos os nós HGS, execute `Remove-HgsAttestationPolicy -Name 'PolicyName'` para excluir permanentemente a política.
 
@@ -538,7 +538,7 @@ Depois de adicionar todas as suas políticas ao HGS, a próxima etapa é executa
 Isso não afeta o estado operacional atual do HGS.
 Os comandos a seguir devem ser executados em um computador que tenha acesso a todos os hosts no ambiente e a pelo menos um nó HGS.
 Se o firewall ou outras políticas de segurança impedirem isso, você poderá ignorar esta etapa.
-Quando possível, é recomendável executar o atestado sintético para fornecer uma boa indicação se a "inversão" para o modo do TPM causará tempo de inatividade para suas VMs. 
+Quando possível, é recomendável executar o atestado sintético para fornecer uma boa indicação se a "inversão" para o modo do TPM causará tempo de inatividade para suas VMs.
 
 ```powershell
 # Get information for each host in your environment
@@ -551,7 +551,7 @@ $hgsCredential = Get-Credential -Message 'Enter an admin credential for HGS'
 $targets += New-HgsTraceTarget -Credential $hgsCredential -Role HostGuardianService -HostName 'HGS01.bastion.local'
 
 # Initiate the synthetic attestation attempt
-Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode 
+Get-HgsTrace -RunDiagnostics -Target $targets -Diagnostic GuardedFabricTpmMode
 ```
 
 Após a conclusão do diagnóstico, examine as informações de saída para determinar se os hosts teriam atestado com falha no modo TPM.
@@ -564,7 +564,7 @@ Execute o comando a seguir em qualquer nó HGS para atualizar o modo de atestado
 Set-HgsServer -TrustTpm
 ```
 
-Se você tiver problemas e precisar voltar para o modo de Active Directory, poderá fazer isso executando `Set-HgsServer -TrustActiveDirectory`.
+Se você tiver problemas e precisar voltar para o modo de Active Directory, poderá fazer isso executando `Set-HgsServer -TrustActiveDirectory` .
 
 Depois de confirmar que tudo está funcionando conforme o esperado, remova todos os grupos de hosts Active Directory confiáveis do HGS e remova a relação de confiança entre os domínios HGS e de malha.
 Se você deixar a Active Directory confiança em vigor, você arriscará alguém reabilitando a relação de confiança e alternando o HGS para o modo de Active Directory, o que pode permitir que um código não confiável seja executado em seus hosts protegidos.
@@ -599,7 +599,7 @@ Consulte a documentação do fornecedor do HSM para obter as etapas e os recurso
     1. Criar um certificado de criptografia com a propriedade de uso da chave de **codificação de dados** no HSM
     2. Criar um certificado de assinatura com a propriedade de uso de chave de **assinatura digital** em seu HSM
 3. Instale os certificados no repositório de certificados local de cada nó do HGS de acordo com as diretrizes do seu fornecedor HSM.
-4. Se o HSM usar permissões granulares para conceder permissão a aplicativos específicos ou usuários para usar a chave privada, você precisará conceder acesso à conta de serviço gerenciado de grupo HGS ao certificado. Você pode encontrar o nome da conta do gMSA HGS executando `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+4. Se o HSM usar permissões granulares para conceder permissão a aplicativos específicos ou usuários para usar a chave privada, você precisará conceder acesso à conta de serviço gerenciado de grupo HGS ao certificado. Você pode encontrar o nome da conta do gMSA HGS executando`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 5. Adicione os certificados de assinatura e criptografia ao HGS substituindo as impressões digitais por aquelas dos seus certificados nos seguintes comandos:
 
     ```powershell
@@ -611,7 +611,7 @@ Consulte a documentação do fornecedor do HSM para obter as etapas e os recurso
 
 Se você tiver um certificado com suporte de software emitido por uma autoridade de certificação pública ou de sua empresa que tenha uma chave privada não exportável, será necessário adicionar seu certificado ao HGS usando sua impressão digital.
 1. Instale o certificado em seu computador de acordo com as instruções da autoridade de certificação.
-2. Conceda à conta de serviço gerenciado do grupo HGS acesso de leitura à chave privada do certificado. Você pode encontrar o nome da conta do gMSA HGS executando `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+2. Conceda à conta de serviço gerenciado do grupo HGS acesso de leitura à chave privada do certificado. Você pode encontrar o nome da conta do gMSA HGS executando`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 3. Registre o certificado com HGS usando o comando a seguir e substituindo na impressão digital do certificado (altere a *criptografia* para *assinar* certificados de assinatura):
 
     ```powershell
@@ -667,14 +667,18 @@ O planejamento adequado para alterar chaves HGS é necessário para minimizar a 
 
 Em um nó HGS, execute as seguintes etapas para registrar um novo par de certificados de criptografia e autenticação.
 Consulte a seção sobre [adição de novas chaves](#adding-new-keys) para obter informações detalhadas de várias maneiras de adicionar novas chaves ao HgS.
+
 1. Crie um novo par de certificados de criptografia e autenticação para o servidor HGS. Idealmente, eles serão criados em um módulo de segurança de hardware.
+
 2. Registre a nova criptografia e certificados de autenticação com **Add-HgsKeyProtectionCertificate**
 
     ```powershell
     Add-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>
     Add-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint>
     ```
+
 3. Se você usou impressões digitais, precisará ir para cada nó no cluster para instalar a chave privada e conceder a gMSA do HGS acesso à chave.
+
 4. Tornar os novos certificados os certificados padrão no HGS
 
     ```powershell
@@ -683,14 +687,20 @@ Consulte a seção sobre [adição de novas chaves](#adding-new-keys) para obter
     ```
 
 Neste ponto, os dados de blindagem criados com metadados obtidos do nó HGS usarão os novos certificados, mas as VMs existentes continuarão funcionando porque os certificados mais antigos ainda estão lá.
+
 Para garantir que todas as VMs existentes funcionem com as novas chaves, será necessário atualizar o protetor de chave em cada VM.
-Essa é uma ação que requer que o proprietário da VM (pessoa ou entidade em posse do guardião de "proprietário") esteja envolvido.
-Para cada VM blindada, execute as seguintes etapas:
-5. Desligue a VM. A VM não pode ser reativada até que as etapas restantes sejam concluídas ou, caso contrário, será necessário iniciar o processo novamente.
-6. Salve o protetor de chave atual em um arquivo: `Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
-7. Transferir o KP para o proprietário da VM
-8. Fazer com que o proprietário Baixe as informações do guardião atualizadas do HGS e importe-as em seu sistema local
-9. Leia o KP atual na memória, conceda o novo acesso do guardião ao KP e salve-o em um novo arquivo executando os seguintes comandos:
+
+Essa é uma ação que requer que o proprietário da VM (pessoa ou entidade em posse do guardião de "proprietário") esteja envolvido. Para cada VM blindada, execute as seguintes etapas:
+
+1. Desligue a VM. A VM não pode ser reativada até que as etapas restantes sejam concluídas ou, caso contrário, será necessário iniciar o processo novamente.
+
+2. Salve o protetor de chave atual em um arquivo:`Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
+
+3. Transferir o KP para o proprietário da VM
+
+4. Fazer com que o proprietário Baixe as informações do guardião atualizadas do HGS e importe-as em seu sistema local
+
+5. Leia o KP atual na memória, conceda o novo acesso do guardião ao KP e salve-o em um novo arquivo executando os seguintes comandos:
 
     ```powershell
     $kpraw = Get-Content -Path .\VM001.kp
@@ -699,36 +709,39 @@ Para cada VM blindada, execute as seguintes etapas:
     $updatedKP = Grant-HgsKeyProtectorAccess -KeyProtector $kp -Guardian $newGuardian
     $updatedKP.RawData | Out-File .\updatedVM001.kp
     ```
-10. Copiar o KP atualizado de volta para a malha de hospedagem
-11. Aplique o KP à VM original:
+
+6. Copie o KP atualizado de volta para a malha de hospedagem.
+
+7. Aplique o KP à VM original:
 
    ```powershell
    $updatedKP = Get-Content -Path .\updatedVM001.kp
    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
    ```
-12.    Por fim, inicie a VM e certifique-se de que ela seja executada com êxito.
 
-> [!NOTE]
-> Se o proprietário da VM definir um protetor de chave incorreto na VM e não autorizar sua malha para executar a VM, você não poderá iniciar a VM blindada.
-> Para retornar ao último protetor de chave válido, execute `Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
+8. Por fim, inicie a VM e certifique-se de que ela seja executada com êxito.
 
-Depois que todas as VMs forem atualizadas para autorizar as novas chaves do guardião, você poderá desabilitar e remover as chaves antigas.
+    > [!NOTE]
+    > Se o proprietário da VM definir um protetor de chave incorreto na VM e não autorizar sua malha para executar a VM, você não poderá iniciar a VM blindada.
+    > Para retornar ao último protetor de chave válido, execute`Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
 
-13. Obter as impressões digitais dos certificados antigos do `Get-HgsKeyProtectionCertificate -IsPrimary $false`
+    Depois que todas as VMs forem atualizadas para autorizar as novas chaves do guardião, você poderá desabilitar e remover as chaves antigas.
 
-14. Desabilite cada certificado executando os seguintes comandos:  
+9.  Obter as impressões digitais dos certificados antigos de`Get-HgsKeyProtectionCertificate -IsPrimary $false`
 
-   ```powershell
-   Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
-   Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
-   ```
+10. Desabilite cada certificado executando os seguintes comandos:
 
-15. Depois de garantir que as VMs ainda possam começar com os certificados desabilitados, remova os certificados do HGS executando os seguintes comandos:
+    ```powershell
+    Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
+    Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
+    ```
 
-   ```powershell
-   Remove-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>`
-   Remove-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint>`
-   ```
+11. Depois de garantir que as VMs ainda possam começar com os certificados desabilitados, remova os certificados do HGS executando os seguintes comandos:
+
+    ```powershell
+    Remove-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint>`
+    Remove-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint>`
+    ```
 
 > [!IMPORTANT]
 > Os backups de VM conterão informações antigas do protetor de chave que permitem que os certificados antigos sejam usados para iniciar a VM.

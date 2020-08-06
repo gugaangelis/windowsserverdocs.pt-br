@@ -1,5 +1,5 @@
 ---
-title: Malha protegida e guia de planejamento de VM blindada para hosters
+title: Malha protegida e guia de planejamento de VM blindada para locatários
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
@@ -7,12 +7,12 @@ manager: dongill
 author: nirb-ms
 ms.author: nirb
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 829d6a3efef082e35c6a4f98e0ba9e4b70c27a93
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5d50721ddf51bc956d8afd256ff047c94c5d5a5e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856469"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769444"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>Malha protegida e guia de planejamento de VM blindada para locatários
 
@@ -24,22 +24,22 @@ Há três áreas a serem consideradas ao usar VMs blindadas:
 
 - O nível de segurança para as VMs
 - As chaves de criptografia usadas para protegê-las
-- Blindagem de dados — informações confidenciais usadas para criar VMs blindadas 
+- Blindagem de dados — informações confidenciais usadas para criar VMs blindadas
 
 ## <a name="security-level-for-the-vms"></a>Nível de segurança para as VMs
 
 Ao implantar VMs blindadas, um dos dois níveis de segurança deve ser selecionado:
 
-- Blindadas 
+- Blindado
 - Criptografia com suporte
 
-As VMs blindadas e com suporte à criptografia têm um TPM virtual anexado a elas e aquelas que executam o Windows são protegidas pelo BitLocker. A principal diferença é que as VMs blindadas bloqueiam o acesso por administradores de malha enquanto as VMs com suporte à criptografia permitem que os administradores de malha tenham o mesmo nível de acesso que teriam em uma VM regular. Para obter mais detalhes sobre essas diferenças, consulte [visão geral de malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms.md). 
+As VMs blindadas e com suporte à criptografia têm um TPM virtual anexado a elas e aquelas que executam o Windows são protegidas pelo BitLocker. A principal diferença é que as VMs blindadas bloqueiam o acesso por administradores de malha enquanto as VMs com suporte à criptografia permitem que os administradores de malha tenham o mesmo nível de acesso que teriam em uma VM regular. Para obter mais detalhes sobre essas diferenças, consulte [visão geral de malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms.md).
 
 Escolha **VMs blindadas** se você estiver procurando proteger a VM de uma malha comprometida (incluindo administradores comprometidos). Eles devem ser usados em ambientes em que os administradores de malha e a própria malha não são confiáveis. Escolha **criptografia VMs com suporte** se você estiver procurando atender a uma barra de conformidade que possa exigir criptografia em repouso e criptografia da VM na conexão (por exemplo, durante a migração ao vivo).
 
 As VMs com suporte de criptografia são ideais em ambientes em que os administradores de malha são totalmente confiáveis, mas a criptografia continua sendo um requisito.
 
-Você pode executar uma mistura de VMs regulares, VMs blindadas e VMs com suporte à criptografia em uma malha protegida e até mesmo no mesmo host do Hyper-V. 
+Você pode executar uma mistura de VMs regulares, VMs blindadas e VMs com suporte à criptografia em uma malha protegida e até mesmo no mesmo host do Hyper-V.
 
 Se uma VM é blindada ou com suporte para criptografia é determinada pelos dados de blindagem selecionados durante a criação da VM. Os proprietários da VM configuram o nível de segurança ao criar os dados de blindagem (consulte a seção [dados de blindagem](#shielding-data) ).
 Observe que, depois que essa opção for feita, ela não poderá ser alterada enquanto a VM permanecer na malha de virtualização.
@@ -49,7 +49,7 @@ Observe que, depois que essa opção for feita, ela não poderá ser alterada en
 As VMs blindadas são protegidas de vetores de ataque de malha de virtualização usando discos criptografados e vários outros elementos criptografados que só podem ser descriptografados pelo:
 
 - Uma chave de proprietário – essa é uma chave criptográfica mantida pelo proprietário da VM que normalmente é usada para recuperação ou solução de problemas de última resolução. Os proprietários da VM são responsáveis por manter as chaves do proprietário em um local seguro.
-- Um ou mais Guardiões (chaves do guardião de host) – cada guardião representa uma malha de virtualização na qual um proprietário autoriza VMs blindadas a serem executadas. As empresas geralmente têm uma malha de virtualização de DR (recuperação de desastres) e primária e, normalmente, autorizariam que suas VMs blindadas fossem executadas em ambos. Em alguns casos, a malha secundária (DR) pode ser hospedada por um provedor de nuvem pública. As chaves privadas de qualquer malha protegida são mantidas somente na malha de virtualização, enquanto suas chaves públicas podem ser baixadas e estão contidas em seu guardião. 
+- Um ou mais Guardiões (chaves do guardião de host) – cada guardião representa uma malha de virtualização na qual um proprietário autoriza VMs blindadas a serem executadas. As empresas geralmente têm uma malha de virtualização de DR (recuperação de desastres) e primária e, normalmente, autorizariam que suas VMs blindadas fossem executadas em ambos. Em alguns casos, a malha secundária (DR) pode ser hospedada por um provedor de nuvem pública. As chaves privadas de qualquer malha protegida são mantidas somente na malha de virtualização, enquanto suas chaves públicas podem ser baixadas e estão contidas em seu guardião.
 
 **Como fazer criar uma chave de proprietário?** Uma chave de proprietário é representada por dois certificados. Um certificado para criptografia e um certificado para assinatura. Você pode criar esses dois certificados usando sua própria infraestrutura PKI ou obter certificados SSL de uma autoridade de certificação pública (CA). Para fins de teste, você também pode criar um certificado autoassinado em qualquer computador que comece com o Windows 10 ou o Windows Server 2016.
 
@@ -67,8 +67,8 @@ As VMs blindadas ajudam a proteger contra ataques de uma malha de virtualizaçã
 
 1. Nível de segurança – com suporte blindado ou criptografia
 2. Proprietário e lista de guardiões de host confiáveis em que a VM pode ser executada
-3. Dados de inicialização da máquina virtual (Unattend. xml, certificado RDP)
-4. Lista de discos de modelo assinados confiáveis para criar a VM no ambiente de virtualização 
+3. Dados de inicialização da máquina virtual (unattend.xml, certificado RDP)
+4. Lista de discos de modelo assinados confiáveis para criar a VM no ambiente de virtualização
 
 Ao criar uma VM blindada ou com suporte de criptografia ou converter uma VM existente, você será solicitado a selecionar os dados de blindagem em vez de serem solicitados a fornecer as informações confidenciais.
 
@@ -89,6 +89,6 @@ A criação de novas VMs a partir de um modelo é uma prática normal. No entant
 Ao usar discos de modelo assinados para criar VMs blindadas, duas opções estão disponíveis:
 
 1. Use um disco de modelo assinado existente que seja fornecido pelo seu provedor de virtualização. Nesse caso, o provedor de virtualização mantém os discos de modelo assinados.
-2. Carregue um disco de modelo assinado na malha de virtualização. O proprietário da VM é responsável por manter os discos de modelo assinados. 
+2. Carregue um disco de modelo assinado na malha de virtualização. O proprietário da VM é responsável por manter os discos de modelo assinados.
 
 

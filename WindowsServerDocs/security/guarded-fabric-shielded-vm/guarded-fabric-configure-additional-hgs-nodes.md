@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/14/2020
-ms.openlocfilehash: d131643db4dfb179f5bdb8bcbad9f003d1ae61e1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fb744d2be9cc0002158deb0d9665a354ef23851a
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856889"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769354"
 ---
 # <a name="configure-additional-hgs-nodes"></a>Configurar nós adicionais do HGS
 
@@ -23,15 +23,15 @@ Em ambientes de produção, o HGS deve ser configurado em um cluster de alta dis
 
 Use um desses métodos para adicionar nós HGS, conforme mais adequado para o seu ambiente.
 
-|                |                         |                              | 
-|----------------|-------------------------|------------------------------|
-|Nova floresta HGS  | [Usando arquivos PFX](#dedicated-hgs-forest-with-pfx-certificates) | [Usando impressões digitais de certificado](#dedicated-hgs-forest-with-certificate-thumbprints) |
-|Floresta de bastiões existente |  [Usando arquivos PFX](#existing-bastion-forest-with-pfx-certificates) | [Usando impressões digitais de certificado](#existing-bastion-forest-with-certificate-thumbprints) |
+| Ambiente | Opção 1 | Opção 2 |
+|--|--|--|
+| Nova floresta HGS | [Usando arquivos PFX](#dedicated-hgs-forest-with-pfx-certificates) | [Usando impressões digitais de certificado](#dedicated-hgs-forest-with-certificate-thumbprints) |
+| Floresta de bastiões existente | [Usando arquivos PFX](#existing-bastion-forest-with-pfx-certificates) | [Usando impressões digitais de certificado](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
-Certifique-se de que cada nó adicional: 
-- Tem a mesma configuração de hardware e software que o nó primário 
+Certifique-se de que cada nó adicional:
+- Tem a mesma configuração de hardware e software que o nó primário
 - Está conectado à mesma rede que os outros servidores HGS
 - Pode resolver os outros servidores HGS por seus nomes DNS
 
@@ -42,25 +42,25 @@ Certifique-se de que cada nó adicional:
 
 ### <a name="promote-the-hgs-node-to-a-domain-controller"></a>Promover o nó HGS para um controlador de domínio
 
-[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)] 
+[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)]
 
 ### <a name="initialize-the-hgs-server"></a>Inicializar o servidor HGS
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 ## <a name="dedicated-hgs-forest-with-certificate-thumbprints"></a>Floresta HGS dedicada com impressões digitais de certificado
- 
+
 1. Promover o nó HGS para um controlador de domínio
 2. Inicializar o servidor HGS
 3. Instalar as chaves privadas para os certificados
 
 ### <a name="promote-the-hgs-node-to-a-domain-controller"></a>Promover o nó HGS para um controlador de domínio
 
-[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)] 
+[!INCLUDE [Promote to a domain controller](../../../includes/guarded-fabric-promote-domain-controller.md)]
 
 ### <a name="initialize-the-hgs-server"></a>Inicializar o servidor HGS
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 ### <a name="install-the-private-keys-for-the-certificates"></a>Instalar as chaves privadas para os certificados
 
@@ -75,15 +75,15 @@ Certifique-se de que cada nó adicional:
 ### <a name="join-the-node-to-the-existing-domain"></a>Unir o nó ao domínio existente
 
 1. Verifique se pelo menos uma NIC no nó está configurada para usar o servidor DNS em seu primeiro servidor HGS.
-2. Ingresse o novo nó HGS no mesmo domínio que o seu primeiro nó HGS. 
+2. Ingresse o novo nó HGS no mesmo domínio que o seu primeiro nó HGS.
 
 ### <a name="grant-the-machine-rights-to-retrieve-gmsa-password-and-run-install-adserviceaccount"></a>Conceda aos direitos de computador para recuperar a senha do gMSA e executar Install-ADServiceAccount
 
-[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)] 
+[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)]
 
 ### <a name="initialize-the-hgs-server"></a>Inicializar o servidor HGS
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 ## <a name="existing-bastion-forest-with-certificate-thumbprints"></a>Floresta de bastiões existente com impressões digitais de certificado
 
@@ -95,15 +95,15 @@ Certifique-se de que cada nó adicional:
 ### <a name="join-the-node-to-the-existing-domain"></a>Unir o nó ao domínio existente
 
 1. Verifique se pelo menos uma NIC no nó está configurada para usar o servidor DNS em seu primeiro servidor HGS.
-2. Ingresse o novo nó HGS no mesmo domínio que o seu primeiro nó HGS. 
+2. Ingresse o novo nó HGS no mesmo domínio que o seu primeiro nó HGS.
 
 ### <a name="grant-the-machine-rights-to-retrieve-gmsa-password-and-run-install-adserviceaccount"></a>Conceda aos direitos de computador para recuperar a senha do gMSA e executar Install-ADServiceAccount
 
-[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)] 
+[!INCLUDE [Grant the machine rights to retrieve the group MSA](../../../includes/guarded-fabric-grant-machine-rights-to-retrieve-gmsa.md)]
 
 ### <a name="initialize-the-hgs-server"></a>Inicializar o servidor HGS
 
-[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)] 
+[!INCLUDE [Initialize the HGS server](../../../includes/guarded-fabric-initialize-hgs-on-the-node.md)]
 
 Levará até 10 minutos para que os certificados de criptografia e autenticação do primeiro servidor HGS sejam replicados para esse nó.
 
@@ -116,7 +116,7 @@ Levará até 10 minutos para que os certificados de criptografia e autenticaçã
 Se você quiser proteger pontos de extremidade HGS com um certificado SSL, deverá configurar o certificado SSL nesse nó, bem como todos os outros nós no cluster HGS.
 Os certificados SSL *não são* replicados pelo HgS e não precisam usar as mesmas chaves para cada nó (ou seja, você pode ter diferentes certificados SSL para cada nó).
 
-Ao solicitar um certificado SSL, certifique-se de que o nome de domínio totalmente qualificado do cluster (conforme mostrado na saída de `Get-HgsServer`) seja o nome comum da entidade do certificado ou seja incluído como um nome DNS alternativo da entidade.
+Ao solicitar um certificado SSL, certifique-se de que o nome de domínio totalmente qualificado do cluster (como mostrado na saída de `Get-HgsServer` ) seja o nome comum da entidade do certificado ou incluído como um nome DNS alternativo da entidade.
 Depois de obter um certificado de sua autoridade de certificação, você pode configurar o HGS para usá-lo com [set-HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver).
 
 ```powershell
@@ -139,10 +139,10 @@ Para desativar um nó HGS:
 
 1. [Limpe a configuração do HgS](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration).
 
-   Isso remove o nó do cluster e desinstala os serviços de atestado e proteção de chave. 
-   Se for o último nó no cluster,-Force é necessário para significar que você deseja remover o último nó e destruir o cluster no Active Directory. 
+   Isso remove o nó do cluster e desinstala os serviços de atestado e proteção de chave.
+   Se for o último nó no cluster,-Force é necessário para significar que você deseja remover o último nó e destruir o cluster no Active Directory.
 
-   Se o HGS for implantado em uma floresta de bastiões (padrão), essa será a única etapa. 
+   Se o HGS for implantado em uma floresta de bastiões (padrão), essa será a única etapa.
    Opcionalmente, você pode desassociar o computador do domínio e remover a conta gMSA da Active Directory.
 
 2. Se o HGS criou seu próprio domínio, você também deve [desinstalar o HgS](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration) para desassociar o domínio e rebaixar o controlador de domínio.

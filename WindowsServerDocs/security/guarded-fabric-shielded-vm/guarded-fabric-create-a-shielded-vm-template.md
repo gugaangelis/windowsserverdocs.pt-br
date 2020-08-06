@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 82725e654fb4c7296b092019db111f9d3debad6d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d33714c9939593b4c877e76f77d390139771e3ff
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475383"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769384"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada do Windows
 
@@ -57,15 +57,19 @@ Execute as etapas a seguir em um computador que esteja executando o Windows Serv
 
 2. Para administrar o servidor localmente, instale o recurso **ferramentas de VM blindada** de **ferramentas de administração de servidor remoto** no servidor.
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
     Você também pode administrar o servidor de um computador cliente no qual você instalou o [Windows 10 ferramentas de administração de servidor remoto](https://www.microsoft.com/download/details.aspx?id=45520).
 
-3. Obtenha ou crie um certificado para assinar o VSC para o VHDX que se tornará o disco de modelo para novas VMs blindadas. Os detalhes sobre esse certificado serão mostrados aos locatários quando criarem seus arquivos de dados de blindagem e estiverem autorizando discos em que confiam. Portanto, é importante obter esse certificado de uma autoridade de certificação mutuamente confiável por você e seus locatários. Em cenários empresariais em que você é o hoster e o locatário, você pode considerar a emissão desse certificado de sua PKI.
+3. Obtenha ou crie um certificado para assinar o VSC para o VHDX que se tornará o disco de modelo para novas VMs blindadas. Os detalhes sobre esse certificado serão mostrados aos locatários quando criarem seus arquivos de dados de blindagem e estiverem autorizando discos em que confiam. Portanto, é importante obter esse certificado de uma autoridade de certificação mutuamente confiável por você e seus locatários. Em cenários empresariais em que você é o host e o locatário, você pode considerar a emissão desse certificado de sua PKI.
 
     Se você estiver configurando um ambiente de teste e quiser apenas usar um certificado autoassinado para preparar o disco de modelo, execute um comando semelhante ao seguinte:
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. Inicie o **Assistente de disco de modelo** na pasta **Ferramentas administrativas** no menu iniciar ou digitando **TemplateDiskWizard.exe** em um prompt de comando.
 

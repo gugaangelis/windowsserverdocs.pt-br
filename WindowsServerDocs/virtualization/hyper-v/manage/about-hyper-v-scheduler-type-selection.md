@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 1e77535548cccd1c821163dabbad381f35d2948a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872060"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768424"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Sobre a seleção do tipo de Agendador de hipervisor do Hyper-V
 
@@ -25,12 +25,12 @@ Aplica-se a:
 * Windows Server, versão 1803
 * Windows Server 2019
 
-Este documento descreve alterações importantes no padrão do Hyper-V e no uso recomendado de tipos de Agendador de hipervisor. Essas alterações afetam a segurança do sistema e o desempenho da virtualização. Os administradores de host de virtualização devem revisar e entender as alterações e as implicações descritas neste documento e avaliar cuidadosamente os impactos, orientações de implantação sugerida e fatores de risco envolvidos para entender melhor como implantar e gerenciar Hosts Hyper-V diante do panorama de segurança de alteração rápida.
+Este documento descreve alterações importantes no padrão do Hyper-V e no uso recomendado de tipos de Agendador de hipervisor. Essas alterações afetam a segurança do sistema e o desempenho da virtualização. Os administradores de host de virtualização devem revisar e entender as alterações e as implicações descritas neste documento e avaliar cuidadosamente os impactos, orientações de implantação sugerida e fatores de risco envolvidos para entender melhor como implantar e gerenciar hosts Hyper-V diante do panorama de segurança de alteração rápida.
 
 >[!IMPORTANT]
->As vulnerabilidades de segurança de canal lateral conhecidas no momento em várias arquiteturas de processador podem ser exploradas por uma VM convidada mal-intencionada por meio do comportamento de agendamento do tipo de Agendador clássico do hipervisor herdado quando executado em hosts com simultaneamente Multithreading (SMT) habilitado.  Se explorada com êxito, uma carga de trabalho mal-intencionada pode observar dados fora de seu limite de partição. Essa classe de ataques pode ser atenuada Configurando o hipervisor do Hyper-V para utilizar o tipo de Agendador principal do hipervisor e reconfigurar as VMs convidadas. Com o Agendador principal, o hipervisor restringe o VPSs de uma VM convidada a ser executado no mesmo núcleo de processador físico, o que isola fortemente a capacidade da VM de acessar dados para os limites do núcleo físico em que ele é executado.  Essa é uma mitigação altamente eficaz contra esses ataques de canal lateral, o que impede que a VM Observe quaisquer artefatos de outras partições, seja a raiz ou outra partição de convidado.  Portanto, a Microsoft está alterando as definições de configuração padrão e recomendadas para hosts de virtualização e VMs convidadas.
+>As vulnerabilidades de segurança de canal lateral conhecidas no momento em várias arquiteturas de processador podem ser exploradas por uma VM convidada mal-intencionada por meio do comportamento de agendamento do tipo de Agendador clássico do hipervisor herdado quando executadas em hosts com SMT (múltiplos Threading simultâneos) habilitados.  Se explorada com êxito, uma carga de trabalho mal-intencionada pode observar dados fora de seu limite de partição. Essa classe de ataques pode ser atenuada Configurando o hipervisor do Hyper-V para utilizar o tipo de Agendador principal do hipervisor e reconfigurar as VMs convidadas. Com o Agendador principal, o hipervisor restringe o VPSs de uma VM convidada a ser executado no mesmo núcleo de processador físico, o que isola fortemente a capacidade da VM de acessar dados para os limites do núcleo físico em que ele é executado.  Essa é uma mitigação altamente eficaz contra esses ataques de canal lateral, o que impede que a VM Observe quaisquer artefatos de outras partições, seja a raiz ou outra partição de convidado.  Portanto, a Microsoft está alterando as definições de configuração padrão e recomendadas para hosts de virtualização e VMs convidadas.
 
-## <a name="background"></a>Informações preliminares
+## <a name="background"></a>Segundo plano
 
 A partir do Windows Server 2016, o Hyper-V dá suporte a vários métodos de agendamento e gerenciamento de processadores virtuais, chamados de tipos de Agendador de hipervisor.  Uma descrição detalhada de todos os tipos de Agendador de hipervisor pode ser encontrada em [compreendendo e usando os tipos de Agendador de hipervisor do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types).
 
@@ -43,7 +43,7 @@ Este artigo se concentra especificamente no uso do novo tipo de Agendador de nú
 
 ### <a name="the-classic-scheduler"></a>O Agendador clássico
 
-O Agendador clássico refere-se ao fair-share, round robin método de agendamento de trabalho em processadores virtuais (VPSs) no sistema, incluindo raiz VPSs, bem como VPSs que pertencem a VMs convidadas. O Agendador clássico tem sido o tipo de agendador padrão usado em todas as versões do Hyper-V (até o Windows Server 2019, conforme descrito aqui).  As características de desempenho do Agendador clássico são bem compreendidas, e o Agendador clássico é demonstrado para dar suporte ably a excesso de cargas de trabalho, ou seja, a excesso de assinatura da proporção de VP: LP do host por uma margem razoável (dependendo do tipos de cargas de trabalho virtualizadas, utilização geral de recursos, etc.).
+O Agendador clássico refere-se ao fair-share, round robin método de agendamento de trabalho em processadores virtuais (VPSs) no sistema, incluindo raiz VPSs, bem como VPSs que pertencem a VMs convidadas. O Agendador clássico tem sido o tipo de agendador padrão usado em todas as versões do Hyper-V (até o Windows Server 2019, conforme descrito aqui).  As características de desempenho do Agendador clássico são bem compreendidas, e o Agendador clássico é demonstrado para dar suporte ably a excesso de cargas de trabalho, ou seja, a excesso de assinatura da proporção de VP: LP do host por uma margem razoável (dependendo dos tipos de cargas de trabalho que estão sendo virtualizadas, utilização geral de recursos, etc.).
 
 Quando executado em um host de virtualização com SMT habilitado, o Agendador clássico agendará o convidado VPSs de qualquer VM em cada thread do SMT que pertença a um núcleo de forma independente. Portanto, VMs diferentes podem ser executadas no mesmo núcleo ao mesmo tempo (uma VM em execução em um thread de um núcleo enquanto outra VM está em execução no outro thread).
 
@@ -107,9 +107,9 @@ A implantação de hosts Hyper-V com a postura de segurança máxima requer o us
 
 A configuração de SMT da máquina virtual convidada é definida por VM. O administrador de host pode inspecionar e configurar a configuração de SMT de uma VM para selecionar uma das seguintes opções:
 
-    1. Configurar VMs para execução como SMT, opcionalmente herdando a topologia SMT do host automaticamente
+1. Configurar VMs para execução como SMT, opcionalmente herdando a topologia SMT do host automaticamente
 
-    2. Configurar VMs para execução como não SMT
+2. Configurar VMs para execução como não SMT
 
 O SMT configuração para uma VM é exibido nos painéis de resumo no console do Gerenciador do Hyper-V.  Definir as configurações de SMT de uma VM pode ser feito usando as configurações de VM ou o PowerShell.
 
@@ -121,13 +121,13 @@ Para definir as configurações de SMT para uma máquina virtual convidada, abra
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <0, 1, 2>
 ```
 
-Sendo que:
+Em que:
 
-    0 = Inherit SMT topology from the host (this setting of HwThreadCountPerCore=0 is not supported on Windows Server 2016)
+- 0 = herdar a topologia SMT do host (essa configuração de HwThreadCountPerCore = 0 não tem suporte no Windows Server 2016)
 
-    1 = Non-SMT
+- 1 = não SMT
 
-    Values > 1 = the desired number of SMT threads per core. May not exceed the number of physical SMT threads per core.
+- Valores > 1 = o número desejado de threads SMT por núcleo. Não pode exceder o número de threads de SMT físicos por núcleo.
 
 Para ler as configurações de SMT para uma máquina virtual convidada, abra uma janela do PowerShell com permissões suficientes e digite:
 
@@ -139,7 +139,7 @@ Observe que as VMs convidadas configuradas com HwThreadCountPerCore = 0 indicam 
 
 ### <a name="guest-vms-may-observe-changes-to-cpu-topology-across-vm-mobility-scenarios"></a>As VMs convidadas podem observar alterações na topologia de CPU entre cenários de mobilidade de VM
 
-O sistema operacional e os aplicativos em uma VM podem ver alterações nas configurações de host e VM antes e depois dos eventos de ciclo de vida da VM, como migração dinâmica ou operações de salvar e restaurar. Durante uma operação na qual o estado da VM é salvo e restaurado, a configuração de HwThreadCountPerCore da VM e o valor realizado (ou seja, a combinação computada da configuração da VM e do host de origem) são migradas. A VM continuará em execução com essas configurações no host de destino. No ponto em que a VM é desligada e reiniciada, é possível que o valor realizado observado pela VM seja alterado. Isso deve ser benigno, pois o software da camada do sistema operacional e do aplicativo deve procurar informações de topologia de CPU como parte dos fluxos normais de inicialização e de código de inicialização. No entanto, como essas sequências de inicialização de tempo de inicialização são ignoradas durante a migração ao vivo ou operações de salvar/restaurar, as VMs que passam por essas transições de estado podem observar o valor realizado originalmente computado até que eles sejam desligados e reiniciados.  
+O sistema operacional e os aplicativos em uma VM podem ver alterações nas configurações de host e VM antes e depois dos eventos de ciclo de vida da VM, como migração dinâmica ou operações de salvar e restaurar. Durante uma operação na qual o estado da VM é salvo e restaurado, a configuração de HwThreadCountPerCore da VM e o valor realizado (ou seja, a combinação computada da configuração da VM e do host de origem) são migradas. A VM continuará em execução com essas configurações no host de destino. No ponto em que a VM é desligada e reiniciada, é possível que o valor realizado observado pela VM seja alterado. Isso deve ser benigno, pois o software da camada do sistema operacional e do aplicativo deve procurar informações de topologia de CPU como parte dos fluxos normais de inicialização e de código de inicialização. No entanto, como essas sequências de inicialização de tempo de inicialização são ignoradas durante a migração ao vivo ou operações de salvar/restaurar, as VMs que passam por essas transições de estado podem observar o valor realizado originalmente computado até que eles sejam desligados e reiniciados.
 
 ### <a name="alerts-regarding-non-optimal-vm-configurations"></a>Alertas sobre configurações de VM não ideais
 
@@ -159,7 +159,7 @@ Get-WinEvent -FilterHashTable @{ProviderName="Microsoft-Windows-Hyper-V-Worker";
 
 ### <a name="impacts-of-guest-smt-configuaration-on-the-use-of-hypervisor-enlightenments-for-guest-operating-systems"></a>Impactos do convidado SMT configuração no uso de esclarecimentos do hipervisor para sistemas operacionais convidados
 
-O hipervisor da Microsoft oferece vários esclarecimentos, ou dicas, que o sistema operacional em execução em uma VM convidada pode consultar e usar para disparar otimizações, como aquelas que podem beneficiar o desempenho ou melhorar o tratamento de várias condições durante a execução virtualizado. Uma apresentação introduzida recentemente aborda a manipulação do agendamento do processador virtual e o uso de atenuações do sistema operacional para ataques de canal lateral que exploram o SMT.
+O hipervisor da Microsoft oferece vários esclarecimentos, ou dicas, que o sistema operacional em execução em uma VM convidada pode consultar e usar para disparar otimizações, como aquelas que podem beneficiar o desempenho ou aprimorar o tratamento de várias condições ao serem executadas em modo virtualizado. Uma apresentação introduzida recentemente aborda a manipulação do agendamento do processador virtual e o uso de atenuações do sistema operacional para ataques de canal lateral que exploram o SMT.
 
 >[!NOTE]
 >A Microsoft recomenda que os administradores de host habilitem o SMT para VMs convidadas para otimizar o desempenho da carga de trabalho.
@@ -170,13 +170,13 @@ Os detalhes dessa contratação de convidado são fornecidos abaixo. no entanto,
 
 A partir do Windows Server 2016, o hipervisor define um novo esclarecimento para descrever seu manuseio de planejamento e posicionamento de VP para o sistema operacional convidado. Esse esclarecimento é definido na [especificação funcional do nível superior do hipervisor v 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs).
 
-CPUID sintética do hipervisor CPUID. 0x40000004. EAX: 18 [NoNonArchitecturalCoreSharing = 1] indica que um processador virtual nunca compartilhará um núcleo físico com outro processador virtual, exceto os processadores virtuais que são relatados como irmãos SMT threads. Por exemplo, um vice-presidente convidado nunca será executado em um thread SMT junto com um VP raiz em execução simultânea em um thread SMT irmão no mesmo núcleo do processador. Essa condição só é possível durante a execução virtualizada e, portanto, representa um comportamento de SMT sem arquitetura que também tem implicações de segurança sérias. O sistema operacional convidado pode usar NoNonArchitecturalCoreSharing = 1 como uma indicação de que é seguro habilitar otimizações, o que pode ajudar a evitar a sobrecarga de desempenho da configuração de STIBP.
+O hipervisor sintética CPUID CPUID CPU. 0x40000004. EAX: 18 [NoNonArchitecturalCoreSharing = 1] indica que um processador virtual nunca compartilhará um núcleo físico com outro processador virtual, exceto os processadores virtuais que são relatados como threads SMT irmãos. Por exemplo, um vice-presidente convidado nunca será executado em um thread SMT junto com um VP raiz em execução simultânea em um thread SMT irmão no mesmo núcleo do processador. Essa condição só é possível durante a execução virtualizada e, portanto, representa um comportamento de SMT sem arquitetura que também tem implicações de segurança sérias. O sistema operacional convidado pode usar NoNonArchitecturalCoreSharing = 1 como uma indicação de que é seguro habilitar otimizações, o que pode ajudar a evitar a sobrecarga de desempenho da configuração de STIBP.
 
 Em determinadas configurações, o hipervisor não indicará que NoNonArchitecturalCoreSharing = 1. Por exemplo, se um host tiver o SMT habilitado e estiver configurado para usar o Agendador clássico do hipervisor, NoNonArchitecturalCoreSharing será 0. Isso pode impedir que convidados esclarecidos habilitem determinadas otimizações. Portanto, a Microsoft recomenda que os administradores de host usando o SMT dependam do Agendador de núcleos do hipervisor e verifique se as máquinas virtuais estão configuradas para herdar a configuração do SMT do host para garantir o desempenho ideal da carga de trabalho.
 
 ## <a name="summary"></a>Resumo
 
-O panorama de ameaças à segurança continua a evoluir. Para garantir que nossos clientes sejam protegidos por padrão, a Microsoft está alterando a configuração padrão para o hipervisor e as máquinas virtuais a partir do Windows Server 2019 Hyper-V e fornecendo diretrizes e recomendações atualizadas para clientes que executam o Windows Server 2016 Hyper-V. Os administradores de host de virtualização devem:
+O panorama de ameaças à segurança continua a evoluir. Para garantir que nossos clientes sejam protegidos por padrão, a Microsoft está alterando a configuração padrão para o hipervisor e as máquinas virtuais a partir do Windows Server 2019 Hyper-V e fornecendo diretrizes e recomendações atualizadas para clientes que executam o Hyper-V do Windows Server 2016. Os administradores de host de virtualização devem:
 
 * Leia e entenda as diretrizes fornecidas neste documento
 

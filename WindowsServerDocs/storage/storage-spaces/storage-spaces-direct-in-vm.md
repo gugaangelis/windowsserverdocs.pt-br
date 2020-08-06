@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 07/15/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 50aba2d8edfe74bf6ca51d7c390f2cfc4ead0048
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b930df382adfc9641175eb4ee3ce531d7eaf8bbc
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961218"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769055"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Usando Espaços de Armazenamento Diretos em clusters de máquinas virtuais convidadas
 
@@ -24,7 +24,7 @@ Você pode implantar Espaços de Armazenamento Diretos (às vezes chamado de S2D
 
 Para usar os discos compartilhados do Azure para máquinas virtuais convidadas, consulte [Azure Shared disks](/azure/virtual-machines/windows/disks-shared).
 
-![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
+![Diagrama de Espaços de Armazenamento Diretos](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
 ## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>Implantando em clusters convidados da VM IaaS do Azure
 

@@ -1,5 +1,5 @@
 ---
-title: Solucionando problemas do serviço guardião de host
+title: Solucionando problemas de hosts protegidos
 ms.prod: windows-server
 ms.topic: article
 ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 86627f6013592c95f517d77fed6ac5f57eb139b6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 4c3a2361d7a8d3340d12402abe1ef6c1b3db256f
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856389"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769634"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>Solucionando problemas de hosts protegidos
 
@@ -48,14 +48,14 @@ A tabela a seguir explica os valores que podem aparecer no campo **AttestationSt
 
 AttestationStatus         | Explicação
 --------------------------|------------
-Expirado                   | O host passou pelo atestado anteriormente, mas o certificado de integridade que ele foi emitido expirou. Verifique se o host e a hora do HGS estão em sincronia.
+Expirado                   | O host foi aprovado no atestado anteriormente, mas o certificado de integridade que ele foi emitido expirou. Verifique se o host e a hora do HGS estão em sincronia.
 InsecureHostConfiguration | O host não passou no atestado porque ele não estava em conformidade com as políticas de atestado configuradas no HGS. Consulte a tabela AttestationSubStatus para obter mais informações.
 NotConfigured             | O host não está configurado para usar um HGS para atestado e proteção de chave. Ele é configurado para o modo local, em vez disso. Se esse host estiver em uma malha protegida, use [set-HgsClientConfiguration](https://technet.microsoft.com/library/dn914494.aspx) para fornecê-lo com as URLs para seu servidor HgS.
 Aprovado                    | O host passou por atestado.
 TransientError            | A última tentativa de atestado falhou devido a uma rede, serviço ou outro erro temporário. Repita a última operação.
 TpmError                  | O host não pôde concluir sua última tentativa de atestado devido a um erro com o TPM. Consulte os logs do TPM para obter mais informações.
 UnauthorizedHost          | O host não passou no atestado porque não foi autorizado a executar VMs blindadas. Verifique se o host pertence a um grupo de segurança confiável pelo HGS para executar VMs blindadas.
-Desconhecido                   | O host ainda não tentou atestar com o HGS.
+Unknown (desconhecido)                   | O host ainda não tentou atestar com o HGS.
 
 Quando **AttestationStatus** é relatado como **InsecureHostConfiguration**, um ou mais motivos serão preenchidos no campo **AttestationSubStatus** .
 A tabela a seguir explica os possíveis valores para AttestationSubStatus e dicas sobre como resolver o problema.
@@ -70,7 +70,7 @@ DumpEncryptionKey          | O host é configurado para permitir e criptografar 
 FullBoot                   | O host retomou-se de um estado de suspensão ou hibernação. Reinicie o host para permitir uma inicialização limpa e completa.
 HibernationEnabled         | O host está configurado para permitir a hibernação sem criptografar o arquivo de hibernação, o que não é permitido por suas políticas HGS. Desabilite a hibernação e reinicie o host ou [Configure a criptografia de despejo](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption).
 HypervisorEnforcedCodeIntegrityPolicy | O host não está configurado para usar uma política de integridade de código imposta por hipervisor. Verifique se a integridade do código está habilitada, configurada e imposta pelo hipervisor. Consulte o [Guia de implantação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies) para obter mais informações.
-IOMMU                      | Os recursos de segurança baseados em virtualização do host não estão configurados para exigir um dispositivo IOMMU para proteção contra ataques de acesso direto à memória, conforme exigido pelas suas políticas HGS. Verifique se o host tem uma IOMMU, se está habilitado e se o Device Guard está [configurado para exigir proteções DMA](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard) ao iniciar o vbs.
+Iommu                      | Os recursos de segurança baseados em virtualização do host não estão configurados para exigir um dispositivo IOMMU para proteção contra ataques de acesso direto à memória, conforme exigido pelas suas políticas HGS. Verifique se o host tem uma IOMMU, se está habilitado e se o Device Guard está [configurado para exigir proteções DMA](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard) ao iniciar o vbs.
 PagefileEncryption         | A criptografia do arquivo de paginação não está habilitada no host. Para resolver isso, execute `fsutil behavior set encryptpagingfile 1` para habilitar a criptografia de arquivo de paginação. Para obter mais informações, consulte [fsutil Behavior](https://technet.microsoft.com/library/cc785435.aspx).
 SecureBoot                 | A inicialização segura não está habilitada neste host ou não está usando o modelo de inicialização segura da Microsoft. [Habilite a inicialização segura](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot) com o modelo de inicialização segura da Microsoft para resolver esse problema.
 SecureBootSettings         | A linha de base do TPM neste host não corresponde a nenhuma das confianças do HGS. Isso pode ocorrer quando suas autoridades de inicialização de UEFI, a variável do DBX, o sinalizador de depuração ou as políticas de inicialização segura personalizadas são alteradas pela instalação de novo hardware ou software. Se você confiar na configuração atual de hardware, firmware e software deste computador, poderá [capturar uma nova linha de base do TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware) e [registrá-la com o HgS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts).

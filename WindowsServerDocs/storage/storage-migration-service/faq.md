@@ -8,12 +8,12 @@ ms.date: 06/02/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: efe16dd9bdc971b97bc401cf10e14439c46069de
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d5c0644c36d4476eb49797de2f828c4da0f53965
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181732"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769154"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>FAQ (perguntas frequentes) sobre o serviço de migração de armazenamento
 
@@ -52,28 +52,28 @@ Atualmente, o serviço de migração de armazenamento não migra controladores d
 
 O serviço de migração de armazenamento migra todos os sinalizadores, configurações e segurança de compartilhamentos SMB. A lista de sinalizadores que o serviço de migração de armazenamento migra inclui:
 
-    - Estado de compartilhamento
-    - Tipo de disponibilidade
-    - Tipo de compartilhamento
-    - Modo de enumeração de pasta *(também conhecido como enumeração baseada em acesso ou Abe)*
-    - Modo de cache
-    - Modo de leasing
-    - Instância SMB
-    - Tempo limite da CA
-    - Limite de usuários simultâneos
-    - Continuamente disponível
-    - Descrição
-    - Criptografar Dados
-    - Comunicação remota de identidade
-    - Infraestrutura
-    - Nome
-    - Caminho
-    - Com escopo
-    - Nome do escopo
-    - Descritor de Segurança
-    - Cópia de sombra
-    - Especial
-    - Temporário
+- Estado de compartilhamento
+- Tipo de disponibilidade
+- Tipo de compartilhamento
+- Modo de enumeração de pasta *(também conhecido como enumeração baseada em acesso ou Abe)*
+- Modo de cache
+- Modo de leasing
+- Instância SMB
+- Tempo limite da CA
+- Limite de usuários simultâneos
+- Continuamente disponível
+- Descrição
+- Criptografar Dados
+- Comunicação remota de identidade
+- Infraestrutura
+- Nome
+- Caminho
+- Com escopo
+- Nome do escopo
+- Descritor de Segurança
+- Cópia de sombra
+- Especial
+- Temporário
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>Posso consolidar vários servidores em um servidor?
 

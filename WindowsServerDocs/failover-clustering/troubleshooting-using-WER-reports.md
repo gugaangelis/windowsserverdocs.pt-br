@@ -1,19 +1,19 @@
 ---
-title: Solucionando problemas de um cluster de failover usando o Relatório de Erros do Windows
+title: Solução de problemas de um Cluster de Failover usando o Relatório de Erros do Windows
 description: Solução de problemas de um cluster de failover usando relatórios do WER, com detalhes específicos sobre como coletar relatórios e diagnosticar problemas comuns.
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
-ms.author: vpetter
-author: dcuomo
+ms.author: johnmar
+author: JohnMarlin-MSFT
 ms.date: 03/27/2018
-ms.openlocfilehash: e8db88dc4fe3ad9176299c5b423a7aac6093f254
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f888b7f49c2bf97eb42070a6028b137aeb730406
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827349"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768533"
 ---
-# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solucionando problemas de um cluster de failover usando o Relatório de Erros do Windows 
+# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solução de problemas de um Cluster de Failover usando o Relatório de Erros do Windows
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server
 
@@ -228,7 +228,7 @@ Volume Serial Number is 4031-E397
 Em seguida, comece a triagem do arquivo **Report. WER** — isso informará o que falhou.
 
 ```
-EventType=Failover_clustering_resource_error 
+EventType=Failover_clustering_resource_error
 <skip>
 Sig[0].Name=ResourceType
 Sig[0].Value=Physical Disk
@@ -299,14 +299,14 @@ Você também pode agrupar por provedores para obter a seguinte exibição:
 
 ![Logs agrupados por provedores](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-Para identificar por que o disco falhou, navegue até os eventos em **FailoverClustering/Diagnostic** e **FailoverClustering/DiagnosticVerbose**. Em seguida, execute a seguinte consulta: **EventLog. EventData ["LogString"] contém "disco de cluster 10"** .  Isso fornecerá a você a seguinte saída:
+Para identificar por que o disco falhou, navegue até os eventos em **FailoverClustering/Diagnostic** e **FailoverClustering/DiagnosticVerbose**. Em seguida, execute a seguinte consulta: **EventLog. EventData ["LogString"] contém "disco de cluster 10"**.  Isso fornecerá a você a seguinte saída:
 
 ![Saída da consulta de log em execução](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>O disco físico atingiu o tempo limite
 
-Para diagnosticar esse problema, navegue até a pasta de relatório do WER. A pasta contém arquivos de log e arquivos de despejo para **RHS**, **ClusSvc. exe**e do processo que hospeda o serviço "**smphost**", como mostrado abaixo:
+Para diagnosticar esse problema, navegue até a pasta de relatório do WER. A pasta contém arquivos de log e arquivos de despejo para **RHS**, **clussvc.exe**e do processo que hospeda o serviço "**smphost**", como mostrado abaixo:
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
@@ -395,7 +395,7 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-A lista de serviços e processos que coletamos em um despejo é controlada pela seguinte propriedade: **PS C:\Windows\system32 > (Get-ClusterResourceType-Name "disco físico"). DumpServicesSmphost**
+A lista de serviços e processos que coletamos em um despejo é controlada pela seguinte propriedade: **PS C:\Windows\system32> (Get-ClusterResourceType-Name "disco físico"). DumpServicesSmphost**
 
 Para identificar por que o travamento ocorreu, abra os arquivos dum. Em seguida, execute a seguinte consulta: **EventLog. EventData ["LogString"] contém "disco de cluster 10"** . isso fornecerá a você a seguinte saída:
 
@@ -406,9 +406,9 @@ Podemos examinar isso com o thread do arquivo **Memory. hdmp** :
 ```
 # 21  Id: 1d98.2718 Suspend: 0 Teb: 0000000b`f1f7b000 Unfrozen
 # Child-SP          RetAddr           Call Site
-00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14 
-01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a 
-02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0 
-03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f 
+00 0000000b`f3c7ec38 00007ff8`455d25ca ntdll!ZwDelayExecution+0x14
+01 0000000b`f3c7ec40 00007ff8`2ef19710 KERNELBASE!SleepEx+0x9a
+02 0000000b`f3c7ece0 00007ff8`3bdf7fbf clusres!ResHardDiskOnlineOrTurnOffMMThread+0x2b0
+03 0000000b`f3c7f960 00007ff8`391eed34 resutils!ClusWorkerStart+0x5f
 04 0000000b`f3c7f9d0 00000000`00000000 vfbasics+0xed34
 ```

@@ -7,12 +7,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: ebb5f9a0ca9c50a5e5357e3dd2c755095da98d11
-ms.sourcegitcommit: 32f810c5429804c384d788c680afac427976e351
+ms.openlocfilehash: bcae278caf088bc544fb6686450eacdfdf88237b
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83203533"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769594"
 ---
 # <a name="virtual-machine-resource-controls"></a>Controles de recurso de máquina virtual
 
@@ -33,7 +33,7 @@ Os grupos de CPU são gerenciados por meio do serviço de computação do host H
 >[!NOTE]
 >Somente o HCS pode ser usado para criar e gerenciar grupos de CPU; o miniaplicativo do Gerenciador do Hyper-V, as interfaces de gerenciamento do WMI e do PowerShell não dão suporte a grupos de CPU.
 
-A Microsoft fornece um utilitário de linha de comando, cpugroups. exe, no [centro de download da Microsoft](https://go.microsoft.com/fwlink/?linkid=865968) que usa a interface HCS para gerenciar grupos de CPU.  Esse utilitário também pode exibir a topologia de CPU de um host.
+A Microsoft fornece um utilitário de linha de comando, cpugroups.exe, no [centro de download da Microsoft](https://go.microsoft.com/fwlink/?linkid=865968) que usa a interface HCS para gerenciar grupos de CPU.  Esse utilitário também pode exibir a topologia de CPU de um host.
 
 ## <a name="how-cpu-groups-work"></a>Como funcionam os grupos de CPU
 
@@ -41,15 +41,15 @@ A alocação de recursos de computação do host em grupos de CPU é imposta pel
 
 O limite do grupo de CPU é calculado como G = *n* x *C*, em que:
 
-    *G* is the amount of host LP we'd like to assign to the group
-    *n* is the total number of logical processors (LPs) in the group
-    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
+- *G* é a quantidade de host LP que gostaríamos de atribuir ao grupo
+- *n* é o número total de processadores lógicos (LPs) no grupo
+- *C* é a alocação de CPU máxima — ou seja, a classe de serviço desejada para o grupo, expressa como uma porcentagem da capacidade total de computação do sistema
 
 Por exemplo, considere um grupo de CPU configurado com 4 processadores lógicos (LPs) e um limite de 50%.
 
-    G = n * C
-    G = 4 * 50%
-    G = 2 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 4 * 50%
+- G = 2 LP de tempo de CPU para o grupo inteiro
 
 Neste exemplo, o grupo de CPU G é alocado 2 LP de tempo de CPU.
 
@@ -70,9 +70,9 @@ Para simplificar, vamos supor que cada VM tenha 1 VP e que nosso host tenha 8 LP
 
 Para criar a camada "B", o host adminstartor define a Cap do grupo como 50%:
 
-    G = n * C
-    G = 8 * 50%
-    G = 4 LP's worth of CPU time for the entire group
+- G = n * C
+- G = 8 * 50%
+- G = 4 LP de tempo de CPU para o grupo inteiro
 
 O administrador de host adiciona uma única VM de camada "B".
 Neste ponto, nossa VM de camada "B" pode usar no máximo 50% da CPU do host ou o equivalente a 4 LPs em nosso sistema de exemplo.

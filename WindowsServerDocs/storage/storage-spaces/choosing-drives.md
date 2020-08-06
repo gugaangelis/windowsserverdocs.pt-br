@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: bdd5264394c94748b7720842cf8ff7e01e1375e7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: aae554c87b8a4ac6005ad359bc474026f5f1ed9e
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965418"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769404"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Escolher unidades para Espaços de Armazenamento Diretos
 
@@ -29,7 +29,7 @@ Espaços de Armazenamento Diretos atualmente funciona com quatro tipos de unidad
 <table>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/pmem-100px.png">
+            <img src="media/understand-the-cache/pmem-100px.png" alt="Image of PMem (persistent memory)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">O 
             <b>PMem</b> se refere à memória persistente, um novo tipo de armazenamento de alto desempenho e baixa latência.
@@ -37,7 +37,7 @@ Espaços de Armazenamento Diretos atualmente funciona com quatro tipos de unidad
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/NVMe-100px.png">
+            <img src="media/understand-the-cache/NVMe-100px.png" alt="Image of NVMe (Non-Volatile Memory Express)">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>NVMe</b> (memória não volátil Express) refere-se a unidades de estado sólido que ficam diretamente no barramento PCIe. Os fatores forma comuns são U.2 de 2,5", PCIe Add-In-Card (AIC) e M.2. O NVMe oferece IOPS e taxa de transferência de e/s maiores com latência menor do que qualquer outro tipo de unidade que damos suporte hoje, exceto a memória persistente.
@@ -45,7 +45,7 @@ Espaços de Armazenamento Diretos atualmente funciona com quatro tipos de unidad
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px" >
-            <img src="media/understand-the-cache/SSD-100px.png">
+            <img src="media/understand-the-cache/SSD-100px.png" alt="Image of SSD drive">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>SSD</b> refere-se a unidades de estado sólido que se conectam via SATA ou SAS convencional.
@@ -53,7 +53,7 @@ Espaços de Armazenamento Diretos atualmente funciona com quatro tipos de unidad
     </tr>
     <tr style="border: 0;">
         <td style="padding: 10px; border: 0; width:70px">
-            <img src="media/understand-the-cache/HDD-100px.png">
+            <img src="media/understand-the-cache/HDD-100px.png" alt="Image of HDD">
         </td>
         <td style="padding: 10px; border: 0;" valign="middle">
             <b>HDD</b> refere-se a unidades de disco rígido magnéticas rotacionais que oferecem ampla capacidade de armazenamento.

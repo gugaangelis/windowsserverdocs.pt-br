@@ -9,12 +9,12 @@ ms.author: johnmar
 ms.date: 03/29/2018
 description: Este artigo descreve os cenários disponíveis hoje para recuperação de desastre do Microsoft HCI (Espaços de Armazenamento Diretos)
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9c36e90f9bfae053197b6a36201748cb7e88d7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8ebe54cf6823f65fae484960ff21cee2baac0131
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966448"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769082"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperação de desastre com Espaços de Armazenamento Diretos
 
@@ -36,7 +36,7 @@ As opções de recuperação de desastre com um hiperconvergente hoje são:
 
 A [réplica de armazenamento](../storage-replica/storage-replica-overview.md) permite a replicação de volumes e oferece suporte à replicação síncrona e assíncrona. Ao escolher entre usar a replicação síncrona ou assíncrona, você deve considerar seu RPO (objetivo de ponto de recuperação). Objetivo de ponto de recuperação é a quantidade de possíveis perdas de dados que você está disposto a incorrer antes de ser considerada uma grande perda. Se você for com replicação síncrona, ela será gravada em sequência em ambas as extremidades ao mesmo tempo. Se você for assíncrona, as gravações serão replicadas muito rapidamente, mas ainda poderão ser perdidas. Você deve considerar o uso do aplicativo ou do arquivo para ver o que melhor funciona para você.
 
-A réplica de armazenamento é um mecanismo de cópia de nível de bloco versus nível de arquivo; ou seja, não importa quais tipos de dados estão sendo replicados. Isso o torna uma opção popular para a infraestrutura hiperconvergente. A réplica de armazenamento também pode utilizar diferentes tipos de unidades entre os parceiros de replicação, portanto, ter todo o armazenamento de um tipo em um HCI e outro armazenamento de tipo no outro é perfeitamente bom. 
+A réplica de armazenamento é um mecanismo de cópia de nível de bloco versus nível de arquivo; ou seja, não importa quais tipos de dados estão sendo replicados. Isso o torna uma opção popular para a infraestrutura hiperconvergente. A réplica de armazenamento também pode utilizar diferentes tipos de unidades entre os parceiros de replicação, portanto, ter todo o armazenamento de um tipo em um HCI e outro armazenamento de tipo no outro é perfeitamente bom.
 
 Um recurso importante da réplica de armazenamento é que ela pode ser executada no Azure, bem como no local. Você pode configurar de forma local para local, Azure para Azure ou até mesmo localmente para o Azure (ou vice-versa).
 
@@ -44,10 +44,10 @@ Nesse cenário, há dois clusters independentes separados. Para configurar a ré
 
 ![Diagrama de replicação de armazenamento](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure1.png)
 
-As considerações a seguir se aplicam ao implantar a réplica de armazenamento. 
+As considerações a seguir se aplicam ao implantar a réplica de armazenamento.
 
-1.    A configuração da replicação é feita fora do clustering de failover. 
-2.    Escolher o método de replicação dependerá da latência de rede e dos requisitos de RPO. O Synchronous replica os dados em redes de baixa latência com consistência de falhas para garantir que não haja perda de dados em um momento de falha. O assíncrona replica os dados em redes com latências mais altas, mas cada site pode não ter cópias idênticas em um momento de falha. 
+1.    A configuração da replicação é feita fora do clustering de failover.
+2.    Escolher o método de replicação dependerá da latência de rede e dos requisitos de RPO. O Synchronous replica os dados em redes de baixa latência com consistência de falhas para garantir que não haja perda de dados em um momento de falha. O assíncrona replica os dados em redes com latências mais altas, mas cada site pode não ter cópias idênticas em um momento de falha.
 3.    No caso de um desastre, os failovers entre os clusters não são automáticos e precisam ser orquestrados manualmente por meio dos cmdlets do PowerShell da réplica de armazenamento. No diagrama acima, ClusterA é o primário e o ClusterB é o secundário. Se o ClusterA ficar inativo, você precisará definir manualmente ClusterB como primário antes de poder colocar os recursos. Depois de fazer backup do ClusterA, você precisaria torná-lo secundário. Depois que todos os dados tiverem sido sincronizados, faça a alteração e troque as funções de volta à maneira como elas foram originalmente definidas.
 4.    Como a réplica de armazenamento só está replicando os dados, uma nova máquina virtual ou um SOFS (servidor de arquivos de Scale Out) utilizando esses dados precisarão ser criados dentro do Gerenciador de Cluster de Failover no parceiro de réplica.
 
@@ -68,7 +68,7 @@ Com a réplica do Hyper-V, a replicação é manipulada pelo Hyper-V. Quando voc
 A outra opção é para quando você desejar que a replicação inicial ocorra.
 
 1.    Iniciar a replicação imediatamente
-2.    Agende um horário para quando a replicação inicial ocorrer. 
+2.    Agende um horário para quando a replicação inicial ocorrer.
 
 Outras considerações que serão necessárias são:
 
@@ -85,7 +85,7 @@ Quando o HCI participa da réplica do Hyper-V, você deve ter o recurso [agente 
 
 ## <a name="backup-and-restore"></a>Backup e restauração
 
-Uma opção de recuperação de desastres tradicional que não é comentada muito, mas é tão importante quanto a falha de todo o cluster ou de um nó no cluster. Qualquer opção com esse cenário usa o backup do Windows NT. 
+Uma opção de recuperação de desastres tradicional que não é comentada muito, mas é tão importante quanto a falha de todo o cluster ou de um nó no cluster. Qualquer opção com esse cenário usa o backup do Windows NT.
 
 É sempre uma recomendação ter backups periódicos da infraestrutura hiperconvergente. Enquanto o serviço de cluster estiver em execução, se você fizer um backup de estado do sistema, o banco de dados do registro de cluster será parte desse backup. A restauração do cluster ou do banco de dados tem dois métodos diferentes (não autoritativo e autoritativos).
 
@@ -103,19 +103,19 @@ Quando uma restauração autoritativa é iniciada em um nó de cluster, o servi�
 
 Para executar uma restauração autoritativa, as etapas a seguir podem ser realizadas.
 
-1.    Execute WBADMIN.EXE em um prompt de comando administrativo para obter a versão mais recente dos backups que você deseja instalar e garantir que o estado do sistema seja um dos componentes que você pode restaurar.
+1. Execute WBADMIN.EXE em um prompt de comando administrativo para obter a versão mais recente dos backups que você deseja instalar e garantir que o estado do sistema seja um dos componentes que você pode restaurar.
 
     ```powershell
-    Wbadmin get versions
+    wbadmin get versions
     ```
 
-2.    Determine se o backup de versão tem as informações de registro de cluster nele como um componente. Há alguns itens que serão necessários nesse comando, a versão e o aplicativo/componente para uso na etapa 3. Para a versão, por exemplo, digamos que o backup foi feito em 3 de janeiro de 2018 em 2:04am e esse é o que você precisa restaurar.
+2. Determine se o backup de versão tem as informações de registro de cluster nele como um componente. Há alguns itens que serão necessários nesse comando, a versão e o aplicativo/componente para uso na etapa 3. Para a versão, por exemplo, digamos que o backup foi feito em 3 de janeiro de 2018 em 2:04am e esse é o que você precisa restaurar.
 
     ```powershell
     wbadmin get items -backuptarget:\\backupserver\location
     ```
 
-3.  Inicie a restauração autoritativa para recuperar apenas a versão de registro de cluster necessária. 
+3. Inicie a restauração autoritativa para recuperar apenas a versão de registro de cluster necessária.
 
     ```powershell
     wbadmin start recovery -version:01/03/2018-02:04 -itemtype:app -items:cluster
@@ -123,6 +123,6 @@ Para executar uma restauração autoritativa, as etapas a seguir podem ser reali
 
 Depois que a restauração for feita, esse nó deverá ser o primeiro a iniciar o serviço de cluster e formar o cluster. Todos os outros nós precisariam ser iniciados e ingressarem no cluster.
 
-## <a name="summary"></a>Resumo 
+## <a name="summary"></a>Resumo
 
 Para somar tudo isso, a recuperação de desastre hiperconvergente é algo que deve ser planejado com cuidado. Há vários cenários que podem atender melhor às suas necessidades e devem ser totalmente testados. Um item a ser observado é que, se você estiver familiarizado com clusters de failover no passado, os clusters de ampliação têm sido uma opção muito popular ao longo dos anos. Houve um pouco de alteração de design com a solução hiperconvergente e ela se baseia na resiliência. Se você perder dois nós em um cluster hiperconvergente, todo o cluster ficará inativo. Com esse ser o caso, em um ambiente hiperconvergente, não há suporte para o cenário de ampliação.

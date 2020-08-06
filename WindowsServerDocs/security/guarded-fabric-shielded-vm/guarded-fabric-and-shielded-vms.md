@@ -7,12 +7,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: aa1e690c55cbbb4ff32657cfe24bd28f1067bfec
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e331732bd958e3e403727709994cf9e2d4aef8f1
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475373"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769304"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Visão geral sobre malha protegida e VMs blindadas
 
@@ -36,7 +36,7 @@ Quando um locatário cria VMs blindadas que são executadas em uma malha protegi
 
 ## <a name="video-introduction-to-shielded-virtual-machines"></a>Vídeo: introdução às máquinas virtuais blindadas
 
-<iframe src="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016/player" width="650" height="440" allowFullScreen frameBorder="0"></iframe>
+> [!VIDEO https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016]
 
 ## <a name="attestation-modes-in-the-guarded-fabric-solution"></a>Modos de Atestado na solução de malha protegida
 
@@ -47,9 +47,9 @@ O HGS dá suporte a diferentes modos de atestado para uma malha protegida:
 
 O Atestado de TPM confiável é recomendado porque oferece garantias mais fortes, conforme explicado na tabela a seguir, mas exige que os hosts do Hyper-V tenham TPM 2.0. Se atualmente você não tiver o TPM 2,0 ou qualquer TPM, poderá usar o atestado de chave de host. Se decidir mover de Atestado de TPM confiável ao adquirir novo hardware, você poderá alternar o modo de atestado do Serviço Guardião de Host com pouca ou nenhuma interrupção para sua malha.
 
-| **Modo de atestado escolhido para hosts**                                            | **Garantias de host** |
-|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**Atestado de TPM confiável:** oferece as proteções mais fortes de possíveis, mas também exigem mais etapas de configuração. O hardware e o firmware do host devem incluir o TPM 2,0 e a UEFI 2.3.1 com a inicialização segura habilitada. | Os hosts protegidos são aprovados com base na identidade do TPM, na sequência de inicialização medida e nas políticas de integridade de código para garantir que eles só executem o código aprovado.|
+| **Modo de atestado escolhido para hosts** | **Garantias de host** |
+|--|--|
+| **Atestado de TPM confiável:** oferece as proteções mais fortes de possíveis, mas também exigem mais etapas de configuração. O hardware e o firmware do host devem incluir o TPM 2,0 e a UEFI 2.3.1 com a inicialização segura habilitada. | Os hosts protegidos são aprovados com base na identidade do TPM, na sequência de inicialização medida e nas políticas de integridade de código para garantir que eles só executem o código aprovado. |
 | **Atestado de chave de host:** Destina-se a oferecer suporte a hardware de host existente onde o TPM 2,0 não está disponível. Requer menos etapas de configuração e é compatível com o hardware de servidor comum. | Os hosts protegidos são aprovados com base na posse da chave. |
 
 Outro modo chamado **admin – atestado confiável** foi preterido a partir do Windows Server 2019. Esse modo foi baseado na associação de host protegido em um grupo de segurança de Active Directory Domain Services designado (AD DS). O atestado de chave de host fornece identificação de host semelhante e é mais fácil de configurar.
@@ -89,9 +89,9 @@ A figura a seguir mostra o arquivo de dados de blindagem e os elementos de confi
 
 Malhas protegidas são capazes de executar VMs de três maneiras:
 
-1.    Uma VM normal que não oferece proteções além de versões anteriores do Hyper-V
-2.    Uma VM com suporte para criptografia cujas proteções podem ser configuradas por um administrador de malha
-3.    Uma VM blindada cujas proteções estão todas ligadas e não podem ser desabilitadas por um administrador de malha
+1. Uma VM normal que não oferece proteções além de versões anteriores do Hyper-V
+2. Uma VM com suporte para criptografia cujas proteções podem ser configuradas por um administrador de malha
+3. Uma VM blindada cujas proteções estão todas ligadas e não podem ser desabilitadas por um administrador de malha
 
 VMs com suporte para criptografia destinam-se ao uso onde os administradores da malha são totalmente confiáveis.  Por exemplo, uma empresa pode implantar uma malha protegida para garantir que os discos de VM estejam criptografados em repouso para fins de conformidade. Os administradores da malha podem continuar a usar os recursos de gerenciamento convenientes, por exemplo, conexões de console de VM, PowerShell Direct e outras ferramentas de gerenciamento e solução de problemas diários.
 
@@ -119,50 +119,35 @@ As VMs blindadas e as VMs com suporte à criptografia continuam a oferecer supor
 
 ![Arquivo de dados de blindagem](../media/Guarded-Fabric-Shielded-VM/shielded-vms-how-a-shielded-vm-is-powered-on.png)
 
-1. VM01 está ligado.
+1. **VM01 está ligado.** Antes de um host protegido possa ligar uma VM blindada, ele deverá primeiro ser atestado afirmativamente de que esteja íntegro. Para provar que está íntegro, ele deverá apresentar um certificado de integridade para o Serviço de Proteção de Chave (KPS). O certificado de integridade é obtido através do processo de atestado.
 
-    Antes de um host protegido possa ligar uma VM blindada, ele deverá primeiro ser atestado afirmativamente de que esteja íntegro. Para provar que está íntegro, ele deverá apresentar um certificado de integridade para o Serviço de Proteção de Chave (KPS). O certificado de integridade é obtido através do processo de atestado.
+2. **Hosts exigem atestado.** O host protegido exige atestado. O modo de atestado é determinado pelo Serviço Guardião de Host:
 
-2. Hosts exigem atestado.
+    - **Atestado confiável de TPM**: o host Hyper-V envia informações que incluem:
+      - Informações de identificação do TPM (sua chave de endosso)
+      - Informações sobre os processos que foram iniciados durante a sequência de inicialização mais recente (o log do TCG)
+      - Informações sobre a política de integridade de código (CI) que foi aplicada no host.
 
-    O host protegido exige atestado. O modo de atestado é determinado pelo Serviço Guardião de Host:
+        O atestado acontece quando o host é iniciado e a cada 8 horas. Se, por algum motivo, um host não tiver um certificado de atestado quando uma VM tentar iniciar, isso também disparará o atestado.
 
-    **Atestado confiável de TPM**: o host Hyper-V envia informações que incluem:
+    - **Atestado de chave de host**: o host Hyper-V envia a metade pública do par de chaves. O HGS valida que a chave de host está registrada.
 
-       - Informações de identificação do TPM (sua chave de endosso)
-       - Informações sobre os processos que foram iniciados durante a sequência de inicialização mais recente (o log do TCG)
-       - Informações sobre a política de integridade de código (CI) que foi aplicada no host.
+    - **Atestado de admin confiável**: o host do Hyper-V envia um tíquete Kerberos, que identifica os grupos de segurança em que o host está. O HGS valida que o host pertence a um grupo de segurança que foi configurado anteriormente pelo administrador de HGS confiável.
 
-       Attestation happens when the host starts and every 8 hours thereafter. If for some reason a host doesn't have an attestation certificate when a VM tries to start, this also triggers attestation.
+3. **O atestado tem êxito (ou falha).** O modo de atestado determina quais verificações são necessárias para atestar com êxito que o host está íntegro. Com o atestado confiável do TPM, a identidade do TPM do host, as medidas de inicialização e a política de integridade de código são validadas. Com o atestado de chave do host, somente o registro da chave do host é validado.
 
-    **Atestado de chave de host**: o host Hyper-V envia a metade pública do par de chaves. O HGS valida que a chave de host está registrada.
+4. **Certificado de atestado enviado ao host.** Supondo que o atestado foi bem-sucedido, um certificado de integridade é enviado ao host e o host é considerado "protegido" (autorizado a executar VMs blindadas). O host usa o certificado de integridade para autorizar o Serviço de Proteção de Chave para liberar com segurança as chaves necessárias para trabalhar com VMs blindadas
 
-    **Atestado de admin confiável**: o host do Hyper-V envia um tíquete Kerberos, que identifica os grupos de segurança em que o host está. O HGS valida que o host pertence a um grupo de segurança que foi configurado anteriormente pelo administrador de HGS confiável.
+5. **O host solicita chave de máquina virtual.** O host protegido não tem as chaves necessárias para ligar uma VM blindada (VM01 neste caso). Para obter as chaves necessárias, o host protegido deve fornecer o seguinte para o KPS:
 
-3. O atestado tem êxito (ou falha).
+   - O certificado de integridade atual
+   - Um segredo criptografado (um Protetor de Chave ou KP) que contém as chaves necessárias para ligar a VM01. O segredo é criptografado usando outras chaves que somente o KPS conhece.
 
-    O modo de atestado determina quais verificações são necessárias para atestar com êxito que o host está íntegro. Com o atestado confiável do TPM, a identidade do TPM do host, as medidas de inicialização e a política de integridade de código são validadas. Com o atestado de chave do host, somente o registro da chave do host é validado.
+6. **Versão da chave.** O KPS examina o certificado de integridade para determinar sua validade. O certificado não deve ter expirado e o KPS deve confiar no serviço de atestado que o emitiu.
 
-4. Certificado de atestado enviado ao host.
+7. **A chave é retornada ao host.** Se o certificado de integridade é válido, o KPS tenta descriptografar o segredo e retornar com segurança as chaves necessárias para ligar a VM. Observe que as chaves são criptografadas para o VBS do host protegido.
 
-    Supondo que o atestado foi bem-sucedido, um certificado de integridade é enviado ao host e o host é considerado "protegido" (autorizado a executar VMs blindadas). O host usa o certificado de integridade para autorizar o Serviço de Proteção de Chave para liberar com segurança as chaves necessárias para trabalhar com VMs blindadas
-
-5. O host solicita chave de máquina virtual.
-
-    O host protegido não tem as chaves necessárias para ligar uma VM blindada (VM01 neste caso). Para obter as chaves necessárias, o host protegido deve fornecer o seguinte para o KPS:
-
-    - O certificado de integridade atual
-    - Um segredo criptografado (um Protetor de Chave ou KP) que contém as chaves necessárias para ligar a VM01. O segredo é criptografado usando outras chaves que somente o KPS conhece.
-
-6. Versão da chave.
-
-    O KPS examina o certificado de integridade para determinar sua validade. O certificado não deve ter expirado e o KPS deve confiar no serviço de atestado que o emitiu.
-
-7. A chave é retornada ao host.
-
-    Se o certificado de integridade é válido, o KPS tenta descriptografar o segredo e retornar com segurança as chaves necessárias para ligar a VM. Observe que as chaves são criptografadas para o VBS do host protegido.
-
-8. O host liga a VM01.
+8. **O host liga a VM01.**
 
 ## <a name="guarded-fabric-and-shielded-vm-glossary"></a>Glossário de malha protegida e VMs blindadas
 

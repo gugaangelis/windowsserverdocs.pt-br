@@ -7,12 +7,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7a4469a3f72737801a5110e322533df9764e20
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2028d7b4ccb42d5da1426634541681f842c18972
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473583"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87768724"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Considerações sobre simetria de unidade para Espaços de Armazenamento Diretos
 
@@ -26,7 +26,7 @@ Este tópico explica as restrições e fornece exemplos de configurações com e
 
 ## <a name="constraints"></a>Restrições
 
-### <a name="type"></a>Digite
+### <a name="type"></a>Tipo
 
 Todos os servidores devem ter os mesmos [tipos de unidades](choosing-drives.md#drive-types).
 
@@ -173,12 +173,12 @@ Não há suporte para isso. Você precisa adicionar no mínimo duas unidades de 
 
 Para recapitular, todos os servidores no cluster devem ter os mesmos tipos de unidades e o mesmo número de cada tipo. Há suporte para misturar e combinar modelos de unidade e tamanhos de unidade, conforme necessário, com as considerações acima.
 
-| Constraint                               |               |
-|------------------------------------------|---------------|
-| Mesmos tipos de unidades em cada servidor     | **Necessário**  |
-| Mesmo número de cada tipo em cada servidor | **Necessário**  |
-| Mesmos modelos de unidade em cada servidor        | Recomendadas   |
-| Mesmos tamanhos de unidade em cada servidor         | Recomendadas   |
+| Constraint | Estado |
+|--|--|
+| Mesmos tipos de unidades em cada servidor | **Obrigatório** |
+| Mesmo número de cada tipo em cada servidor | **Obrigatório** |
+| Mesmos modelos de unidade em cada servidor | Recomendadas |
+| Mesmos tamanhos de unidade em cada servidor | Recomendadas |
 
 ## <a name="additional-references"></a>Referências adicionais
 
