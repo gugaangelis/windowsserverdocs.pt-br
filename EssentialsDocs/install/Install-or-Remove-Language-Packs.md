@@ -7,19 +7,19 @@ ms.assetid: 98f13f63-4480-40ba-a7ef-d1d9b7582e5f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: fa167ec12122883fc0ccea914260407d13f0b992
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9999b78b1b0a4b1823162158b95d175f9c159091
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181162"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837925"
 ---
 # <a name="install-or-remove-language-packs"></a>Instalar ou Remover Pacotes de Idiomas
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 > [!NOTE]
->  Você deve primeiro criar uma imagem multilíngue do Windows, conforme descrito nos [pacotes de idiomas e a implantação](https://technet.microsoft.com/library/hh824829) , antes de adicionar o pacote de idiomas do Windows Server Essentials.
+>  Você deve primeiro criar uma imagem multilíngue do Windows, conforme descrito nos [pacotes de idiomas e a implantação](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824829(v=win.10)) , antes de adicionar o pacote de idiomas do Windows Server Essentials.
 
  Os pacotes de idiomas estão disponíveis somente para a criação de imagens em vários idiomas. As informações contidas nesta seção são específicas para instalar ou remover pacotes de idiomas no Windows Server Essentials.
 
@@ -52,4 +52,3 @@ ms.locfileid: "87181162"
 ## <a name="see-also"></a>Consulte Também
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md) [personalizações adicionais](Additional-Customizations.md) [preparando a imagem para](Preparing-the-Image-for-Deployment.md) [testar a implantação da experiência do cliente](Testing-the-Customer-Experience.md)
-

@@ -6,12 +6,12 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: adaf10a96a945fddce16592da3d491be2b32aa3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: df3eb1b5a1704dcd5a1fc05fab4023c7faaeabe7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181662"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838105"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Introdução ao Windows Server Essentials
 
@@ -46,16 +46,16 @@ O **Windows Server Essentials** Edition é um primeiro servidor conectado à nuv
 
 ## <a name="end-to-end-solution-guides"></a>Guias de solução avançada
 
--    Para aprender a centralizar o armazenamento de dados, restringir permissões de acesso aos dados e fazer backup de seus dados locais e na nuvem, consulte [Fornecer proteção de dados em pequenas e médias empresas](https://technet.microsoft.com/library/dn582043.aspx).
+-    Para aprender a centralizar o armazenamento de dados, restringir permissões de acesso aos dados e fazer backup de seus dados locais e na nuvem, consulte [Fornecer proteção de dados em pequenas e médias empresas](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11)).
 
--    Para saber como acessar dados de negócios em qualquer dispositivo conectado à Internet com segurança em qualquer local, consulte [Proteger o acesso remoto em pequenas e médias empresas](https://technet.microsoft.com/library/dn629457.aspx).
+-    Para saber como acessar dados de negócios em qualquer dispositivo conectado à Internet com segurança em qualquer local, consulte [Proteger o acesso remoto em pequenas e médias empresas](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11)).
 
--    Para saber como colaborar com segurança com parceiros e fornecedores, consulte [Melhorar a colaboração nas pequenas e médias empresas](https://technet.microsoft.com/library/dn747893.aspx).
+-    Para saber como colaborar com segurança com parceiros e fornecedores, consulte [Melhorar a colaboração nas pequenas e médias empresas](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11)).
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Biblioteca do Windows Server TechNet](https://technet.microsoft.com/library/bb625087.aspx)
+-   [Biblioteca do Windows Server TechNet](/windows-server/windows-server-versions)
 
--   [Blog do Windows Server Essentials e do Windows Small Business Server](https://blogs.technet.com/b/sbs/)
+-   [Blog do Windows Server Essentials e do Windows Small Business Server](/archive/blogs/sbs/)
 
--   [Biblioteca do TechNet do Windows Server Essentials (Small Business Server)](https://technet.microsoft.com/library/cc514417.aspx)
+-   [Biblioteca do TechNet do Windows Server Essentials (Small Business Server)](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))

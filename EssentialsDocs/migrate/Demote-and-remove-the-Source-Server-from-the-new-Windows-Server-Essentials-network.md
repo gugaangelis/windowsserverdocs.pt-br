@@ -7,12 +7,12 @@ ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d48c314e5dd1655d23e7423c473163befb3655b9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e55c717b1eeb5b8f75ebfb7b48abd656dd4ddaa3
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180782"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838421"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>Rebaixar e remover o servidor de origem do novo network1 do Windows Server Essentials
 
@@ -53,10 +53,10 @@ Depois de concluir a instalação do Windows Server Essentials e concluir as tar
 
    > [!NOTE]
    >
-   >  O Exchange Server verifica se não há caixas de correio ou pastas públicas no servidor. Se restar algum dado, uma mensagem de erro aparece ao clicar **Remover**. Para evitar esse problema, verifique se você concluiu todos os procedimentos no tópico [mover as configurações e os dados do SBS 2003 para o servidor de destino](Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).
+   >  O Exchange Server verifica se não há caixas de correio ou pastas públicas no servidor. Se restar algum dado, uma mensagem de erro aparece ao clicar **Remover**. Para evitar esse problema, verifique se você concluiu todos os procedimentos no tópico [mover as configurações e os dados do SBS 2003 para o servidor de destino](./move-windows-sbs-2003-to-the-destination-server-for-migration.md).
 
 
-6. Clique em **Próximo**.
+6. Clique em **Avançar**.
 
 7. Quando solicitado, insira o Windows Small Business Server 2003 CD #3 e siga as instruções na tela.
 

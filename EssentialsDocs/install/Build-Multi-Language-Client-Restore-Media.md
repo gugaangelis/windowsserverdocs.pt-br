@@ -7,19 +7,19 @@ ms.assetid: 2fdbc016-d464-43cb-bd75-8a63e61588a2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6ebacd42df17d1d1aa840bc77dfdbb23a1ab48e7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4057e0d6805c7633bf07960d06d97b2eab15f28a
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181482"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838085"
 ---
 # <a name="build-multi-language-client-restore-media"></a>Criar a mídia de restauração do cliente de vários idiomas
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 > [!NOTE]
->  Primeiro, você deve criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: criação de imagem multilíngüe do Windows](https://technet.microsoft.com/library/jj126995) antes de adicionar o Windows Server Essentials langauage Pack ao install. wim.
+>  Primeiro, você deve criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: criação de imagem multilíngüe do Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10)) antes de adicionar o Windows Server Essentials langauage Pack ao install. wim.
 
  Ao criar o DVD de instalação do servidor de vários idiomas, os pacotes de idiomas serão instalados no Servidor install.wim. Os recursos localizados para o assistente de restauração serão instalados como parte do pacote de idiomas.
 
@@ -87,4 +87,3 @@ ms.locfileid: "87181482"
 ## <a name="see-also"></a>Consulte Também
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md) [personalizações adicionais](Additional-Customizations.md) [preparando a imagem para](Preparing-the-Image-for-Deployment.md) [testar a implantação da experiência do cliente](Testing-the-Customer-Experience.md)
-

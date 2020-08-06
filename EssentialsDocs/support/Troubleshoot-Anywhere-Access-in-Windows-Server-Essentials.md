@@ -7,12 +7,12 @@ ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3e79a4e7845298b013d99ff804c665e44cac4fbb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 241e2225c9e1dfdea3189e938a04c4af4c033c3f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180332"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838315"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Solucionar problemas do Acesso em Qualquer Local no Windows Server Essentials
 
@@ -23,7 +23,7 @@ Este tópico fornece instruções gerais para usar o assistente para reparar ace
 O assistente Reparar o Acesso em Qualquer Local tenta identificar e reparar os problemas com seu roteador, nome de domínio ou firewall que estão impedindo os usuários da rede de acessarem remotamente os recursos do servidor.
 
 > [!NOTE]
-> Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
+> Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](/answers/topics/windows-server-essentials.html). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
 
 ## <a name="to-repair-anywhere-access"></a>Para reparar o Acesso em Qualquer Local
 
@@ -33,7 +33,7 @@ O assistente Reparar o Acesso em Qualquer Local tenta identificar e reparar os p
 
 3. Clique em **Reparar**. O assistente Reparar o Acesso em Qualquer Local é iniciado.
 
-4. Clique em **Próximo**. O assistente analisa o Acesso em Qualquer Local, identifica o problema e tenta repará-lo.
+4. Clique em **Avançar**. O assistente analisa o Acesso em Qualquer Local, identifica o problema e tenta repará-lo.
 
 5. Se você receber um alerta quando o assistente for concluído, você pode clicar em **Tentar novamente** para tentar reparar o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.
 
@@ -50,4 +50,4 @@ O assistente Reparar o Acesso em Qualquer Local tenta identificar e reparar os p
 
 - [Solucionar problemas de firewall](Troubleshoot-your-firewall-in-Windows-Server-Essentials.md)
 
-- Verifique o [Fórum do Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html) para obter os problemas mais recentes relatados pela Comunidade do Windows Server Essentials.
+- Verifique o [Fórum do Windows Server Essentials](/answers/topics/windows-server-essentials.html) para obter os problemas mais recentes relatados pela Comunidade do Windows Server Essentials.

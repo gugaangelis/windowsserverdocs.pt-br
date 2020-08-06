@@ -7,12 +7,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b3a9ceca5de9971f77175052a604d3e22de07036
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: e5c8a274a8e012ffd24ce6c6c819fa240c9f1095
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180942"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837885"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Gerenciar backup online no Windows Server Essentials
 
@@ -84,7 +84,7 @@ ms.locfileid: "87180942"
    >  Você também pode usar seu próprio certificado público. Para saber qual certificado é necessário, na página **Início Rápido**, clique no link **Adquirir Certificado**.
 
    > [!NOTE]
-   >   O Azure requer um certificado x. 509 V2 com uma chave pública. Para obter mais informações, consulte [Gerenciar contas online](https://msdn.microsoft.com/library/azure/dn169036.aspx).
+   >   O Azure requer um certificado x. 509 V2 com uma chave pública. Para obter mais informações, consulte [Gerenciar contas online](/previous-versions/azure/dn169036(v=azure.100)).
 
 7. Depois de selecionar o certificado, clique em **OK** (marca de seleção).
 

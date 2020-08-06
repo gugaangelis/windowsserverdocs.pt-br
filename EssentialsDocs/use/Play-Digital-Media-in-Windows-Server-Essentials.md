@@ -7,12 +7,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c8f490f09f9623aa82b42f2103f2fd3e95537d7d
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 1ce7359929cb1658cc84418231fb7d65efce8692
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409506"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838215"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Gerenciar mídia digital no Windows Server Essentials
 
@@ -182,7 +182,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 
 > [!NOTE]
->  Você também pode carregar arquivos de mídia para o servidor usando o aplicativo My Server para Windows Phone. Você pode baixar o aplicativo My Server da [Loja do Windows Phone](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a). Para obter mais informações sobre o aplicativo de servidor para Windows Phone, consulte a postagem de blog [meu aplicativo de telefone do servidor para Windows Server Essentials](https://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx).
+>  Você também pode carregar arquivos de mídia para o servidor usando o aplicativo My Server para Windows Phone. Você pode baixar o aplicativo My Server da [Loja do Windows Phone](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a). Para obter mais informações sobre o aplicativo de servidor para Windows Phone, consulte a postagem de blog [meu aplicativo de telefone do servidor para Windows Server Essentials](/archive/blogs/sbs/my-server-phone-app-for-windows-server-2012-essentials).
 
 #### <a name="to-add-digital-media-files-to-shared-folders-on-the-server"></a>Para adicionar arquivos de mídia digital para pastas compartilhadas no servidor
 
@@ -222,7 +222,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
   Antes de iniciar o download, o arquivo .exe ou .zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.
 
 ##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>Ferramenta de upload de arquivo fácil
- A ferramenta de upload de arquivo fácil simplifica o processo de carregamento de arquivos no servidor do Windows Server Essentials. Você pode adicionar quantos arquivos desejar à ferramenta de upload de arquivo fácil e, em seguida, carregá-los nas pastas compartilhadas no servidor do Windows Server Essentials em um único lote. Para obter mais informações, consulte a postagem de blog [Understanding Remote Web Access File Sharing (Entendendo o compartilhamento de arquivos do Acesso Remoto via Web)](https://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx).
+ A ferramenta de upload de arquivo fácil simplifica o processo de carregamento de arquivos no servidor do Windows Server Essentials. Você pode adicionar quantos arquivos desejar à ferramenta de upload de arquivo fácil e, em seguida, carregá-los nas pastas compartilhadas no servidor do Windows Server Essentials em um único lote. Para obter mais informações, consulte a postagem de blog [Understanding Remote Web Access File Sharing (Entendendo o compartilhamento de arquivos do Acesso Remoto via Web)](/archive/blogs/sbs/understanding-remote-web-access-file-sharing).
 
 ##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>Exibir e procurar mídia digital compartilhada
  Você pode exibir ou procurar recursos usando o Painel, a barra inicial, o site de Acesso Remoto via Web ou o aplicativo My Server para Windows Phone.

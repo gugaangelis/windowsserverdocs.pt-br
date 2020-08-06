@@ -7,12 +7,12 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cbc6fec843a55d99ba709953b56e01a55f317a62
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 933dab3e0471ef4b9d8e4f603a1c177ecc6fc70c
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409516"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838285"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar problemas referentes a erros de backup restauração do computador no Windows Server Essentials
 
@@ -21,13 +21,13 @@ ms.locfileid: "87409516"
 Use estes procedimentos para solução de problemas de backups de computador no Windows Server Essentials, incluindo problemas de configuração de backup, os backups incompletos ou malsucedidos, alertas de integridade de backup e problemas com arquivos, pastas ou restaurações de todo o sistema.
 
 > [!NOTE]
-> Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, visite o [Fórum do Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html).
+> Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, visite o [Fórum do Windows Server Essentials](/answers/topics/windows-server-essentials.html).
 
 ## <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a>Solucionar problemas de configuração de backup para um computador conectado
 
 Use estes procedimentos para solucionar problemas com as configurações de backup para computadores que estão incluídos no backup em seu servidor do Windows Server Essentials.
 
-### <a name="errors"></a>Erros
+### <a name="errors"></a>Errors
 
 - Configuração de backup não foi concluído com êxito
 
@@ -73,7 +73,7 @@ Use estes procedimentos para solucionar problemas com as configurações de back
 
 Quando um backup tem status Malsucedido, nenhuma parte do backup foi bem-sucedida e nenhum dado está disponível para você realizar a restauração. No entanto, quando um backup tem status Incompleto, nem todos os itens especificados na configuração do backup tiveram seu backup feito, mas alguns dados podem estar disponíveis para você realizar a restauração.
 
-### <a name="errors"></a>Erros
+### <a name="errors"></a>Errors
 
 - O backup é incompleto
 
@@ -131,7 +131,7 @@ Quando um backup tem status Malsucedido, nenhuma parte do backup foi bem-sucedid
 
 ## <a name="troubleshoot-backup-health-alert-issues"></a>Solucionar problemas de alerta de integridade de backup
 
-### <a name="errors"></a>Erros
+### <a name="errors"></a>Errors
 
 - O serviço de provedor de backup do computador do Windows Server Solutions parou de funcionar
 
@@ -174,7 +174,7 @@ Quando um backup tem status Malsucedido, nenhuma parte do backup foi bem-sucedid
 
 ## <a name="troubleshoot-a-file-or-folder-restore"></a>Solucionar problemas de uma restauração de arquivo ou pasta
 
-### <a name="errors"></a>Erros
+### <a name="errors"></a>Errors
 
 - A restauração de arquivo ou pasta não foi concluída com êxito.
 
@@ -222,7 +222,7 @@ Quando um backup tem status Malsucedido, nenhuma parte do backup foi bem-sucedid
 
 ## <a name="troubleshoot-a-full-system-restore"></a>Solucionar problemas de uma restauração completa do sistema
 
-### <a name="errors"></a>Erros
+### <a name="errors"></a>Errors
 
 - Não é possível fazer logon no computador cliente após uma restauração completa do sistema.
 

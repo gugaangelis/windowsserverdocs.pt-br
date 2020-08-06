@@ -7,12 +7,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 56bfd8d9860ad571265980e859a09914fb4f1b9c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 094e5914fee1c5d2a1b6f3c68621fa81b96f21c0
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180932"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837775"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Gerenciar o acesso remoto via Web no Windows Server Essentials
 
@@ -151,7 +151,7 @@ ms.locfileid: "87180932"
 > [!NOTE]
 > A configuração da sua rede deve seguir os requisitos de rede com suporte do Windows Server Essentials. Deve haver apenas um roteador na rede.
 
- Caso o roteador não seja configurado pelo assistente de configuração de nome de domínio, encaminhe manualmente a porta 443. Para obter informações sobre como configurar o encaminhamento de porta em seu roteador, consulte o [Fórum do Small Business Server](https://docs.microsoft.com/answers/topics/windows-small-business-server.html).
+ Caso o roteador não seja configurado pelo assistente de configuração de nome de domínio, encaminhe manualmente a porta 443. Para obter informações sobre como configurar o encaminhamento de porta em seu roteador, consulte o [Fórum do Small Business Server](/answers/topics/windows-small-business-server.html).
 
 ###  <a name="replace-a-router"></a><a name="BKMK_ReplaceRouter"></a>Substituir um roteador
  Substitua o roteador de acordo com as instruções do fabricante e execute o assistente configurar o roteador para configurar o novo roteador.
@@ -441,7 +441,7 @@ ms.locfileid: "87180932"
 
 3.  Clique em **Reparar**. O Assistente **Reparo do Acesso via Web Remoto** é iniciado.
 
-4.  Clique em **Próximo**. O assistente analisa o Acesso via Web Remoto, identifica o problema e tenta repará-lo.
+4.  Clique em **Avançar**. O assistente analisa o Acesso via Web Remoto, identifica o problema e tenta repará-lo.
 
 5.  Se você receber um alerta quando o assistente for concluído, você pode clicar em **Tentar novamente** para tentar reparar o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 author: daveba
 ms.author: daveba
-ms.openlocfilehash: e00bf2db8216489787ba3a476a79d7567d4d0d78
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3c415155734515af004e25a07c4e61afabaa3359
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181412"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838005"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Criar um DVD de recuperação de servidor para suporte a vários idiomas
 
@@ -20,7 +20,7 @@ ms.locfileid: "87181412"
 ##  <a name="create-a-server-setup-and-server-recovery-dvd-for-multiple-language-support-on-locally-administered-servers"></a><a name="BKMK_MLHeadedRecovery"></a>Criar um DVD de instalação do servidor e de recuperação do servidor para suporte a vários idiomas em servidores administrados localmente
 
 > [!NOTE]
->  Primeiro, você deve criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: criação de imagem multilíngüe do Windows](https://technet.microsoft.com/library/jj126995) antes de adicionar o Windows Server Essentials langauage Pack ao install. wim.
+>  Primeiro, você deve criar uma imagem multilíngue do Windows, conforme descrito no [passo a passo: criação de imagem multilíngüe do Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10)) antes de adicionar o Windows Server Essentials langauage Pack ao install. wim.
 
  Há duas fases de instalação: o Ambiente de Pré-Instalação do Windows (Windows PE) e a configuração inicial. Por padrão, a página de seleção de idioma na configuração inicial não será exibida.
 
@@ -63,7 +63,7 @@ ms.locfileid: "87181412"
  Nesta etapa, você adiciona os pacotes de idiomas do Windows Server 2012 e do Windows Server Essentials ao install. wim.
 
 > [!NOTE]
->  Verifique se você instalou os pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual correta. Os pacotes de idiomas da interface do usuário multilíngüe do Windows Server 2012 estão disponíveis no [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções descritas no passo a [passo: criação de imagem multilíngüe do Windows na criação de um multilíngue](https://technet.microsoft.com/library/jj126995.aspx) ao criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas do Windows Server Essentials ao install. wim.
+>  Verifique se você instalou os pacotes de idiomas para o Windows Server 2012. Isso garante que você obtenha a identidade visual correta. Os pacotes de idiomas da interface do usuário multilíngüe do Windows Server 2012 estão disponíveis no [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx). Siga as instruções descritas no passo a [passo: criação de imagem multilíngüe do Windows na criação de um multilíngue](/previous-versions/windows/it-pro/windows-8.1-and-8/jj126995(v=win.10)) ao criar uma imagem multilíngue do Windows antes de adicionar o pacote de idiomas do Windows Server Essentials ao install. wim.
 >
 >  Os pacotes de idiomas do Windows Server Essentials estão disponíveis na mídia do pacote de idiomas em \Language packs \\<CultureName \> .
 
@@ -104,4 +104,3 @@ ms.locfileid: "87181412"
 ## <a name="see-also"></a>Consulte Também
 
  [Criando e personalizando a imagem](Creating-and-Customizing-the-Image.md) [personalizações adicionais](Additional-Customizations.md) [preparando a imagem para](Preparing-the-Image-for-Deployment.md) [testar a implantação da experiência do cliente](Testing-the-Customer-Experience.md)
-

@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 343bfc1325a065f4c4903732eceba59c769f838f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181062"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837875"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 
@@ -270,9 +270,9 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
  Você deve configurar um conector de envio SMTP e um conector de recebimento SMTP para transmissão de saída/entrada de mensagens de email.
 
- Para criar um conector de envio SMTP, siga as instruções no artigo [Criar um Conector de Envio SMTP](https://technet.microsoft.com/library/aa997285.aspx)do Exchange Server.
+ Para criar um conector de envio SMTP, siga as instruções no artigo [Criar um Conector de Envio SMTP](/previous-versions/office/exchange-server-2010/aa997285(v=exchg.141))do Exchange Server.
 
- Para criar um conector de recebimento SMTP, siga as instruções no artigo do Exchange Server sobre [criação de um conector de recebimento SMTP](https://technet.microsoft.com/library/bb125159.aspx).
+ Para criar um conector de recebimento SMTP, siga as instruções no artigo do Exchange Server sobre [criação de um conector de recebimento SMTP](/previous-versions/office/exchange-server-2010/bb125159(v=exchg.141)).
 
  Como opção, você pode consultar o script mostrado anteriormente neste documento para criar os conectores de envio e recebimento usando cmdlets de Powershell do Exchange.
 
@@ -347,7 +347,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 6. Copie o arquivo de certificado SSL para o Exchange Server no servidor que executa o Windows Server Essentials. O arquivo de certificado deve conter a chave privada e estar no formato PFX.
 
    > [!NOTE]
-   >  Caso esteja usando um certificado emitido por conta própria, siga as instruções no artigo do Exchange Server sobre [exportação de um certificado do Exchange](https://technet.microsoft.com/library/dd351274.aspx) para exportar o certificado.
+   >  Caso esteja usando um certificado emitido por conta própria, siga as instruções no artigo do Exchange Server sobre [exportação de um certificado do Exchange](/previous-versions/office/exchange-server-2010/dd351274(v=exchg.141)) para exportar o certificado.
 
 7. Dependendo da versão do Windows Server Essentials em execução, realize um dos procedimentos a seguir:
 

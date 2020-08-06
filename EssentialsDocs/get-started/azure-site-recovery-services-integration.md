@@ -7,18 +7,18 @@ ms.assetid: 262701a6-8a97-4c4e-bfbf-9f8007c308d6
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e17d60b4931f4858f915bd177f05e85eb1fc5f6a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7c30d99bd1a0019130f7e39f70b289effd6935c4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181682"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838245"
 ---
 # <a name="azure-site-recovery-services-integration"></a>Integração de Serviços do Azure Site Recovery
 
 >Aplica-se a: Windows Server 2016 Essentials
 
-Os [serviços de Azure site Recovery](https://docs.microsoft.com/azure/site-recovery/) são um serviço oferecido pelo Microsoft Azure habilitando a replicação em tempo real de suas máquinas virtuais (VM) para um cofre de backup no Azure. Caso seu servidor ou site esteja inoperante devido a um hardware ou outra falha, você pode fazer failover para o Azure, onde a imagem de VM armazenada no cofre de backup será provisionada como uma VM em execução no Azure. Combinado com uma rede virtual do Azure, no caso de um failover para o Azure, os PCs cliente conectados anteriormente ao servidor local se conectarão de forma transparente ao servidor em execução no Azure.
+Os [serviços de Azure site Recovery](/azure/site-recovery/) são um serviço oferecido pelo Microsoft Azure habilitando a replicação em tempo real de suas máquinas virtuais (VM) para um cofre de backup no Azure. Caso seu servidor ou site esteja inoperante devido a um hardware ou outra falha, você pode fazer failover para o Azure, onde a imagem de VM armazenada no cofre de backup será provisionada como uma VM em execução no Azure. Combinado com uma rede virtual do Azure, no caso de um failover para o Azure, os PCs cliente conectados anteriormente ao servidor local se conectarão de forma transparente ao servidor em execução no Azure.
 
 A integração dos serviços de Azure Site Recovery com o Windows Server Essentials é iniciada da mesma maneira que a configuração da [rede virtual do Azure](azure-virtual-network-integration.md). Na página de **integração dos serviços de Microsoft Cloud** no painel, clique em **integrar com os serviços de Azure site Recovery** à direita do painel:
 

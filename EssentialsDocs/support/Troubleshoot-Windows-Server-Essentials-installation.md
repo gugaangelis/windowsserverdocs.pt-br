@@ -7,12 +7,12 @@ ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 755b00f9c2593a6923f65437c695dcd6a2de7532
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4afba33d105f0348aaf7c130ccbe5a3b87fc1cb2
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180282"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838305"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Solucionar problemas de instalação do Windows Server Essentials
 
@@ -31,7 +31,7 @@ Este tópico fornece solução de problemas que ocorrem durante a instalação d
 
 
 > [!NOTE]
->  Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html/threads). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
+>  Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](/answers/topics/windows-server-essentials.html/threads). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
 
 ##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a>Etapas gerais de solução de problemas
  Se a instalação do Windows Server Essentials falhar, siga estas etapas para ajudar a identificar o problema que causou a falha.

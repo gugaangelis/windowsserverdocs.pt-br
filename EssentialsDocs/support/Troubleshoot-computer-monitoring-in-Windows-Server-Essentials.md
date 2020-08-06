@@ -7,12 +7,12 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ab964839dbdf8b2907d68c42c80e9d8f93d5bc75
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 3d1428fa258f661636d599dd8dcf41acaaf59082
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180252"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838275"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Solucionar problemas de monitoramento de computador no Windows Server Essentials
 
@@ -21,7 +21,7 @@ ms.locfileid: "87180252"
 Este tópico fornece a solução de problemas encontrados durante o monitoramento do status de integridade de computadores no Visualizador de alertas e por meio de notificações por email no Windows Server Essentials.
 
 > [!NOTE]
-> Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](https://docs.microsoft.com/answers/topics/windows-server-essentials.html). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
+> Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](/answers/topics/windows-server-essentials.html). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
 
 ## <a name="troubleshooting-email-notifications-for-alerts"></a>Solucionando problemas de notificações por email para alertas
 

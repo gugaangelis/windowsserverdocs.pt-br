@@ -7,12 +7,12 @@ ms.technology: storagespaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/15/2019
-ms.openlocfilehash: 6c3e16f0965be5fc7de4bdc7bd751fb1dd193556
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 311edb38f4cdf1dac153d843811442d5eafbce05
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962198"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769744"
 ---
 # <a name="nested-resiliency-for-storage-spaces-direct"></a>Resiliência aninhada para Espaços de Armazenamento Diretos
 
@@ -129,7 +129,7 @@ New-Volume -StoragePoolFriendlyName S2D* -FriendlyName Volume02 -StorageTierFrie
 
 Os volumes que usam resiliência aninhada aparecem no [centro de administração do Windows](../../manage/windows-admin-center/overview.md) com rotulagem clara, como na captura de tela abaixo. Depois que eles forem criados, você poderá gerenciá-los e monitorá-los usando o centro de administração do Windows, assim como qualquer outro volume no Espaços de Armazenamento Diretos.
 
-![](media/nested-resiliency/windows-admin-center.png)
+![Gerenciamento de volume no centro de administração do Windows](media/nested-resiliency/windows-admin-center.png)
 
 ### <a name="optional-extend-to-cache-drives"></a>Opcional: estender para unidades de cache
 

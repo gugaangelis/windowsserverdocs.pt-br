@@ -7,12 +7,12 @@ ms.assetid: 79a417fd-1b3e-47ab-ae33-bb1faf95c86d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 05694d772de033a82c6de6feca94621185cb2642
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 37b443a90ebdb2c6042596747f6c364fafe073a7
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181452"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838075"
 ---
 # <a name="change-the-order-and-grouping-of-tabs"></a>Alterar a Ordem e o Agrupamento de Guias
 
@@ -41,7 +41,7 @@ ms.locfileid: "87181452"
 
 6.  Digite o GUID definido para a guia de nível superior e pressione **Enter**.
 
-     Para obter mais informações sobre a criação e a identificação de guias de nível superior, consulte [Create a Top-Level Tab (Criar guia de nível superior)](https://msdn.microsoft.com/library/gg513957) no SDK do Windows Server Solutions.
+     Para obter mais informações sobre a criação e a identificação de guias de nível superior, consulte [Create a Top-Level Tab (Criar guia de nível superior)](/previous-versions/windows/server-essentials/gg513957(v=msdn.10)) no SDK do Windows Server Solutions.
 
 7.  Salve as alterações no Registro.
 

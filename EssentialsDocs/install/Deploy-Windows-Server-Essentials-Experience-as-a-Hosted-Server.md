@@ -7,12 +7,12 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 63f5a72cf070b1520815f8f8f59d9c6ecf386aa5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7dd1aa46786a3768127ba7934c8a8767d40e6654
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181252"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838015"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Implantar a Experiência do Windows Server Essentials como um servidor hospedado
 
@@ -140,7 +140,7 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 >  Se você não puder fornecer uma conexão VPN antes de o cliente ter o controle do servidor, certifique-se de que a porta 3389 do servidor seja acessível pela Internet para que o cliente possa usar o protocolo RDP para se conectar ao servidor e configure-o.
 
 ##  <a name="customize-the-image-of-windows-server-essentials-experience-role"></a><a name="BKMK_CustomizeImage"></a>Personalizar a imagem da função de experiência do Windows Server Essentials
- Você pode personalizar a imagem antes de configurar a função da Experiência do Windows Server Essentials. Para saber mais sobre o processo padrão do Windows Server Sysprep, consulte [Kit de Avaliação e Implantação do Windows](https://msdn.microsoft.com/library/hh825420.aspx). Depois de preparar a imagem usando o Sysprep, você pode usá-lo ou selá-lo novamente em Install. wim para uma nova implantação.
+ Você pode personalizar a imagem antes de configurar a função da Experiência do Windows Server Essentials. Para saber mais sobre o processo padrão do Windows Server Sysprep, consulte [Kit de Avaliação e Implantação do Windows](/previous-versions/windows/hh825420(v=win.10)). Depois de preparar a imagem usando o Sysprep, você pode usá-lo ou selá-lo novamente em Install. wim para uma nova implantação.
 
  Se estiver usando o Virtual Machine Manager, você pode criar um modelo usando a instância em execução. Esse processo usa o Sysprep para preparar a instância e ele desliga o computador. Depois que você armazená-lo na sua biblioteca, você pode usá-lo caso a caso.
 
@@ -160,14 +160,14 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
 
 - **Acesso em qualquer local** A configuração do roteador e VPN será ignorada por padrão quando você executar o Assistente de configuração Acesso em qualquer lugar.
 
-  Se você deseja controlar o comportamento de cada recurso listado, você pode definir a chave do Registro correspondente para cada um deles. Para obter informações sobre como definir a chave do Registro, consulte [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)
+  Se você deseja controlar o comportamento de cada recurso listado, você pode definir a chave do Registro correspondente para cada um deles. Para obter informações sobre como definir a chave do Registro, consulte [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
 ##  <a name="automate-the-deployment-of-windows-server-essentials-experience"></a><a name="BKMK_AutomateDeployment"></a>Automatizar a implantação da experiência do Windows Server Essentials
  Para automatizar a implantação, primeiro você precisa implantar o sistema operacional e, em seguida, instalar a função de experiência do Windows Server Essentials.
 
--   Para implantar automaticamente o Windows Server 2012 R2 Standard ou o Windows Server 2012 R2 Datacenter, siga as instruções no [Kit de avaliação e implantação do Windows](https://msdn.microsoft.com/library/hh825420.aspx).
+-   Para implantar automaticamente o Windows Server 2012 R2 Standard ou o Windows Server 2012 R2 Datacenter, siga as instruções no [Kit de avaliação e implantação do Windows](/previous-versions/windows/hh825420(v=win.10)).
 
--   Para saber como instalar a função de experiência do Windows Server Essentials usando o Windows PowerShell, consulte [instalar e configurar o Windows Server Essentials](https://technet.microsoft.com/library/dn281793.aspx).
+-   Para saber como instalar a função de experiência do Windows Server Essentials usando o Windows PowerShell, consulte [instalar e configurar o Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/dn281793(v=ws.11)).
 
 > [!NOTE]
 >  Verifique se as configurações de fuso horário da máquina virtual do host e da experiência do Windows Server Essentials são as mesmas. Caso contrário, você pode enfrentar vários erros. Isso inclui: a configuração inicial do servidor pode não ter êxito em tarefas relacionadas ao certificado, o certificado pode não funcionar por algumas horas depois que a função da experiência do Windows Server Essentials for instalada e as informações do dispositivo não serão atualizadas corretamente.
@@ -192,7 +192,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 > - O servidor de origem e o servidor de destino podem acessar uns aos outros nomes DNS internos de ¢ s.
 >   -   Todas as portas necessárias estejam abertas.
 
- Após a migração, você pode atualizar suas licenças para remover os bloqueios e limites. Para obter mais informações, consulte [transição do Windows Server Essentials para o Windows server 2012 Standard](https://technet.microsoft.com/library/jj247582.aspx).
+ Após a migração, você pode atualizar suas licenças para remover os bloqueios e limites. Para obter mais informações, consulte [transição do Windows Server Essentials para o Windows server 2012 Standard](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj247582(v=ws.11)).
 
 ##  <a name="perform-common-tasks-by-using-windows-powershell"></a><a name="BKMK_PowerShell"></a>Executar tarefas comuns usando o Windows PowerShell
  Esta seção explica algumas das tarefas comuns que você pode executar usando o Windows PowerShell.
@@ -231,7 +231,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
  Esse comando adicionará uma pasta de servidor chamada MyTestFolder no local especificado.
 
 ##  <a name="email-integration-with-windows-server-essentials"></a><a name="BKMK_EmailIntegration"></a>Integração de email com o Windows Server Essentials
- Você pode integrar a experiência do Windows Server Essentials com o Office 365 ou o Exchange Server hospedado. Se quiser que o cliente use o email hospedado, precisará desenvolver um complemento para integrar a Experiência do Windows Server Essentials com sua solução de email hospedada. Para obter mais informações, consulte a [SDK do Windows Server Essentials](https://msdn.microsoft.com/library/gg513877.aspx).
+ Você pode integrar a experiência do Windows Server Essentials com o Office 365 ou o Exchange Server hospedado. Se quiser que o cliente use o email hospedado, precisará desenvolver um complemento para integrar a Experiência do Windows Server Essentials com sua solução de email hospedada. Para obter mais informações, consulte a [SDK do Windows Server Essentials](/previous-versions/windows/server-essentials/gg513877(v=msdn.10)).
 
 ##  <a name="monitor-and-manage-by-using-native-tools"></a><a name="BKMK_Monitoring"></a>Monitorar e gerenciar usando ferramentas nativas
  Esta seção aborda as ferramentas nativas que estão disponíveis no Windows Server 2012 R2 para monitorar e gerenciar o servidor.
@@ -254,7 +254,7 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 -   O**backup local** permite que você realize backup incremental no nível do bloco regularmente em um disco separado. Como hoster, você pode anexar um disco rígido virtual à máquina virtual que executa o Windows Server Essentials e, em seguida, configurar o backup do servidor nesse disco rígido virtual. O disco rígido virtual deve estar localizado em um disco físico diferente da máquina virtual que executa o Windows Server Essentials.
 
     > [!NOTE]
-    >  Se você tiver outras soluções de backup para as máquinas virtuais e não quiser que os usuários vejam o recurso de Backup do servidor nativo do Windows Server Essentials, você pode desativá-lo e remover a interface do usuário relacionada do Painel. Para obter mais informações, consulte a seção [Personalizar backup do servidor](https://technet.microsoft.com/library/dn293413.aspx) de [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).
+    >  Se você tiver outras soluções de backup para as máquinas virtuais e não quiser que os usuários vejam o recurso de Backup do servidor nativo do Windows Server Essentials, você pode desativá-lo e remover a interface do usuário relacionada do Painel. Para obter mais informações, consulte a seção [Personalizar backup do servidor](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293413(v=win.10)) de [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10)).
 
 -   **Backup externo** Permite periodicamente fazer backup de dados do servidor para um serviço baseado em nuvem. Você pode baixar e instalar o módulo integração do Backup do Microsoft Azure para o Windows Server Essentials para aproveitar o backup do Azure fornecido pela Microsoft.
 
@@ -285,13 +285,13 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 
     -   Para alterar o limite do ponto de verificação: No cliente, altere **HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold** do seu valor padrão de 40 GB.
 
--   **Restauração Bare Metal do Cliente** Como o Ambiente de Pré-instalação do Windows não tem suporte para conexão VPN, não há suporte para a Restauração Bare Metal do Cliente. Você deve ocultar a tarefa de serviço de restauração do cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).
+-   **Restauração Bare Metal do Cliente** Como o Ambiente de Pré-instalação do Windows não tem suporte para conexão VPN, não há suporte para a Restauração Bare Metal do Cliente. Você deve ocultar a tarefa de serviço de restauração do cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10)).
 
 ##### <a name="file-history"></a>Histórico de arquivos
- Histórico de arquivos é um recurso no Windows 8.1 e Windows 8 para fazer backup dos dados de perfil (bibliotecas, área de trabalho, contatos, favoritos) para um compartilhamento de rede. Você pode gerenciar centralmente a configuração do Histórico de arquivos de todos os computadores que executam o Windows 8.1 ou Windows 8 que fazem parte da rede do Windows Server Essentials. Os dados de backup são armazenados no servidor executando o Windows Server Essentials. Você deve ocultar a tarefa de Serviço de restauração do cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)
+ Histórico de arquivos é um recurso no Windows 8.1 e Windows 8 para fazer backup dos dados de perfil (bibliotecas, área de trabalho, contatos, favoritos) para um compartilhamento de rede. Você pode gerenciar centralmente a configuração do Histórico de arquivos de todos os computadores que executam o Windows 8.1 ou Windows 8 que fazem parte da rede do Windows Server Essentials. Os dados de backup são armazenados no servidor executando o Windows Server Essentials. Você deve ocultar a tarefa de Serviço de restauração do cliente seguindo as etapas em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
 ### <a name="storage-management"></a>Gerenciamento de armazenamento
- Os espaços de armazenamento permitem agregar a capacidade de armazenamento físico de discos rígidos diferentes, incluir dinamicamente discos rígidos e criar volumes de dados com níveis especificados de resiliência. Você pode fazer isso no host ou na máquina virtual. Se você quiser ocultar esse recurso em uma máquina virtual que executa o Windows Server Essentials, siga as instruções em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx).
+ Os espaços de armazenamento permitem agregar a capacidade de armazenamento físico de discos rígidos diferentes, incluir dinamicamente discos rígidos e criar volumes de dados com níveis especificados de resiliência. Você pode fazer isso no host ou na máquina virtual. Se você quiser ocultar esse recurso em uma máquina virtual que executa o Windows Server Essentials, siga as instruções em [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10)).
 
 ##  <a name="test-scenarios"></a><a name="BKMK_Scenarios"></a>Cenários de teste
  Da perspectiva de hospedagem, recomendamos que você teste os seguintes cenários:
@@ -369,9 +369,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
 ##  <a name="support-information"></a><a name="BKMK_Support"></a>Informações de suporte
  Você pode baixar o SDK (Software Development Kit) do Windows Server Essentials e o ADK (Kit de avaliação e implantação) do Windows Server Essentials:
 
--   [Software Development Kit do Windows Server Essentials](https://msdn.microsoft.com/library/gg513877.aspx) SDK
+-   [Software Development Kit do Windows Server Essentials](/previous-versions/windows/server-essentials/gg513877(v=msdn.10)) SDK
 
--   [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](https://technet.microsoft.com/library/dn293241.aspx)
+-   [Personalizar e implantar o Windows Server Essentials no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-8.1-and-8/dn293241(v=win.10))
 
 ## <a name="additional-references"></a>Referências adicionais
 

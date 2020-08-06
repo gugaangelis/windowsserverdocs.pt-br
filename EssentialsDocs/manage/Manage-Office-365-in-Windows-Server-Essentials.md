@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: 249ff5f77d525792d5bf53719fcf1ee93bc955a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8bae98123ee5c8365304243e9f2487218bb5230f
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180962"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837805"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Gerenciar o Office 365 no Windows Server Essentials
 
@@ -146,7 +146,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 
 1. **Comprar um nome de domínio.** Ou seja, registrá-lo com um registrador de domínio ou o provedor de hospedagem de DNS.
 
-   -   Escolha um nome de domínio que funcione com o Office 365. Você pode usar um nome de domínio de segundo nível? por exemplo, buycontoso.com?, mas não um nome de domínio de terceiro nível? por exemplo, marketing.contoso.com. Para obter mais informações sobre como escolher um domínio para usar no Office 365, consulte [domínios](https://technet.microsoft.com/library/office-365-domains.aspx).
+   -   Escolha um nome de domínio que funcione com o Office 365. Você pode usar um nome de domínio de segundo nível? por exemplo, buycontoso.com?, mas não um nome de domínio de terceiro nível? por exemplo, marketing.contoso.com. Para obter mais informações sobre como escolher um domínio para usar no Office 365, consulte [domínios](/office365/servicedescriptions/office-365-platform-service-description/domains).
 
    -   Comprá-lo de um registrador de domínio que permite os registros DNS (servidor de nomes de domínio) exigidos pelo Office 365. Para saber quais registradores de domínio permitem os registros DNS exigidos, consulte [Como comprar um nome de domínio](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660). Se você já registrou seu domínio com um registrador diferente, não se preocupe; Você pode transferir o domínio para um registrador diferente ao vincular o domínio ao Office 365.
 
@@ -235,7 +235,7 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 
 3.  Digite as credenciais da conta que você deseja usar para se conectar à sua assinatura do Office 365 e clique em **Avançar**.
 
-4.  Clique em **Fechar**. O Painel é reiniciado.
+4.  Clique em **fechar** O Painel é reiniciado.
 
 ###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>Desabilitar a integração do Office 365
  Se você decidir que não deseja gerenciar seus serviços do Office 365 e contas online no painel, você pode desabilitar a integração do Office 365. Sua assinatura do Office 365 permanece ativa e as alterações de configuração feitas a partir do painel permanecem em vigor. Por exemplo, você receberá email endereçado a um nome de domínio que você vinculou à sua assinatura do Office 365. Você não perderá nenhum email e os controles que você definir para dispositivos móveis ainda serão usados no Exchange Online.
@@ -284,9 +284,9 @@ Ao integrar seu servidor do Windows Server Essentials com o Microsoft Office 365
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Visão geral da integração de serviços para o Windows Server Essentials-parte 1](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)
+-   [Visão geral da integração de serviços para o Windows Server Essentials-parte 1](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-1)
 
--   [Visão geral da integração de serviços para o Windows Server Essentials-parte 2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)
+-   [Visão geral da integração de serviços para o Windows Server Essentials-parte 2](/archive/blogs/sbs/services-integration-overview-for-windows-server-2012-r2-essentials-part-2)
 
 -   [Guia de início rápido para usar o Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)
 

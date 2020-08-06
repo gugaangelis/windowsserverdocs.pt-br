@@ -7,12 +7,12 @@ ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 861404db4d6b5e0d4cfd4db95056f583f9068a0b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0ee5669fc9ae6e1ee4e38065792d3da7611900a4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180902"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87837725"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Gerenciar o armazenamento de servidor no Windows Server Essentials
 
@@ -193,7 +193,7 @@ ms.locfileid: "87180902"
 > [!NOTE]
 >  Se você configurar espaços de armazenamento em um servidor que executa o Windows Server Essentials, não será possível executar uma redefinição de fábrica com a opção **limpar dados** . A solução alternativa para esse problema é primeiro remover espaços de armazenamento e, em seguida, executar uma redefinição de fábrica com a opção **Limpar dados**.
 
- Para obter mais informações sobre Espaços de Armazenamento, consulte as [Perguntas Frequentes de Espaços de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq).
+ Para obter mais informações sobre Espaços de Armazenamento, consulte as [Perguntas Frequentes de Espaços de Armazenamento](/windows-server/storage/storage-spaces/storage-spaces-direct-faq).
 
 ##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>Criar um espaço de armazenamento
  Para começar a trabalhar com espaços de armazenamento no servidor, os requisitos mínimos a seguintes devem ser atendidos:
