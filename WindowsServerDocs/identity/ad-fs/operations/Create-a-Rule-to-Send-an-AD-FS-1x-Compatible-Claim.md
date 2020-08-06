@@ -1,6 +1,6 @@
 ---
 ms.assetid: 0039fbbb-b981-4526-a550-f3456ff27635
-title: Criar uma regra para transformar uma declaração de entrada
+title: Criar uma regra para enviar uma declaração compatível com o AD FS 1. x
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b74d31ed6dd8775181465c42b6a9c8745f668615
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7b85cfdd93787785b058f5dc83a779b4cd1f6a33
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966658"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864259"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>Criar uma regra para enviar uma declaração compatível com o AD FS 1. x
 
@@ -64,7 +64,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 8.  Em **formato de ID de nome de entrada**, selecione uma das seguintes AD FS 1. *x* \- formatos de declaração compatíveis da lista:  
   
-    -   **SUFIXO**  
+    -   **UPN**  
   
     -   **\-Email**  
   
@@ -106,7 +106,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 8.  Em **formato de ID de nome de entrada**, selecione uma das seguintes AD FS 1. *x* \- formatos de declaração compatíveis da lista:  
   
-    -   **SUFIXO**  
+    -   **UPN**  
   
     -   **\-Email**  
   
@@ -150,7 +150,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 9. Em **formato de ID de nome de saída**, selecione uma das seguintes AD FS 1. *x* \- formatos de declaração compatíveis da lista:  
   
-    -   **SUFIXO**  
+    -   **UPN**  
   
     -   **\-Email**  
   
@@ -194,7 +194,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 9. Em **formato de ID de nome de saída**, selecione uma das seguintes AD FS 1. *x* \- formatos de declaração compatíveis da lista:  
   
-    -   **SUFIXO**  
+    -   **UPN**  
   
     -   **\-Email**  
   
@@ -253,7 +253,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 8.  Em **formato de ID de nome de entrada**, selecione uma das seguintes AD FS 1. *x* \- formatos de declaração compatíveis da lista:  
   
-    -   **SUFIXO**  
+    -   **UPN**  
   
     -   **\-Email**  
   
@@ -304,7 +304,7 @@ Dependendo das necessidades da sua organização, use um dos procedimentos a seg
   
 9. Em **formato de ID de nome de saída**, selecione uma das seguintes AD FS 1. *x* \- formatos de declaração compatíveis da lista:  
   
-    -   **SUFIXO**  
+    -   **UPN**  
   
     -   **\-Email**  
   

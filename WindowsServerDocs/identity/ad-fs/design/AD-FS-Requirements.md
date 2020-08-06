@@ -1,6 +1,6 @@
 ---
 ms.assetid: 8ce6e7c4-cf8e-4b55-980c-048fea28d50f
-title: Farm de servidores de federação usando SQL Server
+title: Requisitos de AD FS para o Windows Server
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 434d630ea3e521abdcffac6b8ce6479659b68ebc
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4f36b1808ff58b29cbd7be852617689bff8bb146
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519945"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863779"
 ---
-# <a name="ad-fs-requirements"></a>Requisitos do AD FS
+# <a name="ad-fs-requirements-for-windows-server"></a>Requisitos de AD FS para o Windows Server
 
 A seguir estão os vários requisitos que você deve obedecer ao implantar AD FS:
 
@@ -144,10 +144,10 @@ A seguir estão os requisitos e as restrições que se aplicam com base no tipo 
 
 A tabela a seguir fornece um resumo para usar um farm WID.  Use-o para planejar sua implementação.
 
-| Relações de confiança de 1-100 RP | Mais de 100 RP relações de confiança |
+| 1 a 100 relações de confiança de RP | Mais de 100 relações de confiança de RP |
 |--|--|
-| **1-30 nós AD FS:** WID com suporte | **1-30 nós AD FS:** Sem suporte usando WID-SQL necessário |
-| **Mais de 30 nós AD FS:** Sem suporte usando WID-SQL necessário | **Mais de 30 nós AD FS:** Sem suporte usando WID-SQL necessário |
+| **1 a 30 nós do AD FS:** Suporte ao WID | **1 a 30 nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido |
+| **Mais de 30 Nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido | **Mais de 30 Nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido |
 
 **SQL Server**
 
@@ -166,7 +166,7 @@ Quando a autenticação do AD FS é executada por meio de um navegador ou contro
 
 Vários navegadores e plataformas principais passaram por validação para a renderização e a funcionalidade dos detalhes listados abaixo. Os navegadores e dispositivos que não são abordados nesta tabela ainda terão suporte se atenderem aos requisitos listados acima:
 
-| **Navegadores** | **Compatíveis** |
+| **Navegadores** | **Plataformas** |
 |--|--|
 | IE 10,0 | Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 |
 | IE 11,0 | Windows7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 |

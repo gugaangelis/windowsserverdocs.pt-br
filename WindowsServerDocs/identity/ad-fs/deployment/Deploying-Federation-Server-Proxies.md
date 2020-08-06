@@ -1,6 +1,6 @@
 ---
 ms.assetid: 1b21b0a9-1fe6-4fd1-8a25-92e578d774ed
-title: Implantação de proxies de servidores de federação
+title: Implantando proxies de servidor de Federação no AD FS
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -8,14 +8,14 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 418fd3bc1c53a4f8f3bdb4b945df29b70806272a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5f9ab6729b5cc5d0b4981f24cdc5a3ef48ee967e
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965958"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864184"
 ---
-# <a name="deploying-federation-server-proxies"></a>Implantação de proxies de servidores de federação
+# <a name="deploying-legacy-ad-fs-federation-server-proxies"></a>Implantando proxies de servidor de Federação AD FS herdados
 
 Para implantar proxies de servidor de Federação no Serviços de Federação do Active Directory (AD FS) \( AD FS \) , conclua cada uma das tarefas na [lista de verificação: Configurando um proxy de servidor de Federação](Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   

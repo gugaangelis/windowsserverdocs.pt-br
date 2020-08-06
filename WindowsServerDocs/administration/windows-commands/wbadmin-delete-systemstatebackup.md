@@ -9,15 +9,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a17ed3595f0e1dd369e762150c8f45fe6f983822
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ea6c2b2f367820db3f3611806d3aaecd9eca87e4
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933709"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863758"
 ---
 # <a name="wbadmin-delete-systemstatebackup"></a>wbadmin delete systemstatebackup
-
 
 
 Exclui os backups de estado do sistema que você especificar. Se o volume especificado contiver backups diferentes dos backups de estado do sistema do servidor local, esses backups não serão excluídos.
@@ -28,8 +27,7 @@ Exclui os backups de estado do sistema que você especificar. Se o volume especi
 Para excluir um backup de estado do sistema com este subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
 
 
-
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 wbadmin delete systemstatebackup
@@ -63,12 +61,12 @@ Para excluir todos os backups de estado do sistema, exceto os três mais recente
 ```
 wbadmin delete systemstatebackup -keepVersions:3
 ```
-Para excluir o backup de estado do sistema mais antigo armazenado no disco f, digite:
+Para excluir o backup de estado do sistema mais antigo armazenado no disco f:, digite:
 ```
-wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
+wbadmin delete systemstatebackup -backupTarget:f:\ -deleteOldest
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
--   [Wbadmin](wbadmin.md)
+- [Wbadmin](wbadmin.md)

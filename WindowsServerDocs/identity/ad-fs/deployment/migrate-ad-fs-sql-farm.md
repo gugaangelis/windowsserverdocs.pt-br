@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 9882061aad5ec6620cda5a0a288790d34f25c3f3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3de9f6f55a93c51c02eadf293b850d40e644586f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966668"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864237"
 ---
-# <a name="migrate-an-ad-fs-20-wid-farm"></a>Migrar um farm de WID AD FS 2,0  
+# <a name="migrate-an-ad-fs-20-sql-farm"></a>Migrar um farm do SQL AD FS 2,0  
 Este documento fornece informações detalhadas sobre como migrar um farm do SQL AD FS 2,0 para o Windows Server 2012.
 
 

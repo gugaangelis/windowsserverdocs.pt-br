@@ -7,24 +7,24 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 06/07/2019
-description: Instruções detalhadas para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como uma infraestrutura hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
+ms.date: 07/24/2020
+description: Instruções passo a passo para implantar o armazenamento definido pelo software com o Espaços de Armazenamento Diretos no Windows Server como infraestrutura de hiperconvergente ou uma infraestrutura convergida (também conhecida como desagregada).
 ms.localizationpriority: medium
-ms.openlocfilehash: c18d3edc57ab04c9f9487bc39b52325fa1eb0ba9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ba9287cebe1cf35c151335e59476f63ae3e01a56
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955108"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863933"
 ---
 # <a name="deploy-storage-spaces-direct"></a>Implantar espaços de armazenamento diretos
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico fornece instruções passo a passo para implantar [espaços de armazenamento diretos](storage-spaces-direct-overview.md).
+Este tópico fornece instruções passo a passo para implantar [espaços de armazenamento diretos](storage-spaces-direct-overview.md) no Windows Server. Para implantar Espaços de Armazenamento Diretos como parte do Azure Stack HCI, consulte [qual é o processo de implantação para Azure Stack HCI?](/azure-stack/hci/deploy/deployment-overview)
 
 > [!Tip]
-> Procurando adquirir a infraestrutura hiperconvergente? A Microsoft recomenda a compra de uma solução de hardware/software validada de nossos parceiros, que incluem ferramentas e procedimentos de implantação. Essas soluções são projetadas, montadas e validadas em relação à nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definição de software do Windows Server](https://microsoft.com/wssd).
+> Deseja adquirir uma infraestrutura com hiperconvergente? A Microsoft recomenda a compra de um hardware/software validado Azure Stack solução de HCI de nossos parceiros. Essas soluções são projetadas, montadas e validadas em relação à nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente. Para examinar um catálogo de soluções de hardware/software que funcionam com o HCI Azure Stack, consulte o [Catálogo de hci Azure Stack](https://azure.microsoft.com/products/azure-stack/hci/catalog/).
 
 > [!Tip]
 > Você pode usar máquinas virtuais do Hyper-V, incluindo no Microsoft Azure, para [avaliar espaços de armazenamento diretos sem hardware](storage-spaces-direct-in-vm.md). Você também pode querer examinar os convenientes [scripts de implantação do Windows Server Rapid Lab](https://aka.ms/wslab), que usaremos para fins de treinamento.

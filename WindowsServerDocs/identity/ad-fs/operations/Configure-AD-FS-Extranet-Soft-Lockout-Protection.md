@@ -1,6 +1,6 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: Configurar AD FS proteção contra bloqueio de extranet
+title: Configurar a proteção de bloqueio suave Extranet do AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -8,12 +8,12 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f49e4a7e27d5b224a86655e48f07df741f03e7b0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc81ac2270a35268fb1547b39f83d1564be994fd
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962638"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87863977"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>Configurar AD FS proteção contra bloqueio de extranet
 
@@ -76,7 +76,7 @@ Como você pode ver no acima, há duas condições quando **badPwdCount** será 
 
 Para obter mais informações, consulte [Configuring Account Lock](/archive/blogs/secguide/configuring-account-lockout). 
 
-## <a name="known-issues"></a>Problemas Conhecidos
+## <a name="known-issues"></a>Problemas conhecidos
 Há um problema conhecido em que a conta de usuário do AD não pode autenticar com AD FS porque o atributo **badPwdCount** não é replicado para o controlador de domínio que o ADFS está consultando. Consulte [2971171](https://support.microsoft.com/help/2971171/adfs-authentication-issue-for-active-directory-users-when-extranet-loc) para obter mais detalhes. Você pode encontrar todos os AD FS QFEs que foram lançados até [aqui](../deployment/updates-for-active-directory-federation-services-ad-fs.md).
 
 ## <a name="key-points-to-remember"></a>Pontos principais a serem lembrados

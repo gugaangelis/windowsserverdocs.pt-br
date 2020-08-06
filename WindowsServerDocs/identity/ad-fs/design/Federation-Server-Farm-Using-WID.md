@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f542dfb228e5c32c2ff6c9d0b5e853c5aa66cf83
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4cfdfbda3a1c7df19ded887cc748e7f69f2fad08
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519915"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864058"
 ---
-# <a name="federation-server-farm-using-wid"></a>Farm de servidores de federação usando WID
+# <a name="legacy-ad-fs-federation-server-farm-using-wid"></a>Farm de servidores de Federação AD FS herdados usando WID
 
 A topologia padrão para Serviços de Federação do Active Directory (AD FS) \( AD FS \) é um farm de servidores de Federação, usando o wid do banco de dados interno do Windows \( \) . Nessa topologia, AD FS usa WID como o repositório para o banco de dados de configuração de AD FS para todos os servidores de Federação que ingressaram nesse farm. O farm replica e mantém os dados do Serviço de Federação no banco de dados de configuração em cada servidor no farm. AD FS no Windows Server 2012 R2 permite que organizações com 100 ou menos confianças de terceira parte confiável configurem farms de servidores de Federação usando o WID com até 30 servidores.
 
@@ -56,10 +56,10 @@ Esta seção descreve as várias considerações sobre o público-alvo, os benef
 
 A tabela a seguir fornece um resumo para usar um farm WID. Use-o para planejar sua implementação.
 
-| Relações de confiança de 1-100 RP | Mais de 100 RP relações de confiança |
+| 1 a 100 relações de confiança de RP | Mais de 100 relações de confiança de RP |
 |--|--|
-| **1-30 nós AD FS:** WID com suporte | **1-30 nós AD FS:** Sem suporte usando WID-SQL necessário |
-| **Mais de 30 nós AD FS:** Sem suporte usando WID-SQL necessário | **Mais de 30 nós AD FS:** Sem suporte usando WID-SQL necessário |
+| **1 a 30 nós do AD FS:** Suporte ao WID | **1 a 30 nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido |
+| **Mais de 30 Nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido | **Mais de 30 Nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido |
 
 
 ## <a name="server-placement-and-network-layout-recommendations"></a>Recomendações de layout de rede e posicionamento do servidor

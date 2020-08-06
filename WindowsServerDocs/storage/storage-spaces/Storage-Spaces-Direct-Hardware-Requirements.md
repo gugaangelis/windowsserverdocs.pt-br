@@ -7,20 +7,20 @@ manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 06/24/2020
+ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 108e5a65b78370c40ba02da677e953eb2b122288
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964578"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864271"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016
 
-Este tópico descreve os requisitos mínimos de hardware para Espaços de Armazenamento Diretos.
+Este tópico descreve os requisitos mínimos de hardware para Espaços de Armazenamento Diretos no Windows Server. Para os requisitos de hardware no Azure Stack HCI, nosso sistema operacional projetado para implantações hiperconvergentes com uma conexão com a nuvem, consulte [antes de implantar Azure Stack HCI: determinar os requisitos de hardware](/azure-stack/hci/deploy/before-you-start#determine-hardware-requirements).
 
 Para produção, a Microsoft recomenda a compra de uma solução de hardware/software validada de nossos parceiros, que incluem ferramentas e procedimentos de implantação. Essas soluções são projetadas, montadas e validadas em relação à nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente. Para soluções do Windows Server 2019, visite o [site de soluções Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para soluções do Windows Server 2016, saiba mais em [definição de software do Windows Server](https://microsoft.com/wssd).
 

@@ -6,24 +6,24 @@ manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/26/2019
+ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
-description: Uma visão geral do Espaços de Armazenamento Diretos, um recurso do Windows Server que permite que você ClusterE servidores com armazenamento interno em uma solução de armazenamento definida por software.
+description: Uma visão geral do Espaços de Armazenamento Diretos, um recurso do Windows Server e Azure Stack HCI que permite a você agrupar servidores com armazenamento interno em uma solução de armazenamento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fb8700935306cbd007ab4afc61cf3eb54227130
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768941"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864317"
 ---
 # <a name="storage-spaces-direct-overview"></a>Visão geral de Espaços de Armazenamento Diretos
 
->Aplica-se a: Windows Server 2019, Windows Server 2016
+>Aplica-se a: Azure Stack HCI, Windows Server 2019, Windows Server 2016
 
 O recurso Espaços de Armazenamento Diretos usa servidores padrão do setor com unidades conectadas localmente para criar um armazenamento definido pelo software altamente disponível e escalonável com custo menor do que o de matrizes de SAN ou NAS tradicionais. Sua arquitetura convergida ou hiperconvergente simplifica radicalmente a aquisição e a implantação, enquanto recursos como cache, camadas de armazenamento e codificação de eliminação, junto com as inovações de hardware mais recentes, como a rede RDMA e unidades de NVMe, proporcionam eficiência e desempenho incomparáveis.
 
-O Espaços de Armazenamento Diretos está incluído no Windows Server 2019 datacenter, no Windows Server 2016 datacenter e em [Builds do Windows Server Insider Preview](https://insider.windows.com/for-business-getting-started-server/).
+Espaços de Armazenamento Diretos está incluído nas compilações [Azure Stack HCI](/azure-stack/hci/), windows Server 2019 datacenter, windows Server 2016 datacenter e [Windows Server Insider Preview](https://insider.windows.com/for-business-getting-started-server/).
 
 Para outros aplicativos de espaços de armazenamento, como clusters SAS compartilhados e servidores autônomos, consulte [visão geral de espaços de armazenamento](overview.md). Se você estiver procurando informações sobre como usar espaços de armazenamento em um PC com Windows 10, consulte [espaços de armazenamento no Windows 10](https://support.microsoft.com/help/12438/windows-10-storage-spaces).
 
@@ -33,7 +33,7 @@ Para outros aplicativos de espaços de armazenamento, como clusters SAS comparti
 | **Implantar**<br><ul><li>[Implantar Espaços de Armazenamento Diretos](deploy-storage-spaces-direct.md)</li><li>[Criar volumes](create-volumes.md)</li><li>[Resiliência aninhada](nested-resiliency.md)</li><li>[Configurar quorum](../../failover-clustering/manage-cluster-quorum.md)</li><li>[Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[Compreender e implantar memória persistente](deploy-pmem.md)</li> | **Gerenciar**<br><ul><li>[Gerenciar com o Centro de Administração do Windows](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[Adicionar servidores ou unidades](add-nodes.md)</li><li>[Colocar um servidor offline para manutenção](maintain-servers.md)</li><li>[Remover servidores](remove-servers.md)</li><li>[Estender volumes](resize-volumes.md)</li><li>[Excluir volumes](delete-volumes.md)</li><li>[Atualizar firmware da unidade](../update-firmware.md)</li><li>[Histórico de desempenho](performance-history.md)</li><li>[Delimitar a alocação de volumes](delimit-volume-allocation.md)</li><li>[Usar Azure Monitor em um cluster hiperconvergente](configure-azure-monitor.md)</li> |
 | **Solução de problemas**<br><ul><li>[Cenários de solução de problemas](troubleshooting-storage-spaces.md)</li><li>[Solucionar problemas de integridade e Estados operacionais](storage-spaces-states.md)</li><li>[Coletar dados de diagnóstico com Espaços de Armazenamento Diretos](data-collection.md)</li><li>[Gerenciamento de integridade de memória da classe de armazenamento](Storage-class-memory-health.md)</li> | **Postagens recentes no blog**<br><ul><li>[13,7 milhões IOPS com Espaços de Armazenamento Diretos: o novo registro do setor para a infraestrutura hiperconvergente](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Infraestrutura hiperconvergente no Windows Server 2019-o relógio de contagem regressiva começa agora!](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Cinco anúncios grandes do Windows Server Summit](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10.000 Espaços de Armazenamento Diretos de clusters e contagem...](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li></ul> |
 
-## <a name="videos"></a>vídeos
+## <a name="videos"></a>Vídeos
 
 **Visão geral de vídeo rápido (5 minutos)**
 

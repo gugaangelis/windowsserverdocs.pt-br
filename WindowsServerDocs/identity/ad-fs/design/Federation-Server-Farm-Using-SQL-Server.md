@@ -8,14 +8,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f3dedd53d75120a6a3e8087c345cd7dfa04ca35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4527b6787531b3a349534092e3597a91dbebf78f
+ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519935"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87864130"
 ---
-# <a name="federation-server-farm-using-sql-server"></a>Farm de servidores de federação usando SQL Server
+# <a name="legacy-ad-fs-federation-server-farm-using-sql-server"></a>Farm de servidores de Federação AD FS herdados usando SQL Server
 
 Essa topologia para Serviços de Federação do Active Directory (AD FS) \( AD FS \) difere do farm de servidores de Federação usando a topologia de implantação de wid do banco de \( \) dados interno do Windows, pois ela não replica o dado para cada servidor de Federação no farm. Em vez disso, todos os servidores de Federação no farm podem ler e gravar dados em um banco de dado comum que é armazenado em um servidor que executa Microsoft SQL Server que está localizado na rede corporativa.
 
@@ -85,10 +85,10 @@ Esta seção descreve cada uma dessas opções, quais problemas eles resolvem re
 
 A tabela a seguir fornece um resumo para usar um farm WID:
 
-| Relações de confiança de 1-100 RP | Mais de 100 RP relações de confiança |
+| 1 a 100 relações de confiança de RP | Mais de 100 relações de confiança de RP |
 |--|--|
-| **1-30 nós AD FS:** WID com suporte | **1-30 nós AD FS:** Sem suporte usando WID-SQL necessário |
-| **Mais de 30 nós AD FS:** Sem suporte usando WID-SQL necessário | **Mais de 30 nós AD FS:** Sem suporte usando WID-SQL necessário |
+| **1 a 30 nós do AD FS:** Suporte ao WID | **1 a 30 nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido |
+| **Mais de 30 Nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido | **Mais de 30 Nós do AD FS:** Sem suporte para uso do WID – O SQL é exigido |
 
 ### <a name="alwayson-availability-groups"></a>Grupos de disponibilidade AlwaysOn
 **Visão geral**
