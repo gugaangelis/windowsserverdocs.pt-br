@@ -8,12 +8,12 @@ author: rpsqrd
 ms.author: ryanpu
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: d5cdaf915de94e73374459c41b090f197b8f56ef
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7e76cb5b41e7800ce8b2725003dcb5ea90e84116
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475073"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769644"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-template-disk-optional"></a>VMs blindadas para locatários – criando um disco de modelo (opcional)
 
@@ -64,13 +64,17 @@ Execute as seguintes etapas em um computador que executa o Windows Server 2016 (
 
 2. Instale o recurso **ferramentas de VM blindada** do **ferramentas de administração de servidor remoto** no computador.
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
+    Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
+    ```
 
 3. Obtenha ou crie um certificado para assinar o VHDX que se tornará o disco de modelo para novas VMs blindadas. Os detalhes sobre esse certificado serão incorporados em um arquivo de dados de blindagem, que autoriza o disco como um disco confiável. Portanto, é importante obter esse certificado de uma autoridade de certificação que você e seu provedor de serviços de hospedagem confiam. Em cenários empresariais em que você é o hoster e o locatário, você pode considerar a emissão desse certificado de sua PKI.
 
     Se você estiver configurando um ambiente de teste e quiser apenas usar um certificado autoassinado para assinar seu disco de modelo, execute um comando semelhante ao seguinte em seu computador:
 
-        New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
+    New-SelfSignedCertificate -DnsName publisher.fabrikam.com
+    ```
 
 4. Inicie o **Assistente de disco de modelo** na pasta **Ferramentas administrativas** no menu iniciar ou digitando **TemplateDiskWizard.exe** em um prompt de comando.
 

@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b2ed2a176167b79596ee398fc43c66d7196a54
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cda974bf264c7e497c8d472338cf7b5f7d13a534
+ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966428"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87769044"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Gerenciamento de integridade de memória de classe de armazenamento (NVDIMM-N) no Windows
 
@@ -72,13 +72,13 @@ Esta condição é quando você verifica a integridade de um dispositivo de mem�
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
-| | Descrição |
+| Direcionamento | Descrição |
 | --- | --- |
 | Condição provável | Violação do limite de aviso de NVDIMM-N |
 | Causa raiz | Os dispositivos NVDIMM-N controlam vários limites, como temperatura, tempo de vida de NVM e/ou tempo de vida de fonte de energia. Quando um desses limites é excedido, o sistema operacional é notificado. |
 | Comportamento geral | O dispositivo permanece totalmente operacional. Este é um aviso, não um erro. |
 | Comportamento dos Espaços de Armazenamento | O dispositivo permanece totalmente operacional. Este é um aviso, não um erro. |
-| Mais informações | Campo OperationalStatus do objeto PhysicalDisk. EventLog – Microsoft-Windows-ScmDisk0101/Operational |
+| Obter mais informações | Campo OperationalStatus do objeto PhysicalDisk. EventLog – Microsoft-Windows-ScmDisk0101/Operational |
 | O que fazer | Dependendo do limite de aviso violado, pode ser prudente substituir todo ou algumas partes do NVDIMM-N. Por exemplo, se o limite de tempo de vida NVM for ultrapassado, faz sentido substituir o NVDIMM-N. |
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>Falha ao gravar um NVDIMM-N
@@ -92,13 +92,13 @@ Esta condição ocorre quando você verifica a integridade de um dispositivo de 
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
-| | Descrição |
+| Direcionamento | Descrição |
 | --- | --- |
 | Condição provável | Perda de persistência/alimentação de backup |
 |Causa raiz|Os dispositivos NVDIMM-N dependem de uma fonte de alimentação de backup para sua persistência, normalmente uma bateria ou supercapacitor. Se essa fonte de alimentação de backup não estiver disponível ou o dispositivo não puder executar um backup por algum motivo (erro de controlador/Flash), os dados estarão em risco e o Windows impedirá gravações adicionais nos dispositivos afetados. Ainda é possível realizar leituras para remover dados.|
 |Comportamento geral|O volume NTFS será desmontado.<br>O campo de status de integridade do PhysicalDisk mostrará "Não íntegro" para todos os dispositivos NVDIMM-N afetados.|
 |Comportamento dos Espaços de Armazenamento|O Espaço de Armazenamento permanecerá operacional contanto que apenas um NVDIMM-N seja afetado. Se vários dispositivos forem afetados, haverá falha nas gravações no Espaço de Armazenamento. <br>O campo de status de integridade do PhysicalDisk mostrará "Não íntegro" para todos os dispositivos NVDIMM-N afetados.|
-|Mais informações|Campo OperationalStatus do objeto PhysicalDisk.<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
+|Obter mais informações|Campo OperationalStatus do objeto PhysicalDisk.<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
 |O que fazer|É recomendável fazer o backup dos dados afetados do NVDIMM-N. Para obter acesso de leitura, você pode manualmente colocar o disco online (a sua superfície será como um volume NTFS somente leitura).<br><br>Para limpar totalmente essa condição, a causa raiz deverá ser resolvida (ou seja, ligar a fonte de alimentação ou substituir o NVDIMM-N, dependendo do problema) e o volume no NVDIMM-N deverá ser colocado offline e online novamente ou o sistema deverá ser reiniciado.<br><br>Para tornar o NVDIMM-N utilizável novamente em Espaços de Armazenamento, use o cmdlet **Reset-PhysicalDisk**, que reintegra o dispositivo e inicia o processo de reparo.|
 
 ## <a name="nvdimm-n-is-shown-with-a-capacity-of-0-bytes-or-as-a-generic-physical-disk"></a>O NVDIMM-N é mostrado com uma capacidade de '0' bytes ou como um "Disco físico genérico"
@@ -112,13 +112,13 @@ Esta condição é quando um dispositivo de memória de classe de armazenamento 
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
-||Descrição|
+|Direcionamento|Descrição|
 |---|---|
 |Condição provável|A BIOS não expôs o NVDIMM-N para o sistema operacional|
 |Causa raiz|Os dispositivos NVDIMM-N são baseados em DRAM. Quando um endereço DRAM corrompido é referenciado, a maioria das CPUs iniciará uma verificação de máquina e reiniciará o servidor. Algumas plataformas de servidor em seguida mapeiam o NVDIMM, impedindo que o sistema operacional o acesse e possivelmente causando outra verificação de máquina. Isso também pode ocorrer se a BIOS detectar que o NVDIMM-N falhou e precisa ser substituído.|
 |Comportamento geral|O NVDIMM-N é mostrado como não inicializado, com uma capacidade de 0 bytes e não pode ser lido ou gravado.|
 |Comportamento dos Espaços de Armazenamento|O Espaço de Armazenamento permanece operacional (desde que apenas um NVDIMM-N seja afetado).<br>O Objeto PhysicalDisk do NVDIMM-N é mostrado com um Status de Integridade de Aviso e como um "Disco físico geral"|
-|Mais informações|Campo OperationalStatus do objeto PhysicalDisk. <br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
+|Obter mais informações|Campo OperationalStatus do objeto PhysicalDisk. <br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
 |O que fazer|O dispositivo NVDIMM-N deve ser substituído ou limpo, de forma que a plataforma de servidor o exponha para o sistema operacional de host novamente. Recomenda-se substituir o dispositivo, pois poderão ocorrer erros incorrigíveis adicionais. Pode-se adicionar um dispositivo de substituição a uma configuração de espaços de armazenamento com o cmdlet **Add-Physicaldisk**.|
 
 ## <a name="nvdimm-n-is-shown-as-a-raw-or-empty-disk-after-a-reboot"></a>O NVDIMM-N é mostrado como RAW ou disco vazio após uma reinicialização
@@ -132,13 +132,13 @@ Esta condição é quando você verifica a integridade de um dispositivo de mem�
 
 A tabela a seguir lista algumas informações sobre essa condição.
 
-||Descrição|
+|Direcionamento|Descrição|
 |---|---|
 |Condição provável|Falha de backup/restauração|
 |Causa raiz|Uma falha no procedimento de backup ou restauração provavelmente resultará na perda de todos os dados do NVDIMM-N. Quando o sistema operacional for carregado, ele será exibido como um novo NVDIMM-N sem uma partição ou sistema de arquivos e uma superfície como RAW, o que significa que ele não tem um sistema de arquivos.|
 |Comportamento geral|O NVDIMM-N estará em modo somente leitura. É necessária uma ação explícita do usuário para começar a usá-lo novamente.|
 |Comportamento dos Espaços de Armazenamento|Os Espaços de Armazenamento permanecem operacionais se apenas um NVDIMM for afetado.<br>O objeto de disco físico NVDIMM-N será mostrado com o Status de Integridade "Não íntegro" e não é usado por Espaços de Armazenamento.|
-|Mais informações|Campo OperationalStatus do objeto PhysicalDisk.<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
+|Obter mais informações|Campo OperationalStatus do objeto PhysicalDisk.<br>EventLog – Microsoft-Windows-ScmDisk0101/Operational|
 |O que fazer|Se o usuário não quiser substituir o dispositivo afetado, ele poderá usar o cmdlet **Reset-PhysicalDisk** para limpar a condição somente leitura no NVDIMM-N afetado. Em ambientes de Espaços de Armazenamento, isso também tentará reintegrar o NVDIMM-N ao Espaço de Armazenamento e iniciar o processo de reparo.|
 
 ## <a name="interleaved-sets"></a>Conjuntos intercalados
