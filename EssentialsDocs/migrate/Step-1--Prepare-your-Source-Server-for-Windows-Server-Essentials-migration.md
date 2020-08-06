@@ -7,12 +7,12 @@ ms.assetid: 244c8a06-04c6-4863-8b52-974786455373
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6666a0f68863913c0c0a5a1b1e903eaebf5470a4
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c2007160c294074287437bedb7e94b318432a9b4
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180482"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838345"
 ---
 # <a name="step-1-prepare-your-source-server-for-windows-server-essentials-migration"></a>Etapa 1: Preparar o servidor de origem para a migração para o Windows Server Essentials
 
@@ -44,12 +44,12 @@ Este tópico explica como fazer backup do servidor de origem, avaliar a integrid
 
    |Produto|Recurso|
    |---|---|
-   |Windows Small Business Server 2003|[Fazendo backup e restaurando o Windows Small Business Server 2003](https://msdn.microsoft.com/library/cc875809.aspx)
+   |Windows Small Business Server 2003|[Fazendo backup e restaurando o Windows Small Business Server 2003](/previous-versions/tn-archive/cc875809(v=technet.10))
    |Windows Small Business Server 2008|[Fazendo Backup e Restaurando os Dados do Windows Small Business Server 2008](https://technet.microsoft.com/library/cc527505\(WS.10\).aspx)
    |Windows Server 2008 Foundation|[Backup e recuperação](https://technet.microsoft.com/library/cc754097\(WS.10\).aspx)
-   |Windows Small Business Server 2011 Essentials|[Saiba mais sobre como configurar o backup do servidor](https://technet.microsoft.com/library/server-backup-support-1.aspx)
-   |Windows Small Business Server 2011 Standard|[Gerenciando backup do servidor](https://technet.microsoft.com/library/cc527488.aspx)
-   |Windows Server Essentials|[Gerenciar Backup e restauração no Windows Server Essentials](https://technet.microsoft.com/library/jj713536.aspx)
+   |Windows Small Business Server 2011 Essentials|[Saiba mais sobre como configurar o backup do servidor](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11))
+   |Windows Small Business Server 2011 Standard|[Gerenciando backup do servidor](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc527488(v=ws.11))
+   |Windows Server Essentials|[Gerenciar Backup e restauração no Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/cc514417(v=msdn.10))
 
 ###  <a name="install-the-most-recent-service-packs"></a><a name="BKMK_InstallTheMostRecentServicePacksToPrepareForMigration"></a>Instalar os service packs mais recentes
  Você deve instalar as últimas atualizações e service packs no Servidor de Origem antes da migração.
@@ -172,17 +172,17 @@ Para exibir a descrição e as soluções de um problema, clique no problema no 
  Caso tenha optado por usar o Microsoft Office 365 como solução de email para seu domínio, siga as diretrizes em [Migrar todas as caixas de correio para a nuvem com uma migração de substituição do Exchange](https://help.outlook.com/140/ms.exch.ecp.emailmigrationwizardexchangelearnmore.aspx) para iniciar a migração de emails para o Office 365. Recomendamos que você conclua a migração de email antes de instalar o Windows Server Essentials.
 
 > [!NOTE]
->  A etapa para remover o Exchange Server local no servidor de origem é obrigatória se você pretende integrar o Windows Server Essentials com o Office 365. Para obter informações sobre como migrar pastas públicas do Exchange Server para o Office 365, consulte a postagem de blog [Microsoft Exchange 2013 Public Folders Migration Scripts for Office 365 (Scripts de migração de pastas públicas do Microsoft Exchange 2013 para o Office 365)](https://blogs.technet.com/b/fmustafa/archive/2013/04/11/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365.aspx).
+>  A etapa para remover o Exchange Server local no servidor de origem é obrigatória se você pretende integrar o Windows Server Essentials com o Office 365. Para obter informações sobre como migrar pastas públicas do Exchange Server para o Office 365, consulte a postagem de blog [Microsoft Exchange 2013 Public Folders Migration Scripts for Office 365 (Scripts de migração de pastas públicas do Microsoft Exchange 2013 para o Office 365)](/archive/blogs/fmustafa/microsoft-exchange-2013-public-folders-migration-scripts-for-office-365).
 >
 >  Depois de concluir a instalação, você deve ativar o recurso integração do Office 365 no Windows Server Essentials executando a tarefa **integrar com Microsoft Office 365** .
 
 > [!IMPORTANT]
->  Para permitir que a ferramenta de migração do Office 365 conecte-se com o Exchange Server em execução no servidor de origem, você deve habilitar RPC sobre HTTP nesse servidor. Para obter informações sobre como habilitar o RPC sobre HTTP, consulte [How to Deploy RPC over HTTP for the First Time in Small Business Server 2003 (Standard ou Premium) (Como implantar o RPC sobre HTTP pela primeira vez no Small Business Server 2003 (Standard ou Premium))](https://technet.microsoft.com/library/bb123622%28EXCHG.65%29.aspx). Caso não consiga executar a ferramenta de migração do Office 365 após habilitar RPC sobre HTTP, exiba a configuração **ValidPorts** no Registro em HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy e certifique-se de que o FQDN (nome de domínio totalmente qualificado) do servidor de origem esteja listado. Caso não esteja, adicione-o manualmente usando o exemplo a seguir:
+>  Para permitir que a ferramenta de migração do Office 365 conecte-se com o Exchange Server em execução no servidor de origem, você deve habilitar RPC sobre HTTP nesse servidor. Para obter informações sobre como habilitar o RPC sobre HTTP, consulte [How to Deploy RPC over HTTP for the First Time in Small Business Server 2003 (Standard ou Premium) (Como implantar o RPC sobre HTTP pela primeira vez no Small Business Server 2003 (Standard ou Premium))](/previous-versions/tn-archive/bb123622(v=exchg.65)). Caso não consiga executar a ferramenta de migração do Office 365 após habilitar RPC sobre HTTP, exiba a configuração **ValidPorts** no Registro em HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy e certifique-se de que o FQDN (nome de domínio totalmente qualificado) do servidor de origem esteja listado. Caso não esteja, adicione-o manualmente usando o exemplo a seguir:
 >
 >  remoto. *contoso*.com: 6001-6002; remoto. *contoso*.com:6004 (substitua *contoso* pelo nome do seu domínio)
 
 #### <a name="migrate-email-to-another-on-premises-exchange-server"></a>Migrar emails para outro Exchange Server local
- Para obter informações sobre como migrar emails para outro servidor Exchange local, consulte [integrar um servidor Exchange local com o Windows Server Essentials](https://technet.microsoft.com/library/jj200172.aspx). Recomendamos que você configure o novo Exchange Server local após a instalação do Windows Server Essentials e, em seguida, conclua a migração de email antes de rebaixar o servidor de origem.
+ Para obter informações sobre como migrar emails para outro servidor Exchange local, consulte [integrar um servidor Exchange local com o Windows Server Essentials](/previous-versions/windows/it-pro/windows-server-essentials-sbs/jj200172(v=ws.11)). Recomendamos que você configure o novo Exchange Server local após a instalação do Windows Server Essentials e, em seguida, conclua a migração de email antes de rebaixar o servidor de origem.
 
 > [!NOTE]
 >  O conector POP3 do Windows Small Business Server não está incluído no Exchange Server. Após migrar os dados de emails para outro Exchange Server, você não poderá mais usar o recurso de conector POP3.
@@ -194,4 +194,3 @@ Para exibir a descrição e as soluções de um problema, clique no problema no 
  Você preparou o servidor de origem para migração para o Windows Server Essentials.  Agora vá para a [etapa 2: instalar o Windows Server Essentials como um novo controlador de domínio de réplica](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md).
 
 Para exibir todas as etapas, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).
-

@@ -7,12 +7,12 @@ ms.assetid: 37e1dae7-586c-4dd7-bf83-7e14a9567c8f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b84372394204353d0410da63d74f785c0e8fd07e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: eea437a5867a602a84483a41fe129d64425bcb88
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180502"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838435"
 ---
 # <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>As regras usadas pela Ferramenta Analisador de Práticas Recomendadas (BPA) do Windows Server Essentials
 
@@ -525,7 +525,7 @@ Este artigo descreve as regras usadas pelo BPA (Windows Server Essentials Analis
 
  **Impacto:**  Se o administrador criar um alerta e configurar o alerta para ser executado quando o administrador não estiver conectado, o alerta falhará com um código de erro 2147943785.
 
- **Resolução:**  Para obter informações sobre como conceder ao grupo de administradores internos a permissão para fazer logon como um trabalho em lotes, consulte [conceder ao grupo administrador interno o direito de fazer logon como um trabalho em lotes](https://technet.microsoft.com/library/jj635076) ( https://technet.microsoft.com/library/jj635076) .
+ **Resolução:**  Para obter informações sobre como conceder ao grupo de administradores internos a permissão para fazer logon como um trabalho em lotes, consulte [conceder ao grupo administrador interno o direito de fazer logon como um trabalho em lotes](/previous-versions/orphan-topics/ws.11/jj635076(v=ws.11)) ( https://technet.microsoft.com/library/jj635076) .
 
 ### <a name="the-windows-firewall-is-turned-off"></a>O Firewall do Windows está desativado
  **Problema:**  O Firewall do Windows está desativado. O valor padrão é ativado.

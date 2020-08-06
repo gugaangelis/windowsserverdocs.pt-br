@@ -7,12 +7,12 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e78b3d50193cfd20df331d945fc549d3e3b35dbe
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 955da6c37bd57711529de02277d10f4627851715
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180412"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838335"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Etapa 6: Rebaixar e remover o servidor de origem da nova rede do Windows Server Essentials
 
@@ -79,7 +79,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
 
 4. O processo pode exigir fazer logoff e logon novamente para ser concluído. Clique em **Sim** para confirmar.
 
-   Se você estiver migrando do Windows Server Essentials ou de suas versões anteriores, para rebaixar o servidor, consulte [remover Active Directory Domain Services](https://technet.microsoft.com/library/hh472163.aspx). Depois de adicionar o servidor de origem como um membro de um grupo de trabalho e desconectá-lo da rede, remova-o do AD DS no servidor de destino.
+   Se você estiver migrando do Windows Server Essentials ou de suas versões anteriores, para rebaixar o servidor, consulte [remover Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472163(v=ws.11)). Depois de adicionar o servidor de origem como um membro de um grupo de trabalho e desconectá-lo da rede, remova-o do AD DS no servidor de destino.
 
    Se você estiver migrando do Windows Server Essentials, use Gerenciador do Servidor para remover a função Active Directory Domain Services, rebaixando o controlador de domínio no servidor de origem usando o seguinte procedimento:
 
@@ -106,4 +106,3 @@ Depois de concluir a instalação do Windows Server Essentials e concluir a migr
 
 
 Para exibir todas as etapas, consulte [migrar para o Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).
-

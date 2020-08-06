@@ -7,12 +7,12 @@ ms.assetid: dff2bf27-5d97-409b-81e8-286f7d933d90
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3d031dacbe2eaf2a4928fc316eaacf1fcb1759e7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 57fa74bbae9e8604dfbc31042f8a315abe34a817
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180732"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838406"
 ---
 # <a name="migrate-server-data-to-windows-server-essentials"></a>Migrar Dados do Servidor para o Windows Server Essentials
 
@@ -52,11 +52,11 @@ As seguintes guias fornecem informações sobre como migrar para o Windows Serve
 
 ## <a name="end-to-end-solution-guides"></a>Guias de solução avançada
 
--    Para aprender a centralizar o armazenamento de dados, restringir permissões de acesso aos dados e fazer backup de seus dados locais e na nuvem, consulte [Fornecer proteção de dados em pequenas e médias empresas](https://technet.microsoft.com/library/dn582043.aspx).
+-    Para aprender a centralizar o armazenamento de dados, restringir permissões de acesso aos dados e fazer backup de seus dados locais e na nuvem, consulte [Fornecer proteção de dados em pequenas e médias empresas](/previous-versions/orphan-topics/ws.11/dn582043(v=ws.11)).
 
--    Para saber como acessar dados de negócios em qualquer dispositivo conectado à Internet com segurança em qualquer local, consulte [Proteger o acesso remoto em pequenas e médias empresas](https://technet.microsoft.com/library/dn629457.aspx).
+-    Para saber como acessar dados de negócios em qualquer dispositivo conectado à Internet com segurança em qualquer local, consulte [Proteger o acesso remoto em pequenas e médias empresas](/previous-versions/windows/it-pro/solutions-guidance/dn629457(v=ws.11)).
 
--    Para saber como colaborar com segurança com parceiros e fornecedores, consulte [Melhorar a colaboração nas pequenas e médias empresas](https://technet.microsoft.com/library/dn747893.aspx).
+-    Para saber como colaborar com segurança com parceiros e fornecedores, consulte [Melhorar a colaboração nas pequenas e médias empresas](/previous-versions/windows/it-pro/solutions-guidance/dn747893(v=ws.11)).
 
 ## <a name="see-also"></a>Confira também
 

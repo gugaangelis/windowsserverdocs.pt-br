@@ -7,12 +7,12 @@ ms.assetid: c8325f87-fd79-471b-bf70-3f052692c383
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c75f69a4c1479d2a377db66a2295df3de9c66503
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 6dbc809ebba6da361923136f6b74351baba06728
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180672"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838365"
 ---
 # <a name="migrate-windows-small-business-server-2011-standard-to-windows-server-essentials"></a>Migrar do Windows Small Business Server 2011 Standard para o Windows Server Essentials
 
@@ -46,7 +46,7 @@ Este guia descreve como migrar um domínio do Windows Small Business Server 2011
 
 3.  [Junte computadores ao novo servidor do Windows Server Essentials](Join-computers-to-the-new-Windows-Server-Essentials-server.md).  Esta seção aborda a adição de computadores cliente à nova rede do Windows Server Essentials e a atualização de Política de Grupo configurações.
 
-4.  [Mova os dados e as configurações do SBS 2011 para o servidor de destino](Move-Windows-SBS-2011-Standard-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.
+4.  [Mova os dados e as configurações do SBS 2011 para o servidor de destino](./move-windows-sbs-2011-standard-to-the-destination-server-for-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.
 
 5.  [Habilite o redirecionamento de pasta no servidor de destino do Windows Server Essentials](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você poderá habilitá-lo no servidor de destino e excluir a antiga configuração de Política de Grupo de Redirecionamento de Pastas.
 

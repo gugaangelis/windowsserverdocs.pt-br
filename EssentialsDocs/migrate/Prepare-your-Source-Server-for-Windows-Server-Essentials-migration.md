@@ -7,12 +7,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1097520110f876a8c29e05547d4407a13f1c5057
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: bc672a3f2d9b74ff4ed283e826312f6661ba63f6
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180512"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838395"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Preparar o servidor de origem para o Windows Server Essentials migration1
 
@@ -39,7 +39,7 @@ Conclua as etapas preliminares a seguir para garantir que as configurações e d
 
 ##### <a name="to-back-up-the-source-server"></a>Para fazer backup do Servidor de Origem
 
-1.  Faça um backup completo do Servidor de Origem. Para obter mais informações sobre o backup do Windows Small Business Server 2011 Essentials, consulte [Saiba mais sobre como configurar backup de servidor](https://technet.microsoft.com/library/server-backup-support-1.aspx).
+1.  Faça um backup completo do Servidor de Origem. Para obter mais informações sobre o backup do Windows Small Business Server 2011 Essentials, consulte [Saiba mais sobre como configurar backup de servidor](/previous-versions/windows/it-pro/windows-server-essentials-sbs/ff402413(v=ws.11)).
 
 2.  Verifique se o backup foi executado com êxito. Para testar a integridade do backup, selecione arquivos aleatórios do backup, restaure-os em um local alternativo e verifique se os arquivos restaurados são iguais aos arquivos originais.
 
@@ -192,4 +192,3 @@ Conclua as etapas preliminares a seguir para garantir que as configurações e d
 
 > [!NOTE]
 >  Se você usou o SDK do Windows Small Business Server 2011 Essentials para desenvolver um suplemento de alerta ou de integridade do sistema personalizado e quiser continuar a usar o suplemento com o Windows Server Essentials, também deverá atualizar o suplemento e implantá-lo no servidor de destino.
-

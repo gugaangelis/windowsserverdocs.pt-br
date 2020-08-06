@@ -7,12 +7,12 @@ ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2bdeb7a31e9ae39d9a7ce1e12891ca6dc14ce51a
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1faa44fbc9b4aba07950c1197169ccba8bb708eb
+ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180692"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87838405"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Migrar do Windows Small Business Server 2008 para o Windows Server Essentials
 
@@ -46,7 +46,7 @@ Este guia descreve como migrar um domínio existente do Windows SBS 2008 para o 
 
 3.  [Junte computadores à nova rede do Windows Server Essentials](Join-computers-to-the-new-Windows-Server-Essentials-network.md).  Esta seção aborda a adição de computadores cliente à nova rede do Windows Server Essentials e a atualização de Política de Grupo configurações.
 
-4.  [Mova os dados e as configurações do SBS 2008 para o servidor de destino](Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.
+4.  [Mova os dados e as configurações do SBS 2008 para o servidor de destino](./move-windows-sbs-2008-to-the-destination-server-for-migration.md).  Esta seção fornece informações sobre a migração de dados e configurações do servidor de origem.
 
 5.  [Habilite o redirecionamento de pasta no servidor de destino do Windows Server Essentials](Enable-folder-redirection-on-the-Windows-Server-Essentials-Destination-Server.md).  Caso o redirecionamento de pastas esteja habilitado no servidor de origem, você poderá habilitá-lo no servidor de destino e excluir a antiga configuração de Política de Grupo de Redirecionamento de Pastas.
 

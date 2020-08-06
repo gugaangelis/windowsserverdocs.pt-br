@@ -26,7 +26,7 @@ Este tópico explica as restrições e fornece exemplos de configurações com e
 
 ## <a name="constraints"></a>Restrições
 
-### <a name="type"></a>Tipo
+### <a name="type"></a>Type
 
 Todos os servidores devem ter os mesmos [tipos de unidades](choosing-drives.md#drive-types).
 
