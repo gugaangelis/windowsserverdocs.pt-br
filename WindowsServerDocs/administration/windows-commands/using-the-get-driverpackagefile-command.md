@@ -1,20 +1,18 @@
 ---
 title: Get-DriverPackageFile
 description: Artigo de referência para Get-DriverPackageFile, que exibe informações sobre um pacote de driver, incluindo os drivers e arquivos que ele contém.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f01a2c67-7e9c-4aad-b625-383f5a1fca25
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1daa93cb8976229c4c847390416f9332769c5ff5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6c80267f90608dca36ef9460eb23b66689022517
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932244"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879757"
 ---
 # <a name="get-driverpackagefile"></a>Get-DriverPackageFile
 

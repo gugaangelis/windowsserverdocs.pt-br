@@ -1,20 +1,18 @@
 ---
 title: autofmt
 description: Artigo de referência para o comando autofmt, que formata uma unidade ou partição quando chamada no console de recuperação do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 81f9abac-f927-41d8-8667-f056db4cb2af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4c4eb9454016b816cd4ca1670fab942c4240366
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4fca51609945085e2a8aa34670a9b34660d30d29
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955848"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895251"
 ---
 # <a name="autofmt"></a>autofmt
 

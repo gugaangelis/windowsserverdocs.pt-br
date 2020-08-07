@@ -1,20 +1,18 @@
 ---
 title: wbadmin start recovery
 description: Artigo de referência para o Wbadmin start Recovery, que executa uma operação de recuperação com base nos parâmetros que você especificar.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 52381316-a0fa-459f-b6a6-01e31fb21612
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7eb408ae8b57279d2620e8971a6e5833e3a044d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7d04e32eeae71593daf995e790b6dcbae05464b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519595"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879694"
 ---
 # <a name="wbadmin-start-recovery"></a>wbadmin start recovery
 

@@ -1,20 +1,18 @@
 ---
 title: ksetup addkpasswd
 description: Artigo de referência para o comando ksetup addkpasswd, que adiciona um endereço de servidor de senha Kerberos (kpasswd) para um realm.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d3196995-1b38-48ff-ba08-911cfab77317
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2db728684e713df35a39995c8ca95196f0b745ed
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 96dd96b3f66a41d75b943fd74ea9fb674f393d09
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925556"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888124"
 ---
 # <a name="ksetup-addkpasswd"></a>ksetup addkpasswd
 

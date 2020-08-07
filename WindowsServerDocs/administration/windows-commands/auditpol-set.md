@@ -1,20 +1,18 @@
 ---
 title: auditpol set
 description: Artigo de referência para o comando de conjunto Auditpol, que define a política de auditoria por usuário, a política de auditoria do sistema ou as opções de auditoria.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f4947486-87bd-48cb-ba81-7230c8e70895
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc42168d65116261d57053e0812cbb49e17021d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 06dcac123a56adbab93aab4dfa44fcc47d26220d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923697"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895329"
 ---
 # <a name="auditpol-set"></a>auditpol set
 

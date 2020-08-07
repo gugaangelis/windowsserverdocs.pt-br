@@ -1,20 +1,18 @@
 ---
 title: attributes volume
 description: Artigo de referência do comando de volume Attributes, que exibe, define ou limpa os atributos de um volume.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e40e8284-3d57-4de8-a46c-e4ade34a0d53
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aae7cc7fe26fac5ef03e40610eb46389eb274c94
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a4e0e7110bd23d1a8127e867dd991d1dc620c164
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923879"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895485"
 ---
 # <a name="attributes-volume"></a>attributes volume
 

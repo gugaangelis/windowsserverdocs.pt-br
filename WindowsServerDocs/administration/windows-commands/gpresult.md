@@ -1,20 +1,18 @@
 ---
 title: gpresult
 description: Artigo de referência do comando gpresult, que exibe o conjunto resultante de informações de política (RSoP) para um usuário e computador remotos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dfaa3adf-2c83-486c-86d6-23f93c5c883c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b55db74c0c8f9c527ade8412f50ef83ea675a5c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5c65dd4799441dca44db24f532be66349b1249a5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924635"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888571"
 ---
 # <a name="gpresult"></a>gpresult
 
@@ -22,7 +20,7 @@ ms.locfileid: "85924635"
 
 Exibe o conjunto resultante de informações de política (RSoP) para um usuário e computador remoto. Para usar relatórios RSoP para computadores de destino remoto por meio do firewall, você deve ter regras de firewall que habilitem o tráfego de rede de entrada nas portas.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 gpresult [/s <system> [/u <username> [/p [<password>]]]] [/user [<targetdomain>\]<targetuser>] [/scope {user | computer}] {/r | /v | /z | [/x | /h] <filename> [/f] | /?}

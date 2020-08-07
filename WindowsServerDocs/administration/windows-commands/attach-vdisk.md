@@ -1,20 +1,18 @@
 ---
 title: attach vdisk
 description: Artigo de referência para o comando attach VDISK, que anexa (às vezes, chamadas de montagens ou superfícies) um disco rígido virtual (VHD) para que ele apareça no computador host como uma unidade de disco rígido local.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 882ab875-0c14-4eb3-98ef-fd0e8fa40d9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0d07af390a025a60fabf53635ce156cab7b71d6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 12e1d7f0ec5e9d67853f4fb77c12dcf837348b28
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923913"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895514"
 ---
 # <a name="attach-vdisk"></a>attach vdisk
 

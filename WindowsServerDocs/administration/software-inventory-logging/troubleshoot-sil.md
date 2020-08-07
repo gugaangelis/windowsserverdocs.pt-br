@@ -1,19 +1,17 @@
 ---
 title: Solucionar problemas do Log de Inventário de Software
 description: Descreve como resolver problemas comuns de implantação de log de inventário de software.
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
 ms.topic: article
 author: brentfor
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: f6ad4686ce5afb86ce60ec0313bd675f8a9a1f4a
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: c2c00f9b3981f35e30b794d778ecc32ad712ae54
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408795"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895648"
 ---
 # <a name="troubleshoot-software-inventory-logging"></a>Solucionar problemas do Log de Inventário de Software
 

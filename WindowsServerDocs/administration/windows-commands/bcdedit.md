@@ -1,20 +1,18 @@
 ---
 title: bcdedit
 description: Artigo de referência para o comando bcdedit, que cria novas lojas, modifica as lojas existentes e adiciona parâmetros de menu de inicialização.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ab2da47d-3aac-44a0-b7fd-bd9561d61553
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/27/2018
-ms.openlocfilehash: 59d6a4eafe2eb3383cfeed9e1cbcb9d3e10fe376
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a24ce7f2503d06ce6c57270027328600d93e217
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955808"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895167"
 ---
 # <a name="bcdedit"></a>bcdedit
 
@@ -43,7 +41,7 @@ bcdedit /command [<argument1>] [<argument2>] ...
 
 ### <a name="general-bcdedit-command-line-options"></a>Opções gerais de linha de comando BCDEdit
 
-| Opção | Descrição |
+| Opção | DESCRIÇÃO |
 | ------ | ----------- |
 | /? | Exibe uma lista de comandos BCDEdit. Executar esse comando sem um argumento exibe um resumo dos comandos disponíveis. Para exibir a ajuda detalhada para um comando específico, execute **bcdedit/?** `<command>`, em que `<command>` é o nome do comando no qual você está pesquisando mais informações. Por exemplo, **bcdedit/? CreateStore** exibe ajuda detalhada para o comando CreateStore. |
 

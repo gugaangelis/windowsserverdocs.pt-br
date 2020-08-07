@@ -1,20 +1,18 @@
 ---
 title: ksetup mapuser
 description: Artigo de referência para o comando ksetup mapuser, que mapeia o nome de uma entidade de segurança Kerberos para uma conta.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 84113e6e-89ff-488a-9cd0-f14bbf23b543
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f387b8c3ff7cf7515a4f2ed9b8ea62d379332ec7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c234dc857241a70f479934fda15dcfab0b4e9de7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933691"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887834"
 ---
 # <a name="ksetup-mapuser"></a>ksetup mapuser
 

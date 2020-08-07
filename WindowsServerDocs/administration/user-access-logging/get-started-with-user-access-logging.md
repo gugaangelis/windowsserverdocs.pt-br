@@ -1,20 +1,18 @@
 ---
 title: Introdução ao log de acesso do usuário
 desctription: Describes the User Access Logging feature and how to start using it.
-ms.prod: windows-server
-ms.technology: manage-user-access-logging
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44bcdd3d89946558934b8309634061f6b8e7ffda
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 6b5e8ae365fbf8130d134ab2f9fa555e952d012a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471161"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895635"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introdução ao log de acesso do usuário
 
@@ -102,7 +100,7 @@ Os seguintes dados relacionados ao usuário são registrados no UAL.
 
 |Dados|Descrição|
 |--------|---------------|
-|**Usu**|Se aplicável, o nome de usuário do cliente acompanha as entradas do UAL de produtos e funções instaladas.|
+|**UserName**|Se aplicável, o nome de usuário do cliente acompanha as entradas do UAL de produtos e funções instaladas.|
 |**ActivityCount**|O número de vezes que um usuário específico acessa uma função ou um serviço.|
 |**FirstSeen**|A data e hora em que um usuário acessa primeiro uma função ou um serviço.|
 |**LastSeen**|A data e hora em que um usuário acessou pela última vez uma função ou um serviço.|

@@ -1,20 +1,18 @@
 ---
 title: Agregador de Log de Inventário de Software
-description: Descreve como instalar e gerenciar o agregador de log de inventário de software
-ms.prod: windows-server
-ms.technology: manage-software-inventory-logging
+description: Descreve como instalar e gerenciar o log de inventário de software agregador-software-inventário de log
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 350187c0ad7490a0698e4a3b99ef710b632f6c6c
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408835"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895680"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Log de Inventário de Software
 
@@ -235,11 +233,11 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
 -   No Agregador do SIL:
 
-    -   Execute `Start-SilAggregator`
+    -   Executar `Start-SilAggregator`
 
         Isso é necessário para que o Agregador receba ativamente os dados que são encaminhados a ele via HTTPS dos servidores que você configurou (ou que configurará) a serem inventariados. Observe que mesmo se você tiver habilitado seus servidores para encaminhar para esse Agregador primeiro, não há problema algum, já que eles armazenarão em cache suas cargas de dados localmente por até 30 dias. Depois que o agregador, seu "targetUri" estiver em execução, todos os dados armazenados em cache serão encaminhados de uma vez ao agregador e todos os dados serão processados.
 
-    -   Execute `Add-SilVMHost`
+    -   Executar `Add-SilVMHost`
 
         Exemplo: `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -255,7 +253,7 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
 -   Nos Windows Servers a serem inventariados, abra o PowerShell como administrador e execute estes comandos:
 
-    -   Execute `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
+    -   Executar `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
 
         -   Isso informará o SIL no Windows Server para qual local se deve enviar os dados de inventário e qual certificado deve ser usado para a autenticação.
 
@@ -267,11 +265,11 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
             > [!IMPORTANT]
             > Se esses valores não estiverem corretos ou se o certificado não estiver instalado no repositório correto (ou se ele for inválido), os encaminhamentos para o destino falharão quando o Log do SIL for iniciado. Os dados serão armazenados em cache localmente por até 30 dias.
 
-    -   Execute `Start-SilLogging`
+    -   Executar `Start-SilLogging`
 
         Isso inicia o Log do SIL. A cada hora, em intervalos aleatórios dentro da mesma hora, o SIL encaminhará seus dados de inventário para o Agregador especificado com o parâmetro `–targeturi` . O primeiro encaminhamento será um conjunto completo de dados. Cada encaminhamento subsequente será mais de uma "pulsação" com apenas a identificação de dados que nada mudou. Se houver alguma alteração ao conjunto de dados, outro conjunto completo de dados será encaminhado.
 
-    -   Execute `Publish-SilData`
+    -   Executar `Publish-SilData`
 
         -   Na primeira vez que o SIL for habilitado para o log, esta etapa será opcional.
 
@@ -565,7 +563,7 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 -   **CRÍTICO: somente depois que todos os servidores que encaminham dados forem atualizados, remova a impressão digital antiga** do Agregador do SIL usando o cmdlet `Set-SilAggregator –RemoveCertificateThumbprint`. Se um servidor que encaminha dados continuar encaminhando com um certificado antigo que foi removido do Agregador do SIL, **os dados serão perdidos** e não são inseridos no banco de dados do Agregador. Isso afeta apenas os cenários em que um servidor encaminhou com êxito os dados para um agregador SIL e o certificado é removido da lista de impressões digitais do agregador SIL para aceitar dados.
 
-## <a name="release-notes"></a>Notas de versão
+## <a name="release-notes"></a>Notas sobre a versão
 
 -   Há um problema conhecido que o Agregador SIL não processará e relatará na presentação das instalaçoes do SQL Server Standard Edition.  Estas são as etapas para corrigir isso:
 

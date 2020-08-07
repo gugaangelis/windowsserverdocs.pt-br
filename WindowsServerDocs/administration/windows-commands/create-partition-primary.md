@@ -1,20 +1,18 @@
 ---
 title: create partition primary
 description: Artigo de referência para o comando criar partição primário, que cria uma partição primária no disco básico com foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6d652d8e-3935-4a91-8ced-b17c0e7937be
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9014b69528d4a67ba2c9c11b8ec53cf3a0f569f6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b5e2869729f56fd09abebb650526ea4f07c86b21
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929625"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879878"
 ---
 # <a name="create-partition-primary"></a>create partition primary
 

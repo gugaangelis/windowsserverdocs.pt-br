@@ -1,20 +1,18 @@
 ---
 title: ksetup addenctypeattr
 description: Artigo de referência para o comando ksetup addenctypeattr, que adiciona o atributo de tipo de criptografia à lista de tipos possíveis para o domínio.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 32cc87d7-b9e1-4d14-9eb7-3b439c55aa3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e52a3fc7303bcd3db3f289ff8155bcb13b145b04
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d1520451b7802c5e7cdd308cf40e61de356d3fab
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931401"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888157"
 ---
 # <a name="ksetup-addenctypeattr"></a>ksetup addenctypeattr
 

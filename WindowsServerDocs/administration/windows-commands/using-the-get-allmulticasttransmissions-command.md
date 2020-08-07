@@ -1,20 +1,18 @@
 ---
 title: Get-AllMulticastTransmissions
 description: Artigo de referência para Get-AllMulticastTransmissions, que exibe informações sobre todas as transmissões multicast em um servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 95b8fb79-7a8a-4f0c-88f4-92bc1111c67f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b220f8b3ffb0dd90092329b4d42bb320706263e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c732559e1f302278f21044884ef93f7efdf05ce7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935077"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879839"
 ---
 # <a name="get-allmulticasttransmissions"></a>Get-AllMulticastTransmissions
 
@@ -22,7 +20,7 @@ ms.locfileid: "85935077"
 
 Exibe informações sobre todas as transmissões multicast em um servidor.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 para o Windows Server 2008:
 ```
 wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:Clients] [/ExcludedeletePending]

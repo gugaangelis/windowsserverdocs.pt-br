@@ -1,42 +1,40 @@
 ---
 title: Manage the Local Server and the Server Manager Console
 description: Gerenciador do Servidor
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d64d45fec0c48f66da72dfee7ab9f1f9965205ad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7892ec8f4102c8baadd8cded8982b6b92702afa8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851489"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895747"
 ---
 # <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 No Windows Server, Gerenciador do Servidor permite que você gerencie o servidor local (se você estiver executando o Gerenciador do Servidor no Windows Server, e não em um sistema operacional cliente baseado no Windows) e servidores remotos que executam o Windows Server 2008 e versões mais recentes do sistema operacional Windows Server.
 
-A página **servidor local** em Gerenciador do servidor exibe as propriedades do servidor, os eventos, os dados do contador de desempenho e do serviço e os resultados de analisador de práticas recomendadas (BPA) para o servidor local. Os blocos de eventos, serviços, BPA e desempenho funcionam da mesma maneira que em páginas de grupo de servidores e função. Para obter mais informações sobre como configurar os dados exibidos nesses blocos, consulte [View e Configure Performance, Event, e Service Data](view-and-configure-performance-event-and-service-data.md) e [Run Best Practices Analyzer Scans e Manage Scan Results](run-best-practices-analyzer-scans-and-manage-scan-results.md).
+A página **servidor local** em Gerenciador do servidor exibe as propriedades do servidor, os eventos, os dados do contador de desempenho e do serviço e os resultados de analisador de práticas recomendadas (BPA) para o servidor local. Os blocos de eventos, serviços, BPA e desempenho funcionam da mesma maneira que em páginas de grupo de servidores e função. Para obter mais informações sobre como configurar os dados exibidos nesses blocos, consulte [Exibir e configurar o desempenho, eventos e dados de serviço](view-and-configure-performance-event-and-service-data.md) e [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](run-best-practices-analyzer-scans-and-manage-scan-results.md).
 
 Os comandos de menu e as configurações nas barras de título do console do Gerenciador do Servidor se aplicam globalmente a todos os servidores em seu pool de servidores e permitem que você use Gerenciador do Servidor para gerenciar todo o pool de servidores.
 
-Este tópico contém as seguintes seções.
+Este tópico inclui as seções a seguir.
 
 -   [Desligar o servidor local](#BKMK_shutdown)
 
--   [Configurar propriedades de Gerenciador do Servidor](#BKMK_props)
+-   [Configurar as propriedades do Gerenciador do Servidor](#BKMK_props)
 
 -   [Gerenciar o console do Gerenciador do Servidor](#BKMK_managesm)
 
--   [Personalizar as ferramentas exibidas no menu ferramentas](#BKMK_tools)
+-   [Personalizar as ferramentas exibidas no menu Ferramentas](#BKMK_tools)
 
--   [Gerenciar funções em home pages de função](#BKMK_roles)
+-   [Gerenciar funções nas home pages de funções](#BKMK_roles)
 
 ## <a name="shut-down-the-local-server"></a><a name=BKMK_shutdown></a>Desligar o servidor local
 O menu **tarefas** no bloco **Propriedades** do servidor local permite que você inicie uma sessão do Windows PowerShell no servidor local, abra o snap-in **Gerenciamento do computador** do MMC ou abra snap-ins do MMC para funções ou recursos que estão instalados no servidor local. Você também pode desligar o servidor local usando o comando **Desligar Servidor Local** nesse menu **Tarefas**. O comando **Desligar Servidor Local** também está disponível para o servidor local no bloco **Servidores** na página **Todos os Servidores** ou na página de qualquer função ou grupo na qual o servidor local esteja representado.
@@ -46,15 +44,15 @@ Desligar o servidor local usando esse método, ao contrário de desligar o Windo
 > [!NOTE]
 > Somente os membros do grupo Administradores podem desligar ou reiniciar um servidor. Os usuários padrão não podem desligar ou reiniciar um servidor. Ao clicar no comando **Desligar Servidor Local**, é feito logoff dos usuários padrão das sessões do servidor local. Isso corresponde à experiência de um usuário padrão que executa o comando de desligamento **Alt+F4** na área de trabalho do servidor.
 
-## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>Configurar propriedades de Gerenciador do Servidor
+## <a name="configure-server-manager-properties"></a><a name=BKMK_props></a>Configurar as propriedades do Gerenciador do Servidor
 Você pode exibir ou alterar as seguintes configurações no bloco **Propriedades** na página **Servidor Local**. Para alterar o valor de uma configuração, clique no valor de hipertexto da configuração.
 
 > [!NOTE]
 > Normalmente, as propriedades exibidas no bloco **Propriedades** do Servidor Local podem ser alteradas apenas no servidor local. Você não pode alterar as propriedades do servidor local de um computador remoto usando Gerenciador do Servidor porque o bloco **Propriedades** só pode obter informações sobre o computador local, não para computadores remotos.
-> 
+>
 > Como muitas propriedades exibidas no bloco **Propriedades** são controladas por ferramentas que não fazem parte do Gerenciador do servidor (painel de controle, por exemplo), as alterações nas configurações de **Propriedades** nem sempre são exibidas no bloco **Propriedades** imediatamente. Por padrão, os dados do bloco **Propriedades** são atualizadas a cada dois minutos. Para atualizar os dados do bloco de **Propriedades** imediatamente, clique em **Atualizar** na barra de endereços do Gerenciador do servidor.
 
-|Configuração|Descrição|
+|Setting|Descrição|
 |------|--------|
 |nome do computador|Exibe o nome amigável do computador e abre a caixa de diálogo **Propriedades do sistema** , que permite alterar o nome do servidor, a associação do domínio e outras configurações do sistema, como perfis de usuário.|
 |Domínio (ou Grupo de Trabalho, se o servidor não tiver ingressado em um domínio)|Exibe o domínio ou o grupo de trabalho do qual o servidor é membro. Abre a caixa de diálogo **Propriedades do sistema** , que permite alterar o nome do servidor, a associação do domínio e outras configurações do sistema, como perfis de usuário.|
@@ -68,7 +66,7 @@ Você pode exibir ou alterar as seguintes configurações no bloco **Propriedade
 |Últimas atualizações instaladas|Exibe o dia e a hora em que atualizações do Windows foram instaladas pela última vez. Abre **Painel de Controle\Sistema e Segurança\Windows Update**.|
 |Windows Update|Exibe as configurações do Windows Update para o servidor local. Abre **Painel de Controle\Sistema e Segurança\Windows Update**.|
 |Última verificação de atualizações|Exibe o dia e a hora em que o servidor verificou atualizações disponíveis do Windows pela última vez. Abre **Painel de Controle\Sistema e Segurança\Windows Update**.|
-|Relatórios de Erros do Windows|Exibe o status de aceite do Relatório de Erros do Windows. Abre a caixa de diálogo **Configuração do Relatório de Erros do Windows**. Para obter mais informações sobre Relatórios de Erros do Windows, seus benefícios, políticas de privacidade e configurações de aceite, consulte [Relatórios de erros do Windows](https://go.microsoft.com/fwlink/?LinkID=245991).|
+|Relatório de Erros do Windows|Exibe o status de aceite do Relatório de Erros do Windows. Abre a caixa de diálogo **Configuração do Relatório de Erros do Windows**. Para obter mais informações sobre Relatórios de Erros do Windows, seus benefícios, políticas de privacidade e configurações de aceite, consulte [Relatórios de erros do Windows](https://go.microsoft.com/fwlink/?LinkID=245991).|
 |Programa de Aperfeiçoamento da Experiência do Usuário|Exibe o status de aceite do Programa de Aperfeiçoamento da Experiência do Usuário do Windows. Abre a caixa de diálogo **Configuração do Programa de Aperfeiçoamento da Experiência do Usuário**. Para obter mais informações sobre o Programa de Aperfeiçoamento da Experiência do Usuário, seus benefícios e suas configurações de aceite, consulte [Programa de Aperfeiçoamento da Experiência do Usuário do Windows](https://go.microsoft.com/fwlink/?LinkID=245992).|
 |Configuração de Segurança Aprimorada do Internet Explorer (IE)|Mostra se a Configuração de Segurança Aprimorada do IE (também conhecida como fortalecimento do IE ou IE ESC) está ativada ou desativada. Abre a caixa de diálogo **Configuração de Segurança Aprimorada do Internet Explorer**. A Configuração de Segurança Aprimorada do IE é uma medida de segurança para servidores que impede que páginas da Web sejam abertas no Internet Explorer. Para mais informações sobre Configuração de segurança avançada do IE, seus benefícios e configurações, consulte [Internet Explorer: Configuração de segurança aprimorada](https://go.microsoft.com/fwlink/?LinkId=253461).|
 |fuso horário|Exibe o fuso horário do servidor local. Abre a caixa de diálogo **data e hora** .|
@@ -90,7 +88,7 @@ Você pode configurar o intervalo de atualização para dados exibidos no Gerenc
 
 1.  No menu **gerenciar** do console do Gerenciador do servidor, clique em **Propriedades de Gerenciador do servidor**.
 
-2.  Na caixa de diálogo **Propriedades do Gerenciador do servidor** , especifique um período de tempo, em minutos, para a quantidade de tempo decorrido que você deseja entre as atualizações dos dados exibidos no Gerenciador do servidor. O padrão é de 10 minutos. Ao concluir, clique em OK.
+2.  Na caixa de diálogo **Propriedades do Gerenciador do servidor** , especifique um período de tempo, em minutos, para a quantidade de tempo decorrido que você deseja entre as atualizações dos dados exibidos no Gerenciador do servidor. O padrão é 10 minutos. Ao concluir, clique em OK.
 
 #### <a name="refresh-limitations"></a>Limitações de atualização
 A atualização se aplica globalmente aos dados de todos os servidores que você adicionou ao pool de servidores do Gerenciador do Servidor. Não é possível atualizar dados ou configurar intervalos de atualização diferentes para servidores, funções ou grupos individuais.
@@ -113,7 +111,7 @@ A caixa de seleção não **iniciar Gerenciador do servidor automaticamente no l
 ### <a name="zoom-in-or-out"></a>Ampliar ou reduzir
 Para ampliar ou reduzir a exibição do console do Gerenciador do Servidor, você pode usar os comandos de **zoom** no menu **Exibir** ou pressionar **Ctrl + mais (+)** para ampliar e **Ctrl + menos (-)** para reduzir.
 
-## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar as ferramentas exibidas no menu ferramentas
+## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar as ferramentas exibidas no menu Ferramentas
 O menu **ferramentas** do Gerenciador do servidor inclui links suaves para atalhos na pasta **Ferramentas administrativas** no **painel de controle/sistema e segurança**. A pasta **Ferramentas administrativas** contém uma lista de atalhos ou arquivos lnk para as ferramentas de gerenciamento disponíveis, como snap-ins do mmc. Gerenciador do servidor popula o menu **ferramentas** com links para esses atalhos e copia a estrutura de pastas da pasta **Ferramentas administrativas** para o menu **ferramentas** . Por padrão, as ferramentas na pasta Ferramentas Administrativas são organizadas em uma lista simples, classificadas por tipo e por nome. No menu**ferramentas** Gerenciador do servidor, os itens são classificados somente por nome, não por tipo.
 
 Para personalizar o menu **Ferramentas**, copie os atalhos das ferramentas ou dos scripts que você deseja usar para a pasta **Ferramentas Administrativas**. Você também pode organizar seus atalhos em pastas, o que cria menus em cascata no menu **Ferramentas**. Além disso, se você quiser restringir o acesso às ferramentas personalizadas no menu **ferramentas** , poderá definir direitos de acesso de usuário em suas pastas de ferramentas personalizadas em ferramentas administrativas ou diretamente na ferramenta original ou nos arquivos de script.
@@ -143,9 +141,9 @@ O procedimento a seguir descreve como criar uma pasta de exemplo chamada *MyTool
 
     > [!NOTE]
     > Se você restringir o acesso a uma pasta inteira que você copiou para ferramentas administrativas, os usuários restritos poderão ver nem a pasta nem seu conteúdo no menu**ferramentas** do Gerenciador do servidor.
-    > 
+    >
     > Edite permissões para a pasta na pasta **Ferramentas administrativas** . Como arquivos ocultos e pastas em ferramentas administrativas são sempre exibidos no menu**ferramentas** de Gerenciador do servidor, não use a configuração **oculta** em uma caixa de diálogo **Propriedades** de arquivo ou pasta para restringir o acesso de usuário aos seus atalhos de ferramenta personalizada.
-    > 
+    >
     > As permissões **Negar** sempre substituem as permissões **Permitir**.
 
 6.  Clique com o botão direito do mouse na ferramenta original, no script ou no arquivo executável para o qual você deseja adicionar entradas no menu **ferramentas** e clique em **criar atalho**.
@@ -154,7 +152,7 @@ O procedimento a seguir descreve como criar uma pasta de exemplo chamada *MyTool
 
 8.  Atualize ou reinicie Gerenciador do Servidor, se necessário, para ver o atalho da ferramenta personalizada no menu **ferramentas** .
 
-## <a name="manage-roles-on-role-home-pages"></a><a name=BKMK_roles></a>Gerenciar funções em home pages de função
+## <a name="manage-roles-on-role-home-pages"></a><a name=BKMK_roles></a>Gerenciar funções nas home pages de funções
 Depois de adicionar servidores ao pool de servidores do Gerenciador do Servidor e Gerenciador do Servidor coletar dados de inventário sobre servidores em seu pool, Gerenciador do Servidor adiciona páginas ao painel de navegação para funções que são descobertas em servidores gerenciados. O bloco **Servidores** nas páginas de funções lista os servidores gerenciados que executam a função. Por padrão, os blocos **Eventos**, **Analisador de Práticas Recomendadas**, **Serviços** e **Desempenho** exibem dados de todos os serviços que executam a função. A seleção de um servidor específico no bloco **Servidores** limita o escopo dos resultados de eventos, serviços, contadores de desempenho e BPA somente aos servidores selecionados. As ferramentas de gerenciamento normalmente estão disponíveis no menu de **ferramentas** do console Gerenciador do servidor, depois que uma função ou um recurso tiver sido instalado ou descoberto em um servidor gerenciado. Você também pode clicar com o botão direito do mouse nas entradas do servidor no bloco **Servidores** de uma função ou um grupo e então iniciar a ferramenta de gerenciamento que deseja usar.
 
 No Windows Server 2016, as funções e recursos a seguir têm ferramentas de gerenciamento integradas ao console do Gerenciador do Servidor como páginas.
@@ -171,14 +169,14 @@ No Windows Server 2016, as funções e recursos a seguir têm ferramentas de ger
 
     para obter mais informações sobre como implantar e gerenciar o IPAM, consulte [IPAM (gerenciamento de endereço IP)](https://go.microsoft.com/fwlink/p/?LinkId=241533).
 
-## <a name="see-also"></a>Consulte também
-[Gerenciador do Servidor](server-manager.md)
-[adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md)
-[criar e gerenciar grupos de servidores](create-and-manage-server-groups.md)
-[Exibir e configurar dados de desempenho, eventos e serviços](view-and-configure-performance-event-and-service-data.md)
-de [serviços de arquivo e armazenamento](https://go.microsoft.com/fwlink/p/?LinkId=241530)
-[serviços de área de trabalho remota (rdS)](https://go.microsoft.com/fwlink/p/?LinkId=241532)
-[Gerenciamento de endereço IP (IPAM)](https://go.microsoft.com/fwlink/p/?LinkId=241533)
+## <a name="see-also"></a>Consulte Também
+[Gerenciador do servidor](server-manager.md) 
+ [adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md) 
+ [criar e gerenciar grupos](create-and-manage-server-groups.md) 
+ de servidores [Exibir e configurar dados de desempenho, eventos e serviços](view-and-configure-performance-event-and-service-data.md) 
+ Serviços de arquivo [e armazenamento](https://go.microsoft.com/fwlink/p/?LinkId=241530) 
+ [Serviços de área de trabalho remota (rdS)](https://go.microsoft.com/fwlink/p/?LinkId=241532) 
+ [IPAM (gerenciamento de endereços IP)](https://go.microsoft.com/fwlink/p/?LinkId=241533)
 
 
 

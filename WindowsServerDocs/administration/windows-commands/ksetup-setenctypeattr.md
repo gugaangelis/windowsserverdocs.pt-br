@@ -1,20 +1,18 @@
 ---
 title: ksetup setenctypeattr
 description: Artigo de referência para o comando ksetup setenctypeattr, que define o atributo de tipo de criptografia para o domínio.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 88fb913e-6b57-48d9-8c16-a035ab2977ac
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8bb8411a795d0167af1fc921fdf1c19febcb8527
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 50d5c5be2382cc1d811066d577f8f092b676853a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933912"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887763"
 ---
 # <a name="ksetup-setenctypeattr"></a>ksetup setenctypeattr
 
