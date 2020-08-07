@@ -1,26 +1,24 @@
 ---
 title: tpmvscmgr
 description: Artigo de referência para tpmvscmgr, que é uma ferramenta de linha de comando que permite aos usuários com credenciais administrativas criar e excluir cartões inteligentes virtuais do TPM em um computador.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8741c947220ce2a3f6852c7374bf0817323bb632
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d124fb0bee576b2058a7ecae02afaf9521baab30
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935592"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897121"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
 A ferramenta de linha de comando Tpmvscmgr permite que os usuários com credenciais administrativas criem e excluam cartões inteligentes virtuais do TPM em um computador.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 Tpmvscmgr create [/name] [/AdminKey DEFAULT | PROMPT | RANDOM] [/PIN DEFAULT | PROMPT] [/PUK DEFAULT | PROMPT] [/generate] [/machine] [/?]

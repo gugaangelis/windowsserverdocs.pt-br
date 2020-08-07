@@ -1,20 +1,18 @@
 ---
 title: doskey
 description: Artigo de referência para o comando do Doskey e Doskey.exe, que recupera os comandos de linha de comando inseridos anteriormente, edita linhas de comando e cria macros.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a92c9e1d6ffe1f8d7ace5500179697b2a00df1b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f945c0b73509e0a936bf4de1cae9bb721b77e5c3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930552"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890763"
 ---
 # <a name="doskey"></a>doskey
 

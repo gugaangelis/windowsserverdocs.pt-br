@@ -1,20 +1,18 @@
 ---
 title: driverquery
 description: Artigo de referência para o comando driverquery, que permite que um administrador exiba uma lista de drivers de dispositivo instalados e suas propriedades.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ad0a028217e07d8c15b59dc96e31c8f236dd743
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931460"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890758"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -33,7 +31,7 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 | /s`<system>` | Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local. |
 | /u`[<domain>]<username>` | Executa o comando com as credenciais da conta de usuário, conforme especificado pelo *usuário* ou *domínio \ nome_de_usuário*. Por padrão, */s* usa as credenciais do usuário que está conectado no momento no computador que está emitindo o comando. **/u** não pode ser usado a menos que **/s** seja especificado. |
 | /p`<password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . **/p** não pode ser usado a menos que **/u** seja especificado. |
-| /Fo Table | Formata a saída como uma tabela. Este é o padrão. |
+| /Fo Table | Formata a saída como uma tabela. Esse é o padrão. |
 | /Fo List | Formata a saída como uma lista. |
 | /Fo CSV | Formata a saída com valores separados por vírgula. |
 | /NH | Omite a linha de cabeçalho das informações de driver exibidas. Não é válido se o parâmetro **/fo** estiver definido como **list**. |

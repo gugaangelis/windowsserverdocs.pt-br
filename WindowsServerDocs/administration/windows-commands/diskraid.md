@@ -1,20 +1,18 @@
 ---
 title: DiskRAID
 description: Artigo de referência para a ferramenta de linha de comando do DiskRAID, que permite configurar e gerenciar a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0745c708878fa9da6571666b5702b4408976164
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d13b8f6a8ffb4f78312a804dd277839021dbd9e1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924764"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890816"
 ---
 # <a name="diskraid"></a>DiskRAID
 
@@ -244,7 +242,7 @@ detail {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 Define a lista especificada de portas do controlador como inativas para o LUN selecionado atualmente (outras portas do controlador não são afetadas) ou dissocia a lista especificada de destinos iSCSI para o LUN selecionado no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 dissociate controllers <n> [,<n> [,...]]
@@ -285,7 +283,7 @@ Controller port associations changed.
 
 Sai do DiskRAID.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 exit
@@ -313,7 +311,7 @@ extend lun [size=<LUN_size>] [drives=<drive_number>, [<drive_number>, ...]] [noe
 
 Limpa o cache no controlador selecionado no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 flushcache controller
@@ -323,7 +321,7 @@ flushcache controller
 
 Exibe uma lista de todos os comandos do DiskRAID.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 help
@@ -333,7 +331,7 @@ help
 
 Recupera ou define o destino de importação de Serviço de Cópias de Sombra de Volume (VSS) atual definido para o subsistema selecionado no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 importtarget subsystem [set target]
@@ -349,7 +347,7 @@ importtarget subsystem [set target]
 
 Recupera informações sobre o iniciador iSCSI local.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 initiator
@@ -359,7 +357,7 @@ initiator
 
 Invalida o cache no controlador selecionado no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 invalidatecache controller
@@ -381,7 +379,7 @@ lbpolicy set lun paths=<path>-{primary | <weight>}[,<path>-{primary | <weight>}[
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | type | Especifica a política de balanceamento de carga. Se o tipo não for especificado, o parâmetro **path** deverá ser especificado. Tipo pode ser um dos seguintes:<ul><li>**Failover** – usa um caminho primário com outros caminhos sendo caminhos de backup.</li><li>**RoundRobin** -usa todos os caminhos no modo Round Robin, que tenta cada caminho sequencialmente.</li><li>**SUBSETROUNDROBIN** -usa todos os caminhos primários no modo Round Robin; os caminhos de backup serão usados somente se todos os caminhos primários falharem.</li><li>**DYNLQD** -usa o caminho com o número mínimo de solicitações ativas.<li><li>**Ponderado** – usa o caminho com o mínimo de peso (cada caminho deve ser atribuído a um peso).</li><li>**LEASTBLOCKS** -usa o caminho com os blocos mínimos.</li><li>**VENDORSPECIFIC** -usa uma política específica do fornecedor.</li></ul> |
-| path | Especifica se um caminho é **primário** ou tem um específico `<weight>` . Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados. |
+| caminho | Especifica se um caminho é **primário** ou tem um específico `<weight>` . Todos os caminhos não especificados são definidos implicitamente como backup. Todos os caminhos listados devem ser um dos caminhos de LUN atualmente selecionados. |
 
 ### <a name="list"></a>list
 
@@ -470,7 +468,7 @@ maintenance <object operation> [count=<iteration>]
 
 Define o nome amigável do subsistema, LUN ou destino iSCSI atualmente selecionado para o nome especificado.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 name {subsystem | lun | target} [<name>]
@@ -486,7 +484,7 @@ name {subsystem | lun | target} [<name>]
 
 Define o estado do objeto selecionado no momento do tipo especificado como **offline**.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 offline <object>
@@ -502,7 +500,7 @@ offline <object>
 
 Define o estado do objeto selecionado do tipo especificado como **online**. Se Object for **hbaport**, o alterará o status dos caminhos para a porta de HBA selecionada no momento para **online**.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 online <object>
@@ -518,7 +516,7 @@ online <object>
 
 Executa as operações necessárias, como ressincronização ou Hot Sparing, para reparar o LUN tolerante a falhas selecionado no momento. Por exemplo, a recuperação pode fazer com que um hot spare seja associado a um conjunto de RAID que tenha um disco com falha ou outra realocação de extensão de disco.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 recover <lun>
@@ -545,7 +543,7 @@ reenumerate {subsystems | drives}
 
 Atualiza os dados internos do provedor selecionado no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 refresh provider
@@ -555,7 +553,7 @@ refresh provider
 
 Usado para comentar scripts.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 Rem <comment>
@@ -565,7 +563,7 @@ Rem <comment>
 
 Remove o portal de destino iSCSI especificado do grupo do portal de destino selecionado no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 remove tpgroup tportal=<tportal> [noerr]
@@ -582,7 +580,7 @@ remove tpgroup tportal=<tportal> [noerr]
 
 Substitui a unidade especificada pela unidade selecionada no momento. A unidade especificada pode não ser a unidade selecionada no momento.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 replace drive=<drive_number>
@@ -625,7 +623,7 @@ select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| objeto | Especifica o tipo de objeto a ser selecionado, incluindo: **provedor**, **subsistema**, **controlador**, **unidade**ou **LUN**. |
+| object | Especifica o tipo de objeto a ser selecionado, incluindo: **provedor**, **subsistema**, **controlador**, **unidade**ou **LUN**. |
 | destes`[<n>]` | Define o foco para a porta HBA local especificada. Se nenhuma porta HBA for especificada, o comando exibirá a porta HBA selecionada no momento (se houver). A especificação de um índice de porta HBA inválido resulta em nenhuma porta HBA em foco. A seleção de uma porta HBA anula a seleção de todos os adaptadores iniciadores e portais iniciadores selecionados. |
 | IADAPTER`[<n>]` | Define o foco para o adaptador do iniciador iSCSI local especificado. Se nenhum adaptador do iniciador for especificado, o comando exibirá o adaptador do iniciador selecionado no momento (se houver). A especificação de um índice de adaptador iniciador inválido resulta em nenhum adaptador de iniciador em foco. A seleção de um adaptador de iniciador anula a seleção de portas HBA selecionadas e portais do iniciador. |
 | iportal`[<n>]` | Define o foco para o portal do iniciador iSCSI local especificado no adaptador do iniciador iSCSI selecionado. Se nenhum portal do iniciador for especificado, o comando exibirá o portal do iniciador selecionado no momento (se houver). A especificação de um índice inválido do portal do iniciador resulta em nenhum portal do iniciador selecionado. |

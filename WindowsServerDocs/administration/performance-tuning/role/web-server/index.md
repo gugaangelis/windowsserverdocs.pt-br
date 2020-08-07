@@ -1,18 +1,16 @@
 ---
 title: Ajuste de desempenho de servidores Web
 description: Recomendações para ajuste de desempenho de servidores Web com Windows Server 2016
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 249500249921d21184dc8cd14993741392927586
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8c0f2383291ee4f0abd74c58d50dc51549edfead
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471201"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896003"
 ---
 # <a name="performance-tuning-web-servers"></a>Ajuste de desempenho de servidores Web
 

@@ -1,20 +1,18 @@
 ---
 title: tracert
 description: Artigo de referência para o tracert, que determina o caminho levado para um destino, enviando solicitações de eco do protocolo ICMP ou mensagens ICMPv6 para o destino com valores de campo TTL (tempo de vida) aumentando de forma incremental.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: adc73fdd646b3a9f7202f286912b5295f0c4e140
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f73c9df4a72b0c28976e25bc2970da372275ea8b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933731"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897104"
 ---
 # <a name="tracert"></a>tracert
 

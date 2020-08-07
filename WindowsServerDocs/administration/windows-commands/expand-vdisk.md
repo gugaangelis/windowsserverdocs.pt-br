@@ -1,20 +1,18 @@
 ---
 title: expand vdisk
 description: Artigo de referência para o comando Expand VDISK, que expande um disco rígido virtual (VHD) para um tamanho especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3ae547b4-3813-4b86-bacd-bc273c028a2a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7951d4875249e46d850883f7863262774dd9bab
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5d9c5c859dfa506d9f8afd07a0e78bdef210f60a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932300"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890448"
 ---
 # <a name="expand-vdisk"></a>expand vdisk
 

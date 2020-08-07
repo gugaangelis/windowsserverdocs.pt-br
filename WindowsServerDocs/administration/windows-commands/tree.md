@@ -1,20 +1,18 @@
 ---
 title: tree
 description: Artigo de referência para a árvore, que exibe a estrutura de diretório de um caminho, ou do disco em uma unidade, graficamente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 345d3192-401e-4a3b-a8ac-36a85c7be79d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dea885a8149c8231f3cb8e24c2128622131206e7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 44e3e54f986cc4bd4459d4e007c5111b664a6a45
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932388"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897094"
 ---
 # <a name="tree"></a>tree
 

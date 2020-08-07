@@ -1,20 +1,18 @@
 ---
 title: diskcopy
 description: Artigo de referência para o comando diskcopy, que copia o conteúdo do disquete na unidade de origem para um disquete formatado ou não formatado na unidade de destino.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5fd21efa-52cc-4e70-a7fe-35125a435106
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 7b29e81dc1befff8cd90b460b1117207146fa191
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b385d7fb371b0e33bcf16b240b051ce038a525a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929349"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890947"
 ---
 # <a name="diskcopy"></a>diskcopy
 

@@ -1,20 +1,18 @@
 ---
 title: dnscmd
 description: Artigo de referência para o comando dnscmd, que é uma interface de linha de comando para gerenciar servidores DNS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e7f31cb5-a426-4e25-b714-88712b8defd5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8c8d865643c12377a3f4b14250f9d3dbead1e2ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc034b86cc095b8bd23a8c0fd71f9da515474068
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958238"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890784"
 ---
 # <a name="dnscmd"></a>Dnscmd
 

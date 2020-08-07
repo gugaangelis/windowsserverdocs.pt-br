@@ -1,18 +1,16 @@
 ---
 title: Diretrizes de ajuste de desempenho do Windows Server 2016
 description: Diretrizes de ajuste de desempenho para Windows Server 2016
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f684a87b091ffd95bb65c0b5f3aa0dfc9f405825
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 69b65e9a7cb5e935a8c6b1a8ab500e33307a092d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71355041"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896694"
 ---
 # <a name="performance-tuning-guidelines-for-windows-server-2016"></a>Diretrizes de ajuste de desempenho para Windows Server 2016
 
@@ -68,4 +66,4 @@ Este guia organiza as diretrizes de desempenho e de ajuste para Windows Server 2
 
 - *Remoção das seções de armazenamento dedicado* e inclusão da nova seção [Espaços de Armazenamento Diretos](subsystem/storage-spaces-direct/index.md) e conteúdo canônico da Technet
 
-- *Remoção da seção de rede dedicada* e inclusão do conteúdo canônico da Technet  
+- *Remoção da seção de rede dedicada* e inclusão do conteúdo canônico da Technet

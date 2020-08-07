@@ -1,26 +1,24 @@
 ---
 title: tracerpt
 description: Artigo de referência para Tracerpt, que analisa logs de rastreamento de eventos, arquivos de log gerados pelo monitor de desempenho e provedores de rastreamento de eventos em tempo real.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cb9eaf86-0ef6-4197-b6c8-9cca8a1d723c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7060932f0b7eb996d0f0934e6945665c0c91e916
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 657a0ff1df856bf605c31d260a77bc266909485d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935584"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897116"
 ---
 # <a name="tracerpt"></a>tracerpt
 
 O comando **Tracerpt** pode ser usado para analisar logs de rastreamento de eventos, arquivos de log gerados pelo monitor de desempenho e provedores de rastreamento de eventos em tempo real. Ele gera arquivos de despejo, arquivos de relatório e esquemas de relatório.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [options]

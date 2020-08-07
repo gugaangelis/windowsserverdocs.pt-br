@@ -1,20 +1,18 @@
 ---
 title: extend
 description: Artigo de referência para o comando Extend, que estende o volume ou a partição com foco e seu sistema de arquivos para o espaço livre (não alocado) em um disco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2414e21d-fc0b-40e8-9e33-3e072f8ad76b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4749b2ddcd47aa5445d9d77ff86c3473ae37b355
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a64de5c0215568827b5440a3720946a86c7a891e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931440"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890386"
 ---
 # <a name="extend"></a>extend
 

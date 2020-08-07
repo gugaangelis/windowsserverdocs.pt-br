@@ -1,20 +1,18 @@
 ---
 title: tsdiscon
 description: Artigo de referência para tsdiscon, que desconecta uma sessão de um servidor de host de sessão de área de trabalho remota.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3016bb5a146bf7c1d55ab93325debb11b0f6a81c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e81a1c7f68af0bb1d16ce64bb4985e3ddb8d18f2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954928"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897078"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 

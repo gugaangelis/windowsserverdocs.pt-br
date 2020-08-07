@@ -1,20 +1,18 @@
 ---
 title: Ajuste de desempenho para servidores de arquivos
 description: Ajuste de desempenho para servidores de arquivos que executam o Windows Server
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 1236b961f77fe46f19b70a2c48d32f05585bd29c
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851839"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896178"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Ajuste de desempenho para servidores de arquivos
 
@@ -95,24 +93,24 @@ As seguintes configurações do Registro REG\_DWORD podem afetar o desempenho do
 
     O padrão é 10 segundos. Esse é o tempo limite do cache do diretório.
 
-    > [!NOTE]  
+    > [!NOTE]
     > Esse parâmetro controla o cache de metadados de diretório na ausência de concessões de diretório.
-     
-     > [!NOTE]  
+
+     > [!NOTE]
      > Um problema conhecido no Windows 10 versão 1803 afeta a capacidade do Windows 10 de armazenar em cache grandes diretórios. Depois de fazer o upgrade de um computador para o Windows 10 versão 1803, você acessa um compartilhamento de rede que contém milhares de arquivos e pastas e abre um documento que está localizado nesse compartilhamento. Durante ambas as operações, você enfrenta atrasos significativos.
-     >  
+     >
      > Para resolver esse problema, instale o Windows 10 versão 1809 ou uma versão posterior.
-     >  
+     >
      > Para contornar esse problema, defina **DirectoryCacheLifetime** como **0**.
-     >  
-     > Esse problema afeta as seguintes edições do Windows 10:  
+     >
+     > Esse problema afeta as seguintes edições do Windows 10:
      > - Windows 10 Enterprise, versão 1803
      > - Windows 10 Pro for Workstations, versão 1803
      > - Windows 10 Pro Education, versão 1803
      > - Windows 10 Professional, versão 1803
      > - Windows 10 Education, versão 1803
      > - Windows 10 Home, versão 1803
-   
+
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -171,8 +169,8 @@ As seguintes configurações do Registro REG\_DWORD podem afetar o desempenho do
 
     Aplica-se a Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Vista, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 e Windows Server 2008
 
-    O padrão é 0, que desabilita a Assinatura SMB. Alterar esse valor para 1 habilita a assinatura SMB para toda a comunicação SMB, impedindo a comunicação SMB com computadores nos quais a assinatura SMB está desabilitada. A assinatura SMB pode aumentar o custo da CPU e as idas e voltas da rede, mas ajuda a bloquear ataques man-in-the-middle. Se a assinatura SMB não for necessária, verifique se esse valor de Registro é 0 em todos os clientes e servidores. 
-    
+    O padrão é 0, que desabilita a Assinatura SMB. Alterar esse valor para 1 habilita a assinatura SMB para toda a comunicação SMB, impedindo a comunicação SMB com computadores nos quais a assinatura SMB está desabilitada. A assinatura SMB pode aumentar o custo da CPU e as idas e voltas da rede, mas ajuda a bloquear ataques man-in-the-middle. Se a assinatura SMB não for necessária, verifique se esse valor de Registro é 0 em todos os clientes e servidores.
+
     Para saber mais, confira [The Basics of SMB Signing](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/) (As noções básicas da assinatura SMB).
 
 -   **FileInfoCacheEntriesMax**
@@ -237,7 +235,7 @@ Os parâmetros de ajustes gerais para computadores cliente podem otimizar um com
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+
 
 Começando com o Windows 8, é possível definir muitas configurações SMB usando os cmdlets **Set-SmbClientConfiguration** e **Set-SmbServerConfiguration** do Windows PowerShell. Configurações somente de Registro podem ser definidas usando o Windows PowerShell também.
 

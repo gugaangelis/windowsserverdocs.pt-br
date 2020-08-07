@@ -1,23 +1,21 @@
 ---
 title: Ajuste de desempenho de contêineres do Windows Server
 description: Recomendações de ajuste de desempenho para contêineres no Windows Server 16
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: a4508e28e54562748422b198f703e23326d15720
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 53201ee17829ec82eb8d661b5f76689e00d22df8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80851629"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895985"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Ajuste de desempenho de contêineres do Windows Server
 
 ## <a name="introduction"></a>Introdução
-O Windows Server 2016 é a primeira versão do Windows que dá suporte à tecnologia de contêiner interna do sistema operacional. No Server 2016, há dois tipos de contêineres disponíveis: Contêineres do Windows Server e contêineres do Hyper-V. Cada tipo de contêiner dá suporte ao SKU do Server Core ou do Nano Server do Windows Server 2016. 
+O Windows Server 2016 é a primeira versão do Windows que dá suporte à tecnologia de contêiner interna do sistema operacional. No Server 2016, há dois tipos de contêineres disponíveis: Contêineres do Windows Server e contêineres do Hyper-V. Cada tipo de contêiner dá suporte ao SKU do Server Core ou do Nano Server do Windows Server 2016.
 
 Essas configurações têm implicações de desempenho diferentes que estão detalhadas abaixo para ajudá-lo a entender qual é a ideal para seus cenários. Além disso, detalhamos as configurações que afetam o desempenho e descrevemos as vantagens e desvantagens de cada uma dessas opções.
 
@@ -33,7 +31,7 @@ O isolamento adicional fornecido pelos contêineres do Hyper-V é obtido em gran
 
 ### <a name="nano-server-and-server-core"></a>Nano Server e Server Core
 
-Os contêineres do Windows Server e os contêineres do Hyper-V dão suporte ao Server Core e a uma nova opção de instalação disponível no Windows Server 2016: o [Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server). 
+Os contêineres do Windows Server e os contêineres do Hyper-V dão suporte ao Server Core e a uma nova opção de instalação disponível no Windows Server 2016: o [Nano Server](https://technet.microsoft.com/windows-server-docs/compute/nano-server/getting-started-with-nano-server).
 
 O Nano Server é um sistema operacional de servidor administrado remotamente e otimizado para data centers e nuvens privadas. É semelhante ao Windows Server no modo Server Core, mas significativamente menor, não tem nenhum recurso de logon local e só oferece suporte a agentes, ferramentas e aplicativos de 64 bits. Ele ocupa bem menos espaço em disco e é iniciado mais rapidamente.
 
@@ -71,7 +69,7 @@ Os contêineres do Windows Server e os contêineres do Hyper-V oferecem uma vari
 
 Cada contêiner receberá um endereço IP de um prefixo IP privado e interno (por exemplo, 172.16.0.0/12). Há suporte para o mapeamento/encaminhamento de porta do host de contêiner para os pontos de extremidade do contêiner. O Docker cria uma rede NAT por padrão, quando o dockerd é executado pela primeira vez.
 
-Desses três modos, a configuração de NAT é o caminho de E/S de rede mais dispendioso, mas tem a menor quantidade de configuração necessária. 
+Desses três modos, a configuração de NAT é o caminho de E/S de rede mais dispendioso, mas tem a menor quantidade de configuração necessária.
 
 Contêineres do Windows Server usam uma vNIC do host para se conectar ao comutador virtual. Os contêineres do Hyper-V usam uma NIC de VM sintética (não exposta à VM do utilitário) para se conectar ao comutador virtual. Quando os contêineres estão se comunicando com a rede externa, os pacotes são roteados pela WinNAT com conversões de endereço aplicadas, o que gera uma sobrecarga.
 
