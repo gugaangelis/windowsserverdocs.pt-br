@@ -1,20 +1,18 @@
 ---
 title: mapadmin
 description: Artigo de referência para o comando mapadmin, que gerencia Mapeamento de Nomes de Usuário para serviços da Microsoft para o sistema de arquivos de rede.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b2ebe5626057bd7f7ddac238360d171c87fd15c6
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3334ae31b3abb85dcc3df046d8199c9b72ea3944
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922185"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886571"
 ---
 # <a name="mapadmin"></a>mapadmin
 

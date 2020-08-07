@@ -1,20 +1,18 @@
 ---
 title: fsutil quota
 description: Artigo de referência para o comando fsutil quota, que gerencia as cotas de disco em volumes NTFS para fornecer um controle mais preciso do armazenamento baseado em rede.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 21225c11-7c72-4ea2-96bd-e63d4beb3be5
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: f757f822a903f6b5c6d221e17f87cf1e73d1555f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7edf7ac908df419611fb42dd819323b15c8ded4e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925220"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889924"
 ---
 # <a name="fsutil-quota"></a>fsutil quota
 

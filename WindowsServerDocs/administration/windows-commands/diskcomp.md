@@ -1,20 +1,18 @@
 ---
 title: diskcomp
 description: Artigo de referência do comando diskcomp, que compara o conteúdo de dois disquetes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4f56f534-a356-4daa-8b4f-38e089341e42
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efd935d4630d9397d97863d6d373db3801a97b17
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 71401942f25d3f503639b2931f2f0ee49229e15b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929354"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890973"
 ---
 # <a name="diskcomp"></a>diskcomp
 

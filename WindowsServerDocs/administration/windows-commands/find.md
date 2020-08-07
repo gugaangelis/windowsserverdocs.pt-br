@@ -1,20 +1,18 @@
 ---
 title: localizar
 description: Artigo de referência para o comando find, que procura uma cadeia de caracteres de texto em arquivos, exibindo a cadeia de caracteres de texto especificada no arquivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2ca66b22-3b7c-4166-8503-eb75fc53ab46
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ebebcd29faad50aec84dd464ff0f745d2ddf52c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: d77995213b05b4bc3c60336569bdf06f4ade04a7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925252"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890317"
 ---
 # <a name="find"></a>localizar
 

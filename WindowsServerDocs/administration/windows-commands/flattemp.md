@@ -1,20 +1,18 @@
 ---
 title: flattemp
 description: Artigo de referência para o comando flattemp, que habilita ou desabilita pastas temporárias simples.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 059a0960-1fd9-4382-87fe-a85d5dccdaea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ec253182ce3071f03ce47e368c6fa87fe58fed0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b90bfdf06fad151ab92ea82782a4171877e6d0ad
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932099"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890197"
 ---
 # <a name="flattemp"></a>flattemp
 

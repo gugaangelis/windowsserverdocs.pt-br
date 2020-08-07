@@ -1,22 +1,20 @@
 ---
-title: para
+title: for
 description: Artigo de referência para o comando for, que executa um comando especificado para cada arquivo, dentro de um conjunto de arquivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44b6497af626079b05768fd245c1b86693bdfe61
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7e964c502d012648f6633b099688781a8d4f22cf
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922416"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890177"
 ---
-# <a name="for"></a>para
+# <a name="for"></a>for
 
 Executa um comando especificado para cada arquivo, dentro de um conjunto de arquivos.
 

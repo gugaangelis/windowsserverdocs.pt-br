@@ -1,20 +1,18 @@
 ---
 title: bitsadmin peercaching e setconfigurationflags
 description: Artigo de referência para o comando Bitsadmin do serviço de cache e setconfigurationflags, que define os sinalizadores de configuração que determinam se o computador pode fornecer conteúdo a pares e se ele pode baixar conteúdo de pares.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ff0a2b49-66e3-4d40-824c-6a3816055d2e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 868ef39104f1d16c760d91eee401c0d48b27ea1f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6ed6f638766378a24bc06c488cb90703d05f9c05
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928120"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87893581"
 ---
 # <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin peercaching e setconfigurationflags
 

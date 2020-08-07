@@ -1,20 +1,18 @@
 ---
 title: dfsrmig
 description: Artigo de referência para o comando DFSRMIG, que migra a replicação do SYSvol do FRS para o Replicação do DFS, fornece informações sobre o progresso da migração e modifica AD DS objetos para dar suporte à migração.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e1b6a464-6a93-4e66-9969-04f175226d8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87882ebe0beb687f704c5573091f56c067c278ee
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 83e4d039b0c7c36960ab8dadfa4740d0c01daa33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928637"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891042"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 

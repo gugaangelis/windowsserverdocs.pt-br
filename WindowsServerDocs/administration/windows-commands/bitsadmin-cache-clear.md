@@ -1,26 +1,24 @@
 ---
 title: bitsadmin cache and clear
 description: Artigo de referência para o cache Bitsadmin e o comando Clear, que limpa o cache local.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 125426bc-5f90-4cdb-ba14-24be428c66c7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 624045036cae03e790c93a03be1007a8140f8d6a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 27da9827b57b4124f7c9fecb3a7cea4528652d28
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928437"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87894665"
 ---
 # <a name="bitsadmin-cache-and-clear"></a>bitsadmin cache and clear
 
 Limpa o cache local.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 bitsadmin /cache /clear

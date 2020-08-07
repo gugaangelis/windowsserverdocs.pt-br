@@ -1,20 +1,18 @@
 ---
 title: fsutil reparsepoint
 description: Artigo de referência para o comando fsutil reparsepoint, que consulta ou exclui pontos de nova análise.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: fb95c8ee-a418-4520-a12a-7754ae947c3c
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: edbbc578b6a84ebd4e342493e29cbe2bd5c5a2cd
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b7742b7bb970394f0ef8602ae5c862c2ff9a1a41
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931211"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889887"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 

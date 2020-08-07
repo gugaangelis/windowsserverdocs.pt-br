@@ -1,20 +1,18 @@
 ---
 title: fsutil usn
 description: Artigo de referência do comando fsutil USN, que gerencia o diário de alterações do USN (número de sequência de atualização).
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: faad34aa-4ba1-4129-bc1f-08088399e2fa
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: b3f71588c7221f0ba8e3659d9a1a1dd133971ce9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c2bbd130902812f9a44d2d762a074b67de5e8dac
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930471"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889779"
 ---
 # <a name="fsutil-usn"></a>fsutil usn
 

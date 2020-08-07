@@ -1,20 +1,18 @@
 ---
 title: cscript
 description: Artigo de referência para o comando cscript, que inicia um script para que ele seja executado em um ambiente de linha de comando.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fba3cbca-594e-4663-bb22-4ee0f63a1ac6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e7f6731c264fc5a22bee2d94b41a555431e48b42
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3f6e27cae1531e0c10e8721d7f7fe11487406e35
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85928834"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891535"
 ---
 # <a name="cscript"></a>cscript
 
@@ -40,7 +38,7 @@ cscript <scriptname.extension> [/b] [/d] [/e:<engine>] [{/h:cscript | /h:wscript
 | /d | Inicia o depurador. |
 | /e:`<engine>` | Especifica o mecanismo usado para executar o script. |
 | /h: cscript | Registra cscript.exe como o host de script padrão para executar scripts. |
-| /h: WScript | Registra wscript.exe como o host de script padrão para executar scripts. Este é o padrão. |
+| /h: WScript | Registra wscript.exe como o host de script padrão para executar scripts. Esse é o padrão. |
 | /i | Especifica o modo interativo, que exibe alertas, erros de script e prompts de entrada. Esse é o padrão e o oposto de `/b` . |
 | /minuto<identifier> | Executa o trabalho identificado pelo *identificador* em um arquivo de script. wsf. |
 | /logo | Especifica que a faixa do host de scripts do Windows é exibida no console do antes de o script ser executado. Esse é o padrão e o oposto de `/nologo` . |

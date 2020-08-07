@@ -1,20 +1,18 @@
 ---
 title: fsutil dirty
 description: Artigo de referência do comando fsutil Dirty, que consulta ou define um bit sujo do volume.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: cb133dc9f9f19a948eb88d24935fac27f2a5e4a3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 00fd11e577957e45bb8b2491b54cf1548effedc3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409727"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890006"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 

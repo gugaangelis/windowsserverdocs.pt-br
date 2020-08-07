@@ -1,20 +1,18 @@
 ---
 title: fsutil file
 description: Artigo de referência para o comando fsutil file, que localiza um arquivo por nome de usuário, consulta intervalos alocados para um arquivo, define o nome curto de um arquivo, define o comprimento de dados válido de um arquivo, define zero data para um arquivo ou cria um novo arquivo.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 6909d381ef5dfebb343e70ad117a1a5b400481fa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 92b048d0ad3a7cb1f0c21dabf3cc14dc9850a251
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932295"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889993"
 ---
 # <a name="fsutil-file"></a>fsutil file
 

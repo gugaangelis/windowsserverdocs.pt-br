@@ -1,20 +1,18 @@
 ---
 title: forfiles
 description: Artigo de referência para o comando Forfiles, que seleciona e executa um comando em um arquivo ou conjunto de arquivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 26c443aa05d081fc257dc49d2f2c7f6a9adae865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 004c27b841629e18eac4d94f7fe0816b42762107
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922393"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87890148"
 ---
 # <a name="forfiles"></a>forfiles
 

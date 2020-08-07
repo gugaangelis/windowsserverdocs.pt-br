@@ -1,20 +1,18 @@
 ---
 title: fsutil objectid
 description: Artigo de referência para o comando fsutil ObjectID, que gerencia identificadores de objeto para controlar outros objetos, como arquivos, diretórios e links.
-ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
-ms.technology: storage
 ms.assetid: 693ab895-9d0c-47c1-9f52-df5cd287842a
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ab0b95bdcde8bce51e1d5a2c14888229621fcaa
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: f24a434a3b48186baa1743cc6159cac39443231e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925245"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889969"
 ---
 # <a name="fsutil-objectid"></a>fsutil objectid
 
