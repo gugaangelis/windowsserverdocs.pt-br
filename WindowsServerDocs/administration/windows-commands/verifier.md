@@ -1,20 +1,18 @@
 ---
 title: verifier
 description: Artigo de referência para o verificador, que executa o Gerenciador de verificador de driver.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 782173d6-f196-4bc4-a547-76109829453c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7c8ee51a5a085b97093c417a143ee36cffbc979
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1f19840d6a9dffe32a1febb8a313500b49f625e8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931334"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891869"
 ---
 # <a name="verifier"></a>verifier
 

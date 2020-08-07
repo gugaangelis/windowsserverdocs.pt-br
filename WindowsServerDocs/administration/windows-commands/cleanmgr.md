@@ -1,19 +1,17 @@
 ---
 title: cleanmgr
-description: Configure a ferramenta de limpeza de disco (cleanmgr. exe) para limpar automaticamente determinados arquivos.
-ms.prod: windows-server
+description: Configure a ferramenta de limpeza de disco (Cleanmgr.exe) para limpar automaticamente determinados arquivos.
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
-ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 49d85fe0c8ec1bbba810a502724fd7aac0c2f55d
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: c0b1cb2ff31bbf3fa25d5ac5e4be0e4b35260019
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82712846"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880206"
 ---
 # <a name="cleanmgr"></a>cleanmgr
 
@@ -31,7 +29,7 @@ cleanmgr [/d <driveletter>] [/sageset:n]  [/sagerun:n] [/TUNEUP:n] [/LOWDISK] [/
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /d`<driveletter>` | Especifica a unidade que você deseja que a limpeza de disco limpe.<p>**Observação:** A opção **/d** não é utilizada com `/sagerun:n`. |
+| /d`<driveletter>` | Especifica a unidade que você deseja que a limpeza de disco limpe.<p>**Observação:** A opção **/d** não é utilizada com `/sagerun:n` . |
 | /sageset: n | Exibe a caixa de diálogo **configurações de limpeza de disco** e também cria uma chave do registro para armazenar as configurações selecionadas. O `n` valor, que é armazenado no registro, permite que você especifique tarefas para que a limpeza de disco seja executada. O `n` valor pode ser qualquer valor inteiro de 0 a 65535. |
 | /sagerun: n | Executa as tarefas especificadas que são atribuídas ao valor n se você usar a opção **\sageset** . Todas as unidades no computador são enumeradas e o perfil selecionado é executado em cada unidade. |
 | /TuneUp: n | Execute **/sageset** e **/sagerun** para o mesmo `n` . |
@@ -61,7 +59,7 @@ As opções para os arquivos que você pode especificar para limpeza de disco us
 
 - **Compactar arquivos antigos** – o Windows pode compactar arquivos que você não usou recentemente. Compactar arquivos economiza espaço em disco, mas você ainda pode usar os arquivos. Nenhum arquivo é excluído. Como os arquivos são compactados em taxas diferentes, a quantidade exibida de espaço em disco que você obterá será aproximada. Um botão Opções permite que você especifique o número de dias de espera antes que a limpeza de disco compacte um arquivo não utilizado.
 
-- **Arquivos de catálogo para o indexador de conteúdo** -o serviço de indexação acelera e melhora as pesquisas de arquivo mantendo um índice dos arquivos que estão no disco. Esses arquivos de catálogo permanecem de uma operação de indexação anterior e podem ser excluídos com segurança.<p>**Observação:** O arquivo de catálogo pode aparecer em mais de uma unidade, por exemplo, não `%SystemRoot%`apenas no.
+- **Arquivos de catálogo para o indexador de conteúdo** -o serviço de indexação acelera e melhora as pesquisas de arquivo mantendo um índice dos arquivos que estão no disco. Esses arquivos de catálogo permanecem de uma operação de indexação anterior e podem ser excluídos com segurança.<p>**Observação:** O arquivo de catálogo pode aparecer em mais de uma unidade, por exemplo, não apenas no `%SystemRoot%` .
 
 >[!NOTE]
 > Se você especificar a limpeza da unidade que contém a instalação do Windows, todas essas opções estarão disponíveis na guia **limpeza de disco** . Se você especificar qualquer outra unidade, apenas a lixeira e os arquivos de catálogo para opções de índice de conteúdo estarão disponíveis na guia **limpeza de disco** .

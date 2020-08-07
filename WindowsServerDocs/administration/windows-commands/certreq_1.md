@@ -1,20 +1,18 @@
 ---
 title: certreq
 description: Artigo de referência para o comando certreq, que solicita certificados de uma autoridade de certificação (CA), recupera uma resposta a uma solicitação anterior de uma CA, cria uma nova solicitação de um arquivo. inf, aceita e instala uma resposta a uma solicitação, constrói uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação existente e assina uma solicitação de certificação cruzada ou de subordinação qualificada
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4610db6755f5177306dfcf4feec005eab6efabfd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178672"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880353"
 ---
 # <a name="certreq"></a>certreq
 
@@ -113,7 +111,7 @@ Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicita�
 | KeySpec | Determina se a chave pode ser usada para assinaturas, para o Exchange (criptografia) ou para ambos. | `AT_NONE, AT_SIGNATURE, AT_KEYEXCHANGE` | `KeySpec = AT_KEYEXCHANGE` |
 | Uso de | Define a que a chave de certificado deve ser usada. | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**Dica:** Vários valores usam um pipe (|) separador de símbolo. Certifique-se de usar aspas duplas ao usar vários valores para evitar problemas de análise de INF. Os valores mostrados são valores hexadecimais (decimais) para cada definição de bit. A sintaxe mais antiga também pode ser usada: um único valor hexadecimal com vários bits definidos, em vez da representação simbólica. Por exemplo, `KeyUsage = 0xa0`. |
 | Keyutilizaproperty | Recupera um valor que identifica a finalidade específica para a qual uma chave privada pode ser usada. | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
-| MachineKeyset | Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador. | `true | false`. O padrão é false. | `MachineKeySet = true` |
+| MachineKeyset | Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador. | `true | false`. O padrão é falso. | `MachineKeySet = true` |
 | NotBefore | Especifica uma data ou data e hora antes da qual a solicitação não pode ser emitida. `NotBefore`pode ser usado com `ValidityPeriod` e `ValidityPeriodUnits` . | Data ou data e hora | `NotBefore = 7/24/2012 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são apenas para R `equestType=cert` . As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
 | NotAfter | Especifica uma data ou data e hora após a qual a solicitação não pode ser emitida. `NotAfter`Não pode ser usado com `ValidityPeriod` ou `ValidityPeriodUnits` . | Data ou data e hora | `NotAfter = 9/23/2014 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são `RequestType=cert` apenas para. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
 | PrivateKeyArchive | A configuração PrivateKeyArchive só funcionará se o RequestType correspondente for definido como CMC porque apenas o formato de solicitação de mensagens de gerenciamento de certificado sobre CMS (CMC) permite transferir com segurança a chave privada do solicitante para a autoridade de arquivamento de chave. | `true | false` | `PrivateKeyArchive = true` |
@@ -146,21 +144,21 @@ Esta seção é opcional.
 | OID de extensão | Definição | Exemplo |
 | ------------- | ---------- | ----- | ------- |
 | 2.5.29.17 | | 2.5.29.17 = {Text} |
-| *continua* | | `continue = UPN=User@Domain.com&` |
-| *continua* | | `continue = EMail=User@Domain.com&` |
-| *continua* | | `continue = DNS=host.domain.com&` |
-| *continua* | | `continue = DirectoryName=CN=Name,DC=Domain,DC=com&` |
-| *continua* | | `continue = URL=<http://host.domain.com/default.html&>` |
-| *continua* | | `continue = IPAddress=10.0.0.1&` |
-| *continua* | | `continue = RegisteredId=1.2.3.4.5&` |
-| *continua* | | `continue = 1.2.3.4.6.1={utf8}String&` |
-| *continua* | | `continue = 1.2.3.4.6.2={octet}AAECAwQFBgc=&` |
-| *continua* | | `continue = 1.2.3.4.6.2={octet}{hex}00 01 02 03 04 05 06 07&` |
-| *continua* | | `continue = 1.2.3.4.6.3={asn}BAgAAQIDBAUGBw==&` |
-| *continua* | | `continue = 1.2.3.4.6.3={hex}04 08 00 01 02 03 04 05 06 07` |
+| *continue* | | `continue = UPN=User@Domain.com&` |
+| *continue* | | `continue = EMail=User@Domain.com&` |
+| *continue* | | `continue = DNS=host.domain.com&` |
+| *continue* | | `continue = DirectoryName=CN=Name,DC=Domain,DC=com&` |
+| *continue* | | `continue = URL=<http://host.domain.com/default.html&>` |
+| *continue* | | `continue = IPAddress=10.0.0.1&` |
+| *continue* | | `continue = RegisteredId=1.2.3.4.5&` |
+| *continue* | | `continue = 1.2.3.4.6.1={utf8}String&` |
+| *continue* | | `continue = 1.2.3.4.6.2={octet}AAECAwQFBgc=&` |
+| *continue* | | `continue = 1.2.3.4.6.2={octet}{hex}00 01 02 03 04 05 06 07&` |
+| *continue* | | `continue = 1.2.3.4.6.3={asn}BAgAAQIDBAUGBw==&` |
+| *continue* | | `continue = 1.2.3.4.6.3={hex}04 08 00 01 02 03 04 05 06 07` |
 | 2.5.29.37 | | `2.5.29.37={text}` |
-| *continua* | | `continue = 1.3.6.1.5.5.7` |
-| *continua* | | `continue = 1.3.6.1.5.5.7.3.1` |
+| *continue* | | `continue = 1.3.6.1.5.5.7` |
+| *continue* | | `continue = 1.3.6.1.5.5.7.3.1` |
 | 2.5.29.19 | | `{text}ca=0pathlength=3` |
 | Crítico | | `Critical=2.5.29.19` |
 | KeySpec | | <ul><li>`AT_NONE -- 0`</li><li>`AT_SIGNATURE -- 2`</li><li>`AT_KEYEXCHANGE -- 1`</ul></li> |

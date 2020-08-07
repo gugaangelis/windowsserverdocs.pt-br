@@ -1,20 +1,18 @@
 ---
 title: certutil
 description: Artigo de referência para o comando certutil, que é um programa de linha de comando que despeja e exibe informações de configuração de autoridade de certificação (CA), configura os serviços de certificados, os componentes de AC de backup e restauração e verifica certificados, pares de chaves e cadeias de certificados.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 12ef5e7fa5ff305b1670c2f88645f57500c4fb5b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178582"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880345"
 ---
 # <a name="certutil"></a>certutil
 
@@ -25,7 +23,7 @@ Se o Certutil for executado em uma autoridade de certificação sem parâmetros 
 > [!IMPORTANT]
 > As versões anteriores do certutil podem não fornecer todas as opções descritas neste documento. Você pode ver todas as opções que uma versão específica do certutil fornece executando o `certutil -?` ou o `certutil <parameter> -?` .
 
-## <a name="parameters"></a>parâmetros
+## <a name="parameters"></a>Parâmetros
 
 ### <a name="-dump"></a>-despejo
 

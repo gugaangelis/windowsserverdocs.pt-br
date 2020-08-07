@@ -1,20 +1,18 @@
 ---
 title: wbadmin start backup
 description: Artigo de referência para Wbadmin start backup, que cria um backup usando parâmetros especificados.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 56f3e752-d99a-4c3d-8e97-10303c37dd78
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3d819b8c3d6ba0b188b11d7fc1db7f1536a844c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8ef64e00f8361a2f006944be65977c3d70769df
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935006"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891689"
 ---
 # <a name="wbadmin-start-backup"></a>wbadmin start backup
 
@@ -22,7 +20,7 @@ Cria um backup usando parâmetros especificados. Se nenhum parâmetro for especi
 
 Para criar um backup único com esse subcomando, você deve ser um membro do grupo operadores de **backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando** e clique em **Executar como administrador**.)
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 Sintaxe para Windows ° Vista e Windows Server 2008:
 ```
@@ -71,7 +69,7 @@ Wbadmin start backup
 |-password|Especifica a senha para o nome de usuário que é fornecido pelo parâmetro **-User**.|
 |-noInheritAcl|Aplica as permissões de ACL (lista de controle de acesso) que correspondem às credenciais fornecidas pelos parâmetros **-User** e **-password** a \\ \\ \<servername> \\ \<sharename> \\ WindowsImageBackup \\ \<ComputerBackedUp> \\ (a pasta que contém o backup). Para acessar o backup mais tarde, você deve usar essas credenciais ou ser um membro do grupo Administradores ou do grupo operadores de backup no computador com a pasta compartilhada. Se **-noInheritAcl** não for usado, as permissões de ACL da pasta compartilhada remota serão aplicadas à \\ \<ComputerBackedUp> pasta por padrão para que qualquer pessoa com acesso à pasta compartilhada remota possa acessar o backup.|
 |-vssFull|Executa um backup completo usando o Serviço de Cópias de Sombra de Volume (VSS). Todos os arquivos são submetidos a backup, o histórico de cada arquivo é atualizado para refletir que foi feito backup e os logs de backups anteriores podem estar truncados. Se esse parâmetro não for usado, o **Wbadmin start backup** fará um backup de cópia, mas o histórico de arquivos cujo backup está sendo feito não será atualizado.</br>Cuidado: não use esse parâmetro se você estiver usando um produto que não seja Backup do Windows Server para fazer backup de aplicativos que estão nos volumes incluídos no backup atual. Isso pode potencialmente dividir o tipo de backup incremental, diferencial ou outro que o outro produto de backup está criando, pois o histórico do qual eles dependem para determinar a quantidade de dados para o backup pode estar ausente e pode executar um backup completo desnecessariamente.|
-|-vssCopy|Para o Windows 7 e o Windows Server 2008 R2 e posterior, o executa um backup de cópia usando o VSS. Todos os arquivos são submetidos a backup, mas o histórico dos arquivos que estão sendo atualizados não é atualizado, de modo que você preserva todas as informações em quais arquivos foram alterados, excluídos e assim por diante, bem como quaisquer arquivos de log do aplicativo. O uso desse tipo de backup não afeta a sequência de backups incrementais e diferenciais que podem ocorrer independentemente desse backup de cópia. Esse é o valor padrão.</br>Aviso: um backup de cópia não pode ser usado para backups ou restaurações incrementais ou diferenciais.|
+|-vssCopy|Para o Windows 7 e o Windows Server 2008 R2 e posterior, o executa um backup de cópia usando o VSS. Todos os arquivos são submetidos a backup, mas o histórico dos arquivos que estão sendo atualizados não é atualizado, de modo que você preserva todas as informações em quais arquivos foram alterados, excluídos e assim por diante, bem como quaisquer arquivos de log do aplicativo. O uso desse tipo de backup não afeta a sequência de backups incrementais e diferenciais que podem ocorrer independentemente desse backup de cópia. Este é o valor padrão.</br>Aviso: um backup de cópia não pode ser usado para backups ou restaurações incrementais ou diferenciais.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|
 
 ## <a name="examples"></a>Exemplos

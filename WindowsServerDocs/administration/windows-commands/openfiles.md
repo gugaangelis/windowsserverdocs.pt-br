@@ -1,20 +1,18 @@
 ---
 title: openfiles
 description: Artigo de referência para o comando openfiles, que permite que um administrador consulte, exiba ou desconecte arquivos e diretórios que foram abertos em um sistema.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c1683bb916e068d83ab30e03fdd76e35abb77df
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 79163a717746cfb43d0195cf30c7bbf7e1766623
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936796"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885122"
 ---
 # <a name="openfiles"></a>openfiles
 

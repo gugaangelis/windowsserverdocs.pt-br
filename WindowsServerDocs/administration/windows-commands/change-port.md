@@ -1,20 +1,18 @@
 ---
 title: change port
 description: Artigo de referência para o comando Change Port, que lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3d772c90-e849-4e74-b9ec-b6cae1159336 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ee3305ff1b8e9ecf82126bd16e6c2c15bb27b26
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 64c0d012d8106d99f1d7a167dd8f2d1d9107150b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955308"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880263"
 ---
 # <a name="change-port"></a>change port
 

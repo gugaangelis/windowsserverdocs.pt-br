@@ -1,20 +1,18 @@
 ---
 title: cmd
 description: Artigo de referência para o comando cmd, que inicia uma nova instância do interpretador de comando, Cmd.exe.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6ec588db-31a9-4a73-a970-65a2c6f4abbe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69176c69434813745f6039b607f2992675df879c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0c4e651a4f88ffa1d85d5be225b3ae6e5d1676dd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929865"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880093"
 ---
 # <a name="cmd"></a>cmd
 
@@ -49,7 +47,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<b><f> | <f>}] [/e:{on | off}] [/f:{on |
 
 A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores para `<b>` e `<f>` :
 
-| Valor | Cor |
+| Valor | Color |
 | ----- | ----- |
 | 0 | Preto |
 | 1 | Azul |
@@ -61,7 +59,7 @@ A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar co
 | 7 | Branco |
 | 8 | Cinza |
 | 9 | Azul-claro |
-| a | verde-claro |
+| um | verde-claro |
 | b | Azul-claro |
 | c | Vermelho-claro |
 | d | Roxo-claro |

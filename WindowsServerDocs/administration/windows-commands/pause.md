@@ -1,20 +1,18 @@
 ---
 title: pause
 description: Artigo de referência para o comando Pause, que suspende o processamento de programas em lotes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: cab3afc3-d046-432f-a0bf-6282f0099032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f604bbd205a074d8966cd2c1a1bc65506e7ca5e0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: e5f8f10ae64fea8cf2c4610247ebe28b03ce26ae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922896"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885066"
 ---
 # <a name="pause"></a>pause
 
@@ -28,7 +26,7 @@ pause
 
 ### <a name="parameters"></a>Parâmetros
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 |--|--|
 | /? | Exibe a ajuda no prompt de comando. |
 

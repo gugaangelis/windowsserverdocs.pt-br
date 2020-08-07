@@ -1,20 +1,18 @@
 ---
 title: cipher
 description: Artigo de referência para o comando cipher, que exibe ou altera a criptografia de diretórios e arquivos em volumes NTFS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 78ef795e-0f87-4acd-8d15-192c972c0f41
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f23e2855c4542cc359d458f6825dd9420581657f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6b5d7c6708c714cd414e06e150b9b0344cc03f9c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929978"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880232"
 ---
 # <a name="cipher"></a>cipher
 

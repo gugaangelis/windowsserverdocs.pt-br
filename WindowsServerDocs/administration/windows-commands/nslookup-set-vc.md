@@ -1,20 +1,18 @@
 ---
 title: nslookup set vc
 description: Artigo de referência para o comando Set vc do nslookup, que especifica se um circuito virtual deve ser usado ao enviar solicitações ao servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e9232c92-cd8d-4eff-8ae5-0647bd03bdcb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c289315c55c1611360bbc2b0ba9ef9a612ee9b64
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ed8c20785bc97afa7028185597e79bca02262af5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930282"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87885455"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
@@ -31,7 +29,7 @@ set [no]vc
 
 | Parâmetro | Descrição |
 | ---------- | ---------- |
-| novc | Especifica para nunca usar um circuito virtual ao enviar solicitações para o servidor. Esse é o valor padrão. |
+| novc | Especifica para nunca usar um circuito virtual ao enviar solicitações para o servidor. Este é o valor padrão. |
 | vc | Especifica sempre usar um circuito virtual ao enviar solicitações para o servidor. |
 | /? | Exibe a ajuda no prompt de comando. |
 | /help | Exibe a ajuda no prompt de comando. |

@@ -1,20 +1,18 @@
 ---
 title: prndrvr
 description: Artigo de referência do comando prndrvr, que adiciona, exclui e lista os drivers de impressora.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f256d003ac0884b100aedb24bbb55e663444911
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2be35ef44b7c54a5b8390120cef65054c06008d2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924202"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884756"
 ---
 # <a name="prndrvr"></a>prndrvr
 

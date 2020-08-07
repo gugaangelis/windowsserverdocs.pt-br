@@ -1,20 +1,18 @@
 ---
 title: Get-myImages
 description: Artigo de referência para as imagens Get-My, que recupera informações sobre todas as imagens em um servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 19de3720-4315-415a-8dc6-486caa0b2100
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9834552ebe6395f13333e81fbc2996a8ff49f39c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 542de8f24f8bbb85a44fdefa9d25ca9acda66ba5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935168"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892031"
 ---
 # <a name="get-allimages"></a>Get-myImages
 

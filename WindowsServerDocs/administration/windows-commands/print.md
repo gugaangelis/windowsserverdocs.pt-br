@@ -1,20 +1,18 @@
 ---
 title: print
 description: Artigo de referência para o comando Print, que envia um arquivo de texto para uma impressora.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8e8cf07ca19af1cf0a0445b9feed06916be10c0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be955faa38af6a81ce5f61c255828470d906528c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926036"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884834"
 ---
 # <a name="print"></a>print
 

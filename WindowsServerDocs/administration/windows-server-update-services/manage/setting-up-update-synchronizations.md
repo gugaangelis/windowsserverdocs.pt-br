@@ -1,30 +1,28 @@
 ---
 title: Configurar sincronizações de atualização
 description: Tópico Windows Server Update Service (WSUS)-como configurar e configurar sincronizações de atualização
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: ddd5c395-451b-44a0-8e08-a05db26d2282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4da028b2100d824b55c00c185f8b90df7d787bf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9f47b5b6086263e901b79b7ed9e2a19e76771b11
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828532"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87891694"
 ---
 # <a name="setting-up-update-synchronizations"></a>Configurar sincronizações de atualização
 
->Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server 2019, Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Durante a sincronização, um servidor WSUS baixa atualizações (arquivos e metadados de atualização) de uma origem de atualização. Ele também baixa novas classificações e categorias de produtos, se houver. Quando o servidor do WSUS for sincronizado pela primeira vez, ele baixará todas as atualizações que você especificou quando configurou as opções de sincronização. Após a primeira sincronização, o servidor WSUS baixa apenas as atualizações da origem da atualização, bem como as revisões em metadados para atualizações existentes e as expirações para atualizações.
 
 A primeira vez que um servidor WSUS baixa atualizações pode levar muito tempo. Se você estiver configurando vários servidores WSUS, poderá acelerar o processo para uma determinada extensão baixando todas as atualizações em um servidor WSUS e, em seguida, copiando as atualizações nos diretórios de conteúdo dos outros servidores WSUS.
 
-Você pode copiar o conteúdo de um diretório de conteúdo do servidor do WSUS para outro. O local do diretório de conteúdo é especificado quando você executa o procedimento pós-instalação do WSUS. Você pode usar a ferramenta WSUSutil. exe para exportar metadados de atualização de um servidor WSUS para um arquivo. Em seguida, você pode importar esse arquivo para outros servidores WSUS.
+Você pode copiar o conteúdo de um diretório de conteúdo do servidor do WSUS para outro. O local do diretório de conteúdo é especificado quando você executa o procedimento pós-instalação do WSUS. Você pode usar a ferramenta wsusutil.exe para exportar metadados de atualização de um servidor WSUS para um arquivo. Em seguida, você pode importar esse arquivo para outros servidores WSUS.
 
 ## <a name="setting-up-update-synchronizations"></a>Configurar sincronizações de atualização
 A página **Opções** é o ponto de acesso central no console de administração do WSUS para personalizar como o servidor do WSUS sincroniza as atualizações. Você pode especificar quais atualizações serão sincronizadas automaticamente, onde o servidor Obtém atualizações, configurações de conexão e a agenda de sincronização. Você também pode usar o assistente de configuração da página **Opções** para configurar ou reconfigurar o servidor do WSUS a qualquer momento.
@@ -48,7 +46,7 @@ Se um servidor WSUS estiver sendo executado no modo de réplica, você não pode
 
 > [!NOTE]
 > Você pode remover produtos ou classificações da mesma maneira. O servidor WSUS deixará de sincronizar novas atualizações para os produtos que você limpou. No entanto, as atualizações que foram sincronizadas para esses produtos antes de serem apagadas permanecerão no servidor do WSUS e serão listadas como disponíveis.
-> 
+>
 > Para remover esses produtos, recuse a atualização, conforme documentado nas [operações de atualizações](updates-operations.md)e, em seguida, use o assistente de [limpeza do servidor](the-server-cleanup-wizard.md) para removê-las.
 
 ### <a name="synchronizing-updates-by-language"></a>Sincronizando atualizações por idioma

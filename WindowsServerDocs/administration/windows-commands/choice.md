@@ -1,20 +1,18 @@
 ---
 title: opção
 description: Artigo de referência para o comando Choice, que solicita ao usuário que selecione um item de uma lista de opções de caractere único em um programa em lotes e, em seguida, retorna o índice da opção selecionada.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 745321c6388e6faa9de1ce1a8a24afe66514d259
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6aec3af1966d0b7952f0bbb5880e373356117e42
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929979"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880257"
 ---
 # <a name="choice"></a>opção
 

@@ -1,20 +1,18 @@
 ---
 title: create partition msr
 description: Artigo de referência para criar partição MSR, que cria uma partição reservada da Microsoft (MSR) em um disco de tabela de partição GUID (GPT).
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 04fba033-23cb-4521-bd5d-db96131f2e73
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2714c47c467fda9c6ca3451331ab9bc7991d4591
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b697aa278849e2cd084ef7e9378b7997032a820c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929642"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879887"
 ---
 # <a name="create-partition-msr"></a>create partition msr
 
