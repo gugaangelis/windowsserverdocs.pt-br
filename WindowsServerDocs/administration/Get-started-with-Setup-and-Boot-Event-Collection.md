@@ -1,21 +1,19 @@
 ---
 title: Introdução à Coleta de Eventos de Instalação e Inicialização
 description: Configuração de coletores e metas de coleta de eventos de instalação e inicialização
-ms.prod: windows-server
 manager: DonGill
-ms.technology: server-sbec
 ms.localizationpriority: medium
 ms.date: 10/16/2017
 ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: bb70f25ca4564f1bdf76940c9d2fcb840db5afa2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87408885"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879533"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introdução à Coleta de Eventos de Instalação e Inicialização
 
@@ -45,7 +43,7 @@ O computador coletor deve estar executando o Windows Server 2016 (pode estar no 
 |Windows 8.1|sim|sim|
 |Windows 10|sim|sim|
 |Windows Server 2016|sim|sim|
-|Windows Server 2012 R2|sim|não|
+|Windows Server 2012 R2|sim|no|
 
 ## <a name="installing-the-collector-service"></a>Instalação do serviço do coletor
 A partir do Windows Server 2016, o serviço de coletor de eventos está disponível como um recurso opcional. Nesta versão, você pode instalá-lo usando DISM.exe com este comando em um prompt de comandos com privilégios elevados do Windows PowerShell:
@@ -158,7 +156,7 @@ Se o computador de destino tiver mais de um adaptador de rede, o driver KDNET es
 ### <a name="validate-target-computer-configuration"></a>Validar a configuração do computador de destino
 Para verificar as configurações no computador de destino, abra um prompt de comandos com privilégios elevados e execute **bcdedit /enum**. Ao terminar, execute **bcdedit /eventsettings**. Você pode verificar os seguintes valores:
 
--   Chave
+-   Key
 
 -   Debugtype = NET
 

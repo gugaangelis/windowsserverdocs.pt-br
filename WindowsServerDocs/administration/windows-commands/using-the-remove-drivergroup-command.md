@@ -1,19 +1,18 @@
 ---
 title: remover-controlador de driver
 description: Artigo de referência para Remove-Group-Driver, que remove um grupo de drivers de um servidor.
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 1fefe9df-9782-433c-8abe-3f1a35e50da2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: baeeac57c04113e1e9dfc8e9d02fc40518a6689b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a6b199e48ab5ffbe5945f8671f23b24629df3337
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932432"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881253"
 ---
 # <a name="remove-drivergroup"></a>remover-controlador de driver
 

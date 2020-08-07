@@ -1,20 +1,18 @@
 ---
 title: time
 description: Saiba como definir e exibir a hora do sistema.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1276a257-7283-41da-ae80-fb4cfb311f9d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e27b260bdaa8896ad3cf0ad58294467bbb63e1c2
-ms.sourcegitcommit: ab64dc83fca28039416c26226815502d0193500c
+ms.openlocfilehash: 1548952c7fcd6d3edcc2dcc0fb3459e27cd0efbb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82721358"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881423"
 ---
 # <a name="time"></a>time
 
@@ -34,7 +32,7 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|\<HH> [:\<mm> [:\<SS> [.\< NN>]]] [AM\|PM]|Define a hora do sistema para a nova hora especificada, em que *hh* está em horas (obrigatório), *mm* é em minutos e *SS* é em segundos. *NN* pode ser usado para especificar centésimos de segundo. Se **am** ou **PM** não for especificado, a **hora** usará o formato de 24 horas por padrão.|
+|\<HH>[:\<MM> [:\<SS> [.\<NN>]]] [AM \| PM]|Define a hora do sistema para a nova hora especificada, em que *hh* está em horas (obrigatório), *mm* é em minutos e *SS* é em segundos. *NN* pode ser usado para especificar centésimos de segundo. Se **am** ou **PM** não for especificado, a **hora** usará o formato de 24 horas por padrão.|
 |/t|Exibe a hora atual sem solicitar um novo horário.|
 |/?|Exibe a ajuda no prompt de comando.|
 
@@ -45,7 +43,7 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 -   Os valores de *hh* válidos são de 0 a 24.
 -   Os valores *mm* e *SS* válidos são de 0 a 59.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Disso
+## <a name="examples"></a><a name="BKMK_examples"></a>Exemplos
 
 Se as extensões de comando estiverem habilitadas, para exibir a hora atual do sistema, digite:
 ```

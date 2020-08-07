@@ -1,20 +1,18 @@
 ---
 title: tftp
 description: Transferir arquivos de e para um computador remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 772f19a8-dafe-45cd-878a-f5691f6568ef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b3674cbfdbc01811ece57e2f9cbbea3aa31251d
-ms.sourcegitcommit: 29bc8740e5a8b1ba8f73b10ba4d08afdf07438b0
+ms.openlocfilehash: e085d86ea8dff5261f77505df4d5d7c2c6adb675
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2020
-ms.locfileid: "84223043"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881612"
 ---
 # <a name="tftp"></a>tftp
 

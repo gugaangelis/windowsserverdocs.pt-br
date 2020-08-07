@@ -1,20 +1,18 @@
 ---
 title: bdehdcfg
 description: Artigo de referência para o comando BdeHdCfg, que prepara um disco rígido com as partições necessárias para Criptografia de Unidade de Disco BitLocker.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 4c92cd74-188e-4fec-b7c4-fe4e8903e032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a8b926459f2d1fb96b9a48910c163eb9aaab02c
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54c43212413aa18f1390a06ddaed81fbdcd80732
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923353"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895015"
 ---
 # <a name="bdehdcfg"></a>bdehdcfg
 

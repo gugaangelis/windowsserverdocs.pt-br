@@ -1,20 +1,18 @@
 ---
 title: título
 description: Artigo de referência para título, que cria um título para a janela de prompt de comando.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c0bbe8bd-201a-4b6c-b617-5d9809881dc8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 732a0de30b9495e6281248120d2a90f85734ad8b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3fede3a0f71da2913e798852817722eaea414770
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930064"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881396"
 ---
 # <a name="title"></a>título
 

@@ -1,20 +1,18 @@
 ---
 title: ktpass
 description: Artigo de referência para o comando ktpass, que configura o nome principal do servidor para o host ou serviço no AD DS e gera um arquivo. keytab que contém a chave secreta compartilhada do serviço.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fbf7b47f4f21a2c964d14dd1200b15ad635d7471
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3bb523d35a1bbf2d15895201855a58e96ebb7772
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931825"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887644"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -49,7 +47,7 @@ ktpass
 | /out`<filename>` | Especifica o nome do arquivo Kerberos versão 5. keytab a ser gerado. **Observação:** Esse é o arquivo. keytab que você transfere para um computador que não está executando o sistema operacional Windows e, em seguida, substitui ou mescla com o arquivo. keytab existente, */etc/krb5.keytab*. |
 | /princ `<principalname>` | Especifica o nome da entidade de segurança no formulário host/computer.contoso.com@CONTOSO.COM . **AVISO:** Esse parâmetro diferencia maiúsculas de minúsculas. |
 | /mapuser `<useraccount>` | Mapeia o nome da entidade de segurança Kerberos, que é especificada pelo parâmetro **princ** , para a conta de domínio especificada. |
-| /mapop`{add|set}` | Especifica como o atributo de mapeamento é definido.<ul><li>**Adicionar** – adiciona o valor do nome de usuário local especificado. Este é o padrão.</li><li>**Set** – define o valor da criptografia somente des (padrão de criptografia de dados) para o nome de usuário local especificado.</li></ul> |
+| /mapop`{add|set}` | Especifica como o atributo de mapeamento é definido.<ul><li>**Adicionar** – adiciona o valor do nome de usuário local especificado. Esse é o padrão.</li><li>**Set** – define o valor da criptografia somente des (padrão de criptografia de dados) para o nome de usuário local especificado.</li></ul> |
 | `{-|+}`desonly | A criptografia somente DES é definida por padrão.<ul><li>**+** Define uma conta para criptografia somente DES.</li><li>**-** Libera a restrição em uma conta para criptografia somente DES. **Importante:** O Windows não dá suporte a DES por padrão.</li></ul> |
 | /in`<filename>` | Especifica o arquivo. keytab para ler de um computador host que não esteja executando o sistema operacional Windows. |
 | /pass`{password|*|{-|+}rndpass}` | Especifica uma senha para o nome de usuário principal que é especificado pelo parâmetro **princ** . Use `*` para solicitar uma senha. |

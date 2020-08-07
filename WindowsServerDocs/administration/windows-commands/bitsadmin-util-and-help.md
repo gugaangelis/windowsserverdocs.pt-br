@@ -1,26 +1,24 @@
 ---
 title: bitsadmin util e help
 description: Artigo de referência para o comando Bitsadmin util e Help, que exibe o uso de linha de comando para as opções de/util.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 806e377a-3022-4764-b451-0aa4f754f195
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54c17d580481cbc054b05a1d0b743f60f2a687f1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 2def95f93b88309e8b0e718798e3bb6c2b37bb7a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927383"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880917"
 ---
 # <a name="bitsadmin-util-and-help"></a>bitsadmin util e help
 
 Exibe o uso da linha de comando para os comutadores **/util** .
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 bitsadmin /util /help

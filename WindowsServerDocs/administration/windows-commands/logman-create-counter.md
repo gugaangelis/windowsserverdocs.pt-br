@@ -1,20 +1,18 @@
 ---
 title: logman create counter
 description: Artigo de referência para o comando do contador Create do logman, que cria um coletor de dados de contador.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1e214c32-b704-43c1-b548-e1cf43b583c3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80ea79eb8c286a8dbe7c020b4c23ae1483d2cb9b
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5a3c876962f1b92112dffc43f5fedf87589b0cae
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927202"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887427"
 ---
 # <a name="logman-create-counter"></a>logman create counter
 

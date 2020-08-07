@@ -1,20 +1,18 @@
 ---
 title: bootcfg copy
 description: Artigo de referência para o comando Bootcfg Copy, que faz uma cópia de uma entrada de inicialização existente, à qual você pode adicionar opções de linha de comando.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2a236c2a-8675-444d-b695-9cbc9aff643b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b158e4b9f892c0142d03281b6608f911afdf7b0a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 5082f5d7e0cd585039b0ceb198052d528f1170cc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925006"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880720"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 

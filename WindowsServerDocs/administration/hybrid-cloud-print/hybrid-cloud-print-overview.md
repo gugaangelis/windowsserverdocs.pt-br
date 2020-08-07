@@ -1,18 +1,16 @@
 ---
 title: Visão geral da impressão de nuvem híbrida do Windows Server
 description: A impressão em nuvem híbrida permite que os profissionais de ti ofereçam suporte aos requisitos de impressão para BYOD ou dispositivos ingressados no domínio.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: conceptual
 author: trudyha
 ms.author: trudyha
 ms.date: 10/16/2017
-ms.openlocfilehash: df720b69e2124aa487958ccd28e365fdcf72def7
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: fc76aef0f7fbc9f3c1dd73b94c6510c0ad37034c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409496"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87879417"
 ---
 # <a name="windows-server-hybrid-cloud-print-overview"></a>Visão geral da impressão de nuvem híbrida do Windows Server
 

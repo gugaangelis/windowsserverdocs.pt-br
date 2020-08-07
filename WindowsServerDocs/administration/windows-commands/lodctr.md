@@ -1,20 +1,18 @@
 ---
 title: lodctr
 description: Artigo de referência do comando Lodctr, que permite registrar ou salvar o nome do contador de desempenho e as configurações do registro em um arquivo e designar serviços confiáveis.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5a849abd-6b31-4833-bc8a-306c05eca29a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e6dba42610923e8b0cd9d7ea25a0e1ea6df507a
-ms.sourcegitcommit: 67d9c51e396c8f937f8704a25e66fea8c5fae81a
+ms.openlocfilehash: 428830b06796914e66434c90f7624cc7c64eec5b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441524"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887469"
 ---
 # <a name="lodctr"></a>lodctr
 

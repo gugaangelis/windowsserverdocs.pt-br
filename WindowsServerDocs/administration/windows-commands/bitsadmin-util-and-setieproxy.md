@@ -1,20 +1,18 @@
 ---
 title: bitsadmin util e setieproxy
 description: Artigo de referência para o comando Bitsadmin util e setieproxy, que define as configurações de proxy a serem usadas ao transferir arquivos usando uma conta de serviço.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0e9f31ba-3070-4ffd-a94c-388c8d78f688
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 018e9400dd2463b61f053d37338740090670f51a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 32eb4c8703f7b56af11efccfe9f53ca41d8c4c88
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927318"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880837"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util e setieproxy
 

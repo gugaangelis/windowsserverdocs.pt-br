@@ -1,20 +1,18 @@
 ---
 title: bdehdcfg driveinfo
 description: Artigo de referência do comando BdeHdCfg DriveInfo, que exibe a letra da unidade, o tamanho total, o máximo de espaço livre e as características da partição.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f2d065e7-eced-4509-a1a0-ee2521a7f02e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0063c73cd20aca8c8fe5cc21b245517475268c64
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a4836105bf3141cef036aa4f2e2630ea266e150d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85923482"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895135"
 ---
 # <a name="bdehdcfg-driveinfo"></a>BdeHdCfg: DriveInfo
 

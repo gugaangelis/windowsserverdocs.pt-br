@@ -1,20 +1,18 @@
 ---
 title: cancelar inicialização-servidor
 description: Artigo de referência para Uninitialize-Server, que reverte as alterações feitas no servidor durante a configuração inicial do servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 015efb04-fe84-469f-bd81-49d0046296b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbe391a7335c347f05f9f9c06bbade3474fa30e
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 954c56d8a9c901431859e7a424c5df436ab6858a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935876"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881453"
 ---
 # <a name="uninitialize-server"></a>cancelar inicialização-servidor
 
