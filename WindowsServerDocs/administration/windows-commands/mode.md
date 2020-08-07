@@ -1,20 +1,18 @@
 ---
 title: mode
 description: Artigo de referência para o comando de modo, que exibe o status do sistema, altera as configurações do sistema ou reconfigura portas ou dispositivos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b59b04f2-b41d-42df-b5be-19c3721445b1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5794b80f7457b133d3e5b599cb12613469ad58eb
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ae436d5ed1328799f7c20d98274a574d40ef796d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936050"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886390"
 ---
 # <a name="mode"></a>mode
 

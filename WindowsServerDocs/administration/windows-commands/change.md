@@ -1,20 +1,18 @@
 ---
 title: alterar
 description: Artigo de referência do comando Change, que altera Host da Sessão da Área de Trabalho Remota configurações do servidor para logons, mapeamentos de porta COM e modo de instalação.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 90012116-0fb3-4f34-a819-cf4d4b4f8981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72829ac264e5d5553bcfe6e3442ad73e793c259
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 733ef9fba0a546cd844121899840f592bd2b3118
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955268"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892833"
 ---
 # <a name="change"></a>alterar
 

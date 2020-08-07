@@ -1,20 +1,18 @@
 ---
 title: chcp
 description: Artigo de referência para o comando CHCP, que altera a página de código ativa do console.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a07d439a4738053ea9a76b4ca68fadec2a215ff0
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 21dcdc1e663656439bece576287877653d0dcd8c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930025"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892811"
 ---
 # <a name="chcp"></a>chcp
 

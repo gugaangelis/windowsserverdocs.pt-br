@@ -1,19 +1,17 @@
 ---
 title: VSSadmin list writers
 description: Uma descrição do comando VSSadmin list Writer.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b897fdc481faf69a423200030fe71a28529eb82d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 74a242734c1e1a80e4dc69907ca1bc680dbc3417
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954748"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892360"
 ---
 # <a name="vssadmin-list-writers"></a>VSSadmin list writers
 

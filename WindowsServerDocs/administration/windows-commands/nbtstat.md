@@ -1,20 +1,18 @@
 ---
 title: nbtstat
 description: Artigo de referência para o comando nbtstat, que exibe estatísticas de protocolo NetBIOS sobre TCP/IP (NetBT), tabelas de nomes NetBIOS para o computador local e computadores remotos e o cache de nomes NetBIOS.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e663559686d95a4aaa123e2d43731a6b613de080
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 3367190fb751a0cb5081724c6ea8ad2b7f2c95ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934856"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886113"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -61,7 +59,7 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
     | Nome local | O nome NetBIOS local associado à conexão. |
     | Host remoto | O nome ou endereço IP associado ao computador remoto. |
     | `<03>` | O último byte de um nome NetBIOS convertido em hexadecimal. Cada nome NetBIOS tem 16 caracteres. Geralmente, esse último byte tem um significado especial, pois o mesmo nome pode estar presente várias vezes em um computador, diferente somente no último byte. Por exemplo, `<20>` é um espaço em texto ASCII. |
-    | tipo | O tipo do nome. Um nome pode ser um nome exclusivo ou um nome de grupo. |
+    | type | O tipo do nome. Um nome pode ser um nome exclusivo ou um nome de grupo. |
     | Status | Se o serviço NetBIOS no computador remoto está em execução (registrado) ou se um nome de computador duplicado registrou o mesmo serviço (conflito). |
     | Estado | O estado das conexões NetBIOS. |
 

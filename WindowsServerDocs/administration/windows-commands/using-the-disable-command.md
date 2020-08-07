@@ -1,20 +1,18 @@
 ---
 title: Usando o comando Disable
 description: Artigo de referência para desabilitar, que desabilita todos os serviços dos serviços de implantação do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 08d1b9ea-1e25-486a-b7df-ad26c53b4e77
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1af887ed98341e51cbaddd2ac3bf135e3afe357e
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: d21b927f9d51a24abe0fc1c7d4406dcbfd071501
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409617"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892165"
 ---
 # <a name="using-the-disable-command"></a>Usando o comando Disable
 

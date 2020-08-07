@@ -1,20 +1,18 @@
 ---
 title: reg unload
 description: Artigo de referência para o comando reg Unload, que remove uma seção do registro carregado usando a operação reg Load.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1d07791d-ca27-454e-9797-27d7e84c5048
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6728f898bd8c2c65aff922943ccef58d4d9fd738
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7d2ea6f5981ea613ae5e0d9d4dcae155464b505a
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85925987"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883983"
 ---
 # <a name="reg-unload"></a>reg unload
 

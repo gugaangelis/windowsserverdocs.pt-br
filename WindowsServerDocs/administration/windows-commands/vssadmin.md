@@ -1,19 +1,17 @@
 ---
 title: Vssadmin
 description: Uma visão geral dos comandos vssadmin.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3618841eb2f511323873d2ea962838f9ab777d0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 529a135164495ad5d0cb2db09373139ac7663e57
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954688"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892269"
 ---
 # <a name="vssadmin"></a>Vssadmin
 

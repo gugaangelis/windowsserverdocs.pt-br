@@ -1,20 +1,18 @@
 ---
 title: Remove-DriverGroupPackages
 description: Artigo de referência para Remove-DriverGroupPackages, que remove pacotes de driver de um grupo de drivers em um servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7b499635-6285-491c-8854-5665489f4364
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 873f19131df590818df1cbfc83a9a0ef620d5d49
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 98a4afec7011e75c9e74d6764549c96c2ab50268
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933466"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892368"
 ---
 # <a name="remove-drivergrouppackages"></a>Remove-DriverGroupPackages
 

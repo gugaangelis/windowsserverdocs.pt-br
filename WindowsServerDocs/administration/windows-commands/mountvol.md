@@ -1,20 +1,18 @@
 ---
 title: mountvol
 description: Artigo de referência para o comando mountvol, que cria, exclui ou lista um ponto de montagem de volume.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: fea8ad4d-f04a-4aaa-a3e5-75931e867b39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1617149fac677069d97b5b7c1353e85b4e1fea14
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1289874f76bd9c3d5818a582a8fcefbfc8c4c130
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936326"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886360"
 ---
 # <a name="mountvol"></a>mountvol
 

@@ -1,20 +1,18 @@
 ---
 title: bitsadmin setproxysettings
 description: Artigo de referência para o comando Bitsadmin setproxysettings, que define as configurações de proxy para o trabalho especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: be8edb1b-614e-4d0b-a8f8-64b4bde3e64b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a59bbb560b8c89134e81c02f99aaecebdb65ca89
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0fb4e8893aa4becac49e5837baef3148541136ff
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927584"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87892964"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
