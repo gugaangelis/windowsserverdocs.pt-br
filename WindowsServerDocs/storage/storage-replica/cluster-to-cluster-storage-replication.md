@@ -1,20 +1,18 @@
 ---
 title: Replicação de armazenamento de cluster para cluster
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: Como usar a réplica de armazenamento para replicar volumes em um cluster para outro cluster que executa o Windows Server.
-ms.openlocfilehash: d99a7ebf933427e8e065f72261816610e62a433d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5de25151f0b49ac9cbf9d6be793c2ba0c6efb165
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961238"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950470"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicação de armazenamento de cluster para cluster
 

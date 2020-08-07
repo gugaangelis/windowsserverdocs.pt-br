@@ -1,17 +1,15 @@
 ---
-title: Remover nó da Associação de cluster de failover ativo
+title: Remover nó da associação ao cluster de failover ativo
 description: Este artigo aborda a questão de localizar nós removidos da Associação de cluster de failover ativo.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 6613bf09c3588637cfe03cb7647e4fed358b760c
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: da46b39f853476676a06bcaaa20338dd1a178586
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150324"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935566"
 ---
 # <a name="nodes-being-removed-from-failover-cluster-membership-on-vmware-esx"></a>Nós sendo removidos da Associação de cluster de failover no VMWare ESX
 

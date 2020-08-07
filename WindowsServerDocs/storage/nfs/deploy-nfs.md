@@ -1,19 +1,17 @@
 ---
 title: Implantar o sistema de arquivos de rede
 description: Descreve como implantar o sistema de arquivos de rede.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 22c8725c227719ee143baa8f4abd3a5cc5dcf883
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 98213b594ee3ae41196bbbbef4da34dbf280e6ad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393972"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935765"
 ---
 # <a name="deploy-network-file-system"></a>Implantar o sistema de arquivos de rede
 
@@ -27,7 +25,7 @@ Aqui está o que mudou para o NFS no Windows Server 2012:
 
 - **Suporte para NFS versão 4,1**. Essa versão de protocolo inclui os aprimoramentos a seguir.
   - É mais fácil navegar por firewalls, melhorando a acessibilidade.
-  - Dá suporte ao\_protocolo GSS RPCSEC, fornecendo segurança mais forte e permitindo que clientes e servidores negociem a segurança.
+  - Dá suporte ao \_ protocolo GSS RPCSEC, fornecendo segurança mais forte e permitindo que clientes e servidores negociem a segurança.
   - Dá suporte à semântica de arquivo do UNIX e do Windows.
   - Aproveita as implantações do servidor de arquivos clusterizado.
   - Dá suporte a procedimentos compostos amigáveis para WAN.
@@ -49,7 +47,7 @@ Esse cenário se aplica a organizações com ambientes heterogêneos que consist
 Para este cenário, você deve ter uma configuração de origem de mapeamento de identidade válida. O Windows Server 2012 dá suporte aos seguintes armazenamentos de mapeamento de identidade:
 
 - Arquivo de mapeamento
-- Serviços de Domínio do Active Directory (AD DS)
+- Active Directory Domain Services (AD DS)
 - Armazenamentos LDAP compatíveis com RFC 2307, como Active Directory Lightweight Directory Services (AD LDS)
 - Servidor Mapeamento de Nomes de Usuário (UNM)
 
@@ -69,7 +67,7 @@ O Server for NFS pode ser instalado em qualquer versão do Windows Server 2012. 
 
 Você precisa implantar os computadores a seguir e conectá-los em uma rede local (LAN):
 
-- Um ou mais computadores que executam o Windows Server 2012 no qual você instalará os dois principais serviços para componentes NFS: Servidor para NFS e cliente para NFS. Você pode instalar esses componentes no mesmo computador ou em computadores diferentes.
+- Um ou mais computadores que executam o Windows Server 2012 no qual você instalará os dois principais serviços para componentes NFS: Server for NFS e Client for NFS. Você pode instalar esses componentes no mesmo computador ou em computadores diferentes.
 - Um ou mais computadores baseados em UNIX que estão executando o servidor NFS e o software cliente NFS. O computador baseado em UNIX que está executando o servidor NFS hospeda um compartilhamento de arquivos NFS ou uma exportação, que é acessada por um computador que está executando o Windows Server 2012 como um cliente usando o Client for NFS. Você pode instalar o software de servidor e cliente NFS no mesmo computador baseado em UNIX ou em diferentes computadores baseados em UNIX, conforme desejado.
 - Um controlador de domínio em execução no nível funcional do Windows Server 2008 R2. O controlador de domínio fornece informações de autenticação de usuário e mapeamento para o ambiente do Windows.
 - Quando um controlador de domínio não é implantado, você pode usar um servidor de Serviço de Informação de Rede (NIS) para fornecer informações de autenticação de usuário para o ambiente UNIX. Ou, se preferir, você pode usar os arquivos de senha e de grupo armazenados no computador que está executando o serviço de Mapeamento de Nomes de Usuário.
@@ -95,13 +93,13 @@ Import-Module NFS
 
 Ao usar os protocolos NFS versão 4,1 e NFS versão 3,0, você tem as seguintes opções de autenticação e segurança.
 
-- RPCSEC\_GSS
+- RPCSEC \_ GSS
   - **Krb5**. Usa o protocolo Kerberos versão 5 para autenticar usuários antes de conceder acesso ao compartilhamento de arquivos.
   - **Krb5i**. Usa o protocolo Kerberos versão 5 para se autenticar com a verificação de integridade (checksums), que verifica se os dados não foram alterados.
   - **Krb5p** Usa o protocolo Kerberos versão 5, que autentica o tráfego NFS com criptografia para privacidade.
-- SYS\_DE AUTENTICAÇÃO
+- SYS de autenticação \_
 
-Você também pode optar por não usar a autorização do servidor\_(auth sys), que oferece a opção de habilitar o acesso de usuário não mapeado. Ao usar o acesso de usuário não mapeado, você pode especificar para permitir o acesso de usuário não mapeado por UID/GID, que é o padrão, ou permitir acesso anônimo.
+Você também pode optar por não usar a autorização do servidor (AUTH \_ sys), que oferece a opção de habilitar o acesso de usuário não mapeado. Ao usar o acesso de usuário não mapeado, você pode especificar para permitir o acesso de usuário não mapeado por UID/GID, que é o padrão, ou permitir acesso anônimo.
 
 Instruções para configurar a autenticação NFS no abordado na seção a seguir.
 
@@ -112,7 +110,7 @@ Você pode criar um compartilhamento de arquivos NFS usando cmdlets do Gerenciad
 ### <a name="create-an-nfs-file-share-with-server-manager"></a>Criar um compartilhamento de arquivos NFS com Gerenciador do Servidor
 
 1. Faça logon no servidor como membro do grupo Administradores local.
-2. O Gerenciador do Servidor será iniciado automaticamente. Se não for iniciado automaticamente, selecione **Iniciar**, digite **ServerManager. exe**e, em seguida, selecione **Gerenciador do servidor**.
+2. O Gerenciador do Servidor será iniciado automaticamente. Se não for iniciado automaticamente, selecione **Iniciar**, digite **servermanager.exe**e, em seguida, selecione **Gerenciador do servidor**.
 3. À esquerda, selecione **serviços de arquivo e armazenamento**e, em seguida, selecione **compartilhamentos**.
 4. Selecione **para criar um compartilhamento de arquivos, inicie o assistente de novo compartilhamento**.
 5. Na página **selecionar perfil** , selecione **compartilhamento NFS – compartilhamento rápido** ou **NFS-avançado**e, em seguida, selecione **Avançar**.
@@ -125,7 +123,7 @@ Você pode criar um compartilhamento de arquivos NFS usando cmdlets do Gerenciad
 
 ### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes do Windows PowerShell
 
-O cmdlet do Windows PowerShell a seguir também pode criar um compartilhamento de arquivos `nfs1` NFS (onde é o nome do `C:\\shares\\nfsfolder` compartilhamento e é o caminho do arquivo):
+O cmdlet do Windows PowerShell a seguir também pode criar um compartilhamento de arquivos NFS (onde `nfs1` é o nome do compartilhamento e `C:\\shares\\nfsfolder` é o caminho do arquivo):
 
 ```PowerShell
 New-NfsShare -name nfs1 -Path C:\shares\nfsfolder

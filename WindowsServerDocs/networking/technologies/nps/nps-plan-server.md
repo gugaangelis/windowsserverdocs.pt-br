@@ -2,26 +2,24 @@
 title: Planejar NPS como um servidor RADIUS
 description: Este tópico fornece informações sobre o planejamento de implantação do servidor RADIUS do servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 2900dd2c-0f70-4f8d-9650-ed83d51d509a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0e012746841bcf736b7698afb5d7c807194bbec0
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 73e85d9582e447466115ce30047a3968a8f457d8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315737"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952001"
 ---
 # <a name="plan-nps-as-a-radius-server"></a>Planejar NPS como um servidor RADIUS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Quando você implanta o servidor de diretivas de rede \(NPS\) como um servidor serviço RADIUS (RADIUS), o NPS executa autenticação, autorização e contabilização de solicitações de conexão para o domínio local e para domínios que confiam no domínio local. Você pode usar essas diretrizes de planejamento para simplificar a implantação do RADIUS.
+Quando você implanta o NPS do servidor de políticas de rede \( \) como um servidor serviço RADIUS (RADIUS), o NPS executa autenticação, autorização e contabilização de solicitações de conexão para o domínio local e para domínios que confiam no domínio local. Você pode usar essas diretrizes de planejamento para simplificar a implantação do RADIUS.
 
-Essas diretrizes de planejamento não incluem circunstâncias nas quais você deseja implantar o NPS como um proxy RADIUS. Quando você implanta o NPS como um proxy RADIUS, o NPS encaminha as solicitações de conexão para um servidor que executa o NPS ou outros servidores RADIUS em domínios remotos, domínios não confiáveis ou ambos. 
+Essas diretrizes de planejamento não incluem circunstâncias nas quais você deseja implantar o NPS como um proxy RADIUS. Quando você implanta o NPS como um proxy RADIUS, o NPS encaminha as solicitações de conexão para um servidor que executa o NPS ou outros servidores RADIUS em domínios remotos, domínios não confiáveis ou ambos.
 
 Antes de implantar o NPS como um servidor RADIUS em sua rede, use as diretrizes a seguir para planejar sua implantação.
 
@@ -62,7 +60,7 @@ Os clientes RADIUS são servidores de acesso à rede, como pontos de acesso sem 
 >[!IMPORTANT]
 >Clientes de acesso, como computadores cliente, não são clientes RADIUS. Somente os servidores de acesso à rede e os servidores proxy que dão suporte ao protocolo RADIUS são clientes RADIUS.
 
-Além disso, os pontos de acesso sem fio e os comutadores devem ser compatíveis com a autenticação 802.1 X. Se você quiser implantar o protocolo de autenticação extensível \(EAP\) ou o protocolo de autenticação extensível protegido \(\)PEAP, pontos de acesso e comutadores devem oferecer suporte ao uso do EAP.
+Além disso, os pontos de acesso sem fio e os comutadores devem ser compatíveis com a autenticação 802.1 X. Se você quiser implantar o protocolo \( EAP \) ou \( PEAP \) , os pontos de acesso e os comutadores de autenticação extensíveis devem oferecer suporte ao uso do EAP.
 
 Para testar a interoperabilidade básica para conexões PPP para pontos de acesso sem fio, configure o ponto de acesso e o cliente de acesso para usar o protocolo de autenticação de senha (PAP). Use protocolos de autenticação adicionais baseados em PPP, como o PEAP, até que você tenha testado aqueles que pretende usar para acesso à rede.
 
@@ -70,7 +68,7 @@ Para testar a interoperabilidade básica para conexões PPP para pontos de acess
 
 Durante o planejamento para clientes RADIUS, você pode usar as etapas a seguir.
 
-- Documente os atributos específicos do fornecedor (VSAs) que você deve configurar no NPS. Se os servidores de acesso à rede exigirem VSAs, registre as informações de VSA para uso posterior ao configurar as políticas de rede no NPS. 
+- Documente os atributos específicos do fornecedor (VSAs) que você deve configurar no NPS. Se os servidores de acesso à rede exigirem VSAs, registre as informações de VSA para uso posterior ao configurar as políticas de rede no NPS.
 
 - Documente os endereços IP de clientes RADIUS e seu NPS para simplificar a configuração de todos os dispositivos. Ao implantar seus clientes RADIUS, você deve configurá-los para usar o protocolo RADIUS, com o endereço IP do NPS inserido como o servidor de autenticação. E, ao configurar o NPS para se comunicar com seus clientes RADIUS, você deve inserir os endereços IP do cliente RADIUS no snap-in do NPS.
 
@@ -80,7 +78,7 @@ Durante o planejamento para clientes RADIUS, você pode usar as etapas a seguir.
 
 O NPS dá suporte a métodos de autenticação baseados em senha e em certificado. No entanto, nem todos os servidores de acesso à rede oferecem suporte aos mesmos métodos de autenticação. Em alguns casos, talvez você queira implantar um método de autenticação diferente com base no tipo de acesso à rede.
 
-Por exemplo, talvez você queira implantar o acesso sem fio e VPN para sua organização, mas usar um método de autenticação diferente para cada tipo de acesso: EAP-TLS para conexões VPN, devido à segurança forte que o EAP com segurança de camada de transporte (EAP-TLS) fornece o e o PEAP-MS-CHAP v2 para conexões sem fio 802.1 X.
+Por exemplo, você pode desejar implantar o acesso sem fio e VPN para sua organização, mas usar um método de autenticação diferente para cada tipo de acesso: EAP-TLS para conexões VPN, devido à segurança forte que o EAP com segurança de camada de transporte (EAP-TLS) fornece e PEAP-MS-CHAP v2 para conexões sem fio 802.1 X.
 
 O PEAP com o protocolo de autenticação de handshake de desafio da Microsoft versão 2 (PEAP-MS-CHAP v2) fornece um recurso chamado reconexão rápida que é projetado especificamente para uso com computadores portáteis e outros dispositivos sem fio. A reconexão rápida permite que os clientes sem fio se movam entre pontos de acesso sem fio na mesma rede sem serem autenticados sempre que eles se associam a um novo ponto de acesso. Isso fornece uma experiência melhor para usuários sem fio e permite que eles se movam entre pontos de acesso sem precisar digitar novamente suas credenciais.
 Devido à reconexão rápida e à segurança fornecida pelo PEAP-MS-CHAP v2, o PEAP-MS-CHAP v2 é uma opção lógica como um método de autenticação para conexões sem fio.
@@ -97,7 +95,7 @@ O PEAP-MS-CHAP v2 e o EAP-TLS são métodos de autenticação baseados em certif
 
 O EAP-TLS usa certificados para autenticação de cliente e de servidor e requer que você implante uma infraestrutura de chave pública (PKI) em sua organização. A implantação de uma PKI pode ser complexa e requer uma fase de planejamento que seja independente do planejamento para o uso do NPS como um servidor RADIUS.
 
-Com o EAP-TLS, o NPS registra um certificado de servidor de uma autoridade de certificação \(\)de AC e o certificado é salvo no computador local no repositório de certificados. Durante o processo de autenticação, a autenticação do servidor ocorre quando o NPS envia seu certificado de servidor ao cliente de acesso para provar sua identidade para o cliente de acesso. O cliente de acesso examina várias propriedades de certificado para determinar se o certificado é válido e é apropriado para uso durante a autenticação do servidor. Se o certificado do servidor atender aos requisitos mínimos de certificado do servidor e for emitido por uma AC que o cliente de acesso confia, o NPS será autenticado com êxito pelo cliente.
+Com o EAP-TLS, o NPS registra um certificado de servidor de uma AC de autoridade de certificação \( \) e o certificado é salvo no computador local no repositório de certificados. Durante o processo de autenticação, a autenticação do servidor ocorre quando o NPS envia seu certificado de servidor ao cliente de acesso para provar sua identidade para o cliente de acesso. O cliente de acesso examina várias propriedades de certificado para determinar se o certificado é válido e é apropriado para uso durante a autenticação do servidor. Se o certificado do servidor atender aos requisitos mínimos de certificado do servidor e for emitido por uma AC que o cliente de acesso confia, o NPS será autenticado com êxito pelo cliente.
 
 Da mesma forma, a autenticação de cliente ocorre durante o processo de autenticação quando o cliente envia seu certificado de cliente para o NPS para provar sua identidade para o NPS. O NPS examina o certificado e, se o certificado do cliente atender aos requisitos mínimos de certificado do cliente e for emitido por uma autoridade de certificação que o NPS confia, o cliente de acesso será autenticado com êxito pelo NPS.
 
@@ -157,9 +155,9 @@ Durante o planejamento de políticas de rede, você pode usar as etapas a seguir
 
 ## <a name="plan-nps-accounting"></a>Planejar contabilidade do NPS
 
-O NPS fornece a capacidade de registrar em log dados de estatísticas RADIUS, como autenticação de usuário e solicitações de contabilização, em três formatos: formato IAS, formato compatível com Banco de dados e log de Microsoft SQL Server. 
+O NPS fornece a capacidade de registrar em log dados de estatísticas RADIUS, como autenticação de usuário e solicitações de contabilização, em três formatos: formato IAS, formato compatível com Banco de dados e log de Microsoft SQL Server.
 
-Formato do IAS e formato compatível com Banco de dados criar arquivos de log no NPS local no formato de arquivo de texto. 
+Formato do IAS e formato compatível com Banco de dados criar arquivos de log no NPS local no formato de arquivo de texto.
 
 SQL Server log fornece a capacidade de fazer logon em um banco de dados SQL Server 2000 ou SQL Server 2005 em conformidade com XML, estendendo a contabilidade RADIUS para aproveitar as vantagens do registro em log em um banco de dados relacional.
 
@@ -171,7 +169,7 @@ Durante o planejamento para a contabilidade do NPS, você pode usar as etapas a 
 
 ### <a name="nps-accounting-using-local-log-files"></a>Contabilidade de NPS usando arquivos de log locais
 
-A gravação de solicitações de estatísticas e autenticação de usuário em arquivos de log é usada principalmente para fins de análise e cobrança de conexão e também é útil como uma ferramenta de investigação de segurança, fornecendo um método para acompanhar a atividade de um usuário mal-intencionado após um invasão.
+A gravação de solicitações de estatísticas e autenticação de usuário em arquivos de log é usada principalmente para fins de análise e cobrança de conexão e também é útil como uma ferramenta de investigação de segurança, fornecendo um método para acompanhar a atividade de um usuário mal-intencionado após um ataque.
 
 ### <a name="key-steps"></a>Principais etapas
 
@@ -195,9 +193,9 @@ Durante o planejamento para a contabilidade do NPS usando arquivos de log locais
 
 O log de SQL Server do NPS é usado quando você precisa de informações de estado da sessão, para fins de criação de relatórios e análise de dados e para centralizar e simplificar o gerenciamento de seus dados contábeis.
 
-O NPS fornece a capacidade de usar SQL Server log para registrar a autenticação de usuário e as solicitações de contabilização recebidas de um ou mais servidores de acesso à rede para uma fonte de dados em um computador que executa o mecanismo de área de trabalho Microsoft SQL Server \(o MSDE 2000\)ou qualquer versão do SQL Server posterior a SQL Server 2000.
+O NPS fornece a capacidade de usar SQL Server log para registrar a autenticação de usuário e as solicitações de contabilização recebidas de um ou mais servidores de acesso à rede para uma fonte de dados em um computador que executa o Microsoft SQL Server do mecanismo de área de trabalho do \( MSDE 2000 \) ou qualquer versão do SQL Server posterior à SQL Server 2000.
 
-Os dados de contabilidade são passados do NPS em formato XML para um procedimento armazenado no banco de dados, que dá suporte à linguagem de consulta estruturada \(SQL\) e XML \(SQLXML\). A gravação de solicitações de estatísticas e autenticação de usuário em um banco de dados SQL Server em conformidade com XML permite que vários NPSs tenham uma fonte de dado.
+Os dados de contabilização são passados do NPS em formato XML para um procedimento armazenado no banco de dados, que dá suporte ao \( SQL \) e ao XML SQLXML da linguagem de consulta estruturada \( \) . A gravação de solicitações de estatísticas e autenticação de usuário em um banco de dados SQL Server em conformidade com XML permite que vários NPSs tenham uma fonte de dado.
 
 ### <a name="key-steps"></a>Principais etapas
 

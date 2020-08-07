@@ -2,18 +2,16 @@
 title: Entrar em contato com a equipe de rede na nuvem e Datacenter
 description: Esta página foi projetada para informar os clientes sobre os melhores métodos para alcançar a equipe de SDN em vários contextos.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 45baf6966fc0bc703dcf354e557b9d4eeab8e9d9
-ms.sourcegitcommit: 0ccc7b2caa1781f0c67e1a3cc52c0b0f6a175ad4
+ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87819577"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970823"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Entrar em contato com a equipe de rede na nuvem e Datacenter
 
@@ -37,7 +35,7 @@ Acesse [aqui](https://github.com/Microsoft/SDN/issues) para enviar problemas par
 Nossa [documentação de rede de contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) pode ser encontrada em [Microsoft docs (docs.Microsoft.com)](https://docs.microsoft.com/), que tem **funcionalidade de comentário interna**. Para deixar ou responder a um comentário em Microsoft Docs apenas entrar, role para baixo até a parte inferior da página Microsoft Docs que você deseja referenciar e, em seguida, faça e envie seu comentário.
 
 > [Microsoft docs](https://docs.microsoft.com/) é o novo site de documentação unificado da Microsoft. Embora a maior parte da [documentação de Sdn](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking) da nossa equipe permaneça no TechNet, nossa documentação de [rede de contêineres](https://docs.microsoft.com/virtualization/windowscontainers) está agora em Microsoft docs.
-> 
+>
 > *Em geral, se você encontrar um tópico sobre Microsoft Docs que Spark uma pergunta ou deixar que você queira mais, basta deixar um comentário nessa página para compartilhar seus comentários com a equipe da Microsoft que pode ajudar.*
 
 ## <a name="container-specific-forums"></a>Fóruns específicos do contêiner
@@ -45,5 +43,5 @@ Sinta-se à vontade para usar qualquer Avenida nessa página para fornecer comen
 - [User Voice](https://windowsserver.uservoice.com/forums/304624-containers) -melhor para *solicitações de recursos*
 - [GitHub (repositório de virtualização)](https://github.com/Microsoft/Virtualization-Documentation) -melhor para procurar erros de *relatório* e *ajuda de solução de problemas*
 
-### <a name="not-seeing-the-forum-for-you"></a>Não está vendo o fórum para você? 
+### <a name="not-seeing-the-forum-for-you"></a>Não está vendo o fórum para você?
 Sempre que possível, incentivamos o uso de nossos fóruns públicos para que a comunidade mais ampla possa se beneficiar do acesso às perguntas e aos comentários que chegarem ao nosso caminho. No entanto, também reconhecemos que há situações em que o email é simplesmente a maneira preferida de entrar em contato conosco. Se você estiver em uma dessas situações, envie um email para e teremos o sdn_feedback@microsoft.com prazer de ouvi-lo.

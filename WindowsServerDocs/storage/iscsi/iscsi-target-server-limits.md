@@ -1,19 +1,17 @@
 ---
 title: Limites de escalabilidade do servidor de destino iSCSI
 TOCTitle: iSCSI Target Server Scalability Limits
-ms.prod: windows-server
-ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 7a6d23ebd82afc192a9c306420811860d74cf469
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961358"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935853"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Limites de escalabilidade do servidor de destino iSCSI
 
@@ -104,7 +102,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Vários nós de cluster ativos</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td>
 <p>N/D</p></td>
 <td><p>Cada nó ativo no cluster de failover possui uma instância de cluster de servidor de destino iSCSI diferente com outros nós que atuam como possíveis nós de proprietário.</p></td>
@@ -129,7 +127,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Entrada/saída de vários caminhos (MPIO)</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
@@ -186,19 +184,19 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>IPv4</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarregamento de TCP</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td><p>Aproveitar envio grande (segmentação), soma de verificação, moderação de interrupção e descarregamento de RSS</p></td>
 </tr>
@@ -210,19 +208,19 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="even">
 <td><p>Quadros jumbo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPsec</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Descarregamento de CRC</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
@@ -290,13 +288,13 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="odd">
 <td><p>Formato de VHD fixo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>Não</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Formato diferencial do VHD</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>Não</p></td>
 <td><p>Os instantâneos não podem ser obtidos de discos virtuais iSCSI baseados em VHD diferenciais.</p></td>
 </tr>
@@ -327,13 +325,13 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="odd">
 <td><p>ReFS</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>N/D</p></td>
 <td></td>
 </tr>
@@ -382,12 +380,12 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tbody>
 <tr class="odd">
 <td><p>Criação de instantâneo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Restauração de instantâneo</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -422,7 +420,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 </tr>
 <tr class="odd">
 <td><p>Montagem local</p></td>
-<td><p>Suportado</p></td>
+<td><p>Com suporte</p></td>
 <td><p>Discos virtuais iSCSI montados localmente são preteridos-para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>. Instantâneos de disco dinâmico não podem ser montados localmente.</p></td>
 </tr>
 </tbody>

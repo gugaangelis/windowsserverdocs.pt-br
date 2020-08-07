@@ -1,19 +1,17 @@
 ---
 title: Balanceamento de carga do servidor proxy NPS
 description: Você pode usar este tópico para aprender sobre recursos e funcionalidades de VPN do Windows Server 2016 e do Windows 10.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 528280e6-b47e-489f-b310-b257d434aa0d
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 10a33494365f5a10923dd9ce46c3575675099b27
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8710723c397744f3ba937ac863cf5ab45dc8a4f1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315969"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952153"
 ---
 # <a name="nps-proxy-server-load-balancing"></a>Balanceamento de carga do servidor proxy NPS
 
@@ -23,9 +21,9 @@ Clientes do serviço RADIUS (RADIUS), que são servidores de acesso à rede, com
 
 O balanceamento de carga é particularmente útil para:
 
-- As organizações que usam o protocolo de autenticação extensível – segurança de camada de transporte \(EAP-TLS\) ou protocolo de autenticação extensível protegida \(PEAP\)-TLS para autenticação. Como esses métodos de autenticação usam certificados para autenticação de servidor e para autenticação de computador cliente ou de usuário, a carga em proxies e servidores RADIUS é mais pesada do que quando métodos de autenticação baseados em senha são usados.
+- Organizações que usam protocolo de autenticação extensível – \( EAP-TLS \) ou protocolo de autenticação extensível protegido \( PEAP \) -TLS para autenticação. Como esses métodos de autenticação usam certificados para autenticação de servidor e para autenticação de computador cliente ou de usuário, a carga em proxies e servidores RADIUS é mais pesada do que quando métodos de autenticação baseados em senha são usados.
 - Organizações que precisam manter a disponibilidade contínua do serviço.
-- Provedores de serviços de Internet \(ISPs\) que terceirizam o acesso VPN para outras organizações. Os serviços de VPN terceirizados podem gerar um grande volume de tráfego de autenticação.
+- Provedores de serviços \( de Internet ISPs \) que terceirizam o acesso VPN para outras organizações. Os serviços de VPN terceirizados podem gerar um grande volume de tráfego de autenticação.
 
 Há dois métodos que você pode usar para balancear a carga de solicitações de conexão enviadas para seu NPSs:
 
@@ -53,7 +51,7 @@ Antes de configurar o balanceamento de carga, crie um plano de implantação que
 
 Para configurar o NPS para atuar como um servidor proxy e encaminhar solicitações de conexão de clientes RADIUS para servidores RADIUS remotos, você deve executar as seguintes ações:
 
-1. Implante seus clientes RADIUS \(servidores VPN, servidores dial-up, servidores de gateway de serviços de terminal, comutadores de autenticação 802.1 X e pontos de acesso sem fio 802.1 X\) e configure-os para enviar solicitações de conexão para seus servidores proxy NPS.
+1. Implante servidores VPN de clientes RADIUS \( , servidores dial-up, servidores de gateway de serviços de terminal, comutadores de autenticação 802.1 x e pontos de acesso sem fio 802.1 x \) e configurá-los para enviar solicitações de conexão para seus servidores proxy NPS.
 
 2. No proxy NPS, configure os servidores de acesso à rede como clientes RADIUS. Para obter mais informações, consulte [configurar clientes RADIUS](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure).
 

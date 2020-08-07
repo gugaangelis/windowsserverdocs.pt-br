@@ -2,19 +2,17 @@
 title: Acesso remoto
 description: Este tópico fornece uma visão geral da função de servidor de acesso remoto no Windows Server 2016.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: lizross
 author: eross-msft
 ms.date: 05/18/2018
-ms.openlocfilehash: 9fc6fef0bc868e2f2db1fa8deb102eb46e959264
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3efbc9d05beacdcc1d8ceb466f25dfc59f2bae0c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959498"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970443"
 ---
 # <a name="remote-access"></a>Acesso remoto
 
@@ -24,11 +22,11 @@ O guia de acesso remoto fornece uma visão geral da função de servidor de aces
 
 - [Guia de implantação de VPN Always On](vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)
 - [Border Gateway Protocol &#40;BGP&#41;](bgp/Border-Gateway-Protocol-BGP.md)
-- [Gateway de RAS](ras-gateway/RAS-Gateway.md) 
+- [Gateway de RAS](ras-gateway/RAS-Gateway.md)
 - [Documentação da função de servidor de acesso remoto](ras/Remote-Access-Server-Role-Documentation.md)
 - [Gateway de RAS para SDN](../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)
 - [VPN (rede virtual privada)](vpn/vpn-top.md)
- 
+
 Para obter mais informações sobre outras tecnologias de rede, consulte [Networking in Windows Server 2016](../../networking/index.yml).
 
 A função de servidor de acesso remoto é um agrupamento lógico dessas tecnologias de acesso à rede relacionadas: [RAS (serviço de acesso remoto)](#bkmk_da), [Roteamento](#bkmk_rras)e [proxy de aplicativo Web](#bkmk_proxy). Essas tecnologias são os *serviços de função* da função do servidor de acesso remoto. Ao instalar a função de servidor de acesso remoto com o **Assistente para adicionar funções e recursos** ou o Windows PowerShell, você pode instalar um ou mais desses três serviços de função.
@@ -47,7 +45,7 @@ Ao instalar o serviço de função **DirectAccess e VPN (RAS)** , você está im
 >[!IMPORTANT]
 > O gateway RAS com recursos multilocatário também está disponível no Windows Server 2012 R2.
 
-- **Always on VPN**. Always On VPN permite que os usuários remotos acessem com segurança recursos compartilhados, sites da intranet e aplicativos em uma rede interna sem se conectar a uma VPN. 
+- **Always on VPN**. Always On VPN permite que os usuários remotos acessem com segurança recursos compartilhados, sites da intranet e aplicativos em uma rede interna sem se conectar a uma VPN.
 
 Para obter mais informações, consulte [RAS gateway](ras-gateway/RAS-Gateway.md) and [Border Gateway Protocol (BGP)](bgp/Border-Gateway-Protocol-BGP.md).
 
@@ -57,19 +55,19 @@ Você pode usar o acesso remoto para rotear o tráfego de rede entre sub-redes e
 
 Para instalar o acesso remoto como um roteador de LAN, use o assistente para adicionar funções e recursos no Gerenciador do Servidor e selecione a função de servidor de **acesso remoto** e o serviço de função de **Roteamento** ; ou digite o seguinte comando em um prompt do Windows PowerShell e pressione ENTER.
 
-```  
+```
 Install-RemoteAccess -VpnType RoutingOnly
-```  
+```
 
 ## <a name="web-application-proxy"></a><a name="bkmk_proxy"></a>Proxy de aplicativo Web
 
 O proxy de aplicativo Web é um serviço de função de acesso remoto no Windows Server 2016. O Proxy de Aplicativo Web fornece funcionalidade de proxy reverso para aplicativos Web dentro da rede corporativa. Isso permite aos usuários acessá-los de qualquer dispositivo fora da rede corporativa. O proxy de aplicativo Web autentica previamente o acesso a aplicativos Web usando Serviços de Federação do Active Directory (AD FS) (AD FS) e também funciona como um proxy AD FS.
 
-Para instalar o acesso remoto como um proxy de aplicativo Web, use o assistente para adicionar funções e recursos no Gerenciador do Servidor e selecione a função de servidor de **acesso remoto** e o serviço de função **proxy de aplicativo Web** ; ou digite o seguinte comando em um prompt do Windows PowerShell e pressione ENTER.  
+Para instalar o acesso remoto como um proxy de aplicativo Web, use o assistente para adicionar funções e recursos no Gerenciador do Servidor e selecione a função de servidor de **acesso remoto** e o serviço de função **proxy de aplicativo Web** ; ou digite o seguinte comando em um prompt do Windows PowerShell e pressione ENTER.
 
-```  
-Install-RemoteAccess -VpnType SstpProxy  
-```  
+```
+Install-RemoteAccess -VpnType SstpProxy
+```
 
 Para obter mais informações, consulte [proxy de aplicativo Web](./web-application-proxy/web-application-proxy-windows-server.md).
 

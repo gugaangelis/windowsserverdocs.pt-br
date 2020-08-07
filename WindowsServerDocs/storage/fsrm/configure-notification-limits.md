@@ -2,18 +2,16 @@
 title: Configurar limites de notificação
 description: Este artigo descreve como adicionar os limites de tempo para vários tipos de notificação
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5b9bda5ffb225cc05df7d45e8b611e0154f9e582
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 969c950d3a925afac400d128ac21ed0923f07ffa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961528"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950650"
 ---
 # <a name="configure-notification-limits"></a>Configurar limites de notificação
 

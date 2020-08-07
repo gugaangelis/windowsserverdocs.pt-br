@@ -1,23 +1,21 @@
 ---
-title: Políticas de rede
+title: Políticas de Rede
 description: Este tópico fornece uma visão geral das políticas de rede para o servidor de políticas de rede no Windows Server 2016 e inclui links para diretrizes adicionais sobre o NPS.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: e4a9b134-6d1d-40d7-a49c-5f46d5fdb419
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4ee256184cd551c5f2c2fcdb8544e4d061ea2bf3
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f499de643a2460696305ef1ab35f695236849035
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315763"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952041"
 ---
-# <a name="network-policies"></a>Políticas de rede
+# <a name="network-policies"></a>Políticas de Rede
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma visão geral das políticas de rede no NPS.
 
@@ -30,7 +28,7 @@ As políticas de rede são conjuntos de condições, restrições e configuraç�
 
 No processamento das solicitações de conexão como um servidor RADIUS, o NPS executa a autenticação e a autorização da solicitação de conexão. Durante o processo de autenticação, o NPS verifica a identidade do usuário ou computador que está se conectando à rede. Durante o processo de autorização, o NPS determina se o usuário ou o computador tem permissão para acessar a rede.
 
-Para fazer essas determinações, o NPS usa políticas de rede que são configuradas no console do NPS. O NPS também examina as propriedades de discagem da conta de usuário em Active Directory&reg; serviços de domínio \(AD DS\) para executar a autorização.
+Para fazer essas determinações, o NPS usa políticas de rede que são configuradas no console do NPS. O NPS também examina as propriedades de discagem da conta de usuário no Active Directory &reg; Domain Services \( AD DS \) para executar a autorização.
 
 ## <a name="network-policies---an-ordered-set-of-rules"></a>Políticas de rede-um conjunto ordenado de regras
 
@@ -54,7 +52,7 @@ Há quatro categorias de propriedades para cada política de rede:
 
 ### <a name="conditions"></a>Condições
 
- Essas propriedades permitem que você especifique as condições que a solicitação de conexão deve ter para corresponder à política de rede; Se as condições configuradas na política corresponderem à solicitação de conexão, o NPS aplicará as configurações designadas na política de rede para a conexão. Por exemplo, se você especificar o endereço IPv4 do NAS como uma condição da diretiva de rede e o NPS receber uma solicitação de conexão de um NAS que tem o endereço IP especificado, a condição na política corresponderá à solicitação de conexão. 
+ Essas propriedades permitem que você especifique as condições que a solicitação de conexão deve ter para corresponder à política de rede; Se as condições configuradas na política corresponderem à solicitação de conexão, o NPS aplicará as configurações designadas na política de rede para a conexão. Por exemplo, se você especificar o endereço IPv4 do NAS como uma condição da diretiva de rede e o NPS receber uma solicitação de conexão de um NAS que tem o endereço IP especificado, a condição na política corresponderá à solicitação de conexão.
 
 
 ### <a name="constraints"></a>Restrições

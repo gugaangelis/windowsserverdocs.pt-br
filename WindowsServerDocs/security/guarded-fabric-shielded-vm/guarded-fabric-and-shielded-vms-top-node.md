@@ -1,19 +1,17 @@
 ---
 title: Malha protegida e VMs blindadas
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5c7ada81-2d97-41d4-87cf-1a7ccf06cd20
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9e76b3081438ae38c6b83b7cdd179d47b1e21a70
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7a73bf1b677d09cc31783b58148c8ca7c581fbca
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856909"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971373"
 ---
 # <a name="guarded-fabric-and-shielded-vms"></a>Malha protegida e VMs blindadas
 
@@ -44,18 +42,18 @@ Uma das metas mais importantes de fornecer um ambiente hospedado é garantir a s
     - [Início rápido](guarded-fabric-deployment-overview.md)
     - [Implantar o HGS](guarded-fabric-setting-up-the-host-guardian-service-hgs.md)
     - [Implantar hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
-        - [Configurando o DNS de malha para hosts que se tornarão hosts protegidos](guarded-fabric-configuring-fabric-dns.md)
+        - [Configurando a malha DNS para hosts que se tornarão hosts protegidos](guarded-fabric-configuring-fabric-dns.md)
         - [Implantar um host protegido usando o modo AD](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
         - [Implantar um host protegido usando o modo TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
         - [Confirmar que os hosts protegidos podem atestar](guarded-fabric-confirm-hosts-can-attest-successfully.md)
-        - [VMs blindadas-provedor de serviços de hospedagem implanta hosts protegidos no VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
+        - [VMs blindadas – provedor de serviços de hospedagem implanta hosts protegidos no VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts)
     - [Implantar VMs blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-        - [Criar um modelo de VM blindada](guarded-fabric-create-a-shielded-vm-template.md)
+        - [Criar um modelo de VM blindado](guarded-fabric-create-a-shielded-vm-template.md)
         - [Preparar um VHD do auxiliar de blindagem de VM](guarded-fabric-vm-shielding-helper-vhd.md)
         - [Instalar o Microsoft Azure Pack](guarded-fabric-hoster-sets-up-windows-azure-pack.md)
         - [Criar um arquivo de dados de blindagem](guarded-fabric-tenant-creates-shielding-data.md)
-        - [Implantar uma VM blindada usando Pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md)
-        - [Implantar uma VM blindada usando Virtual Machine Manager](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
+        - [Implantar uma VM blindada usando o Pacote do Microsoft Azure](guarded-fabric-shielded-vm-windows-azure-pack.md)
+        - [Implantar uma VM blindada usando o Virtual Machine Manager](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
 
 ## <a name="operations-and-management-topic"></a>Tópico de operações e gerenciamento
 

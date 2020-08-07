@@ -2,31 +2,29 @@
 title: Conectar pontos de extremidade do contêiner a uma rede virtual do locatário
 description: Neste tópico, mostraremos como conectar pontos de extremidade do contêiner a uma rede virtual de locatário existente criada por meio de SDN. Use o driver de rede l2bridge (e, opcionalmente, l2tunnel) disponível com o plug-in libnetwork do Windows para o Docker para criar uma rede de contêiner na VM de locatário.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 2b8927ec260b4f5a42aa59a25db1b18896ce91ef
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854529"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970803"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conectar pontos de extremidade do contêiner a uma rede virtual do locatário
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Neste tópico, mostraremos como conectar pontos de extremidade do contêiner a uma rede virtual de locatário existente criada por meio de SDN. Use o driver de rede *l2bridge* (e, opcionalmente, *l2tunnel*) disponível com o plug-in libnetwork do Windows para o Docker para criar uma rede de contêiner na VM de locatário.
 
-No tópico [drivers de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) , discutimos que os vários drivers de rede estão disponíveis por meio do Docker no Windows. Para SDN, use os drivers *l2bridge* e *l2tunnel* . Para ambos os drivers, cada ponto de extremidade do contêiner está na mesma sub-rede virtual que a máquina virtual do host do contêiner (locatário). 
+No tópico [drivers de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) , discutimos que os vários drivers de rede estão disponíveis por meio do Docker no Windows. Para SDN, use os drivers *l2bridge* e *l2tunnel* . Para ambos os drivers, cada ponto de extremidade do contêiner está na mesma sub-rede virtual que a máquina virtual do host do contêiner (locatário).
 
-O serviço de rede de host (HNS), por meio do plug-in de nuvem privada, atribui dinamicamente os endereços IP para pontos de extremidade de contêiner. Os pontos de extremidade do contêiner têm endereços IP exclusivos, mas compartilham o mesmo endereço MAC da máquina virtual do host do contêiner (locatário) devido à conversão de endereço da camada 2. 
+O serviço de rede de host (HNS), por meio do plug-in de nuvem privada, atribui dinamicamente os endereços IP para pontos de extremidade de contêiner. Os pontos de extremidade do contêiner têm endereços IP exclusivos, mas compartilham o mesmo endereço MAC da máquina virtual do host do contêiner (locatário) devido à conversão de endereço da camada 2.
 
-A política de rede (ACLs, encapsulamento e QoS) para esses pontos de extremidade de contêiner são impostas no host físico do Hyper-V conforme recebido pelo controlador de rede e definido em sistemas de gerenciamento de camada superior. 
+A política de rede (ACLs, encapsulamento e QoS) para esses pontos de extremidade de contêiner são impostas no host físico do Hyper-V conforme recebido pelo controlador de rede e definido em sistemas de gerenciamento de camada superior.
 
 A diferença entre os drivers *l2bridge* e *l2tunnel* é:
 
@@ -41,26 +39,26 @@ A diferença entre os drivers *l2bridge* e *l2tunnel* é:
 >Esses modos de rede não funcionam para conectar pontos de extremidade de contêiner do Windows a uma rede virtual de locatário na nuvem pública do Azure.
 
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 -  Uma infraestrutura de SDN implantada com o controlador de rede.
 -  Uma rede virtual de locatário foi criada.
 -  Uma máquina virtual de locatário implantada com o recurso de contêiner do Windows habilitado, Docker instalado e recurso do Hyper-V habilitado. O recurso Hyper-V é necessário para instalar vários binários para redes l2bridge e l2tunnel.
 
    ```powershell
    # To install HyperV feature without checks for nested virtualization
-   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
+   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All
    ```
 
 >[!Note]
->A [virtualização aninhada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) e a exposição de extensões de virtualização não são necessárias, a menos que usem contêineres Hyper-V. 
+>A [virtualização aninhada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) e a exposição de extensões de virtualização não são necessárias, a menos que usem contêineres Hyper-V.
 
 
-## <a name="workflow"></a>Fluxo de Trabalho
+## <a name="workflow"></a>Fluxo de trabalho
 
-[1. Adicione várias configurações de IP a um recurso de NIC de VM existente por meio do controlador de rede (host Hyper-V)](#1-add-multiple-ip-configurations)
-[2. Habilite o proxy de rede no host para alocar endereços IP de CA para pontos de extremidade de contêiner (host Hyper-V)](#2-enable-the-network-proxy)
-[3. Instale o plug-in de nuvem privada para atribuir endereços IP de autoridade de certificação aos pontos de extremidade do contêiner (VM do host do contêiner)](#3-install-the-private-cloud-plug-in)
-[4. Criar uma rede *l2bridge* ou *l2tunnel* usando o Docker (VM do host do contêiner)](#4-create-an-l2bridge-container-network)
+[1. Adicione várias configurações de IP a um recurso de NIC de VM existente por meio do controlador de rede (host Hyper-V)](#1-add-multiple-ip-configurations) 
+ [2. Habilite o proxy de rede no host para alocar endereços IP de CA para pontos de extremidade de contêiner (host Hyper-V)](#2-enable-the-network-proxy) 
+ [3. Instale o plug-in de nuvem privada para atribuir endereços IP de autoridade de certificação aos pontos de extremidade do contêiner (VM do host do contêiner)](#3-install-the-private-cloud-plug-in) 
+ [4. Criar uma rede *l2bridge* ou *l2tunnel* usando o Docker (VM do host do contêiner)](#4-create-an-l2bridge-container-network)
 
 >[!NOTE]
 >Não há suporte para várias configurações de IP em recursos de NIC de VM criados por meio de System Center Virtual Machine Manager. É recomendável para esses tipos de implantações que você cria o recurso NIC da VM fora da banda usando o PowerShell do controlador de rede.
@@ -89,7 +87,7 @@ foreach ($i in 1..10)
     $props = new-object Microsoft.Windows.NetworkController.NetworkInterfaceIpConfigurationProperties
 
     $resourceid = "IP_192_168_1_1"
-    if ($i -eq 10) 
+    if ($i -eq 10)
     {
         $resourceid += "10"
         $ipstr = "192.168.1.110"
@@ -101,7 +99,7 @@ foreach ($i in 1..10)
     }
 
     $newipconfig.ResourceId = $resourceid
-    $props.PrivateIPAddress = $ipstr    
+    $props.PrivateIPAddress = $ipstr
 
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
@@ -117,9 +115,9 @@ New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties 
 ```
 
 ### <a name="2-enable-the-network-proxy"></a>2. habilitar o proxy de rede
-Nesta etapa, você habilita o proxy de rede para alocar vários endereços IP para a máquina virtual do host do contêiner. 
+Nesta etapa, você habilita o proxy de rede para alocar vários endereços IP para a máquina virtual do host do contêiner.
 
-Para habilitar o proxy de rede, execute o script [ConfigureMCNP. ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) no **host Hyper-V** que hospeda a máquina virtual de host (locatário) do contêiner.
+Para habilitar o proxy de rede, execute o script [ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) no **host Hyper-V** que hospeda a máquina virtual de host (locatário) do contêiner.
 
 ```powershell
 PS C:\> ConfigureMCNP.ps1
@@ -128,7 +126,7 @@ PS C:\> ConfigureMCNP.ps1
 ### <a name="3-install-the-private-cloud-plug-in"></a>3. instalar o plug-in de nuvem privada
 Nesta etapa, você instala um plug-in para permitir que o HNS se comunique com o proxy de rede no host Hyper-V.
 
-Para instalar o plug-in, execute o script [InstallPrivateCloudPlugin. ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro da **máquina virtual de host (locatário) do contêiner**.
+Para instalar o plug-in, execute o script de [InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) dentro da **máquina virtual de host (locatário) do contêiner**.
 
 
 ```powershell
@@ -136,13 +134,13 @@ PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
 ### <a name="4-create-an-l2bridge-container-network"></a>4. criar uma rede de contêiner *l2bridge*
-Nesta etapa, você usa o comando `docker network create` na **máquina virtual do host do contêiner (locatário)** para criar uma rede l2bridge. 
+Nesta etapa, você usa o `docker network create` comando na **máquina virtual do host do contêiner (locatário)** para criar uma rede l2bridge.
 
 ```powershell
 # Create the container network
 C:\> docker network create -d l2bridge --subnet="192.168.1.0/24" --gateway="192.168.1.1" MyContainerOverlayNetwork
 
-# Attach a container to the MyContainerOverlayNetwork 
+# Attach a container to the MyContainerOverlayNetwork
 C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 ```
 

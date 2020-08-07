@@ -2,18 +2,16 @@
 title: Planejamento da capacidade do DirectAccess
 description: Você pode usar este tópico para obter um relatório sobre o desempenho do servidor DirectAccess do Windows Server 2012 para ajudá-lo com o planejamento de capacidade para o DirectAccess no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: 456e5971-3aa7-4a24-bc5d-0c21fec7687e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 85ac9d40ec0de0a896e99d56679b325cdfc387ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6df4005112601aefb1e508087ec66e7af44e52fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517681"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87951401"
 ---
 # <a name="directaccess-capacity-planning"></a>Planejamento da capacidade do DirectAccess
 

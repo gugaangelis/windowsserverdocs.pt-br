@@ -2,18 +2,16 @@
 title: Gerenciamento de recursos de armazenamento remoto
 description: Este artigo descreve como gerenciar recursos de armazenamento em um computador remoto
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5c6dc9c931e130e36e01655de05fbd209f50f3dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8498d55cbdeab609bb3526c9ef884e330148d714
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394080"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950630"
 ---
 # <a name="managing-remote-storage-resources"></a>Gerenciamento de recursos de armazenamento remoto
 
@@ -34,7 +32,7 @@ Por exemplo, você pode:
 -   Conectar a outro computador no domínio usando o snap-in do MMC do Gerenciador de recursos do servidor de arquivos e examinar a utilização de armazenamento em um volume ou uma pasta localizado no computador remoto.
 -   Criar modelos de cota e triagem de arquivo em um servidor local e, em seguida, usar as ferramentas de linha de comando para importar esses modelos para um servidor de arquivos localizado em uma filial.
 
-Esta seção inclui os seguintes tópicos:
+Esta seção inclui os tópicos a seguir:
 
 -   [Conectar a um computador remoto](connect-to-remote-computer.md)
 -   [Ferramentas de linha de comando](command-line-tools.md)

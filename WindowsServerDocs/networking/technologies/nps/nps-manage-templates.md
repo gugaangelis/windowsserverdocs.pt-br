@@ -2,42 +2,40 @@
 title: Gerenciar modelos do NPS
 description: Este tópico fornece instruções sobre como criar, aplicar, exportar e importar modelos de NPS para o servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 989b00c5-4767-4081-ace5-6321f8b2c55e
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0e6a35640d6a4a7c5665f3638925d9dc99a9df9d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 7380f5a712294b1583a7d552ef695811f8cebef4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315934"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952112"
 ---
 # <a name="manage-nps-templates"></a>Gerenciar modelos do NPS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Você pode usar o servidor de políticas de rede \(modelos de\) do NPS para criar elementos de configuração, como serviço RADIUS \(clientes RADIUS\) ou segredos compartilhados, que você pode reutilizar no NPS local e exportar para uso em outros NPSs. 
+Você pode usar \( modelos NPS do servidor \) de políticas de rede para criar elementos de configuração, como serviço RADIUS \( \) clientes RADIUS ou segredos compartilhados, que você pode reutilizar no NPS local e exportar para uso em outros NPSs.
 
 O gerenciamento de modelos fornece um nó no console do NPS, no qual você pode criar, modificar, excluir, duplicar e exibir o uso de modelos de NPS. Os modelos de NPS são projetados para reduzir a quantidade de tempo e o custo necessário para configurar o NPS em um ou mais servidores.
 
 Os seguintes tipos de modelo de NPS estão disponíveis para configuração no gerenciamento de modelos.
 
-- **Segredos compartilhados**. Esse tipo de modelo possibilita que você especifique um segredo compartilhado que pode ser reutilizado (selecionando o modelo no local apropriado no console do NPS) ao configurar clientes e servidores RADIUS. 
+- **Segredos compartilhados**. Esse tipo de modelo possibilita que você especifique um segredo compartilhado que pode ser reutilizado (selecionando o modelo no local apropriado no console do NPS) ao configurar clientes e servidores RADIUS.
 
 - **Clientes RADIUS**. Esse tipo de modelo possibilita que você defina as configurações do cliente RADIUS que podem ser reutilizadas selecionando o modelo no local apropriado no console do NPS.
 
-- **Servidores RADIUS remotos**. Esse modelo possibilita que você defina as configurações do servidor RADIUS remoto que você pode reutilizar selecionando o modelo no local apropriado no console do NPS. 
+- **Servidores RADIUS remotos**. Esse modelo possibilita que você defina as configurações do servidor RADIUS remoto que você pode reutilizar selecionando o modelo no local apropriado no console do NPS.
 
-- **Filtros de IP**. Esse modelo possibilita que você crie filtros de protocolo IP versão 4 (IPv4) e IP versão 6 \(IPv6\) que você pode reutilizar \(selecionando o modelo no local apropriado no console do NPS\) quando você configura as políticas de rede.
+- **Filtros de IP**. Esse modelo possibilita que você crie filtros IPv6 (protocolo IP versão 4) e protocolo IP versão 6 \( \) que podem ser reutilizados \( , selecionando o modelo no local apropriado no console do NPS \) quando você configura as políticas de rede.
 
 ## <a name="create-an-nps-template"></a>Criar um modelo de NPS
 
-Configurar um modelo é diferente de configurar diretamente o NPS. A criação de um modelo não afeta a funcionalidade do NPS. Ele é apenas quando você seleciona o modelo no local apropriado no console do NPS e aplica o modelo que o modelo afeta a funcionalidade do NPS. 
+Configurar um modelo é diferente de configurar diretamente o NPS. A criação de um modelo não afeta a funcionalidade do NPS. Ele é apenas quando você seleciona o modelo no local apropriado no console do NPS e aplica o modelo que o modelo afeta a funcionalidade do NPS.
 
-Por exemplo, se você configurar um cliente RADIUS no console do NPS em **clientes e servidores RADIUS**, altere a configuração do NPS e execute uma etapa para configurar o NPS para se comunicar com um dos seus servidores de acesso à rede. \(a próxima etapa é configurar o servidor de acesso à rede \(\) do NAS para se comunicar com o NPS.\) 
+Por exemplo, se você configurar um cliente RADIUS no console do NPS em **clientes e servidores RADIUS**, altere a configuração do NPS e execute uma etapa para configurar o NPS para se comunicar com um dos seus servidores de acesso à rede. \(A próxima etapa é configurar o nas do servidor de acesso à rede \( \) para se comunicar com o NPS.\)
 
 No entanto, se você configurar um novo modelo de **clientes RADIUS** no console do NPS em **Gerenciamento de modelos** , em vez de criar um novo cliente RADIUS em **clientes e servidores RADIUS**, você criou um modelo, mas ainda não alterou a funcionalidade do NPS. Para alterar a funcionalidade do NPS, você deve aplicar o modelo do local correto no console do NPS.
 
@@ -48,7 +46,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
 ### <a name="to-create-an-nps-template"></a>Para criar um modelo de NPS
 
 
-1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto. 
+1. No NPS, em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto.
 
 2. No console do NPS, expanda **Gerenciamento de modelos**, clique com o botão direito do mouse em um tipo de modelo, como **clientes RADIUS**e clique em **novo**.
 
@@ -72,7 +70,7 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
 
 ## <a name="export-or-import-nps-templates"></a>Exportar ou importar modelos de NPS
 
-Você pode exportar modelos para uso em outros NPSs, ou você pode importar modelos para o **Gerenciamento de modelos** para uso no computador local. 
+Você pode exportar modelos para uso em outros NPSs, ou você pode importar modelos para o **Gerenciamento de modelos** para uso no computador local.
 
 A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 

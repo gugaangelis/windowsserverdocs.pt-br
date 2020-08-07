@@ -2,30 +2,28 @@
 title: Verificar a configuração após as alterações do NPS
 description: Você pode usar este tópico para verificar a configuração do servidor de diretivas de rede do Windows Server 2016 depois que um endereço IP ou nome mudar para o servidor.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: fc77450e-2af1-47ba-bb23-1fd36d9efdbf
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5a99cfb62d3ce331ef2d90fe13afe99a6d14960c
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: e178521d47ebcc152853f34ae01e72cb9d2fdd48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315882"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952091"
 ---
 # <a name="verify-configuration-after-nps-changes"></a>Verificar a configuração após as alterações do NPS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para verificar a configuração do NPS após a alteração de um endereço IP ou nome para o servidor.
 
 ## <a name="verify-configuration-after-an-nps-ip-address-change"></a>Verificar a configuração após a alteração de um endereço IP do NPS
 
-Pode haver circunstâncias em que você precisa alterar o endereço IP de um NPS ou proxy, como quando você move o servidor para uma sub-rede IP diferente. 
+Pode haver circunstâncias em que você precisa alterar o endereço IP de um NPS ou proxy, como quando você move o servidor para uma sub-rede IP diferente.
 
-Se você alterar um endereço IP de proxy ou NPS, será necessário reconfigurar partes de sua implantação do NPS. 
+Se você alterar um endereço IP de proxy ou NPS, será necessário reconfigurar partes de sua implantação do NPS.
 
 Use as diretrizes gerais a seguir para ajudá-lo a verificar se uma alteração de endereço IP não interrompe a autenticação, autorização ou contabilização de acesso à rede em sua rede para servidores RADIUS NPS e servidores proxy RADIUS.
 
@@ -51,9 +49,9 @@ Você deve ser um membro de **Administradores**, ou equivalente, para executar e
 
 3. Reconfigure todos os membros de todos os grupos de servidores remotos RADIUS com o endereço IP do servidor proxy. Para realizar essa tarefa, em cada NPS que tem o proxy NPS configurado como um cliente RADIUS:
 
-    a. Clique duas vezes em **NPS (local)** , clique duas vezes em **clientes e servidores RADIUS**, clique em **clientes RADIUS**e, no painel de detalhes, clique duas vezes no cliente RADIUS que você deseja alterar.
+    a. Clique duas vezes em **NPS (local)**, clique duas vezes em **clientes e servidores RADIUS**, clique em **clientes RADIUS**e, no painel de detalhes, clique duas vezes no cliente RADIUS que você deseja alterar.
 
-    b. Em **Propriedades**do cliente RADIUS, em **endereço \(IP ou DNS\)** , digite o novo endereço IP do proxy NPS.
+    b. Em **Propriedades**do cliente RADIUS, em **endereço \( IP ou \) DNS**, digite o novo endereço IP do proxy NPS.
 
 4. Se você tiver configurado o proxy NPS para usar o log de SQL Server, verifique se a conectividade entre o computador que executa o SQL Server e o proxy NPS ainda está funcionando corretamente.
 
@@ -61,7 +59,7 @@ Você deve ser um membro de **Administradores**, ou equivalente, para executar e
 
 Pode haver circunstâncias em que você precisa alterar o nome de um NPS ou proxy, como quando você remodela as convenções de nomenclatura para seus servidores.
 
-Se você alterar um nome de proxy ou NPS, será necessário reconfigurar partes de sua implantação do NPS. 
+Se você alterar um nome de proxy ou NPS, será necessário reconfigurar partes de sua implantação do NPS.
 
 Use as diretrizes gerais a seguir para ajudá-lo a verificar se uma alteração de nome de servidor não interrompe a autenticação, autorização ou contabilização de acesso à rede.
 
@@ -71,20 +69,20 @@ Você deve ser um membro de **Administradores**, ou equivalente, para executar e
 
 1. Se o NPS for membro de um grupo de servidores remotos RADIUS e o grupo estiver configurado com nomes de computador em vez de endereços IP, reconfigure o grupo de servidores remotos RADIUS com o novo nome do NPS.
 
-2. Se os métodos de autenticação baseados em certificado forem implantados no NPS, a alteração de nome invalida o certificado do servidor. Você pode solicitar um novo certificado do administrador da autoridade de certificação (CA) ou, se o computador for um computador membro do domínio e registrar automaticamente os certificados para membros do domínio, você poderá atualizar Política de Grupo para obter um novo certificado por meio do registro automático . Para atualizar Política de Grupo:
+2. Se os métodos de autenticação baseados em certificado forem implantados no NPS, a alteração de nome invalida o certificado do servidor. Você pode solicitar um novo certificado do administrador da autoridade de certificação (CA) ou, se o computador for um computador membro do domínio e registrar automaticamente os certificados para os membros do domínio, você poderá atualizar Política de Grupo para obter um novo certificado por meio do registro automático. Para atualizar Política de Grupo:
 
     a. Abra o prompt de comando ou o Windows PowerShell.
 
     b. Digite **gpupdate** e pressione ENTER.
 
 
-3. Depois de ter um novo certificado de servidor, solicite que o administrador da autoridade de certificação revogue o certificado antigo. 
+3. Depois de ter um novo certificado de servidor, solicite que o administrador da autoridade de certificação revogue o certificado antigo.
 
-     Depois que o certificado antigo for revogado, o NPS continuará a usá-lo até que o certificado antigo expire. Por padrão, o certificado antigo permanece válido por um tempo máximo de uma semana e 10 horas. Esse período de tempo pode ser diferente dependendo se a expiração da CRL (lista de certificados revogados) e a expiração do tempo de cache da TLS (segurança da camada de transporte) foram modificadas a partir de seus padrões. A expiração da CRL padrão é de uma semana; a expiração do tempo de cache TLS padrão é de 10 horas. 
+     Depois que o certificado antigo for revogado, o NPS continuará a usá-lo até que o certificado antigo expire. Por padrão, o certificado antigo permanece válido por um tempo máximo de uma semana e 10 horas. Esse período de tempo pode ser diferente dependendo se a expiração da CRL (lista de certificados revogados) e a expiração do tempo de cache da TLS (segurança da camada de transporte) foram modificadas a partir de seus padrões. A expiração da CRL padrão é de uma semana; a expiração do tempo de cache TLS padrão é de 10 horas.
 
      Se você quiser configurar o NPS para usar o novo certificado imediatamente, no entanto, você pode reconfigurar manualmente as políticas de rede com o novo certificado.
 
-4. Depois que o certificado antigo expira, o NPS começa automaticamente a usar o novo certificado. 
+4. Depois que o certificado antigo expira, o NPS começa automaticamente a usar o novo certificado.
 
 5. Se você configurou o NPS para usar SQL Server registro em log, verifique se a conectividade entre o computador que está executando o SQL Server e o NPS ainda está funcionando corretamente.
 

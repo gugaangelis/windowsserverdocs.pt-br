@@ -2,26 +2,24 @@
 title: Configurar e exibir configurações de VLAN em Portas de comutador virtual do Hyper-V
 description: Você pode usar este tópico para aprender as práticas recomendadas para configurar e exibir as configurações de rede local virtual (VLAN) em uma porta do comutador virtual do Hyper-V no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 083558762051283115211d10d32ebb6fd3ad3953
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1f4812e05ff003d40b34b7bf757894f7e66aaa6e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80308031"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950290"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Configurar e exibir configurações de VLAN em Portas de comutador virtual do Hyper-V
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender as práticas recomendadas para configurar e exibir as configurações de rede local virtual (VLAN) em uma porta de comutador virtual do Hyper-V.
 
-Quando desejar definir as configurações de VLAN em portas do comutador virtual Hyper-V, você poderá usar o Windows&reg; Server 2016 Hyper-V Manager ou o System Center Virtual Machine Manager (VMM).
+Quando desejar definir as configurações de VLAN em portas do comutador virtual Hyper-V, você poderá usar o Windows &reg; Server 2016 Hyper-v Manager ou o System Center Virtual Machine Manager (VMM).
 
 Se você estiver usando o VMM, o VMM usará o seguinte comando do Windows PowerShell para configurar a porta do comutador.
 
@@ -41,7 +39,7 @@ Para garantir que você não encontre esses problemas, você deve usar o mesmo m
 
 Para configurar e exibir as configurações de porta do comutador de VLAN, você deve fazer o seguinte:
 
-- Se você estiver usando o VMM ou o controlador de rede para configurar e gerenciar sua rede e tiver implantado SDN (rede definida pelo software), deverá usar os cmdlets **VMNetworkAdapterIsolation** . 
+- Se você estiver usando o VMM ou o controlador de rede para configurar e gerenciar sua rede e tiver implantado SDN (rede definida pelo software), deverá usar os cmdlets **VMNetworkAdapterIsolation** .
 - Se você estiver usando o Gerenciador do Hyper-V do Windows Server 2016 ou cmdlets do Windows PowerShell e não tiver implantado o SDN (rede definida pelo software), deverá usar os cmdlets **VMNetworkAdapterVlan** .
 
 ### <a name="possible-issues"></a>Possíveis problemas

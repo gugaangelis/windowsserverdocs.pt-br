@@ -1,19 +1,18 @@
 ---
 title: Adicionar ou remover computadores
 description: Saiba como adicionar e remover computadores dos serviços do MultiPoint.
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 1c37739d-7ab0-4b80-8d05-0330e79fd631
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 07/13/2017
-ms.openlocfilehash: 40905afb2bff790425586c3f54e9ee43bdd4fc52
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 5b72655966cc1c16c2da3625c70cd31facf70056
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409837"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970703"
 ---
 # <a name="add-or-remove-computers"></a>Adicionar ou remover computadores
 Você pode adicionar outros computadores ou remover computadores do seu sistema de serviços do MultiPoint usando o Gerenciador do MultiPoint. Adicionar outros PCs ao MultiPoint Manager permite que o MultiPoint Dashboard orquestre a sessão de qualquer usuário conectado a esse PC da mesma forma que ele pode fazer com estações MultiPoint.

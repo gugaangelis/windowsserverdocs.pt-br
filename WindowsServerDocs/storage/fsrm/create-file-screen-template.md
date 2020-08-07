@@ -2,18 +2,16 @@
 title: Criar um modelo de triagem de arquivo
 description: Este artigo descreve como criar um modelo de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 87df941015b240fd34028e59b8aea489e9410834
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 05219f74ba03f77da5dc0b1f85c92b2af303a586
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475623"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950620"
 ---
 # <a name="create-a-file-screen-template"></a>Criar um modelo de triagem de arquivo
 
