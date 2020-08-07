@@ -1,20 +1,18 @@
 ---
 ms.assetid: c91c7196-ee0d-4856-8cfb-4c38494ccf1f
 title: Visão geral de Pastas de Trabalho
-ms.prod: windows-server
-ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: 4759584773698dded934d435e601da4e05ff9ee6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 5641ea38a75e79420a5e697c14c0e4e3422aa913
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181902"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970063"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -164,7 +162,7 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
 
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](https://www.windowsazure.com/documentation/services/virtual-machines).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Consulte também
 
 | Tipo de conteúdo | Referências |
 | ------------------ | ---------------- |

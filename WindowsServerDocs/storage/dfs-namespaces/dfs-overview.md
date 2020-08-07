@@ -1,19 +1,17 @@
 ---
 title: Visão geral de Namespaces DFS
-ms.prod: windows-server
 ms.author: jgerend
 manager: daveba
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: Este tópico descreve o namespaces do DFS, que é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente.
-ms.openlocfilehash: 71c7f4e90a6a224586c90890a456fdf6f061ddf2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 54f26a605c15ab683dbe51f768e82bce2c00a290
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182272"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936186"
 ---
 # <a name="dfs-namespaces-overview"></a>Visão geral de Namespaces DFS
 

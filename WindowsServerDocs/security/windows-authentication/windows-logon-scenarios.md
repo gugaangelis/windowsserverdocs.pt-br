@@ -1,24 +1,22 @@
 ---
 title: Cenários de logon do Windows
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 66b7c568-67b7-4ac9-a479-a5a3b8a66142
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9a953b22b39a20557103fa84a5d6d5e42e753444
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861699"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936446"
 ---
 # <a name="windows-logon-scenarios"></a>Cenários de logon do Windows
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico de referência para o profissional de ti resume os cenários comuns de logon e entrada do Windows.
 
@@ -36,7 +34,7 @@ Este tópico descreve os seguintes cenários:
 
 -   [Logon de rede](#BKMK_NetworkLogon)
 
--   [Logon de cartão inteligente](#BKMK_SmartCardLogon)
+-   [Logon com cartão inteligente](#BKMK_SmartCardLogon)
 
 -   [Logon biométrico](#BKMK_BioLogon)
 
@@ -47,7 +45,7 @@ O diagrama a seguir mostra os elementos de logon interativos e o processo de log
 
 ![Diagrama mostrando os elementos de logon interativos e o processo de logon](../media/windows-logon-scenarios/AuthN_LSA_Architecture_Client.gif)
 
-**Arquitetura de autenticação de cliente do Windows**
+**Arquitetura de autenticação do Windows Client**
 
 ### <a name="local-and-domain-logon"></a><a name="BKMK_LocaDomainLogon"></a>Logon local e de domínio
 As credenciais que o usuário apresenta para um logon de domínio contêm todos os elementos necessários para um logon local, como nome da conta, senha ou certificado, e Active Directory informações de domínio. O processo confirma a identificação do usuário para o banco de dados de segurança no computador local do usuário ou em um domínio Active Directory. Esse processo de logon obrigatório não pode ser desativado para usuários em um domínio.
@@ -92,7 +90,7 @@ Para fornecer esse tipo de autenticação, o sistema de segurança inclui estes 
 
 Para obter informações sobre os elementos e processos, consulte o diagrama de logon interativo acima.
 
-## <a name="smart-card-logon"></a><a name="BKMK_SmartCardLogon"></a>Logon de cartão inteligente
+## <a name="smart-card-logon"></a><a name="BKMK_SmartCardLogon"></a>Logon com cartão inteligente
 Os cartões inteligentes podem ser usados para fazer logon somente em contas de domínio, não em contas locais. A autenticação de cartão inteligente requer o uso do protocolo de autenticação Kerberos. Introduzido no Windows 2000 Server, em sistemas operacionais baseados no Windows, uma extensão de chave pública para a solicitação de autenticação inicial do protocolo Kerberos é implementada. Ao contrário da criptografia de chave secreta compartilhada, a criptografia de chave pública é assimétrica, ou seja, duas chaves diferentes são necessárias: uma para criptografar, outra para descriptografar. Juntas, as chaves que são necessárias para executar ambas as operações compõem um par de chaves privada/pública.
 
 Para iniciar uma sessão de logon típica, um usuário deve provar sua identidade fornecendo informações conhecidas apenas para o usuário e a infraestrutura de protocolo Kerberos subjacente. As informações secretas são uma chave compartilhada criptográfica derivada da senha do usuário. Uma chave secreta compartilhada é simétrica, o que significa que a mesma chave é usada para criptografia e descriptografia.
@@ -101,7 +99,7 @@ O diagrama a seguir mostra os elementos e processos necessários para o logon do
 
 ![Diagrama mostrando os elementos e os processos necessários para o logon do cartão inteligente](../media/windows-logon-scenarios/SmartCardCredArchitecture.gif)
 
-**Arquitetura do provedor de credenciais de cartão inteligente**
+**Arquitetura do provedor de credenciais do cartão inteligente**
 
 Quando um cartão inteligente é usado em vez de uma senha, um par de chaves privada/pública armazenado no cartão inteligente do usuário é substituído pela chave secreta compartilhada, que é derivada da senha do usuário. A chave privada é armazenada somente no cartão inteligente. A chave pública pode ser disponibilizada para qualquer pessoa com a qual o proprietário deseja trocar informações confidenciais.
 

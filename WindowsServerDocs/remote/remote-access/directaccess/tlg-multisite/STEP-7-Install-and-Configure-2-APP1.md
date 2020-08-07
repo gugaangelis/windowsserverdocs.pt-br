@@ -2,18 +2,16 @@
 title: ETAPA 7 instalar e configurar o 2-APP1
 description: Este tópico faz parte do guia de laboratório de teste – demonstre uma implantação multissite do DirectAccess para o Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
 ms.topic: article
-ms.technology: networking-da
 ms.assetid: 1cc0abc6-be4d-4cbe-bd0c-cc448bf294f6
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ff2b9eacfa2ae888497371e3f6dffedf955d82d3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: b881f22ab2e2aa5427b0c06f042d4102cccf26fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409847"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953682"
 ---
 # <a name="step-7-install-and-configure-2-app1"></a>ETAPA 7 instalar e configurar o 2-APP1
 

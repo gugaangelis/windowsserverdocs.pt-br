@@ -1,23 +1,21 @@
 ---
 title: Gerenciar servidores com o centro de administração do Windows
 description: Gerenciar servidores com o centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: cbcb5c2357a60d6d12551a7d08055cacecd515b7
-ms.sourcegitcommit: 20d07170c7f3094c2fb4455f54b13ec4b102f2d7
+ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81269233"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962380"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 > [!Tip]
 > Conhecendo o Windows Admin Center agora?
@@ -51,34 +49,34 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | ---- | ----------- |
 | [Visão geral](#overview) | Exibir detalhes do servidor e controlar o estado do servidor |
 | [Active Directory](#active-directory-preview) | Gerenciar Active Directory |
-| [Backup](#backup) | Exibir e configurar o backup do Azure |  
+| [Backup](#backup) | Exibir e configurar o backup do Azure |
 | [Certificados](#certificates) | Exibir e modificar certificados |
 | [Contêineres](#containers) | Exibir contêineres |
 | [Dispositivos](#devices) | Exibir e modificar dispositivos |
 | [DHCP](#dhcp) | Exibir e gerenciar a configuração do servidor DHCP |
 | [DNS](#dns) | Exibir e gerenciar a configuração do servidor DNS |
-| [LostFocus](#events) | Exibir eventos |
+| [Eventos](#events) | Exibir eventos |
 | [Arquivos](#files) | Procurar arquivos e pastas |
 | [Firewall](#firewall) | Exibir e modificar regras de firewall |
 | [Aplicativos instalados](#installed-apps) | Exibir e remover aplicativos instalados |
-| [Usuários e grupos locais](#local-users-and-groups) | Exibir e modificar usuários e grupos locais |
+| [Usuários e Grupos Locais](#local-users-and-groups) | Exibir e modificar usuários e grupos locais |
 | [Rede](#network) | Exibir e modificar dispositivos de rede |
 | [Monitoramento de pacotes](https://aka.ms/wac1908) | Monitorar pacotes de rede |
 | [Monitor de desempenho](https://aka.ms/perfmon-blog) | Exibir contadores de desempenho e relatórios |
 | [PowerShell](#powershell) | Interagir com o servidor por meio do PowerShell |
-| [Processar](#processes) | Exibir e modificar processos em execução |
-| [Registry](#registry) | Exibir e modificar entradas do registro |
+| [Processos](#processes) | Exibir e modificar processos em execução |
+| [Registro](#registry) | Exibir e modificar entradas do registro |
 | [Área de Trabalho Remota](#remote-desktop) | Interagir com o servidor via Área de Trabalho Remota |
 | [Funções e recursos](#roles-and-features) | Exibir e modificar funções e recursos |
 | [Tarefas agendadas](#scheduled-tasks) | Exibir e modificar tarefas agendadas |
 | [Serviços](#services) | Exibir e modificar serviços |
 | [Configurações](#settings) | Exibir e modificar serviços |
-| [Armazenamento](#storage) | Exibir e modificar dispositivos de armazenamento |
-| [Serviço de migração de armazenamento](#storage-migration-service) | Migrar servidores e compartilhamentos de arquivos para o Azure ou o Windows Server 2019 |
+| [Storage](#storage) | Exibir e modificar dispositivos de armazenamento |
+| [Serviço de Migração de Armazenamento](#storage-migration-service) | Migrar servidores e compartilhamentos de arquivos para o Azure ou o Windows Server 2019 |
 | [Réplica de armazenamento](#storage-replica) | Usar a réplica de armazenamento para gerenciar a replicação de armazenamento de servidor para servidor |
 | [Insights do sistema](#system-insights) | O System insights oferece maior insight sobre o funcionamento do seu servidor. |
 | [Atualizações](#updates) | Exibir instalado e verificar se há novas atualizações |
-| [Máquinas Virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
+| [Máquinas virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
 | [Comutadores virtuais](#virtual-switches) | Exibir e gerenciar comutadores virtuais |
 
 ## <a name="overview"></a>Visão geral
@@ -114,10 +112,10 @@ O gerenciamento de Active Directory a seguir está disponível:
 - Procurar por usuários, computadores e grupos
 - Painel de detalhes para usuários, computadores e grupos quando selecionado em grade
 - Ações de grade global usuários, computadores e grupos (desabilitar/habilitar, remover)
-- Redefinir a senha do usuário
+- Redefinir senha de usuário
 - Objetos de usuário: configurar as propriedades básicas & associações de grupo
 - Objetos de computador: configurar a delegação para uma única máquina
-- Objetos de Grupo: gerenciar associação (Adicionar/remover 1 usuário de cada vez)  
+- Objetos de Grupo: gerenciar associação (Adicionar/remover 1 usuário de cada vez)
 
 [**Exibir comentários e recursos propostos para Active Directory**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D).
 
@@ -219,7 +217,7 @@ Os seguintes recursos têm suporte em eventos:
 
 [**Exibir comentários e recursos propostos para eventos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D).
 
-## <a name="files"></a>Files
+## <a name="files"></a>Arquivos
 
 **Os arquivos** permitem que você gerencie arquivos e pastas em um computador ou servidor.
 
@@ -373,7 +371,7 @@ Os recursos a seguir têm suporte em funções e recursos:
 
 [**Exibir comentários e recursos propostos para funções e recursos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRoles%20and%20Features%5D).
 
-## <a name="scheduled-tasks"></a>Tarefas Agendadas
+## <a name="scheduled-tasks"></a>Tarefas agendadas
 
 **As tarefas agendadas** permitem que você gerencie tarefas agendadas em um computador ou servidor.
 
@@ -383,7 +381,7 @@ Os recursos a seguir têm suporte nas tarefas agendadas:
 
 - Procurar a biblioteca do Agendador de tarefas
 - Editar tarefas agendadas
-- Habilitar & Desabilitar tarefas agendadas
+- Habilitar & desabilitar tarefas agendadas
 - Iniciar & interromper as tarefas agendadas
 - Criar tarefas agendadas
 
@@ -429,7 +427,7 @@ Os recursos a seguir têm suporte no armazenamento:
 
 - Procurar e Pesquisar discos existentes em um servidor
 - Exibir detalhes do disco
-- Criar um volume
+- Crie um volume
 - Inicializar um disco
 - Criar, anexar e desanexar um disco rígido virtual (VHD)
 - Colocar um disco offline
@@ -438,7 +436,7 @@ Os recursos a seguir têm suporte no armazenamento:
 - Editar propriedades do volume
 - Excluir um volume
 - Instalar gerenciamento de cota
-- Gerenciar cotas do Gerenciador de recursos do servidor [de arquivos armazenamento-> criar/atualizar cota](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- Gerenciar cotas do Gerenciador de recursos do servidor [de arquivos armazenamento->criar/atualizar cota](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
 [**Exibir comentários e recursos propostos para armazenamento**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -453,7 +451,7 @@ O **serviço de migração de armazenamento** permite migrar servidores e compar
 ## <a name="storage-replica"></a>Réplica de Armazenamento
 
 Use a **réplica de armazenamento** para gerenciar a replicação de armazenamento de servidor para servidor.
-[Saiba mais sobre a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [Saiba mais sobre Réplica de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
 
 ## <a name="system-insights"></a>Insights do Sistema
 
@@ -483,7 +481,7 @@ Os recursos a seguir têm suporte em atualizações:
 
 Consulte [Gerenciando máquinas virtuais com o centro de administração do Windows](manage-virtual-machines.md)
 
-## <a name="virtual-switches"></a>Comutadores virtuais
+## <a name="virtual-switches"></a>Comutadores Virtuais
 
 Os **comutadores virtuais** permitem que você gerencie comutadores virtuais do Hyper-V em um computador ou servidor.
 

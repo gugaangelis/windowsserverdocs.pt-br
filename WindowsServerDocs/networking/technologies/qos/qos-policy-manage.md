@@ -1,29 +1,27 @@
 ---
 title: Gerenciar política de QoS
 description: Este tópico fornece instruções sobre como criar e gerenciar a política de QoS (qualidade de serviço) no Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 36c30372b6cac40b603658eca9636a265801fb1a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 1eff6763ac00ea63e386e2774814221b01956b97
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315440"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953842"
 ---
 # <a name="manage-qos-policy"></a>Gerenciar política de QoS
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre como usar o assistente de política de QoS para criar, editar ou excluir uma política de QoS.
 
 >[!NOTE]
 >  Além deste tópico, a documentação de gerenciamento de política de QoS a seguir está disponível.
-> 
+>
 >  - [Eventos e erros da política de QoS](qos-policy-errors.md)
 
 Em sistemas operacionais Windows, a política de QoS combina a funcionalidade de QoS baseada em padrões com a capacidade de gerenciamento de Política de Grupo. A configuração dessa combinação torna o aplicativo fácil de políticas de QoS para Política de Grupo objetos. O Windows inclui um assistente de política de QoS para ajudá-lo a realizar as tarefas a seguir.
@@ -42,15 +40,15 @@ Antes de criar uma política de QoS, é importante entender os dois principais c
 
 ### <a name="prioritizing-traffic-with-dscp"></a>Priorizando o tráfego com DSCP
 
-Conforme observado no exemplo anterior de aplicativo de linha de negócios, você pode definir a prioridade do tráfego de rede de saída usando **especificar valor DSCP** para configurar uma política de QoS com um valor DSCP específico. 
+Conforme observado no exemplo anterior de aplicativo de linha de negócios, você pode definir a prioridade do tráfego de rede de saída usando **especificar valor DSCP** para configurar uma política de QoS com um valor DSCP específico.
 
 Conforme descrito em RFC 2474, o DSCP permite que valores de 0 a 63 sejam especificados dentro do campo TOS de um pacote IPv4 e dentro do campo classe de tráfego no IPv6. Os roteadores de rede usam o valor DSCP para classificar os pacotes de rede e enfileirar-los adequadamente.
-  
+
 > [!NOTE]
 >  Por padrão, o tráfego do Windows tem um valor DSCP de 0.
-  
-O número de filas e seu comportamento de priorização devem ser planejados como parte da estratégia de QoS de sua organização. Por exemplo, sua organização pode optar por ter cinco filas: tráfego sensível à latência, tráfego de controle, tráfego crítico para os negócios, tráfego de melhor esforço e tráfego de transferência de dados em massa.  
-  
+
+O número de filas e seu comportamento de priorização devem ser planejados como parte da estratégia de QoS de sua organização. Por exemplo, sua organização pode optar por ter cinco filas: tráfego sensível à latência, tráfego de controle, tráfego crítico para os negócios, tráfego de melhor esforço e tráfego de transferência de dados em massa.
+
 ### <a name="throttling-traffic"></a>Acelerando o tráfego
 
 Juntamente com valores DSCP, a limitação é outro controle de chave para gerenciar a largura de banda da rede. Conforme mencionado anteriormente, você pode usar a configuração **especificar taxa de restrição** para configurar uma política de QoS com uma taxa de limitação específica para o tráfego de saída. Usando a limitação, uma política de QoS limita o tráfego de rede de saída para uma taxa de limitação especificada. A aceleração e a marcação de DSCP podem ser usadas juntas para gerenciar o tráfego de maneira eficiente.
@@ -80,9 +78,9 @@ Na primeira página do assistente de política de QoS, você pode especificar um
 
 2. Opcionalmente, use **especificar valor DSCP** para habilitar a marcação DSCP e, em seguida, configure um valor DSCP entre 0 e 63.
 
-3. Como opção, use **Especificar Taxa de Aceleração** para habilitar a aceleração de tráfego e configurar a taxa de aceleração. O valor da taxa de limitação deve ser maior que 1 e você pode especificar unidades de kilobytes por segundo \(KBps\) ou megabytes por segundo \(MBps\).
+3. Como opção, use **Especificar Taxa de Aceleração** para habilitar a aceleração de tráfego e configurar a taxa de aceleração. O valor da taxa de limitação deve ser maior que 1 e você pode especificar unidades de kilobytes por segundo, \( kbps \) ou megabytes por segundo \( Mbps \) .
 
-4. Clique em **Avançar**.
+4. Clique em **Próximo**.
 
 ### <a name="wizard-page-2---application-name"></a>Página 2 do assistente-nome do aplicativo
 
@@ -99,11 +97,11 @@ Como opção, você pode inserir o caminho do aplicativo. Para especial um camin
 >[!NOTE]
 >O caminho do aplicativo não pode incluir um caminho que resolva um link simbólico.
 
-A URL deve estar em conformidade com a [RFC 1738](https://tools.ietf.org/html/rfc1738), na forma de `http[s]://<hostname\>:<port\>/<url-path>`. Você pode usar um caractere curinga, `‘*'`, para `<hostname>` e/ou `<port>`, por exemplo, `https://training.\*/, https://\*.\*`, mas o curinga não pode indicar uma subcadeia de `<hostname>` ou `<port>`.
+A URL deve estar em conformidade com a [RFC 1738](https://tools.ietf.org/html/rfc1738), na forma de `http[s]://<hostname\>:<port\>/<url-path>` . Você pode usar um caractere curinga, `‘*'` , para `<hostname>` e/ou `<port>` , por exemplo `https://training.\*/, https://\*.\*` ,, mas o curinga não pode indicar uma subcadeia de caracteres de `<hostname>` ou `<port>` .
 
-Em outras palavras, nem `https://my\*site/` nem `https://\*training\*/` são válidos. 
+Em outras palavras, nem `https://my\*site/` nem `https://\*training\*/` é válido.
 
-Opcionalmente, você pode selecionar **incluir subdiretórios e arquivos** para executar correspondência em todos os subdiretórios e arquivos após uma URL. Por exemplo, se essa opção estiver marcada e a URL for `https://training`, a política de QoS considerará as solicitações de` https://training/video` uma boa correspondência.
+Opcionalmente, você pode selecionar **incluir subdiretórios e arquivos** para executar correspondência em todos os subdiretórios e arquivos após uma URL. Por exemplo, se essa opção estiver marcada e a URL for `https://training` , a política de QoS considerará as solicitações para ` https://training/video` uma boa correspondência.
 
 #### <a name="to-configure-the-application-name-page-of-the-qos-policy-wizard"></a>Para configurar a página nome do aplicativo do assistente de política de QoS
 
@@ -111,7 +109,7 @@ Opcionalmente, você pode selecionar **incluir subdiretórios e arquivos** para 
 
 2. Se você selecionar **Somente aplicativos com este nome executável**, especifique o nome de um executável que termine com a extensão de nome de arquivo .exe.
 
-3. Clique em **Avançar**.
+3. Clique em **Próximo**.
 
 ### <a name="wizard-page-3---ip-addresses"></a>Página 3-endereços IP do assistente
 
@@ -123,17 +121,17 @@ Na terceira página do assistente de política de QoS, você pode especificar as
 
 Se você selecionar **Somente para o seguinte endereço IP de origem** ou **Somente para o seguinte endereço IP de destino**, será necessário digitar uma das seguintes opções:
 
-- Um endereço IPv4, como `192.168.1.1`
+- Um endereço IPv4, como`192.168.1.1`
 
-- Um prefixo de endereço IPv4 usando a notação de comprimento de prefixo de rede, como `192.168.1.0/24`
+- Um prefixo de endereço IPv4 usando a notação de comprimento de prefixo de rede, como`192.168.1.0/24`
 
-- Um endereço IPv6, como `3ffe:ffff::1`
+- Um endereço IPv6, como`3ffe:ffff::1`
 
-- Um prefixo de endereço IPv6, como `3ffe:ffff::/48`
+- Um prefixo de endereço IPv6, como`3ffe:ffff::/48`
 
 Se você selecionar ambos **apenas para o endereço IP de origem a seguir** e **apenas para o endereço IP de destino a seguir**, os endereços ou prefixos de endereço deverão ser baseados em IPv4 ou IPv6.
 
-Se você especificou a URL para aplicativos de servidor HTTP na página anterior do assistente, observará que o endereço IP de origem da política de QoS nesta página do assistente está esmaecido. 
+Se você especificou a URL para aplicativos de servidor HTTP na página anterior do assistente, observará que o endereço IP de origem da política de QoS nesta página do assistente está esmaecido.
 
 Isso é verdadeiro porque o endereço IP de origem é o endereço do servidor HTTP e não é configurável aqui. Por outro lado, você ainda pode personalizar a política especificando o endereço IP de destino. Isso possibilita que você crie políticas diferentes para clientes diferentes usando os mesmos aplicativos de servidor HTTP.
 
@@ -147,16 +145,16 @@ Isso é verdadeiro porque o endereço IP de origem é o endereço do servidor HT
 
 4. Se você selecionou **apenas para o endereço IP de destino a seguir**, especifique um endereço IPv4 ou IPv6 ou prefixo que corresponda ao tipo de endereço ou prefixo especificado para o endereço de origem.
 
-5.  Clique em **Avançar**.  
+5.  Clique em **Próximo**.
 
 ### <a name="wizard-page-4---protocols-and-ports"></a>Página 4 do assistente-protocolos e portas
 
-Na quarta página do assistente de política de QoS, você pode especificar os tipos de tráfego e as portas que são controladas pelas configurações na primeira página do assistente. Você pode especificar:  
--   Tráfego TCP, tráfego UDP ou os dois  
+Na quarta página do assistente de política de QoS, você pode especificar os tipos de tráfego e as portas que são controladas pelas configurações na primeira página do assistente. É possível especificar:
+-   Tráfego TCP, tráfego UDP ou os dois
 
 -   Todas as portas de origem, um intervalo de portas de origem ou uma porta de origem específica
 
--   Todas as portas de destino, um intervalo de portas de destino ou uma porta de destino específica  
+-   Todas as portas de destino, um intervalo de portas de destino ou uma porta de destino específica
 
 #### <a name="to-configure-the-protocols-and-ports-page-of-the-qos-policy-wizard"></a>Para configurar a página protocolos e portas do assistente de política de QoS
 
@@ -172,64 +170,64 @@ Na quarta página do assistente de política de QoS, você pode especificar os t
 
 5. Se você selecionou **Para este número de porta de destino** na etapa anterior, digite um número de porta entre 1 e 65535.
 
-Para concluir a criação da nova política de QoS, clique em **concluir** na página **protocolos e portas** do assistente de política de QoS. Quando concluído, a nova política de QoS é listada no painel de detalhes do Editor de Objeto de Política de Grupo.  
-  
-Para aplicar as configurações de política de QoS a usuários ou computadores, vincule o GPO no qual as políticas de QoS estão localizadas em um contêiner Active Directory Domain Services, como um domínio, um site ou uma UO (unidade organizacional).  
-  
+Para concluir a criação da nova política de QoS, clique em **concluir** na página **protocolos e portas** do assistente de política de QoS. Quando concluído, a nova política de QoS é listada no painel de detalhes do Editor de Objeto de Política de Grupo.
+
+Para aplicar as configurações de política de QoS a usuários ou computadores, vincule o GPO no qual as políticas de QoS estão localizadas em um contêiner Active Directory Domain Services, como um domínio, um site ou uma UO (unidade organizacional).
+
 ##  <a name="view-edit-or-delete-a-qos-policy"></a><a name="bkmk_editpolicy"></a>Exibir, editar ou excluir uma política de QoS
 
-As páginas do assistente de política de QoS descritas anteriormente correspondem às páginas de propriedades que são exibidas quando você exibe ou edita as propriedades de uma política.  
-  
-### <a name="to-view-the-properties-of-a-qos-policy"></a>Para exibir as propriedades de uma política de QoS  
-  
--   Clique com o botão direito do mouse no nome da política no painel de detalhes da Editor de Objeto de Política de Grupo e clique em **Propriedades**.  
-  
-     O Editor de Objeto de Política de Grupo exibe a página Propriedades com as seguintes guias:  
-  
-    -   Perfil da Política  
-  
-    -   Nome do Aplicativo  
-  
-    -   Endereços IP  
-  
-    -   Protocolos e portas  
-  
-### <a name="to-edit-a-qos-policy"></a>Para editar uma política de QoS  
-  
--   Clique com o botão direito do mouse no nome da política no painel de detalhes da Editor de Objeto de Política de Grupo e clique em **Editar política existente**.  
-  
-     O Editor de Objeto de Política de Grupo exibe a caixa de diálogo **Editar uma política de QoS existente** .  
-  
-### <a name="to-delete-a-qos-policy"></a>Para excluir uma diretiva de QoS  
-  
--   Clique com o botão direito do mouse no nome da política no painel de detalhes da Editor de Objeto de Política de Grupo e clique em **excluir política**.  
-  
-### <a name="qos-policy-gpmc-reporting"></a>Relatórios GPMC de política de QoS 
+As páginas do assistente de política de QoS descritas anteriormente correspondem às páginas de propriedades que são exibidas quando você exibe ou edita as propriedades de uma política.
 
-Depois de ter aplicado uma série de políticas de QoS em sua organização, pode ser útil ou necessário examinar periodicamente como as políticas são aplicadas. Um resumo das políticas de QoS para um usuário ou computador específico pode ser exibido usando os relatórios do GPMC.  
-  
-#### <a name="to-run-the-group-policy-results-wizard-for-a-report-of-qos-policies"></a>Para executar o assistente de resultados de Política de Grupo para um relatório de políticas de QoS  
-  
--   No GPMC, clique com o botão direito do mouse no nó **política de grupo resultados** e selecione a opção de menu para **Assistente de política de grupo de resultados.**  
-  
-Depois que os resultados da Política de Grupo forem gerados, clique na guia **configurações** . Na guia **configurações** , as políticas de QoS podem ser encontradas nos nós "Computer \ Settings\QoS Policy" e "User \ Settings\QoS Policy".  
-  
-Na guia **configurações** , as políticas de QoS são listadas por seus nomes de política de QoS com o valor DSCP, a taxa de aceleração, as condições de política e o GPO vencedor listado na mesma linha.  
-  
-A exibição de resultados de Política de Grupo identifica exclusivamente o GPO vencedor. Quando vários GPOs têm políticas de QoS com o mesmo nome de política de QoS, o GPO com a maior precedência de GPO é aplicado. Esse é o GPO vencedor. As políticas de QoS conflitantes (identificadas pelo nome da política) que estão anexadas a um GPO de prioridade mais baixa não são aplicadas. Observe que as prioridades de GPO definem quais políticas de QoS são implantadas no site, no domínio ou na UO, conforme apropriado. Após a implantação, em um nível de usuário ou computador, as [regras de precedência de política de QoS](#BKMK_precedencerules) determinam qual tráfego é permitido e bloqueado.  
-  
-O valor DSCP da política de QoS, a taxa de limitação e as condições de política também são visíveis em Editor de Objeto de Política de Grupo (GPOE)  
-  
-### <a name="advanced-settings-for-roaming-and-remote-users"></a>Configurações avançadas para roaming e usuários remotos  
-Com a política de QoS, o objetivo é gerenciar o tráfego na rede de uma empresa. Em cenários móveis, os usuários podem estar enviando tráfego para dentro ou para fora da rede corporativa. Como as políticas de QoS não são relevantes enquanto estão longe da rede da empresa, as políticas de QoS são habilitadas somente em interfaces de rede conectadas à empresa para Windows 8, Windows 7 ou Windows Vista.  
-  
-Por exemplo, um usuário pode conectar seu computador portátil à rede da sua empresa por meio da VPN (rede virtual privada) de uma cafeteria. Para VPN, a interface de rede física (como sem fio) não terá políticas de QoS aplicadas. No entanto, a interface VPN terá políticas de QoS aplicadas porque se conecta à empresa. Se o usuário mais tarde inserir outra rede da empresa que não tenha uma relação de confiança AD DS, as políticas de QoS não serão habilitadas.  
-  
-Observe que esses cenários móveis não se aplicam às cargas de trabalho do servidor. Por exemplo, um servidor com vários adaptadores de rede pode se sentar na borda da rede de uma empresa. O departamento de ti pode optar por ter políticas de QoS para limitar o tráfego que egresso a empresa; no entanto, esse adaptador de rede que envia esse tráfego de saída não necessariamente se conecta de volta à rede corporativa. Por esse motivo, as políticas de QoS sempre são habilitadas em todas as interfaces de rede de um computador que executa o Windows Server 2012.  
-  
+### <a name="to-view-the-properties-of-a-qos-policy"></a>Para exibir as propriedades de uma política de QoS
+
+-   Clique com o botão direito do mouse no nome da política no painel de detalhes da Editor de Objeto de Política de Grupo e clique em **Propriedades**.
+
+     O Editor de Objeto de Política de Grupo exibe a página Propriedades com as seguintes guias:
+
+    -   Perfil da Política
+
+    -   Nome do Aplicativo
+
+    -   Endereços IP
+
+    -   Protocolos e portas
+
+### <a name="to-edit-a-qos-policy"></a>Para editar uma política de QoS
+
+-   Clique com o botão direito do mouse no nome da política no painel de detalhes da Editor de Objeto de Política de Grupo e clique em **Editar política existente**.
+
+     O Editor de Objeto de Política de Grupo exibe a caixa de diálogo **Editar uma política de QoS existente** .
+
+### <a name="to-delete-a-qos-policy"></a>Para excluir uma política de QoS
+
+-   Clique com o botão direito do mouse no nome da política no painel de detalhes da Editor de Objeto de Política de Grupo e clique em **excluir política**.
+
+### <a name="qos-policy-gpmc-reporting"></a>Relatórios GPMC de política de QoS
+
+Depois de ter aplicado uma série de políticas de QoS em sua organização, pode ser útil ou necessário examinar periodicamente como as políticas são aplicadas. Um resumo das políticas de QoS para um usuário ou computador específico pode ser exibido usando os relatórios do GPMC.
+
+#### <a name="to-run-the-group-policy-results-wizard-for-a-report-of-qos-policies"></a>Para executar o assistente de resultados de Política de Grupo para um relatório de políticas de QoS
+
+-   No GPMC, clique com o botão direito do mouse no nó **política de grupo resultados** e selecione a opção de menu para **Assistente de política de grupo de resultados.**
+
+Depois que os resultados da Política de Grupo forem gerados, clique na guia **configurações** . Na guia **configurações** , as políticas de QoS podem ser encontradas nos nós "Computer \ Settings\QoS Policy" e "User \ Settings\QoS Policy".
+
+Na guia **configurações** , as políticas de QoS são listadas por seus nomes de política de QoS com o valor DSCP, a taxa de aceleração, as condições de política e o GPO vencedor listado na mesma linha.
+
+A exibição de resultados de Política de Grupo identifica exclusivamente o GPO vencedor. Quando vários GPOs têm políticas de QoS com o mesmo nome de política de QoS, o GPO com a maior precedência de GPO é aplicado. Esse é o GPO vencedor. As políticas de QoS conflitantes (identificadas pelo nome da política) que estão anexadas a um GPO de prioridade mais baixa não são aplicadas. Observe que as prioridades de GPO definem quais políticas de QoS são implantadas no site, no domínio ou na UO, conforme apropriado. Após a implantação, em um nível de usuário ou computador, as [regras de precedência de política de QoS](#BKMK_precedencerules) determinam qual tráfego é permitido e bloqueado.
+
+O valor DSCP da política de QoS, a taxa de limitação e as condições de política também são visíveis em Editor de Objeto de Política de Grupo (GPOE)
+
+### <a name="advanced-settings-for-roaming-and-remote-users"></a>Configurações avançadas para roaming e usuários remotos
+Com a política de QoS, o objetivo é gerenciar o tráfego na rede de uma empresa. Em cenários móveis, os usuários podem estar enviando tráfego para dentro ou para fora da rede corporativa. Como as políticas de QoS não são relevantes enquanto estão longe da rede da empresa, as políticas de QoS são habilitadas somente em interfaces de rede conectadas à empresa para Windows 8, Windows 7 ou Windows Vista.
+
+Por exemplo, um usuário pode conectar seu computador portátil à rede da sua empresa por meio da VPN (rede virtual privada) de uma cafeteria. Para VPN, a interface de rede física (como sem fio) não terá políticas de QoS aplicadas. No entanto, a interface VPN terá políticas de QoS aplicadas porque se conecta à empresa. Se o usuário mais tarde inserir outra rede da empresa que não tenha uma relação de confiança AD DS, as políticas de QoS não serão habilitadas.
+
+Observe que esses cenários móveis não se aplicam às cargas de trabalho do servidor. Por exemplo, um servidor com vários adaptadores de rede pode se sentar na borda da rede de uma empresa. O departamento de ti pode optar por ter políticas de QoS para limitar o tráfego que egresso a empresa; no entanto, esse adaptador de rede que envia esse tráfego de saída não necessariamente se conecta de volta à rede corporativa. Por esse motivo, as políticas de QoS sempre são habilitadas em todas as interfaces de rede de um computador que executa o Windows Server 2012.
+
 > [!NOTE]
->  A habilitação seletiva só se aplica a políticas de QoS e não às configurações de QoS avançadas discutidas a seguir neste documento.  
-  
+>  A habilitação seletiva só se aplica a políticas de QoS e não às configurações de QoS avançadas discutidas a seguir neste documento.
+
 ### <a name="advanced-qos-settings"></a>Configurações de QoS avançadas
 
 As configurações de QoS avançadas fornecem controles adicionais para que os administradores de ti gerenciem o consumo de rede do computador e marcações DSCP. As configurações de QoS avançadas aplicam-se somente ao nível do computador, enquanto as políticas de QoS podem ser aplicadas nos níveis do computador e do usuário.
@@ -237,24 +235,24 @@ As configurações de QoS avançadas fornecem controles adicionais para que os a
 #### <a name="to-configure-advanced-qos-settings"></a>Para definir configurações de QoS avançadas
 
 1.  Clique em **configuração do computador**e, em seguida, clique em **configurações do Windows em política de grupo**.
-  
+
 2.  Clique com o botão direito do mouse em **política de QoS**e clique em **configurações de QoS avançadas**.
 
      A figura a seguir mostra as duas guias configurações avançadas de QoS: **tráfego TCP de entrada** e **substituição de marcação DSCP**.
-  
+
 > [!NOTE]
 >  As configurações de QoS avançadas são configurações de Política de Grupo no nível do computador.
-  
+
 #### <a name="advanced-qos-settings-inbound-tcp-traffic"></a>Configurações de QoS avançadas: tráfego TCP de entrada
 
-O **tráfego TCP de entrada** controla o consumo de largura de banda TCP no lado do destinatário, enquanto as políticas de QoS afetam o tráfego TCP e UDP de saída. 
+O **tráfego TCP de entrada** controla o consumo de largura de banda TCP no lado do destinatário, enquanto as políticas de QoS afetam o tráfego TCP e UDP de saída.
 
 Ao definir um nível de taxa de transferência menor na guia **tráfego TCP de entrada** , o TCP limitará o tamanho de sua janela de recebimento TCP anunciada. O efeito dessa configuração aumentará as taxas de taxa de transferência e a utilização de links para conexões TCP com larguras de banda ou latências maiores (produto de atraso de largura de banda). Por padrão, os computadores que executam o Windows Server 2012, o Windows 8, o Windows Server 2008 R2, o Windows Server 2008 e o Windows Vista são definidos como o nível máximo de taxa de transferência.
-  
-A janela de recepção TCP foi alterada no Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows Server 2008 e Windows Vista de versões anteriores do Windows. As versões anteriores do Windows limitaram a janela do lado de recebimento TCP a um máximo de 64 kilobytes (KB), enquanto o Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows Server 2008 e Windows Vista dimensionam dinamicamente a janela do lado de recebimento até 16 megabytes (MB ). No controle de tráfego TCP de entrada, você pode controlar o nível de taxa de transferência de entrada definindo o valor máximo para o qual a janela de recepção TCP pode crescer. Os níveis correspondem aos valores máximos a seguir. 
-  
-|Nível de taxa de transferência de entrada|Máximo|  
-|------------------------|-------|  
+
+A janela de recepção TCP foi alterada no Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows Server 2008 e Windows Vista de versões anteriores do Windows. As versões anteriores do Windows limitaram a janela do lado do recebimento TCP a um máximo de 64 kilobytes (KB), enquanto o Windows Server 2012, o Windows 8, o Windows Server 2008 R2, o Windows Server 2008 e o Windows Vista dimensionam dinamicamente a janela do lado do recebimento até 16 megabytes (MB). No controle de tráfego TCP de entrada, você pode controlar o nível de taxa de transferência de entrada definindo o valor máximo para o qual a janela de recepção TCP pode crescer. Os níveis correspondem aos valores máximos a seguir.
+
+|Nível de taxa de transferência de entrada|Máximo|
+|------------------------|-------|
 |0|64 KB|
 |1|256 KB|
 |2|1 MB|
@@ -265,23 +263,23 @@ O tamanho real da janela pode ser um valor igual ou menor que o máximo, depende
 ###### <a name="to-set-the-tcp-receive-side-window"></a>Para definir a janela do lado de recebimento TCP
 
 1. Em Editor de Objeto de Política de Grupo, clique em **política de computador local**, clique em **configurações do Windows**, clique com o botão direito do mouse em política de **QoS**e clique em **configurações de QoS avançadas**.
-  
+
 2. Em **TCP recebendo taxa de transferência**, selecione **Configurar taxa de transferência de recebimento de TCP**e, em seguida, selecione o nível de taxa de transferência desejado.
 
 3.  Vincule o GPO à UO.
 
 #### <a name="advanced-qos-settings-dscp-marking-override"></a>Configurações de QoS avançadas: substituição de marcação DSCP
 
-A substituição de marcação DSCP restringe a capacidade dos aplicativos de especificar — ou "marcar" — valores de DSCP diferentes daqueles especificados nas políticas de QoS. Ao especificar que os aplicativos têm permissão para definir valores DSCP, os aplicativos podem definir valores DSCP diferentes de zero. 
+A substituição de marcação DSCP restringe a capacidade dos aplicativos de especificar — ou "marcar" — valores de DSCP diferentes daqueles especificados nas políticas de QoS. Ao especificar que os aplicativos têm permissão para definir valores DSCP, os aplicativos podem definir valores DSCP diferentes de zero.
 
-Ao especificar **ignorar**, os aplicativos que usam APIs de QoS terão seus valores DSCP definidos como zero, e somente as políticas de QoS poderão definir valores DSCP. 
+Ao especificar **ignorar**, os aplicativos que usam APIs de QoS terão seus valores DSCP definidos como zero, e somente as políticas de QoS poderão definir valores DSCP.
 
 Por padrão, os computadores que executam o Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows Server 2008 e Windows Vista permitem que os aplicativos especifiquem valores DSCP; aplicativos e dispositivos que não usam as APIs de QoS não são substituídos.
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>Valores de multimídia e de DSCP sem fio
 
-A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu uma certificação para\) de multimídia sem fio \(WMM que define quatro categorias de acesso \(WMM_AC\) para priorizar o tráfego de rede transmitido em uma rede sem fio Wi\-Fi. As categorias de acesso incluem \(na ordem de prioridade mais alta para a mais baixa\): voz, vídeo, melhor esforço e plano de fundo; abreviado, respectivamente, como VO, VI, is e BK. A especificação WMM define quais valores de DSCP correspondem a cada uma das quatro categorias de acesso:
-  
+A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu uma certificação para WMM de multimídia sem fio \( \) que define quatro categorias \( de acesso WMM_AC \) para priorizar o tráfego de rede transmitido em uma \- rede sem fio Wi-Fi. As categorias de acesso incluem para a \( prioridade mais alta para a mais baixa \) : voz, vídeo, melhor esforço e plano de fundo; respectivamente abreviados como vo, vi, ser e BK. A especificação WMM define quais valores de DSCP correspondem a cada uma das quatro categorias de acesso:
+
 |Valor de DSCP|Categoria de acesso do WMM|
 |----------|-------------------|
 |48-63|Voz (VO)|
@@ -289,15 +287,15 @@ A [Wi-Fi Alliance](https://go.microsoft.com/fwlink/?LinkId=160769) estabeleceu u
 |24-31, 0-7|Melhor esforço (ser)|
 |8-23|Segundo plano (BK)|
 
-Você pode criar políticas de QoS que usam esses valores DSCP para garantir que computadores portáteis com o Wi\-Fi CERTIFIED™ para adaptadores sem fio WMM recebam tratamento priorizado quando associados a Wi\-Fi certificados para pontos de acesso do WMM.
-  
+Você pode criar políticas de QoS que usam esses valores de DSCP para garantir que computadores portáteis com \- ™ de Certificação Wi-Fi para adaptadores sem fio WMM recebam tratamento priorizado quando associados a Wi \- Fi CERTIFIED para pontos de acesso do WMM.
+
 ### <a name="qos-policy-precedence-rules"></a><a name="BKMK_precedencerules"></a>Regras de precedência de política de QoS
 
 Semelhante às prioridades do GPO, as políticas de QoS têm regras de precedência para resolver conflitos quando várias políticas de QoS se aplicam a um conjunto específico de tráfego. Para o tráfego TCP ou UDP de saída, somente uma política de QoS pode ser aplicada por vez, o que significa que as políticas de QoS não têm um efeito cumulativo, como o local em que as taxas de limitação seriam somadas.
 
 Em geral, a política de QoS com as condições mais correspondentes vence. Quando várias políticas de QoS se aplicam, as regras se enquadram em três categorias: nível de usuário versus nível de computador; aplicativo versus a rede quintuple; e entre a rede quintuple.
 
-Por *quintuple de rede*, queremos dizer o endereço IP de origem, o endereço IP de destino, a porta de origem, a porta de destino e o protocolo \(\)TCP/UDP.  
+Por *quintuple de rede*, queremos dizer o endereço IP de origem, o endereço IP de destino, a porta de origem, a porta de destino e o protocolo \( TCP/UDP \) .
 
  **A política de QoS de nível de usuário tem precedência sobre a política de QoS no nível do computador**
 
@@ -310,16 +308,16 @@ Essa regra facilita muito o gerenciamento de GPOs de QoS pelos administradores d
 
 Quando várias políticas de QoS correspondem ao tráfego específico, a política mais específica é aplicada. Entre as políticas que identificam aplicativos, uma política que inclui o caminho do arquivo do aplicativo de envio é considerada mais específica do que outra política que identifica apenas o nome do aplicativo (sem caminho). Se várias políticas com aplicativos ainda se aplicarem, as regras de precedência usarão a rede quintuple para encontrar a melhor correspondência.
 
-Como alternativa, várias políticas de QoS podem se aplicar ao mesmo tráfego especificando condições não sobrepostas. Entre as condições de aplicativos e a rede quintuple, a política que especifica o aplicativo é considerada mais específica e é aplicada. 
+Como alternativa, várias políticas de QoS podem se aplicar ao mesmo tráfego especificando condições não sobrepostas. Entre as condições de aplicativos e a rede quintuple, a política que especifica o aplicativo é considerada mais específica e é aplicada.
 
-Por exemplo, policy_A especifica apenas um nome de aplicativo (App. exe) e policy_B especifica o endereço IP de destino 192.168.1.0/24. Quando essas políticas de QoS entram em conflito \(app. exe envia o tráfego para um endereço IP dentro do intervalo de 192.168.4.0/24\), policy_A é aplicado.
+Por exemplo, policy_A especifica apenas um nome de aplicativo (app.exe) e policy_B especifica o endereço IP de destino 192.168.1.0/24. Quando essas políticas de QoS entram \( em conflitoapp.exe envia o tráfego para um endereço IP dentro do intervalo de 192.168.4.0/24 \) , policy_A é aplicado.
 
  **Mais especificidades têm precedência na rede quintuple**
 
-Para conflitos de política dentro da rede quintuple, a política com a maioria das condições de correspondência tem precedência. Por exemplo, suponha que policy_C especifica o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino "any" e o protocolo "TCP". 
+Para conflitos de política dentro da rede quintuple, a política com a maioria das condições de correspondência tem precedência. Por exemplo, suponha que policy_C especifica o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino "any" e o protocolo "TCP".
 
-Em seguida, suponha que policy_D especifica o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino 80 e o protocolo "TCP". Em seguida, policy_C e policy_D corresponder as conexões com o destino 10.0.0.1:80. Como a política de QoS aplica a política com as condições de correspondência mais específicas, policy_D tem precedência neste exemplo.  
-  
+Em seguida, suponha que policy_D especifica o endereço IP de origem "any", o endereço IP de destino 10.0.0.1, a porta de origem "any", a porta de destino 80 e o protocolo "TCP". Em seguida, policy_C e policy_D corresponder as conexões com o destino 10.0.0.1:80. Como a política de QoS aplica a política com as condições de correspondência mais específicas, policy_D tem precedência neste exemplo.
+
 No entanto, as políticas de QoS podem ter um número igual de condições. Por exemplo, várias políticas podem especificar apenas uma (mas não a mesma) parte da rede quintuple. Entre a rede quintuple, a ordem a seguir é de maior ou menor precedência:
 
 - Endereço IP de origem

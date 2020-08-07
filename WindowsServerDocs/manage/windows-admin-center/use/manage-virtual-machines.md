@@ -1,19 +1,17 @@
 ---
 title: Gerenciando máquinas virtuais com o centro de administração do Windows
 description: Gerenciando hosts Hyper-V e máquinas virtuais com o centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 02a33383b466e8bade2db0bbddaff66f0196954c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f3696cc4bd88e401cbbe3a6db83ba5a90cb7049
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356861"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962420"
 ---
 # <a name="managing-virtual-machines-with-windows-admin-center"></a>Gerenciando máquinas virtuais com o centro de administração do Windows
 
@@ -33,7 +31,7 @@ Aqui estão algumas das tarefas do Hyper-V que você pode fazer no centro de adm
 
 - [Monitorar recursos e desempenho do host Hyper-V](#monitor-hyper-v-host-resources-and-performance)
 - [Exibir inventário de máquina virtual](#view-virtual-machine-inventory)
-- [Criar uma nova máquina virtual](#create-a-new-virtual-machine)
+- [Criar uma máquina virtual](#create-a-new-virtual-machine)
 - [Alterar configurações de máquina virtual](#change-virtual-machine-settings)
 - [Migrar ao vivo uma máquina virtual para outro nó de cluster](#live-migrate-a-virtual-machine-to-another-cluster-node)
 - [Gerenciamento avançado e solução de problemas para uma única máquina virtual](#advanced-management-and-troubleshooting-for-a-single-virtual-machine)
@@ -69,9 +67,9 @@ Aqui estão algumas das tarefas do Hyper-V que você pode fazer no centro de adm
     - [Replique uma máquina virtual usando Azure site Recovery](#protect-virtual-machines-with-azure-site-recovery).
     - Para operações que podem ser executadas em várias VMs, como iniciar, desligar, salvar, pausar, excluir, redefinir, você pode selecionar várias VMs e executar a operação de uma vez.
 
-OBSERVAÇÃO:  Se você estiver conectado a um cluster, a ferramenta de máquina virtual exibirá apenas máquinas virtuais clusterizadas. Planejamos também mostrar máquinas virtuais não clusterizadas no futuro.
+Observação: se você estiver conectado a um cluster, a ferramenta de máquina virtual exibirá apenas as máquinas virtuais clusterizadas. Planejamos também mostrar máquinas virtuais não clusterizadas no futuro.
 
-## <a name="create-a-new-virtual-machine"></a>Criar uma nova máquina virtual
+## <a name="create-a-new-virtual-machine"></a>Criar uma máquina virtual
 
 ![Tela criar nova máquina virtual](../media/manage-virtual-machines/new-vm.png)
 
@@ -79,30 +77,30 @@ OBSERVAÇÃO:  Se você estiver conectado a um cluster, a ferramenta de máquina
 2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** e clique em **novo** para criar uma nova máquina virtual.
 3. Insira o nome da máquina virtual e escolha entre as máquinas virtuais de geração 1 e 2.
 4. Se você estiver criando uma máquina virtual em um cluster, poderá escolher em qual host a máquina virtual será inicialmente criada. Se você estiver executando o Windows Server 2016 ou posterior, a ferramenta fornecerá uma recomendação de host para você.
-5. Escolha um caminho para os arquivos de máquina virtual. Escolha um volume na lista suspensa ou clique em **procurar** para escolher uma pasta usando o seletor de pasta. Os arquivos de configuração de máquina virtual e o arquivo de disco rígido virtual serão salvos em uma única `\Hyper-V\\[virtual machine name]` pasta sob o caminho do volume ou caminho selecionado.
+5. Escolha um caminho para os arquivos de máquina virtual. Escolha um volume na lista suspensa ou clique em **procurar** para escolher uma pasta usando o seletor de pasta. Os arquivos de configuração de máquina virtual e o arquivo de disco rígido virtual serão salvos em uma única pasta sob o `\Hyper-V\\[virtual machine name]` caminho do volume ou caminho selecionado.
 
    >[!Tip]
-   > No seletor de pasta, você pode navegar para qualquer compartilhamento SMB disponível na rede inserindo o caminho no campo **nome da pasta** como ```\\server\share```. Usar um compartilhamento de rede para o armazenamento de VM exigirá [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp).
+   > No seletor de pasta, você pode navegar para qualquer compartilhamento SMB disponível na rede inserindo o caminho no campo **nome da pasta** como ```\\server\share``` . Usar um compartilhamento de rede para o armazenamento de VM exigirá [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp).
 
 6. Escolha o número de processadores virtuais, se você deseja habilitar a virtualização aninhada, definir configurações de memória, adaptadores de rede, discos rígidos virtuais e escolher se deseja instalar um sistema operacional de um arquivo de imagem. ISO ou da rede.
 7. Clique em **criar** para criar a máquina virtual.
 8. Depois que a máquina virtual é criada e exibida na lista de máquinas virtuais, você pode iniciar a máquina virtual.
-9. Depois que a máquina virtual for iniciada, você poderá se conectar ao console da máquina virtual por meio do VMConnect para instalar o sistema operacional. Selecione a máquina virtual na lista, clique em **mais** > **conexão** para baixar o arquivo. rdp. Abra o arquivo. rdp no aplicativo Conexão de Área de Trabalho Remota. Como isso está se conectando ao console da máquina virtual, será necessário inserir as credenciais de administrador do host Hyper-V.
+9. Depois que a máquina virtual for iniciada, você poderá se conectar ao console da máquina virtual por meio do VMConnect para instalar o sistema operacional. Selecione a máquina virtual na lista, clique em **mais**  >  **conexão** para baixar o arquivo. rdp. Abra o arquivo. rdp no aplicativo Conexão de Área de Trabalho Remota. Como isso está se conectando ao console da máquina virtual, será necessário inserir as credenciais de administrador do host Hyper-V.
 
 ## <a name="change-virtual-machine-settings"></a>Alterar configurações de máquina virtual
 
 ![Tela de configurações da máquina virtual](../media/manage-virtual-machines/vm-settings.png)
 
 1. Clique na ferramenta **máquinas virtuais** no painel de navegação do lado esquerdo.
-2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** . Escolha uma máquina virtual na lista e clique em **mais** **configurações** > .
-3. Alterne entre a **guia Geral**, **segurança**, **memória**, **processadores**, **discos**, **redes**, **ordem de inicialização** e pontos de **verificação** , defina as configurações necessárias e clique em **salvar** para salvar as configurações da guia atual. As configurações disponíveis variam de acordo com a geração da máquina virtual. Além disso, algumas configurações não podem ser alteradas para máquinas virtuais em execução e você precisará parar a máquina virtual primeiro.
+2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** . escolha uma máquina virtual na lista e clique em **mais**  >  **configurações**.
+3. Alterne entre a **guia Geral**, **segurança**, **memória**, **processadores**, **discos**, **redes**, **ordem de inicialização** e pontos de **verificação** , defina as configurações necessárias e, em seguida, clique em **salvar** para salvar as configurações da guia atual. As configurações disponíveis variam de acordo com a geração da máquina virtual. Além disso, algumas configurações não podem ser alteradas para máquinas virtuais em execução e você precisará parar a máquina virtual primeiro.
 
 ## <a name="live-migrate-a-virtual-machine-to-another-cluster-node"></a>Migrar ao vivo uma máquina virtual para outro nó de cluster
 
 Se você estiver conectado a um cluster, poderá migrar ao vivo uma máquina virtual para outro nó de cluster.
 
 1. Em um cluster de failover ou conexão de cluster hiperconvergente, clique na ferramenta **máquinas virtuais** no painel de navegação do lado esquerdo.
-2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** . Escolha uma máquina virtual na lista e clique em **mais** > **mover**.
+2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** . escolha uma máquina virtual na lista e clique em **mais**  >  **mover**.
 3. Escolha um servidor na lista de nós de cluster disponíveis e clique em **mover**.
 4. As notificações para o progresso da movimentação serão exibidas no canto superior direito do centro de administração do Windows. Se a movimentação for bem-sucedida, você verá o nome do servidor host alterado na lista de máquinas virtuais.
 
@@ -129,7 +127,7 @@ Você pode exibir informações detalhadas e gráficos de desempenho para uma ú
 ![Conexão de VM por meio do navegador da Web](../media/manage-virtual-machines/vm-connect.png)
 
 1. Clique na ferramenta **máquinas virtuais** no painel de navegação do lado esquerdo.
-2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** . Escolha uma máquina virtual na lista e clique em **mais** > **conectar** ou **baixar o arquivo RDP**. O **Connect** permitirá que você interaja com a VM convidada por meio do console Web área de trabalho remota, integrado no centro de administração do Windows. O **download do arquivo RDP** baixará um arquivo. rdp que você pode abrir com o aplicativo conexão de área de trabalho remota (mstsc. exe). As duas opções usarão VMConnect para se conectar à VM convidada por meio do host Hyper-V e exigirão que você insira as credenciais de administrador para o servidor host Hyper-V.
+2. Na parte superior da ferramenta máquinas virtuais, escolha a guia **inventário** . escolha uma máquina virtual na lista e clique em **mais**  >  **conectar** ou **baixar arquivo RDP**. O **Connect** permitirá que você interaja com a VM convidada por meio do console Web área de trabalho remota, integrado no centro de administração do Windows. O **download do arquivo RDP** baixará um arquivo. rdp que você pode abrir com o aplicativo Conexão de Área de Trabalho Remota (mstsc.exe). As duas opções usarão VMConnect para se conectar à VM convidada por meio do host Hyper-V e exigirão que você insira as credenciais de administrador para o servidor host Hyper-V.
 
 ## <a name="change-hyper-v-host-settings"></a>Alterar as configurações de host do Hyper-V
 
@@ -137,10 +135,10 @@ Você pode exibir informações detalhadas e gráficos de desempenho para uma ú
 
 1. Em um servidor, cluster hiperconvergente ou conexão de cluster de failover, clique no menu **configurações** na parte inferior do painel de navegação do lado esquerdo.
 2. Em um cluster ou servidor de host do Hyper-V, você verá um grupo de **configurações de host do Hyper-v** com as seguintes seções:
-    - Genéricos Alterar o caminho do arquivo de máquinas virtuais e discos rígidos virtuais e o tipo de agendamento do hipervisor (se houver suporte)
+    - Geral: alterar o caminho do arquivo de discos rígidos virtuais e máquinas virtuais e o tipo de agendamento do hipervisor (se houver suporte)
     - Modo de sessão avançado
     - Abrangência NUMA
-    - Migração ao vivo
+    - Migração dinâmica
     - Migração de armazenamento
 3. Se você fizer alterações de configuração de host Hyper-V em um cluster hiperconvergente ou conexão de cluster de failover, a alteração será aplicada a todos os nós de cluster.
 

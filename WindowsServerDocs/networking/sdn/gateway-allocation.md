@@ -1,18 +1,16 @@
 ---
 title: Alocação de largura de banda de gateway
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: a5e4e6b280c30eedc230da99cbf798e5560a0ca5
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 48a24586c356650ee0e625770dcdd55ce505951c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855709"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962280"
 ---
 # <a name="gateway-bandwidth-allocation"></a>Alocação de largura de banda de gateway
 
@@ -20,7 +18,7 @@ ms.locfileid: "80855709"
 
 No Windows Server 2016, a largura de banda de túnel individual para IPsec, GRE e L3 era uma proporção da capacidade total do gateway. Portanto, os clientes forneceriam a capacidade do gateway com base na largura de banda TCP padrão, esperando isso fora da VM do gateway.
 
-Além disso, a largura de banda máxima do túnel IPsec no gateway era limitada a (3/20)\*capacidade de gateway fornecida pelo cliente. Portanto, por exemplo, se você definir a capacidade do gateway como 100 Mbps, a capacidade do túnel IPsec será de 150 Mbps. As taxas equivalentes para túneis GRE e L3 são 1/5 e 1/2, respectivamente.
+Além disso, a largura de banda máxima do túnel IPsec no gateway era limitada à \* capacidade do gateway (3/20) fornecida pelo cliente. Portanto, por exemplo, se você definir a capacidade do gateway como 100 Mbps, a capacidade do túnel IPsec será de 150 Mbps. As taxas equivalentes para túneis GRE e L3 são 1/5 e 1/2, respectivamente.
 
 Embora isso tenha trabalhado para a maioria das implantações, o modelo de taxa fixa não era apropriado para ambientes de alta taxa de transferência. Mesmo quando as taxas de transferência de dados eram altas (digamos, mais de 40 Gbps), a taxa de transferência máxima de túneis de gateway de SDN é limitada devido a fatores internos.
 
@@ -60,11 +58,11 @@ Capacidade disponível restante no gateway = total de capacidade do gateway – 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25 – 5 * 2 = 15 Gbps
 
-Taxa de transferência IPsec restante que você pode alocar no gateway 
+Taxa de transferência IPsec restante que você pode alocar no gateway
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5-2 = 3 Gbps
 
-Taxa de transferência de GRE restante que você pode alocar no gateway = capacidade restante da taxa de taxa de transferência de gateway/GRE 
+Taxa de transferência de GRE restante que você pode alocar no gateway = capacidade restante da taxa de taxa de transferência de gateway/GRE
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 * 3/5 = 9 Gbps
 
@@ -74,7 +72,7 @@ Além disso, se a capacidade do gateway for menor que a capacidade total dispon�
 
 ## <a name="windows-server-2016-behavior"></a>Comportamento do Windows Server 2016
 
-O algoritmo de cálculo da capacidade do gateway para o Windows Server 2016 permanece inalterado. No Windows Server 2016, a largura de banda máxima do túnel IPsec era limitada a (3/20)\*capacidade de gateway em um gateway. As taxas equivalentes para túneis GRE e L3 eram 1/5 e 1/2, respectivamente.
+O algoritmo de cálculo da capacidade do gateway para o Windows Server 2016 permanece inalterado. No Windows Server 2016, a largura de banda máxima do túnel IPsec era limitada à capacidade do gateway (3/20) \* em um gateway. As taxas equivalentes para túneis GRE e L3 eram 1/5 e 1/2, respectivamente.
 
 Se você estiver atualizando do Windows Server 2016 para o Windows Server 2019:
 

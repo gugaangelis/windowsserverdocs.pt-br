@@ -2,25 +2,23 @@
 title: Instalar o NPS (Servidor de Políticas de Rede)
 description: Você pode usar este tópico para instalar o NPS (servidor de diretivas de rede) usando o Windows PowerShell ou o assistente para adicionar funções e recursos no Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 4842a4ab-70bb-4744-bea7-70f2ac892ad1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d64498d5d77483ae43ade01b30aaeecd3e9fc753
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 8335c4a5a7f42fa33182a78e3dcb6777f76f6483
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80315981"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953932"
 ---
 # <a name="install-network-policy-server"></a>Instalar o NPS (Servidor de Políticas de Rede)
 
 Você pode usar este tópico para instalar o servidor de diretivas de rede (NPS) usando o Windows PowerShell ou o assistente para adicionar funções e recursos. O NPS é um serviço de função da função de servidor Serviços de Acesso e Política de Rede.
 
 > [!NOTE]
-> Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se o Firewall do Windows com segurança avançada estiver habilitado quando você instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o protocolo IP versão 6 \(IPv6\) e o tráfego IPv4. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
+> Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se o Firewall do Windows com segurança avançada estiver habilitado quando você instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o \( tráfego IPv6 e IPv4 do protocolo IP versão 6 \) . Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para o tráfego RADIUS.
 
 **Credenciais administrativas**
 
@@ -43,14 +41,14 @@ Para executar esse procedimento usando o Windows PowerShell, execute o Windows P
 
 3.  Em **Selecionar Tipo de Instalação**, verifique se **Instalação baseada em função ou recurso** está marcada e clique em **Avançar**.
 
-4.  Em **Selecionar servidor de destino**, verifique se **Selecionar um servidor no pool de servidores** está marcada. Em **Pool de Servidores**, verifique se o computador local está selecionado. Clique em **Avançar**.
+4.  Em **Selecionar servidor de destino**, verifique se **Selecionar um servidor no pool de servidores** está marcada. Em **Pool de Servidores**, verifique se o computador local está selecionado. Clique em **Próximo**.
 
 5.  Em **selecionar funções de servidor**, em **funções**, selecione **serviços de acesso e política de rede**. Uma caixa de diálogo será aberta perguntando se ele deve adicionar recursos necessários para serviços de acesso e política de rede. Clique em **Adicionar recursos**e em **Avançar**
 
 6.  Em **Selecionar recursos**, clique em **Avançar** e, em **Serviços de Acesso e Política de Rede**, analise as informações fornecidas e clique em **Avançar**.
 
-7.  Em **Selecionar serviços de função**, clique em **Servidor de Políticas de Rede**.  Em **Adicionar recursos que são necessários para Servidor de Políticas de Rede**, clique em **Adicionar Recursos**. Clique em **Avançar**.
+7.  Em **Selecionar serviços de função**, clique em **Servidor de Políticas de Rede**.  Em **Adicionar recursos que são necessários para Servidor de Políticas de Rede**, clique em **Adicionar Recursos**. Clique em **Próximo**.
 
-8.  Em **Confirmar seleções de instalação**, clique em **Reiniciar cada servidor de destino automaticamente, se necessário**. Na solicitação de confirmação dessa seleção, clique em **Sim** e em **Instalar**. A página Progresso da instalação exibe o status durante o processo de instalação. Quando o processo for concluído, a mensagem "a instalação foi bem-sucedida em *ComputerName*" será exibida, em que *ComputerName* é o nome do computador no qual você instalou o servidor de políticas de rede. Clique em **Fechar**.
+8.  Em **Confirmar seleções de instalação**, clique em **Reiniciar cada servidor de destino automaticamente, se necessário**. Na solicitação de confirmação dessa seleção, clique em **Sim** e em **Instalar**. A página Progresso da instalação exibe o status durante o processo de instalação. Quando o processo for concluído, a mensagem "a instalação foi bem-sucedida em *ComputerName*" será exibida, em que *ComputerName* é o nome do computador no qual você instalou o servidor de políticas de rede. Clique em **fechar**
 
 Para obter mais informações, consulte [Manage NPSs](nps-manage-servers.md).

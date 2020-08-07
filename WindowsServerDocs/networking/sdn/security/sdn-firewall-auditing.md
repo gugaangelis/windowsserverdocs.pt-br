@@ -2,19 +2,17 @@
 title: Auditoria de firewall SDN
 description: A auditoria de firewall é uma nova funcionalidade para o firewall de SDN no Windows Server 2019. Quando você habilita o Firewall do SDN, qualquer fluxo processado por ACLs (regras de firewall do SDN) que tenham o log habilitado é registrado.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: d834c78d393fdbaeaa65900f16f4d1e32f2e5131
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e37fc548db0a1043b2b78d95f97e8b4ef01214c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854376"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962050"
 ---
 # <a name="sdn-firewall-auditing"></a>Auditoria de firewall SDN
 
@@ -26,7 +24,7 @@ Em breve, forneceremos alguns exemplos de como processar esses arquivos usando f
 
 _**Experimente e nos forneça comentários!**_
 
-Aqui está um script de exemplo para habilitar a auditoria de firewall nos hosts Hyper-V. Atualize as variáveis no início e execute-as em um computador com Windows Server 2019 com o recurso RSAT-NetworkController instalado:
+Aqui está um script de exemplo para habilitar a auditoria de firewall nos hosts Hyper-V.Atualize as variáveis no início e execute-as em um computador com Windows Server 2019 com o recurso RSAT-NetworkController instalado:
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +52,7 @@ foreach ($s in $servers) {
 }
 ```
 
-Uma vez habilitado, um novo arquivo aparece no diretório especificado em cada host aproximadamente uma vez por hora.  Você deve processar esses arquivos periodicamente e removê-los dos hosts.  O arquivo atual tem comprimento zero e está bloqueado até ser liberado na próxima marca de hora:
+Uma vez habilitado, um novo arquivo aparece no diretório especificado em cada host aproximadamente uma vez por hora.Você deve processar esses arquivos periodicamente e removê-los dos hosts.O arquivo atual tem comprimento zero e está bloqueado até ser liberado na próxima marca de hora:
 
 ```syntax
 PS C:\test\log1> dir
@@ -73,7 +71,7 @@ Mode                LastWriteTime         Length Name
 Esses arquivos contêm uma sequência de eventos de fluxo, por exemplo:
 
 ```syntax
-{ 
+{
     "records": [
         {
             "properties":{

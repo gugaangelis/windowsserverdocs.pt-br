@@ -2,18 +2,16 @@
 title: Desempenho e produtividade de túnel GRE de Gateway RAS
 description: Este tópico, destinado a profissionais de ti (tecnologia da informação), fornece informações de desempenho de taxa de transferência sobre túneis de túnel de roteamento genérico (GRE) do gateway RAS.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b20f26673cc5f56632717f9889bfd03b81173661
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3cf4b74a6aa6d8f64b917842cc0806cd463716e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961868"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953662"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>Desempenho e produtividade de túnel GRE de Gateway RAS
 
@@ -33,7 +31,7 @@ O modo de locatário único permite que organizações de qualquer tamanho impla
 
 O GRE é um protocolo de encapsulamento leve que pode encapsular uma ampla variedade de protocolos de camada de rede dentro de links de ponto virtual \- para \- ponto por meio de uma interconexão de Internet de protocolo IP. A implementação do Microsoft GRE encapsula tanto o IPv4 quanto o IPv6.
 
-Para obter mais informações, consulte a seção **cenários de implantação de gateway de Ras** no tópico gateway de [RAS](./ras-gateway.md#bkmk_deploy). 
+Para obter mais informações, consulte a seção **cenários de implantação de gateway de Ras** no tópico gateway de [RAS](./ras-gateway.md#bkmk_deploy).
 
 Neste cenário de teste, que é descrito na ilustração a seguir, o fluxo de tráfego medido é movido da intranet da organização 2 para a intranet da organização 1. As VMs de carga de trabalho do locatário enviam o tráfego de rede da intranet 2 para a intranet 1 usando o gateway RAS.
 
@@ -47,14 +45,14 @@ No ambiente de teste, as VMs de gateway de RAS são implantadas em \- hosts Hype
 
 ### <a name="hyper-v-host-configuration"></a>Configuração de host do Hyper- \- V
 
-Dois \- hosts Hyper-V são configurados para dar suporte ao cenário de teste da seguinte maneira. 
+Dois \- hosts Hyper-V são configurados para dar suporte ao cenário de teste da seguinte maneira.
 
 - Dois \- computadores físicos de hospedagem dupla são configurados com o Windows Server, versão 1709
 - Os dois adaptadores de rede física em cada um dos dois servidores estão conectados a sub-redes diferentes – ambos representam sub-redes de uma intranet da organização. As redes e o hardware de suporte têm uma capacidade de 10 GBps.
 - O hyperthreading nos servidores físicos está desabilitado. Isso fornece a taxa de transferência máxima das NICs físicas.
 - A \- função de servidor Hyper v é instalada em ambos os servidores e configurada com dois \- comutadores virtuais Hyper-v externos, um para cada adaptador de rede física.
 - Como ambos os servidores estão conectados à mesma intranet, os servidores podem se comunicar entre si.
-- Os \- hosts do Hyper V são configurados em um cluster de failover pela rede da intranet. 
+- Os \- hosts do Hyper V são configurados em um cluster de failover pela rede da intranet.
 
 >[!NOTE]
 >Para saber mais, consulte [Comutador Virtual do Hyper-V](../../../virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md).

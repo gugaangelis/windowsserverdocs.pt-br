@@ -1,17 +1,15 @@
 ---
-title: Um problema com a exclusão de um nó
+title: Problema ao excluir um nó
 description: Este artigo descreve os problemas encontrados ao remover nós da Associação de cluster de failover ativo.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 05/28/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 08f5e7ef2ddd0f11abee7d0f21b56c3d5a601d3d
-ms.sourcegitcommit: 5fac756c2c9920757e33ef0a68528cda0c85dd04
+ms.openlocfilehash: e69b110db8f631b74c89e046f724367b4d60dbad
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84306515"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970033"
 ---
 # <a name="having-a-problem-with-nodes-being-removed-from-active-failover-cluster-membership"></a>Tendo um problema com os nós sendo removidos da Associação de cluster de failover ativo
 

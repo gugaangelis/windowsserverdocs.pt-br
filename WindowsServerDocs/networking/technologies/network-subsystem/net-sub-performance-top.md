@@ -1,23 +1,21 @@
 ---
-title: Ajuste de desempenho do subsistema de rede
+title: Ajuste do desempenho de subsistemas de rede
 description: Este tópico faz parte do guia de ajuste de desempenho do subsistema de rede para o Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 45217fce-bfb9-47e8-9814-88ffdb3c7b7d
 manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
-ms.openlocfilehash: 66f4401235e8eccfe0ab6e10f86cddb15386621c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 40819f850788192f9057f8fd73c6c63f9d61dc0c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854749"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953902"
 ---
-# <a name="network-subsystem-performance-tuning"></a>Ajuste de desempenho do subsistema de rede
+# <a name="network-subsystem-performance-tuning"></a>Ajuste do desempenho de subsistemas de rede
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma visão geral do subsistema de rede e links para outros tópicos deste guia.
 
@@ -33,15 +31,15 @@ O ajuste de desempenho do subsistema de rede, especialmente para cargas de traba
 
 1. **Interface de rede**. Essa é a camada mais baixa na pilha de rede e contém o driver de rede que se comunica diretamente com o adaptador de rede.
 
-2. **NDIS (Network Driver Interface Specification)** . O NDIS expõe interfaces para o driver abaixo dele e para as camadas acima dela, como a pilha de protocolos.
-  
+2. **NDIS (Network Driver Interface Specification)**. O NDIS expõe interfaces para o driver abaixo dele e para as camadas acima dela, como a pilha de protocolos.
+
 3. **Pilha de protocolos**. A pilha de protocolos implementa protocolos como TCP/IP e UDP/IP. Essas camadas expõem a interface da camada de transporte para as camadas acima delas.
-  
-4. **Drivers do sistema**. Normalmente, esses são clientes que usam uma interface de TDX (transporte data Extension) ou WSK (kernel do Winsock) para expor interfaces para aplicativos de modo de usuário. A interface WSK foi introduzida no Windows Server 2008 e no Windows&reg; vista, e é exposta por AFD. sys. A interface melhora o desempenho ao eliminar a alternância entre o modo de usuário e o modo kernel.
-  
+
+4. **Drivers do sistema**. Normalmente, esses são clientes que usam uma interface de TDX (transporte data Extension) ou WSK (kernel do Winsock) para expor interfaces para aplicativos de modo de usuário. A interface WSK foi introduzida no Windows Server 2008 e no Windows &reg; Vista e é exposta por AFD.sys. A interface melhora o desempenho ao eliminar a alternância entre o modo de usuário e o modo kernel.
+
 5. **Aplicativos de modo de usuário**. Normalmente, são soluções da Microsoft ou aplicativos personalizados.
 
-A tabela a seguir fornece uma ilustração vertical das camadas da pilha de rede, incluindo exemplos de itens executados em cada camada.  
+A tabela a seguir fornece uma ilustração vertical das camadas da pilha de rede, incluindo exemplos de itens executados em cada camada.
 
 ![Camadas da pilha de rede](../../media/Network-Subsystem/network-layers.jpg)
 

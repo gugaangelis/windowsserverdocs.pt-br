@@ -2,28 +2,26 @@
 title: Etapa 2 configurar o servidor DirectAccess-VPN
 description: Este tópico faz parte do guia adicionar o DirectAccess a uma implantação de VPN (acesso remoto) existente para o Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-da
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f055a51c93276474bb1b5d4162a914dfa7bbb69a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a9206ca86f9b64036b9a16d29e6c442268c3d4ed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819629"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953722"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Etapa 2 configurar o servidor DirectAccess-VPN
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico descreve como configurar o cliente e as configurações de servidor necessárias para uma implantação básica do Acesso Remoto usando o Assistente para Habilitar o DirectAccess.
 
 A tabela a seguir fornece uma visão geral das etapas que você pode concluir usando este tópico.
 
-|{1&gt;Tarefa&lt;1}       |Descrição|
+|Tarefa       |Descrição|
 |-----------|-----------|
 |Configurar os clientes de DirectAccess|Configurar o servidor de Acesso Remoto com os grupos de segurança contendo os clientes do DirectAccess.|
 |Configurar a Topologia de Rede|Definir as configurações do servidor de Acesso Remoto.|
@@ -32,11 +30,11 @@ A tabela a seguir fornece uma visão geral das etapas que você pode concluir us
 
 ## <a name="to-start-the-enable-directacces-wizard"></a>Para iniciar o Assistente para Habilitar o DirectAccess
 
-1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **acesso remoto**. O assistente habilitar DirectAccess é iniciado automaticamente, a menos que você tenha selecionado **não mostrar esta tela novamente**. 
+1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **acesso remoto**. O assistente habilitar DirectAccess é iniciado automaticamente, a menos que você tenha selecionado **não mostrar esta tela novamente**.
 
-2. Se o assistente não iniciar automaticamente, clique com o botão direito do mouse no nó do servidor na árvore de roteamento e acesso remoto e, em seguida, clique em **habilitar DirectAccess**.
+2. Se o assistente não for iniciado automaticamente, clique com o botão direito do mouse no nó do servidor na árvore Roteamento e Acesso Remoto e clique em **Habilitar DirectAccess**.
 
-3. Clique em **Avançar**.
+3. Clique em **Próximo**.
 
 ## <a name="configure-directaccess-clients"></a>Configurar os clientes de DirectAccess
 
@@ -50,13 +48,13 @@ Para que um computador cliente possa ser provisionado para usar o DirectAccess, 
 
 4. Marque a caixa de seleção **Usar criação de túneis à força** para rotear todo o tráfego cliente (para a rede interna e para a Internet) pelo servidor de Acesso Remoto.
 
-5. Clique em **Avançar**.
+5. Clique em **Próximo**.
 
 ## <a name="configure-the-network-topology"></a>Configurar a Topologia de Rede
 
 Para implantar o Acesso Remoto, será necessário configurar o servidor de Acesso Remoto com os adaptadores de rede corretos, uma URL pública para o servidor de Acesso Remoto, à qual os computadores cliente poderão se conectar (o endereço de conexão) e um certificado IP-HTTPS com o assunto correspondente ao endereço de conexão.
 
-1. Na página **Topologia de Rede** , clique na topologia de implantação que será usada na sua organização. Em **Digitar o nome público ou endereço IPv4 usado pelos clientes para se conectar ao servidor de acesso remoto**, digite o nome público da implantação (esse nome corresponde ao nome do assunto do certificado IP-HTTPS, por exemplo, edge1.contoso.com) e clique em **Avançar**.
+1. Na página **Topologia de Rede**, clique na topologia de implantação que será usada na sua organização. Em **Digitar o nome público ou endereço IPv4 usado pelos clientes para se conectar ao servidor de acesso remoto**, digite o nome público da implantação (esse nome corresponde ao nome do assunto do certificado IP-HTTPS, por exemplo, edge1.contoso.com) e clique em **Avançar**.
 
 ## <a name="configure-the-dns-suffix-search-list"></a>Configurar a Lista de Pesquisa de Sufixos do DNS
 
@@ -66,26 +64,26 @@ Para clientes DNS, você pode configurar uma lista de pesquisa de sufixo de dom�
 
 2. Digite um novo nome de sufixo em **novo sufixo** e clique em **Adicionar**. Além disso, você pode alterar a ordem de pesquisa e remover os sufixos dos **sufixos de domínio a serem usados**.
 
->ANOTAÇÕES Em um cenário de espaço de nome não contíguo \(em que um ou mais computadores de domínio têm um sufixo DNS que não corresponde ao domínio de Active Directory ao qual os computadores pertencem\), você deve garantir que a lista de pesquisa seja personalizada para incluir todos os sufixos necessários. O Assistente de Acesso Remoto configurará o nome do DNS do Active Directory como o sufixo de DNS primário do cliente. O Administrador deverá adicionar o sufixo de DNS usado pelos clientes para resolução de nome.
+>ANOTAÇÕES Em um cenário de espaço de nome não contíguo \( em que um ou mais computadores de domínio têm um sufixo DNS que não corresponde ao domínio Active Directory ao qual os computadores pertencem \) , você deve garantir que a lista de pesquisa seja personalizada para incluir todos os sufixos necessários. O Assistente de Acesso Remoto configurará o nome do DNS do Active Directory como o sufixo de DNS primário do cliente. O Administrador deverá adicionar o sufixo de DNS usado pelos clientes para resolução de nome.
 
-Para computadores e servidores, o comportamento de pesquisa DNS padrão a seguir é predeterminado e usado ao concluir e resolver nomes curtos e não qualificados. Quando a lista de pesquisa de sufixo está vazia ou não é especificada, o sufixo DNS primário do computador é anexado a nomes curtos não qualificados e uma consulta DNS é usada para resolver o FQDN resultante. 
+Para computadores e servidores, o comportamento de pesquisa DNS padrão a seguir é predeterminado e usado ao concluir e resolver nomes curtos e não qualificados. Quando a lista de pesquisa de sufixo está vazia ou não é especificada, o sufixo DNS primário do computador é anexado a nomes curtos não qualificados e uma consulta DNS é usada para resolver o FQDN resultante.
 
 Se essa consulta falhar, o computador poderá tentar consultas adicionais para FQDNs alternativos acrescentando qualquer sufixo DNS específico de conexão configurado para conexões de rede. Se nenhum sufixo específico de conexão estiver configurado ou se consultas para esses FQDNs específicos da conexão resultante falharem, o cliente poderá começar a tentar novamente as consultas com base na redução sistemática do sufixo primário (também conhecido como devolução).
 
 Por exemplo, se o sufixo primário for "example.microsoft.com", o processo de devolução poderá repetir consultas para o nome curto pesquisando-o nos domínios "microsoft.com" e "com".
 
-Quando a lista de pesquisa de sufixo não está vazia e tem pelo menos um sufixo DNS especificado, as tentativas de qualificar e resolver nomes DNS curtos são limitadas à pesquisa somente pelos FQDNs possibilitados pela lista de sufixos especificada. 
+Quando a lista de pesquisa de sufixo não está vazia e tem pelo menos um sufixo DNS especificado, as tentativas de qualificar e resolver nomes DNS curtos são limitadas à pesquisa somente pelos FQDNs possibilitados pela lista de sufixos especificada.
 
-Se as consultas por todos os FQDNs criados como resultado da agregação e tentativa de cada sufixo na lista não forem resolvidas, o processo de consulta falhará, produzindo um resultado "nome não encontrado". 
+Se as consultas por todos os FQDNs criados como resultado da agregação e tentativa de cada sufixo na lista não forem resolvidas, o processo de consulta falhará, produzindo um resultado "nome não encontrado".
 
 > [!WARNING]
 > Se a lista de sufixo de domínio for usada, os clientes continuarão a enviar consultas alternativas adicionais com base nos diferentes nomes de domínio do DNS quando uma consulta não é respondida ou resolvida. Depois que o nome é resolvido usando uma entrada da lista de sufixos, as entradas da lista não usadas não serão tentadas. Por esta razão, é mais eficiente ordenar a lista começando pelos sufixos de domínio mais usados.
-> 
+>
 > Pesquisas pelo sufixo de nome de domínio somente são usadas quando uma entrada de nome de DNS não é totalmente qualificado. Para tornar um nome de DNS totalmente elegível, um ponto à direita (.) deverá ser inserido no fim do nome.
 
 ## <a name="gpo-configuration"></a>Configuração do GPO
 
-Quando você configura o acesso remoto, as configurações do DirectAccess são coletadas em objetos de Política de Grupo (GPO). 
+Quando você configura o acesso remoto, as configurações do DirectAccess são coletadas em objetos de Política de Grupo (GPO).
 
 Nas **configurações de GPO**, o nome do GPO do servidor DirectAccess e o nome do GPO do cliente são listados. Além disso, é possível modificar as configurações de seleção de GPO.
 

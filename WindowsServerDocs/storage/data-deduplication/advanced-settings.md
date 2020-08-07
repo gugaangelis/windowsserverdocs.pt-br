@@ -1,19 +1,17 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
 title: Configurações avançadas de Eliminação de Duplicação de Dados
-ms.prod: windows-server
-ms.technology: storage-deduplication
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: b45e8723066f040268ee174b15af09569af2ff01
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 73f9ce6e88fa56a645f0ffedba4f38dec87e973b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965388"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936373"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configurações avançadas de Eliminação de Duplicação de Dados
 
@@ -33,7 +31,7 @@ Os trabalhos de Eliminação de Duplicação de Dados são programados pelo Agen
 
 O motivo mais comum para alterar quando executar trabalhos de Eliminação de Duplicação de Dados é garantir que os trabalhos sejam executados durante fora do horário comercial. O exemplo de passo a passo a seguir mostra como modificar o plano de Eliminação de Duplicação de Dados para um cenário em que *tudo corre bem*: um host hiperconvergido do Hyper-V que fica ocioso nos fins de semana e depois das 19h durante a semana. Para alterar a agenda, execute os cmdlets do PowerShell a seguir em um contexto de Administrador.
 
-1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization)agendados por hora.  
+1. Desabilite os trabalhos de [Otimização](understand.md#job-info-optimization)agendados por hora.
     ```PowerShell
     Set-DedupSchedule -Name BackgroundOptimization -Enabled $false
     Set-DedupSchedule -Name PriorityOptimization -Enabled $false
@@ -50,7 +48,7 @@ O motivo mais comum para alterar quando executar trabalhos de Eliminação de Du
     New-DedupSchedule -Name "NightlyOptimization" -Type Optimization -DurationHours 11 -Memory 100 -Cores 100 -Priority High -Days @(1,2,3,4,5) -Start (Get-Date "2016-08-08 19:00:00")
     ```
 
-    >[!NOTE]  
+    >[!NOTE]
     > A parte *date* do parâmetro `System.Datetime` fornecido a `-Start` é irrelevante (desde que esteja no passado), mas a parte *time* especifica quando o trabalho deve começar.
 4. Crie um trabalho de Coleta de Lixo semanal a ser executado no sábado, começando às 19h, com prioridade alta e todas as CPUs e memória disponíveis no sistema.
     ```PowerShell
@@ -76,11 +74,11 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
     </thead>
     <tbody>
         <tr>
-            <td>Tipo</td>
+            <td>Type</td>
             <td>O tipo do trabalho que deve ser agendado</td>
             <td>
                 <ul>
-                    <li>Optimization</li>
+                    <li>Otimização</li>
                     <li>Coleta de Lixo</li>
                     <li>Anulação</li>
                 </ul>
@@ -126,7 +124,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
             <td>Para impedir que um trabalho seja executado em uma carga&#39;s horas não ociosas</td>
         </tr>
         <tr>
-            <td>habilitado</td>
+            <td>Habilitada</td>
             <td>Se o trabalho será executado ou não</td>
             <td>Verdadeiro/Falso</td>
             <td>Para desabilitar um trabalho sem removê-lo</td>
@@ -152,7 +150,7 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
         <tr>
             <td>Nome</td>
             <td>O nome do trabalho agendado</td>
-            <td>Cadeia de caracteres</td>
+            <td>String</td>
             <td>Um trabalho deve ter um nome de identificação exclusivo.</td>
         </tr>
         <tr>
@@ -318,18 +316,18 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
 </table>
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>Perguntas frequentes
-<a id="faq-use-responsibly"></a>**Mudei uma configuração da Eliminação de Duplicação de Dados e agora os trabalhos estão lentos ou não são concluídos, ou o desempenho da carga de trabalho diminuiu. Por que?**  
+<a id="faq-use-responsibly"></a>**Mudei uma configuração da Eliminação de Duplicação de Dados e agora os trabalhos estão lentos ou não são concluídos, ou o desempenho da carga de trabalho diminuiu. Por que?**
 Essas configurações dão bastante poder de controle sobre a execução da Eliminação de Duplicação de Dados. Use-as com responsabilidade e [monitore o desempenho](run.md#monitoring-dedup).
 
-<a id="faq-running-dedup-jobs-manually"></a>**Quero executar um trabalho de eliminação de duplicação de dados no momento, mas não quero criar uma nova agenda – posso fazer isso?**  
+<a id="faq-running-dedup-jobs-manually"></a>**Quero executar um trabalho de eliminação de duplicação de dados no momento, mas não quero criar uma nova agenda – posso fazer isso?**
 Sim, [todos os trabalhos podem ser executados manualmente](run.md#running-dedup-jobs-manually).
 
-<a id="faq-full-v-regular-gc"></a>**Qual é a diferença entre a coleta de lixo completa e regular?**  
+<a id="faq-full-v-regular-gc"></a>**Qual é a diferença entre a coleta de lixo completa e regular?**
 Há dois tipos de [coleta de lixo](understand.md#job-info-gc):
 
 - A *Coleta de Lixo regular* usa um algoritmo estatístico para encontrar as partes grandes não referenciadas que atendem a certos critérios (memória e IOPs baixos). A Coleta de Lixo regular compacta um contêiner de repositório de partes somente se uma porcentagem mínima das partes não for referenciada. Esse tipo de Coleta de Lixo é executado muito mais rapidamente e usa menos recursos do que a Coleta de Lixo completa. O agendamento padrão de trabalho de Coleta de Lixo regular é a execução uma vez por semana.
 - A *Coleta de Lixo completa* faz um trabalho muito mais completo de localizar partes não referenciadas e liberar mais espaço em disco. A Coleta de Lixo completa compacta cada contêiner, mesmo que só haja uma única parte no contêiner sem referência. A Coleta de Lixo completa também libera espaço que pode estar em uso quando há uma falha ou queda de energia durante um trabalho de Otimização. Os trabalhos de Coleta de Lixo completa recuperarão 100% do espaço disponível que pode ser recuperado em um volume com eliminação de duplicação com o custo de exigir mais tempo e recursos do sistema em comparação com um trabalho de Coleta de Lixo regular. O trabalho de Coleta de Lixo completa normalmente encontra e libera até 5% mais dados não referenciados do que um trabalho de Coleta de Lixo regular. O agendamento padrão do trabalho de Coleta de Lixo completa é a execução na quarta vez em que uma Coleta de Lixo está agendada.
 
-<a id="faq-why-disable-full-gc"></a>**Por que quero desabilitar a coleta de lixo completa?**  
-- A Coleta de Lixo pode prejudicar o tempo de vida da cópia de sombra de vida útil do volume e o tamanho do backup incremental. Variação alta ou cargas de trabalho com E/S intensivas podem ver uma degradação no desempenho por causa dos trabalhos de Coleta de Lixo completa.           
+<a id="faq-why-disable-full-gc"></a>**Por que quero desabilitar a coleta de lixo completa?**
+- A Coleta de Lixo pode prejudicar o tempo de vida da cópia de sombra de vida útil do volume e o tamanho do backup incremental. Variação alta ou cargas de trabalho com E/S intensivas podem ver uma degradação no desempenho por causa dos trabalhos de Coleta de Lixo completa.
 - Você pode executar um trabalho de Coleta de Lixo completa no PowerShell manualmente para limpar vazamentos se você sabe que o seu sistema falhou.

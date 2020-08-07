@@ -1,20 +1,18 @@
 ---
 title: Visão geral do Windows Defender para Windows Server
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-defender
 ms.topic: article
 ms.assetid: 751efb33-a08e-4e90-9208-6f2bc319e029
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 0eb88a0ad80de1060971b6de5e0c5ba313ce0fad
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: d1b3ec35ddba593267e91b9343e5f96d4bcbee6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936385"
 ---
 # <a name="windows-defender-antivirus-for-windows-server"></a>Windows Defender antivírus para Windows Server
 
@@ -34,9 +32,9 @@ O tópico [Windows Defender antivírus no Windows server 2016](https://docs.micr
 
 -   [Habilitar a interface](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UsingDef)
 
--   [Verifique se o Windows Defender AV está em execução]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefRun)
+-   [Verificar se o Windows Defender AV está em execução]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefRun)
 
--   [Atualizar definições de antimalware]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UpdateDef)
+-   [Atualizar definições antimalware]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UpdateDef)
 
 -   [Enviar amostras]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefSamples)
 

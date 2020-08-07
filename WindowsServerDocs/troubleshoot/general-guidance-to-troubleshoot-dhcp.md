@@ -1,22 +1,20 @@
 ---
-title: Diretrizes gerais para solucionar problemas de DHCP
+title: Diretrizes gerais para solucionar problemas do DHCP
 description: Este Artilce apresenta orientações gerais para solucionar problemas de DHCP.
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: c0460791fef2451722af09e8bbe08b51a605f01b
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 92b76748153f19419733c32c08a24d48e53d5647
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150154"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970043"
 ---
-# <a name="general-guidance-to-troubleshoot-dhcp"></a>Diretrizes gerais para solucionar problemas de DHCP
+# <a name="general-guidance-to-troubleshoot-dhcp"></a>Diretrizes gerais para solucionar problemas do DHCP
 
 Antes de começar a solucionar problemas, verifique os itens a seguir. Isso pode ajudá-lo a encontrar a causa raiz do problema.
 
@@ -26,7 +24,7 @@ Antes de começar a solucionar problemas, verifique os itens a seguir. Isso pode
 
   - Há mensagens de erro?
 
-  - O servidor DHCP estava funcionando anteriormente ou se ele nunca funcionou?  
+  - O servidor DHCP estava funcionando anteriormente ou se ele nunca funcionou?
     Se ele funcionou anteriormente, fez alguma alteração antes do problema ser iniciado. Por exemplo, uma atualização foi instalada? Foi uma alteração feita na infraestrutura?
 
   - O problema é persistente ou intermitente? Se for intermitente, quando ela ocorreu pela última vez?

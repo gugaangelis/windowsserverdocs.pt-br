@@ -2,19 +2,17 @@
 title: MultiPoint Stations
 description: Saiba mais sobre as estações nos serviços do MultiPoint, incluindo as diferentes opções para os usuários
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 6167919b31621aef51707bc5b7acf9c07ba795e3
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6f1c313f4d8eeb4e32ec27da1c37bc1d423240d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517671"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953812"
 ---
 # <a name="multipoint--stations"></a>Estações multiponto
 Em um ambiente de sistema de serviços do MultiPoint, as *estações* são os pontos de extremidade do usuário para se conectarem ao computador que executa os serviços do MultiPoint. Cada estação fornece ao usuário uma experiência independente do Windows 10. Há suporte para os seguintes tipos de estação:

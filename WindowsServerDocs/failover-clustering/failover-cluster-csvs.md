@@ -1,20 +1,18 @@
 ---
 title: Usar volumes compartilhados de cluster em um cluster de failover
 description: Como usar volumes compartilhados de cluster em um cluster de failover.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 697fd832a6af66d9cbea2537c44183aaf1b8839d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0dbfaea12444de607cc28a33be334f86ee273d78
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177872"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945859"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volumes compartilhados de cluster em um cluster de failover
 

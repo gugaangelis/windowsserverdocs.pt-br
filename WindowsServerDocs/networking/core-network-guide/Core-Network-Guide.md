@@ -2,18 +2,16 @@
 title: Principais componentes de rede
 description: Este guia fornece instruções sobre como planejar e implantar os componentes principais necessários para uma rede totalmente funcional e um novo domínio de Active Directory em uma nova floresta com o Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 0e44de005bd7b110e89b514071667c62a81d386b
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2c41fde041183ff7e039bd2fed877aad8ff0f234
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518534"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962320"
 ---
 # <a name="core-network-components"></a>Principais componentes de rede
 
@@ -164,7 +162,7 @@ A ilustração a seguir mostra a topologia de Rede Principal do Windows Server.
 ### <a name="core-network-components"></a>Componentes da rede principal
 Estes são os componentes de uma rede principal.
 
-##### <a name="router"></a>Roteador
+##### <a name="router"></a>Router
 Este guia de implantação fornece instruções para a implantação de uma rede principal com duas sub-redes separadas por um roteador que tem o encaminhamento DHCP habilitado. No entanto, você pode implantar um comutador de Camada 2, comutador de Camada 3 ou um hub, dependendo das suas necessidades e recursos. Se você implantar um comutador, ele deverá ser capaz de encaminhar DHCP ou você deverá colocar um servidor DHCP em cada sub-rede. Se você implantar um hub, estará implantando uma única sub-rede e não precisará do encaminhamento DHCP ou de um segundo escopo no servidor DHCP.
 
 ##### <a name="static-tcpip-configurations"></a>Configurações TCP/IP estáticas
@@ -565,7 +563,7 @@ Quando a instalação for concluída com êxito, a seguinte mensagem será exibi
 
 | Sucesso | Reinicialização necessária | Código de Saída |  Resultado do recurso |
 |--|--|--|--|
-| Verdadeiro | Não | Sucesso | {Active Directory Domain Services, grupo P... |
+| verdadeiro | Não | Sucesso | {Active Directory Domain Services, grupo P... |
 
 - No Windows PowerShell, digite o comando a seguir, substituindo o texto **Corp.contoso.com** pelo seu nome de domínio e, em seguida, pressione ENTER:
 
@@ -1079,7 +1077,7 @@ Para concluir este procedimento, você deve ser um membro do grupo **Administrad
 
 7.  Em **Selecionar serviços de função**, clique em **Servidor de Políticas de Rede**.  Em **Adicionar recursos que são necessários para Servidor de Políticas de Rede**, clique em **Adicionar Recursos**. Clique em **Próximo**.
 
-8.  Em **Confirmar seleções de instalação**, clique em **Reiniciar cada servidor de destino automaticamente, se necessário**. Na solicitação de confirmação dessa seleção, clique em **Sim** e em **Instalar**. A página Progresso da instalação exibe o status durante o processo de instalação. Quando o processo for concluído, a mensagem "a instalação foi bem-sucedida em *ComputerName*" será exibida, em que *ComputerName* é o nome do computador no qual você instalou o servidor de políticas de rede. Clique em **Fechar**.
+8.  Em **Confirmar seleções de instalação**, clique em **Reiniciar cada servidor de destino automaticamente, se necessário**. Na solicitação de confirmação dessa seleção, clique em **Sim** e em **Instalar**. A página Progresso da instalação exibe o status durante o processo de instalação. Quando o processo for concluído, a mensagem "a instalação foi bem-sucedida em *ComputerName*" será exibida, em que *ComputerName* é o nome do computador no qual você instalou o servidor de políticas de rede. Clique em **fechar**
 
 ##### <a name="register-the-nps-in-the-default-domain"></a><a name="BKMK_registerNPS"></a>Registrar o NPS no domínio padrão
 Você pode usar este procedimento para registrar um NPS no domínio em que o servidor é membro do domínio.
@@ -1510,7 +1508,7 @@ Os itens de configuração do procedimento de implantação da Rede Principal do
 |Descrição do escopo|Sub-rede principal do escritório 2||
 |(intervalo de endereços IP)<p>Endereço IP inicial|10.0.1.1||
 |(intervalo de endereços IP)<p>Endereço IP final|10.0.1.254||
-|Comprimento|8||
+|Tamanho|8||
 |Máscara de sub-rede|255.255.255.0||
 |Endereço IP Inicial (intervalo de exclusão)|10.0.1.1||
 |Endereço IP final do intervalo de exclusão|10.0.1.15||

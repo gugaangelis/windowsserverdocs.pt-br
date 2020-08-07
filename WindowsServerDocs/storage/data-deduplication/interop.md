@@ -1,28 +1,26 @@
 ---
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
-title: Interoperabilidade de Eliminação de Duplicação de Dados
-ms.technology: storage-deduplication
-ms.prod: windows-server
+title: Interoperabilidade de eliminação de duplicação de dados
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f99b4d12821e505a229ac02d0198a9ac2ed31fa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403192"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936301"
 ---
-# <a name="data-deduplication-interoperability"></a>Interoperabilidade de Eliminação de Duplicação de Dados
+# <a name="data-deduplication-interoperability"></a>Interoperabilidade de eliminação de duplicação de dados
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2019
 
-## <a name="supported"></a>Suportado
+## <a name="supported"></a>Com suporte
 
 ### <a name="refs"></a>ReFS
-A eliminação de duplicação de dados tem suporte a partir do Windows Server 2019. 
+A eliminação de duplicação de dados tem suporte a partir do Windows Server 2019.
 
 ### <a name="failover-clustering"></a>Clustering de failover
 
@@ -43,18 +41,18 @@ Você pode otimizar o acesso a dados pela rede habilitando [BranchCache](../../n
 A Eliminação de Duplicação de Dados funciona com a replicação DFS (Sistema de Arquivos Distribuído). A otimização ou cancelamento da otimização de um arquivo não vai disparar uma replicação porque o arquivo não é alterado. A Replicação do DFS usa RDC (Compactação Diferencial Remota), não as partes no repositório de partes, com economia de uso de rede. Os arquivos na réplica também podem ser otimizados com eliminação de duplicação se a réplica estiver usando Eliminação de Duplicação de Dados.
 
 ### <a name="quotas"></a>Cotas
-A Eliminação de Duplicação de Dados não dá suporte à criação de uma cota fixa em uma pasta raiz de volume que também tem a eliminação de duplicação habilitada. Quando há uma cota rígida em uma raiz de volume, o espaço livre real no volume e o espaço restrito à cota no volume são os mesmos. Isso pode provocar falha nos trabalhos de eliminação de duplicação. No entanto, é possível criar uma cota flexível em uma raiz de volume que tenha a eliminação de duplicação habilitada. 
+A Eliminação de Duplicação de Dados não dá suporte à criação de uma cota fixa em uma pasta raiz de volume que também tem a eliminação de duplicação habilitada. Quando há uma cota rígida em uma raiz de volume, o espaço livre real no volume e o espaço restrito à cota no volume são os mesmos. Isso pode provocar falha nos trabalhos de eliminação de duplicação. No entanto, é possível criar uma cota flexível em uma raiz de volume que tenha a eliminação de duplicação habilitada.
 
 Quando a cota é habilitada em um volume com eliminação de duplicação, a cota usa o tamanho lógico do arquivo em vez do tamanho físico do arquivo. O uso de cota (incluindo qualquer limite de cota) não é alterado quando um arquivo é processado pela eliminação de duplicação. Todas as demais funcionalidades de cota, incluindo cotas flexíveis de raiz de volume e cotas em subpastas, funcionam normalmente durante a eliminação de duplicação.
 
 ### <a name="windows-server-backup"></a>Backup do Windows Server
 O Backup do Windows Server pode fazer backup de um volume otimizado "como está" (ou seja, sem remover dados com eliminação de duplicação). As etapas a seguir mostram como fazer backup de um volume e como restaurar um volume ou arquivos selecionados de um volume.
-1. Instale o Backup do Windows Server.  
+1. Instale o Backup do Windows Server.
     ```PowerShell
     Install-WindowsFeature -Name Windows-Server-Backup
     ```
 
-2. Faça backup do volume E: de volume para outro volume, executando o seguinte, substituindo os nomes do volume correto de acordo com a situação.  
+2. Faça backup do volume E: de volume para outro volume, executando o seguinte, substituindo os nomes do volume correto de acordo com a situação.
     ```PowerShell
     wbadmin start backup –include:E: -backuptarget:F: -quiet
     ```
@@ -64,23 +62,23 @@ O Backup do Windows Server pode fazer backup de um volume otimizado "como está"
     wbadmin get versions
     ```
 
-    Essa ID de versão de saída será uma cadeia de caracteres de data e hora, por exemplo: 08/18/2016-06:22.
+    Essa identificação de versão de saída será uma cadeia de caracteres de data e hora, por exemplo: 08/18/2016-06:22.
 
 4. Restaure o volume inteiro.
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **--OU--**  
+    **--OU--**
 
     Restaure uma pasta específica (nesse caso, a pasta E:\Docs):
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:File  -items:E:\Docs  -recursive
     ```
 
-## <a name="unsupported"></a>Sem Suporte
+## <a name="unsupported"></a>Sem suporte
 
-### <a name="windows-10-client-os"></a>Windows 10 (So cliente)
+### <a name="windows-10-client-os"></a>Windows 10 (SO cliente)
 Não há suporte para a eliminação da duplicação de dados no Windows 10. Há várias postagens de blog populares na Comunidade do Windows que descrevem como remover os binários do Windows Server 2016 e instalar no Windows 10, mas esse cenário não foi validado como parte do desenvolvimento de eliminação de duplicação de dados. [Vote nesse item para o Windows 10 no Windows Server Storage UserVoice](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os).
 
 ### <a name="windows-search"></a>Windows Search

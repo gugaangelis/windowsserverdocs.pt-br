@@ -7,14 +7,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/02/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a982df8ce7d1f335a1c2242f277b1983573c9ee1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc48e3efc783665921519272443e86620dcd4d4a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954199"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962470"
 ---
 # <a name="managing-ssl-certificates-in-ad-fs-and-wap-in-windows-server-2016"></a>Gerenciamento de certificados SSL no AD FS e no Windows Server 2016
 
@@ -124,6 +122,6 @@ Insira as credenciais de um usuário de domínio que seja administrador local no
 Install-WebApplicationProxy -FederationServiceTrustCredential $cred -CertificateThumbprint '<thumbprint of new cert>' -FederationServiceName 'fs.contoso.com'
 ```
 
-## <a name="additional-references"></a>Referências adicionais  
+## <a name="additional-references"></a>Referências adicionais
 * [Suporte do AD FS para associação de nome de host alternativo para autenticação de certificado](../operations/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication.md)
 * [Informações da propriedade KeySpec AD FS e do certificado](../technical-reference/AD-FS-and-KeySpec-Property.md)

@@ -1,28 +1,26 @@
 ---
 title: Implantar uma testemunha de compartilhamento de arquivos no Windows Server 2019
 description: O compartilhamento de arquivos testemunhas permite que você use um compartilhamento de arquivos para votar no quorum do cluster. Este tópico descreve o compartilhamento de arquivos testemunhas e a nova funcionalidade, incluindo o uso de uma unidade USB conectada a um roteador como uma testemunha de compartilhamento de arquivos.
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63e016b8e00482529e69aaa12727f854afd51e41
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: ea9dd3f79576048a57c85e879daf86567d325046
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80827669"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945829"
 ---
-# <a name="deploy-a-file-share-witness"></a>Implantar uma testemunha de compartilhamento de arquivos
+# <a name="deploy-a-file-share-witness"></a>Implantar testemunha de compartilhamento de arquivos
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Uma testemunha de compartilhamento de arquivos é um compartilhamento SMB que o cluster de failover usa como um voto no quorum do cluster. Este tópico fornece uma visão geral da tecnologia e da nova funcionalidade do Windows Server 2019, incluindo o uso de uma unidade USB conectada a um roteador como uma testemunha de compartilhamento de arquivos.
 
-O compartilhamento de arquivos testemunhas é útil nas seguintes circunstâncias:  
+O compartilhamento de arquivos testemunhas é útil nas seguintes circunstâncias:
 
 - Não é possível usar uma testemunha de nuvem porque nem todos os servidores no cluster têm uma conexão de Internet confiável
 - Não é possível usar uma testemunha de disco porque não há unidades compartilhadas a serem usadas para uma testemunha de disco. Pode ser um cluster Espaços de Armazenamento Diretos, SQL Server Always On grupos de disponibilidade (AG), grupo de disponibilidade de banco de dados do Exchange (DAG), etc.  Nenhum desses tipos de clusters usam discos compartilhados.

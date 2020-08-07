@@ -1,19 +1,17 @@
 ---
 title: Problemas conhecidos do Windows Admin Center
 description: Problemas conhecidos do Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: f7e62f05a340a2186a012d7ed99e3ecc46654256
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: bb416a45e18ea34628994b589e452f25d2d7744e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891391"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937665"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -29,7 +27,7 @@ Se você encontrar um problema não descrito nessa página, [informe-nos](https:
 
 ## <a name="general"></a>Geral
 
-- Na versão 1910,2 do centro de administração do Windows, talvez você não consiga se conectar a servidores Hyper-V em um hardware específico. Se você estiver bloqueado sobre esse problema, [Baixe nossa compilação anterior](https://aka.ms/wacprevious). 
+- Na versão 1910,2 do centro de administração do Windows, talvez você não consiga se conectar a servidores Hyper-V em um hardware específico. Se você estiver bloqueado sobre esse problema, [Baixe nossa compilação anterior](https://aka.ms/wacprevious).
 
 - Se você tiver o centro de administração do Windows instalado como um gateway no **Windows Server 2016** sob uso intenso, o serviço poderá falhar com um erro no log de eventos que contém ```Faulting application name: sme.exe``` e ```Faulting module name: WsmSvc.dll``` . Isso ocorre devido a um bug que foi corrigido no Windows Server 2019. O patch para o Windows Server 2016 foi incluído na atualização cumulativa de fevereiro de 2019, [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977).
 
@@ -73,7 +71,7 @@ O Windows Admin Center não foi testado com o Mozilla Firefox, mas a maior parte
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>Compatibilidade de WebSocket ao usar um serviço de proxy
 
-Os módulos de Área de trabalho remota, PowerShell e Eventos no Windows Admin Center utilizam o protocolo WebSocket, que geralmente não é suportado ao usar um serviço de proxy. 
+Os módulos de Área de trabalho remota, PowerShell e Eventos no Windows Admin Center utilizam o protocolo WebSocket, que geralmente não é suportado ao usar um serviço de proxy.
 
 ## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>Suporte para versões do Windows Server anteriores a 2016 (2012 R2, 2012, 2008 R2)
 
@@ -194,7 +192,7 @@ A solução de gerenciamento do computador contém um subconjunto das ferramenta
 - Ao tentar gerenciar o localhost, você será solicitado a elevar o processo de gateway. Se você clicar em **não** no pop-up controle de conta de usuário que segue, deverá cancelar a tentativa de conexão e começar novamente.
 
 - O Windows 10 não tem a comunicação remota do WinRM/PowerShell ativada por padrão.
-  
+
   - Para habilitar o gerenciamento do cliente Windows 10, você deve executar o comando ```Enable-PSRemoting``` por um prompt de comandos com privilégios elevados do PowerShell.
 
   - Você também pode precisar atualizar seu firewall para permitir conexões de fora da sub-rede local com ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any```. Para cenários de redes mais restritivos, consulte [esta documentação](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1).
@@ -205,35 +203,35 @@ A solução de gerenciamento do computador contém um subconjunto das ferramenta
 Atualmente, não há suporte para computadores de grupo de trabalho mistos ao adicionar servidores. Todos os computadores usados para clustering precisam pertencer ao mesmo grupo de trabalho. Se não forem, o botão Avançar será desabilitado e o seguinte erro será exibido: "não é possível criar um cluster com servidores em diferentes domínios de Active Directory. Verifique se os nomes de servidor estão corretos. Mova todos os servidores para o mesmo domínio e tente novamente. "
 
 ### <a name="step-14"></a>Etapa 1,4
-O Hyper-V precisa ser instalado em máquinas virtuais que executam o sistema operacional Azure Stack do HCI. A tentativa de habilitar o recurso Hyper-V para essas máquinas virtuais falhará com o erro abaixo: 
+O Hyper-V precisa ser instalado em máquinas virtuais que executam o sistema operacional Azure Stack do HCI. A tentativa de habilitar o recurso Hyper-V para essas máquinas virtuais falhará com o erro abaixo:
 
 ![Captura de tela do erro de habilitação do Hyper-V](../media/cluster-create-install-hyperv.png)
 
-Para instalar o Hyper-V em máquinas virtuais que executam o sistema operacional Azure Stack do HCI, execute o seguinte comando: 
+Para instalar o Hyper-V em máquinas virtuais que executam o sistema operacional Azure Stack do HCI, execute o seguinte comando:
 
 ```PowerShell
-Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v 
+Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
 ```
 
 ### <a name="step-17"></a>Etapa 1,7
-Às vezes, os servidores demoram mais do que o esperado para reiniciar após a instalação das atualizações. O assistente de implantação de cluster do centro de administração do Windows verificará o estado de reinicialização do servidor periodicamente para saber se o servidor foi reiniciado com êxito. No entanto, se o usuário reiniciar o servidor fora do assistente manualmente, o assistente não terá uma maneira de capturar o estado do servidor de forma apropriada. 
+Às vezes, os servidores demoram mais do que o esperado para reiniciar após a instalação das atualizações. O assistente de implantação de cluster do centro de administração do Windows verificará o estado de reinicialização do servidor periodicamente para saber se o servidor foi reiniciado com êxito. No entanto, se o usuário reiniciar o servidor fora do assistente manualmente, o assistente não terá uma maneira de capturar o estado do servidor de forma apropriada.
 
-Se você quiser reiniciar o servidor manualmente, saia da sessão do assistente atual. Depois de reiniciar o servidor, você poderá reiniciar o assistente. 
+Se você quiser reiniciar o servidor manualmente, saia da sessão do assistente atual. Depois de reiniciar o servidor, você poderá reiniciar o assistente.
 
 ### <a name="stretch-cluster-creation"></a>Criação de cluster de ampliação
 É recomendável usar servidores que ingressaram no domínio ao criar um cluster de ampliação. Há um problema de segmentação de rede ao tentar usar máquinas de grupo de trabalho para implantação de cluster de ampliação devido a limitações do WinRM.
 
 ### <a name="undo-and-start-over"></a>Desfazer e reiniciar
-Ao usar as mesmas máquinas repetidamente para implantação de cluster, a limpeza de entidades de cluster anteriores é importante para obter uma implantação de cluster bem-sucedida no mesmo conjunto de computadores. Consulte a página sobre [implantação de infraestrutura hiperconvergente](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over) para obter instruções sobre como limpar o cluster. 
+Ao usar as mesmas máquinas repetidamente para implantação de cluster, a limpeza de entidades de cluster anteriores é importante para obter uma implantação de cluster bem-sucedida no mesmo conjunto de computadores. Consulte a página sobre [implantação de infraestrutura hiperconvergente](https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/deploy-hyperconverged-infrastructure#undo-and-start-over) para obter instruções sobre como limpar o cluster.
 
 ### <a name="credssp"></a>CredSSP
 O assistente de implantação de cluster do centro de administração do Windows usa CredSSP em vários locais. Você encontrará essa mensagem de erro durante o assistente (isso ocorre com mais frequência na etapa validar cluster):
 
 ![Captura de tela do erro de criação de CredSSP do cluster](../media/cluster-create-credssp-error.jpg)
 
-Você pode usar as seguintes etapas para solucionar problemas: 
+Você pode usar as seguintes etapas para solucionar problemas:
 
-1. Desabilite as configurações de CredSSP em todos os nós e no computador do gateway do centro de administração do Windows. Execute o primeiro comando em seu computador do gateway e o segundo comando em todos os nós em seu cluster: 
+1. Desabilite as configurações de CredSSP em todos os nós e no computador do gateway do centro de administração do Windows. Execute o primeiro comando em seu computador do gateway e o segundo comando em todos os nós em seu cluster:
 
 ```PowerShell
 Disable-WsmanCredSSP -Role Client
@@ -241,7 +239,7 @@ Disable-WsmanCredSSP -Role Client
 ```PowerShell
 Disable-WsmanCredSSP -Role Server
 ```
-2. Repare a relação de confiança em todos os nós. Execute o seguinte comando em todos os nós: 
+2. Repare a relação de confiança em todos os nós. Execute o seguinte comando em todos os nós:
 ```PowerShell
 Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 ```
@@ -251,7 +249,7 @@ Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 gpupdate /force
 ```
 
-4. Reinicialize os nós. Após a reinicialização, teste a conectividade entre o computador do gateway e os nós de destino, bem como a conectividade entre os nós, usando o seguinte comando: 
+4. Reinicialize os nós. Após a reinicialização, teste a conectividade entre o computador do gateway e os nós de destino, bem como a conectividade entre os nós, usando o seguinte comando:
 ```PowerShell
 Enter-PSSession -computername <node fqdn>
 ```
@@ -260,20 +258,20 @@ Enter-PSSession -computername <node fqdn>
 Ao validar Azure Stack implantação de cluster do sistema operacional do HCI em máquinas virtuais, a virtualização aninhada precisa ser ativada antes que funções/recursos sejam habilitadas usando o comando do PowerShell abaixo:
 
 ```PowerShell
-Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true 
+Set-VMProcessor -VMName <VMName> -ExposeVirtualizationExtensions $true
 ```
 
   > [!Note]
-  > Para que o agrupamento do comutador virtual seja bem-sucedido em um ambiente de máquina virtual, o comando a seguir precisa ser executado no PowerShell no host logo após a criação das máquinas virtuais: Get-VM | % {Set-VMNetworkAdapter-VMName $ _. Name-MacAddressSpoofing on-AllowTeaming on} 
+  > Para que o agrupamento do comutador virtual seja bem-sucedido em um ambiente de máquina virtual, o comando a seguir precisa ser executado no PowerShell no host logo após a criação das máquinas virtuais: Get-VM | % {Set-VMNetworkAdapter-VMName $ _. Name-MacAddressSpoofing on-AllowTeaming on}
 
-Se você estiver implantando um cluster usando o sistema operacional Azure Stack do HCI, haverá um requisito adicional. O disco rígido virtual de inicialização da VM deve ser pré-instalado com recursos do Hyper-V. Para fazer isso, execute o seguinte comando antes de criar as máquinas virtuais: 
+Se você estiver implantando um cluster usando o sistema operacional Azure Stack do HCI, haverá um requisito adicional. O disco rígido virtual de inicialização da VM deve ser pré-instalado com recursos do Hyper-V. Para fazer isso, execute o seguinte comando antes de criar as máquinas virtuais:
 
 ```PowerShell
 Install-WindowsFeature –VHD <Path to the VHD> -Name Hyper-V, RSAT-Hyper-V-Tools, Hyper-V-PowerShell
 ```
 
 ### <a name="support-for-rdma"></a>Suporte para RDMA
-O assistente de implantação de cluster no centro de administração do Windows versão 2007 não oferece suporte para configuração RDMA.   
+O assistente de implantação de cluster no centro de administração do Windows versão 2007 não oferece suporte para configuração RDMA.
 
 ## <a name="failover-cluster-manager-solution"></a>Solução de Gerenciador de cluster de failover
 
@@ -296,7 +294,7 @@ O assistente de implantação de cluster no centro de administração do Windows
 Sincronização de Arquivos do Azure requer permissões no Azure que o centro de administração do Windows não forneceu antes da versão 1910. Se você registrou seu gateway do centro de administração do Windows com o Azure usando uma versão anterior à versão 1910 do centro de administração do Windows, será necessário atualizar seu aplicativo Azure Active Directory para obter as permissões corretas para usar Sincronização de Arquivos do Azure na versão mais recente do centro de administração do Windows. A permissão adicional permite que Sincronização de Arquivos do Azure execute a configuração automática do acesso à conta de armazenamento, conforme descrito neste artigo: [Verifique se sincronização de arquivos do Azure tem acesso à conta de armazenamento](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal).
 
 Para atualizar seu aplicativo Azure Active Directory, você pode fazer uma das duas coisas
-1. Acesse **configurações**  >  **Azure**  >  **Cancelar registro**e registre o centro de administração do Windows com o Azure novamente, verificando se você escolheu criar um novo aplicativo Azure Active Directory. 
+1. Acesse **configurações**  >  **Azure**  >  **Cancelar registro**e registre o centro de administração do Windows com o Azure novamente, verificando se você escolheu criar um novo aplicativo Azure Active Directory.
 2. Vá para o aplicativo Azure Active Directory e adicione manualmente a permissão necessária ao seu aplicativo Azure Active Directory existente registrado no centro de administração do Windows. Para fazer isso, vá para **configurações**  >  exibição**do Azure**  >  **no Azure**. Na folha **registro de aplicativo** no Azure, acesse **permissões de API**, selecione **Adicionar uma permissão**. Role para baixo para selecionar **Azure Active Directory grafo**, selecione **permissões delegadas**, expanda **diretório**e selecione **Directory. AccessAsUser. All**. Clique em **adicionar permissões** para salvar as atualizações no aplicativo.
 
 ### <a name="options-for-setting-up-azure-management-services"></a>Opções para configurar os serviços de gerenciamento do Azure

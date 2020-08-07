@@ -2,18 +2,16 @@
 title: Habilitar a enumeração baseada em acesso em um Namespace
 description: Este artigo descreve como habilitar a enumeração baseada em acesso em um namespace.
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 04b023a931f8d66205a07f05bb8d3e955f8b83ca
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 507af0f3cdd76ab7af59092f8f099225c113edaa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964068"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936120"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar a enumeração baseada em acesso em um Namespace
 

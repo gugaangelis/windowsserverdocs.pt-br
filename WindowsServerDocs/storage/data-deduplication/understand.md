@@ -1,19 +1,17 @@
 ---
 ms.assetid: acc0803b-fa05-4fc3-b94d-2916abf4fdbd
 title: Noções básicas da eliminação de duplicação de dados
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 54ad12c1631df39b6fdbe06c78e1a300ff5d73bd
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e3a58889d42020d939981e2d10eda450e5860642
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955598"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936249"
 ---
 # <a name="understanding-data-deduplication"></a>Noções básicas da eliminação de duplicação de dados
 
@@ -25,11 +23,9 @@ Este documento descreve como funciona a [Eliminação de Duplicação de Dados](
 
 A Eliminação de Duplicação de Dados no Windows Server foi criada com os dois princípios a seguir:
 
-1. **A otimização não interferir as gravações no disco**  
-    A eliminação de duplicação de dados otimiza os dados usando um modelo de pós-processamento. Todos os dados são gravados de forma não otimizada no disco e são otimizados posteriormente pela Eliminação de Duplicação de Dados.
+1. A **otimização não deve chegar à forma de gravações no disco** A eliminação de duplicação de dados otimiza os dados por meio de um modelo de pós-processamento. Todos os dados são gravados de forma não otimizada no disco e são otimizados posteriormente pela Eliminação de Duplicação de Dados.
 
-2. **A otimização não deve alterar a semântica de acesso**  
-    Os usuários e aplicativos que acessam dados em um volume otimizado não têm a menor a ideia de que os arquivos que eles estão acessando passaram pela eliminação de duplicação.
+2. A **otimização não deve alterar a semântica de acesso** Os usuários e aplicativos que acessam dados em um volume otimizado não sabem completamente que os arquivos que eles estão acessando tiveram eliminação de duplicação.
 
 Uma vez habilitada para um volume, a eliminação de duplicação de dados é executada em segundo plano para:
 
@@ -38,21 +34,21 @@ Uma vez habilitada para um volume, a eliminação de duplicação de dados é ex
 
 Isso ocorre em quatro etapas, descritas a seguir:
 
-1. Verificação de arquivos que atendam à política de otimização no sistema de arquivos.  
-![Verificação do sistema de arquivos](media/understanding-dedup-how-dedup-works-1.gif)  
-2. Divisão dos arquivos em partes de tamanho variável.  
+1. Verificação de arquivos que atendam à política de otimização no sistema de arquivos.
+![Verificação do sistema de arquivos](media/understanding-dedup-how-dedup-works-1.gif)
+2. Divisão dos arquivos em partes de tamanho variável.
 ![Divisão dos arquivos em partes](media/understanding-dedup-how-dedup-works-2.gif)
-3. Identificação de partes exclusivas.  
+3. Identificação de partes exclusivas.
 ![Identificação de partes exclusivas](media/understanding-dedup-how-dedup-works-3.gif)
-4. Inserção das partes no repositório de partes e, opcionalmente, compactação.  
+4. Inserção das partes no repositório de partes e, opcionalmente, compactação.
 ![Movimentação para o armazenamento de partes](media/understanding-dedup-how-dedup-works-4.gif)
-5. Substituição do fluxo de arquivos original dos arquivos agora otimizados com um ponto de nova análise para o repositório de partes.  
+5. Substituição do fluxo de arquivos original dos arquivos agora otimizados com um ponto de nova análise para o repositório de partes.
 ![Substituição do fluxo de arquivos com o ponto de nova análise](media/understanding-dedup-how-dedup-works-5.gif)
 
 Quando os arquivos otimizados são lidos, o sistema de arquivos os envia com um ponto de nova análise ao filtro do sistema de arquivos de Eliminação de Duplicação de Dados (Dedup.sys). O filtro redireciona a operação de leitura para as partes apropriadas que compõem o fluxo para esse arquivo no repositório de partes. As modificações em intervalos de arquivos que passaram pela eliminação de duplicação são gravadas de forma não otimizada no disco e são otimizadas pelo [Trabalho de otimização](understand.md#job-info) da próxima vez em que ele for executado.
 
 ## <a name="usage-types"></a><a id="usage-type"></a>Tipos de uso
-Os tipos de uso a seguir fornecem uma configuração razoável de Eliminação de Duplicação de Dados para cargas de trabalho comuns:  
+Os tipos de uso a seguir fornecem uma configuração razoável de Eliminação de Duplicação de Dados para cargas de trabalho comuns:
 
 | Tipo de uso | Cargas de trabalho ideais | Qual é a diferença |
 |------------|-----------------|------------------|
@@ -84,32 +80,32 @@ A Eliminação de Duplicação de Dados usa uma estratégia de pós-processament
 | <a id="dedup-term-in-policy"></a>Política de otimização | A política de otimização especifica os arquivos que devem ser considerados para Eliminação de Duplicação de Dados. Por exemplo, os arquivos poderão ser considerados fora da política se forem totalmente novos, estiverem abertos, em um determinado caminho no volume ou se forem de um determinado tipo de arquivo. |
 | <a id="dedup-term-reparse-point"></a>Ponto de nova análise | Um [ponto de nova análise](/windows/win32/fileio/reparse-points) é uma marca especial que notifica o sistema de arquivos para passar a e/s para um filtro do sistema de arquivos especificado. Quando o fluxo de arquivos do arquivo tiver sido otimizado, a Eliminação de Duplicação de Dados substitui o fluxo de arquivos por um ponto de nova análise, que permite à Eliminação de Duplicação de Dados preservar a semântica de acesso nesse arquivo. |
 | <a id="dedup-term-volume"></a>Volume | Um volume é uma construção do Windows para uma unidade de armazenamento lógico que pode abranger vários dispositivos de armazenamento físicos em um ou mais servidores. A Eliminação de duplicação é habilitada de acordo com o volume. |
-| <a id="dedup-term-workload"></a>Carga de trabalho | Uma carga de trabalho é um aplicativo executado no Windows Server. Entre os exemplos de carga de trabalho de exemplo estão o servidor de arquivos de finalidade geral, Hyper-V e o SQL Server. |
+| <a id="dedup-term-workload"></a>Pico | Uma carga de trabalho é um aplicativo executado no Windows Server. Entre os exemplos de carga de trabalho de exemplo estão o servidor de arquivos de finalidade geral, Hyper-V e o SQL Server. |
 
-> [!Warning]  
+> [!Warning]
 > A menos que seja indicado pela Equipe de suporte autorizada da Microsoft, não tente modificar manualmente o repositório de partes. Isso pode resultar em corrupção ou perda de dados.
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
-**Qual é a diferença entre a Eliminação de Duplicação de Dados e os outros produtos de otimização?**  
+**Qual é a diferença entre a Eliminação de Duplicação de Dados e os outros produtos de otimização?**
 Há várias diferenças importantes entre a Eliminação de Duplicação de Dados e outros produtos de otimização de armazenamento comuns:
 
-* *Qual é a diferença entre a Eliminação de Duplicação de Dados e o Single Instance Store?*  
+* *Qual é a diferença entre a Eliminação de Duplicação de Dados e o Single Instance Store?*
     O Single Instance Store, ou o SIS, é uma tecnologia anterior à Eliminação de Duplicação de Dados e foi introduzida pela primeira vez no Windows Storage Server 2008 R2. Para otimizar um volume, o Single Instance Store identifica os arquivos completamente idênticos e os substitui por links lógico em uma única cópia de um arquivo armazenado no armazenamento comum do SIS. Ao contrário do Single Instance Store, a Eliminação de Duplicação de Dados pode conseguir uma economia de espaço dos arquivos que não são idênticos, mas que compartilham muitos padrões comuns, e de arquivos que contêm vários padrões repetidos. O Single Instance Store foi preterido no Windows Server 2012 R2 e removido no Windows Server 2016 em favor da Eliminação de Duplicação de Dados.
 
-* *Qual é a diferença entre a Eliminação de Duplicação de Dados e a compactação NTFS?*  
+* *Qual é a diferença entre a Eliminação de Duplicação de Dados e a compactação NTFS?*
     A compactação NTFS é um recurso do NTFS que você pode habilitar opcionalmente no nível do volume. Com a compactação NTFS, cada arquivo é otimizado individualmente por meio de compactação no momento da gravação. Ao contrário da compactação NTFS, a Eliminação de Duplicação de Dados pode conseguir economia de espaço em todos os arquivos em um volume. Isso é melhor do que a compactação NTFS, porque <u>ambos</u> os arquivos podem ter uma duplicação interna (solucionada pela compactação NTFS) e ter semelhanças com outros arquivos no volume (não solucionado pela compactação NTFS). Além disso, a Eliminação de Duplicação de Dados tem um modelo de pós-processamento, o que significa que arquivos novos ou modificados serão gravadas em disco de forma não otimizada e serão otimizados posteriormente pela Eliminação de Duplicação de Dados.
 
-* *Como a eliminação de duplicação de dados difere dos formatos de arquivo mortos como zip, rar, 7z, CAB, etc.?*  
+* *Como a eliminação de duplicação de dados difere dos formatos de arquivo mortos como zip, rar, 7z, CAB, etc.?*
     Os formatos de arquivo morto zip, rar, 7z, cab, etc. executam a compactação em um conjunto especificado de arquivos. Como a Eliminação de Duplicação de Dados, padrões duplicados dentro de arquivos e padrões duplicados em arquivos são otimizados. No entanto, você precisa escolher os arquivos que você deseja incluir no arquivo morto. A semântica de acesso também é diferente. Para acessar um arquivo específico dentro do arquivo morto, você precisa abrir o arquivo morto, selecionar um arquivo específico e descompactar esse arquivo para uso. A Eliminação de Duplicação de Dados opera de forma transparente para usuários e administradores e não exige qualquer inicialização manual. Além disso, a Eliminação de Duplicação de Dados preserva a semântica de acesso: os arquivos otimizados aparecem inalterados após a otimização.
 
-**Posso alterar as configurações de Eliminação de Duplicação de Dados para o meu tipo de uso selecionado?**  
+**Posso alterar as configurações de Eliminação de Duplicação de Dados para o meu tipo de uso selecionado?**
 Sim. Embora a Eliminação de Duplicação de Dados forneça padrões razoáveis para **Cargas de trabalho recomendadas**, ainda convém ajustar as configurações da Eliminação de Duplicação de Dados para obter o máximo proveito de seu armazenamento. Além disso, outras cargas de trabalho [exigirão alguns ajustes para garantir que a Eliminação de Duplicação de Dados não interfira com a carga de trabalho](install-enable.md#enable-dedup-sometimes-considerations).
 
-**Posso executar manualmente um trabalho de Eliminação de Duplicação de Dados?**  
+**Posso executar manualmente um trabalho de Eliminação de Duplicação de Dados?**
 Sim, [todos os trabalhos de Eliminação de Duplicação de Dados podem ser executados manualmente](run.md#running-dedup-jobs-manually). Isso pode ser desejável se os trabalhos agendados não tiverem sido executados por falta de recursos do sistema ou por um erro. Além disso, o cancelamento da otimização do trabalho pode ser executado manualmente.
 
-**Posso monitorar os resultados históricos dos trabalhos de Eliminação de Duplicação de Dados?**  
+**Posso monitorar os resultados históricos dos trabalhos de Eliminação de Duplicação de Dados?**
 Sim, [todos os trabalhos de Eliminação de Duplicação de Dados criam entradas no Log de Eventos do Windows](run.md#monitoring-dedup).
 
-**Posso alterar as agendas padrão para os trabalhos de Eliminação de Duplicação de Dados em meu sistema?**  
+**Posso alterar as agendas padrão para os trabalhos de Eliminação de Duplicação de Dados em meu sistema?**
 Sim, [todas as agendas são configuráveis](advanced-settings.md#modifying-job-schedules). A modificação das agendas padrão da Eliminação de Duplicação de Dados é especialmente desejável para garantir que os trabalhos da Eliminação de Duplicação de Dados tenham tempo para concluir e não compitam por recursos com a carga de trabalho.

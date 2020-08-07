@@ -1,21 +1,19 @@
 ---
 title: Visão geral de Espaços de Armazenamento Diretos
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 07/24/2020
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: Uma visão geral do Espaços de Armazenamento Diretos, um recurso do Windows Server e Azure Stack HCI que permite a você agrupar servidores com armazenamento interno em uma solução de armazenamento definida por software.
 ms.localizationpriority: medium
-ms.openlocfilehash: 3fd86a8465d2fef59ccce73fc473790682f0d180
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 2a6839ddfd6015707f79a7e8f3036be4bc893b2e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864317"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970123"
 ---
 # <a name="storage-spaces-direct-overview"></a>Visão geral de Espaços de Armazenamento Diretos
 
@@ -33,7 +31,7 @@ Para outros aplicativos de espaços de armazenamento, como clusters SAS comparti
 | **Implantar**<br><ul><li>[Implantar Espaços de Armazenamento Diretos](deploy-storage-spaces-direct.md)</li><li>[Criar volumes](create-volumes.md)</li><li>[Resiliência aninhada](nested-resiliency.md)</li><li>[Configurar quorum](../../failover-clustering/manage-cluster-quorum.md)</li><li>[Atualizar um cluster de Espaços de Armazenamento Diretos para o Windows Server 2019](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[Compreender e implantar memória persistente](deploy-pmem.md)</li> | **Gerenciar**<br><ul><li>[Gerenciar com o Centro de Administração do Windows](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[Adicionar servidores ou unidades](add-nodes.md)</li><li>[Colocar um servidor offline para manutenção](maintain-servers.md)</li><li>[Remover servidores](remove-servers.md)</li><li>[Estender volumes](resize-volumes.md)</li><li>[Excluir volumes](delete-volumes.md)</li><li>[Atualizar firmware da unidade](../update-firmware.md)</li><li>[Histórico de desempenho](performance-history.md)</li><li>[Delimitar a alocação de volumes](delimit-volume-allocation.md)</li><li>[Usar Azure Monitor em um cluster hiperconvergente](configure-azure-monitor.md)</li> |
 | **Solução de problemas**<br><ul><li>[Cenários de solução de problemas](troubleshooting-storage-spaces.md)</li><li>[Solucionar problemas de integridade e Estados operacionais](storage-spaces-states.md)</li><li>[Coletar dados de diagnóstico com Espaços de Armazenamento Diretos](data-collection.md)</li><li>[Gerenciamento de integridade de memória da classe de armazenamento](Storage-class-memory-health.md)</li> | **Postagens recentes no blog**<br><ul><li>[13,7 milhões IOPS com Espaços de Armazenamento Diretos: o novo registro do setor para a infraestrutura hiperconvergente](https://techcommunity.microsoft.com/t5/storage-at-microsoft/the-new-hci-industry-record-13-7-million-iops-with-windows/ba-p/428314)</li><li>[Infraestrutura hiperconvergente no Windows Server 2019-o relógio de contagem regressiva começa agora!](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[Cinco anúncios grandes do Windows Server Summit](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB)</li><li>[10.000 Espaços de Armazenamento Diretos de clusters e contagem...](https://techcommunity.microsoft.com/t5/storage-at-microsoft/storage-spaces-direct-10-000-clusters-and-counting/ba-p/428185)</li></ul> |
 
-## <a name="videos"></a>Vídeos
+## <a name="videos"></a>vídeos
 
 **Visão geral de vídeo rápido (5 minutos)**
 
@@ -53,7 +51,7 @@ Para outros aplicativos de espaços de armazenamento, como clusters SAS comparti
 
 ## <a name="key-benefits"></a>Principais benefícios
 
-| Imagem | Descrição |
+| Image | Descrição |
 |--|--|
 | ![Simplicidade](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png) | **Simplicidade.** Passe de servidores padrão do setor que executam o Windows Server 2016 para seu primeiro cluster de Espaços de Armazenamento Diretos em menos de 15 minutos. Para usuários do System Center, a implantação é apenas uma caixa de seleção. |
 | ![Desempenho inigualável](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png) | **Desempenho inigualável.** Se todos os flash ou híbrida, espaços de armazenamento Direct facilmente exceder [150.000 misto 4K aleatório IOPS por servidor](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) com consistente e de baixa latência graças à sua arquitetura de hipervisor interno, seu interno cache de leitura/gravação e suporte para unidades de NVMe ponta montadas diretamente no barramento PCIe. |

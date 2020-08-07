@@ -1,19 +1,17 @@
 ---
 title: Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 description: Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 8344fcb01a5d527dfce46118121fbf7623636549
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6fc9ab25ee9138b078af31c2e13965d1300c8a6b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519665"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962490"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 

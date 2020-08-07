@@ -1,19 +1,17 @@
 ---
 ms.assetid: f15c02d7-1cbd-4eba-a571-0ea34ab93ef4
 title: Executar a Eliminação de Duplicação de Dados
-ms.technology: storage-deduplication
-ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: f75a20a8b69a863209f6e782bd34e48d8c12fe91
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f382d229458f27795c09e0377e0f0b23ef7b395b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962158"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936227"
 ---
 # <a name="running-data-deduplication"></a>Executar a Eliminação de Duplicação de Dados
 
@@ -42,7 +40,7 @@ Como a Eliminação de Duplicação de Dados usa um modelo de pós-processamento
 * Para o [trabalho de Coleta de Lixo](understand.md#job-info-gc), examine `LastGarbageCollectionResult` (0 = Êxito), `LastGarbageCollectionResultMessage` e `LastGarbageCollectionTime` (deve ser recente).
 * Para o [trabalho de Depuração de Integridade](understand.md#job-info-scrubbing), examine `LastScrubbingResult` (0 = Êxito), `LastScrubbingResultMessage` e `LastScrubbingTime` (deve ser recente).
 
-> [!Note]  
+> [!Note]
 > Mais detalhes sobre falhas e êxitos de trabalhos podem ser encontrados no Visualizador de Eventos do Windows em `\Applications and Services Logs\Windows\Deduplication\Operational`.
 
 ### <a name="optimization-rates"></a><a id="monitoring-dedup-optimization-rates"></a>Taxas de otimização
@@ -61,9 +59,9 @@ Para desligar a Eliminação de Duplicação de Dados, execute o [Trabalho de ca
 Start-DedupJob -Type Unoptimization -Volume <Desired-Volume>
 ```
 
-> [!Important]  
+> [!Important]
 > O trabalho de Cancelamento da otimização falhará se o volume não tiver espaço suficiente para manter os dados não otimizados.
 
 ## <a name="frequently-asked-questions"></a><a id="faq"></a>Perguntas frequentes
-**Há um Pacote de gerenciamento do System Center Operations Manager disponível para monitorar a Eliminação de Duplicação de Dados?**  
+**Há um Pacote de gerenciamento do System Center Operations Manager disponível para monitorar a Eliminação de Duplicação de Dados?**
 Sim. A Eliminação de Duplicação de Dados pode ser monitorada por meio do Pacote de gerenciamento do System Center para o Servidor de Arquivos. Para obter mais informações, consulte o documento [Guide for System Center Management Pack for File Server 2012 R2](https://download.microsoft.com/download/6/F/7/6F7A33B9-9383-48ED-9252-23C2C8AD1BDA/MPGuide_FileServer2012R2.doc) (Guia de Pacote de Gerenciamento do System Center para Servidor de Arquivos 2012 R2).

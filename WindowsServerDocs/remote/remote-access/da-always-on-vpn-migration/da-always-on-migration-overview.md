@@ -2,25 +2,23 @@
 title: Visão geral da migração de VPN Always On acesso remoto
 description: Always On VPN aborda as lacunas anteriores entre as VPNs do Windows e o DirectAccess e como migrar do DirectAccess para Always On VPN.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: lizross
 author: eross-msft
 ms.date: 05/29/2018
-ms.openlocfilehash: bd4d0d4d3b165a4e89a00cd2975ace20687aed7d
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: fcc04dcb9c76a2e25d768de18738078f425f2c76
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80314980"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953742"
 ---
-# <a name="overview-of-the-directaccess-to-always-on-vpn-migration"></a>Visão geral do DirectAccess a migração de VPN Always On 
+# <a name="overview-of-the-directaccess-to-always-on-vpn-migration"></a>Visão geral do DirectAccess a migração de VPN Always On
 
->Aplicável a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows 10
 
-&#187;[ **Em seguida:** planejar o directaccess para Always on migração de VPN](da-always-on-migration-planning.md)
+&#187; [ **Avançar:** planejar a migração do directaccess para Always on VPN](da-always-on-migration-planning.md)
 
 Nas versões anteriores da arquitetura de VPN do Windows, as limitações de plataforma tornaram difícil fornecer a funcionalidade crítica necessária para substituir o DirectAccess, como conexões automáticas iniciadas antes que os usuários entrem. O Always On VPN, no entanto, reduziu a maioria dessas limitações ou expandiu a funcionalidade de VPN além dos recursos do DirectAccess. Always On VPN atende às lacunas anteriores entre as VPNs do Windows e o DirectAccess.
 
@@ -31,15 +29,15 @@ O processo de migração de VPN do DirectAccess para o Always On consiste em qua
 
     1.  [!INCLUDE [build-migration-rings-shortdesc-include](../includes/build-migration-rings-shortdesc-include.md)]
 
-    2.  [!INCLUDE [review-feature-mapping-shortdesc-include](../includes/review-feature-mapping-shortdesc-include.md)] 
+    2.  [!INCLUDE [review-feature-mapping-shortdesc-include](../includes/review-feature-mapping-shortdesc-include.md)]
 
-    3.  [!INCLUDE [review-the-enhancements-shortdesc-include](../includes/review-the-enhancements-shortdesc-include.md)] 
+    3.  [!INCLUDE [review-the-enhancements-shortdesc-include](../includes/review-the-enhancements-shortdesc-include.md)]
 
     4.  [!INCLUDE [review-the-technology-overview-shortdesc-include](../includes/review-the-technology-overview-shortdesc-include.md)]
 
-2.  **Implante uma infraestrutura de VPN lado a lado.** Depois de determinar suas fases de migração e os recursos que você deseja incluir em sua implantação, implante a infraestrutura de VPN Always On lado a lado com a infraestrutura de DirectAccess existente.  
+2.  **Implante uma infraestrutura de VPN lado a lado.** Depois de determinar suas fases de migração e os recursos que você deseja incluir em sua implantação, implante a infraestrutura de VPN Always On lado a lado com a infraestrutura de DirectAccess existente.
 
-3.  **Implantar certificados e configuração para os clientes.**  Quando a infraestrutura de VPN estiver pronta, você criará e publicará os certificados necessários no cliente. Quando os clientes tiverem recebido os certificados, você implantará o script de configuração VPN_Profile. ps1. Como alternativa, você pode usar o Intune para configurar o cliente VPN. Use o Microsoft Endpoint Configuration Manager ou Microsoft Intune para monitorar implantações de configuração de VPN bem-sucedidas.
+3.  **Implantar certificados e configuração para os clientes.**  Quando a infraestrutura de VPN estiver pronta, você criará e publicará os certificados necessários no cliente. Quando os clientes tiverem recebido os certificados, você implantará o script de configuração de VPN_Profile.ps1. Como alternativa, você pode usar o Intune para configurar o cliente VPN. Use o Microsoft Endpoint Configuration Manager ou Microsoft Intune para monitorar implantações de configuração de VPN bem-sucedidas.
 
 4.  **Remover e desativar.** Encerre o ambiente corretamente depois de migrar todos fora do DirectAccess.
 
@@ -54,7 +52,7 @@ Nesse cenário de implantação, você usa um cenário de implantação simples 
 
 Há muitas opções e cenários de implantação do DirectAccess, portanto, sua implementação provavelmente será diferente da descrita aqui. Nesse caso, consulte [mapeamento de recursos entre o DirectAccess e Always on VPN](../vpn/vpn-map-da.md) para determinar o mapeamento do conjunto de recursos de VPN Always on para suas adições atuais e, em seguida, adicione esses recursos à sua configuração. Além disso, você pode consultar o [Always on aprimoramentos de VPN](../vpn/always-on-vpn/always-on-vpn-enhancements.md) para adicionar opções à sua implantação de VPN Always on.
 
->[!NOTE] 
+>[!NOTE]
 >Para dispositivos não ingressados no domínio, há considerações adicionais, como registro de certificado. Para obter detalhes, consulte [implantação de VPN Always on para Windows Server e Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md).
 
 ### <a name="deployment-scenario-feature-list"></a>Lista de recursos do cenário de implantação
@@ -86,12 +84,12 @@ Nesse cenário de implantação, você se concentra em migrar um ambiente simple
 | Adaptadores de Rede   | 2        |
 | Autenticação de usuário  | Credenciais do Active Directory            |
 | Usar certificados de computador        | Sim                          |
-| Roteamento | Túnel dividido |
+| Roteamento | Túnel Dividido |
 | Resolução de nomes | Lista de informações de nome de domínio e sufixo DNS (sistema de nomes de domínio) |
 | Disparar | Detecção de rede confiável e AlwaysOn |
 | Autenticação  | Protocolo de autenticação extensível protegido – PEAP-TLS (segurança de camada de transporte) com Trusted Platform Module – certificados de usuário protegidos |
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 [Planeje o DirectAccess para Always on migração de VPN](da-always-on-migration-planning.md). O objetivo principal da migração é que os usuários mantenham a conectividade remota com o escritório durante todo o processo.
 
