@@ -2,45 +2,43 @@
 title: Configurar uma estação conectada RDP em LAN nos serviços do MultiPoint
 description: Saiba como configurar um sistema RDP via LAN nos serviços do MultiPoint
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 60e1a025-c2fb-4708-a3ff-c44c223a3224
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 36aaa4c1571ff6dd48ae645b9c7b5746be7c1857
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9c43f207ad968c76fef027f09c2a13f1b36f1998
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853899"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971723"
 ---
 # <a name="set-up-an-rdp-over-lan-connected-station-in-multipoint-services"></a>Configurar uma estação conectada RDP em LAN nos serviços do MultiPoint
-Uma estação conectada de RDP via LAN é um cliente fino, desktop tradicional ou laptop que se conecta aos serviços do MultiPoint em uma rede local (LAN) usando o protocolo RDP (RDP). Para obter mais informações sobre esse e outros tipos de estação, consulte [MultiPoint stations](MultiPoint-services-Stations.md).  
-  
-## <a name="to-set-up-a-multipoint-station-using-a-computer-or-thin-client-on-a-lan"></a>Para configurar uma estação do MultiPoint usando um computador ou cliente fino em uma LAN  
-  
-1.  Ligue o computador que está executando os serviços do MultiPoint.  
-  
-2.  Verifique se o computador do MultiPoint Server está conectado à LAN por um comutador, roteador ou outro dispositivo de rede e tem um endereço IP adequado. (Um endereço IP que começa com 169,254 (um endereço APIPA) pode indicar que há um problema com a conexão LAN ou que o servidor DHCP não pode ser acessado ou não está funcionando corretamente.)  
-  
-3.  Conecte o computador cliente ou o cliente fino à LAN.  
-  
-4.  Ligue o computador cliente ou o cliente fino.  
-  
+Uma estação conectada de RDP via LAN é um cliente fino, desktop tradicional ou laptop que se conecta aos serviços do MultiPoint em uma rede local (LAN) usando o protocolo RDP (RDP). Para obter mais informações sobre esse e outros tipos de estação, consulte [MultiPoint stations](MultiPoint-services-Stations.md).
+
+## <a name="to-set-up-a-multipoint-station-using-a-computer-or-thin-client-on-a-lan"></a>Para configurar uma estação do MultiPoint usando um computador ou cliente fino em uma LAN
+
+1.  Ligue o computador que está executando os serviços do MultiPoint.
+
+2.  Verifique se o computador do MultiPoint Server está conectado à LAN por um comutador, roteador ou outro dispositivo de rede e tem um endereço IP adequado. (Um endereço IP que começa com 169,254 (um endereço APIPA) pode indicar que há um problema com a conexão LAN ou que o servidor DHCP não pode ser acessado ou não está funcionando corretamente.)
+
+3.  Conecte o computador cliente ou o cliente fino à LAN.
+
+4.  Ligue o computador cliente ou o cliente fino.
+
 5.  No computador cliente ou cliente fino, inicie Conexão de Área de Trabalho Remota ou um aplicativo equivalente e insira o nome ou endereço IP do computador que executa os serviços do MultiPoint.
 
 ## <a name="set-up-a-windows-10-device-for-remote-management-by-using-connector-services"></a>Configurar um dispositivo Windows 10 para gerenciamento remoto usando serviços de conector
 Qualquer PC ou laptop que esteja executando o Windows 10 pode ser gerenciado remotamente, desde que:
-- os serviços do conector foram habilitados  
-- o computador foi adicionado aos computadores gerenciados no MultiPoint Server.  
+- os serviços do conector foram habilitados
+- o computador foi adicionado aos computadores gerenciados no MultiPoint Server.
 
 No PC que executa o Windows 10, siga estas etapas para habilitar o conector do MultiPoint:
 
-1. Na caixa de pesquisa, digite "ativar ou desativar recursos do Windows" e selecione o resultado de pesquisa adequado. 
+1. Na caixa de pesquisa, digite "ativar ou desativar recursos do Windows" e selecione o resultado de pesquisa adequado.
 
-2. Na lista de recursos, habilite o **conector do MultiPoint**. Isso habilitará os serviços do conector do MultiPoint, que são necessários para gerenciar o dispositivo. 
+2. Na lista de recursos, habilite o **conector do MultiPoint**. Isso habilitará os serviços do conector do MultiPoint, que são necessários para gerenciar o dispositivo.
 
 No servidor MultiPoint:
 1. Abra o Gerenciador do MultiPoint e selecione **Adicionar ou remover computadores pessoais** ou **Adicionar ou remover serviços do MultiPoint**.
@@ -49,5 +47,5 @@ No servidor MultiPoint:
 
 Quando a configuração bem-sucedida do Dashboard Manager pode monitorar os usuários que estão trabalhando no dispositivo gerenciado.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Ao monitorar dispositivos Windows 10 gerenciados, os usuários administratrive não podem ser monitorados, exceto que as configurações do servidor foram alteradas de acordo. Consulte [Editar configurações do servidor](Edit-Server-Settings.md)

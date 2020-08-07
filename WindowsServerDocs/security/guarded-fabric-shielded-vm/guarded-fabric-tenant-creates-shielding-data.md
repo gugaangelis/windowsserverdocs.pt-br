@@ -1,19 +1,17 @@
 ---
 title: VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 30f8f4db8f6bbfd4ead6ce2a31af3b2f6adbf72c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 296de5fbb7387e469d7e1ce39a477366dd274bbb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475093"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936747"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>VMs blindadas para locatários – criando dados de blindagem para definir uma VM blindada
 

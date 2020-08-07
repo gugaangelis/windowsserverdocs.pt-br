@@ -1,20 +1,18 @@
 ---
 title: Getting Started with Group Managed Service Accounts
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 70bdbc49bc1e173b488d5934bae0a5b4837c76f5
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: 728da4f2061156352045439a55cba7fa9e98ced9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775292"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971463"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -52,14 +50,14 @@ Quando um computador cliente se conecta a um serviço hospedado em um farm de se
 
 Os serviços têm as entidades a seguir entre as quais escolher, e cada uma delas apresenta determinadas limitações.
 
-|Principals|Escopo|Serviços com suporte|Gerenciamento de senhas|
+|Principals|Escopo|Serviços compatíveis|Gerenciamento de senhas|
 |-------|-----|-----------|------------|
-|Conta de Computador do sistema do Windows|Domínio|Limitado a um servidor ingressado no domínio|O computador gerencia|
-|Conta de Computador sem o sistema do Windows|Domínio|Qualquer servidor ingressado no domínio|Nenhum|
+|Conta de Computador do sistema do Windows|Domain|Limitado a um servidor ingressado no domínio|O computador gerencia|
+|Conta de Computador sem o sistema do Windows|Domain|Qualquer servidor ingressado no domínio|Nenhum|
 |Conta Virtual|Local|Limitado a um servidor|O computador gerencia|
-|Conta de Serviço Gerenciado independente do Windows 7|Domínio|Limitado a um servidor ingressado no domínio|O computador gerencia|
-|Conta de usuário|Domínio|Qualquer servidor ingressado no domínio|Nenhum|
-|Conta de Serviço Gerenciado de Grupo|Domínio|Qualquer servidor ingressado no domínio do Windows Server 2012|O controlador de domínio gerencia e o host recupera|
+|Conta de Serviço Gerenciado independente do Windows 7|Domain|Limitado a um servidor ingressado no domínio|O computador gerencia|
+|Conta de Usuário|Domain|Qualquer servidor ingressado no domínio|Nenhum|
+|Conta de Serviço Gerenciado de Grupo|Domain|Qualquer servidor ingressado no domínio do Windows Server 2012|O controlador de domínio gerencia e o host recupera|
 
 Uma conta de computador do Windows, uma sMSA (Conta de Serviço Gerenciado independente) do Windows 7 ou contas virtuais não podem ser compartilhadas em diversos sistemas. Se você configurasse uma conta para serviços em farms de servidores a serem compartilhados, teria que escolher uma conta de usuário ou uma conta de computador separada do sistema do Windows. De qualquer maneira, essas contas não têm a funcionalidade de gerenciamento de senhas de ponto único de controle. Isso cria um problema em que cada organização precisa criar uma solução dispendiosa para atualizar chaves do serviço no Active Directory e distribuir as chaves a todas as instâncias desses serviços.
 
@@ -95,7 +93,7 @@ Uma arquitetura de 64 bits é necessária para executar os comandos do Windows P
 
 -   O esquema de Active Directory na floresta do domínio gMSA precisa ser atualizado para o Windows Server 2012 para criar um gMSA.
 
-    Você pode atualizar o esquema instalando um controlador de domínio que executa o Windows Server 2012 ou executando a versão do adprep. exe de um computador que executa o Windows Server 2012. O valor de atributo de versão do objeto para o objeto CN=Schema,CN=Configuration,DC=Contoso,DC=Com deve ser 52.
+    Você pode atualizar o esquema instalando um controlador de domínio que executa o Windows Server 2012 ou executando a versão do adprep.exe de um computador que executa o Windows Server 2012. O valor de atributo de versão do objeto para o objeto CN=Schema,CN=Configuration,DC=Contoso,DC=Com deve ser 52.
 
 -   Nova conta gMSA provisionada
 
@@ -144,7 +142,7 @@ Você pode criar um gMSA somente se o esquema de floresta foi atualizado para o 
 A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade de criar objetos msDS-GroupManagedServiceAccount é o mínimo necessário para concluir os procedimentos a seguir.
 
 > [!NOTE]
-> Um valor para o parâmetro-Name é sempre necessário (independentemente de você especificar-Name ou not), com-DNSHostName,-RestrictToSingleComputer e-RestrictToOutboundAuthentication os requisitos secundários para os três cenários de implantação.    
+> Um valor para o parâmetro-Name é sempre necessário (independentemente de você especificar-Name ou not), com-DNSHostName,-RestrictToSingleComputer e-RestrictToOutboundAuthentication os requisitos secundários para os três cenários de implantação.
 
 
 #### <a name="to-create-a-gmsa-using-the-new-adserviceaccount-cmdlet"></a><a name="BKMK_CreateGMSA"></a>Para criar uma gMSA usando o cmdlet New-ADServiceAccount
@@ -155,9 +153,9 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
     **New-ADServiceAccount [-name] &lt; String &gt; -dNSHostName &lt; cadeia de caracteres &gt; [-KerberosEncryptionType &lt; ADKerberosEncryptionType &gt; ] [-ManagedPasswordIntervalInDays <Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >] [-sAMAccountName &lt; String &gt; ] [-serviceprincipalnamenames <String [] >]**
 
-    |Parâmetro|Cadeia de caracteres|Exemplo|
+    |Parâmetro|String|Exemplo|
     |-------|-----|------|
-    |Name|Nome da conta|ITFarm1|
+    |Nome|Nome da conta|ITFarm1|
     |DNSHostName|Nome de host DNS do serviço|ITFarm1.contoso.com|
     |KerberosEncryptionType|Quaisquer tipos de criptografia com suporte pelos servidores host|Nenhum, RC4, AES128, AES256|
     |ManagedPasswordIntervalInDays|Intervalo de alteração de senha em dias (o padrão é 30 dias, se nenhum tiver sido fornecido)|90|
@@ -167,7 +165,7 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
     > [!IMPORTANT]
     > O intervalo de alteração de senha só pode ser configurado durante a criação. Se for necessário alterar o intervalo, crie uma nova gMSA e configure-a no momento da criação.
-   
+
     **Exemplo**
 
     Insira o comando em uma única linha, mesmo se houver quebra automática de linha em várias linhas devido a restrições de formatação.
@@ -186,15 +184,15 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
     **New-ADServiceAccount [-name] &lt; cadeia &gt; de caracteres-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays <Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >]**
 
-    |Parâmetro|Cadeia de caracteres|Exemplo|
+    |Parâmetro|String|Exemplo|
     |-------|-----|------|
-    |Name|Nome da conta|ITFarm1|
+    |Nome|Nome da conta|ITFarm1|
     |ManagedPasswordIntervalInDays|Intervalo de alteração de senha em dias (o padrão é 30 dias, se nenhum tiver sido fornecido)|75|
     |PrincipalsAllowedToRetrieveManagedPassword|As contas de computador dos hosts membros ou o grupo de segurança dos quais os hosts membros fazem parte|ITFarmHosts|
 
     > [!IMPORTANT]
     > O intervalo de alteração de senha só pode ser configurado durante a criação. Se for necessário alterar o intervalo, crie uma nova gMSA e configure-a no momento da criação.
-    
+
   **Exemplo**
 
 ```PowerShell
@@ -251,9 +249,9 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
     **Set-ADServiceAccount [-Identity] &lt; String &gt; -PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >**
 
-|Parâmetro|Cadeia de caracteres|Exemplo|
+|Parâmetro|String|Exemplo|
 |-------|-----|------|
-|Name|Nome da conta|ITFarm1|
+|Nome|Nome da conta|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|As contas de computador dos hosts membros ou o grupo de segurança dos quais os hosts membros fazem parte|Host1, Host2, Host3|
 
 **Exemplo**
@@ -309,9 +307,9 @@ A associação em **Admins. do Domínio**, **Opers. de Contas** ou a capacidade 
 
     **Set-ADServiceAccount [-Identity] &lt; String &gt; -PrincipalsAllowedToRetrieveManagedPassword <ADPrincipal [] >**
 
-|Parâmetro|Cadeia de caracteres|Exemplo|
+|Parâmetro|String|Exemplo|
 |-------|-----|------|
-|Name|Nome da conta|ITFarm1|
+|Nome|Nome da conta|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|As contas de computador dos hosts membros ou o grupo de segurança dos quais os hosts membros fazem parte|Host1, Host3|
 
 **Exemplo**
@@ -351,6 +349,6 @@ Para obter mais informações sobre o cmdlet Uninstall-ADServiceAccount, no prom
 
 
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Veja também
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também
 
--   [Visão geral das contas de serviço gerenciado de grupo](group-managed-service-accounts-overview.md)
+-   [Visão geral de contas de serviço gerenciado de grupo](group-managed-service-accounts-overview.md)

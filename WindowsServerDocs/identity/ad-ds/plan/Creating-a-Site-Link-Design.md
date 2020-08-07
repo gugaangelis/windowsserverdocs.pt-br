@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: ae68cf05f9631df0f942cb65ccf29971f7bc17c8
-ms.sourcegitcommit: 11421f4005f9f3a3f6c0db95b1836d0f765a9fa3
+ms.openlocfilehash: f10fea4e6e94ecc6636fe13588fea2bb94ad4407
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81624324"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947758"
 ---
 # <a name="creating-a-site-link-design"></a>Criar um design de link de site
 
@@ -29,7 +27,7 @@ Ao criar links de site, verifique se todos os sites estão incluídos em um link
 
 Sempre que você adicionar sites a um link de site recém-criado, determine se o site que está sendo adicionado é membro de outros links de site e altere a associação de link de site do site, se necessário. Por exemplo, se você fizer com que um site seja membro do link padrão-primeiro-site ao criar inicialmente o site, certifique-se de remover o site do link de primeiro site padrão depois de adicionar o site a um novo link de site. Se você não remover o site do link de primeiro site padrão, o Knowledge Consistency Checker (KCC) fará decisões de roteamento com base na associação de ambos os links de site, o que pode resultar em roteamento incorreto.
 
-Para identificar os sites membros que você deseja conectar a um link de site, use a lista de locais e locais vinculados que você registrou na planilha "locais geográficos e links de comunicação" (DSSTOPO_1. doc). Se vários sites tiverem a mesma conectividade e disponibilidade entre si, você poderá conectá-los com o mesmo link de site.
+Para identificar os sites membros que você deseja conectar a um link de site, use a lista de locais e locais vinculados que você registrou na planilha "locais geográficos e links de comunicação" (DSSTOPO_1.doc). Se vários sites tiverem a mesma conectividade e disponibilidade entre si, você poderá conectá-los com o mesmo link de site.
 
 O contêiner Transportes entre sites fornece os meios para mapear links de site para o transporte usado pelo link. Ao criar um objeto de link de site, você o cria no contêiner IP, que associa o link de site à RPC (chamada de procedimento remoto) sobre o transporte de IP ou o contêiner SMTP, que associa o link de site ao transporte SMTP.
 
@@ -40,7 +38,7 @@ Quando você cria um objeto de link de site no respectivo contêiner de transpor
 
 Quando uma conexão IP direta não está disponível, você pode configurar a replicação entre sites para usar o SMTP. No entanto, a funcionalidade de replicação SMTP é limitada e requer uma autoridade de certificação (CA) corporativa. O SMTP só pode replicar a configuração, o esquema e as partições de diretório de aplicativo e não oferece suporte à replicação de partições de diretório de domínio.
 
-Para nomear links de site, use um esquema de nomenclatura consistente, como name_of_site1 name_of_site2. Registre a lista de sites, sites vinculados e os nomes dos links de site que conectam esses sites em uma planilha. Para uma planilha para ajudá-lo a registrar nomes de site e nomes de links de site associados, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixe Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip e abra "sites e links de site associados" (DSSTOPO_5. doc).
+Para nomear links de site, use um esquema de nomenclatura consistente, como name_of_site1 name_of_site2. Registre a lista de sites, sites vinculados e os nomes dos links de site que conectam esses sites em uma planilha. Para uma planilha para ajudá-lo a registrar nomes de site e nomes de links de site associados, consulte [ajudas de trabalho para o Windows Server 2003 Deployment Kit](https://microsoft.com/download/details.aspx?id=9608), baixar Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip e abrir "sites e links de site associados" (DSSTOPO_5.doc).
 
 ## <a name="in-this-guide"></a>Neste guia
 

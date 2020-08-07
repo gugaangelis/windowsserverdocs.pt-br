@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: c8b332de4053aa64f3294c3cd68c37773742f9f5
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f16ea84d339e1b6bb51d0c0e5be352aeda4abc41
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962718"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947336"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>Personalização de entrada de usuário do AD FS
 
@@ -22,9 +20,9 @@ O AD FS fornece várias opções para que os administradores personalizem e adap
 
 
 
-![Personalização do AD FS](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
-    
-  
+![Personalização do AD FS](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+
+
 
 
 

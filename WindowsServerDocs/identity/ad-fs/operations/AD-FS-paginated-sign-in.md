@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ca13ebe29b0a9260302599110f333d166681abdb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27b0232b65a3003dde9a5702ec45063781abd813
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358562"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947442"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS entrada paginada
 
@@ -62,6 +60,6 @@ Se você for um novo cliente para AD FS, você receberá o novo design por padr�
 As opções de personalização ainda serão aplicáveis para o AD FS 2019.
 Abaixo estão alguns links para outros documentos para sua referência.
 
-• Para aqueles que não planejam atualizar seus servidores para AD FS 2019, mas ainda desejam o novo design: [Usando um tema da Web do Azure AD UX no Serviços de Federação do Active Directory (AD FS)](azure-ux-web-theme-in-ad-fs.md)
+• Para aqueles que não planejam atualizar seus servidores para AD FS 2019, mas ainda desejam o novo design: [usando um tema da Web do Azure ad UX no serviços de Federação do Active Directory (AD FS)](azure-ux-web-theme-in-ad-fs.md)
 
-• Um local central para personalização: [Personalização de entrada de usuário do AD FS](ad-fs-user-sign-in-customization.md)
+• Um local central para personalização: [AD FS personalização de entrada do usuário](ad-fs-user-sign-in-customization.md)

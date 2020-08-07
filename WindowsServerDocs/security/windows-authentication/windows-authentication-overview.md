@@ -1,20 +1,18 @@
 ---
 title: Visão geral da autenticação do Windows
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 485a0774-0785-457f-a964-0e9403c12bb1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 4e3dbed9ebef441dab4a4583455e29df98a6ab24
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182302"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936485"
 ---
 # <a name="windows-authentication-overview"></a>Visão geral da autenticação do Windows
 

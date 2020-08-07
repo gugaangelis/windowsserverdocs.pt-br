@@ -1,30 +1,28 @@
 ---
 title: Solucionar problemas da VPN Always On
 description: Este tópico fornece instruções para verificar e solucionar problemas de implantação de VPN Always On no Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
 ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: bbb614886099bf2adc1239a699ef8d904e71be7b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961778"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963802"
 ---
-# <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas da VPN Always On 
+# <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas da VPN Always On
 
 >Aplica-se a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-Se a configuração de VPN Always On estiver falhando ao conectar clientes à sua rede interna, a causa provavelmente será um certificado VPN inválido, políticas de NPS incorretas ou problemas com os scripts de implantação do cliente ou no roteamento e acesso remoto. A primeira etapa na solução de problemas e no teste de sua conexão VPN é compreender os principais componentes da infraestrutura de VPN Always On. 
+Se a configuração de VPN Always On estiver falhando ao conectar clientes à sua rede interna, a causa provavelmente será um certificado VPN inválido, políticas de NPS incorretas ou problemas com os scripts de implantação do cliente ou no roteamento e acesso remoto. A primeira etapa na solução de problemas e no teste de sua conexão VPN é compreender os principais componentes da infraestrutura de VPN Always On.
 
 Você pode solucionar problemas de conexão de várias maneiras. Para problemas do lado do cliente e solução de problemas gerais, os logs do aplicativo em computadores cliente são inestimáveis. Para problemas específicos de autenticação, o log do NPS no servidor NPS pode ajudá-lo a determinar a origem do problema.
 
-## <a name="error-codes"></a>Códigos de erro
+## <a name="error-codes"></a>Códigos do Erro
 
 ### <a name="error-code-800"></a>Código de erro: 800
 
@@ -170,15 +168,15 @@ Uma pequena configuração incorreta pode fazer com que a conexão do cliente fa
 
   - O usuário tem um certificado de autenticação de cliente válido em seu repositório de certificados pessoal que não foi emitido pelo Azure AD.
 
-  - A seção de perfil VPN \<TLSExtensions\> está ausente ou não contém o ** \<EKUName\> acesso condicional do AAD \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</Ekuoid \> \<EKUName> AAD acesso condicional</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> ** entradas. As \<EKUName> \<EKUOID> entradas e informam ao cliente VPN qual certificado recuperar do repositório de certificados do usuário ao passar o certificado para o servidor VPN. Sem isso, o cliente VPN usa qualquer certificado de autenticação de cliente válido que esteja no repositório de certificados do usuário e a autenticação seja realizada com sucesso. 
+  - A seção de perfil VPN \<TLSExtensions\> está ausente ou não contém o ** \<EKUName\> acesso condicional do AAD \</EKUName\> \<EKUOID\> 1.3.6.1.4.1.311.87</Ekuoid \> \<EKUName> AAD acesso condicional</ekuname \> \<EKUOID\> 1.3.6.1.4.1.311.87</ekuoid \> ** entradas. As \<EKUName> \<EKUOID> entradas e informam ao cliente VPN qual certificado recuperar do repositório de certificados do usuário ao passar o certificado para o servidor VPN. Sem isso, o cliente VPN usa qualquer certificado de autenticação de cliente válido que esteja no repositório de certificados do usuário e a autenticação seja realizada com sucesso.
 
   - O servidor RADIUS (NPS) não foi configurado para aceitar somente certificados de cliente que contenham o OID de **acesso condicional do AAD** .
 
 - **Solução possível.** Para escapar desse loop, faça o seguinte:
 
-  1. No Windows PowerShell, execute o cmdlet **Get-WmiObject** para despejar a configuração do perfil VPN. 
+  1. No Windows PowerShell, execute o cmdlet **Get-WmiObject** para despejar a configuração do perfil VPN.
   2. Verifique se as **\<TLSExtensions>** **\<EKUName>** seções, e **\<EKUOID>** existem e mostram o nome e o OID corretos.
-      
+
       ```powershell
       PS C:\> Get-WmiObject -Class MDM_VPNv2_01 -Namespace root\cimv2\mdm\dmmap
 
@@ -261,7 +259,7 @@ Uma pequena configuração incorreta pode fazer com que a conexão do cliente fa
         Simple container name: te-User-c7bcc4bd-0498-4411-af44-da2257f54387
         Provider = Microsoft Enhanced Cryptographic Provider v1.0
       Encryption test passed
-        
+
       ================ Certificate 1 ================
       Serial Number: 367fbdd7e6e4103dec9b91f93959ac56
       Issuer: CN=Microsoft VPN root CA gen 1
@@ -280,7 +278,7 @@ Uma pequena configuração incorreta pode fazer com que a conexão do cliente fa
      >Se um certificado do emissor **CN = Microsoft VPN root CA Gen 1** estiver presente no armazenamento pessoal do usuário, mas o usuário obtiver acesso selecionando **X** para fechar a mensagem do Ops, colete logs de eventos CAPI2 para verificar se o certificado usado para autenticar foi um certificado de autenticação de cliente válido que não foi emitido pela AC raiz VPN da Microsoft.
 
   4. Se um certificado de autenticação de cliente válido existir no armazenamento pessoal do usuário, a conexão falhará (como deveria) depois que o usuário selecionar o **X** e se as **\<TLSExtensions>** **\<EKUName>** seções, e **\<EKUOID>** existirem e contiverem as informações corretas.
-   
+
      Uma mensagem de erro que diz "um certificado não encontrado que pode ser usado com o protocolo de autenticação extensível" é exibida.
 
 ### <a name="unable-to-delete-the-certificate-from-the-vpn-connectivity-blade"></a>Não é possível excluir o certificado da folha de conectividade VPN

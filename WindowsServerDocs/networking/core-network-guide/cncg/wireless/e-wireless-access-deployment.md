@@ -2,18 +2,16 @@
 title: Implantação de acesso sem fio
 description: Este tópico faz parte do guia de rede do Windows Server 2016 "implantar o acesso sem fio autenticado 802.1 X com base em senha"
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 95d849d35cecb6db71207b655b243879520d9827
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518421"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971823"
 ---
 # <a name="wireless-access-deployment"></a>Implantação de acesso sem fio
 
@@ -113,7 +111,7 @@ A associação a **Adminis. do Domínio** ou equivalente é o requisito mínimo 
 
     - **Domínio local**
 
-    - **Geral**
+    - **Global**
 
     - **Universal**
 

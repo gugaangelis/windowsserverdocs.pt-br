@@ -1,19 +1,17 @@
 ---
 title: Guia de estilo de texto e o design de IU de Windows Admin Center
 description: SDK da interface do usuário do centro de administração do Windows e guia de estilo de design
-ms.technology: manage
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: d8215f3589e021ec5df6a3a150d09a2388a2f35d
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518544"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971973"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guia de estilo de texto e o design de IU de Windows Admin Center
 

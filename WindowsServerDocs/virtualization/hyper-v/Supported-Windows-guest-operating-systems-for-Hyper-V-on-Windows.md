@@ -1,20 +1,18 @@
 ---
 title: Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 description: Lista os sistemas operacionais Windows com suporte para uso como um convidado em uma máquina virtual. Também fornece links para artigos semelhantes para versões anteriores do Hyper-V.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: ddcb4f080183b6a1c8ae0ed0d705597c1a0dd4a5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a3c1f82d1c1f12c51a36a8285d28ccb9402f2817
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181792"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963702"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 

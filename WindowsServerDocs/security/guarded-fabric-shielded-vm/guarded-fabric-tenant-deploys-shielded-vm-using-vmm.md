@@ -1,19 +1,17 @@
 ---
 title: VMs blindadas para locatários-implantando uma VM blindada usando Virtual Machine Manager
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 39d5e29c-835d-490a-b74d-798a0dcb3f39
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 683d7bb77c5420c503e638436b4d370ca2873460
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1e2f5a3e011cd3b3593aaac38043c3cf140c2a72
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475043"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936632"
 ---
 # <a name="shielded-vms-for-tenants---deploying-a-shielded-vm-by-using-virtual-machine-manager"></a>VMs blindadas para locatários-implantando uma VM blindada usando Virtual Machine Manager
 

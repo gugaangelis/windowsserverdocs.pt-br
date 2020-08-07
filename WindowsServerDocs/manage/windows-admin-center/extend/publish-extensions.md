@@ -1,19 +1,17 @@
 ---
 title: Publicando extensões para o centro de administração do Windows
 description: Publicando extensões para o centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 357c37ec395e5c51f3c3f946414f38ea5f95e9e4
-ms.sourcegitcommit: eaf3fb57517b9110082edad356b12daf3345bb2c
+ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85593987"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971963"
 ---
 # <a name="publishing-extensions"></a>Publicando extensões
 
@@ -93,7 +91,7 @@ Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias
     <licenseUrl>http://YourLicenseLink</licenseUrl>
     <iconUrl>http://YourLogoLink</iconUrl>
     <description>Hello World extension by Contoso</description>
-    <copyright>(c) Contoso. All rights reserved.</copyright> 
+    <copyright>(c) Contoso. All rights reserved.</copyright>
     <tags></tags>
   </metadata>
   <files>
@@ -107,16 +105,16 @@ Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias
 
 | Nome da propriedade | Obrigatório/recomendado | Descrição |
 | ---- | ---- | ---- |
-| packageType | Obrigatório | Use "WindowsAdminCenterExtension", que é o tipo de pacote NuGet definido para extensões do centro de administração do Windows. |
-| id | Obrigatório | Identificador de pacote exclusivo no feed. Esse valor precisa corresponder ao valor de "nome" na manifest.jsdo seu projeto no arquivo.  Consulte [Escolhendo um identificador de pacote exclusivo](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para ver diretrizes. |
+| packageType | Necessária | Use "WindowsAdminCenterExtension", que é o tipo de pacote NuGet definido para extensões do centro de administração do Windows. |
+| id | Necessária | Identificador de pacote exclusivo no feed. Esse valor precisa corresponder ao valor de "nome" na manifest.jsdo seu projeto no arquivo.  Consulte [Escolhendo um identificador de pacote exclusivo](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para ver diretrizes. |
 | título | Necessário para publicar no feed do centro de administração do Windows | Nome amigável para o pacote que é exibido no Gerenciador de extensões do centro de administração do Windows. |
-| version | Obrigatório | Versão da extensão. O uso [de controle de versão semântico (Convenção de SemVer)](http://semver.org/spec/v1.0.0.html) é recomendado, mas não obrigatório. |
-| authors | Obrigatório | Se estiver publicando em nome da sua empresa, use o nome da empresa. |
-| descrição | Obrigatório | Forneça uma descrição da funcionalidade da extensão. |
+| version | Necessária | Versão da extensão. O uso [de controle de versão semântico (Convenção de SemVer)](http://semver.org/spec/v1.0.0.html) é recomendado, mas não obrigatório. |
+| authors | Necessária | Se estiver publicando em nome da sua empresa, use o nome da empresa. |
+| descrição | Necessária | Forneça uma descrição da funcionalidade da extensão. |
 | iconUrl | Recomendado ao publicar no feed do centro de administração do Windows | URL para o ícone a ser exibido no Gerenciador de extensões. |
 | projectUrl | Necessário para publicar no feed do centro de administração do Windows | URL para o site da sua extensão. Se você não tiver um site separado, use a URL para a página da Web do pacote no feed do NuGet. |
 | licenseUrl | Necessário para publicar no feed do centro de administração do Windows | URL para o contrato de licença de usuário final da extensão. |
-| files | Obrigatório | Essas duas configurações configuram a estrutura de pastas esperada pelo centro de administração do Windows para extensões de interface do usuário e plug-ins de gateway. |
+| files | Necessária | Essas duas configurações configuram a estrutura de pastas esperada pelo centro de administração do Windows para extensões de interface do usuário e plug-ins de gateway. |
 
 ### <a name="3-build-the-extension-nuget-package"></a>3. compilar o pacote NuGet de extensão
 

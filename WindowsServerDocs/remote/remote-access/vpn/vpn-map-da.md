@@ -1,20 +1,18 @@
 ---
 title: Recursos de VPN Always On
 description: Neste tópico, você aprenderá sobre os recursos e a funcionalidade do Always On VPN.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: d71329b1932baec1efa137024c5c3bd570caa9e2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44a417e5b06378a00ce1e85c5c79aebad47ff0fd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86960208"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971643"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Recursos e funcionalidades de VPN Always On
 
@@ -23,10 +21,10 @@ ms.locfileid: "86960208"
 - [**Anterior:** Implantação de VPN Always On para Windows Server e Windows 10](always-on-vpn/deploy/always-on-vpn-deploy.md)
 - [**Em seguida:** Saiba mais sobre os aprimoramentos de VPN Always On](../vpn/always-on-vpn/always-on-vpn-enhancements.md)
 
-Neste tópico, você aprenderá sobre os recursos e funcionalidades do Always On VPN.  A tabela a seguir não é uma lista completa, no entanto, inclui alguns dos recursos e funcionalidades mais comuns usados nas soluções de acesso remoto. 
+Neste tópico, você aprenderá sobre os recursos e funcionalidades do Always On VPN.  A tabela a seguir não é uma lista completa, no entanto, inclui alguns dos recursos e funcionalidades mais comuns usados nas soluções de acesso remoto.
 
 > [!TIP]
-> Se você usa atualmente o DirectAccess, recomendamos que investigue a funcionalidade de VPN Always On cuidadosamente para determinar se ela atende a todas as suas necessidades de acesso remoto antes de migrar do DirectAccess para Always On VPN.  
+> Se você usa atualmente o DirectAccess, recomendamos que investigue a funcionalidade de VPN Always On cuidadosamente para determinar se ela atende a todas as suas necessidades de acesso remoto antes de migrar do DirectAccess para Always On VPN.
 
 |                                                   Área funcional                                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                     VPN Always On                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |---------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

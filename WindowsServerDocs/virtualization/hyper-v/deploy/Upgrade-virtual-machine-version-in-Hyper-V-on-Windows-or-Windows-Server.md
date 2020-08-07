@@ -1,20 +1,18 @@
 ---
 title: Atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server
 description: Fornece instruções e considerações para atualizar a versão de uma máquina virtual
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: e08d13e4d9b493b80cad59561c8088c7d3a12b57
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e7c86cc15877c622cf3554a7ae69fe3d0aea1c50
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860869"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938920"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server
 
@@ -43,7 +41,7 @@ Você também pode ver a versão de configuração no Gerenciador do Hyper-V sel
 ## <a name="step-2-upgrade-the-virtual-machine-configuration-version"></a>Etapa 2: atualizar a versão de configuração da máquina virtual
 
 1. Desligue a máquina virtual no Gerenciador do Hyper-V.
-2. Selecione a ação > atualizar a versão de configuração. Se essa opção não estiver disponível para a máquina virtual, ela já estará na versão de configuração mais alta com suporte do host do Hyper-V.
+2. Selecione a ação > atualizar a versão de configuração. Se essa opção não está disponível para a máquina virtual, ela já está na maior versão de configuração com suporte pelo host Hyper-V.
 
 Para atualizar a versão de configuração da máquina virtual usando o Windows PowerShell, use o cmdlet [Update-VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) . Execute o comando a seguir, em que vmname é o nome da máquina virtual.
 
@@ -72,7 +70,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 A tabela a seguir lista as versões de configuração da VM com suporte em hosts que executam uma versão de manutenção em longo prazo do Windows.
 
-| Versão do Windows do host do Hyper-V | 9,1 | 9,0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
+| Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
 |Windows Server 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Enterprise LTSC 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -86,17 +84,17 @@ A tabela a seguir lista as versões de configuração da VM com suporte em hosts
 
 A tabela a seguir lista as versões de configuração de VM para hosts que executam uma versão de canal semianual com suporte no momento do Windows. Para obter mais informações sobre versões de canal semianuais do Windows, visite as páginas a seguir para [Windows Server](../../../get-started-19/servicing-channels-19.md) e [Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)
 
-| Versão do Windows do host do Hyper-V | 9,1 | 9,0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
+| Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
 | Atualização de 2019 de maio do Windows 10 (versão 1903) |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 | Windows Server, versão 1903 |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 |Windows Server, versão 1809|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Atualização de 10 de outubro de 2018 do Windows (versão 1809)|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Atualização de outubro de 2018 para Windows 10 (Versão 1809)|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server, versão 1803|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Atualização do Windows 10 de abril de 2018 (versão 1803)|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Atualização dos criadores de outono do Windows 10 (versão 1709)|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Atualização do Windows 10 para criadores (versão 1703)|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Atualização de aniversário do Windows 10 (versão 1607)|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Atualização de abril de 2018 para o Windows 10 (versão 1803)|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Windows 10 Fall Creators Update (versão 1709)|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|No Windows 10 Creators Update (versão 1703)|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|Na Atualização de Aniversário do Windows 10 (versão 1607)|&#10006;|&#10006;|&#10006;|&#10006;|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 
 ## <a name="why-should-i-upgrade-the-virtual-machine-configuration-version"></a>Por que devo atualizar a versão de configuração da máquina virtual?
 
@@ -138,12 +136,12 @@ A tabela a seguir mostra a versão mínima de configuração de máquina virtual
 |Unidade de armazenamento de chaves|8.0|
 |VBS (suporte de segurança baseado em virtualização) do convidado|8.0|
 |Virtualização aninhada|8.0|
-|Contagem de processadores virtuais|8.0|
+|Número de processadores virtuais|8.0|
 |VMs de memória grande|8.0|
 |Aumentar o número máximo padrão de dispositivos virtuais para 64 por dispositivo (por exemplo, rede e dispositivos atribuídos)|8.3|
-|Permitir recursos de processador adicionais para Perfmon|9,0|
-|Expor automaticamente a configuração de [multithreading simultânea](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#background) para VMs em execução em hosts usando o [Agendador principal](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)|9,0|
-|Suporte à hibernação|9,0|
+|Permitir recursos de processador adicionais para Perfmon|9.0|
+|Expor automaticamente a configuração de [multithreading simultânea](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#background) para VMs em execução em hosts usando o [Agendador principal](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)|9.0|
+|Suporte à hibernação|9.0|
 
 Para obter mais informações sobre esses recursos, consulte [o que há de novo no Hyper-V no Windows Server](../What-s-new-in-Hyper-V-on-Windows.md).
 

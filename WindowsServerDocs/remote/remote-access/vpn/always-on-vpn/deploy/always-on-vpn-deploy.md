@@ -1,20 +1,18 @@
 ---
 title: Implantação de VPN Always On para o Windows Server e o Windows 10
 description: Você pode usar essa implantação para implantar Always On conexões de rede virtual privada (VPN) para funcionários remotos usando o acesso remoto no Windows Server 2016 ou posterior e Always On perfis de VPN para computadores cliente com Windows 10.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 5ae1a40b-4f10-4ace-8aaf-13f7ab581f4f
 ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: bab89611932316d165e805e96f0a6d2d357c0780
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bc7608d71dcb2bce19138fea18d6de23cda97d35
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959177"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87963782"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Implantação da VPN Always On no Windows Server e no Windows 10
 
@@ -34,7 +32,7 @@ Provavelmente, você tem as tecnologias implantadas que podem ser usadas para im
 - Servidor, virtual ou físico, existente ou novo, para instalar o servidor de diretivas de rede (NPS). Se você já tiver servidores NPS em sua rede, poderá modificar uma configuração de servidor NPS existente em vez de adicionar um novo servidor.
 - Acesso remoto como um servidor VPN de gateway RAS com um pequeno subconjunto de recursos que dão suporte a conexões VPN IKEv2 e roteamento de LAN.
 - Rede de perímetro que inclui dois firewalls.  Verifique se os firewalls permitem o tráfego necessário para que as comunicações VPN e RADIUS funcionem corretamente. Para obter mais informações, consulte [visão geral da tecnologia VPN Always on](../always-on-vpn-technology-overview.md).
-- Servidor físico ou VM (máquina virtual) em sua rede de perímetro com dois adaptadores de rede Ethernet físicos para instalar o acesso remoto como um servidor VPN de gateway RAS. As VMs exigem a LAN virtual (VLAN) para o host. 
+- Servidor físico ou VM (máquina virtual) em sua rede de perímetro com dois adaptadores de rede Ethernet físicos para instalar o acesso remoto como um servidor VPN de gateway RAS. As VMs exigem a LAN virtual (VLAN) para o host.
 - A associação em administradores, ou equivalente, é o mínimo necessário.
 - Leia a seção de planejamento deste guia para garantir que você está preparado para essa implantação antes de executar a implantação.
 - Examine os guias de design e implantação para cada uma das tecnologias usadas. Esses guias podem ajudá-lo a determinar se os cenários de implantação fornecem os serviços e a configuração de que você precisa para a rede da sua organização. Para obter mais informações, consulte [visão geral da tecnologia VPN Always on](../always-on-vpn-technology-overview.md).

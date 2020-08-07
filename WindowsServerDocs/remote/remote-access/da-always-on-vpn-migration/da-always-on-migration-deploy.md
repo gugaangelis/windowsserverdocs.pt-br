@@ -2,19 +2,17 @@
 title: Migração do DirectAccess para Always On VPN
 description: Migrar do DirectAccess para Always On VPN requer um processo específico para migrar clientes, o que ajuda a minimizar as condições de corrida que surgem da execução de etapas de migração fora de ordem.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: lizross
 author: eross-msft
 ms.date: 06/07/2018
-ms.openlocfilehash: 68184fe43fd027ea24bd0e77623002ec88368e86
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: a452c9ab1a24304a9acfec8357bc98a3d058e03c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517691"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971743"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>Migre para VPN Always On e encerrar o DirectAccess
 
@@ -122,7 +120,7 @@ Você deve garantir que o **VPN_Profile.ps1** venha _depois_ que o certificado t
 
 | Se você estiver usando...  | Então... |
 | ---- | ---- |
-| Gerenciador de Configurações | Crie uma coleção de usuários com base na associação do grupo de segurança.<br><br>![Caixa de diálogo Propriedades do critério](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)|
+| Configuration Manager | Crie uma coleção de usuários com base na associação do grupo de segurança.<br><br>![Caixa de diálogo Propriedades do critério](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)|
 | Intune | Basta direcionar o grupo de segurança diretamente depois que ele for sincronizado. |
 
 Sempre que executar o script de configuração de **GetUsersWithCert.ps1** , você também deverá executar uma regra de descoberta de AD DS para atualizar a associação de grupo de segurança no Configuration Manager. Além disso, verifique se a atualização de associação para a coleção de implantação ocorre com frequência (alinhada com a regra de descoberta e script).

@@ -5,14 +5,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 110bc74d6b77c63fc6a9554049b5adb940f2641d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3cf37c1fad67c652f67f4e862780c740ae5ebe60
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962668"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947290"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Políticas de controle de acesso de cliente no AD FS 2,0
 As políticas de acesso para cliente no Serviços de Federação do Active Directory (AD FS) 2,0 permitem que você restrinja ou conceda acesso a recursos aos usuários.  Este documento descreve como habilitar as políticas de acesso do cliente no AD FS 2,0 e como configurar os cenários mais comuns.
@@ -74,13 +72,13 @@ Esse cenário de política de acesso de cliente permite o acesso de todos os cli
 
 
 1. Clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e clique em AD FS gerenciamento de 2,0.
-2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
+2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração.
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
 5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
     NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip",
     Value=~"customer-provided public ip address regex"])
-    => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");` 
+    => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");`
 6. Clique em Concluir. Verifique se a nova regra aparece imediatamente abaixo da regra permitir acesso a todos os usuários na lista regras de autorização de emissão.
 7. Para salvar a regra, na caixa de diálogo Editar regras de declaração, clique em OK.
 
@@ -97,7 +95,7 @@ O exemplo a seguir permite o acesso a todos os aplicativos do Office 365, inclui
 
 
 1. Clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e clique em AD FS gerenciamento de 2,0.
-2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
+2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração.
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
 5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -126,7 +124,7 @@ O conjunto de regras se baseia na regra de autorização de emissão padrão cha
 
 
 1. Clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e clique em AD FS gerenciamento de 2,0.
-2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
+2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração.
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
 5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -146,7 +144,7 @@ O exemplo a seguir habilita o acesso de clientes internos com base no endereço 
 
 
 1. Clique em Iniciar, aponte para programas, aponte para ferramentas administrativas e clique em AD FS gerenciamento de 2,0.
-2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração. 
+2. Na árvore de console, em AD FS 2.0 \ relações de confiança, clique em confiança de terceira parte confiável, clique com o botão direito do mouse na relação de confiança da plataforma de identidade Microsoft Office 365 e clique em Editar regras de declaração.
 3. Na caixa de diálogo Editar regras de declaração, selecione a guia regras de autorização de emissão e clique em Adicionar regra para iniciar o assistente de regra de declaração.
 4. Na página Selecionar modelo de regra, em modelo de regra de declaração, selecione enviar declarações usando uma regra personalizada e clique em Avançar.
 5. Na página Configurar regra, em nome da regra de declaração, digite o nome para exibição dessa regra. Em regra personalizada, digite ou cole a seguinte sintaxe de linguagem de regra de declaração:`exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"]) &&
@@ -175,12 +173,12 @@ O exemplo a seguir habilita o acesso de clientes internos com base no endereço 
 
 A declaração x-MS-encaminhar-Client-IP é populada a partir de um cabeçalho HTTP atualmente definido somente pelo Exchange Online, que popula o cabeçalho ao passar a solicitação de autenticação para AD FS. O valor da declaração pode ser um dos seguintes:
 
->[!Note] 
+>[!Note]
 >Atualmente, o Exchange Online dá suporte apenas a endereços IPV4 e não IPV6.
 
 Um único endereço IP: o endereço IP do cliente que está conectado diretamente ao Exchange Online
 
->[!Note] 
+>[!Note]
 >O endereço IP de um cliente na rede corporativa será exibido como o endereço IP da interface externa do proxy ou gateway de saída da organização.
 
 Os clientes que estão conectados à rede corporativa por uma VPN ou pelo Microsoft DirectAccess (DA) podem aparecer como clientes corporativos internos ou como clientes externos, dependendo da configuração da VPN ou DA.
@@ -209,7 +207,7 @@ Portanto, um exemplo para corresponder apenas a dois endereços (como 192.168.1.
 
 Isso oferece a técnica pela qual você pode inserir qualquer número de endereços. Onde um intervalo de endereços precisa ser permitido, por exemplo, 192.168.1.1 – 192.168.1.25, a correspondência deve ser feita caractere por caractere: \b192 \. 168 \. 1 \. ([1-9] | 1 [0-9] | 2 [0-5]) \b
 
->[!Note] 
+>[!Note]
 >O endereço IP é tratado como cadeia de caracteres e não como um número.
 
 
@@ -235,11 +233,11 @@ E colocando-os juntos, a expressão a seguir deve corresponder a todos os endere
 
 As expressões Regex podem se tornar muito complicadas, portanto, é altamente recomendável usar uma ferramenta de verificação Regex. Se você fizer uma pesquisa na Internet por "Construtor de expressões de Regex online", encontrará vários bons utilitários online que permitirão experimentar suas expressões em relação aos dados de exemplo.
 
-Ao testar a expressão, é importante que você entenda o que esperar deve corresponder. O sistema Exchange Online pode enviar vários endereços IP, separados por vírgulas. As expressões fornecidas acima funcionarão para isso. No entanto, é importante pensar nisso ao testar suas expressões Regex. Por exemplo, uma delas pode usar a seguinte entrada de exemplo para verificar os exemplos acima: 
+Ao testar a expressão, é importante que você entenda o que esperar deve corresponder. O sistema Exchange Online pode enviar vários endereços IP, separados por vírgulas. As expressões fornecidas acima funcionarão para isso. No entanto, é importante pensar nisso ao testar suas expressões Regex. Por exemplo, uma delas pode usar a seguinte entrada de exemplo para verificar os exemplos acima:
 
-192.168.1.1, 192.168.1.2, 192.169.1.1. 192.168.12.1, 192.168.1.10, 192.168.1.25, 192.168.1.26, 192.168.1.30, 1192.168.1.20 
+192.168.1.1, 192.168.1.2, 192.169.1.1. 192.168.12.1, 192.168.1.10, 192.168.1.25, 192.168.1.26, 192.168.1.30, 1192.168.1.20
 
-10.0.0.1, 10.0.0.5, 10.0.0.10, 10.0.1.0, 10.0.1.1, 110.0.0.1, 10.0.0.14, 10.0.0.15, 10.0.0.10, 10, 0.0.1 
+10.0.0.1, 10.0.0.5, 10.0.0.10, 10.0.1.0, 10.0.1.1, 110.0.0.1, 10.0.0.14, 10.0.0.15, 10.0.0.10, 10, 0.0.1
 
 
 
@@ -255,7 +253,7 @@ Ao testar a expressão, é importante que você entenda o que esperar deve corre
 
 ### <a name="security-audit-logs"></a>Logs de auditoria de segurança
 
-Para verificar se as novas declarações de contexto de solicitação estão sendo enviadas e estão disponíveis para o AD FS pipeline de processamento de declarações, habilite o log de auditoria no servidor AD FS. Em seguida, envie algumas solicitações de autenticação e verifique os valores de declaração nas entradas do log de auditoria de segurança padrão. 
+Para verificar se as novas declarações de contexto de solicitação estão sendo enviadas e estão disponíveis para o AD FS pipeline de processamento de declarações, habilite o log de auditoria no servidor AD FS. Em seguida, envie algumas solicitações de autenticação e verifique os valores de declaração nas entradas do log de auditoria de segurança padrão.
 
 Para habilitar o log de eventos de auditoria para o log de segurança em um AD FS Server, siga as etapas em configurar a auditoria para AD FS 2,0.
 
@@ -267,7 +265,7 @@ Por padrão, as solicitações com falha são registradas no log de eventos do a
 
 AD FS eventos de rastreamento são registrados no log de depuração do AD FS 2,0. Para habilitar o rastreamento, consulte [Configurar o rastreamento de depuração para AD FS 2,0](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641696(v=ws.10)).
 
-Depois de habilitar o rastreamento, use a seguinte sintaxe de linha de comando para habilitar o nível de log detalhado: wevtutil.exe SL "AD FS 2,0 rastreamento/depuração"/l: 5  
+Depois de habilitar o rastreamento, use a seguinte sintaxe de linha de comando para habilitar o nível de log detalhado: wevtutil.exe SL "AD FS 2,0 rastreamento/depuração"/l: 5
 
 ## <a name="related"></a>Relacionados
 Para obter mais informações sobre os novos tipos de declaração, consulte [AD FS tipos de declarações](AD-FS-Claims-Types.md).

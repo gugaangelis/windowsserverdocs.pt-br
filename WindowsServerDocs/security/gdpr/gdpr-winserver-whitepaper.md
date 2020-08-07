@@ -1,19 +1,18 @@
 ---
 title: Como iniciar sua jornada pelo Regulamento de Proteção Geral de Dados (GDPR) para Windows Server 2016
 description: Use este artigo para entender o que é GDPR e sobre os produtos que a Microsoft fornece para ajudá-lo a seguir em direção a conformidade.
-ms.technology: techgroup-security
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 6e105171a9d645eb93ce4739514752698cd45c02
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: 0a21adf3bafeb93f2f9fc18da785fae1a81260b3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118647"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971523"
 ---
-# <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Iniciando sua jornada de Regulamento Geral sobre a Proteção de Dados (GDPR) para o Windows Server 
+# <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Iniciando sua jornada de Regulamento Geral sobre a Proteção de Dados (GDPR) para o Windows Server
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
@@ -70,11 +69,11 @@ Esta lista fornece exemplos de vários tipos de informações que serão control
 ## <a name="getting-started-on-the-journey-towards-gdpr-compliance"></a>Guia de introdução sobre a jornada até a conformidade de GDPR
 Dada a quantidade é complicado para se tornar GDPR compatível, é altamente recomendável que você não esperar para preparar até que começa de imposição. Você deve revisar sua privacidade e as práticas de gerenciamento de dados agora. Recomendamos que você comece sua jornada de conformidade GDPR, concentrando-se em quatro etapas principais:
 
--   **Descobri.** Identifique quais dados pessoais que você tem e onde estão. 
+-   **Descobri.** Identifique quais dados pessoais que você tem e onde estão.
 
 -   **Capacidade.** Controlar o acesso e o uso dos dados pessoais.
 
--   **Protegendo.** Estabelecer controles de segurança para prevenir, detectar e reagir a vulnerabilidades e violações de dados.  
+-   **Protegendo.** Estabelecer controles de segurança para prevenir, detectar e reagir a vulnerabilidades e violações de dados.
 
 -   **Relatar.** Age em solicitações de dados, violações de dados de relatório e mantém a documentação necessária.
 
@@ -105,7 +104,7 @@ Dois princípios principais guiaram e continuarão a guiar o desenvolvimento do 
 
 - **Privacidade.** Os usuários devem estar no controle de como seus dados são usados. As políticas de uso de informações devem ser claras para o usuário. Os usuários devem estar no controle de quando e se receberem informações para fazer o melhor uso do seu tempo. Deve ser fácil para os usuários especificar o uso apropriado de suas informações, incluindo o controle do uso de emails que eles enviam.
 
-A Microsoft permaneceu sólido em relação a esses princípios, conforme observado recentemente pelo CEO da Microsoft, Satya Nadella, 
+A Microsoft permaneceu sólido em relação a esses princípios, conforme observado recentemente pelo CEO da Microsoft, Satya Nadella,
 
 > "À_medida que o mundo continua a mudar e os requisitos de negócios evoluem, algumas coisas são consistentes: a demanda de segurança e privacidade do cliente._"
 
@@ -150,11 +149,11 @@ Os principais recursos do Windows Server podem ajudá-lo a implementar com efici
 
 O sistema operacional do servidor reside em uma camada estratégica na infraestrutura de uma organização, oferecendo novas oportunidades para criar camadas de proteção contra ataques que podem roubar dados e interromper seus negócios. Os principais aspectos do GDPR, como privacidade por design, proteção de dados e controle de acesso, precisam ser abordados em sua infraestrutura de ti no nível do servidor.
 
-Trabalhando para ajudar a proteger a identidade, o sistema operacional e as camadas de virtualização, o Windows Server 2016 ajuda a bloquear os vetores de ataque comuns usados para obter acesso ilícito aos seus sistemas: credenciais roubadas, malware e uma malha de virtualização comprometida. Além de reduzir os riscos para os negócios, os componentes de segurança incorporados ao Windows Server 2016 ajudam a atender aos requisitos de conformidade para as principais normas governamentais e de segurança do setor. 
+Trabalhando para ajudar a proteger a identidade, o sistema operacional e as camadas de virtualização, o Windows Server 2016 ajuda a bloquear os vetores de ataque comuns usados para obter acesso ilícito aos seus sistemas: credenciais roubadas, malware e uma malha de virtualização comprometida. Além de reduzir os riscos para os negócios, os componentes de segurança incorporados ao Windows Server 2016 ajudam a atender aos requisitos de conformidade para as principais normas governamentais e de segurança do setor.
 
 Essas proteções de identidade, de sistema operacional e de virtualização permitem que você proteja melhor seu datacenter executando o Windows Server como uma VM em qualquer nuvem e limite a capacidade dos invasores de comprometer credenciais, iniciar malware e permanecer sem detecção na rede. Da mesma forma, quando implantado como um host Hyper-V, o Windows Server 2016 oferece garantia de segurança para seus ambientes de virtualização por meio de máquinas virtuais blindadas e recursos de firewall distribuído. Com o Windows Server 2016, o sistema operacional do servidor se torna um participante ativo em sua segurança de datacenter.
 
-### <a name="protect-your-credentials-and-limit-administrator-privileges"></a>Proteger suas credenciais e limitar os privilégios de administrador 
+### <a name="protect-your-credentials-and-limit-administrator-privileges"></a>Proteger suas credenciais e limitar os privilégios de administrador
 O controle sobre o acesso a dados pessoais e os sistemas que processam esses dados é uma área com o GDPR que tem requisitos específicos, incluindo o acesso por administradores. Identidades privilegiadas são contas que têm privilégios elevados, como contas de usuário que são membros dos administradores de domínio, administradores de empresa, administradores locais ou até mesmo grupos de usuários avançados. Essas identidades também podem incluir contas que receberam privilégios diretamente, como executar backups, desligar o sistema ou outros direitos listados no nó atribuição de direitos de usuário no console de política de segurança local.
 
 Como princípio de controle de acesso geral e em linha com o GDPR, você precisa proteger essas identidades com privilégios de comprometimento por invasores em potencial. Primeiro, é importante entender como as identidades são comprometidas; em seguida, você pode planejar para impedir que os invasores obtenham acesso a essas identidades privilegiadas.
@@ -166,7 +165,7 @@ As identidades com privilégios podem ficar comprometidas quando as organizaçõ
 
 - **Conectado constantemente com privilégios elevados.** Outro problema comum é que os usuários com privilégios elevados podem usá-lo por um tempo ilimitado. Isso é muito comum com os profissionais de ti que entram em um computador desktop usando uma conta privilegiada, permanecem conectados e usam a conta com privilégios para navegar na Web e usar email (funções típicas de trabalho de ti). A duração ilimitada de contas com privilégios torna a conta mais suscetível a ataques e aumenta as chances de que a conta seja comprometida.
 
-- **Pesquisa de engenharia social.** A maioria das ameaças de credenciais começa pesquisando a organização e, em seguida, conduzida por meio da engenharia social. Por exemplo, um invasor pode executar um ataque de phishing por email para comprometer contas legítimas (mas não necessariamente contas com privilégios elevados) que têm acesso à rede de uma organização. O invasor usa essas contas válidas para executar pesquisas adicionais em sua rede e identificar contas com privilégios que podem executar tarefas administrativas. 
+- **Pesquisa de engenharia social.** A maioria das ameaças de credenciais começa pesquisando a organização e, em seguida, conduzida por meio da engenharia social. Por exemplo, um invasor pode executar um ataque de phishing por email para comprometer contas legítimas (mas não necessariamente contas com privilégios elevados) que têm acesso à rede de uma organização. O invasor usa essas contas válidas para executar pesquisas adicionais em sua rede e identificar contas com privilégios que podem executar tarefas administrativas.
 
 - **Aproveite contas com privilégios elevados.** Mesmo com uma conta de usuário normal e não com privilégios elevados na rede, os invasores podem obter acesso a contas com permissões elevadas. Um dos métodos mais comuns de fazer isso é usando os ataques Pass-the-hash ou Pass-the-token. Para obter mais informações sobre as técnicas Pass-the-hash e outras informações sobre roubo de credenciais, consulte os recursos na [página Pass-the-hash (PtH)](https://technet.microsoft.com/dn785092.aspx).
 
@@ -187,7 +186,7 @@ Imagine este cenário se as credenciais do administrador do DNS fossem roubadas.
 
 Além disso, muitas organizações usam a [solução de senha de administrador local gratuita (LAPs)](https://aka.ms/laps) como um mecanismo de administração JIT simples, mas poderoso, para seus sistemas cliente e servidor. O recurso de LAPSos fornece gerenciamento de senhas de contas locais de computadores ingressados no domínio. As senhas são armazenadas em Active Directory (AD) e protegidas pelo e pela ACL (lista de controle de acesso) para que somente usuários qualificados possam lê-lo ou solicitar sua redefinição.
 
-Conforme observado no [Guia de mitigação de roubo de credenciais do Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095), 
+Conforme observado no [Guia de mitigação de roubo de credenciais do Windows](https://www.microsoft.com/download/confirmation.aspx?id=54095),
 
 > "_as ferramentas e as técnicas que os criminosos usam para realizar o roubo de credenciais e reutilizar ataques aprimorados, invasores mal-intencionados estão encontrando mais fácil atingir suas metas. O roubo de credenciais geralmente se baseia em práticas operacionais ou exposição de credenciais de usuário, portanto, as atenuações efetivas exigem uma abordagem holística que atenda às pessoas, aos processos e à tecnologia. Além disso, esses ataques dependem do invasor roubar credenciais depois de comprometer um sistema para expandir ou manter o acesso, de modo que as organizações devem conter falhas rapidamente implementando estratégias que impedem que os invasores se movimentem livremente e não sejam detectados em uma rede comprometida._"
 
@@ -223,7 +222,7 @@ Com a proteção remota de credenciais do Windows Defender, o Windows Server 201
 
 - Deve usar a autenticação Kerberos.
 
-- Deve estar executando pelo menos o Windows 10 versão 1607 ou o Windows Server 2016.  
+- Deve estar executando pelo menos o Windows 10 versão 1607 ou o Windows Server 2016.
 
 - O Área de Trabalho Remota aplicativo clássico do Windows é necessário. O aplicativo Área de Trabalho Remota Plataforma Universal do Windows não dá suporte à proteção remota de credenciais do Windows Defender.
 
@@ -237,7 +236,7 @@ O Windows Server 2016 inclui o Windows Defender Device Guard para garantir que a
 
 O Windows Defender Device Guard também é integrado ao PowerShell para que você possa autorizar quais scripts podem ser executados em seu sistema. Em versões anteriores do Windows Server, os administradores poderiam ignorar a imposição de integridade de código simplesmente excluindo a política do arquivo de código. Com o Windows Server 2016, você pode configurar uma política que é assinada pela sua organização para que apenas uma pessoa com acesso ao certificado que assinou a política possa alterar a política.
 
-#### <a name="control-flow-guard"></a>Proteção de Fluxo de Controle 
+#### <a name="control-flow-guard"></a>Proteção de Fluxo de Controle
 O Windows Server 2016 também inclui proteção interna contra algumas classes de ataques de corrupção de memória. A aplicação de patch nos servidores é importante, mas sempre há uma chance de que o malware possa ser desenvolvido para uma vulnerabilidade que ainda não foi identificada. Alguns dos métodos mais comuns para explorar essas vulnerabilidades são fornecer dados incomuns ou extremos a um programa em execução. Por exemplo, um invasor pode explorar uma vulnerabilidade de estouro de buffer fornecendo mais entrada a um programa do que o esperado e saturando a área reservada pelo programa para manter uma resposta. Isso pode corromper a memória adjacente que pode conter um ponteiro de função.
 
 Quando o programa chama essa função, ele pode ir para um local não intencional especificado pelo invasor. Esses ataques também são conhecidos como ataques de JOP (programação orientada a salto). A proteção de fluxo de controle impede ataques JOP, colocando restrições rígidas sobre o código do aplicativo que pode ser executado – especialmente instruções de chamada indiretas. Ele adiciona verificações de segurança leves para identificar o conjunto de funções no aplicativo que são destinos válidos para chamadas indiretas. Quando um aplicativo é executado, ele verifica se esses destinos de chamada indireta são válidos.
@@ -255,7 +254,7 @@ O Windows Defender AV é uma solução de antimalware interna que fornece gerenc
 
 - **Proteção entregue na nuvem** ajuda a detectar e bloquear novo malware em segundos, mesmo que o malware não tenha sido visto antes.
 
-- O **Contexto local avançado** aprimora a forma como o malware é identificado. O Windows Server informa o Windows Defender AV não apenas sobre conteúdo como arquivos e processos, mas também de onde veio o conteúdo, onde ele foi armazenado e muito mais. 
+- O **Contexto local avançado** aprimora a forma como o malware é identificado. O Windows Server informa o Windows Defender AV não apenas sobre conteúdo como arquivos e processos, mas também de onde veio o conteúdo, onde ele foi armazenado e muito mais.
 
 - **Sensores globais extensivos** ajudam a manter o Windows Defender AV atual e a reconhecer até mesmo o malware mais recente. Isso é feito de duas maneiras: coletando os dados de contexto local avançado de pontos de extremidade e analisando centralmente esses dados.
 
@@ -263,13 +262,13 @@ O Windows Defender AV é uma solução de antimalware interna que fornece gerenc
 
 - Os **recursos de nível empresarial** fornecem aos profissionais de ti as ferramentas e as opções de configuração necessárias para tornar o Windows Defender AV uma solução antimalware de classe empresarial.
 
-#### <a name="enhanced-security-auditing"></a>Auditoria de segurança aprimorada 
+#### <a name="enhanced-security-auditing"></a>Auditoria de segurança aprimorada
 O Windows Server 2016 alerta ativamente os administradores para possíveis tentativas de violação com a auditoria de segurança aprimorada que fornece informações mais detalhadas, que podem ser usadas para detecção de ataque mais rápida e análise forense. Ele registra eventos da proteção de fluxo de controle, do Windows Defender Device Guard e de outros recursos de segurança em um único local, facilitando para os administradores determinar quais sistemas podem estar em risco.
 
 As novas categorias de evento incluem:
 
-- **Auditar Associação de grupo.** Permite auditar as informações de associação de grupo no token de logon de um usuário. Os eventos são gerados quando as associações de grupo são enumeradas ou consultadas no PC em que a sessão de logon foi criada. 
- 
+- **Auditar Associação de grupo.** Permite auditar as informações de associação de grupo no token de logon de um usuário. Os eventos são gerados quando as associações de grupo são enumeradas ou consultadas no PC em que a sessão de logon foi criada.
+
 - **Auditar atividade de PnP.** Permite que você faça a auditoria quando o plug and Play detecta um dispositivo externo, que pode conter malware. Os eventos PnP podem ser usados para rastrear alterações no hardware do sistema. Uma lista de IDs de fornecedor de hardware está incluída no evento.
 
 O Windows Server 2016 integra-se facilmente com sistemas SIEM (gerenciamento de eventos de incidente de segurança), como o Microsoft Operations Management Suite (OMS), que pode incorporar as informações em relatórios de inteligência sobre possíveis violações. A profundidade das informações fornecidas pela auditoria aprimorada permite que as equipes de segurança identifiquem e respondam a possíveis violações com mais rapidez e eficiência.
@@ -328,7 +327,7 @@ Entre os principais benefícios do Windows Defender ATP estão os seguintes:
 
 - **Detectando o não detectável.** Sensores criados em profundidade no kernel do sistema operacional, especialistas em segurança do Windows e óticas exclusivas de mais de 1.000.000.000 computadores e sinais em todos os serviços da Microsoft.
 
-- **Interno, não Unido.** Sem agente, com alto desempenho e impacto mínimo, com capacidade de nuvem; gerenciamento fácil sem implantação. 
+- **Interno, não Unido.** Sem agente, com alto desempenho e impacto mínimo, com capacidade de nuvem; gerenciamento fácil sem implantação.
 
 - **Painel único do vidro para segurança do Windows.** Explore 6 meses de experiência avançada, linha do tempo, unificando eventos de segurança do Windows Defender ATP, do Windows Defender antivírus e do Windows Defender Device Guard.
 
@@ -368,7 +367,7 @@ Como resultado, este artigo é fornecido apenas para fins informativos e não se
 
 A MICROSOFT NÃO OFERECE NENHUMA GARANTIA EXPRESSA, IMPLÍCITA OU ESTATUTÁRIA EM RELAÇÃO ÀS INFORMAÇÕES CONTIDAS NESTE ARTIGO. Este artigo é fornecido "na condição em que se encontra". Informações e exibições expressas neste artigo, incluindo URL e outras referências de site da Internet, podem ser alteradas sem aviso prévio.
 
-Este artigo não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft.  Você pode copiar e usar este artigo apenas para fins de referência interna.  
+Este artigo não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft.  Você pode copiar e usar este artigo apenas para fins de referência interna.
 
 Publicado em setembro de 2017<br>
 Versão 1.0<br>

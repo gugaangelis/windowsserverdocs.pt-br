@@ -1,24 +1,22 @@
 ---
 title: Como funciona o Controle de Conta de Usuário
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-tpm
 ms.topic: article
 ms.assetid: da83ddb2-6182-417c-aa8e-0b47b2e17d13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9cc4e9aab01421a2da09b75d67edad4d2f85dc33
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9d8558f89d2428217087f943fa9b54b2b74621cb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857589"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936685"
 ---
 # <a name="how-user-account-control-works"></a>Como funciona o Controle de Conta de Usuário
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 O UAC (Controle de Conta de Usuário) ajuda a impedir que programas mal-intencionados (também chamados de malware) danifiquem um computador. Além disso, ele ajuda as organizações a implantarem uma área de trabalho com melhor gerenciamento. Com o UAC, os aplicativos e as tarefas são sempre executados no contexto de segurança de uma conta que não é de administrador, a não ser que um administrador autorize especificamente o acesso no nível do administrador ao sistema. O UAC pode bloquear a instalação automática de aplicativos não autorizados e evitar alterações involuntárias nas configurações do sistema.
 
@@ -46,7 +44,7 @@ Quando o UAC está habilitado, a experiência dos usuários padrão é diferente
 
 A alternativa à execução como um usuário padrão é a execução como um administrador no Modo de Aprovação de Administrador. Com o componente interno de elevação do UAC, os membros do grupo local Administradores podem facilmente realizar uma tarefa administrativa providenciando uma aprovação. O componente interno padrão de elevação do UAC para uma conta de administrador no Modo de Aprovação de Administrador é chamado de solicitação de consentimento. O comportamento da solicitação de elevação do UAC pode ser configurado por meio do snap-in de Política de Segurança Local (Secpol.msc) ou da Política de Grupo.
 
-**As solicitações de consentimento e credencial**
+**As solicitações de consentimento e de credenciais**
 
 Com o UAC habilitado, o Windows Server 2012 solicita consentimento ou solicita credenciais de uma conta de administrador local válida antes de iniciar um programa ou uma tarefa que exija um token de acesso de administrador completo. Essa solicitação assegura que nenhum software mal-intencionado possa ser instalado silenciosamente.
 
@@ -64,7 +62,7 @@ A captura de tela a seguir é um exemplo da solicitação de credenciais do UAC.
 
 ![Captura de tela mostrando um exemplo do prompt de credenciais do UAC](../media/How-User-Account-Control-Works/UACCredentialPrompt.gif)
 
-**Prompts de elevação do UAC**
+**Solicitações de elevação do UAC**
 
 As solicitações de elevação do UAC são codificadas por cores para serem específicas ao aplicativo, o que permite a identificação imediata do risco de segurança potencial de um aplicativo. Quando um aplicativo tenta ser executado com um token de acesso completo do administrador, o Windows Server 2012 primeiro analisa o arquivo executável para determinar seu editor. Os aplicativos são primeiro separados em três categorias com base no editor do arquivo executável: Windows Server 2012, Publicador verificado (assinado) e Publicador não verificado (não assinado). O diagrama a seguir ilustra como o Windows Server 2012 determina qual prompt de elevação de cor deve ser apresentado ao usuário.
 
@@ -78,7 +76,7 @@ A codificação de cores das solicitações de elevação é a seguinte:
 
 -   Fundo amarelo com um ícone de escudo amarelo: o aplicativo não está assinado, ou está assinado mas ainda não é confiável para o computador local.
 
-**Ícone de escudo**
+**Ícone de proteção**
 
 Alguns itens do Painel de Controle, como **Propriedades de data e hora**, contêm uma combinação de operações de administrador e de usuário padrão. Os usuários padrão podem ver o relógio e alterar o fuso horário, mas um token de acesso de administrador completo é necessário para alterar a hora local do sistema. A imagem a seguir é uma captura de tela do item do Painel de Controle **Propriedades de data e hora**.
 
@@ -106,13 +104,13 @@ Para entender melhor cada componente, examine a tabela abaixo:
 |Componente|Descrição|
 |-------|--------|
 |**Usuário**||
-|Usuário realiza uma operação que exige um privilégio|Se o operador alterar o sistema de arquivos ou o registro, Virtualization será chamado. Todas as outras operações chamam ShellExecute.|
+|O usuário executa a operação que requer privilégio|Se o operador alterar o sistema de arquivos ou o registro, Virtualization será chamado. Todas as outras operações chamam ShellExecute.|
 |ShellExecute|ShellExecute chama CreateProcess. ShellExecute procura o erro ERROR_ELEVATION_REQUIRED em CreateProcess. Se receber o erro, ShellExecute chamará o serviço de Informações de Aplicativos para tentar realizar a tarefa solicitada com o prompt de privilégios elevados.|
 |CreateProcess|Se o aplicativo exigir elevação, CreateProcess rejeitará a chamada com ERROR_ELEVATION_REQUIRED.|
 |**Sistema**||
 |Serviço de Informações de Aplicativos|Um serviço do sistema que ajuda a iniciar aplicativos que exigem um ou mais direitos de usuário ou privilégios elevados para serem executados, como tarefas administrativas locais, e aplicativos que exigem níveis maiores de integridade. O Serviço de Informações de Aplicativos ajuda a iniciar esses aplicativos criando novos processos para eles com o token de acesso completo de um usuário administrativo quando a elevação é necessária e (dependendo da Política de Grupo) e quando o usuário deu o seu consentimento para isso.|
-|Elevação de uma instalação do ActiveX|Se o ActiveX não estiver instalado, o sistema verificará o nível do controle deslizante do UAC. Se o ActiveX estiver instalado, a configuração de Política de Grupo **Controle de Conta de Usuário: alternar para a área de trabalho segura ao pedir elevação** estará marcada.|
-|Verificar nível do controle deslizante do UAC|Agora, o UAC tem quatro níveis de notificação para seleção, além de um controle deslizante que deve ser usado para escolher o nível de notificação:<p><ul><li>Alta<p>    Se o controle deslizante estiver definido como **Sempre notificar**, o sistema verificará se a área de trabalho protegida está habilitada.</li><li>Média<p>    Se o controle deslizante estiver definido como **Padrão - Notificar-me somente quando os programas tentarem fazer alterações no meu computador**, a configuração de política **Controle de Conta de Usuário: elevar somente executáveis assinados e validados** estará marcada:<p><ul><li>Se essa configuração de política estiver habilitada, a validação do caminho de certificação de PKI (infraestrutura de chave pública) será imposta para um arquivo executável específico antes que ele possa ser executado.</li><li>Se essa configuração de política não estiver habilitada, a validação do caminho de certificação de PKI não será imposta para que um arquivo executável específico possa ser executado. A configuração de Política de Grupo **Controle de Conta de Usuário: alternar para a área de trabalho segura ao pedir elevação** está marcada.</li></ul></li><li>Baixo<p>    Se o controle deslizante estiver definido como **Notificar somente quando programas tentarem fazer alterações no meu computador (não esmaecer a área de trabalho)** , CreateProcess será chamado.</li><li>Nunca notificar<p>    Se o controle deslizante estiver definido como **nunca notificar quando**, o prompt do UAC nunca notificará quando um programa estiver tentando instalar ou tentar fazer qualquer alteração no computador. **Importante:**     Essa configuração não é recomendada. Essa configuração é igual à configuração da política **Controle de Conta de Usuário: comportamento da solicitação de elevação de administradores no Modo de Aprovação de Administrador** como **Elevate sem aviso**.</li></ul>|
+|Elevando uma instalação do ActiveX|Se o ActiveX não estiver instalado, o sistema verificará o nível do controle deslizante do UAC. Se o ActiveX estiver instalado, a configuração de Política de Grupo **Controle de Conta de Usuário: alternar para a área de trabalho segura ao pedir elevação** estará marcada.|
+|Verificar nível do controle deslizante do UAC|Agora, o UAC tem quatro níveis de notificação para seleção, além de um controle deslizante que deve ser usado para escolher o nível de notificação:<p><ul><li>Alta<p>    Se o controle deslizante estiver definido como **Sempre notificar**, o sistema verificará se a área de trabalho protegida está habilitada.</li><li>Médio<p>    Se o controle deslizante estiver definido como **Padrão - Notificar-me somente quando os programas tentarem fazer alterações no meu computador**, a configuração de política **Controle de Conta de Usuário: elevar somente executáveis assinados e validados** estará marcada:<p><ul><li>Se essa configuração de política estiver habilitada, a validação do caminho de certificação de PKI (infraestrutura de chave pública) será imposta para um arquivo executável específico antes que ele possa ser executado.</li><li>Se essa configuração de política não estiver habilitada, a validação do caminho de certificação de PKI não será imposta para que um arquivo executável específico possa ser executado. A configuração de Política de Grupo **Controle de Conta de Usuário: alternar para a área de trabalho segura ao pedir elevação** está marcada.</li></ul></li><li>Baixo<p>    Se o controle deslizante estiver definido como **Notificar somente quando programas tentarem fazer alterações no meu computador (não esmaecer a área de trabalho)**, CreateProcess será chamado.</li><li>Nunca notificar<p>    Se o controle deslizante estiver definido como **nunca notificar quando**, o prompt do UAC nunca notificará quando um programa estiver tentando instalar ou tentar fazer qualquer alteração no computador. **Importante:**     Essa configuração não é recomendada. Essa configuração é igual a definir o **controle de conta de usuário: comportamento da solicitação de elevação para administradores na** configuração de política de modo de aprovação de administrador para **elevar sem avisar**.</li></ul>|
 |Área de trabalho protegida habilitada|A configuração de política **Controle de Conta de Usuário: alternar para a área de trabalho segura ao pedir elevação** está marcada:<p>-Se a área de trabalho segura estiver habilitada, todas as solicitações de elevação vão para a área de trabalho segura independentemente das configurações de política de comportamento de prompt para administradores e usuários padrão.<br />-Se a área de trabalho segura não estiver habilitada, todas as solicitações de elevação vão para a área de trabalho do usuário interativo e as configurações por usuário para administradores e usuários padrão são usadas.|
 |CreateProcess|CreateProcess chama AppCompat, Fusion e a detecção de Instalador para avaliar se o aplicativo requer elevação. Em seguida, o arquivo executável é inspecionado para determinar seu nível de execução solicitado, que é armazenado no manifesto do aplicativo para o arquivo executável. CreateProcess falhará se o nível de execução solicitado que foi especificado no manifesto não corresponder ao token de acesso, retornando um erro (ERROR_ELEVATION_REQUIRED) para ShellExecute. |
 |AppCompat|O banco de dados AppCompat armazena informações nas entradas de correção de compatibilidade de um aplicativo.|
@@ -124,14 +122,14 @@ Para entender melhor cada componente, examine a tabela abaixo:
 
 Há uma alteração no UAC do Windows Server 2012 de versões anteriores do Windows. O novo controle deslizante nunca desativará completamente o UAC. A nova configuração:
 
--   Manter o serviço do UAC em execução.
+-   Mantenha o serviço UAC em execução.
 
--   Fazer toda a solicitação de elevação iniciada por administradores ser aprovada automaticamente sem mostrar uma solicitação do UAC.
+-   Faça com que toda a solicitação de elevação iniciada pelos administradores seja aprovada automaticamente sem mostrar um prompt do UAC.
 
 -   Negar automaticamente todas as solicitações de elevação para usuários padrão.
 
 > [!IMPORTANT]
-> Para desabilitar por completo o UAC, você deve desabilitar a política **Controle de Conta de Usuário: executar todos os administradores no Modo de Aprovação de Administrador**.
+> Para desabilitar completamente o UAC, você deve desabilitar o controle de conta de usuário da política **: executar todos os administradores no modo de aprovação de administrador**.
 
 > [!WARNING]
 > Os aplicativos personalizados não funcionarão no Windows Server 2012 quando o UAC estiver desabilitado.
@@ -152,7 +150,7 @@ A virtualização não é uma opção nos seguintes cenários:
 3.  A virtualização ficará desabilitada para um aplicativo se este incluir um manifesto de aplicativos com um atributo de nível de execução solicitado.
 
 ### <a name="request-execution-levels"></a>Níveis de execução de solicitação
-Um manifesto do aplicativo é um arquivo XML que descreve e identifica os assemblies privados compartilhados e lado a lado que um aplicativo deve associar em tempo de execução. No Windows Server 2012, o manifesto do aplicativo inclui entradas para fins de compatibilidade de aplicativos do UAC. Aplicativos administrativos que incluem uma entrada no manifesto de aplicativos solicitam a permissão do usuário para obter o token de acesso desse usuário. Embora eles não tenham uma entrada no manifesto de aplicativos, a maioria desses aplicativos administrativos pode ser executada sem modificação, com o uso de correções de compatibilidade de aplicativo. Correções de compatibilidade de aplicativos são entradas de banco de dados que permitem que aplicativos que não são compatíveis com o UAC funcionem corretamente com o Windows Server 2012.
+Um manifesto de aplicativo é um arquivo XML que descreve e identifica os assemblies lado a lado particulares e compartilhados aos quais um aplicativo deve se associar em tempo de execução. No Windows Server 2012, o manifesto do aplicativo inclui entradas para fins de compatibilidade de aplicativos do UAC. Aplicativos administrativos que incluem uma entrada no manifesto de aplicativos solicitam a permissão do usuário para obter o token de acesso desse usuário. Embora eles não tenham uma entrada no manifesto de aplicativos, a maioria desses aplicativos administrativos pode ser executada sem modificação, com o uso de correções de compatibilidade de aplicativo. Correções de compatibilidade de aplicativos são entradas de banco de dados que permitem que aplicativos que não são compatíveis com o UAC funcionem corretamente com o Windows Server 2012.
 
 Todos os aplicativos compatíveis com o UAC devem ter um nível de execução solicitado adicionado ao manifesto de aplicativos. Se o aplicativo exigir acesso administrativo ao sistema, marcá-lo com um nível de execução solicitado de "exigir administrador" garantirá que o sistema consiga identificar esse programa como um aplicativo administrativo e realizar as etapas de elevação necessárias. Níveis de execução solicitados especificam os privilégios necessários para um aplicativo.
 

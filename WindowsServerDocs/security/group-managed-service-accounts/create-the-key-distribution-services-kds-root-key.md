@@ -1,33 +1,31 @@
 ---
 title: Criar a chave raiz do KDS (serviço de distribuição de chave)
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-gmsa
 ms.topic: article
 ms.assetid: 42e5db8f-1516-4d42-be0a-fa932f5588e9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: d26cd32f021e8b00c6c9c6d3949a00f71096a3c9
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857009"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971483"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>Criar a chave raiz do KDS (serviço de distribuição de chave)
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico para o profissional de ti descreve como criar uma chave raiz do serviço de distribuição de chaves da Microsoft (kdssvc. dll) no controlador de domínio usando o Windows PowerShell para gerar senhas de conta de serviço gerenciado de grupo no Windows Server 2012 ou posterior.
+Este tópico para o profissional de ti descreve como criar uma chave raiz do serviço de distribuição de chaves da Microsoft (kdssvc.dll) no controlador de domínio usando o Windows PowerShell para gerar senhas de conta de serviço gerenciado de grupo no Windows Server 2012 ou posterior.
 
 Controladores de domínio (DC) exigem uma chave raiz para começar a gerar senhas gMSA. Os controladores de domínio aguardarão até 10 horas desde a criação para permitir que todos os controladores de domínio convirjam a replicação do AD antes de permitir a criação de uma gMSA. O período de 10 horas é uma medida de segurança para impedir que a geração de senhas ocorra antes que todos os DCs no ambiente sejam capazes de responder às solicitações da MSA de grupo.  Se você tentar usar um gMSA muito cedo, a chave poderá não ter sido replicada para todos os controladores de domínio e, portanto, a recuperação de senha poderá falhar quando o host gMSA tentar recuperar a senha. as falhas de recuperação de senha do gMSA também podem ocorrer ao usar DCs com agendamentos de replicação limitados ou se houver um problema de replicação.
 
 > [!NOTE]
 > Excluir e recriar a chave raiz pode levar a problemas em que a chave antiga continua a ser usada após a exclusão devido ao cache da chave. O KDC (serviço de distribuição de chaves) deve ser reiniciado em todos os controladores de domínio se a chave raiz for recriada.
 
-A associação ao grupo **Admins. do Domínio** ou **Administradores de Empresa** ou equivalente é o mínimo exigido para concluir este procedimento. Para obter informações detalhadas sobre como usar as contas e as associações a grupos apropriadas, consulte [Grupos padrão Local e Domínio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+A associação ao grupo **Admins. do Domínio** ou **Administradores de Empresa** ou equivalente é o mínimo exigido para concluir este procedimento. Para obter informações detalhadas sobre como usar as contas e associações de grupo apropriadas, consulte [grupos padrão de domínio e locais](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
 
 > [!NOTE]
 > Uma arquitetura de 64 bits é exigida para executar os comandos do Windows PowerShell, que são usados para administrar as contas de serviço gerenciado de grupo.
@@ -61,7 +59,7 @@ Para ambientes de teste com apenas um DC, você pode criar uma chave raiz do KDS
 
     **Add-KdsRootKey-efetivo (Get-Date). AddHours (-10))**
 
-## <a name="see-also"></a>Consulte também
-[Introdução a contas de serviços gerenciados em grupo](getting-started-with-group-managed-service-accounts.md)
+## <a name="see-also"></a>Consulte Também
+[Introdução com contas de serviço gerenciado de grupo](getting-started-with-group-managed-service-accounts.md)
 
 

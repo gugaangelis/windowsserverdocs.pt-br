@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2152d6a242f829b56207632d214a1fc73e48515d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 410e9ce5fbde7d84cbb4efbbde3515d0af537180
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959588"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87937883"
 ---
 # <a name="the-role-of-claim-rules"></a>A função das regras de declaração
 A função geral do Serviço de Federação no Serviços de Federação do Active Directory (AD FS) \( AD FS \) é emitir um token que contenha um conjunto de declarações. A decisão sobre o que as declarações AD FS aceita e os problemas são governadas por regras de declaração.
