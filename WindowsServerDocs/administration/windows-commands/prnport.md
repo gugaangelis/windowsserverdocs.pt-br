@@ -1,20 +1,18 @@
 ---
 title: prnport
 description: Artigo de referência para o comando prnport, que cria, exclui e lista portas de impressora TCP/IP padrão, além de exibir e alterar a configuração de porta.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b373547050d3d3dfb1d64160959c8dbb9e6f5c5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a8aa1729c84b54393a6154dd5fc4ba5a5e6834fc
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931158"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884701"
 ---
 # <a name="prnport"></a>prnport
 

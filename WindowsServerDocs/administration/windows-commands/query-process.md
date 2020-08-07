@@ -1,20 +1,18 @@
 ---
 title: processo de consulta
 description: Artigo de referência para o comando de processo de consulta, que exibe informações sobre processos que estão sendo executados em um servidor de Host da Sessão da Área de Trabalho Remota.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 36ce3ffc-0092-4eb1-a374-28e6616ca946
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 548be2874bf79aab88abd53f0303096a82486fd0
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 204782437d9fb144a9738038e82cdbbbcdc9078f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956518"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884530"
 ---
 # <a name="query-process"></a>processo de consulta
 

@@ -1,20 +1,18 @@
 ---
 title: bootcfg raw
 description: Artigo de referência para o comando Bootcfg RAW, que adiciona opções de carregamento do sistema operacional, especificadas como uma cadeia de caracteres, a uma entrada do sistema operacional na seção do sistema operacional do arquivo de Boot.ini.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e3458749-b0a0-460f-a022-3ff199a71f27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 74ab3c957623178e54b8a5debcf4aebffc942070
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 9cba66ccebeacd21d337e04c97d935bd2c260b24
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926221"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880551"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 

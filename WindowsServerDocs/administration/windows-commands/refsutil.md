@@ -4,15 +4,13 @@ description: Artigo de referência para a ferramenta ReFSUtil, que tenta diagnos
 author: laknight5
 ms.author: laknight
 ms.date: 6/29/2020
-ms.prod: windows-server
-ms.technology: windows-commands
 ms.topic: article
-ms.openlocfilehash: 3afc96970bb0350a3c1168c520cc20ad4f2254af
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: d40faa165666a5836dc6e87589d27f8eb643479e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409717"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884213"
 ---
 # <a name="refsutil"></a>ReFSUtil
 
@@ -31,7 +29,7 @@ O ReFS Salvage é a função principal de ReFSUtil e é útil para recuperar dad
 | `<target directory>` | Especifica o local onde os arquivos identificados são copiados. Ele **não** deve estar localizado no `<source volume>` . |
 | \-m | Recupera todos os arquivos possíveis, incluindo aqueles excluídos.<p>**AVISO:** Esse parâmetro não apenas faz com que o processo demore mais para ser executado, mas também pode levar a resultados inesperados. |
 | \-l | Especifica o uso do modo detalhado. |
-| \-x | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para o volume são, então, inválidos. Por exemplo, `refsutil salvage -QA R: N:\WORKING N:\DATA -x`. |
+| \-w.x.y. | Força o volume a ser desmontado primeiro, se necessário. Todos os identificadores abertos para o volume são, então, inválidos. Por exemplo, `refsutil salvage -QA R: N:\WORKING N:\DATA -x`. |
 
 ## <a name="usage-and-available-options"></a>Opções de uso e disponíveis
 

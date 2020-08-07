@@ -1,20 +1,18 @@
 ---
 title: Início do subcomando-servidor
 description: Artigo de referência para o subcomando Start-Server, que inicia todos os serviços para um servidor de serviços de implantação do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1e4343e2-0a16-4e65-8769-c09adaef5680
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 112f60897d96479d627fc61eb70f79de84d1514a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 53fbc5ed80d69077efad49682368fbf3877361a0
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936952"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882060"
 ---
 # <a name="subcommand-start-server"></a>Subcomando: Start-Server
 

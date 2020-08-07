@@ -1,20 +1,18 @@
 ---
 title: net print
 description: Artigo de referência do comando net Print. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f59b2015-4698-415d-9a74-09566c466f40
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ac91d2226e9a5394d6f7ea00ab6f268eb99015b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 16e685c4fb616272baace3554e5ca96bd7a82617
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956798"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886070"
 ---
 # <a name="net-print"></a>net print
 

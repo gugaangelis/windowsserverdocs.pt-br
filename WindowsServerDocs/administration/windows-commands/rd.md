@@ -1,20 +1,18 @@
 ---
 title: rd
 description: Artigo de referência para o comando Rd, que exclui um diretório.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b0ec217756b7453733398dd85709dc607d32c41
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f1baacb12a0169d9915897a3d6672870c6a21927
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956348"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884350"
 ---
 # <a name="rd"></a>rd
 

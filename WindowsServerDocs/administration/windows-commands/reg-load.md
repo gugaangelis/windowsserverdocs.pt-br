@@ -1,20 +1,18 @@
 ---
 title: reg load
 description: Artigo de referência para o comando reg Load, que grava subchaves e entradas salvas em uma subchave diferente no registro.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 3b0b2b1b-f510-4108-9e9d-7057e924aa6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba298ec5743022034f9576b50ff75e20b6f2d3e3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: bc44a6d992312f67abb29a91da848cc17787d507
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85931095"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884091"
 ---
 # <a name="reg-load"></a>reg load
 

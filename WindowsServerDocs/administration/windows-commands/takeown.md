@@ -1,20 +1,18 @@
 ---
 title: takeown
 description: Saiba como obter acesso a um arquivo, tornando-se o proprietário do arquivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da43b13f0333f3a12a8763db4cad31e12283bb8b
-ms.sourcegitcommit: bf887504703337f8ad685d778124f65fe8c3dc13
+ms.openlocfilehash: c0d3e64032f792e0ad2ff3a0a1156e9b7c1b1efa
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83436191"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881891"
 ---
 # <a name="takeown"></a>takeown
 
@@ -32,10 +30,10 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s \<> do computador|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
-|/u [ \< domínio>\]<User name>|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
-|/p [ \< senha>]|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
-|/f \< nome do arquivo>|Especifica o nome do arquivo ou padrão de nome de diretório. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *ShareName* \* filename *.|
+|/s\<Computer>|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
+|t\<Domain>\]<User name>|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
+|/p [ \<Password> ]|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
+|/f \<File name>|Especifica o nome do arquivo ou padrão de nome de diretório. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *ShareName* \* filename *.|
 |/a|Concede a propriedade ao grupo de administradores em vez do usuário atual.|
 |/r|Executa uma operação recursiva em todos os arquivos no diretório e nos subdiretórios especificados.|
 |/d {Y \| N}|Suprime o prompt de confirmação exibido quando o usuário atual não tem a permissão "Listar pasta" em um diretório especificado e, em vez disso, usa o valor padrão especificado. Os valores válidos para a opção **/d** são os seguintes:</br>-Y: apropriar-se do diretório.</br>-N: ignorar o diretório.</br>Observe que você deve usar essa opção em conjunto com a opção **/r** .|

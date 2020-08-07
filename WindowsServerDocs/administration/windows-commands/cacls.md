@@ -1,20 +1,18 @@
 ---
 title: cacls
 description: Artigo de referência para o comando Cacls. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b5bdbaaa-4557-48b8-80df-e75ee0d2f27d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7719728f2c1cb7ce629e199a51ee211ea5781401
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0a6033d6631fd3269f00f52df14fd5e94994b278
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924843"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87880427"
 ---
 # <a name="cacls"></a>cacls
 

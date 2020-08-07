@@ -1,20 +1,18 @@
 ---
 title: reg compare
 description: Artigo de referência do comando reg Compare, que compara as entradas ou as subchaves do registro especificadas.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b508a52d0f110455b09002a1044fefcf1be048a
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: cac4b4f0e2e00cfc6d121ca27155b122291d0829
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85930728"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87884191"
 ---
 # <a name="reg-compare"></a>reg compare
 
