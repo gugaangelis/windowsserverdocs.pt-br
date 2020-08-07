@@ -6,16 +6,14 @@ manager: mtillman
 ms.author: joflore
 ms.reviewer: richagi
 ms.custom: it-pro
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.date: 05/01/2018
-ms.openlocfilehash: def65c174ff608301f8d4f35ef1ce19818103e61
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: a5cce413e2e95387edf73c628f38a4d225c80adb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80859369"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955573"
 ---
 # <a name="network-policy-server-user-data-collection"></a>Coleta de dados de usuário do servidor de políticas de rede
 
@@ -26,7 +24,7 @@ Este documento explica como localizar informações de usuário coletadas pelo N
 
 ## <a name="information-collected-by-nps"></a>Informações coletadas pelo NPS
 
-- Carimbo de data/hora
+- Timestamp
 - Carimbo de hora do evento
 - Nome de Usuário
 - Nome de usuário totalmente qualificado
@@ -38,12 +36,12 @@ Este documento explica como localizar informações de usuário coletadas pelo N
 
 ## <a name="gather-data-from-nps"></a>Coletar dados do NPS
 
-Se os dados de contabilidade estiverem habilitados e configurados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos em SQL Server ou nos arquivos de log, dependendo da configuração. 
+Se os dados de contabilidade estiverem habilitados e configurados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos em SQL Server ou nos arquivos de log, dependendo da configuração.
 
-Se os dados de contabilidade estiverem configurados para SQL Server, consulte para todos os registros em que User_Name = `'<username>'`.
+Se os dados de contabilidade estiverem configurados para SQL Server, consulte para todos os registros em que User_Name = `'<username>'` .
 
-Se os dados de contabilidade estiverem configurados para um arquivo de log, pesquise o arquivo de log para o `<username>` localizar todas as entradas de log.
+Se os dados de contabilidade estiverem configurados para um arquivo de log, pesquise o arquivo de log para `<username>` Localizar todas as entradas de log.
 
 As entradas de log de eventos de serviços de acesso e política de rede são consideradas duplicadas para os dados de contabilidade e não precisam ser coletadas.
 
-Se os dados de contabilidade não estiverem habilitados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos no log de eventos de serviços de acesso e diretiva de rede pesquisando o `<username>`.
+Se os dados de contabilidade não estiverem habilitados, os registros das tentativas de autenticação do NPS de um usuário poderão ser obtidos no log de eventos de serviços de acesso e diretiva de rede, pesquisando pelo `<username>` .

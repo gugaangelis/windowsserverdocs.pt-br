@@ -2,19 +2,17 @@
 title: Network Load Balancing
 description: Neste tópico, fornecemos uma visão geral do recurso NLB de balanceamento de carga de rede \( \) no Windows Server 2016. Você pode usar o NLB para gerenciar dois ou mais servidores como um único cluster virtual. O NLB aprimora a disponibilidade e a escalabilidade de aplicativos de servidor de Internet, como aqueles usados em Web, FTP, firewall, proxy, VPN de rede privada virtual \( \) e outros servidores de missão \- crítica.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking-nlb
 ms.topic: article
 ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: f6631920fd4df056447d702df78145d4b375e0f5
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409606"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955803"
 ---
 # <a name="network-load-balancing"></a>Network Load Balancing
 
@@ -154,7 +152,7 @@ A tabela a seguir fornece links para informações adicionais sobre o recurso NL
 |Tipo de conteúdo|Referências|
 |----------------|--------------|
 |Implantação|[Guia de implantação de balanceamento de carga de rede](https://technet.microsoft.com/library/cc754833(WS.10).aspx) &#124; configurar o [balanceamento de carga de rede com serviços de terminal](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|
-|Operations|[Gerenciar clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [definir parâmetros de balanceamento de carga de rede](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124; [controlar hosts em clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
+|Operações|[Gerenciar clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [definir parâmetros de balanceamento de carga de rede](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124; [controlar hosts em clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
 |Solução de problemas|[Solucionando problemas de clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [eventos e erros de cluster NLB](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
 |Ferramentas e configurações|[Cmdlets do Windows PowerShell para Balanceamento de Carga de Rede](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |Recursos da comunidade|[Fórum de \( clustering de alta disponibilidade \)](https://go.microsoft.com/fwlink/p/?LinkId=230641)

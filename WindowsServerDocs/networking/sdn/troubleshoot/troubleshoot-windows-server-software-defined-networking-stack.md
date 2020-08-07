@@ -2,19 +2,17 @@
 title: Solucionar problemas de pilha de rede definida do Windows Server Software
 description: Este guia do Windows Server examina os erros comuns de SDN (rede definida pelo software) e os cenários de falha e descreve um fluxo de trabalho de solução de problemas que aproveita as ferramentas de diagnóstico disponíveis.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 3c6ac190b721492a03c7dcb9ab367df4174e55ff
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520235"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955913"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solucionar problemas de pilha de rede definida do Windows Server Software
 

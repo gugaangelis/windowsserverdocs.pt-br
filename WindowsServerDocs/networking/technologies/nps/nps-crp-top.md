@@ -2,22 +2,20 @@
 title: Processamento de solicitações de conexão
 description: Este tópico fornece uma visão geral do processamento de solicitação de conexão do servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 849d661a-42c1-4f93-b669-6009d52aad39
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 311003201f96c5f566077867b09fee0a325ed011
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 9b50fe9a3adce7967a555237446e77e4d4080221
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316193"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955593"
 ---
 # <a name="connection-request-processing"></a>Processamento de solicitações de conexão
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre o processamento de solicitação de conexão no servidor de políticas de rede no Windows Server 2016.
 
@@ -27,7 +25,7 @@ Você pode usar este tópico para saber mais sobre o processamento de solicitaç
 > - [Nomes de territórios](nps-crp-realm-names.md)
 > - [Grupos de servidores RADIUS remotos](nps-crp-rrsg.md)
 
-Você pode usar o processamento de solicitação de conexão para especificar onde a autenticação de solicitações de conexão é executada-no computador local ou em um servidor RADIUS remoto que é membro de um grupo de servidores RADIUS remoto. 
+Você pode usar o processamento de solicitação de conexão para especificar onde a autenticação de solicitações de conexão é executada-no computador local ou em um servidor RADIUS remoto que é membro de um grupo de servidores RADIUS remoto.
 
 Se desejar que o servidor local que está executando o NPS (servidor de diretivas de rede) execute a autenticação para solicitações de conexão, você poderá usar a política de solicitação de conexão padrão sem configuração adicional. Com base na política padrão, o NPS autentica usuários e computadores que têm uma conta no domínio local e em domínios confiáveis.
 
@@ -40,7 +38,7 @@ A ilustração a seguir mostra o caminho de uma mensagem de solicitação de ace
 
 
 >[!NOTE]
->Os servidores de acesso à rede que você usa com o NPS podem ser dispositivos de gateway em conformidade com o protocolo RADIUS, como pontos de acesso sem fio 802.1 X e comutadores de autenticação, servidores que executam acesso remoto que são configurados como servidores VPN ou discadas, ou outros dispositivos compatíveis com RADIUS.
+>Os servidores de acesso à rede que você usa com o NPS podem ser dispositivos de gateway em conformidade com o protocolo RADIUS, como pontos de acesso sem fio 802.1 X e comutadores de autenticação, servidores que executam acesso remoto que são configurados como servidores VPN ou dial-up ou outros dispositivos compatíveis com RADIUS.
 
 Se você quiser que o NPS processe algumas solicitações de autenticação localmente ao encaminhar outras solicitações para um grupo de servidores RADIUS remotos, configure mais de uma política de solicitação de conexão.
 
@@ -52,23 +50,23 @@ Para especificar o NPS ou outros servidores RADIUS aos quais as solicitações d
 
 Quando você usa o NPS como um servidor RADIUS, as mensagens RADIUS fornecem autenticação, autorização e contabilidade para conexões de acesso à rede da seguinte maneira:
 
-1. Servidores de acesso, como servidores de acesso à rede dial-up, servidores VPN e pontos de acesso sem fio, recebem solicitações de conexão de clientes de acesso. 
+1. Servidores de acesso, como servidores de acesso à rede dial-up, servidores VPN e pontos de acesso sem fio, recebem solicitações de conexão de clientes de acesso.
 
-2. O servidor de acesso, configurado para usar o RADIUS como o protocolo de autenticação, autorização e contabilização, cria uma mensagem de solicitação de acesso e a envia para o NPS. 
+2. O servidor de acesso, configurado para usar o RADIUS como o protocolo de autenticação, autorização e contabilização, cria uma mensagem de solicitação de acesso e a envia para o NPS.
 
-3. O NPS avalia a mensagem de solicitação de acesso. 
+3. O NPS avalia a mensagem de solicitação de acesso.
 
-4. Se necessário, o NPS envia uma mensagem de desafio de acesso ao servidor de acesso. O servidor de acesso processa o desafio e envia uma solicitação de acesso atualizada para o NPS. 
+4. Se necessário, o NPS envia uma mensagem de desafio de acesso ao servidor de acesso. O servidor de acesso processa o desafio e envia uma solicitação de acesso atualizada para o NPS.
 
-5. As credenciais do usuário são verificadas e as propriedades de discagem da conta de usuário são obtidas usando uma conexão segura com um controlador de domínio. 
+5. As credenciais do usuário são verificadas e as propriedades de discagem da conta de usuário são obtidas usando uma conexão segura com um controlador de domínio.
 
-6. A tentativa de conexão é autorizada com as propriedades de discagem da conta de usuário e das diretivas de rede. 
+6. A tentativa de conexão é autorizada com as propriedades de discagem da conta de usuário e das diretivas de rede.
 
-7. Se a tentativa de conexão for autenticada e autorizada, o NPS enviará uma mensagem de aceitação de acesso ao servidor de acesso. Se a tentativa de conexão não for autenticada ou não autorizada, o NPS enviará uma mensagem de rejeição de acesso ao servidor de acesso. 
+7. Se a tentativa de conexão for autenticada e autorizada, o NPS enviará uma mensagem de aceitação de acesso ao servidor de acesso. Se a tentativa de conexão não for autenticada ou não autorizada, o NPS enviará uma mensagem de rejeição de acesso ao servidor de acesso.
 
-8. O servidor de acesso conclui o processo de conexão com o cliente de acesso e envia uma mensagem de solicitação de contabilização para o NPS, onde a mensagem é registrada. 
+8. O servidor de acesso conclui o processo de conexão com o cliente de acesso e envia uma mensagem de solicitação de contabilização para o NPS, onde a mensagem é registrada.
 
-9. O NPS envia uma resposta de contabilidade para o servidor de acesso. 
+9. O NPS envia uma resposta de contabilidade para o servidor de acesso.
 
 >[!NOTE]
 >O servidor de acesso também envia mensagens de solicitação de contabilização durante o tempo em que a conexão é estabelecida, quando a conexão do cliente de acesso é fechada e quando o servidor de acesso é iniciado e interrompido.

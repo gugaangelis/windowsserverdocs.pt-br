@@ -1,19 +1,17 @@
 ---
 title: Adicionando e recursos de desenvolvimento
 description: O System insights permite que você adicione novos recursos de previsão ao System insights, sem a necessidade de qualquer atualização do sistema operacional. Isso permite que os desenvolvedores, incluindo a Microsoft e terceiros, criem e forneçam novos recursos de lançamento médio para atender aos cenários que você preocupa. Novos recursos podem especificar dados personalizados para coletar e analisar e também se integram aos planos de gerenciamento existentes do System insights.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 891edb108bc2c298c70b29c596fb8d0ca0e06b7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: b28621b24b321cdc22f07c03e9c04f0dde22759b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475183"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972013"
 ---
 # <a name="adding-and-developing-new-capabilities"></a>Adicionando e desenvolvendo novos recursos
 

@@ -2,26 +2,24 @@
 title: Migrar para os serviços do MultiPoint no Windows Server 2016
 description: Saiba como migrar de uma versão anterior dos serviços do MultiPoint
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 16c217ad-700a-48a3-8398-4a7f7e9edb52
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1609ff02c8e1b1480d004104bdc7e37f1240729a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ce5fb28f92808d736f66f1f900228aac09d98bf5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959268"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955333"
 ---
 # <a name="multipoint-services-migration-in-windows-server-2016"></a>Migração de serviços do MultiPoint no Windows Server 2016
 >Aplica-se a: Windows Server 2016
 
 Você pode migrar de uma versão anterior do Windows Server 2016 MultiPoint Services para a versão RTM dos serviços do MultiPoint. As informações a seguir fornecem informações de preparação e etapas de migração e verificação.
 
-Documentação e ferramentas de migração facilitam a migração de dados e configurações de função de servidor de um servidor existente para um servidor de destino que esteja executando o Windows Server 2016. Utilizando o processo descrito neste guia, você pode simplificar o processo de migração, reduzir o tempo da migração, aumentar a precisão do processo e ajudar a eliminar possíveis conflitos que, de outro modo, poderiam ocorrer durante a migração. 
+Documentação e ferramentas de migração facilitam a migração de dados e configurações de função de servidor de um servidor existente para um servidor de destino que esteja executando o Windows Server 2016. Utilizando o processo descrito neste guia, você pode simplificar o processo de migração, reduzir o tempo da migração, aumentar a precisão do processo e ajudar a eliminar possíveis conflitos que, de outro modo, poderiam ocorrer durante a migração.
 
 ## <a name="what-to-know-before-you-begin"></a>O que saber antes de começar
 Antes de começar o processo de migração, observe o seguinte:

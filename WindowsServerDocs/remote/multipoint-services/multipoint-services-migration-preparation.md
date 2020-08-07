@@ -2,19 +2,17 @@
 title: Prepare-se para migrar para MultiPoint Services
 description: Descreve as informações a serem coletadas antes de migrar para os serviços do MultiPoint no Windows Server 2016
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 3060c531-98a2-4957-a02c-be273f25f493
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 3333570aae34f2c102c36382eeffcb5411b7dd83
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b9d0a3e8451748cc8f9f060e3d0c44d2e195d019
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858699"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955323"
 ---
 # <a name="prepare-to-migrate-to-multipoint-services-in-windows-server-2016"></a>Preparar para migrar para os serviços do MultiPoint no Windows Server 2016
 
@@ -60,6 +58,6 @@ Para recuperar as configurações de orientação de exibição, exiba as **conf
 
 ## <a name="vdi-template-location"></a>Local do modelo de VDI
  Se você habilitou anteriormente o recurso de modelo do VDI, registre o local do modelo de VDI. Contanto que os servidores de origem e de destino estejam na mesma rede, você pode importar o modelo usando o Gerenciador do MultiPoint.
- 
-## <a name="next-step"></a>Próximas etapas
+
+## <a name="next-step"></a>Próxima etapa
 Agora você está pronto para [migrar para os serviços do MultiPoint](multipoint-services-migration-steps.md) na versão RTM do Windows Server 2016.

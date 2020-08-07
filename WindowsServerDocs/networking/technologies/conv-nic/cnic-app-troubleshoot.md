@@ -1,19 +1,17 @@
 ---
 title: Solucionando problemas de configurações de NIC convergida
 description: Este tópico faz parte do guia de configuração da NIC convergida para o Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 90021956ebe85ec2f4abfea0aaafd96daebfd82f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 7868861d33392e954b64064e3f748f742293b9af
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520205"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955833"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>Solucionando problemas de configurações de NIC convergida
 

@@ -1,20 +1,18 @@
 ---
 title: Rede de alto desempenho
 description: Este tópico fornece uma visão geral das tecnologias de descarregamento e otimização no Windows Server 2016 e inclui links para diretrizes adicionais sobre essas tecnologias.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 7b2030535e65a94e285a3db00779dddb85411c95
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316990"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955655"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>Tecnologias e recursos do hardware apenas (HO)
 
@@ -31,7 +29,7 @@ No caminho de recebimento, o descarregamento de soma de verificação calcula as
 
 No caminho de envio, o descarregamento de soma de verificação calcula e insere as somas de verificação no cabeçalho IP, TCP ou UDP, conforme apropriado.
 
-Desabilitar descarregamentos de soma de verificação no caminho de envio não desabilita o cálculo da soma de verificação e a inserção de pacotes enviados para o driver de miniporta usando o recurso LSO (descarregamento de envio grande).  Para desabilitar todos os cálculos de descarregamento de soma de verificação, o usuário também deve desabilitar o LSO.
+Desabilitar descarregamentos de soma de verificação no caminho de envio não desabilita o cálculo da soma de verificação e a inserção de pacotes enviados para o driver de miniporta usando o recurso LSO (descarregamento de envio grande).Para desabilitar todos os cálculos de descarregamento de soma de verificação, o usuário também deve desabilitar o LSO.
 
 _**Gerenciar descarregamentos de soma de verificação de endereço**_
 
@@ -61,7 +59,7 @@ Os descarregamentos de soma de verificação de endereço sempre devem ser habil
 
 ## <a name="interrupt-moderation-im"></a>Moderação de interrupção (IM)
 
-O IM armazena em buffer vários pacotes recebidos antes de interromper o sistema operacional. Quando uma NIC recebe um pacote, ele inicia um temporizador. Quando o buffer estiver cheio ou o temporizador expirar, o que vier primeiro, a NIC interromperá o sistema operacional. 
+O IM armazena em buffer vários pacotes recebidos antes de interromper o sistema operacional. Quando uma NIC recebe um pacote, ele inicia um temporizador. Quando o buffer estiver cheio ou o temporizador expirar, o que vier primeiro, a NIC interromperá o sistema operacional.
 
 Muitas NICs dão suporte a mais do que apenas ligado/desligado para moderação da interrupção. A maioria das NICs dá suporte aos conceitos de uma taxa baixa, média e alta para mensagens instantâneas. As diferentes taxas representam temporizadores mais curtos ou longos e ajustes de tamanho de buffer apropriados para reduzir a latência (moderação de baixa interrupção) ou reduzir interrupções (alta moderação de interrupção).
 

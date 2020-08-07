@@ -2,19 +2,17 @@
 title: Requisitos para a implantação do controlador de rede
 description: Prepare seu datacenter para a implantação do controlador de rede, que exige um ou mais computadores ou VMs e um computador ou VM. Antes de implantar o controlador de rede, você deve configurar os grupos de segurança, os locais do arquivo de log (se necessário) e o registro de DNS dinâmico.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: f5a7ec331c9d70214cbd0a772de6e2b2c7f4f58e
-ms.sourcegitcommit: 7116460855701eed4e09d615693efa4fffc40006
+ms.openlocfilehash: 060194959f80c9d2a6d174910b0264c58214373b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83433170"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964082"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>Requisitos para a implantação do controlador de rede
 
@@ -25,11 +23,11 @@ Prepare seu datacenter para a implantação do controlador de rede, que exige um
 
 ## <a name="network-controller-requirements"></a>Requisitos do controlador de rede
 
-A implantação do controlador de rede requer um ou mais computadores ou VMs que servem como o controlador de rede e um computador ou VM para servir como um cliente de gerenciamento para o controlador de rede. 
+A implantação do controlador de rede requer um ou mais computadores ou VMs que servem como o controlador de rede e um computador ou VM para servir como um cliente de gerenciamento para o controlador de rede.
 
-- Todas as VMs e computadores planejados como nós do controlador de rede devem estar executando o Windows Server 2016 Datacenter Edition. 
-- Qualquer computador ou VM (máquina virtual) no qual você instala o controlador de rede deve estar executando a Datacenter Edition do Windows Server 2016. 
-- O computador cliente de gerenciamento ou a VM para o controlador de rede deve estar executando o Windows 10. 
+- Todas as VMs e computadores planejados como nós do controlador de rede devem estar executando o Windows Server 2016 Datacenter Edition.
+- Qualquer computador ou VM (máquina virtual) no qual você instala o controlador de rede deve estar executando a Datacenter Edition do Windows Server 2016.
+- O computador cliente de gerenciamento ou a VM para o controlador de rede deve estar executando o Windows 10.
 
 
 ## <a name="configuration-requirements"></a>Requisitos de configuração
@@ -38,11 +36,11 @@ Antes de implantar o controlador de rede, você deve configurar os grupos de seg
 
 ### <a name="step-1-configure-your-security-groups"></a>Etapa 1. Configurar seus grupos de segurança
 
-A primeira coisa que você deseja fazer é criar dois grupos de segurança para a autenticação Kerberos. 
+A primeira coisa que você deseja fazer é criar dois grupos de segurança para a autenticação Kerberos.
 
-Você cria grupos para usuários que têm permissão para: 
+Você cria grupos para usuários que têm permissão para:
 
-1. Configurar o controlador de rede<p>Você pode nomear esse grupo Administradores de controlador de rede, por exemplo. 
+1. Configurar o controlador de rede<p>Você pode nomear esse grupo Administradores de controlador de rede, por exemplo.
 2.  Configurar e gerenciar a rede usando o controlador de rede<p>Você pode nomear esse grupo de usuários do controlador de rede, por exemplo. Use REST (Representational State Transfer) para configurar e gerenciar o controlador de rede.
 
 >[!NOTE]
@@ -50,7 +48,7 @@ Você cria grupos para usuários que têm permissão para:
 
 ### <a name="step-2-configure-log-file-locations-if-needed"></a>Etapa 2. Configurar locais do arquivo de log, se necessário
 
-A próxima coisa que você quer fazer é configurar os locais de arquivo para armazenar logs de depuração do controlador de rede no computador do controlador de rede ou VM ou em um compartilhamento de arquivo remoto. 
+A próxima coisa que você quer fazer é configurar os locais de arquivo para armazenar logs de depuração do controlador de rede no computador do controlador de rede ou VM ou em um compartilhamento de arquivo remoto.
 
 >[!NOTE]
 >Se você armazenar os logs em um compartilhamento de arquivos remoto, verifique se o compartilhamento está acessível no controlador de rede.
@@ -58,7 +56,7 @@ A próxima coisa que você quer fazer é configurar os locais de arquivo para ar
 
 ### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Etapa 3. Configurar o registro de DNS dinâmico para o controlador de rede
 
-Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster do controlador de rede na mesma sub-rede ou em sub-redes diferentes. 
+Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster do controlador de rede na mesma sub-rede ou em sub-redes diferentes.
 
 
 |         Se...         |                                                                                                                                                         Então...                                                                                                                                                         |
@@ -73,7 +71,7 @@ Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster do
 
 1. Permitir atualizações dinâmicas de DNS para uma zona.
 
-   a. Abra o Gerenciador de DNS e, na árvore de console, clique com o botão direito do mouse na zona aplicável e clique em **Propriedades**. 
+   a. Abra o Gerenciador de DNS e, na árvore de console, clique com o botão direito do mouse na zona aplicável e clique em **Propriedades**.
 
    b. Na guia **geral** , verifique se o tipo de zona é **primário** ou **integrado ao Active Directory**.
 
@@ -81,13 +79,13 @@ Por fim, a próxima coisa que você deseja fazer é implantar nós de cluster do
 
 2. Configurar permissões de segurança de zona DNS para nós do controlador de rede
 
-   a.  Clique na guia **Segurança** e clique em **Avançado**. 
+   a.  Clique na guia **Segurança** e clique em **Avançado**.
 
-   b. Em **configurações de segurança avançadas**, clique em **Adicionar**. 
+   b. Em **configurações de segurança avançadas**, clique em **Adicionar**.
 
-   c. Clique em **Selecionar uma entidade**. 
+   c. Clique em **Selecionar uma entidade**.
 
-   d. Na caixa de diálogo **Selecionar usuário, computador, conta de serviço ou grupo** , clique em **tipos de objeto**. 
+   d. Na caixa de diálogo **Selecionar usuário, computador, conta de serviço ou grupo** , clique em **tipos de objeto**.
 
    e. Em **tipos de objeto**, selecione **computadores**e clique em **OK**.
 
@@ -110,7 +108,7 @@ Se o controlador de rede estiver usando a autenticação baseada em Kerberos par
 
 ### <a name="network-controller-deployment"></a>Implantação do controlador de rede
 
-A instalação está altamente disponível com três nós de controlador de rede configurados em máquinas virtuais. Também são mostrados dois locatários com a rede virtual do locatário 2 dividida em duas sub-redes virtuais para simular uma camada da Web e uma camada de banco de dados.  
+A instalação está altamente disponível com três nós de controlador de rede configurados em máquinas virtuais. Também são mostrados dois locatários com a rede virtual do locatário 2 dividida em duas sub-redes virtuais para simular uma camada da Web e uma camada de banco de dados.
 
 ![Planejamento do SDN NC](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
 
@@ -124,17 +122,17 @@ Para alta disponibilidade, há dois ou mais nós SLB/MUX.
 
 Há três máquinas virtuais de gateway; dois estão ativos e um é redundante.
 
-![Planejamento do SDN NC](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
+![Planejamento do SDN NC](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)
 
->[!IMPORTANT] 
->Se você implantar usando o VMM, verifique se suas máquinas virtuais de infraestrutura (servidor VMM, AD/DNS, SQL Server etc.) não estão hospedadas em nenhum dos quatro hosts mostrados nos diagramas.  
+>[!IMPORTANT]
+>Se você implantar usando o VMM, verifique se suas máquinas virtuais de infraestrutura (servidor VMM, AD/DNS, SQL Server etc.) não estão hospedadas em nenhum dos quatro hosts mostrados nos diagramas.
 
 
 ## <a name="next-steps"></a>Próximas etapas
 [Planejar uma infraestrutura de rede definida pelo software](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure).
 
 ## <a name="related-topics"></a>Tópicos relacionados
-- [Controlador de rede](../technologies/network-controller/Network-Controller.md) 
-- [Alta disponibilidade do controlador de rede](../technologies/network-controller/network-controller-high-availability.md) 
-- [Implantar controlador de rede usando o Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
-- [Instalar a função de servidor do Controlador de Rede usando o Gerenciador do Servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   
+- [Controlador de rede](../technologies/network-controller/Network-Controller.md)
+- [Alta disponibilidade do controlador de rede](../technologies/network-controller/network-controller-high-availability.md)
+- [Implantar controlador de rede usando o Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+- [Instalar a função de servidor do Controlador de Rede usando o Gerenciador do Servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)

@@ -6,14 +6,12 @@ author: eross-msft
 ms.author: lizross
 ms.date: 09/12/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: f6403cd9787ccdd4f50eb08ebd7723d2de789ebb
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 2eb6ec82d9127e89f1d7871d0143ae3716b4355e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819639"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955643"
 ---
 # <a name="new-hpn-features-in-windows-server-2019"></a>Novos recursos do HPN no Windows Server 2019
 
@@ -22,7 +20,7 @@ ms.locfileid: "80819639"
 
 >Aplica-se a: Windows Server 2019
 
-No passado, as filas de máquinas virtuais e as várias filas de máquinas virtuais permitiam uma taxa de transferência muito maior para VMs individuais, já que as taxas de transferência de rede chegaram pela primeira vez à marca de 10 GbE e além. Infelizmente, o planejamento, a linha de base, o ajuste e o monitoramento necessários para o sucesso se tornaram um grande empreendimento; muitas vezes, o administrador de ti pretende gastar. 
+No passado, as filas de máquinas virtuais e as várias filas de máquinas virtuais permitiam uma taxa de transferência muito maior para VMs individuais, já que as taxas de transferência de rede chegaram pela primeira vez à marca de 10 GbE e além. Infelizmente, o planejamento, a linha de base, o ajuste e o monitoramento necessários para o sucesso se tornaram um grande empreendimento; muitas vezes, o administrador de ti pretende gastar.
 
 O Windows Server 2019 melhora essas otimizações, distribuindo e ajustando dinamicamente o processamento de cargas de trabalho de rede, conforme necessário. O Windows Server 2019 garante a eficiência de pico e remove a carga de configuração para os administradores de ti.
 

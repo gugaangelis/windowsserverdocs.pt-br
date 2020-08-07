@@ -1,39 +1,37 @@
 ---
 title: Implantar um gateway do centro de administração do Windows no Azure
 description: Como implantar um gateway do centro de administração do Windows no Azure
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: b4ae232d47398800ecae8500cff6726128f22b83
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903928"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971983"
 ---
-# <a name="deploy-windows-admin-center-in-azure"></a>Implantar o centro de administração do Windows no Azure
+# <a name="deploy-windows-admin-center-in-azure"></a>Implantar o Windows Admin Center no Azure
 
 ## <a name="deploy-using-script"></a>Implantar usando script
 
-Você pode baixar [Deploy-WACAzVM. ps1](https://aka.ms/deploy-wacazvm) , que será executado de [Azure cloud Shell](https://shell.azure.com) para configurar um gateway do centro de administração do Windows no Azure. Esse script pode criar todo o ambiente, incluindo o grupo de recursos.
+Você pode baixar [Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm) que será executado de [Azure cloud Shell](https://shell.azure.com) para configurar um gateway do centro de administração do Windows no Azure. Esse script pode criar todo o ambiente, incluindo o grupo de recursos.
 
 [Ir para etapas de implantação manual](#deploy-manually-on-an-existing-azure-virtual-machine)
 
 ### <a name="prerequisites"></a>Pré-requisitos
 
 * Configure sua conta no [Azure cloud Shell](https://shell.azure.com). Se esta for a primeira vez que você usa Cloud Shell, você será solicitado a associar ou criar uma conta de armazenamento do Azure com Cloud Shell.
-* Em um Cloud Shell do **PowerShell** , navegue até seu diretório base: ```PS Azure:\> cd ~```
-* Para carregar o arquivo de ```Deploy-WACAzVM.ps1```, arraste-o e solte-o do computador local para qualquer lugar na janela Cloud Shell.
+* Em um Cloud Shell do **PowerShell** , navegue até seu diretório base:```PS Azure:\> cd ~```
+* Para carregar o ```Deploy-WACAzVM.ps1``` arquivo, arraste-o e solte-o do computador local para qualquer lugar na janela de Cloud Shell.
 
 Se especificar seu próprio certificado:
 
 * Carregue o certificado para [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis). Primeiro, crie um cofre de chaves no portal do Azure e, em seguida, carregue o certificado no cofre de chaves. Como alternativa, você pode usar o portal do Azure para gerar um certificado para você.
 
-### <a name="script-parameters"></a>Parâmetros do script
+### <a name="script-parameters"></a>Parâmetros de script
 
 * **ResourceGroupName** -[String] Especifica o nome do grupo de recursos em que a VM será criada.
 
@@ -41,7 +39,7 @@ Se especificar seu próprio certificado:
 
 * **Credential** -[PSCredential] Especifica as credenciais para a VM.
 
-* **MsiPath** -[cadeia de caracteres] Especifica o caminho local do MSI do centro de administração do Windows ao implantar o centro de administração do Windows em uma VM existente. O padrão é a versão de https://aka.ms/WACDownload se omitido.
+* **MsiPath** -[cadeia de caracteres] Especifica o caminho local do MSI do centro de administração do Windows ao implantar o centro de administração do Windows em uma VM existente. O padrão é a versão de https://aka.ms/WACDownload se omitida.
 
 * **Vaultname** -[cadeia de caracteres] Especifica o nome do cofre de chaves que contém o certificado.
 
@@ -76,7 +74,7 @@ Há duas opções diferentes para o MSI implantar e o certificado usado para a i
 Primeiro, defina as variáveis comuns necessárias para os parâmetros do script.
 
 ```PowerShell
-$ResourceGroupName = "wac-rg1" 
+$ResourceGroupName = "wac-rg1"
 $VirtualNetworkName = "wac-vnet"
 $SecurityGroupName = "wac-nsg"
 $SubnetName = "wac-subnet"
@@ -147,7 +145,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>Requisitos para VMs gerenciadas do Azure
 
 A porta 5985 (WinRM sobre HTTP) deve estar aberta e ter um ouvinte ativo.
-Você pode usar o código abaixo em Azure Cloud Shell para atualizar os nós gerenciados. ```$ResourceGroupName``` e ```$Name``` usar as mesmas variáveis que o script de implantação, mas será necessário usar o ```$Credential``` específico para a VM que você está gerenciando.
+Você pode usar o código abaixo em Azure Cloud Shell para atualizar os nós gerenciados. ```$ResourceGroupName```e ```$Name``` usar as mesmas variáveis que o script de implantação, mas será necessário usar o ```$Credential``` específico para a VM que você está gerenciando.
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -157,10 +155,10 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 
 ## <a name="deploy-manually-on-an-existing-azure-virtual-machine"></a>Implantar manualmente em uma máquina virtual do Azure existente
 
-Antes de instalar o centro de administração do Windows em sua VM de gateway desejada, instale um certificado SSL a ser usado para comunicação HTTPS ou você pode optar por usar um certificado autoassinado gerado pelo centro de administração do Windows. No entanto, você receberá um aviso ao tentar se conectar a partir de um navegador se escolher a última opção. Você pode ignorar esse aviso no Microsoft Edge clicando em **detalhes > ir para a página da Web** ou, no Chrome, selecionando **> avançado vá para [página da Web]** . Recomendamos que você use somente certificados autoassinados para ambientes de teste.
+Antes de instalar o centro de administração do Windows em sua VM de gateway desejada, instale um certificado SSL a ser usado para comunicação HTTPS ou você pode optar por usar um certificado autoassinado gerado pelo centro de administração do Windows. No entanto, você receberá um aviso ao tentar se conectar a partir de um navegador se escolher a última opção. Você pode ignorar esse aviso no Edge clicando em **detalhes > ir para a página da Web** ou, no Chrome, selecionando **> avançado vá para [página da Web]**. Recomendamos que você use somente certificados autoassinados para ambientes de teste.
 
 > [!NOTE]
-> Essas instruções são para instalação no Windows Server com experiência desktop, não em uma instalação Server Core. 
+> Essas instruções são para instalação no Windows Server com experiência desktop, não em uma instalação Server Core.
 
 1. [Baixe o centro de administração do Windows](https://aka.ms/windowsadmincenter) no computador local.
 
@@ -168,32 +166,32 @@ Antes de instalar o centro de administração do Windows em sua VM de gateway de
 
 3. Clique duas vezes no MSI para iniciar a instalação e siga as instruções no assistente. Esteja ciente do seguinte:
 
-   - Por padrão, o instalador usa a porta recomendada 443 (HTTPS). Se você quiser selecionar uma porta diferente, observe que também precisará abrir essa porta no firewall. 
+   - Por padrão, o instalador usa a porta recomendada 443 (HTTPS). Se você quiser selecionar uma porta diferente, observe que também precisará abrir essa porta no firewall.
 
    - Se você já tiver instalado um certificado SSL na VM, certifique-se de selecionar essa opção e insira a impressão digital.
 
-4. Iniciar o serviço do centro de administração do Windows (executar C:/Arquivos de programas/centro de administração do Windows/SME. exe)
+4. Inicie o serviço centro de administração do Windows (executar C:/Arquivos de programas/centro de administração do Windows/sme.exe)
 
 [Saiba mais sobre a implantação do centro de administração do Windows.](../deploy/install.md)
 
-### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>Configure a VM do gateway para habilitar o acesso à porta HTTPS: 
+### <a name="configure-the-gateway-vm-to-enable-https-port-access"></a>Configure a VM do gateway para habilitar o acesso à porta HTTPS:
 
-1. Navegue até sua VM no portal do Azure e selecione **rede**. 
+1. Navegue até sua VM no portal do Azure e selecione **rede**.
 
-2. Selecione **Adicionar regra de porta de entrada** e selecione **https** em **serviço**. 
+2. Selecione **Adicionar regra de porta de entrada** e selecione **https** em **serviço**.
 
 > [!NOTE]
-> Se você escolher uma porta diferente do padrão 443, escolha **personalizado** em serviço e insira a porta escolhida na etapa 3 em intervalos de **porta**. 
+> Se você escolher uma porta diferente do padrão 443, escolha **personalizado** em serviço e insira a porta escolhida na etapa 3 em intervalos de **porta**.
 
 ### <a name="accessing-a-windows-admin-center-gateway-installed-on-an-azure-vm"></a>Acessando um gateway do centro de administração do Windows instalado em uma VM do Azure
 
-Neste ponto, você deve ser capaz de acessar o centro de administração do Windows de um navegador moderno (Microsoft Edge ou Chrome) em seu computador local, navegando até o nome DNS da sua VM de gateway. 
+Neste ponto, você deve ser capaz de acessar o centro de administração do Windows de um navegador moderno (Edge ou Chrome) em seu computador local, navegando até o nome DNS da sua VM de gateway.
 
 > [!NOTE]
-> Se você selecionou uma porta diferente de 443, poderá acessar o centro de administração do Windows navegando até https://\<nome DNS de sua VM\>:\<porta personalizada\>
+> Se você selecionou uma porta diferente de 443, poderá acessar o centro de administração do Windows navegando até https:// \<DNS name of your VM\> :\<custom port\>
 
-Quando você tentar acessar o centro de administração do Windows, o navegador solicitará credenciais para acessar a máquina virtual na qual o centro de administração do Windows está instalado. Aqui, você precisará inserir as credenciais que estão no grupo usuários locais ou administradores locais da máquina virtual. 
+Quando você tentar acessar o centro de administração do Windows, o navegador solicitará credenciais para acessar a máquina virtual na qual o centro de administração do Windows está instalado. Aqui, você precisará inserir as credenciais que estão no grupo usuários locais ou administradores locais da máquina virtual.
 
-Para adicionar outras VMs na VNet, verifique se o WinRM está em execução nas VMs de destino executando o seguinte no PowerShell ou no prompt de comando na VM de destino: `winrm quickconfig`
+Para adicionar outras VMs na VNet, verifique se o WinRM está em execução nas VMs de destino executando o seguinte no PowerShell ou no prompt de comando na VM de destino:`winrm quickconfig`
 
 Se você não ingressou no domínio na VM do Azure, a VM se comporta como um servidor no grupo de trabalho, portanto, você precisará se certificar de [usar o centro de administração do Windows em um grupo de trabalho](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup).

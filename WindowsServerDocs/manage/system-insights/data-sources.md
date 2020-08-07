@@ -1,19 +1,17 @@
 ---
 title: Fontes de dados de informações do sistema
 description: Ao escrever um novo recurso no System insights, você pode especificar fontes de dados novas ou existentes para coletar localmente e analisar. Este tópico descreve as fontes de dados que você pode escolher ao registrar um novo recurso.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 7/31/2018
-ms.openlocfilehash: 5dc44d9309c25ca1475e512a11d9868d7fa49e97
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 23150a741c9ec218077f63ca65e6948b1c48f8bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473663"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87972003"
 ---
 # <a name="system-insights-data-sources"></a>Fontes de dados de informações do sistema
 
