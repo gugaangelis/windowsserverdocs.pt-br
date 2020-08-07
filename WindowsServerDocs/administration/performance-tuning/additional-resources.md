@@ -1,18 +1,16 @@
 ---
 title: Recursos adicionais de ajuste de desempenho do servidor
 description: Recursos adicionais de ajuste de desempenho do servidor
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 2b789fb3c5290c5f268c1e64f66fb25fd4856136
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001861"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896753"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos adicionais de ajuste de desempenho
 
@@ -25,7 +23,7 @@ Use os links neste tópico para saber mais sobre os conceitos que foram discutid
 
 -   [Conselho de desempenho de processamento de transações](http://www.tpc.org/)
 
--   [Kit de Avaliação e Implantação do Windows](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
+-   [Kit de avaliação e implantação do Windows](https://developer.microsoft.com/windows/hardware/windows-assessment-deployment-kit)
 
 ## <a name="power-management-tuning-resources"></a>Recursos de ajuste do gerenciamento de energia
 
@@ -51,7 +49,7 @@ Use os links neste tópico para saber mais sobre os conceitos que foram discutid
 
 -   [Diretrizes de ajuste de desempenho para os serviços da Microsoft para o sistema de arquivos de rede](https://technet.microsoft.com/library/bb463205.aspx)
 
--   [\[MS-FSSO\]: visão geral do sistema de serviços de acesso a arquivos](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
+-   [\[MS-FSSO \] : visão geral do sistema de serviços de acesso a arquivos](https://download.microsoft.com/download/5/0/1/501ED102-E53F-4CE0-AA6B-B0F93629DDC6/Windows/%5bMS-FSSO%5d.pdf)
 
 -   [Como desabilitar a ferramenta de diagnóstico de ajuste de TCP](https://support.microsoft.com/kb/967475)
 
@@ -63,7 +61,7 @@ Use os links neste tópico para saber mais sobre os conceitos que foram discutid
 
 -   [O que há de novo no Hyper-V no Windows Server 2016](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/what-s-new-in-hyper-v-on-windows)
 
--   [Guia de configuração de Memória Dinâmica do Hyper-V](https://technet.microsoft.com/library/ff817651.aspx)
+-   [Guia de Configuração de Memória Dinâmica do Hyper-V](https://technet.microsoft.com/library/ff817651.aspx)
 
 -   [Balanceamento de nó NUMA](https://blogs.technet.com/b/winserverperformance/archive/2009/12/10/numa-node-balancing.aspx)
 
@@ -79,7 +77,7 @@ Use os links neste tópico para saber mais sobre os conceitos que foram discutid
 
 ## <a name="print-server-tuning-resources"></a>Servidor de Impressão ajustar recursos
 
--   [Escalabilidade e planejamento de capacidade do Servidor de Impressão](https://technet.microsoft.com/library/dn554243.aspx)
+-   [Print Server Scalability and Capacity Planning](https://technet.microsoft.com/library/dn554243.aspx)
 
 ## <a name="server-workload-tuning-resources"></a>Recursos de ajuste de carga de trabalho do servidor
 
@@ -97,11 +95,11 @@ Use os links neste tópico para saber mais sobre os conceitos que foram discutid
 
 -   [Ajuste de desempenho para OLTP (processamento de transações online)](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
--   [Como configurar SQL Server para usar o soft-NUMA](https://go.microsoft.com/fwlink/?LinkId=98292)
+-   [Como: configurar o SQL Server para usar o Soft-NUMA](https://go.microsoft.com/fwlink/?LinkId=98292)
 
--   [Como mapear portas TCP/IP para nós NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
+-   [Como mapear portas de TCP/IP para nós NUMA](https://go.microsoft.com/fwlink/?LinkId=98293)
 
--   [Alterar configuração do servidor (Transact-SQL)](https://msdn.microsoft.com/library/ee210585.aspx)
+-   [ALTER SERVER CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/library/ee210585.aspx)
 
 
 ## <a name="server-tuning-tools"></a>Ferramentas de ajuste do servidor

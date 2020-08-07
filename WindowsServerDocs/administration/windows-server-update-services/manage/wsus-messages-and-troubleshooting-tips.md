@@ -1,24 +1,22 @@
 ---
 title: Mensagens do WSUS e dicas de solução de problemas
 description: Tópico do Windows Server Update Service (WSUS)-solucionar problemas usando mensagens do WSUS
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4fe14eeaba3fc82e125288f8c47fb445f6e00b0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7ce07e38a3a8a07f97959e782fd22c1d5472d338
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828309"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896774"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Mensagens do WSUS e dicas de solução de problemas
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico contém informações sobre as seguintes mensagens do WSUS:
 
@@ -45,18 +43,18 @@ Os motivos mais comuns são:
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>ID da mensagem 6703-falha na sincronização do WSUS
 > Mensagem: a solicitação falhou com o status HTTP 503: serviço não disponível.
-> 
+>
 > Origem: Microsoft. updateservices. Administration. AdminProxy. createUpdateServer.
 
 Ao tentar abrir os serviços de atualização no servidor do WSUS, você recebe o seguinte erro:
 
 > Erro: erro de conexão
-> 
+>
 > Ocorreu um erro ao tentar se conectar ao servidor do WSUS. Esse erro pode ocorrer por vários motivos. Entre em contato com seu administrador de rede se o problema persistir. Clique no nó redefinir servidor para se conectar ao servidor novamente.
 
-Além do que está acima, as tentativas de acessar a URL para o site de administração do WSUS (por exemplo, `http://CM12CAS:8530`) falham com o erro:
+Além do que está acima, as tentativas de acessar a URL para o site de administração do WSUS (ou seja, `http://CM12CAS:8530` ) falham com o erro:
 
-> Erro de HTTP 503. O serviço está indisponível
+> Erro HTTP 503. O serviço está indisponível
 
 Nessa situação, a causa mais provável é que o pool de aplicativos WsusPool no IIS está em um estado parado.
 
@@ -73,20 +71,20 @@ Para resolver esse problema, conceda permissões de administrador do sistema a u
 
 - **Selfupdate:** Consulte [atualizações automáticas deve ser atualizado](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obter informações sobre como solucionar problemas do serviço selfupdate.
 
-- **WSSUService. exe:** Esse serviço facilita a sincronização. Se você tiver problemas com a sincronização, acesse WSUSService. exe clicando em **Iniciar**, apontando para **Ferramentas administrativas**, clicando em **Serviços**e localizando **serviço de atualização do Windows Server** na lista de serviços. Faça o seguinte:
-    
+- **WSSUService.exe:** Esse serviço facilita a sincronização. Se você tiver problemas com a sincronização, acesse WSUSService.exe clicando em **Iniciar**, apontando para **Ferramentas administrativas**, clicando em **Serviços**e localizando **serviço de atualização do Windows Server** na lista de serviços. Faça o seguinte:
+
     -   Verifique se esse serviço está em execução. Clique em **Iniciar** se ele for interrompido ou **reiniciado** para atualizar o serviço.
-    
+
     -   Use Visualizador de Eventos para verificar os logs de eventos do **aplicativo**, do **securit**s e do **sistema** para ver se há algum evento que possa indicar um problema.
-    
+
     -   Você também pode verificar o SoftwareDistribution. log para ver se há eventos que podem indicar um problema.
 
 - **Serviço Web servicesSQL:** Os serviços Web são hospedados no IIS. Se eles não estiverem em execução, verifique se o IIS está em execução (ou iniciado). Você também pode tentar redefinir o serviço Web digitando **iisreset** em um prompt de comando.
 
 - **Serviço SQL:** Cada serviço, exceto para o serviço selfupdate, requer que o serviço SQL esteja em execução. Se qualquer um dos arquivos de log indicar problemas de conexão do SQL, verifique o serviço SQL primeiro. Para acessar o serviço SQL, clique em **Iniciar**, aponte para **Ferramentas administrativas**, clique em **Serviços**e procure um dos seguintes:
-    
+
   - **MSSQLSERver** (se você estiver usando o WMSDE ou o MSDE, ou se estiver usando SQL Server e estiver usando o nome de instância padrão para o nome da instância)
-    
+
   - **MSSQL $ WSUS** (se você estiver usando um banco de dados SQL Server e tiver nomeado sua instância de banco de dados WSUS)
-    
+
     Clique com o botão direito do mouse no serviço e clique em **Iniciar** se o serviço não estiver em execução ou **reinicie** para atualizar o serviço se ele estiver em execução.

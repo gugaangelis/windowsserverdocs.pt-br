@@ -1,20 +1,18 @@
 ---
 title: robocopy
 description: Saiba como usar o comando Robocopy no Windows e no Windows Server para copiar arquivos
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c6e8e9-fcb3-4a4a-9d04-2d8c367b6354
 author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 3ce409d0995449a4f5da98b69df6f436d75e04b7
-ms.sourcegitcommit: a538474d2c0a9520567f4e6ad0933f8660273098
+ms.openlocfilehash: fdf7eda5a17dccba0f43cca91cae122872dd5235
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84505788"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883497"
 ---
 # <a name="robocopy"></a>robocopy
 
@@ -176,7 +174,7 @@ Valor | Descrição
 
 ### <a name="remarks"></a>Comentários
 
--   A opção **/Mir** é equivalente às opções **/e** Plus **/Purge** com uma pequena diferença no comportamento:  
+-   A opção **/Mir** é equivalente às opções **/e** Plus **/Purge** com uma pequena diferença no comportamento:
     -   Com as opções **/e** Plus **/Purge** , se o diretório de destino existir, as configurações de segurança do diretório de destino não serão substituídas.
     -   Com a opção **/Mir** , se o diretório de destino existir, as configurações de segurança do diretório de destino serão substituídas.
 

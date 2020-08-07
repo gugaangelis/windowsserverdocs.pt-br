@@ -1,20 +1,18 @@
 ---
 title: Exibição de scwcmd
 description: Artigo de referência para * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7995959a-d93e-4865-a6a0-2ab18c2bb47f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cbae5f3d0157424fb9281d47cdf126bf106447c3
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: c969931301afaab6cdf00e5a0238715fc655a79e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932614"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883085"
 ---
 # <a name="scwcmd-view"></a>Scwcmd: view
 

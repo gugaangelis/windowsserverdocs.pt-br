@@ -1,18 +1,16 @@
 ---
 title: Considerações de energia de hardware do Windows Server
 description: Considerações sobre a potência de hardware do Windows Server.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e110fbb41f44a4c8ac6ab014eeae44e542ade41
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ee380937e54faa77ec17f8ae47445089ba1eece8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471681"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896723"
 ---
 # <a name="server-hardware-power-considerations"></a>Server Hardware Power Considerations (Considerações de energia de hardware do servidor)
 

@@ -1,24 +1,22 @@
 ---
 title: Operações de atualizações
 description: Tópico Windows Server Update Service (WSUS)-como gerenciar atualizações, incluindo o processo de aprovação
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 4cb7ff54-3014-4e91-842a-a7b831ea59ff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 327bff2e678e278dcba05ce1df807dc3842a56cd
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 32e6aa39dec354aeb7b3277d68c3bf07ef8a0161
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828489"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896802"
 ---
 # <a name="updates-operations"></a>Operações de atualizações
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Depois que as atualizações tiverem sido sincronizadas com o servidor do WSUS, elas serão verificadas automaticamente para fins de relevância para os computadores cliente do servidor. No entanto, você deve aprovar as atualizações antes que elas sejam implantadas nos computadores da sua rede. Ao aprovar uma atualização, você está basicamente dizendo ao WSUS o que fazer com ele (suas opções são **instalar** ou **recusar** uma nova atualização). Você pode aprovar atualizações para o grupo **todos os computadores** ou para subgrupos. Se você não aprovar uma atualização, seu status de aprovação permanecerá **não aprovado**e o servidor do WSUS permitirá que os clientes avaliem se precisam ou não da atualização.
 
@@ -47,7 +45,7 @@ Há duas considerações importantes que você deve ter em mente:
 
 3.  Selecione **aprovado para instalação**e clique em **aprovar**.
 
-4.  A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** será exibido. Clique em **Fechar**.
+4.  A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** será exibido. Clique em **fechar**
 
 5.  Você pode selecionar um prazo clicando com o botão direito do mouse na atualização, selecionando o grupo de computadores apropriado, clicando na seta ao lado dele e, em seguida, clicando em **prazo**.
 
@@ -71,7 +69,7 @@ Há duas considerações importantes que você deve ter em mente:
 
 7.  Se você quiser que o comportamento de aprovação seja alterado para todos os filhos, aprove **todos os computadores**e, em seguida, escolha **aplicar a filhos**.
 
-8.  Clique em **OK** depois de definir todas as suas aprovações. A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** estará disponível. Clique em **Fechar**.
+8.  Clique em **OK** depois de definir todas as suas aprovações. A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** estará disponível. Clique em **fechar**
 
 ## <a name="declining-updates"></a>Recusando atualizações
 Se você selecionar essa opção, a atualização será removida da lista padrão de atualizações disponíveis e o servidor do WSUS não oferecerá a atualização para os clientes, seja para avaliação ou instalação. Você pode acessar essa opção selecionando uma atualização ou grupo de atualizações e clicando com o botão direito do mouse ou indo para o painel Ações. As atualizações recusadas serão exibidas na lista de atualizações somente se você selecionar **recusadas** na lista aprovação ao especificar o filtro para a lista de atualizações em **exibição**.
@@ -133,13 +131,13 @@ Você pode aprovar uma atualização para remoção (ou seja, para desinstalar u
 6.  Se você quiser que uma atualização seja removida assim que os computadores cliente entrarem em contato com o servidor, clique em **personalizado**e defina uma data no passado.
 
 ## <a name="approving-updates-automatically"></a>Aprovando atualizações automaticamente
-Você pode configurar o servidor do WSUS para aprovação automática de determinadas atualizações. Você também pode especificar a aprovação automática de revisões para as atualizações existentes à medida que elas se tornarem disponíveis. Essa opção é selecionada por padrão. Uma revisão é uma versão de uma atualização que teve alterações feitas nela (por exemplo, ela pode ter expirado ou suas regras de aplicabilidade podem ter sido alteradas). Se você não optar por aprovar automaticamente a versão revisada de uma atualização, o WSUS usará a versão mais antiga e você deverá aprovar manualmente a revisão da atualização.
+Você pode configurar o servidor do WSUS para aprovação automática de determinadas atualizações. Você também pode especificar a aprovação automática de revisões para as atualizações existentes à medida que elas se tornarem disponíveis. Essa opção é habilitada por padrão. Uma revisão é uma versão de uma atualização que teve alterações feitas nela (por exemplo, ela pode ter expirado ou suas regras de aplicabilidade podem ter sido alteradas). Se você não optar por aprovar automaticamente a versão revisada de uma atualização, o WSUS usará a versão mais antiga e você deverá aprovar manualmente a revisão da atualização.
 
 Você pode criar regras que o servidor do WSUS aplicará automaticamente durante a sincronização. Você especifica quais atualizações deseja aprovar automaticamente para instalação, por classificação de atualização, por produto e por grupo de computadores. Isso se aplica somente a novas atualizações, em oposição às atualizações revisadas. Você também pode especificar um prazo de aprovação de atualização, que define um número de dias e um tempo específico de oferta antes que a atualização aprovada seja instalada no prazo final. Essas configurações estão disponíveis no painel **Opções** , em **aprovações automáticas**.
 
 #### <a name="to-automatically-approve-updates"></a>Para aprovar atualizações automaticamente
 
-1.  No console de administração do WSUS, clique em **Opções**e, em seguida, clique em **aprovações automáticas**.
+1.  No console de administração do WSUS, clique em **Opções**e clique em **Aprovações Automáticas**.
 
 2.  Em **Regras de Atualização**, clique em **Nova Regra**.
 
@@ -161,7 +159,7 @@ A seção aprovações automáticas do painel opções contém uma opção padr�
 
 #### <a name="to-automatically-approve-revisions-to-updates-and-decline-expired-updates"></a>Para aprovar automaticamente as revisões para atualizações e recusar atualizações expiradas
 
-1.  No console de administração do WSUS, clique em **Opções**e, em seguida, clique em **aprovações automáticas**.
+1.  No console de administração do WSUS, clique em **Opções**e clique em **Aprovações Automáticas**.
 
 2.  Na guia **avançado** , certifique-se de que ambos **aprove automaticamente as novas revisões de atualizações aprovadas** e **recuse automaticamente as atualizações quando uma nova revisão fizer com que elas expirem** sejam selecionadas.
 

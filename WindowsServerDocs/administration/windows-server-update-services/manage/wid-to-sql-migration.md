@@ -1,20 +1,18 @@
 ---
 title: Migrando o banco de dados do WSUS do WID (banco de dados interno do Windows) para o SQL
 description: Tópico Windows Server Update Service (WSUS)-como migrar o banco de dados do WSUS (SUSDB) de uma instância de banco de dados interna do Windows para uma instância local ou remota do SQL Server.
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: facd846dd0c20ee2e5001b0592651ce310e19097
-ms.sourcegitcommit: 29f7a4811b4d36d60b8b7c55ce57d4ee7d52e263
+ms.openlocfilehash: edebd8ea11a844fbe6d00ca7ce7a6a375d8e9a51
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83716881"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896865"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migrando o banco de dados do WSUS do WID para o SQL
 
@@ -121,7 +119,7 @@ A conta **NT Authority\Network Service** deve ser listada. Se não for, você pr
 4. Na página **mapeamento de usuário** :
     - Em **Usuários mapeados para este logon**: selecione **SUSDB**
     - Em **Associação de função de banco de dados para: SUSDB**, verifique se o seguinte está marcado:
-        - **publicada**
+        - **público**
         - **WebService** ![ image9](images/image9.png)
 5. Clique em **OK**
 
@@ -131,7 +129,7 @@ Agora você deve ver **NT Authority\Network Service** em logons.
 #### <a name="database-permissions"></a>Permissões de banco de dados
 
 1. Clique com o botão direito do mouse no SUSDB
-2. Selecionar **Propriedades**
+2. Selecione **Propriedades**
 3. **Permissões** de clique
 
 A conta **NT Authority\Network Service** deve ser listada.
@@ -181,7 +179,7 @@ No PowerShell (elevado), execute:
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>Desinstalando a função WID (não recomendado)
 
 > [!WARNING]
-> A remoção da função WID também remove uma pasta de banco de dados (**%systemdrive%\Arquivos de Files\Update Services\Database**) que contém os scripts exigidos pelo WSUSutil. exe para tarefas pós-instalação. Se você optar por desinstalar a função WID, certifique-se de fazer backup da pasta **%systemdrive%\Arquivos de Files\Update Services\Database** com antecedência.
+> A remoção da função WID também remove uma pasta de banco de dados (**%systemdrive%\Arquivos de Files\Update Services\Database**) que contém os scripts exigidos pelo WSUSUtil.exe para tarefas pós-instalação. Se você optar por desinstalar a função WID, certifique-se de fazer backup da pasta **%systemdrive%\Arquivos de Files\Update Services\Database** com antecedência.
 
 Usando o PowerShell:
 

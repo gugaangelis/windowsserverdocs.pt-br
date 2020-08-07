@@ -1,24 +1,22 @@
 ---
 title: Exibir e gerenciar atualizações
 description: Tópico Windows Server Update Service (WSUS)-como exibir e gerenciar atualizações no console do WSUS
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a2a9f7e1f1f3f648a0cba22d599ccc64e7b424d8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 8da092fc64b46a192dd9f40816721d639af795cb
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828439"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896799"
 ---
 # <a name="viewing-and-managing-updates"></a>Exibir e gerenciar atualizações
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Você pode usar o console do WSUS para exibir e gerenciar atualizações.
 
@@ -160,41 +158,41 @@ As classificações de atualização representam o tipo de atualização. Para q
 |Atualizações Críticas|Correções liberadas amplamente para problemas específicos que abordam bugs críticos e não relacionados à segurança.|
 |Atualizações de definição|Atualizações para vírus ou outros arquivos de definição.|
 |Drivers|Componentes de software projetados para dar suporte a novos hardwares.|
-|Pacotes de recursos|Novas versões de recursos, geralmente distribuídas em produtos na próxima versão.|
+|Feature packs|Novas versões de recursos, geralmente distribuídas em produtos na próxima versão.|
 |Atualizações de segurança|Correções liberadas em larga escala para produtos específicos, abordando problemas de segurança.|
 |Service packs|Conjuntos cumulativos de todos os hotfixes, atualizações de segurança, atualizações críticas e atualizações criadas desde o lançamento do produto. Os service packs também podem conter um número limitado de recursos ou alterações de design solicitadas pelo cliente.|
 |Ferramentas|Utilitários ou recursos que ajudam a realizar uma tarefa ou um conjunto de tarefas.|
-|Pacotes cumulativos de atualizações|Um conjunto cumulativo de hotfixes, atualizações de segurança, atualizações críticas e outras atualizações que são reunidas para facilitar a implantação. Um ROLLUP geralmente tem como alvo uma área específica, como segurança, ou um componente específico, como Serviços de Informações da Internet (IIS).|
+|Pacotes cumulativos de atualização|Um conjunto cumulativo de hotfixes, atualizações de segurança, atualizações críticas e outras atualizações que são reunidas para facilitar a implantação. Um ROLLUP geralmente tem como alvo uma área específica, como segurança, ou um componente específico, como Serviços de Informações da Internet (IIS).|
 |Atualizações|Correções liberadas amplamente para problemas específicos que abordam bugs não críticos relacionados à segurança.|
 
 ## <a name="icons-used-for-updates-in-windows-server-update-services"></a>Ícones usados para atualizações no Windows Server Update Services
- As atualizações no WSUS são representadas por um dos ícones a seguir.  
- Para exibir esses ícones, você precisa habilitar a coluna substituição no console do Update Services.
- 
+ As atualizações no WSUS são representadas por um dos ícones a seguir.
+Para exibir esses ícones, você precisa habilitar a coluna substituição no console do Update Services.
+
 ### <a name="no-icon"></a>Sem ícone
  A atualização não tem nenhuma relação de substituição com nenhuma outra atualização.
 
- **Problemas operacionais:**  
+ **Problemas operacionais:**
 
- Não há preocupações operacionais.  
- 
+ não há problemas operacionais.
+
 ### <a name="superseding-icon"></a>Ícone de substituição
  ![ícone](../../media/wsus/wsus-superseding.png) Esta atualização substitui outras atualizações.
 
- **Problemas operacionais:**  
+ **Problemas operacionais:**
 
- Não há preocupações operacionais.  
+ não há problemas operacionais.
 
 ### <a name="superseded--superseding-icon"></a>Ícone de substituição de & substituído
  ![ícone](../../media/wsus/wsus-superseded.png) Essa atualização é substituída por outra atualização e substitui outras atualizações.
 
- **Problemas operacionais:**  
+ **Problemas operacionais:**
 
  Substitua essas atualizações com as atualizações substitutas quando possível.
- 
+
 ### <a name="superseded-icon"></a>Ícone substituído
  ![ícone](../../media/wsus/wsus-superseded-leaf.png) Esta atualização foi substituída por outra atualização.
 
- **Problemas operacionais:**  
+ **Problemas operacionais:**
 
  Substitua essas atualizações com as atualizações substitutas quando possível.

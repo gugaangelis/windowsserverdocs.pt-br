@@ -1,20 +1,18 @@
 ---
 title: atualização do Manage-bde
 description: Artigo de referência para o comando de atualização Manage-bde, que atualiza a versão do BitLocker.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 23bfa824-6ff0-44cc-9b8b-b199a769fb8d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be218d9954a1a2872e974206fe02082a8e17c163
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 33f4e243d14465d2bc89b5723a0d92a98489dc59
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922112"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886609"
 ---
 # <a name="manage-bde-upgrade"></a>atualização do Manage-bde
 

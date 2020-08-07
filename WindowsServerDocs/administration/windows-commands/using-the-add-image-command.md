@@ -1,20 +1,18 @@
 ---
 title: Adicionar imagem
 description: Artigo de referência para Add-Image, que adiciona imagens a um servidor de serviços de implantação do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d5b6f4da-90ba-4b0e-9423-66c8ef5172e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 535c303e779441dd164174e7a7e311747a9c1e4d
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 24afd8b608875fcb971efad50d4c8adf16541557
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85929133"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896999"
 ---
 # <a name="add-image"></a>Adicionar imagem
 
@@ -22,7 +20,7 @@ ms.locfileid: "85929133"
 
 Adiciona imagens a um servidor dos serviços de implantação do Windows.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 para imagens de inicialização, use a seguinte sintaxe:
 ```
 wdsutil /add-ImagmediaFile:<wim file path> [/Server:<Server name>mediatype:Boot [/Skipverify] [/Name:<Image name>] [/Description:<Image description>]

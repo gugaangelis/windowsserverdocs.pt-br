@@ -1,20 +1,18 @@
 ---
 title: Usando o subcomando Add-AllDriverPackages
 description: Artigo de referência para Add-AllDriverPackages, que adiciona todos os pacotes de driver armazenados em uma pasta a um servidor.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ba6641c1-d7e9-43a9-9819-702dad5484ed
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 277053d48ce8ed853ccd41659af0a8f2418400cf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 301842cce5306c8f7922660f49c9475fbbf70cc3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954818"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897033"
 ---
 # <a name="add-alldriverpackages"></a>Add-AllDriverPackages
 

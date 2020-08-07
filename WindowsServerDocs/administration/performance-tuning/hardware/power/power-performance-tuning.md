@@ -1,18 +1,16 @@
 ---
 title: Visão geral sobre ajuste de energia e desempenho para o Windows Server
 description: Visão geral sobre o ajuste do gerenciamento de energia do processador (PPM) para o Windows Server.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 67e72967d29fc96fe3f57b714bd8aaf19f406565
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471651"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896738"
 ---
 # <a name="power-and-performance-tuning"></a>Ajuste de potência e desempenho
 
@@ -73,7 +71,7 @@ O Windows Server 2016 tem três planos de energia internos projetados para atend
 
 | **Plano** | **Descrição** | **Cenários comuns aplicáveis** | **Destaques da implementação** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Equilibrado (recomendado) | configuração padrão. Tem como alvo uma boa eficiência de energia com impacto mínimo no desempenho. | Computação geral | Corresponde à capacidade de demanda. Recursos de economia de energia equilibram energia e desempenho. |
+| Equilibrado (recomendado) | Configuração padrão. Tem como alvo uma boa eficiência de energia com impacto mínimo no desempenho. | Computação geral | Corresponde à capacidade de demanda. Recursos de economia de energia equilibram energia e desempenho. |
 | Alto Desempenho | Aumenta o desempenho ao custo de alto consumo de energia. As limitações de energia e térmica, as despesas operacionais e as considerações de confiabilidade se aplicam. | Aplicativos de baixa latência e código de aplicativo que são sensíveis a alterações de desempenho do processador | Os processadores são sempre bloqueados no estado de desempenho mais alto (incluindo frequências de "Turbo"). Todos os núcleos não são estacionados. A saída térmica pode ser significativa. |
 | Economia de energia | Limita o desempenho para economizar energia e reduzir o custo operacional. Não recomendado sem testes completos para garantir que o desempenho seja adequado. | Implantações com orçamentos de energia e restrições térmicas limitadas | A frequência do processador em uma porcentagem de máximo (se houver suporte) e habilita outros recursos de economia de energia. |
 

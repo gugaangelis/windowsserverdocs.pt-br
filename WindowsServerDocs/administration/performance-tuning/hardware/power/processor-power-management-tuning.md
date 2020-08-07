@@ -1,18 +1,16 @@
 ---
 title: Ajuste do gerenciamento de energia do processador (PPM) para o plano de energia balanceado do Windows Server
 description: Ajuste do gerenciamento de energia do processador (PPM) para o plano de energia balanceado do Windows Server
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 25244ecb653f7a1b8461130bba40901b35945765
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9b45ad16981667eff626278daadbe8b39f5cc5c8
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471611"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896718"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Ajuste do gerenciamento de energia do processador (PPM) para o plano de energia balanceado do Windows Server
 

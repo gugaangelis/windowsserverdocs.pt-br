@@ -1,20 +1,18 @@
 ---
 title: tzutil
 description: Artigo de referência para tzutil, que exibe o utilitário de fuso horário do Windows.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: bcf6e007-c9b6-4df5-83c5-ed7b4b1b5913
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99d88057c88a55aaf529d238088f8422c33e9ba7
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 4727423ed6752b3a0c2b578f5838a1108d1d14d4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937291"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896640"
 ---
 # <a name="tzutil"></a>tzutil
 
@@ -27,7 +25,7 @@ Exibe o utilitário de fuso horário do Windows.
 tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 ```
 #### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
+|Parâmetro|DESCRIÇÃO|
 |-------|--------|
 |/?|Exibe a ajuda no prompt de comando.|
 |/g|Exibe a ID do fuso horário atual.|

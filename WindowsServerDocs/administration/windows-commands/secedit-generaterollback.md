@@ -1,20 +1,18 @@
 ---
 title: 'secedit: generaterollback'
 description: Artigo de referência para * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 385a6799-51a7-4fe3-bd73-10c7998b6680
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1dec7833853d3c0526997f1d3e1bd2113d114cf2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: a5d7b21f47019e791ba541c17b99080c2324a43b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926174"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882955"
 ---
 # <a name="seceditgeneraterollback"></a>secedit: generaterollback
 

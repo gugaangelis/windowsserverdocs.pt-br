@@ -1,20 +1,18 @@
 ---
 title: rundll32 printui.dll, PrintUIEntry
 description: Artigo de referência para o comando rundll32 printui.dll, PrintUIEntry, que automatiza muitas tarefas de configuração de impressora.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 12fb48b6-5dd8-4cc0-8808-e6a681aceb84
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/25/2018
-ms.openlocfilehash: 04678bcaf13bbdc5f325dc56af39c4e0385bcd06
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b6c5510a2b1e556f57b70774a9b38fb58609e1a1
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932795"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883427"
 ---
 # <a name="rundll32-printuidllprintuientry"></a>rundll32 printui.dll, PrintUIEntry
 
@@ -22,7 +20,7 @@ ms.locfileid: "85932795"
 
 Automatiza muitas tarefas de configuração de impressora. printui.dll é o arquivo executável que contém as funções usadas pelas caixas de diálogo de configuração de impressora. Essas funções também podem ser chamadas de dentro de um script ou de um arquivo em lotes de linha de comando, ou podem ser executadas interativamente no prompt de comando.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 rundll32 printui.dll PrintUIEntry [BaseParameter] [ModificationParameter1] [ModificationParameter2] [ModificationParameterN]

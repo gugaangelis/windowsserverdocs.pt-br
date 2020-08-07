@@ -1,24 +1,22 @@
 ---
 title: WSUS e o site do catálogo
 description: Tópico Windows Server Update Service (WSUS)-como importar hotfixes para o WSUS acessando o site do catálogo Microsoft Update
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44c5ff9ffe793160b0d378a753c3f4c35e40f282
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80828319"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896789"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS e o site do catálogo
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 O site do catálogo é o local da Microsoft no qual você pode importar hotfixes e drivers de hardware.
 
@@ -37,7 +35,7 @@ Para importar hotfixes para o WSUS, você deve acessar o site de catálogo Micro
 
 As atualizações aprovadas importadas do site do catálogo Microsoft Update são baixadas na próxima vez que o servidor do WSUS for sincronizado. Eles não são baixados no momento da importação do site do catálogo Microsoft Update.
 
-Observe que você deve acessar o site do catálogo do Microsoft Update no console do WSUS para garantir que as atualizações sejam importadas em um formato compatível com o WSUS. Se você acessar o site do catálogo do Microsoft Update manualmente, as atualizações baixadas não serão importadas para o servidor do WSUS, mas, em vez disso, serão baixadas como individuais *. Arquivos MSU. No momento, o WSUS não tem um mecanismo com suporte para importar arquivos no \*. Formato MSU.
+Observe que você deve acessar o site do catálogo do Microsoft Update no console do WSUS para garantir que as atualizações sejam importadas em um formato compatível com o WSUS. Se você acessar o site do catálogo do Microsoft Update manualmente, as atualizações baixadas não serão importadas para o servidor do WSUS, mas, em vez disso, serão baixadas como individuais *. Arquivos MSU. No momento, o WSUS não tem um mecanismo com suporte para importar arquivos no \* . Formato MSU.
 
 Se você executar o assistente de limpeza do servidor, as atualizações importadas do catálogo de Microsoft Update definidas como não aprovadas ou como recusadas poderão ser removidas do servidor do WSUS. Se eles forem removidos, eles poderão ser importados novamente do catálogo de Microsoft Update.
 
@@ -51,7 +49,7 @@ Os administradores do WSUS podem considerar a restrição de acesso aos hotfixes
 
 1.  Habilite a autenticação do Windows no conteúdo do IIS vroot.
 
-    -   Inicie o Gerenciador do IIS.
+    -   Inicie o Gerenciador IIS.
 
     -   Navegue até o nó de conteúdo no site de administração do WSUS.
 

@@ -1,20 +1,18 @@
 ---
 title: 'secedit: importar'
 description: Artigo de referência para * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1dd59d4c-9d48-444a-871b-b957eb682597
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec5cbfdb4c9561b9af8841a267138dd6149c2c2
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 38f6b55d8c6cec30fbaa7de1fa3295df5cbfc26d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936505"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882943"
 ---
 # <a name="seceditimport"></a>secedit: importar
 

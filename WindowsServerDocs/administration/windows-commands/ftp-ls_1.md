@@ -1,20 +1,18 @@
 ---
 title: ftp ls
 description: Artigo de referência do comando FTP ls, que exibe uma lista abreviada de arquivos e subdiretórios do computador remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5e03c7db-1e2b-419c-acb2-8a68f3db9615
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6895886b8a18575f5e7c1f93c65f37a58ad3ad45
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 59e19d7e48b902ccc0704c22e150b3494fb2ad2b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957738"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889348"
 ---
 # <a name="ftp-ls"></a>ftp ls
 

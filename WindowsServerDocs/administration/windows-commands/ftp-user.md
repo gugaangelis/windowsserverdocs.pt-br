@@ -1,20 +1,18 @@
 ---
 title: ftp user
 description: Artigo de referência para o comando de usuário de FTP, que especifica um usuário para o computador remoto.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0a77bfeb-27a9-4f2f-a3c4-2fef529fb569
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b1eea449765b58461d410f0e015d4978c3ad016
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: bd015b7f84a6f5a4f3ee10a3cbe351a5bfa4a563
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957348"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87888818"
 ---
 # <a name="ftp-user"></a>ftp user
 

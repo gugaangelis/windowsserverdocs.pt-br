@@ -1,20 +1,18 @@
 ---
 title: unexpose
 description: Artigo de referência para unexpo, que não expõe uma cópia de sombra que foi exposta usando o comando Expose.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 58dc7d0f-52e9-4587-9487-d3b4c3e52640
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 02edb1f2c9331a22473123f0327dbc84cb05a865
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1c315639746db84d49afd72fc2be89e757c8fb95
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937298"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87897069"
 ---
 # <a name="unexpose"></a>unexpose
 

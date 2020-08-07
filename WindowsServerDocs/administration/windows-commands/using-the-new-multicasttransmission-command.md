@@ -1,27 +1,25 @@
 ---
 title: New-MulticastTransmission
 description: Artigo de referência para New-MulticastTransmission, que cria uma nova transmissão multicast para uma imagem.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c1f1dc46-dd50-4eb9-9f72-cf0e5d71bd3d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3d9c2b507243b9a024728e99885c7a429b34178
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 77f25940a3316d715bced365e92ed0614c74ed33
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932456"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896907"
 ---
 # <a name="new-multicasttransmission"></a>New-MulticastTransmission
 
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Cria uma nova transmissão multicast para uma imagem. Esse comando é equivalente a criar uma transmissão usando o snap-in do MMC dos serviços de implantação do Windows (clique com o botão direito do mouse no nó **transmissões multicast** e clique em **criar transmissão multicast**). Você deve usar esse comando quando tiver o serviço de função servidor de implantação e o serviço de função de servidor de transporte instalados (que é a instalação padrão). Se você tiver apenas o serviço de função de servidor de transporte instalado, use [usando o comando New-namespace](using-the-new-namespace-command.md).
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 para transmissões de imagens de instalação:
 ```
 wdsutil [Options] /New-MulticastTransmissiomedia:<Image name>

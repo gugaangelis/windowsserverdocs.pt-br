@@ -1,20 +1,18 @@
 ---
 title: ftp get
 description: Artigo de referência para o comando Get do FTP, que copia um arquivo remoto para o computador local usando o tipo de transferência de arquivo atual.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d70355c4-58ef-43e0-916b-c7ecf77e6ee4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a998786f5381dd5affc1bae900c0aa3fb33da49a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: beff912251646bb3c9672921955515247c0b13f3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957828"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87889433"
 ---
 # <a name="ftp-get"></a>ftp get
 

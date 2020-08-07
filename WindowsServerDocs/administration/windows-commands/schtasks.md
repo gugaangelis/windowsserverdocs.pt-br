@@ -1,20 +1,18 @@
 ---
 title: schtasks
 description: Artigo de referência para * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 2e713203-3dd8-491b-b9e1-9423618dc7e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f631a0b156d78365f2c2038bec49062a5892214
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 77af62734aedb06e8481fab661b8f186f0d3c12d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932806"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883242"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -645,7 +643,7 @@ schtasks /create /tn My App /tr c:\apps\myapp.exe /sc onidle /i 10
 
 **Schtasks** não tem uma opção executar agora, mas você pode simular essa opção criando uma tarefa que é executada uma vez e inicia em alguns minutos.
 
-#### <a name="syntax"></a>Syntax
+#### <a name="syntax"></a>Sintaxe
 
 ```
 schtasks /create /tn <TaskName> /tr <TaskRun> /sc once [/st <HH:MM>] /sd <MM/DD/YYYY> [/it] [/ru {[<Domain>\]<User> [/rp <Password>] | System}] [/s <Computer> [/u [<Domain>\]<User> [/p <Password>]]]

@@ -1,20 +1,18 @@
 ---
 title: 'secedit: configurar'
 description: Artigo de referência para * * * *-
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: a92e68ca-003c-4219-8655-0e7734f5fab3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2ab11a62d3c3b14be0d91345e6e18cc895d2c64
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 6da1afd83e1c50393581da932c894fa25d3f1583
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85926204"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87883017"
 ---
 # <a name="seceditconfigure"></a>secedit: configurar
 
