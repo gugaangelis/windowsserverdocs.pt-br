@@ -1,20 +1,18 @@
 ---
 title: ID do conjunto
 description: Artigo de referência para a ID do conjunto do DiskPart, que altera o campo de tipo de partição para a partição com foco.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 5793d7ad-827e-4285-b2c6-ae60eeb0e886
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad0a4c6ac29e4226bbbe6ea2bde140ae21b68374
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: afcaa134cd9af11d37130e17012a7cf8a147afd4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937107"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882624"
 ---
 # <a name="set-id"></a>ID do conjunto
 

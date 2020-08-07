@@ -1,27 +1,26 @@
 ---
 title: Funções, serviços de função e recursos que não estão em contêineres do Server Core-Windows Server, versão 1803
 description: Saiba mais sobre as funções e os recursos que removemos da imagem de contêiner do Server Core para o Windows Server.
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 41b5a9ac32066f1b2a41de84f66b9be79252c336
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383414"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895911"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Funções, serviços de função e recursos que não estão em contêineres do Server Core-Windows Server, versão 1803
 
 > Aplica-se a: Windows Server, versão 1803
 
-No Windows Server, versão 1803, [reduzimos o tamanho geral da imagem de contêiner do Server Core para **1,58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/). A maneira como fizemos isso é otimizando a arquitetura e removendo as coisas que você não precisa em um [contêiner do Server Core](https://docs.microsoft.com/virtualization/windowscontainers/about/). Alguns eram coisas que não funcionavam em contêineres, alguns eram funções e recursos que ninguém está usando. 
+No Windows Server, versão 1803, [reduzimos o tamanho geral da imagem de contêiner do Server Core para **1,58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/). A maneira como fizemos isso é otimizando a arquitetura e removendo as coisas que você não precisa em um [contêiner do Server Core](https://docs.microsoft.com/virtualization/windowscontainers/about/). Alguns eram coisas que não funcionavam em contêineres, alguns eram funções e recursos que ninguém está usando.
 
 > [!IMPORTANT]
-> Nós os removemos da imagem de **contêiner** do Server Core, e não do [próprio Server Core](server-core-roles-and-services.md). 
+> Nós os removemos da imagem de **contêiner** do Server Core, e não do [próprio Server Core](server-core-roles-and-services.md).
 
 Aqui está a lista completa de recursos e funções removidas da imagem de contêiner do Server Core:
 
@@ -70,7 +69,7 @@ Aqui está a lista completa de recursos e funções removidas da imagem de cont�
 <br>iSCSITargetServer
 <br>iSCSITargetStorageProviders
 <br>iSNS_Service
-<br>Licenciamento
+<br>Licenças
 <br>LightweightServer
 <br>Microsoft-Hyper-V-Management-clientes
 <br>Microsoft-Hyper-V-offline

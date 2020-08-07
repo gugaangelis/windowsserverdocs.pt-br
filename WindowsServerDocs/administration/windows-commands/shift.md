@@ -1,20 +1,18 @@
 ---
 title: shift
 description: Artigo de referência para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c72f1f2390a1adaa993be2caa7954d72dede51e9
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 985c1271a1da8f486e2313ba9aeb266803664b93
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932579"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882389"
 ---
 # <a name="shift"></a>shift
 

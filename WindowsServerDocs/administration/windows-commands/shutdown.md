@@ -1,20 +1,18 @@
 ---
 title: shutdown
 description: Artigo de referência para desligamento, que permite desligar ou reiniciar computadores locais ou remotos um de cada vez.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f31e5b0ee1252bf015c964fa76dd2852df3515b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 8dff8150cb6ccfea24238567581320a9b11650d3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956118"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882365"
 ---
 # <a name="shutdown"></a>shutdown
 

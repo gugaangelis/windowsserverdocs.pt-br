@@ -1,20 +1,18 @@
 ---
 title: fazer logoff
 description: Artigo de referência para o comando logoff, que faz logoff de um usuário de uma sessão em um servidor de Host da Sessão da Área de Trabalho Remota e exclui a sessão.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 939f09cc-de8c-436c-a05d-aca5f2a06371
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d154b767302f5c536e0a7efb30d99ac0a8e087d5
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: b8eb1b13d7eeddc03ead24bcda10062aea5e1cfe
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85927162"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887076"
 ---
 # <a name="logoff"></a>fazer logoff
 

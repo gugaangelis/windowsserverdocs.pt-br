@@ -1,49 +1,48 @@
 ---
 title: Configurar arquivos de despejo de memória para a instalação do Server Core
 description: Saiba como configurar arquivos de despejo de memória para uma instalação do Server Core do Windows Server
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 4f1baa52fc9f0ebfe8afae35d86b7a7238d56223
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee5786684c4f3a6c75c3b123b9d3ef9d32143949
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383393"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895889"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar arquivos de despejo de memória para a instalação do Server Core
 
 >Aplica-se a: Windows Server 2019, Windows Server 2016 e Windows Server (canal semestral)
 
-Use as etapas a seguir para configurar um despejo de memória para a instalação do Server Core. 
+Use as etapas a seguir para configurar um despejo de memória para a instalação do Server Core.
 
 ## <a name="step-1-disable-the-automatic-system-page-file-management"></a>Etapa 1: desabilitar o gerenciamento de arquivos de página de sistema automático
 
 A primeira etapa é configurar manualmente as opções de falha e recuperação do sistema. Isso é necessário para concluir as etapas restantes.
 
-Execute o seguinte comando: 
+Execute o seguinte comando:
 
 ```
 wmic computersystem set AutomaticManagedPagefile=False
 ```
- 
+
 ## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>Etapa 2: configurar o caminho de destino para um despejo de memória
 
-Você não precisa ter o arquivo de paginação na partição em que o sistema operacional está instalado. Para colocar o arquivo de paginação em outra partição, você deve criar uma nova entrada de registro chamada **DedicatedDumpFile**. Você pode definir o tamanho do arquivo de paginação usando a entrada do registro **DumpFileSize** . Para criar as entradas de registro DedicatedDumpFile e DumpFileSize, siga estas etapas: 
+Você não precisa ter o arquivo de paginação na partição em que o sistema operacional está instalado. Para colocar o arquivo de paginação em outra partição, você deve criar uma nova entrada de registro chamada **DedicatedDumpFile**. Você pode definir o tamanho do arquivo de paginação usando a entrada do registro **DumpFileSize** . Para criar as entradas de registro DedicatedDumpFile e DumpFileSize, siga estas etapas:
 
 1. No prompt de comando, execute o comando **regedit** para abrir o editor do registro.
 2. Localize e clique na seguinte subchave do registro: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\CrashControl
 3. Clique em **editar > novo > valor da cadeia de caracteres**.
 4. Nomeie o novo valor **DedicatedDumpFile**e pressione Enter.
 5. Clique com o botão direito do mouse em **DedicatedDumpFile**e clique em **Modificar**.
-6. Em tipo de **dados de valor** **\<unidade\>:\\\<Dedicateddumpfile. sys\>** e clique em **OK**.
+6. Em tipo de **dados de valor** ** \<Drive\> \\ \<Dedicateddumpfile.sys\> :**, e clique em **OK**.
 
-   >[!NOTE] 
-   > Substitua \<unidade\> por uma unidade que tenha espaço em disco suficiente para o arquivo de paginação e substitua \<Dedicateddumpfile. dmp\> pelo caminho completo do arquivo dedicado.
- 
+   >[!NOTE]
+   > Substitua \<Drive\> por uma unidade que tenha espaço em disco suficiente para o arquivo de paginação e substitua \<Dedicateddumpfile.dmp\> pelo caminho completo do arquivo dedicado.
+
 7. Clique em **editar > novo > valor DWORD**.
 8. Digite **DumpFileSize**e pressione Enter.
 9. Clique com o botão direito do mouse em **DumpFileSize**e clique em **Modificar**.
@@ -65,12 +64,12 @@ O destino padrão para **DebugFilePath** é%SystemRoot%\Memory.dmp. Para alterar
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-Defina \<FilePath\> para o caminho de destino. Por exemplo, o comando a seguir define o caminho de destino de despejo de memória para C:\WINDOWS\MEMORY. DMP 
+Defina \<FilePath\> como o caminho de destino. Por exemplo, o comando a seguir define o caminho de destino de despejo de memória para C:\WINDOWS\MEMORY. DMP
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
 ```
- 
+
 ## <a name="step-3-set-the-type-of-memory-dump"></a>Etapa 3: definir o tipo de despejo de memória
 
 Determine o tipo de despejo de memória a ser configurado para o servidor. Para exibir o tipo de despejo de memória atual, execute o seguinte comando:
@@ -79,13 +78,13 @@ Determine o tipo de despejo de memória a ser configurado para o servidor. Para 
 wmic RECOVEROS get DebugInfoType
 ```
 
-Para alterar o tipo de despejo de memória atual, execute o seguinte comando: 
+Para alterar o tipo de despejo de memória atual, execute o seguinte comando:
 
 ```
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<valor\> pode ser 0, 1, 2 ou 3, conforme definido abaixo.
+\<Value\>pode ser 0, 1, 2 ou 3, conforme definido abaixo.
 
 - 0: desabilitar a remoção de um despejo de memória.
 - 1: despejo de memória completo. Registra todo o conteúdo da memória do sistema quando o computador é interrompido inesperadamente. Um despejo de memória cheio pode conter dados de processos que estavam em execução quando o despejo de memória foi coletado.
@@ -107,7 +106,7 @@ Se o valor de **reinicialização** automática for false, o servidor não será
 ```
 wmic RECOVEROS set AutoReboot = true
 ```
- 
+
 ## <a name="step-5-configure-the-server-to-overwrite-the-existing-memory-dump-file"></a>Etapa 5: configurar o servidor para substituir o arquivo de despejo de memória existente
 
 Por padrão, o servidor substitui o arquivo de despejo de memória existente quando um novo é criado. Para determinar se os arquivos de despejo de memória já estão configurados para serem substituídos, execute o seguinte comando:
@@ -118,12 +117,12 @@ wmic RECOVEROS get OverwriteExistingDebugFile
 
 Se o valor for 1, o servidor substituirá o arquivo de despejo de memória existente. Nenhuma configuração é necessária e você pode prosseguir para a próxima etapa.
 
-Se o valor for 0, o servidor não substituirá o arquivo de despejo de memória existente. Execute o seguinte comando para alterar o valor: 
+Se o valor for 0, o servidor não substituirá o arquivo de despejo de memória existente. Execute o seguinte comando para alterar o valor:
 
 ```
 wmic RECOVEROS set OverwriteExistingDebugFile = 1
 ```
- 
+
 ## <a name="step-6-set-an-administrative-alert"></a>Etapa 6: definir um alerta administrativo
 
 Determine se um alerta administrativo é apropriado e defina **SendAdminAlert** de acordo. Para exibir o valor atual de SendAdminAlert, execute o seguinte comando:
@@ -132,12 +131,12 @@ Determine se um alerta administrativo é apropriado e defina **SendAdminAlert** 
 wmic RECOVEROS get SendAdminAlert
 ```
 
-Os valores possíveis para SendAdminAlert são TRUE ou FALSE. Para modificar o valor de SendAdminAlert existente para true, execute o seguinte comando: 
+Os valores possíveis para SendAdminAlert são TRUE ou FALSE. Para modificar o valor de SendAdminAlert existente para true, execute o seguinte comando:
 
 ```
 wmic RECOVEROS set SendAdminAlert = true
 ```
- 
+
 ## <a name="step-7-set-the-memory-dumps-page-file-size"></a>Etapa 7: definir o tamanho do arquivo de paginação do despejo de memória
 
 Para verificar as configurações do arquivo de paginação atual, execute um dos seguintes comandos:
@@ -146,7 +145,7 @@ Para verificar as configurações do arquivo de paginação atual, execute um do
    wmic.exe pagefile
    ```
 
-   ou
+   ou o
 
    ```
    wmic.exe pagefile list /format:list
@@ -184,13 +183,13 @@ Você pode gerar despejos de memória manuais com um teclado PS/2 conectado ao s
 
 ## <a name="step-9-verify-that-memory-dump-files-are-being-created-correctly"></a>Etapa 9: verificar se os arquivos de despejo de memória estão sendo criados corretamente
 
-Você pode usar o utlity Dumpchk. exe para verificar se os arquivos de despejo de memória estão sendo criados corretamente. O utilitário Dumpchk. exe não está instalado com a opção de instalação Server Core, portanto, você precisará executá-lo em um servidor com a experiência desktop ou com o Windows 10. Além disso, as ferramentas de depuração para produtos Windows devem ser instaladas.  
+Você pode usar o dumpchk.exe utlity para verificar se os arquivos de despejo de memória estão sendo criados corretamente. O utilitário dumpchk.exe não está instalado com a opção de instalação Server Core, portanto, você precisará executá-lo em um servidor com a experiência desktop ou com o Windows 10. Além disso, as ferramentas de depuração para produtos Windows devem ser instaladas.
 
-O utilitário Dumpchk. exe permite transferir o arquivo de despejo de memória da instalação Server Core do Windows Server 2008 para o outro computador usando a mídia de sua escolha.
+O utilitário dumpchk.exe permite transferir o arquivo de despejo de memória da instalação Server Core do Windows Server 2008 para o outro computador usando a mídia de sua escolha.
 
 > [!WARNING]
 > Os arquivos de paginação podem ser muito grandes, portanto, considere cuidadosamente o método de transferência e os recursos que o método exige.
- 
+
 
 Referências adicionais
 

@@ -1,24 +1,22 @@
 ---
 title: Configurar o gerenciamento remoto no Gerenciador do Servidor
 description: Gerenciador do Servidor
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 509182ed-c37d-4b81-84bc-aee43d006873
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01bc2d2d262882c08d1213bae6149896a8b284ab
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851559"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895805"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar o gerenciamento remoto no Gerenciador do Servidor
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 No Windows Server, você pode usar Gerenciador do Servidor para executar tarefas de gerenciamento em servidores remotos. o gerenciamento remoto é habilitado por padrão em servidores que executam o Windows Server 2016. Para gerenciar um servidor remotamente usando Gerenciador do Servidor, você adiciona o servidor ao pool de servidores do Gerenciador do Servidor.
 
@@ -26,11 +24,11 @@ Você pode usar Gerenciador do Servidor para gerenciar servidores remotos que ex
 
 Para gerenciar servidores que executam versões anteriores ao Windows Server 2016, instale o software e as atualizações a seguir para fazer com que as versões mais antigas do Windows Server sejam gerenciadas usando Gerenciador do Servidor no Windows Server 2016.
 
-|Sistema Operacional|Software Necessário|Capacidade de gerenciamento|
+|Sistema operacional|Software necessário|Capacidade de gerenciamento|
 |----------|-----------|---------|
-| Windows Server 2012 R2 ou Windows Server 2012 |-   [.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   o [Windows Management Framework 5,0](https://go.microsoft.com/fwlink/?LinkID=395058). O pacote de download do Windows Management Framework 5,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2008 R2. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2 têm um status de capacidade de gerenciamento **não acessível**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) não é mais necessária em servidores que executam o windows Server 2012 R2 ou o windows Server 2012.||
-| Windows Server 2008 R2 |-   [.NET Framework 4,5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   o [Windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkId=293881). O pacote de download do Windows Management Framework 4,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2008 R2. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2008 R2 têm um status de capacidade de gerenciamento **não acessível**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite Gerenciador do servidor coletar dados de desempenho do Windows Server 2008 R2.||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   o [Windows Management framework 3,0](https://go.microsoft.com/fwlink/p/?LinkID=229019) , o pacote de download do Windows management Framework 3,0 fornece os provedores de instrumentação de gerenciamento do Windows (WMI) no windows Server 2008. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2008 têm um status de capacidade de gerenciamento **não acessível-Verifique se as versões anteriores executam o Windows Management Framework 3,0**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite Gerenciador do servidor coletar dados de desempenho do Windows Server 2008.||
+| Windows Server 2012 R2 ou Windows Server 2012 |-   [.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5,0](https://go.microsoft.com/fwlink/?LinkID=395058). O pacote de download do Windows Management Framework 5,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2012 R2, Windows Server 2012 e Windows Server 2008 R2. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2012 R2, Windows Server 2012 ou Windows Server 2008 R2 têm um status de capacidade de gerenciamento **não acessível**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) não é mais necessária em servidores que executam o windows Server 2012 R2 ou o windows Server 2012.||
+| Windows Server 2008 R2 |-   [.NET Framework 4,5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4,0](https://go.microsoft.com/fwlink/?LinkId=293881). O pacote de download do Windows Management Framework 4,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2008 R2. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2008 R2 têm um status de capacidade de gerenciamento **não acessível**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite Gerenciador do servidor coletar dados de desempenho do Windows Server 2008 R2.||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management Framework 3,0](https://go.microsoft.com/fwlink/p/?LinkID=229019) O pacote de download do Windows Management Framework 3,0 atualiza os provedores de Instrumentação de Gerenciamento do Windows (WMI) no Windows Server 2008. Os provedores WMI atualizados permitem que Gerenciador do Servidor coletem informações sobre funções e recursos que estão instalados nos servidores gerenciados. Até que a atualização seja aplicada, os servidores que executam o Windows Server 2008 têm um status de capacidade de gerenciamento **não acessível-Verifique se as versões anteriores executam o Windows Management Framework 3,0**.<br />-A atualização de desempenho associada ao [artigo 2682011 da base de dados de conhecimento](https://go.microsoft.com/fwlink/p/?LinkID=245487) permite Gerenciador do servidor coletar dados de desempenho do Windows Server 2008.||
 
 para obter informações detalhadas sobre como adicionar servidores que estão em grupos de trabalho para gerenciar ou gerenciar servidores remotos de um computador do grupo de trabalhos que está executando o Gerenciador do Servidor, consulte [adicionar servidores ao Gerenciador do servidor](add-servers-to-server-manager.md).
 
@@ -46,17 +44,17 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
 -   Para habilitar o gerenciamento remoto do WinRM, selecione um dos procedimentos a seguir.
 
-    -   [Para habilitar Gerenciador do Servidor gerenciamento remoto usando a interface do Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
+    -   [Para habilitar o gerenciamento remoto do Gerenciador do Servidor usando a interface do Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
 
-    -   [Para habilitar Gerenciador do Servidor gerenciamento remoto usando o Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)
+    -   [Habilitar o gerenciamento remoto do Gerenciador de Servidores usando o Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)
 
-    -   [Para habilitar Gerenciador do Servidor gerenciamento remoto usando a linha de comando](#to-enable-server-manager-remote-management-by-using-the-command-line)
+    -   [Para habilitar o gerenciamento remoto do Gerenciador do Servidor usando a linha de comando](#to-enable-server-manager-remote-management-by-using-the-command-line)
 
-    -   [Para habilitar o gerenciamento remoto do Gerenciador do Servidor e do Windows PowerShell em versões anteriores do Windows Server](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
+    -   [Habilitar o Gerenciador de Servidores e o gerenciamento remoto do Windows PowerShell em versões anteriores do Windows Server](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
 
 -   Para desabilitar o WinRM e Gerenciador do Servidor gerenciamento remoto, selecione um dos procedimentos a seguir.
 
-    -   [Para desabilitar o gerenciamento remoto usando o Política de Grupo](#to-disable-remote-management-by-using-group-policy)
+    -   [Para desabilitar o gerenciamento remoto usando a Política de Grupo](#to-disable-remote-management-by-using-group-policy)
 
     -   [Para desabilitar o gerenciamento remoto usando um arquivo de resposta durante a instalação autônoma](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
@@ -87,7 +85,7 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
 2.  Digite o seguinte e pressione **Enter** para habilitar todas as exceções de regra de firewall necessárias.
 
-    **Configure-SMRemoting. exe-Enable**
+    **Configure-SMremoting.exe-habilitar**
 
 ### <a name="to-enable-server-manager-remote-management-by-using-the-command-line"></a>Para habilitar o gerenciamento remoto do Gerenciador do Servidor usando a linha de comando
 
@@ -95,19 +93,19 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
 2.  Execute o seguinte arquivo executável.
 
-    **%windir%\system32\Configure-SMremoting.exe**
+    **% WINDIR% \system32\Configure-SMremoting.exe**
 
-3.  Siga um destes procedimentos:
+3.  Realize um dos seguintes procedimentos:
 
-    -   Para desabilitar o gerenciamento remoto, digite **Configure-SMRemoting. exe-disable**e pressione **Enter**.
+    -   Para desabilitar o gerenciamento remoto, digite **Configure-SMremoting.exe-Disable**e pressione **Enter**.
 
-    -   Para habilitar o gerenciamento remoto, digite **Configure-SMRemoting. exe-Enable**e pressione **Enter**.
+    -   Para habilitar o gerenciamento remoto, digite **Configure-SMremoting.exe-Enable**e pressione **Enter**.
 
-    -   Para exibir a configuração de gerenciamento remoto atual, digite **Configure-SMRemoting. exe-get**e pressione Enter.
+    -   Para exibir a configuração de gerenciamento remoto atual, digite **Configure-SMremoting.exe-Get**e pressione Enter.
 
 ### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Habilitar o Gerenciador de Servidores e o gerenciamento remoto do Windows PowerShell em versões anteriores do Windows Server
 
--   Siga um destes procedimentos:
+-   Realize um dos seguintes procedimentos:
 
     -   Para habilitar o gerenciamento remoto em servidores que executam o Windows Server 2012, consulte [para habilitar Gerenciador do servidor gerenciamento remoto usando a interface do Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) neste tópico.
 
@@ -135,7 +133,7 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
     -   Gerenciamento remoto do log de eventos (RPC-EPMAP)
 
-4.  Clique com o botão direito do mouse nas regras que não estão habilitadas, e clique no menu de contexto **Habilitar regra** .
+4.  Clique com o botão direito do mouse nas regras que não estão habilitadas, e clique no menu de contexto **Habilitar regra**.
 
 5.  Feche o Firewall do Windows com o snap-in de Segurança Avançada
 
@@ -147,11 +145,11 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
     -   Em um servidor que esteja executando o Windows Server 2008 R2 ou o Windows Server 2008, na caixa de diálogo **executar** , digite **gpedit. msc**e pressione **Enter**.
 
-2.  Abra o **Computador\modelos Administrativos\Componentes do serviço \WinRM do gerenciamento remoto do Windows\Windows (WinRM)** .
+2.  Abra o **Computador\modelos Administrativos\Componentes do serviço \WinRM do gerenciamento remoto do Windows\Windows (WinRM)**.
 
 3.  No painel de conteúdo, clique duas vezes em **Permitir gerenciamento de servidor remoto via WinRM**.
 
-4.  Na caixa de diálogo da configuração de política **Permitir gerenciamento de servidor remoto via WinRM** , selecione **Desabilitado** para desabilitar o gerenciamento remoto. Clique em **OK** para salvar suas alterações e fechar a caixa de diálogo de configuração da política.
+4.  Na caixa de diálogo da configuração de política **Permitir gerenciamento de servidor remoto via WinRM**, selecione **Desabilitado** para desabilitar o gerenciamento remoto. Clique em **OK** para salvar suas alterações e fechar a caixa de diálogo de configuração da política.
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>Para desabilitar o gerenciamento remoto usando um arquivo de resposta durante a instalação autônoma
 
@@ -163,7 +161,7 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
     > [!NOTE]
     > Essa configuração desabilita o gerenciamento remoto como parte do processo de instalação do sistema operacional. Definir essa configuração não impede que um administrador habilite Gerenciador do Servidor gerenciamento remoto em um servidor após a conclusão da instalação do sistema operacional. Os administradores podem habilitar Gerenciador do Servidor gerenciamento remoto novamente usando as etapas em [para configurar Gerenciador do servidor gerenciamento remoto usando a interface do Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) ou [para habilitar Gerenciador do servidor gerenciamento remoto usando o Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell) neste tópico.
-    > 
+    >
     > Se você desabilitar o gerenciamento remoto por padrão como parte de uma instalação autônoma e não habilitar o gerenciamento remoto no servidor novamente após a instalação, os servidores aos quais esse arquivo de resposta é aplicado não poderão ser totalmente gerenciados com o uso de Gerenciador do Servidor. Os servidores que executam o Windows Server 2016, o Windows Server 2012 R2 ou o Windows Server 2012 (e que têm o gerenciamento remoto desabilitado por padrão) geram erros de status de capacidade de gerenciamento no console do Gerenciador do Servidor depois de serem adicionados ao pool de servidores do Gerenciador do Servidor.
 
 ## <a name="windows-remote-management-winrm-listener-settings"></a>Configurações do ouvinte do Windows Remote Management (WinRM)
@@ -183,10 +181,10 @@ O número da porta padrão é 5985 para que o WinRM se comunique com um computad
 
 para obter mais informações sobre como definir as configurações do ouvinte do WinRM, em um prompt de comando, digite **winrm help config**e pressione Enter.
 
-## <a name="see-also"></a>Consulte também
-[Adicionar servidores a Gerenciador do Servidor](add-servers-to-server-manager.md)
-[windows PowerShell: about_remote_Troubleshooting no TechCenter do Windows Server](https://technet.microsoft.com/library/dd347642.aspx)
-[Descrição do controle de conta de usuário](https://support.microsoft.com/kb/951016)
+## <a name="see-also"></a>Consulte Também
+[Adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md) 
+ [Windows PowerShell: about_remote_Troubleshooting no TechCenter](https://technet.microsoft.com/library/dd347642.aspx) 
+ do Windows Server [Descrição do controle de conta de usuário](https://support.microsoft.com/kb/951016)
 
 
 

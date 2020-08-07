@@ -1,20 +1,18 @@
 ---
 title: winsat mem
 description: Artigo de referência para o WinSAT Mem, que testa a largura de banda de memória do sistema de uma maneira que reflete a memória grande para cópias de buffer de memória, como é usado no processamento de multimídia.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 winms.topic: article
 ms.assetid: cda017bf-6193-43c1-b71f-e379c23e1152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ddb18a923358997d2882cce0d3ae1e261061ef
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 928c0b7389af4c2417fe62af1aeae4f9a90856a4
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936100"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896483"
 ---
 # <a name="winsat-mem"></a>winsat mem
 

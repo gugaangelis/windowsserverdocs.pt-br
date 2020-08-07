@@ -1,24 +1,22 @@
 ---
-title: criar e gerenciar grupos de servidores
+title: Create and Manage Server Groups
 description: Gerenciador do Servidor
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: 9d5b1be8-49fd-4ff7-9580-e4ff21fe4b17
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2f4ad512c55bcd1391ad55bdbdeb9a2ba3bfd7f0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 496d950f8b73b141821963a028b01c71d5375447
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851539"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895791"
 ---
 # <a name="create-and-manage-server-groups"></a>criar e gerenciar grupos de servidores
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico descreve como criar grupos de servidores personalizados e definidos pelo usuário no Gerenciador do Servidor no Windows Server.
 
@@ -31,7 +29,7 @@ Os servidores podem ser membros de mais de um grupo.
 
 1.  No menu **gerenciar** , clique em **Criar grupo de servidores**.
 
-2.  Na caixa de texto **Nome do grupo de servidores** , digite um nome fácil para seu grupo de servidores, como **Servidores Contábeis**.
+2.  Na caixa de texto **Nome do grupo de servidores**, digite um nome fácil para seu grupo de servidores, como **Servidores Contábeis**.
 
 3.  Adicione servidores à lista **selecionada** do pool de servidores ou adicione outros servidores ao grupo usando as guias **Active Directory**, **DNS**ou **Import** . Para obter mais informações sobre como usar essas guias, consulte [adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md) neste guia.
 
@@ -39,7 +37,7 @@ Os servidores podem ser membros de mais de um grupo.
 
 #### <a name="to-edit-an-existing-server-group"></a>Para editar um grupo de servidores existente
 
-1.  Siga um destes procedimentos.
+1.  Execute uma delas.
 
     -   No painel de navegação Gerenciador do Servidor, clique com o botão direito do mouse em um grupo de servidores e clique em **Editar grupo de servidores**.
 
@@ -48,13 +46,13 @@ Os servidores podem ser membros de mais de um grupo.
 2.  Altere o nome do grupo ou adicione ou remova servidores do grupo.
 
     > [!NOTE]
-    > a remoção de servidores de um grupo de servidores não remove servidores do Gerenciador do Servidor. Os servidores removidos de um grupo permanecem no grupo **Todos os Servidores** , no pool de servidores.
+    > a remoção de servidores de um grupo de servidores não remove servidores do Gerenciador do Servidor. Os servidores removidos de um grupo permanecem no grupo **Todos os Servidores**, no pool de servidores.
 
 3.  Após concluir as alterações no grupo, clique em **OK**.
 
 #### <a name="to-delete-an-existing-server-group"></a>Para excluir um grupo de servidores existente
 
-1.  Siga um destes procedimentos.
+1.  Execute uma delas.
 
     -   No painel de navegação Gerenciador do Servidor, clique com o botão direito do mouse em um grupo de servidores e clique em **excluir grupo de servidores**.
 
@@ -63,13 +61,13 @@ Os servidores podem ser membros de mais de um grupo.
 2.  Quando for exibida uma mensagem perguntando se você deseja excluir o grupo de servidores, clique em **Sim**.
 
     > [!NOTE]
-    > a exclusão de um grupo de servidores não remove servidores de Gerenciador do Servidor. Os servidores que estavam em um grupo excluído permanecem no grupo **Todos os Servidores** , no pool de servidores.
+    > a exclusão de um grupo de servidores não remove servidores de Gerenciador do Servidor. Os servidores que estavam em um grupo excluído permanecem no grupo **Todos os Servidores**, no pool de servidores.
 
 3.  Após concluir as alterações no grupo, clique em **OK**.
 
-## <a name="see-also"></a>Consulte também
-[adicionar servidores ao Gerenciador do Servidor](add-servers-to-server-manager.md)
-[Gerenciador do servidor](server-manager.md)
+## <a name="see-also"></a>Consulte Também
+[adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md) 
+ [Gerenciador do servidor](server-manager.md)
 
 
 

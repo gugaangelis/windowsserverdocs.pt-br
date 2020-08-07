@@ -1,18 +1,17 @@
 ---
 title: Funções, serviços de função e recursos que não estão no Windows Server-Server Core
 description: Saiba mais sobre as funções e os recursos não incluídos na opção de instalação do Server Core para o Windows Server.
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: ce8fd0edc426b673f873717a27e6045e3476170f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b2dd8012048d2a055fc412676874170395c597cd
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383359"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895871"
 ---
 # <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Funções, serviços de função e recursos que não estão no Windows Server-Server Core
 

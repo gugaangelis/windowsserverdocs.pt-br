@@ -1,20 +1,18 @@
 ---
 title: gerenciar-bde setidentifier
 description: Artigo de referência para o comando Manage-bde setidentifier, que define o campo identificador da unidade na unidade para o valor especificado na configuração fornecer os identificadores exclusivos para sua organização Política de Grupo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 7092d18f-4ac9-4c73-a20f-1246ca60e75e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6a04b4f7c04174158a165cf0d41493078af0056
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 836f8a0cb1842dcae276ccd8c2cca8f831056099
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86957038"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886702"
 ---
 # <a name="manage-bde-setidentifier"></a>gerenciar-bde setidentifier
 

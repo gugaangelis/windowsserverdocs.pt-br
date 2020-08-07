@@ -1,20 +1,18 @@
 ---
 title: Configure Features on Demand in Windows Server
 description: Gerenciador do Servidor
-ms.prod: windows-server
-ms.technology: manage-server-manager
 ms.topic: article
 ms.assetid: e663bbea-d025-41fa-b16c-c2bff00a88e8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 090b87810dc519728bf915bdb2cd79668c7f01f4
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7819bdfe1c5a65adc126ab902e6138d372982f20
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851549"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895819"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -34,34 +32,34 @@ Em uma configuração de recursos sob demanda, quando os arquivos de recurso nã
 
 Você pode substituir o comportamento padrão de Recursos sob Demanda executando um dos procedimentos a seguir.
 
--   Especificando um caminho de origem alternativo como parte do cmdlet `Install-WindowsFeature` , adicionando o parâmetro `Source`
+-   Especificando um caminho de origem alternativo como parte do cmdlet `Install-WindowsFeature`, adicionando o parâmetro `Source`
 
 -   Especificando um caminho de origem alternativo na página **confirmar opções de instalação** enquanto você está instalando recursos usando o assistente para adicionar funções e recursos
 
 -   Definindo a configuração da Política de Grupo, **Especificar configurações para instalação de componentes opcionais e reparo de componentes**
 
-Este tópico contém as seguintes seções.
+Este tópico inclui as seções a seguir.
 
--   [Criar um arquivo de recurso ou armazenamento lado a lado](#BKMK_store)
+-   [Criar um arquivo de recursos ou repositório lado a lado](#BKMK_store)
 
 -   [Métodos de remoção de arquivos de recursos](#BKMK_methods)
 
--   [Remover arquivos de recurso usando Uninstall-WindowsFeature](#BKMK_remove)
+-   [Remover arquivos de recursos usando Uninstall-WindowsFeature](#BKMK_remove)
 
-## <a name="create-a-feature-file-or-side-by-side-store"></a><a name=BKMK_store></a>Criar um arquivo de recurso ou armazenamento lado a lado
+## <a name="create-a-feature-file-or-side-by-side-store"></a><a name=BKMK_store></a>Criar um arquivo de recursos ou repositório lado a lado
 Esta seção descreve como configurar uma pasta compartilhada de arquivo de recurso remoto (também chamada de armazenamento lado a lado) que armazena os arquivos necessários para instalar funções, serviços de função e recursos em servidores que executam o Windows Server 2012 R2 ou o Windows Server 2012. Depois de configurar um repositório de recursos, você pode instalar funções, serviços de função e recursos em servidores que executam esses sistemas operacionais e especificar o repositório de recursos como o local dos arquivos de origem da instalação.
 
 #### <a name="to-create-a-feature-file-store"></a>Para criar um repositório de arquivos de recursos
 
-1.  Crie uma pasta compartilhada em um servidor em sua rede. Por exemplo, *\\\network\share\sxs*.
+1.  Crie uma pasta compartilhada em um servidor em sua rede. Por exemplo, * \\ \network\share\sxs*.
 
-2.  Verifique se você tem as permissões corretas atribuídas ao repositório de recursos. O caminho de origem ou o compartilhamento de arquivos deve conceder permissões de **leitura** ao grupo **todos** (não recomendado por motivos de segurança) ou às contas de computador (*domínio*\\*ServerName*$) de servidores nos quais você planeja instalar recursos usando esse armazenamento de recursos; conceder acesso à conta de usuário não é suficiente.
+2.  Verifique se você tem as permissões corretas atribuídas ao repositório de recursos. O caminho de origem ou o compartilhamento de arquivos deve conceder permissões de **leitura** ao grupo **todos** (não recomendado por motivos de segurança) ou às contas de computador (*domínio* \\ *ServerName*$) dos servidores nos quais você planeja instalar recursos usando esse repositório de recursos; conceder acesso à conta de usuário não é suficiente.
 
     Você pode acessar o compartilhamento de arquivos e as configurações de permissões executando um dos procedimentos a seguir na área de trabalho do Windows.
 
     -   Clique com o botão direito do mouse na pasta compartilhada, clique em **Propriedades** e altere os usuários permitidos e seus direitos de acesso à pasta na guia **Segurança**.
 
-    -   Clique com o botão direito do mouse na pasta compartilhada, aponte para **Compartilhar com**e clique em **Pessoas específicas**.
+    -   Clique com o botão direito do mouse na pasta compartilhada, aponte para **Compartilhar com** e clique em **Pessoas específicas**.
 
     > [!NOTE]
     > Os servidores que estão em grupos de trabalho não podem acessar compartilhamentos de arquivos externos, mesmo que a conta do computador do servidor do grupo tenha permissões **Leitura** no compartilhamento externo. Locais de origem alternativos que funcionam para servidores de grupos de trabalho incluem mídias de instalação, o Windows Update e arquivos VHD ou WIM armazenados no servidor de grupo de trabalho local.
@@ -71,11 +69,11 @@ Esta seção descreve como configurar uma pasta compartilhada de arquivo de recu
 ## <a name="methods-of-removing-feature-files"></a><a name=BKMK_methods></a>Métodos de remoção de arquivos de recursos
 Há dois métodos disponíveis para remover arquivos de recursos do Windows Server em uma configuração de Recursos sob Demanda.
 
--   O parâmetro `remove` do cmdlet `Uninstall-WindowsFeature` permite que você exclua arquivos de recursos de um servidor ou VHD (disco rígido virtual) offline que esteja executando o Windows Server 2012 R2 ou o Windows Server 2012. Os valores válidos para o parâmetro `remove` são os nomes de funções, serviços de função e recursos.
+-   O `remove` parâmetro do `Uninstall-WindowsFeature` cmdlet permite que você exclua arquivos de recursos de um servidor ou VHD (disco rígido virtual) offline que esteja executando o windows Server 2012 R2 ou o windows Server 2012. Os valores válidos para o `remove` parâmetro são os nomes de funções, serviços de função e recursos.
 
 -   Os comandos DISM (Gerenciamento e Manutenção de Imagens de Implantação) permitem criar arquivos WIM personalizados que preservam espaço em disco omitindo arquivos de recursos que não são necessários ou que podem ser obtidos de outras fontes remotas. Para obter mais informações sobre como usar o DISM para preparar imagens personalizadas, consulte [Como habilitar ou desabilitar os recursos do Windows](https://technet.microsoft.com/library/hh824822.aspx).
 
-## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Remover arquivos de recurso usando Uninstall-WindowsFeature
+## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Remover arquivos de recursos usando Uninstall-WindowsFeature
 Você pode usar o cmdlet Uninstall-WindowsFeature para desinstalar funções, serviços de função e recursos de servidores e VHDs offline que executam o Windows Server 2012 R2 ou o Windows Server 2012 e para excluir arquivos de recursos. Você pode desinstalar e excluir as mesmas funções, serviços de função e recursos no mesmo comando, se desejado.
 
 > [!IMPORTANT]
@@ -109,18 +107,18 @@ Você pode usar o cmdlet Uninstall-WindowsFeature para desinstalar funções, se
     **Exemplo:** No exemplo a seguir, o comando remove os serviços de domínio Active Directory e o gerenciamento de Política de Grupo de um VHD offline. A função e o recurso são desinstalados primeiro, depois seus arquivos de recursos são removidos completamente do VHD offline, *Contoso.vhd*.
 
     > [!NOTE]
-    > Você deve adicionar o parâmetro `computerName` se estiver executando o cmdlet de um computador que esteja executando o Windows 8.1 ou o Windows 8.
-    > 
+    > Você deve adicionar o `computerName` parâmetro se estiver executando o cmdlet de um computador que esteja executando o Windows 8.1 ou o Windows 8.
+    >
     > Se você inserir o nome de um arquivo VHD de um compartilhamento de rede, esse compartilhamento deverá conceder permissões de **leitura** e **gravação** à conta de computador do servidor que você selecionou para montar o VHD. O acesso à conta somente do usuário não é suficiente. O compartilhamento pode fornecer permissões de **Leitura** e **Gravação** ao grupo **Todos** para conceder acesso ao VHD. Porém, por motivos de segurança, isso não é recomendado.
 
     ```
     Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -VHD C:\WS2012VHDs\Contoso.vhd -computerName ContosoDC1
     ```
 
-## <a name="see-also"></a>Consulte também
-[Instale ou desinstale funções, serviços de função ou recursos](install-or-uninstall-roles-role-services-or-features.md)
-[Opções de instalação do Windows Server](https://technet.microsoft.com/library/hh831786.aspx)
-[como habilitar ou desabilitar recursos do Windows](https://technet.microsoft.com/library/hh824822.aspx)
-[visão geral do DISM (gerenciamento e manutenção de imagens de implantação)](https://technet.microsoft.com/library/hh825236.aspx)
+## <a name="see-also"></a>Consulte Também
+[Instalar ou desinstalar funções, serviços de função ou recursos](install-or-uninstall-roles-role-services-or-features.md) 
+ Opções de instalação [do Windows Server](https://technet.microsoft.com/library/hh831786.aspx) 
+ [Como habilitar ou desabilitar recursos](https://technet.microsoft.com/library/hh824822.aspx) 
+ do Windows [Visão geral do DISM (gerenciamento e manutenção de imagens de implantação)](https://technet.microsoft.com/library/hh825236.aspx)
 
 

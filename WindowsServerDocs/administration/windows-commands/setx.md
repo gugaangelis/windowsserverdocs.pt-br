@@ -1,20 +1,18 @@
 ---
 title: setx
 description: Artigo de referência para setx, que cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69dcbca54419acb9ede0924e3e835bdfaf0633c1
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935896"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882524"
 ---
 # <a name="setx"></a>setx
 

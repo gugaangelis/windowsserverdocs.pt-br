@@ -1,19 +1,17 @@
 ---
 title: wecutil
 description: Artigo de referência para wecutil, que permite criar e gerenciar assinaturas para eventos que são encaminhados de computadores remotos.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: af9e987bb78e4ef326f01effec6f3d7b53145091
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: be3c05bcb8122db0dddd1eea8823222786d58008
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85924784"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896523"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -42,7 +40,7 @@ wecutil  [{es | enum-subscription}]
 |{es \| enum-Subscription}|Exibe os nomes de todas as assinaturas de eventos remotos existentes.|
 |{GS \| Get-Subscription} \<Subid> [/f: \<Format> ] [/uni: \<Unicode> ]|Exibe informações de configuração de assinatura remota. \<Subid>é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<Subid>é o mesmo que a cadeia de caracteres especificada na \<SubscriptionId> marca do arquivo de configuração XML, que foi usado para criar a assinatura.|
 |{GR \| Get-subscriptionruntimestatus} \<Subid> [ \<Eventsource> ...]|Exibe o status de tempo de execução de uma assinatura. \<Subid>é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<Subid>é o mesmo que a cadeia de caracteres especificada na \<SubscriptionId> marca do arquivo de configuração XML, que foi usado para criar a assinatura. \<Eventsource>é uma cadeia de caracteres que identifica um computador que serve como uma fonte de eventos. \<Eventsource>deve ser um nome de domínio totalmente qualificado, um nome NetBIOS ou um endereço IP.|
-|{SS \| set-Subscription} \<Subid> [/e: [ \<Subenabled> ]] [/ESA: \<Address> ] [/ESE: [ \<Srcenabled> ]] [/AES] [/res] [/un: \<Username> ] [/up: \<Password> ] [/d: \<Desc> ] [/URI: \<Uri> ] [/cm: \<Configmode> ] [/ex: \<Expires> ] [/q: \<Query> ] [/dia: \<Dialect> ] [/TN: \<Transportname> ] [/TP: \<Transportport> ] [/DM: \<Deliverymode> ] [/DMI: \<Deliverymax> ] [/dmlt: \<Deliverytime> ] [/Hi: \<Heartbeat> ] [/CF: \<Content> ] [/l: \<Locale> ] [/Ree: [ \<Readexist> ]] [/LF: \<Logfile> ] [/PN: \<Publishername> ] [/ESSP: \<Enableport> ] [/HN: \<Hostname> ] [/CT: \<Type> ]</br>ou</br>{SS \| set-Subscription/c: \<Configfile> [/cun: \<Comusername> /Cup: \<Compassword> ]|Altera a configuração da assinatura. Você pode especificar a ID da assinatura e as opções apropriadas para alterar os parâmetros de assinatura ou pode especificar um arquivo de configuração XML para alterar os parâmetros de assinatura.|
+|{SS \| set-Subscription} \<Subid> [/e: [ \<Subenabled> ]] [/ESA: \<Address> ] [/ESE: [ \<Srcenabled> ]] [/AES] [/res] [/un: \<Username> ] [/up: \<Password> ] [/d: \<Desc> ] [/URI: \<Uri> ] [/cm: \<Configmode> ] [/ex: \<Expires> ] [/q: \<Query> ] [/dia: \<Dialect> ] [/TN: \<Transportname> ] [/TP: \<Transportport> ] [/DM: \<Deliverymode> ] [/DMI: \<Deliverymax> ] [/dmlt: \<Deliverytime> ] [/Hi: \<Heartbeat> ] [/CF: \<Content> ] [/l: \<Locale> ] [/Ree: [ \<Readexist> ]] [/LF: \<Logfile> ] [/PN: \<Publishername> ] [/ESSP: \<Enableport> ] [/HN: \<Hostname> ] [/CT: \<Type> ]</br>ou o</br>{SS \| set-Subscription/c: \<Configfile> [/cun: \<Comusername> /Cup: \<Compassword> ]|Altera a configuração da assinatura. Você pode especificar a ID da assinatura e as opções apropriadas para alterar os parâmetros de assinatura ou pode especificar um arquivo de configuração XML para alterar os parâmetros de assinatura.|
 |{cs \| Create-Subscription} \<Configfile> [/cun: \<Username> /Cup: \<Password> ]|Cria uma assinatura remota. \<Configfile>Especifica o caminho para o arquivo XML que contém a configuração de assinatura. O caminho pode ser absoluto ou relativo ao diretório atual.|
 |{DS \| excluir-assinatura}\<Subid>|Exclui uma assinatura e cancela a assinatura de todas as origens de evento que entregam eventos no log de eventos para a assinatura. Todos os eventos já recebidos e registrados em log não são excluídos. \<Subid>é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<Subid>é o mesmo que a cadeia de caracteres especificada na \<SubscriptionId> marca do arquivo de configuração XML, que foi usado para criar a assinatura.|
 |{RS \| Retry-assinatura} \<Subid> [ \<Eventsource> ...]|Tenta estabelecer uma conexão e enviar uma solicitação de assinatura remota para uma assinatura inativa. Tenta reativar todas as fontes de eventos ou origens de eventos especificadas. As fontes desabilitadas não são repetidas. \<Subid>é uma cadeia de caracteres que identifica exclusivamente uma assinatura. \<Subid>é o mesmo que a cadeia de caracteres especificada na \<SubscriptionId> marca do arquivo de configuração XML, que foi usado para criar a assinatura. \<Eventsource>é uma cadeia de caracteres que identifica um computador que serve como uma fonte de eventos. \<Eventsource>deve ser um nome de domínio totalmente qualificado, um nome NetBIOS ou um endereço IP.|

@@ -1,20 +1,18 @@
 ---
 title: logman update api
 description: Artigo de referência para o comando da API de atualização do logman, que atualiza as propriedades de um coletor de dados de rastreamento de API existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 6f322e52-0f9f-42b1-bd64-8b8f8fe086fc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40575772e5f82474c4afbd4809773f47d7e4e075
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: eaa66a05fa6f47fc17990d1f84223c2e2a8086c3
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933868"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887244"
 ---
 # <a name="logman-update-api"></a>logman update api
 

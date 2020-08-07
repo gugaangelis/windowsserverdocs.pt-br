@@ -1,18 +1,16 @@
 ---
 title: Ajuste de desempenho para servidores de arquivos NFS
 description: Ajuste de desempenho para servidores de arquivos NFS
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: roopeshb, nedpyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 9bee396532c3319e43d10012e098533495cf0b03
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 897e45a99ac4640c5fbae4287ac99a0bce6eae66
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851849"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896181"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>Servidores de arquivos NFS de ajuste de desempenho
 
@@ -25,7 +23,7 @@ Nenhum ajuste de registro é necessário para o protocolo NFS v 4.1.
 
 ### <a name="service-for-nfs-model-overview"></a>Visão geral do modelo de serviço para NFS
 
-O Microsoft Services for NFS fornece uma solução de compartilhamento de arquivos para empresas que têm um ambiente misto do Windows e do UNIX. Esse modelo de comunicação consiste em computadores cliente e um servidor do. Os aplicativos nos arquivos de solicitação do cliente que estão localizados no servidor por meio do redirecionador (Rdbss. sys) e do NFS mini-Redirector (Nfsrdr. sys). O mini-redirecionador usa o protocolo NFS para enviar sua solicitação por meio de TCP/IP. O servidor recebe várias solicitações dos clientes por meio de TCP/IP e roteia as solicitações para o sistema de arquivos local (NTFS. sys), que acessa a pilha de armazenamento.
+O Microsoft Services for NFS fornece uma solução de compartilhamento de arquivos para empresas que têm um ambiente misto do Windows e do UNIX. Esse modelo de comunicação consiste em computadores cliente e um servidor do. Os aplicativos nos arquivos de solicitação do cliente que estão localizados no servidor por meio do redirecionador (Rdbss.sys) e do mini-redirecionador NFS (Nfsrdr.sys). O mini-redirecionador usa o protocolo NFS para enviar sua solicitação por meio de TCP/IP. O servidor recebe várias solicitações dos clientes por meio de TCP/IP e roteia as solicitações para o sistema de arquivos local (Ntfs.sys), que acessa a pilha de armazenamento.
 
 A figura a seguir mostra o modelo de comunicação para NFS.
 
@@ -33,7 +31,7 @@ A figura a seguir mostra o modelo de comunicação para NFS.
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>Parâmetros de ajuste para servidores de arquivos NFS
 
-As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho dos servidores de arquivos NFS:
+As seguintes \_ configurações de registro do reg DWORD podem afetar o desempenho dos servidores de arquivos NFS:
 
 -   **OptimalReads**
 
@@ -41,7 +39,7 @@ As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    O padrão é 0. Esse parâmetro determina se os arquivos são abertos para o arquivo\_acesso aleatório\_ou somente para\_de arquivo\_SEQUENCIAl, dependendo das características de e/s de carga de trabalho. Defina esse valor como 1 para forçar a abertura de arquivos para o arquivo\_acesso aleatório\_. O arquivo\_acesso\_aleatório impede que o sistema de arquivos e o Gerenciador de cache se probusquem.
+    O padrão é 0. Esse parâmetro determina se os arquivos são abertos para \_ acesso aleatório de arquivo \_ ou \_ somente para arquivo sequencial \_ , dependendo das características de e/s de carga de trabalho. Defina esse valor como 1 para forçar a abertura de arquivos para \_ acesso aleatório de arquivo \_ . \_ \_ O acesso aleatório do arquivo impede que o sistema de arquivos e o Gerenciador de cache se probusquem.
 
     >[!NOTE]
     > Essa configuração deve ser avaliada com cuidado porque pode ter impacto potencial no aumento do cache de arquivos do sistema.
@@ -85,7 +83,7 @@ As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    O padrão é 4. Esse parâmetro especifica a memória máxima a ser consumida por entradas de cache de identificador de arquivo. O mínimo é 1 e o máximo é 1\*1024\*1024\*1024 (1073741824).
+    O padrão é 4. Esse parâmetro especifica a memória máxima a ser consumida por entradas de cache de identificador de arquivo. O mínimo é 1 e o máximo é 1 \* 1024 \* 1024 \* 1024 (1073741824).
 
 -   **LockFileHandleCacheInMemory**
 

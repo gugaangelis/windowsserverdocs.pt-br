@@ -1,18 +1,16 @@
 ---
 title: Solucionar problemas de desempenho de Active Directory Domain Services
 description: Diretrizes de solução de problemas no ajuste de desempenho Active Directory.
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7da3e421dd129e54cb013b91a0fa931cb874e815
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: d327d31bbfa7192780d524716504d1db3b5e9282
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471471"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896195"
 ---
 # <a name="troubleshooting-active-directory-domain-services-performance"></a>Solucionando problemas de desempenho de Active Directory Domain Services
 

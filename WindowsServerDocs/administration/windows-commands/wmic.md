@@ -1,20 +1,18 @@
 ---
 title: wmic
 description: Artigo de referência para WMIC, que exibe informações de WMI dentro de um shell de comando interativo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 76397c72-d06f-4cea-88cf-c7603315a983
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c14f877c226bdd376da39cfa6e8f11116d59fe56
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1b585cb968aa3165397b61acb1f974b2fafbd2b7
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936112"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896465"
 ---
 # <a name="wmic"></a>wmic
 
@@ -24,7 +22,7 @@ Exibe informações de WMI dentro de um shell de comando interativo.
 
 
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 wmic </parameter>
@@ -36,8 +34,8 @@ Os seguintes subcomandos estão disponíveis o tempo todo:
 
 |Subcomando|Descrição|
 |-----------|-----------|
-|class|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
-|path|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
+|classe|Sai do modo de alias padrão do WMIC para acessar classes diretamente no esquema WMI.|
+|caminho|Sai do modo de alias padrão do WMIC para acessar instâncias diretamente no esquema do WMI.|
 |contexto|Exibe os valores atuais de todas as opções globais.|
 |[sair \| sair]|Sai do Shell de comando do WMIC.|
 

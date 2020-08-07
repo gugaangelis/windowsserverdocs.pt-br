@@ -1,20 +1,18 @@
 ---
 title: wbadmin enable backup
 description: Artigo de referência para Wbadmin enable backup, que cria e habilita um agendamento de backup diário ou modifica um agendamento de backup existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: c0e57f8a-70fa-4c60-9754-e762e8ad8772
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 394316c0c3fdb419c2b4eeb5bbe290d56fdefb78
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ad192f90ca89eda75accb02aad1ad07e4c3e9ce2
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85936674"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896345"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin enable backup
 
@@ -24,7 +22,7 @@ Cria e habilita um agendamento de backup diário ou modifica um agendamento de b
 
 Para configurar ou modificar um agendamento de backup diário, você deve ser membro do grupo **Administradores** ou **operadores de backup** . Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando** e clique em **Executar como administrador**.)
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 Sintaxe do Windows Server 2008:
 ```
@@ -87,7 +85,7 @@ wbadmin enable backup
 |-SystemState|Para o Windows ° 7 e o Windows Server 2008 R2 e posterior, o cria um backup que inclui o estado do sistema, além de quaisquer outros itens que você especificou com o parâmetro **-include** . O estado do sistema contém arquivos de inicialização (Boot.ini, NDTLDR, NTDetect.com), o registro do Windows, incluindo configurações COM, o SYSVOL (diretivas de grupo e scripts de logon), o Active Directory e o NTDS. DIT em controladores de domínio e, se o serviço de certificados estiver instalado, o repositório de certificados. Se o servidor tiver a função de servidor Web instalada, o metadiretório do IIS será incluído. Se o servidor fizer parte de um cluster, Serviço de cluster informações também serão incluídas.|
 |-missão crítica|Especifica que todos os volumes críticos (volumes que contêm o estado do sistema operacional) sejam incluídos nos backups. Esse parâmetro será útil se você estiver criando um backup para recuperação completa do sistema ou do estado do sistema. Ele deve ser usado somente quando-backupTarget for especificado, caso contrário, o comando falhará. Pode ser usado com a opção **-include** .</br>Dica: o volume de destino para um backup de volume crítico pode ser uma unidade local, mas não pode ser qualquer um dos volumes incluídos no backup.|
 |-vssFull|Para o Windows Server 2008 R2 e posterior, o executa um backup completo usando o Serviço de Cópias de Sombra de Volume (VSS). Todos os arquivos são submetidos a backup, o histórico de cada arquivo é atualizado para refletir que foi feito backup e os logs de backups anteriores podem estar truncados. Se esse parâmetro não for usado, o Wbadmin start backup fará um backup de cópia, mas o histórico de arquivos cujo backup está sendo feito não será atualizado.</br>Cuidado: não use esse parâmetro se você estiver usando um produto que não seja Backup do Windows Server para fazer backup de aplicativos que estão nos volumes incluídos no backup atual. Isso pode potencialmente dividir o tipo de backup incremental, diferencial ou outro que o outro produto de backup está criando, pois o histórico do qual eles dependem para determinar a quantidade de dados para o backup pode estar ausente e pode executar um backup completo desnecessariamente.|
-|-vssCopy|Para o Windows Server 2008 R2 e posterior, o executa um backup de cópia usando o VSS. Todos os arquivos são submetidos a backup, mas o histórico dos arquivos que estão sendo atualizados não é atualizado, de modo que você preserva todas as informações em quais arquivos foram alterados, excluídos e assim por diante, bem como quaisquer arquivos de log do aplicativo. O uso desse tipo de backup não afeta a sequência de backups incrementais e diferenciais que podem ocorrer independentemente desse backup de cópia. Esse é o valor padrão.</br>Aviso: um backup de cópia não pode ser usado para backups ou restaurações incrementais ou diferenciais.|
+|-vssCopy|Para o Windows Server 2008 R2 e posterior, o executa um backup de cópia usando o VSS. Todos os arquivos são submetidos a backup, mas o histórico dos arquivos que estão sendo atualizados não é atualizado, de modo que você preserva todas as informações em quais arquivos foram alterados, excluídos e assim por diante, bem como quaisquer arquivos de log do aplicativo. O uso desse tipo de backup não afeta a sequência de backups incrementais e diferenciais que podem ocorrer independentemente desse backup de cópia. Este é o valor padrão.</br>Aviso: um backup de cópia não pode ser usado para backups ou restaurações incrementais ou diferenciais.|
 |-usuário|Para o Windows Server 2008 R2 e posterior, especifica o usuário com permissão de gravação para o destino de armazenamento de backup (se for uma pasta compartilhada remota). O usuário precisa ser um membro do grupo de administradores ou do grupo de operadores de backup no computador que está sendo submetido a backup.|
 |-password|Para o Windows Server 2008 R2 e posterior, especifica a senha para o nome de usuário fornecido pelo parâmetro-User.|
 |-quiet|Executa o subcomando sem prompts para o usuário.|

@@ -1,20 +1,18 @@
 ---
 title: Manage-bde protetores
 description: Artigo de referência para o comando Manage-bde protectors, que gerencia os métodos de proteção usados para a chave de criptografia do BitLocker.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 1f9b22c5-cc93-45df-9165-bedee94998da
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: d277c070ff0cdee0d93d7a8be11dc13bea5adb95
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 445f87435a97173192976f195478f9c92e109032
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85922304"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87886753"
 ---
 # <a name="manage-bde-protectors"></a>Manage-bde protetores
 

@@ -1,20 +1,18 @@
 ---
 title: wevtutil
 description: Artigo de referência para wevtutil, que permite recuperar informações sobre os logs de eventos e publicadores.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f76f04e54f1b502f3e816e4f547873d2ac6e1b4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 11eb4d3d2ab9c07ed9fe2cdd3ee03855731fb65b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958718"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896517"
 ---
 # <a name="wevtutil"></a>wevtutil
 

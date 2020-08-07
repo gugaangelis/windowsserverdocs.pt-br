@@ -1,18 +1,16 @@
 ---
 title: Considerações de criação de módulo do PowerShell
 description: Considerações de criação de módulo do PowerShell
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: jasonsh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 25b202e56286b7c26c3150642a656eb31a120808
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bb22009262cc1ae713846779c6b24402e3ed7928
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851929"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896263"
 ---
 # <a name="powershell-module-authoring-considerations"></a>Considerações de criação de módulo do PowerShell
 
@@ -28,10 +26,10 @@ Durante a análise do módulo, se os comandos exportados puderem ser totalmente 
 
 ### <a name="guidelines"></a>Diretrizes
 
-* No manifesto do módulo, não use caracteres curinga nas entradas `AliasesToExport`, `CmdletsToExport`e `FunctionsToExport`.
+* No manifesto do módulo, não use caracteres curinga nas `AliasesToExport` `CmdletsToExport` entradas, e `FunctionsToExport` .
 
-* Se o módulo não exportar comandos de um tipo específico, especifique-o explicitamente no manifesto especificando `@()`.
-Uma entrada ausente ou `$null` é equivalente a especificar o `*`curinga.
+* Se o módulo não exportar comandos de um tipo específico, especifique explicitamente no manifesto especificando `@()` .
+Uma entrada ausente ou `$null` é equivalente à especificação do caractere curinga `*` .
 
 O seguinte deve ser evitado sempre que possível:
 
@@ -59,7 +57,7 @@ Em vez disso, use:
 
 Ao decidir como implementar seu módulo, há três opções principais:
 
-* Binary (normalmente C#)
+* Binary (geralmente C#)
 * Script (PowerShell)
 * CDXML (um arquivo XML com encapsulamento CIM)
 

@@ -1,18 +1,16 @@
 ---
 title: Ajuste de desempenho do gateway SLB em redes definidas pelo software
 description: Diretrizes de ajuste de desempenho do gateway SLB em redes SDN
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: grcusanz; anpaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d1a497f24eba26b3b9b866772ae5171ea0fcbb24
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 64d045a270b8762d0d269055c8c65d1e40a71d63
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851579"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87895933"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste de desempenho do gateway SLB em redes definidas pelo software
 
@@ -22,7 +20,7 @@ Nenhum ajuste de desempenho adicional é necessário para configurar o controlad
 
 ## <a name="slb-mux-vm-configuration"></a>Configuração de VM MUX SLB
 
-As máquinas virtuais SLB MUX são implantadas em uma configuração ativo-ativo.  Isso significa que todas as VMs MUX implantadas e adicionadas ao controlador de rede podem processar solicitações de entrada.  Assim, a taxa de transferência total agregada de todas as conexões é limitada apenas pelo número de VMs MUX implantadas.  
+As máquinas virtuais SLB MUX são implantadas em uma configuração ativo-ativo.  Isso significa que todas as VMs MUX implantadas e adicionadas ao controlador de rede podem processar solicitações de entrada.  Assim, a taxa de transferência total agregada de todas as conexões é limitada apenas pelo número de VMs MUX implantadas.
 
 Uma conexão individual com um VIP (IP virtual) sempre será enviada para o mesmo MUX, supondo que o número de Muxes permaneça constante e, como resultado, sua taxa de transferência será limitada à taxa de transferência de uma única VM Mux.  Muxes processa apenas o tráfego de entrada destinado a um VIP.  Os pacotes de resposta vão diretamente da VM que está enviando a resposta para o comutador físico que o encaminha para o cliente.
 

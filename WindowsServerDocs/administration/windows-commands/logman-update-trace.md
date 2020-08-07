@@ -1,20 +1,18 @@
 ---
 title: logman update trace
 description: Artigo de referência para o comando de rastreamento de atualização do logman, que atualiza as propriedades de um coletor de dados de rastreamento de eventos existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: b7111f7f-4162-4d1a-8e53-d766db0ede1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7eb8b034958e14009101848d0aca381cb915a579
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 7c95d9cf4a0c6f2665057c9056bcbef04dc70b37
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85933121"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887171"
 ---
 # <a name="logman-update-trace"></a>logman update trace
 

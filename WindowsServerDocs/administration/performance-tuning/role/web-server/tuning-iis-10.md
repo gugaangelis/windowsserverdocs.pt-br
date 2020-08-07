@@ -1,18 +1,16 @@
 ---
 title: Ajuste do IIS 10.0
 description: Recommmendations de ajuste de desempenho para servidores Web do IIS 10,0 no Windows Server 16
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: davso; ericam; yashi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8617c285ae55521e4e301b5c6b74f389df6b32d2
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 74badc4bd2c001a524a290b74054fffb1a08cd36
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409446"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896013"
 ---
 # <a name="tuning-iis-100"></a>Ajuste do IIS 10.0
 
@@ -142,8 +140,8 @@ Esta seção descreve as configurações que afetam o comportamento de cache no 
 
 | Atributo | Descrição | Padrão |
 |--|--|--|
-| Habilitada | Desabilita o cache do IIS no modo de usuário quando definido como **false**. Quando a taxa de acesso ao cache é muito pequena, você pode desabilitar o cache completamente para evitar a sobrecarga associada ao caminho do código de cache. Desabilitar o cache de modo de usuário não desabilita o cache do modo kernel. | True |
-| enableKernelCache | Desabilita o cache do modo kernel quando definido como **false**. | True |
+| habilitado | Desabilita o cache do IIS no modo de usuário quando definido como **false**. Quando a taxa de acesso ao cache é muito pequena, você pode desabilitar o cache completamente para evitar a sobrecarga associada ao caminho do código de cache. Desabilitar o cache de modo de usuário não desabilita o cache do modo kernel. | verdadeiro |
+| enableKernelCache | Desabilita o cache do modo kernel quando definido como **false**. | verdadeiro |
 | maxCacheSize | Limita o tamanho do cache do modo de usuário do IIS ao tamanho especificado em megabytes. O IIS ajusta o padrão dependendo da memória disponível. Escolha o valor com cuidado com base no tamanho do conjunto de arquivos acessados com frequência em comparação com a quantidade de RAM ou o espaço de endereço de processo do IIS. | 0 |
 | maxResponseSize | Armazena em cache os arquivos até o tamanho especificado. O valor real depende do número e do tamanho dos maiores arquivos no conjunto de dados em comparação à RAM disponível. O cache de arquivos grandes e solicitados com frequência pode reduzir o uso da CPU, o acesso ao disco e as latências associadas. | 262144 |
 
@@ -159,15 +157,15 @@ Para desabilitar completamente a compactação, remova StaticCompressionModule e
 |--|--|--|
 | staticCompression-EnableCpuUsage<br><br>staticCompression-DisableCpuUsage<br><br>dynamicCompression-EnableCpuUsage<br><br>dynamicCompression-DisableCpuUsage | Habilita ou desabilita a compactação se o uso percentual atual da CPU estiver acima ou abaixo dos limites especificados.<br><br>A partir do IIS 7,0, a compactação será desabilitada automaticamente se a CPU de estado estacionário aumentar acima do limite de desabilitação. A compactação será habilitada se a CPU cair abaixo do limite de habilitação. | 50, 100, 50 e 90, respectivamente |
 | directory | Especifica o diretório no qual as versões compactadas de arquivos estáticos são armazenadas temporariamente e armazenadas em cache. Considere mover esse diretório da unidade do sistema se ele for acessado com frequência. | %SystemDrive%\inetpub\temp\IIS Temporary Compressed Files |
-| doDiskSpaceLimiting | Especifica se existe um limite para a quantidade de espaço em disco que todos os arquivos compactados podem ocupar. Os arquivos compactados são armazenados no diretório de compactação especificado pelo atributo **Directory** . | True |
+| doDiskSpaceLimiting | Especifica se existe um limite para a quantidade de espaço em disco que todos os arquivos compactados podem ocupar. Os arquivos compactados são armazenados no diretório de compactação especificado pelo atributo **Directory** . | verdadeiro |
 | maxDiskSpaceUsage | Especifica o número de bytes de espaço em disco que os arquivos compactados podem ocupar no diretório de compactação.<br><br>Essa configuração pode precisar ser aumentada se o tamanho total de todo o conteúdo compactado for muito grande. | 100 MB |
 
 **System. WebServer/urlCompression**
 
 | Atributo | Descrição | Padrão |
 |--|--|--|
-| doStaticCompression | Especifica se o conteúdo estático é compactado. | True |
-| doDynamicCompression | Especifica se o conteúdo dinâmico é compactado. | True |
+| doStaticCompression | Especifica se o conteúdo estático é compactado. | verdadeiro |
+| doDynamicCompression | Especifica se o conteúdo dinâmico é compactado. | verdadeiro |
 
 > [!NOTE]
 > Para servidores que executam o IIS 10,0 com baixo uso médio de CPU, considere habilitar a compactação para conteúdo dinâmico, especialmente se as respostas forem grandes. Isso deve ser feito primeiro em um ambiente de teste para avaliar o efeito sobre o uso da CPU da linha de base.
@@ -186,7 +184,7 @@ Para desabilitar completamente os documentos padrão, remova DefaultDocumentModu
 
 | Atributo | Descrição | Padrão |
 |--|--|--|
-| Habilitado | Especifica que os documentos padrão estão habilitados. | True |
+| Habilitado | Especifica que os documentos padrão estão habilitados. | verdadeiro |
 | Elemento `<files>` | Especifica os nomes de arquivo que são configurados como documentos padrão. | A lista padrão é Default.htm, Default. asp, Index.htm, Index.html, Iisstart.htm e default. aspx. |
 
 ## <a name="central-binary-logging"></a>Log binário central
@@ -223,7 +221,7 @@ As configurações a seguir estão relacionadas ao pool de aplicativos e aos aju
 
 | Atributo | Descrição | Padrão |
 |--|--|--|
-| allowSubDirConfig | Especifica se o IIS procura web.config arquivos em diretórios de conteúdo inferiores ao nível atual (true) ou não procura arquivos de web.config em diretórios de conteúdo inferiores ao nível atual (false). Ao impor uma limitação simples, que permite a configuração somente em diretórios virtuais, o IISÂ 10,0 pode saber que, a menos que ** / &lt; name &gt; . htm** seja um diretório virtual, ele não deve procurar um arquivo de configuração. Ignorar as operações de arquivo adicionais pode melhorar significativamente o desempenho de sites que têm um conjunto muito grande de conteúdo estático acessado aleatoriamente. | True |
+| allowSubDirConfig | Especifica se o IIS procura web.config arquivos em diretórios de conteúdo inferiores ao nível atual (true) ou não procura arquivos de web.config em diretórios de conteúdo inferiores ao nível atual (false). Ao impor uma limitação simples, que permite a configuração somente em diretórios virtuais, o IISÂ 10,0 pode saber que, a menos que ** / &lt; name &gt; . htm** seja um diretório virtual, ele não deve procurar um arquivo de configuração. Ignorar as operações de arquivo adicionais pode melhorar significativamente o desempenho de sites que têm um conjunto muito grande de conteúdo estático acessado aleatoriamente. | verdadeiro |
 
 ## <a name="managing-iis-100-modules"></a>Gerenciando módulos do IIS 10,0
 

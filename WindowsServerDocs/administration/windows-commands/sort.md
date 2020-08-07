@@ -1,20 +1,18 @@
 ---
 title: sort
 description: Artigo de referência para classificação, que lê entrada, classifica dados e grava os resultados na tela, em um arquivo ou em outro dispositivo.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3246745a2dceddec6cb1a66a4316ea7a8acb522
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: ec95133af8e9c2c617fedc3bf6a3085a6663b104
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937063"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882353"
 ---
 # <a name="sort"></a>sort
 

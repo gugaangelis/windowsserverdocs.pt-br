@@ -1,18 +1,16 @@
 ---
 title: Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 description: Ajuste de desempenho para hosts de virtualização Área de Trabalho Remota
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 2a0db4d890a01df13c44a9bb7adfbd13bebbdde0
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 071321249db62c927ee5677a48c52a7f2cd9c20d
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851699"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896038"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 
@@ -32,7 +30,7 @@ Quando apropriado, use a eliminação de duplicação de disco e o cache para re
 
 Introduzido no Windows Server 2012 R2, a eliminação de duplicação de dados dá suporte à otimização de arquivos abertos. Para usar máquinas virtuais em execução em um volume com eliminação de duplicação, os arquivos de máquina virtual precisam ser armazenados em um host separado do host do Hyper-V. Se o Hyper-V e a eliminação de duplicação estiverem em execução no mesmo computador, os dois recursos irão competir com os recursos do sistema e impactar negativamente o desempenho geral.
 
-O volume também deve ser configurado para usar o tipo de otimização de eliminação de duplicação de "Virtual Desktop Infrastructure (VDI)". Você pode configurar isso usando Gerenciador do Servidor (**serviços de arquivo e armazenamento** -&gt; **volumes** -&gt; **configurações de eliminação de duplicatas**) ou usando o seguinte comando do Windows PowerShell:
+O volume também deve ser configurado para usar o tipo de otimização de eliminação de duplicação de "Virtual Desktop Infrastructure (VDI)". Você pode configurar isso usando Gerenciador do servidor (configurações de eliminação de duplicatas de volumes**de serviços de arquivo e armazenamento**  - &gt; **Volumes**  - &gt; **Dedup Settings**) ou usando o seguinte comando do Windows PowerShell:
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
@@ -93,7 +91,7 @@ Faz sentido desativar os recursos e serviços do Windows que dependem do estado 
 
 Cada serviço específico deve ser avaliado adequadamente antes de qualquer implantação ampla. Veja a seguir algumas coisas iniciais a serem consideradas:
 
-| Service                                      | Por quê?                                                                                                                                                                                                      |
+| Serviço                                      | Por quê?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Atualização automática                                  | As áreas de trabalho virtuais em pool são atualizadas recriando o modelo de área de trabalho virtual.                                                                                                                          |
 | Arquivos Offline                                | As áreas de trabalho virtuais estão sempre online e conectadas de um ponto de vista de rede.                                                                                                                         |

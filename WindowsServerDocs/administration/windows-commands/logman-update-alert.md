@@ -1,20 +1,18 @@
 ---
 title: logman update alert
 description: Artigo de referência para o comando de alerta de atualização do logman, que atualiza as propriedades de um coletor de dados de alerta existente.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: ede94a76-931c-40ed-9fda-6766bed8ff72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e198ef528d1f9192662ed89ad39b6884fab742
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 1139b3d5f8e49c70f00b5bd5780a96f30bafa41e
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85932268"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87887256"
 ---
 # <a name="logman-update-alert"></a>logman update alert
 

@@ -1,22 +1,20 @@
 ---
-title: iniciar
+title: start
 description: Artigo de referência para Start, que inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8864edd1f108ac0408b6b9f899c72e70e22922f
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 54ec76cf6162cd887b21f99b6579fc123f4f614c
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85937050"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882296"
 ---
-# <a name="start"></a>iniciar
+# <a name="start"></a>start
 
 Inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
 

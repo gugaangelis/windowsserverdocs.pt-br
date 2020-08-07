@@ -1,18 +1,16 @@
 ---
 title: Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 description: Diretrizes de ajuste de desempenho para hosts de sessão Área de Trabalho Remota
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 3227bfe3bf21343ca9b7e85a07f550b4684a2fb7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851709"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896054"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 
@@ -21,7 +19,7 @@ Este tópico discute como selecionar o hardware de Host da Sessão da Área de T
 
 **Neste tópico:**
 
--   [Selecionando o hardware apropriado para o desempenho](#selecting-the-proper-hardware-for-performance)
+-   [Selecionar o hardware adequado para desempenho](#selecting-the-proper-hardware-for-performance)
 
 -   [Ajustando aplicativos para Host da Sessão da Área de Trabalho Remota](#tuning-applications-for-remote-desktop-session-host)
 
@@ -40,7 +38,7 @@ Portanto, quanto mais processadores lógicos estiver em um sistema, menor será 
 
 ### <a name="memory-configuration"></a>Configuração de memória
 
-A configuração de memória depende dos aplicativos que os usuários empregam; no entanto, a quantidade necessária de memória pode ser estimada usando a seguinte fórmula: TotalMem = OSMem + SessionMem \* NS
+A configuração de memória depende dos aplicativos que os usuários empregam; no entanto, a quantidade necessária de memória pode ser estimada usando a seguinte fórmula: TotalMem = OSMem + SessionMem \* ns
 
 OSMem é a quantidade de memória que o sistema operacional exige para ser executado (como imagens binárias do sistema, estruturas de dados etc.), SessionMem é a quantidade de processos de memória em execução em uma sessão necessária, e NS é o número de destino de sessões ativas. A quantidade de memória necessária para uma sessão é basicamente determinada pela referência de memória privada definida para aplicativos e processos do sistema em execução dentro da sessão. O código compartilhado ou as páginas de dados têm pouco efeito porque apenas uma cópia está presente no sistema.
 
@@ -93,7 +91,7 @@ Considere as seguintes sugestões ao configurar aplicativos que serão usados em
 
 -   Desabilite os processos desnecessários que estão registrados para começar com a entrada do usuário ou uma inicialização da sessão.
 
-    Esses processos podem contribuir significativamente com o custo do uso da CPU ao criar uma nova sessão de usuário, que geralmente é um processo intensivo de CPU, e pode ser muito caro em cenários de manhã. Use o MsConfig. exe ou o MsInfo32. exe para obter uma lista de processos que são iniciados na entrada do usuário. Para obter informações mais detalhadas, você pode usar o [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
+    Esses processos podem contribuir significativamente com o custo do uso da CPU ao criar uma nova sessão de usuário, que geralmente é um processo intensivo de CPU, e pode ser muito caro em cenários de manhã. Use MsConfig.exe ou MsInfo32.exe para obter uma lista de processos que são iniciados na entrada do usuário. Para obter informações mais detalhadas, você pode usar o [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
 
 Para o consumo de memória, você deve considerar o seguinte:
 
@@ -101,13 +99,13 @@ Para o consumo de memória, você deve considerar o seguinte:
 
     -   DLLs realocadas podem ser verificadas selecionando processar exibição de DLL, conforme mostrado na figura a seguir, usando o [Gerenciador de processos](https://technet.microsoft.com/sysinternals/bb896653.aspx).
 
-    -   Aqui, podemos ver que y. dll foi realocado porque x. dll já ocupava seu endereço base padrão e a ASLR não estava habilitada
+    -   Aqui, podemos ver que y.dll foi realocada porque x.dll já ocupava seu endereço base padrão e a ASLR não estava habilitada
 
         ![DLLs realocadas](../../media/perftune-guide-relocated-dlls.png)
 
         Se as DLLs forem realocadas, é impossível compartilhar seu código entre as sessões, o que aumenta significativamente a superfície de uma sessão. Esse é um dos problemas de desempenho mais comuns relacionados à memória em um servidor Host da Sessão RD.
 
--   Para aplicativos Common Language Runtime (CLR), use o gerador de imagem nativa (NGen. exe) para aumentar o compartilhamento de página e reduzir a sobrecarga da CPU.
+-   Para aplicativos Common Language Runtime (CLR), use o gerador de imagem nativa (Ngen.exe) para aumentar o compartilhamento de página e reduzir a sobrecarga de CPU.
 
     Quando possível, aplique técnicas semelhantes a outros mecanismos de execução semelhantes.
 
@@ -132,7 +130,7 @@ Os ícones de notificação na área de trabalho podem ter mecanismos de atualiz
 
 ### <a name="remote-desktop-protocol-data-compression"></a>Compactação de dados protocolo RDP
 
-Protocolo RDP compactação pode ser configurada usando Política de Grupo em **configuração do computador** &gt; **modelos administrativos** &gt; componentes do **Remote Desktop Session Host** **Windows** **&gt; serviços de área de trabalho remota &gt; host da sessão da área de trabalho remota** ambiente de **sessão remota** &gt; **Configurar a compactação para dados do RemoteFX**.&gt; Três valores são possíveis:
+Protocolo RDP compactação pode ser configurada usando política de grupo em **configuração do computador** &gt; **modelos administrativos** &gt; **componentes do Windows** &gt; **serviços de área de trabalho remota** &gt; **host da sessão da área de trabalho remota** &gt; **ambiente de sessão remota** &gt; **Configurar a compactação para dados do RemoteFX**. Três valores são possíveis:
 
 -   **Otimizado para usar menos memória** Consome a menor quantidade de memória por sessão, mas tem a menor taxa de compactação e, portanto, o consumo de largura de banda mais alto.
 
@@ -144,7 +142,7 @@ Você também pode optar por não usar um algoritmo de compactação protocolo R
 
 ### <a name="device-redirection"></a>Redirecionamento de dispositivo
 
-O redirecionamento de dispositivo pode ser configurado usando Política de Grupo em configuração do **computador** &gt; **modelos administrativos** &gt; **componentes** do Windows **Remote Desktop Session Host** **&gt; serviços de área de trabalho remota &gt; host da sessão da área de trabalho remota** **redirecionamento de dispositivo e recurso** ou usando a caixa Propriedades da **coleção de sessões** no &gt;.
+O redirecionamento de dispositivo pode ser configurado usando política de grupo em **configuração do computador** &gt; **modelos administrativos** &gt; **componentes do Windows** &gt; **serviços de área de trabalho remota** &gt; **host da sessão da área de trabalho remota** &gt; **redirecionamento de dispositivo e recurso** ou usando a caixa Propriedades da **coleção de sessões** no Gerenciador do servidor.
 
 Geralmente, o redirecionamento de dispositivo aumenta a quantidade de largura de banda de rede Host da Sessão RD conexões do servidor, pois os dados são trocados entre dispositivos nos computadores cliente e processos que estão em execução na sessão do servidor. A extensão do aumento é uma função da frequência das operações executadas pelos aplicativos que estão em execução no servidor em relação aos dispositivos redirecionados.
 

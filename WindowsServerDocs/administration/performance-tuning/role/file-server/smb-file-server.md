@@ -1,18 +1,16 @@
 ---
 title: Ajuste de desempenho para servidores de arquivos SMB
 description: Ajuste de desempenho para servidores de arquivos SMB
-ms.prod: windows-server
-ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: nedpyle; danlo; dkruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 89017686801501593c51245d44bf88a6ecf4baf6
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9e20b05f911726837cf436798a3743fbb80af193
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80851819"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87896155"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Ajuste de desempenho para servidores de arquivos SMB
 
@@ -58,7 +56,7 @@ Para obter mais informações sobre a expansão do SMB, consulte a [visão geral
 
 ### <a name="performance-counters-for-smb-30"></a>Contadores de desempenho para SMB 3,0
 
-Os contadores de desempenho SMB a seguir foram introduzidos no Windows Server 2012 e são considerados um conjunto base de contadores quando você monitora o uso de recursos do SMB 2 e versões posteriores. Registre os contadores de desempenho em um log de contador de desempenho local e bruto (. blg). É mais barato coletar todas as instâncias usando o caractere curinga (\*) e, em seguida, extrair instâncias específicas durante o pós-processamento usando relog. exe.
+Os contadores de desempenho SMB a seguir foram introduzidos no Windows Server 2012 e são considerados um conjunto base de contadores quando você monitora o uso de recursos do SMB 2 e versões posteriores. Registre os contadores de desempenho em um log de contador de desempenho local e bruto (. blg). É mais barato coletar todas as instâncias usando o caractere curinga ( \* ) e, em seguida, extrair instâncias específicas durante o pós-processamento usando Relog.exe.
 
 -   **Compartilhamentos de cliente SMB**
 
@@ -91,7 +89,7 @@ Os contadores de desempenho SMB a seguir foram introduzidos no Windows Server 20
 ## <a name="tuning-parameters-for-smb-file-servers"></a>Parâmetros de ajuste para servidores de arquivos SMB
 
 
-As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho dos servidores de arquivos SMB:
+As seguintes \_ configurações de registro do reg DWORD podem afetar o desempenho dos servidores de arquivos SMB:
 
 - **Smb2CreditsMin** e **Smb2CreditsMax**
 
@@ -104,11 +102,11 @@ As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho
   ```
 
   Os padrões são 512 e 8192, respectivamente. Esses parâmetros permitem que o servidor controle a simultaneidade da operação do cliente dinamicamente dentro dos limites especificados. Alguns clientes podem alcançar uma taxa de transferência maior com limites de simultaneidade mais altos, por exemplo, copiar arquivos por links de alta largura de banda e alta latência.
-    
+
   > [!TIP]
   > Antes do Windows 10 e do Windows Server 2016, o número de créditos concedidos ao cliente variavam dinamicamente entre Smb2CreditsMin e Smb2CreditsMax com base em um algoritmo que tentava determinar o número ideal de créditos a serem concedidos com base na latência de rede e no uso de crédito. No Windows 10 e no Windows Server 2016, o servidor SMB foi alterado para conceder créditos incondicionalmente mediante solicitação até o número máximo configurado de créditos. Como parte dessa alteração, o mecanismo de limitação de crédito, que reduz o tamanho da janela de crédito de cada conexão quando o servidor está sob pressão de memória, foi removido. O evento de memória insuficiente do kernel que disparou a limitação só é sinalizado quando o servidor está tão baixo na memória (< alguns MB) para ser inútil. Como o servidor não reduz mais as janelas de crédito, a configuração Smb2CreditsMin não é mais necessária e agora é ignorada.
-  > 
-  > Você pode monitorar compartilhamentos de clientes SMB\\paralisações de crédito/S para ver se há problemas com créditos.
+  >
+  > Você pode monitorar \\ as interrupções de crédito de compartilhamentos de cliente SMB/s para ver se há problemas com créditos.
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -119,7 +117,7 @@ As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho
     O padrão é 0, o que significa que nenhum thread de trabalho de kernel crítico adicional é adicionado. Esse valor afeta o número de threads que o cache do sistema de arquivos usa para solicitações Read-Ahead e write-behind. Aumentar esse valor pode permitir uma e/s mais enfileirada no subsistema de armazenamento, e pode melhorar O desempenho de e/s, especialmente em sistemas com muitos processadores lógicos e hardware de armazenamento avançado.
 
     >[!TIP]
-    > Talvez seja necessário aumentar o valor se a quantidade de dados sujos do Gerenciador de cache (cache do contador de desempenho\\páginas sujas) estiver crescendo para consumir uma parte grande (mais de aproximadamente 25%) de memória ou se o sistema estiver fazendo muitas e/SS de leitura síncronas.
+    > Talvez seja necessário aumentar o valor se a quantidade de dados sujos do Gerenciador de cache (páginas sujas no cache do contador de desempenho \\ ) estiver crescendo para consumir uma parte grande (mais de aproximadamente 25%) de memória ou se o sistema estiver fazendo muitas e/SS de leitura síncronas.
 
 - **MaxThreadsPerQueue**
 
@@ -130,15 +128,15 @@ As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho
   O padrão é 20. Aumentar esse valor gera o número de threads que o servidor de arquivos pode usar para atender a solicitações simultâneas. Quando um grande número de conexões ativas precisa ser atendido, e recursos de hardware, como largura de banda de armazenamento, são suficientes, aumentar o valor pode melhorar a escalabilidade, o desempenho e os tempos de resposta do servidor.
 
   >[!TIP]
-  > Uma indicação de que o valor pode precisar ser aumentado é se as filas de trabalho do SMB2 estiverem crescendo muito grandes (o contador de desempenho ' filas de trabalho do servidor\\comprimento da fila\\o \*não bloqueio de SMB2 ' está consistentemente acima de ~ 100).
+  > Uma indicação de que o valor pode precisar ser aumentado é se as filas de trabalho do SMB2 estiverem crescendo muito grandes (o contador de desempenho ' servidor de filas de trabalho de filas \\ SMB2 o comprimento de fila \\ \* é consistentemente acima de 100).
 
   >[!Note]
   >No Windows 10 e no Windows Server 2016, o MaxThreadsPerQueue está indisponível. O número de threads para um pool de threads será "20 * o número de processadores em um nó NUMA".
-     
+
 
 - **AsynchronousCredits**
 
-  ``` 
+  ```
   HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
   ```
 
@@ -148,7 +146,7 @@ As seguintes configurações do registro do REG\_DWORD podem afetar o desempenho
 
 As configurações a seguir podem otimizar um computador para o desempenho do servidor de arquivos em muitos casos. As configurações não são ideais nem adequadas em todos os computadores. Você deve avaliar o impacto de configurações individuais antes de aplicá-las.
 
-| Parâmetro                       | {1&gt;Valor&lt;1} | Padrão |
+| Parâmetro                       | Valor | Padrão |
 |---------------------------------|-------|---------|
 | AdditionalCriticalWorkerThreads | 64    | 0       |
 | MaxThreadsPerQueue              | 64    | 20      |

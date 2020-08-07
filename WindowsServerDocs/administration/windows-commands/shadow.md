@@ -1,20 +1,18 @@
 ---
 title: shadow
 description: Artigo de referência para sombra, que permite controlar remotamente uma sessão ativa de outro usuário em um servidor de Host da Sessão da Área de Trabalho Remota.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: f81d9717-6883-4e14-9508-4b2a87e48ea7 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4f7d6483e46708cab31d46b917f16b1eba29a58
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 225d85d777c7c6785d2d07916aef1b7d88b6ae53
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85935878"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882465"
 ---
 # <a name="shadow"></a>shadow
 

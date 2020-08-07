@@ -1,20 +1,18 @@
 ---
 title: setlocal
 description: Artigo de referência para setlocal, que inicia a localização de variáveis de ambiente em um arquivo em lotes.
-ms.prod: windows-server
-ms.technology: manage-windows-commands
 ms.topic: article
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e990cf931e72bd8f6972db448d24db08c2e5208
-ms.sourcegitcommit: 2afed2461574a3f53f84fc9ec28d86df3b335685
+ms.openlocfilehash: 30b84c9dcaf741c57393e680d3f9c9cb7b92f19b
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85934612"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87882531"
 ---
 # <a name="setlocal"></a>setlocal
 
