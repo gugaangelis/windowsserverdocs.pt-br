@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: b2cbb47262033d5149e47704e3f232b7662f69e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 30055b7954674b1cea99e7ef60d45cfa33543c3d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955655"
+ms.locfileid: "87996741"
 ---
 # <a name="hardware-only-ho-features-and-technologies"></a>Tecnologias e recursos do hardware apenas (HO)
 
@@ -79,4 +79,4 @@ O LSO permite que um aplicativo transmita um grande bloco de dados para a NIC, e
 
 ## <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
-A União de segmento de recebimento, também conhecida como descarga de recebimento grande, é um recurso NIC que usa pacotes que fazem parte do mesmo fluxo que chega entre interrupções de rede e os une em um único pacote antes de fornecê-los ao sistema operacional. O RSC não está disponível em NICs associadas ao comutador virtual Hyper-V. Para obter mais informações, consulte [RSC (União de segmento de recebimento)](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch).
+A União de segmento de recebimento, também conhecida como descarga de recebimento grande, é um recurso NIC que usa pacotes que fazem parte do mesmo fluxo que chega entre interrupções de rede e os une em um único pacote antes de fornecê-los ao sistema operacional. O RSC não está disponível em NICs associadas ao comutador virtual Hyper-V. Para obter mais informações, consulte [RSC (União de segmento de recebimento)](./rsc-in-the-vswitch.md).

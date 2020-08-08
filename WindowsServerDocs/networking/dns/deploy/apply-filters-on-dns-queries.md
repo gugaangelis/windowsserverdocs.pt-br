@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 81afa40adc51a89a12e096000de1f11f13730df6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 79e0a0c0e99c49fc251d8aebc3fc76e68603e45c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964172"
+ms.locfileid: "87996919"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>Usar a Política de DNS para a aplicação de filtros em consultas DNS
 
@@ -41,7 +41,7 @@ Você pode criar filtros de consulta com qualquer combinação lógica (e/ou/nã
 Os exemplos a seguir mostram como criar filtros para a política DNS que bloqueiam ou permitem consultas de resolução de nomes DNS.
 
 >[!NOTE]
->Os comandos de exemplo neste tópico usam o comando do Windows PowerShell **Add-DnsServerQueryResolutionPolicy**. Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+>Os comandos de exemplo neste tópico usam o comando do Windows PowerShell **Add-DnsServerQueryResolutionPolicy**. Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 ## <a name="block-queries-from-a-domain"></a><a name="bkmk_block1"></a>Bloquear consultas de um domínio
 

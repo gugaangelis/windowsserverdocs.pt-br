@@ -1,19 +1,17 @@
 ---
 title: Visão geral dos insights do sistema
 description: O System insights é um novo recurso de análise preditiva no Windows Server 2019. Os recursos de previsão do System insights – cada um apoiado por um modelo de aprendizado de máquina – analise localmente os dados do sistema do Windows Server, como contadores de desempenho e eventos, fornecendo informações sobre o funcionamento dos servidores e ajudando a reduzir as despesas operacionais associadas ao gerenciamento reativo de problemas em suas implantações.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 5/23/2018
-ms.openlocfilehash: b1f0fc5343c5228a02369a64bff2de50ab3f863e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9bedd593cdd26b67e6e16ddea73955bb926a87a5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471761"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996680"
 ---
 # <a name="system-insights-overview"></a>Visão geral dos insights do sistema
 
@@ -23,7 +21,7 @@ O System insights é um novo recurso de análise preditiva no Windows Server 201
 
 No Windows Server 2019, o System insights é fornecido com quatro recursos padrão com foco na previsão de capacidade, prevendo recursos futuros para computação, rede e armazenamento com base em seus padrões de uso anteriores. O System insights também é fornecido com uma [infraestrutura extensível](adding-and-developing-capabilities.md), portanto, a Microsoft e terceiros podem adicionar novos recursos de previsão ao insights do sistema sem Atualizar o sistema operacional.
 
-Você pode gerenciar as informações do sistema por meio de uma extensão intuitiva do [centro de administração do Windows](https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview) ou [diretamente por meio do PowerShell](https://aka.ms/SystemInsightsPowerShell), e o System insights permite que você configure cada recurso de previsão separadamente de acordo com as necessidades de sua implantação. Todos os resultados de previsão são publicados no log de eventos, o que permite que você use [Azure monitor](https://azure.microsoft.com/services/monitor/) ou [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar facilmente e ver previsões em um grupo de computadores.
+Você pode gerenciar as informações do sistema por meio de uma extensão intuitiva do [centro de administração do Windows](../windows-admin-center/overview.md) ou [diretamente por meio do PowerShell](https://aka.ms/SystemInsightsPowerShell), e o System insights permite que você configure cada recurso de previsão separadamente de acordo com as necessidades de sua implantação. Todos os resultados de previsão são publicados no log de eventos, o que permite que você use [Azure monitor](https://azure.microsoft.com/services/monitor/) ou [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) para agregar facilmente e ver previsões em um grupo de computadores.
 
 ![Extensão do System insights no centro de administração do Windows, mostrando a capacidade de previsão de capacidade da CPU com um gráfico que plota a previsão](media/cpu-forecast-2.png)
 

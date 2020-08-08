@@ -1,19 +1,17 @@
 ---
 title: Desenvolver uma extensão de solução
 description: Desenvolver uma extensão de solução SDK do Windows Admin Center (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ac9c6296fdf9159c9f50a1304dd345932052ac9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357149"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949591"
 ---
 # <a name="develop-a-solution-extension"></a>Desenvolver uma extensão de solução
 
@@ -33,7 +31,7 @@ Se você quiser criar uma GUI de gerenciamento para serviços não definidos pel
 > [!NOTE]
 > Não está familiarizado com os tipos de extensão diferentes? Saiba mais sobre a [arquitetura de extensibilidade e os tipos de extensão](understand-extensions.md).
 
-## <a name="prepare-your-environment"></a>Prepare o ambiente
+## <a name="prepare-your-environment"></a>Prepare o seu ambiente
 
 Se você ainda não fez isso, [Prepare seu ambiente](prepare-development-environment.md) instalando dependências e pré-requisitos globais necessários para todos os projetos.
 
@@ -57,7 +55,7 @@ Aqui está um uso de exemplo:
 wac create --company "Contoso Inc" --solution "Contoso Foo Works Suite" --tool "Manage Foo Works"
 ```
 
-Isso cria uma nova pasta dentro do diretório de trabalho atual usando o nome especificado para sua solução, copia todos os arquivos de modelo necessários em seu projeto e configura os arquivos com sua empresa, solução e nome de ferramenta.  
+Isso cria uma nova pasta dentro do diretório de trabalho atual usando o nome especificado para sua solução, copia todos os arquivos de modelo necessários em seu projeto e configura os arquivos com sua empresa, solução e nome de ferramenta.
 
 Em seguida, altere o diretório para a pasta recém-criada e instale as dependências locais necessárias executando o seguinte comando:
 
@@ -65,7 +63,7 @@ Em seguida, altere o diretório para a pasta recém-criada e instale as dependê
 npm install
 ```
 
-Quando isso for concluído, você configurou tudo o que precisa para carregar sua nova extensão no centro de administração do Windows. 
+Quando isso for concluído, você configurou tudo o que precisa para carregar sua nova extensão no centro de administração do Windows.
 
 ## <a name="add-content-to-your-extension"></a>Adicionar conteúdo à sua extensão
 
@@ -75,7 +73,7 @@ Agora que você criou uma extensão com a CLI do centro de administração do Wi
 - Adicionar um [iframe](guides/add-iframe.md)
 - Criar um [provedor de conexão personalizado](guides/create-connection-provider.md)
 - Modificar o [comportamento de navegação raiz](guides/modify-root-navigation.md)
- 
+
 Ainda mais exemplos podem ser encontrados nosso [site do SDK do GitHub](https://aka.ms/wacsdk):
 -  [Ferramentas para desenvolvedores](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) é uma extensão totalmente funcional que pode ser carregada no centro de administração do Windows e contém uma rica coleção de exemplos de funcionalidade e de ferramentas que você pode procurar e usar em sua própria extensão.
 

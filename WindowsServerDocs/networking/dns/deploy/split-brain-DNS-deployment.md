@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f0274eddba5aa81a0910ca2f22841029c699bb3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bc1e63ff865a7eb6d4d83c75d6c2680dcf8ddb49
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962300"
+ms.locfileid: "87996866"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para a implantação de DNS de divisão \- Brain
 
@@ -121,7 +121,7 @@ No comando de exemplo a seguir, 10.0.0.56 é o endereço IP na interface de rede
 
 `Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,10.0.0.56" -ZoneScope "internal,1" -ZoneName contoso.com`
 
-Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 ## <a name="example-of-dns-selective-recursion-control"></a><a name="bkmk_recursion"></a>Exemplo de controle de recursão seletiva de DNS
 
@@ -183,7 +183,7 @@ Set-DnsServerRecursionScope -Name . -EnableRecursion $False
 Add-DnsServerRecursionScope -Name "InternalClients" -EnableRecursion $True
 ```
 
-Para obter mais informações, consulte [Add-DnsServerRecursionScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
+Para obter mais informações, consulte [Add-DnsServerRecursionScope](/powershell/module/dnsserver/add-dnsserverrecursionscope?view=win10-ps)
 
 #### <a name="create-dns-recursion-policies"></a><a name="bkmk_recpolicy"></a>Criar políticas de recursão de DNS
 
@@ -199,7 +199,7 @@ Você pode usar o comando de exemplo a seguir para configurar políticas de recu
 Add-DnsServerQueryResolutionPolicy -Name "SplitBrainRecursionPolicy" -Action ALLOW -ApplyOnRecursion -RecursionScope "InternalClients" -ServerInterfaceIP "EQ,10.0.0.39"
 ```
 
-Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Agora o servidor DNS está configurado com as políticas de DNS necessárias para um servidor de nome de divisão ou um servidor DNS com controle de recursão seletiva habilitado para clientes internos.
 

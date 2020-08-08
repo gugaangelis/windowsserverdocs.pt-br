@@ -2,18 +2,16 @@
 title: Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com implantações primárias e secundárias
 description: Este tópico faz parte do guia de cenário de política DNS do Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e819cf2e3e0b4803e9efc9886a679e5128432087
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 45bff2c65f0497216cb8c7e7dc9dd670c5387ba2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518262"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996859"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com implantações primárias e secundárias
 
@@ -80,7 +78,7 @@ Para qualquer atualização adicional em um escopo de zona, uma notificação IX
 
 ## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>Como configurar a política de DNS para o gerenciamento de tráfego baseado em localização geográfica secundária principal
 
-Antes de começar, verifique se você concluiu todas as etapas no tópico usar a [política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), e seu servidor DNS primário está configurado com zonas, escopos de zona, sub-redes de cliente DNS e política DNS.
+Antes de começar, verifique se você concluiu todas as etapas no tópico usar a [política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](./primary-geo-location.md), e seu servidor DNS primário está configurado com zonas, escopos de zona, sub-redes de cliente DNS e política DNS.
 
 > [!NOTE]
 > As instruções neste tópico para copiar sub-redes de cliente DNS, escopos de zona e políticas de DNS de servidores DNS primários para servidores DNS secundários são para a sua configuração e validação de DNS inicial. No futuro, você pode querer alterar as configurações de sub-rede do cliente DNS, escopos de zona e políticas no servidor primário. Nessa circunstância, você pode criar scripts de automação para manter os servidores secundários sincronizados com o servidor primário.
@@ -113,7 +111,7 @@ Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -
 Add-DnsServerSecondaryZone -Name "woodgrove.com" -ZoneFile "woodgrove.com.dns" -MasterServers 10.0.0.1 -ComputerName SecondaryServer2
 ```
 
-Para obter mais informações, consulte [Add-DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerSecondaryZone](/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps).
 
 ### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>Definir as configurações de transferência de zona na zona primária
 
@@ -131,7 +129,7 @@ Você pode usar os seguintes comandos do Windows PowerShell para definir as conf
 Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer
 ```
 
-Para obter mais informações, consulte [set-DnsServerPrimaryZone](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps).
+Para obter mais informações, consulte [set-DnsServerPrimaryZone](/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps).
 
 ### <a name="copy-the-dns-client-subnets"></a>Copiar as sub-redes do cliente DNS
 
@@ -144,7 +142,7 @@ Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubne
 Get-DnsServerClientSubnet -ComputerName PrimaryServer | Add-DnsServerClientSubnet -ComputerName SecondaryServer2
 ```
 
-Para obter mais informações, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 ### <a name="create-the-zone-scopes-on-the-secondary-server"></a>Criar os escopos de zona no servidor secundário
 
@@ -160,7 +158,7 @@ Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add
 > [!NOTE]
 > Nesses comandos de exemplo, o parâmetro **-ErrorAction ignorar** é incluído, pois existe um escopo de zona padrão em cada zona. O escopo de zona padrão não pode ser criado ou excluído. O pipeline resultará em uma tentativa de criar esse escopo e ele falhará. Como alternativa, você pode criar escopos de zona não padrão em duas zonas secundárias.
 
-Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
 
 ### <a name="configure-dns-policy"></a>Configurar política DNS
 
@@ -174,7 +172,7 @@ $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -Computer
 $policy | Add-DnsServerQueryResolutionPolicy -ZoneName "woodgrove.com" -ComputerName SecondaryServer2
 ```
 
-Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Agora, os servidores DNS secundários são configurados com as políticas de DNS necessárias para redirecionar o tráfego com base na localização geográfica.
 

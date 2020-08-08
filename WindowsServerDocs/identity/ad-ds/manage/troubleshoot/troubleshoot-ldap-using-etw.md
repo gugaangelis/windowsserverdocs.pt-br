@@ -2,19 +2,17 @@
 title: Como usar o ETW para solucionar problemas de conexões LDAP
 description: Como ativar e usar o ETW para rastrear conexões LDAP entre AD DS controladores de domínio.
 author: Teresa-Motiv
-manager: dcscontentpm
-ms.prod: windows-server-dev
-ms.technology: active-directory-lightweight-directory-services
+manager: dcscontentpm-dev
 audience: Admin
 ms.author: v-tea
 ms.topic: article
 ms.date: 11/22/2019
-ms.openlocfilehash: 516304498206523a1ce618da6aa21640e38c9654
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 37f588be3b181aea66555389c120f147a74e6314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965648"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941550"
 ---
 # <a name="using-etw-to-troubleshoot-ldap-connections"></a>Como usar o ETW para solucionar problemas de conexões LDAP
 
@@ -30,7 +28,7 @@ O [ETW (rastreamento de eventos para Windows)](/windows/win32/etw/event-tracing-
 
    Nesta subchave, o *ProcessName* é o nome completo do processo que você deseja rastrear, incluindo sua extensão (por exemplo, "Svchost.exe").
 
-1. (**Opcional**) Nessa subchave, crie uma nova entrada denominada **pid**. Para usar essa entrada, atribua uma ID de processo como um valor DWORD.  
+1. (**Opcional**) Nessa subchave, crie uma nova entrada denominada **pid**. Para usar essa entrada, atribua uma ID de processo como um valor DWORD.
 
    Se você especificar uma ID de processo, o ETW rastreará apenas a instância do aplicativo que tem essa ID de processo.
 
@@ -44,8 +42,8 @@ O [ETW (rastreamento de eventos para Windows)](/windows/win32/etw/event-tracing-
 
    Os espaços reservados neste comando representam os valores a seguir.
 
-  - \<*SessionName*>é um identificador arbitrário que é usado para rotular a sessão de rastreamento.  
-  > [!NOTE]  
+  - \<*SessionName*>é um identificador arbitrário que é usado para rotular a sessão de rastreamento.
+  > [!NOTE]
   > Você precisará se referir a esse nome de sessão posteriormente quando parar a sessão de rastreamento.
   - \<*FileName*>Especifica o arquivo de log no qual os eventos serão gravados.
   - \<*TraceFlags*>deve ser um ou mais dos valores listados na tabela de sinalizadores de [rastreamento](#values-for-trace-flags).
@@ -70,7 +68,7 @@ O [ETW (rastreamento de eventos para Windows)](/windows/win32/etw/event-tracing-
 
 Para usar um sinalizador, substitua o valor do sinalizador para o <*sinalizadores*> espaço reservado nos argumentos do comando **tracelog.exe-Start** .
 
-> [!NOTE]  
+> [!NOTE]
 > Você pode especificar vários sinalizadores usando a soma dos valores de sinalizador apropriados. Por exemplo, para especificar os sinalizadores de ** \_ pesquisa de depuração** (0x00000001) e ** \_ cache de depuração** (0x00000010), o \<*TraceFlags*> valor apropriado é **0x00000011**.
 
 |Nome do sinalizador |Valor do sinalizador |Descrição do sinalizador |
@@ -138,5 +136,5 @@ Considere um aplicativo, App1.exe, que define senhas para contas de usuário. Su
     tracerpt.exe .\ldap.etl -o -report
     ```
 
-   > [!NOTE]  
+   > [!NOTE]
    > Neste comando, **tracerpt.exe** é uma ferramenta de [consumidor de rastreamento](https://go.microsoft.com/fwlink/p/?linkid=83876) .

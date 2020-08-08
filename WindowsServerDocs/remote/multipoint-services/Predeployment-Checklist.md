@@ -7,12 +7,12 @@ ms.assetid: 87ea20e4-46cf-49e9-86bf-70be9098c8db
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 30e4c3f8553161c8fbc87e0e9b9235c8878eb186
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 34356de97d04ed3e678b0aa1e0e1e76d7a657421
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951741"
+ms.locfileid: "87996649"
 ---
 # <a name="predeployment-checklist"></a>Lista de verificação para pré-implantação
 Use a lista de verificação a seguir para ajudá-lo a planejar a implantação dos serviços do MultiPoint.
@@ -23,7 +23,7 @@ Use a lista de verificação a seguir para ajudá-lo a planejar a implantação 
 |2.|Determine o número de usuários que provavelmente acessarão, ao mesmo tempo, cada computador que esteja executando os serviços do MultiPoint para que você possa estimar o número de computadores necessários que devem executar os serviços do MultiPoint.|[Usuários, estações e computadores](MultiPoint-services-Site-Planning.md#users-stations-and-computers)|
 |3.|Entenda os aplicativos de software e o conteúdo da Web que provavelmente serão acessados pelos usuários e o impacto que terá no desempenho do sistema.|[Requisitos de hardware e recomendações de desempenho](hardware-and-performance-recommendations.md)|
 |4.|Determine o número e o tipo de estações que serão conectadas ao sistema.|[Estações do MultiPoint](MultiPoint-services-Stations.md)|
-|5.|Determine o hardware necessário.|[Selecionando o hardware para seus](Selecting-Hardware-for-Your-MultiPoint-services-System.md) requisitos de hardware e de sistema de serviços do MultiPoint [e recomendações de desempenho](hardware-and-performance-recommendations.md)|
+|5.|Determine o hardware necessário.|[Selecionando o hardware para seus](./select-hardware-mps.md) requisitos de hardware e de sistema de serviços do MultiPoint [e recomendações de desempenho](hardware-and-performance-recommendations.md)|
 |6.|Determine onde o sistema de serviços do MultiPoint será localizado. Ela será configurada em uma única sala ou será configurada para que possa ser movida de um local para outro?|[Planejamento de site do MultiPoint Server](MultiPoint-services-Site-Planning.md)|
 |7.|Determine como as estações serão organizadas.|[Planejamento do site do MultiPoint Services](MultiPoint-services-Site-Planning.md)|
 |8.|Verifique uma infra-estrutura de energia e rede adequada.|[Planejamento do site do MultiPoint Services](MultiPoint-services-Site-Planning.md)|

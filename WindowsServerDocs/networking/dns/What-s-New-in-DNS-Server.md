@@ -2,18 +2,16 @@
 title: O que há de novo no servidor DNS no Windows Server
 description: Este tópico fornece uma visão geral dos novos recursos no servidor DNS no Windows Server 2016 e versões posteriores
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: c9cecb94-3cd5-4da7-9a3e-084148b8226b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ee2baf5a42d8c0aaeced375bfd2d61193c4828ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 05daf36ebf875269906b0c287204e4ff131a678e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473913"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996945"
 ---
 # <a name="whats-new-in-dns-server-in-windows-server"></a>O que há de novo no servidor DNS no Windows Server
 
@@ -147,13 +145,9 @@ Os novos cmdlets e parâmetros do Windows PowerShell a seguir são introduzidos 
 
 Para obter mais informações, consulte os seguintes tópicos de referência de comando do Windows Server 2016 do Windows PowerShell.
 
-- [Módulo DnsServer](https://docs.microsoft.com/powershell/module/dnsserver/?view=win10-ps)
-- [Módulo DnsClient](https://docs.microsoft.com/powershell/module/dnsclient/?view=win10-ps)
+- [Módulo DnsServer](/powershell/module/dnsserver/?view=win10-ps)
+- [Módulo DnsClient](/powershell/module/dnsclient/?view=win10-ps)
 
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [O que há de novo no cliente DNS](What-s-New-in-DNS-Client.md)
-
-
-
-

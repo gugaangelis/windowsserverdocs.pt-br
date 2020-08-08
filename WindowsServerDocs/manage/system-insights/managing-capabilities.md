@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e78afb47877bb908df81876afe01d2f60b853c70
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940157"
+ms.locfileid: "87996705"
 ---
 # <a name="managing-capabilities"></a>Gerenciamento de recursos
 
@@ -86,7 +86,7 @@ O System insights registra um evento sempre que um recurso termina uma previsão
 | Nenhum | 132 |
 
 >[!TIP]
->Use [Azure monitor](https://azure.microsoft.com/services/monitor/) ou [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome?view=sc-om-1807) para agregar esses eventos e ver os resultados da previsão em um grupo de computadores.
+>Use [Azure monitor](https://azure.microsoft.com/services/monitor/) ou [System Center Operations Manager](/system-center/scom/welcome?view=sc-om-1807) para agregar esses eventos e ver os resultados da previsão em um grupo de computadores.
 
 
 ## <a name="setting-a-capability-schedule"></a>Configurando um agendamento de funcionalidade

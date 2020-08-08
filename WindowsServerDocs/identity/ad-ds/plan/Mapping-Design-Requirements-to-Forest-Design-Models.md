@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 2a389b00fbf983a24b745431fee98a760f0fc756
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f10c3c5bc1b974e27aa14341c5367885333172fc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963558"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971003"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Mapeamento de requisitos de design para modelos de design de floresta
 

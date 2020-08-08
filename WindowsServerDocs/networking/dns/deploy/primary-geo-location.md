@@ -2,18 +2,16 @@
 title: Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com servidores primários
 description: Este tópico faz parte do guia de cenário de política DNS do Windows Server 2016
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 47124531c3e516efeceda57574bd6a648667f90f
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 9a1abc00bd8683c716563159aac889a98f364f87
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518272"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996873"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>Usar política de DNS para gerenciamento de tráfego baseado em localização geográfica com servidores primários
 
@@ -98,7 +96,7 @@ Add-DnsServerClientSubnet -Name "USSubnet" -IPv4Subnet "192.0.0.0/24"
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24"
 ```
 
-Para obter mais informações, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 ### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>Criar escopos de zona
 Depois que as sub-redes de cliente são configuradas, você deve particionar a zona cujo tráfego você deseja redirecionar em dois escopos de zona diferentes, um escopo para cada uma das sub-redes de cliente DNS que você configurou.
@@ -117,7 +115,7 @@ Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "USZoneScope"
 Add-DnsServerZoneScope -ZoneName "woodgrove.com" -Name "EuropeZoneScope"
 ```
 
-Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona
 Agora você deve adicionar os registros que representam o host do servidor Web nos escopos de duas zonas.
@@ -140,7 +138,7 @@ Add-DnsServerResourceRecord -ZoneName "woodgrove.com" -A -Name "www" -IPv4Addres
 
 O parâmetro **ZoneScope** não é incluído quando você adiciona um registro no escopo padrão. Isso é o mesmo que adicionar registros a uma zona DNS padrão.
 
-Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 ### <a name="create-the-policies"></a><a name="bkmk_policies"></a>Criar as políticas
 Depois de criar as sub-redes, as partições (escopos de zona) e adicionar registros, você deve criar políticas que conectam as sub-redes e as partições, de modo que quando uma consulta vier de uma origem em uma das sub-redes de cliente DNS, a resposta de consulta será retornada do escopo correto da zona. Nenhuma política é necessária para mapear o escopo de zona padrão.
@@ -152,7 +150,7 @@ Add-DnsServerQueryResolutionPolicy -Name "USPolicy" -Action ALLOW -ClientSubnet 
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "EuropeZoneScope,1" -ZoneName "woodgrove.com"
 ```
 
-Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Agora, o servidor DNS é configurado com as políticas de DNS necessárias para redirecionar o tráfego com base na localização geográfica.
 

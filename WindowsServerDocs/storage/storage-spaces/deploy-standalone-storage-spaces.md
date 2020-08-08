@@ -1,19 +1,17 @@
 ---
 title: Implantar espaços de armazenamento em um servidor autônomo
 description: Descreve como implantar espaços de armazenamento em um servidor autônomo baseado no Windows Server 2012.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b5f1ccab7e4c0ca2bbd478509a76a4a37559c345
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181862"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960819"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
@@ -154,7 +152,7 @@ Em seguida, você deverá criar um ou mais discos virtuais no pool de armazename
 
      Com o provisionamento dinâmico, o espaço é alocado conforme a necessidade. Isso otimiza o uso do armazenamento disponível. Contudo, como isso permite a alocação excessiva do armazenamento, é necessário monitorar atentamente quanto espaço em disco está disponível.
 
-   - **Fixo**
+   - **Fixado**
 
      Com o provisionamento fixo, a capacidade de armazenamento é alocada imediatamente, no momento da criação do disco virtual. Portanto o provisionamento fixo usa espaço do pool de armazenamento igual ao tamanho do disco virtual.
 

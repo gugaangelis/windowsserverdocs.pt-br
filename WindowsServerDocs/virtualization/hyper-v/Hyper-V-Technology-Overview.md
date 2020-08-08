@@ -1,20 +1,18 @@
 ---
 title: Visão geral da tecnologia Hyper-V
 description: Descreve o que é o Hyper-V, como obtê-lo, recursos principais e usos comuns.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: d21bec24a22607213771bdad0b48df18fd88eb4d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960759"
 ---
 # <a name="hyper-v-technology-overview"></a>Visão geral da tecnologia Hyper-V
 
@@ -28,13 +26,13 @@ O Hyper-V executa cada máquina virtual em seu próprio espaço isolado, o que s
 
 O Hyper-V pode ajudá-lo a:
 
-- **Estabeleça ou expanda um ambiente de nuvem privada.** Forneça serviços de ti mais flexíveis e sob demanda ao migrar ou expandir o uso de recursos compartilhados e ajustar a utilização conforme as alterações de demanda.
+- **Estabelecer ou expandir um ambiente de nuvem privada.** Forneça serviços de ti mais flexíveis e sob demanda ao migrar ou expandir o uso de recursos compartilhados e ajustar a utilização conforme as alterações de demanda.
 
 - **Use o hardware com mais eficiência.** Consolide servidores e cargas de trabalho em menos computadores físicos mais potentes para usar menos energia e espaço físico.
 
-- **Melhore a continuidade dos negócios.** Minimize o impacto do tempo de inatividade agendado e não agendado de suas cargas de trabalho.
+- **Melhorar a continuidade dos negócios.** Minimize o impacto do tempo de inatividade agendado e não agendado de suas cargas de trabalho.
 
-- **Estabeleça ou expanda uma VDI (Virtual Desktop Infrastructure).** Usar uma estratégia de área de trabalho centralizada com o VDI pode ajudá-lo a aumentar a agilidade e a segurança dos dados, bem como simplificar a conformidade regulatória e gerenciar sistemas operacionais e aplicativos de desktop. Implante o Hyper-V e o Host de Virtualização de Área de Trabalho Remota (host de Virtualização RD) no mesmo servidor para disponibilizar áreas de trabalho virtuais pessoais ou pools de áreas de trabalho virtuais para seus usuários.
+- **Estabelecer ou expandir uma infraestrutura de área de trabalho virtual (VDI).** Usar uma estratégia de área de trabalho centralizada com o VDI pode ajudá-lo a aumentar a agilidade e a segurança dos dados, bem como simplificar a conformidade regulatória e gerenciar sistemas operacionais e aplicativos de desktop. Implante o Hyper-V e o Host de Virtualização de Área de Trabalho Remota (host de Virtualização RD) no mesmo servidor para disponibilizar áreas de trabalho virtuais pessoais ou pools de áreas de trabalho virtuais para seus usuários.
 
 - **Torne o desenvolvimento e o teste mais eficientes.** Reproduza diferentes ambientes de computação sem precisar comprar ou manter todo o hardware necessário se você usava apenas sistemas físicos.
 
@@ -86,9 +84,9 @@ O Hyper-V exigiu partes que funcionam juntas para que você possa criar e execut
 
 O Hyper-V também tem ferramentas para gerenciamento e conectividade. Você pode instalá-los no mesmo computador em que a função Hyper-V está instalada e em computadores sem a função Hyper-V instalada. Essas ferramentas são:
 
-- Gerenciador Hyper-V
+- Gerenciador do Hyper-V
 - [Módulo do Hyper-V para Windows PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- A [conexão de máquina Virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(às vezes chamada de VMConnect\)
+- Conexão de máquina [virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \( às vezes chamado de VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>Tecnologias relacionadas
@@ -96,7 +94,7 @@ O Hyper-V também tem ferramentas para gerenciamento e conectividade. Você pode
 Essas são algumas tecnologias da Microsoft que geralmente são usadas com o Hyper-V:
 
 - [Clustering de failover](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [Serviços de Área de Trabalho Remota](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
+- [Serviços de área de trabalho remota](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
 - [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
 
 Várias tecnologias de armazenamento: volumes compartilhados do cluster, SMB 3,0, espaços de armazenamento diretos

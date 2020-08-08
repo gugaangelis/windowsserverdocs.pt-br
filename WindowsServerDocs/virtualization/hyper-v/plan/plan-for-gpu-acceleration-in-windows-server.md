@@ -7,12 +7,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: afdb856fc84bcee634381f04054a97f545056882
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8cba3ac4d2e4680f480ff76db12c10553c1857d3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938789"
+ms.locfileid: "87996961"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Planejar a aceleração de GPU no Windows Server
 
@@ -37,7 +37,7 @@ As seguintes tecnologias de virtualização de gráficos estão disponíveis par
 - [Atribuição de dispositivo discreta (DDA)](#discrete-device-assignment-dda)
 - [RemoteFX vGPU](#remotefx-vgpu)
 
-Além das cargas de trabalho de VM, o Windows Server também dá suporte à aceleração de GPU de cargas de trabalho em contêineres em contêineres do Windows. Para obter mais informações, consulte [aceleração de GPU em contêineres do Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/gpu-acceleration).
+Além das cargas de trabalho de VM, o Windows Server também dá suporte à aceleração de GPU de cargas de trabalho em contêineres em contêineres do Windows. Para obter mais informações, consulte [aceleração de GPU em contêineres do Windows](/virtualization/windowscontainers/deploy-containers/gpu-acceleration).
 
 ## <a name="discrete-device-assignment-dda"></a>Atribuição de dispositivo discreta (DDA)
 

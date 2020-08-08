@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: f371b91ecd87e07af90a7a2f7a0c802fb3d6c7e5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 771b87776e6530f330e68f1f06b39fef191cb7c7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955933"
+ms.locfileid: "87996890"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>Usar a política de DNS para respostas de DNS inteligente com base na hora do dia
 
@@ -80,7 +80,7 @@ Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24, 182.0
 Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.0.0/24"
 
 ```
-Para obter mais informações, consulte [Add-DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 #### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>Criar os escopos de zona
 Depois que as sub-redes de cliente são configuradas, você deve particionar a zona cujo tráfego você deseja redirecionar em dois escopos de zona diferentes, um escopo para cada uma das sub-redes de cliente DNS que você configurou.
@@ -100,7 +100,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneSco
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
 
 ```
-Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
 
 #### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona
 Agora você deve adicionar os registros que representam o host do servidor Web nos escopos de duas zonas.
@@ -117,7 +117,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 ```
 O parâmetro ZoneScope não é incluído quando você adiciona um registro no escopo padrão. Isso é o mesmo que adicionar registros a uma zona DNS padrão.
 
-Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 #### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Criar as políticas de DNS
 Depois de criar as sub-redes, as partições (escopos de zona) e adicionar registros, você deve criar políticas que conectam as sub-redes e as partições, de modo que quando uma consulta vier de uma origem em uma das sub-redes de cliente DNS, a resposta de consulta será retornada do escopo correto da zona. Nenhuma política é necessária para mapear o escopo de zona padrão.
@@ -148,12 +148,10 @@ Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSub
 Add-DnsServerQueryResolutionPolicy -Name "RestOfWorldPolicy" -Action ALLOW --ZoneScope "DublinZoneScope,1;SeattleZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 5
 
 ```
-Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Agora, o servidor DNS é configurado com as políticas de DNS necessárias para redirecionar o tráfego com base na localização geográfica e na hora do dia.
 
 Quando o servidor DNS recebe consultas de resolução de nomes, o servidor DNS avalia os campos na solicitação DNS em relação às políticas de DNS configuradas. Se o endereço IP de origem na solicitação de resolução de nomes corresponder a qualquer uma das políticas, o escopo de zona associado será usado para responder à consulta e o usuário será direcionado para o recurso que está geograficamente mais próximo.
 
 Você pode criar milhares de políticas de DNS de acordo com seus requisitos de gerenciamento de tráfego e todas as novas políticas são aplicadas dinamicamente, sem reiniciar o servidor DNS-em consultas de entrada.
-
-

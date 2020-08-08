@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 04e4d33f6c5894a59547e84a6066d3af04f80a9b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d7df84e26ef86f553d57b2019d4d46581d7c17fa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964102"
+ms.locfileid: "87996893"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Respostas de DNS com base na hora do dia com o Servidor de aplicativos da nuvem do Azure
 
@@ -22,7 +22,7 @@ Você pode usar este tópico para aprender a distribuir o tráfego do aplicativo
 Esse cenário é útil em situações em que você deseja direcionar o tráfego em um fuso horário para servidores de aplicativos alternativos, como servidores Web hospedados em Microsoft Azure, que estão localizados em outro fuso horário. Isso permite balancear a carga de tráfego entre instâncias do aplicativo durante períodos de pico quando os servidores primários estão sobrecarregados com o tráfego.
 
 > [!NOTE]
-> Para saber como usar a política DNS para respostas de DNS inteligentes sem usar o Azure, consulte [usar a política DNS para respostas de DNS inteligente com base na hora do dia](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md).
+> Para saber como usar a política DNS para respostas de DNS inteligentes sem usar o Azure, consulte [usar a política DNS para respostas de DNS inteligente com base na hora do dia](./dns-tod-intelligent.md).
 
 ## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Exemplo de respostas de DNS inteligente com base na hora do dia com o servidor de aplicativos de nuvem do Azure
 
@@ -91,7 +91,7 @@ Você pode usar o seguinte comando de exemplo para criar um escopo de zona para 
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope"
 ```
 
-Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obter mais informações, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a>Adicionar registros aos escopos de zona
 A próxima etapa é adicionar os registros que representam o host do servidor Web nos escopos de zona.
@@ -110,7 +110,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.68.30.2"
 ```
 
-Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 ### <a name="create-the-dns-policies"></a>Criar as políticas de DNS
 Depois que os escopos de zona são criados, você pode criar políticas de DNS que distribuem as consultas de entrada entre esses escopos para que ocorra o seguinte.
@@ -126,7 +126,7 @@ Você pode usar o comando de exemplo a seguir para criar a política DNS.
 Add-DnsServerQueryResolutionPolicy -Name "Contoso6To9Policy" -Action ALLOW -ZoneScope "contosogiftservices.com,7;AzureZoneScope,3" –TimeOfDay “EQ,18:00-21:00” -ZoneName "contosogiftservices.com" –ProcessingOrder 1
 ```
 
-Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Agora, o servidor DNS é configurado com as políticas de DNS necessárias para redirecionar o tráfego para o servidor Web do Azure com base na hora do dia.
 

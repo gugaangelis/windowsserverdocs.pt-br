@@ -6,18 +6,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: c52c26d44e50075f9c28dfdec7c2ab4fc420e163
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a93302ee89bf8c4b9a78fc6651e77fb566d1e9c6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948949"
+ms.locfileid: "87997000"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>Etapa 1 configurar a infraestrutura do DirectAccess
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Este tópico descreve como configurar a infraestrutura requerida para habilitar o DirectAccess em uma implantação da VPN existente. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas na [etapa 1: planejar a infraestrutura do DirectAccess](Step-1-Plan-DirectAccess-Infrastructure.md).
+Este tópico descreve como configurar a infraestrutura requerida para habilitar o DirectAccess em uma implantação da VPN existente. Antes de iniciar as etapas de implantação, verifique se você concluiu as etapas de planejamento descritas na [etapa 1: planejar a infraestrutura do DirectAccess](./step-1-plan-da-inf-davpn.md).
 
 |Tarefa|Descrição|
 |----|--------|
@@ -328,6 +328,3 @@ O servidor de local de rede deve estar em um servidor com alta disponibilidade e
 13. Clique em **OK**, **Registrar** e em **Concluir**.
 
 14. No painel de detalhes do snap-in Certificados, verifique se o novo certificado foi registrado com Finalidades de Autenticação de Servidor.
-
-
-

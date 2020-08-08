@@ -1,20 +1,18 @@
 ---
 title: Configurar a Réplica do Hyper-V
-ms.technology: compute-hyper-v
 description: Fornece instruções para configurar a réplica, testar o failover e fazer uma primeira replicação.
-ms.prod: windows-server
 manager: dongill
 ms.topic: article
 ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/10/2016
-ms.openlocfilehash: c24b26617f7174632bc39842afc9e83843e7673b
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 24fce3e0ebbfc51167a7e6e390de092433cceaff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769684"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941844"
 ---
 # <a name="set-up-hyper-v-replica"></a>Configurar a Réplica do Hyper-V
 
@@ -95,7 +93,7 @@ Faça o seguinte em cada máquina virtual que você deseja replicar:
 
 2.  Na página **Antes de Começar**, clique em **Avançar**.
 
-3.  Na página **especificar servidor de réplica** , na caixa servidor de réplica, insira o NetBIOS ou o FQDN do servidor de réplica. Se o servidor de réplica fizer parte de um cluster de failover, insira o nome do agente de réplica do Hyper-V. Clique em **Avançar**.
+3.  Na página **especificar servidor de réplica** , na caixa servidor de réplica, insira o NetBIOS ou o FQDN do servidor de réplica. Se o servidor de réplica fizer parte de um cluster de failover, insira o nome do agente de réplica do Hyper-V. Clique em **Próximo**.
 
 4.  Na página **especificar parâmetros de conexão** , a réplica do Hyper-V recupera automaticamente as configurações de porta e autenticação que você configurou para o servidor de réplica. Se os valores não estiverem sendo recuperados, verifique se o servidor está configurado como um servidor de réplica e se ele está registrado no DNS. Se necessário, digite manualmente a configuração.
 

@@ -2,17 +2,16 @@
 title: Considerações sobre simetria de unidade para Espaços de Armazenamento Diretos
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 2028d7b4ccb42d5da1426634541681f842c18972
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 1f845702bb66226e604289f7f37ffa2fb1155843
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768724"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971113"
 ---
 # <a name="drive-symmetry-considerations-for-storage-spaces-direct"></a>Considerações sobre simetria de unidade para Espaços de Armazenamento Diretos
 
@@ -175,10 +174,10 @@ Para recapitular, todos os servidores no cluster devem ter os mesmos tipos de un
 
 | Constraint | Estado |
 |--|--|
-| Mesmos tipos de unidades em cada servidor | **Obrigatório** |
-| Mesmo número de cada tipo em cada servidor | **Obrigatório** |
-| Mesmos modelos de unidade em cada servidor | Recomendadas |
-| Mesmos tamanhos de unidade em cada servidor | Recomendadas |
+| Mesmos tipos de unidades em cada servidor | **Necessária** |
+| Mesmo número de cada tipo em cada servidor | **Necessária** |
+| Mesmos modelos de unidade em cada servidor | Recomendado |
+| Mesmos tamanhos de unidade em cada servidor | Recomendado |
 
 ## <a name="additional-references"></a>Referências adicionais
 

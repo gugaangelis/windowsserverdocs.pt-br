@@ -1,19 +1,17 @@
 ---
 title: Estendendo volumes em Espaços de Armazenamento Diretos
 description: Como redimensionar volumes em Espaços de Armazenamento Diretos usando o centro de administração do Windows e o PowerShell.
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 03/10/2020
-ms.openlocfilehash: 4526bdc87bfbb8cdaf6cc3b0e8f3cd1cd80f4a9d
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: dccc8d25505fb1ac94af81b23334b7f8639dcc01
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474603"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971073"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Estendendo volumes em Espaços de Armazenamento Diretos
 > Aplica-se a: Windows Server 2019, Windows Server 2016
@@ -137,7 +135,7 @@ Quando você redimensiona a **Partição**, o **Volume** e o **Volume Compartilh
 
 ![Redimensionar partição](media/resize-volumes/Resize-Partition.gif)
 
-Pronto!
+É isso!
 
 > [!TIP]
 > Você pode verificar se o volume tem o novo tamanho executando **Get-Volume**.

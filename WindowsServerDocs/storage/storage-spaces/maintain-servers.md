@@ -1,20 +1,18 @@
 ---
 title: Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
-ms.prod: windows-server
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/08/2018
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dba155f8b8d7312a823dedc72d23268d7d13fbf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: d3fd3e1c6ca9a7493ac0bcdc809f68fe22f8fa67
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955908"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971083"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Colocando um servidor de Espaços de Armazenamento Diretos offline para manutenção
 
@@ -82,7 +80,7 @@ Todas as máquinas virtuais começarão a realizar a migração ao vivo para out
 
 Depois que o servidor tiver concluído o esvaziamento, ele aparecerá como **Em Pausa** no Gerenciador de Cluster de Failover e no PowerShell.
 
-![Pausado](media/maintain-servers/paused.png)
+![Em Pausa](media/maintain-servers/paused.png)
 
 Agora você pode reiniciá-lo ou desligá-lo com segurança como faria normalmente (por exemplo, usando os cmdlets Restart-Computer ou Stop-Computer do PowerShell).
 

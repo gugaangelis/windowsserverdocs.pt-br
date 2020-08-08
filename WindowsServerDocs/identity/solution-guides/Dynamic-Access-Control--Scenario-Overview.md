@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4d39ee3053133286c07a93d18b5c3bd5809e3b54
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 03e45cbeadf25391522728bf3d30006bec76e1e0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182392"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996690"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>Controle de Acesso Dinâmico: Visão geral do cenário
 
@@ -56,13 +54,13 @@ Os seguintes cenários e diretrizes estão incluídos como parte desse conjunto 
 > [!NOTE]
 > O Controle de Acesso Dinâmico não tem suporte no ReFS (Sistema de Arquivos Resilientes).
 
-## <a name="see-also"></a>Confira também
+## <a name="see-also"></a>Consulte também
 
 |Tipo de conteúdo|Referências|
 |----------------|--------------|
-|**Avaliação do produto**|- [Guia de revisores de controle de acesso dinâmico](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [Diretrizes para desenvolvedores de controle de acesso dinâmico](https://docs.microsoft.com/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
-|**Planejamento**|- [Planejando uma implantação de política de acesso central](https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--central-access-policy)<br>- [Planejar a auditoria de acesso a arquivos](Plan-for-File-Access-Auditing.md)|
-|**Implantação**|- [Implantação de Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/ad-ds-deployment)<br>- [Implantação de serviços de arquivo e armazenamento](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
-|**Operações**|[Referência do PowerShell do Controle de Acesso Dinâmico](https://docs.microsoft.com/powershell/module/addsadministration/?view=win10-ps)|
+|**Avaliação do produto**|- [Guia de revisores de controle de acesso dinâmico](/previous-versions/orphan-topics/ws.10/cc732148(v=ws.10))<br>- [Diretrizes para desenvolvedores de controle de acesso dinâmico](/previous-versions/windows/desktop/dacx/dynamic-access-control-developer-extensibility-roadmap)|
+|**Planejamento**|- [Planejando uma implantação de política de acesso central](./scenario--central-access-policy.md)<br>- [Planejar a auditoria de acesso a arquivos](Plan-for-File-Access-Auditing.md)|
+|**Implantação**|- [Implantação de Active Directory](../ad-ds/deploy/ad-ds-deployment.md)<br>- [Implantação de serviços de arquivo e armazenamento](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831487(v=ws.11))|
+|**Operações**|[Referência do PowerShell do Controle de Acesso Dinâmico](/powershell/module/addsadministration/?view=win10-ps)|
 |**Ferramentas e configurações**|[Kit de ferramentas de classificação de dados](https://www.microsoft.com/download/details.aspx?id=27123)|
-|**Recursos da comunidade**|[Fórum de serviços de diretório](https://docs.microsoft.com/answers/topics/windows-active-directory.html)|
+|**Recursos da comunidade**|[Fórum de serviços de diretório](/answers/topics/windows-active-directory.html)|

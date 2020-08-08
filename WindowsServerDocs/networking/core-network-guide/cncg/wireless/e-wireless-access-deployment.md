@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 6ba9221707ffdea76236cd8f94c80a1220a750d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 32e54b5129bf2215758adf35bd23c4d99ab2d8e9
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971823"
+ms.locfileid: "87996970"
 ---
 # <a name="wireless-access-deployment"></a>Implantação de acesso sem fio
 
@@ -489,7 +489,7 @@ A associação no **Admins. do Domínio** ou equivalente é o requisito mínimo 
     >[!TIP]
     >Se você receber uma mensagem de erro indicando que um certificado não pode ser encontrado para uso com o método de autenticação, e você configurou Active Directory serviços de certificados para emitir automaticamente certificados para servidores RAS e IAS em sua rede, primeiro verifique se você seguiu as etapas para registrar o NPS no Active Directory Domain Services, em seguida, use as seguintes etapas para atualizar Política de Grupo: clique em **Iniciar**, clique em **sistema Windows**, clique em **executar**e em **abrir**, digite **gpupdate**e pressione Enter. Quando o comando retorna resultados indicando que o usuário e o computador Política de Grupo foram atualizados com êxito, selecione **Microsoft: EAP \( PEAP \) Protected** novamente e clique em **Configurar**.
     >
-    >Se depois de atualizar Política de Grupo você continuar a receber a mensagem de erro indicando que um certificado não pode ser encontrado para uso com o método de autenticação, o certificado não será exibido porque não atende aos requisitos mínimos de certificado do servidor, conforme documentado no guia complementar da rede principal: [implantar certificados de servidor para implantações com e sem fio 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments). Se isso acontecer, você deverá descontinuar a configuração do NPS, revogar o certificado emitido para os s do NPS \( \) e, em seguida, seguir as instruções para configurar um novo certificado usando o guia de implantação de certificados do servidor.
+    >Se depois de atualizar Política de Grupo você continuar a receber a mensagem de erro indicando que um certificado não pode ser encontrado para uso com o método de autenticação, o certificado não será exibido porque não atende aos requisitos mínimos de certificado do servidor, conforme documentado no guia complementar da rede principal: [implantar certificados de servidor para implantações com e sem fio 802.1 x](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md). Se isso acontecer, você deverá descontinuar a configuração do NPS, revogar o certificado emitido para os s do NPS \( \) e, em seguida, seguir as instruções para configurar um novo certificado usando o guia de implantação de certificados do servidor.
 
 7.  Na página **Editar propriedades de EAP protegidas** , em **certificado emitido**, verifique se o certificado NPS correto está selecionado e, em seguida, faça o seguinte:
 
@@ -554,7 +554,7 @@ Depois de ingressar o computador no domínio, use este procedimento para configu
 3. Ingresse o novo computador sem fio no domínio \( , por exemplo, por meio de uma conexão Ethernet que não exija autenticação IEEE 802.1 x \) e adicione o perfil sem fio de Bootstrap ao computador usando o comando **netsh wlan Add Profile** .
 
     >[!NOTE]
-    >Para obter mais informações, consulte comandos netsh para rede local sem fio \( WLAN \) em [http: \/ \/ TechNet.Microsoft.com \/ library \/ dd744890. aspx](https://technet.microsoft.com/library/dd744890).
+    >Para obter mais informações, consulte comandos netsh para rede local sem fio \( WLAN \) em [http: \/ \/ TechNet.Microsoft.com \/ library \/ dd744890. aspx](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd744890(v=ws.10)).
 
 4. Distribua o novo computador sem fio para o usuário com o procedimento para "fazer logon no domínio usando computadores que executam o Windows 10".
 
@@ -586,7 +586,7 @@ Com esse método, você conclui as etapas na seção etapas gerais e, em seguida
     >Para ingressar um computador em um domínio, o usuário deve estar conectado ao computador com a conta de administrador local. Como alternativa, o usuário deve fornecer as credenciais para a conta de administrador local durante o processo de ingresso do computador no domínio. Além disso, o usuário deve ter uma conta de usuário no domínio no qual o usuário deseja ingressar no computador. Durante o processo de ingressar o computador no domínio, o usuário receberá uma solicitação de \( nome de usuário e senha de credenciais de conta de domínio \) .
 
 2. Forneça aos usuários do domínio as instruções para configurar um perfil sem fio de Bootstrap, conforme documentado no procedimento **a seguir para configurar um perfil sem fio de Bootstrap**.
-3. Além disso, forneça aos usuários o nome de usuário e a senha das credenciais do computador local e \( \) \( o nome e a senha da conta de usuário do domínio de credenciais do domínio, \) bem como os procedimentos para "ingressar o computador no domínio" e para "fazer logon no domínio", conforme documentado no [Guia de rede](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)do Windows Server 2016 Core. * \\ *
+3. Além disso, forneça aos usuários o nome de usuário e a senha das credenciais do computador local e \( \) \( o nome e a senha da conta de usuário do domínio de credenciais do domínio, \) bem como os procedimentos para "ingressar o computador no domínio" e para "fazer logon no domínio", conforme documentado no [Guia de rede](../../core-network-guide.md)do Windows Server 2016 Core. * \\ *
 
 #### <a name="to-configure-a-bootstrap-wireless-profile"></a>Para configurar um perfil sem fio de Bootstrap
 
