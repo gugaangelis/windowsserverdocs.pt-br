@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 04/11/2019
-ms.technology: identity-adds
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: a429ae3fed8694b5d9f05722b9f9d580b6b27ae6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7272ddc3693816974df528e6c5e10671bbe4ffb7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962978"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943771"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Instalar uma nova floresta do Active Directory usando a CLI do Azure
 
@@ -40,7 +38,7 @@ Usamos o [portal do Azure](https://portal.azure.com) e [CLI do Azure](/cli/azure
 
 A CLI do Azure é usada para criar e gerenciar recursos do Azure da linha de comando ou em scripts. Este tutorial detalha o uso do CLI do Azure para implantar máquinas virtuais que executam o Windows Server 2019. Após a conclusão da implantação, nós nos conectamos aos servidores e instalamos AD DS.
 
-Caso não tenha uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free) antes de começar.
+Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free) antes de começar.
 
 ### <a name="using-azure-cli"></a>Usando a CLI do Azure
 
@@ -53,7 +51,7 @@ O script abaixo pode ser executado diretamente do portal do Azure. Se você opta
 | AdminUsername | Nome de usuário a ser configurado em cada VM como o administrador local. |
 | AdminPassword | Senha de texto não criptografado a ser configurada em cada VM como a senha de administrador local. |
 | ResourceGroupName | Nome a ser usado para o grupo de recursos. Não deve duplicar um nome existente. |
-| Location | Nome do local do Azure no qual você deseja implantar. Listar regiões com suporte para a assinatura atual usando `az account list-locations` . |
+| Localização | Nome do local do Azure no qual você deseja implantar. Listar regiões com suporte para a assinatura atual usando `az account list-locations` . |
 | VNetName | O nome para atribuir a rede virtual do Azure não deve duplicar um nome existente. |
 | VNetAddress | Escopo de IP a ser usado para a rede do Azure. Não deve duplicar um intervalo existente. |
 | SubnetName | Nome para atribuir a sub-rede IP. Não deve duplicar um nome existente. |

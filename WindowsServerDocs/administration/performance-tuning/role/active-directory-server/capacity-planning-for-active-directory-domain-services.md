@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 33ae34a953f71739fd909ff5548861c2aebfe170
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2067f3dd8c07190c7f52eb75229f08e080ae0208
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896306"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992308"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planejamento de capacidade para Active Directory Domain Services
 
@@ -43,7 +43,7 @@ Além disso, a abordagem está mudando de um exercício de planejamento de capac
 
 Ao longo deste artigo, são esperados os seguintes requisitos de linha de base:
 
-- Os leitores têm lido e estão familiarizados com as [diretrizes de ajuste de desempenho para o Windows Server 2012 R2](/previous-versions//dn529133(v=vs.85)).
+- Os leitores têm lido e estão familiarizados com as [diretrizes de ajuste de desempenho para o Windows Server 2012 R2](/previous-versions/dn529133(v=vs.85)).
 - A plataforma Windows Server é uma arquitetura baseada em x64. Mas mesmo que seu ambiente de Active Directory esteja instalado no Windows Server 2003 x86 (agora além do fim do ciclo de vida do suporte) e tenha uma DIT (árvore de informações de diretório) com menos de 1,5 GB de tamanho e que possa ser facilmente mantida na memória, as diretrizes deste artigo ainda serão aplicáveis.
 - O planejamento de capacidade é um processo contínuo e você deve examinar regularmente o quão bem o ambiente está atendendo às expectativas.
 - A otimização ocorrerá em vários ciclos de vida de hardware à medida que os custos de hardware forem alterados. Por exemplo, a memória se torna mais barata, o custo por núcleo diminui ou o preço das diferentes opções de armazenamento mudam.
@@ -410,7 +410,7 @@ Infelizmente, devido à grande variabilidade dos aplicativos cliente que aprovei
 
 Conforme mencionado anteriormente, ao planejar a capacidade de um site inteiro, o objetivo é direcionar um design com um design de capacidade de *N* + 1, de modo que a falha de um sistema durante o período de pico permitirá a continuação do serviço em um nível razoável de qualidade. Isso significa que, em um cenário "*N*", a carga entre todas as caixas deve ser inferior a 100% (melhor ainda, menos de 80%) durante os períodos de pico.
 
-Além disso, se os aplicativos e os clientes no site estiverem usando as práticas recomendadas para localizar controladores de domínio (ou seja, usando a [função DsGetDcName](https://docs.microsoft.com/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)), os clientes deverão ser relativamente distribuídos igualmente com picos transitórios pequenos devido a qualquer número de fatores.
+Além disso, se os aplicativos e os clientes no site estiverem usando as práticas recomendadas para localizar controladores de domínio (ou seja, usando a [função DsGetDcName](/windows/win32/api/dsgetdc/nf-dsgetdc-dsgetdcnamea)), os clientes deverão ser relativamente distribuídos igualmente com picos transitórios pequenos devido a qualquer número de fatores.
 
 No próximo exemplo, são feitas as seguintes suposições:
 

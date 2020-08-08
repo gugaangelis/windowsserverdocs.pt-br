@@ -7,12 +7,12 @@ ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 97f8c2a0bcfec3699593e5162ede8cff3e411b0d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 654767901607207ff1dea74201e1b7ede3c38ae0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941971"
+ms.locfileid: "87997467"
 ---
 # <a name="manage-windows-virtual-machines-with-powershell-direct"></a>Gerenciar máquinas virtuais do Windows com o PowerShell Direct
 
@@ -26,13 +26,13 @@ Há duas maneiras de executar o PowerShell Direct:
 
 - Executar script ou comando com o cmdlet Invoke-Command
 
-Se você estiver gerenciando máquinas virtuais mais antigas, use o VMConnect (Conexão com Máquina Virtual) ou [configure uma rede virtual para a máquina virtual](https://technet.microsoft.com/library/cc816585.aspx).
+Se você estiver gerenciando máquinas virtuais mais antigas, use o VMConnect (Conexão com Máquina Virtual) ou [configure uma rede virtual para a máquina virtual](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816585(v=ws.10)).
 
 ## <a name="create-and-exit-a-powershell-direct-session-using-pssession-cmdlets"></a>Criar e sair de uma sessão direta do PowerShell usando cmdlets de PSSession
 
 1. No servidor do Hyper-V, abra o Windows PowerShell como Administrador.
 
-2. Use o cmdlet [Enter-PSSession](https://technet.microsoft.com/library/hh849707.aspx) para se conectar à máquina virtual. Execute um dos seguintes comandos para criar uma sessão usando o nome ou o GUID da máquina virtual:
+2. Use o cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7) para se conectar à máquina virtual. Execute um dos seguintes comandos para criar uma sessão usando o nome ou o GUID da máquina virtual:
 
     ```
     Enter-PSSession -VMName <VMName>
@@ -45,14 +45,14 @@ Se você estiver gerenciando máquinas virtuais mais antigas, use o VMConnect (C
 3. Digite suas credenciais para a máquina virtual.
 4. Execute os comandos necessários. Esses comandos são executados na máquina virtual com a qual você criou a sessão.
 
-5.  Quando terminar, use [Exit-PSSession](https://technet.microsoft.com/library/hh849743.aspx) para fechar a sessão.
+5.  Quando terminar, use [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession?view=powershell-7) para fechar a sessão.
 
     ```
     Exit-PSSession
     ```
 
 ## <a name="run-script-or-command-with-invoke-command-cmdlet"></a>Executar script ou comando com o cmdlet Invoke-Command
-Você pode usar o cmdlet [Invoke-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) para executar um conjunto predeterminado de comandos na máquina virtual. Aqui está um exemplo de como você pode usar o cmdlet Invoke-Command, onde PSTest é o nome da máquina virtual e o script a ser executado (foo.ps1) está na pasta de script na unidade “C:/”:
+Você pode usar o cmdlet [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command) para executar um conjunto predeterminado de comandos na máquina virtual. Aqui está um exemplo de como você pode usar o cmdlet Invoke-Command, onde PSTest é o nome da máquina virtual e o script a ser executado (foo.ps1) está na pasta de script na unidade “C:/”:
 
 ```
 Invoke-Command -VMName PSTest  -FilePath C:\script\foo.ps1
@@ -77,12 +77,9 @@ Para criar uma sessão do PowerShell Direct em uma máquina virtual,
 
 -   A máquina virtual deve executar pelo menos o Windows 10 ou o Windows Server 2016.
 
-Você pode usar o cmdlet [Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm) para verificar se as credenciais que você está usando têm a função Administrador do Hyper-V e para obter uma lista das máquinas virtuais em execução localmente no host e inicializadas.
+Você pode usar o cmdlet [Get-VM](/powershell/module/hyper-v/get-vm) para verificar se as credenciais que você está usando têm a função Administrador do Hyper-V e para obter uma lista das máquinas virtuais em execução localmente no host e inicializadas.
 
 ## <a name="see-also"></a>Consulte Também
-[Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 
- [Sair-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) 
- [Invoke-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)
-
-
-
+[Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 
+ [Sair-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) 
+ [Invoke-Command](/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)

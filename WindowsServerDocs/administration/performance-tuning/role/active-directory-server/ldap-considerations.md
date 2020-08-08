@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b1678eadda1232da19c80e648c8b7ecb9c06f64b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 779175a4e1e42bae5f40aa4d4d8495ac7803c655
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896219"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992254"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>Considerações sobre LDAP no adiciona ajuste de desempenho
 
@@ -21,19 +21,19 @@ ms.locfileid: "87896219"
 
 Verifique se as consultas LDAP estão em conformidade com as recomendações de criação de consultas eficientes.
 
-Há uma abrangente documentação sobre o MSDN sobre como escrever, estruturar e analisar consultas de forma adequada para uso em Active Directory. Para obter mais informações, consulte [criando aplicativos mais eficientes habilitados para o Microsoft Active Directory](https://msdn.microsoft.com/library/ms808539.aspx).
+Há uma abrangente documentação sobre o MSDN sobre como escrever, estruturar e analisar consultas de forma adequada para uso em Active Directory. Para obter mais informações, consulte [criando aplicativos mais eficientes habilitados para o Microsoft Active Directory](/previous-versions/ms808539(v=msdn.10)).
 
 ## <a name="optimize-ldap-page-sizes"></a>Otimizar tamanhos de página LDAP
 
 Ao retornar resultados com vários objetos em resposta às solicitações do cliente, o controlador de domínio deve armazenar temporariamente o conjunto de resultados na memória. O aumento dos tamanhos de página causará mais utilização de memória e os itens de idade poderão ser desnecessariamente armazenados no cache. Nesse caso, as configurações padrão são ideais. Há vários cenários em que foram feitas recomendações para aumentar as configurações de tamanho de página. É recomendável usar os valores padrão, a menos que especificamente identificado como inadequado.
 
-Quando as consultas têm muitos resultados, um limite de consultas semelhantes executadas simultaneamente pode ser encontrado.  Isso ocorre porque o servidor LDAP pode depauperam uma área de memória global conhecida como o pool de cookies.  Pode ser necessário aumentar o tamanho do pool conforme discutido em [como os cookies do servidor LDAP são manipulados](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/manage/how-ldap-server-cookies-are-handled).
+Quando as consultas têm muitos resultados, um limite de consultas semelhantes executadas simultaneamente pode ser encontrado.  Isso ocorre porque o servidor LDAP pode depauperam uma área de memória global conhecida como o pool de cookies.  Pode ser necessário aumentar o tamanho do pool conforme discutido em [como os cookies do servidor LDAP são manipulados](../../../../identity/ad-ds/manage/how-ldap-server-cookies-are-handled.md).
 
 Para ajustar essas configurações, consulte [o Windows Server 2008 e o controlador de domínio mais recente retornam apenas 5000 valores em uma resposta LDAP](https://support.microsoft.com/kb/2009267).
 
 ## <a name="determine-whether-to-add-indices"></a>Determinar se os índices devem ser adicionados
 
-Atributos de indexação são úteis ao pesquisar objetos que têm o nome do atributo em um filtro. A indexação pode reduzir o número de objetos que devem ser visitados ao avaliar o filtro. No entanto, isso reduz o desempenho das operações de gravação porque o índice deve ser atualizado quando o atributo correspondente é modificado ou adicionado. Ele também aumenta o tamanho do banco de dados do diretório, embora os benefícios geralmente superem o custo do armazenamento. O registro em log pode ser usado para encontrar as consultas caras e ineficientes. Depois de identificado, considere indexar alguns atributos que são usados nas consultas correspondentes para melhorar o desempenho da pesquisa. Para obter mais informações sobre como Active Directory pesquisas funcionam, consulte [como Active Directory pesquisas funcionam](https://technet.microsoft.com/library/cc755809.aspx).
+Atributos de indexação são úteis ao pesquisar objetos que têm o nome do atributo em um filtro. A indexação pode reduzir o número de objetos que devem ser visitados ao avaliar o filtro. No entanto, isso reduz o desempenho das operações de gravação porque o índice deve ser atualizado quando o atributo correspondente é modificado ou adicionado. Ele também aumenta o tamanho do banco de dados do diretório, embora os benefícios geralmente superem o custo do armazenamento. O registro em log pode ser usado para encontrar as consultas caras e ineficientes. Depois de identificado, considere indexar alguns atributos que são usados nas consultas correspondentes para melhorar o desempenho da pesquisa. Para obter mais informações sobre como Active Directory pesquisas funcionam, consulte [como Active Directory pesquisas funcionam](/previous-versions/windows/it-pro/windows-server-2003/cc755809(v=ws.10)).
 
 ### <a name="scenarios-that-benefit-in-adding-indices"></a>Cenários que se beneficiam na adição de índices
 
@@ -54,11 +54,11 @@ Atributos de indexação são úteis ao pesquisar objetos que têm o nome do atr
 
 Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens:
 
--   [Determinando o tempo de consulta com o controle de estatísticas](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [Determinando o tempo de consulta com o controle de estatísticas](/previous-versions/ms808539(v=msdn.10))
 
--   [Acompanhamento de pesquisas caras e ineficientes](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [Acompanhamento de pesquisas caras e ineficientes](/previous-versions/ms808539(v=msdn.10))
 
--   Active Directory conjunto de coletores de dados de diagnóstico no monitor de desempenho ([filho de Spa: conjuntos de coletores de dados do AD em Win2008 e além](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   Active Directory conjunto de coletores de dados de diagnóstico no monitor de desempenho ([filho de Spa: conjuntos de coletores de dados do AD em Win2008 e além](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond))
 
 -   [Supervisor de desempenho de servidor da Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Pacote Advisor Active Directory
 
@@ -68,11 +68,11 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 -   Certifique-se de que a criação do índice seja a solução certa para o problema depois que o ajuste da consulta tiver sido esgotado como uma opção. O dimensionamento correto do hardware é muito importante. Os índices devem ser adicionados somente quando a correção correta é indexar o atributo, e não uma tentativa de ofuscar os problemas de hardware.
 
--   Os índices aumentam o tamanho do banco de dados por um mínimo do tamanho total do atributo que está sendo indexado. Portanto, uma estimativa do crescimento do banco de dados pode ser avaliada por meio da obtenção do tamanho médio do atributo e da multiplicação pelo número de objetos que terão o atributo preenchido. Geralmente, trata-se de um aumento de 1% no tamanho do banco de dados. Para obter mais informações, consulte [como funciona o armazenamento de dados](https://technet.microsoft.com/library/cc772829.aspx).
+-   Os índices aumentam o tamanho do banco de dados por um mínimo do tamanho total do atributo que está sendo indexado. Portanto, uma estimativa do crescimento do banco de dados pode ser avaliada por meio da obtenção do tamanho médio do atributo e da multiplicação pelo número de objetos que terão o atributo preenchido. Geralmente, trata-se de um aumento de 1% no tamanho do banco de dados. Para obter mais informações, consulte [como funciona o armazenamento de dados](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10)).
 
 -   Se o comportamento da pesquisa for feito predominantemente no nível da unidade organizacional, considere a indexação para pesquisas em contêineres.
 
--   Os índices de tupla são maiores que os índices normais, mas é muito mais difícil estimar o tamanho. Use estimativas de tamanho de índices normais como o andar para crescimento, com um máximo de 20%. Para obter mais informações, consulte [como funciona o armazenamento de dados](https://technet.microsoft.com/library/cc772829.aspx).
+-   Os índices de tupla são maiores que os índices normais, mas é muito mais difícil estimar o tamanho. Use estimativas de tamanho de índices normais como o andar para crescimento, com um máximo de 20%. Para obter mais informações, consulte [como funciona o armazenamento de dados](/previous-versions/windows/it-pro/windows-server-2003/cc772829(v=ws.10)).
 
 -   Se o comportamento da pesquisa for feito predominantemente no nível da unidade organizacional, considere a indexação para pesquisas em contêineres.
 
@@ -90,11 +90,11 @@ Esses cenários podem ser detectados usando uma ou mais das seguintes abordagens
 
 Para obter mais informações, consulte o seguinte:
 
--   [Criando aplicativos mais eficientes habilitados para o Microsoft Active Directory](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [Criando aplicativos mais eficientes habilitados para o Microsoft Active Directory](/previous-versions/ms808539(v=msdn.10))
 
--   [Pesquisando no Active Directory Domain Services](https://msdn.microsoft.com/library/aa746427.aspx)
+-   [Pesquisando no Active Directory Domain Services](/windows/win32/ad/searching-in-active-directory-domain-services)
 
--   [Atributos indexados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
+-   [Atributos indexados](/windows/win32/ad/indexed-attributes)
 
 ## <a name="additional-references"></a>Referências adicionais
 

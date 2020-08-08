@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 0451917da46c94c9c637d1bb26d68e0c33d65be4
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4d3e242bf151650144f8350a4665196672425530
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518973"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943600"
 ---
 # <a name="managing-rid-issuance"></a>Gerenciar emissão de RIDs
 
@@ -255,43 +253,43 @@ As novas mensagens a seguir são registradas em log no log de eventos do sistema
 
 | ID do evento | 16653 |
 |--|--|
-| Fonte | Directory-Services-SAM |
-| Severidade | Aviso |
+| Origem | Directory-Services-SAM |
+| Gravidade | Aviso |
 | Mensagem | Um tamanho de pool para identificadores de conta (RIDs) que foi configurado por um Administrador é maior do que o máximo com suporte. O valor máximo de %1 será usado quando o controlador de domínio for o mestre RID.<p>Para obter mais informações, consulte [Limite de tamanho de bloco RID](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize). |
 | Notas e resolução | O valor máximo para o Tamanho de Bloco RID agora é 15.000 decimal (3A98 hexadecimal). Um controlador de domínio não pode solicitar mais de 15.000 RIDs. Esse evento efetua registros em log a cada inicialização, até que o valor seja definido como um valor nesse máximo ou abaixo dele. |
 
 | ID do evento | 16654 |
 |--|--|
-| Fonte | Directory-Services-SAM |
-| Severidade | Informativo |
+| Origem | Directory-Services-SAM |
+| Gravidade | Informativo |
 | Mensagem | Um pool de RIDs (identificadores de conta) foi invalidado. Isso pode ocorrer nos seguintes casos previstos:<p>1. um controlador de domínio é restaurado do backup.<p>2. um controlador de domínio em execução em uma máquina virtual é restaurado do instantâneo.<p>3. um administrador invalidou manualmente o pool.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=226247 para obter mais informações. |
 | Notas e resolução | Se esse evento for inesperado, contate todos os administradores do domínio e determine quais deles executou a ação. O log de eventos dos Serviços de Diretório também contém mais informações sobre quando uma dessas etapas foi executada. |
 
 | ID do evento | 16655 |
 |--|--|
-| Fonte | Directory-Services-SAM |
-| Severidade | Informativo |
+| Origem | Directory-Services-SAM |
+| Gravidade | Informativo |
 | Mensagem | O máximo global para identificadores de conta (RIDs) foi aumentado para %1. |
 | Notas e resolução | Se esse evento for inesperado, contate todos os administradores do domínio e determine quais deles executou a ação. Esse evento registra o aumento do tamanho do pool RID geral além do padrão de 2<sup>30</sup>e não ocorrerá automaticamente; somente por ação administrativa. |
 
 | ID do evento | 16656 |
 |--|--|
-| Fonte | Directory-Services-SAM |
-| Severidade | Aviso |
+| Origem | Directory-Services-SAM |
+| Gravidade | Aviso |
 | Mensagem | O máximo global para identificadores de conta (RIDs) foi aumentado para %1. |
 | Notas e resolução | Ação necessária! Um pool de identificador de conta (RID) foi alocado a esse controlador de domínio. O valor do pool indica que esse domínio consumiu uma parte considerável do total de identificadores de conta disponíveis.<p>Um mecanismo de proteção será ativado quando o domínio atingir o seguinte limite da conta total disponível-identificadores restantes: %1. O mecanismo de proteção impedirá a criação de conta até que você reabilite manualmente a alocação de identificador de conta no controlador de domínio de mestre RID.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obter mais informações. |
 
 | ID do evento | 16657 |
 |--|--|
-| Fonte | Directory-Services-SAM |
-| Severidade | Erro |
+| Origem | Directory-Services-SAM |
+| Gravidade | Erro |
 | Mensagem | Ação necessária! Esse domínio consumiu uma parte considerável do total de identificadores de conta (RIDs) disponíveis. Um mecanismo de proteção foi ativado porque a conta total disponível-os identificadores restantes é menor que: X% [argumento de teto artificial].<p>O mecanismo de proteção impede a criação de conta até que você reabilite manualmente a alocação de identificador de conta no controlador de domínio de mestre RID.<p>É extremamente importante que certos diagnósticos sejam executados antes da criação de conta ser reabilitada, para assegurar que esse domínio não esteja consumindo identificadores de conta a uma taxa anormalmente alta. Todo problema identificado deve ser resolvido antes da criação da conta ser reabilitada.<p>Falha em diagnosticar e corrigir qualquer problema subjacente que resulte em uma taxa anormalmente alta de consumo do identificador de conta pode levar ao esgotamento de identificadores de conta no domínio. Depois disso, a criação da conta ficará permanentemente desabilitada nesse domínio.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obter mais informações. |
 | Notas e resolução | Contate todos os administradores de domínio e informe-os de que mais nenhuma entidade de segurança poderá ser criada nesse domínio até que essa proteção seja substituída. Para obter mais informações sobre como substituir a proteção e provavelmente aumentar o pool RID geral, consulte [Desbloqueio de tamanho de espaço de RID global](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock). |
 
 | ID do evento | 16658 |
 |--|--|
-| Fonte | Directory-Services-SAM |
-| Severidade | Aviso |
+| Origem | Directory-Services-SAM |
+| Gravidade | Aviso |
 | Mensagem | Esse evento é uma atualização periódica na quantidade total restante de identificadores de conta (RIDs) disponíveis. O número de identificadores de conta restantes é aproximadamente: %1.<p>Os identificadores de conta são usados conforme as contas são criadas, quando eles estão esgotados nenhuma conta nova pode ser criada no domínio.<p>Consulte https://go.microsoft.com/fwlink/?LinkId=228745 para obter mais informações. |
 | Notas e resolução | Contate todos os administradores de domínio e informe-os que o consumo de RID ultrapassou o marco principal; determine se esse comportamento é esperado ou não examinando os padrões de criação de objeto de confiança de segurança. Presenciar esse evento seria muito incomum, pois isso significaria que pelo menos ~100 milhões de RIDS foram alocados. |
 

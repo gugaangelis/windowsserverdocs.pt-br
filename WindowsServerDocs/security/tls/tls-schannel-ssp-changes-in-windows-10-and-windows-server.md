@@ -5,12 +5,12 @@ ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
 manager: alanth
 author: justinha
 ms.date: 05/16/2018
-ms.openlocfilehash: 67a0c77b3e6dfa343cfd511b2fe48273439632e4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 92a61452d3c22c34bb3251ee2668679068f3a2ad
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971243"
+ms.locfileid: "87989492"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>Alterações de TLS (Schannel SSP) no Windows 10 e no Windows Server 2016
 
@@ -20,7 +20,7 @@ ms.locfileid: "87971243"
 
 Windows 10, versão 1511 e Windows Server 2016 Adicione suporte para configuração da ordem do conjunto de codificação usando o MDM (gerenciamento de dispositivo móvel).
 
-Para alterações de ordem de prioridade do pacote de codificação, consulte [pacotes de codificação no Schannel](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx).
+Para alterações de ordem de prioridade do pacote de codificação, consulte [pacotes de codificação no Schannel](/windows/win32/secauthn/cipher-suites-in-schannel).
 
 Adicionado suporte para os seguintes conjuntos de codificação:
 
@@ -53,7 +53,7 @@ Para obter mais informações, consulte [tamanhos de chave KeyExchangeAlgorithm-
 
 ### <a name="sch_use_strong_crypto-option-changes"></a>SCH_USE_STRONG_CRYPTO alterações de opção
 
-Com o Windows 10, versão 1507 e Windows Server 2016, [SCH_USE_STRONG_CRYPTO](https://msdn.microsoft.com/library/windows/desktop/aa379810.aspx) opção agora desabilita as codificações nulas, MD5, des e exportar.
+Com o Windows 10, versão 1507 e Windows Server 2016, [SCH_USE_STRONG_CRYPTO](/windows/win32/api/schannel/ns-schannel-schannel_cred) opção agora desabilita as codificações nulas, MD5, des e exportar.
 
 ## <a name="elliptical-curve-changes"></a>Alterações de curva elíptica
 
@@ -113,7 +113,7 @@ O Windows 10, versão 1507 e Windows Server 2016 fornecem 30% mais de retomadas 
 
 O Windows 10, versão 1507 e Windows Server 2016 adicionam suporte para RFC 7627: hash de sessão TLS (Transport Layer Security) e extensão de segredo mestre estendido.
 
-Devido a essa alteração, o Windows 10 e o Windows Server 2016 exigem atualizações de [provedor CNG SSL](https://msdn.microsoft.com/library/windows/desktop/ff468652.aspx) de terceiros para dar suporte a NCRYPT_SSL_INTERFACE_VERSION_3 e para descrever essa nova interface.
+Devido a essa alteração, o Windows 10 e o Windows Server 2016 exigem atualizações de [provedor CNG SSL](/windows/win32/seccng/cng-ssl-provider-functions) de terceiros para dar suporte a NCRYPT_SSL_INTERFACE_VERSION_3 e para descrever essa nova interface.
 
 
 ## <a name="ssl-support"></a>Suporte a SSL
@@ -139,5 +139,3 @@ No Windows 10 e no Windows Server 2016, as restrições são relaxadas e o servi
 O cliente pode continuar ou encerrar o handshake.
 
 Ao validar certificados do servidor e do cliente, a pilha do Windows TLS é estritamente compatível com a RFC 1,2 do TLS e permite apenas a assinatura negociada e os algoritmos de hash no servidor e nos certificados do cliente.
-
-

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: e5e18ed5f5cc4cba319042f1a5da84acae8e5fd5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e5275937e12542e16c40273d69d9684d72a4ee82
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879533"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992449"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introdução à Coleta de Eventos de Instalação e Inicialização
 
@@ -130,9 +130,9 @@ Se não puder configurar a comunicação remota do Windows PowerShell, você sem
 
 1.  No computador de destino, inicie o Regedit.exe e localize esta chave do registro:
 
-    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. Várias sessões de log são listadas como chaves subsites sob essa chave. **Setup Platform**, **NT Kernel Logger**e **Microsoft-Windows-Setup** são opções possíveis para uso com a instalação e a coleta de eventos de inicialização, mas a opção recomendada é o **EventLog-System**. Essas chaves são detalhadas em [Configurar e iniciar uma sessão de agente de log automático](https://msdn.microsoft.com/library/windows/desktop/aa363687(v=vs.85).aspx).
+    **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\AutoLogger**. Várias sessões de log são listadas como chaves subsites sob essa chave. **Setup Platform**, **NT Kernel Logger**e **Microsoft-Windows-Setup** são opções possíveis para uso com a instalação e a coleta de eventos de inicialização, mas a opção recomendada é o **EventLog-System**. Essas chaves são detalhadas em [Configurar e iniciar uma sessão de agente de log automático](/windows/win32/etw/configuring-and-starting-an-autologger-session).
 
-2.  Na chave EventLog-System, altere o valor da **LogFileMode** de **0x10000180** para **0x10080180**. Para obter mais informações sobre os detalhes dessas configurações, consulte [Constantes de modo de registro em log](https://msdn.microsoft.com/library/windows/desktop/aa364080(v=vs.85).aspx).
+2.  Na chave EventLog-System, altere o valor da **LogFileMode** de **0x10000180** para **0x10080180**. Para obter mais informações sobre os detalhes dessas configurações, consulte [Constantes de modo de registro em log](/windows/win32/etw/logging-mode-constants).
 
 3.  Opcionalmente, você também pode habilitar o encaminhamento de dados de verificação de bug para o computador coletor. Para fazer isso, localize a chave do registro HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager e crie a chave **Debug Print Filter** com um valor de **0x1**.
 
@@ -276,7 +276,7 @@ A interface mínima oferecida pelo Nano Server às vezes pode dificultar o diagn
 
 ### <a name="to-configure-nano-server-as-a-target-computer"></a>Para configurar o Nano Server como um computador de destino
 
-1. Crie sua imagem básica do Nano Server. Para obter detalhes, consulte [Introdução ao Nano Server](https://technet.microsoft.com/library/mt126167.aspx) .
+1. Crie sua imagem básica do Nano Server. Para obter detalhes, consulte [Introdução ao Nano Server](../get-started/getting-started-with-nano-server.md) .
 
 2. Configure um computador coletor como na seção Configurando o computador do coletor deste tópico.
 
@@ -286,7 +286,7 @@ A interface mínima oferecida pelo Nano Server às vezes pode dificultar o diagn
 
     2. Inicie um console do Windows PowerShell com permissões elevadas e execute `Import-Module BootEventCollector` .
 
-    3. Atualize o registro de VHD do Nano Serve para habilitar Agentes de log automático. Para fazer isso, execute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`. Isto adiciona uma lista básica do ambiente mais típico e eventos de inicialização; você pode pesquisar outros em [Controlar sessões de rastreamento de eventos](https://msdn.microsoft.com/library/windows/desktop/aa363694(v=vs.85).aspx).
+    3. Atualize o registro de VHD do Nano Serve para habilitar Agentes de log automático. Para fazer isso, execute `Enable-SbecAutoLogger -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd`. Isto adiciona uma lista básica do ambiente mais típico e eventos de inicialização; você pode pesquisar outros em [Controlar sessões de rastreamento de eventos](/windows/win32/etw/controlling-event-tracing-sessions).
 
 4. Atualize configurações de BCD na imagem do Nano Server para habilitar o sinalizador de Eventos e defina o computador coletor para certifique-se de que eventos de diagnósticos são enviados para o servidor correto. Observe que o endereço IPv4 do computador coletor, a porta TCP e a chave de criptografia configurada no arquivo Active.XML do coletor (descrito em outro lugar neste tópico). Use este comando em um console do Windows PowerShell com permissões elevadas:`Enable-SbecBcd -Path C:\NanoServer\Workloads\IncludingWorkloads.vhd -CollectorIp 192.168.100.1 -CollectorPort 50000 -Key a.b.c.d`
 

@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7502233cfd71fe2f3e7d25ff6ba246531233d1ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896203"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992250"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado dos controladores de domínio e considerações sobre o local
 
@@ -23,8 +23,8 @@ Uma área adicional de consideração é localizar controladores de rede de leit
 -   Onde um controlador de domínio gravável pode ser necessário.  Coloque os controladores de domínio de leitura/gravação em locais centrais para minimizar a latência.
 
 Para referência de informações adicionais:
--   [Compatibilidade de aplicativos com RODCs](https://technet.microsoft.com/library/cc772597.aspx)
--   [ADSI (interface do serviço de Active Directory) e o RODC (controlador de domínio somente leitura) – evitando problemas de desempenho](https://blogs.technet.microsoft.com/fieldcoding/2012/06/24/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues/)
+-   [Compatibilidade de aplicativos com RODCs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772597(v=ws.10))
+-   [ADSI (interface do serviço de Active Directory) e o RODC (controlador de domínio somente leitura) – evitando problemas de desempenho](/archive/blogs/fieldcoding/active-directory-service-interface-adsi-and-the-read-only-domain-controller-rodc-avoiding-performance-issues)
 
 ## <a name="optimize-for-referrals"></a>Otimizar para referências
 
@@ -54,9 +54,9 @@ Os cenários de confiança entre domínios são uma área que tem sido consisten
 
 -   Os controladores de domínio no domínio confiante tentarão localizar controladores de domínio no domínio confiável que estão no mesmo site primeiro e, em seguida, efetuarão failback para os localizadores genéricos.
 
-    -   Para obter mais informações sobre como o DCLocator funciona, consulte [localizando um controlador de domínio no site mais próximo](https://technet.microsoft.com/library/cc978016.aspx).
+    -   Para obter mais informações sobre como o DCLocator funciona, consulte [localizando um controlador de domínio no site mais próximo](/previous-versions/windows/it-pro/windows-2000-server/cc978016(v=technet.10)).
 
-    -   Convergir nomes de site entre os domínios confiáveis e confiantes para refletir o controlador de domínio no mesmo local. Verifique se os mapeamentos de sub-rede e endereço IP estão vinculados corretamente a sites em ambas as florestas. Para obter mais informações, consulte [localizador de domínio em uma relação de confiança de floresta](https://blogs.technet.com/b/askds/archive/2008/09/24/domain-locator-across-a-forest-trust.aspx).
+    -   Convergir nomes de site entre os domínios confiáveis e confiantes para refletir o controlador de domínio no mesmo local. Verifique se os mapeamentos de sub-rede e endereço IP estão vinculados corretamente a sites em ambas as florestas. Para obter mais informações, consulte [localizador de domínio em uma relação de confiança de floresta](/archive/blogs/askds/domain-locator-across-a-forest-trust).
 
     -   Verifique se as portas estão abertas, de acordo com as necessidades do DCLocator, para o local do controlador de domínio. Se existirem firewalls entre os domínios, verifique se os firewalls estão configurados corretamente para todas as relações de confiança. Se os firewalls não estiverem abertos, o controlador de domínio confiante ainda tentará acessar o domínio confiável. Se a comunicação falhar por algum motivo, o controlador de domínio confiante eventualmente atingirá o tempo limite da solicitação para o controlador de domínio confiável. No entanto, esses tempos limite podem levar vários segundos por solicitação e podem esgotar portas de rede no controlador de domínio confiável se o volume de solicitações de entrada for alto. O cliente pode experimentar as esperas para o tempo limite no controlador de domínio como threads suspensos, que podem ser convertidos em aplicativos suspensos (se o aplicativo executar a solicitação no thread em primeiro plano). Para obter mais informações, consulte [como configurar um firewall para domínios e relações de confiança](https://support.microsoft.com/kb/179442).
 

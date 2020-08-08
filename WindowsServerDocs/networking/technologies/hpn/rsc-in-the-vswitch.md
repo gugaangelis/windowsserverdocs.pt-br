@@ -2,18 +2,16 @@
 title: Receber segmento Coalescing (RSC) em vSwitch
 description: A União de segmento de recebimento (RSC) no vSwitch é um recurso do Windows Server 2019 e atualização de 10 de outubro de 2018 que ajuda a reduzir a utilização da CPU do host e aumenta a taxa de transferência para cargas de trabalho virtuais, unindo vários segmentos TCP em menos, mas segmentos maiores. O processamento de menos segmentos grandes (Unidos) é mais eficiente do que o processamento de vários segmentos pequenos.
 manager: dougkim
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.author: dacuo
 author: dcuomo
 ms.date: 09/07/2018
-ms.openlocfilehash: e7db6656bd9331e5cc6c2deaee143b3602ef1239
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 26f4a5fc028ebe134e6eff8ff22c348d52ba3f90
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181812"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87962040"
 ---
 # <a name="rsc-in-the-vswitch"></a>RSC no vSwitch
 >Aplica-se a: Windows Server 2019

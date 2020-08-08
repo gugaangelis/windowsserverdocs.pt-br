@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b45ad16981667eff626278daadbe8b39f5cc5c8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1fcc21df93d9963ee83159c1df2fcf918ddbbfba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896718"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992366"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Ajuste do gerenciamento de energia do processador (PPM) para o plano de energia balanceado do Windows Server
 
@@ -87,7 +87,7 @@ Se suas características de carga de trabalho primárias diferirem significativa
 
 Devido ao número e à complexidade dos parâmetros, essa pode ser uma tarefa desafiadora, mas se você estiver procurando o melhor equilíbrio entre o consumo de energia e a eficácia da carga de trabalho para seu ambiente específico, pode valer o esforço.
 
- O conjunto completo de parâmetros ajustáveis pode ser encontrado no [ajuste de gerenciamento de energia do processador](https://msdn.microsoft.com/windows/hardware/gg566941.aspx). Alguns dos parâmetros de energia mais simples para começar com o podem ser:
+ O conjunto completo de parâmetros ajustáveis pode ser encontrado no [ajuste de gerenciamento de energia do processador](/previous-versions/windows/hardware/design/dn613983(v=vs.85)). Alguns dos parâmetros de energia mais simples para começar com o podem ser:
 
 -   Aumento do **desempenho do processador e desempenho do processador aumento do tempo** – os valores maiores lentam a resposta de desempenho para a maior atividade
 

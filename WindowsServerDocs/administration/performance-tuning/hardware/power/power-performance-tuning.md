@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: qizha;tristanb
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e758e2335d8a5b536b0f0db9626dc88337de631
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 535c1e2ccff14f01f015b67fd0fc2c6be4a04729
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896738"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992406"
 ---
 # <a name="power-and-performance-tuning"></a>Ajuste de potência e desempenho
 
@@ -63,7 +63,7 @@ Você precisa compreender totalmente seus requisitos de carga de trabalho para e
 
 As taxas de tiques do temporizador reduzidas, os drivers que não têm suporte ao gerenciamento de energia e a utilização excessiva da CPU são alguns dos problemas comportamentais detectados pelo comando **powercfg/Energy** . Essa ferramenta fornece uma maneira simples de identificar e corrigir problemas de gerenciamento de energia, potencialmente resultando em uma economia de custos significativa em um datacenter grande.
 
-Para obter mais informações sobre PowerCfg.exe, consulte [usando o Powercfg para avaliar a eficiência de energia do sistema](https://msdn.microsoft.com/windows/hardware/gg463250.aspx).
+Para obter mais informações sobre PowerCfg.exe, consulte [usando o Powercfg para avaliar a eficiência de energia do sistema](/previous-versions/windows/hardware/download/dn550976(v=vs.85)).
 
 ## <a name="using-power-plans-in-windows-server"></a>Usando planos de energia no Windows Server
 
@@ -78,7 +78,7 @@ O Windows Server 2016 tem três planos de energia internos projetados para atend
 
 Esses planos de energia existem no Windows para sistemas de corrente alternada (AC) e corrente direta (DC), mas vamos pressupor que os servidores estejam sempre usando uma fonte de energia CA.
 
-Para obter mais informações sobre planos de energia e configurações de política de energia, consulte [configuração e implantação da política de energia no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
+Para obter mais informações sobre planos de energia e configurações de política de energia, consulte [configuração e implantação da política de energia no Windows](/previous-versions/windows/hardware/design/dn642106(v=vs.85)).
 
 > [!Note]
 > Alguns fabricantes de servidor têm suas próprias opções de gerenciamento de energia disponíveis por meio das configurações do BIOS. Se o sistema operacional não tiver controle sobre o gerenciamento de energia, alterar os planos de energia no Windows não afetará a energia e o desempenho do sistema.
@@ -87,7 +87,7 @@ Para obter mais informações sobre planos de energia e configurações de polí
 
 Cada plano de energia representa uma combinação de vários parâmetros de gerenciamento de energia subjacentes. Os planos internos são três coleções de configurações recomendadas que abrangem uma ampla variedade de cargas de trabalho e cenários. No entanto, reconhecemos que esses planos não atenderão às necessidades de cada cliente.
 
-As seções a seguir descrevem maneiras de ajustar alguns parâmetros específicos de gerenciamento de energia do processador para atender às metas não abordadas pelos três planos internos. Se você precisar entender uma matriz mais ampla de parâmetros de energia, consulte [configuração e implantação da política de energia no Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
+As seções a seguir descrevem maneiras de ajustar alguns parâmetros específicos de gerenciamento de energia do processador para atender às metas não abordadas pelos três planos internos. Se você precisar entender uma matriz mais ampla de parâmetros de energia, consulte [configuração e implantação da política de energia no Windows](/previous-versions/windows/hardware/design/dn642106(v=vs.85)).
 
 ## <a name="processor-performance-boost-mode"></a>Modo de aumento de desempenho do processador
 
@@ -111,8 +111,8 @@ No Windows Server 2016, o valor padrão para o modo Boost é 3.
 | **Nome** | **Comportamento baseado em estado P** | **Comportamento de CPPC** |
 |--------------------------|------------------------|-------------------|
 | 0 (desabilitado) | Desabilitado | Desabilitado |
-| 1 (habilitado) | habilitado | Habilitado com eficiência |
-| 2 (agressivo) | habilitado | Agressivo |
+| 1 (habilitado) | Habilitada | Habilitado com eficiência |
+| 2 (agressivo) | Habilitada | Agressivo |
 | 3 (eficiente habilitado) | Eficiente | Habilitado com eficiência |
 | 4 (agressivo eficiente) | Eficiente | Agressivo |
 
