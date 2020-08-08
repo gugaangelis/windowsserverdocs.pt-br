@@ -5,12 +5,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: 0a21adf3bafeb93f2f9fc18da785fae1a81260b3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1ddfbbda9ab0bdf4d04213069e192e471e4d1b98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971523"
+ms.locfileid: "87991686"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Iniciando sua jornada de Regulamento Geral sobre a Proteção de Dados (GDPR) para o Windows Server
 
@@ -167,7 +167,7 @@ As identidades com privilégios podem ficar comprometidas quando as organizaçõ
 
 - **Pesquisa de engenharia social.** A maioria das ameaças de credenciais começa pesquisando a organização e, em seguida, conduzida por meio da engenharia social. Por exemplo, um invasor pode executar um ataque de phishing por email para comprometer contas legítimas (mas não necessariamente contas com privilégios elevados) que têm acesso à rede de uma organização. O invasor usa essas contas válidas para executar pesquisas adicionais em sua rede e identificar contas com privilégios que podem executar tarefas administrativas.
 
-- **Aproveite contas com privilégios elevados.** Mesmo com uma conta de usuário normal e não com privilégios elevados na rede, os invasores podem obter acesso a contas com permissões elevadas. Um dos métodos mais comuns de fazer isso é usando os ataques Pass-the-hash ou Pass-the-token. Para obter mais informações sobre as técnicas Pass-the-hash e outras informações sobre roubo de credenciais, consulte os recursos na [página Pass-the-hash (PtH)](https://technet.microsoft.com/dn785092.aspx).
+- **Aproveite contas com privilégios elevados.** Mesmo com uma conta de usuário normal e não com privilégios elevados na rede, os invasores podem obter acesso a contas com permissões elevadas. Um dos métodos mais comuns de fazer isso é usando os ataques Pass-the-hash ou Pass-the-token. Para obter mais informações sobre as técnicas Pass-the-hash e outras informações sobre roubo de credenciais, consulte os recursos na [página Pass-the-hash (PtH)](/previous-versions/dn785092(v=msdn.10)).
 
 Há, obviamente, outros métodos que os invasores podem usar para identificar e comprometer identidades privilegiadas (com novos métodos sendo criados todos os dias). Portanto, é importante que você estabeleça práticas para que os usuários façam logon com contas com privilégios mínimos para reduzir a capacidade dos invasores de obter acesso a identidades privilegiadas. As seções abaixo descrevem a funcionalidade em que o Windows Server pode mitigar esses riscos.
 
@@ -211,7 +211,7 @@ O Windows Defender Credential Guard usa:
 
 - TPM 2.0 distinto ou de firmware (preferencial - fornece a associação ao hardware)
 
-Você pode usar o Windows Defender Credential Guard para ajudar a proteger identidades com privilégios protegendo as credenciais e derivações de credencial no Windows Server 2016. Para obter mais informações sobre os requisitos do Windows Defender Credential Guard, consulte [proteger credenciais de domínio derivado com o Windows Defender Credential Guard](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard).
+Você pode usar o Windows Defender Credential Guard para ajudar a proteger identidades com privilégios protegendo as credenciais e derivações de credencial no Windows Server 2016. Para obter mais informações sobre os requisitos do Windows Defender Credential Guard, consulte [proteger credenciais de domínio derivado com o Windows Defender Credential Guard](/windows/access-protection/credential-guard/credential-guard).
 
 #### <a name="windows-defender-remote-credential-guard"></a>Proteção de credencial remota do Windows Defender
 A proteção de credenciais remota do Windows Defender no Windows Server 2016 e na atualização de aniversário do Windows 10 também ajuda a proteger as credenciais para usuários com conexões de área de trabalho remota. Anteriormente, qualquer pessoa que estivesse usando Serviços de Área de Trabalho Remota precisaria fazer logon em seu computador local e, em seguida, precisaria fazer logon novamente quando executo uma conexão remota com seu computador de destino. Esse segundo logon passa as credenciais para o computador de destino, expondo-as a ataques de passagem de hash ou de passagem de tíquete.
@@ -226,7 +226,7 @@ Com a proteção remota de credenciais do Windows Defender, o Windows Server 201
 
 - O Área de Trabalho Remota aplicativo clássico do Windows é necessário. O aplicativo Área de Trabalho Remota Plataforma Universal do Windows não dá suporte à proteção remota de credenciais do Windows Defender.
 
-Você pode habilitar a proteção remota de credenciais do Windows Defender usando uma configuração do registro no servidor Área de Trabalho Remota e Política de Grupo ou um parâmetro Conexão de Área de Trabalho Remota no cliente Área de Trabalho Remota. Para obter mais informações sobre como habilitar a proteção remota de credenciais do Windows Defender, consulte [proteger área de trabalho remota credenciais com o Windows Defender Remote Credential Guard](https://docs.microsoft.com/windows/access-protection/remote-credential-guard). Assim como no Windows Defender Credential Guard, você pode usar o Windows Defender Remote Credential Guard para ajudar a proteger as identidades com privilégios no Windows Server 2016.
+Você pode habilitar a proteção remota de credenciais do Windows Defender usando uma configuração do registro no servidor Área de Trabalho Remota e Política de Grupo ou um parâmetro Conexão de Área de Trabalho Remota no cliente Área de Trabalho Remota. Para obter mais informações sobre como habilitar a proteção remota de credenciais do Windows Defender, consulte [proteger área de trabalho remota credenciais com o Windows Defender Remote Credential Guard](/windows/access-protection/remote-credential-guard). Assim como no Windows Defender Credential Guard, você pode usar o Windows Defender Remote Credential Guard para ajudar a proteger as identidades com privilégios no Windows Server 2016.
 
 ### <a name="secure-the-operating-system-to-run-your-apps-and-infrastructure"></a>Proteger o sistema operacional para executar seus aplicativos e a infraestrutura
 Impedir ameaças cibernéticos também exige a localização e o bloqueio de malware e ataques que buscam obter controle ao subverter as práticas operacionais padrão da sua infraestrutura. Se os invasores puderem fazer com que um sistema operacional ou aplicativo seja executado de forma não predeterminada e não viável, provavelmente ele usará esse sistema para realizar ações mal-intencionadas. O Windows Server 2016 fornece camadas de proteção que bloqueiam invasores externos que executam software mal-intencionado ou exploram vulnerabilidades. O sistema operacional usa uma função ativa para proteger a infraestrutura e os aplicativos ao alertar os administradores sobre a atividade que indica que um sistema foi violado.
@@ -340,11 +340,11 @@ O ATA é um produto local que ajuda a detectar o comprometimento de identidade e
 
 |Tipo de ataque |Descrição |
 |---------|---------|
-|Ataques mal-intencionados |Esses ataques são detectados procurando ataques de uma lista conhecida de tipos de ataque, incluindo:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC Forjado (MS14-068)</li><li>Golden Ticket</li><li>Replicações mal-intencionadas</li><li>Reconhecimento</li><li>Força bruta</li><li>Execução remota</li></ul>Para obter uma lista completa de ataques mal-intencionados que podem ser detectados e sua descrição, consulte [quais atividades suspeitas podem ser detectadas pelo ATA?](https://docs.microsoft.com/advanced-threat-analytics/understand-explore/ata-threats).|
+|Ataques mal-intencionados |Esses ataques são detectados procurando ataques de uma lista conhecida de tipos de ataque, incluindo:<ul><li>Pass-the-Ticket (PtT)</li><li>Pass-the-Hash (PtH)</li><li>Overpass-the-Hash</li><li>PAC Forjado (MS14-068)</li><li>Golden Ticket</li><li>Replicações mal-intencionadas</li><li>Reconhecimento</li><li>Força bruta</li><li>Execução remota</li></ul>Para obter uma lista completa de ataques mal-intencionados que podem ser detectados e sua descrição, consulte [quais atividades suspeitas podem ser detectadas pelo ATA?](/advanced-threat-analytics/understand-explore/ata-threats).|
 |Comportamento anômalo |Esses ataques são detectados usando a análise comportamental e usam o Machine Learning para identificar atividades questionáveis, incluindo:<ul><li>Logons anormais</li><li>Ameaças desconhecidas</li><li>Compartilhamento de senha</li><li>Movimento lateral</li></ul>|
 |Problemas de segurança e riscos |Esses ataques são detectados examinando a configuração atual da rede e do sistema, incluindo:<ul><li>Confiança quebrada</li><li>Protocolos fracos</li><li>Vulnerabilidades de protocolo conhecidas</li></ul>|
 
-Você pode usar o ATA para ajudar a detectar invasores tentando comprometer identidades privilegiadas. Para obter mais informações sobre como implantar o ATA, consulte os tópicos planejar, projetar e implantar na [documentação do Advanced Threat Analytics](https://docs.microsoft.com/advanced-threat-analytics/).
+Você pode usar o ATA para ajudar a detectar invasores tentando comprometer identidades privilegiadas. Para obter mais informações sobre como implantar o ATA, consulte os tópicos planejar, projetar e implantar na [documentação do Advanced Threat Analytics](/advanced-threat-analytics/).
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>Conteúdo relacionado para soluções do Windows Server 2016 associadas
 
@@ -372,5 +372,3 @@ Este artigo não fornece direitos legais e nenhuma propriedade intelectual sobre
 Publicado em setembro de 2017<br>
 Versão 1.0<br>
 © 2017 Microsoft. Todos os direitos reservados.
-
-

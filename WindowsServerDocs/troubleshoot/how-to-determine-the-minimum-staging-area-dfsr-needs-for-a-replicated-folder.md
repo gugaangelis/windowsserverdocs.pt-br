@@ -1,21 +1,19 @@
 ---
-title: Como determinar a área mínima de preparação necessária para o DFSR para uma pasta replicada
+title: Como determinar a área mínima de preparo exigida pela DFSR para uma pasta replicada
 description: Este artigo é um guia de referência rápida sobre como calcular a área de preparação mínima necessária para que o DFSR funcione corretamente.
-ms.prod: windows-server
-ms.technology: server-general
 ms.date: 06/10/2020
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5e5bfdbb90d2b3e631aaa020a173eca779f0d6b3
-ms.sourcegitcommit: fa9a8badf4eb366aeeca7d2905e2cad711ee8dae
+ms.openlocfilehash: 581b485f219e960ecd467baa1f7dff7742c3acf8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84715000"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965783"
 ---
-# <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>Como determinar a área mínima de preparação necessária para o DFSR para uma pasta replicada
+# <a name="how-to-determine-the-minimum-staging-area-dfsr-needs-for-a-replicated-folder"></a>Como determinar a área mínima de preparo exigida pela DFSR para uma pasta replicada
 
-Este artigo é um guia de referência rápida sobre como calcular a área de preparação mínima necessária para que o DFSR funcione corretamente. Valores inferiores a esses podem fazer com que a replicação fique lenta ou pare completamente. 
+Este artigo é um guia de referência rápida sobre como calcular a área de preparação mínima necessária para que o DFSR funcione corretamente. Valores inferiores a esses podem fazer com que a replicação fique lenta ou pare completamente.
 
 Tenha em mente que estes são *apenas mínimos*. Ao considerar o tamanho da área de preparação, maior a área de preparo, até o tamanho da pasta replicada. Consulte a seção "como determinar se você tem um problema de área de preparação" e as postagens de blog vinculadas ao final deste artigo para obter mais detalhes sobre por que é importante ter uma área de preparo corretamente dimensionada.
 
@@ -38,23 +36,23 @@ O PowerShell está incluído no Windows 2008 e superior. Você deve instalar o P
 
 Use um script do PowerShell para localizar os maiores arquivos 32 ou 9 e determinar quantos gigabytes eles somam (graças a preciso Pyle para os comandos do PowerShell). Na verdade, vou apresentar três scripts do PowerShell. Cada um é útil por conta própria; no entanto, o número 3 é o mais útil.
 
-1. Execute o comando a seguir:  
+1. Execute o seguinte comando:
    ```Powershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | ft name,length -wrap –auto
    ```
-   
+
    Esse comando retornará os nomes de arquivo e o tamanho dos arquivos em bytes. Útil se você quiser saber quais são os 32 arquivos que são o maior na pasta replicada para que você possa "visitar" seus proprietários.
 
-2. Execute o comando a seguir:  
+2. Execute o seguinte comando:
    ```Poswershell
    Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
    ```
    Esse comando retornará o número total de bytes dos 32 maiores arquivos na pasta sem listar os nomes de arquivo.
 
-3. Execute o comando a seguir:  
+3. Execute o seguinte comando:
    ```Poswershell
    $big32 = Get-ChildItem c:\\temp -recurse | Sort-Object length -descending | select-object -first 32 | measure-object -property length –sum
-   
+
    $big32.sum /1gb
    ```
    Esse comando obterá o número total de bytes de 32 maiores arquivos na pasta e fará o cálculo para converter bytes em gigabytes para você. Esse comando é de duas linhas separadas. Você pode colá-los no Shell de comando do PowerShell de uma vez ou executá-los de volta para trás.
@@ -71,7 +69,7 @@ A execução do comando 1 retornará resultados semelhantes à saída abaixo. Es
 <tbody>
 <tr class="odd">
 <td>Nome</td>
-<td>Comprimento</td>
+<td>Tamanho</td>
 </tr>
 <tr class="even">
 <td><strong>File5.zip</strong></td>
@@ -174,29 +172,24 @@ Você detecta problemas da área de preparação monitorando as IDs de eventos e
 
 ### <a name="staging-area-events"></a>Eventos da área de preparação
 
-> ID do evento: **4202**  
-> Severidade: **aviso**
-> 
+> ID do evento: **4202** severidade: **aviso**
+>
 > O serviço de Replicação do DFS detectou que o espaço de preparo em uso para a pasta replicada no caminho local (caminho) está acima da marca d' água alta. O serviço tentará excluir os arquivos de preparação mais antigos. O desempenho pode ser afetado.
-> 
-> ID do evento: **4204**  
-> Gravidade: **informativo**
-> 
+>
+> ID do evento: **4204** severidade: **informativo**
+>
 > O serviço de Replicação do DFS excluiu com êxito arquivos de preparação antigos para a pasta replicada no caminho local (caminho). O espaço de preparo agora está abaixo da marca d' água alta.
-> 
-> ID do evento: **4206**  
-> Severidade: **aviso**
-> 
+>
+> ID do evento: **4206** severidade: **aviso**
+>
 > O serviço de Replicação do DFS falhou ao limpar arquivos de preparação antigos para a pasta replicada no caminho local (caminho). O serviço pode falhar ao replicar alguns arquivos grandes e a pasta replicada pode ficar fora de sincronia. O serviço tentará automaticamente a limpeza do espaço de preparo em (x) minutos. O serviço pode iniciar a limpeza mais cedo se detectar que alguns arquivos de preparação foram desbloqueados.
-> 
-> ID do evento: **4208**  
-> Severidade: **aviso**
-> 
+>
+> ID do evento: **4208** severidade: **aviso**
+>
 > O serviço Replicação do DFS detectou que o uso do espaço de preparo está acima da cota de preparo para a pasta replicada no caminho local (caminho). O serviço pode falhar ao replicar alguns arquivos grandes e a pasta replicada pode ficar fora de sincronia. O serviço tentará limpar o espaço de preparo automaticamente.
-> 
-> ID do evento: **4212**  
-> Severidade: **erro**
-> 
+>
+> ID do evento: **4212** severidade: **erro**
+>
 > O serviço de Replicação do DFS não pôde replicar a pasta replicada no caminho local (caminho) porque o caminho de preparo é inválido ou inacessível.
 
 ## <a name="what-is-the-difference-between-4202-and-4208"></a>Qual é a diferença entre 4202 e 4208?

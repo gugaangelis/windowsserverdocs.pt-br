@@ -2,18 +2,16 @@
 title: Lista de verificação - Ajustar um Namespace DFS
 description: Este artigo descreve como otimizar a como o Namespace de DFS manipula indicações e sonda o AD DS para dados do namespace atualizado
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 67e272657c23926adbbf9f0db5174d00f4852137
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9e5759579b86c2ed7721a31aada5ddaa345fc256
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961748"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957684"
 ---
 # <a name="checklist-tune-a-dfs-namespace"></a>Lista de verificação: ajustar um namespace DFS
 

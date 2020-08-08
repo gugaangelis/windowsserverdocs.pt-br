@@ -7,12 +7,12 @@ ms.assetid: e74961a2-bd38-48ae-b1c0-4b3eff761b4a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 37fd4d30183d626caf0891fea2a41f79046030e9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a38b26604ae6089acf6e9b64c20fd9115edcade
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970463"
+ms.locfileid: "87997205"
 ---
 # <a name="selecting-hardware-for-your-multipoint-services-system"></a>Selecionar o hardware para o sistema MultiPoint Services
 
@@ -51,7 +51,7 @@ Use as informações a seguir para tomar decisões de hardware:
 
 Um sistema de serviços do MultiPoint é um ambiente de vários usuários \- , com todos os usuários conectados a um único computador host. Isso aumenta o uso da CPU porque todos os usuários compartilham o mesmo computador. Algumas tarefas, como programas multimídia, \( por exemplo, media players ou \- software de edição de vídeo \) , têm demandas de processamento maiores. Portanto, certifique-se de selecionar uma CPU que possa lidar com os requisitos de processamento para o número de usuários e tipos de cenários de usuário aos quais ele precisará dar suporte.
 
-Os serviços do MultiPoint exigem uma \- CPU baseada em x64 e devem atender aos requisitos do sistema para o computador, conforme descrito em [requisitos de hardware e recomendações de desempenho](Hardware-Requirements-and-Performance-Recommendations.md).
+Os serviços do MultiPoint exigem uma \- CPU baseada em x64 e devem atender aos requisitos do sistema para o computador, conforme descrito em [requisitos de hardware e recomendações de desempenho](./hardware-and-performance-recommendations.md).
 
 Os seguintes tipos de processadores foram testados para serem usados em um sistema de serviços do MultiPoint com programas de processamento de alta \- demanda, como programas multimídia:
 

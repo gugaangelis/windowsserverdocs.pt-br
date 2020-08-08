@@ -2,18 +2,16 @@
 title: Definir grupos de arquivos para triagem
 description: Este artigo descreve como definir grupos de arquivos para criar um namespace para triagem de arquivo, exceção de triagem de arquivo ou arquivos por relatórios de armazenamento do grupo de arquivos
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e38dee0381b33bb9d11b038de715a4420906e131
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: cbcf96a4ab5c6516b87ebde57f6adaf1cf4df17f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474323"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957473"
 ---
 # <a name="define-file-groups-for-screening"></a>Definir grupos de arquivos para triagem
 

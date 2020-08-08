@@ -1,19 +1,17 @@
 ---
 title: Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
-ms.prod: windows-server
 ms.author: jgerend
 manager: brianlic
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: O FSRM (Gerenciador de recursos de servidor de arquivos) é uma ferramenta que permite gerenciar e classificar dados em um servidor de arquivos do Windows Server.
-ms.openlocfilehash: 58b410e51dae3ea102bb1a15f5bb60f00ab702fa
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f09e262176d0e5741c60390497fd2f241eaa965a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964558"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957383"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Visão Geral do FSRM (Gerenciador de Recursos de Servidor de Arquivos)
 

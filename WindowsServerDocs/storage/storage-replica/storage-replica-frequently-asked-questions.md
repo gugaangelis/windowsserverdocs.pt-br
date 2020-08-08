@@ -1,19 +1,17 @@
 ---
 title: Perguntas frequentes sobre Réplica de Armazenamento
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/15/2020
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 04477ac9d7aa7905a4d5fc4dd58c7891c91f5baf
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 01bda8c501ca1416ebc887a98a4369f99c60f0f2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769694"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989375"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Perguntas frequentes sobre Réplica de Armazenamento
 
@@ -254,7 +252,7 @@ No entanto, para obter o desempenho de replicação aprimorado do Windows Server
 
 ## <a name="how-do-i-report-an-issue-with-storage-replica-or-this-guide"></a><a name="FAQ17"></a>Como fazer relatar um problema com a réplica de armazenamento ou este guia?
 
-Para obter assistência técnica com a réplica de armazenamento, você pode postar nos [fóruns da Microsoft](https://docs.microsoft.com/answers/index.html). Você também pode enviar um email a srfeed@microsoft.com perguntas sobre a Réplica de Armazenamento ou problemas com esta documentação. O [site de comentários gerais do Windows Server](https://windowsserver.uservoice.com/forums/295047-general-feedback) é preferido para solicitações de alteração de design, pois permite que seus colegas de atendimento forneçam suporte e comentários para suas ideias.
+Para obter assistência técnica com a réplica de armazenamento, você pode postar nos [fóruns da Microsoft](/answers/index.html). Você também pode enviar um email a srfeed@microsoft.com perguntas sobre a Réplica de Armazenamento ou problemas com esta documentação. O [site de comentários gerais do Windows Server](https://windowsserver.uservoice.com/forums/295047-general-feedback) é preferido para solicitações de alteração de design, pois permite que seus colegas de atendimento forneçam suporte e comentários para suas ideias.
 
 ## <a name="can-storage-replica-be-configured-to-replicate-in-both-directions"></a><a name="FAQ18"></a>A réplica de armazenamento pode ser configurada para replicar em ambas as direções?
 

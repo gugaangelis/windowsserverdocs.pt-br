@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/21/2019
-ms.openlocfilehash: 7ec49467b3875ba552f5b92fb3776892a2d54c13
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fc879fda0f6a708a8a1d4ebd60834f4e6543f3ba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971403"
+ms.locfileid: "87997171"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>Adicionar informações do host para o atestado confiável do TPM
 
@@ -55,7 +55,7 @@ Depois que o administrador da malha capturar as informações, adicione-as à co
     Add-HgsAttestationTpmPolicy -Path <Filename>.tcglog -Name '<PolicyName>'
     ```
 
-Isso conclui o processo de configuração de um cluster HGS para o modo TPM. O administrador de malha pode precisar que você forneça duas URLs do HGS para que a configuração possa ser concluída para os hosts. Para obter essas URLs, em um servidor HGS, execute [Get-HgsServer](https://docs.microsoft.com/powershell/module/hgsserver/get-hgsserver?view=win10-ps).
+Isso conclui o processo de configuração de um cluster HGS para o modo TPM. O administrador de malha pode precisar que você forneça duas URLs do HGS para que a configuração possa ser concluída para os hosts. Para obter essas URLs, em um servidor HGS, execute [Get-HgsServer](/powershell/module/hgsserver/get-hgsserver?view=win10-ps).
 
 ## <a name="next-step"></a>Próxima etapa
 

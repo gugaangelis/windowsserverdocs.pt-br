@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7819bdfe1c5a65adc126ab902e6138d372982f20
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ffe38a896e7913d03cc8f4ad62d1e520cec6a0c2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895819"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991930"
 ---
 # <a name="configure-features-on-demand-in-windows-server"></a>Configure Features on Demand in Windows Server
 
@@ -71,7 +71,7 @@ Há dois métodos disponíveis para remover arquivos de recursos do Windows Serv
 
 -   O `remove` parâmetro do `Uninstall-WindowsFeature` cmdlet permite que você exclua arquivos de recursos de um servidor ou VHD (disco rígido virtual) offline que esteja executando o windows Server 2012 R2 ou o windows Server 2012. Os valores válidos para o `remove` parâmetro são os nomes de funções, serviços de função e recursos.
 
--   Os comandos DISM (Gerenciamento e Manutenção de Imagens de Implantação) permitem criar arquivos WIM personalizados que preservam espaço em disco omitindo arquivos de recursos que não são necessários ou que podem ser obtidos de outras fontes remotas. Para obter mais informações sobre como usar o DISM para preparar imagens personalizadas, consulte [Como habilitar ou desabilitar os recursos do Windows](https://technet.microsoft.com/library/hh824822.aspx).
+-   Os comandos DISM (Gerenciamento e Manutenção de Imagens de Implantação) permitem criar arquivos WIM personalizados que preservam espaço em disco omitindo arquivos de recursos que não são necessários ou que podem ser obtidos de outras fontes remotas. Para obter mais informações sobre como usar o DISM para preparar imagens personalizadas, consulte [Como habilitar ou desabilitar os recursos do Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)).
 
 ## <a name="remove-feature-files-by-using-uninstall-windowsfeature"></a><a name=BKMK_remove></a>Remover arquivos de recursos usando Uninstall-WindowsFeature
 Você pode usar o cmdlet Uninstall-WindowsFeature para desinstalar funções, serviços de função e recursos de servidores e VHDs offline que executam o Windows Server 2012 R2 ou o Windows Server 2012 e para excluir arquivos de recursos. Você pode desinstalar e excluir as mesmas funções, serviços de função e recursos no mesmo comando, se desejado.
@@ -117,8 +117,6 @@ Você pode usar o cmdlet Uninstall-WindowsFeature para desinstalar funções, se
 
 ## <a name="see-also"></a>Consulte Também
 [Instalar ou desinstalar funções, serviços de função ou recursos](install-or-uninstall-roles-role-services-or-features.md) 
- Opções de instalação [do Windows Server](https://technet.microsoft.com/library/hh831786.aspx) 
- [Como habilitar ou desabilitar recursos](https://technet.microsoft.com/library/hh824822.aspx) 
- do Windows [Visão geral do DISM (gerenciamento e manutenção de imagens de implantação)](https://technet.microsoft.com/library/hh825236.aspx)
-
-
+ Opções de instalação [do Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831786(v=ws.11)) 
+ [Como habilitar ou desabilitar recursos](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824822(v=win.10)) 
+ do Windows [Visão geral do DISM (gerenciamento e manutenção de imagens de implantação)](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825236(v=win.10))

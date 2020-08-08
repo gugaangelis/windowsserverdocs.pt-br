@@ -1,19 +1,17 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
 title: Novidades no armazenamento no Windows Server
-ms.prod: windows-server
 ms.author: jgerend
 manager: dongill
-ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 447c8fe33a0454179d8c9aacc9c324ac7bcf1f49
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965943"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>O que há de novo no armazenamento no Windows Server
 
@@ -109,7 +107,7 @@ Há uma série de aprimoramentos para Espaços de Armazenamento Diretos no Windo
 
     Isso permite que os administradores delimitem manualmente a alocação de volumes em Espaços de Armazenamento Diretos. Isso pode aumentar significativamente a tolerância a falhas sob determinadas condições, mas impõe algumas considerações e complexidade de gerenciamento adicionais. Para obter mais informações, consulte [delimitar a alocação de volumes](storage-spaces/delimit-volume-allocation.md).
 
-### <a name="storage-replica"></a><a name="storage-replica2019"></a>Réplica de armazenamento
+### <a name="storage-replica"></a><a name="storage-replica2019"></a>Réplica de Armazenamento
 
 Há várias melhorias na [réplica de armazenamento](storage-replica/storage-replica-overview.md) nesta versão:
 

@@ -8,12 +8,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: 2280dd901756c033a16e5203ad60bc0b6cad5ce4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1c3e2f1c521615ff365642566745411db8aa612
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895829"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991935"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -157,7 +157,7 @@ Esses erros ou erros semelhantes podem ocorrer nas condições a seguir.
 
 5.  Faça logoff do computador no qual você está executando o Gerenciador do servidor e, em seguida, faça logon novamente usando a conta de administrador interna. Repita a etapa anterior, para verificar se o Gerenciador de servidores é capaz de se conectar a e coletar dados do servidor remoto.
 
-Se você seguiu os procedimentos nesta seção e continuar tendo problemas para gerenciar computadores do grupo de trabalho ou gerenciar outros computadores em computadores do grupo de trabalho, consulte [about_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx) no site da Microsoft.
+Se você seguiu os procedimentos nesta seção e continuar tendo problemas para gerenciar computadores do grupo de trabalho ou gerenciar outros computadores em computadores do grupo de trabalho, consulte [about_remote_Troubleshooting](/previous-versions/dd347642(v=technet.10)) no site da Microsoft.
 
 ### <a name="add-and-manage-servers-in-clusters"></a>Adicionar e gerenciar servidores em clusters
 Você pode usar o Gerenciador do Servidor para gerenciar os servidores que estão em clusters de failover (também chamados de clusters de servidores ou MSCS). Os servidores nos clusters de failover (se os nós do cluster são físicos ou virtuais) têm algumas limitações de gerenciamento e comportamentos exclusivos no Gerenciador do Servidor.

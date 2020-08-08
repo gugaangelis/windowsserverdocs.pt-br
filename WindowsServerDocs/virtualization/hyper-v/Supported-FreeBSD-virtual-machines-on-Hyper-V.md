@@ -1,20 +1,18 @@
 ---
 title: Máquinas virtuais FreeBSD com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 04/07/2020
-ms.openlocfilehash: 9394ff04b32ab34cbdad6a46573fd3674051db36
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 3767c56640dd4e4e07e2cdd4a578ec0c3db2f470
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994527"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965633"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuais FreeBSD com suporte no Hyper-V
 
@@ -26,26 +24,26 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 
 * **Interno** – o bis (serviço de integração do FreeBSD) é incluído como parte desta versão do FreeBSD.
 
-* &#10004;-Recurso disponível
+* &#10004;-recurso disponível
 
 * (*em branco*)-recurso não disponível
 
 |**Recurso**|**Versão do sistema operacional Windows Server**|**12 de 12,1**|**11.1-11.3**|**11,0**|**10,3**|**10,2**|**10,0-10,1**|**9,1-9,3, 8,4**|
 |-|-|-|-|-|-|-|-|-|
-|**Disponibilidade**||Interno|Interno|Interno|Interno|Interno|Interno|[Porta](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**Disponibilidade**||Interno|Interno|Interno|Interno|Interno|Interno|[Portas](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
+|**[Núcleo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Tempo preciso do Windows Server 2016|2019, 2016|&#10004;|&#10004;||||||
 |**[Rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
-|Quadros jumbo|2019, 2016, 2012 R2|&#10004;Observação 3|&#10004;Observação 3|&#10004;Observação 3|&#10004;Observação 3|&#10004;Observação 3|&#10004;Observação 3|&#10004;Observação 3|
+|Quadros jumbo|2019, 2016, 2012 R2|Observação de &#10004; 3|Observação de &#10004; 3|Observação de &#10004; 3|Observação de &#10004; 3|Observação de &#10004; 3|Observação de &#10004; 3|Observação de &#10004; 3|
 |Marcação e entroncamento de VLAN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migração ao vivo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Injeção de IP estático|2019, 2016, 2012 R2|&#10004;Observação 4|&#10004;Observação 4|&#10004;Observação 4|&#10004;Observação 4|&#10004;Observação 4|&#10004;Observação 4|&#10004;|
+|Injeção de IP estático|2019, 2016, 2012 R2|&#10004; Observação 4|&#10004; Observação 4|&#10004; Observação 4|&#10004; Observação 4|&#10004; Observação 4|&#10004; Observação 4|&#10004;|
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|||||
 |Segmentação de TCP e descarregamentos de soma de verificação|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 |Descarregamento de recebimento grande (LRO)|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;|||||
-|**[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|Observação 1|Observação 1|Observação 1|Observação 1|Observação 1, 2|Observação 1, 2|
-|Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|||||
+|**[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||Note1|Observação 1|Observação 1|Observação 1|Observação 1|Observação 1, 2|Observação 1, 2|
+|Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6|||||
 |Fibre Channel Virtual|2019, 2016, 2012 R2||||||||
 |Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;|&#10004;||||||
 |Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;||||||
@@ -56,20 +54,20 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 |Memória Dinâmica-adição a quente|2019, 2016, 2012 R2||||||||
 |Memória Dinâmica-balões|2019, 2016, 2012 R2||||||||
 |Redimensionamento de memória de Runtime|2019, 2016||||||||
-|**[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2||||||||
-|**[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
-|Par chave/valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;Observação 5|&#10004;|
+|**[Diversos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
+|Pares chave/valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|Observação de &#10004; 5|&#10004;|
 |Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Cópia de arquivo do host para o convidado|2019, 2016, 2012 R2||||||||
 |comando lsvmbus|2019, 2016, 2012 R2||||||||
 |Soquetes do Hyper-V|2019, 2016||||||||
 |Passagem de PCI/DDA|2019, 2016|&#10004;|&#10004;||||||
-|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
+|**[Máquinas virtuais de 2ª geração](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
 |Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;|&#10004;||||||
-|Inicialização segura|2019, 2016||||||||
+|Inicialização Segura|2019, 2016||||||||
 
-## <a name="notes"></a><a name="BKMK_notes"></a>Registra
+## <a name="notes"></a><a name="BKMK_notes"></a>Observações
 
 1. Sugira para [rotular dispositivos de disco]( https://www.freebsd.org/doc/handbook/geom-glabel.html) para evitar erro de montagem raiz durante a inicialização.
 
@@ -90,10 +88,10 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-   
+
 **Observações adicionais**: a matriz de recursos de 10 estável e 11 estável é a mesma com a versão FreeBSD 11,1. Além disso, o FreeBSD 10,2 e as versões anteriores (10,1, 10,0, 9. x, 8. x) são o fim da vida útil. Consulte [aqui](https://security.freebsd.org/) uma lista atualizada de versões com suporte e as mais recentes consultorias de segurança.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 * [Descrições de recursos para máquinas virtuais Linux e FreeBSD no Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 * [Práticas recomendadas para executar o FreeBSD no Hyper-V](Best-practices-for-running-FreeBSD-on-Hyper-V.md)

@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 697ca5e27db6a937c31b4dad072eef19a6f3df06
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895680"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991920"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Log de Inventário de Software
 
@@ -178,7 +178,7 @@ Há algumas coisas de que você precisa ter certeza antes de instalar o Agregado
 
 6.  Em **Escolher um Tipo de Conta**, selecione **usuário local** ou **gMSA**, dependendo de sua preferência.
 
-    A escolha da opção de conta de usuário local criará um usuário local com uma senha forte gerada automaticamente. Essa conta será usada para todos os serviços do Agregador do SIL e operações de tarefa no servidor local.  É recomendado usar a gMSA (Contas de Serviço Gerenciado de Grupo) se o Agregador fizer parte de um domínio do Active Directory (Windows Server 2012 e posterior). Para obter mais informações sobre a gMSA, veja: [Visão geral das Contas de Serviço do Gerenciado de Grupo](https://technet.microsoft.com/library/hh831782.aspx)
+    A escolha da opção de conta de usuário local criará um usuário local com uma senha forte gerada automaticamente. Essa conta será usada para todos os serviços do Agregador do SIL e operações de tarefa no servidor local.  É recomendado usar a gMSA (Contas de Serviço Gerenciado de Grupo) se o Agregador fizer parte de um domínio do Active Directory (Windows Server 2012 e posterior). Para obter mais informações sobre a gMSA, veja: [Visão geral das Contas de Serviço do Gerenciado de Grupo](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831782(v=ws.11))
 
     -   A opção de conta gMSA deve ser usada se você pretende executar o banco de dados SQL Server em um servidor separado do Agregador do SIL.
 
@@ -397,7 +397,7 @@ Veja a seguir as descrições de cada coluna na guia **Detalhes do Windows Serve
 |Data hora do host vista pela última vez|Data e hora do último recebimento pelo Agregador do inventário de dados via HTTPS desse host físico do Windows Server.<p>Há suporte para hosts físicos, que executam o Windows Server e o HyperV, para habilitar o SIL e encaminhar dados de inventário via HTTPS para um Agregador do SIL.|
 
 ## <a name="sil-aggregator-cmdlets-detail"></a>Detalhes de cmdlets do Agregador do SIL
-Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documentação completa de cmdlets, veja: [Cmdlets do PowerShell do Agregador do SIL](https://technet.microsoft.com/library/mt548455.aspx)
+Veja a seguir os detalhes de cmdlets do Agregador do SIL. Para obter a documentação completa de cmdlets, veja: [Cmdlets do PowerShell do Agregador do SIL](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))
 
 ### <a name="publish-silreport"></a>Publish-SilReport
 
@@ -563,7 +563,7 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 -   **CRÍTICO: somente depois que todos os servidores que encaminham dados forem atualizados, remova a impressão digital antiga** do Agregador do SIL usando o cmdlet `Set-SilAggregator –RemoveCertificateThumbprint`. Se um servidor que encaminha dados continuar encaminhando com um certificado antigo que foi removido do Agregador do SIL, **os dados serão perdidos** e não são inseridos no banco de dados do Agregador. Isso afeta apenas os cenários em que um servidor encaminhou com êxito os dados para um agregador SIL e o certificado é removido da lista de impressões digitais do agregador SIL para aceitar dados.
 
-## <a name="release-notes"></a>Notas sobre a versão
+## <a name="release-notes"></a>Notas de versão
 
 -   Há um problema conhecido que o Agregador SIL não processará e relatará na presentação das instalaçoes do SQL Server Standard Edition.  Estas são as etapas para corrigir isso:
 
@@ -591,8 +591,7 @@ Quando você desejar iniciar o inventário de servidores em seu ambiente com um 
 
 ## <a name="see-also"></a>Consulte Também
 [Agregador do Log de Inventário de Software 1.0 para Windows Server](https://www.microsoft.com/download/details.aspx?id=49046)<br>
-[Cmdlets do PowerShell do Agregador do SIL](https://technet.microsoft.com/library/mt548455.aspx)<br>
-[Cmdlets do PowerShell do SIL](https://technet.microsoft.com/library/dn283390.aspx)<br>
-[Uma visão geral do SIL](https://technet.microsoft.com/library/dn268301.aspx)<br>
-[Gerenciando o SIL](https://technet.microsoft.com/library/dn383584.aspx)
-
+[Cmdlets do PowerShell do Agregador do SIL](/previous-versions/windows/powershell-scripting/mt548455(v=wps.640))<br>
+[Cmdlets do PowerShell do SIL](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)<br>
+[Uma visão geral do SIL](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn268301(v=ws.11))<br>
+[Gerenciando o SIL](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11))

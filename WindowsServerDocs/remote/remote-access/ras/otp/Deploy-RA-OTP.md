@@ -2,18 +2,16 @@
 title: Implantar Acesso Remoto com autenticação OTP
 description: Este tópico faz parte do guia implantar o acesso remoto com autenticação OTP no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: b1b2fe70-7956-46e8-a3e3-43848868df09
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d1b38f753e2e4d8333299c369042a72e0dc3a6e6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8cc47a3a94425b4f77e5ed430cffe86429bf9b23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182002"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991285"
 ---
 # <a name="deploy-remote-access-with-otp-authentication"></a>Implantar Acesso Remoto com autenticação OTP
 
@@ -35,7 +33,7 @@ Antes de começar a implantar este cenário, examine esta lista de requisitos im
 
 -   Uma infraestrutura de chave pública deve ser implantada.
 
-    Para saber mais, veja os tópicos sobre: [Minimódulo de guia do laboratório de teste: PKI Básico para Windows Server 2012.](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    Para saber mais, veja os tópicos sobre: [Minimódulo de guia do laboratório de teste: PKI Básico para Windows Server 2012.](/answers/topics/windows-server-2012.html)
 
 -   Não há suporte para a alteração de políticas fora do console de gerenciamento do DirectAccess ou de cmdlets do Windows PowerShell.
 
@@ -129,4 +127,3 @@ Os problemas a seguir são conhecidos quando se configura um cenário de OTP:
         -   HKEY \_ local \_ Machine \\ software \\ Microsoft \\ DirectAccess \\ \\ RadiusProbePass OTP
 
 -   Se você alterar o certificado raiz do IPsec em uma implantação configurada e executando o DirectAccess, o OTP para de funcionar. Para resolver esse problema, em cada servidor DirectAccess, em um prompt do Windows PowerShell, execute o comando:`iisreset`
-

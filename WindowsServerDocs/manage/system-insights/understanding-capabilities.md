@@ -1,19 +1,17 @@
 ---
 title: Recursos de compreensão
 description: Este tópico define o conceito de recursos no System insights e apresenta os recursos padrão disponíveis no Windows Server 2019.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: c6738e6e914d97c70aa31af2fe3b6987b0b9ea33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 195ab01ded24742a26e1d7558529044c9883b8fc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471741"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991710"
 ---
 # <a name="understanding-capabilities"></a>Recursos de compreensão
 
@@ -40,7 +38,7 @@ Quando um recurso é invocado, ele fornece uma saída para ajudar a explicar o r
 - **Erro** -um problema desconhecido causou a falha na capacidade.
 - **Nenhum** -nenhuma previsão foi feita. Isso pode ser devido à falta de dados ou a qualquer outro motivo específico de recurso para não fazer uma previsão.
 
-Além disso, todos os dados específicos de recurso contidos no resultado serão colocados em um arquivo JSON acessível pelo usuário e o caminho do arquivo [poderá ser encontrado usando o PowerShell](https://docs.microsoft.com/windows-server/manage/system-insights/managing-capabilities#retrieving-capability-results).
+Além disso, todos os dados específicos de recurso contidos no resultado serão colocados em um arquivo JSON acessível pelo usuário e o caminho do arquivo [poderá ser encontrado usando o PowerShell](./managing-capabilities.md#retrieving-capability-results).
 
 ## <a name="default-capabilities"></a>Recursos padrão
 No Windows Server 2019, o System insights apresenta quatro recursos padrão com foco na previsão de capacidade:

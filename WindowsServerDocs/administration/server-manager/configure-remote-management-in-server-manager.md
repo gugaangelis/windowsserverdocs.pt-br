@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0d2369bd42fc884b1a401fc1450dbe9d1e47663
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0a39eaaff5497ee85cb823907cd8b57f1888dd08
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895805"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991876"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar o gerenciamento remoto no Gerenciador do Servidor
 
@@ -153,7 +153,7 @@ No Windows Server 2016, Gerenciador do Servidor se baseia no gerenciamento remot
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>Para desabilitar o gerenciamento remoto usando um arquivo de resposta durante a instalação autônoma
 
-1.  Crie um arquivo de resposta de instalação autônoma para instalações do Windows Server 2016 usando o Windows SIM (Gerenciador de imagem de sistema do Windows). Para obter mais informações sobre como criar um arquivo de resposta e usar o Windows SIM, consulte [O que é o Gerenciador de Imagem de Sistema do Windows?](https://technet.microsoft.com/library/cc766347.aspx) e [Passo a passo: implantação básica do Windows para profissionais de TI](https://technet.microsoft.com/library/dd349348.aspx).
+1.  Crie um arquivo de resposta de instalação autônoma para instalações do Windows Server 2016 usando o Windows SIM (Gerenciador de imagem de sistema do Windows). Para obter mais informações sobre como criar um arquivo de resposta e usar o Windows SIM, consulte [O que é o Gerenciador de Imagem de Sistema do Windows?](/previous-versions/windows/it-pro/windows-vista/cc766347(v=ws.10)) e [Passo a passo: implantação básica do Windows para profissionais de TI](/previous-versions/windows/it-pro/windows-7/dd349348(v=ws.10)).
 
 2.  No arquivo de resposta, localize a configuração **Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**.
 
@@ -183,8 +183,5 @@ para obter mais informações sobre como definir as configurações do ouvinte d
 
 ## <a name="see-also"></a>Consulte Também
 [Adicionar servidores a Gerenciador do servidor](add-servers-to-server-manager.md) 
- [Windows PowerShell: about_remote_Troubleshooting no TechCenter](https://technet.microsoft.com/library/dd347642.aspx) 
+ [Windows PowerShell: about_remote_Troubleshooting no TechCenter](/previous-versions/dd347642(v=technet.10)) 
  do Windows Server [Descrição do controle de conta de usuário](https://support.microsoft.com/kb/951016)
-
-
-

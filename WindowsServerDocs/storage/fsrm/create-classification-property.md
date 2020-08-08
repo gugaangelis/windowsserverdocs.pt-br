@@ -2,18 +2,16 @@
 title: Criar uma propriedade de classificação
 description: Este artigo descreve as propriedades de classificação, usadas para atribuir valores a arquivos em uma pasta especificada ou volume.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f8e0ba45883385a2b2bf161b04f99f8077fdef28
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 8a5d044ae78ad45b59fa4cb97694c15aad3c4bbe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957493"
 ---
 # <a name="create-a-classification-property"></a>Criar uma propriedade de classificação
 
@@ -27,7 +25,7 @@ Propriedades de classificação são usadas para atribuir valores a arquivos em 
 | Data e hora | Uma propriedade simples de data/hora. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, os valores conflitantes evitarão nova classificação. |
 | Número | Uma propriedade de número simples. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, os valores conflitantes evitarão nova classificação. |
 | Lista ordenada | Uma lista de valores fixos. Apenas um valor pode ser atribuído a uma propriedade por vez. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, o maior valor na lista será usado. |
-| Cadeia de caracteres | Uma propriedade de cadeia simples. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, os valores conflitantes evitarão nova classificação. |
+| String | Uma propriedade de cadeia simples. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, os valores conflitantes evitarão nova classificação. |
 | Múltipla escolha | Uma lista de valores que podem ser atribuídos a uma propriedade. Mais que um valor pode ser atribuído a uma propriedade por vez. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, cada valor na lista será usado. |
 | Várias cadeias | Uma lista de cadeias que podem ser atribuídas a uma propriedade. Mais que um valor pode ser atribuído a uma propriedade por vez. Ao combinar vários valores durante a classificação ou no conteúdo do arquivo, cada valor na lista será usado. |
 

@@ -1,20 +1,18 @@
 ---
 title: NIC convergida em uma configuração de NIC agrupada (Datacenter)
 description: Neste tópico, fornecemos instruções para implantar a NIC convergida em uma configuração de NIC agrupada com o switch Embedded Integration (SET).
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/17/2018
-ms.openlocfilehash: d81e4013d7cc38a15dd8b0bcd48529a2d72d0b69
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 918b3d10c39c6f06330f9c0986bc08b5bc04a229
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520195"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949370"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>NIC convergida em uma configuração de NIC agrupada (Datacenter)
 
@@ -39,7 +37,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    _**Da**_
 
 
-   |    Name    |           InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |    Nome    |           InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-1 | Adaptador Mellanox ConnectX-3 pro Ethernet |   11    |   Up   | E4-1D-2D-07-43-D0 |  40 Gbps  |
 
@@ -59,7 +57,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    | InterfaceIndex |     11      |
    | AliasdeInterface | Test-40G-1  |
    | AddressFamily  |    IPv4     |
-   |      Tipo      |   Unicast   |
+   |      Type      |   Unicast   |
    |  PrefixLength  |     24      |
 
 3. Exiba as propriedades do segundo adaptador de rede.
@@ -71,7 +69,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    _**Da**_
 
 
-   |    Name    |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |    Nome    |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | TESTE-40G-2 | Mellanox ConnectX-3 pro Ethernet A... #2 |   13    |   Up   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
@@ -91,7 +89,7 @@ Verifique se a NIC física pode se conectar ao host de destino.  Esse teste demo
    | InterfaceIndex |     13      |
    | AliasdeInterface | TESTE-40G-2  |
    | AddressFamily  |    IPv4     |
-   |      Tipo      |   Unicast   |
+   |      Type      |   Unicast   |
    |  PrefixLength  |     24      |
 
 5. Verifique se outra equipe NIC ou conjunto de membros pNICs tem um endereço IP válido.<p>Use uma sub-rede separada, \( xxx.xxx.** 2**. xxx vs xxx.xxx. **1**. xxx \) , para facilitar o envio desse adaptador para o destino. Caso contrário, se você localizar ambos os pNICs na mesma sub-rede, os balanceamentos de carga de pilha TCP/IP do Windows entre as interfaces e a validação simples se tornarão mais complicados.
@@ -193,7 +191,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   |    Name    | DisplayName | DisplayValue | RegistryKeyword | Registrovalue |
+   |    Nome    | DisplayName | DisplayValue | RegistryKeyword | Registrovalue |
    |------------|-------------|--------------|-----------------|---------------|
    | TEST-40G-1 |   ID DA VLAN   |     101      |     VlanID      |     {101}     |
 
@@ -212,7 +210,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   |    Name    |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |    Nome    |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-1 | Mellanox ConnectX-3 pro Ethernet Ada... |   11    |   Up   | E4-1D-2D-07-43-D0 |  40 Gbps  |
 
@@ -226,7 +224,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   |    Name    | DisplayName | DisplayValue | RegistryKeyword | Registrovalue |
+   |    Nome    | DisplayName | DisplayValue | RegistryKeyword | Registrovalue |
    |------------|-------------|--------------|-----------------|---------------|
    | TESTE-40G-2 |   ID DA VLAN   |     102      |     VlanID      |     {102}     |
 
@@ -245,7 +243,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   |    Name    |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |    Nome    |          InterfaceDescription           | ifIndex | Status |    MacAddress     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | Teste-40G-2 | Mellanox ConnectX-3 pro Ethernet Ada... |   11    |   Up   | E4-1D-2D-07-43-D1 |  40 Gbps  |
 
@@ -267,7 +265,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    |      RemoteAddress       | 192.168.1.5 |
    |      AliasdeInterface      | Test-40G-1  |
    |      SourceAddress       | 192.168.1.5 |
-   |      PingSucceeded       |    Verdadeiro     |
+   |      PingSucceeded       |    verdadeiro     |
    | RTT de PingReplyDetails \(\) |    0 ms     |
 
 8. Verifique a conectividade da primeira NIC, Test-40G-2.<p>Se a conectividade falhar, inspecione a configuração do switch VLAN ou a participação de destino na mesma VLAN.
@@ -285,7 +283,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    |      RemoteAddress       | 192.168.2.5 |
    |      AliasdeInterface      | Teste-40G-2  |
    |      SourceAddress       | 192.168.2.3 |
-   |      PingSucceeded       |    Verdadeiro     |
+   |      PingSucceeded       |    verdadeiro     |
    | RTT de PingReplyDetails \(\) |    0 ms     |
 
    >[!IMPORTANT]
@@ -318,7 +316,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
 
    | Sucesso | Reinicialização necessária | Código de Saída |     Resultado do recurso     |
    |---------|----------------|-----------|------------------------|
-   |  Verdadeiro   |       Não       |  Sucesso  | {Ponte do Data Center} |
+   |  verdadeiro   |       Não       |  Sucesso  | {Ponte do Data Center} |
 
 2. Defina as políticas de QoS para o SMB – Direct:
 
@@ -338,7 +336,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    |----------------|--------------------------|
    |      Nome      |           SMB            |
    |     Proprietário      | \(Máquina política de grupo\) |
-   | NetworkProfile |           Tudo            |
+   | NetworkProfile |           Todos            |
    |   Precedência   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
@@ -357,7 +355,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    |----------------|--------------------------|
    |      Nome      |         DEFAULT          |
    |     Proprietário      | \(Máquina política de grupo\) |
-   | NetworkProfile |           Tudo            |
+   | NetworkProfile |           Todos            |
    |   Precedência   |           127            |
    |    Modelo    |         Padrão          |
    |   JobObject    |          &nbsp;          |
@@ -373,12 +371,12 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   | Prioridade | habilitado | Política de | IfIndex | IfAlias |
+   | Prioridade | Habilitada | Política de | IfIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
    |    1     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
    |    2     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
-   |    3     |  Verdadeiro   |  Global   | &nbsp;  | &nbsp;  |
+   |    3     |  verdadeiro   |  Global   | &nbsp;  | &nbsp;  |
    |    4     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
    |    5     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
    |    6     |  Falso  |  Global   | &nbsp;  | &nbsp;  |
@@ -479,7 +477,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   | Name | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
+   | Nome | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -491,7 +489,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
 
    _**Da**_
 
-   |   Name    | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
+   |   Nome    | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | Os |    ETS    |      50      | 0-2, 4-7  |  Global   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  Global   | &nbsp;  | &nbsp;  |
@@ -507,7 +505,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
 
    _**Da**_
 
-   | Name | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
+   | Nome | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -518,7 +516,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
    _**Da**_
 
 
-   | Name | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
+   | Nome | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -531,7 +529,7 @@ A imagem a seguir mostra dois hosts Hyper-V com dois adaptadores de rede cada um
     _**Da**_
 
 
-    |   Name    | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
+    |   Nome    | Algoritmo | Largura de banda (%) | Prioridade | Política de | IfIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | Os |    ETS    |      30      |  0, 4-7   |  Global   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  Global   | &nbsp;  | &nbsp;  |
@@ -573,10 +571,10 @@ A imagem a seguir mostra o estado atual dos hosts Hyper-V.
    _**Da**_
 
 
-   |    Name    |        InterfaceDescription        | habilitado |
+   |    Nome    |        InterfaceDescription        | Habilitada |
    |------------|------------------------------------|---------|
-   | TEST-40G-1 | Adaptador de VPI Mellanox ConnectX-4 #2 |  Verdadeiro   |
-   | TESTE-40G-2 |  Adaptador de VPI Mellanox ConnectX-4   |  Verdadeiro   |
+   | TEST-40G-1 | Adaptador de VPI Mellanox ConnectX-4 #2 |  verdadeiro   |
+   | TESTE-40G-2 |  Adaptador de VPI Mellanox ConnectX-4   |  verdadeiro   |
 
 2. Determine o valor **ifIndex** de seus adaptadores de destino.<p>Você usará esse valor em etapas subsequentes ao executar o script baixado.
 
@@ -671,7 +669,7 @@ A imagem a seguir mostra o host do Hyper-V 1 com um vSwitch.
    _**Disso**_
 
 
-   |  Name   | SwitchType | NetAdapterInterfaceDescription |
+   |  Nome   | SwitchType | NetAdapterInterfaceDescription |
    |---------|------------|--------------------------------|
    | VMSTEST |  Externo  |        Agrupado-interface        |
 
@@ -700,7 +698,7 @@ A imagem a seguir mostra o host do Hyper-V 1 com um vSwitch.
    _**Da**_
 
 
-   |        Name         |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |        Nome         |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
    | vEthernet (VMSTEST) | #2 de adaptador Ethernet virtual do Hyper-V |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
@@ -713,9 +711,9 @@ A imagem a seguir mostra o host do Hyper-V 1 com um vSwitch.
    _**Da**_
 
 
-   |  Name   | IsManagementOs | VMName  |  SwitchName  | MacAddress | Status | IPAddresses |
+   |  Nome   | IsManagementOs | VMName  |  SwitchName  | MacAddress | Status | IPAddresses |
    |---------|----------------|---------|--------------|------------|--------|-------------|
-   | VMSTEST |      Verdadeiro      | VMSTEST | E41D2D074071 |    Problemas    | &nbsp; |             |
+   | VMSTEST |      verdadeiro      | VMSTEST | E41D2D074071 |    Problemas    | &nbsp; |             |
 
 
 5. Teste a conexão de rede com o adaptador remoto VLAN 101.
@@ -820,10 +818,10 @@ Você deve remover a configuração de VLAN de acesso para impedir a marcação 
    _**Da**_
 
 
-   |         Name         | IsManagementOs | VMName |      SwitchName      |  MacAddress  | Status | IPAddresses |
+   |         Nome         | IsManagementOs | VMName |      SwitchName      |  MacAddress  | Status | IPAddresses |
    |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
-   | CORP-external-switch |      Verdadeiro      | &nbsp; | CORP-external-switch | 001B785768AA |  Problemas  |   &nbsp;    |
-   |         GERENCIAMENTO          |      Verdadeiro      | &nbsp; |       VMSTEST        | E41D2D074071 |  Problemas  |   &nbsp;    |
+   | CORP-external-switch |      verdadeiro      | &nbsp; | CORP-external-switch | 001B785768AA |  Problemas  |   &nbsp;    |
+   |         GERENCIAMENTO          |      verdadeiro      | &nbsp; |       VMSTEST        | E41D2D074071 |  Problemas  |   &nbsp;    |
 
 5. Exibir propriedades adicionais da NIC.
 
@@ -834,7 +832,7 @@ Você deve remover a configuração de VLAN de acesso para impedir a marcação 
    _**Da**_
 
 
-   |      Name       |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
+   |      Nome       |        InterfaceDescription         | ifIndex | Status |    MacAddress     | LinkSpeed |
    |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
    | vEthernet (gerenciamento) | #2 de adaptador Ethernet virtual do Hyper-V |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
@@ -871,12 +869,12 @@ A imagem a seguir mostra o estado atual dos hosts do Hyper-V, incluindo o vSwitc
    _**Da**_
 
 
-   |         Name         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | Status | IPAddresses |
+   |         Nome         | IsManagementOs |        VMName        |  SwitchName  | MacAddress | Status | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
-   | CORP-external-switch |      Verdadeiro      | CORP-external-switch | 001B785768AA |    Problemas    | &nbsp; |             |
-   |         Gerenciamento          |      Verdadeiro      |       VMSTEST        | E41D2D074071 |    Problemas    | &nbsp; |             |
-   |         SMB1         |      Verdadeiro      |       VMSTEST        | 00155D30AA00 |    Problemas    | &nbsp; |             |
-   |         SMB2         |      Verdadeiro      |       VMSTEST        | 00155D30AA01 |    Problemas    | &nbsp; |             |
+   | CORP-external-switch |      verdadeiro      | CORP-external-switch | 001B785768AA |    Problemas    | &nbsp; |             |
+   |         Gerenciamento          |      verdadeiro      |       VMSTEST        | E41D2D074071 |    Problemas    | &nbsp; |             |
+   |         SMB1         |      verdadeiro      |       VMSTEST        | 00155D30AA00 |    Problemas    | &nbsp; |             |
+   |         SMB2         |      verdadeiro      |       VMSTEST        | 00155D30AA01 |    Problemas    | &nbsp; |             |
 
 ## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>Etapa 9. Atribuir um endereço IP ao host SMB vNICs vEthernet \( SMB1 \) e vEthernet \( SMB2\)
 

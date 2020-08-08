@@ -2,18 +2,16 @@
 title: Ferramentas de linha de comando do Gerenciador de Recursos de Servidor de Arquivos
 description: Este artigo descreve as ferramentas de linha de comando do Windows Server 2016
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 793c9d705cc225de2372d65bf92ce924b498032a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0300e8fa6845c58e61b695546daf4116286d975f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957513"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Ferramentas de linha de comando do Gerenciador de Recursos de Servidor de Arquivos
 

@@ -2,22 +2,20 @@
 title: Protocolo DHCP
 description: Este tópico fornece uma breve visão geral do protocolo DHCP no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-dhcp
 ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 5fc44d0f58ed73ff48f530bad3206baa675d9ac9
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: ba932599b7d23a8504c146118489598e45cc9fd7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80312521"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949219"
 ---
 # <a name="dynamic-host-configuration-protocol-dhcp"></a>Protocolo DHCP
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para obter uma breve visão geral do DHCP no Windows Server 2016.
 
@@ -49,8 +47,8 @@ O administrador de rede estabelece servidores DHCP que mantêm informações de 
 
 Um cliente habilitado para DHCP, após aceitar uma oferta de concessão, recebe:
 
-- Um endereço IP válido para a sub-rede à qual ele está se conectando.  
-  
+- Um endereço IP válido para a sub-rede à qual ele está se conectando.
+
 - Opções de DHCP solicitadas, que são parâmetros adicionais que um servidor DHCP está configurado para atribuir a clientes. Alguns exemplos de opções de DHCP são roteador (gateway padrão), servidores DNS e nome de domínio DNS.
 
 ## <a name="benefits-of-dhcp"></a>Benefícios do DHCP

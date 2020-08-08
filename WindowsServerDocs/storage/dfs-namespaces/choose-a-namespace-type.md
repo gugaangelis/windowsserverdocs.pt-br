@@ -2,18 +2,16 @@
 title: Escolha um tipo de namespace
 description: Este artigo descreve como escolher um tipo de um namespace.
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ce991a628b63732f645e859a4855a18eacbacd77
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c78e97148dffba920be5e65b19d97594c1b302d1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953728"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957674"
 ---
 # <a name="choose-a-namespace-type"></a>Escolha um tipo de namespace
 
@@ -67,7 +65,7 @@ As características de cada tipo de namespace e o modo são descritos na tabela 
 |Servidores de namespace com suporte mínimo|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
 |Suporte para enumeração baseada em acesso (se habilitado)|Sim, requer o servidor de namespace do Windows Server 2008|Não|Sim|
 |Métodos com suporte para garantir a disponibilidade de namespace|Crie um namespace autônomo em um cluster de failover.|Use vários servidores de namespace para hospedar o namespace. (Os servidores de namespace devem ser no mesmo domínio.)|Use vários servidores de namespace para hospedar o namespace. (Os servidores de namespace devem ser no mesmo domínio.)|
-|Suporte para usar replicação de DFS para replicar alvos de pasta|Suportado quando tiver ingressado em um domínio do AD DS|Suportado|Suportado|
+|Suporte para usar replicação de DFS para replicar alvos de pasta|Suportado quando tiver ingressado em um domínio do AD DS|Com suporte|Com suporte|
 
 ## <a name="additional-references"></a>Referências adicionais
 

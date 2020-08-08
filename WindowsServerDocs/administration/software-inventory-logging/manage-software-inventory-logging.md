@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1df4ffbb0cdc79527bef0fd2e3400d78995d5474
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 548158fd1df4ee4fbd8d6f1bcee28693961c8d79
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895662"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991861"
 ---
 # <a name="manage-software-inventory-logging"></a>Gerenciar o Log de Inventário de Software
 
@@ -91,7 +91,7 @@ As opções de configuração abordadas neste documento incluem:
 A coleta diária de log de inventário de software e o encaminhamento pela rede devem ser habilitados em um computador que esteja executando o Windows Server 2012 R2 para registrar o inventário de software.
 
 > [!NOTE]
-> Você pode usar o cmdlet **[Get-SilLogging](https://technet.microsoft.com/library/dn283396.aspx)** do PowerShell para recuperar informações sobre Serviço de Log de Inventário de Software, incluindo se ele está em execução ou parado.
+> Você pode usar o cmdlet **[Get-SilLogging](/previous-versions/windows/powershell-scripting/dn283396(v=wps.630))** do PowerShell para recuperar informações sobre Serviço de Log de Inventário de Software, incluindo se ele está em execução ou parado.
 
 #### <a name="to-start-software-inventory-logging"></a>Para iniciar o Log de Inventário de Software
 
@@ -99,7 +99,7 @@ A coleta diária de log de inventário de software e o encaminhamento pela rede 
 
 2.  Abra o PowerShell como Administrador.
 
-3.  No prompt do PowerShell, digite **[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)**
+3.  No prompt do PowerShell, digite **[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630))**
 
 > [!NOTE]
 > É possível definir o destino sem definir uma impressão digital do certificado, mas se você fizer isso, os encaminhamentos falharão e os dados serão armazenados localmente por até um valor padrão de 30 dias (após o qual eles serão excluídos). Depois que um hash de certificado válido é definido para o destino (e um certificado válido correspondente é instalado no repositório de LocalMachine/Pessoal), dados armazenados localmente serão encaminhados para o destino assim que ele é configurado para aceitar esses dados com esse certificado (consulte [Software Inventory Logging Aggregator](Software-Inventory-Logging-Aggregator.md) para obter mais informações).
@@ -110,7 +110,7 @@ A coleta diária de log de inventário de software e o encaminhamento pela rede 
 
 2.  Abra o PowerShell como Administrador.
 
-3.  No prompt do PowerShell, digite **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)**
+3.  No prompt do PowerShell, digite **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))**
 
 ## <a name="configuring-software-inventory-logging"></a>Configurando o Log de Inventário de Software
 Há três etapas para configurar o Log de Inventário de Software para encaminhar dados para um servidor de agregação ao longo do tempo:
@@ -126,7 +126,7 @@ Há três etapas para configurar o Log de Inventário de Software para encaminha
 Para obter um guia abrangente para configurar a estrutura do SIL como um todo, consulte [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md).  Em particular, se **Publish-SilData** produzir um erro ou o Log de Inventário de Software falhar, consulte a seção solução de problemas.
 
 ## <a name="software-inventory-logging-over-time"></a><a name="BKMK_Step2"></a>Log de Inventário de Software ao longo do tempo
-Se o Log de Inventário de Software foi iniciado por um administrador, a coleta de hora em hora e o encaminhamento dos dados par o servidor de agregação (URI de destino) começa. O primeiro encaminhamento será um conjunto de dados completo dos mesmos dados que [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) recupera e exibe no console em um ponto no tempo. Depois, a cada intervalo, o SIL fará uma verificação dos dados e encaminhará somente uma pequena confirmação de identificação para o servidor de agregação de destino se não houver nenhuma alteração nos dados desde a última coleta. Se algum valor tiver sido alterado, o SIL enviará novamente um conjunto de dados completo.
+Se o Log de Inventário de Software foi iniciado por um administrador, a coleta de hora em hora e o encaminhamento dos dados par o servidor de agregação (URI de destino) começa. O primeiro encaminhamento será um conjunto de dados completo dos mesmos dados que [Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630)) recupera e exibe no console em um ponto no tempo. Depois, a cada intervalo, o SIL fará uma verificação dos dados e encaminhará somente uma pequena confirmação de identificação para o servidor de agregação de destino se não houver nenhuma alteração nos dados desde a última coleta. Se algum valor tiver sido alterado, o SIL enviará novamente um conjunto de dados completo.
 
 > [!IMPORTANT]
 > Se em qualquer intervalo o URI de destino estiver inacessível ou a transferência de dados pela rede for malsucedida por algum motivo, os dados coletados serão armazenados localmente por até um valor padrão de 30 dias (após o qual eles serão excluídos). No próximo encaminhamento bem-sucedido dos dados para o servidor de agregação de destino, todos os dados armazenados localmente serão encaminhados e os dados armazenados em cache locais serão excluídos.
@@ -134,19 +134,19 @@ Se o Log de Inventário de Software foi iniciado por um administrador, a coleta 
 ## <a name="displaying-software-inventory-logging-data"></a><a name="BKMK_Step3"></a>Exibindo dados de Log de Inventário de Software
 Além dos cmdlets do PowerShell descritos na seção anterior, seis cmdlets adicionais podem ser usados para coletar dados de Log de Inventário de Software:
 
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**: exibe os valores pontuais para dados relacionados a sistema operacional e servidor específicos, bem como o FQDN ou o nome do host físico, se disponível.
+-   **[Get-SilComputer](/previous-versions/windows/powershell-scripting/dn283392(v=wps.630))**: exibe os valores pontuais para dados relacionados a sistema operacional e servidor específicos, bem como o FQDN ou o nome do host físico, se disponível.
 
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**: exibe identificadores usados pelo SIL para servidores individuais.
+-   **[Get-SilComputerIdentity (KB 3000850)](/previous-versions/windows/powershell-scripting/dn858074(v=wps.630))**: exibe identificadores usados pelo SIL para servidores individuais.
 
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**: exibe uma coleta pontual de todos os dados de Log de Inventário de Software.
+-   **[Get-SilData](/previous-versions/windows/powershell-scripting/dn283388(v=wps.630))**: exibe uma coleta pontual de todos os dados de Log de Inventário de Software.
 
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**: exibe a identidade pontual de todos os softwares instalados no computador.
+-   **[Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))**: exibe a identidade pontual de todos os softwares instalados no computador.
 
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**: exibe o número total de solicitações únicas do dispositivo cliente e solicitações do usuário do cliente do servidor de dois dias antes.
+-   **[Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630))**: exibe o número total de solicitações únicas do dispositivo cliente e solicitações do usuário do cliente do servidor de dois dias antes.
 
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**: exibe a lista pontual de todas as atualizações do Windows instaladas no computador.
+-   **[Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630))**: exibe a lista pontual de todas as atualizações do Windows instaladas no computador.
 
-Um cenário típico de caso de uso dos cmdlets do Log de Inventário de Software seria o de um administrador consultar o Log de Inventário de Software para uma coleta de um ponto no tempo de todos os dados do Log de Inventário de Software usando o [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx).
+Um cenário típico de caso de uso dos cmdlets do Log de Inventário de Software seria o de um administrador consultar o Log de Inventário de Software para uma coleta de um ponto no tempo de todos os dados do Log de Inventário de Software usando o [Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630)).
 
 **Exemplo de saída**
 
@@ -200,7 +200,7 @@ O Log de Inventário de Software não tem a finalidade de ser um componente crí
 
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>Para excluir dados registrados pelo Log de Inventário de Software
 
-1. No PowerShell, pare o Log de Inventário de Software com o comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)**.
+1. No PowerShell, pare o Log de Inventário de Software com o comando **[Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))**.
 
 2. Abra o Windows Explorer.
 
@@ -223,17 +223,17 @@ Dados registrados por SIL, mas armazenados localmente (se o encaminhamento para 
 ## <a name="software-inventory-logging-security"></a><a name="BKMK_Step7"></a>Segurança do Log de Inventário de Software
 São necessários privilégios administrativos no servidor local para recuperar dados do WMI de Log de Inventário de Software e das APIs do PowerShell.
 
-Para utilizar com êxito a capacidade total do recurso de Log de Inventário de Software para encaminhar dados para um ponto de agregação continuamente ao longo do tempo (em intervalos de hora em hora), um administrador precisa utilizar certificados de cliente para garantir sessões SSL seguras para a transferência de dados por HTTPS. Uma visão geral básica da autenticação HTTPS pode ser encontrada aqui: [autenticação https](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx).
+Para utilizar com êxito a capacidade total do recurso de Log de Inventário de Software para encaminhar dados para um ponto de agregação continuamente ao longo do tempo (em intervalos de hora em hora), um administrador precisa utilizar certificados de cliente para garantir sessões SSL seguras para a transferência de dados por HTTPS. Uma visão geral básica da autenticação HTTPS pode ser encontrada aqui: [autenticação https](/previous-versions/windows/it-pro/windows-server-2003/cc736680(v=ws.10)).
 
 Todos os dados armazenados localmente em um Windows Server (ocorre apenas se o recurso é iniciado, mas o destino está inacessível por qualquer motivo) são acessíveis apenas com privilégios administrativos no servidor local.
 
 ## <a name="working-with-date-and-time-settings-in-windows-server-2012-r2-software-inventory-logging"></a><a name="BKMK_Step8"></a>Trabalhando com configurações de data e hora no Log de Inventário de Software do Windows Server 2012 R2
 
--   Ao usar [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay para definir a hora em que o registro em log do SIL é executado, é necessário especificar uma data e hora.A data do calendário será definida e registro em log não ocorrerá até que a data seja atingida, na hora do sistema local.
+-   Ao usar [Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay para definir a hora em que o registro em log do SIL é executado, é necessário especificar uma data e hora.A data do calendário será definida e registro em log não ocorrerá até que a data seja atingida, na hora do sistema local.
 
--   Ao usar [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)ou [Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx), "InstallDate" sempre mostrará 12:00:10:00, um valor sem sentido.
+-   Ao usar [Get-SilSoftware](/previous-versions/windows/powershell-scripting/dn283397(v=wps.630))ou [Get-SilWindowsUpdate](/previous-versions/windows/powershell-scripting/dn283393(v=wps.630)), "InstallDate" sempre mostrará 12:00:10:00, um valor sem sentido.
 
--   Ao usar [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate" sempre mostrará 11:59:13h, um valor sem sentido.A data é o dado pertinente para essas consultas de cmdlet.
+-   Ao usar [Get-SilUalAccess](/previous-versions/windows/powershell-scripting/dn283389(v=wps.630)), "SampleDate" sempre mostrará 11:59:13h, um valor sem sentido.A data é o dado pertinente para essas consultas de cmdlet.
 
 ## <a name="enabling-and-configuring-software-inventory-logging-in-a-mounted-virtual-hard-disk"></a><a name="BKMK_Step10"></a>Habilitando e configurando o Log de Inventário de Software em um disco rígido virtual montado
 O Log de Inventário de Software também dá suporte à configuração e habilitação em máquinas virtuais offline. Os usos práticos para isso se destinam a cobrir a configuração de "imagem ouro" para ampla implantação em data centers, bem como a configuração de imagens do usuário final de um local para uma implantação em nuvem.
@@ -242,20 +242,20 @@ Para dar suporte a esses usos, o Log de Inventário de Software tem entradas de 
 
 | Função | Nome do valor | Dados | Cmdlet correspondente (disponível apenas no sistema operacional em execução) |
 | --- | --- | --- | --- |
-|Iniciar/parar o recurso|CollectionState|1 ou 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx), [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|
-|Especifica o ponto de agregação de destino na rede|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|
-|Especifica a impressão digital do certificado ou Hash do certificado usado para a autenticação SSL para o servidor Web de destino|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|
-|Especifica a data e hora em que o recurso deve iniciar (se o valor definido for no futuro de acordo com a hora do sistema local)|CollectionTime|Padrão: 2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|
+|Iniciar/parar o recurso|CollectionState|1 ou 0|[Start-SilLogging](/previous-versions/windows/powershell-scripting/dn283391(v=wps.630)), [Stop-SilLogging](/previous-versions/windows/powershell-scripting/dn283394(v=wps.630))|
+|Especifica o ponto de agregação de destino na rede|TargetUri|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TargetURI|
+|Especifica a impressão digital do certificado ou Hash do certificado usado para a autenticação SSL para o servidor Web de destino|CertificateThumbprint|string|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -CertificateThumbprint|
+|Especifica a data e hora em que o recurso deve iniciar (se o valor definido for no futuro de acordo com a hora do sistema local)|CollectionTime|Padrão: 2000-01-01T03:00:00|[Set-SilLogging](/previous-versions/windows/powershell-scripting/dn283387(v=wps.630)) -TimeOfDay|
 
 Para modificar esses valores em um VHD offline (sistema operacional da VM não em execução), um VHD primeiro deve ser montado e, em seguida, os comandos a seguir podem ser usados para fazer alterações:
 
--   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)
+-   [Reg load](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742053(v=ws.11))
 
--   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)
+-   [Reg delete](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742145(v=ws.11))
 
--   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)
+-   [Reg add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742162(v=ws.11))
 
--   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)
+-   [Reg unload](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc742043(v=ws.11))
 
 O Log de Inventário de Software verificará esses valores quando o sistema operacional for iniciado e executará de acordo.
 
@@ -291,6 +291,6 @@ Veja a seguir dois exemplos de como a saída no console do PowerShell ficaria (m
 ## <a name="see-also"></a>Consulte Também
 [Introdução ao log](get-started-with-software-inventory-logging.md) 
  de inventário de software Agregador de log de [inventário de software](software-inventory-logging-aggregator.md) 
- [Cmdlets de log de inventário de software no Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx) 
+ [Cmdlets de log de inventário de software no Windows PowerShell](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps) 
  [Importar-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) 
  [Export-BinaryMiLog](https://technet.microsoft.com/library/dn262591.aspx)

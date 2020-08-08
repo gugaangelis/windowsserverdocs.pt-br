@@ -7,12 +7,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fad4586b4d510fd22ecd90855b3afa1c8870c1bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895628"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991748"
 ---
 # <a name="manage-user-access-logging"></a>Gerenciar o Log de Acesso do Usuário
 
@@ -233,11 +233,11 @@ O número máximo de acessos que podem ser registrados com o UAL é de 65.535 po
 ## <a name="recovering-from-a-corrupt-state"></a>Recuperando de um estado corrompido
 Esta seção aborda o uso da UAL do mecanismo de armazenamento extensível (ESE) em um alto nível e o que um administrador pode fazer se os dados de UAL estiverem corrompidos ou irrecuperáveis.
 
-O UAL emprega o ESE para otimizar o uso dos recursos do sistema e por sua resistência a danos.  Para saber mais sobre as vantagens do ESE, consulte o tópico sobre [Mecanismo de Armazenamento Extensível](https://msdn.microsoft.com/library/windows/desktop/gg269259(v=exchg.10).aspx) no MSDN.
+O UAL emprega o ESE para otimizar o uso dos recursos do sistema e por sua resistência a danos.  Para saber mais sobre as vantagens do ESE, consulte o tópico sobre [Mecanismo de Armazenamento Extensível](/windows/win32/extensible-storage-engine/extensible-storage-engine) no MSDN.
 
-Cada vez que o serviço UAL é iniciado, o ESE realiza uma recuperação simples. Para saber mais, consulte o tópico sobre [os arquivos do Mecanismo de Armazenamento Extensível](https://msdn.microsoft.com/library/windows/desktop/gg294069(v=exchg.10).aspx) no MSDN.
+Cada vez que o serviço UAL é iniciado, o ESE realiza uma recuperação simples. Para saber mais, consulte o tópico sobre [os arquivos do Mecanismo de Armazenamento Extensível](/windows/win32/extensible-storage-engine/extensible-storage-engine-files) no MSDN.
 
-Se houver um problema com a recuperação simples, o ESE realizará uma recuperação de pane. Para saber mais, consulte o tópico sobre a [função JetInit](https://msdn.microsoft.com/library/windows/desktop/gg294068(v=exchg.10).aspx) no MSDN.
+Se houver um problema com a recuperação simples, o ESE realizará uma recuperação de pane. Para saber mais, consulte o tópico sobre a [função JetInit](/windows/win32/extensible-storage-engine/jetinit-function) no MSDN.
 
 Caso o UAL ainda não consiga ser iniciado com o conjunto existente de arquivos do ESE, ele excluirá todos os arquivos do diretório \Windows\System32\LogFiles\SUM\. Após a exclusão dos arquivos, o Serviço de Log para Acesso de Usuário será reiniciado e novos arquivos serão criados. O serviço UAL será retomado como se estivesse em um computador recém-instalado.
 
@@ -255,8 +255,6 @@ Depois de adicionar a regkey, reinicie o serviço SyncShareSvc no servidor para 
 
 Depois que o log estiver habilitado, dois eventos informativos são registrados no canal de Log\Aplicativos do Windows sempre que um cliente se conecta ao servidor. Para pastas de trabalho, cada usuário pode ter um ou mais dispositivos de cliente que se conectam ao servidor e verificar se há atualizações de dados a cada 10 minutos. Se o servidor estiver enfrentando 1.000 usuários, cada um com dois dispositivos, os logs de aplicativo farão a substituição a cada 70 minutos, tornando difícil a solução de problemas não relacionados. Para evitar isso, você pode desabilitar o serviço de log de acesso do usuário temporariamente ou aumentar o tamanho do canal do Windows Logs\Application do servidor.
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Confira também
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também
 
 - [Introdução ao log de acesso do usuário](get-started-with-user-access-logging.md)
-
-

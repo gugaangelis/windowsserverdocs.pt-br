@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 69f8f20aa9e1b222ff112f91df8d6b3d7767fc84
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962380"
+ms.locfileid: "87997185"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
@@ -411,7 +411,7 @@ Os recursos a seguir têm suporte nos serviços do:
 ### <a name="features"></a>Recursos
 
 - Exibir e modificar variáveis de ambiente do usuário e do sistema
-- Exibir a configuração de alertas de monitoramento do [Azure monitor](azure-monitor.md)
+- Exibir a configuração de alertas de monitoramento do [Azure monitor](../azure/azure-monitor.md)
 - Exibir e modificar a configuração de energia
 - Exibir e modificar configurações de Área de Trabalho Remota
 - Exibir e modificar as configurações de controle de acesso baseado em função
@@ -436,7 +436,7 @@ Os recursos a seguir têm suporte no armazenamento:
 - Editar propriedades do volume
 - Excluir um volume
 - Instalar gerenciamento de cota
-- Gerenciar cotas do Gerenciador de recursos do servidor [de arquivos armazenamento->criar/atualizar cota](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
+- Gerenciar cotas do Gerenciador de recursos do servidor [de arquivos armazenamento->criar/atualizar cota](../../../storage/fsrm/quota-management.md)
 
 [**Exibir comentários e recursos propostos para armazenamento**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BStorage%5D)
 
@@ -451,7 +451,7 @@ O **serviço de migração de armazenamento** permite migrar servidores e compar
 ## <a name="storage-replica"></a>Réplica de Armazenamento
 
 Use a **réplica de armazenamento** para gerenciar a replicação de armazenamento de servidor para servidor.
- [Saiba mais sobre Réplica de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui)
+ [Saiba mais sobre Réplica de Armazenamento](../../../storage/storage-replica/server-to-server-storage-replication.md)
 
 ## <a name="system-insights"></a>Insights do Sistema
 
@@ -473,7 +473,7 @@ Os recursos a seguir têm suporte em atualizações:
 - Exibir uma lista de histórico de atualizações
 - Instalar atualizações
 - Verificar se há atualizações online do Microsoft Update
-- Gerenciar a integração de [Gerenciamento de atualizações do Azure](https://docs.microsoft.com/azure/automation/automation-update-management)
+- Gerenciar a integração de [Gerenciamento de atualizações do Azure](/azure/automation/automation-update-management)
 
 [**Exibir comentários e recursos propostos para atualizações**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BUpdates%5D)
 

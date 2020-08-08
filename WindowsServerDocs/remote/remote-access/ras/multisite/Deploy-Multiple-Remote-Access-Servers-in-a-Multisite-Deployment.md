@@ -2,18 +2,16 @@
 title: Implantar vários servidores de acesso remoto em uma implantação multissite
 description: Este tópico faz parte do guia implantar vários servidores de acesso remoto em uma implantação multissite no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ac2f6015-50a5-4909-8f67-8565f9d332a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: d8f12839deb1279b9f6c095068a85f528dad4a72
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8f0d8b4416c8480921d43fd4e705b837082152fb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181752"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991349"
 ---
 # <a name="deploy-multiple-remote-access-servers-in-a-multisite-deployment"></a>Implantar vários servidores de acesso remoto em uma implantação multissite
 
@@ -45,7 +43,7 @@ Antes de começar a implantar este cenário, examine esta lista de requisitos im
 
 -   Uma infraestrutura de chave pública deve ser implantada.
 
-    Para saber mais, veja os tópicos sobre: [Minimódulo de guia do laboratório de teste: PKI Básico para Windows Server 2012.](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+    Para saber mais, veja os tópicos sobre: [Minimódulo de guia do laboratório de teste: PKI Básico para Windows Server 2012.](/answers/topics/windows-server-2012.html)
 
 -   A rede corporativa deve estar habilitada para IPv6. Se você estiver usando ISATAP, remova-o e use o IPv6 nativo.
 
@@ -156,6 +154,3 @@ Veja a seguir os problemas conhecidos ao configurar um cenário multissite:
 -   Se o DirectAccess foi implantado quando uma infraestrutura ISATAP existente estava presente, ao remover um ponto de entrada que era um host ISATAP, o endereço IPv6 do serviço DNS64 será removido dos endereços de servidor DNS de todos os sufixos DNS na NRPT.
 
     Para resolver esse problema, no assistente de **instalação do servidor de infraestrutura** , na página **DNS** , remova os sufixos DNS que foram modificados e adicione-os novamente com os endereços corretos do servidor DNS, clicando em **detectar** na caixa de diálogo **endereços do servidor DNS** .
-
-
-

@@ -1,20 +1,18 @@
 ---
 title: Máquinas virtuais Ubuntu com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 04/08/2020
-ms.openlocfilehash: 541f34e11146715fc54017dc3fb0d831cb4e078e
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 88d5659bb4732c82cc7ecc5e4a5e806f4b984739
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994501"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989316"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>Máquinas virtuais Ubuntu com suporte no Hyper-V
 
@@ -26,55 +24,55 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 
 * A LIS **interna** é incluída como parte dessa distribuição do Linux. O pacote de download do LIS fornecido pela Microsoft não funciona para essa distribuição, portanto, não o instale. Os números de versão do módulo do kernel para a LIS interna (conforme mostrado por **lsmod**, por exemplo) são diferentes do número de versão no pacote de download do LIS fornecido pela Microsoft. Uma incompatibilidade não indica que a LIS interna está desatualizada.
 
-* &#10004;-Recurso disponível
+* &#10004;-recurso disponível
 
 * (*em branco*)-recurso não disponível
 
-|**Recurso**|**Versão do sistema operacional Windows Server**|**19,10**|**18, 4 LTS**|**16, 4 LTS**|**14, 4 LTS**|
+|**Recurso**|**Versão do sistema operacional Windows Server**|**19,10**|**18.04 LTS**|**16.04 LTS**|**14.04 LTS**|
 |-|-|-|-|-|-|
-|**Disponibilidade**||Internos|Internos|Internos|Internos|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
+|**Disponibilidade**||Interno|Interno|Interno|Interno|
+|**[Núcleo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Tempo preciso do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;||
 |**[Rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||
 |Quadros jumbo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Marcação e entroncamento de VLAN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migração ao vivo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Injeção de IP estático|2019, 2016, 2012 R2|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|
+|Injeção de IP estático|2019, 2016, 2012 R2|Observação de &#10004; 1|Observação de &#10004; 1|Observação de &#10004; 1|Observação de &#10004; 1|
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Segmentação de TCP e descarregamentos de soma de verificação|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;||
-|**[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
+|**[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||
 |Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Fibre Channel Virtual|2019, 2016, 2012 R2|&#10004;Observação 2|&#10004;Observação 2|&#10004;Observação 2|&#10004;Observação 2|
-|Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;Observação 3, 4, 6|&#10004;Observação 3, 4, 5|&#10004;Observação 3, 4, 5|&#10004;Observação 3, 4, 5|
+|Fibre Channel Virtual|2019, 2016, 2012 R2|Observação de &#10004; 2|Observação de &#10004; 2|Observação de &#10004; 2|Observação de &#10004; 2|
+|Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004; observação 3, 4, 6|&#10004; observação 3, 4, 5|&#10004; observação 3, 4, 5|&#10004; observação 3, 4, 5|
 |Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |WWN DO SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||
 |Suporte ao kernel de PAE|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Configuração da lacuna de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2|&#10004;Observação 7, 8, 9|&#10004;Observação 7, 8, 9|&#10004;Observação 7, 8, 9|&#10004;Observação 7, 8, 9|
-|Memória Dinâmica-balões|2019, 2016, 2012 R2|&#10004;Observação 7, 8, 9|&#10004;Observação 7, 8, 9|&#10004;Observação 7, 8, 9|&#10004;Observação 7, 8, 9|
+|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2|Observação de &#10004; 7, 8, 9|Observação de &#10004; 7, 8, 9|Observação de &#10004; 7, 8, 9|Observação de &#10004; 7, 8, 9|
+|Memória Dinâmica-balões|2019, 2016, 2012 R2|Observação de &#10004; 7, 8, 9|Observação de &#10004; 7, 8, 9|Observação de &#10004; 7, 8, 9|Observação de &#10004; 7, 8, 9|
 |Redimensionamento de memória de Runtime|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
+|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||
 |Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
-|Par chave/valor|2019, 2016, 2012 R2|&#10004;Nota 6, 10|&#10004;Observação 5, 10|&#10004;Observação 5, 10|&#10004;Observação 5, 10|
+|**[Diversos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||
+|Pares chave/valor|2019, 2016, 2012 R2|Nota de &#10004; 6, 10|&#10004; observação 5, 10|&#10004; observação 5, 10|&#10004; observação 5, 10|
 |Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Cópia de arquivo do host para o convidado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |comando lsvmbus|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|
 |Soquetes do Hyper-V|2019, 2016|||||
 |Passagem de PCI/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
-|Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;Observação 11, 12|&#10004;Observação 11, 12|&#10004;Observação 11, 12|&#10004;Observação 11, 12|
-|Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[Máquinas virtuais de 2ª geração](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||
+|Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004; observação 11, 12|&#10004; observação 11, 12|&#10004; observação 11, 12|&#10004; observação 11, 12|
+|Inicialização Segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|
 
-## <a name="notes"></a>{1&gt;Observações&lt;1}
+## <a name="notes"></a>Observações
 
 1. A injeção de IP estático poderá não funcionar se o **Gerenciador de rede** tiver sido configurado para um determinado adaptador de rede específico do Hyper-V na máquina virtual. Para garantir o funcionamento suave da injeção de IP estático, verifique se o Gerenciador de rede está desligado completamente ou se foi desligado para um adaptador de rede específico por meio de seu arquivo **ifcfg-ethX** .
 
 2. Ao usar dispositivos de Fiber Channel virtual, verifique se o número de unidade lógica 0 (LUN 0) foi populado. Se o LUN 0 não tiver sido populado, uma máquina virtual Linux poderá não conseguir montar dispositivos de Fiber Channel nativamente.
 
-3. Se houver identificadores de arquivos abertos durante uma operação de backup de máquina virtual ao vivo, em alguns casos de canto, os VHDs com backup poderão ter que passar por uma verificação de consistência do sistema de arquivos (`fsck`) na restauração.
+3. Se houver identificadores de arquivos abertos durante uma operação de backup de máquina virtual em tempo real, em alguns casos de canto, os VHDs com backup poderão ter que passar por uma verificação de consistência do sistema de arquivos ( `fsck` ) na restauração.
 
 4. As operações de backup dinâmico podem falhar silenciosamente se a máquina virtual tiver um dispositivo iSCSI conectado ou um armazenamento de conexão direta (também conhecido como um disco de passagem).
 
@@ -144,7 +142,7 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
        # sudo mv shimx64.efi bootx64.efi
        ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
 * [Máquinas virtuais CentOS e Red Hat Enterprise Linux com suporte no Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
@@ -158,6 +156,6 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 
 * [Práticas recomendadas para executar o Linux no Hyper-V](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
-* [Ubuntu 14, 4 em uma VM de geração 2-blog de virtualização de Ben Armstrong](https://blogs.msdn.com/b/virtual_pc_guy/archive/2014/06/09/ubuntu-14-04-in-a-generation-2-vm.aspx)
+* [Ubuntu 14, 4 em uma VM de geração 2-blog de virtualização de Ben Armstrong](/archive/blogs/virtual_pc_guy/ubuntu-14-04-in-a-generation-2-vm)

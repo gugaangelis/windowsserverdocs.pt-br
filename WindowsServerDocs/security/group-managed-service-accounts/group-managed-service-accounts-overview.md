@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 51b9b0d7b912cfc2fbf123cf4c666f8653dc86a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09405b940e9fd862372fe80c4a5194caa205e5ea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971453"
+ms.locfileid: "87991498"
 ---
 # <a name="group-managed-service-accounts-overview"></a>Group Managed Service Accounts Overview
 
@@ -42,7 +42,7 @@ Uma arquitetura de 64 \- bits é necessária para executar os comandos do Window
 Uma conta de serviços gerenciados depende de tipos de criptografia Kerberos com suporte. Quando um computador cliente se autentica em um servidor usando Kerberos, o controlador de domínio cria um ticket de serviço Kerberos protegido com uma criptografia que é compatível tanto nesse controlador quanto no servidor. O DC usa o atributo msDS SupportedEncryptionTypes da conta \- para determinar a criptografia com a qual o servidor dá suporte e, se não houver nenhum atributo, ele assume que o computador cliente não oferece suporte a tipos de criptografia mais fortes. Se o host estiver configurado para não oferecer suporte a RC4, a autenticação sempre falhará. Por esse motivo, o AES sempre deve ser configurado explicitamente para contas de serviços gerenciados.
 
 > [!NOTE]
-> A partir do Windows Server 2008 R2, o DES fica desabilitado por padrão. Para obter mais informações sobre os tipos de criptografia com suporte, consulte [Alterações da autenticação do Kerberos](https://technet.microsoft.com/library/dd560670(WS.10).aspx).
+> A partir do Windows Server 2008 R2, o DES fica desabilitado por padrão. Para obter mais informações sobre os tipos de criptografia com suporte, consulte [Alterações da autenticação do Kerberos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10)).
 
 gMSAs não são aplicáveis a sistemas operacionais Windows anteriores ao Windows Server 2012.
 
@@ -54,14 +54,12 @@ A tabela a seguir fornece links para recursos adicionais relacionados às Contas
 
 |Tipo de conteúdo|Referências|
 |--------|-------|
-|**Avaliação do produto**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[Documentação de Contas de Serviço Gerenciado para Windows 7 e Windows Server 2008 R2](https://technet.microsoft.com/library/ff641731(v=ws.10).aspx)<p>[Guia passo a passo das contas \- de serviço \-](https://technet.microsoft.com/library/dd548356(v=ws.10).aspx)|
+|**Avaliação do produto**|[What's New for Managed Service Accounts](what-s-new-for-managed-service-accounts.md)<p>[Documentação de Contas de Serviço Gerenciado para Windows 7 e Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff641731(v=ws.10))<p>[Guia passo a passo das contas \- de serviço \-](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd548356(v=ws.10))|
 |**Planejamento**|Ainda não está disponível|
 |**Implantação**|Ainda não está disponível|
-|**Operações**|[Contas de Serviço Gerenciado no Active Directory](https://technet.microsoft.com/library/dd378925(v=ws.10).aspx)|
+|**Operações**|[Contas de Serviço Gerenciado no Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
 |**Solução de problemas**|Ainda não está disponível|
 |**Evaluation**|[Introdução com contas de serviço gerenciado de grupo](getting-started-with-group-managed-service-accounts.md)|
-|**Ferramentas e configurações**|[Contas de Serviço Gerenciado nos Serviços de Domínio Active Directory](https://technet.microsoft.com/library/dd378925(v=WS.10).aspx)|
-|**Recursos da comunidade**|[Contas de Serviços Gerenciados: compreendendo, implementando, práticas recomendadas e solução de problemas](https://blogs.technet.com/b/askds/archive/2009/09/10/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)|
+|**Ferramentas e configurações**|[Contas de Serviço Gerenciado nos Serviços de Domínio Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd378925(v=ws.10))|
+|**Recursos da comunidade**|[Contas de Serviços Gerenciados: compreendendo, implementando, práticas recomendadas e solução de problemas](/archive/blogs/askds/managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting)|
 |**Tecnologias relacionadas**|[Visão geral do Active Directory Domain Services](active-directory-domain-services-overview.md)|
-
-

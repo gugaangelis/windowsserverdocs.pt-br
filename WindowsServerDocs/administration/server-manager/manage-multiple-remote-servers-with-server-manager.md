@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 731d73c8aa7ea5ad7f7b2777b2694da232fae12a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 480b03f49b806ca0096c64d824679473b02695c5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895753"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991843"
 ---
 # <a name="manage-multiple-remote-servers-with-server-manager"></a>Gerenciar vários servidores remotos com Gerenciador do Servidor
 
@@ -132,7 +132,7 @@ Para executar tarefas de gerenciamento em servidores remotos usando Gerenciador 
 
     -   Para habilitar o gerenciamento remoto em servidores que executam o Windows Server 2008, consulte [habilitar e usar comandos remotos no Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=242565).
 
-    -   Para habilitar o gerenciamento remoto em servidores com o Windows Server 2003, habilite as exceções DCOM de WMI no Firewall do Windows. Para obter mais informações sobre como fazer isso em servidores com o Windows Server 2003, consulte [Conectando através do firewall do Windows](https://msdn.microsoft.com/library/aa389286.aspx) no MSDN.
+    -   Para habilitar o gerenciamento remoto em servidores com o Windows Server 2003, habilite as exceções DCOM de WMI no Firewall do Windows. Para obter mais informações sobre como fazer isso em servidores com o Windows Server 2003, consulte [Conectando através do firewall do Windows](/windows/win32/wmisdk/connecting-to-wmi-remotely-with-vbscript) no MSDN.
 
 ## <a name="tasks-that-you-can-perform-in-server-manager"></a><a name=BKMK_tasks></a>Tarefas que você pode realizar no Gerenciador de Servidores
 Gerenciador do Servidor torna a administração do servidor mais eficiente, permitindo que os administradores realizem tarefas na tabela a seguir usando uma única ferramenta. No Windows Server 2012 R2 e no Windows Server 2012, os usuários padrão de um servidor e os membros do grupo Administradores podem executar tarefas de gerenciamento no Gerenciador do Servidor, mas por padrão, os usuários padrão são impedidos de executar algumas tarefas, conforme mostrado na tabela a seguir.
@@ -237,5 +237,3 @@ Você pode exportar Gerenciador do Servidor configurações, tornar Gerenciador 
     -   %*AppData*% \Microsoft\Windows\ServerManager\Serverlist.xml
 
     -   %*LocalAppData*% \Microsoft_Corporation\ServerManager.exe_StrongName_*GUID*\6.2.0.0\user.config
-
-

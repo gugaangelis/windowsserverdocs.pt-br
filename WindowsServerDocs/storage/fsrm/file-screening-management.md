@@ -2,18 +2,16 @@
 title: Gerenciamento de triagem de arquivos
 description: Este artigo descreve como criar triagens de arquivo, gerar notificações, definir modelos de triagem e criar exceções de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 43aed09aead02883f91c168e1cfaf6388aedfa85
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: c189386ac340e9362c8774340732f8689f17effe
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473973"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957433"
 ---
 # <a name="file-screening-management"></a>Gerenciamento de triagem de arquivos
 

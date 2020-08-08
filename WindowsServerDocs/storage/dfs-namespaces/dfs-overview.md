@@ -6,12 +6,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: Este tópico descreve o namespaces do DFS, que é um serviço de função no Windows Serve que permite que você agrupe pastas compartilhadas localizadas em diferentes servidores em um ou mais namespaces estruturados logicamente.
-ms.openlocfilehash: 54f26a605c15ab683dbe51f768e82bce2c00a290
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cc29d4bbb73a3255497b89a438c2f3962fd07751
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936186"
+ms.locfileid: "87989383"
 ---
 # <a name="dfs-namespaces-overview"></a>Visão geral de Namespaces DFS
 
@@ -123,7 +123,7 @@ Para obter informações adicionais relacionadas, consulte os seguintes recursos
 | **Avaliação do produto** | [Novidades no Namespaces DFS e Replicação DFS no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281957(v=ws.11)) |
 | **Implantação**    | [Considerações de escalabilidade do Namespace DFS](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB) |
 | **Operações**    | [Namespaces do DFS: perguntas frequentes](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee404780(v=ws.10)) |
-| **Recursos da comunidade** | [The File Services and Storage TechNet Forum (O Fórum TechNet para serviços e armazenamento de arquivos)](https://docs.microsoft.com/answers/topics/windows-server-storage.html) |
+| **Recursos da comunidade** | [The File Services and Storage TechNet Forum (O Fórum TechNet para serviços e armazenamento de arquivos)](/answers/topics/windows-server-storage.html) |
 | **Protocolos**        | [Protocolos de serviços de arquivos no Windows Server](/openspecs/windows_protocols/MS-WINPROTLP/df36f95e-6a6b-48d6-a3ae-35a17674f546) (preterido) |
 | **Tecnologias relacionadas** | [Clustering de failover](../../failover-clustering/failover-clustering-overview.md)|
 | **Suporte** | [Suporte do Windows IT Pro](https://www.microsoft.com/itpro/windows/support)|

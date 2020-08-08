@@ -2,18 +2,16 @@
 title: Gerenciamento de relatórios de armazenamento
 description: Este artigo descreve como gerar, agendar e monitorar relatórios de armazenamento
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5bdcada1b445298c8743bdb39491726b594d0a66
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a43dbeac08c1cb851df48cb8412343928e07b1d0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475473"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957343"
 ---
 # <a name="storage-reports-management"></a>Gerenciamento de relatórios de armazenamento
 
