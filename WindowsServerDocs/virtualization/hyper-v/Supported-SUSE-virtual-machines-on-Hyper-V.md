@@ -1,20 +1,18 @@
 ---
 title: Máquinas virtuais SUSE com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 04/07/2020
-ms.openlocfilehash: 96dadc56c17dcdbf391c480029e3124bf70dbec7
-ms.sourcegitcommit: 7b1ebc4934998af2472962ca8cce1c872f39946f
+ms.openlocfilehash: 4e2948bdb07ecefc0cbb46553aeaece3efd914c2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80994517"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989293"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuais SUSE com suporte no Hyper-V
 
@@ -28,7 +26,7 @@ Os drivers internos do SUSE Linux Enterprise Service para Hyper-V são certifica
 
 * A LIS **interna** é incluída como parte dessa distribuição do Linux. O pacote de download do LIS fornecido pela Microsoft não funciona para essa distribuição, portanto, não o instale. Os números de versão do módulo do kernel para a LIS interna (conforme mostrado por **lsmod**, por exemplo) são diferentes do número de versão no pacote de download do LIS fornecido pela Microsoft. Uma incompatibilidade não indica que a LIS interna está desatualizada.
 
-* &#10004;-Recurso disponível
+* &#10004;-recurso disponível
 
 * (*em branco*)-recurso não disponível
 
@@ -36,43 +34,43 @@ SLES12 + é de apenas 64 bits.
 
 |**Recurso**|**Versão do sistema operacional Windows Server**|**SLES 15 SP1**|**SLES 15**|**SLES 12 SP3-SP5**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|-|
-|**Disponibilidade**||Internos|Internos|Internos|Internos|Internos|Internos|Internos|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**Disponibilidade**||Interno|Interno|Interno|Interno|Interno|Interno|Interno|
+|**[Núcleo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Tempo preciso do Windows Server 2016|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||||
 |**[Rede](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|||||||||
 |Quadros jumbo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Marcação e entroncamento de VLAN|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Migração ao vivo|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Injeção de IP estático|2019, 2016, 2012 R2|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|&#10004;Observação 1|
+|Injeção de IP estático|2019, 2016, 2012 R2|Observação de &#10004;1|Observação de &#10004;1|Observação de &#10004;1|Observação de &#10004;1|Observação de &#10004;1|Observação de &#10004;1|Observação de &#10004;1|
 |vRSS|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 |Segmentação de TCP e descarregamentos de soma de verificação|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;||||
-|**[Repositório](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
+|**[Armazenamento](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|||||||||
 |Redimensionamento de VHDX|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Fibre Channel Virtual|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|&#10004;Observação 2, 3, 8|
+|Backup de máquina virtual ao vivo|2019, 2016, 2012 R2|&#10004; observação 2, 3, 8|&#10004;observação 2, 3, 8|&#10004; observação 2, 3, 8|&#10004; observação 2, 3, 8|&#10004; observação 2, 3, 8|&#10004; observação 2, 3, 8|&#10004; observação 2, 3, 8|
 |Suporte a corte|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |WWN DO SCSI|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |**[Memória](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|||||||||
-|Suporte ao kernel de PAE|2019, 2016, 2012 R2|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|{1&gt;N/A&lt;1}|&#10004;|&#10004;|
+|Suporte ao kernel de PAE|2019, 2016, 2012 R2|N/D|N/D|N/D|N/D|N/D|&#10004;|&#10004;|
 |Configuração da lacuna de MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
-|Memória Dinâmica-balões|2019, 2016, 2012 R2|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Observação 4, 5, 6|&#10004;Observação 4, 5, 6|
-|Redimensionamento de memória de Runtime|2019, 2016|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6|&#10004;Nota 6||||
-|**[Monitor](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
+|Memória Dinâmica-adição a quente|2019, 2016, 2012 R2|&#10004; observação 6|&#10004;observação 6|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6|&#10004; Observação 4, 5, 6|&#10004; Observação 4, 5, 6|
+|Memória Dinâmica-balões|2019, 2016, 2012 R2|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6|&#10004; Observação 4, 5, 6|&#10004; Observação 4, 5, 6|
+|Redimensionamento de memória de Runtime|2019, 2016|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6|&#10004; observação 6||||
+|**[Vídeo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|||||||||
 |Dispositivo de vídeo específico do Hyper-V|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[Várias](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
-|Par chave/valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;Observação 7|&#10004;Observação 7|
+|**[Diversos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|||||||||
+|Pares chave/valor|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|Observação de &#10004; 7|Observação de &#10004; 7|
 |Interrupção não mascarável|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Cópia de arquivo do host para o convidado|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |comando lsvmbus|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;||||
 |Soquetes do Hyper-V|2019, 2016|&#10004;|&#10004;|&#10004;|||||
 |Passagem de PCI/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
-|**[Máquinas virtuais de geração 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
-|Inicializar usando UEFI|2019, 2016, 2012 R2|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9|&#10004;Nota 9||
-|Inicialização segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
+|**[Máquinas virtuais de 2ª geração](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|||||||||
+|Inicializar usando UEFI|2019, 2016, 2012 R2|Nota de &#10004; 9|Nota de &#10004; 9|Nota de &#10004; 9|Nota de &#10004; 9|Nota de &#10004; 9|Nota de &#10004; 9||
+|Inicialização Segura|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|||
 
-## <a name="notes"></a><a name="BKMK_notes"></a>Registra
+## <a name="notes"></a><a name="BKMK_notes"></a>Observações
 
 1. A injeção de IP estático poderá não funcionar se o **Gerenciador de rede** tiver sido configurado para um determinado adaptador de rede específico do Hyper-V na máquina virtual. Para garantir o funcionamento suave da injeção de IP estático, verifique se o Gerenciador de rede está desligado completamente ou se foi desligado para um adaptador de rede específico por meio de seu arquivo **ifcfg-ethX** .
 
@@ -101,9 +99,9 @@ SLES12 + é de apenas 64 bits.
 
    ```
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Consulte Também
 
-* [Set-VMFirmware](https://technet.microsoft.com/library/dn464287.aspx)
+* [Set-VMFirmware](/powershell/module/hyper-v/set-vmfirmware?view=win10-ps)
 
 * [Máquinas virtuais CentOS e Red Hat Enterprise Linux com suporte no Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

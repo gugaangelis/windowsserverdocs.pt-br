@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 4358f48b2373ee0c521c3970c4cb235a0d19dfca
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519033"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956973"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administração simplificada do AD DS
 
@@ -113,7 +111,7 @@ Para obter mais informações sobre a topologia e replicação do site AD DS, co
 
 O Windows 2000 Active Directory introduziu o Mestre RID, que emite pools de identificadores relativos para os controladores de domínio, a fim de criar identificadores de segurança (SIDs) de entidades confiáveis, como usuários, grupos e computadores.  Por padrão, esse espaço RID global é limitado a um total de 2<sup>30</sup> (ou 1.073.741.823) SIDs criados em um domínio. Os SIDs não podem retornar para o pool ou serem reemitidos. Com o tempo, um domínio grande pode começar a ficar escasso nos RIDs, ou os acidentes podem levar ao esgotamento de RID desnecessário e a uma eventual exaustão.
 
-O Windows Server 2012 atende a um grande número de problemas de emissão RID e gerenciamento não cobertos por clientes e pelo suporte ao cliente da Microsoft, na medida em que o AD DS amadurece, e isso desde a criação dos primeiros domínios do Active Directory, em 1999. Eles incluem:
+O Windows Server 2012 atende a um grande número de problemas de emissão RID e gerenciamento não cobertos por clientes e pelo suporte ao cliente da Microsoft, na medida em que o AD DS amadurece, e isso desde a criação dos primeiros domínios do Active Directory, em 1999. Elas incluem:
 
 - Avisos de consumo RID periódicos são gravados no log de eventos
 - Os eventos são registrados quando um administrador invalida um pool RID

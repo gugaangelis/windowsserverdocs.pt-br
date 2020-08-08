@@ -1,20 +1,18 @@
 ---
 title: Trabalhar com dispositivos USB
 description: Saiba como os dispositivos USB funcionam com os serviços do MultiPoint
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: a33f2b83-bbc2-4fc1-8a94-aaa985dfe1f9
 author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9c434bd415b19d4072a327c6a38bec32f00a5d88
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4ba0828d986098c551a59439fe2ca496b43485e3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517631"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948979"
 ---
 # <a name="work-with-usb-devices"></a>Trabalhar com dispositivos USB
 
@@ -30,7 +28,7 @@ A tabela a seguir mostra uma lista de dispositivos e como eles se comportam depe
 
 | **Dispositivo** | **Comportamento quando é conectado diretamente ao computador** | **Comportamento quando é conectado a uma estação** | **Observações** |
 |--|--|--|--|
-| Teclado | Não recomendamos conectar um teclado diretamente ao computador. | Acessível somente para o usuário da estação. | Se o teclado contiver uma porta USB, o hub USB dentro do teclado poderá ser o hub de estação. Outros dispositivos USB conectados a essa porta estão disponíveis somente para o usuário que está usando esse teclado.<p>Alguns hubs de estação são equipados com uma porta para mouse PS\/2 que é convertida em uma conexão USB dentro do hub. |
+| Keyboard | Não recomendamos conectar um teclado diretamente ao computador. | Acessível somente para o usuário da estação. | Se o teclado contiver uma porta USB, o hub USB dentro do teclado poderá ser o hub de estação. Outros dispositivos USB conectados a essa porta estão disponíveis somente para o usuário que está usando esse teclado.<p>Alguns hubs de estação são equipados com uma porta para mouse PS\/2 que é convertida em uma conexão USB dentro do hub. |
 | Mouse | Não recomendamos conectar um mouse diretamente ao computador. | Acessível somente para o usuário da estação. | Alguns hubs de estação são equipados com uma porta para mouse PS\/2 que é convertida em uma conexão USB dentro do hub. |
 | Hub USB | Consulte [trabalhando com hubs de estação](#working-with-station-hubs). | Consulte [trabalhando com hubs de estação](#working-with-station-hubs). |  |
 | Monitor de vídeo | Consulte [dispositivos de vídeo dos serviços do MultiPoint](work-with-video-devices.md). | Consulte [dispositivos de vídeo dos serviços do MultiPoint](work-with-video-devices.md). |  |

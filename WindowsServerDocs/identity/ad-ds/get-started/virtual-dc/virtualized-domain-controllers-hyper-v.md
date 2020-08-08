@@ -5,13 +5,12 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 99d470af623be7ccc7ad2a5fe0d63576a406ff57
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: ad40b5e5049c8b4f29dab4ffac8246a73e5b2fcd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519043"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956983"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualizando controladores de domínio usando o Hyper-V
 
@@ -45,7 +44,7 @@ Procure evitar criar pontos únicos de falha em potencial quando planejar a impl
 3. Se possível, os controladores de domínio devem ser executados em hardware localizado em diferentes regiões do mundo. Isso ajuda a reduzir o impacto de um desastre ou de uma falha que afeta um site no qual os controladores de domínio estão hospedados.
 4. Mantenha os controladores de domínio físicos em cada um dos domínios. Isso ameniza o risco de um problema no funcionamento da plataforma de virtualização que afeta todos os sistemas de host que usam a plataforma.
 
-## <a name="security-considerations"></a>Considerações de segurança
+## <a name="security-considerations"></a>Considerações sobre segurança
 
 O computador host no qual os controladores de domínio virtuais são executados deve ser gerenciado tão cuidadosamente quanto um controlador de domínio gravável, mesmo se o computador for apenas associado a um domínio ou de grupo de trabalho. Essa é uma consideração de segurança importante. Um host mal gerenciado está vulnerável a um ataque de elevação de privilégio, que ocorre quando um usuário mal-intencionado ganha privilégios de acesso e sistema que não foram autorizados ou atribuídos de forma legítima. Um usuário mal-intencionado pode usar esse tipo de ataque para comprometer todas as máquinas virtuais, domínios e florestas que esse computador hospeda.
 

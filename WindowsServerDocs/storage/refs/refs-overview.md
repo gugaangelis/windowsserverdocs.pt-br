@@ -1,18 +1,16 @@
 ---
 title: Visão geral do ReFS (Sistema de Arquivos Resiliente)
-ms.prod: windows-server
 ms.author: gawatu
 manager: mchad
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 06/29/2019
-ms.openlocfilehash: 5bcdbc76259d1dfecaaa5266bb952a21bcbc7825
-ms.sourcegitcommit: 457e88e5aa6be13a2bffdb8e434a8efc3698678f
+ms.openlocfilehash: 668ee7a0c9e948c12140d3e25309a68ad3b2148b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85548891"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957263"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Visão geral do ReFS (Sistema de Arquivos Resiliente)
 
@@ -155,7 +153,7 @@ A implantação de ReFS como um destino de backup é mais adequada para aplicati
 |---------------------------|------------------|-----------------------|
 | Compactação de sistema de arquivos | Não | Sim |
 | Criptografia de sistema de arquivos | Não | Sim |
-| Transactions | Não | Sim |
+| Transações | Não | Sim |
 | Links físicos | Não | Sim |
 | Identificadores de objeto | Não | Sim |
 | Transferência de Dados descarregadas (ODX) | Não | Sim |

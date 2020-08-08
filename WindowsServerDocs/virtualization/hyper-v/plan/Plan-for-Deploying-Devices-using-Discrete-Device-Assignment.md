@@ -1,18 +1,16 @@
 ---
 title: Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 description: Saiba mais sobre como o DDA funciona no Windows Server
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 08/21/2019
-ms.openlocfilehash: 9cc9614524c424398df550351aa2abfa7d173d43
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 189a4f399ac76f1b7f30c5b45725c3a4fb6a8215
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856089"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989855"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 >Aplica-se a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019
@@ -26,8 +24,8 @@ Para saber mais sobre outros métodos de virtualização de GPU, consulte [plane
 ## <a name="supported-virtual-machines-and-guest-operating-systems"></a>Máquinas virtuais com suporte e sistemas operacionais convidados
 Há suporte para a atribuição de dispositivo discreto para VMs de geração 1 ou 2.  Além disso, os convidados com suporte incluem Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012r2 com [KB 3133690](https://support.microsoft.com/kb/3133690) aplicado e várias distribuições do [sistema operacional Linux.](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
 
-## <a name="system-requirements"></a>Requisitos do sistema
-Além dos requisitos do [sistema para o Windows Server](../../../get-started/System-Requirements--and-Installation.md) e os [requisitos do sistema para o Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), a atribuição de dispositivo discreta requer hardware de classe de servidor capaz de conceder o controle do sistema operacional sobre a configuração da malha PCIe (controle nativo de PCI Express). Além disso, a raiz do PCIe complexa tem que dar suporte ao "ACS (Access Control Services"), que habilita o Hyper-V a forçar todo o tráfego de PCIe por meio do MMU de e/s.
+## <a name="system-requirements"></a>Requisitos do Sistema
+Além dos requisitos do [sistema para o Windows Server](../../../get-started/system-requirements.md) e os [requisitos do sistema para o Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), a atribuição de dispositivo discreta requer hardware de classe de servidor capaz de conceder o controle do sistema operacional sobre a configuração da malha PCIe (controle nativo de PCI Express). Além disso, a raiz do PCIe complexa tem que dar suporte ao "ACS (Access Control Services"), que habilita o Hyper-V a forçar todo o tráfego de PCIe por meio do MMU de e/s.
 
 Esses recursos geralmente não são expostos diretamente no BIOS do servidor e, em geral, são ocultos por trás de outras configurações.  Por exemplo, os mesmos recursos são necessários para o suporte a SR-IOV e, no BIOS, talvez seja necessário definir "Habilitar SR-IOV".  Entre em contato com o fornecedor do sistema se não for possível identificar a configuração correta em seu BIOS.
 
@@ -41,7 +39,7 @@ Os fabricantes de dispositivos podem entrar em contato com o representante da Mi
 ## <a name="device-driver"></a>Driver de dispositivo
 À medida que a atribuição de dispositivo discreta passa o dispositivo PCIe inteiro para a VM convidada, um driver de host não precisa ser instalado antes do dispositivo que está sendo montado na VM.  O único requisito no host é que o [caminho do local do PCIe](#pcie-location-path) do dispositivo possa ser determinado.  O driver do dispositivo pode, opcionalmente, ser instalado se isso ajudar a identificar o dispositivo.  Por exemplo, uma GPU sem seu driver de dispositivo instalado no host pode aparecer como um dispositivo de renderização básico da Microsoft.  Se o driver de dispositivo estiver instalado, seu fabricante e modelo provavelmente serão exibidos.
 
-Depois que o dispositivo é montado dentro do convidado, o driver de dispositivo do fabricante agora pode ser instalado como normal dentro da máquina virtual convidada.  
+Depois que o dispositivo é montado dentro do convidado, o driver de dispositivo do fabricante agora pode ser instalado como normal dentro da máquina virtual convidada.
 
 ## <a name="virtual-machine-limitations"></a>Limitações da máquina virtual
 Devido à natureza de como a atribuição de dispositivo discreta é implementada, alguns recursos de uma máquina virtual são restritos enquanto um dispositivo é anexado.  Os seguintes recursos não estão disponíveis:
@@ -51,20 +49,20 @@ Devido à natureza de como a atribuição de dispositivo discreta é implementad
 - Adicionando a VM a um cluster de alta disponibilidade (HA)
 
 ## <a name="security"></a>Segurança
-A atribuição de dispositivo discreta passa o dispositivo inteiro para a VM.  Isso significa que todos os recursos desse dispositivo podem ser acessados do sistema operacional convidado. Alguns recursos, como a atualização de firmware, podem afetar negativamente a estabilidade do sistema. Assim, vários avisos são apresentados ao administrador ao desmontar o dispositivo do host. É altamente recomendável que a atribuição de dispositivo discreta seja usada apenas onde os locatários das VMs são confiáveis.  
+A atribuição de dispositivo discreta passa o dispositivo inteiro para a VM.  Isso significa que todos os recursos desse dispositivo podem ser acessados do sistema operacional convidado. Alguns recursos, como a atualização de firmware, podem afetar negativamente a estabilidade do sistema. Assim, vários avisos são apresentados ao administrador ao desmontar o dispositivo do host. É altamente recomendável que a atribuição de dispositivo discreta seja usada apenas onde os locatários das VMs são confiáveis.
 
 Se o administrador quiser usar um dispositivo com um locatário não confiável, fornecemos fabricantes de dispositivos com a capacidade de criar um driver de mitigação de dispositivo que pode ser instalado no host.  Entre em contato com o fabricante do dispositivo para obter detalhes sobre se eles fornecem um driver de mitigação de dispositivo.
 
-Se você quiser ignorar as verificações de segurança de um dispositivo que não tem um driver de mitigação de dispositivo, será necessário passar o parâmetro `-Force` para o cmdlet `Dismount-VMHostAssignableDevice`.  Entenda que, ao fazer isso, você alterou o perfil de segurança desse sistema e isso é recomendado apenas durante o protótipo ou ambientes confiáveis.
+Se desejar ignorar as verificações de segurança de um dispositivo que não tem um driver de mitigação de dispositivo, você precisará passar o `-Force` parâmetro para o `Dismount-VMHostAssignableDevice` cmdlet.  Entenda que, ao fazer isso, você alterou o perfil de segurança desse sistema e isso é recomendado apenas durante o protótipo ou ambientes confiáveis.
 
 ## <a name="pcie-location-path"></a>Caminho do local do PCIe
-O caminho do local do PCIe é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao seguinte: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`.   O [script de perfil do computador](#machine-profile-script) também retornará o caminho do local do dispositivo PCIe.
+O caminho do local do PCIe é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao seguinte: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` .   O [script de perfil do computador](#machine-profile-script) também retornará o caminho do local do dispositivo PCIe.
 
 ### <a name="getting-the-location-path-by-using-device-manager"></a>Obtendo o caminho do local usando Device Manager
 ![Gerenciador de Dispositivos](../deploy/media/dda-devicemanager.png)
-- Abra Device Manager e localize o dispositivo.  
+- Abra Device Manager e localize o dispositivo.
 - Clique com o botão direito do mouse no dispositivo e selecione "Propriedades".
-- Navegue até a guia detalhes e selecione "caminhos de localização" na lista suspensa propriedade.  
+- Navegue até a guia detalhes e selecione "caminhos de localização" na lista suspensa propriedade.
 - Clique com o botão direito do mouse na entrada que começa com "PCIROOT" e selecione "copiar".  Agora você tem o caminho do local para esse dispositivo.
 
 ## <a name="mmio-space"></a>Espaço MMIO
@@ -102,7 +100,7 @@ Se um usuário fosse atribuir uma única GPU K520 como no exemplo acima, ele dev
 Para obter uma visão mais detalhada do espaço de MMIO, confira [GPUs de atribuição de dispositivo discretos](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266) no blog do TechCommunity.
 
 ## <a name="machine-profile-script"></a>Script de perfil de computador
-Para simplificar a identificação se o servidor está configurado corretamente e quais dispositivos estão disponíveis para serem transmitidos usando a atribuição de dispositivo discreta, um de nossos engenheiros reúne o seguinte script do PowerShell: [SurveyDDA. ps1.](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
+Para simplificar a identificação se o servidor está configurado corretamente e quais dispositivos estão disponíveis para serem transmitidos usando a atribuição de dispositivo discreta, um de nossos engenheiros reúne o seguinte script do PowerShell: [SurveyDDA.ps1.](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
 
 Antes de usar o script, verifique se você tem a função Hyper-V instalada e execute o script em uma janela de comando do PowerShell que tenha privilégios de administrador.
 
@@ -110,4 +108,4 @@ Se o sistema estiver configurado incorretamente para dar suporte à atribuição
 
 Para cada dispositivo localizado, a ferramenta exibirá se é possível usá-la com a atribuição de dispositivo discreta. Se um dispositivo for identificado como compatível com a atribuição de dispositivo discreta, o script fornecerá um motivo.  Quando um dispositivo for identificado com êxito como compatível, o caminho do local do dispositivo será exibido.  Além disso, se esse dispositivo exigir [espaço MMIO](#mmio-space), ele também será exibido.
 
-![SurveyDDA. ps1](./images/hyper-v-surveydda-ps1.png)
+![SurveyDDA.ps1](./images/hyper-v-surveydda-ps1.png)

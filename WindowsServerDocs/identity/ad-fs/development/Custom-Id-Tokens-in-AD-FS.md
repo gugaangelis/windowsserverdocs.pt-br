@@ -6,15 +6,13 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/29/2020
 ms.topic: article
-ms.prod: windows-server
 ms.reviewer: anandy
-ms.technology: identity-adfs
-ms.openlocfilehash: 9ffc8351c2c5033346f04e3cd4dc6f8ba4914149
-ms.sourcegitcommit: fea590c092d7abcb55be2b424458faa413795f5c
+ms.openlocfilehash: 9ab9a22e471a576a2632e3dbb054d21dd4534e46
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85372203"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940544"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalize as declarações a serem emitidas no id_token ao usar o OpenID Connect ou o OAuth com o AD FS 2016 ou posterior
 
@@ -58,16 +56,16 @@ Siga as etapas abaixo para criar e configurar o aplicativo no AD FS para receber
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>Criar e configurar um grupo de aplicativos no AD FS 2016 ou posterior
 
 1. Em gerenciamento de AD FS, clique com o botão direito do mouse em grupos de aplicativos e selecione **Adicionar grupo de aplicativos**.
-2. No assistente de grupo de aplicativos, para o nome, insira **ADFSSSO** e, em aplicativos cliente-servidor, selecione o **aplicativo nativo acessando um modelo de aplicativo Web** . Clique em **Avançar**.
+2. No assistente de grupo de aplicativos, para o nome, insira **ADFSSSO** e, em aplicativos cliente-servidor, selecione o **aplicativo nativo acessando um modelo de aplicativo Web** . Clique em **Próximo**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
 3. Copie o valor do **identificador de cliente** .  Ele será usado posteriormente como o valor de ida: ClientId no arquivo de web.config de aplicativos.
-4. Insira o seguinte para o **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Avançar**.
+4. Insira o seguinte para o **URI de redirecionamento:**  -  **https://localhost:44320/** .  Clique em **Adicionar**. Clique em **Próximo**.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. Na tela **Configurar API da Web** , insira o seguinte para o **identificador**  -  **https://contoso.com/WebApp** .  Clique em **Adicionar**. Clique em **Avançar**.  Esse valor será usado posteriormente para **ida: ResourceId** no arquivo de web.config de aplicativos.
+5. Na tela **Configurar API da Web** , insira o seguinte para o **identificador**  -  **https://contoso.com/WebApp** .  Clique em **Adicionar**. Clique em **Próximo**.  Esse valor será usado posteriormente para **ida: ResourceId** no arquivo de web.config de aplicativos.
 
    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 

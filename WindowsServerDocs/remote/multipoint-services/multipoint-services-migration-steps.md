@@ -2,19 +2,17 @@
 title: Etapas para migrar serviços do MultiPoint
 description: Orienta você pelas etapas para migrar para os serviços do MultiPoint no Windows Server 2016
 ms.date: 07/29/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 3ee77efa-7cc5-4ddf-aaff-b5634a717014
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: f2e293fafb8d6f5d84e9ea5a4ad8ef3b7fe2ba7d
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0d76e3518801829b852c94d0b112b906abbd92c0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858689"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948929"
 ---
 # <a name="migrate-to--multipoint-services-in-windows-server-2016"></a>Migrar para os serviços do MultiPoint no Windows Server 2016
 
@@ -41,7 +39,7 @@ Antes de importar o modelo de VDI do servidor de origem, habilite áreas de trab
 4. Clique em **Importar modelo de área de trabalho virtual**. Siga as instruções para importar o modelo do servidor de origem.
 
 > [!NOTE]
-> Quando você importa um modelo de área de trabalho virtual, qualquer personalização aplicada ao modelo será redefinida. 
+> Quando você importa um modelo de área de trabalho virtual, qualquer personalização aplicada ao modelo será redefinida.
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 [Valide sua nova implantação de serviços do MultiPoint.](multipoint-services-post-migration-steps.md)

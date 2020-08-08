@@ -1,19 +1,17 @@
 ---
 title: iSCSI Target Server Overview
 TOCTitle: iSCSI Target Server
-ms.prod: windows-server
-ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 34515988c46b680701cc39b3948fcd53645741f4
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: febd4b7ab74e89949997b6a182390ef5177f5ac5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961348"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957273"
 ---
 # <a name="iscsi-target-server-overview"></a>Visão geral do servidor de destino iSCSI
 
@@ -39,5 +37,5 @@ Se você habilitar o cluster convidado, terá que fornecer armazenamento em bloc
 
 ## <a name="see-also"></a>Consulte Também
 
-[Armazenamento em bloco de destino iSCSI, Como](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848268(v%3dws.11))  
-[Novidades no servidor de destino iSCSI do Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn305893(v%3dws.11))
+[armazenamento de blocos de destino iSCSI, como](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh848268(v%3dws.11)) 
+ [O que há de novo no servidor de destino iSCSI no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn305893(v%3dws.11))

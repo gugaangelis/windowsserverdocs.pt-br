@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 04/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b6fc6c662630af5658e5f186c958f4ddaffccc42
-ms.sourcegitcommit: 4af8ab2e5c199ecff0697e5331fa7f61f2556a8f
+ms.openlocfilehash: cf8a12957621ce86492cc4216c56d9a159f1ee5c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86866025"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940562"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Atualizando para o AD FS no Windows Server 2016 por meio de um banco de dados WID
 
@@ -156,8 +154,9 @@ Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
 Isso concluirá a atualização dos servidores WAP.
 
 
-> [!NOTE] 
-> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você poderá receber esse erro nos logs de eventos de administrador do ADFS: Solicitação OAuth inválida recebida. O 'NAME' do cliente é proibido de acessar o recurso com o escopo 'ugs'. Para corrigir esse erro: 
+> [!NOTE]
+> Existe um problema de PRT conhecido no AD FS 2019 se o Windows Hello para empresas com uma confiança de certificado híbrido for executado. Você poderá receber esse erro nos logs de eventos de administrador do ADFS: Solicitação OAuth inválida recebida. O 'NAME' do cliente é proibido de acessar o recurso com o escopo 'ugs'.
+> Para corrigir esse erro:
 > 1. Inicie o console de gerenciamento do AD FS. Procure "Serviços > Descrições de Escopo"
 > 2. Clique com o botão direito do mouse em "Descrições de Escopo" e selecione "Adicionar Descrição de Escopo"
 > 3. No nome, digite "ugs" e clique em Aplicar > OK

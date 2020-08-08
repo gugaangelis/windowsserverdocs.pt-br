@@ -1,19 +1,17 @@
 ---
 ms.assetid: 350aa5a3-5938-4921-93dc-289660f26bad
 title: O que há de novo no clustering de failover no Windows Server
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: get-started-article
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 431854f2e063454124092151c6788263db57b5f2
-ms.sourcegitcommit: 568b924d32421256f64abfee171304f1daf320d2
+ms.openlocfilehash: 2376a96d762f2ae10a5353a621dd80be2aaf0d3d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85070154"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957013"
 ---
 # <a name="whats-new-in-failover-clustering"></a>Novidades no Clustering de Failover
 
@@ -31,7 +29,7 @@ Este tópico explica as funcionalidades novas e alteradas no clustering de failo
     Para obter mais informações, consulte [conjuntos de clusters](../storage/storage-spaces/cluster-sets.md).
 
 - **Clusters com suporte ao Azure**
-  
+
     Os clusters de failover agora detectam automaticamente quando estão em execução em máquinas virtuais IaaS do Azure e otimizam a configuração para fornecer failover proativo e registro em log de eventos de manutenção planejada do Azure para atingir os níveis mais altos de disponibilidade. A implantação também é simplificada com a remoção da necessidade de configurar o balanceador de carga com o nome de rede dinâmico para o nome do cluster.
 
 - **Migração de cluster entre domínios**
@@ -74,107 +72,107 @@ Este tópico explica as funcionalidades novas e alteradas no clustering de failo
 
 A atualização sem interrupção do sistema operacional do cluster permite que um administrador atualize o sistema operacional dos nós do cluster do Windows Server 2012 R2 para uma versão mais recente sem interromper o Hyper-V ou as cargas de trabalho de Servidor de Arquivos de Escalabilidade Horizontal. Usando esse recurso, as penalidades de tempo de inatividade em SLAs (Contratos de Nível de Serviço) podem ser evitadas.
 
-**Qual é o valor agregado desta alteração?**  
+**Qual é o valor agregado desta alteração?**
 
 A atualização de um cluster Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal do Windows Server 2012 R2 para o Windows Server 2016 não requer mais tempo de inatividade. O cluster continuará a funcionar em um nível do Windows Server 2012 R2 até que todos os nós no cluster estejam executando o Windows Server 2016. O nível funcional do cluster é atualizado para o Windows Server 2016 usando o cmdlt do Windows PowerShell `Update-ClusterFunctionalLevel` .
 
-> [!WARNING]  
+> [!WARNING]
 > - Depois de atualizar o nível funcional do cluster, você não pode voltar para um nível funcional de cluster do Windows Server 2012 R2.
 >
 > - Até que o `Update-ClusterFunctionalLevel` cmdlet seja executado, o processo é reversível e os nós do Windows server 2012 R2 podem ser adicionados e os nós do Windows server 2016 podem ser removidos.
 
-**O que passou a funcionar de maneira diferente?**  
+**O que passou a funcionar de maneira diferente?**
 
 Um cluster de failover do Hyper-V ou Servidor de Arquivos de Escalabilidade Horizontal agora pode ser facilmente atualizado sem qualquer tempo de inatividade ou necessidade de criar um novo cluster com nós que estejam executando o sistema operacional Windows Server 2016. Migrar clusters para o Windows Server 2012 R2 envolvido colocando o cluster existente offline e reinstalando o novo sistema operacional para cada nó e, em seguida, colocando o cluster novamente online. O processo antigo era trabalhoso e exigia tempo de inatividade. No entanto, no Windows Server 2016, o cluster não precisa ficar offline em nenhum momento.
 
-Os sistemas operacionais de cluster para a atualização em fases são os seguintes para cada nó em um cluster:  
--   O nó é pausado e drenado de todas as máquinas virtuais em execução nela. 
--   As máquinas virtuais (ou outras cargas de trabalho de cluster) são migradas para outro nó no cluster. 
--   O sistema operacional existente é removido e uma instalação limpa do sistema operacional Windows Server 2016 no nó é executada. 
--   O nó que executa o sistema operacional Windows Server 2016 é adicionado de volta ao cluster. 
--   Neste ponto, o cluster deve estar sendo executado no modo misto, pois os nós de cluster estão executando o Windows Server 2012 R2 ou o Windows Server 2016. 
--   O nível funcional do cluster permanece no Windows Server 2012 R2. Nesse nível funcional, os novos recursos do Windows Server 2016 que afetam a compatibilidade com as versões anteriores do sistema operacional ficarão indisponíveis. 
--   Eventualmente, todos os nós são atualizados para o Windows Server 2016. 
--   O nível funcional do cluster é então alterado para o Windows Server 2016 usando o cmdlet do Windows PowerShell `Update-ClusterFunctionalLevel` . Neste ponto, você pode aproveitar os recursos do Windows Server 2016. 
+Os sistemas operacionais de cluster para a atualização em fases são os seguintes para cada nó em um cluster:
+-   O nó é pausado e drenado de todas as máquinas virtuais em execução nela.
+-   As máquinas virtuais (ou outras cargas de trabalho de cluster) são migradas para outro nó no cluster.
+-   O sistema operacional existente é removido e uma instalação limpa do sistema operacional Windows Server 2016 no nó é executada.
+-   O nó que executa o sistema operacional Windows Server 2016 é adicionado de volta ao cluster.
+-   Neste ponto, o cluster deve estar sendo executado no modo misto, pois os nós de cluster estão executando o Windows Server 2012 R2 ou o Windows Server 2016.
+-   O nível funcional do cluster permanece no Windows Server 2012 R2. Nesse nível funcional, os novos recursos do Windows Server 2016 que afetam a compatibilidade com as versões anteriores do sistema operacional ficarão indisponíveis.
+-   Eventualmente, todos os nós são atualizados para o Windows Server 2016.
+-   O nível funcional do cluster é então alterado para o Windows Server 2016 usando o cmdlet do Windows PowerShell `Update-ClusterFunctionalLevel` . Neste ponto, você pode aproveitar os recursos do Windows Server 2016.
 
-Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](cluster-operating-system-rolling-upgrade.md). 
+Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](cluster-operating-system-rolling-upgrade.md).
 
-### <a name="storage-replica"></a><a name="BKMK_SR"></a>Réplica de armazenamento  
-A réplica de armazenamento é um novo recurso que permite a replicação síncrona de nível de bloco e independente de armazenamento entre servidores ou clusters para recuperação de desastre, bem como o alargamento de um cluster de failover entre sites. A replicação síncrona habilita o espelhamento de dados em locais físicos com volumes consistentes com falha para garantir perda zero de dados no nível do sistema de arquivos. A replicação assíncrona permite a extensão de site além das dimensões metropolitanas com a possibilidade de perda de dados. 
+### <a name="storage-replica"></a><a name="BKMK_SR"></a>Réplica de Armazenamento
+A réplica de armazenamento é um novo recurso que permite a replicação síncrona de nível de bloco e independente de armazenamento entre servidores ou clusters para recuperação de desastre, bem como o alargamento de um cluster de failover entre sites. A replicação síncrona habilita o espelhamento de dados em locais físicos com volumes consistentes com falha para garantir perda zero de dados no nível do sistema de arquivos. A replicação assíncrona permite a extensão de site além das dimensões metropolitanas com a possibilidade de perda de dados.
 
-**Qual é o valor agregado desta alteração?**  
+**Qual é o valor agregado desta alteração?**
 
-A réplica de armazenamento permite que você faça o seguinte:  
+A réplica de armazenamento permite que você faça o seguinte:
 
--   Fornecer uma solução de recuperação de desastre de um único fornecedor para interrupções planejadas e não planejadas de cargas de trabalho críticas. 
+-   Fornecer uma solução de recuperação de desastre de um único fornecedor para interrupções planejadas e não planejadas de cargas de trabalho críticas.
 
--   Usar o transporte SMB3 com desempenho, escalabilidade e confiabilidade comprovados. 
+-   Usar o transporte SMB3 com desempenho, escalabilidade e confiabilidade comprovados.
 
--   Alongar clusters de failover do Windows para distâncias metropolitanas. 
+-   Alongar clusters de failover do Windows para distâncias metropolitanas.
 
--   Use o software da Microsoft de ponta a ponta para armazenamento e clustering, como Hyper-V, réplica de armazenamento, espaços de armazenamento, cluster, Servidor de Arquivos de Escalabilidade Horizontal, SMB3, eliminação de duplicação de dados e ReFS/NTFS. 
+-   Use o software da Microsoft de ponta a ponta para armazenamento e clustering, como Hyper-V, réplica de armazenamento, espaços de armazenamento, cluster, Servidor de Arquivos de Escalabilidade Horizontal, SMB3, eliminação de duplicação de dados e ReFS/NTFS.
 
--   Ajudar a reduzir o custo e a complexidade da seguinte maneira:  
+-   Ajudar a reduzir o custo e a complexidade da seguinte maneira:
 
-    -   É independente de hardware, sem a necessidade de uma configuração de armazenamento específica, como DAS ou SAN. 
+    -   É independente de hardware, sem a necessidade de uma configuração de armazenamento específica, como DAS ou SAN.
 
-    -   Permite armazenamento de mercadorias e tecnologias de rede. 
+    -   Permite armazenamento de mercadorias e tecnologias de rede.
 
-    -   Conta com facilidade de gerenciamento gráfico para nós individuais e clusters por meio do Gerenciador de Cluster de Failover. 
+    -   Conta com facilidade de gerenciamento gráfico para nós individuais e clusters por meio do Gerenciador de Cluster de Failover.
 
-    -   Inclui opções de script abrangentes em grande escala por meio do Windows PowerShell. 
+    -   Inclui opções de script abrangentes em grande escala por meio do Windows PowerShell.
 
--   Ajudar a reduzir o tempo de inatividade e aumentar a confiabilidade e a produtividade intrínsecas ao Windows. 
+-   Ajudar a reduzir o tempo de inatividade e aumentar a confiabilidade e a produtividade intrínsecas ao Windows.
 
--   Fornecer capacidade de suporte, métricas de desempenho e recursos de diagnóstico. 
+-   Fornecer capacidade de suporte, métricas de desempenho e recursos de diagnóstico.
 
-Para saber mais, consulte [Novidades na Réplica de Armazenamento no Windows Server 2016](../storage/storage-replica/storage-replica-overview.md). 
+Para saber mais, consulte [Novidades na Réplica de Armazenamento no Windows Server 2016](../storage/storage-replica/storage-replica-overview.md).
 
 ### <a name="cloud-witness"></a><a name="BKMK_CloudWitness"></a>Testemunha de nuvem
 
-Testemunha de nuvem é um novo tipo de testemunha de quorum de Cluster de Failover no Windows Server 2016 que utiliza o Microsoft Azure como o ponto de arbitragem. A Testemunha de nuvem, como qualquer outra testemunha de quorum, obtém um voto e pode participar dos cálculos de quorum. Você pode configurar a testemunha de nuvem como uma testemunha de quorum usando o Configurar um Assistente para Quorum do Cluster. 
+Testemunha de nuvem é um novo tipo de testemunha de quorum de Cluster de Failover no Windows Server 2016 que utiliza o Microsoft Azure como o ponto de arbitragem. A Testemunha de nuvem, como qualquer outra testemunha de quorum, obtém um voto e pode participar dos cálculos de quorum. Você pode configurar a testemunha de nuvem como uma testemunha de quorum usando o Configurar um Assistente para Quorum do Cluster.
 
-**Qual é o valor agregado desta alteração?**  
+**Qual é o valor agregado desta alteração?**
 
-Usar a testemunha de nuvem como uma testemunha de quorum de cluster de failover oferece as seguintes vantagens:  
+Usar a testemunha de nuvem como uma testemunha de quorum de cluster de failover oferece as seguintes vantagens:
 
--   Aproveita Microsoft Azure e elimina a necessidade de um datacenter separado. 
+-   Aproveita Microsoft Azure e elimina a necessidade de um datacenter separado.
 
--   Usa o armazenamento de BLOBs disponível publicamente Microsoft Azure, o que elimina a sobrecarga de manutenção extra das VMs hospedadas em uma nuvem pública. 
+-   Usa o armazenamento de BLOBs disponível publicamente Microsoft Azure, o que elimina a sobrecarga de manutenção extra das VMs hospedadas em uma nuvem pública.
 
--   A mesma conta de Armazenamento do Microsoft Azure pode ser usada para vários clusters (um arquivo de blob por cluster; ID exclusiva do cluster usada como nome do arquivo de BLOB). 
+-   A mesma conta de Armazenamento do Microsoft Azure pode ser usada para vários clusters (um arquivo de blob por cluster; ID exclusiva do cluster usada como nome do arquivo de BLOB).
 
--   Fornece um custo de andamento muito baixo para a conta de armazenamento (dados muito pequenos gravados por arquivo de BLOB, arquivo de blob atualizado apenas uma vez quando o estado dos nós de cluster é alterado). 
+-   Fornece um custo de andamento muito baixo para a conta de armazenamento (dados muito pequenos gravados por arquivo de BLOB, arquivo de blob atualizado apenas uma vez quando o estado dos nós de cluster é alterado).
 
-Para obter mais informações, consulte [implantar uma testemunha em nuvem para um cluster de failover](deploy-cloud-witness.md). 
+Para obter mais informações, consulte [implantar uma testemunha em nuvem para um cluster de failover](deploy-cloud-witness.md).
 
-**O que passou a funcionar de maneira diferente?**  
+**O que passou a funcionar de maneira diferente?**
 
-Esse recurso é novo no Windows Server 2016. 
+Esse recurso é novo no Windows Server 2016.
 
 ### <a name="virtual-machine-resiliency"></a><a name="BKMK_VMs"></a>Resiliência da máquina virtual
 
-**Resiliência de computação** O Windows Server 2016 inclui maior resiliência de computação de máquinas virtuais para ajudar a reduzir problemas de comunicação dentro do cluster em seu cluster de computação da seguinte maneira: 
+**Resiliência de computação** O Windows Server 2016 inclui maior resiliência de computação de máquinas virtuais para ajudar a reduzir problemas de comunicação dentro do cluster em seu cluster de computação da seguinte maneira:
 
--   **Opções de resiliência disponíveis para máquinas virtuais:**  Agora você pode configurar opções de resiliência de máquina virtual que definem o comportamento das máquinas virtuais durante falhas transitórias:  
+-   **Opções de resiliência disponíveis para máquinas virtuais:**  Agora você pode configurar opções de resiliência de máquina virtual que definem o comportamento das máquinas virtuais durante falhas transitórias:
 
-    -   **Nível de resiliência:** Ajuda a definir como as falhas transitórias são tratadas. 
+    -   **Nível de resiliência:** Ajuda a definir como as falhas transitórias são tratadas.
 
-    -   **Período de resiliência:**  Ajuda a definir por quanto tempo todas as máquinas virtuais têm permissão para serem executadas isoladas. 
+    -   **Período de resiliência:**  Ajuda a definir por quanto tempo todas as máquinas virtuais têm permissão para serem executadas isoladas.
 
--   **Quarentena de nós não íntegros:** Os nós não íntegros são colocados em quarentena e não têm mais permissão para ingressar no cluster. Isso impede que nós oscilantes afetem negativamente outros nós e o cluster geral. 
+-   **Quarentena de nós não íntegros:** Os nós não íntegros são colocados em quarentena e não têm mais permissão para ingressar no cluster. Isso impede que nós oscilantes afetem negativamente outros nós e o cluster geral.
 
-Para obter mais informações sobre o fluxo de trabalho de resiliência de computação de máquina virtual e configurações de quarentena de nó que controlam como o nó é colocado em isolamento ou quarentena, consulte [resiliência de computação de máquina virtual no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx). 
+Para obter mais informações sobre o fluxo de trabalho de resiliência de computação de máquina virtual e configurações de quarentena de nó que controlam como o nó é colocado em isolamento ou quarentena, consulte [resiliência de computação de máquina virtual no Windows Server 2016](https://blogs.msdn.com/b/clustering/archive/2015/06/03/10619308.aspx).
 
-**Resiliência de armazenamento** No Windows Server 2016, as máquinas virtuais são mais resilientes a falhas de armazenamento transitórias. A resiliência de máquina virtual aprimorada ajuda a preservar os Estados de sessão de máquina virtual de locatário no caso de uma interrupção de armazenamento. Isso é obtido por uma resposta inteligente e rápida de máquina virtual para problemas de infraestrutura de armazenamento. 
+**Resiliência de armazenamento** No Windows Server 2016, as máquinas virtuais são mais resilientes a falhas de armazenamento transitórias. A resiliência de máquina virtual aprimorada ajuda a preservar os Estados de sessão de máquina virtual de locatário no caso de uma interrupção de armazenamento. Isso é obtido por uma resposta inteligente e rápida de máquina virtual para problemas de infraestrutura de armazenamento.
 
-Quando uma máquina virtual se desconecta de seu armazenamento subjacente, ela pausa e aguarda o armazenamento ser recuperado. Enquanto está em pausa, a máquina virtual retém o contexto dos aplicativos que estão sendo executados nele. Quando a conexão da máquina virtual com seu armazenamento é restaurada, a máquina virtual retorna ao seu estado de execução. Como resultado, o estado de sessão da máquina de locatário é retido na recuperação. 
+Quando uma máquina virtual se desconecta de seu armazenamento subjacente, ela pausa e aguarda o armazenamento ser recuperado. Enquanto está em pausa, a máquina virtual retém o contexto dos aplicativos que estão sendo executados nele. Quando a conexão da máquina virtual com seu armazenamento é restaurada, a máquina virtual retorna ao seu estado de execução. Como resultado, o estado de sessão da máquina de locatário é retido na recuperação.
 
-No Windows Server 2016, a resiliência de armazenamento de máquina virtual também está ciente e otimizado para clusters de convidado. 
+No Windows Server 2016, a resiliência de armazenamento de máquina virtual também está ciente e otimizado para clusters de convidado.
 
 ### <a name="diagnostic-improvements-in-failover-clustering"></a><a name="BKMK_Diagnostics"></a>Aprimoramentos de diagnóstico no clustering de failover
 
-Para ajudar a diagnosticar problemas com clusters de failover, o Windows Server 2016 inclui o seguinte:  
+Para ajudar a diagnosticar problemas com clusters de failover, o Windows Server 2016 inclui o seguinte:
 
 - Vários aprimoramentos nos arquivos de log de cluster (como informações de fuso horário e log DiagnosticVerbose) que facilitam a solução de problemas de clustering de failover. Para obter mais informações, consulte [aprimoramentos de solução de problemas do cluster de failover do Windows Server 2016-log de cluster](https://techcommunity.microsoft.com/t5/failover-clustering/windows-server-2016-failover-cluster-troubleshooting/ba-p/372005).
 
@@ -186,31 +184,31 @@ O Windows Server 2016 inclui clusters de failover com reconhecimento de site que
 
 ### <a name="workgroup-and-multi-domain-clusters"></a><a name="BKMK_multidomainclusters"></a>Clusters de grupo de trabalho e vários domínios
 
-No Windows Server 2012 R2 e versões anteriores, um cluster só pode ser criado entre nós membro ingressados no mesmo domínio. O Windows Server 2016 quebra essas barreiras e apresenta a capacidade de criar um Cluster de failover sem dependências do Active Directory. Agora você pode criar clusters de failover nas seguintes configurações:  
+No Windows Server 2012 R2 e versões anteriores, um cluster só pode ser criado entre nós membro ingressados no mesmo domínio. O Windows Server 2016 quebra essas barreiras e apresenta a capacidade de criar um Cluster de failover sem dependências do Active Directory. Agora você pode criar clusters de failover nas seguintes configurações:
 
--   **Clusters de domínio único.** Clusters com todos os nós ingressados no mesmo domínio. 
+-   **Clusters de domínio único.** Clusters com todos os nós ingressados no mesmo domínio.
 
--   **Clusters de vários domínios.** Clusters com nós que são membros de domínios diferentes. 
+-   **Clusters de vários domínios.** Clusters com nós que são membros de domínios diferentes.
 
--   **Clusters de grupo de trabalho.** Clusters com nós que são servidores membros/grupo de trabalho (não ingressados no domínio). 
+-   **Clusters de grupo de trabalho.** Clusters com nós que são servidores membros/grupo de trabalho (não ingressados no domínio).
 
 Para obter mais informações, consulte [clusters de vários domínios e grupos de trabalho no Windows Server 2016](https://techcommunity.microsoft.com/t5/failover-clustering/workgroup-and-multi-domain-clusters-in-windows-server-2016/ba-p/372059)
 
-### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>Balanceamento de carga de máquina virtual  
+### <a name="virtual-machine-load-balancing"></a><a name="BKMK_VMLoadBalancing"></a>Balanceamento de carga de máquina virtual
 
-O balanceamento de carga de máquina virtual é um novo recurso no clustering de failover que facilita o balanceamento de carga contínuo de máquinas virtuais entre os nós em um cluster. Nós de excesso de confirmações são identificados com base na memória da máquina virtual e na utilização da CPU no nó. As máquinas virtuais são então movidas (migradas ao vivo) de um nó com excesso de confirmações para nós com largura de banda disponível (se aplicável). A agressividade do balanceamento pode ser ajustada para garantir o desempenho e a utilização ideais do cluster. O balanceamento de carga é habilitado por padrão no Windows Server 2016 Technical Preview. No entanto, o balanceamento de carga é desabilitado quando a otimização dinâmica do SCVMM está habilitada. 
+O balanceamento de carga de máquina virtual é um novo recurso no clustering de failover que facilita o balanceamento de carga contínuo de máquinas virtuais entre os nós em um cluster. Nós de excesso de confirmações são identificados com base na memória da máquina virtual e na utilização da CPU no nó. As máquinas virtuais são então movidas (migradas ao vivo) de um nó com excesso de confirmações para nós com largura de banda disponível (se aplicável). A agressividade do balanceamento pode ser ajustada para garantir o desempenho e a utilização ideais do cluster. O balanceamento de carga é habilitado por padrão no Windows Server 2016 Technical Preview. No entanto, o balanceamento de carga é desabilitado quando a otimização dinâmica do SCVMM está habilitada.
 
 ### <a name="virtual-machine-start-order"></a><a name="BKMK_VMStartOrder"></a>Ordem de início da máquina virtual
 
-A ordem de início da máquina virtual é um novo recurso no clustering de failover que introduz a orquestração de ordem de início para máquinas virtuais (e todos os grupos) em um cluster. As máquinas virtuais agora podem ser agrupadas em camadas, e as dependências de ordem de início podem ser criadas entre diferentes camadas. Isso garante que as máquinas virtuais mais importantes (como controladores de domínio ou máquinas virtuais do utilitário) sejam iniciadas primeiro. As máquinas virtuais não são iniciadas até que as máquinas virtuais nas quais elas têm uma dependência também sejam iniciadas. 
+A ordem de início da máquina virtual é um novo recurso no clustering de failover que introduz a orquestração de ordem de início para máquinas virtuais (e todos os grupos) em um cluster. As máquinas virtuais agora podem ser agrupadas em camadas, e as dependências de ordem de início podem ser criadas entre diferentes camadas. Isso garante que as máquinas virtuais mais importantes (como controladores de domínio ou máquinas virtuais do utilitário) sejam iniciadas primeiro. As máquinas virtuais não são iniciadas até que as máquinas virtuais nas quais elas têm uma dependência também sejam iniciadas.
 
 ### <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a><a name="BKMK_SMBMultiChannel"></a>Redes de cluster de vários canais e multichannels SMB simplificadas
 
-As redes de cluster de failover não são mais limitadas a uma única NIC por sub-rede/rede. Com redes SMB simplificadas de cluster Multichannel e MultiNIC, a configuração de rede é automática e cada NIC na sub-rede pode ser usada para tráfego de cluster e carga de trabalho. Esse aprimoramento permite que os clientes maximizem a taxa de transferência de rede para o Hyper-V, SQL Server instância de cluster de failover e outras cargas de trabalho SMB. 
+As redes de cluster de failover não são mais limitadas a uma única NIC por sub-rede/rede. Com redes SMB simplificadas de cluster Multichannel e MultiNIC, a configuração de rede é automática e cada NIC na sub-rede pode ser usada para tráfego de cluster e carga de trabalho. Esse aprimoramento permite que os clientes maximizem a taxa de transferência de rede para o Hyper-V, SQL Server instância de cluster de failover e outras cargas de trabalho SMB.
 
 Para obter mais informações, consulte [redes de cluster de vários canais e multiplataforma SMB simplificadas](smb-multichannel.md).
 
 ## <a name="see-also"></a>Consulte Também
 
-* [Armazenamento](../storage/storage.yml)  
-* [O que há de novo no armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md)  
+* [Storage](../storage/storage.yml)
+* [O que há de novo no armazenamento no Windows Server 2016](../storage/whats-new-in-storage.md)

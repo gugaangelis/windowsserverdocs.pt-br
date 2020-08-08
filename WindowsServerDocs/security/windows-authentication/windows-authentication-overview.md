@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 10fb8e072e9dd810e64ace79c17f02290766ec6f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bb35516e16e4b7d27ab2a5b68c61fce69a0e7670
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936485"
+ms.locfileid: "87989959"
 ---
 # <a name="windows-authentication-overview"></a>Visão geral da autenticação do Windows
 
@@ -54,9 +54,9 @@ A Autenticação do Windows é usada para verificar se a informação vem de uma
 |----|------|--------|
 |Autenticar em um domínio do Active Directory|Kerberos|Os &nbsp; sistemas operacionais Microsoft Windows Server implementam o protocolo de autenticação Kerberos versão 5 e as extensões para autenticação de chave pública. O cliente de autenticação Kerberos é implementado como um SSP do provedor de suporte de segurança \( \) e pode ser acessado por meio da interface de provedor de suporte de segurança \( SSPI \) . A autenticação inicial do usuário é integrada com a arquitetura de logon único do Winlogon \- . O Kerberos centro de distribuição de chaves \( KDC \) é integrado a outros serviços de segurança do Windows Server em execução no controlador de domínio. O KDC usa o banco de dados do serviço de diretório Active Directory do domínio como seu banco de dados de conta de segurança. O Active Directory é exigido para as implementações de Kerberos padrão.<p>Para obter recursos adicionais, veja [Visão geral da autenticação Kerberos](../kerberos/kerberos-authentication-overview.md).|
 |Autenticação segura na Web|TLS \/ SSL conforme implementado no provedor de suporte de segurança Schannel|O protocolo TLS de segurança de camada de transporte \( \) versões 1,0, 1,1 e 1,2, protocolo SSL \( \) protocolo SSL, versões 2,0 e 3,0, protocolo de segurança de camada de transporte de datatransport versão 1,0 e o protocolo PCT de transporte de comunicações privada \( \) , versão 1,0, são baseados na criptografia de chave pública. O conjunto de \( protocolos de autenticação do provedor Schannel do canal seguro \) fornece esses protocolos. Todos os protocolos Schannel usam um modelo de cliente e de servidor.<p>Para obter recursos adicionais, confira [TLS-SSL &#40;Schannel SSP&#41; visão geral](../tls/tls-ssl-schannel-ssp-overview.md).|
-|Autenticar em um aplicativo ou serviço Web|Autenticação Integrada do Windows<p>Autenticação Digest|Para obter recursos adicionais, consulte [Autenticação integrada do Windows](https://technet.microsoft.com/library/cc758557(v=WS.10).aspx) e [Autenticação Digest](https://technet.microsoft.com/library/cc738318(v=ws.10).aspx) e [Autenticação Digest avançada](https://technet.microsoft.com/library/cc783131(v=ws.10).aspx).|
+|Autenticar em um aplicativo ou serviço Web|Autenticação Integrada do Windows<p>Autenticação Digest|Para obter recursos adicionais, consulte [Autenticação integrada do Windows](/previous-versions/windows/it-pro/windows-server-2003/cc758557(v=ws.10)) e [Autenticação Digest](/previous-versions/windows/it-pro/windows-server-2003/cc738318(v=ws.10)) e [Autenticação Digest avançada](/previous-versions/windows/it-pro/windows-server-2003/cc783131(v=ws.10)).|
 |Autenticar em aplicativos herdados|NTLM|NTLM é um protocolo de autenticação de estilo de resposta de desafio \- . Além da autenticação, o protocolo NTLM fornece opcionalmente a segurança da sessão, especificamente a integridade e a confidencialidade das mensagens por meio de funções de assinatura e lacre no NTLM.<p>Para obter recursos adicionais, veja [Visão geral de NTLM](../kerberos/ntlm-overview.md).|
-|Aproveitar autenticação multifator|Suporte de cartão inteligente<p>Suporte biométrico|Os cartões inteligentes são uma \- maneira portátil e resistente a adulterações para fornecer soluções de segurança para tarefas como autenticação de cliente, logon em domínios, assinatura de código e segurança e \- email.<p>A biometria depende da medição de uma característica física imutável de uma pessoa para identificá-la. As impressões digitais são uma das características biométricas mais usadas, com milhões de dispositivos biométricos de impressões digitais que são incorporados a computadores pessoais e periféricos.<p>Para obter recursos adicionais, consulte [referência técnica do cartão inteligente](https://technet.microsoft.com/itpro/windows/keep-secure/smart-card-windows-smart-card-technical-reference). |
+|Aproveitar autenticação multifator|Suporte de cartão inteligente<p>Suporte biométrico|Os cartões inteligentes são uma \- maneira portátil e resistente a adulterações para fornecer soluções de segurança para tarefas como autenticação de cliente, logon em domínios, assinatura de código e segurança e \- email.<p>A biometria depende da medição de uma característica física imutável de uma pessoa para identificá-la. As impressões digitais são uma das características biométricas mais usadas, com milhões de dispositivos biométricos de impressões digitais que são incorporados a computadores pessoais e periféricos.<p>Para obter recursos adicionais, consulte [referência técnica do cartão inteligente](/windows/security/identity-protection/smart-cards/smart-card-windows-smart-card-technical-reference). |
 |Oferecer gerenciamento local, armazenamento e reutilização de credenciais|Gerenciamento de credenciais<p>Autoridade de Segurança Local<p>Senhas|O gerenciamento de credenciais no Windows garante que as credenciais sejam armazenadas com segurança. As credenciais são coletadas na área de trabalho segura \( para acesso local ou de domínio \) , por meio de aplicativos ou por meio de sites, para que as credenciais corretas sejam apresentadas sempre que um recurso for acessado.<p>
 |Estender a moderna proteção de autenticação aos sistemas herdados|Proteção Estendida para Autenticação|Esse recurso aprimora a proteção e a manipulação de credenciais ao autenticar conexões de rede usando IWA de autenticação integrada do Windows \( \) .|
 
@@ -71,12 +71,10 @@ Muitos recursos de autenticação podem ser configurados usando a Política de G
 |Tecnologias de autenticação|Recursos|
 |----------------|-------|
 |Autenticação do Windows|[Visão geral técnica de autenticação do Windows](../windows-authentication/windows-authentication-technical-overview.md)<br />Inclui tópicos que abordam as diferenças entre versões, os conceitos gerais de autenticação, cenários de logon, arquiteturas para versões com suporte e configurações aplicáveis.|
-|Kerberos|[Kerberos Authentication Overview](../kerberos/kerberos-authentication-overview.md)<p>[Visão geral da Delegação Restrita de Kerberos](../kerberos/kerberos-constrained-delegation-overview.md)<p>Referência técnica de [autenticação Kerberos](https://technet.microsoft.com/library/cc739058(v=ws.10).aspx) \( 2003\)<p>[Fórum do Kerberos](https://docs.microsoft.com/answers/topics/windows-server-security.html)|
+|Kerberos|[Kerberos Authentication Overview](../kerberos/kerberos-authentication-overview.md)<p>[Visão geral da Delegação Restrita de Kerberos](../kerberos/kerberos-constrained-delegation-overview.md)<p>Referência técnica de [autenticação Kerberos](/previous-versions/windows/it-pro/windows-server-2003/cc739058(v=ws.10)) \( 2003\)<p>[Fórum do Kerberos](/answers/topics/windows-server-security.html)|
 |\/Provedor de suporte de segurança do DTLS Schannel SSL e TLS \(\)|[Visão geral do &#40;do SSP do Schannel do protocolo TLS&#41;](../tls/tls-ssl-schannel-ssp-overview.md)<p>[Referência técnica do provedor de suporte de segurança Schannel](../tls/schannel-security-support-provider-technical-reference.md)|
-|Autenticação digest|Referência técnica da [autenticação Digest](https://technet.microsoft.com/library/cc782794(v=ws.10).aspx) \( 2003\)|
+|Autenticação digest|Referência técnica da [autenticação Digest](/previous-versions/windows/it-pro/windows-server-2003/cc782794(v=ws.10)) \( 2003\)|
 |NTLM|[NTLM Overview](../kerberos/ntlm-overview.md)<br />Contém links para recursos atuais e anteriores|
-|PKU2U|[Introdução ao PKU2U no Windows](https://technet.microsoft.com/library/dd560634(v=ws.10).aspx)|
-|Cartão inteligente|[Referência técnica do cartão inteligente](https://technet.microsoft.com/itpro/windows/keep-secure/smart-card-windows-smart-card-technical-reference)<p>
+|PKU2U|[Introdução ao PKU2U no Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560634(v=ws.10))|
+|Cartão inteligente|[Referência técnica do cartão inteligente](/windows/security/identity-protection/smart-cards/smart-card-windows-smart-card-technical-reference)<p>
 |Credenciais|[Proteção e gerenciamento de credenciais](../credentials-protection-and-management/credentials-protection-and-management.md)<br />Contém links para recursos atuais e anteriores<p>[Visão geral de senhas](../kerberos/passwords-overview.md)<br />Contém links para recursos atuais e anteriores|
-
-

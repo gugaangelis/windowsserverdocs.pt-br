@@ -2,19 +2,17 @@
 ms.assetid: 289cbd10-e7ec-4f2e-8dd1-eb5692565578
 title: Histórico de alterações dos tópicos do Clustering de Failover
 description: Tópicos novos e atualizados na documentação de clustering de failover do Windows Server 2016
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: JasonGerend
 manager: lizross
 ms.author: jgerend
 ms.date: 01/07/2020
-ms.openlocfilehash: 2bc64479c5615e356158b83ee41402f425f4ea3b
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9305935046db6e4185e07c703eb9caa83d263b2a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177892"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87965293"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>Histórico de alterações dos tópicos do Clustering de Failover
 

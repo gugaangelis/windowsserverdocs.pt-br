@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ce9bddbc9b03a9019860e9b831bb928326098b76
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a7cb3a037d074fc4a61e6c805bca181316643bb3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965948"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956673"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>Usando um tema da Web do Azure AD UX no Serviços de Federação do Active Directory (AD FS)
 Atualmente, a entrada de formulários AD FS não espelha a experiência de entrada do Azure/O365.  Para fornecer uma experiência mais uniforme e simples para os usuários finais, lançamos o seguinte tema da Web de folha de estilos em cascata que pode ser aplicado aos seus servidores de AD FS.  Atualmente, a entrada de formulários para AD FS no Windows Server 2016 é semelhante ao seguinte:

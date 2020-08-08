@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3e3876680031cdb31f2fa3e6ce200efdf6fb5185
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b1a7783e02746f53d818066eb20ceb3094bd2707
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936446"
+ms.locfileid: "87990032"
 ---
 # <a name="windows-logon-scenarios"></a>Cenários de logon do Windows
 
@@ -103,14 +103,12 @@ O diagrama a seguir mostra os elementos e processos necessários para o logon do
 
 Quando um cartão inteligente é usado em vez de uma senha, um par de chaves privada/pública armazenado no cartão inteligente do usuário é substituído pela chave secreta compartilhada, que é derivada da senha do usuário. A chave privada é armazenada somente no cartão inteligente. A chave pública pode ser disponibilizada para qualquer pessoa com a qual o proprietário deseja trocar informações confidenciais.
 
-Para obter mais informações sobre o processo de logon do cartão inteligente no Windows, consulte [como o logon do cartão inteligente funciona no Windows](https://technet.microsoft.com/library/ff404285.aspx).
+Para obter mais informações sobre o processo de logon do cartão inteligente no Windows, consulte [como o logon do cartão inteligente funciona no Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff404285(v=ws.10)).
 
 ## <a name="biometric-logon"></a><a name="BKMK_BioLogon"></a>Logon biométrico
 Um dispositivo é usado para capturar e criar uma característica digital de um artefato, como uma impressão digital. Em seguida, essa representação digital é comparada a uma amostra do mesmo artefato e quando as duas são comparadas com êxito, a autenticação pode ocorrer. Os computadores que executam qualquer um dos sistemas operacionais designados na lista **aplica-se a ao** início deste tópico podem ser configurados para aceitar essa forma de logon. No entanto, se o logon biométrico for configurado apenas para logon local, o usuário precisará apresentar as credenciais de domínio ao acessar um domínio de Active Directory.
 
 ## <a name="additional-resources"></a>Recursos adicionais
-Para obter informações sobre como o Windows gerencia as credenciais enviadas durante o processo de logon, consulte [Gerenciamento de credenciais na autenticação do Windows](https://technet.microsoft.com/library/dn169014.aspx).
+Para obter informações sobre como o Windows gerencia as credenciais enviadas durante o processo de logon, consulte [Gerenciamento de credenciais na autenticação do Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169014(v=ws.10)).
 
-[Visão geral técnica de logon e autenticação do Windows](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+[Visão geral técnica de logon e autenticação do Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))
