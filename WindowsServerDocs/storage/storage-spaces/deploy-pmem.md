@@ -1,19 +1,17 @@
 ---
 title: Compreender e implantar memória persistente
 description: Informações detalhadas sobre o que é a memória persistente e como configurá-la com espaços de armazenamento diretos no Windows Server 2019.
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 1/27/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f5f88ac2ec728e176735ad58d9d67112583c527
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512b53be7af89fe9e0fd017af14425264062ed29
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469641"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960899"
 ---
 # <a name="understand-and-deploy-persistent-memory"></a>Compreender e implantar memória persistente
 
@@ -57,9 +55,9 @@ A tabela a seguir mostra o hardware de memória persistente com suporte para o W
 
 | Tecnologia de memória persistente                                      | Windows Server 2016 | Windows Server 2019 |
 |-------------------------------------------------------------------|--------------------------|--------------------------|
-| **NVDIMM-N** no modo persistente                                  | Com suporte                | Suportado                |
+| **NVDIMM-N** no modo persistente                                  | Com suporte                | Com suporte                |
 | **Intel Optane &trade; Memória persistente de DC** no modo direto do aplicativo             | Sem suporte            | Com suporte                |
-| **Intel Optane &trade; Memória persistente de DC** no modo de memória | Com suporte            | Suportado                |
+| **Intel Optane &trade; Memória persistente de DC** no modo de memória | Com suporte            | Com suporte                |
 
 > [!NOTE]
 > O Intel Optane dá suporte aos modos de *memória* (volátil) e *direto do aplicativo* (persistente).

@@ -2,19 +2,17 @@
 title: Implantação do MultiPoint Services
 description: Visão geral do processo de implantação de serviços do MultiPoint
 ms.date: 07/22/2016
-ms.prod: windows-server
-ms.technology: multipoint-services
 ms.topic: article
 ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 0e24fadf1914c43bf6270e1d84c5a5535518d9bd
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7188e6db4d3b0f6c7846f1e8e4d8847980f2605a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182032"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942445"
 ---
 # <a name="deploying-multipoint-services"></a>Implantação do MultiPoint Services
 

@@ -1,18 +1,16 @@
 ---
 title: TLS (Schannel SSP)
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
 manager: alanth
 author: justinha
-ms.technology: security-authentication
 ms.date: 05/16/2018
-ms.openlocfilehash: 3547c77e8c58bcbb219a7b017c3186f198007805
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 67a0c77b3e6dfa343cfd511b2fe48273439632e4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820159"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971243"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>Alterações de TLS (Schannel SSP) no Windows 10 e no Windows Server 2016
 
@@ -59,12 +57,13 @@ Com o Windows 10, versão 1507 e Windows Server 2016, [SCH_USE_STRONG_CRYPTO](ht
 
 ## <a name="elliptical-curve-changes"></a>Alterações de curva elíptica
 
-Windows 10, versão 1507 e Windows Server 2016 adicione Política de Grupo configuração para curvas elípticas em configuração do computador > Modelos Administrativos > rede > definições de configuração SSL. A lista ordem de curva de ECC especifica a ordem na qual as curvas elípticas são preferenciais e habilita as curvas com suporte que não estão habilitadas. 
- 
+Windows 10, versão 1507 e Windows Server 2016 adicione Política de Grupo configuração para curvas elípticas em configuração do computador > Modelos Administrativos > rede > definições de configuração SSL.
+A lista ordem de curva de ECC especifica a ordem na qual as curvas elípticas são preferenciais e habilita as curvas com suporte que não estão habilitadas.
+
 Adicionado suporte para as seguintes curvas elípticas:
 
 - BrainpoolP256r1 (RFC 7027) no Windows 10, versão 1507 e Windows Server 2016
-- BrainpoolP384r1 (RFC 7027) no Windows 10, versão 1507 e Windows Server 2016 
+- BrainpoolP384r1 (RFC 7027) no Windows 10, versão 1507 e Windows Server 2016
 - BrainpoolP512r1 (RFC 7027) no Windows 10, versão 1507 e Windows Server 2016
 - Curve25519 (RFC draft-ietf-TLS-Curve25519) no Windows 10, versão 1607 e Windows Server 2016
 
@@ -76,15 +75,18 @@ O Windows 10, versão 1507 e Windows Server 2016 adicionam suporte para SealMess
 
 Windows 10, versão 1607 e Windows Server 2016 adicionar suporte para DTLS 1,2 (RFC 6347).
 
-## <a name="httpsys-thread-pool"></a>HTTP. Pool de threads SYS 
+## <a name="httpsys-thread-pool"></a>Pool de threads HTTP.SYS
 
-O Windows 10, versão 1607 e Windows Server 2016 adicionam a configuração do registro do tamanho do pool de threads usado para lidar com Handshakes de TLS para HTTP. Sistema.
+Windows 10, versão 1607 e Windows Server 2016 adicionar configuração de registro do tamanho do pool de threads usado para lidar com Handshakes de TLS para HTTP.SYS.
 
-Caminho do Registro: 
+Caminho de Registro:
 
 HKLM\SYSTEM\CurrentControlSet\Control\LSA
 
-Para especificar um tamanho máximo de pool de threads por núcleo de CPU, crie uma entrada **MaxAsyncWorkerThreadsPerCpu** . Essa entrada não existe no Registro por padrão. Depois de criar a entrada, altere o valor DWORD para o tamanho desejado. Se não estiver configurado, o máximo será 2 threads por núcleo de CPU.
+Para especificar um tamanho máximo de pool de threads por núcleo de CPU, crie uma entrada **MaxAsyncWorkerThreadsPerCpu** .
+Essa entrada não existe no Registro por padrão.
+Depois de criar a entrada, altere o valor DWORD para o tamanho desejado.
+Se não estiver configurado, o máximo será 2 threads por núcleo de CPU.
 
 ## <a name="next-protocol-negotiation-npn-support"></a>Suporte de NPN (Next Protocol negotiation)
 
@@ -116,13 +118,15 @@ Devido a essa alteração, o Windows 10 e o Windows Server 2016 exigem atualiza�
 
 ## <a name="ssl-support"></a>Suporte a SSL
 
-A partir do Windows 10, versão 1607 e Windows Server 2016, o cliente TLS e o servidor SSL 3,0 estão desabilitados por padrão. Isso significa que, a menos que o aplicativo ou serviço solicite especificamente o SSL 3,0 por meio do SSPI, o cliente nunca oferecerá ou aceitará o SSL 3,0 e o servidor nunca selecionará SSL 3,0.
+A partir do Windows 10, versão 1607 e Windows Server 2016, o cliente TLS e o servidor SSL 3,0 estão desabilitados por padrão.
+Isso significa que, a menos que o aplicativo ou serviço solicite especificamente o SSL 3,0 por meio do SSPI, o cliente nunca oferecerá ou aceitará o SSL 3,0 e o servidor nunca selecionará SSL 3,0.
 
 A partir do Windows 10 versão 1607 e do Windows Server 2016, o SSL 2,0 foi removido e não tem mais suporte.
 
 ## <a name="changes-to-windows-tls-adherence-to-tls-12-requirements-for-connections-with-non-compliant-tls-clients"></a>Alterações na adesão do Windows TLS aos requisitos de TLS 1,2 para conexões com clientes TLS não compatíveis
 
-No TLS 1,2, o cliente usa a [extensão "signature_algorithms"](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1) para indicar ao servidor quais pares de algoritmos de assinatura/hash podem ser usados em assinaturas digitais (ou seja, certificados de servidor e troca de chaves de servidor). A RFC 1,2 do TLS também exige que a mensagem de certificado do servidor obedeça "signature_algorithms" extensão:
+No TLS 1,2, o cliente usa a [extensão "signature_algorithms"](https://tools.ietf.org/html/rfc5246#section-7.4.1.4.1) para indicar ao servidor quais pares de algoritmos de assinatura/hash podem ser usados em assinaturas digitais (ou seja, certificados de servidor e troca de chaves de servidor).
+A RFC 1,2 do TLS também exige que a mensagem de certificado do servidor obedeça "signature_algorithms" extensão:
 
 "Se o cliente forneceu uma extensão" signature_algorithms ", todos os certificados fornecidos pelo servidor devem ser assinados por um par de algoritmos de hash/assinatura que aparece nessa extensão."
 
@@ -130,7 +134,9 @@ Na prática, alguns clientes TLS de terceiros não estão em conformidade com a 
 
 Um servidor TLS geralmente tem apenas um certificado configurado por ponto de extremidade, o que significa que o servidor nem sempre pode fornecer um certificado que atenda aos requisitos do cliente.
 
-Antes do Windows 10 e do Windows Server 2016, a pilha do Windows TLS está estritamente em conformidade com os requisitos de TLS 1,2 RFC, resultando em falhas de conexão com clientes TLS não compatíveis com RFC e problemas de interoperabilidade. No Windows 10 e no Windows Server 2016, as restrições são relaxadas e o servidor pode enviar um certificado que não esteja em conformidade com o TLS 1,2 RFC, se essa for a única opção do servidor. O cliente pode continuar ou encerrar o handshake.
+Antes do Windows 10 e do Windows Server 2016, a pilha do Windows TLS está estritamente em conformidade com os requisitos de TLS 1,2 RFC, resultando em falhas de conexão com clientes TLS não compatíveis com RFC e problemas de interoperabilidade.
+No Windows 10 e no Windows Server 2016, as restrições são relaxadas e o servidor pode enviar um certificado que não esteja em conformidade com o TLS 1,2 RFC, se essa for a única opção do servidor.
+O cliente pode continuar ou encerrar o handshake.
 
 Ao validar certificados do servidor e do cliente, a pilha do Windows TLS é estritamente compatível com a RFC 1,2 do TLS e permite apenas a assinatura negociada e os algoritmos de hash no servidor e nos certificados do cliente.
 

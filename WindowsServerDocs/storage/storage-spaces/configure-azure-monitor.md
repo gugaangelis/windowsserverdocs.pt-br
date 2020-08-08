@@ -1,18 +1,16 @@
 ---
 title: Entender e configurar Azure Monitor
 description: Informações detalhadas de configuração sobre o que Azure Monitor é e como configurar alertas de email e SMS para o cluster de espaços de armazenamento diretos no Windows Server 2016 e 2019.
-ms.prod: windows-server
 ms.author: adagashe
-ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/10/2020
-ms.openlocfilehash: 72d08b3e4461eeea07e161de1073f5320830028c
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 40ee23fa8c1fa88c54e5c8ee1e2c3ebd3453bfff
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953980"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961130"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Usar Azure Monitor para enviar emails para Serviço de Integridade falhas
 
@@ -80,7 +78,7 @@ Para fornecer uma visão geral, o [Azure log Analytics](/azure/azure-monitor/pla
 
 Para entender a configuração com suporte, revise [suporte para sistemas operacionais Windows](/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems) e [configuração de firewall de rede](/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements).
 
-Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
+Caso não tenha uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 #### <a name="login-in-to-azure-portal"></a>Fazer logon no portal do Azure
 
@@ -185,7 +183,7 @@ Se você o fez até agora, o cluster deve enviar seus logs e contadores de desem
 
 Inicie abrindo o portal de Pesquisa de Logs.
 
-1. No portal do Azure, clique em **Todos os serviços**. Na lista de recursos, digite **Monitor**. À medida que você começa a digitar, a lista filtra com base em sua entrada. Selecione **Monitor**.
+1. No portal do Azure, clique em **Todos os serviços**. Na lista de recursos, digite **Monitor**. Quando você começa a digitar, a lista é filtrada com base em sua entrada. Selecione **Monitor**.
 2. No menu de navegação Monitor, selecione **Log Analytics**, em seguida, selecione um workspace.
 
 A maneira mais rápida de recuperar alguns dados para trabalhar é uma consulta simples que retorna todos os registros na tabela. Digite as consultas a seguir na caixa de pesquisa e clique no botão Pesquisar.

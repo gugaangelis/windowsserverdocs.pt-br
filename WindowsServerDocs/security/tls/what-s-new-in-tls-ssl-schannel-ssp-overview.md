@@ -1,20 +1,18 @@
 ---
 title: Visão geral de TLS-SSL (Schannel SSP)
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: c8836345-16bb-4dcc-8d2b-2b9b687456a3
 author: justinha
 ms.author: justinha
 manager: brianlic
 ms.date: 05/16/2018
-ms.openlocfilehash: b70a8fefc05723b78dbf5e652bf35f7b8b5cff4d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: a60ed0b1228780ebb6e8d1e75541dc3089f7665c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182312"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989456"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>Visão geral do TLS-SSL (Schannel SSP)
 
@@ -24,7 +22,7 @@ Este tópico para o profissional de ti descreve as alterações na funcionalidad
 
 Schannel é um SSP (Provedor de Suporte de Segurança) que implementa os protocolos de autenticação padrão da Internet SSL, TLS e DTLS. A Interface SSPI é uma API usada por sistemas Windows para executar funções relacionadas à segurança, incluindo autenticação. A SSPI funciona como uma interface comum para vários SSPS, incluindo o SSP Schannel.
 
-Para obter mais informações sobre a implementação da Microsoft de TLS e SSL no SSP do Schannel, consulte a [referência técnica de TLS/SSL (2003)](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx).
+Para obter mais informações sobre a implementação da Microsoft de TLS e SSL no SSP do Schannel, consulte a [referência técnica de TLS/SSL (2003)](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10)).
 
 
 ## <a name="tlsssl-schannel-ssp-features"></a>Recursos de TLS/SSL (Schannel SSP)
@@ -49,7 +47,7 @@ Para obter informações sobre a retomada de sessão TLS sem estado, consulte o 
 ### <a name="application-protocol-negotiation"></a>Negociação de protocolos de aplicativos
  O Windows Server 2012 R2 e o Windows 8.1 oferecem suporte à negociação do protocolo de aplicativo TLS do lado do cliente para que os aplicativos possam aproveitar os protocolos como parte do desenvolvimento padrão HTTP 2,0 e os usuários possam acessar serviços online como o Google e o Twitter usando aplicativos que executam o protocolo SPDY.
 
-**Como isso funciona**
+**Como ele funciona**
 
 Os aplicativos de cliente e servidor permitem a extensão da negociação de protocolos de aplicativos fornecendo listas das IDs de protocolos de aplicativos com suporte, em ordem decrescente de preferência. O cliente do TLS indica que ele dá suporte à negociação de protocolos de aplicativos incluindo a extensão da negociação de protocolos de camada de aplicativos (ALPN) com uma lista de protocolos com suporte cliente na mensagem ClientHello.
 
@@ -94,11 +92,11 @@ Se o repositório de **autoridades de Certifictation raiz confiáveis** que foi 
 
 A arquitetura do SSP do Schannel no Windows Server 2012 usará, por padrão, as lojas, conforme descrito acima, para gerenciar a lista de emissores confiáveis. Você ainda pode usar os commandlets existentes de gerenciamento de certificados do provedor do PowerShell, bem como as ferramentas de linha de comando como Certutil, para gerenciar certificados.
 
-Para obter informações sobre como gerenciar certificados usando o provedor do PowerShell, consulte [Cmdlets de administração do AD CS no Windows](https://technet.microsoft.com/library/hh848365(v=wps.620).aspx).
+Para obter informações sobre como gerenciar certificados usando o provedor do PowerShell, consulte [Cmdlets de administração do AD CS no Windows](/powershell/module/adcsadministration/?view=winserver2012-ps).
 
-Para obter informações sobre como gerenciar certificados usando o utilitário de certificados, consulte [certutil.exe](https://technet.microsoft.com/library/cc732443.aspx).
+Para obter informações sobre como gerenciar certificados usando o utilitário de certificados, consulte [certutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732443(v=ws.11)).
 
-Para obter informações sobre quais dados, incluindo o repositório definido pelo aplicativo, são definidos para uma credencial do Schannel, consulte [Estrutura SCHANNEL_CRED (Windows)](https://msdn.microsoft.com/library/windows/desktop/aa379810(v=vs.85).aspx).
+Para obter informações sobre quais dados, incluindo o repositório definido pelo aplicativo, são definidos para uma credencial do Schannel, consulte [Estrutura SCHANNEL_CRED (Windows)](/windows/win32/api/schannel/ns-schannel-schannel_cred).
 
 **Padrões para modos de confiança**
 
@@ -127,7 +125,7 @@ Esta funcionalidade adicional:
 
 -   Permite que você forneça dicas para usuários finais através da interface do computador para selecionar o certificado correto durante um processo de autenticação do cliente.
 
-**Como isso funciona**
+**Como ele funciona**
 
 O SSP Schannel mantém um cache na memória dos estados de conexão permitidos para clientes. Isso permite que os computadores cliente se reconectem rapidamente ao servidor SSL sem se sujeitarem a um handshake SSL completo em visitas subsequentes.  Esse uso eficiente do gerenciamento de certificados permite que mais sites sejam hospedados em um único Windows Server 2012 em comparação com versões anteriores do sistema operacional.
 
@@ -140,7 +138,7 @@ O protocolo DTLS versão 1.0 foi adicionado ao Provedor de Suporte de Segurança
 
 Os datagramas são comuns em mídia de streaming, como jogos ou videoconferências de vídeo protegido. Adicionar o protocolo DTLS ao provedor Schannel possibilita usar o modelo de SSPI familiar do Windows para proteger as comunicações entre computadores cliente e servidores. O DTLS foi deliberadamente concebido para ser o mais semelhante possível ao TLS, tanto para minimizar novas invenções de segurança quanto para maximizar a reutilização de código e infraestrutura.
 
-**Como isso funciona**
+**Como ele funciona**
 
 Os aplicativos que usam DTLS sobre UDP podem usar o modelo SSPI no Windows Server 2012 e no Windows 8. Alguns pacotes de codificações estão disponíveis para configuração, de maneira semelhante à forma como se configura o TLS. O Schannel continua a usar o provedor de criptografia CNG, que usa a certificação FIPS 140, introduzida no Windows Vista.
 
@@ -148,4 +146,4 @@ Os aplicativos que usam DTLS sobre UDP podem usar o modelo SSPI no Windows Serve
 No SSP do Schannel para Windows Server 2012 e Windows 8, não há recursos ou funcionalidades preteridos.
 
 ## <a name="additional-references"></a>Referências adicionais
--   [Modelo de segurança de nuvem privada - funcionalidade Wrapper](https://docs.microsoft.com/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)
+-   [Modelo de segurança de nuvem privada - funcionalidade Wrapper](/archive/blogs/cloudsolutions/cloud-services-foundation-reference-architecture-overview)

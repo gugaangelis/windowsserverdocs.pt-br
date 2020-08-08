@@ -1,19 +1,17 @@
 ---
 title: Criando volumes em Espaços de Armazenamento Diretos
 description: Como criar volumes no Espaços de Armazenamento Diretos usando o centro de administração do Windows e o PowerShell.
-ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.date: 02/25/2020
-ms.openlocfilehash: 40750acb260335e858a7763c950dfc4ad2cd7979
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 417deaf61b111b6ba54939505c65e8e0f854e604
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473823"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960939"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Criando volumes em Espaços de Armazenamento Diretos
 
@@ -149,7 +147,7 @@ Para criar volumes em camadas, referencie esses modelos de camadas usando os par
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-Concluído! Repita conforme necessário para criar mais de um volume.
+Pronto! Repita conforme necessário para criar mais de um volume.
 
 ## <a name="additional-references"></a>Referências adicionais
 

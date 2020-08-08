@@ -1,19 +1,17 @@
 ---
 title: Cache de leitura na memória Espaços de Armazenamento Diretos
-ms.prod: windows-server
 ms.author: eldenc
 manager: siroy
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fff78ddc831ae9f6cba103d7630da3afec2c87d7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce4546a3c3933700b7aec812027e2abc91f718f9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474233"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87960909"
 ---
 # <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>Usando Espaços de Armazenamento Diretos com o cache de leitura na memória CSV
 > Aplica-se a: Windows Server 2016, Windows Server 2019
@@ -24,7 +22,7 @@ Espaços de Armazenamento Diretos é compatível com o cache de leitura na memó
 
 Como o cache na memória é servidor local, ele melhora a localidade de dados para implantações de Espaços de Armazenamento Diretos hiperconvergentes: as leituras recentes são armazenadas em cache na memória no mesmo host em que a máquina virtual está em execução, reduzindo a frequência com que as leituras passam pela rede. Isso resulta em menor latência e melhor desempenho de armazenamento.
 
-## <a name="planning-considerations"></a>Considerações sobre planejamento
+## <a name="planning-considerations"></a>Considerações sobre o planejamento
 
 O cache de leitura na memória é mais eficaz para cargas de trabalho com uso intensivo de leitura, como o Virtual Desktop Infrastructure (VDI). Por outro lado, se a carga de trabalho for extremamente de gravação intensa, o cache poderá introduzir mais sobrecarga que o valor e deverá ser desabilitado.
 

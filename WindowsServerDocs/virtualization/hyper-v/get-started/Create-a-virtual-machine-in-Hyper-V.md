@@ -1,20 +1,18 @@
 ---
 title: Criar uma máquina virtual com o Hyper-V
 description: Fornece instruções para criar uma máquina virtual usando o Gerenciador do Hyper-V ou o Windows PowerShell
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 59297022-a898-456c-b299-d79cd5860238
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 703c3f739200fafa4934681c300a61d8039d660c
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f4e07919503f283add8da1c8dd522f3d2b7f222
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475653"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942012"
 ---
 # <a name="create-a-virtual-machine-in-hyper-v"></a>Criar uma máquina virtual com o Hyper-V
 
@@ -44,7 +42,7 @@ Saiba como criar uma máquina virtual usando o Gerenciador do Hyper-V e o Window
 
 2. Clique com o botão direito do mouse em **Windows PowerShell** e selecione **Executar como administrador**.
 
-3. Obtenha o nome do comutador virtual que você deseja que a máquina virtual use usando [Get-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx).  Por exemplo,
+3. Obtenha o nome do comutador virtual que você deseja que a máquina virtual use usando [Get-VMSwitch](https://technet.microsoft.com/library/hh848499.aspx).  Por exemplo:
 
    ```
    Get-VMSwitch  * | Format-Table Name
@@ -76,7 +74,7 @@ Saiba como criar uma máquina virtual usando o Gerenciador do Hyper-V e o Window
 
        Isso cria uma máquina virtual de geração 2 chamada Win10VM com 4 GB de memória. Ele é inicializado a partir da pasta VMs\Win10.vhdx no diretório atual e usa o comutador virtual chamado ExternalSwitch. Os arquivos de configuração de máquina virtual são armazenados na pasta VMData.
 
-   - **Novo disco rígido virtual** -para criar uma máquina virtual com um novo disco rígido virtual, substitua o parâmetro **-VHDPath** do exemplo acima por **-NewVHDPath** e adicione o parâmetro **-NewVHDSizeBytes** . Por exemplo,
+   - **Novo disco rígido virtual** -para criar uma máquina virtual com um novo disco rígido virtual, substitua o parâmetro **-VHDPath** do exemplo acima por **-NewVHDPath** e adicione o parâmetro **-NewVHDSizeBytes** . Por exemplo:
 
      ```
      New-VM -Name Win10VM -MemoryStartupBytes 4GB -BootDevice VHD -NewVHDPath .\VMs\Win10.vhdx -Path .\VMData -NewVHDSizeBytes 20GB -Generation 2 -Switch ExternalSwitch

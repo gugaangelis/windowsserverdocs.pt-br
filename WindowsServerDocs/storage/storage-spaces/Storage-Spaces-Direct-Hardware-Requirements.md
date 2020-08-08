@@ -1,20 +1,18 @@
 ---
 title: Requisitos de hardware de Espaços de Armazenamento Diretos
-ms.prod: windows-server
 description: Requisitos mínimos de hardware para testes de Espaços de Armazenamento Diretos.
 ms.author: eldenc
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 07/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 45ef438d58c9d36275f2e7a32ce93a383bd21a70
-ms.sourcegitcommit: de8fea497201d8f3d995e733dfec1d13a16cb8fa
+ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87864271"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961120"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -60,19 +58,19 @@ Além disso, os seguintes requisitos se aplicam:
 
 ## <a name="networking"></a>Rede
 
-Espaços de Armazenamento Diretos requer uma alta largura de banda altamente confiável, conexão de rede de baixa latência entre cada nó.  
+Espaços de Armazenamento Diretos requer uma alta largura de banda altamente confiável, conexão de rede de baixa latência entre cada nó.
 
 Interconexão mínima para o nó 2-3 de pequena escala
 - NIC (placa de interface de rede) de 10 Gbps ou mais rápido
 - Duas ou mais conexões de rede de cada nó recomendado para redundância e desempenho
 
-Interconexão recomendada para alto desempenho, em escala ou implantações de 4 + 
+Interconexão recomendada para alto desempenho, em escala ou implantações de 4 +
 - NICs que são compatíveis com RDMA (acesso remoto direto à memória), iWARP (recomendado) ou RoCE
 - Duas ou mais conexões de rede de cada nó recomendado para redundância e desempenho
 - NIC de 25 Gbps ou mais rápido
 
 Interconexões de nó alternadas ou alternadas
-- Comutado: comutadores de rede devem ser configurados corretamente para lidar com a largura de banda e o tipo de rede.  Se estiver usando RDMA que implementa o protocolo RoCE, a configuração do dispositivo de rede e do comutador será ainda mais importante. 
+- Comutado: comutadores de rede devem ser configurados corretamente para lidar com a largura de banda e o tipo de rede.  Se estiver usando RDMA que implementa o protocolo RoCE, a configuração do dispositivo de rede e do comutador será ainda mais importante.
 - SWITCHLESS: os nós podem ser interconectados usando conexões diretas, evitando o uso de uma opção.  É necessário que cada nó tenha uma conexão direta com todos os outros nós do cluster.
 
 

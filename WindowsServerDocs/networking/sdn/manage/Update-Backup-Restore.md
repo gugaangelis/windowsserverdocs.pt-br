@@ -2,37 +2,35 @@
 title: Atualizar, fazer backup e restaurar a infraestrutura SDN
 description: Neste tópico, você aprenderá a atualizar, fazer backup e restaurar uma infraestrutura de SDN.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/27/2018
-ms.openlocfilehash: 7d3e504f0fed5bc6d17333504548fe78d1345f2a
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: daca883456a32c707fc2c7b9bfd6193b0d917b58
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854459"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942576"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>Atualizar, fazer backup e restaurar a infraestrutura SDN
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
-Neste tópico, você aprenderá a atualizar, fazer backup e restaurar uma infraestrutura de SDN. 
+Neste tópico, você aprenderá a atualizar, fazer backup e restaurar uma infraestrutura de SDN.
 
 ## <a name="upgrade-the-sdn-infrastructure"></a>Atualizar a infraestrutura de SDN
 A infraestrutura de SDN pode ser atualizada do Windows Server 2016 para o Windows Server 2019. Para a ordenação de atualização, siga a mesma sequência de etapas, conforme mencionado na seção "atualizar a infraestrutura de SDN". Antes da atualização, é recomendável fazer um backup do banco de dados do controlador de rede.
 
-Para computadores do controlador de rede, use o cmdlet Get-NetworkControllerNode para verificar o status do nó após a conclusão da atualização. Verifique se o nó retorna ao status "para cima" antes de atualizar os outros nós. Depois de atualizar todos os nós do controlador de rede, o controlador de rede atualiza os microserviços em execução no cluster do controlador de rede dentro de uma hora. Você pode disparar uma atualização imediata usando o cmdlet Update-networkcontroller. 
+Para computadores do controlador de rede, use o cmdlet Get-NetworkControllerNode para verificar o status do nó após a conclusão da atualização. Verifique se o nó retorna ao status "para cima" antes de atualizar os outros nós. Depois de atualizar todos os nós do controlador de rede, o controlador de rede atualiza os microserviços em execução no cluster do controlador de rede dentro de uma hora. Você pode disparar uma atualização imediata usando o cmdlet Update-networkcontroller.
 
 Instale as mesmas atualizações do Windows em todos os componentes do sistema operacional do sistema de rede definida pelo software (SDN), que inclui:
 
 - Hosts Hyper-V habilitados para SDN
 - VMs do controlador de rede
 - VMs do software Load Balancer MUX
-- VMs de gateway de RAS 
+- VMs de gateway de RAS
 
 >[!IMPORTANT]
 >Se você usar o System Center Virtual Manager, deverá atualizá-lo com os pacotes cumulativos de atualizações mais recentes.
@@ -43,9 +41,9 @@ Ao atualizar cada componente, você pode usar qualquer um dos métodos padrão p
 
 2. Na primeira VM do controlador de rede, instale todas as atualizações e reinicie o.
 
-3. Antes de prosseguir para a próxima VM do controlador de rede, use o cmdlet `get-networkcontrollernode` para verificar o status do nó que você atualizou e reiniciou.
+3. Antes de prosseguir para a próxima VM do controlador de rede, use o `get-networkcontrollernode` cmdlet para verificar o status do nó que você atualizou e reiniciou.
 
-4. Durante o ciclo de reinicialização, aguarde até que o nó do controlador de rede fique inativo e volte novamente.<p>Após a reinicialização da VM, pode levar vários minutos antes de retornar ao status de **_backup_** . Para obter um exemplo da saída, consulte 
+4. Durante o ciclo de reinicialização, aguarde até que o nó do controlador de rede fique inativo e volte novamente.<p>Após a reinicialização da VM, pode levar vários minutos antes de retornar ao status de **_backup_** . Para obter um exemplo da saída, consulte
 
 5. Instale atualizações em cada VM MUX do SLB, uma de cada vez, para garantir a disponibilidade contínua da infraestrutura do balanceador de carga.
 
@@ -55,7 +53,7 @@ Ao atualizar cada componente, você pode usar qualquer um dos métodos padrão p
 
     b. Instale atualizações em cada VM de gateway neste host.
 
-    c. Se a atualização exigir que a VM de gateway seja reinicializada, reinicialize a VM.  
+    c. Se a atualização exigir que a VM de gateway seja reinicializada, reinicialize a VM.
 
     d. Instale atualizações no host que contém a VM de gateway que acabou de ser atualizada.
 
@@ -64,9 +62,9 @@ Ao atualizar cada componente, você pode usar qualquer um dos métodos padrão p
     f. Repita para cada host adicional que contém um gateway em espera.<p>Se nenhum gateway em espera permanecer, siga estas mesmas etapas para todos os hosts restantes.
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>Exemplo: Use o cmdlet Get-networkcontrollernode 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>Exemplo: Use o cmdlet Get-networkcontrollernode
 
-Neste exemplo, você vê a saída para o cmdlet `get-networkcontrollernode` executado de dentro de uma das VMs do controlador de rede.  
+Neste exemplo, você vê a saída para a `get-networkcontrollernode` execução do cmdlet de dentro de uma das VMs do controlador de rede.
 
 O status dos nós que você vê na saída de exemplo é:
 
@@ -77,10 +75,10 @@ O status dos nós que você vê na saída de exemplo é:
 >[!IMPORTANT]
 >Você deve aguardar vários minutos até que o status do nó seja alterado para _**ativo**_ antes de atualizar qualquer nó adicional, um de cada vez.
 
-Depois de atualizar todos os nós do controlador de rede, o controlador de rede atualiza os microserviços em execução no cluster do controlador de rede dentro de uma hora. 
+Depois de atualizar todos os nós do controlador de rede, o controlador de rede atualiza os microserviços em execução no cluster do controlador de rede dentro de uma hora.
 
 >[!TIP]
->Você pode disparar uma atualização imediata usando o cmdlet `update-networkcontroller`.
+>Você pode disparar uma atualização imediata usando o `update-networkcontroller` cmdlet.
 
 
 ```Powershell
@@ -108,7 +106,7 @@ Status          : Up
 ```
 
 ### <a name="example-use-the-update-networkcontroller-cmdlet"></a>Exemplo: Use o cmdlet Update-networkcontroller
-Neste exemplo, você vê a saída do cmdlet `update-networkcontroller` para forçar a atualização do controlador de rede. 
+Neste exemplo, você vê a saída do `update-networkcontroller` cmdlet para forçar a atualização do controlador de rede.
 
 >[!IMPORTANT]
 >Execute este cmdlet quando não houver mais atualizações a serem instaladas.
@@ -131,16 +129,16 @@ Os backups regulares do banco de dados do controlador de rede garantem a continu
 
 **Procedure**
 
-1. Use o método de backup da VM de sua escolha ou use o Hyper-V para exportar uma cópia de cada VM do controlador de rede.<p>Fazer backup da VM do controlador de rede garante que os certificados necessários para descriptografar o banco de dados estejam presentes.  
+1. Use o método de backup da VM de sua escolha ou use o Hyper-V para exportar uma cópia de cada VM do controlador de rede.<p>Fazer backup da VM do controlador de rede garante que os certificados necessários para descriptografar o banco de dados estejam presentes.
 
-2. Se estiver usando o System Center Virtual Machine Manager (SCVMM), interrompa o serviço do SCVMM e faça o backup por meio de SQL Server.<p>A meta aqui é garantir que nenhuma atualização seja feita no SCVMM durante esse tempo, o que poderia criar uma inconsistência entre o backup do controlador de rede e o SCVMM.  
+2. Se estiver usando o System Center Virtual Machine Manager (SCVMM), interrompa o serviço do SCVMM e faça o backup por meio de SQL Server.<p>A meta aqui é garantir que nenhuma atualização seja feita no SCVMM durante esse tempo, o que poderia criar uma inconsistência entre o backup do controlador de rede e o SCVMM.
 
    >[!IMPORTANT]
    >Não reinicie o serviço do SCVMM até que o backup do controlador de rede seja concluído.
 
-3. Faça backup do banco de dados do controlador de rede com o cmdlet `new-networkcontrollerbackup`.
+3. Faça backup do banco de dados do controlador de rede com o `new-networkcontrollerbackup` cmdlet.
 
-4. Verifique a conclusão e o êxito do backup com o cmdlet `get-networkcontrollerbackup`.
+4. Verifique a conclusão e o êxito do backup com o `get-networkcontrollerbackup` cmdlet.
 
 5. Se estiver usando o SCVMM, inicie o serviço do SCVMM.
 
@@ -264,7 +262,7 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 ## <a name="restore-the-sdn-infrastructure-from-a-backup"></a>Restaurar a infraestrutura de SDN de um backup
 
-Quando você restaura todos os componentes necessários do backup, o ambiente de SDN retorna para um estado operacional.  
+Quando você restaura todos os componentes necessários do backup, o ambiente de SDN retorna para um estado operacional.
 
 >[!IMPORTANT]
 >As etapas variam dependendo do número de componentes restaurados.
@@ -272,7 +270,7 @@ Quando você restaura todos os componentes necessários do backup, o ambiente de
 
 1. Se necessário, reimplante os hosts Hyper-V e o armazenamento necessário.
 
-2. Se necessário, restaure as VMs do controlador de rede, as VMs do gateway de RAS e as VMs do MUX do backup. 
+2. Se necessário, restaure as VMs do controlador de rede, as VMs do gateway de RAS e as VMs do MUX do backup.
 
 3. Interrompa o agente de host NC e o agente de host SLB em todos os hosts Hyper-V:
 
@@ -286,7 +284,7 @@ Quando você restaura todos os componentes necessários do backup, o ambiente de
 
 5. Interrompa as VMs MUX SLB.
 
-6. Restaure o controlador de rede com o cmdlet `new-networkcontrollerrestore`.
+6. Restaure o controlador de rede com o `new-networkcontrollerrestore` cmdlet.
 
 7. Verifique o **ProvisioningState** de restauração para saber quando a restauração foi concluída com êxito.
 
@@ -310,7 +308,7 @@ Fetching ResourceType:     Gateways
 ```
 
 ### <a name="example-restoring-a-network-controller-database"></a>Exemplo: restaurando um banco de dados do controlador de rede
- 
+
 ```Powershell
 $URI = "https://NC.contoso.com"
 $Credential = Get-Credential

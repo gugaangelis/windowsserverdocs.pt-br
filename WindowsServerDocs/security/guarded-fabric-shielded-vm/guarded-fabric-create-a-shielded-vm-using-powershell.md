@@ -1,24 +1,23 @@
 ---
 title: Criar uma VM blindada usando o PowerShell
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: abc1a2af7353bd85e0ae7ac55debc36d63d1782f
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: 3272f1dd75f3e8df506341d49c1c32346bb5dbce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942285"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971323"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>Criar uma VM blindada usando o PowerShell
 
 >Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016
 
-Em produção, normalmente você usaria um Gerenciador de malha (por exemplo, o VMM) para implantar VMs blindadas. No entanto, as etapas ilustradas abaixo permitem que você implante e valide todo o cenário sem um Gerenciador de malha.
+Em produção, normalmente você usaria um Gerenciador de malha (por exemplo, o VMM) para implantar VMs blindadas.
+No entanto, as etapas ilustradas abaixo permitem que você implante e valide todo o cenário sem um Gerenciador de malha.
 
 Resumindo, você criará um disco de modelo, um arquivo de dados de blindagem, um arquivo de resposta de instalação autônoma e outros artefatos de segurança em qualquer computador e, em seguida, copiará esses arquivos para um host protegido e provisionar a VM blindada.
 
@@ -56,21 +55,21 @@ Além disso, você precisará de um arquivo de resposta de instalação autônom
 Execute os seguintes cmdlets em um computador com o Ferramentas de Administração de Servidor Remoto para VMs blindadas instaladas.
 Se você estiver criando um PDK para uma VM do Linux, deverá fazer isso em um servidor que executa o Windows Server, versão 1709 ou posterior.
 
- 
+
 ```powershell
 # Create owner certificate, don't lose this!
 # The certificate is stored at Cert:\LocalMachine\Shielded VM Local Certificates
 $Owner = New-HgsGuardian –Name 'Owner' –GenerateCertificates
- 
+
 # Import the HGS guardian for each fabric you want to run your shielded VM
 $Guardian = Import-HgsGuardian -Path C:\HGSGuardian.xml -Name 'TestFabric'
- 
+
 # Create the PDK file
 # The "Policy" parameter describes whether the admin can see the VM's console or not
 # Use "EncryptionSupported" if you are testing out shielded VMs and want to debug any issues during the specialization process
 New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner –Guardian $guardian –VolumeIDQualifier (New-VolumeIDQualifier -VolumeSignatureCatalogFilePath 'C:\temp\MyTemplateDiskCatalog.vsc' -VersionRule Equals) -WindowsUnattendFile 'C:\unattend.xml' -Policy Shielded
 ```
-    
+
 ## <a name="provision-shielded-vm-on-a-guarded-host"></a>Provisionar VM blindada em um host protegido
 Em um host que esteja executando o Windows Server 2016, você pode monitorar a VM a ser desligada para sinalizar a conclusão da tarefa de provisionamento e consultar os logs de eventos do Hyper-V para obter informações de erro se o provisionamento não for bem-sucedido.
 

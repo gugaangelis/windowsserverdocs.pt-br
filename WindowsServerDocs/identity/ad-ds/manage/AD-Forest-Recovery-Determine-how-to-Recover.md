@@ -5,15 +5,13 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.technology: identity-adds
-ms.openlocfilehash: fbb1f0f0f1b21c626f344bb01b793211586c7cf3
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: fcc344010f25a11051bed5afc6bc6632729f7f4e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953968"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949930"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar como recuperar a floresta
 
@@ -63,7 +61,7 @@ Você também pode usar o comando **Ntdsutil snapshot** para criar instantâneos
 A facilidade do processo de restauração é um fator importante ao decidir qual controlador de domínio deve ser restaurado. É recomendável ter um DC dedicado para cada domínio que seja o DC preferencial para uma restauração. Um DC de restauração dedicado torna mais fácil planejar e executar a recuperação de floresta de forma confiável, pois você usa a mesma configuração de origem que foi usada para executar testes de restauração. Você pode criar o script da recuperação e não lutar com configurações diferentes, como se o controlador de domínio contém funções de mestre de operações ou não, ou se é um servidor GC ou DNS ou não.
 
 > [!NOTE]
-> Embora não seja recomendável restaurar um detentor da função mestre de operações no interesse da simplicidade, algumas organizações podem optar por restaurar uma para outras vantagens. Por exemplo, restaurar o mestre RID pode ajudar a evitar problemas com o gerenciamento de RIDs durante a recuperação.  
+> Embora não seja recomendável restaurar um detentor da função mestre de operações no interesse da simplicidade, algumas organizações podem optar por restaurar uma para outras vantagens. Por exemplo, restaurar o mestre RID pode ajudar a evitar problemas com o gerenciamento de RIDs durante a recuperação.
 
 Escolha um controlador de domínio que melhor atenda aos seguintes critérios:
 
@@ -89,59 +87,59 @@ Determine a estrutura da floresta atual identificando todos os domínios na flor
 
 Prepare uma tabela que mostra as funções de cada DC no domínio, conforme mostrado no exemplo a seguir. Isso irá ajudá-lo a reverter para a configuração de pré-falha da floresta após a recuperação.
 
-|Nome do DC|Sistema operacional|FSMO|GC|RODC|Backup|DNS|Server Core|VM|VM-GenID|  
-|-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|Mestre de esquema, mestre de nomeação de domínio|Sim|Não|Sim|Não|Não|Sim|Sim|  
-|DC_2|Windows Server 2012|Nenhum|Sim|Não|Sim|Sim|Não|Sim|Sim|  
-|DC_3|Windows Server 2012|Mestre de Infra-Estrutura|Não|Não|Não|Sim|Sim|Sim|Sim|  
-|DC_4|Windows Server 2012|Emulador de PDC, mestre de RID|Sim|Não|Não|Não|Não|Sim|Não|  
-|DC_5|Windows Server 2012|Nenhum|Não|Não|Sim|Sim|Não|Sim|Sim|  
-|RODC_1|Windows Server 2008 R2|Nenhum|Sim|Sim|Sim|Sim|Sim|Sim|Não|  
-|RODC_2|Windows Server 2008|Nenhum|Sim|Sim|Não|Sim|Sim|Sim|Não|  
+|Nome do DC|Sistema operacional|FSMO|GC|RODC|Backup|DNS|Server Core|VM|VM-GenID|
+|-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|
+|DC_1|Windows Server 2012|Mestre de esquema, mestre de nomeação de domínio|Sim|Não|Sim|Não|Não|Sim|Sim|
+|DC_2|Windows Server 2012|Nenhum|Sim|Não|Sim|Sim|Não|Sim|Sim|
+|DC_3|Windows Server 2012|Mestre de Infra-Estrutura|Não|Não|Não|Sim|Sim|Sim|Sim|
+|DC_4|Windows Server 2012|Emulador de PDC, mestre de RID|Sim|Não|Não|Não|Não|Sim|Não|
+|DC_5|Windows Server 2012|Nenhum|Não|Não|Sim|Sim|Não|Sim|Sim|
+|RODC_1|Windows Server 2008 R2|Nenhum|Sim|Sim|Sim|Sim|Sim|Sim|Não|
+|RODC_2|Windows Server 2008|Nenhum|Sim|Sim|Não|Sim|Sim|Sim|Não|
 
 Para cada domínio na floresta, identifique um único DC gravável que tenha um backup confiável do banco de dados Active Directory para esse domínio. Tenha cuidado ao escolher um backup para restaurar um DC. Se o dia e a causa da falha forem aproximadamente conhecidos, a recomendação geral é usar um backup feito alguns dias antes dessa data.
-  
-Neste exemplo, há quatro candidatos de backup: DC_1, DC_2, DC_4 e DC_5. Desses candidatos de backup, você restaura apenas um. O DC recomendado é DC_5 pelos seguintes motivos:  
 
-- Ele atende aos requisitos para usá-lo como uma fonte para clonagem virtualizada de DC, ou seja, ele executa o Windows Server 2012 como um controlador de domínio virtual em um hipervisor que dá suporte a VM-Generationid, executa software que pode ser clonado (ou que poderá ser removido se não for capaz de ser clonado). Após a restauração, a função de emulador de PDC será executada nesse servidor e poderá ser adicionada ao grupo de controladores de domínio clonáveis para o domínio.  
-- Ele executa uma instalação completa do Windows Server 2012. Um DC que executa uma instalação do Server Core pode ser menos conveniente como um destino para recuperação.  
-- É um servidor DNS. Portanto, o DNS não precisa ser reinstalado.  
+Neste exemplo, há quatro candidatos de backup: DC_1, DC_2, DC_4 e DC_5. Desses candidatos de backup, você restaura apenas um. O DC recomendado é DC_5 pelos seguintes motivos:
+
+- Ele atende aos requisitos para usá-lo como uma fonte para clonagem virtualizada de DC, ou seja, ele executa o Windows Server 2012 como um controlador de domínio virtual em um hipervisor que dá suporte a VM-Generationid, executa software que pode ser clonado (ou que poderá ser removido se não for capaz de ser clonado). Após a restauração, a função de emulador de PDC será executada nesse servidor e poderá ser adicionada ao grupo de controladores de domínio clonáveis para o domínio.
+- Ele executa uma instalação completa do Windows Server 2012. Um DC que executa uma instalação do Server Core pode ser menos conveniente como um destino para recuperação.
+- É um servidor DNS. Portanto, o DNS não precisa ser reinstalado.
 
 > [!NOTE]
-> Como DC_5 não é um servidor de catálogo global, ele também tem uma vantagem em que o catálogo global não precisa ser removido após a restauração. Mas se o DC também é um servidor de catálogo global não é um fator decisivo porque, a partir do Windows Server 2012, todos os DCs são servidores de catálogo global por padrão e a remoção e a adição do catálogo global após a restauração é recomendada como parte do processo de recuperação de floresta em qualquer caso.  
+> Como DC_5 não é um servidor de catálogo global, ele também tem uma vantagem em que o catálogo global não precisa ser removido após a restauração. Mas se o DC também é um servidor de catálogo global não é um fator decisivo porque, a partir do Windows Server 2012, todos os DCs são servidores de catálogo global por padrão e a remoção e a adição do catálogo global após a restauração é recomendada como parte do processo de recuperação de floresta em qualquer caso.
 
 ## <a name="recover-the-forest-in-isolation"></a>Recuperar a floresta isoladamente
 
-O cenário preferencial é desligar todos os DCs graváveis antes que o primeiro controlador de domínio restaurado seja colocado de volta para a produção. Isso garante que qualquer dado perigoso não seja replicado de volta para a floresta recuperada. É particularmente importante desligar todos os detentores de função do mestre de operações.  
+O cenário preferencial é desligar todos os DCs graváveis antes que o primeiro controlador de domínio restaurado seja colocado de volta para a produção. Isso garante que qualquer dado perigoso não seja replicado de volta para a floresta recuperada. É particularmente importante desligar todos os detentores de função do mestre de operações.
 
 > [!NOTE]
 > Pode haver casos em que você move o primeiro DC que pretende recuperar para cada domínio em uma rede isolada, enquanto permite que outros controladores permaneçam online a fim de minimizar o tempo de inatividade do sistema. Por exemplo, se você estiver recuperando de uma atualização de esquema com falha, poderá optar por manter os controladores de domínio em execução na rede de produção enquanto executa as etapas de recuperação isoladamente.
 
-Se você estiver executando DCs virtualizados, poderá movê-los para uma rede virtual isolada da rede de produção em que você executará a recuperação. Mover DCs virtualizados para uma rede separada fornece dois benefícios:  
+Se você estiver executando DCs virtualizados, poderá movê-los para uma rede virtual isolada da rede de produção em que você executará a recuperação. Mover DCs virtualizados para uma rede separada fornece dois benefícios:
 
-- Os DCs recuperados são impedidos de recorrência do problema que causou a recuperação da floresta porque eles estão isolados.  
+- Os DCs recuperados são impedidos de recorrência do problema que causou a recuperação da floresta porque eles estão isolados.
 - A clonagem de DC virtualizado pode ser executada na rede separada para que um número crítico de controladores de domínio possa ser executado e testado antes de ser levado de volta à rede de produção.
 
-Se você estiver executando DCs em hardware físico, desconecte o cabo de rede do primeiro DC que você planeja restaurar no domínio raiz da floresta. Se possível, desconecte também os cabos de rede de todos os outros DCs. Isso impede que os DCs sejam replicados, se forem iniciados acidentalmente durante o processo de recuperação da floresta.  
+Se você estiver executando DCs em hardware físico, desconecte o cabo de rede do primeiro DC que você planeja restaurar no domínio raiz da floresta. Se possível, desconecte também os cabos de rede de todos os outros DCs. Isso impede que os DCs sejam replicados, se forem iniciados acidentalmente durante o processo de recuperação da floresta.
 
-Em uma floresta grande que é distribuída em vários locais, pode ser difícil garantir que todos os DCs graváveis sejam desligados. Por esse motivo, as etapas de recuperação, como a redefinição da conta de computador e da conta krbtgt, além da limpeza de metadados, são projetadas para garantir que os controladores de domínio graváveis recuperados não sejam replicados com DCs graváveis perigosos (caso alguns ainda estejam online na floresta).  
-  
-No entanto, apenas com o uso de DCs graváveis offline é possível garantir que a replicação não ocorra. Portanto, sempre que possível, você deve implantar a tecnologia de gerenciamento remoto que pode ajudá-lo a desligar e isolar fisicamente os DCs graváveis durante a recuperação da floresta.  
-  
-Os RODCs podem continuar a operar enquanto os DCs graváveis estiverem offline. Nenhum outro controlador de domínio replicará diretamente quaisquer alterações de qualquer RODC — especialmente, sem alterações de esquema ou de contêiner de configuração – para que não apresentem o mesmo risco que os DCs graváveis durante a recuperação. Depois que todos os DCs graváveis forem recuperados e online, você deverá recompilar todos os RODCs.  
-  
-Os RODCs continuarão a permitir o acesso a recursos locais que são armazenados em cache em seus respectivos sites, enquanto as operações de recuperação entram em paralelo. Os recursos locais que não são armazenados em cache no RODC terão solicitações de autenticação encaminhadas para um controlador de domínio gravável. Essas solicitações falharão porque os DCs graváveis estão offline. Algumas operações, como alterações de senha, também não funcionarão até que você recupere os DCs graváveis.  
-  
-Se você estiver usando uma arquitetura de rede hub e spoke, poderá se concentrar primeiro na recuperação dos DCs graváveis nos sites do Hub. Posteriormente, você pode recriar os RODCs em sites remotos.  
-  
+Em uma floresta grande que é distribuída em vários locais, pode ser difícil garantir que todos os DCs graváveis sejam desligados. Por esse motivo, as etapas de recuperação, como a redefinição da conta de computador e da conta krbtgt, além da limpeza de metadados, são projetadas para garantir que os controladores de domínio graváveis recuperados não sejam replicados com DCs graváveis perigosos (caso alguns ainda estejam online na floresta).
+
+No entanto, apenas com o uso de DCs graváveis offline é possível garantir que a replicação não ocorra. Portanto, sempre que possível, você deve implantar a tecnologia de gerenciamento remoto que pode ajudá-lo a desligar e isolar fisicamente os DCs graváveis durante a recuperação da floresta.
+
+Os RODCs podem continuar a operar enquanto os DCs graváveis estiverem offline. Nenhum outro controlador de domínio replicará diretamente quaisquer alterações de qualquer RODC — especialmente, sem alterações de esquema ou de contêiner de configuração – para que não apresentem o mesmo risco que os DCs graváveis durante a recuperação. Depois que todos os DCs graváveis forem recuperados e online, você deverá recompilar todos os RODCs.
+
+Os RODCs continuarão a permitir o acesso a recursos locais que são armazenados em cache em seus respectivos sites, enquanto as operações de recuperação entram em paralelo. Os recursos locais que não são armazenados em cache no RODC terão solicitações de autenticação encaminhadas para um controlador de domínio gravável. Essas solicitações falharão porque os DCs graváveis estão offline. Algumas operações, como alterações de senha, também não funcionarão até que você recupere os DCs graváveis.
+
+Se você estiver usando uma arquitetura de rede hub e spoke, poderá se concentrar primeiro na recuperação dos DCs graváveis nos sites do Hub. Posteriormente, você pode recriar os RODCs em sites remotos.
+
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)  
-- [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [Recuperação de floresta do AD – Pré-requisitos](AD-Forest-Recovery-Prerequisties.md)
+- [Recuperação de floresta do AD-planejar um plano de recuperação de floresta personalizado](AD-Forest-Recovery-Devising-a-Plan.md)
 - [Recuperação de floresta do AD – identificar o problema](AD-Forest-Recovery-Identify-the-Problem.md)
 - [Recuperação de floresta do AD-determine como recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [Recuperação de floresta do AD-executar recuperação inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)  
-- [Recuperação de floresta do AD-perguntas frequentes](AD-Forest-Recovery-FAQ.md)  
-- [Recuperação de floresta do AD-recuperando um único domínio em uma floresta de multidomínio](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [Recuperação de floresta do AD-recuperação de floresta com controladores de domínio do Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)  
+- [Recuperação de floresta do AD-executar recuperação inicial](AD-Forest-Recovery-Perform-initial-recovery.md)
+- [Recuperação de floresta do AD – Procedimentos](AD-Forest-Recovery-Procedures.md)
+- [Recuperação de floresta do AD-perguntas frequentes](AD-Forest-Recovery-FAQ.md)
+- [Recuperação de floresta do AD-recuperando um único domínio em uma floresta de multidomínio](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)
+- [Recuperação de floresta do AD-recuperação de floresta com controladores de domínio do Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)

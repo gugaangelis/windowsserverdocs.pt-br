@@ -2,18 +2,16 @@
 title: Como usar permissões herdadas com enumeração baseada em acesso
 description: Este artigo descreve como usar as permissões herdadas com enumeração baseada em acesso
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 112ec4363177ac6dd560493843c8937bdfbac4de
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 96b6280b8f69325a9f5c819430dd7a5249247302
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475143"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971203"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>Usando permissões herdadas com Enumeração baseada em acesso
 

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: f9cc811c6a78e58ff3550343e89c19806b9914fb
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 976a8db89d8ffdb08f5f453619b7a341fb4dcdb4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966868"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949690"
 ---
 # <a name="device-authentication-controls-in-ad-fs"></a>Controles de autenticação de dispositivo no AD FS
 O documento a seguir mostra como habilitar os controles de autenticação de dispositivo no Windows Server 2016 e 2012 R2.
@@ -37,7 +35,7 @@ O único tipo de autenticação de dispositivo com suporte no 2012 R2 foi client
 - PKeyAuth
 - PRT
 
-Para controlar o novo comportamento, a `DeviceAuthenticationEnabled` propriedade é usada em combinação com uma nova propriedade chamada `DeviceAuthenticationMethod` .  
+Para controlar o novo comportamento, a `DeviceAuthenticationEnabled` propriedade é usada em combinação com uma nova propriedade chamada `DeviceAuthenticationMethod` .
 
 O método de autenticação de dispositivo determina o tipo de autenticação de dispositivo que será feito: PRT, PKeyAuth, clientTLS ou alguma combinação.
 Ele tem os seguintes valores:
@@ -78,11 +76,11 @@ Os significados dos `DeviceAuthenticationMethod` valores mudaram um pouco desde 
 | ----- | ----- | ----- |
 |2016 RTM|SignedToken|PRT + PkeyAuth|
 ||clientTLS|clientTLS|
-||Tudo|PRT + PkeyAuth + clientTLS|
+||Todos|PRT + PkeyAuth + clientTLS|
 |2016 RTM + atualizado com Windows Update|SignedToken (significado alterado)|PRT (somente)|
 ||PkeyAuth (novo)|PRT + PkeyAuth|
 ||clientTLS|PRT + clientTLS|
-||Tudo|PRT + PkeyAuth + clientTLS|
+||Todos|PRT + PkeyAuth + clientTLS|
 
 ## <a name="see-also"></a>Consulte Também
 [Operações do AD FS](../ad-fs-operations.md)

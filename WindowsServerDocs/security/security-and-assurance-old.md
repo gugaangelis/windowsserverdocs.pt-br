@@ -7,19 +7,19 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: f973d83c53fb4667163d950a169611721f53f78e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e6bb0df12ba193cb5b335af3bf05bdca538e148b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939473"
+ms.locfileid: "87997304"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Segurança e garantia no Windows Server
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 >[!TIP]
-> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions).
+> Está procurando informações sobre versões anteriores do Windows Server? Confira as outras [bibliotecas do Windows Server](/previous-versions/windows/) em docs.microsoft.com. Você também pode [pesquisar informações específicas neste site](/search/index?dataSource=previousVersions&search=Windows+Server).
 
 <img src="../media/landing-icons/security.png" style='float:left; padding:.5em;' alt="Icon representing a lock"> Você pode contar com novas camadas de proteção integradas ao sistema operacional para proteger ainda mais contra falhas de segurança. Bloqueie ataques mal-intencionados e aumente a segurança de máquinas virtuais, aplicativos e dados.
 
@@ -27,7 +27,7 @@ ms.locfileid: "87939473"
 ### <a name="windows-server-security-blog-post"></a>[Postagem no blog de segurança do Windows Server](https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/)
 Nesta postagem de blog sobre a segurança do Windows Server, a equipe de segurança destaca muitas das melhorias do Windows Server que aumentam a segurança para ambientes de hospedagem e nuvem híbrida.
 
-### <a name="datacenter-and-private-cloud-security-blog"></a>[Blog de segurança de nuvem privada e datacenter](https://blogs.technet.microsoft.com/datacentersecurity/)
+### <a name="datacenter-and-private-cloud-security-blog"></a>[Blog de segurança de nuvem privada e datacenter](/archive/blogs/datacentersecurity/)
 Esse é o site de blog central para conteúdo técnico da equipe de segurança de nuvem privada e datacenter da Microsoft.
 
 ### <a name="addressing-emerging-threats-and-landscape-shifts"></a>[Abordar ameaças emergentes e mudanças de paisagem](https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be)
@@ -54,23 +54,23 @@ Este passo a passo em vídeo mostra como o Serviço Guardião de Host habilita a
 
 Esta apresentação da Ignite discute os aprimoramentos feitos no Hyper-V, no Virtual Machine Manager e a nova função Servidor Guardião de Host para habilitar as VMs blindadas.
 
-### <a name="guarded-fabric-deployment-guide"></a>[Guia de implantação de malha protegida](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)
+### <a name="guarded-fabric-deployment-guide"></a>[Guia de implantação de malha protegida](./guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview.md)
 Este guia proporciona informações de instalação e validação para o Windows Server e o System Center Virtual Machine Manager para hosts de malha protegida e VMs blindadas.
 
-### <a name="shielded-vm-and-guarded-fabric-in-branch-offices"></a>[VM blindada e malha protegida em filiais](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office)
+### <a name="shielded-vm-and-guarded-fabric-in-branch-offices"></a>[VM blindada e malha protegida em filiais](./guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office.md)
 Este guia fornece práticas recomendadas para a execução de máquinas virtuais blindadas em filiais e em outros cenários remotos em que os hosts do Hyper-V podem ter períodos de tempo com conectividade limitada para HGS.
 
-### <a name="shielded-vm-and-guarded-fabric-troubleshooting-guide"></a>[Guia de solução de problemas de VM blindada e malha protegida](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview)
+### <a name="shielded-vm-and-guarded-fabric-troubleshooting-guide"></a>[Guia de solução de problemas de VM blindada e malha protegida](./guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-overview.md)
 Este guia fornece informações sobre como resolver problemas que você pode encontrar em seu ambiente de VM blindada.
 
 ### <a name="shielded-vm-article"></a>[Artigo de VM blindada](http://windowsitpro.com/hyper-v/super-secure-hyper-v-environments-shielded-vms-2016)
 Este white paper proporciona uma visão geral sobre como as VMs blindadas aumentam a segurança geral para evitar a violação.
 
 ## <a name="privileged-access-management"></a>Gerenciamento de Acesso Privilegiado
-### <a name="securing-privileged-access"></a>[Como proteger o acesso privilegiado](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
+### <a name="securing-privileged-access"></a>[Como proteger o acesso privilegiado](../identity/securing-privileged-access/securing-privileged-access.md)
 Um roteiro para proteger o acesso privilegiado. Esse roteiro foi criado com base na experiência combinada da equipe de segurança de servidores, a TI da Microsoft, a equipe do Azure e os serviços de consultoria da Microsoft
 
-### <a name="just-in-time-administration-with-microsoft-identity-manager"></a>[Administração Just in Time com o Microsoft Identity Manager](https://technet.microsoft.com/library/mt150258.aspx)
+### <a name="just-in-time-administration-with-microsoft-identity-manager"></a>[Administração Just in Time com o Microsoft Identity Manager](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)
 Este artigo descreve os recursos e as funcionalidades incluídos no Microsoft Identity Manager, incluindo suporte para Gerenciamento de Acesso Privilegiado Just In Time (JIT).
 
 ### <a name="protecting-windows-and-microsoft-azure-active-directory-with-privileged-access-management"></a>[Proteger o Windows e o Microsoft Azure Active Directory com Gerenciamento de Acesso Privilegiado](https://channel9.msdn.com/events/ignite/2015/brk3873)
@@ -83,28 +83,28 @@ Este documento compartilha a visão e os detalhes técnicos da Administração J
 Passo a passo da demonstração da Administração Just Enough.
 ## <a name="credential-protection"></a>Proteção de credenciais
 
-### <a name="protect-derived-domain-credentials-with-credential-guard"></a>[Proteger as credenciais de domínio derivadas com o Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+### <a name="protect-derived-domain-credentials-with-credential-guard"></a>[Proteger as credenciais de domínio derivadas com o Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard)
 O Credential Guard usa segurança baseada em virtualização para isolar segredos para que apenas o software de sistema privilegiado possa acessá-los. O acesso não autorizado a esses segredos pode levar a ataques de roubo de credenciais, como Pass-the-Hash ou Pass-the-Ticket. O Credential Guard evita esses ataques protegendo os hashes de senha de NTLM e concessão de tickets de Kerberos.
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guard"></a>[Proteger as credenciais de Área de Trabalho Remota com o Remote Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guard"></a>[Proteger as credenciais de Área de Trabalho Remota com o Remote Credential Guard](/windows/security/identity-protection/remote-credential-guard)
 O Remote Credential Guard ajuda a proteger suas credenciais através de uma Conexão de Área de Trabalho Remota ao redirecionar as solicitações de Kerberos para o dispositivo que está solicitando a conexão. Ele também fornece experiências de logon único para sessões de Área de Trabalho Remota.                                                                                                        |
 ### <a name="credential-guard-demo-video"></a>[Vídeo de demonstração do Credential Guard](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 Este vídeo de cinco minutos demonstra o Credential Guard e o Remote Credential Guard.
 
 ## <a name="hardening-the-os-and-applications"></a>Proteção do sistema operacional e de aplicativos
-### <a name="windows-defender-application-control-wdac-deployment-guide"></a>[Guia de implantação do WDAC (Controle de Aplicativos do Windows Defender)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
+### <a name="windows-defender-application-control-wdac-deployment-guide"></a>[Guia de implantação do WDAC (Controle de Aplicativos do Windows Defender)](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)
 O WDAC é uma política de CI (integridade de código) configurável que ajuda as empresas a controlar quais aplicativos serão executados em seu ambiente e não tem nenhum requisito específico de hardware ou software diferente do que esteja executando o Windows 10.
 
 ### <a name="device-guard-demo-video"></a>[Vídeo de demonstração do Device Guard](https://www.youtube.com/watch?v=F-pTkesjkhI)
 O Device Guard é uma combinação de WDAC e HVCI (integridade de código protegida pelo Hipervisor). Este vídeo de sete minutos apresenta o Device Guard e seu uso no Windows Server.
 
-### <a name="transport-layer-security-registry-settings"></a>[Configurações do Registro do protocolo TLS](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings)
+### <a name="transport-layer-security-registry-settings"></a>[Configurações do Registro do protocolo TLS](./tls/tls-registry-settings.md)
 Informações de configuração do Registro com suporte para a implementação do Windows do protocolo TLS (Transport Layer Security) e do protocolo SSL (Secure Sockets Layer).
 
-### <a name="control-flow-guard"></a>[Proteção de fluxo de controle](https://docs.microsoft.com/windows/desktop/SecBP/control-flow-guard)
+### <a name="control-flow-guard"></a>[Proteção de fluxo de controle](/windows/desktop/SecBP/control-flow-guard)
 A Proteção de Fluxo de Controle oferece proteção incorporada contra algumas classes de ataque de corrupção de memória.
 
-### <a name="windows-defender"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
+### <a name="windows-defender"></a>[Windows Defender](./windows-defender/windows-defender-overview-windows-server.md)
 O Windows Defender proporciona recursos de detecção ativa para bloquear malware conhecido. O Windows Defender é ativado por padrão e é otimizado para oferecer suporte a várias funções de servidor no Windows Server.
 
 ## <a name="detecting-and-responding-to-threats"></a>Detectar e responder a ameaças
@@ -125,10 +125,10 @@ Este vídeo de três minutos apresenta uma visão geral de como a Microsoft est�
 
 ## <a name="network-security"></a>Segurança de rede
 
-### <a name="datacenter-firewall-overview"></a>[Visão geral do firewall do datacenter](https://technet.microsoft.com/library/dn920240.aspx)
+### <a name="datacenter-firewall-overview"></a>[Visão geral do firewall do datacenter](/previous-versions/windows/server/dn920240(v=ws.12))
 Esta visão geral discute o Firewall do Datacenter, uma camada de rede, 5 tuplas (protocolo, números de porta de origem e destino, endereços IP de origem e destino), firewall multilocatário e com monitoração de estado.
 
-### <a name="whats-new-in-dns-in-windows-server"></a>[Novidades em DNS no Windows Server](https://technet.microsoft.com/windows-server-docs/networking/dns/what-s-new-in-dns-server)
+### <a name="whats-new-in-dns-in-windows-server"></a>[Novidades em DNS no Windows Server](../networking/dns/what-s-new-in-dns-server.md)
 Este tópico de visão geral fornece descrições breves dos novos recursos de DNS, com links para saber mais.
 
 ## <a name="mapping-security-features-to-compliance-regulations"></a>Mapear recursos de segurança com regulamentos de conformidade

@@ -2,18 +2,16 @@
 title: Definir prioridade alvo para sobrepor ordem de referência
 description: Este artigo descreve como definir a prioridade de destino para substituir a ordenação de referência
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 77fe5b82b73a0f37ba81dda210f15d6017788822
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 04a295b8f6249521c809770af2c85fdce5dd54b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966818"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971213"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Definir a prioridade de destino para sobrepor a ordem de referência
 

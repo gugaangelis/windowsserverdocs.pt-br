@@ -1,20 +1,18 @@
 ---
 title: Conjuntos de cluster
-ms.prod: windows-server
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/30/2019
 description: Este artigo descreve o cenário de conjuntos de clusters
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cf798a5adfeee1279f564df63c431a77affd18
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b5b3f36cbc6627b13d2bba678cc1aeec02e57d81
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955028"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961160"
 ---
 # <a name="cluster-sets"></a>Conjuntos de cluster
 
@@ -376,7 +374,7 @@ Por exemplo, o comando para remover o cluster CLUSTER1 dos conjuntos de clusters
 Remove-ClusterSetMember -ClusterName CLUSTER1 -CimSession CSMASTER
 ```
 
-## <a name="frequently-asked-questions-faq"></a>Perguntas frequentes (FAQ)
+## <a name="frequently-asked-questions-faq"></a>Perguntas frequentes
 
 **Pergunta:** No meu conjunto de clusters, estou limitado a usar apenas clusters hiperconvergentes? <br>
 **Resposta:** Não. Você pode misturar Espaços de Armazenamento Diretos com clusters tradicionais.

@@ -1,21 +1,19 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: Adicionando servidores ou unidades a Espaços de Armazenamento Diretos
-ms.prod: windows-server
 ms.author: cosdar
 manager: dongill
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
 description: Como adicionar servidores ou unidades a um cluster Espaços de Armazenamento Diretos
 ms.localizationpriority: medium
-ms.openlocfilehash: 773bb3a55de27d049d26fa76659d3a4d8057f0fe
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b9a26d3ac982cccf4471f3a3e03bfdae55b55eed
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966388"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961060"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>Adicionando servidores ou unidades a Espaços de Armazenamento Diretos
 
@@ -45,7 +43,7 @@ As implantações típicas são simples de serem escaladas horizontalmente adici
 2. Execute o seguinte cmdlet no cluster para concluir a adição do servidor:
 
 ```
-Add-ClusterNode -Name NewNode 
+Add-ClusterNode -Name NewNode
 ```
 
    >[!NOTE]
@@ -59,7 +57,7 @@ Com dois servidores, você só pode criar volumes espelhados bidirecionais (em c
 
 Volumes espelhados bidirecionais não podem ser atualizados localmente para o espelhamento de três vias. Em vez disso, você pode criar um novo volume e migrar (copiar, usando a [Réplica de Armazenamento](../storage-replica/server-to-server-storage-replication.md)) seus dados para ele e, em seguida, remover o volume antigo.
 
-Para começar a criar volumes espelhados de três vias, você tem várias boas opções. Você pode usar a que você preferir. 
+Para começar a criar volumes espelhados de três vias, você tem várias boas opções. Você pode usar a que você preferir.
 
 #### <a name="option-1"></a>Opção 1
 
@@ -84,7 +82,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 Defina **PhysicalDiskRedundancy = 2** no modelo **StorageTier** chamado *Capacity* e, em seguida, crie volumes fazendo referência à camada.
 
 ```PowerShell
-Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
+Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2
 
 New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Capacity -StorageTierSizes <Size>
 ```
@@ -135,7 +133,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 #### <a name="example"></a>Exemplo
 
 ```PowerShell
-New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size> 
+New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes <Size, Size>
 ```
 
 ### <a name="beyond-4-servers-greater-parity-efficiency"></a>Mais de 4 servidores: maior eficiência de paridade
@@ -153,13 +151,13 @@ Se sua implantação usar a tolerância a falhas em chassi ou rack, você dever�
 1. Crie um domínio de falha temporário para o nó abrindo uma sessão do PowerShell com privilégios elevados e, em seguida, usando o comando a seguir, em que *\<NewNode>* é o nome do novo nó de cluster:
 
    ```PowerShell
-   New-ClusterFaultDomain -Type Node -Name <NewNode> 
+   New-ClusterFaultDomain -Type Node -Name <NewNode>
    ```
 
 2. Mova esse domínio de falha temporário para o chassi ou rack onde o novo servidor está localizado no mundo real, conforme especificado por *\<ParentName>* :
 
    ```PowerShell
-   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
+   Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName>
    ```
 
    Para obter mais informações, consulte [Fault domain awareness in Windows Server 2016](../../failover-clustering/fault-domains.md) (Reconhecimento de domínio de falha no Windows Server 2016).

@@ -2,18 +2,16 @@
 title: Migre um namespace baseado em domínio para modo Windows 2008 Server
 description: Este artigo descreve como migrar um namespace baseado em domínio para o modo do Windows Server 2008
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 3aa7743773a8a6e9ed22c0f626c2c6a0dbafce56
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: a7326584e2889fc0fd451b56ca4af065040f408d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475463"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942270"
 ---
 # <a name="migrate-a-domain-based-namespace-to-windows-server-2008-mode"></a>Migrar um namespace baseado em domínio para o modo Windows Server 2008
 

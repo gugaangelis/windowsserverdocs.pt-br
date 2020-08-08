@@ -1,19 +1,17 @@
 ---
 title: Desenvolver um plug-in de gateway
 description: Desenvolver um plug-in de gateway SDK do centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 2b096b226190ad1ca3fd07c38b7b939d019ee30f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 428f40abf050e87cf88d536b18254e6c20b51fa3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406934"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949620"
 ---
 # <a name="develop-a-gateway-plugin"></a>Desenvolver um plug-in de gateway
 
@@ -31,45 +29,45 @@ Se você quiser se comunicar com um protocolo diferente do PowerShell ou WMI, co
 > [!NOTE]
 > Não está familiarizado com os tipos de extensão diferentes? Saiba mais sobre a [arquitetura de extensibilidade e os tipos de extensão](understand-extensions.md).
 
-## <a name="prepare-your-environment"></a>Prepare o ambiente
+## <a name="prepare-your-environment"></a>Prepare o seu ambiente
 
 Se você ainda não fez isso, [Prepare seu ambiente](prepare-development-environment.md) instalando dependências e pré-requisitos globais necessários para todos os projetos.
 
-## <a name="create-a-gateway-plugin-c-library"></a>Criar um plug-inC# de gateway (biblioteca)
+## <a name="create-a-gateway-plugin-c-library"></a>Criar um plug-in de gateway (biblioteca C#)
 
-Para criar um plug-in de gateway personalizado, C# crie uma nova classe que implemente a interface ```IPlugIn``` do namespace ```Microsoft.ManagementExperience.FeatureInterfaces```.  
+Para criar um plug-in de gateway personalizado, crie uma nova classe C# que implementa a ```IPlugIn``` interface do ```Microsoft.ManagementExperience.FeatureInterfaces``` namespace.
 
 > [!NOTE]
-> A interface ```IFeature```, disponível em versões anteriores do SDK, agora está sinalizada como obsoleta.  Todo o desenvolvimento de plugin de gateway deve usar IPlugIn (ou, opcionalmente, a classe abstrata HttpPlugIn).
+> A ```IFeature``` interface, disponível em versões anteriores do SDK, agora está sinalizada como obsoleta.  Todo o desenvolvimento de plugin de gateway deve usar IPlugIn (ou, opcionalmente, a classe abstrata HttpPlugIn).
 
 ### <a name="download-sample-from-github"></a>Baixar exemplo do GitHub
 
-Para começar rapidamente com um plug-in de gateway personalizado, você pode clonar ou baixar uma cópia do nosso [projeto de plug-in de C# exemplo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) de nosso [site GitHub](https://aka.ms/wacsdk)do SDK do centro de administração do Windows.
+Para começar rapidamente com um plug-in de gateway personalizado, você pode clonar ou baixar uma cópia do nosso [projeto de plug-in C# de exemplo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) de nosso [site do GitHub](https://aka.ms/wacsdk)do SDK do centro de administração do Windows.
 
 ### <a name="add-content"></a>Adicionar conteúdo
 
-Adicione novo conteúdo à cópia clonada do projeto de [projeto C# de plug-in de exemplo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) (ou seu próprio projeto) para conter suas APIs personalizadas e, em seguida, crie seu arquivo DLL de plug-in de gateway personalizado para ser usado nas próximas etapas.
+Adicione novo conteúdo à cópia clonada do projeto de [projeto de plug-in C# de exemplo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) (ou seu próprio projeto) para conter suas APIs personalizadas e, em seguida, crie seu arquivo DLL de plug-in de gateway personalizado para ser usado nas próximas etapas.
 
 ### <a name="deploy-plugin-for-testing"></a>Implantar plug-in para teste
 
 Teste sua DLL de plug-in de gateway personalizado carregando-a no processo do gateway do centro de administração do Windows.
 
-O centro de administração do Windows procura todos os plug-ins em uma pasta ```plugins``` na pasta dados do aplicativo do computador atual (usando o valor CommonApplicationData da enumeração Environment. SpecialFolder). No Windows 10, esse local é ```C:\ProgramData\Server Management Experience```.  Se a pasta ```plugins``` ainda não existir, você poderá criar a pasta por conta própria.
+O centro de administração do Windows procura todos os plug-ins em uma ```plugins``` pasta na pasta dados do aplicativo do computador atual (usando o valor CommonApplicationData da enumeração Environment. SpecialFolder). No Windows 10, esse local é ```C:\ProgramData\Server Management Experience``` .  Se a ```plugins``` pasta ainda não existir, você poderá criar a pasta por conta própria.
 
 > [!NOTE]
-> Você pode substituir o local do plug-in em uma compilação de depuração atualizando o valor de configuração "StaticsFolder". Se você estiver Depurando localmente, essa configuração estará no app. config da solução de desktop. 
+> Você pode substituir o local do plug-in em uma compilação de depuração atualizando o valor de configuração "StaticsFolder". Se você estiver Depurando localmente, essa configuração estará na App.Config da solução de desktop.
 
-Dentro da pasta plugins (neste exemplo, ```C:\ProgramData\Server Management Experience\plugins```)
+Dentro da pasta plugins (neste exemplo, ```C:\ProgramData\Server Management Experience\plugins``` )
 
-* Crie uma nova pasta com o mesmo nome que o valor da propriedade ```Name``` do ```Feature``` em sua DLL de plug-in de gateway personalizado (em nosso projeto de exemplo, o ```Name``` é "Uno de exemplo")
+* Crie uma nova pasta com o mesmo nome que o ```Name``` valor da Propriedade do ```Feature``` em sua DLL de plug-in de gateway personalizado (em nosso projeto de exemplo, o ```Name``` é "Uno de exemplo")
 * Copie seu arquivo DLL de plug-in de gateway personalizado para esta nova pasta
 * Reiniciar o processo do centro de administração do Windows
 
-Após a reinicialização do processo de administração do Windows, você poderá exercitar as APIs em sua DLL de plug-in de gateway personalizado emitindo GET, PUT, PATCH, DELETE ou POST para ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
+Após a reinicialização do processo de administração do Windows, você poderá exercitar as APIs em sua DLL de plug-in de gateway personalizado emitindo GET, PUT, PATCH, DELETE ou POST para```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
 
-### <a name="optional-attach-to-plugin-for-debugging"></a>Opcional: Anexar ao plug-in para depuração
+### <a name="optional-attach-to-plugin-for-debugging"></a>Opcional: anexar ao plug-in para depuração
 
-No Visual Studio 2017, no menu Depurar, selecione "anexar ao processo". Na próxima janela, percorra a lista processos disponíveis e selecione SMEDesktop. exe e, em seguida, clique em "anexar". Depois que o depurador for iniciado, você poderá inserir um ponto de interrupção em seu código de recurso e, em seguida, exercitar por meio do formato de URL acima. Para nosso projeto de exemplo (nome do recurso: "Uno de exemplo") a URL é: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+No Visual Studio 2017, no menu Depurar, selecione "anexar ao processo". Na próxima janela, percorra a lista processos disponíveis e selecione SMEDesktop.exe, em seguida, clique em "anexar". Depois que o depurador for iniciado, você poderá inserir um ponto de interrupção em seu código de recurso e, em seguida, exercitar por meio do formato de URL acima. Para nosso projeto de exemplo (nome do recurso: "Uno de exemplo"), a URL é: " <http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno> "
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Criar uma extensão de ferramenta com a CLI do centro de administração do Windows ##
 
@@ -90,7 +88,7 @@ Aqui está um uso de exemplo:
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-Isso cria uma nova pasta dentro do diretório de trabalho atual usando o nome especificado para sua ferramenta, copia todos os arquivos de modelo necessários em seu projeto e configura os arquivos com o nome da sua empresa e da ferramenta.  
+Isso cria uma nova pasta dentro do diretório de trabalho atual usando o nome especificado para sua ferramenta, copia todos os arquivos de modelo necessários em seu projeto e configura os arquivos com o nome da sua empresa e da ferramenta.
 
 Em seguida, altere o diretório para a pasta recém-criada e instale as dependências locais necessárias executando o seguinte comando:
 
@@ -98,7 +96,7 @@ Em seguida, altere o diretório para a pasta recém-criada e instale as dependê
 npm install
 ```
 
-Quando isso for concluído, você configurou tudo o que precisa para carregar sua nova extensão no centro de administração do Windows. 
+Quando isso for concluído, você configurou tudo o que precisa para carregar sua nova extensão no centro de administração do Windows.
 
 ## <a name="connect-your-tool-extension-to-your-custom-gateway-plugin"></a>Conecte sua extensão de ferramenta ao seu plug-in de gateway personalizado
 
@@ -106,7 +104,7 @@ Agora que você criou uma extensão com a CLI do centro de administração do Wi
 
 - Adicionar um [módulo vazio](guides/add-module.md)
 - Usar seu [plug-in de gateway personalizado](guides/use-custom-gateway-plugin.md) em sua extensão de ferramenta
- 
+
 ## <a name="build-and-side-load-your-extension"></a>Compilar e carregar lado sua extensão
 
 Em seguida, compile e carregue sua extensão no centro de administração do Windows.  Abra uma janela de comando, altere o diretório para o diretório de origem e, em seguida, você estará pronto para compilar.

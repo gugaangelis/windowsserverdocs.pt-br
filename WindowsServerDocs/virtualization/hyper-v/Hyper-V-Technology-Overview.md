@@ -7,12 +7,12 @@ ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: kbdazure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: 5fd4c0199cea04d6697b593ad70b4f31b55afad0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2d69a16dc49c34872d3787338a1fd130aaf7241d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960759"
+ms.locfileid: "87997035"
 ---
 # <a name="hyper-v-technology-overview"></a>Visão geral da tecnologia Hyper-V
 
@@ -58,11 +58,11 @@ O Hyper-V oferece muitos recursos. Essa é uma visão geral, agrupada pelo que o
 
 **Segurança** -as máquinas virtuais blindadas e de inicialização segura ajudam a proteger contra malware e outros acessos não autorizados a uma máquina virtual e a seus dados.
 
-Para obter um resumo dos recursos introduzidos nesta versão, consulte [What ' s New in Hyper-V in Windows Server](What-s-new-in-Hyper-V-on-Windows.md). Alguns recursos ou partes têm um limite de quantos podem ser configurados. Para obter detalhes, consulte [planejar a escalabilidade do Hyper-V no Windows Server 2016](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md).
+Para obter um resumo dos recursos introduzidos nesta versão, consulte [What ' s New in Hyper-V in Windows Server](What-s-new-in-Hyper-V-on-Windows.md). Alguns recursos ou partes têm um limite de quantos podem ser configurados. Para obter detalhes, consulte [planejar a escalabilidade do Hyper-V no Windows Server 2016](./plan/plan-hyper-v-scalability-in-windows-server.md).
 
 ## <a name="how-to-get-hyper-v"></a>Como obter o Hyper-V
 
-O Hyper-V está disponível no Windows Server e no Windows, como uma função de servidor disponível para versões x64 do Windows Server. Para obter instruções sobre o servidor, consulte [instalar a função Hyper-V no Windows Server](get-started/Install-the-Hyper-V-role-on-Windows-Server.md). No Windows, ele está disponível como [recurso](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) em algumas versões de 64 bits do Windows. Ele também está disponível como um produto de servidor autônomo e baixável, [Microsoft Hyper-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019).
+O Hyper-V está disponível no Windows Server e no Windows, como uma função de servidor disponível para versões x64 do Windows Server. Para obter instruções sobre o servidor, consulte [instalar a função Hyper-V no Windows Server](get-started/Install-the-Hyper-V-role-on-Windows-Server.md). No Windows, ele está disponível como [recurso](/virtualization/hyper-v-on-windows/index) em algumas versões de 64 bits do Windows. Ele também está disponível como um produto de servidor autônomo e baixável, [Microsoft Hyper-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019).
 
 ## <a name="supported-operating-systems"></a>Sistemas operacionais compatíveis
 
@@ -85,8 +85,8 @@ O Hyper-V exigiu partes que funcionam juntas para que você possa criar e execut
 O Hyper-V também tem ferramentas para gerenciamento e conectividade. Você pode instalá-los no mesmo computador em que a função Hyper-V está instalada e em computadores sem a função Hyper-V instalada. Essas ferramentas são:
 
 - Gerenciador do Hyper-V
-- [Módulo do Hyper-V para Windows PowerShell](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- Conexão de máquina [virtual](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \( às vezes chamado de VMConnect\)
+- [Módulo do Hyper-V para Windows PowerShell](/powershell/module/hyper-v/index)
+- Conexão de máquina [virtual](./learn-more/hyper-v-virtual-machine-connect.md) \( às vezes chamado de VMConnect\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>Tecnologias relacionadas
@@ -94,9 +94,9 @@ O Hyper-V também tem ferramentas para gerenciamento e conectividade. Você pode
 Essas são algumas tecnologias da Microsoft que geralmente são usadas com o Hyper-V:
 
 - [Clustering de failover](../../failover-clustering/whats-new-in-failover-clustering.md)
-- [Serviços de área de trabalho remota](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
-- [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
+- [Serviços de área de trabalho remota](../../remote/remote-desktop-services/welcome-to-rds.md)
+- [System Center Virtual Machine Manager](/system-center/vmm/overview)
 
 Várias tecnologias de armazenamento: volumes compartilhados do cluster, SMB 3,0, espaços de armazenamento diretos
 
-Os contêineres do Windows oferecem outra abordagem à virtualização. Consulte a biblioteca de [contêineres do Windows](https://docs.microsoft.com/virtualization/windowscontainers/index) no msdn.
+Os contêineres do Windows oferecem outra abordagem à virtualização. Consulte a biblioteca de [contêineres do Windows](/virtualization/windowscontainers/index) no msdn.

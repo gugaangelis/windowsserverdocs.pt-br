@@ -1,19 +1,17 @@
 ---
 title: Paridade acelerada por espelho
-ms.prod: windows-server
 ms.author: gawatu
 manager: masriniv
-ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: 3efbc6ae29ddaa4f3a4a4f2a2409bbeb87fec2ed
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f54eb8db2a71fe8576913d7d2123e822661b0732
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475163"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942165"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridade acelerada por espelho
 

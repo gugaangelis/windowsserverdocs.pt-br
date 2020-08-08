@@ -1,20 +1,18 @@
 ---
 title: Visão geral de TLS/SSL (SSP do Schannel)
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-tls-ssl
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/16/2018
-ms.openlocfilehash: 0d963116fc9f22482398b38482f0c3c49f4be505
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475513"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989470"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>Visão geral de TLS/SSL (SSP do Schannel)
 
@@ -22,7 +20,7 @@ ms.locfileid: "85475513"
 
 Este tópico para o profissional de ti apresenta as implementações de TLS e SSL no Windows usando o SSP (provedor de serviços de segurança do Schannel) descrevendo aplicativos práticos, alterações na implementação da Microsoft e requisitos de software, além de recursos adicionais para o Windows Server 2012 e o Windows 8.
 
-## <a name="description"></a><a name="BKMK_OVER"></a>Descrição
+## <a name="description"></a><a name="BKMK_OVER"></a>Ndescrição
 Schannel é um SSP (Provedor de Suporte de Segurança) que implementa os protocolos de autenticação padrão de Internet SSL e TLS.
 
 A Interface SSPI é uma API usada por sistemas Windows para executar funções relacionadas à segurança, incluindo autenticação. O SSPI funciona como uma interface comum para vários SSPs, incluindo o SSP do Schannel.
@@ -48,6 +46,6 @@ Não há nenhuma etapa de configuração necessária para implementar TLS, SSL o
 
 ## <a name="additional-references"></a>Referências adicionais ##
 
--   [O pacote de segurança Schannel](https://docs.microsoft.com/windows/desktop/com/schannel)
--   [Canal Seguro](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel)
--   [Protocolo de segurança da camada de transporte](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)
+-   [O pacote de segurança Schannel](/windows/desktop/com/schannel)
+-   [Canal Seguro](/windows/desktop/SecAuthN/secure-channel)
+-   [Protocolo de segurança da camada de transporte](/windows/desktop/SecAuthN/transport-layer-security-protocol)

@@ -2,18 +2,16 @@
 title: Criar uma exceção de triagem de arquivo
 description: Este artigo descreve como criar uma exceção de triagem de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c496151ed1f38cd1f2c604bd227627a586e582c6
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9d8f0e4a8bc89312b846421c64b14518a9246aaa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473693"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942135"
 ---
 # <a name="create-a-file-screen-exception"></a>Criar uma exceção de triagem de arquivo
 

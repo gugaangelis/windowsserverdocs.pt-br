@@ -6,18 +6,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b56960a531c8d7d8cf42cb0462d2fe4d422dfba7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0a19e9bf00667e142c3aa6585c26b69c63e2aa7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970893"
+ms.locfileid: "87997348"
 ---
 # <a name="configuring-azure-integration"></a>Configurando a integração do Azure
 
 >Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-O centro de administração do Windows suporta vários recursos opcionais que se integram aos serviços do Azure. [Saiba mais sobre as opções de integração do Azure disponíveis com o centro de administração do Windows.](../plan/azure-integration-options.md)
+O centro de administração do Windows suporta vários recursos opcionais que se integram aos serviços do Azure. [Saiba mais sobre as opções de integração do Azure disponíveis com o centro de administração do Windows.](./index.md)
 
 Para permitir que o gateway do centro de administração do Windows se comunique com o Azure para aproveitar a autenticação Azure Active Directory para acesso ao gateway ou para criar recursos do Azure em seu nome (por exemplo, para proteger as VMs gerenciadas no centro de administração do Windows usando Azure Site Recovery), você precisará primeiro registrar o gateway do centro de administração do Windows com o Azure. Você só precisa fazer isso uma vez para o gateway do centro de administração do Windows-a configuração é preservada quando você atualiza seu gateway para uma versão mais recente.
 

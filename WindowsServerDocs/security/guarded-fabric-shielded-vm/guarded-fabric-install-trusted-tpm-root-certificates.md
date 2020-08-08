@@ -1,18 +1,16 @@
 ---
 title: Instalar certificados raiz de TPM confiáveis
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 096a40f422f308a036b8062e4515ebe698c31f08
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 04beb3f517df090393690a871a12015cf0bed163
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856569"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971313"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>Instalar certificados raiz de TPM confiáveis
 
@@ -20,7 +18,7 @@ ms.locfileid: "80856569"
 
 Ao configurar o HGS para usar o atestado de TPM, você também precisa configurar o HGS para confiar nos fornecedores do TPMs em seus servidores.
 Esse processo de verificação adicional garante que apenas TPMs confiáveis e de confiança sejam capazes de atestar com seu HGS.
-Se você tentar registrar um TPM não confiável com `Add-HgsAttestationTpmHost`, receberá um erro indicando que o fornecedor do TPM não é confiável.
+Se você tentar registrar um TPM não confiável com `Add-HgsAttestationTpmHost` o, receberá um erro indicando que o fornecedor do TPM não é confiável.
 
 Para confiar em seu TPMs, os certificados de assinatura raiz e intermediário usados para assinar a chave de endosso em seus servidores ' TPMs precisam ser instalados no HGS.
 Se você usar mais de um modelo TPM em seu datacenter, talvez seja necessário instalar certificados diferentes para cada modelo.
@@ -35,19 +33,19 @@ Se os certificados do TPM não estiverem incluídos no pacote abaixo, entre em c
 
 Repita as seguintes etapas em **todos os servidores HgS**:
 
-1.  Baixe o pacote mais recente de [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925).
+1.  Baixe o pacote mais recente do [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925) .
 
 2.  Verifique a assinatura do arquivo CAB para garantir sua autenticidade. Não prossiga se a assinatura não for válida.
 
     ```powershell
     Get-AuthenticodeSignature .\TrustedTpm.cab
     ```
-    
+
     Veja a seguir um exemplo de saída:
-    
+
     ```
     Directory: C:\Users\Administrator\Downloads
-        
+
     SignerCertificate                         Status                                 Path
     -----------------                         ------                                 ----
     0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
@@ -72,7 +70,7 @@ Repita as seguintes etapas em **todos os servidores HgS**:
 Para adicionar novos certificados ou aqueles que foram intencionalmente ignorados durante uma instalação anterior, basta repetir as etapas acima em cada nó em seu cluster HGS.
 Os certificados existentes permanecerão confiáveis, mas novos certificados encontrados no arquivo CAB expandido serão adicionados aos repositórios TPM confiáveis.
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 > [!div class="nextstepaction"]
 > [Configurar DNS da malha](guarded-fabric-configuring-fabric-dns-tpm.md)

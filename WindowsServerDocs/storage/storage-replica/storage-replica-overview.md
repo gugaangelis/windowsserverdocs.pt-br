@@ -1,19 +1,17 @@
 ---
 title: Visão geral da Réplica de Armazenamento
-ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
-ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
 ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: 400af7c4fb5db6e6740b1140688602c55d8ca0a9
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 1d8997edf1354a49b9b67e417906eeaa307fdee6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469801"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961220"
 ---
 # <a name="storage-replica-overview"></a>Visão geral da Réplica de Armazenamento
 
@@ -87,24 +85,24 @@ A réplica de armazenamento inclui os seguintes recursos:
 
 | Recurso | Detalhes |
 | ----------- | ----------- |
-| Digite | Baseado em host |
-| Síncrona | Yes |
-| Assíncrona | Yes |
-| Independente de hardware de armazenamento | Yes |
+| Type | Baseado em host |
+| Síncrono | Sim |
+| Assíncronos | Sim |
+| Independente de hardware de armazenamento | Sim |
 | Unidade de replicação | Volume (partição) |
-| Criação de cluster de ampliação do Windows Server | Yes |
-| Replicação de servidor para servidor | Yes |
-| Replicação de cluster para cluster | Yes |
-| Transport | SMB3 |
+| Criação de cluster de ampliação do Windows Server | Sim |
+| Replicação de servidor para servidor | Sim |
+| Replicação de cluster para cluster | Sim |
+| Transporte | SMB3 |
 | Rede | TCP/IP ou RDMA |
-| Suporte a restrição de rede | Yes |
+| Suporte a restrição de rede | Sim |
 | RDMA* | iWARP, InfiniBand, RoCE v2 |
 | Requisitos de firewall de porta de rede de replicação | Porta IANA única (TCP 445 ou 5445) |
 | Multicaminhos/multicanal | Sim (SMB3) |
 | Suporte a Kerberos | Sim (SMB3) |
 | Criptografia e assinatura durante a transmissão|Sim (SMB3) |
-| Failovers por volume permitidos | Yes |
-| Suporte ao armazenamento com provisionamento dinâmico | Yes |
+| Failovers por volume permitidos | Sim |
+| Suporte ao armazenamento com provisionamento dinâmico | Sim |
 | Interface do usuário de gerenciamento pronta para uso | PowerShell, Gerenciador de Cluster de Failover |
 
 *Pode exigir equipamento e cabeamento de longa distância adicionais.
@@ -138,9 +136,9 @@ A replicação síncrona garante que o aplicativo grave dados em dois locais ao 
 
 Quando gravações de aplicativo ocorrem na cópia de dados de origem, o armazenamento de origem não reconhece a E/S imediatamente. Em vez disso, essas alterações de dados são replicadas para a cópia de destino remoto e retornam uma confirmação. Somente então o aplicativo recebe a confirmação de E/S. Isso garante a sincronização constante do local remoto com o local de origem, estendendo de fato o armazenamento de E/S pela rede. Em caso de falha do local de origem, os aplicativos podem fazer failover para o local remoto do site e retomar as operações com a garantia de zero perda de dados.
 
-| Mode | Diagrama | Etapas |
+| Modo | Diagrama | Etapas |
 | -------- | ----------- | --------- |
-| **Síncrona**<p>Zero Perda de dados<p>RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação síncrona](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  O aplicativo grava dados<br />2.  Dados de log são gravados e os dados são replicados para o local remoto<br />3.  Dados de log são gravados no local remoto<br />4.  Confirmação do local remoto<br />5.  Gravação de aplicativo confirmada<p>t e t1: dados liberados para o volume, logs sempre realizam gravação |
+| **Síncrono**<p>Zero Perda de dados<p>RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação síncrona](./media/Storage-Replica-Overview/Storage_SR_SynchronousV2.png) | 1.  O aplicativo grava dados<br />2.  Dados de log são gravados e os dados são replicados para o local remoto<br />3.  Dados de log são gravados no local remoto<br />4.  Confirmação do local remoto<br />5.  Gravação de aplicativo confirmada<p>t e t1: dados liberados para o volume, logs sempre realizam gravação |
 
 ### <a name="asynchronous-replication"></a>Replicação assíncrona
 
@@ -150,9 +148,9 @@ Quando o aplicativo grava dados, o mecanismo de replicação captura a gravaçã
 
 Com seu RPO maior que zero, a replicação assíncrona é menos adequada para soluções de alta disponibilidade como Clusters de Failover, pois eles são projetados para operação contínua com redundância e sem perda de dados.
 
-| Mode | Diagrama | Etapas |
+| Modo | Diagrama | Etapas |
 | -------- | ----------- | --------- |
-| **Assíncrona**<p>Perda de dados quase zero<p>(depende de vários fatores)<p>RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação assíncrona](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log gravados<br />3.  Gravação de aplicativo confirmada<br />4.  Dados replicados para o local remoto<br />5.  Dados de log gravados no local remoto<br />6.  Confirmação do local remoto<p>t e t1: dados liberados para o volume, logs sempre realizam gravação |
+| **Assíncronos**<p>Perda de dados quase zero<p>(depende de vários fatores)<p>RPO | ![Diagrama que mostra como a Réplica de Armazenamento grava dados em replicação assíncrona](./media/Storage-Replica-Overview/Storage_SR_AsynchronousV2.png)|1.  O aplicativo grava dados<br />2.  Dados de log gravados<br />3.  Gravação de aplicativo confirmada<br />4.  Dados replicados para o local remoto<br />5.  Dados de log gravados no local remoto<br />6.  Confirmação do local remoto<p>t e t1: dados liberados para o volume, logs sempre realizam gravação |
 
 ### <a name="key-evaluation-points-and-behaviors"></a>Principais pontos de avaliação e comportamentos
 

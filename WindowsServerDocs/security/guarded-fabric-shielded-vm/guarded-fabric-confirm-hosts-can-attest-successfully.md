@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 0162cd8c14640bfc025796995fdc2ce78b5912a2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8c3f28b544db7a41c15c4f12b58c58c1f750cb54
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939637"
+ms.locfileid: "87997511"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>Confirmar que os hosts protegidos podem atestar
 
@@ -37,7 +37,7 @@ Um administrador de malha precisa confirmar que os hosts Hyper-V podem ser execu
 
         Para configurar um servidor HGS de fallback, repita esse comando e especifique as URLs de fallback para a proteção de chave e os serviços de atestado. Para obter mais informações, consulte [configuração de fallback](guarded-fabric-manage-branch-office.md#fallback-configuration).
 
-    - **Por meio do VMM**: se você estiver usando o System Center 2016-Virtual Machine Manager (VMM), poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
+    - **Por meio do VMM**: se você estiver usando o System Center 2016-Virtual Machine Manager (VMM), poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
 
     >**Observações**
     > - Se o administrador HGS [habilitou o HTTPS no servidor HgS](guarded-fabric-configure-hgs-https.md), inicie as URLs com `https://` .

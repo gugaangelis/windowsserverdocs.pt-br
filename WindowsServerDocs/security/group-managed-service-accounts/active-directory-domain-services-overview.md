@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 86d65aac95dcb5fb33f650ae5e03f943b78f78f5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 87f8aefb2645fa13ba1c9ac98e7970fc908e7bed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971493"
+ms.locfileid: "87997053"
 ---
 # <a name="overview-of-active-directory-domain-services"></a>Visão geral do Active Directory Domain Services
 
@@ -22,7 +22,7 @@ Um diretório é uma estrutura hierárquica que armazena informações sobre obj
 
 O Active Directory armazena informações sobre objetos na rede e torna essas informações fáceis de serem encontradas e usadas por administradores e usuários. O Active Directory usa um armazenamento de dados estruturado como base para uma organização lógica e hierárquica de informações de diretório.
 
-Esse armazenamento de dados, também conhecido como o diretório, contém informações sobre objetos Active Directory. Esses objetos normalmente incluem recursos compartilhados, como servidores, volumes, impressoras e contas de usuário e computador de rede. Para obter mais informações sobre o armazenamento de dados de Active Directory, consulte [Directory Data Store](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx).
+Esse armazenamento de dados, também conhecido como o diretório, contém informações sobre objetos Active Directory. Esses objetos normalmente incluem recursos compartilhados, como servidores, volumes, impressoras e contas de usuário e computador de rede. Para obter mais informações sobre o armazenamento de dados de Active Directory, consulte [Directory Data Store](/previous-versions/windows/it-pro/windows-server-2003/cc736627(v=ws.10)).
 
 A segurança é integrada com Active Directory por meio de autenticação de logon e controle de acesso a objetos no diretório. Com um único logon de rede, os administradores podem gerenciar dados de diretório e organização em toda a rede, e os usuários de rede autorizados podem acessar recursos em qualquer lugar da rede. A administração baseada em política facilita igualmente o gerenciamento de redes mais complexas. Para obter mais informações sobre Active Directory segurança, consulte Visão geral de segurança.
 
@@ -41,14 +41,13 @@ O Active Directory também inclui:
 ## <a name="understanding-active-directory"></a>Noções básicas sobre Active Directory
  Esta seção fornece links para os principais conceitos de Active Directory:
 
-* [Active Directory a estrutura e as tecnologias de armazenamento](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
-* [Funções do controlador de domínios](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx)
+* [Active Directory a estrutura e as tecnologias de armazenamento](/previous-versions/windows/it-pro/windows-server-2003/cc759186(v=ws.10))
+* [Funções do controlador de domínios](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
 * Esquema do Active Directory
-* [Noções básicas sobre relações de confiança](https://technet.microsoft.com/library/cc771294(v=ws.10).aspx)
-* [Tecnologias de replicação Active Directory](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx)
-* [Active Directory tecnologias de pesquisa e publicação](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx)
+* [Noções básicas sobre relações de confiança](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771294(v=ws.10))
+* [Tecnologias de replicação Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc786438(v=ws.10))
+* [Active Directory tecnologias de pesquisa e publicação](/previous-versions/windows/it-pro/windows-server-2003/cc775686(v=ws.10))
 * Interoperação com DNS e Política de Grupo
-* [Compreendendo o esquema](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx)
+* [Compreendendo o esquema](/previous-versions/windows/it-pro/windows-server-2003/cc759402(v=ws.10))
 
-Para obter uma lista detalhada dos conceitos de Active Directory, consulte [noções básicas sobre Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx).
-
+Para obter uma lista detalhada dos conceitos de Active Directory, consulte [noções básicas sobre Active Directory](/previous-versions/windows/it-pro/windows-server-2003/cc781408(v=ws.10)).
