@@ -5,18 +5,18 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: heidilohr
-ms.openlocfilehash: 5cadad3dd8fafe28ba127610afd3dfa219f92b73
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895844"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993229"
 ---
 # <a name="what-is-server-core-2008"></a>O que é o Server Core 2008?
 >Aplica-se a: Windows Server 2008
 
 >[!NOTE]
->Essas informações se aplicam ao Windows Server 2008. Para obter informações sobre o Server Core no Windows Server, consulte [o que é a instalação Server Core no Windows Server](https://docs.microsoft.com/windows-server/administration/server-core/what-is-server-core).
+>Essas informações se aplicam ao Windows Server 2008. Para obter informações sobre o Server Core no Windows Server, consulte [o que é a instalação Server Core no Windows Server](./what-is-server-core.md).
 
 A opção Server Core é uma nova opção de instalação mínima que está disponível quando você está implantando a edição Standard, Enterprise ou Datacenter do Windows Server 2008. O Server Core fornece uma instalação mínima do Windows Server 2008 que oferece suporte à instalação de determinadas funções de servidor, conforme descrito posteriormente neste capítulo. Compare isso com a opção de instalação completa do Windows Server 2008, que dá suporte à instalação de todas as funções de servidor disponíveis e também a outros aplicativos de servidor da Microsoft ou de terceiros, como o Microsoft Exchange Server ou o SAP.
 

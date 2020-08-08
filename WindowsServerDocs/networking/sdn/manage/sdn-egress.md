@@ -2,18 +2,16 @@
 title: Saída monitoração na rede virtual
 description: Um aspecto fundamental do monetização de rede em nuvem é A saída da largura de banda da rede. Por exemplo-transferências de dados de saída no modelo de negócios Microsoft Azure. Os dados de saída são cobrados com base na quantidade total de dados que saem dos data centers do Azure pela Internet em um determinado ciclo de cobrança.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 10/02/2018
-ms.openlocfilehash: a5d530d5cd1b42206bd6881ee902496713573793
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: be28e5b3b9939907398b0c245fc49fcfd6f5e49a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854429"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954012"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>Saída de medição em uma rede virtual
 
@@ -24,7 +22,7 @@ Um aspecto fundamental do monetização de rede em nuvem é ser capaz de cobrar 
 
 A medição de saída para o tráfego de rede SDN no Windows Server 2019 permite a capacidade de oferecer medidores de uso para transferências de dados de saída. O tráfego de rede que deixa cada rede virtual, mas permanece dentro do data center pode ser acompanhado separadamente para que possa ser excluído dos cálculos de cobrança. Os pacotes associados aos endereços IP de destino que não estão incluídos em um dos intervalos de endereços não faturados são controlados como transferências de dados de saída cobradas.
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista de permissões de intervalos de IP)
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Intervalos de endereços não cobrados da rede virtual (lista branca de intervalos de IP)
 
 Você pode encontrar intervalos de endereços não faturados na propriedade **UnbilledAddressRanges** de uma rede virtual existente. Por padrão, não há nenhum intervalo de endereços adicionado.
 

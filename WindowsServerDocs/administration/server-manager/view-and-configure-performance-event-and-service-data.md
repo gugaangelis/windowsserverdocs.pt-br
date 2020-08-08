@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4819f07f974848ed775c07be51601d870edeaa0b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e7fbf4c96213d7db042143c1da8065f87e642f47
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895707"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993163"
 ---
 # <a name="view-and-configure-performance-event-and-service-data"></a>View and Configure Performance, Event, and Service Data
 
@@ -47,7 +47,7 @@ A miniatura faz uma exibição rápida do status e da capacidade de gerenciament
 
 |Linha de miniaturas|Descrição|
 |---------|--------|
-|Capacidade de gerenciamento|A capacidade de gerenciamento de um servidor inclui várias medidas: se o servidor está online ou offline, se ele está acessível e relatando dados para Gerenciador do Servidor, se o usuário que está conectado ao computador local tem direitos de usuário adequados para acessar ou gerenciar o servidor remoto, se o servidor remoto está executando todo o software necessário para gerenciá-lo remotamente ou se o servidor está configurado de forma a permitir que ele seja consultado e gerenciado usando Gerenciador do Servidor. Os únicos dados de capacidade de gerenciamento que Gerenciador do Servidor podem coletar de um servidor que executa o Windows Server 2003 é se o servidor está online ou offline. Para obter informações detalhadas sobre os erros de status de gerenciamento e como resolvê-los, consulte o [Fórum de Gerenciador do servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).|
+|Capacidade de gerenciamento|A capacidade de gerenciamento de um servidor inclui várias medidas: se o servidor está online ou offline, se ele está acessível e relatando dados para Gerenciador do Servidor, se o usuário que está conectado ao computador local tem direitos de usuário adequados para acessar ou gerenciar o servidor remoto, se o servidor remoto está executando todo o software necessário para gerenciá-lo remotamente ou se o servidor está configurado de forma a permitir que ele seja consultado e gerenciado usando Gerenciador do Servidor. Os únicos dados de capacidade de gerenciamento que Gerenciador do Servidor podem coletar de um servidor que executa o Windows Server 2003 é se o servidor está online ou offline. Para obter informações detalhadas sobre os erros de status de gerenciamento e como resolvê-los, consulte o [Fórum de Gerenciador do servidor](/answers/topics/windows-server-manager.html).|
 |Eventos|Você pode configurar a linha de **Eventos** de uma miniatura para exibir alertas quando os eventos registrados correspondem aos níveis de severidade, às fontes, aos períodos de tempo, servidores ou IDs de eventos que você especificar. Exiba detalhes sobre os eventos e altere os alertas que você deseja ver clicando na linha **eventos** e abra a caixa de diálogo **exibição de detalhes de eventos** para a função ou grupo de servidores.|
 |Serviços|Você pode configurar a linha de **Serviços** para exibir alertas quando forem encontrados serviços em uma função ou grupo de servidores que correspondam a tipos de inicialização, status de serviço, nomes de serviço e servidores que você especificar na caixa de diálogo **exibição de detalhes de serviços** .<p>Depois que um servidor tiver sido adicionado ao pool de servidores do Gerenciador do Servidor, os alertas de serviço sobre o serviço de detecção de hardware do shell poderão ser exibidos se não houver usuários conectados ao servidor gerenciado. Isso ocorre porque o serviço de detecção do hardware do shell é executado apenas quando usuários estão conectados ao servidor gerenciado ou a uma sessão de área de trabalho remota no servidor gerenciado. Para impedir a exibição de alertas do serviço de detecção do hardware do shell nesse caso, clique em **Serviços** nas miniaturas dos grupos de servidores, incluindo o grupo **Todos os servidores**. Na caixa de diálogo **exibição de detalhes dos serviços** , na lista suspensa **Serviços** , desmarque a caixa de seleção para **detecção de hardware do Shell**e clique em **OK**.|
 |Desempenho|Você pode configurar a linha de **desempenho** para exibir alertas para uma função ou grupo de servidores quando ocorrerem alertas de desempenho que correspondam a tipos de recursos, servidores ou períodos de tempo que você especificar na caixa de diálogo **exibição de detalhes de desempenho** .<p>Por padrão, os contadores de desempenho estão desativados. Os servidores gerenciados que estão executando sistemas operacionais mais recentes do que o Windows Server 2003 e para os quais os contadores de desempenho não foram iniciados, normalmente mostram erros de status de gerenciamento de **contadores de desempenho online não iniciados** no bloco **servidores** de páginas de função ou grupo. Para ativar os contadores de desempenho para servidores gerenciados, na página **todos os servidores** , clique com o botão direito do mouse em entradas no bloco **desempenho** que mostram um valor de **status de contador** de **desativado**e clique em **Iniciar contadores de desempenho**. Você também pode iniciar contadores de desempenho clicando com o botão direito do mouse em entradas para servidores no bloco **servidores** de páginas de função ou grupo e, em seguida, clicando em **Iniciar contadores de desempenho**.|
@@ -126,7 +126,7 @@ Por padrão, os contadores de desempenho estão desativados. Os servidores geren
     Observe que o número de alertas de desempenho no bloco **Desempenho** e o mapeamento dos alertas ao longo do tempo conforme exibido pelo gráfico podem mudar depois que você clica em **Salvar**.
 
     > [!NOTE]
-    > para máquinas virtuais que têm o [memória dinâmica](https://technet.microsoft.com/library/ff817651.aspx) ativado, aumentar o limite de alertas de desempenho pode resultar em alertas falsos positivos.
+    > para máquinas virtuais que têm o [memória dinâmica](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff817651(v=ws.10)) ativado, aumentar o limite de alertas de desempenho pode resultar em alertas falsos positivos.
 
 7.  Para atualizar a lista de alertas de desempenho coletados dos servidores, no menu **Tarefas**, clique em **Atualizar**.
 
@@ -167,7 +167,7 @@ para obter mais informações sobre como analisar os dados do contador de desemp
 
 -   [Resolvendo problemas de desempenho](https://go.microsoft.com/fwlink/?LinkId=239831)
 
-para obter mais informações sobre ferramentas avançadas de monitoramento e análise de desempenho disponíveis para o Windows Server 2012 e versões posteriores do Windows Server, incluindo o supervisor de desempenho do servidor 3,0, consulte [desempenho](https://msdn.microsoft.com/windows/hardware/gg463374.aspx) no msdn.
+para obter mais informações sobre ferramentas avançadas de monitoramento e análise de desempenho disponíveis para o Windows Server 2012 e versões posteriores do Windows Server, incluindo o supervisor de desempenho do servidor 3,0, consulte [desempenho](/previous-versions/windows/hardware/design/dn614608(v=vs.85)) no msdn.
 
 ## <a name="manage-services-and-configure-service-alerts"></a><a name=BKMK_services></a>Gerenciar serviços e configurar alertas de serviços
 Nesta seção, saiba como iniciar, parar, reiniciar, pausar ou retomar os serviços que são exibidos no bloco **Serviços** nas páginas função e grupo de servidores no Gerenciador do servidor. Você também pode configurar os serviços sobre os quais você é alertado em miniaturas no painel Gerenciador do Servidor.

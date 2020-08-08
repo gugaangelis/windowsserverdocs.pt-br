@@ -3,22 +3,20 @@ title: Usar dispositivos virtuais de rede em uma rede virtual
 description: Neste tópico, você aprenderá a implantar dispositivos de rede virtual em redes virtuais de locatário. Você pode adicionar soluções de virtualização de rede a redes que executam funções de espelhamento de porta e roteamento definidas pelo usuário.
 manager: grcusanz
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.assetid: 3c361575-1050-46f4-ac94-fa42102f83c1
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 5d8ac7256e9c7e59c7df260bea5d5a8f0fb6b42b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 3fa6fcd735a2cad6a062d7b2daaa7cf206589c20
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80854469"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954052"
 ---
 # <a name="use-network-virtual-appliances-on-a-virtual-network"></a>Usar dispositivos virtuais de rede em uma rede virtual
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Neste tópico, você aprenderá a implantar dispositivos de rede virtual em redes virtuais de locatário. Você pode adicionar soluções de virtualização de rede a redes que executam funções de espelhamento de porta e roteamento definidas pelo usuário.
 
@@ -28,7 +26,7 @@ Você pode usar um dos dois tipos de dispositivos virtuais:
 
 1. **Roteamento definido pelo usuário** – substitui os roteadores distribuídos na rede virtual pelos recursos de roteamento do dispositivo virtual.  Com o roteamento definido pelo usuário, a solução de virtualização é usada como um roteador entre as sub-redes virtuais na rede virtual.
 
-2. **Espelhamento de porta** – todo o tráfego de rede que está entrando ou saindo da porta monitorada é duplicado e enviado a um dispositivo virtual para análise. 
+2. **Espelhamento de porta** – todo o tráfego de rede que está entrando ou saindo da porta monitorada é duplicado e enviado a um dispositivo virtual para análise.
 
 
 ## <a name="deploying-a-network-virtual-appliance"></a>Implantando uma solução de virtualização de rede
@@ -37,20 +35,20 @@ Para implantar uma solução de virtualização de rede, você deve primeiro cri
 
 Alguns dispositivos exigem vários adaptadores de rede virtual. Normalmente, um adaptador de rede dedicado ao gerenciamento de dispositivo, enquanto adaptadores adicionais processam o tráfego.  Se seu dispositivo exigir vários adaptadores de rede, você deverá criar cada interface de rede no controlador de rede. Você também deve atribuir uma ID de interface em cada host para cada um dos adaptadores adicionais que estão em sub-redes virtuais diferentes.
 
-Depois de implantar a solução de virtualização de rede, você pode usar o dispositivo para roteamento definido, portamento de espelhamento ou ambos. 
+Depois de implantar a solução de virtualização de rede, você pode usar o dispositivo para roteamento definido, portamento de espelhamento ou ambos.
 
 
 ## <a name="example-user-defined-routing"></a>Exemplo: roteamento definido pelo usuário
 
 Para a maioria dos ambientes, você só precisa das rotas do sistema já definidas pelo roteador distribuído da rede virtual. No entanto, talvez seja necessário criar uma tabela de roteamento e adicionar uma ou mais rotas em casos específicos, como:
 
-- Forçar o túnel para a Internet por meio de sua rede local.
+- Túnel à força para a Internet através de sua rede local.
 - Uso de dispositivos virtuais em seu ambiente.
 
 Para esses cenários, você deve criar uma tabela de roteamento e adicionar rotas definidas pelo usuário à tabela. Você pode ter várias tabelas de roteamento e associar a mesma tabela de roteamento a uma ou mais sub-redes. Você só pode associar cada sub-rede a uma única tabela de roteamento. Todas as VMs em uma sub-rede usam a tabela de roteamento associada à sub-rede.
 
 As sub-redes dependem de rotas do sistema até que uma tabela de roteamento seja associada à sub-rede. Após a existência de uma associação, o roteamento é feito com base na maior correspondência de prefixo (LPM) entre as rotas definidas pelo usuário e as rotas do sistema. Se houver mais de uma rota com a mesma correspondência de LPM, a rota definida pelo usuário será selecionada primeiro-antes da rota do sistema.
- 
+
 **Procedure**
 
 1. Crie as propriedades da tabela de rotas, que contém todas as rotas definidas pelo usuário.<p>As rotas do sistema ainda se aplicam de acordo com as regras definidas acima.
@@ -91,7 +89,7 @@ Assim que você aplicar a tabela de roteamento à rede virtual, o tráfego será
 
 ## <a name="example-port-mirroring"></a>Exemplo: espelhamento de porta
 
-Neste exemplo, você configura o tráfego para MyVM_Ethernet1 espelhar Appliance_Ethernet1.  Presumimos que você tenha implantado duas VMs, uma como o dispositivo e a outra como a VM a ser monitorada com o espelhamento. 
+Neste exemplo, você configura o tráfego para MyVM_Ethernet1 espelhar Appliance_Ethernet1.  Presumimos que você tenha implantado duas VMs, uma como o dispositivo e a outra como a VM a ser monitorada com o espelhamento.
 
 O dispositivo deve ter uma segunda interface de rede para gerenciamento. Depois de habilitar o espelhamento como um destino no Appliciance_Ethernet1, ele não recebe mais o tráfego destinado à interface IP configurada lá.
 
@@ -165,5 +163,5 @@ O dispositivo deve ter uma segunda interface de rede para gerenciamento. Depois 
    ```
 
 Depois de concluir essas etapas, a interface de Appliance_Ethernet1 espelha o tráfego da interface MyVM_Ethernet1.
- 
+
 ---

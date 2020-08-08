@@ -6,12 +6,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: ee5786684c4f3a6c75c3b123b9d3ef9d32143949
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895889"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993211"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar arquivos de despejo de memória para a instalação do Server Core
 
@@ -195,7 +195,4 @@ Referências adicionais
 
 Para obter informações gerais sobre como usar arquivos de despejo de memória, consulte [visão geral das opções de arquivo de despejo de memória para Windows](https://support.microsoft.com/help/254649/overview-of-memory-dump-file-options-for-windows).
 
-Para obter mais informações sobre arquivos de despejo dedicados, consulte [como usar o valor do registro DedicatedDeumpFile para superar as limitações de espaço na unidade do sistema durante a captura de um despejo de memória do sistema](https://blogs.msdn.microsoft.com/ntdebugging/2010/04/02/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump/).
-
-
-
+Para obter mais informações sobre arquivos de despejo dedicados, consulte [como usar o valor do registro DedicatedDeumpFile para superar as limitações de espaço na unidade do sistema durante a captura de um despejo de memória do sistema](/archive/blogs/ntdebugging/how-to-use-the-dedicateddumpfile-registry-value-to-overcome-space-limitations-on-the-system-drive-when-capturing-a-system-memory-dump).
