@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 3937f124ba91a597af83c00cd5497ea57c1b2fed
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ce85e93f229c62d836a00e7665e2a76bd08b44dd
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962130"
+ms.locfileid: "87996543"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos com o nome da entidade de serviço (SPN)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87962130"
 
 O controlador de rede dá suporte a vários métodos de autenticação para comunicação com clientes de gerenciamento. Você pode usar a autenticação baseada em Kerberos, a autenticação baseada em certificado X509. Você também tem a opção de não usar autenticação para implantações de teste.
 
-O System Center Virtual Machine Manager usa a autenticação baseada em Kerberos. Se você estiver usando a autenticação baseada em Kerberos, deverá configurar um SPN (nome da entidade de serviço) para o controlador de rede no Active Directory. O SPN é um identificador exclusivo para a instância de serviço do controlador de rede, que é usado pela autenticação Kerberos para associar uma instância de serviço a uma conta de logon de serviço. Para obter mais detalhes, consulte [nomes da entidade de serviço](https://docs.microsoft.com/windows/desktop/ad/service-principal-names).
+O System Center Virtual Machine Manager usa a autenticação baseada em Kerberos. Se você estiver usando a autenticação baseada em Kerberos, deverá configurar um SPN (nome da entidade de serviço) para o controlador de rede no Active Directory. O SPN é um identificador exclusivo para a instância de serviço do controlador de rede, que é usado pela autenticação Kerberos para associar uma instância de serviço a uma conta de logon de serviço. Para obter mais detalhes, consulte [nomes da entidade de serviço](/windows/desktop/ad/service-principal-names).
 
 ## <a name="configure-service-principal-names-spn"></a>Configurar SPN (nomes da entidade de serviço)
 

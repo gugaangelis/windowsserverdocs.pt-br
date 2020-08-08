@@ -6,18 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 41ec95b44c6953e061390f181bc22c9788db50de
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c75f2109f7ef67cb9c83ddd05f95030904413e23
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937676"
+ms.locfileid: "87996577"
 ---
 # <a name="understanding-key-ad-fs-concepts"></a>Understanding Key AD FS Concepts
 É recomendável que você saiba mais sobre os conceitos importantes para Serviços de Federação do Active Directory (AD FS) e familiarize-se com seu conjunto de recursos.
 
 > [!TIP]
-> Você pode encontrar links adicionais de recursos de AD FS no [noções básicas sobre conceitos de AD FS de chave](https://docs.microsoft.com/windows-server/identity/ad-fs/technical-reference/understanding-key-ad-fs-concepts).
+> Você pode encontrar links adicionais de recursos de AD FS no [noções básicas sobre conceitos de AD FS de chave]().
 
 ## <a name="ad-fs-terminology-used-in-this-guide"></a>Terminologia do AD FS usada neste guia
 
@@ -62,5 +62,3 @@ Com o AD FS, as organizações podem ignorar as solicitações de credenciais se
 -   [Determinar o tipo de modelo de regra de declaração a ser usado](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)
 
 -   [Como URIs são usados no AD FS](How-URIs-Are-Used-in-AD-FS.md)
-
-

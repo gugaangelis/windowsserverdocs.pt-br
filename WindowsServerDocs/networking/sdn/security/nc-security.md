@@ -7,12 +7,12 @@ ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/30/2018
-ms.openlocfilehash: 42bed85fed8da210d3a7583caf0170064fd2aff5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c66030d1940bca12ab603767da2d17d1086004a6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962070"
+ms.locfileid: "87996541"
 ---
 # <a name="secure-the-network-controller"></a>Proteger o controlador de rede
 
@@ -46,7 +46,7 @@ O controlador de rede dá suporte aos três modos de autenticação a seguir ent
 
 3. **None**. Use nenhum para fins de teste em um ambiente de teste e, portanto, não é recomendado para uso em um ambiente de produção. Quando você escolhe esse modo, não há nenhuma autenticação executada entre nós e clientes de gerenciamento.
 
-Você pode configurar o modo de autenticação para comunicação Northbound usando o comando do Windows PowerShell **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** com o parâmetro _clientauthentication válido_ .
+Você pode configurar o modo de autenticação para comunicação Northbound usando o comando do Windows PowerShell **[install-NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** com o parâmetro _clientauthentication válido_ .
 
 
 ### <a name="authorization"></a>Autorização
@@ -55,9 +55,9 @@ Ao configurar a autorização para a comunicação Northbound do controlador de 
 
 Use os métodos de autorização a seguir para cada um dos modos de autenticação com suporte do controlador de rede.
 
-1.  **Kerberos**. Ao usar o método de autenticação Kerberos, você define os usuários e computadores autorizados a se comunicar com o controlador de rede criando um grupo de segurança no Active Directory e, em seguida, adicionando os usuários e computadores autorizados ao grupo. Você pode configurar o controlador de rede para usar o grupo de segurança para autorização usando o parâmetro _ClientSecurityGroup_ do comando **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** do Windows PowerShell. Depois de instalar o controlador de rede, você pode alterar o grupo de segurança usando o comando **[set-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** com o parâmetro _-ClientSecurityGroup_. Se estiver usando o SCVMM, você deverá fornecer o grupo de segurança como um parâmetro durante a implantação.
+1.  **Kerberos**. Ao usar o método de autenticação Kerberos, você define os usuários e computadores autorizados a se comunicar com o controlador de rede criando um grupo de segurança no Active Directory e, em seguida, adicionando os usuários e computadores autorizados ao grupo. Você pode configurar o controlador de rede para usar o grupo de segurança para autorização usando o parâmetro _ClientSecurityGroup_ do comando **[install-NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** do Windows PowerShell. Depois de instalar o controlador de rede, você pode alterar o grupo de segurança usando o comando **[set-NetworkController](/powershell/module/networkcontroller/Set-NetworkController)** com o parâmetro _-ClientSecurityGroup_. Se estiver usando o SCVMM, você deverá fornecer o grupo de segurança como um parâmetro durante a implantação.
 
-2.  **X509**. Quando você estiver usando o método de autenticação X509, o controlador de rede só aceita solicitações de clientes de gerenciamento cujas impressões digitais de certificado são conhecidas pelo controlador de rede. Você pode configurar essas impressões digitais usando o parâmetro _ClientCertificateThumbprint_ do comando **[install-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontroller)** do Windows PowerShell. Você pode adicionar outras impressões digitais do cliente a qualquer momento usando o comando **[set-NetworkController](https://docs.microsoft.com/powershell/module/networkcontroller/Set-NetworkController)** .
+2.  **X509**. Quando você estiver usando o método de autenticação X509, o controlador de rede só aceita solicitações de clientes de gerenciamento cujas impressões digitais de certificado são conhecidas pelo controlador de rede. Você pode configurar essas impressões digitais usando o parâmetro _ClientCertificateThumbprint_ do comando **[install-NetworkController](/powershell/module/networkcontroller/install-networkcontroller)** do Windows PowerShell. Você pode adicionar outras impressões digitais do cliente a qualquer momento usando o comando **[set-NetworkController](/powershell/module/networkcontroller/Set-NetworkController)** .
 
 3.  **None**. Quando você escolhe esse modo, não há nenhuma autenticação executada entre nós e clientes de gerenciamento. Use nenhum para fins de teste em um ambiente de teste e, portanto, não é recomendado para uso em um ambiente de produção.
 
@@ -82,15 +82,15 @@ Você deve registrar manualmente o certificado SSL em nós do controlador de red
 Depois que o certificado for registrado, você poderá configurar o controlador de rede para usar o certificado com o parâmetro **-serverCertificate** do comando **install-NetworkController** do Windows PowerShell. Se você já tiver instalado o controlador de rede, poderá atualizar a configuração a qualquer momento usando o comando **set-NetworkController** .
 
 >[!NOTE]
->Se você estiver usando o SCVMM, deverá adicionar o certificado como um recurso de biblioteca. Para obter mais informações, consulte [configurar um controlador de rede Sdn na malha do VMM](https://docs.microsoft.com/system-center/vmm/sdn-controller).
+>Se você estiver usando o SCVMM, deverá adicionar o certificado como um recurso de biblioteca. Para obter mais informações, consulte [configurar um controlador de rede Sdn na malha do VMM](/system-center/vmm/sdn-controller).
 
 ## <a name="network-controller-cluster-communication"></a>Comunicação de cluster do controlador de rede
 
-O controlador de rede dá suporte à autenticação, autorização e criptografia para comunicação entre nós do controlador de rede. A comunicação é sobre [Windows Communication Foundation](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf) \( WCF \) e TCP.
+O controlador de rede dá suporte à autenticação, autorização e criptografia para comunicação entre nós do controlador de rede. A comunicação é sobre [Windows Communication Foundation](/dotnet/framework/wcf/whats-wcf) \( WCF \) e TCP.
 
 Você pode configurar esse modo com o parâmetro **ClusterAuthentication** do comando **install-NetworkControllerCluster** do Windows PowerShell.
 
-Para obter mais informações, consulte [install-NetworkControllerCluster](https://docs.microsoft.com/powershell/module/networkcontroller/install-networkcontrollercluster).
+Para obter mais informações, consulte [install-NetworkControllerCluster](/powershell/module/networkcontroller/install-networkcontrollercluster).
 
 ### <a name="authentication"></a>Autenticação
 
@@ -113,9 +113,9 @@ Ao configurar a autorização para comunicação de cluster do controlador de re
 
 Para cada um dos modos de autenticação com suporte do controlador de rede, os métodos de autorização a seguir são usados.
 
-1. **Kerberos**. Os nós do controlador de rede aceitam solicitações de comunicação somente de outras contas de computador do controlador de rede. Você pode configurar essas contas ao implantar o controlador de rede usando o parâmetro **Name** do comando [New-NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) do Windows PowerShell.
+1. **Kerberos**. Os nós do controlador de rede aceitam solicitações de comunicação somente de outras contas de computador do controlador de rede. Você pode configurar essas contas ao implantar o controlador de rede usando o parâmetro **Name** do comando [New-NetworkControllerNodeObject](/powershell/module/networkcontroller/new-networkcontrollernodeobject) do Windows PowerShell.
 
-2. **X509**. Os nós do controlador de rede aceitam solicitações de comunicação somente de outras contas de computador do controlador de rede. Você pode configurar essas contas ao implantar o controlador de rede usando o parâmetro **Name** do comando [New-NetworkControllerNodeObject](https://docs.microsoft.com/powershell/module/networkcontroller/new-networkcontrollernodeobject) do Windows PowerShell.
+2. **X509**. Os nós do controlador de rede aceitam solicitações de comunicação somente de outras contas de computador do controlador de rede. Você pode configurar essas contas ao implantar o controlador de rede usando o parâmetro **Name** do comando [New-NetworkControllerNodeObject](/powershell/module/networkcontroller/new-networkcontrollernodeobject) do Windows PowerShell.
 
 3. **None**. Quando você escolhe esse modo, não há nenhuma autorização executada entre nós do controlador de rede. Esse modo é fornecido apenas para fins de teste e não é recomendado para uso em um ambiente de produção.
 
@@ -123,8 +123,8 @@ Para cada um dos modos de autenticação com suporte do controlador de rede, os 
 
 A comunicação entre nós do controlador de rede é criptografada usando a criptografia do nível de transporte do WCF. Essa forma de criptografia é usada quando os métodos de autenticação e autorização são certificados Kerberos ou X509. Para obter mais informações, consulte os tópicos a seguir.
 
-- [Como: proteger um serviço com credenciais do Windows](https://docs.microsoft.com/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
-- [Como: proteger um serviço com certificados X. 509](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate).
+- [Como: proteger um serviço com credenciais do Windows](/dotnet/framework/wcf/how-to-secure-a-service-with-windows-credentials)
+- [Como: proteger um serviço com certificados X. 509](/dotnet/framework/wcf/feature-details/how-to-secure-a-service-with-an-x-509-certificate).
 
 ## <a name="southbound-communication"></a>Comunicação Southbound
 

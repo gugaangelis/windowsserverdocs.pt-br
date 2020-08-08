@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ac661631eef9053e202c7e21ffff9982d26d1d38
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960819"
+ms.locfileid: "87996473"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
@@ -21,7 +21,7 @@ Este tópico descreve como implantar espaços de armazenamento em um servidor au
 
 Para criar um espaço de armazenamento, você deve primeiramente criar um ou mais pools de armazenamento. Um pool de armazenamento é uma coleção de discos físicos. Um pool de armazenamento permite a agregação de armazenamento, expansão da capacidade elástica e administração delegada.
 
-Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) e o [Windows Server Storage forum](https://docs.microsoft.com/answers/topics/windows-server-storage.html).
+Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) e o [Windows Server Storage forum](/answers/topics/windows-server-storage.html).
 
 >[!NOTE]
 >Você não pode usar um espaço de armazenamento para hospedar o sistema operacional Windows.
@@ -266,4 +266,4 @@ Get-VirtualDisk –FriendlyName VirtualDisk1 | Get-Disk | Initialize-Disk –Pas
 - [Espaços de armazenamento](overview.md)
 - [Cmdlets de armazenamento no Windows PowerShell](/powershell/module/storage/index?view=win10-ps)
 - [Implantar Espaços de Armazenamento clusterizados](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11))
-- [Fórum de armazenamento do Windows Server](https://docs.microsoft.com/answers/topics/windows-server-storage.html)
+- [Fórum de armazenamento do Windows Server](/answers/topics/windows-server-storage.html)

@@ -7,12 +7,12 @@ ms.assetid: ea7e53c8-11ec-410b-b287-897c7aaafb13
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/10/2018
-ms.openlocfilehash: 60ba3ea51bf958f2cc5fa598e4f1323bd5631a80
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1930ee8d74a1aa99b5c94df19e572d382144e604
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962170"
+ms.locfileid: "87996559"
 ---
 # <a name="plan-a-software-defined-network-infrastructure"></a>Planejar uma infraestrutura de rede definida pelo software
 
@@ -243,7 +243,7 @@ Função|requisitos do vCPU|Requisitos de memória|Requisitos de disco|
 |Roteador BGP de gateway RAS para emparelhamento de SLB/MUX<p>(como alternativa, use a opção ToR como roteador BGP)|2 vCPUs|2 GB|75 GB para a unidade do sistema operacional|
 
 
-Se você usar o VMM para implantação, recursos adicionais de máquina virtual de infraestrutura serão necessários para o VMM e outra infraestrutura não SDN. Para obter informações adicionais, consulte [recomendações de hardware mínimas para o System Center Technical Preview.](https://technet.microsoft.com/library/dn997303.aspx)
+Se você usar o VMM para implantação, recursos adicionais de máquina virtual de infraestrutura serão necessários para o VMM e outra infraestrutura não SDN. Para obter informações adicionais, consulte [recomendações de hardware mínimas para o System Center Technical Preview.](/system-center/)
 
 ## <a name="extending-your-infrastructure"></a>Estendendo sua infraestrutura
 Os requisitos de dimensionamento e de recursos para sua infraestrutura dependem das máquinas virtuais de carga de trabalho do locatário que você planeja hospedar. Os requisitos de CPU, memória e disco para as máquinas virtuais de infraestrutura (por exemplo: controlador de rede, SLB, gateway, etc.) são listados na tabela anterior. Você pode adicionar mais dessas máquinas virtuais de infraestrutura para escalar horizontalmente, conforme necessário. No entanto, todas as máquinas virtuais de locatário em execução nos hosts Hyper-V têm seus próprios requisitos de CPU, memória e disco que você deve considerar.
@@ -253,7 +253,4 @@ Quando as máquinas virtuais de carga de trabalho do locatário começam a consu
 
 ## <a name="see-also"></a>Consulte Também
 [Requisitos de instalação e preparação para a implantação do controlador](Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md) 
- de rede [Rede definida pelo Software &#40;SDN&#41;](../Software-Defined-Networking--SDN-.md)
-
-
-
+ de rede [Rede definida pelo Software &#40;SDN&#41;](../software-defined-networking.md)

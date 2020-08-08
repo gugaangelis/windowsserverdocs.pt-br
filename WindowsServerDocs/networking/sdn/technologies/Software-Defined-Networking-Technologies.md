@@ -7,12 +7,12 @@ ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 02/14/2019
-ms.openlocfilehash: 591a81c91dc444cfe48f0fa40142489b72142409
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e01630cf34a588b6861c833015076bd4a31ef4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952566"
+ms.locfileid: "87996467"
 ---
 # <a name="sdn-technologies"></a>Tecnologias de SDN
 
@@ -72,7 +72,7 @@ O conjunto é uma solução de agrupamento NIC alternativa que você pode usar e
 SET permite que você agrupe entre um e oito adaptadores de rede Ethernet física em um ou mais adaptadores de rede virtual baseados em software. Esses adaptadores de rede virtual oferecem desempenho rápido e tolerância a falhas no caso de uma falha do adaptador de rede.
 O conjunto de adaptadores de rede de membros deve ser instalado no mesmo host do Hyper-V físico a ser colocado em uma equipe.
 
-Além disso, você pode usar comandos do Windows PowerShell para habilitar a ponte do Data Center (DCB), criar um comutador virtual do Hyper-V com uma NIC virtual RDMA (vNIC) e criar um comutador virtual do Hyper-V com SET e RDMA vNICs. Para obter mais informações, consulte [acesso remoto direto à memória (RDMA) e Comutador incorporado (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
+Além disso, você pode usar comandos do Windows PowerShell para habilitar a ponte do Data Center (DCB), criar um comutador virtual do Hyper-V com uma NIC virtual RDMA (vNIC) e criar um comutador virtual do Hyper-V com SET e RDMA vNICs. Para obter mais informações, consulte [acesso remoto direto à memória (RDMA) e Comutador incorporado (Set)](../../../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md).
 
 ## <a name="border-gateway-protocol-bgp"></a>[BGP (Border Gateway Protocol)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
 
@@ -87,7 +87,7 @@ Os contêineres do Windows Server são um método leve de virtualização do sis
 
 ## <a name="system-center"></a>System Center
 
-Implante e gerencie a infraestrutura de SDN com o [VMM (gerenciamento de máquinas virtuais)](https://docs.microsoft.com/system-center/vmm/) e [Operations Manager](https://docs.microsoft.com/system-center/scom/). Com o VMM, você provisiona e gerencia os recursos necessários para criar e implantar máquinas virtuais e serviços em nuvens privadas.  Com o Operations Manager, você monitora serviços, dispositivos e operações em toda a empresa para identificar problemas para ação imediata.
+Implante e gerencie a infraestrutura de SDN com o [VMM (gerenciamento de máquinas virtuais)](/system-center/vmm/) e [Operations Manager](/system-center/scom/). Com o VMM, você provisiona e gerencia os recursos necessários para criar e implantar máquinas virtuais e serviços em nuvens privadas.  Com o Operations Manager, você monitora serviços, dispositivos e operações em toda a empresa para identificar problemas para ação imediata.
 
 
 ---

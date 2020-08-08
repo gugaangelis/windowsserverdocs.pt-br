@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 763d11a8-4225-4d96-b56f-1ec62e256bfd
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 7e46bb6dc7709c63e43a4548ff0ce8ee088b34ce
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3546b48c40af7eea48fcb1f0c995d459a05201a0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949270"
+ms.locfileid: "87996496"
 ---
 # <a name="security-for-sdn"></a>Segurança para SDN
 
@@ -23,8 +23,8 @@ Você pode usar os tópicos desta seção para saber mais sobre segurança em re
 >Para obter uma documentação adicional de rede definida pelo software, você pode usar as seções de biblioteca a seguir.
 >
 > - [Tecnologias de SDN](../technologies/Software-Defined-Networking-Technologies.md)
-> - [Planejar SDN](../plan/Plan-Software-Defined-Networking.md)
-> - [Implantar SDN](../deploy/Deploy-Software-Defined-Networking.md)
+> - [Planejar SDN](/windows-server/networking/sdn/plan/Deploy-a-Software-Defined-Network-Infrastructure)
+> - [Implantar SDN](../deploy/deploy-a-software-defined-network-infrastructure.md)
 > - [Gerenciar SDN](../manage/manage-sdn.md)
 > - [Solucionar problemas de SDN](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
 

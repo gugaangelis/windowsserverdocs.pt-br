@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c7eb9b82938d6506493ff7cf0856a8c25d3af0ed
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952596"
+ms.locfileid: "87996511"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>Serviço DNS interno (iDNS) para SDN
 
@@ -65,7 +65,7 @@ Quando você implanta o SDN no Windows Server 2016 usando scripts, os iDNS são 
 
 Para obter mais informações, consulte os tópicos a seguir.
 
-- [Implantar uma infraestrutura de rede definida pelo software usando scripts](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
+- [Implantar uma infraestrutura de rede definida pelo software usando scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md)
 
 
 ## <a name="understanding-idns-deployment-steps"></a>Compreendendo as etapas de implantação de iDNS
@@ -108,7 +108,7 @@ Method: PUT
 ```
 
 >[!NOTE]
->Este é um trecho da seção **configuração ConfigureIDns** no SDNExpress.ps1. Para obter mais informações, consulte [Implantar uma infraestrutura de rede definida pelo software usando scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts).
+>Este é um trecho da seção **configuração ConfigureIDns** no SDNExpress.ps1. Para obter mais informações, consulte [Implantar uma infraestrutura de rede definida pelo software usando scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md).
 
 ### <a name="step-3-configure-the-idns-proxy-service"></a>Etapa 3: configurar o serviço proxy de iDNS
 O serviço proxy de iDNS é executado em cada um dos hosts Hyper-V, fornecendo a ponte entre as redes virtuais de locatários e a rede física onde os servidores iDNS estão localizados. As seguintes chaves do registro devem ser criadas em todos os hosts Hyper-V.
@@ -149,7 +149,7 @@ O serviço proxy de iDNS é executado em cada um dos hosts Hyper-V, fornecendo a
 - ValueType = "cadeia de caracteres"
 
 >[!NOTE]
->Este é um trecho da seção **configuração ConfigureIDnsProxy** no SDNExpress.ps1. Para obter mais informações, consulte [Implantar uma infraestrutura de rede definida pelo software usando scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts).
+>Este é um trecho da seção **configuração ConfigureIDnsProxy** no SDNExpress.ps1. Para obter mais informações, consulte [Implantar uma infraestrutura de rede definida pelo software usando scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md).
 
 ### <a name="step-4-restart-the-network-controller-host-agent-service"></a>Etapa 4: reiniciar o serviço de agente de host do controlador de rede
 Você pode usar o seguinte comando do Windows PowerShell para reiniciar o serviço de agente de host do controlador de rede.
@@ -158,7 +158,7 @@ Você pode usar o seguinte comando do Windows PowerShell para reiniciar o servi�
 Restart-Service nchostagent -Force
 ```
 
-Para obter mais informações, consulte [Restart-Service](https://technet.microsoft.com/library/hh849823.aspx).
+Para obter mais informações, consulte [Restart-Service](/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7).
 
 ### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>Habilitar regras de firewall para o serviço de proxy DNS
 Você pode usar o seguinte comando do Windows PowerShell para criar uma regra de firewall que permita que as exceções do proxy se comuniquem com a VM e o servidor iDNS.
@@ -167,12 +167,12 @@ Você pode usar o seguinte comando do Windows PowerShell para criar uma regra de
 Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 ```
 
-Para obter mais informações, consulte [Enable-NetFirewallRule](https://technet.microsoft.com/library/jj554869.aspx).
+Para obter mais informações, consulte [Enable-NetFirewallRule](/powershell/module/netsecurity/enable-netfirewallrule?view=winserver2012r2-ps).
 
 ### <a name="validate-the-idns-service"></a>Validar o serviço iDNS
 Para validar o serviço iDNS, você deve implantar uma carga de trabalho de locatário de exemplo.
 
-Para obter mais informações, consulte [criar uma VM e conectar-se a uma rede virtual de locatário ou VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).
+Para obter mais informações, consulte [criar uma VM e conectar-se a uma rede virtual de locatário ou VLAN](../manage/create-a-tenant-vm.md).
 
 Se você quiser que a VM de locatário use o serviço iDNS, você deve deixar a configuração de servidor DNS de interfaces de rede VM em branco e permitir que as interfaces usem DHCP.
 
@@ -187,5 +187,4 @@ Quando a VM inicia uma consulta DNS, o proxy atua como um encaminhador da consul
 O proxy DNS também garante que as consultas de VM de locatário sejam isoladas. Se o servidor iDNS for autoritativo para a consulta, o servidor iDNS responderá com uma resposta autoritativa. Se o servidor iDNS não for autoritativo para a consulta, ele executará uma recursão de DNS para resolver os nomes de Internet.
 
 >[!NOTE]
->Essas informações estão incluídas na seção **configuração do AttachToVirtualNetwork** em SDNExpressTenant.ps1. Para obter mais informações, consulte [Implantar uma infraestrutura de rede definida pelo software usando scripts](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts).
-
+>Essas informações estão incluídas na seção **configuração do AttachToVirtualNetwork** em SDNExpressTenant.ps1. Para obter mais informações, consulte [Implantar uma infraestrutura de rede definida pelo software usando scripts](../deploy/deploy-a-software-defined-network-infrastructure-using-scripts.md).
