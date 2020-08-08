@@ -2,18 +2,16 @@
 title: Planejamento da implantação do modo de cache hospedado BranchCache
 description: Este guia fornece instruções sobre como implantar o BranchCache no modo de cache hospedado em computadores que executam o Windows Server 2016 e o Windows 10
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-bc
 ms.topic: article
 ms.assetid: bc44a7db-f7a5-4e95-9d95-ab8d334e885f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 09e6d6db0347e36c2cea01a0bc200edcaf4eb474
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 476aa5f87436cd777ae6aa6fa2db70ace623deb7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80319051"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956013"
 ---
 # <a name="branchcache-hosted-cache-mode-deployment-planning"></a>Planejamento da implantação do modo de cache hospedado BranchCache
 
@@ -37,7 +35,7 @@ Antes de implantar o servidor de cache hospedado, você deve planejar os seguint
 - [Planejar a criação de pacotes de dados e de hash em servidores de conteúdo](#bkmk_prehash)
 
 ## <a name="plan-basic-server-configuration"></a><a name="bkmk_basic"></a>Planejar a configuração básica do servidor
-  
+
 Se você estiver planejando usar um servidor existente em sua filial como seu servidor de cache hospedado, não será necessário executar essa etapa de planejamento, pois o computador já está nomeado e tem uma configuração de endereço IP.
 
 Depois de instalar o Windows Server 2016 em seu servidor de cache hospedado, você deve renomear o computador e atribuir e configurar um endereço IP estático para o computador local.
@@ -48,7 +46,7 @@ Depois de instalar o Windows Server 2016 em seu servidor de cache hospedado, voc
 ## <a name="plan-domain-access"></a><a name="bkmk_domain"></a>Planejar o acesso ao domínio
 
 Se você estiver planejando usar um servidor existente em sua filial como seu servidor de cache hospedado, não precisará executar essa etapa de planejamento, a menos que o computador não esteja atualmente ingressado no domínio.
-  
+
 Para fazer logon no domínio, o computador deve ser um computador membro do domínio e a conta de usuário deve ser criada no AD DS antes da tentativa de logon. Além disso, você deve ingressar o computador no domínio com uma conta que tenha a associação de grupo apropriada.
 
 ## <a name="plan-the-location-and-size-of-the-hosted-cache"></a><a name="bkmk_cachelocation"></a>Planejar o local e o tamanho do cache hospedado
@@ -65,7 +63,7 @@ Planeje o local da pasta e as permissões de compartilhamento para a pasta compa
 
 ## <a name="plan-prehashing-and-data-package-creation-on-content-servers"></a><a name="bkmk_prehash"></a>Planejar a criação de pacotes de dados e de hash em servidores de conteúdo
 
-Antes de fazer o hash de conteúdo em seus servidores de conteúdo, você deve identificar as pastas e os arquivos que contêm o conteúdo que você deseja adicionar ao pacote de dados. 
+Antes de fazer o hash de conteúdo em seus servidores de conteúdo, você deve identificar as pastas e os arquivos que contêm o conteúdo que você deseja adicionar ao pacote de dados.
 
 Além disso, você deve planejar o local da pasta local em que você pode armazenar os pacotes de dados antes de copiá-los para o servidor de cache hospedado.
 

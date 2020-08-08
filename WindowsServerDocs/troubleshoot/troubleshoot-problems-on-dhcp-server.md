@@ -1,20 +1,18 @@
 ---
 title: Solucionar problemas no servidor DHCP
 description: Este Artilce apresenta como solucionar problemas no servidor DHCP e coletar dados.
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: 5ec2ef358cfaf7841b093843848f2ea5ee42433e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d6fc69c15c3465769232d89f70a65ca915d0584e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181892"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989031"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solucionar problemas no servidor DHCP
 
@@ -26,7 +24,7 @@ Verifique as seguintes configurações:
 
   - O serviço do servidor DHCP foi iniciado e está em execução. Para verificar essa configuração, execute o comando **net start** e procure o **servidor DHCP**.
 
-  - O servidor DHCP está autorizado. Consulte [autorização do servidor DHCP do Windows no cenário ingressado no domínio](https://docs.microsoft.com/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077).
+  - O servidor DHCP está autorizado. Consulte [autorização do servidor DHCP do Windows no cenário ingressado no domínio](/openspecs/windows_protocols/ms-dhcpe/56f8870b-a7c1-4db1-8a86-f69079fe5077).
 
   - Verifique se as concessões de endereço IP estão disponíveis no escopo do servidor DHCP para a sub-rede em que o cliente DHCP está. Para fazer isso, consulte a estatística do escopo apropriado no console de gerenciamento do servidor DHCP.
 

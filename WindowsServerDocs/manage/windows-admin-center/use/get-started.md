@@ -1,19 +1,17 @@
 ---
 title: Introdução ao centro de administração do Windows
 description: Introdução ao centro de administração do Windows
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 5c0094c9cecfb50304b0317ab11c60f0332ef3a7
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f03e97cb4c318a65b0daf4034f0f0cfd6fe053bf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518564"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964602"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introdução ao centro de administração do Windows
 
@@ -54,7 +52,7 @@ Depois de concluir a instalação do centro de administração do Windows, você
 
 1. Clique em **+ Adicionar** em **todas as conexões**.
 
-   ![Centro de administração do Windows – página todas as conexões](../media/launch/addserver0.png)
+   ![Windows Admin Center – Página Todas as Conexões](../media/launch/addserver0.png)
 
 2. Escolha Adicionar um servidor, cluster, computador Windows ou uma VM do Azure:
 

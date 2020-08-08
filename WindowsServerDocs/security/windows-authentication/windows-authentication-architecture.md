@@ -1,20 +1,18 @@
 ---
 title: Arquitetura de autenticação do Windows
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-windows-auth
 ms.topic: article
 ms.assetid: 07c9d6bb-9b03-407d-89b6-97c7551b256b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: da4f173a5d91f73c73d3f537f58228890f90b136
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 9f9d5241d033303a8a32c7bf870fd7c935b40b0f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471671"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989125"
 ---
 # <a name="windows-authentication-architecture"></a>Arquitetura de autenticação do Windows
 
@@ -46,6 +44,4 @@ SSPI é a implementação da API de serviço de segurança genérica (GSSAPI). O
 
 -   [Processos de credenciais na autenticação do Windows](credentials-processes-in-windows-authentication.md)
 
--   [Visão geral técnica de autenticação do Windows](https://technet.microsoft.com/library/dn169029.aspx)
-
-
+-   [Visão geral técnica de autenticação do Windows](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dn169029(v=ws.10))

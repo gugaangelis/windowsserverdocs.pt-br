@@ -1,18 +1,16 @@
 ---
 title: Gerenciando o serviço guardião de host
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: 19bf253a4cd669020442ca80f77c141f19ab94fe
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769454"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989162"
 ---
 # <a name="managing-the-host-guardian-service"></a>Gerenciando o serviço guardião de host
 
@@ -120,7 +118,7 @@ Os eventos do HGS aparecerão no log de eventos do Windows em 2 fontes:
 Você pode exibir esses eventos abrindo Visualizador de Eventos e navegando para Microsoft-Windows-HostGuardianService-atestation e Microsoft-Windows-HostGuardianService-keyprotection.
 
 Em um ambiente grande, geralmente é preferível encaminhar eventos para um coletor de eventos do Windows central para tornar o análise dos eventos mais fácil.
-Para obter mais informações, confira a [documentação de encaminhamento de eventos do Windows](https://msdn.microsoft.com/library/windows/desktop/bb427443.aspx).
+Para obter mais informações, confira a [documentação de encaminhamento de eventos do Windows](/windows/win32/wec/windows-event-collector).
 
 ### <a name="using-system-center-operations-manager"></a>Usando System Center Operations Manager
 Você também pode usar o System Center 2016-Operations Manager para monitorar o HGS e seus hosts protegidos.
@@ -486,7 +484,7 @@ Add-HgsAttestationDumpPolicy -Name 'DumpEncryptionKey02' -PublicKeyHash '<paste 
 Certifique-se de adicionar cada chave de criptografia de despejo exclusivo ao HGS se você optar por usar chaves diferentes em sua malha protegida.
 Os hosts que estão criptografando despejos de memória com uma chave que não seja conhecida como HGS não passarão por atestado.
 
-Consulte a documentação do Hyper-V para obter mais informações sobre como [Configurar a criptografia de despejo em hosts](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption).
+Consulte a documentação do Hyper-V para obter mais informações sobre como [Configurar a criptografia de despejo em hosts](../../virtualization/hyper-v/manage/about-dump-encryption.md).
 
 #### <a name="check-if-the-system-passed-attestation"></a>Verifique se o sistema passou por atestado
 Depois de registrar as informações necessárias com o HGS, você deve verificar se o host passa por atestado.

@@ -2,18 +2,16 @@
 title: Etapa 1 planejar a infraestrutura de acesso remoto
 description: Este tópico faz parte do guia gerenciar clientes DirectAccess remotamente no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 567097d69db8f0de3f93e315af06c18525ad3735
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 88bc666b516d00b4c132b5b67ed702f071847fb0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769584"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989755"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>Etapa 1 planejar a infraestrutura de acesso remoto
 
@@ -52,9 +50,9 @@ Ao planejar sua rede, você precisa considerar a topologia do adaptador de rede,
 
     O DirectAccess usa IPv6 com IPsec para criar uma conexão segura entre os computadores cliente do DirectAccess e a rede interna corporativa. Contudo, o DirectAccess não precisa necessariamente de uma conectividade IPv6 com a Internet ou suporte IPv6 nativo em redes internas. Em vez disso, ele configura automaticamente e usa tecnologias de transição IPv6 para encapsular o tráfego IPv6 na Internet IPv4 (6to4, Teredo ou IP-HTTPS) e em sua intranet somente IPv4 (NAT64 ou ISATAP). Para uma visão geral dessas tecnologias de transição, confira os seguintes recursos:
 
-    -   [Tecnologias de transição IPv6](/previous-versions//bb726951(v=technet.10))
+    -   [Tecnologias de transição IPv6](/previous-versions/bb726951(v=technet.10))
 
-    -   [Especificação do protocolo de túnel IP-HTTPS](/previous-versions//bb726951(v=technet.10))
+    -   [Especificação do protocolo de túnel IP-HTTPS](/previous-versions/bb726951(v=technet.10))
 
 3.  Configure os adaptadores e endereçamento necessários conforme a tabela a seguir. Para implantações que estão atrás de um dispositivo NAT usando um único adaptador de rede, configure seus endereços IP usando apenas a coluna **adaptador de rede interno** .
 

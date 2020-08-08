@@ -2,18 +2,16 @@
 title: Acesso Remoto Direto à Memória (RDMA) e Agrupamento incorporado do comutador (SET)
 description: Este tópico fornece informações sobre a configuração de interfaces RDMA (acesso remoto direto à memória) com o Hyper-V no Windows Server 2016, além de informações sobre o switch Embedded reteaming (SET).
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: b0f11e67467521a8cfa98f4035435bbed537eda2
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 54d3ecbf752ce806a14d16088476bbb270e28271
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769564"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989134"
 ---
 # <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>\( \) Conjunto de agrupamentos RDMA e Comutador incorporado de acesso remoto direto à memória \(\)
 
@@ -190,7 +188,7 @@ A ilustração a seguir descreve a arquitetura do conjunto.
 
 Como o conjunto é integrado ao comutador virtual do Hyper-V, não é possível usar SET dentro de uma VM (máquina virtual). Você pode, no entanto, usar agrupamento NIC em VMs.
 
-Para obter mais informações, consulte [agrupamento NIC em VMS (máquinas virtuais)](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-vms).
+Para obter mais informações, consulte [agrupamento NIC em VMS (máquinas virtuais)](../../networking/technologies/nic-teaming/nic-teaming.md).
 
 Além disso, a arquitetura SET não expõe as interfaces da equipe. Em vez disso, você deve configurar portas do comutador virtual do Hyper-V.
 
@@ -342,7 +340,7 @@ Veja a seguir as listas que descrevem o comportamento de substituição do ender
 
 É recomendável que você use System Center Virtual Machine Manager \( VMM \) para gerenciar equipes definidas, no entanto, você também pode usar o Windows PowerShell para gerenciar o conjunto. As seções a seguir fornecem os comandos do Windows PowerShell que você pode usar para gerenciar o conjunto.
 
-Para obter informações sobre como criar uma equipe de conjunto usando o VMM, consulte a seção "configurar um comutador lógico" no tópico da biblioteca do System Center VMM [criar comutadores lógicos](https://docs.microsoft.com/system-center/vmm/network-switch).
+Para obter informações sobre como criar uma equipe de conjunto usando o VMM, consulte a seção "configurar um comutador lógico" no tópico da biblioteca do System Center VMM [criar comutadores lógicos](/system-center/vmm/network-switch).
 
 ### <a name="create-a-set-team"></a>Criar uma equipe de conjunto
 
@@ -376,7 +374,7 @@ Set-VMSwitchTeam -Name TeamedvSwitch -NetAdapterName "NIC 1","NIC 3"
 
 ### <a name="removing-a-set-team"></a>Removendo uma equipe de conjunto
 
-Você pode remover uma equipe de conjunto apenas removendo o comutador virtual do Hyper-V que contém a equipe definida.  Use o tópico [Remove-VMSwitch](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/remove-vmswitch) para obter informações sobre como remover o comutador virtual Hyper-V. O exemplo a seguir remove um comutador virtual chamado **SETvSwitch**.
+Você pode remover uma equipe de conjunto apenas removendo o comutador virtual do Hyper-V que contém a equipe definida.  Use o tópico [Remove-VMSwitch](/powershell/module/hyper-v/remove-vmswitch?view=win10-ps) para obter informações sobre como remover o comutador virtual Hyper-V. O exemplo a seguir remove um comutador virtual chamado **SETvSwitch**.
 
 ```
 Remove-VMSwitch "SETvSwitch"

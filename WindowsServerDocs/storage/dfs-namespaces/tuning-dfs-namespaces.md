@@ -2,24 +2,22 @@
 title: Ajustando namespaces de DFS
 description: Este artigo descreve como ajustar ou otimizar namespaces de DFS
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 011512deaeb99ded7d0bfc32a48f19ab3b622475
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 348a34e24cf7d22dc376df37607f21f1dceea74a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386153"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939392"
 ---
 # <a name="tuning-dfs-namespaces"></a>Ajustando namespaces de DFS
 
 > Aplica-se a: Windows Server 2019, Windows Server (canal semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-Depois de criar um namespace e adicionar pastas e destinos, consulte as seções a seguir para ajustar ou otimizar a maneira como o namespace do DFS manipula referências e pesquisas Active Directory Domain Services (AD DS) para dados de namespace atualizados:
+Depois de criar um namespace e adicionar pastas e destinos, use esta lista de verificação para ajustar ou otimizar a maneira como o Namespace de DFS manipula indicações e controla os serviços do Active Directory Domain Services (AD DS) para dados do namespace atualizado.
 
 -   [Habilitar a enumeração baseada em acesso em um namespace](enable-access-based-enumeration-on-a-namespace.md)
 -   [Habilitar ou desabilitar referências e failback de cliente](enable-or-disable-referrals-and-client-failback.md)

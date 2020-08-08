@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 26b925861eada96bae11b66278955e648e197f65
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6227829f73cdccefecd0758a69a25a299665557
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935445"
+ms.locfileid: "87988956"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>Memória Dinâmica está habilitado, mas não respondendo em algumas máquinas virtuais
 
@@ -42,7 +42,4 @@ Nas seções a seguir, os itálicos indicam o texto da interface do usuário que
 
 A partir do Windows Server 2016, o Integration Services é fornecido por meio de Windows Update. Verifique se as máquinas virtuais estão configuradas para receber atualizações para obter a versão mais recente do Integration Services.
 
-Memória Dinâmica funciona com versões específicas de convidados com suporte. Consulte [visão geral de memória dinâmica do Hyper-V](https://technet.microsoft.com/library/hh831766.aspx) para versões anteriores ao windows Server 2016 e Windows 10.
-
-
-
+Memória Dinâmica funciona com versões específicas de convidados com suporte. Consulte [visão geral de memória dinâmica do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831766(v=ws.11)) para versões anteriores ao windows Server 2016 e Windows 10.

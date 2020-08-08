@@ -6,14 +6,12 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 03/25/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: cd8c41e67baf0ffa0399e62ad2a697e4efa1433f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6a6fa412ec4a4472c0651332187515f7f4988641
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965178"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939344"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar o serviço de migração de armazenamento para migrar um servidor
 
@@ -43,7 +41,7 @@ Antes de começar, instale o serviço de migração de armazenamento e verifique
 
 Nesta etapa, você especifica quais servidores migrar e, em seguida, os verifica para coletar informações sobre seus arquivos e configurações.
 
-1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Em seguida, selecione **OK**.
+1. Selecione **novo trabalho**, nomeie o trabalho e, em seguida, selecione se deseja migrar servidores Windows e clusters ou servidores Linux que usam o samba. Depois, selecione **OK**.
 2. Na página **Inserir credenciais** , digite as credenciais de administrador que funcionam nos servidores dos quais você deseja migrar e, em seguida, selecione **Avançar**. <br>Se você estiver migrando de servidores Linux, insira as credenciais nas páginas **credenciais do samba** e credenciais do **Linux** , incluindo uma senha ssh ou uma chave privada.
 
 3. Selecione **Adicionar um dispositivo**, digite um nome do servidor de origem ou o nome de um servidor de arquivos clusterizado e, em seguida, selecione **OK**. <br>Repita esse procedimento para todos os outros servidores que você deseja inventariar.

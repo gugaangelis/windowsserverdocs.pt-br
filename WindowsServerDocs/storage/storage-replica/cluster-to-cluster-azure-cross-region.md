@@ -5,15 +5,13 @@ author: arduppal
 ms.author: arduppal
 ms.date: 12/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 8a1d98fd6c36876aebaf2f9abe4bed29f5485e8a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cb1b712e62b3b77def304526c7b65fd5187b56d5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939355"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Réplica de armazenamento de cluster para Cluster cruzar região no Azure
 
@@ -65,11 +63,11 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
    Conecte todos os nós ao domínio e forneça privilégios de administrador para o usuário criado anteriormente.
 
    Altere o servidor DNS da rede virtual para o endereço IP privado do controlador de domínio.
-   - No exemplo, o controlador de domínio **az2azDC** tem o 10.3.0.8 (endereço IP privado). Na rede virtual (**az2az-vnet** e **azcross-vnet),** altere o servidor DNS 10.3.0.8. 
+   - No exemplo, o controlador de domínio **az2azDC** tem o 10.3.0.8 (endereço IP privado). Na rede virtual (**az2az-vnet** e **azcross-vnet),** altere o servidor DNS 10.3.0.8.
 
      No exemplo, conecte todos os nós a "contoso.com" e forneça privilégios de administrador para "contosoadmin".
-   - Faça logon como contosoadmin de todos os nós. 
- 
+   - Faça logon como contosoadmin de todos os nós.
+
 6. Crie os clusters (**SRAZC1**, **SRAZCross**).
 
    Abaixo estão os comandos do PowerShell para o exemplo
@@ -97,11 +95,11 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
       - Criar investigação de integridade: porta 59999
       - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado.
 
-   Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga. 
+   Forneça o endereço IP do cluster como endereço IP privado estático para o balanceador de carga.
       - azlbazcross => IP de front-end: 10.0.0.10 (pegue um endereço IP não utilizado da sub-rede da rede virtual (**azcross-VNET**))
       - Crie um pool de back-end para cada balanceador de carga. Adicione os nós de cluster associados.
       - Criar investigação de integridade: porta 59999
-      - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado. 
+      - Criar regra de balanceamento de carga: permitir portas de HA, com IP flutuante habilitado.
 
 9. Crie um [Gateway de rede virtual](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM) para conectividade vnet a vnet.
 
@@ -113,20 +111,20 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
 
    - Crie uma conexão de vnet para vnet do primeiro gateway de rede virtual para o segundo gateway de rede virtual. Fornecer uma chave compartilhada
 
-   - Crie uma conexão de vnet para vnet do segundo gateway de rede virtual para o primeiro gateway de rede virtual. Forneça a mesma chave compartilhada, conforme fornecido na etapa anterior. 
+   - Crie uma conexão de vnet para vnet do segundo gateway de rede virtual para o primeiro gateway de rede virtual. Forneça a mesma chave compartilhada, conforme fornecido na etapa anterior.
 
 10. Em cada nó de cluster, abra a porta 59999 (investigação de integridade).
 
     Execute o seguinte comando em cada nó:
 
     ```powershell
-      netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
+      netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any
     ```
 
 11. Instrua o cluster a escutar mensagens de investigação de integridade na porta 59999 e responder do nó que atualmente possui esse recurso.
 
-    Execute-o uma vez de qualquer nó do cluster, para cada cluster. 
-    
+    Execute-o uma vez de qualquer nó do cluster, para cada cluster.
+
     Em nosso exemplo, certifique-se de alterar o "ILBIP" de acordo com seus valores de configuração. Execute o seguinte comando de um nó **az2az1** / **az2az2**
 
     ```PowerShell
@@ -134,7 +132,7 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
 12. Execute o seguinte comando de um nó **azcross1** / **azcross2**
@@ -143,7 +141,7 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.0.0.10" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
-     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}  
+     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"ProbeFailureThreshold"=5;"EnableDhcp"=0}
     ```
 
     Certifique-se de que ambos os clusters podem se conectar/se comunicar entre si.
@@ -155,18 +153,18 @@ Assista ao vídeo abaixo para obter um passo a passo completo do processo.
       Get-Cluster -Name SRAZC1 (ran from azcross1)
     ```
     ```powershell
-      Get-Cluster -Name SRAZCross (ran from az2az1) 
+      Get-Cluster -Name SRAZCross (ran from az2az1)
     ```
 
 13. Criar testemunha de nuvem para ambos os clusters. Crie duas [contas de armazenamento](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) (**az2azcw**,**azcrosssa**) no Azure, uma para cada cluster em cada grupo de recursos (**Sr-AZ2AZ**, **Sr-AZCROSS**).
-   
+
     - Copie o nome da conta de armazenamento e a chave de "chaves de acesso"
-    - Crie a testemunha de nuvem de "Gerenciador de cluster de failover" e use o nome e a chave da conta acima para criá-la. 
+    - Crie a testemunha de nuvem de "Gerenciador de cluster de failover" e use o nome e a chave da conta acima para criá-la.
 
 14. Executar [testes de validação de cluster](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de passar para a próxima etapa
 
 15. Inicie o Windows PowerShell e use o cmdlet [Test-SRTopology](/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar se você atende a todos os requisitos de Réplica de Armazenamento. Você pode usar o cmdlet em um modo somente de requisitos para um teste rápido, assim como um modo de avaliação de desempenho de execução longa.
- 
+
 16. Configure a réplica de armazenamento de cluster para cluster.
     Conceder acesso de um cluster para outro cluster em ambas as direções:
 

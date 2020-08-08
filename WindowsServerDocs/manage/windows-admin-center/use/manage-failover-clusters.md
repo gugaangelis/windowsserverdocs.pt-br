@@ -1,26 +1,24 @@
 ---
 title: Gerenciar clusters de failover com o centro de administração do Windows
 description: Gerenciar clusters de failover com o centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: b7f015ac4c9906447069501bf0922b36306a51d7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950491"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964412"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>Gerenciar clusters de failover com o centro de administração do Windows
 
->Aplica-se a: Windows Admin Center, Visualização do Windows Admin Center
+>Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 > [!Tip]
-> Novo no Windows Admin Center?
+> Conhecendo o Windows Admin Center agora?
 > [Baixe ou saiba mais sobre o centro de administração do Windows](../overview.md).
 
 ## <a name="managing-failover-clusters"></a>Gerenciando clusters de failover
@@ -56,8 +54,8 @@ As seguintes ferramentas estão disponíveis para conexões de cluster de failov
 | Nós | Exibir e gerenciar nós de cluster |
 | Funções | Gerenciar funções de cluster ou criar uma função vazia |
 | Atualizações | Gerenciar atualizações com suporte a cluster (requer [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp)) |
-| [Máquinas Virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
-| Switches virtuais | Exibir e gerenciar comutadores virtuais |
+| [Máquinas virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
+| Comutadores Virtuais | Exibir e gerenciar comutadores virtuais |
 
 ## <a name="more-coming"></a>Mais em breve
 

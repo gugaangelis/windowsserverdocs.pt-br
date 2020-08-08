@@ -1,19 +1,17 @@
 ---
-title: Registro em log de eventos
+title: Log de eventos
 description: Log de eventos do centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 012c2229fb29aa711d9887f28859e09bcf71c14a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 615ecb6c34da980b1223b4ffc5da20c8e84cb9ea
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356872"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964422"
 ---
 # <a name="use-event-logging-in-windows-admin-center-to-gain-insight-into-management-activities-and-track-gateway-usage"></a>Usar o log de eventos no centro de administração do Windows para obter informações sobre as atividades de gerenciamento e acompanhar o uso do gateway
 
@@ -23,7 +21,7 @@ O centro de administração do Windows grava logs de eventos para permitir que v
 
 ## <a name="gain-insight-into-management-activities-in-your-environment-through-user-action-logging"></a>Aprofunde-se nas atividades de gerenciamento em seu ambiente por meio do registro em log de ações do usuário
 
-O centro de administração do Windows fornece informações sobre as atividades de gerenciamento executadas nos servidores em seu ambiente, registrando ações no canal de eventos **Microsoft-ServerManagementExperience** no log de eventos do servidor gerenciado, com EventID 4000 e SMEGateway de origem. O centro de administração do Windows apenas registra ações no servidor gerenciado, de modo que você não verá eventos registrados se um usuário acessar um servidor para fins somente leitura.
+O centro de administração do Windows fornece informações sobre as atividades de gerenciamento executadas nos servidores em seu ambiente, registrando ações no canal de eventos **Microsoft-ServerManagementExperience** no log de eventos do servidor gerenciado, com EventID 4000 e Source SMEGateway. O centro de administração do Windows apenas registra ações no servidor gerenciado, de modo que você não verá eventos registrados se um usuário acessar um servidor para fins somente leitura.
 
 Os eventos registrados incluem as seguintes informações:
 

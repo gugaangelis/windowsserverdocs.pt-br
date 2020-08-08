@@ -3,15 +3,13 @@ title: Implantar a infraestrutura de hiperconvergente com o centro de administra
 ms.topic: article
 author: cosmosdarwin
 ms.author: cosdar
-ms.prod: windows-server
-ms.technology: manage
 ms.date: 11/04/2019
-ms.openlocfilehash: f0f3e313124dd10cd508bf11853969cc67de6368
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: a7c15bd07754d48b7fbffe2cd95edaa871c9bde3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891361"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87964442"
 ---
 # <a name="deploy-hyperconverged-infrastructure-with-windows-admin-center"></a>Implantar a infraestrutura de hiperconvergente com o centro de administração do Windows
 
@@ -19,7 +17,7 @@ ms.locfileid: "86891361"
 
 Você pode usar o centro de administração do Windows [versão 1910](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center) ou posterior para implantar a infraestrutura de hiperconvergente usando dois ou mais servidores Windows adequados. Esse novo recurso assume a forma de um fluxo de trabalho de vários estágios que orienta você na instalação de recursos, na configuração de rede, na criação do cluster e na implantação de Espaços de Armazenamento Diretos e/ou SDN (rede definida pelo software), se selecionado.
 
-A partir da versão 2007 do centro de administração do Windows, o centro de administração do Windows dá suporte ao sistema operacional Azure Stack do HCI. Leia sobre [como implantar um cluster no centro de administração do Windows no Azure Stack documentos do HCI](https://docs.microsoft.com/azure-stack/hci/getting-started). Pense que esta documentação está concentrada no Azure Stack HCI, as instruções também são adequadas para implantações do Windows Server. 
+A partir da versão 2007 do centro de administração do Windows, o centro de administração do Windows dá suporte ao sistema operacional Azure Stack do HCI. Leia sobre [como implantar um cluster no centro de administração do Windows no Azure Stack documentos do HCI](https://docs.microsoft.com/azure-stack/hci/getting-started). Pense que esta documentação está concentrada no Azure Stack HCI, as instruções também são adequadas para implantações do Windows Server.
 
 ## <a name="undo-and-start-over"></a>Desfazer e reiniciar
 

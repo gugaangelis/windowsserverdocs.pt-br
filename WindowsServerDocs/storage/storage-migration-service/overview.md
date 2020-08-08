@@ -6,14 +6,12 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 03/26/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: storage
-ms.openlocfilehash: 1403e0ecd12c4c15924781d75bd9127874018451
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 18c9bb2bf22f107b988942706850907c67b5ec9a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953888"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939324"
 ---
 # <a name="storage-migration-service-overview"></a>Visão geral do serviço de migração de armazenamento
 
@@ -136,7 +134,7 @@ O centro de administração do Windows versão 1910 permite implantar máquinas 
 
    Aqui está um vídeo mostrando como usar o serviço de migração de armazenamento para migrar para VMs do Azure.
    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ]
-   
+
 Se você quiser compensar e deslocar máquinas virtuais para o Azure sem migrar para um sistema operacional posterior, considere o uso de migrações para Azure. Para obter mais informações, consulte [visão geral de migrações para Azure](https://go.microsoft.com/fwlink/?linkid=2056064).
 
 ## <a name="whats-new-in-storage-migration-service"></a>O que há de novo no serviço de migração de armazenamento

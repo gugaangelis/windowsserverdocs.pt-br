@@ -6,14 +6,12 @@ manager: mtillman
 ms.author: billmath
 ms.date: 04/30/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: web-app-proxy
-ms.openlocfilehash: 3bfb94a841265695b1a95cff8cc3cc87ee8088bf
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 115a55ab9ddfde42027a991d172f92c3d62c4613
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961498"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939787"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>Publicar aplicativos com SharePoint, Exchange e RDG
 
@@ -161,7 +159,7 @@ Se você quiser restringir o acesso ao gateway de acesso remoto e adicionar pré
 
             Para obter mais informações sobre o RDP, consulte [Configurando o cenário de OTP do Gateway TS](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc731249(v=ws.10)).
 
-## <a name="see-also"></a><a name="BKMK_Links"></a>Confira também
+## <a name="see-also"></a><a name="BKMK_Links"></a>Consulte também
 
 - [Planejando publicar aplicativos usando o proxy de aplicativo Web](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn383650(v=ws.11))
 
