@@ -2,18 +2,16 @@
 title: Implantando namespaces DFS
 description: Este artigo descreve como implantar namespaces de DFS
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5ce0b24c723d2bdb311a83af63714ca0a4344252
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3f31e1f58acd5273986f0d1e1c1d9c7db5e93ec3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402240"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954773"
 ---
 # <a name="deploying-dfs-namespaces"></a>Implantando namespaces DFS
 
@@ -21,7 +19,7 @@ ms.locfileid: "71402240"
 
 Para implantar Namespaces DFS, consulte os tópicos a seguir:
 
--   [Escolher um tipo de namespaces](choose-a-namespace-type.md)
+-   [Escolha um tipo de namespace](choose-a-namespace-type.md)
 -   [Criar um namespace do DFS](create-a-dfs-namespace.md)
 -   [Migrar um namespace baseado em domínio para o modo Windows 2008 Server](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
 -   [Adicionar servidores de namespace a um namespace do DFS baseado em domínio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)

@@ -6,14 +6,12 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 423587d7beb434af13aac68da82ee791f5c6b071
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: a96b256fbd2f1a5ce3db71bd11de8715eccf60e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961708"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966903"
 ---
 # <a name="obtain-and-configure-ts-and-td-certificates-for-ad-fs"></a>Obter e configurar certificados TS e TD para AD FS
 
@@ -27,15 +25,15 @@ Para obter informações adicionais, consulte [requisitos de certificado](../des
 Por padrão, o AD FS está configurado para gerar os certificados de autenticação e descriptografia de tokens automaticamente durante a configuração inicial e quando os certificados estiverem próximos do vencimento.
 
 Você pode executar o seguinte comando do Windows PowerShell: `Get-AdfsProperties` .
-  
+
   ![Obter-ADFSproperties](media/configure-TS-TD-certs-ad-fs/ts1.png)
-  
+
 A propriedade AutoCertificateRollover descreve se AD FS está configurado para renovar a assinatura de token e certificados de descriptografia de token automaticamente.
 
 Se AutoCertificateRollover for definido como TRUE, os certificados de AD FS serão renovados e configurados em AD FS automaticamente. Depois que o novo certificado for configurado, para evitar uma interrupção, você deve garantir que cada parceiro de Federação (representado em seu farm de AD FS por meio de confianças de terceira parte confiável ou de confiança do provedor de declarações) seja atualizado com esse novo certificado.
-    
+
 Se AD FS não estiver configurado para renovar a assinatura de token e descriptografar certificados automaticamente (se AutoCertificateRollover for definido como false), AD FS não irá gerar automaticamente ou começar a usar a assinatura de token ou certificados de descriptografia de token. Você precisará executar essas tarefas manualmente.
-    
+
 Se AD FS estiver configurado para renovar certificados de assinatura de token e de descriptografia de token automaticamente (AutoCertificateRollover estiver definido como TRUE), você poderá determinar quando eles serão renovados:
 
 CertificateGenerationThreshold descreve quantos dias antes do certificado não após a data em que um novo certificado será gerado.
@@ -43,7 +41,7 @@ CertificateGenerationThreshold descreve quantos dias antes do certificado não a
 CertificatePromotionThreshold determina quantos dias após a geração do novo certificado que ele será promovido para ser o certificado principal (em outras palavras, AD FS começará a usá-lo para assinar tokens que emite e descriptografar tokens de provedores de identidade).
 
 ![Obter-ADFSproperties](media/configure-TS-TD-certs-ad-fs/ts2.png)
-  
+
 Se AD FS estiver configurado para renovar certificados de assinatura de token e de descriptografia de token automaticamente (AutoCertificateRollover estiver definido como TRUE), você poderá determinar quando eles serão renovados:
 
  - **CertificateGenerationThreshold** descreve quantos dias antes do certificado não após a data em que um novo certificado será gerado.

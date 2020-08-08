@@ -1,20 +1,18 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: Histórico de alterações dos tópicos de armazenamento
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.date: 1/16/2019
 description: Tópicos novos e atualizados na documentação de armazenamento local do Windows Server para profissionais de ti.
-ms.openlocfilehash: 3d43166d8f5e931d2677ff394c1c4ad69b0f302f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c4ba7edcbd2a0cf4949c986dec2e2aef385326c8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966258"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954623"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Histórico de alterações dos tópicos de armazenamento no Windows Server
 
@@ -190,7 +188,7 @@ Este tópico lista os tópicos novos e atualizados na documentação de [armazen
 
 |Tópico novo ou alterado|Descrição|
 |---|---|
-|[O que há de novo no armazenamento](whats-new-in-storage.md)|Foram adicionadas informações sobre as novidades do Windows Server, versão 1709.|
+|[Novidades no armazenamento](whats-new-in-storage.md)|Foram adicionadas informações sobre as novidades do Windows Server, versão 1709.|
 |[Adicionar servidores ou unidades](storage-spaces/add-nodes.md)|Adicionadas informações sobre como Espaços de Armazenamento Diretos otimiza automaticamente o uso da unidade depois de adicionar unidades.|
 
 ## <a name="october-2017"></a>Outubro de 2017

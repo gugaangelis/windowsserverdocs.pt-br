@@ -1,20 +1,18 @@
 ---
 title: Software e hardware (SH) integrado recursos e tecnologias
 description: Esses recursos têm componentes de software e hardware. O software está intimamente ligado a recursos de hardware que são necessários para que o recurso funcione. Exemplos desses incluem VMMQ, VMQ, descarregamento de soma de verificação do IPv4 do lado do envio e RSS.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/12/2018
-ms.openlocfilehash: 93913acbe598c4fd1b8ee5556dbf70013f3d714a
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 92ddf9c5d90a963115e4009afea996b8aecf052d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316944"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966543"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>Software e hardware (SH) integrado recursos e tecnologias
 
@@ -23,7 +21,7 @@ Esses recursos têm componentes de software e hardware. O software está intimam
 >[!TIP]
 >Os recursos SH e HO estarão disponíveis se a NIC instalada der suporte a ele. As descrições de recurso a seguir abordarão como saber se a NIC dá suporte ao recurso.
 
-## <a name="converged-nic"></a>NIC convergida 
+## <a name="converged-nic"></a>NIC convergida
 
 A NIC convergida é uma tecnologia que permite que as NICs virtuais no host Hyper-V exponham serviços RDMA para hospedar processos. O Windows Server 2016 não requer mais NICs separadas para RDMA. O recurso NIC convergida permite que as NICs virtuais na partição de host (vNICs) exponham RDMA à partição de host e compartilhem a largura de banda das NICs entre o tráfego RDMA e a VM e outro tráfego TCP/UDP de uma maneira justa e gerenciável.
 
@@ -35,13 +33,13 @@ Para usar a capacidade de NIC convergida:
 
 1.  Certifique-se de definir o host para DCB.
 
-2.  Certifique-se de habilitar o RDMA na NIC ou, no caso de uma equipe definida, as NICs estão associadas à opção do Hyper-V. 
+2.  Certifique-se de habilitar o RDMA na NIC ou, no caso de uma equipe definida, as NICs estão associadas à opção do Hyper-V.
 
-3.  Certifique-se de habilitar o RDMA no vNICs designado para RDMA no host. 
+3.  Certifique-se de habilitar o RDMA no vNICs designado para RDMA no host.
 
 Para obter mais detalhes sobre o RDMA e o conjunto, consulte [acesso remoto direto à memória (RDMA) e alternância inserida de equipe (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
 
-## <a name="data-center-bridging-dcb"></a>DCB (Data Center Bridging) 
+## <a name="data-center-bridging-dcb"></a>DCB (Data Center Bridging)
 
 O DCB é um conjunto de padrões de IEEE (Institute of Electrical and Electronics Engineers) que habilitam malhas convergentes em data centers. O DCB fornece gerenciamento de largura de banda baseado em fila de hardware em um host com cooperação do comutador adjacente. Todo o tráfego de armazenamento, rede de dados, IPC (comunicação entre processos de cluster) e gerenciamento compartilham a mesma infraestrutura de rede Ethernet. No Windows Server 2016, DCB pode ser aplicado a qualquer NIC individualmente e a NICs associadas ao comutador do Hyper-V.
 
@@ -59,32 +57,32 @@ Para obter mais informações, consulte [ponte do Data Center (DCB)](https://doc
 
 ---
 
-## <a name="ipsec-task-offload-ipsecto"></a>Descarregamento de tarefa IPsec (IPsecto) 
+## <a name="ipsec-task-offload-ipsecto"></a>Descarregamento de tarefa IPsec (IPsecto)
 
 O descarregamento de tarefa IPsec é um recurso NIC que permite que o sistema operacional use o processador na NIC para o trabalho de criptografia IPsec.
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >O descarregamento de tarefa IPsec é uma tecnologia herdada que não é suportada pela maioria dos adaptadores de rede e onde ela existe, está desabilitada por padrão.
 
-## <a name="private-virtual-local-area-network-pvlan"></a>Rede de área local virtual privada (PVLAN). 
+## <a name="private-virtual-local-area-network-pvlan"></a>Rede de área local virtual privada (PVLAN).
 
 PVLANs permitir a comunicação somente entre máquinas virtuais no mesmo servidor de virtualização. Uma rede virtual privada não está associada a um adaptador de rede física. Uma rede virtual privada é isolada de todo o tráfego de rede externo no servidor de virtualização, bem como qualquer tráfego de rede entre o sistema operacional de gerenciamento e a rede externa. Esse tipo de rede é útil quando você precisa criar um ambiente isolado de rede, como um domínio de teste isolada. As pilhas do Hyper-V e do SDN dão suporte apenas ao modo de porta isolada PVLAN.
 
 Para obter detalhes sobre o isolamento de PVLAN, consulte [System Center: blog de engenharia de Virtual Machine Manager](https://blogs.technet.microsoft.com/scvmm/2013/06/04/logical-networks-part-iv-pvlan-isolation/).
 
-## <a name="remote-direct-memory-access-rdma"></a>Acesso Remoto Direto à Memória (RDMA) 
+## <a name="remote-direct-memory-access-rdma"></a>Acesso Remoto Direto à Memória (RDMA)
 
 O RDMA é uma tecnologia de rede que fornece comunicação de baixa latência e alta taxa de transferência que minimiza o uso da CPU. O RDMA dá suporte à rede de cópia zero, permitindo que o adaptador de rede transfira dados diretamente para ou da memória do aplicativo. Compatível com RDMA significa que a NIC (física ou virtual) é capaz de expor RDMA a um cliente RDMA. Por outro lado, habilitado para RDMA significa que uma NIC compatível com RDMA está expondo a interface RDMA na pilha.
 
 Para obter mais detalhes sobre o RDMA, consulte [acesso remoto direto à memória (RDMA) e comutador inserido de equipe (Set)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming).
 
-## <a name="receive-side-scaling-rss"></a>Receive Side Scaling (RSS) 
+## <a name="receive-side-scaling-rss"></a>RSS (Receive Side Scaling)
 
-RSS é um recurso de NIC que separa diferentes conjuntos de fluxos e os entrega a processadores diferentes para processamento. O RSS paralelize o processamento de rede, permitindo que um host seja dimensionado para taxas de dados muito altas. 
+RSS é um recurso de NIC que separa diferentes conjuntos de fluxos e os entrega a processadores diferentes para processamento. O RSS paralelize o processamento de rede, permitindo que um host seja dimensionado para taxas de dados muito altas.
 
 Para obter mais detalhes, consulte [RSS (receber dimensionamento lateral)](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-receive-side-scaling).
 
-## <a name="single-root-input-output-virtualization-sr-iov"></a>Virtualização de entrada/saída de raiz única (SR-IOV) 
+## <a name="single-root-input-output-virtualization-sr-iov"></a>Virtualização de entrada/saída de raiz única (SR-IOV)
 
 O SR-IOV permite que o tráfego da VM seja movido diretamente da NIC para a VM sem passar pelo host do Hyper-V. O SR-IOV é uma melhoria incrível no desempenho de uma VM, mas não tem a capacidade de o host gerenciar esse pipe. Use somente Sr-IOV quando a carga de trabalho estiver bem comparada, confiável e geralmente a única VM no host.
 
@@ -101,15 +99,15 @@ O descarregamento de Chimney TCP, também conhecido como TOE (TCP Engine Offload
 >[!IMPORTANT]
 >O descarregamento de Chimney TCP é uma tecnologia preterida. Recomendamos que você não use o descarregamento de Chimney TCP, pois a Microsoft pode parar de dar suporte a ele no futuro.
 
-## <a name="virtual-local-area-network-vlan"></a>Rede de área local virtual (VLAN) 
+## <a name="virtual-local-area-network-vlan"></a>Rede de área local virtual (VLAN)
 
 VLAN é uma extensão para o cabeçalho de quadro de Ethernet para habilitar o particionamento de uma LAN em várias VLANs, cada uma usando seu próprio espaço de endereço. No Windows Server 2016, as VLANs são definidas em portas do comutador do Hyper-V ou definindo interfaces de equipe em equipes de agrupamento NIC. Para obter mais informações, consulte [agrupamento NIC e redes locais virtuais (VLANs)](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nict-and-vlans).
 
-## <a name="virtual-machine-queue-vmq"></a>VMQ (Fila de Máquina Virtual) 
+## <a name="virtual-machine-queue-vmq"></a>VMQ (Fila de Máquina Virtual)
 
 VMQs é um recurso de NIC que aloca uma fila para cada VM. Sempre que você tiver habilitado o Hyper-V; Você também deve habilitar a VMQ. No Windows Server 2016, VMQs use o comutador NIC vPorts com uma única fila atribuída ao vPort para fornecer a mesma funcionalidade. Para obter mais informações, consulte [vRSS (recebimento virtual)](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-top) e [agrupamento NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
 
-## <a name="virtual-machine-multi-queue-vmmq"></a>VMMQ (várias filas de máquina virtual) 
+## <a name="virtual-machine-multi-queue-vmmq"></a>VMMQ (várias filas de máquina virtual)
 
 VMMQ é um recurso de NIC que permite que o tráfego de uma VM se espalhe por várias filas, cada uma processada por um processador físico diferente. O tráfego é passado para vários LPs na VM como seria em vRSS, o que permite a entrega de largura de banda de rede substancial para a VM.
 

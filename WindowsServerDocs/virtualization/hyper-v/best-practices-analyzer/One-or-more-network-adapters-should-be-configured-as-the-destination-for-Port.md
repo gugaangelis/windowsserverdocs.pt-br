@@ -1,46 +1,44 @@
 ---
 title: Um ou mais adaptadores de rede devem ser configurados como o destino para o espelhamento de porta
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.author: kathydav
 ms.topic: article
 ms.assetid: b83c166d-f010-47c4-a4bb-02167f2e3361
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b0b9ce90c9614332ca12ddb6a1467d38425d6ddf
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0759a3471f147143f7c22a917c9c64e2393a5e84
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80861869"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954463"
 ---
 # <a name="one-or-more-network-adapters-should-be-configured-as-the-destination-for-port-mirroring"></a>Um ou mais adaptadores de rede devem ser configurados como o destino para o espelhamento de porta
 
 >Aplica-se a: Windows Server 2016
 
-Para obter mais informações sobre práticas recomendadas e verificações, consulte [executar verificações de analisador de práticas recomendadas e gerenciar resultados de verificação](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
-  
-|Propriedade|Detalhes|  
-|-|-|  
-|**Sistema Operacional**|Windows Server 2016|  
-|**Produto/recurso**|Hyper-V|  
-|**Severity**|Aviso|  
-|**Categoria**|Configuração|  
-  
-Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.  
-  
-## <a name="issue"></a>**Problema**  
-*Uma ou mais máquinas virtuais têm um adaptador de rede configurado como uma origem para o espelhamento de porta, mas não há nenhum destino correspondente no comutador virtual.*  
-  
-## <a name="impact"></a>**Causa**  
-*O espelhamento de porta não funcionará corretamente para os seguintes comutadores virtuais e máquinas virtuais:*  
-  
-\<lista de máquinas virtuais >  
-  
-## <a name="resolution"></a>**Resolução**  
-*Use o Windows PowerShell ou o Gerenciador do Hyper-V para concluir ou corrigir a configuração de espelhamento de porta.*  
-  
+Para obter mais informações sobre práticas recomendadas e varreduras, confira [Executar varreduras do Analisador de Práticas Recomendadas e gerenciar os resultados](https://go.microsoft.com/fwlink/p/?LinkID=223177).
+
+|Propriedade|Detalhes|
+|-|-|
+|**Sistema operacional**|Windows Server 2016|
+|**Produto/Recurso**|Hyper-V|
+|**Gravidade**|Aviso|
+|**Categoria**|Configuração|
+
+Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.
+
+## <a name="issue"></a>**Problema**
+*Uma ou mais máquinas virtuais têm um adaptador de rede configurado como uma origem para o espelhamento de porta, mas não há nenhum destino correspondente no comutador virtual.*
+
+## <a name="impact"></a>**Impacto**
+*O espelhamento de porta não funcionará corretamente para os seguintes comutadores virtuais e máquinas virtuais:*
+
+\<list of virtual machines>
+
+## <a name="resolution"></a>**Resolução**
+*Use o Windows PowerShell ou o Gerenciador do Hyper-V para concluir ou corrigir a configuração de espelhamento de porta.*
+
 
 

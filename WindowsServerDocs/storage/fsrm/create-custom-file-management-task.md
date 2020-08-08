@@ -2,18 +2,16 @@
 title: Criar uma tarefa de gerenciamento de arquivo personalizada
 description: Este artigo descreve como criar uma tarefa de gerenciamento de arquivo personalizado e tarefas personalizadas.
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bf1329c47fd5746bf0777415331ebcd7b882c5f1
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fcfd9958787817a6945b220115c507f48924cbf
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475573"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954673"
 ---
 # <a name="create-a-custom-file-management-task"></a>Criar uma tarefa de gerenciamento de arquivo personalizada
 
@@ -32,7 +30,7 @@ Expiração nem sempre é uma ação desejada para ser executada nos arquivos. A
 
 3.  Na guia **Ação**, insira as seguintes informações:
 
-    -   **Tipo**. Selecione **Personalizar** no menu suspenso.
+    -   **Type**. Selecione **Personalizar** no menu suspenso.
     -   **Executável**. Digite ou procure por um comando para executar quando a tarefa de gerenciamento de arquivo processa os arquivos. Esse executável deve ser definido para ser gravável apenas pelos Administradores e Sistema. Se nenhum outro usuário tiver acesso ao executável, ele não rodará corretamente.
     -   **Configurações de comandos**. Para configurar os argumentos passados para o executável quando um trabalho de gerenciamento de arquivo processa arquivos, edite a caixa de texto identificada como **Argumentos**. Para inserir variáveis adicionais no texto, coloque o cursor no local na caixa de texto onde você deseja inserir a variável, selecione a variável que deseja inserir e clique em **Inserir variável**. O texto entre colchetes insere informações variáveis que o executável pode receber. Por exemplo, a \[ variável de caminho do arquivo de origem \] insere o nome do arquivo que deve ser processado pelo executável. Opcionalmente, clique no botão **Diretório de trabalho** para especificar o local do executável personalizado.
     -   **Comando de segurança**. Configure as configurações de segurança deste executável. Por padrão, o comando é executado como Serviço Local, que é a conta mais restritiva disponível.

@@ -1,20 +1,18 @@
 ---
 title: Solucionar problemas no cliente DHCP
 description: Este Artilce apresenta como solucionar problemas no cliente DHCP e coletar dados.
-ms.prod: windows-server
 ms.service: na
 manager: dcscontentpm
-ms.technology: server-general
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: a6064b9e497fcd54671292ade77a08c06ba42920
-ms.sourcegitcommit: ef089864980a1d4793a35cbf4cbdd02ce1962054
+ms.openlocfilehash: 650b3f83ebd0467df2a747d865db2d0a346bcddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84150294"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954573"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-client"></a>Solucionar problemas no cliente DHCP
 
@@ -38,7 +36,7 @@ Verifique os seguintes dispositivos e configurações:
 
 ## <a name="event-logs"></a>Logs de eventos
 
-Examine os logs de eventos de administrador/eventos do cliente Microsoft-Windows-DHCP e Microsoft-Windows-DHCP. Todos os eventos relacionados ao serviço de cliente DHCP são enviados a esses logs de eventos.  
+Examine os logs de eventos de administrador/eventos do cliente Microsoft-Windows-DHCP e Microsoft-Windows-DHCP. Todos os eventos relacionados ao serviço de cliente DHCP são enviados a esses logs de eventos.
 Os eventos do cliente Microsoft-Windows-DHCP estão localizados na Visualizador de Eventos em **logs de aplicativos e serviços**.
 
 O comando do PowerShell "Get-netadapter-IncludeHidden" fornece as informações necessárias para interpretar os eventos listados nos logs. Por exemplo, ID de interface, endereço MAC e assim por diante.
@@ -52,7 +50,7 @@ Para coletar dados do servidor e do cliente afetado, use o [Wireshark](https://w
 Execute os seguintes comandos no cliente que está enfrentando o problema:
 
 ```console
-ipconfig /release  
+ipconfig /release
 ipconfig /renew
 ```
 

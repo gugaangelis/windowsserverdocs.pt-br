@@ -1,23 +1,21 @@
 ---
 title: Rede de alto desempenho (HPN)
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/20/2018
-ms.openlocfilehash: 6be95455dcbd38feca0e7e166e712f4d38e21645
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7b0e18f2ab6673357c225468d214e8ed30ed731e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80814779"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966463"
 ---
 # <a name="high-performance-networking-hpn"></a>Rede de alto desempenho (HPN)
 
-Redes de alto desempenho (HPNs) desempenham uma função em requisitos de processamento de dados em tempo real. Por exemplo, atividades como a replicação do datacenter, a recuperação de desastres do datacenter e a computação distribuída de alto desempenho exigem alta transferência de dados de volume e baixa latência de rede. HPNs com recursos de conexão dinâmica tornam os recursos de rede de alto desempenho mais acessíveis e gerenciáveis. 
+Redes de alto desempenho (HPNs) desempenham uma função em requisitos de processamento de dados em tempo real. Por exemplo, atividades como a replicação do datacenter, a recuperação de desastres do datacenter e a computação distribuída de alto desempenho exigem alta transferência de dados de volume e baixa latência de rede. HPNs com recursos de conexão dinâmica tornam os recursos de rede de alto desempenho mais acessíveis e gerenciáveis.
 
 
 Os tópicos de rede de alto desempenho incluem:

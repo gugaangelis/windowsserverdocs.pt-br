@@ -1,19 +1,17 @@
 ---
 title: Solução de problemas Espaços de Armazenamento Diretos
 description: Saiba como solucionar problemas de implantação de Espaços de Armazenamento Diretos.
-ms.prod: windows-server
 ms.author: ''
-ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a1ec8462f96c1f6a018d1148b7824cdf8cc20
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 719a44a6c442f64b83a804c9ca20eb6ceaa791e9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769464"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954603"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espaços de Armazenamento Diretos
 
@@ -37,10 +35,10 @@ Os nós de um Espaços de Armazenamento Diretos sistema são reiniciados inesper
 
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|Tamanho| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
-|Disk4| Espelho| OK|  Íntegros| Verdadeiro|  10 TB|  Nó-01. cont...|
-|Disk3         |Espelho                 |OK                          |Íntegros       |Verdadeiro            |10 TB | Nó-01. cont...|
-|Disk2         |Espelho                 |Sem redundância               |Unhealthy     |Verdadeiro            |10 TB | Nó-01. cont...|
-|Disk1         |Espelho                 |{Sem redundância, InService}  |Unhealthy     |Verdadeiro            |10 TB | Nó-01. cont...|
+|Disk4| Espelho| OK|  Íntegros| verdadeiro|  10 TB|  Nó-01. cont...|
+|Disk3         |Espelho                 |OK                          |Íntegros       |verdadeiro            |10 TB | Nó-01. cont...|
+|Disk2         |Espelho                 |Sem redundância               |Unhealthy     |verdadeiro            |10 TB | Nó-01. cont...|
+|Disk1         |Espelho                 |{Sem redundância, InService}  |Unhealthy     |verdadeiro            |10 TB | Nó-01. cont...|
 
 Além disso, após uma tentativa de colocar o disco virtual online, as informações a seguir são registradas no log de cluster (DiskRecoveryAction).
 
@@ -100,10 +98,10 @@ Veja a seguir um exemplo da saída do cmdlet **Get-VirtualDisk** .
 
 |FriendlyName|  ResiliencySettingName|  OperationalStatus|   HealthStatus|  IsManualAttach|  Tamanho|   PSComputerName|
 |-|-|-|-|-|-|-|
-|Disk4|         Espelho|                 OK|                  Íntegros|       Verdadeiro|            10 TB|  Nó-01. cont...|
-|Disk3|         Espelho|                 OK|                  Íntegros|       Verdadeiro|            10 TB|  Nó-01. cont...|
-|Disk2|         Espelho|                 Desanexado|            Unknown (desconhecido)|       Verdadeiro|            10 TB|  Nó-01. cont...|
-|Disk1|         Espelho|                 Desanexado|            Unknown (desconhecido)|       Verdadeiro|            10 TB|  Nó-01. cont...|
+|Disk4|         Espelho|                 OK|                  Íntegros|       verdadeiro|            10 TB|  Nó-01. cont...|
+|Disk3|         Espelho|                 OK|                  Íntegros|       verdadeiro|            10 TB|  Nó-01. cont...|
+|Disk2|         Espelho|                 Desanexado|            Unknown (desconhecido)|       verdadeiro|            10 TB|  Nó-01. cont...|
+|Disk1|         Espelho|                 Desanexado|            Unknown (desconhecido)|       verdadeiro|            10 TB|  Nó-01. cont...|
 
 
 Além disso, os seguintes eventos podem ser registrados nos nós:
@@ -400,10 +398,10 @@ Você pode ver um problema em que um dispositivo Intel SSD DC série P4600 parec
 |               uniqueid               | deviceid | MediaType | BusType |               SerialNumber               |      tamanho      | canpool | FriendlyName | OperationalStatus |
 |--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
 |           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  Falso  |     HGST     |  HUH721010AL4200  |
-| EUI. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  Verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
-| EUI. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  Verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
-| EUI. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  Verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
-| EUI. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  Verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
+| EUI. 0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  verdadeiro   |    PROCESSADOR     |   SSDPE2KE016T7   |
 
 Para corrigir esse problema, atualize o firmware nas unidades Intel para a versão mais recente.  A versão de firmware QDV101B1 de maio de 2018 é conhecida por resolver esse problema.
 
