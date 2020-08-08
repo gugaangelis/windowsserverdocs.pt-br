@@ -7,12 +7,12 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/22/2018
-ms.openlocfilehash: 3156b2ed40415226e094485fba224e7d95a12ca2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 71152234b72a0557ca0d189896826d66c6ce0f49
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947102"
+ms.locfileid: "87996520"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Gerenciar certificados para rede definida pelo software
 
@@ -56,7 +56,7 @@ Ao criar \- certificados autoassinados, você pode usar as diretrizes a seguir.
 
 #### <a name="multiple-node"></a>Vários nós
 
-Você pode usar o comando [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) do Windows PowerShell para criar um \- certificado autoassinado.
+Você pode usar o comando [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) do Windows PowerShell para criar um \- certificado autoassinado.
 
 **Sintaxe**
 
@@ -72,7 +72,7 @@ New-SelfSignedCertificate -KeyUsageProperty All -Provider "Microsoft Strong Cryp
 
 #### <a name="single-node"></a>Nó único
 
-Você pode usar o comando [New-SelfSignedCertificate](https://technet.microsoft.com/itpro/powershell/windows/pkiclient/new-selfsignedcertificate) do Windows PowerShell para criar um \- certificado autoassinado.
+Você pode usar o comando [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) do Windows PowerShell para criar um \- certificado autoassinado.
 
 **Sintaxe**
 

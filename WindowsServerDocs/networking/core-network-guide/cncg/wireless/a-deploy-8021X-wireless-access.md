@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 29a570cdda76bf514f3843d3fefca4cdd1406a95
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 252c687d3ea42254edc81d1ea1e6019a4bad69fe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969603"
+ms.locfileid: "87997651"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>Implantar o \- acesso sem fio autenticado 802.1 x baseado em senha
 
@@ -53,7 +53,7 @@ Este guia foi projetado para administradores de rede e de sistema que seguiram a
 
 O guia de rede principal está disponível nos seguintes locais:
 
-- O [Guia de rede](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide) do windows Server 2016 Core está disponível na biblioteca técnica do windows Server 2016.
+- O [Guia de rede](../../core-network-guide.md) do windows Server 2016 Core está disponível na biblioteca técnica do windows Server 2016.
 
 - O [Guia de rede principal](https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683) também está disponível no formato Word na galeria do TechNet, em [https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683](https://gallery.technet.microsoft.com/Core-Network-Guide-for-9da2e683) .
 
@@ -65,7 +65,7 @@ Os administradores de rede e de sistema que implantam o sem fio autenticado deve
 
 Este guia está disponível no local a seguir.
 
-- O guia complementar de rede do Windows Server 2016 Core [implanta certificados de servidor para implantações com e sem fio 802.1 x](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments?f=255&MSPPError=-2147217396) em formato HTML na biblioteca técnica.
+- O guia complementar de rede do Windows Server 2016 Core [implanta certificados de servidor para implantações com e sem fio 802.1 x](../server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments.md?f=255&MSPPError=-2147217396) em formato HTML na biblioteca técnica.
 
 ##### <a name="public-ca"></a>CA Pública
 Você pode comprar certificados de servidor de uma CA pública, como a VeriSign, que os computadores cliente já confiam.

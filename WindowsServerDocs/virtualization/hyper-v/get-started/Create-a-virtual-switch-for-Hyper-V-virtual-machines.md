@@ -7,12 +7,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 7140c9e8b3205a2772e50652fd0e162790204b4c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b9de14f9c3f66f6d8c8b532e8f4a83192b3e824b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960115"
+ms.locfileid: "87996628"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Criar uma opção virtual para máquinas virtuais Hyper-V
 
@@ -49,7 +49,7 @@ A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos r
     |Nome da configuração|Descrição|
     |----------------|---------------|
     |Permitir que o sistema de operacional de gerenciamento compartilhe esse adaptador de rede|Selecione esta opção se desejar permitir que o host Hyper-V Compartilhe o uso do comutador virtual e NIC ou equipe NIC com a máquina virtual. Com isso habilitado, o host pode usar qualquer uma das configurações definidas para o comutador virtual, como configurações de QoS (qualidade de serviço), configurações de segurança ou outros recursos do comutador virtual Hyper-V.|
-    |Habilitar SR-IOV (virtualização de e/s de raiz única)|Selecione esta opção somente se você quiser permitir que o tráfego da máquina virtual ignore o comutador da máquina virtual e vá diretamente para a NIC física. Para obter mais informações, consulte [virtualização de e/s de raiz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) na referência do pôster Companion: rede Hyper-V.|
+    |Habilitar SR-IOV (virtualização de e/s de raiz única)|Selecione esta opção somente se você quiser permitir que o tráfego da máquina virtual ignore o comutador da máquina virtual e vá diretamente para a NIC física. Para obter mais informações, consulte [virtualização de e/s de raiz única](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn641211(v=ws.11)#Sec4) na referência do pôster Companion: rede Hyper-V.|
 
 7.  Se você quiser isolar o tráfego de rede do sistema operacional do host Hyper-V de gerenciamento ou outras máquinas virtuais que compartilham o mesmo comutador virtual, selecione **habilitar identificação de LAN virtual para o sistema operacional de gerenciamento**. Você pode alterar a ID de VLAN para qualquer número ou deixar o padrão. Esse é o número de identificação de LAN virtual que o sistema operacional de gerenciamento usará para toda a comunicação de rede por meio desse comutador virtual.
 
@@ -73,7 +73,7 @@ A rede de máquinas virtuais pode ser um assunto complexo. E há vários novos r
     Get-NetAdapter
     ```
 
-4.  Crie um comutador virtual usando o cmdlet [New-VMSwitch](https://technet.microsoft.com/library/hh848455.aspx) . Por exemplo, para criar um comutador virtual externo chamado ExternalSwitch, usando o adaptador de rede Ethernet e com **permitir que o sistema operacional de gerenciamento compartilhe esse adaptador de rede** ativado, execute o comando a seguir.
+4.  Crie um comutador virtual usando o cmdlet [New-VMSwitch](/powershell/module/hyper-v/new-vmswitch?view=win10-ps) . Por exemplo, para criar um comutador virtual externo chamado ExternalSwitch, usando o adaptador de rede Ethernet e com **permitir que o sistema operacional de gerenciamento compartilhe esse adaptador de rede** ativado, execute o comando a seguir.
 
     ```
     New-VMSwitch -name ExternalSwitch  -NetAdapterName Ethernet -AllowManagementOS $true
@@ -96,6 +96,3 @@ Para obter scripts mais avançados do Windows PowerShell que abrangem recursos d
 
 ## <a name="next-step"></a>Próxima etapa
 [Criar uma máquina virtual com o Hyper-V](Create-a-virtual-machine-in-Hyper-V.md)
-
-
-
