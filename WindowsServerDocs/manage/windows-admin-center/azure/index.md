@@ -1,19 +1,17 @@
 ---
 title: Como conectar o Windows Server aos serviços híbridos do Azure
 description: É possível estender as implantações locais do Windows Server para a nuvem usando os serviços híbridos do Azure.
-ms.technology: manage
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: 49b07845003208dc9c0bd3aaab4082a3e7d6a83a
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 5dcba9b92d9c0d85f99a1d54d50bef187fd51f10
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891351"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997477"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Como conectar o Windows Server aos serviços híbridos do Azure
 
@@ -46,21 +44,21 @@ Na ferramenta de serviços híbridos do Azure, é possível:
 - Sincronizar seu servidor de arquivos com a nuvem usando a [Sincronização de Arquivos do Azure](azure-file-sync.md)
 - Gerenciar as atualizações do sistema operacional para todos os seus servidores Windows, locais ou na nuvem, com o [Gerenciamento de Atualizações do Azure](azure-update-management.md)
 - Monitorar os servidores, locais ou na nuvem, e configurar alertas com o [Azure Monitor](azure-monitor.md)
-- Aplicar políticas de governança a seus servidores locais por meio do Azure Policy usando o [Azure Arc para servidores](https://docs.microsoft.com/azure/azure-arc/servers/overview)
-- Proteger seus servidores e obter proteção avançada contra ameaças com a [Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/windows-admin-center-integration)
+- Aplicar políticas de governança a seus servidores locais por meio do Azure Policy usando o [Azure Arc para servidores](/azure/azure-arc/servers/overview)
+- Proteger seus servidores e obter proteção avançada contra ameaças com a [Central de Segurança do Azure](/azure/security-center/windows-admin-center-integration)
 - Conectar seus servidores locais com uma Rede Virtual do Azure com o [Adaptador de Rede do Azure](https://aka.ms/WACNetworkAdapter)
 - Fazer com que as VMs do Azure se pareçam com sua rede local com a [Rede Estendida do Azure](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)
 
 ## <a name="back-up-and-protect-your-on-premises-servers-and-vms"></a>Fazer backup e proteger seus servidores e VMs locais
 
-- **Fazer backup dos servidores Windows com o [Backup do Azure](https://docs.microsoft.com/azure/backup/backup-overview)** É possível fazer backup de seus servidores Windows no Azure, o que ajuda a proteger você contra corrupção, ransomware e exclusões acidentais ou mal-intencionadas.
+- **Fazer backup dos servidores Windows com o [Backup do Azure](/azure/backup/backup-overview)** É possível fazer backup de seus servidores Windows no Azure, o que ajuda a proteger você contra corrupção, ransomware e exclusões acidentais ou mal-intencionadas.
 Para mais informações, confira [Fazer backup dos seus servidores com o Backup do Azure](azure-backup.md).
 
-- **Proteger suas máquinas virtuais Hyper-V com o [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)** É possível replicar cargas de trabalho em execução em VMs para que a infraestrutura crítica de negócios esteja protegida em caso de desastre. O Windows Admin Center simplifica a instalação e o processo de replicação de máquinas virtuais nos servidores Hyper-V ou clusters, tornando mais fácil reforçar a resiliência do ambiente com o serviço de recuperação de desastre do Azure Site Recovery.
+- **Proteger suas máquinas virtuais Hyper-V com o [Azure Site Recovery](/azure/site-recovery/site-recovery-overview)** É possível replicar cargas de trabalho em execução em VMs para que a infraestrutura crítica de negócios esteja protegida em caso de desastre. O Windows Admin Center simplifica a instalação e o processo de replicação de máquinas virtuais nos servidores Hyper-V ou clusters, tornando mais fácil reforçar a resiliência do ambiente com o serviço de recuperação de desastre do Azure Site Recovery.
 Para mais informações, confira [Proteger suas VMs com o Azure Site Recovery e com o Windows Admin Center](azure-site-recovery.md).
 
-- **Usar a replicação síncrona ou assíncrona baseada em bloco para uma VM no Azure usando a [Réplica de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)** É possível configurar a replicação baseada em bloco ou em volume em um nível de servidor para servidor usando a Réplica de Armazenamento para um servidor secundário ou uma VM. O Windows Admin Center permite que você crie uma VM do Azure especificamente para seu destino de replicação, ajudando você a configurar corretamente o armazenamento em uma nova VM do Azure.
-Para obter mais informações, consulte [Replicação de servidor para servidor com a Réplica de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-ui).
+- **Usar a replicação síncrona ou assíncrona baseada em bloco para uma VM no Azure usando a [Réplica de Armazenamento](../../../storage/storage-replica/storage-replica-overview.md)** É possível configurar a replicação baseada em bloco ou em volume em um nível de servidor para servidor usando a Réplica de Armazenamento para um servidor secundário ou uma VM. O Windows Admin Center permite que você crie uma VM do Azure especificamente para seu destino de replicação, ajudando você a configurar corretamente o armazenamento em uma nova VM do Azure.
+Para obter mais informações, consulte [Replicação de servidor para servidor com a Réplica de Armazenamento](../../../storage/storage-replica/server-to-server-storage-replication.md).
 
 ## <a name="extend-on-premises-capacity-with-azure"></a>Estender a capacidade local com o Azure
 
@@ -69,15 +67,15 @@ Para obter mais informações, consulte [Replicação de servidor para servidor 
 - **Sincronizar o servidor de arquivos com a nuvem usando a [Sincronização de Arquivos do Azure](https://aka.ms/afs)** Sincronize arquivos neste servidor com compartilhamentos de arquivos do Azure. Mantenha todos os seus arquivos locais ou use a camada de nuvem para liberar espaço e armazene em cache apenas os arquivos usados com mais frequência no servidor, dispondo em camadas os dados frios na nuvem. O backup dos dados na nuvem pode ser realizado, acabando com a necessidade de se preocupar com o backup do servidor local. Além disso, a sincronização de vários sites pode manter um conjunto de arquivos em sincronia entre vários servidores.
 Para obter mais informações, consulte [Sincronizar seu servidor de arquivos com a nuvem usando a Sincronização de Arquivos do Azure](azure-file-sync.md).
 
-- **Migrar o armazenamento para uma VM no Azure usando o [Serviço de Migração de Armazenamento](https://docs.microsoft.com/windows-server/storage/storage-migration-service/overview)** Use a ferramenta passo a passo para inventariar dados em servidores Windows e Linux e transferir os dados para uma nova VM do Azure. O Windows Admin Center pode criar uma VM do Azure para o trabalho que tem o tamanho e a configuração corretos para receber os dados do seu servidor de origem.
-Para obter mais informações, consulte [Usar o Serviço de Migração de Armazenamento para migrar um servidor](https://docs.microsoft.com/windows-server/storage/storage-migration-service/migrate-data).
+- **Migrar o armazenamento para uma VM no Azure usando o [Serviço de Migração de Armazenamento](../../../storage/storage-migration-service/overview.md)** Use a ferramenta passo a passo para inventariar dados em servidores Windows e Linux e transferir os dados para uma nova VM do Azure. O Windows Admin Center pode criar uma VM do Azure para o trabalho que tem o tamanho e a configuração corretos para receber os dados do seu servidor de origem.
+Para obter mais informações, consulte [Usar o Serviço de Migração de Armazenamento para migrar um servidor](../../../storage/storage-migration-service/migrate-data.md).
 
 ### <a name="extend-compute-capacity"></a>Estender a capacidade de computação
 
 - **Criar uma máquina virtual do Azure sem sair do Windows Admin Center** Na página *Todas as Conexões* no Windows Admin Center, vá para **Adicionar** e selecione **Criar** em **VM do Azure**. Você pode até ingressar no domínio de sua VM do Azure e configurar o armazenamento de dentro desta ferramenta de criação passo a passo.
 
-- **Aproveitar o Azure para atingir o quorum em seu cluster de failover com a [Testemunha em Nuvem](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness)** Em vez de investir em hardware adicional para obter quorum em um cluster de dois nós, é possível usar uma conta de armazenamento do Azure para servir como a testemunha de cluster para seu cluster do Azure Stack HCI ou outro cluster de failover.
-Para saber mais, confira [Implantar uma testemunha de nuvem para um Cluster de Failover](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness).
+- **Aproveitar o Azure para atingir o quorum em seu cluster de failover com a [Testemunha em Nuvem](../../../failover-clustering/deploy-cloud-witness.md)** Em vez de investir em hardware adicional para obter quorum em um cluster de dois nós, é possível usar uma conta de armazenamento do Azure para servir como a testemunha de cluster para seu cluster do Azure Stack HCI ou outro cluster de failover.
+Para saber mais, confira [Implantar uma testemunha de nuvem para um Cluster de Failover](../../../failover-clustering/deploy-cloud-witness.md).
 
 ### <a name="simplify-network-connectivity-between-your-on-premises-and-azure-networks"></a>Simplifique a conectividade de rede entre suas redes locais e do Azure
 
@@ -87,23 +85,23 @@ Para saber mais, confira [Implantar uma testemunha de nuvem para um Cluster de F
 
 ## <a name="centrally-manage-your-hybrid-environment-from-azure"></a>Gerenciar centralmente seu ambiente híbrido do Azure
 
-- **Monitorar e receber alertas de email para todos os servidores em seu ambiente com o [Azure Monitor para Máquinas Virtuais](https://docs.microsoft.com/azure/azure-monitor/insights/vminsights-overview)** É possível usar o Azure Monitor, também conhecido como Insights de Máquinas Virtuais, para monitorar a integridade e os eventos do servidor, criar alertas de email, obter uma exibição consolidada do desempenho do servidor em seu ambiente e visualizar aplicativos, sistemas e serviços conectados a um determinado servidor. O Windows Admin Center também pode configurar alertas de email padrão para o desempenho de integridade do servidor e eventos de integridade do cluster.
+- **Monitorar e receber alertas de email para todos os servidores em seu ambiente com o [Azure Monitor para Máquinas Virtuais](/azure/azure-monitor/insights/vminsights-overview)** É possível usar o Azure Monitor, também conhecido como Insights de Máquinas Virtuais, para monitorar a integridade e os eventos do servidor, criar alertas de email, obter uma exibição consolidada do desempenho do servidor em seu ambiente e visualizar aplicativos, sistemas e serviços conectados a um determinado servidor. O Windows Admin Center também pode configurar alertas de email padrão para o desempenho de integridade do servidor e eventos de integridade do cluster.
 Para mais informações, confira [Conectar seus servidores ao Azure Monitor e configurar notificações por email](azure-monitor.md).
 
-- **Gerenciar centralmente atualizações do sistema operacional para todos os seus servidores Windows com o [Gerenciamento de Atualizações do Azure](https://docs.microsoft.com/azure/automation/automation-update-management)** É possível gerenciar atualizações e patches para vários servidores e VMs de um só lugar, em vez de fazê-lo por servidor. Com o Gerenciamento de Atualizações do Azure, é possível avaliar rapidamente o status de atualizações disponíveis, agendar a instalação de atualizações necessárias e examinar os resultados de implantação para verificar atualizações que foram aplicadas com êxito. Isso será possível se seus servidores forem VMs do Azure, hospedadas por outros provedores de nuvem ou locais.
+- **Gerenciar centralmente atualizações do sistema operacional para todos os seus servidores Windows com o [Gerenciamento de Atualizações do Azure](/azure/automation/automation-update-management)** É possível gerenciar atualizações e patches para vários servidores e VMs de um só lugar, em vez de fazê-lo por servidor. Com o Gerenciamento de Atualizações do Azure, é possível avaliar rapidamente o status de atualizações disponíveis, agendar a instalação de atualizações necessárias e examinar os resultados de implantação para verificar atualizações que foram aplicadas com êxito. Isso será possível se seus servidores forem VMs do Azure, hospedadas por outros provedores de nuvem ou locais.
 Para mais informações, confira [Configurar servidores para o Gerenciamento de Atualizações do Azure](azure-update-management.md).
 
-- **Aprimorar a postura de segurança e obter proteção avançada contra ameaças com a [Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)** A Central de Segurança do Azure é um sistema de gerenciamento de segurança de infraestrutura unificado que fortalece a postura de segurança de seus data centers e fornece proteção avançada contra ameaças em suas cargas de trabalho híbridas na nuvem, estejam elas no Azure ou não, bem como no local. Com o Windows Admin Center, é possível configurar e conectar facilmente seus servidores à Central de Segurança do Azure.
-Para obter mais informações, consulte [Integrar a Central de Segurança do Azure com o Windows Admin Center (versão prévia)](https://docs.microsoft.com/azure/security-center/windows-admin-center-integration).
+- **Aprimorar a postura de segurança e obter proteção avançada contra ameaças com a [Central de Segurança do Azure](/azure/security-center/security-center-intro)** A Central de Segurança do Azure é um sistema de gerenciamento de segurança de infraestrutura unificado que fortalece a postura de segurança de seus data centers e fornece proteção avançada contra ameaças em suas cargas de trabalho híbridas na nuvem, estejam elas no Azure ou não, bem como no local. Com o Windows Admin Center, é possível configurar e conectar facilmente seus servidores à Central de Segurança do Azure.
+Para obter mais informações, consulte [Integrar a Central de Segurança do Azure com o Windows Admin Center (versão prévia)](/azure/security-center/windows-admin-center-integration).
 
-- **Aplicar políticas e garantir a conformidade em seu ambiente híbrido com o [Azure Arc para servidores](https://docs.microsoft.com/azure/azure-arc/servers/overview) e o [Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview)** Faça inventário, organize e gerencie servidores locais do Azure. É possível administrar servidores usando a política do Azure, controlar o acesso usando o RBAC (controle de acesso baseado em função) e habilitar serviços de gerenciamento adicionais do Azure.
+- **Aplicar políticas e garantir a conformidade em seu ambiente híbrido com o [Azure Arc para servidores](/azure/azure-arc/servers/overview) e o [Azure Policy](/azure/governance/policy/overview)** Faça inventário, organize e gerencie servidores locais do Azure. É possível administrar servidores usando a política do Azure, controlar o acesso usando o RBAC (controle de acesso baseado em função) e habilitar serviços de gerenciamento adicionais do Azure.
 
 ## <a name="clusters-versus-stand-alone-servers-and-vms"></a>Clusters versus servidores e VMs autônomos
 
 Os serviços híbridos do Azure funcionam com os Servidores do Windows nas seguintes configurações:
 
 - Servidores físicos e VMs (máquinas virtuais) autônomos
-- Clusters, incluindo clusters hiperconvergentes certificados pelo [Azure Stack HCI](../../../azure-stack-hci/index.md) e por programas [WSSD (definidos pelo software do Windows Server)](https://www.microsoft.com/cloud-platform/software-defined-datacenter)
+- Clusters, incluindo clusters hiperconvergentes certificados pelo [Azure Stack HCI](/azure-stack/hci/overview?view=azs-2002) e por programas [WSSD (definidos pelo software do Windows Server)](https://www.microsoft.com/cloud-platform/software-defined-datacenter)
 
 ### <a name="services-for-stand-alone-servers-and-vms"></a>Serviços para servidores e VMs autônomos
 
@@ -114,8 +112,8 @@ Esta é a lista completa dos serviços do Azure que oferecem uma funcionalidade 
 - Sincronizar seu servidor de arquivos com a nuvem usando a [Sincronização de Arquivos do Azure](azure-file-sync.md)
 - Gerenciar as atualizações do sistema operacional para todos os seus servidores Windows, locais ou na nuvem, com o [Gerenciamento de Atualizações do Azure](azure-update-management.md)
 - Monitorar os servidores, locais ou na nuvem, e configurar alertas com o [Azure Monitor](azure-monitor.md)
-- Aplicar políticas de governança a seus servidores locais por meio do Azure Policy usando o [Azure Arc para servidores](https://docs.microsoft.com/azure/azure-arc/servers/overview)
-- Proteger seus servidores e obter proteção avançada contra ameaças com a [Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/windows-admin-center-integration)
+- Aplicar políticas de governança a seus servidores locais por meio do Azure Policy usando o [Azure Arc para servidores](/azure/azure-arc/servers/overview)
+- Proteger seus servidores e obter proteção avançada contra ameaças com a [Central de Segurança do Azure](/azure/security-center/windows-admin-center-integration)
 - Conectar seus servidores locais com uma Rede Virtual do Azure com o [Adaptador de Rede do Azure](https://aka.ms/WACNetworkAdapter)
 - Fazer com que as VMs do Azure se pareçam com sua rede local com a [Rede Estendida do Azure](https://go.microsoft.com/fwlink/?linkid=2109517&clcid=0x409)
 
@@ -135,8 +133,8 @@ Para mais informações, confira [Configurar o Windows Admin Center para gerenci
 - **Adicionar uma camada de segurança ao Windows Admin Center adicionando a [autenticação do ](https://azure.microsoft.com/services/active-directory/)Azure AD (Azure Active Directory)** É possível adicionar uma camada adicional de segurança ao Windows Admin Center exigindo que os usuários se autentiquem usando identidades do Azure AD (Active Directory) para acessar o gateway. A autenticação do Azure AD também permite que você aproveite os recursos de segurança do Azure AD, como acesso condicional e autenticação multifator.
 Para obter mais informações, consulte [Configurar autenticação do Azure AD para o Windows Admin Center](../configure/user-access-control.md#azure-active-directory).
 
-- **Gerenciar recursos do Azure diretamente por meio do [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) inserido no Windows Admin Center** Aproveite o Azure Cloud Shell para obter uma experiência do Bash ou do PowerShell no Windows Admin Center e ter acesso fácil às tarefas de gerenciamento do Azure.
-Para obter mais informações, consulte [Visão geral do Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
+- **Gerenciar recursos do Azure diretamente por meio do [Azure Cloud Shell](/azure/cloud-shell/overview) inserido no Windows Admin Center** Aproveite o Azure Cloud Shell para obter uma experiência do Bash ou do PowerShell no Windows Admin Center e ter acesso fácil às tarefas de gerenciamento do Azure.
+Para obter mais informações, consulte [Visão geral do Azure Cloud Shell](/azure/cloud-shell/overview).
 
 
 ## <a name="additional-references"></a>Referências adicionais

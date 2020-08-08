@@ -67,7 +67,7 @@
 ####### [Configurar regras de firewall para membros não associados a domínio para permitir tráfego BranchCache](branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)
 ###### [Verificar configurações do computador cliente](branchcache/deploy/verify-Client-computer-Settings.md)
 
-## [DirectAccess](../remote/remote-access/da-stub.md) 
+## [DirectAccess](../remote/remote-access/directaccess/directaccess.md) 
 
 ## [Sistema de nome de domínio (DNS)](dns/dns-top.md)
 ### [Novidades no cliente DNS no Windows Server](dns/What-s-New-in-DNS-Client.md)
@@ -135,7 +135,7 @@
 ### [Exemplo de código gerado por C#](technologies/hcn/example-c-sharp.md)
 ### [Exemplo de código gerado por Go](technologies/hcn/example-go.md)
 
-## [Comutador Virtual do Hyper-V](technologies/vswitch-stub.md)
+## [Comutador Virtual do Hyper-V](../virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch.md)
 
 ## [IPAM (Gerenciamento de Endereço IP)](technologies/ipam/ipam-top.md)
 ### [Novidades no IPAM](technologies/ipam/What-s-New-in-IPAM.md)
@@ -304,7 +304,7 @@
 ### [Microsoft Azure e SDN](sdn/Azure_and_Sdn.md)
 ### [Contatar a equipe de rede na nuvem e datacenter](sdn/contact-sdn-team.md)
 
-## [VPN (rede virtual privada)](technologies/vpn-stub.md)
+## [VPN (rede virtual privada)](../remote/remote-access/vpn/vpn-top.md)
 
 ## [WINS (Serviço de Cadastramento na Internet do Windows)](technologies/wins/wins-top.md)
 
@@ -317,4 +317,3 @@
 ### [Referência técnica do serviço de data/hora do Windows](windows-time-service/windows-time-service-tech-ref.md)
 #### [Como o Serviço de data/hora do Windows Funciona](windows-time-service/How-the-Windows-Time-Service-Works.md)
 #### [Ferramentas e configurações do Serviço de data/hora do Windows](windows-time-service/Windows-Time-Service-Tools-and-Settings.md)
-

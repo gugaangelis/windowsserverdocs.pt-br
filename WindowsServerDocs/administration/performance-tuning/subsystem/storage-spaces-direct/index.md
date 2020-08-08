@@ -6,12 +6,12 @@ ms.assetid: 15a519fa-37cc-4d84-a9fe-097d33bb71ea
 author: phstee
 ms.author: vshankar; danlo; clausjor; stevenek
 ms.date: 4/14/2017
-ms.openlocfilehash: 9430e9e71d9e39533d5bdacd72af4593fe34c59a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 18dca2080a311a337e0d41055e95e7a7f0f42a80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895923"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991983"
 ---
 # <a name="performance-tuning-for-storage-spaces-direct"></a>Ajuste de desempenho para Espaços de Armazenamento Diretos
 
@@ -36,7 +36,7 @@ Para exibir e alterar a configuração de cache, use os cmdlets [Get-ClusterStor
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [Noções básicas de Espaços de Armazenamento Diretos](../../../../storage/storage-spaces/understand-storage-spaces-direct.md)
-- [Planejar Espaços de Armazenamento Diretos](../../../../storage/storage-spaces/plan-storage-spaces-direct.md)
+- [Noções básicas de Espaços de Armazenamento Diretos](../../../../storage/storage-spaces/understand-the-cache.md)
+- [Planejar Espaços de Armazenamento Diretos](../../../../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)
 - [Ajuste de desempenho para servidores de arquivo](../../role/file-server/index.md)
-- [Guia de considerações de design de armazenamento definido pelo software](https://technet.microsoft.com/library/mt243829.aspx) (Windows Server 2012 R2 e armazenamento SAS compartilhado)
+- [Guia de considerações de design de armazenamento definido pelo software](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/mt243829(v=ws.11)) (Windows Server 2012 R2 e armazenamento SAS compartilhado)

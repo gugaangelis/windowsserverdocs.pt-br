@@ -7,12 +7,12 @@ ms.author: nedpyle; danlo; dkruse; v-tea
 ms.date: 12/12/2019
 manager: dcscontentpm
 audience: Admin
-ms.openlocfilehash: 951d59a1a0e1d58a064eb71bd073259c15fd46d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecbd1bc751f133b80cf1d9cb264cf70a4ac4f47c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896178"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992195"
 ---
 # <a name="performance-tuning-for-file-servers"></a>Ajuste de desempenho para servidores de arquivos
 
@@ -171,7 +171,7 @@ As seguintes configurações do Registro REG\_DWORD podem afetar o desempenho do
 
     O padrão é 0, que desabilita a Assinatura SMB. Alterar esse valor para 1 habilita a assinatura SMB para toda a comunicação SMB, impedindo a comunicação SMB com computadores nos quais a assinatura SMB está desabilitada. A assinatura SMB pode aumentar o custo da CPU e as idas e voltas da rede, mas ajuda a bloquear ataques man-in-the-middle. Se a assinatura SMB não for necessária, verifique se esse valor de Registro é 0 em todos os clientes e servidores.
 
-    Para saber mais, confira [The Basics of SMB Signing](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/) (As noções básicas da assinatura SMB).
+    Para saber mais, confira [The Basics of SMB Signing](/archive/blogs/josebda/the-basics-of-smb-signing-covering-both-smb1-and-smb2) (As noções básicas da assinatura SMB).
 
 -   **FileInfoCacheEntriesMax**
 
