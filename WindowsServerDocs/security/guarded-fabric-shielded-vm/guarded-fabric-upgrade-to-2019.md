@@ -1,18 +1,16 @@
 ---
 title: Fazer upgrade de uma malha protegida para o Windows Server 2019
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: 50e35939031a74173fb031cf963af97bf8bb6dba
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: aefff380a1320898ff342f813498b8f45dfa6122
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856349"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943996"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Fazer upgrade de uma malha protegida para o Windows Server 2019
 
@@ -73,7 +71,7 @@ Antes de atualizar seus hosts Hyper-V para o Windows Server 2019, verifique se o
 1.  Se você estiver usando as políticas de integridade de código do controle de aplicativos do Windows Defender no servidor (sempre que estiver usando atestado de TPM), verifique se a política está no modo de auditoria ou está desabilitada antes de tentar atualizar o servidor. [Saiba como desabilitar uma política WDAC](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
 2.  Siga as orientações no [conteúdo de atualização do Windows Server](../../upgrade/upgrade-overview.md) para atualizar seu host para o Windows Server 2019. Se o host do Hyper-V fizer parte de um cluster de failover, considere o uso de uma [atualização sem interrupção do sistema operacional do cluster](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md).
 3.  [Teste e reabilite](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies) sua política de controle de aplicativos do Windows Defender, se você tiver uma habilitada antes da atualização.
-4.  Execute `Get-HgsClientConfiguration` para verificar se **IsHostGuarded = true**, o que significa que o host está passando com êxito o atestado com o servidor HgS.
+4.  Execute `Get-HgsClientConfiguration` para verificar se **IsHostGuarded = true**, significando que o host está passando com êxito o atestado com o servidor HgS.
 5.  Se você estiver usando o atestado de TPM, talvez seja necessário [recapturar a política de linha de base ou integridade de código do TPM](guarded-fabric-add-host-information-for-tpm-trusted-attestation.md) após a atualização para passar o atestado.
 6.  Inicie a execução de VMs blindadas no host novamente!
 

@@ -2,18 +2,16 @@
 title: Serviço DNS interno (iDNS) para SDN
 description: Este tópico explica como você pode fornecer serviços DNS para suas cargas de trabalho de locatários hospedados usando o iDNS (DNS interno), que é integrado à rede definida pelo software no Windows Server 2016.
 manager: grcusanz
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 47765dc6a08821b0b7032261467bef78239f8369
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 2980e073c34d6177846175563e4d374b439ced44
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520245"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952596"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>Serviço DNS interno (iDNS) para SDN
 

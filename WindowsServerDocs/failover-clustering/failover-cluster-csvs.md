@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0dbfaea12444de607cc28a33be334f86ee273d78
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945859"
+ms.locfileid: "87992868"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volumes compartilhados de cluster em um cluster de failover
 
@@ -45,7 +45,7 @@ Considere o seguinte ao configurar redes que deem suporte o CSV.
 
 - **Múltiplas redes e múltiplos adaptadores de rede**. Para habilitar a tolerância a falhas em caso de falha de rede, recomendamos que as redes com múltiplos clusters transportem o tráfego CSV ou que os adaptadores de rede agrupados sejam configurados.
 
-    Se os nós de cluster estiverem conectados a redes que não devam ser usadas pelo cluster, desabilite-os. Por exemplo, recomendamos desabilitar redes iSCSI (Internet Small Computer System Interface) para uso de cluster, a fim de impedir o tráfego CSV nessas redes. Para desabilitar uma rede, em Gerenciador de Cluster de Failover, selecione **redes**, selecione a rede, selecione a ação **Propriedades** e, em seguida, selecione **não permitir comunicação de rede de cluster nesta rede**. Como alternativa, você pode configurar a propriedade **role** da rede usando o cmdlet [Get-ClusterNetwork](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) do Windows PowerShell.
+    Se os nós de cluster estiverem conectados a redes que não devam ser usadas pelo cluster, desabilite-os. Por exemplo, recomendamos desabilitar redes iSCSI (Internet Small Computer System Interface) para uso de cluster, a fim de impedir o tráfego CSV nessas redes. Para desabilitar uma rede, em Gerenciador de Cluster de Failover, selecione **redes**, selecione a rede, selecione a ação **Propriedades** e, em seguida, selecione **não permitir comunicação de rede de cluster nesta rede**. Como alternativa, você pode configurar a propriedade **role** da rede usando o cmdlet [Get-ClusterNetwork](/powershell/module/failoverclusters/get-clusternetwork?view=win10-ps) do Windows PowerShell.
 - **Propriedades do adaptador de rede**. Verifique se as configurações a seguir estão habilitadas nas propriedades de todos os adaptadores de rede que transportarem a comunicação do cluster:
 
   - **Cliente para redes Microsoft** e **Compartilhamento Arquivos/Impressoras para Redes Microsoft**. Essas configurações dão suporte ao protocolo SMB 3.0, que é usado por padrão para transportar o tráfego CSV entre os nós. Para habilitar o SMB, certifique-se também de que o serviço Servidor e Estação de Trabalho estejam sendo executados e configurados para serem iniciados automaticamente em cada nó de cluster.
@@ -64,7 +64,7 @@ Para uma visão geral dos requisitos de hardware, rede e armazenamento para os c
 
 #### <a name="about-io-synchronization-and-io-redirection-in-csv-communication"></a>Sobre a sincronização de E/S e redirecionamento de E/S na comunicação do CSV
 
-- **Sincronização de e/s**: o CSV permite que vários nós tenham acesso de leitura/gravação simultâneo ao mesmo armazenamento compartilhado. Quando um nó realizar uma entrada/saída (E/S) de disco em um volume CSV, o nó se comunicará diretamente com o armazenamento, por meio se uma SAN (rede de área de armazenamento), por exemplo. No entanto, a qualquer momento, um único nó (chamado de nó de coordenador) "possui" o recurso de disco físico que está associado ao LUN. O nó coordenador de um volume CSV é exibido no Gerenciador de Cluster de Failover como **Nó do Proprietário**, em **Discos**. Ele também aparece na saída do cmdlet [Get-ClusterSharedVolume](https://docs.microsoft.com/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) do Windows PowerShell.
+- **Sincronização de e/s**: o CSV permite que vários nós tenham acesso de leitura/gravação simultâneo ao mesmo armazenamento compartilhado. Quando um nó realizar uma entrada/saída (E/S) de disco em um volume CSV, o nó se comunicará diretamente com o armazenamento, por meio se uma SAN (rede de área de armazenamento), por exemplo. No entanto, a qualquer momento, um único nó (chamado de nó de coordenador) "possui" o recurso de disco físico que está associado ao LUN. O nó coordenador de um volume CSV é exibido no Gerenciador de Cluster de Failover como **Nó do Proprietário**, em **Discos**. Ele também aparece na saída do cmdlet [Get-ClusterSharedVolume](/powershell/module/failoverclusters/get-clustersharedvolume?view=win10-ps) do Windows PowerShell.
 
   >[!NOTE]
   >No Windows Server 2012 R2, a propriedade CSV é distribuída uniformemente entre os nós de cluster de failover com base no número de volumes CSV que cada nó possui. Além disso, a propriedade é rebalanceada automaticamente em caso de condições, como failover de CSV, um nó reingressar no cluster, adição de um novo nó ao cluster, reinicialização de um nó de cluster ou inicialização do cluster de failover após um desligamento.
@@ -256,5 +256,5 @@ Considere os seguintes fatores ao escolher um aplicativo e agenda de backup para
 
 ## <a name="more-information"></a>Mais informações
 
-- [Clustering de failover](failover-clustering.md)
+- [Clustering de failover](./failover-clustering-overview.md)
 - [Implantar Espaços de Armazenamento clusterizados](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

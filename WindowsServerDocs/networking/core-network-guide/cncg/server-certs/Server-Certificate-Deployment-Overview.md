@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: ca5c3e04-ae25-4590-97f3-0376a9c2a9a2
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 318bab675cc633034731e369b5da2bbb40d810b0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f8d1536bf3043df4071c01ebb46cd84665b23b8b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949410"
+ms.locfileid: "87992841"
 ---
 # <a name="server-certificate-deployment-overview"></a>Visão geral da implantação de certificado do servidor
 
@@ -34,7 +34,7 @@ A ilustração a seguir mostra os componentes necessários para implantar certif
 ![Infraestrutura necessária para implantação de certificado do servidor](../../../media/Nps-Certs/Nps-Certs.jpg)
 
 > [!NOTE]
-> Na ilustração acima, vários servidores são representados: DC1, CA1, WEB1 e muitos servidores SDN. Este guia fornece instruções para implantar e configurar o CA1 e o WEB1, e para configurar o DC1, que este guia pressupõe que você já tenha instalado em sua rede. Se você ainda não tiver instalado seu domínio de Active Directory, poderá fazer isso usando o [Guia de rede principal](https://technet.microsoft.com/library/mt604042.aspx) do Windows Server 2016.
+> Na ilustração acima, vários servidores são representados: DC1, CA1, WEB1 e muitos servidores SDN. Este guia fornece instruções para implantar e configurar o CA1 e o WEB1, e para configurar o DC1, que este guia pressupõe que você já tenha instalado em sua rede. Se você ainda não tiver instalado seu domínio de Active Directory, poderá fazer isso usando o [Guia de rede principal](../../core-network-guide.md) do Windows Server 2016.
 
 Para obter mais informações sobre cada item representado na ilustração acima, consulte o seguinte:
 
@@ -116,6 +116,3 @@ O processo de configuração do registro de certificado do servidor ocorre neste
     > Todos os computadores membros do domínio recebem automaticamente o certificado da autoridade de certificação raiz da empresa sem a configuração do registro automático. Esse certificado é diferente do certificado do servidor que você configura e distribui usando o registro automático. O certificado da autoridade de certificação é instalado automaticamente no repositório de certificados das autoridades de certificação raiz confiáveis para todos os computadores membros do domínio para que eles confiem nos certificados emitidos por essa autoridade de certificação.
 
 10. Verifique se todos os servidores registraram um certificado de servidor válido.
-
-
-

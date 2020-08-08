@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e9276acbad0f9e9d403d3e172b4935f1de43475
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e3beb043272de304edfcac294bc9b831a60b1003
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880353"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992997"
 ---
 # <a name="certreq"></a>certreq
 
@@ -339,7 +339,7 @@ Os artigos a seguir contêm exemplos de uso de Certreq:
 
 - [Como criar um certificado SSL do servidor Web manualmente](https://techcommunity.microsoft.com/t5/core-infrastructure-and-security/how-to-create-a-web-server-ssl-certificate-manually/ba-p/1128529)
 
-- [Registro de certificado para o agente de System Center Operations Manager](https://docs.microsoft.com/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
+- [Registro de certificado para o agente de System Center Operations Manager](/system-center/scom/plan-planning-agent-deployment?view=sc-om-2019)
 
 - [Visão geral dos Serviços de Certificados do Active Directory](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11))
 

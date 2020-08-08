@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f83e828dd8ce90da4265eb03f94b498933d9c2a6
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 406674f26039f80cbca5ed3ba96e041bc8624729
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518604"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952787"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>Implantar uma política de acesso central (passo a passo)
 
@@ -40,7 +38,7 @@ Esta seção apresenta a série de etapas de alto nível que auxiliam na fase de
 |--|--|--|
 | 1,1 | A empresa determina que uma política de acesso central é necessária. | Para proteger as informações financeiras armazenadas nos servidores de arquivos, as operações de segurança do departamento financeiro trabalham com a segurança das informações para especificar a necessidade de uma política de acesso central. |  |
 | 1.2 | Expressar a política de acesso | Os documentos financeiros só devem ser lidos pelos membros do departamento financeiro. Os membros do departamento financeiro só devem acessar documentos do próprio país. Apenas os administradores financeiros devem ter acesso de gravação. Uma exceção será permitida para os membros do grupo FinanceException. Esse grupo terá acesso de leitura. |  |
-| 1.3 | Expressar a política de acesso em construções do Windows Server 2012 | Direcionamento:<p>-Resource. Department contém Finance<p>Regras de acesso:<p>-Permitir leitura de usuário. país = recurso. país e usuário. departamento = recurso. departamento<br />-Permitir controle total de usuário. MemberOf (FinanceAdmin)<p>Exceção:<p>Allow read memberOf(FinanceException) |  |
+| 1,3 | Expressar a política de acesso em construções do Windows Server 2012 | Direcionamento:<p>-Resource. Department contém Finance<p>Regras de acesso:<p>-Permitir leitura de usuário. país = recurso. país e usuário. departamento = recurso. departamento<br />-Permitir controle total de usuário. MemberOf (FinanceAdmin)<p>Exceção:<p>Allow read memberOf(FinanceException) |  |
 | 1.4 | Determinar as propriedades de arquivo necessárias para a política | Marque os arquivos com:<p>-Departamento<br />-País |  |
 | 1.5 | Determinar os tipos de declarações e os grupos necessários para a política | Tipos de declarações:<p>-País<br />-Departamento<p>Grupos de usuários:<p>- FinanceAdmin<br />-Financeexception |  |
 | 1.6 | Determinar os servidores aos quais essa política será aplicada | Aplique a política a todos os servidores de arquivos financeiros. |  |
@@ -117,7 +115,7 @@ A próxima etapa consiste em criar as propriedades de recurso. No procedimento a
 
     -   País
 
-    -   Departamento
+    -   department
 
 ![guias de solução](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes do Windows PowerShell</em>***
 

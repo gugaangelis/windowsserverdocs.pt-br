@@ -1,33 +1,31 @@
 ---
 title: Autenticação de chave pública de dispositivo ingressado no domínio
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: michikos
-ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 450d3e64ff753a718c2e72e69cb60d51c8c18f78
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 37710710bc301173503450a46fc1ccc2b0614cf4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856329"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943946"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>Autenticação de chave pública de dispositivo ingressado no domínio
 
 >Aplica-se a: Windows Server 2016, Windows 10
 
-O Kerberos adicionou suporte para dispositivos ingressados no domínio para entrar usando um certificado que começa com o Windows Server 2012 e o Windows 8. Essa alteração permite que fornecedores de terceiros criem soluções para provisionar e inicializar certificados para dispositivos ingressados no domínio a serem usados para autenticação de domínio. 
+O Kerberos adicionou suporte para dispositivos ingressados no domínio para entrar usando um certificado que começa com o Windows Server 2012 e o Windows 8. Essa alteração permite que fornecedores de terceiros criem soluções para provisionar e inicializar certificados para dispositivos ingressados no domínio a serem usados para autenticação de domínio.
 
 ## <a name="automatic-public-key-provisioning"></a>Provisionamento automático de chave pública
 
 A partir do Windows 10 versão 1507 e do Windows Server 2016, os dispositivos ingressados no domínio provisionam automaticamente uma chave pública associada a um controlador de domínio do Windows Server 2016 (DC). Depois que uma chave é provisionada, o Windows pode usar a autenticação de chave pública para o domínio.
 
 ### <a name="key-generation"></a>Geração de chave
-Se o dispositivo estiver executando o Credential Guard, um par de chaves pública/privada será criado protegido pelo Credential Guard. 
+Se o dispositivo estiver executando o Credential Guard, um par de chaves pública/privada será criado protegido pelo Credential Guard.
 
-Se o Credential Guard não estiver disponível e um TPM for, um par de chaves pública/privada será criado protegido pelo TPM. 
+Se o Credential Guard não estiver disponível e um TPM for, um par de chaves pública/privada será criado protegido pelo TPM.
 
 Se nenhum estiver disponível, um par de chaves não será gerado e o dispositivo só poderá ser autenticado usando a senha.
 

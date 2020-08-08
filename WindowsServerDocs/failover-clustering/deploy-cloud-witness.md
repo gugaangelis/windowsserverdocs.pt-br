@@ -7,12 +7,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: Como usar Microsoft Azure para hospedar a testemunha para um cluster de failover do Windows Server na nuvem – também conhecido como implantar uma testemunha em nuvem.
-ms.openlocfilehash: 937fb6c2d4aaabfd6399a6bebdce50e351b78fc6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa0fee044b0a5e702cb56816bf9a878f209d6117
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950190"
+ms.locfileid: "87993016"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implantar uma testemunha de nuvem para um Cluster de Failover
 
@@ -111,7 +111,7 @@ No portal do Azure, navegue até sua conta de armazenamento, clique em **todas a
 ![Instantâneo dos links de ponto de extremidade de testemunha de nuvem ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)
  **Figura 5: links de URL de ponto de extremidade de testemunha**
 
-Para obter mais informações sobre como criar e gerenciar contas de armazenamento do Azure, consulte [sobre contas de armazenamento do Azure](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)
+Para obter mais informações sobre como criar e gerenciar contas de armazenamento do Azure, consulte [sobre contas de armazenamento do Azure](/azure/storage/common/storage-account-create)
 
 ## <a name="configure-cloud-witness-as-a-quorum-witness-for-your-cluster"></a>Configurar a testemunha de nuvem como uma testemunha de quorum para o cluster
 A configuração da testemunha em nuvem está bem integrada no assistente de configuração de quorum existente interno do Gerenciador de Cluster de Failover.
@@ -146,7 +146,7 @@ A configuração da testemunha em nuvem está bem integrada no assistente de con
 ### <a name="configuring-cloud-witness-using-powershell"></a>Configurando a testemunha de nuvem usando o PowerShell
 O comando do PowerShell Set-ClusterQuorum existente tem novos parâmetros adicionais correspondentes à testemunha de nuvem.
 
-Você pode configurar a testemunha de nuvem usando o [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx) seguinte comando do PowerShell:
+Você pode configurar a testemunha de nuvem usando o [`Set-ClusterQuorum`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee461013(v=technet.10)) seguinte comando do PowerShell:
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>

@@ -1,26 +1,25 @@
 ---
 title: Implantar dispositivos gráficos usando um vGPU do RemoteFX
 description: Saiba como implantar e configurar vGPU RemoteFX no Windows Server
-ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: ab16dcdc8ce29f2440207ea5bbc7c421f171ed4a
-ms.sourcegitcommit: f81aa22739d818382d314561dece59a9341dfb6f
+ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86390083"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953432"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>Implantar dispositivos gráficos usando um vGPU do RemoteFX
 
 > Aplica-se a: Windows Server 2016, Microsoft Hyper-V Server 2016
 
 > [!NOTE]
-> Devido a questões de segurança, o vGPU RemoteFX está desabilitado por padrão em todas as versões do Windows a partir da atualização de segurança de 14 de julho de 2020. Para saber mais, consulte [KB 4570006](https://support.microsoft.com/help/4570006).
+> Devido a questões de segurança, a vGPU RemoteFX está desabilitada por padrão em todas as versões do Windows desde a Atualização de Segurança de 14 de julho de 2020. Para saber mais, confira [KB 4570006](https://support.microsoft.com/help/4570006).
 
 O recurso vGPU para o RemoteFX possibilita que várias máquinas virtuais compartilhem uma GPU física. Os recursos de renderização e de computação são compartilhados dinamicamente entre máquinas virtuais, tornando o RemoteFX vGPU apropriado para cargas de trabalho de alta intermitência em que os recursos de GPU dedicados não são necessários. Por exemplo, em um serviço de VDI, o vGPU RemoteFX pode ser usado para descarregar os custos de renderização de aplicativo para a GPU, com o efeito de diminuir a carga da CPU e melhorar a escalabilidade do serviço.
 
@@ -38,7 +37,7 @@ Requisitos da VM convidada:
 
 Considerações adicionais para VMs convidadas:
 
-- A funcionalidade OpenGL e OpenCL só está disponível em convidados que executam o Windows 10 ou o Windows Server 2016.  
+- A funcionalidade OpenGL e OpenCL só está disponível em convidados que executam o Windows 10 ou o Windows Server 2016.
 - O DirectX 11,0 só está disponível para convidados que executam o Windows 8 ou posterior.
 
 ## <a name="enable-remotefx-vgpu"></a>Habilitar vGPU do RemoteFX

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b347f5cf3a3d752c500e602b84889afa9c580ab0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 479105e7f1e605142ec54103825b1ba4934fb127
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895696"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993105"
 ---
 # <a name="view-task-details-and-notifications"></a>Exibir detalhes e notificações de tarefas
 
@@ -37,7 +37,7 @@ Os itens no menu **Notificações** mostram uma barra de progresso, uma breve de
 
 As notificações são particularmente úteis para instalar ou desinstalar funções, serviços de função e recursos. Por exemplo, se você iniciar uma instalação de recurso em um servidor remoto, poderá fechar o assistente para adicionar funções e recursos enquanto a instalação ainda estiver em andamento, mas a tarefa ativa permanecerá na lista de **notificações** . O item **notificações** mostra uma barra de progresso para a instalação e permite reabrir o assistente para adicionar funções e recursos, se necessário, clicando em **Adicionar Assistente de funções e recursos**. Os itens nessa lista informam se uma instalação falhou ou se são necessárias etapas de configuração adicionais para concluir a implantação do recurso.
 
-As notificações também desempenham uma parte importante na solução de problemas com tarefas ou processos no Gerenciador do Servidor. Para obter mais informações sobre como usar mensagens na área de **notificações** e na caixa de diálogo **detalhes da tarefa** para solucionar problemas de tarefas ou processos sem êxito, consulte o [Fórum Gerenciador do servidor](https://docs.microsoft.com/answers/topics/windows-server-manager.html).
+As notificações também desempenham uma parte importante na solução de problemas com tarefas ou processos no Gerenciador do Servidor. Para obter mais informações sobre como usar mensagens na área de **notificações** e na caixa de diálogo **detalhes da tarefa** para solucionar problemas de tarefas ou processos sem êxito, consulte o [Fórum Gerenciador do servidor](/answers/topics/windows-server-manager.html).
 
 Para excluir uma notificação que você não deseja mais ver na lista de **notificações** , passe o cursor do mouse sobre a notificação e clique em **remover tarefa** (**X**).
 
@@ -48,4 +48,4 @@ O painel inferior é especialmente útil para solucionar problemas de tarefas co
 
 ## <a name="see-also"></a>Consulte Também
 [Filtrar, classificar e consultar dados em blocos](filter-sort-and-query-data-in-server-manager-tiles.md) 
- de Gerenciador do servidor [Gerenciador do servidor Fórum](https://docs.microsoft.com/answers/topics/windows-server-manager.html).
+ de Gerenciador do servidor [Gerenciador do servidor Fórum](/answers/topics/windows-server-manager.html).

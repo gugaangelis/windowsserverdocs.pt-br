@@ -1,24 +1,22 @@
 ---
 title: Kerberos Constrained Delegation Overview
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-kerberos
 ms.topic: article
 ms.assetid: 51923b0a-0c1a-47b2-93a0-d36f8e295589
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 07717743017c15a7bdabd3c3ce38d75a02980460
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: bd34723d1f5223c2576237c768d9da55172eebc6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80858859"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87943886"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico de visão geral do profissional de ti descreve os novos recursos para a delegação restrita de Kerberos no Windows Server 2012 R2 e no Windows Server 2012.
 
@@ -26,15 +24,15 @@ Este tópico de visão geral do profissional de ti descreve os novos recursos pa
 
 A delegação restrita de Kerberos foi introduzida no Windows Server 2003 para proporcionar uma forma de delegação mais segura para ser usada em serviços. Quando configurada, a delegação restrita restringe os serviços nos quais um determinado servidor pode agir em nome de um usuário. Isso requer privilégios de administrador de domínio para configurar uma conta de domínio para um serviço e restringe a conta a um único domínio. Na empresa de hoje, os serviços front-end não são projetados para serem limitados à integração apenas com serviços em seu domínio.
 
-Nos sistemas operacionais anteriores, em que o administrador de domínio configurava o serviço, o administrador de serviços não tinha muito como saber quais serviços front-end eram delegados aos serviços de recurso que eles tinham. Portanto, qualquer serviço front-end que pudesse ser delegado a um serviço de recurso representava um ponto de ataque potencial. Se um servidor que hospedasse um serviço front-end fosse comprometido, e estivesse configurado para delegar para serviços de recurso, os serviços de recurso também poderiam ser comprometidos.
+Em sistemas operacionais mais antigos, nos quais o administrador de domínio configurava o serviço, o administrador do serviço não tinha uma maneira útil de saber quais serviços front-end eram delegados aos serviços de recursos eles possuíam. E qualquer serviço front-end que pudesse ser delegado a um serviço de recurso representava um possível ponto de ataque. Se um servidor que hospedava um serviço front-end fosse comprometido, e tivesse sido configurado para delegar aos serviços de recursos, os serviços de recurso também poderiam ser comprometidos.
 
-No Windows Server 2012 R2 e no Windows Server 2012, a capacidade de configurar a delegação restrita para o serviço foi transferida do administrador de domínio para o administrador de serviços. Dessa forma, o administrador de serviços back-end pode permitir ou negar serviços front-end.
+No Windows Server 2012 R2 e no Windows Server 2012, a capacidade de configurar a delegação restrita para o serviço foi transferida do administrador de domínio para o administrador de serviços. Dessa forma, o administrador do serviço de back-end pode permitir ou negar os serviços front-end.
 
 Para obter informações detalhadas sobre delegação restrita, conforme apresentada no Windows Server 2003, consulte [Transição de protocolo e delegação restrita de Kerberos](https://technet.microsoft.com/library/cc739587(v=ws.10)).
 
-A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões específicas para delegação restrita.  O S4U2Proxy (Service for User to Proxy) permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end. Essas extensões permitem que a delegação restrita seja configurada na conta do serviço de back-end, que pode estar em outro domínio. Para obter mais informações sobre essas extensões, consulte [\[MS-SFU\]: extensões de protocolo Kerberos: serviço para a especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx) na biblioteca MSDN.
+A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões específicas para delegação restrita.  O S4U2Proxy (Service for User to Proxy) permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end. Essas extensões permitem que a delegação restrita seja configurada na conta do serviço de back-end, que pode estar em outro domínio. Para obter mais informações sobre essas extensões, consulte [ \[ MS-SFU \] : extensões de protocolo Kerberos: serviço para a especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx) na biblioteca MSDN.
 
-**Aplicativos práticos**
+**Aplicações práticas**
 
 A delegação restrita dá aos administradores de serviço a capacidade de especificar e impor limites de confiança do aplicativo, limitando o escopo em que os serviços de aplicativo podem agir em nome de um usuário. Os administradores de serviços podem configurar quais contas de serviço front-end podem ser delegadas aos seus respectivos serviços back-end.
 
@@ -54,7 +52,7 @@ Isso também muda a decisão de se um servidor deve confiar na origem de uma ide
 
 Uma alteração no protocolo subjacente permite a delegação restrita entre domínios. A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões para serviço para o protocolo S4U2Proxy (user to proxy). Trata-se de um conjunto de extensões para o protocolo Kerberos que permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end.
 
-Para obter informações de implementação sobre essas extensões, consulte [\[MS-SFU\]: extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx) no msdn.
+Para obter informações de implementação sobre essas extensões, consulte [ \[ MS-SFU \] : extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx) no msdn.
 
 Para obter mais informações sobre a sequência de mensagem básica para a delegação Kerberos com um TGT (tíquete de concessão de tíquete) encaminhado em comparação com o serviço para as extensões de usuário (S4U), consulte a seção [1.3.3 Visão geral do protocolo](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) no [MS-SFU]: Extensões do protocolo Kerberos: Serviço para usuário e especificação do protocolo de delegação restrita.
 
@@ -82,4 +80,4 @@ Para configurar um serviço de recurso para permitir acesso a um serviço front-
 ## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>Requisitos de software
 A delegação restrita baseada em recursos só pode ser configurada em um controlador de domínio que executa o Windows Server 2012 R2 e o Windows Server 2012, mas pode ser aplicada em uma floresta de modo misto.
 
-Você deve aplicar o hotfix a seguir a todos os controladores de domínio que executam o Windows Server 2012 em domínios de conta de usuário no caminho de referência entre os domínios de front-end e back-end que estão executando sistemas operacionais anteriores ao Windows Server: a delegação restrita baseada em recursos KDC_ERR_POLICY falha em ambientes que têm controladores de domínio baseados no Windows Server 2008 R2 (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro).
+Você deve aplicar o hotfix a seguir a todos os controladores de domínio que executam o Windows Server 2012 em domínios de conta de usuário no caminho de referência entre os domínios de front-end e back-end que estão executando sistemas operacionais anteriores ao Windows Server: a delegação restrita baseada em recursos KDC_ERR_POLICY falha em ambientes que têm controladores de domínio baseados no Windows Server 2008 R2 ( https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro) .

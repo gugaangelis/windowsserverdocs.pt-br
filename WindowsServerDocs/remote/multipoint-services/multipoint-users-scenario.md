@@ -7,12 +7,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: ada21ba798dc248d7c488059b52b94e7460f2830
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a14d7da2d633c659be9ea949e913857534e244a2
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970473"
+ms.locfileid: "87992755"
 ---
 # <a name="example-scenarios-multipoint-services-user-accounts"></a>Cenários de exemplo: contas de usuário do MultiPoint Services
 O que você precisa fazer para implementar o cenário de conta de usuário que você escolheu para o ambiente de serviços do MultiPoint? As tabelas a seguir descrevem cada tarefa a ser executada para configurar contas de usuário e preparar estações para contas de usuário compartilhadas ou individuais em um computador MultiPoint autônomo ou em servidores em rede em um grupo de trabalho ou em um domínio Active Directory. Escolha o cenário que se aplica ao seu ambiente. Em seguida, siga os links na tabela para concluir cada tarefa de configuração necessária.
@@ -42,5 +42,5 @@ O que você precisa fazer para implementar o cenário de conta de usuário que v
 |-|-|
 |**Meus usuários não precisam fazer logon.** As estações podem estar disponíveis para qualquer pessoa que possa orientá-las. Eles não precisam de uma experiência individual na área de trabalho do Windows que inclua pastas particulares para armazenar dados ou áreas de trabalho personalizadas.|1. Crie uma conta de domínio para fazer logon nos servidores.<br />2. [permitir que uma conta tenha várias sessões](Allow-one-account-to-have-multiple-sessions.md) em cada servidor.<br />3. [Configurar estações para logon automático](Configure-stations-for-automatic-logon.md) em cada servidor.|
 |**Meus usuários podem compartilhar o mesmo logon de usuário.** Eles não precisam de uma experiência individual na área de trabalho do Windows que inclua pastas particulares para armazenar dados ou áreas de trabalho personalizadas.|1. Crie uma conta de domínio para um grupo ou para cada usuário.<br />2. [permitir que uma conta tenha várias sessões](Allow-one-account-to-have-multiple-sessions.md) em cada servidor.|
-|**Meus usuários devem ter sua própria experiência de área de trabalho individual do Windows.**<p>-   **Opção a** -qualquer usuário com uma conta de domínio pode usar o computador dos serviços do MultiPoint.<br />-   **Opção B** -quero limitar quais contas de domínio podem acessar o servidor.|-   **Opção a** -nenhuma configuração é necessária. Por padrão, todos os usuários de domínio têm acesso a qualquer computador dos serviços do MultiPoint na rede.<br />-   **Opção B** -limitar o acesso de contas de usuário de domínio ao computador dos serviços do MultiPoint. Para obter instruções, confira [limitar o acesso de usuários ao servidor](limit-users--access-to-the-server-in-multipoint-services.md).|
+|**Meus usuários devem ter sua própria experiência de área de trabalho individual do Windows.**<p>-   **Opção a** -qualquer usuário com uma conta de domínio pode usar o computador dos serviços do MultiPoint.<br />-   **Opção B** -quero limitar quais contas de domínio podem acessar o servidor.|-   **Opção a** -nenhuma configuração é necessária. Por padrão, todos os usuários de domínio têm acesso a qualquer computador dos serviços do MultiPoint na rede.<br />-   **Opção B** -limitar o acesso de contas de usuário de domínio ao computador dos serviços do MultiPoint. Para obter instruções, confira [limitar o acesso de usuários ao servidor](./limit-user-access-to-multipoint.md).|
 |**Quero usar contas de usuário local e gerenciá-las separadamente de minhas contas de domínio.** Por exemplo, você deseja que alguém gerencie serviços do MultiPoint, mas não o domínio, ou não queira conceder contas de domínio a todos os usuários de serviços do MultiPoint.|Crie uma ou mais contas de usuário local em cada servidor. (Para obter instruções, consulte [criar contas de usuário local](Create-local-user-accounts.md).)<p>**Observação:** Isso significa que cada conta de usuário terá um perfil em cada servidor. Em outras palavras, se salvar um arquivo em meus documentos enquanto estiver conectado na estação do servidor A, ele não verá o arquivo ao fazer logon na estação do servidor B.|

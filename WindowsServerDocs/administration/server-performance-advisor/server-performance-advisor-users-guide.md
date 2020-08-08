@@ -7,12 +7,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.openlocfilehash: dd6270f1aadea058a1b0fb6ffb3f7dad59a54811
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a7ea3b902793f281156930a8e666c1d32d05cbe
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895714"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993117"
 ---
 # <a name="server-performance-advisor-users-guide"></a>Guia do usuário das Supervisor de desempenho do servidor
 
@@ -591,7 +591,7 @@ A tabela a seguir descreve os cmdlets do Windows PowerShell do SPA:
 | Get-SpaServer | **-SQLINSTANCENAME** Nome da instância de SQL Server.<br>**-Sqldatabasename** Nome do banco de dados do projeto SPA. | Obtém a lista de servidores no banco de dados. Retorna uma lista de objetos, inclusive estas propriedades: nome, Status, compartilhamento de arquivos e comentário. |
 | Get-SpaAdvisorPacks | **-SQLINSTANCENAME** Nome da instância de SQL Server<br>**-Sqldatabasename** Nome do banco de dados do projeto SPA | Obtém a lista de pacotes de Supervisor no banco de dados. Retorna uma lista de objetos, inclusive estas propriedades: nome, DisplayName, autor e versão. |
 
-O Windows PowerShell oferece a capacidade de passar credenciais por meio de arquivos criptografados para habilitar cenários de automação. Para obter mais informações sobre como usar arquivos criptografados para passar credenciais para um cmdlet, consulte [criar scripts do Windows PowerShell que aceitam credenciais](https://technet.microsoft.com/magazine/ff714574.aspx).
+O Windows PowerShell oferece a capacidade de passar credenciais por meio de arquivos criptografados para habilitar cenários de automação. Para obter mais informações sobre como usar arquivos criptografados para passar credenciais para um cmdlet, consulte [criar scripts do Windows PowerShell que aceitam credenciais](/previous-versions/technet-magazine/ff714574(v=msdn.10)).
 
 ### <a name="automating-spa-report-collection-by-using-windows-powershell"></a>Automatizar a coleta de relatório SPA usando o Windows PowerShell
 
@@ -774,7 +774,7 @@ Aqui estão alguns dos termos usados com SPA:
 
 * **Sessão de análise de dados** uma análise de desempenho em um servidor de destino específico. Uma sessão de análise de dados pode incluir vários pacotes de Supervisor. Os conjuntos de Coletores de dados desses pacotes de Supervisor são mesclados em um conjunto de Coletores de dados único. Todos os logs de desempenho para uma sessão de análise de dados são coletados durante o mesmo período de tempo. Analisar relatórios que são gerados por pacotes de supervisor em execução na mesma sessão de análise de dados pode ajudar os usuários a entender a situação geral de desempenho e identificar as causas de problemas de desempenho.
 
-* **Rastreamento de eventos do Windows** um sistema de rastreamento de alto desempenho, baixa sobrecarga e dimensionável que é fornecido no Windows. Ele fornece perfis e depuração de recursos, que podem ser usados para solucionar uma variedade de cenários. SPA usa eventos ETW como uma fonte de dados para gerar os relatórios de desempenho. Para obter informações gerais sobre o ETW, consulte [melhorar a depuração e ajuste de desempenho com o ETW](https://msdn.microsoft.com/magazine/cc163437.aspx).
+* **Rastreamento de eventos do Windows** um sistema de rastreamento de alto desempenho, baixa sobrecarga e dimensionável que é fornecido no Windows. Ele fornece perfis e depuração de recursos, que podem ser usados para solucionar uma variedade de cenários. SPA usa eventos ETW como uma fonte de dados para gerar os relatórios de desempenho. Para obter informações gerais sobre o ETW, consulte [melhorar a depuração e ajuste de desempenho com o ETW](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw).
 
 * **Windows Management Instrumentation (WMI)** a infra-estrutura para gerenciamento de dados e operações no Windows. Você pode escrever scripts WMI ou aplicativos para automatizar tarefas administrativas em computadores remotos. WMI também fornece dados de gerenciamento para outras partes do sistema operacional e produtos. SPA usa informações de classe WMI e pontos de dados como fontes para geração de relatórios de desempenho.
 

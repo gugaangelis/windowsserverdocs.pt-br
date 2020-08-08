@@ -1,20 +1,18 @@
 ---
 title: Usar políticas de restrição de software para ajudar a proteger seu computador contra um vírus de email
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 02f23979-f832-4e46-bdea-21fd77db35b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3b9f727107ac9d392b52ab683aca510849fc534a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: de636bf4e1783d1d6aaf1b78a45442c80e0a6d27
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964688"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952993"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>Usar políticas de restrição de software para ajudar a proteger seu computador contra um vírus de email
 
@@ -25,7 +23,7 @@ Este tópico fornece informações sobre como definir políticas de controle de 
 ## <a name="introduction"></a>Introdução
 A política SRP (Política de Restrição de Software) é um recurso baseado em políticas de grupo que identifica programas de software que são executados em um domínio e que controla a capacidade desses programas de serem executados. Use políticas de restrição de software para criar uma configuração altamente restrita para computadores nos quais você permite que apenas aplicativos especificamente identificados sejam executados. Eles são integrados ao Microsoft Active Directory Domain Services e Política de Grupo, mas também podem ser configurados em computadores autônomos. Para obter um ponto de partida para o SRP, consulte as [diretivas de restrição de software](software-restriction-policies.md).
 
-A partir do Windows Server 2008 R2 e do Windows 7, o Windows AppLocker pode ser usado em vez de ou em conjunto com o SRP para uma parte da sua estratégia de controle de aplicativo. 
+A partir do Windows Server 2008 R2 e do Windows 7, o Windows AppLocker pode ser usado em vez de ou em conjunto com o SRP para uma parte da sua estratégia de controle de aplicativo.
 
 #### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>Configurar o SRP para ajudar a proteger contra um vírus de email
 

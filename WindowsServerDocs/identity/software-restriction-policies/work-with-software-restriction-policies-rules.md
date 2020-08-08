@@ -1,20 +1,18 @@
 ---
 title: Trabalhar com regras de políticas de restrição de software
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 4a8047d5-9bb9-4bed-bc8f-583a237731e2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 249426f7b0ef1b427d903e8d0cac9ca2e0747b68
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 619564d618ba542e915f19ba69884a48652c8bbc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820979"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87952972"
 ---
 # <a name="work-with-software-restriction-policies-rules"></a>Trabalhar com regras de políticas de restrição de software
 
@@ -70,7 +68,7 @@ Quando as regras são criadas para o domínio usando Política de Grupo, você d
 ### <a name="enabling-certificate-rules"></a>Habilitando as regras de certificado
 Há diferentes procedimentos para habilitar as regras de certificado dependendo do seu ambiente:
 
--   [Para seu computador local](#BKMK_1)
+-   [Para o computador local](#BKMK_1)
 
 -   [Para um objeto Política de Grupo, e você está em um servidor que ingressou em um domínio](#BKMK_2)
 

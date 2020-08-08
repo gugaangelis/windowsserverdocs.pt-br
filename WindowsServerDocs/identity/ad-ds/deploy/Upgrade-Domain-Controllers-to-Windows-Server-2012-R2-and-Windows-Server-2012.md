@@ -6,14 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: f211acd5e93f3f4654983e2c61d6b1a460415655
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519374"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953305"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>Atualizar controladores de domínio para o Windows Server 2012 R2 e o Windows Server 2012
 
@@ -157,9 +155,9 @@ A partir do Windows Server 2008, os controladores de domínio também têm as se
 | Tipo ou política de criptografia | Padrão do Windows Server 2008 | Padrão do Windows Server 2012 e Windows Server 2008 R2 | Comentário |
 |--|--|--|--|
 | AllowNT4Crypto | Desabilitado | Desabilitado | Os clientes do protocolo SMB podem ser incompatíveis com as configurações padrão seguras em controladores de domínio. Em todos os casos, essas configurações podem ser reduzidas a fim de permitir a interoperabilidade (porém, em detrimento da segurança). Para obter mais informações, consulte o [artigo 942564](https://go.microsoft.com/fwlink/?LinkId=164558) na base de dados de conhecimento Microsoft ( https://go.microsoft.com/fwlink/?LinkId=164558) . |
-| DES | habilitado | Desabilitado | [Artigo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) na base de dados de conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=177717) |
-| Proteção CBT/estendida para autenticação integrada | N/D | habilitado | Consulte [consultoria de segurança da Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) e [artigo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) na base de dados de conhecimento Microsoft ( https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Examine e instale o hotfix no [artigo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) na base de dados de conhecimento Microsoft, conforme necessário. |
-| LMv2 | habilitado | Desabilitado | [Artigo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) na base de dados de conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=178251) |
+| DES | Habilitada | Desabilitado | [Artigo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) na base de dados de conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=177717) |
+| Proteção CBT/estendida para autenticação integrada | N/D | Habilitada | Consulte [consultoria de segurança da Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) ( https://go.microsoft.com/fwlink/?LinkId=164559) e [artigo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) na base de dados de conhecimento Microsoft ( https://go.microsoft.com/fwlink/?LinkId=178251) .<p>Examine e instale o hotfix no [artigo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) ( https://go.microsoft.com/fwlink/?LinkId=186394) na base de dados de conhecimento Microsoft, conforme necessário. |
+| LMv2 | Habilitada | Desabilitado | [Artigo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) na base de dados de conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=178251) |
 
 ## <a name="operating-system-requirements"></a><a name="BKMK_SysReqs"></a>Requisitos do sistema operacional
 

@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f66bfb724a40a21bfaf323a54749f1d99c25e86
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: afaf0c75350cfb4121d0ebc664469f4494afe8c7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880345"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992945"
 ---
 # <a name="certutil"></a>certutil
 
@@ -1101,7 +1101,7 @@ Em que:
 - A `-f` opção pode ser usada para substituir erros de validação para o **SiteName** especificado ou para excluir todos os sites de autoridade de certificação.
 
 > [!NOTE]
-> Para obter mais informações sobre como configurar o reconhecimento de site de CAs para Active Directory Domain Services (AD DS), consulte [AD DS reconhecimento de site para clientes do AD CS e PKI](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)).
+> Para obter mais informações sobre como configurar o reconhecimento de site de CAs para Active Directory Domain Services (AD DS), consulte [AD DS reconhecimento de site para clientes do AD CS e PKI](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831740(v=ws.11)).
 
 ### <a name="-enrollmentserverurl"></a>-enrollmentserverURL
 

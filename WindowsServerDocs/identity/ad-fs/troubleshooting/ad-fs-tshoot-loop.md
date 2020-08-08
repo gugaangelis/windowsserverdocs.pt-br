@@ -6,17 +6,15 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 2f8842dc53756cc4f65b6d6794a8c4952e111c00
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3d654f44ba75d9b647c0c1d9db7345c7ea75435
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385336"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953086"
 ---
-# <a name="ad-fs-troubleshooting---loop-detection"></a>Solução de problemas AD FS detecção de loop 
- 
+# <a name="ad-fs-troubleshooting---loop-detection"></a>Solução de problemas AD FS detecção de loop
+
 O loop em AD FS ocorre quando uma terceira parte confiável rejeita continuamente um token de segurança válido e redireciona de volta para AD FS.
 
 ## <a name="loop-detection-cookie"></a>Cookie de detecção de loop
@@ -24,9 +22,9 @@ Para evitar que isso aconteça, AD FS implementou o que é chamado de cookie de 
 
 Se um cliente passivo visitar a Serviço de Federação por um token cinco (5) vezes em 20 segundos, AD FS lançará o seguinte erro:
 
-**MSIS7042: A mesma sessão do navegador do cliente fez solicitações ' {0} ' nos últimos ' {1} ' segundos. Contate o administrador para obter detalhes.**
+**MSIS7042: a mesma sessão do navegador do cliente fez {0} solicitações ' ' nos últimos ' {1} ' segundos. Contate o administrador para obter detalhes.**
 
-A entrada em loops infinitos geralmente é causada por um aplicativo de terceira parte confiável de comportamento inadequado que não consome com êxito o token emitido por AD FS, e o aplicativo está enviando o cliente passivo de volta para AD FS, repetidamente, para um novo token.  AD FS irá emitir o cliente passivo um novo token a cada vez, desde que ele não exceda 5 solicitações dentro de 20 segundos. 
+A entrada em loops infinitos geralmente é causada por um aplicativo de terceira parte confiável de comportamento inadequado que não consome com êxito o token emitido por AD FS, e o aplicativo está enviando o cliente passivo de volta para AD FS, repetidamente, para um novo token.  AD FS irá emitir o cliente passivo um novo token a cada vez, desde que ele não exceda 5 solicitações dentro de 20 segundos.
 
 ## <a name="adjusting-the-loop-detection-cookie"></a>Ajustando o cookie de detecção de loop
 Você pode usar o PowerShell para alterar o número de tokens emitidos e o valor de TimeSpan.

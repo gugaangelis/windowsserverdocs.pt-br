@@ -1,20 +1,18 @@
 ---
 title: Determinar a lista de permissão-restrição e inventário de aplicativos para políticas de restrição de Software
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 0abb73b6-b5d8-4505-8ab1-2f29e4bf0411
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c0fdb5c1d7c4b03610a173c6cd0575d39646a7d0
-ms.sourcegitcommit: af1cf89632d62a94943d3ad9f6b5234b88499278
+ms.openlocfilehash: 831508de2aae56aab53cbd1ff7820ea1af0da565
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81524901"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953033"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>Determinar a lista de permissão-restrição e inventário de aplicativos para políticas de restrição de Software
 
@@ -68,5 +66,5 @@ Para usar efetivamente a regra permitir padrão, você precisa determinar exatam
 
     Um exemplo da saída gravada em um arquivo de log:
 
-**Explorer. exe (PID = 4728) identifiedC: \ Windows\system32\onenote.exe como regra usingpath irrestrita, GUID = {320bd852-aa7c-4674-82c5-9a80321670a3}**    Todos os aplicativos e o código associado que o SRP verifica e definem para bloquear serão indicados no arquivo de log, que você pode usar para determinar quais executáveis devem ser considerados para sua lista de permissões.
+**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe como regra usingpath irrestrita, GUID = {320bd852-aa7c-4674-82c5-9a80321670a3}**    Todos os aplicativos e o código associado que o SRP verifica e definem para bloquear serão indicados no arquivo de log, que você pode usar para determinar quais executáveis devem ser considerados para sua lista de permissões.
 

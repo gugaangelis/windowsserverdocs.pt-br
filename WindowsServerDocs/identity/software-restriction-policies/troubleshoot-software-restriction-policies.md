@@ -1,20 +1,18 @@
 ---
 title: Solucionar problemas de políticas de restrição de software
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 4fd53736-03e7-4bf9-ba90-d1212d93e19a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c6b3a475f21925b506d073bd3618d78e2ee0c1d7
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6e4d31dd6e434c5a5b18491ea7f73b92c993e05a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80819719"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953003"
 ---
 # <a name="troubleshoot-software-restriction-policies"></a>Solucionar problemas de políticas de restrição de software
 

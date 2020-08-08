@@ -1,19 +1,17 @@
 ---
 title: Solucionando problemas do serviço guardião de host
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 4cbbb41b965a44b6c81b58adc94990bb4d6af046
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856399"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944076"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solucionando problemas do serviço guardião de host
 
@@ -124,9 +122,9 @@ Se você estiver Active Directory usando modelos de certificado do ADCS (serviç
 
 Propriedade de modelo ADCS | Valor obrigatório
 -----------------------|---------------
-Categoria do provedor      | Provedor de Armazenamento de Chaves
+Categoria do provedor      | Provedor de armazenamento de chaves
 Nome do algoritmo         | RSA
-Tamanho mínimo da chave       | 2048
+Tamanho mínimo da chave       | 2.048
 Finalidade                | Assinatura e criptografia
 Extensão de uso de chave    | Assinatura digital, codificação de chave, codificação de dados ("permitir criptografia de dados do usuário")
 
@@ -139,7 +137,7 @@ O certificado de signatário de atestado é criado e renovado em segundo plano n
 Para atualizar o certificado de signatário de atestado, execute o seguinte comando em um prompt do PowerShell com privilégios elevados.
 
 ```powershell
-Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName 
+Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
@@ -161,7 +159,7 @@ Você pode verificar o modo de atestado do seu servidor HGS executando [Get-HgsS
 
 ## <a name="memory-dump-encryption-policies"></a>Políticas de criptografia de despejo de memória
 
-Se você estiver tentando configurar as políticas de criptografia de despejo de memória e não vir as políticas de despejo HGS padrão (HgS\_nodumps, HgS\_DumpEncryption e HgS\_DumpEncryptionKey) ou o cmdlet de política de despejo (Add-HgsAttestationDumpPolicy), é provável que você não tenha a atualização cumulativa mais recente instalada.
+Se você estiver tentando configurar as políticas de criptografia de despejo de memória e não vir as políticas de despejo HGS padrão (HgS \_ Nodumps, HgS \_ DumpEncryption e HgS \_ DumpEncryptionKey) ou o cmdlet de política de despejo (Add-HgsAttestationDumpPolicy), é provável que você não tenha a atualização cumulativa mais recente instalada.
 Para corrigir isso, [atualize seu servidor HgS](guarded-fabric-manage-hgs.md#patching-hgs) para o Windows Update cumulativo mais recente e [ative as novas políticas de atestado](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation).
 Certifique-se de atualizar seus hosts Hyper-V para a mesma atualização cumulativa antes de ativar as novas políticas de atestado, já que os hosts que não têm os novos recursos de criptografia de despejo instalados provavelmente falharão com atestado quando a política HGS for ativada.
 
@@ -176,8 +174,8 @@ Você receberá um erro ao registrar um host TPM se uma das duas condições for
 2. O arquivo de identificador de plataforma contém um certificado de chave de endosso, mas esse certificado **não é confiável** no seu sistema
 
 Determinados fabricantes de TPM não incluem EKcerts em seu TPMs.
-Se você suspeitar de que esse é o caso do seu TPM, confirme com seu OEM que seu TPMs não deve ter um EKcert e use o sinalizador `-Force` para registrar manualmente o host com o HGS.
+Se você suspeitar de que esse é o caso do seu TPM, confirme com seu OEM que seu TPMs não deve ter um EKcert e use o `-Force` sinalizador para registrar manualmente o host com HgS.
 Se o TPM tiver um EKcert, mas um não foi encontrado no arquivo de identificador de plataforma, verifique se você está usando um console do PowerShell de administrador (elevado) ao executar [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) no host.
 
-Se você recebeu o erro de que seu EKcert não é confiável, verifique se você [instalou o pacote de certificados raiz do TPM confiável](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor HgS e se o certificado raiz do seu fornecedor de TPM está presente no TrustedTPM do computador local **\_RootCA** Store. Todos os certificados intermediários aplicáveis também precisam ser instalados no repositório **TrustedTPM\_IntermediateCA** no computador local.
-Depois de instalar os certificados raiz e intermediário, você poderá executar o `Add-HgsAttestationTpmHost` com êxito.
+Se você recebeu o erro de que seu EKcert não é confiável, verifique se você [instalou o pacote de certificados raiz do TPM confiável](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor HgS e se o certificado raiz do seu fornecedor de TPM está presente no repositório ** \_ RootCA do TrustedTPM** do computador local. Todos os certificados intermediários aplicáveis também precisam ser instalados no repositório **TrustedTPM \_ IntermediateCA** no computador local.
+Depois de instalar os certificados raiz e intermediário, você poderá executar `Add-HgsAttestationTpmHost` com êxito.

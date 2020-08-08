@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 03/20/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: e3f215abaccbd1f95ee46eca93a573aa1db9e065
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519404"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953325"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solução de problemas de implantação de controlador de domínio
 
@@ -220,7 +218,7 @@ A seguir, problemas comuns observados durante o processo de desenvolvimento do W
 | Problema | O rebaixamento de um controlador de domínio deixa o DNS executando sem zonas |
 |--|--|
 | Sintomas | O servidor ainda atenderá solicitações de DNS, mas não terá informações sobre a zona |
-| Solução e notas | Ao remover a função AD DS, remova também a função Servidor DNS ou defina o serviço Servidor DNS como desabilitado. Lembre-se de apontar o cliente DNS para um servidor diferente. Se estiver usando o Windows PowerShell, execute o seguinte depois de rebaixar o servidor:<p>Código-desinstalar-WindowsFeature DNS<p>ou<p>Conjunto de código-DNS-de-início do serviço desabilitado<br />parar o DNS do serviço |
+| Solução e notas | Ao remover a função AD DS, remova também a função Servidor DNS ou defina o serviço Servidor DNS como desabilitado. Lembre-se de apontar o cliente DNS para um servidor diferente. Se estiver usando o Windows PowerShell, execute o seguinte depois de rebaixar o servidor:<p>Código-desinstalar-WindowsFeature DNS<p>ou o<p>Conjunto de código-DNS-de-início do serviço desabilitado<br />parar o DNS do serviço |
 
 | Problema | A promoção de um Windows Server 2012 para um domínio de rótulo único existente não configura updatetopleveldomain=1 ou allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -280,7 +278,7 @@ A seguir, problemas comuns observados durante o processo de desenvolvimento do W
 | Problema | Falha ao promover um RODC para uma conta de computador pré-criada |
 |--|--|
 | Sintomas | Ao usar o ADDSDeployment do Windows PowerShell para promover um novo RODC com uma conta de computador pré-configurada, você recebe o erro:<p>O conjunto de parâmetros de código não pode ser resolvido usando os parâmetros nomeados especificados.    <br />InvalidArgument: ParameterBindingException<br />    + FullyQualifiedErrorId: AmbiguousParameterSet, Microsoft. DirectoryServices. Deployment. PowerShell. Commands. Install |
-| Solução e notas | Não forneça parâmetros já definidos em uma conta RODC pré-criada. Eles incluem:<p>Código--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-SiteName<br />-installdns |
+| Solução e notas | Não forneça parâmetros já definidos em uma conta RODC pré-criada. Elas incluem:<p>Código--readonlyreplica<br />-installdns<br />-donotconfigureglobalcatalog<br />-SiteName<br />-installdns |
 
 | Problema | Ao desmarcar/selecionar "Reiniciar cada servidor de destino automaticamente, se necessário" nada ocorre |
 |--|--|

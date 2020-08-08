@@ -6,20 +6,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 3442ada27e8e01b72561850f724d7e28d740f43b
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3fb672d9557e7f10245e8c29ea1585cf9f4aadf9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964958"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953183"
 ---
 # <a name="ad-fs-operations"></a>Operações do AD FS
 
 
 
-Este documento contém uma lista de todas as operações de documentação para AD FS. 
+Este documento contém uma lista de todas as operações de documentação para AD FS.
 
 ## <a name="service-configuration"></a>Configuração de Serviço
 - [Atualizar certificados SSL em AD FS e WAP 2016](./operations/manage-ssl-certificates-ad-fs-wap.md)
@@ -29,7 +27,7 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [Delegar acesso do Powershell Commandlet do AD FS para usuários não administradores](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [Ajuste fino do SQL e da latência de endereço](../ad-fs/operations/adfs-sql-latency.md)
-- [Grupos de disponibilidade AlwaysOn](../ad-fs/operations/ad-fs-always-on.md) 
+- [Grupos de disponibilidade AlwaysOn](../ad-fs/operations/ad-fs-always-on.md)
 
 
 ## <a name="authentication-configuration"></a>Configuração de autenticação
@@ -55,7 +53,7 @@ Este documento contém uma lista de todas as operações de documentação para 
 
 
 ### <a name="device"></a>Dispositivo
-- [Controles de autenticação de dispositivo no AD FS](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
+- [Controles de autenticação de dispositivo no AD FS](../ad-fs/operations/device-authentication-controls-in-AD-FS.md)
 
 
 ## <a name="authorization-configuration"></a>Configuração de autorização
@@ -64,8 +62,8 @@ Este documento contém uma lista de todas as operações de documentação para 
 
 ## <a name="rpt--cpt-configuration"></a>Configuração de CPT de & de relatório
 - [Configurar o AD FS para autenticar usuários armazenados nos diretórios do LDAP](../ad-fs/operations/Configure-AD-FS-to-authenticate-users-stored-in-LDAP-directories.md)
-- [Configurar regras de declaração](../ad-fs/operations/Configure-Claim-Rules.md) 
-- [Criar uma relação de confiança do provedor de declarações](../ad-fs/operations/Create-a-Claims-Provider-Trust.md) 
+- [Configurar regras de declaração](../ad-fs/operations/Configure-Claim-Rules.md)
+- [Criar uma relação de confiança do provedor de declarações](../ad-fs/operations/Create-a-Claims-Provider-Trust.md)
 - [Criar um objeto de confiança de terceira parte confiável sem reconhecimento de declarações](../ad-fs/operations/Create-a-Non-Claims-Aware-Relying-Party-Trust.md)
 - [Criar um objeto de confiança de terceira parte confiável](../ad-fs/operations/Create-a-Relying-Party-Trust.md)
 - [Configurar AD FS para trabalhar com o provedor de Federação agregado (por exemplo, incomum)](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
@@ -77,7 +75,7 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Configurar o AD FS para enviar declarações de expiração de senha](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [Configurar a autenticação baseada em formulários de intranet para dispositivos que não são compatíveis com a WIA](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Outro
+## <a name="other"></a>Outros
 - [Ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [Gerenciar riscos com Autenticação Multifator adicional para aplicativos confidenciais](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [Gerenciar risco com o Controle de Acesso Condicional](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
@@ -87,4 +85,4 @@ Este documento contém uma lista de todas as operações de documentação para 
 - [Passo a passo: Ingressar no local de trabalho com um dispositivo do Windows](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 - [Passo a passo: Ingressar no Local de Trabalho com um dispositivo iOS](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-  
+

@@ -1,20 +1,18 @@
 ---
 title: Administrar políticas de restrição de software
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-software-restriction-policies
 ms.topic: article
 ms.assetid: 8cc22093-67d1-47b6-9ddd-4569b6761ce9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 88e745b6951ab27f22cc412ee63f792d30775d14
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 7af23cd43e6cc61ab25c1efd94d67a480365f08f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80855109"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953075"
 ---
 # <a name="administer-software-restriction-policies"></a>Administrar políticas de restrição de software
 
@@ -51,7 +49,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 ## <a name="to-open-software-restriction-policies"></a><a name="BKMK_Open_SRP"></a>Para abrir as diretivas de restrição de software
 
--   [Para seu computador local](#BKMK_1)
+-   [Para o computador local](#BKMK_1)
 
 -   [Para um domínio, site ou unidade organizacional, e você está em um servidor membro ou em uma estação de trabalho que tenha ingressado em um domínio](#BKMK_2)
 
@@ -59,7 +57,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 -   [Para um site, e você está em um controlador de domínio ou em uma estação de trabalho que tem o Ferramentas de Administração de Servidor Remoto instalado](#BKMK_4)
 
-### <a name="for-your-local-computer"></a><a name="BKMK_1"></a>Para seu computador local
+### <a name="for-your-local-computer"></a><a name="BKMK_1"></a>Para o computador local
 
 1.  Abra as Configurações de Segurança Locais.
 
@@ -130,7 +128,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 4.  Na árvore de console, clique em **diretivas de restrição de software**.
 
-    **Posição**
+    **Where**
 
     -   *Política de grupo objeto* [*ComputerName*] configuração do computador/política ou
 
@@ -149,7 +147,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 > [!WARNING]
 > -   São necessárias diferentes credenciais administrativas para executar esse procedimento, dependendo do seu ambiente:
-> 
+>
 >     -   Se você criar novas diretivas de restrição de software para seu computador local: a associação no grupo local de **Administradores** , ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
 >     -   Se você criar novas políticas de restrição de software para um computador que ingressou em um domínio, os membros do grupo Administradores de Domínio poderão executar esse procedimento.
 > -   Se as políticas de restrição de software já tiverem sido criadas para um GPO (Objeto de Política de Grupo), o comando **Novas Políticas de Restrição de Software** não será exibido no menu **Ação**. Para excluir as políticas de restrição de software aplicadas a um GPO, na árvore de console, clique com o botão direito do mouse em **Políticas de Restrição de Software** e clique em **Excluir Políticas de Restrição de Software**. Ao excluir as políticas de restrição de software para um GPO, você também exclui todas as regras de diretivas de restrição de software desse GPO. Depois de criar as políticas de restrição de software, você pode criar novas políticas de restrição de software para esse GPO.
@@ -160,7 +158,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 2.  No painel de detalhes, clique duas vezes em **Tipos de Arquivo Designados**.
 
-3.  Siga um destes procedimentos:
+3.  Realize um dos seguintes procedimentos:
 
     -   Para adicionar um tipo de arquivo, em **Extensão de nome de arquivo**, digite a extensão do nome do arquivo e clique em **Adicionar**.
 
@@ -168,7 +166,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 
 > [!NOTE]
 > -   São necessárias diferentes credenciais administrativas para executar esse procedimento, dependendo do ambiente em que você adiciona ou exclui um tipo de arquivo designado:
-> 
+>
 >     -   Se você adicionar ou excluir um tipo de arquivo designado para seu computador local: a associação no grupo **Administradores** local ou equivalente é o mínimo necessário para concluir este procedimento.
 >     -   Se você criar novas políticas de restrição de software para um computador que ingressou em um domínio, os membros do grupo Administradores de Domínio poderão executar esse procedimento.
 > -   Talvez seja necessário criar uma nova configuração de política de restrição de software para o GPO (Objeto de Política de Grupo), se você ainda não tiver feito isso.
@@ -183,7 +181,7 @@ Para obter informações sobre como realizar tarefas específicas usando o SRP, 
 3.  Em **Aplicar políticas de restrição de software aos seguintes usuários**, clique em **Todos os usuários, exceto administradores locais**.
 
 > [!WARNING]
-> -   A associação no grupo **Administradores** local, ou equivalente, é o mínimo necessário para concluir este procedimento.
+> -   A associação no grupo local **Administradores**, ou equivalente, é o mínimo necessário para concluir esse procedimento.
 > -   Talvez seja necessário criar uma nova configuração de política de restrição de software para o GPO (Objeto de Política de Grupo), se você ainda não tiver feito isso.
 > -   Se for comum que os usuários sejam membros do grupo local de administradores nos computadores de sua organização, convém não habilitar essa opção.
 > -   Se você estiver definindo uma configuração de política de restrição de software para o computador local, use esse procedimento para impedir que administradores locais tenham as políticas de restrição de software aplicadas a eles. Se você estiver definindo uma configuração de diretiva de restrição de software para sua rede, filtre as configurações de política de usuário com base na associação em grupos de segurança por meio de Política de Grupo.

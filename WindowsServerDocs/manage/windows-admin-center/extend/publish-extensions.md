@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: c817a28494104a1bfed1d7e19eaebaa04fd5138e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 910ed2733d01fe502a93d43f46530d781ba8c7e5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971963"
+ms.locfileid: "87992701"
 ---
 # <a name="publishing-extensions"></a>Publicando extensões
 
@@ -32,7 +32,7 @@ Por padrão, o centro de administração do Windows está conectado a um feed do
 
 ### <a name="publishing-to-a-different-nuget-feed"></a>Publicando em um feed do NuGet diferente
 
-Você também pode criar seu próprio feed do NuGet para publicar suas extensões usando uma das várias [opções diferentes para configurar uma fonte privada ou usar um serviço de hospedagem do NuGet](https://docs.microsoft.com/nuget/hosting-packages/overview). O feed do NuGet deve dar suporte à API NuGet v2. Como o centro de administração do Windows atualmente não dá suporte à autenticação de feeds, o feed precisa ser configurado para permitir o acesso de leitura a qualquer pessoa.
+Você também pode criar seu próprio feed do NuGet para publicar suas extensões usando uma das várias [opções diferentes para configurar uma fonte privada ou usar um serviço de hospedagem do NuGet](/nuget/hosting-packages/overview). O feed do NuGet deve dar suporte à API NuGet v2. Como o centro de administração do Windows atualmente não dá suporte à autenticação de feeds, o feed precisa ser configurado para permitir o acesso de leitura a qualquer pessoa.
 
 ### <a name="publishing-to-a-file-share"></a>Publicando em um compartilhamento de arquivos
 
@@ -72,7 +72,7 @@ Usando sua infraestrutura de compilação (isso pode ser tão simples quanto abr
 
 Para criar o pacote NuGet, você precisa primeiro criar um arquivo. nuspec. Um arquivo. nuspec é um manifesto XML que contém metadados do pacote NuGet. Esse manifesto é usado para compilar o pacote e fornecer informações aos consumidores.  Coloque esse arquivo na raiz da pasta "pacote NuGet".
 
-Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias ou recomendadas. Para o esquema completo, consulte a [referência. nuspec](https://docs.microsoft.com/nuget/reference/nuspec). Salve o arquivo. nuspec na pasta raiz do projeto com um nome de arquivo de sua escolha.
+Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias ou recomendadas. Para o esquema completo, consulte a [referência. nuspec](/nuget/reference/nuspec). Salve o arquivo. nuspec na pasta raiz do projeto com um nome de arquivo de sua escolha.
 
 > [!IMPORTANT]
 > O ```<id>``` valor no arquivo. nuspec precisa corresponder ao ```"name"``` valor no arquivo do projeto ```manifest.json``` ou, caso contrário, a extensão publicada não será carregada com êxito no centro de administração do Windows.
@@ -106,7 +106,7 @@ Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias
 | Nome da propriedade | Obrigatório/recomendado | Descrição |
 | ---- | ---- | ---- |
 | packageType | Necessária | Use "WindowsAdminCenterExtension", que é o tipo de pacote NuGet definido para extensões do centro de administração do Windows. |
-| id | Necessária | Identificador de pacote exclusivo no feed. Esse valor precisa corresponder ao valor de "nome" na manifest.jsdo seu projeto no arquivo.  Consulte [Escolhendo um identificador de pacote exclusivo](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para ver diretrizes. |
+| id | Necessária | Identificador de pacote exclusivo no feed. Esse valor precisa corresponder ao valor de "nome" na manifest.jsdo seu projeto no arquivo.  Consulte [Escolhendo um identificador de pacote exclusivo](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para ver diretrizes. |
 | título | Necessário para publicar no feed do centro de administração do Windows | Nome amigável para o pacote que é exibido no Gerenciador de extensões do centro de administração do Windows. |
 | version | Necessária | Versão da extensão. O uso [de controle de versão semântico (Convenção de SemVer)](http://semver.org/spec/v1.0.0.html) é recomendado, mas não obrigatório. |
 | authors | Necessária | Se estiver publicando em nome da sua empresa, use o nome da empresa. |
@@ -120,7 +120,7 @@ Aqui está um exemplo de arquivo. nuspec e a lista de propriedades obrigatórias
 
 Usando o arquivo. nuspec criado acima, você criará agora o arquivo. nupkg do pacote NuGet que você pode carregar e publicar no feed do NuGet.
 
-1. Baixe a ferramenta CLI do nuget.exe do [site de ferramentas de cliente do NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools).
+1. Baixe a ferramenta CLI do nuget.exe do [site de ferramentas de cliente do NuGet](/nuget/install-nuget-client-tools).
 2. Execute "nuget.exe Pack [. nuspec nome do arquivo]" para criar o arquivo. nupkg.
 
 ### <a name="4-signing-your-extension-nuget-package"></a>4. assinando seu pacote NuGet de extensão

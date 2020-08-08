@@ -7,12 +7,12 @@ ms.assetid: b5e3c405-cb76-4ff2-8042-c2284448c435
 author: kbdazure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 7bcd4e625f340ba7358a8ce9bdd860581c390e96
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e07910b6f822ca29769fb398434f83272867dbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948015"
+ms.locfileid: "87992711"
 ---
 # <a name="set-up-hosts-for-live-migration-without-failover-clustering"></a>Configurar hosts para migração ao vivo sem clustering de failover
 
@@ -112,7 +112,7 @@ Esta etapa inclui a escolha de opções para autenticação e rede. Como prátic
 
 ### <a name="use-windows-powershell-to-set-up-the-source-and-destination-computers-for-live-migration"></a>Usar o Windows PowerShell para configurar os computadores de origem e de destino para a migração ao vivo
 
-Três cmdlets estão disponíveis para configurar a migração ao vivo em hosts não clusterizados: [Enable-VMMigration](https://technet.microsoft.com/library/hh848544.aspx), [set-VMMigrationNetwork](https://technet.microsoft.com/library/hh848467.aspx)e [set-VMHost](https://technet.microsoft.com/library/hh848524.aspx). Este exemplo usa todos os três e faz o seguinte:
+Três cmdlets estão disponíveis para configurar a migração ao vivo em hosts não clusterizados: [Enable-VMMigration](/powershell/module/hyper-v/enable-vmmigration?view=win10-ps), [set-VMMigrationNetwork](/powershell/module/hyper-v/set-vmmigrationnetwork?view=win10-ps)e [set-VMHost](/powershell/module/hyper-v/set-vmhost?view=win10-ps). Este exemplo usa todos os três e faz o seguinte:
   - Configura a migração dinâmica no host local
   - Permite o tráfego de migração de entrada somente em uma rede específica
   - Escolhe o Kerberos como o protocolo de autenticação
@@ -139,7 +139,7 @@ Esta tabela descreve como funcionam as opções de desempenho.
 |----------|---------------|
     |TCP/IP|Copia a memória da máquina virtual para o servidor de destino em uma conexão TCP/IP.|
     |Compactação|Compacta o conteúdo de memória da máquina virtual antes de copiá-la para o servidor de destino em uma conexão TCP/IP. **Observação:** Essa é a configuração **padrão** .|
-    |SMB|Copia a memória da máquina virtual para o servidor de destino em uma conexão SMB 3,0.<p>-O SMB Direct é usado quando os adaptadores de rede nos servidores de origem e de destino têm recursos RDMA (acesso remoto direto à memória) habilitados.<br />-O SMB Multichannel detecta e usa várias conexões automaticamente quando uma configuração de vários canais SMB adequada é identificada.<p>Para obter mais informações, consulte [Melhorar o desempenho de um servidor de arquivos com o SMB Direct](https://technet.microsoft.com/library/jj134210(WS.11).aspx).|
+    |SMB|Copia a memória da máquina virtual para o servidor de destino em uma conexão SMB 3,0.<p>-O SMB Direct é usado quando os adaptadores de rede nos servidores de origem e de destino têm recursos RDMA (acesso remoto direto à memória) habilitados.<br />-O SMB Multichannel detecta e usa várias conexões automaticamente quando uma configuração de vários canais SMB adequada é identificada.<p>Para obter mais informações, consulte [Melhorar o desempenho de um servidor de arquivos com o SMB Direct](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134210(v=ws.11)).|
 
  ## <a name="next-steps"></a>Próximas etapas
 
