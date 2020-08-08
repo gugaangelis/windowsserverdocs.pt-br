@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 0bca5a7e78a663c535e1d727339c6dd9eb50704b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ad453c5581f966a2e21a5cd8b4ed1c9cb28fe9a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957914"
+ms.locfileid: "87995899"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Políticas de autenticação e silos de políticas de autenticação
 
@@ -28,7 +28,7 @@ Os recursos introduzidos no Windows Server 2012 R2 permitem que você crie silos
 
 Com essas capacidades, você pode limitar o uso de contas de alto valor a hosts de alto valor. Por exemplo, você poderia criar um novo silo de Administradores de Floresta contendo os administradores corporativos, de esquema e de domínio. Depois, você poderia configurar o silo com uma política de autenticação para que a autenticação baseada em senha e cartão inteligente de sistemas diferentes dos controladores de domínio e consoles de administrador do domínio falhassem.
 
-Para mais informações sobre como configurar os silos da política de autenticação e as políticas de autenticação, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Para mais informações sobre como configurar os silos da política de autenticação e as políticas de autenticação, consulte [Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ### <a name="about-authentication-policy-silos"></a>Sobre silos de política de autenticação
 Um silo de política de autenticação controla quais contas podem ser restringidas pelo silo e define as políticas de autenticação a serem aplicadas aos membros. Você pode criar o silo com base nos requisitos da sua organização. Os silos são objetos do Active Directory para usuários, computadores e serviços, conforme definido pelo esquema na tabela a seguir.
@@ -44,7 +44,7 @@ Um silo de política de autenticação controla quais contas podem ser restringi
 |Membros do silo de política de autenticação|Especifica quais entidades são atribuídas ao AuthNPolicySilo.|
 |Vínculo regressivo dos membros do silo de política de autenticação|Este atributo é o vínculo regressivo para os msDS-AuthNPolicySiloMembers.|
 
-Os silos de política de autenticação podem ser configurados usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Os silos de política de autenticação podem ser configurados usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ### <a name="about-authentication-policies"></a>Sobre políticas de autenticação
 Uma política de autenticação define as propriedades de tempo de vida TGT (tíquete de concessão de tíquete) do protocolo Kerberos e as condições do controle de acesso de autenticação para um tipo de conta. A política é criada e controla o contêiner de AD DS conhecido como silo da política de autenticação.
@@ -104,7 +104,7 @@ As políticas para os objetos do Active Directory para usuários, computadores e
 |Serviço|ms-DS-Service-Allowed-To-Authenticate-From|Este atributo é usado para determinar o conjunto de dispositivos com os quais uma conta de serviço possui permissão para entrar.|
 |Serviço|Tempo de vida de TGT de serviço|Especifica a duração máxima de um TGT de Kerberos emitido para um serviço (expressada em segundos).|
 
-As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ## <a name="how-it-works"></a>Como ele funciona
 Esta seção explica como os silos de política de autenticação e as políticas de autenticação funcionam em conjunto com o grupo de segurança Usuários Protegidos, bem como a implementação do protocolo Kerberos no Windows.
@@ -133,9 +133,9 @@ Para mais informações sobre este grupo de segurança, consulte [Como funciona 
 
 Os silos de política de autenticação e as políticas de autenticação aproveitam a infraestrutura de autenticação existente do Windows. O uso do protocolo NTLM é rejeitado, sendo usado o protocolo Kerberos com tipos de criptografia mais modernos. As políticas de autenticação complementam o grupo de segurança Usuários Protegidos ao oferecer uma maneira de aplicar restrições configuráveis a contas, além de fornecer restrições a contas para serviços e computadores. As políticas de autenticação são impostas durante o compartilhamento do protocolo Kerberos AS (serviço de autenticação) ou TGS (serviço de concessão de tíquete). Para saber mais sobre como o Windows usa o protocolo Kerberos e quais alterações foram feitas para dar suporte aos silos de política de autenticação e as políticas de autenticação, consulte:
 
--   [Como funciona o protocolo de autenticação Kerberos versão 5](https://technet.microsoft.com/library/cc772815(v=ws.10).aspx)
+-   [Como funciona o protocolo de autenticação Kerberos versão 5](/previous-versions/windows/it-pro/windows-server-2003/cc772815(v=ws.10))
 
--   [Alterações na autenticação Kerberos](https://technet.microsoft.com/library/dd560670(v=ws.10).aspx) (windows Server 2008 R2 e Windows 7)
+-   [Alterações na autenticação Kerberos](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560670(v=ws.10)) (windows Server 2008 R2 e Windows 7)
 
 ### <a name="how-the-kerberos-protocol-is-used-with-authentication-policy-silos-and-policies"></a><a name="BKMK_HowKerbUsed"></a>Como o protocolo Kerberos é usado com silos de políticas e políticas de autenticação
 Quando uma conta de domínio é ligada a um silo de política de autenticação e o usuário entra, o Gerenciador de contas de segurança adiciona o tipo de declaração do Silo de política de autenticação que inclui o silo como valor. Essa declaração na conta fornece o acesso ao silo de destino.
@@ -162,7 +162,7 @@ Quando uma política de autenticação está em modo de auditoria e uma solicita
 
 Você pode usar uma única política de autenticação para todos os membros de um silo ou usar políticas separadas para usuários, computadores e contas de serviço gerenciadas.
 
-As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ### <a name="how-restricting-a-user-sign-in-works"></a><a name="BKMK_HowRestrictingSignOn"></a>Como funciona a restrição de entrada de usuário
 Como essas políticas de autenticação são aplicadas a uma conta, elas também se aplicam às contas usadas pelos serviços. Esta configuração será muito útil se você desejar limitar o uso de uma senha para um serviço a um host específico. Isso ocorre, por exemplo, quando contas de serviço gerenciadas de grupo são configuradas onde os hosts têm permissão para recuperar a senha dos Serviços de Domínio Active Directory. Contudo, a senha pode ser usada de qualquer host para autenticação inicial. Ao aplicar uma condição de controle de acesso, uma camada de proteção adicional pode ser obtida ao limitar que a senha pode ser recuperada apenas por um determinado conjunto de hosts.
@@ -224,7 +224,7 @@ A tabela a seguir descreve os eventos associados ao grupo de segurança Usuário
 
 Os eventos são registrados nos Logs de Aplicativos e Serviços, em **Microsoft\Windows\Authentication**.
 
-Para ver as etapas de solução de problemas que usam esses eventos, consulte as [Solução de problemas das políticas de autenticação](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-authentication-policies) e [Solução de problemas de eventos relacionados a usuários protegidos](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts#troubleshoot-events-related-to-protected-users).
+Para ver as etapas de solução de problemas que usam esses eventos, consulte as [Solução de problemas das políticas de autenticação](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicies) e [Solução de problemas de eventos relacionados a usuários protegidos](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents).
 
 |ID e log de evento|Descrição|
 |----------|--------|
@@ -235,10 +235,8 @@ Para ver as etapas de solução de problemas que usam esses eventos, consulte as
 |306<p>**AuthenticationPolicyFailures-DomainController**|Motivo: uma falha de restrição de Kerberos pode ocorrer porque o usuário ou o dispositivo não tem permissão para se autenticar no servidor.<p>No modo de auditoria, um evento informativo é registrado no controlador de domínio para indicar que o tíquete de serviço do Kerberos será negado, pois o usuário, o dispositivo ou ambos não cumprem as restrições de controle de acesso.<p>Exibe os nomes do dispositivo, política e silo.|
 
 ## <a name="additional-references"></a>Referências adicionais
-[Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
+[Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)
 
 [Proteção e gerenciamento de credenciais](credentials-protection-and-management.md)
 
 [Grupo de segurança Usuários protegidos](protected-users-security-group.md)
-
-

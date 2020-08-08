@@ -4,19 +4,17 @@ description: O arquivo CAPolicy. inf contém várias configurações que são us
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server
-ms.technology: networking
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 4df23cd64bcf3bf9c27190908fb5f2a48b30b833
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 83e2acbc9edfd9ca236f01b1fef3474ffe1bbb51
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80318298"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87949450"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxe de CAPolicy. inf
->   Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>   Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 O CAPolicy. inf é um arquivo de configuração que define as extensões, as restrições e outras definições de configuração que são aplicadas a um certificado de autoridade de certificação raiz e a todos os certificados emitidos pela autoridade de certificação raiz. O arquivo CAPolicy. inf deve ser instalado em um servidor host antes que a rotina de instalação para a autoridade de certificação raiz comece. Quando as restrições de segurança em uma autoridade de certificação raiz devem ser modificadas, o certificado raiz deve ser renovado e um arquivo. inf de capolicye atualizado deve ser instalado no servidor antes do início do processo de renovação.
 
@@ -42,7 +40,7 @@ Os termos a seguir são usados para descrever a estrutura do arquivo. inf:
 
 -   _Valor_ – é o parâmetro e é exibido à direita do sinal de igual.
 
-No exemplo a seguir, **[Version]** é a seção, **Signature** é a chave e **"\$Windows NT\$"** é o valor.
+No exemplo a seguir, **[Version]** é a seção, **Signature** é a chave e **" \$ Windows NT \$ "** é o valor.
 
 Exemplo:
 
@@ -51,7 +49,7 @@ Exemplo:
 Signature="$Windows NT$"      #key=value
 ```
 
-###  <a name="version"></a>{1&gt;Version&lt;1}
+###  <a name="version"></a>Versão
 
 Identifica o arquivo como um arquivo. inf. A versão é a única seção necessária e deve estar no início do arquivo CAPolicy. inf.
 
@@ -97,7 +95,7 @@ Notice=”Legal policy statement text”
 
 ### <a name="crldistributionpoint"></a>CRLDistributionPoint
 
-Você pode especificar os CDPs (pontos de distribuição) de CRL para um certificado de autoridade de certificação raiz no arquivo CAPolicy. inf.  Depois de instalar a AC, você pode configurar as URLs de CDP que a autoridade de certificação inclui em cada certificado emitido. O certificado de autoridade de certificação raiz mostra as URLs especificadas nesta seção do arquivo CAPolicy. inf. 
+Você pode especificar os CDPs (pontos de distribuição) de CRL para um certificado de autoridade de certificação raiz no arquivo CAPolicy. inf.  Depois de instalar a AC, você pode configurar as URLs de CDP que a autoridade de certificação inclui em cada certificado emitido. O certificado de autoridade de certificação raiz mostra as URLs especificadas nesta seção do arquivo CAPolicy. inf.
 
 ```
 [CRLDistributionPoint]
@@ -105,12 +103,12 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 ```
 
 Algumas informações adicionais sobre esta seção:
--   Suportar
-    - HTTP 
+-   Oferece suporte a:
+    - HTTP
     - URLs de arquivo
-    - URLs de LDAP 
+    - URLs de LDAP
     - Várias URLs
-   
+
     >[!IMPORTANT]
     >Não oferece suporte a URLs HTTPS.
 
@@ -121,7 +119,7 @@ Algumas informações adicionais sobre esta seção:
 -    A CA pode publicar no arquivo UNC, por exemplo, para um compartilhamento que representa a pasta de um site em que um cliente recupera via HTTP.
 
 -   Use esta seção somente se você estiver configurando uma AC raiz ou renovando o certificado de autoridade de certificação raiz. A AC determina as extensões de CDP de CA subordinadas.
-   
+
 
 ### <a name="authorityinformationaccess"></a>AuthorityInformationAccess
 
@@ -193,7 +191,7 @@ Em uma instalação padrão da autoridade de certificação, um subconjunto dos 
 
 Talvez você não queira emitir certificados imediatamente após a instalação de uma CA, para que você possa usar a configuração LoadDefaultTemplates para impedir que os modelos padrão sejam adicionados à AC corporativa. Se não houver modelos configurados na autoridade de certificação, ele poderá emitir nenhum certificado.
 
-**AlternateSignatureAlgorithm** configura a AC para dar suporte ao formato de assinatura PKCS\#1 v 2.1 para o certificado de autoridade de certificação e as solicitações de certificado. Quando definido como 1 em uma AC raiz, o certificado de autoridade de certificação incluirá o formato de assinatura PKCS\#1 V 2.1. Quando definido em uma autoridade de certificação subordinada, a autoridade de certificação subordinada criará uma solicitação de certificado que inclui o formato de assinatura PKCS\#1 V 2.1.
+**AlternateSignatureAlgorithm** configura a autoridade de certificação para dar suporte ao \# formato de assinatura PKCS 1 v 2.1 para as solicitações de certificado de autoridade de certificação e certificado. Quando definido como 1 em uma AC raiz, o certificado de autoridade de certificação incluirá o \# formato de assinatura PKCS 1 v 2.1. Quando definido em uma AC subordinada, a autoridade de certificação subordinada criará uma solicitação de certificado que inclui o \# formato de assinatura PKCS 1 v 2.1.
 
 **ForceUTF8** altera a codificação padrão de nomes diferenciados relativos (RDNS) em nomes diferenciados de assunto e emissor para UTF-8. Somente os RDNs que dão suporte a UTF-8, como os que são definidos como tipos de cadeia de caracteres de diretório por uma RFC, são afetados. Por exemplo, o RDN para o controlador de domínio (DC) dá suporte à codificação como IA5 ou UTF-8, enquanto o RDN de país (C) dá suporte apenas à codificação como uma cadeia de caracteres imprimível. Portanto, a diretiva ForceUTF8 afetará um RDN DC, mas não afetará um RDN C.
 
@@ -211,23 +209,23 @@ Antes de instalar o AD CS, você configura o arquivo CAPolicy. inf com configura
 
 3. Insira o seguinte como o conteúdo do arquivo:
    ```
-   [Version]  
-   Signature="$Windows NT$"  
-   [PolicyStatementExtension]  
-   Policies=InternalPolicy  
-   [InternalPolicy]  
-   OID=1.2.3.4.1455.67.89.5  
-   Notice="Legal Policy Statement"  
-   URL=https://pki.corp.contoso.com/pki/cps.txt  
-   [Certsrv_Server]  
-   RenewalKeyLength=2048  
-   RenewalValidityPeriod=Years  
-   RenewalValidityPeriodUnits=5  
-   CRLPeriod=weeks  
-   CRLPeriodUnits=1  
-   LoadDefaultTemplates=0  
-   AlternateSignatureAlgorithm=1  
-   [CRLDistributionPoint]  
+   [Version]
+   Signature="$Windows NT$"
+   [PolicyStatementExtension]
+   Policies=InternalPolicy
+   [InternalPolicy]
+   OID=1.2.3.4.1455.67.89.5
+   Notice="Legal Policy Statement"
+   URL=https://pki.corp.contoso.com/pki/cps.txt
+   [Certsrv_Server]
+   RenewalKeyLength=2048
+   RenewalValidityPeriod=Years
+   RenewalValidityPeriodUnits=5
+   CRLPeriod=weeks
+   CRLPeriodUnits=1
+   LoadDefaultTemplates=0
+   AlternateSignatureAlgorithm=1
+   [CRLDistributionPoint]
    [AuthorityInformationAccess]
    ```
 4. Clique em **arquivo**e, em seguida, clique em **salvar como**.
@@ -251,7 +249,7 @@ Antes de instalar o AD CS, você configura o arquivo CAPolicy. inf com configura
    > [!CAUTION]
    >   Verifique se você salvou o CAPolicy.inf com a extensão inf. Se você não digitar **.inf** especificamente no final do nome de arquivo e selecionar as opções conforme descrito, o arquivo será salvo como um arquivo de texto e não será usado durante a instalação da AC.
 
-9. Feche o Bloco de Notas.
+9. Feche o Bloco de notas.
 
 > [!IMPORTANT]
->   No arquivo CAPolicy. inf, você pode ver que há uma linha especificando a URL https://pki.corp.contoso.com/pki/cps.txt. A seção Política Interna do CAPolicy.inf é mostrada apenas como um exemplo de como você poderia especificar o local de uma CPS (declaração de prática de certificação). Neste guia, você não é instruído a criar a declaração de prática de certificado (CPS).
+>   No arquivo CAPolicy. inf, você pode ver que há uma linha especificando a URL https://pki.corp.contoso.com/pki/cps.txt . A seção Política Interna do CAPolicy.inf é mostrada apenas como um exemplo de como você poderia especificar o local de uma CPS (declaração de prática de certificação). Neste guia, você não é instruído a criar a declaração de prática de certificado (CPS).

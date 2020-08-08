@@ -7,12 +7,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 342a374027abc3019b4fc01dbc91b676d63e922b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2469bbb35ce0e68801b28e221c05c285b4f1c464
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970673"
+ms.locfileid: "87996337"
 ---
 # <a name="getting-started-with-multipoint-services"></a>Introdução com os serviços do MultiPoint
 O sistema MultiPoint Services permite que muitos usuários usem várias estações conectadas fisicamente usando hubs de estação para apenas um computador. Em geral, cada estação consiste em um hub de estação, mouse, teclado e monitor de vídeo. Cada usuário em uma estação de serviços do MultiPoint experimenta uma sessão de computação exclusiva do Windows que você pode gerenciar usando o MultiPoint Manager.
@@ -91,7 +91,7 @@ Para obter mais informações sobre como salvar e gerenciar conteúdo privado e 
 
 ## <a name="see-also"></a>Consulte Também
 [Gerenciando o sistema](managing-your-multipoint-services-system.md) 
- MultiPoint Server [Informações importantes sobre a conformidade](Important-Information-about-Software-License-Compliance.md) 
+ MultiPoint Server [Informações importantes sobre a conformidade](./multipoint-software-license-compliance.md) 
  de licença de software [Gerenciar tarefas do sistema usando o Gerenciador](Manage-System-Tasks-Using-MultiPoint-Manager.md) 
  do MultiPoint [Gerenciar arquivos](Manage-User-Files.md) 
  do usuário [Gerenciar áreas de trabalho](manage-user-desktops-using-multipoint-dashboard.md) 
@@ -104,4 +104,3 @@ Para obter mais informações sobre como salvar e gerenciar conteúdo privado e 
  de usuário [Gerenciar áreas de trabalho do usuário usando o painel](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) 
  do MultiPoint [Gerenciar sistemas MultiPoint usando o painel](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) 
  do MultiPoint [Solução de problemas](Troubleshooting.md)
-

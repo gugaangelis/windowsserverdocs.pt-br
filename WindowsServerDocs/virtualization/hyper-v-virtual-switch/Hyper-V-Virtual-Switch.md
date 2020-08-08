@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 398440ac-5988-41ce-b91e-eab343a255d3
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: e8722e5ff925bca1d99c39d7eb6bf360dc12c065
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 1e2db53f28ff5262778b36b8a5cb91e6062ca9c0
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968693"
+ms.locfileid: "87995704"
 ---
 # <a name="hyper-v-virtual-switch"></a>Comutador Virtual Hyper-V
 
@@ -26,13 +26,13 @@ Você também pode se conectar a redes virtuais no servidor que está executando
 >
 > - [Gerenciar o comutador virtual do Hyper-V](Manage-Hyper-V-Virtual-Switch.md)
 > - [Acesso Remoto Direto à Memória (RDMA) e Agrupamento incorporado de comutador (SET)](RDMA-and-Switch-Embedded-Teaming.md)
-> - [Cmdlets de equipe do comutador de rede no Windows PowerShell](https://docs.microsoft.com/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
-> - [O que há de novo no VMM 2016](https://docs.microsoft.com/system-center/vmm/whats-new#networking)
-> - [Configurar a malha de rede do VMM](https://docs.microsoft.com/system-center/vmm/manage-networks)
-> - [Fórum do Hyper-V](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
-> - [Hyper-V: a extensão do comutador virtual WFP deve ser habilitada se for exigida pelas extensões de terceiros](https://docs.microsoft.com/answers/topics/windows-server-hyper-v.html)
+> - [Cmdlets de equipe do comutador de rede no Windows PowerShell](/powershell/module/netswitchteam/new-netswitchteam?view=win10-ps)
+> - [O que há de novo no VMM 2016](/system-center/vmm/whats-new#networking)
+> - [Configurar a malha de rede do VMM](/system-center/vmm/manage-networks)
+> - [Fórum do Hyper-V](/answers/topics/windows-server-hyper-v.html)
+> - [Hyper-V: a extensão do comutador virtual WFP deve ser habilitada se for exigida pelas extensões de terceiros](/answers/topics/windows-server-hyper-v.html)
 >
-> Para obter mais informações sobre outras tecnologias de rede, consulte [Networking in Windows Server 2016](https://docs.microsoft.com/windows-server/networking/networking).
+> Para obter mais informações sobre outras tecnologias de rede, consulte [Networking in Windows Server 2016](../../networking/index.yml).
 
 \-O comutador virtual do Hyper-V é um comutador de rede Ethernet de camada 2 baseado em software que está disponível no \- Gerenciador do Hyper-v quando você instala a \- função Hyper v Server.
 

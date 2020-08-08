@@ -6,19 +6,19 @@ manager: dongill
 author: justinha
 ms.author: justinha
 ms.date: 01/30/2019
-ms.openlocfilehash: 8ddd4699358a6725ed5e2f80683a363a1120caf7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 35e95204e076c0e0c96eb1669ff267b87ba7242a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944246"
+ms.locfileid: "87996326"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Início rápido para implantação de malha protegida
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico explica o que é uma malha protegida, seus requisitos e um resumo do processo de implantação.
-Para obter etapas de implantação detalhadas, consulte [implantando o serviço guardião de host para hosts protegidos e VMs blindadas](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview).
+Para obter etapas de implantação detalhadas, consulte [implantando o serviço guardião de host para hosts protegidos e VMs blindadas](./guarded-fabric-deploying-hgs-overview.md).
 
 Prefere vídeo? Confira o curso Microsoft Virtual Academy [implantando VMs blindadas e uma malha protegida com o Windows Server 2016](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474).
 
@@ -72,7 +72,7 @@ Vamos imaginar esse cenário — você tem uma malha Hyper-V existente, como Con
 
 ## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>Etapa 1: implantar os hosts Hyper-V que executam o Windows Server 2016
 
-Os hosts do Hyper-V precisam executar o Windows Server 2016 Datacenter Edition ou posterior. Se você estiver atualizando hosts, poderá [Atualizar](https://technet.microsoft.com/windowsserver/dn527667.aspx) do Standard Edition para o Datacenter Edition.
+Os hosts do Hyper-V precisam executar o Windows Server 2016 Datacenter Edition ou posterior. Se você estiver atualizando hosts, poderá [Atualizar](../../get-started/installation-and-upgrade.md) do Standard Edition para o Datacenter Edition.
 
 ![Atualizar hosts do Hyper-V](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
@@ -159,7 +159,7 @@ O arquivo de dados de blindagem também inclui a configuração de política de 
 
     ![Nova VM com suporte de criptografia](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-new-shielded-vm.png)
 
-Você pode adicionar partes de gerenciamento opcionais, como VMM ou Pacote do Microsoft Azure. Se você quiser criar uma VM sem instalar essas partes, consulte [passo a passo – criando VMs blindadas sem VMM](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/).
+Você pode adicionar partes de gerenciamento opcionais, como VMM ou Pacote do Microsoft Azure. Se você quiser criar uma VM sem instalar essas partes, consulte [passo a passo – criando VMs blindadas sem VMM](/archive/blogs/datacentersecurity/step-by-step-creating-shielded-vms-without-vmm).
 
 ## <a name="step-6-create-a-shielded-vm"></a>Etapa 6: criar uma VM blindada
 

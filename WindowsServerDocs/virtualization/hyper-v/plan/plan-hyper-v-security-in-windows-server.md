@@ -7,12 +7,12 @@ manager: dongill
 author: larsiwer
 ms.author: kathydav
 ms.date: 08/03/2018
-ms.openlocfilehash: b9cb34a7d7c790bb7eee939f9247609e7cee6e3e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af974edfb94ccf1a0a4844df43885198ab68d416
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947972"
+ms.locfileid: "87996003"
 ---
 # <a name="plan-for-hyper-v-security-in-windows-server"></a>Planejar a segurança do Hyper-V no Windows Server
 
@@ -22,18 +22,18 @@ Proteja o sistema operacional do host Hyper-V, as máquinas virtuais, os arquivo
 
 ## <a name="secure-the-hyper-v-host"></a>Proteger o host Hyper-V
 - **Mantenha o sistema operacional do host seguro.**
-    - Minimize a superfície de ataque usando a opção de instalação mínima do Windows Server necessária para o sistema operacional de gerenciamento. Para obter mais informações, consulte a [seção Opções de instalação](/windows-server/windows-server#installation-options) da biblioteca de conteúdo técnico do Windows Server. Não recomendamos que você execute cargas de trabalho de produção no Hyper-V no Windows 10.
+    - Minimize a superfície de ataque usando a opção de instalação mínima do Windows Server necessária para o sistema operacional de gerenciamento. Para obter mais informações, consulte a [seção Opções de instalação](../../../get-started-19/install-upgrade-migrate-19.md) da biblioteca de conteúdo técnico do Windows Server. Não recomendamos que você execute cargas de trabalho de produção no Hyper-V no Windows 10.
     - Mantenha o sistema operacional do host do Hyper-V, o firmware e os drivers de dispositivo atualizados com as atualizações de segurança mais recentes. Verifique as recomendações do seu fornecedor para atualizar o firmware e os drivers.
     - Não use o host Hyper-V como uma estação de trabalho ou instale qualquer software desnecessário.
-    - Gerencie remotamente o host Hyper-V. Se você precisar gerenciar o host Hyper-V localmente, use o Credential Guard. Para obter mais informações, consulte [Proteger credenciais de domínio derivadas com o Credential Guard](https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard).
-    - Habilitar políticas de integridade de código. Use serviços de integridade de código protegidos por segurança baseada em virtualização. Para obter mais informações, consulte [Guia de implantação do Device Guard](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide).
+    - Gerencie remotamente o host Hyper-V. Se você precisar gerenciar o host Hyper-V localmente, use o Credential Guard. Para obter mais informações, consulte [Proteger credenciais de domínio derivadas com o Credential Guard](/windows/access-protection/credential-guard/credential-guard).
+    - Habilitar políticas de integridade de código. Use serviços de integridade de código protegidos por segurança baseada em virtualização. Para obter mais informações, consulte [Guia de implantação do Device Guard](/windows/device-security/device-guard/device-guard-deployment-guide).
 - **Use uma rede segura.**
     - Use uma rede separada com um adaptador de rede dedicado para o computador físico do Hyper-V.
     - Use uma rede privada ou segura para acessar configurações de VM e arquivos de disco rígido virtual.
     - Use uma rede privada/dedicada para o tráfego de migração ao vivo. Considere habilitar o IPSec nessa rede para usar a criptografia e proteger os dados da VM pela rede durante a migração. Para obter mais informações, consulte [Configurar hosts para migração ao vivo sem clustering de failover](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md).
 - **Tráfego de migração de armazenamento seguro.**
 
-    Use SMB 3,0 para criptografia de ponta a ponta de dados SMB e violação de proteção de dados ou espionagem em redes não confiáveis. Use uma rede privada para acessar o conteúdo do compartilhamento SMB para evitar ataques man-in-the-Middle. Para obter mais informações, consulte [melhorias de segurança SMB](https://technet.microsoft.com/library/dn551363.aspx).
+    Use SMB 3,0 para criptografia de ponta a ponta de dados SMB e violação de proteção de dados ou espionagem em redes não confiáveis. Use uma rede privada para acessar o conteúdo do compartilhamento SMB para evitar ataques man-in-the-Middle. Para obter mais informações, consulte [melhorias de segurança SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn551363(v=ws.11)).
 - **Configure os hosts para que façam parte de uma malha protegida.**
 
     Para obter mais informações, consulte [malha protegida](../../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md).
@@ -47,7 +47,7 @@ Proteja o sistema operacional do host Hyper-V, as máquinas virtuais, os arquivo
 
 - **Proteger o sistema operacional do host Hyper-V.**
 
-    Use as recomendações de configuração de segurança de linha de base descritas na [linha de base de segurança do Windows Server](https://docs.microsoft.com/windows/device-security/windows-security-baselines).
+    Use as recomendações de configuração de segurança de linha de base descritas na [linha de base de segurança do Windows Server](/windows/device-security/windows-security-baselines).
 
 - **Conceda as permissões apropriadas.**
     - Adicione usuários que precisam gerenciar o host Hyper-V para o grupo Administradores do Hyper-V.
@@ -55,7 +55,7 @@ Proteja o sistema operacional do host Hyper-V, as máquinas virtuais, os arquivo
 
 - **Configure as exclusões e as opções de antivírus para o Hyper-V.**
 
-    O Windows Defender já tem [exclusões automáticas](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus) configuradas. Para obter mais informações sobre exclusões, consulte [exclusões de antivírus recomendadas para hosts Hyper-V](https://support.microsoft.com/kb/3105657).
+    O Windows Defender já tem [exclusões automáticas](/windows/security/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus) configuradas. Para obter mais informações sobre exclusões, consulte [exclusões de antivírus recomendadas para hosts Hyper-V](https://support.microsoft.com/kb/3105657).
 
 - **Não monte VHDs desconhecidos.** Isso pode expor o host a ataques de nível do sistema de arquivos.
 
@@ -82,7 +82,7 @@ Para ambientes mais seguros:
 
     - Instale as atualizações de segurança mais recentes antes de ativar uma máquina virtual em um ambiente de produção.
     - Instale o Integration Services para os sistemas operacionais convidados com suporte que precisam dele e mantenha-o atualizado. As atualizações do serviço de integração para convidados que executam versões do Windows com suporte estão disponíveis por meio de Windows Update.
-    - Proteger o sistema operacional executado em cada máquina virtual com base na função que ele executa. Use as recomendações de configuração de segurança de linha de base descritas na [linha de base de segurança do Windows](https://docs.microsoft.com/windows/device-security/windows-security-baselines).
+    - Proteger o sistema operacional executado em cada máquina virtual com base na função que ele executa. Use as recomendações de configuração de segurança de linha de base descritas na [linha de base de segurança do Windows](/windows/device-security/windows-security-baselines).
 
 - **Use uma rede segura.**
 
@@ -98,7 +98,7 @@ Para ambientes mais seguros:
 
 - **Habilite a segurança baseada em virtualização para convidados que executam o Windows 10 ou o Windows Server 2016 ou posterior.**
 
-    Para obter mais informações, consulte o [Guia de implantação do Device Guard](https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide).
+    Para obter mais informações, consulte o [Guia de implantação do Device Guard](/windows/device-security/device-guard/device-guard-deployment-guide).
 
 - **Habilite apenas a atribuição de dispositivo discreta, se necessário, para uma carga de trabalho específica**.
 

@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fca3faca236a2fc5162d7a50ef02acad9b508226
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87966063"
+ms.locfileid: "87996312"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada Linux
 
@@ -67,7 +67,7 @@ Essas etapas guiarão você pelos requisitos mínimos para obter uma VM Linux pr
 4.  Abra o **Gerenciador do Hyper-V** no computador de gerenciamento e conecte-se ao servidor de virtualização.
     Você pode fazer isso clicando em "conectar-se ao servidor..." no painel ações ou clicando com o botão direito do mouse em Gerenciador do Hyper-V e escolhendo "conectar-se ao servidor..." Forneça o nome DNS para o servidor Hyper-V e, se necessário, as credenciais necessárias para se conectar a ele.
 
-5.  Usando o Gerenciador do Hyper-V, [Configure um comutador externo](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) no servidor de virtualização para que a VM do Linux possa acessar a Internet para obter atualizações.
+5.  Usando o Gerenciador do Hyper-V, [Configure um comutador externo](../../virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines.md) no servidor de virtualização para que a VM do Linux possa acessar a Internet para obter atualizações.
 
 6.  Em seguida, crie uma nova máquina virtual na qual instalar o sistema operacional Linux.
     No painel Ações, clique em **nova**  >  **máquina virtual** para abrir o assistente.
@@ -119,7 +119,7 @@ Essas etapas guiarão você pelos requisitos mínimos para obter uma VM Linux pr
 
 13. Se você estiver planejando usar System Center Virtual Machine Manager para implantar suas VMs, instale o agente convidado do VMM para habilitar o VMM a especializar seu sistema operacional durante o provisionamento da VM.
     A especialização permite que cada VM seja configurada com segurança com diferentes usuários e chaves SSH, configurações de rede e etapas de instalação personalizadas.
-    Saiba como [obter e instalar o agente convidado do VMM](https://docs.microsoft.com/system-center/vmm/vm-linux#install-the-vmm-guest-agent) na documentação do VMM.
+    Saiba como [obter e instalar o agente convidado do VMM](/system-center/vmm/vm-linux#install-the-vmm-guest-agent) na documentação do VMM.
 
 14. Em seguida, [adicione o repositório de software do Microsoft Linux ao Gerenciador de pacotes](../../administration/linux-package-repository-for-microsoft-software.md).
 
@@ -189,7 +189,7 @@ O VHDX que você fornecer ao `-Path` parâmetro será substituído pelo disco de
 
 > [!IMPORTANT]
 > O Ferramentas de Administração de Servidor Remoto disponível no Windows Server 2016 ou Windows 10 não pode ser usado para preparar um disco de modelo de VM blindada do Linux.
-> Use apenas o cmdlet [Protect-TemplateDisk](https://docs.microsoft.com/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) disponível no Windows Server, versão 1709 ou o ferramentas de administração de servidor remoto disponível no windows Server 2019 para preparar um disco de modelo de VM blindada do Linux.
+> Use apenas o cmdlet [Protect-TemplateDisk](/powershell/module/shieldedvmtemplate/protect-templatedisk?view=win10-ps) disponível no Windows Server, versão 1709 ou o ferramentas de administração de servidor remoto disponível no windows Server 2019 para preparar um disco de modelo de VM blindada do Linux.
 
 ```powershell
 # Replace "THUMBPRINT" with the thumbprint of your template disk signing certificate in the line below

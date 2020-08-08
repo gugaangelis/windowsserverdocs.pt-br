@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 7e62b5dab69676e15494ff531ffe0fce0e550c1a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6af6e6dea584485e2517d8e54c107c5cc2af90
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970083"
+ms.locfileid: "87996269"
 ---
 # <a name="shielded-vms---hosting-service-provider-sets-up-windows-azure-pack"></a>VMs blindadas – provedor de serviços de hospedagem configura o Pacote do Microsoft Azure
 
@@ -25,7 +25,7 @@ Você concluirá as seguintes tarefas para configurar Pacote do Microsoft Azure 
 
 1. Conclua a configuração do System Center 2016-Virtual Machine Manager (VMM) para sua malha de hospedagem. Isso inclui a configuração de modelos de VM e uma nuvem de VM, que serão expostos por meio de Pacote do Microsoft Azure:
 
-    [Cenário - implantar hosts protegidos e máquinas virtuais blindadas no VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-overview)
+    [Cenário - implantar hosts protegidos e máquinas virtuais blindadas no VMM](/system-center/vmm/deploy-guarded-host-fabric?view=sc-vmm-2019)
 
 2. Instalar e configurar o System Center 2016-Service Provider Foundation (SPF). Este software permite que Pacote do Microsoft Azure se comunique com seus servidores do VMM:
 
@@ -44,7 +44,7 @@ Você concluirá as seguintes tarefas para configurar Pacote do Microsoft Azure 
 
 Instale e configure o Pacote do Microsoft Azure (WAP) no computador em que você deseja hospedar o portal da Web para seus locatários. Este computador precisará ser capaz de acessar o servidor SPF e ser acessível por seus locatários.
 
-1.  Revisão [dos requisitos do sistema WAP](https://technet.microsoft.com/library/dn296442.aspx) e instalação do [software de pré-requisito](https://technet.microsoft.com/library/dn469335.aspx).
+1.  Revisão [dos requisitos do sistema WAP](/previous-versions/azure/windows-server-azure-pack/dn296442(v=technet.10)) e instalação do [software de pré-requisito](/previous-versions/azure/windows-server-azure-pack/dn469335(v=technet.10)).
 
 2.  Baixe e instale o [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx). Se o computador não estiver conectado à Internet, siga as [instruções de instalação offline](https://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release).
 
@@ -52,7 +52,7 @@ Instale e configure o Pacote do Microsoft Azure (WAP) no computador em que você
 
 4.  Continue com a instalação. Após a conclusão da instalação, o site de configuração (*https:// &lt; wapserver &gt; : 30101/*) é aberto no navegador da Web. Neste site, forneça informações sobre o SQL Server e conclua a configuração de WAP.
 
-Para obter ajuda sobre como configurar Pacote do Microsoft Azure, consulte [instalar uma implantação expressa do pacote do Microsoft Azure](https://technet.microsoft.com/dn296439.aspx).
+Para obter ajuda sobre como configurar Pacote do Microsoft Azure, consulte [instalar uma implantação expressa do pacote do Microsoft Azure](/previous-versions/azure/windows-server-azure-pack/dn296439(v=technet.10)).
 
 > [!NOTE]
 > Se você já tiver executado Pacote do Microsoft Azure em seu ambiente, poderá usar a instalação existente. No entanto, para trabalhar com os recursos mais recentes da VM blindada, você precisará atualizar sua instalação para pelo menos o pacote cumulativo de atualizações 10.

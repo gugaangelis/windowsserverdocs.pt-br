@@ -1,20 +1,18 @@
 ---
 title: VPN (rede virtual privada)
 description: Você pode usar este tópico para aprender sobre recursos e funcionalidades de VPN do Windows Server 2016 e do Windows 10.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: cd4908f0-0d6f-4c02-8f98-4dc88c3dcb65
 ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 35293f98dd36fc48750a811981dafe37a06af7c9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 30f08f02bf7a06619b9a32206863a9ddefc0fc2d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959168"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968913"
 ---
 # <a name="virtual-private-networking-vpn"></a>VPN (rede virtual privada)
 
@@ -38,7 +36,7 @@ Ao instalar o serviço de função **DirectAccess e VPN (RAS)** , você está im
 >Você também pode implantar o gateway RAS como um servidor VPN multilocatário para uso com o SDN (rede definida pelo software) ou como um servidor DirectAccess. Para obter mais informações, consulte [Gateway de Ras](../ras-gateway/ras-gateway.md), [rede definida por software (SDN)](../../../networking/sdn/software-defined-networking.md)e [DirectAccess](../directaccess/directaccess.md).
 
 ## <a name="related-topics"></a>Tópicos relacionados
-- [Always on recursos e funcionalidades de VPN](vpn-map-da.md): neste tópico, você aprende sobre os recursos e a funcionalidade de Always on VPN. 
+- [Always on recursos e funcionalidades de VPN](vpn-map-da.md): neste tópico, você aprende sobre os recursos e a funcionalidade de Always on VPN.
 
 - [Configurar túneis de dispositivo VPN no Windows 10](vpn-device-tunnel-config.md): Always on VPN oferece a capacidade de criar um perfil VPN dedicado para o dispositivo ou computador. Always On conexões VPN incluem dois tipos de túneis: _túnel de dispositivo_ e túnel de _usuário_. O túnel de dispositivo é usado para cenários de conectividade pré-login e para fins de gerenciamento de dispositivos. O túnel do usuário permite que os usuários acessem recursos da organização por meio de servidores VPN.
 

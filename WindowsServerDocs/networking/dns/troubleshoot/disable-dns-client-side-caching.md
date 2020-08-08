@@ -2,21 +2,20 @@
 title: Desabilitar o cache do DNS do lado do cliente em clientes DNS
 description: Este artigo apresenta como desabilitar o cache do lado do cliente DNS em clientes DNS.
 manager: dcscontentpm
-ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 74e7f3936418bd2f04234d07b2f600197e94b357
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 107527f621dd82f9ca78df2f036600b7ecb7bccd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182342"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87947186"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>Desabilitar o cache do DNS do lado do cliente em clientes DNS
 
-O Windows contém um cache DNS do lado do cliente. O recurso de cache DNS do lado do cliente pode gerar uma falsa impressão de que o balanceamento de carga do DNS "round robin" não está ocorrendo do servidor DNS para o computador cliente do Windows. Quando você usa o comando ping para pesquisar o mesmo nome de domínio de registro a, o cliente pode usar o mesmo endereço IP.  
+O Windows contém um cache DNS do lado do cliente. O recurso de cache DNS do lado do cliente pode gerar uma falsa impressão de que o balanceamento de carga do DNS "round robin" não está ocorrendo do servidor DNS para o computador cliente do Windows. Quando você usa o comando ping para pesquisar o mesmo nome de domínio de registro a, o cliente pode usar o mesmo endereço IP.
 
 ## <a name="how-to-disable-client-side-caching"></a>Como desabilitar o armazenamento em cache do lado do cliente
 
@@ -31,33 +30,33 @@ sc servername stop dnscache
 ```
 
 
-Para desabilitar o cache DNS permanentemente no Windows, use a ferramenta do controlador de serviço ou a ferramenta serviços para definir o tipo de inicialização do serviço cliente DNS como **desabilitado**. Observe que o nome do serviço cliente DNS do Windows também pode aparecer como "dnscache". 
+Para desabilitar o cache DNS permanentemente no Windows, use a ferramenta do controlador de serviço ou a ferramenta serviços para definir o tipo de inicialização do serviço cliente DNS como **desabilitado**. Observe que o nome do serviço cliente DNS do Windows também pode aparecer como "dnscache".
 
 > [!NOTE]
-> Se o cache do resolvedor de DNS for desativado, o desempenho geral do computador cliente diminuirá e o tráfego de rede para consultas DNS aumentará. 
+> Se o cache do resolvedor de DNS for desativado, o desempenho geral do computador cliente diminuirá e o tráfego de rede para consultas DNS aumentará.
 
-O serviço cliente DNS otimiza o desempenho da resolução de nomes DNS armazenando nomes anteriormente resolvidos na memória. Se o serviço cliente DNS estiver desativado, o computador ainda poderá resolver nomes DNS usando os servidores DNS da rede. 
+O serviço cliente DNS otimiza o desempenho da resolução de nomes DNS armazenando nomes anteriormente resolvidos na memória. Se o serviço cliente DNS estiver desativado, o computador ainda poderá resolver nomes DNS usando os servidores DNS da rede.
 
-Quando o resolvedor do Windows recebe uma resposta, positiva ou negativa, para uma consulta, ele adiciona essa resposta ao seu cache e, portanto, cria um registro de recurso DNS. O resolvedor sempre verifica o cache antes de consultar qualquer servidor DNS. Se um registro de recurso DNS estiver no cache, o resolvedor usará o registro do cache em vez de consultar um servidor. Esse comportamento acelera as consultas e diminui o tráfego de rede para consultas DNS. 
+Quando o resolvedor do Windows recebe uma resposta, positiva ou negativa, para uma consulta, ele adiciona essa resposta ao seu cache e, portanto, cria um registro de recurso DNS. O resolvedor sempre verifica o cache antes de consultar qualquer servidor DNS. Se um registro de recurso DNS estiver no cache, o resolvedor usará o registro do cache em vez de consultar um servidor. Esse comportamento acelera as consultas e diminui o tráfego de rede para consultas DNS.
 
 Você pode usar a ferramenta ipconfig para exibir e liberar o cache do resolvedor de DNS. Para exibir o cache do resolvedor de DNS, execute o seguinte comando no prompt de comando:
 
 ```cmd
-ipconfig /displaydns 
+ipconfig /displaydns
 ```
 
 Esse comando exibe o conteúdo do cache do resolvedor de DNS, incluindo os registros de recursos de DNS pré-carregados do arquivo de hosts e quaisquer nomes consultados recentemente que foram resolvidos pelo sistema. Depois de algum tempo, o resolvedor descarta o registro do cache. O período de tempo é especificado pelo valor **TTL (vida útil)** associado ao registro de recurso DNS. Você também pode liberar o cache manualmente. Depois de liberar o cache, o computador deve consultar os servidores DNS novamente para todos os registros de recursos DNS que foram resolvidos anteriormente pelo computador. Para excluir as entradas no cache do resolvedor de DNS, execute `ipconfig /flushdns` em um prompt de comando.
 
 ## <a name="using-the-registry-to-control-the-caching-time"></a>Usando o registro para controlar o tempo de cache
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Siga as etapas nesta seção com cuidado. Problemas sérios podem ocorrer se você modificar o Registro incorretamente. Antes de modificá-lo, [faça backup do Registro para a restauração](https://support.microsoft.com/help/322756) em caso de problemas.
 
 O período de tempo para o qual uma resposta positiva ou negativa é armazenada em cache depende dos valores das entradas na seguinte chave do registro:
 
 **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
 
-O TTL para respostas positivas é o menor dos seguintes valores: 
+O TTL para respostas positivas é o menor dos seguintes valores:
 
 - O número de segundos especificado na resposta de consulta que o resolvedor recebeu
 

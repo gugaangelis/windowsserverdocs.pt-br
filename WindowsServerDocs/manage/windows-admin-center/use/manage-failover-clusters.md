@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b9c0e43d1573a52f69454ce05dd7a1c281510e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e181e52c2e461d6f1ef00f72684b8228cf9889d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964412"
+ms.locfileid: "87995981"
 ---
 # <a name="manage-failover-clusters-with-windows-admin-center"></a>Gerenciar clusters de failover com o centro de administração do Windows
 
@@ -22,7 +22,7 @@ ms.locfileid: "87964412"
 > [Baixe ou saiba mais sobre o centro de administração do Windows](../overview.md).
 
 ## <a name="managing-failover-clusters"></a>Gerenciando clusters de failover
-O [clustering de failover](https://docs.microsoft.com/windows-server/failover-clustering/failover-clustering-overview) é um recurso do Windows Server que permite agrupar vários servidores juntos em um cluster tolerante a falhas para aumentar a disponibilidade e a escalabilidade de aplicativos e serviços, como o servidor de arquivos de escalabilidade horizontal, o Hyper-V e o Microsoft SQL Server.
+O [clustering de failover](../../../failover-clustering/failover-clustering-overview.md) é um recurso do Windows Server que permite agrupar vários servidores juntos em um cluster tolerante a falhas para aumentar a disponibilidade e a escalabilidade de aplicativos e serviços, como o servidor de arquivos de escalabilidade horizontal, o Hyper-V e o Microsoft SQL Server.
 
 Embora você possa gerenciar nós de cluster de failover como servidores individuais adicionando-os como [conexões de servidor](manage-servers.md) no centro de administração do Windows, você também pode adicioná-los como clusters de failover para exibir e gerenciar recursos de cluster, armazenamento, rede, nós, funções, máquinas virtuais e comutadores virtuais.
 

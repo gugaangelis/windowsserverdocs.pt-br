@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 78533908de1a1f43cbfac9054dcfe6ec83edce9d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bfb40249dffa08e1c05aa1dc7cbc26fad6f7885d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948749"
+ms.locfileid: "87995890"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configurando a proteção LSA adicional
 
@@ -29,13 +29,13 @@ Para um plug-in ou driver de LSA carregar com êxito como um processo protegido,
 
     O modo protegido exige que qualquer plug-in carregado na LSA tenha uma assinatura digital da Microsoft. Portanto, os plug-ins não assinados ou não assinados com uma assinatura da Microsoft não carregarão na LSA. Exemplos desses plug-ins são os drivers de cartão inteligente, os plug-ins criptográficos e os filtros de senha.
 
-    Os plug-ins de LSA que são drivers, como os drivers de cartão inteligente, precisam ser assinados usando a Certificação WHQL. Para obter mais informações, consulte [assinatura de versão do WHQL](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx).
+    Os plug-ins de LSA que são drivers, como os drivers de cartão inteligente, precisam ser assinados usando a Certificação WHQL. Para obter mais informações, consulte [assinatura de versão do WHQL](/windows-hardware/drivers/install/whql-release-signature).
 
     Os plug-ins de LSA que não têm um processo de Certificação de WHQL devem ser assinados usando o [serviço de assinatura de arquivo para LSA](https://go.microsoft.com/fwlink/?LinkId=392590).
 
 2.  Aderência à orientação do processo SDL (Security Development Lifecycle) da Microsoft
 
-    Todos os plug-ins devem estar em conformidade com a orientação do processo SDL aplicável. Para obter mais informações, consulte [Microsoft Security Development Lifecycle (SDL) Appendix](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx).
+    Todos os plug-ins devem estar em conformidade com a orientação do processo SDL aplicável. Para obter mais informações, consulte [Microsoft Security Development Lifecycle (SDL) Appendix](/previous-versions/windows/desktop/cc307891(v=msdn.10)).
 
     Mesmo se os plug-ins estiverem adequadamente assinados com uma assinatura da Microsoft, a não conformidade com o processo SDL pode resultar em falha no carregamento de um plug-in.
 
@@ -180,7 +180,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
     Para obter mais informações sobre a ferramenta de recusa, consulte [Baixar Protected Process Opt-out de LSA (Autoridade de Segurança Local) do Centro Oficial de Download da Microsoft](https://www.microsoft.com/download/details.aspx?id=40897).
 
-    Para obter mais informações sobre o gerenciamento de Inicialização Segura, consulte [Firmware de UEFI](https://technet.microsoft.com/library/hh824898.aspx).
+    Para obter mais informações sobre o gerenciamento de Inicialização Segura, consulte [Firmware de UEFI](/previous-versions/windows/it-pro/windows-8.1-and-8/hh824898(v=win.10)).
 
     > [!WARNING]
     > Quando a Inicialização Segura está desativada, todas as configurações relacionadas à Inicialização Segura e à UEFI são redefinidas. Você deve desativar a Inicialização Segura somente quando todos os outros meios para desabilitar a proteção de LSA falharem.
@@ -194,5 +194,3 @@ Para descobrir se a LSA foi iniciada no modo protegido quando o Windows foi inic
 [Proteção e gerenciamento de credenciais](credentials-protection-and-management.md)
 
 [serviço de assinatura de arquivo para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
-
-

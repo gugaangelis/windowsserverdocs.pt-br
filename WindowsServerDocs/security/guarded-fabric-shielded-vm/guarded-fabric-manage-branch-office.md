@@ -4,12 +4,12 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 140888bdaa27d5040ff723b94df2e28f3bbab167
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957904"
+ms.locfileid: "87996160"
 ---
 # <a name="branch-office-considerations"></a>Considerações das filiais
 
@@ -39,7 +39,7 @@ Para que o host Hyper-V transmita o atestado com os servidores primário e de fa
 Além disso, os certificados usados para descriptografar o TPM da máquina virtual precisam estar disponíveis em ambos os clusters HGS.
 Você pode configurar cada HGS com certificados diferentes e configurar a VM para confiar em ambos ou adicionar um conjunto compartilhado de certificados a ambos os clusters HGS.
 
-Para obter informações adicionais sobre como configurar o HGS em uma filial usando URLs de fallback, consulte a postagem de blog [melhorou o suporte de filial para VMs blindadas no Windows Server, versão 1709](https://blogs.technet.microsoft.com/datacentersecurity/2017/11/15/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709/).
+Para obter informações adicionais sobre como configurar o HGS em uma filial usando URLs de fallback, consulte a postagem de blog [melhorou o suporte de filial para VMs blindadas no Windows Server, versão 1709](/archive/blogs/datacentersecurity/improved-branch-office-support-for-shielded-vms-in-windows-server-version-1709).
 
 
 ## <a name="offline-mode"></a>Modo offline

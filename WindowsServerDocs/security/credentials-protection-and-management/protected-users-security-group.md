@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948689"
+ms.locfileid: "87995808"
 ---
 # <a name="protected-users-security-group"></a>Grupo de segurança de usuários protegidos
 
@@ -37,7 +37,7 @@ Os requisitos para fornecer proteções de dispositivo para membros do grupo de 
 
 - O grupo de segurança global de Usuários protegidos é replicado para todos os controladores de domínio na conta de domínio.
 
-- O Windows 8.1 e o Windows Server 2012 R2 adicionaram suporte por padrão. [O Microsoft Security Advisory 2871997](https://technet.microsoft.com/library/security/2871997) adiciona suporte ao Windows 7, windows Server 2008 R2 e Windows Server 2012.
+- O Windows 8.1 e o Windows Server 2012 R2 adicionaram suporte por padrão. [O Microsoft Security Advisory 2871997](/security-updates/SecurityAdvisories/2016/2871997) adiciona suporte ao Windows 7, windows Server 2008 R2 e Windows Server 2012.
 
 Os requisitos para fornecer a proteção ao controlador de domínio para membros do grupo de Usuários protegidos são:
 
@@ -50,7 +50,7 @@ Controladores de domínio que executam um sistema operacional anterior ao Window
 > [!Note]
 > Os controladores de domínio não oferecerão suporte a proteções de domínio.
 
-O grupo de usuários protegidos pode ser criado [transferindo a função de emulador de controlador de domínio primário (PDC)](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) para um controlador de domínio que executa o Windows Server 2012 R2. Depois de o objeto do grupo ser replicado para outros controladores de domínio, a função do emulador de PDC pode se hospedada em um controlador de domínio que executa uma versão anterior do Windows Server.
+O grupo de usuários protegidos pode ser criado [transferindo a função de emulador de controlador de domínio primário (PDC)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc816944(v=ws.10)) para um controlador de domínio que executa o Windows Server 2012 R2. Depois de o objeto do grupo ser replicado para outros controladores de domínio, a função do emulador de PDC pode se hospedada em um controlador de domínio que executa uma versão anterior do Windows Server.
 
 ### <a name="protected-users-group-ad-properties"></a><a name="BKMK_ADgroup"></a>Propriedades do AD do grupo de usuários protegidos
 
@@ -83,7 +83,7 @@ Quando o usuário conectado for membro do grupo de usuários protegidos, as segu
 - A partir do Windows 8.1 e do Windows Server 2012 R2, o Windows Digest não armazenará em cache as credenciais de texto sem formatação do usuário mesmo quando o Windows Digest estiver habilitado.
 
 > [!Note]
-> Depois de instalar o [Microsoft Security Advisory 2871997](https://technet.microsoft.com/library/security/2871997) , o resumo do Windows continuará a armazenar as credenciais em cache até a chave do registro ser configurada. Consulte [consultoria de segurança da Microsoft: atualizar para melhorar a proteção e o gerenciamento de credenciais: 13 de maio de 2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obter instruções.
+> Depois de instalar o [Microsoft Security Advisory 2871997](/security-updates/SecurityAdvisories/2016/2871997) , o resumo do Windows continuará a armazenar as credenciais em cache até a chave do registro ser configurada. Consulte [consultoria de segurança da Microsoft: atualizar para melhorar a proteção e o gerenciamento de credenciais: 13 de maio de 2014](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a) para obter instruções.
 
 - O NTLM não armazenará em cache as credenciais de texto sem formatação do usuário ou a função unidirecional do NT (NTOWF).
 
@@ -106,7 +106,7 @@ As contas que são membros do grupo de usuários protegidos que se autenticam em
 
 As definições não configuráveis para a expiração de TGTs são estabelecidas para cada conta do grupo de Usuários protegidos. Normalmente, o controlador de domínio define o tempo de vida e renovação do TGT com base nas políticas do domínio **Tempo de vida máximo para o tíquete do usuário** e **Tempo de vida máximo para renovação de tíquete do usuário**. Para o grupo de Usuários protegidos, foram definidos 600 minutos para essas políticas de domínio.
 
-Para mais informações, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
+Para mais informações, consulte [Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md).
 
 ## <a name="troubleshooting"></a>Solução de problemas
 Dois logs administrativos operacionais estão disponíveis para ajudar a solucionar problemas de eventos relacionados aos Usuários protegidos. Esses novos logs estão localizados em Visualizador de Eventos e são desabilitados por padrão e estão localizados em **aplicativos e serviços Logs\Microsoft\Windows\Authentication**.
@@ -126,4 +126,4 @@ Dois logs administrativos operacionais estão disponíveis para ajudar a solucio
 
 - [Políticas de autenticação e silos de políticas de autenticação](authentication-policies-and-authentication-policy-silos.md)
 
-- [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts)
+- [Como configurar contas protegidas](../../identity/ad-ds/manage/how-to-configure-protected-accounts.md)

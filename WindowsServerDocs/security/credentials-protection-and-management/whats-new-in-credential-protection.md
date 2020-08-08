@@ -7,12 +7,12 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 9522988946fbf5aa060ff81ab7a54077f5ca28f4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 521562b938b002e4c5fe5ffee5fcd7c677551f98
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948709"
+ms.locfileid: "87995756"
 ---
 # <a name="whats-new-in-credential-protection"></a>O que há de novo na proteção de credenciais
 
@@ -24,7 +24,7 @@ A partir do Windows 10, versão 1511, o Credential Manager usa a segurança base
 
 A partir do Windows 10, versão 1607, o modo de usuário isolado está incluído no Hyper-V, portanto, ele não é mais instalado separadamente para a implantação do Credential Guard.
 
-[Saiba mais sobre o Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard).
+[Saiba mais sobre o Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard).
 
 
 ## <a name="remote-credential-guard-for-signed-in-user"></a>Remote Credential Guard para usuário conectado
@@ -33,7 +33,7 @@ A partir do Windows 10, versão 1607, o Remote Credential Guard protege as crede
 
 A partir do Windows 10, versão 1703, o Remote Credential Guard protege as credenciais de usuário fornecidas ao usar o Área de Trabalho Remota.
 
-[Saiba mais sobre o Remote Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard).
+[Saiba mais sobre o Remote Credential Guard](/windows/security/identity-protection/remote-credential-guard).
 
 ## <a name="domain-protections"></a>Proteções de domínio
 
@@ -45,7 +45,7 @@ A partir do Windows 10 versão 1507 e do Windows Server 2016, se um dispositivo 
 
 A partir do Windows Server 2016, o KDCs dá suporte à autenticação usando a confiança de chave Kerberos.
 
-[Saiba mais sobre o suporte de chave pública para dispositivos ingressados no domínio & confiança de chave Kerberos](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
+[Saiba mais sobre o suporte de chave pública para dispositivos ingressados no domínio & confiança de chave Kerberos](../kerberos/whats-new-in-kerberos-authentication.md).
 
 ### <a name="pkinit-freshness-extension-support"></a>Suporte à extensão de atualização de PKINIT
 
@@ -53,7 +53,7 @@ A partir do Windows 10, versão 1507 e Windows Server 2016, os clientes Kerberos
 
 A partir do Windows Server 2016, o KDCs pode dar suporte à extensão de atualização PKInit.  Por padrão, o KDCs não oferecerá a extensão de atualização PKInit.
 
-[Saiba mais sobre o suporte à extensão de atualização de PKINIT](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
+[Saiba mais sobre o suporte à extensão de atualização de PKINIT](../kerberos/whats-new-in-kerberos-authentication.md).
 
 ### <a name="rolling-public-key-only-users-ntlm-secrets"></a>Segredos de NTLM do usuário de chave pública sem interrupção
 
@@ -80,4 +80,4 @@ A partir do DFL (nível funcional de domínio) do Windows Server 2016, os DCs po
 
 Configuração: na política de autenticação, clique em **Permitir autenticação de rede NTLM quando o usuário estiver restrito a dispositivos selecionados**.
 
-[Saiba mais sobre as políticas de autenticação](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos).
+[Saiba mais sobre as políticas de autenticação](./authentication-policies-and-authentication-policy-silos.md).

@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: cb2fe57963ac2786586d75df2a783945e2fb7d11
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4e4bdf9c33d4511c470da50462469fadbd0641ce
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963772"
+ms.locfileid: "87996233"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalar o HGS em uma floresta de bastiões existente
 
@@ -41,7 +41,7 @@ Você também pode pré-testar os objetos de cluster se a conta para a qual voc�
 
 ## <a name="group-managed-service-account"></a>Conta de serviço gerenciado de grupo
 
-A conta de serviço gerenciado de grupo (gMSA) é a identidade usada pelo HGS para recuperar e usar seus certificados. Use [New-ADServiceAccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount) para criar um gMSA.
+A conta de serviço gerenciado de grupo (gMSA) é a identidade usada pelo HGS para recuperar e usar seus certificados. Use [New-ADServiceAccount](/powershell/module/addsadministration/new-adserviceaccount?view=win10-ps) para criar um gMSA.
 Se esse for o primeiro gMSA no domínio, será necessário adicionar uma chave raiz do serviço de distribuição de chaves.
 
 Cada nó HGS precisará receber permissão para acessar a senha gMSA.
@@ -72,7 +72,7 @@ Se você usar Política de Grupo para configurar a atribuição de direitos de u
 
 > [!NOTE]
 > Contas de serviço gerenciado de grupo estão disponíveis a partir do esquema de Active Directory do Windows Server 2012.
-> Para obter mais informações, consulte [requisitos de conta de serviço gerenciado de grupo](https://technet.microsoft.com/library/jj128431.aspx).
+> Para obter mais informações, consulte [requisitos de conta de serviço gerenciado de grupo](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431(v=ws.11)).
 
 ## <a name="jea-security-groups"></a>Grupos de segurança do JEA
 
@@ -81,7 +81,7 @@ Não é necessário usar o JEA para gerenciar o HGS, mas ele ainda deve ser conf
 A configuração do ponto de extremidade JEA consiste em designar 2 grupos de segurança que contêm seus administradores HGS e os revisores HGS.
 Os usuários que pertencem ao grupo de administradores podem adicionar, alterar ou remover políticas no HGS; os revisores só podem exibir a configuração atual.
 
-Crie dois grupos de segurança para esses grupos de JEA usando as ferramentas de administração Active Directory ou [New-ADGroup](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adgroup).
+Crie dois grupos de segurança para esses grupos de JEA usando as ferramentas de administração Active Directory ou [New-ADGroup](/powershell/module/addsadministration/new-adgroup?view=win10-ps).
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
@@ -91,7 +91,7 @@ New-ADGroup -Name 'HgsJeaAdmins' -GroupScope DomainLocal
 ## <a name="cluster-objects"></a>Objetos de cluster
 
 Se a conta que você está usando para configurar o HGS não tiver permissão para criar novos objetos de computador no domínio, será necessário pré-testar os objetos de cluster.
-Essas etapas são explicadas em pré-configurar [objetos de computador de cluster no Active Directory Domain Services](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx).
+Essas etapas são explicadas em pré-configurar [objetos de computador de cluster no Active Directory Domain Services](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn466519(v=ws.11)).
 
 Para configurar seu primeiro nó HGS, será necessário criar um objeto de nome de cluster (CNO) e um objeto de computador virtual (VCO).
 O CNO representa o nome do cluster e é usado principalmente internamente pelo clustering de failover.
@@ -140,7 +140,7 @@ Verifique os objetos do Política de Grupo para as seguintes configurações e s
 
 **Nome da política:** Segurança de rede: configurar tipos de criptografia permitidos para Kerberos
 
-**Ação**: se essa política estiver configurada, você deverá atualizar a conta GMSA com [set-ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar apenas os tipos de criptografia com suporte nesta política. Por exemplo, se sua política permitir somente AES128 \_ HMAC \_ SHA1 e aes256 \_ HMAC \_ SHA1, você deverá executar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` .
+**Ação**: se essa política estiver configurada, você deverá atualizar a conta GMSA com [set-ADServiceAccount](/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps) para usar apenas os tipos de criptografia com suporte nesta política. Por exemplo, se sua política permitir somente AES128 \_ HMAC \_ SHA1 e aes256 \_ HMAC \_ SHA1, você deverá executar `Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` .
 
 
 
@@ -149,4 +149,3 @@ Verifique os objetos do Política de Grupo para as seguintes configurações e s
 - Para as próximas etapas para configurar o atestado baseado em TPM, consulte [inicializar o cluster HgS usando o modo TPM em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-tpm-mode-bastion.md).
 - Para as próximas etapas para configurar o atestado de chave do host, consulte [inicializar o cluster HgS usando o modo de chave em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-key-mode-bastion.md).
 - Para as próximas etapas para configurar o atestado baseado em administrador (preterido no Windows Server 2019), consulte [inicializar o cluster HgS usando o modo ad em uma floresta de bastiões existente](guarded-fabric-initialize-hgs-ad-mode-bastion.md).
-

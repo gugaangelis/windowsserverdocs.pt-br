@@ -2,22 +2,20 @@
 title: Políticas de solicitação de conexão
 description: Este tópico fornece uma visão geral das políticas de solicitação de conexão do servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 4ec45e0c-6b37-4dfb-8158-5f40677b0157
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 021cef4a220b183f6580bca75bc6db68aba893cf
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: f3f6aa743f592ae9336a5b8a20a13ff9e1048621
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316232"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969403"
 ---
 # <a name="connection-request-policies"></a>Políticas de solicitação de conexão
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a usar as políticas de solicitação de conexão do NPS para configurar o NPS como um servidor RADIUS, um proxy RADIUS ou ambos.
 
@@ -26,18 +24,18 @@ Você pode usar este tópico para aprender a usar as políticas de solicitação
 > - [Configurar políticas de solicitação de conexão](nps-crp-configure.md)
 > - [Configurar grupos de servidores RADIUS remotos](nps-crp-rrsg-configure.md)
 
-As políticas de solicitação de conexão são conjuntos de condições e configurações que permitem que os administradores de rede designem quais servidores de serviço RADIUS (RADIUS) executam a autenticação e a autorização de solicitações de conexão que o o servidor que executa o servidor de diretivas de rede (NPS) recebe de clientes RADIUS. As políticas de solicitação de conexão podem ser configuradas para designar quais servidores RADIUS são usados para contabilização RADIUS.
+As políticas de solicitação de conexão são conjuntos de condições e configurações que permitem que os administradores de rede designem quais servidores do serviço RADIUS (RADIUS) executam a autenticação e a autorização de solicitações de conexão que o servidor que executa o NPS (servidor de diretivas de rede) recebe de clientes RADIUS. As políticas de solicitação de conexão podem ser configuradas para designar quais servidores RADIUS são usados para contabilização RADIUS.
 
 Você pode criar políticas de solicitação de conexão para que algumas mensagens de solicitação RADIUS enviadas de clientes RADIUS sejam processadas localmente (o NPS é usado como um servidor RADIUS) e outros tipos de mensagens são encaminhados para outro servidor RADIUS (o NPS é usado como um proxy RADIUS).
 
-Com as políticas de solicitação de conexão, você pode usar o NPS como um servidor RADIUS ou um proxy RADIUS, com base em fatores como o seguinte: 
+Com as políticas de solicitação de conexão, você pode usar o NPS como um servidor RADIUS ou um proxy RADIUS, com base em fatores como o seguinte:
 
 - A hora do dia e o dia da semana
 - O nome do Realm na solicitação de conexão
 - O tipo de conexão que está sendo solicitada
 - O endereço IP do cliente RADIUS
 
-As mensagens de solicitação de acesso RADIUS serão processadas ou encaminhadas pelo NPS somente se as configurações da mensagem de entrada corresponderem a pelo menos uma das políticas de solicitação de conexão configuradas no NPS. 
+As mensagens de solicitação de acesso RADIUS serão processadas ou encaminhadas pelo NPS somente se as configurações da mensagem de entrada corresponderem a pelo menos uma das políticas de solicitação de conexão configuradas no NPS.
 
 Se as configurações de política forem correspondentes e a política exigir que o NPS processe a mensagem, o NPS atuará como um servidor RADIUS, Autenticando e autorizando a solicitação de conexão. Se as configurações de política forem correspondentes e a política exigir que o NPS encaminhe a mensagem, o NPS atuará como um proxy RADIUS e encaminhará a solicitação de conexão a um servidor RADIUS remoto para processamento.
 
@@ -85,7 +83,7 @@ O grupo de atributos propriedades de conexão contém os atributos a seguir.
 - **Tipo de serviço**. Usado para designar o tipo de serviço que está sendo solicitado. Os exemplos incluem Framed (por exemplo, conexões PPP) e logon (por exemplo, conexões Telnet). Para obter mais informações sobre os tipos de serviço RADIUS, consulte RFC 2865, "Remote Authentication Dial-in User Service (RADIUS)".
 - **Tipo de Encapsulamento**. Usado para designar o tipo de túnel que está sendo criado pelo cliente solicitante. Os tipos de túnel incluem o protocolo PPTP (ponto a ponto de encapsulamento) e o L2TP (protocolo de encapsulamento de camada dois).
 
-### <a name="day-and-time-restrictions-attribute-group"></a>Grupo de atributos de restrições de dia e hora 
+### <a name="day-and-time-restrictions-attribute-group"></a>Grupo de atributos de restrições de dia e hora
 
 O grupo de atributos restrições de dia e hora contém o atributo de restrições de dia e hora. Com esse atributo, você pode designar o dia da semana e a hora do dia da tentativa de conexão. O dia e a hora são relativos ao dia e à hora do NPS.
 
@@ -107,7 +105,7 @@ O grupo de atributos de identidade do computador contém o atributo de identidad
 
 O grupo de atributos propriedades do cliente RADIUS contém os seguintes atributos.
 
-- **ID da estação de chamada**. Usado para designar o número de telefone usado pelo chamador (o cliente de acesso). Esse atributo é uma cadeia de caracteres. Você pode usar a sintaxe de correspondência de padrões para especificar códigos de área.  Em autenticações 802.1 x, o endereço MAC é normalmente preenchido e pode ser correspondido do cliente.  Esse campo é normalmente usado para cenários de bypass de endereço Mac quando a política de solicitação de conexão está configurada para "aceitar usuários sem validar credenciais".  
+- **ID da estação de chamada**. Usado para designar o número de telefone usado pelo chamador (o cliente de acesso). Esse atributo é uma cadeia de caracteres. Você pode usar a sintaxe de correspondência de padrões para especificar códigos de área.  Em autenticações 802.1 x, o endereço MAC é normalmente preenchido e pode ser correspondido do cliente.  Esse campo é normalmente usado para cenários de bypass de endereço Mac quando a política de solicitação de conexão está configurada para "aceitar usuários sem validar credenciais".
 - **Nome amigável do cliente**. Usado para designar o nome do computador cliente RADIUS que está solicitando a autenticação. Esse atributo é uma cadeia de caracteres. Você pode usar a sintaxe de correspondência de padrões para especificar nomes de cliente.
 - **Endereço IPv4 do cliente**. Usado para designar o endereço IPv4 do servidor de acesso à rede (o cliente RADIUS). Esse atributo é uma cadeia de caracteres. Você pode usar a sintaxe de correspondência de padrões para especificar redes IP.
 - **Endereço IPv6 do cliente**. Usado para designar o endereço IPv6 do servidor de acesso à rede (o cliente RADIUS). Esse atributo é uma cadeia de caracteres. Você pode usar a sintaxe de correspondência de padrões para especificar redes IP.
@@ -122,7 +120,7 @@ O grupo de atributos nome de usuário contém o atributo nome de usuário. Usand
 As configurações de política de solicitação de conexão são um conjunto de propriedades que são aplicadas a uma mensagem RADIUS de entrada. As configurações consistem nos seguintes grupos de propriedades.
 
 - Autenticação
-- Contabilização
+- Contabilidade
 - Manipulação de atributos
 - Encaminhando a solicitação
 - Avançado
@@ -134,16 +132,16 @@ As seções a seguir fornecem detalhes adicionais sobre essas configurações.
 Ao usar essa configuração, você pode substituir as configurações de autenticação definidas em todas as políticas de rede e pode designar os métodos e tipos de autenticação necessários para se conectar à sua rede.
 
 >[!IMPORTANT]
->Se você configurar um método de autenticação na diretiva de solicitação de conexão que seja menos segura do que o método de autenticação configurado na diretiva de rede, o método de autenticação mais seguro que você configurar na política de rede será substituído. Por exemplo, se você tiver uma política de rede que exija o uso do protocolo de autenticação extensível protegida – protocolo de autenticação de handshake de desafio da Microsoft versão 2 \(PEAP-MS-CHAP v2\), que é um método de autenticação baseado em senha para sem fio seguro e você também configura uma política de solicitação de conexão para permitir o acesso não autenticado, o resultado é que nenhum cliente é solicitado a autenticar usando o PEAP-MS-CHAP v2. Neste exemplo, todos os clientes que se conectam à sua rede recebem acesso não autenticado.
+>Se você configurar um método de autenticação na diretiva de solicitação de conexão que seja menos segura do que o método de autenticação configurado na diretiva de rede, o método de autenticação mais seguro que você configurar na política de rede será substituído. Por exemplo, se você tiver uma política de rede que exija o uso do protocolo de autenticação extensível protegida – protocolo de autenticação de handshake de desafio da Microsoft versão 2 \( PEAP-MS-CHAP v2 \) , que é um método de autenticação baseado em senha para sem fio seguro e também configurar uma política de solicitação de conexão para permitir acesso não autenticado, o resultado é que nenhum cliente é solicitado a autenticar usando PEAP- Neste exemplo, todos os clientes que se conectam à sua rede recebem acesso não autenticado.
 
-### <a name="accounting"></a>Contabilização
+### <a name="accounting"></a>Contabilidade
 
 Ao usar essa configuração, você pode configurar a política de solicitação de conexão para encaminhar informações de estatísticas para um NPS ou outro servidor RADIUS em um grupo de servidores remotos RADIUS para que o grupo de servidores remotos RADIUS execute a contabilidade.
 
 >[!NOTE]
 >Se você tiver vários servidores RADIUS e quiser informações de estatísticas para todos os servidores armazenados em um banco de dados de contabilidade RADIUS central, poderá usar a configuração contabilidade de política de solicitação de conexão em uma política em cada servidor RADIUS para encaminhar dados contábeis de todos os servidores para um NPS ou outro servidor RADIUS designado como um servidor de contabilidade.
 
-As configurações de contabilidade de política de solicitação de conexão funcionam independentemente da configuração de contabilidade do NPS local. Em outras palavras, se você configurar o NPS local para registrar informações de contabilização RADIUS em um arquivo local ou em um Microsoft SQL Server banco de dados, isso fará isso, independentemente de você configurar uma política de solicitação de conexão para encaminhar mensagens contábeis para um RADIUS remoto grupo de servidores.
+As configurações de contabilidade de política de solicitação de conexão funcionam independentemente da configuração de contabilidade do NPS local. Em outras palavras, se você configurar o NPS local para registrar informações de contabilização RADIUS em um arquivo local ou em um Microsoft SQL Server banco de dados, isso fará isso, independentemente de você configurar uma política de solicitação de conexão para encaminhar mensagens contábeis para um grupo de servidores remotos RADIUS.
 
 Se você quiser que as informações de contabilidade sejam registradas remotamente, mas não localmente, você deve configurar o NPS local para não executar a contabilidade, enquanto também configura a contabilidade em uma política de solicitação de conexão para encaminhar dados contábeis para um grupo de servidores remotos RADIUS.
 
@@ -158,7 +156,7 @@ Você pode configurar um conjunto de regras de localização e substituição qu
 O processamento da regra localizar e substituir ocorre para um dos atributos anteriores antes que a mensagem RADIUS esteja sujeita às configurações de estatísticas e autenticação. As regras de manipulação de atributos se aplicam apenas a um único atributo. Você não pode configurar regras de manipulação de atributo para cada atributo. Além disso, a lista de atributos que você pode manipular é uma lista estática; Não é possível adicionar à lista de atributos disponíveis para manipulação.
 
 >[!NOTE]
->Se você estiver usando o protocolo de autenticação MS-CHAP v2, não poderá manipular o atributo de nome de usuário se a política de solicitação de conexão for usada para encaminhar a mensagem RADIUS. A única exceção ocorre quando uma barra invertida (\) caractere é usada e a manipulação só afeta as informações à esquerda dela. Um caractere de barra invertida normalmente é usado para indicar um nome de domínio (as informações à esquerda do caractere de barra invertida) e um nome de conta de usuário dentro do domínio (as informações à direita do caractere de barra invertida). Nesse caso, somente as regras de manipulação de atributos que modificam ou substituem o nome de domínio são permitidas.
+>Se você estiver usando o protocolo de autenticação MS-CHAP v2, não poderá manipular o atributo de nome de usuário se a política de solicitação de conexão for usada para encaminhar a mensagem RADIUS. A única exceção ocorre quando uma barra invertida ( \) caractere é usada e a manipulação só afeta as informações à esquerda dela. Um caractere de barra invertida normalmente é usado para indicar um nome de domínio (as informações à esquerda do caractere de barra invertida) e um nome de conta de usuário dentro do domínio (as informações à direita do caractere de barra invertida). Nesse caso, somente as regras de manipulação de atributos que modificam ou substituem o nome de domínio são permitidas.
 
 Para obter exemplos de como manipular o nome de realm no atributo de nome de usuário, consulte a seção "exemplos de manipulação do nome de realm no atributo de nome de usuário" no tópico [usar expressões regulares no NPS](nps-crp-reg-expressions.md).
 
@@ -182,7 +180,7 @@ Para obter exemplos de como usar expressões regulares para criar regras de rote
 Você pode definir propriedades avançadas para especificar a série de atributos RADIUS que são:
 
 - Adicionado à mensagem de resposta RADIUS quando o NPS está sendo usado como um servidor de autenticação ou contabilização RADIUS. Quando há atributos especificados em uma diretiva de rede e na política de solicitação de conexão, os atributos que são enviados na mensagem de resposta RADIUS são a combinação dos dois conjuntos de atributos.
-- Adicionado à mensagem RADIUS quando o NPS está sendo usado como um proxy de autenticação ou estatísticas RADIUS. Se o atributo já existir na mensagem que é encaminhada, ele será substituído pelo valor do atributo especificado na política de solicitação de conexão. 
+- Adicionado à mensagem RADIUS quando o NPS está sendo usado como um proxy de autenticação ou estatísticas RADIUS. Se o atributo já existir na mensagem que é encaminhada, ele será substituído pelo valor do atributo especificado na política de solicitação de conexão.
 
 Além disso, alguns atributos que estão disponíveis para configuração na guia **configurações** de diretiva de solicitação de conexão na categoria **avançado** fornecem funcionalidade especializada. Por exemplo, você pode configurar o atributo **RADIUS remoto para mapeamento de usuário do Windows** quando desejar dividir a autenticação e a autorização de uma solicitação de conexão entre dois bancos de dados de contas de usuário.
 
@@ -209,4 +207,4 @@ Uma política de solicitação de conexão padrão é criada quando você instal
 A política de solicitação de conexão padrão usa o NPS como um servidor RADIUS. Para configurar um servidor que executa o NPS para atuar como um proxy RADIUS, você também deve configurar um grupo de servidores remotos RADIUS. Você pode criar um novo grupo de servidores remotos RADIUS enquanto estiver criando uma nova política de solicitação de conexão usando o assistente de nova política de solicitação de conexão. Você pode excluir a política de solicitação de conexão padrão ou verificar se a política de solicitação de conexão padrão é a última política processada pelo NPS, colocando-a por último na lista ordenada de políticas.
 
 >[!NOTE]
->Se o NPS e o serviço de acesso remoto estiverem instalados no mesmo computador e o serviço de acesso remoto estiver configurado para autenticação e contabilidade do Windows, é possível que as solicitações de autenticação e contabilização de acesso remoto sejam encaminhadas para um servidor RADIUS . Isso pode ocorrer quando as solicitações de autenticação e contabilização de acesso remoto correspondem a uma política de solicitação de conexão configurada para encaminhá-las a um grupo de servidores remotos RADIUS.
+>Se o NPS e o serviço de acesso remoto estiverem instalados no mesmo computador e o serviço de acesso remoto estiver configurado para autenticação e contabilidade do Windows, é possível que as solicitações de autenticação e contabilização de acesso remoto sejam encaminhadas para um servidor RADIUS. Isso pode ocorrer quando as solicitações de autenticação e contabilização de acesso remoto correspondem a uma política de solicitação de conexão configurada para encaminhá-las a um grupo de servidores remotos RADIUS.
