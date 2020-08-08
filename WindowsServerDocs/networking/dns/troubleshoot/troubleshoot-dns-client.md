@@ -2,17 +2,16 @@
 title: Solução de problemas de clientes DNS
 description: Este artigo apresenta como solucionar problemas do problema de DNS do lado do cliente.
 manager: dcscontentpm
-ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 2a9b44807ae6bc9f4c446d4af2150caf09955899
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8098f49c0a48004c54e4acc67522d61d4b30717c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182332"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958634"
 ---
 # <a name="troubleshooting-dns-clients"></a>Solução de problemas de clientes DNS
 
@@ -22,7 +21,7 @@ Este artigo discute como solucionar problemas de clientes DNS.
 
 1. Abra uma janela de prompt de comando como administrador no computador cliente.
 
-2. Execute o comando a seguir:
+2. Execute o seguinte comando:
 
    ```cmd
    ipconfig /all

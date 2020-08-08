@@ -1,20 +1,18 @@
 ---
 title: Configurar o servidor de acesso remoto para VPN Always On
 description: O RRAS foi projetado para funcionar bem como um roteador e um servidor de acesso remoto; Portanto, ele dá suporte a uma ampla gama de recursos.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 4cb5d5fc65eee997068ea3192081bf753fdd9083
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 6861ff0925c21c1723346ab75fc1be2f268b0551
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80818979"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946589"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Etapa 3. Configurar o servidor de acesso remoto para VPN Always On
 
@@ -65,7 +63,7 @@ Neste procedimento, você instala a função de acesso remoto como um servidor V
 Você pode usar o procedimento a seguir para instalar a função de acesso remoto usando Gerenciador do Servidor.
 
 1. No servidor VPN, em Gerenciador do Servidor, selecione **gerenciar** e selecione **adicionar funções e recursos**.
-   
+
    O Assistente para Adicionar Funções e Recursos é aberto.
 
 2. Na página antes de começar, selecione **Avançar**.
@@ -82,7 +80,7 @@ Você pode usar o procedimento a seguir para instalar a função de acesso remot
 
 8. Na página acesso remoto, selecione **Avançar**.
 
-9.  Na página Selecionar Serviço de função, em **serviços de função**, selecione **DirectAccess e VPN (RAS)** .
+9.  Na página Selecionar Serviço de função, em **serviços de função**, selecione **DirectAccess e VPN (RAS)**.
 
    A caixa de diálogo **Assistente de adição de funções e recursos** é aberta.
 
@@ -94,7 +92,7 @@ Você pode usar o procedimento a seguir para instalar a função de acesso remot
 
 14. Na página confirmar seleções de instalação, examine suas escolhas e selecione **instalar**.
 
-15. Quando a instalação for concluída, selecione **fechar**.
+15. Quando a instalação for concluída, selecione **Fechar**.
 
 ## <a name="configure-remote-access-as-a-vpn-server"></a>Configurar o acesso remoto como um servidor VPN
 
@@ -144,7 +142,7 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
        A caixa de diálogo Adicionar servidor RADIUS é aberta.
 
     d. Em **nome do servidor**, insira o nome de domínio totalmente qualificado (FQDN) do servidor NPS em sua organização/rede corporativa.
-    
+
        Por exemplo, se o nome NetBIOS do servidor NPS for NPS1 e o nome de domínio for corp.contoso.com, digite **NPS1.Corp.contoso.com**.
 
     e. Em **segredo compartilhado**, selecione **alterar**.
@@ -164,7 +162,7 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
     - **Pontuação inicial**
 
-    - **Porto**
+    - **Porta**
 
 13. Se necessário, altere os valores para corresponder aos requisitos do seu ambiente e selecione **OK**.
 
@@ -172,7 +170,7 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
 14. Examine a configuração do **provedor de contabilidade**:
 
-    |                    Se você quiser...                     |                                                     Então...                                                      |
+    |                    Se você quiser...                     |                                                     Então…                                                      |
     |-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
     | Atividade de acesso remoto registrada no servidor de acesso remoto |                               Verifique se a **contabilidade do Windows** está selecionada.                               |
     |        NPS para executar serviços de contabilidade para VPN         | Altere o **provedor de contabilização** para **contabilização RADIUS** e configure o NPS como o provedor de contabilidade. |
@@ -193,7 +191,7 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
 16. Adicional *Se você estiver configurando o acesso condicional para conectividade VPN*, na lista suspensa **certificado** , em **Associação de certificado SSL**, selecione a autenticação do servidor VPN.
 
-17. Adicional *Se você estiver configurando o acesso condicional para conectividade VPN*, no MMC do NPS, expanda **políticas\\políticas de rede** e faça: 
+17. Adicional *Se você estiver configurando o acesso condicional para conectividade VPN*, no MMC do NPS, expanda **políticas \\ políticas de rede** e faça:
 
     a. Direita – as **conexões com a política de rede do servidor de roteamento e acesso remoto da Microsoft** e selecione **Propriedades**.
 
@@ -201,8 +199,8 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
     c. Em tipo de servidor de acesso à rede, selecione **servidor de acesso remoto (VPN-Dial up)** na lista suspensa.
 
-18. No MMC roteamento e acesso remoto, clique com o botão direito do mouse em **portas** e selecione **Propriedades**. 
-    
+18. No MMC roteamento e acesso remoto, clique com o botão direito do mouse em **portas** e selecione **Propriedades**.
+
     A caixa de diálogo Propriedades de portas é aberta.
 
 19. Selecione **SSTP (WAN Miniport)** e selecione **Configurar**. A caixa de diálogo Configurar o dispositivo-Miniport WAN (SSTP) é aberta.
@@ -231,6 +229,6 @@ Nesta seção, você pode configurar a VPN de acesso remoto para permitir conex�
 
 23. Se solicitado, selecione **Sim** para confirmar a reinicialização do servidor e selecione **fechar** para reiniciar o servidor.
 
-## <a name="next-step"></a>Próximas etapas
+## <a name="next-step"></a>Próxima etapa
 
 [Etapa 4. Instalar e configurar o servidor de políticas de rede (NPS)](vpn-deploy-nps.md): nesta etapa, você instala o servidor de políticas de rede (NPS) usando o Windows PowerShell ou o assistente Gerenciador do servidor adicionar funções e recursos. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade das solicitações de conexão que ele recebe do servidor VPN.

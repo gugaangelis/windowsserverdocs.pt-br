@@ -1,19 +1,17 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: Solução de problemas de atualizações de firmware de unidade
-ms.prod: windows-server
 ms.author: toklima
 manager: masriniv
-ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: b62fdfe64ea579f61239dc582c639fb10ec1371c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b63df280585c4e1d5de88bc8a2ab08cce74c06d7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80820879"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946219"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solução de problemas de atualizações de firmware de unidade
 
@@ -23,8 +21,8 @@ O Windows 10, versão 1703, e o novo Windows Server (canal semestral) incluem a 
 
 Você pode encontrar mais informações sobre esse recurso aqui:
 
-- [Atualizando o firmware da unidade no Windows Server 2016](update-firmware.md)
-- [Atualizar o firmware da unidade sem tempo de inatividade no Espaços de Armazenamento Diretos](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Atualizar o firmware da unidade no Windows Server 2016](update-firmware.md)
+- [Atualizar o firmware de unidade sem tempo de inatividade em Espaços de Armazenamento Diretos](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 As atualizações de firmware podem falhar por vários motivos. O objetivo deste artigo é ajudar na solução de problemas avançada.
 
@@ -41,7 +39,7 @@ Em termos de arquitetura, esse novo recurso depende de APIs implementadas na pil
 As seções a seguir descrevem informações de solução de problemas, dependendo se drivers da Microsoft ou de terceiros são usados.
 
 ## <a name="identifying-inappropriate-hardware"></a>Identificando hardware inadequado
-A maneira mais rápida para identificar se um dispositivo dá suporte ao conjunto correto de comandos é simplesmente iniciar o PowerShell e passar um objeto do disco que representa PhysicalDisk para o cmdlet Get-StorageFirmwareInfo. Aqui está um exemplo:
+A maneira mais rápida para identificar se um dispositivo dá suporte ao conjunto correto de comandos é simplesmente iniciar o PowerShell e passar um objeto do disco que representa PhysicalDisk para o cmdlet Get-StorageFirmwareInfo. Veja um exemplo:
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -81,7 +79,7 @@ Esses canal registra as informações sobre as APIs do Windows enviadas para os 
 ```powershell
 Get-PhysicalDisk -SerialNumber 44GS103UT5EW | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
 ```
-Eis um exemplo da saída:
+Veja um exemplo da saída:
 
 ```
 Update-StorageFirmware : Failed
@@ -97,14 +95,14 @@ At line:1 char:47
 + CategoryInfo          : NotSpecified: (:) [Update-StorageFirmware], CimException
 + FullyQualifiedErrorId : StorageWMI 4,Microsoft.Management.Infrastructure.CimCmdlets.InvokeCimMethodCommand,Update-StorageFirmware
 ```
-    
+
 O PowerShell gerará um erro e receberá informações indicando que a função chamada (ou seja, API de Kernel) estava incorreta. Isso pode indicar que a API não foi implementada pelo driver de miniporta SAS de terceiros (verdadeiro nesse caso) ou que a API falhou por outro motivo, como um alinhamento incorreto de segmentos de download.
 
 ```
 EventData
 DeviceGUID  {132EDB55-6BAC-A3A0-C2D5-203C7551D700}
 DeviceNumber    1
-Vendor  ATA 
+Vendor  ATA
 Model   TOSHIBA THNSNJ12
 FirmwareVersion 6101
 SerialNumber    44GS103UT5EW
@@ -144,7 +142,7 @@ Para coletar essas entradas avançadas do log, habilite o log, reproduza a falha
 
 Veja um exemplo de uma atualização de firmware em uma falha de dispositivo SATA, pois a imagem a ser baixada era inválida (ID de evento: 258):
 
-``` 
+```
 EventData
 MiniportName    storahci
 MiniportEventId 19

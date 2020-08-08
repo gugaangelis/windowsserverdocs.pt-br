@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 5940b2a626a42d639870c98ee740c44b18c02ca3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d226f4fdc9b34b97b24b970b3198bd4164b3a309
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944056"
+ms.locfileid: "87995275"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>Solucionando problemas de hosts protegidos
 
@@ -60,20 +60,20 @@ A tabela a seguir explica os possíveis valores para AttestationSubStatus e dica
 
 AttestationSubStatus       | O que significa e o que fazer
 ---------------------------|-------------------------------
-BitLocker                  | O volume do sistema operacional do host não é criptografado pelo BitLocker. Para resolver isso, [habilite o BitLocker](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-basic-deployment) no volume do sistema operacional ou [desabilite a política do BitLocker no HgS](guarded-fabric-manage-hgs.md#review-attestation-policies).
+BitLocker                  | O volume do sistema operacional do host não é criptografado pelo BitLocker. Para resolver isso, [habilite o BitLocker](/windows/security/information-protection/bitlocker/bitlocker-basic-deployment) no volume do sistema operacional ou [desabilite a política do BitLocker no HgS](guarded-fabric-manage-hgs.md#review-attestation-policies).
 CodeIntegrityPolicy        | O host não está configurado para usar uma política de integridade de código ou não está usando uma política confiável para o servidor HGS. Verifique se uma política de integridade de código foi configurada, se o host foi reiniciado e se a política está registrada com o servidor HGS. Para obter mais informações, consulte [criar e aplicar uma política de integridade de código](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#create-and-apply-a-code-integrity-policy).
 DumpsEnabled               | O host está configurado para permitir despejos ou despejos de memória ao vivo, o que não é permitido por suas políticas HGS. Para resolver isso, desabilite os despejos no host.
-DumpEncryption             | O host é configurado para permitir despejos ou despejos de memória ao vivo, mas não criptografa esses despejos. Desabilite os despejos no host ou [Configure a criptografia de despejo](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption).
-DumpEncryptionKey          | O host é configurado para permitir e criptografar despejos, mas não está usando um certificado conhecido por HGS para criptografá-los. Para resolver isso, [atualize a chave de criptografia de despejo](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption) no host ou [Registre a chave com o HgS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts).
+DumpEncryption             | O host é configurado para permitir despejos ou despejos de memória ao vivo, mas não criptografa esses despejos. Desabilite os despejos no host ou [Configure a criptografia de despejo](../../virtualization/hyper-v/manage/about-dump-encryption.md).
+DumpEncryptionKey          | O host é configurado para permitir e criptografar despejos, mas não está usando um certificado conhecido por HGS para criptografá-los. Para resolver isso, [atualize a chave de criptografia de despejo](../../virtualization/hyper-v/manage/about-dump-encryption.md) no host ou [Registre a chave com o HgS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts).
 FullBoot                   | O host retomou-se de um estado de suspensão ou hibernação. Reinicie o host para permitir uma inicialização limpa e completa.
-HibernationEnabled         | O host está configurado para permitir a hibernação sem criptografar o arquivo de hibernação, o que não é permitido por suas políticas HGS. Desabilite a hibernação e reinicie o host ou [Configure a criptografia de despejo](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/manage/about-dump-encryption).
+HibernationEnabled         | O host está configurado para permitir a hibernação sem criptografar o arquivo de hibernação, o que não é permitido por suas políticas HGS. Desabilite a hibernação e reinicie o host ou [Configure a criptografia de despejo](../../virtualization/hyper-v/manage/about-dump-encryption.md).
 HypervisorEnforcedCodeIntegrityPolicy | O host não está configurado para usar uma política de integridade de código imposta por hipervisor. Verifique se a integridade do código está habilitada, configurada e imposta pelo hipervisor. Consulte o [Guia de implantação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-deploy-code-integrity-policies) para obter mais informações.
 Iommu                      | Os recursos de segurança baseados em virtualização do host não estão configurados para exigir um dispositivo IOMMU para proteção contra ataques de acesso direto à memória, conforme exigido pelas suas políticas HGS. Verifique se o host tem uma IOMMU, se está habilitado e se o Device Guard está [configurado para exigir proteções DMA](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#enable-virtualization-based-security-vbs-and-device-guard) ao iniciar o vbs.
-PagefileEncryption         | A criptografia do arquivo de paginação não está habilitada no host. Para resolver isso, execute `fsutil behavior set encryptpagingfile 1` para habilitar a criptografia de arquivo de paginação. Para obter mais informações, consulte [fsutil Behavior](https://technet.microsoft.com/library/cc785435.aspx).
-SecureBoot                 | A inicialização segura não está habilitada neste host ou não está usando o modelo de inicialização segura da Microsoft. [Habilite a inicialização segura](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/disabling-secure-boot#enable_secure_boot) com o modelo de inicialização segura da Microsoft para resolver esse problema.
+PagefileEncryption         | A criptografia do arquivo de paginação não está habilitada no host. Para resolver isso, execute `fsutil behavior set encryptpagingfile 1` para habilitar a criptografia de arquivo de paginação. Para obter mais informações, consulte [fsutil Behavior](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc785435(v=ws.11)).
+SecureBoot                 | A inicialização segura não está habilitada neste host ou não está usando o modelo de inicialização segura da Microsoft. [Habilite a inicialização segura](/windows-hardware/manufacture/desktop/disabling-secure-boot#enable_secure_boot) com o modelo de inicialização segura da Microsoft para resolver esse problema.
 SecureBootSettings         | A linha de base do TPM neste host não corresponde a nenhuma das confianças do HGS. Isso pode ocorrer quando suas autoridades de inicialização de UEFI, a variável do DBX, o sinalizador de depuração ou as políticas de inicialização segura personalizadas são alteradas pela instalação de novo hardware ou software. Se você confiar na configuração atual de hardware, firmware e software deste computador, poderá [capturar uma nova linha de base do TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware) e [registrá-la com o HgS](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts).
 TcgLogVerification         | O log do TCG (linha de base do TPM) não pode ser obtido ou verificado. Isso pode indicar um problema com o firmware do host, o TPM ou outros componentes de hardware. Se o host estiver configurado para tentar a inicialização PXE antes de inicializar o Windows, um NBP (programa de inicialização líquida) desatualizado também poderá causar esse erro. Verifique se todos os NBPs estão atualizados quando a inicialização PXE está habilitada.
-VirtualSecureMode          | Os recursos de segurança baseados em virtualização não estão em execução no host. Verifique se o VBS está habilitado e se o seu sistema atende aos [recursos de segurança da plataforma](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)configurada. Consulte a [documentação do Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide) para obter mais informações sobre os requisitos de vbs.
+VirtualSecureMode          | Os recursos de segurança baseados em virtualização não estão em execução no host. Verifique se o VBS está habilitado e se o seu sistema atende aos [recursos de segurança da plataforma](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)configurada. Consulte a [documentação do Device Guard](/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide) para obter mais informações sobre os requisitos de vbs.
 
 ## <a name="modern-tls"></a>TLS moderno
 
@@ -90,4 +90,4 @@ reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVers
 > [!WARNING]
 > A configuração de versões padrão do TLS do sistema afetará todos os aplicativos .NET em seu computador. Certifique-se de testar as chaves do registro em um ambiente isolado antes de implantá-las em suas máquinas de produção.
 
-Para obter mais informações sobre o .NET 4,6 e o TLS 1,0, consulte [resolvendo o problema de tls 1,0, 2ª edição](https://docs.microsoft.com/security/solving-tls1-problem).
+Para obter mais informações sobre o .NET 4,6 e o TLS 1,0, consulte [resolvendo o problema de tls 1,0, 2ª edição](/security/solving-tls1-problem).

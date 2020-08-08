@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 0872131de7ba2a201b0a0e70fb6157b0e2706def
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9d3e37f92482f7352ccb07ef9528783d7e693565
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86958628"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967493"
 ---
 # <a name="configuring-alternate-login-id"></a>Configurar a ID de logon alternativa
 
 
 ## <a name="what-is-alternate-login-id"></a>O que é a ID de logon alternativa?
-Na maioria dos cenários, os usuários usam seus UPN (nomes de entidade de usuário) para fazer logon em suas contas. No entanto, em alguns ambientes devido a políticas corporativas ou dependências locais de aplicativos de linha de negócios, os usuários podem estar usando alguma outra forma de entrada. 
+Na maioria dos cenários, os usuários usam seus UPN (nomes de entidade de usuário) para fazer logon em suas contas. No entanto, em alguns ambientes devido a políticas corporativas ou dependências locais de aplicativos de linha de negócios, os usuários podem estar usando alguma outra forma de entrada.
 
 >[!NOTE]
 >As práticas recomendadas da Microsoft são fazer a correspondência entre o UPN e o endereço SMTP primário. Este artigo aborda a pequena porcentagem de clientes que não podem corrigir a correspondência de UPN.
@@ -30,9 +28,9 @@ Serviços de Federação do Active Directory (AD FS) (AD FS) permite que aplicat
 
 ## <a name="alternate-id-in-azure-ad"></a>ID alternativa no Azure AD
 Uma organização pode ter que usar a ID alternativa nos seguintes cenários:
-1. O nome de domínio local não é roteável, por exemplo, Contoso. local e, como resultado, o nome principal de usuário padrão é não roteável ( jdoe@contoso.local ). O UPN existente não pode ser alterado devido a dependências do aplicativo local ou políticas da empresa. O Azure AD e o Office 365 exigem que todos os sufixos de domínio associados ao diretório do AD do Azure sejam totalmente roteáveis pela Internet. 
+1. O nome de domínio local não é roteável, por exemplo, Contoso. local e, como resultado, o nome principal de usuário padrão é não roteável ( jdoe@contoso.local ). O UPN existente não pode ser alterado devido a dependências do aplicativo local ou políticas da empresa. O Azure AD e o Office 365 exigem que todos os sufixos de domínio associados ao diretório do AD do Azure sejam totalmente roteáveis pela Internet.
 2. O UPN local não é o mesmo que o endereço de email do usuário e para entrar no Office 365, os usuários usam o endereço de email e o UPN não podem ser usados devido a restrições organizacionais.
-   Nos cenários mencionados acima, a ID alternativa com AD FS permite que os usuários entrem no Azure AD sem modificar seus UPNs locais. 
+   Nos cenários mencionados acima, a ID alternativa com AD FS permite que os usuários entrem no Azure AD sem modificar seus UPNs locais.
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>Experiência do usuário final com ID de logon alternativa
 A experiência do usuário final varia dependendo do método de autenticação usado com a ID de logon alternativa.  Atualmente, há três maneiras diferentes em que o uso da ID de logon alternativo pode ser obtido.  Eles são:
@@ -60,7 +58,7 @@ Quando Azure AD Connect é fornecido detalhes sobre o ambiente de AD FS, ele ver
 ### <a name="manually-configure-alternate-id"></a>Configurar manualmente a ID alternativa
 Para configurar a ID de logon alternativa, você deve executar as seguintes tarefas: configurar seu AD FS relações de confiança do provedor de declarações para habilitar a ID de logon alternativa
 
-1.  Se você tiver o servidor 2012R2, verifique se você tem o KB2919355 instalado em todos os servidores de AD FS. Você pode obtê-lo por meio de serviços Windows Update ou baixá-lo diretamente. 
+1.  Se você tiver o servidor 2012R2, verifique se você tem o KB2919355 instalado em todos os servidores de AD FS. Você pode obtê-lo por meio de serviços Windows Update ou baixá-lo diretamente.
 
 2.  Atualize a configuração de AD FS executando o seguinte cmdlet do PowerShell em qualquer um dos servidores de Federação em seu farm (se você tiver um farm de WID, deverá executar esse comando no servidor de AD FS primário em seu farm):
 
@@ -157,22 +155,22 @@ HKEY_CURRENT_USER \Software\Microsoft\Windows\CurrentVersion\Internet Settings\Z
 
 |Cliente|Declaração de suporte|Comentários|
 | ----- | -----|-----|
-|Microsoft Teams|Suportado|<li>O Microsoft Teams dá suporte a AD FS (SAML-P, WS-enalimentate, WS-Trust e OAuth) e à autenticação moderna.</li><li> As principais equipes da Microsoft, como canais, chats e arquivos funcionais, funcionam com a ID de logon alternativa.</li><li>os aplicativos de primeira e de terceiros devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de suporte.</li>|     
+|Microsoft Teams|Com suporte|<li>O Microsoft Teams dá suporte a AD FS (SAML-P, WS-enalimentate, WS-Trust e OAuth) e à autenticação moderna.</li><li> As principais equipes da Microsoft, como canais, chats e arquivos funcionais, funcionam com a ID de logon alternativa.</li><li>os aplicativos de primeira e de terceiros devem ser investigados separadamente pelo cliente. Isso ocorre porque cada aplicativo tem seus próprios protocolos de autenticação de suporte.</li>|
 |OneDrive for Business|Com suporte-chave do registro do lado do cliente recomendada |Com a ID alternativa configurada, você vê que o UPN local é preenchido previamente no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro do lado do cliente indicada neste artigo: Office 2013 e Lync 2013 solicitam credenciais para o SharePoint Online, OneDrive e Lync Online periodicamente.|
-|Cliente móvel do OneDrive for Business|Suportado|| 
+|Cliente móvel do OneDrive for Business|Com suporte||
 |Página de ativação do Office 365 Pro Plus|Com suporte-chave do registro do lado do cliente recomendada|Com a ID alternativa configurada, você vê que o UPN local é preenchido previamente no campo de verificação. Isso precisa ser alterado para a identidade alternativa que está sendo usada. É recomendável usar a chave do registro do lado do cliente indicada neste artigo: o Office 2013 e Lync 2013 solicitam periodicamente credenciais para o SharePoint Online, OneDrive e Lync Online.|
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Clientes do Exchange e Skype for Business
 
 |Cliente|Instrução de suporte-com HMA|Instrução de suporte-sem HMA|
 | ----- |----- | ----- |
-|Outlook|Com suporte, sem prompts extras|Suportado</br></br>Com a **autenticação moderna** para o Exchange Online: com suporte</br></br>Com a **autenticação regular** para o Exchange Online: com suporte com as seguintes advertências:</br><li>Você deve estar em um computador ingressado no domínio e conectado à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários só podem se autenticar em sua caixa de correio de forma compatível quando estão conectados e ingressados na rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts adicionais ao configurar seu perfil do Outlook.| 
+|Outlook|Com suporte, sem prompts extras|Com suporte</br></br>Com a **autenticação moderna** para o Exchange Online: com suporte</br></br>Com a **autenticação regular** para o Exchange Online: com suporte com as seguintes advertências:</br><li>Você deve estar em um computador ingressado no domínio e conectado à rede corporativa </li><li>Você só pode usar a ID alternativa em ambientes que não permitem acesso externo para usuários de caixa de correio. Isso significa que os usuários só podem se autenticar em sua caixa de correio de forma compatível quando estão conectados e ingressados na rede corporativa, em uma VPN ou conectados por meio de máquinas de acesso direto, mas você obtém alguns prompts adicionais ao configurar seu perfil do Outlook.|
 |Pastas públicas híbridas|Com suporte, sem prompts adicionais.|Com a **autenticação moderna** para o Exchange Online: com suporte</br></br>Com **autenticação regular** para o Exchange Online: sem suporte</br></br><li>As pastas públicas híbridas não poderão ser expandidas se forem usadas IDs alternativas e, portanto, não deverão ser usadas hoje com métodos de autenticação regulares.|
 |Delegação entre locais|Consulte [Configurar o Exchange para dar suporte a permissões de caixa de correio delegadas em uma implantação híbrida](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|Consulte [Configurar o Exchange para dar suporte a permissões de caixa de correio delegadas em uma implantação híbrida](/exchange/hybrid-deployment/set-up-delegated-mailbox-permissions)|
-|Arquivar o acesso à caixa de correio (caixa de correio local-arquivo na nuvem)|Com suporte, sem prompts extras|Com suporte-os usuários recebem um prompt extra para as credenciais ao acessar o arquivo morto, eles precisam fornecer sua ID alternativa quando solicitado.| 
-|Outlook Web Access|Suportado|Suportado|
-|Aplicativos móveis do Outlook para Android, IOS e Windows Phone|Suportado|Suportado|
-|Skype for Business/Lync|Com suporte, sem prompts extras|Com suporte (exceto conforme observado), mas há um potencial para confusão do usuário.</br></br>Em clientes móveis, há suporte para a ID alternativa somente se o endereço SIP = email address = ID alternativo.</br></br> Os usuários podem precisar entrar duas vezes no cliente do Skype for Business Desktop, primeiro usando o UPN local e, em seguida, usando a ID alternativa. (Observe que o "endereço de entrada" é, na verdade, o endereço SIP que pode não ser o mesmo que o "nome de usuário", embora geralmente seja). Quando um nome de usuário é solicitado pela primeira vez, o usuário deve inserir o UPN, mesmo que ele esteja previamente preenchido com a ID alternativa ou o endereço SIP. Depois que o usuário clicar em entrar com o UPN, o prompt de nome de usuário reaparecerá, desta vez com o UPN. Desta vez, o usuário deve substituir isso pela ID alternativa e clicar em entrar para concluir o processo de entrada. Em clientes móveis, os usuários devem inserir a ID de usuário local na página avançado, usando o formato de estilo SAM (domínio \ nomedeusuário), não o formato UPN.</br></br>Após a entrada bem-sucedida, se o Skype for Business ou o Lync disser "o Exchange precisa de suas credenciais", você precisará fornecer as credenciais que são válidas para onde a caixa de correio está localizada. Se a caixa de correio estiver na nuvem, você precisará fornecer a ID alternativa. Se a caixa de correio for local, você precisará fornecer o UPN local.| 
+|Arquivar o acesso à caixa de correio (caixa de correio local-arquivo na nuvem)|Com suporte, sem prompts extras|Com suporte-os usuários recebem um prompt extra para as credenciais ao acessar o arquivo morto, eles precisam fornecer sua ID alternativa quando solicitado.|
+|Outlook Web Access|Com suporte|Com suporte|
+|Aplicativos móveis do Outlook para Android, IOS e Windows Phone|Com suporte|Com suporte|
+|Skype for Business/Lync|Com suporte, sem prompts extras|Com suporte (exceto conforme observado), mas há um potencial para confusão do usuário.</br></br>Em clientes móveis, há suporte para a ID alternativa somente se o endereço SIP = email address = ID alternativo.</br></br> Os usuários podem precisar entrar duas vezes no cliente do Skype for Business Desktop, primeiro usando o UPN local e, em seguida, usando a ID alternativa. (Observe que o "endereço de entrada" é, na verdade, o endereço SIP que pode não ser o mesmo que o "nome de usuário", embora geralmente seja). Quando um nome de usuário é solicitado pela primeira vez, o usuário deve inserir o UPN, mesmo que ele esteja previamente preenchido com a ID alternativa ou o endereço SIP. Depois que o usuário clicar em entrar com o UPN, o prompt de nome de usuário reaparecerá, desta vez com o UPN. Desta vez, o usuário deve substituir isso pela ID alternativa e clicar em entrar para concluir o processo de entrada. Em clientes móveis, os usuários devem inserir a ID de usuário local na página avançado, usando o formato de estilo SAM (domínio \ nomedeusuário), não o formato UPN.</br></br>Após a entrada bem-sucedida, se o Skype for Business ou o Lync disser "o Exchange precisa de suas credenciais", você precisará fornecer as credenciais que são válidas para onde a caixa de correio está localizada. Se a caixa de correio estiver na nuvem, você precisará fornecer a ID alternativa. Se a caixa de correio for local, você precisará fornecer o UPN local.|
 
 ## <a name="additional-details--considerations"></a>Detalhes adicionais & considerações
 

@@ -7,12 +7,12 @@ ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: e7c86cc15877c622cf3554a7ae69fe3d0aea1c50
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 24e67bd88a644c44b65d5eb8ccd3d6190737b5db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938920"
+ms.locfileid: "87995638"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server
 
@@ -24,13 +24,13 @@ Disponibilize os recursos mais recentes do Hyper-V em suas máquinas virtuais at
 - Você atualiza o nível funcional do cluster.
 - Você tem certeza de que não precisará mover a máquina virtual de volta para um host Hyper-V que executa uma versão anterior do Windows ou Windows Server.
 
-Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) e [executar uma atualização sem interrupção de um cluster de host do Hyper-V no VMM](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade).
+Para obter mais informações, consulte [atualização sem interrupção do sistema operacional do cluster](../../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md) e [executar uma atualização sem interrupção de um cluster de host do Hyper-V no VMM](/system-center/vmm/hyper-v-rolling-upgrade).
 
 ## <a name="step-1-check-the-virtual-machine-configuration-versions"></a>Etapa 1: verificar as versões de configuração da máquina virtual
 
 1. Na área de trabalho do Windows, clique no botão Iniciar e digite qualquer parte do nome **Windows PowerShell**.
 2. Clique com o botão direito do mouse em Windows PowerShell e selecione **Executar como administrador**.
-3. Use o cmdlet [Get-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm). Execute o comando a seguir para obter as versões de suas máquinas virtuais.
+3. Use o cmdlet [Get-VM](/powershell/module/hyper-v/get-vm). Execute o comando a seguir para obter as versões de suas máquinas virtuais.
 
 ```PowerShell
 Get-VM * | Format-Table Name, Version
@@ -43,7 +43,7 @@ Você também pode ver a versão de configuração no Gerenciador do Hyper-V sel
 1. Desligue a máquina virtual no Gerenciador do Hyper-V.
 2. Selecione a ação > atualizar a versão de configuração. Se essa opção não está disponível para a máquina virtual, ela já está na maior versão de configuração com suporte pelo host Hyper-V.
 
-Para atualizar a versão de configuração da máquina virtual usando o Windows PowerShell, use o cmdlet [Update-VMVersion](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion) . Execute o comando a seguir, em que vmname é o nome da máquina virtual.
+Para atualizar a versão de configuração da máquina virtual usando o Windows PowerShell, use o cmdlet [Update-VMVersion](/powershell/module/hyper-v/update-vmversion) . Execute o comando a seguir, em que vmname é o nome da máquina virtual.
 
 ```PowerShell
 Update-VMVersion <vmname>
@@ -51,13 +51,13 @@ Update-VMVersion <vmname>
 
 ## <a name="supported-virtual-machine-configuration-versions"></a>Versões de configuração de máquina virtual com suporte
 
-Execute o cmdlet do PowerShell [Get-VMHostSupportedVersion](https://docs.microsoft.com/powershell/module/hyper-v/get-vmhostsupportedversion) para ver quais versões de configuração de máquina virtual seu host Hyper-V dá suporte. Quando você cria uma máquina virtual, ela é criada com a versão de configuração padrão. Para ver qual é o padrão, execute o comando a seguir.
+Execute o cmdlet do PowerShell [Get-VMHostSupportedVersion](/powershell/module/hyper-v/get-vmhostsupportedversion) para ver quais versões de configuração de máquina virtual seu host Hyper-V dá suporte. Quando você cria uma máquina virtual, ela é criada com a versão de configuração padrão. Para ver qual é o padrão, execute o comando a seguir.
 
 ```PowerShell
 Get-VMHostSupportedVersion -Default
 ```
 
-Se você precisar criar uma máquina virtual que pode ser movida para um host Hyper-V que executa uma versão mais antiga do Windows, use o cmdlet [New-VM](https://docs.microsoft.com/powershell/module/hyper-v/new-vm) com o parâmetro-version. Por exemplo, para criar uma máquina virtual que você pode mover para um host Hyper-V que executa o Windows Server 2012 R2, execute o comando a seguir. Este comando criará uma máquina virtual chamada "WindowsCV5" com uma versão de configuração 5,0.
+Se você precisar criar uma máquina virtual que pode ser movida para um host Hyper-V que executa uma versão mais antiga do Windows, use o cmdlet [New-VM](/powershell/module/hyper-v/new-vm) com o parâmetro-version. Por exemplo, para criar uma máquina virtual que você pode mover para um host Hyper-V que executa o Windows Server 2012 R2, execute o comando a seguir. Este comando criará uma máquina virtual chamada "WindowsCV5" com uma versão de configuração 5,0.
 
 ```PowerShell
 New-VM -Name "WindowsCV5" -Version 5.0
@@ -82,7 +82,7 @@ A tabela a seguir lista as versões de configuração da VM com suporte em hosts
 
 ### <a name="supported-vm-configuration-versions-for-semi-annual-channel-hosts"></a>Versões de configuração de VM com suporte para hosts de canal semestral
 
-A tabela a seguir lista as versões de configuração de VM para hosts que executam uma versão de canal semianual com suporte no momento do Windows. Para obter mais informações sobre versões de canal semianuais do Windows, visite as páginas a seguir para [Windows Server](../../../get-started-19/servicing-channels-19.md) e [Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview#servicing-channels)
+A tabela a seguir lista as versões de configuração de VM para hosts que executam uma versão de canal semianual com suporte no momento do Windows. Para obter mais informações sobre versões de canal semianuais do Windows, visite as páginas a seguir para [Windows Server](../../../get-started-19/servicing-channels-19.md) e [Windows 10](/windows/deployment/update/waas-overview#servicing-channels)
 
 | Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
@@ -116,7 +116,7 @@ A tabela a seguir lista as descrições, extensões de nome de arquivo e locais 
 
 Se você tiver máquinas virtuais que criou com uma versão anterior do Hyper-V, alguns recursos que estão disponíveis no sistema operacional host mais recente podem não funcionar com essas máquinas virtuais até que você atualize a versão de configuração.
 
-Como uma orientação geral, é recomendável atualizar a versão de configuração depois de atualizar com êxito os hosts de virtualização para uma versão mais recente do Windows e sentir a certeza de que você não precisa reverter. Quando você estiver usando o recurso de [atualização sem interrupção do sistema operacional do cluster](https://docs.microsoft.com/windows-server/failover-clustering/Cluster-Operating-System-Rolling-Upgrade) , isso normalmente seria depois de atualizar o nível funcional do cluster. Dessa forma, você também se beneficiará dos novos recursos e das otimizações e alterações internas.
+Como uma orientação geral, é recomendável atualizar a versão de configuração depois de atualizar com êxito os hosts de virtualização para uma versão mais recente do Windows e sentir a certeza de que você não precisa reverter. Quando você estiver usando o recurso de [atualização sem interrupção do sistema operacional do cluster](../../../failover-clustering/cluster-operating-system-rolling-upgrade.md) , isso normalmente seria depois de atualizar o nível funcional do cluster. Dessa forma, você também se beneficiará dos novos recursos e das otimizações e alterações internas.
 
 >[!NOTE]
 >Depois que a versão da configuração da VM for atualizada, a VM não poderá ser iniciada em hosts que não dão suporte à versão de configuração atualizada.
@@ -140,8 +140,7 @@ A tabela a seguir mostra a versão mínima de configuração de máquina virtual
 |VMs de memória grande|8.0|
 |Aumentar o número máximo padrão de dispositivos virtuais para 64 por dispositivo (por exemplo, rede e dispositivos atribuídos)|8.3|
 |Permitir recursos de processador adicionais para Perfmon|9.0|
-|Expor automaticamente a configuração de [multithreading simultânea](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#background) para VMs em execução em hosts usando o [Agendador principal](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)|9.0|
+|Expor automaticamente a configuração de [multithreading simultânea](../manage/manage-hyper-v-scheduler-types.md#background) para VMs em execução em hosts usando o [Agendador principal](../manage/manage-hyper-v-scheduler-types.md#windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler)|9.0|
 |Suporte à hibernação|9.0|
 
 Para obter mais informações sobre esses recursos, consulte [o que há de novo no Hyper-V no Windows Server](../What-s-new-in-Hyper-V-on-Windows.md).
-

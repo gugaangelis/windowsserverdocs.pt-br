@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 431b751bceb9ccbb1a494da074b1dfe23f58f601
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d9be9555c3e72b13fb86509289ee7459f4d1b687
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519585"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959384"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Rebaixando controladores de domínio e domínios
 

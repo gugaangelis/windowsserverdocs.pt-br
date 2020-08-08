@@ -1,8 +1,6 @@
 ---
 title: Configurar conexões de VPN Always On em cliente do Windows 10
 description: Nesta etapa, você aprenderá sobre as opções e o esquema do ProfileXML e configurará os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/29/2018
 ms.assetid: d165822d-b65c-40a2-b440-af495ad22f42
@@ -10,12 +8,12 @@ ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.reviewer: deverette
-ms.openlocfilehash: fc8b2646019292576abb638c7abdba1882eeedaa
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: c1f97ae4ec0ef39db2f0924bf2b6c3884f6ea1a9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965438"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946749"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Etapa 6. Configurar conexões VPN Always On cliente do Windows 10
 
@@ -160,7 +158,7 @@ No entanto, se você não tiver reiniciado o computador desde a configuração d
 
 6.  Em nome ou endereço do servidor, digite o FQDN **externo** do servidor VPN (por exemplo, **VPN.contoso.com**).
 
-7.  Clique em **Save** (Salvar).
+7.  Clique em **Salvar**.
 
 8.  Em configurações relacionadas, clique em **alterar opções de adaptador**.
 
@@ -452,9 +450,9 @@ Write-Host "$Message"
 
 ## <a name="makeprofileps1-full-script"></a>MakeProfile.ps1 script completo
 
-A maioria dos exemplos usa o cmdlet Set-WmiInstance do Windows PowerShell para inserir ProfileXML em uma nova instância da classe MDM_VPNv2_01 WMI. 
+A maioria dos exemplos usa o cmdlet Set-WmiInstance do Windows PowerShell para inserir ProfileXML em uma nova instância da classe MDM_VPNv2_01 WMI.
 
-No entanto, isso não funciona em Configuration Manager porque você não pode executar o pacote no contexto dos usuários finais. Portanto, esse script usa o modelo CIM para criar uma sessão WMI no contexto do usuário e, em seguida, cria uma nova instância da classe MDM_VPNv2_01 WMI nessa sessão. Essa classe WMI usa a ponte WMI para CSP para configurar o CSP VPNv2. Portanto, ao adicionar a instância de classe, você configura o CSP. 
+No entanto, isso não funciona em Configuration Manager porque você não pode executar o pacote no contexto dos usuários finais. Portanto, esse script usa o modelo CIM para criar uma sessão WMI no contexto do usuário e, em seguida, cria uma nova instância da classe MDM_VPNv2_01 WMI nessa sessão. Essa classe WMI usa a ponte WMI para CSP para configurar o CSP VPNv2. Portanto, ao adicionar a instância de classe, você configura o CSP.
 
 >[!IMPORTANT]
 >A ponte WMI para CSP requer direitos de administrador local, por design. Para implantar perfis VPN por usuário, você deve usar Configuration Manager ou MDM.
@@ -463,7 +461,7 @@ No entanto, isso não funciona em Configuration Manager porque você não pode e
 >O script VPN_Profile.ps1 usa o SID do usuário atual para identificar o contexto do usuário. Como nenhum SID está disponível em uma sessão de Área de Trabalho Remota, o script não funciona em uma sessão de Área de Trabalho Remota. Da mesma forma, ele não funciona em uma sessão avançada do Hyper-V. Se você estiver testando um acesso remoto Always On VPN em máquinas virtuais, desabilite a sessão avançada em suas VMs de cliente antes de executar esse script.
 
 O script de exemplo a seguir inclui todos os exemplos de código de seções anteriores. Certifique-se de alterar os valores de exemplo para valores que são apropriados para o seu ambiente.
-    
+
    ```makeProfile.ps1
     $TemplateName = 'Template'
     $ProfileName = 'Contoso AlwaysOn VPN'
@@ -473,7 +471,7 @@ O script de exemplo a seguir inclui todos os exemplos de código de seções ant
     $DNSServers = '10.10.0.2,10.10.0.3'
     $TrustedNetwork = 'corp.contoso.com'
 
-    
+
     $Connection = Get-VpnConnection -Name $TemplateName
     if(!$Connection)
     {
@@ -482,7 +480,7 @@ O script de exemplo a seguir inclui todos os exemplos de código de seções ant
     exit
     }
     $EAPSettings= $Connection.EapConfigXmlStream.InnerXml
-    
+
     $ProfileXML = @("
     <VPNProfile>
       <DnsSuffix>$DnsSuffix</DnsSuffix>
@@ -508,23 +506,23 @@ O script de exemplo a seguir inclui todos os exemplos de código de seções ant
     </DomainNameInformation>
     </VPNProfile>
     ")
-    
+
     $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
-    
+
      $Script = @("
       `$ProfileName = '$ProfileName'
       `$ProfileNameEscaped = `$ProfileName -replace ' ', '%20'
- 
+
       `$ProfileXML = '$ProfileXML'
- 
+
       `$ProfileXML = `$ProfileXML -replace '<', '&lt;'
       `$ProfileXML = `$ProfileXML -replace '>', '&gt;'
       `$ProfileXML = `$ProfileXML -replace '`"', '&quot;'
- 
+
       `$nodeCSPURI = `"./Vendor/MSFT/VPNv2`"
       `$namespaceName = `"root\cimv2\mdm\dmmap`"
       `$className = `"MDM_VPNv2_01`"
- 
+
       try
       {
       `$username = Gwmi -Class Win32_ComputerSystem | select username
@@ -540,12 +538,12 @@ O script de exemplo a seguir inclui todos os exemplos de código de seções ant
       Write-Host `"`$Message`"
       exit
       }
- 
+
       `$session = New-CimSession
       `$options = New-Object Microsoft.Management.Infrastructure.Options.CimOperationOptions
       `$options.SetCustomOption(`"PolicyPlatformContext_PrincipalContext_Type`", `"PolicyPlatform_UserContext`", `$false)
       `$options.SetCustomOption(`"PolicyPlatformContext_PrincipalContext_Id`", `"`$SidValue`", `$false)
- 
+
       try
       {
      `$deleteInstances = `$session.EnumerateInstances(`$namespaceName, `$className, `$options)
@@ -569,7 +567,7 @@ O script de exemplo a seguir inclui todos os exemplos de código de seções ant
      Write-Host `"`$Message`"
      exit
       }
- 
+
       try
       {
      `$newInstance = New-Object Microsoft.Management.Infrastructure.CimInstance `$className, `$namespaceName
@@ -590,13 +588,13 @@ O script de exemplo a seguir inclui todos os exemplos de código de seções ant
      Write-Host `"`$Message`"
      exit
       }
- 
+
       `$Message = `"Script Complete`"
       Write-Host `"`$Message`"
       ")
- 
+
       $Script | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.ps1')
-    
+
     $Message = "Successfully created VPN_Profile.xml and VPN_Profile.ps1 on the desktop."
     Write-Host "$Message"
    ```
@@ -842,7 +840,7 @@ Com o script de configuração do ProfileXML implantado, entre em um computador 
 
 ### <a name="verify-the-configuration-of-the-vpn-client"></a>Verificar a configuração do cliente VPN
 
-1.  No painel de controle, **em \\ segurança do sistema**, clique em **Configuration Manager**. 
+1.  No painel de controle, **em \\ segurança do sistema**, clique em **Configuration Manager**.
 
 2.  Na caixa de diálogo Propriedades do Configuration Manager, na guia **ações** , conclua as seguintes etapas:
 
@@ -867,7 +865,7 @@ Crie a política de configuração de dispositivo VPN para configurar os computa
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Criar a política de configuração de VPN Always On
 
-1.    Entre no [portal do Azure](https://portal.azure.com/).
+1.    Entre no [Portal do Azure](https://portal.azure.com/).
 
 2.    Vá para **Intune**  >  perfis de**configuração de dispositivo**do Intune  >  **Profiles**.
 
@@ -882,35 +880,35 @@ Crie a política de configuração de dispositivo VPN para configurar os computa
 
 2. Na guia **VPN de base** , verifique ou defina as seguintes configurações:
 
-    - **Nome da conexão:** Insira o nome da conexão VPN que aparece no computador cliente na guia **VPN** em **configurações**, por exemplo, _contoso AutoVPN_.  
-    
+    - **Nome da conexão:** Insira o nome da conexão VPN que aparece no computador cliente na guia **VPN** em **configurações**, por exemplo, _contoso AutoVPN_.
+
     - **Servidores:** Adicione um ou mais servidores VPN clicando em **Adicionar.**
-    
-    - **Descrição** e **endereço IP ou FQDN:** Insira a descrição e o endereço IP ou o FQDN do servidor VPN. Esses valores devem ser alinhados com o nome da entidade no certificado de autenticação do servidor VPN. 
-    
-    - **Servidor padrão:** Se esse for o servidor VPN padrão, defina como **true**. Isso habilita esse servidor como o servidor padrão que os dispositivos usam para estabelecer a conexão. 
-    
-    - **Tipo de conexão:** Defina como **IKEv2**.  
-    
+
+    - **Descrição** e **endereço IP ou FQDN:** Insira a descrição e o endereço IP ou o FQDN do servidor VPN. Esses valores devem ser alinhados com o nome da entidade no certificado de autenticação do servidor VPN.
+
+    - **Servidor padrão:** Se esse for o servidor VPN padrão, defina como **true**. Isso habilita esse servidor como o servidor padrão que os dispositivos usam para estabelecer a conexão.
+
+    - **Tipo de conexão:** Defina como **IKEv2**.
+
     - **Always on:** Defina para **habilitar** o para se conectar à VPN automaticamente na entrada e permanecer conectado até que o usuário se desconecte manualmente.
-    
+
     - **Lembrar credenciais a cada logon**: valor booliano (true ou false) para armazenar as credenciais em cache. Se definido como true, as credenciais serão armazenadas em cache sempre que possível.
 
 3.  Copie a seguinte cadeia de caracteres XML em um editor de texto:
- 
+
     [!INCLUDE [important-lower-case-true-include](../../../includes/important-lower-case-true-include.md)]
-    
-    
+
+
     ```XML
     <EapHostConfig xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><EapMethod><Type xmlns="https://www.microsoft.com/provisioning/EapCommon">25</Type><VendorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorId><VendorType xmlns="https://www.microsoft.com/provisioning/EapCommon">0</VendorType><AuthorId xmlns="https://www.microsoft.com/provisioning/EapCommon">0</AuthorId></EapMethod><Config xmlns="https://www.microsoft.com/provisioning/EapHostConfig"><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>25</Type><EapType xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV1"><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><FastReconnect>true</FastReconnect><InnerEapOptional>false</InnerEapOptional><Eap xmlns="https://www.microsoft.com/provisioning/BaseEapConnectionPropertiesV1"><Type>13</Type><EapType xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV1"><CredentialsSource><CertificateStore><SimpleCertSelection>true</SimpleCertSelection></CertificateStore></CredentialsSource><ServerValidation><DisableUserPromptForServerValidation>true</DisableUserPromptForServerValidation><ServerNames>NPS.contoso.com</ServerNames><TrustedRootCA>5a 89 fe cb 5b 49 a7 0b 1a 52 63 b7 35 ee d7 1c c2 68 be 4b </TrustedRootCA></ServerValidation><DifferentUsername>false</DifferentUsername><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2">true</AcceptServerName></EapType></Eap><EnableQuarantineChecks>false</EnableQuarantineChecks><RequireCryptoBinding>false</RequireCryptoBinding><PeapExtensions><PerformServerValidation xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</PerformServerValidation><AcceptServerName xmlns="https://www.microsoft.com/provisioning/MsPeapConnectionPropertiesV2">true</AcceptServerName></PeapExtensions></EapType></Eap></Config></EapHostConfig>
     ```
 
 4.  Substitua o ** \<TrustedRootCA> 5a 89 FE cb 5b 49 a7 0b 1a 52 63 B7 35 EE D7 1c C2 68 ser 4B<\/ TrustedRootCA>** no exemplo com a impressão digital do certificado de sua autoridade de certificação raiz local em ambos os locais.
-  
+
     >[!Important]
     >Não use a impressão digital de exemplo na \<TrustedRootCA> \</TrustedRootCA> seção abaixo.  O TrustedRootCA deve ser a impressão digital do certificado da autoridade de certificação raiz local que emitiu o certificado de autenticação de servidor para servidores RRAS e NPS. **Esse não deve ser o certificado raiz da nuvem nem a impressão digital do certificado de CA emissora intermediária**.
 
-5.  Substitua o ** \<ServerNames> NPS.contoso.com \</ServerNames> ** no XML de exemplo pelo FQDN do NPS ingressado no domínio em que a autenticação ocorre. 
+5.  Substitua o ** \<ServerNames> NPS.contoso.com \</ServerNames> ** no XML de exemplo pelo FQDN do NPS ingressado no domínio em que a autenticação ocorre.
 
 6.  Copie a cadeia de caracteres XML revisada e cole-a na caixa **EAP XML** na guia VPN de base e clique em **OK**.
     Uma política de configuração de dispositivo VPN Always On usando EAP é criada no Intune.

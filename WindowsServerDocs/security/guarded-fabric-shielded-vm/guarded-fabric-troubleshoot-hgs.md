@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 21c29c8432d9f578a50130719c61a255fdb5c649
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fa6b0bb75752d29b4deaa510eca2293abab4a15c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944076"
+ms.locfileid: "87995330"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solucionando problemas do serviço guardião de host
 
@@ -165,7 +165,7 @@ Certifique-se de atualizar seus hosts Hyper-V para a mesma atualização cumulat
 
 ## <a name="endorsement-key-certificate-error-messages"></a>Mensagens de erro de certificado de chave de endosso
 
-Ao registrar um host usando o cmdlet [Add-HgsAttestationTpmHost](https://docs.microsoft.com/powershell/module/hgsattestation/add-hgsattestationtpmhost) , dois identificadores de TPM são extraídos do arquivo de identificador de plataforma fornecido: o EKcert (certificado de chave de endosso) e a EKpub (chave de endosso pública).
+Ao registrar um host usando o cmdlet [Add-HgsAttestationTpmHost](/powershell/module/hgsattestation/add-hgsattestationtpmhost) , dois identificadores de TPM são extraídos do arquivo de identificador de plataforma fornecido: o EKcert (certificado de chave de endosso) e a EKpub (chave de endosso pública).
 O EKcert identifica o fabricante do TPM, fornecendo garantias de que o TPM é autêntico e fabricado por meio da cadeia de suprimentos normal.
 O EKpub identifica exclusivamente esse TPM específico e é uma das medidas que o HGS usa para conceder a um host acesso para executar VMs blindadas.
 
@@ -175,7 +175,7 @@ Você receberá um erro ao registrar um host TPM se uma das duas condições for
 
 Determinados fabricantes de TPM não incluem EKcerts em seu TPMs.
 Se você suspeitar de que esse é o caso do seu TPM, confirme com seu OEM que seu TPMs não deve ter um EKcert e use o `-Force` sinalizador para registrar manualmente o host com HgS.
-Se o TPM tiver um EKcert, mas um não foi encontrado no arquivo de identificador de plataforma, verifique se você está usando um console do PowerShell de administrador (elevado) ao executar [Get-PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier) no host.
+Se o TPM tiver um EKcert, mas um não foi encontrado no arquivo de identificador de plataforma, verifique se você está usando um console do PowerShell de administrador (elevado) ao executar [Get-PlatformIdentifier](/powershell/module/platformidentifier/get-platformidentifier) no host.
 
 Se você recebeu o erro de que seu EKcert não é confiável, verifique se você [instalou o pacote de certificados raiz do TPM confiável](guarded-fabric-install-trusted-tpm-root-certificates.md) em cada servidor HgS e se o certificado raiz do seu fornecedor de TPM está presente no repositório ** \_ RootCA do TrustedTPM** do computador local. Todos os certificados intermediários aplicáveis também precisam ser instalados no repositório **TrustedTPM \_ IntermediateCA** no computador local.
 Depois de instalar os certificados raiz e intermediário, você poderá executar `Add-HgsAttestationTpmHost` com êxito.

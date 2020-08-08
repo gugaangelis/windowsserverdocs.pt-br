@@ -7,12 +7,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: fd05441ecc64c05778234dc00fa315bb406dfb40
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: af8232de75005ae295079eb2207bce303629acaa
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970803"
+ms.locfileid: "87995196"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conectar pontos de extremidade do contêiner a uma rede virtual do locatário
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970803"
 
 Neste tópico, mostraremos como conectar pontos de extremidade do contêiner a uma rede virtual de locatário existente criada por meio de SDN. Use o driver de rede *l2bridge* (e, opcionalmente, *l2tunnel*) disponível com o plug-in libnetwork do Windows para o Docker para criar uma rede de contêiner na VM de locatário.
 
-No tópico [drivers de rede do contêiner](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) , discutimos que os vários drivers de rede estão disponíveis por meio do Docker no Windows. Para SDN, use os drivers *l2bridge* e *l2tunnel* . Para ambos os drivers, cada ponto de extremidade do contêiner está na mesma sub-rede virtual que a máquina virtual do host do contêiner (locatário).
+No tópico [drivers de rede do contêiner](/virtualization/windowscontainers/container-networking/network-drivers-topologies) , discutimos que os vários drivers de rede estão disponíveis por meio do Docker no Windows. Para SDN, use os drivers *l2bridge* e *l2tunnel* . Para ambos os drivers, cada ponto de extremidade do contêiner está na mesma sub-rede virtual que a máquina virtual do host do contêiner (locatário).
 
 O serviço de rede de host (HNS), por meio do plug-in de nuvem privada, atribui dinamicamente os endereços IP para pontos de extremidade de contêiner. Os pontos de extremidade do contêiner têm endereços IP exclusivos, mas compartilham o mesmo endereço MAC da máquina virtual do host do contêiner (locatário) devido à conversão de endereço da camada 2.
 
@@ -50,7 +50,7 @@ A diferença entre os drivers *l2bridge* e *l2tunnel* é:
    ```
 
 >[!Note]
->A [virtualização aninhada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) e a exposição de extensões de virtualização não são necessárias, a menos que usem contêineres Hyper-V.
+>A [virtualização aninhada](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization) e a exposição de extensões de virtualização não são necessárias, a menos que usem contêineres Hyper-V.
 
 
 ## <a name="workflow"></a>Fluxo de trabalho
@@ -148,5 +148,4 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 >A atribuição de IP estático não tem suporte com redes de contêiner *l2bridge* ou *l2tunnel* quando usadas com a pilha do Microsoft Sdn.
 
 ## <a name="more-information"></a>Mais informações
-Para obter mais detalhes sobre como implantar uma infraestrutura de SDN, consulte [implantar uma infraestrutura de rede definida pelo software](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure).
-
+Para obter mais detalhes sobre como implantar uma infraestrutura de SDN, consulte [implantar uma infraestrutura de rede definida pelo software](../deploy/deploy-a-software-defined-network-infrastructure.md).

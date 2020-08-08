@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: a0bc065f9654091ece18445488e4b46cfb197ad3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944146"
+ms.locfileid: "87995384"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos usando atestado baseado em TPM
 
@@ -80,11 +80,11 @@ A partir do Windows Server versão 1709, as políticas de integridade de código
 
 É recomendável que você primeiro crie a política CI no modo de auditoria (log) para ver se está faltando alguma coisa e, em seguida, impor a política para cargas de trabalho de produção do host.
 
-Se você usar o cmdlet [New-CIPolicy](https://docs.microsoft.com/powershell/module/configci/new-cipolicy?view=win10-ps) para gerar sua própria política de integridade de código, será necessário decidir os níveis de regra a serem usados.
+Se você usar o cmdlet [New-CIPolicy](/powershell/module/configci/new-cipolicy?view=win10-ps) para gerar sua própria política de integridade de código, será necessário decidir os níveis de regra a serem usados.
 Recomendamos um nível primário do **Publicador** com fallback para **hash**, que permite que a maioria dos softwares assinados digitalmente sejam atualizados sem alterar a política de CI.
 Novos softwares escritos pelo mesmo editor também podem ser instalados no servidor sem alterar a política de CI.
 Os executáveis que não forem assinados digitalmente serão codificados – as atualizações nesses arquivos exigirão que você crie uma nova política de CI.
-Para obter mais informações sobre os níveis de regra de política de CI disponíveis, consulte [implantar políticas de integridade de código: regras de política e regras de arquivo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules) e ajuda de cmdlet.
+Para obter mais informações sobre os níveis de regra de política de CI disponíveis, consulte [implantar políticas de integridade de código: regras de política e regras de arquivo](/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules) e ajuda de cmdlet.
 
 1.  No host de referência, gere uma nova política de integridade de código. Os comandos a seguir criam uma política no nível do **Publicador** com fallback para **hash**. Em seguida, ele converte o arquivo XML para o formato de arquivo binário que o Windows e o HGS precisam aplicar e medir a política de CI, respectivamente.
 
@@ -101,7 +101,7 @@ Para obter mais informações sobre os níveis de regra de política de CI dispo
 
 3.  Aplique a política CI ao seu host de referência:
 
-    1.  Execute o comando a seguir para configurar o computador para usar sua política de CI. Você também pode implantar a política CI com [política de grupo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) ou [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
+    1.  Execute o comando a seguir para configurar o computador para usar sua política de CI. Você também pode implantar a política CI com [política de grupo](/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) ou [System Center Virtual Machine Manager](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

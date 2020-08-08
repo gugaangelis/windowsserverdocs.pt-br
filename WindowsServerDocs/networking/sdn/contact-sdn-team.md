@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: fe5b9bc8c8b3b888b3c11a72c39756374cde566c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d9bba302c80a810e44c41079d7041b49741fd5b4
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970823"
+ms.locfileid: "87995247"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>Entrar em contato com a equipe de rede na nuvem e Datacenter
 
@@ -31,10 +31,10 @@ Acesse [aqui](https://github.com/Microsoft/SDN/issues) para enviar problemas par
 
 > O GitHub é o melhor lugar para entrar em contato conosco sobre tópicos que envolvem mais detalhes do que os tipos de coisas que você poderia facilmente ajustar a um tweet. *Precisa de ajuda com sua implantação de SDN? Não tem certeza de como nossos recursos poderiam se adequar às necessidades exclusivas da sua organização? Sendo mantido por um bug em potencial?* Todos os bons motivos para entrar em contato conosco enviando um problema do GitHub.
 
-## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
-Nossa [documentação de rede de contêiner](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking) pode ser encontrada em [Microsoft docs (docs.Microsoft.com)](https://docs.microsoft.com/), que tem **funcionalidade de comentário interna**. Para deixar ou responder a um comentário em Microsoft Docs apenas entrar, role para baixo até a parte inferior da página Microsoft Docs que você deseja referenciar e, em seguida, faça e envie seu comentário.
+## <a name="microsoft-docs"></a>[Microsoft Docs](/)
+Nossa [documentação de rede de contêiner](/virtualization/windowscontainers/manage-containers/container-networking) pode ser encontrada em [Microsoft docs (docs.Microsoft.com)](/), que tem **funcionalidade de comentário interna**. Para deixar ou responder a um comentário em Microsoft Docs apenas entrar, role para baixo até a parte inferior da página Microsoft Docs que você deseja referenciar e, em seguida, faça e envie seu comentário.
 
-> [Microsoft docs](https://docs.microsoft.com/) é o novo site de documentação unificado da Microsoft. Embora a maior parte da [documentação de Sdn](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking) da nossa equipe permaneça no TechNet, nossa documentação de [rede de contêineres](https://docs.microsoft.com/virtualization/windowscontainers) está agora em Microsoft docs.
+> [Microsoft docs](/) é o novo site de documentação unificado da Microsoft. Embora a maior parte da [documentação de Sdn](./software-defined-networking.md) da nossa equipe permaneça no TechNet, nossa documentação de [rede de contêineres](/virtualization/windowscontainers) está agora em Microsoft docs.
 >
 > *Em geral, se você encontrar um tópico sobre Microsoft Docs que Spark uma pergunta ou deixar que você queira mais, basta deixar um comentário nessa página para compartilhar seus comentários com a equipe da Microsoft que pode ajudar.*
 

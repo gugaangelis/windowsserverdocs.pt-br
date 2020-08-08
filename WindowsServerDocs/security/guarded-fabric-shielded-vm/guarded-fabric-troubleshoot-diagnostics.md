@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 01/14/2020
-ms.openlocfilehash: a0537c938b86141f83857f1763fbb18260a23e42
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 40381a08c22c8b559fbf2b7da8e8151e91c77718
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944187"
+ms.locfileid: "87995363"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solução de problemas usando a ferramenta de diagnóstico de malha protegida
 
@@ -19,7 +19,7 @@ ms.locfileid: "87944187"
 
 Este tópico descreve o uso da ferramenta de diagnóstico de malha protegida para identificar e corrigir falhas comuns na implantação, configuração e operação contínua da infraestrutura de malha protegida. Isso inclui o serviço de guardião de host (HGS), todos os hosts protegidos e serviços de suporte, como DNS e Active Directory. A ferramenta de diagnóstico pode ser usada para executar uma primeira passagem na triagem de uma malha protegida com falha, fornecendo aos administradores um ponto de partida para resolver interrupções e identificar ativos configurados incorretamente. A ferramenta não é uma substituição por um sólido entendimento da operação de uma malha protegida e serve apenas para verificar rapidamente os problemas mais comuns encontrados durante as operações cotidianas.
 
-A documentação completa dos cmdlets usados neste artigo pode ser encontrada na referência do [módulo HgsDiagnostics](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps).
+A documentação completa dos cmdlets usados neste artigo pode ser encontrada na referência do [módulo HgsDiagnostics](/powershell/module/hgsdiagnostics/?view=win10-ps).
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
@@ -105,10 +105,10 @@ Get-HgsTrace -RunDiagnostics -Target $server
 ```
 Este exemplo irá gerar um prompt para coletar as credenciais de usuário remoto e, em seguida, o diagnóstico será executado usando o host remoto em `hgs-01.secure.contoso.com` para concluir a coleta de rastreamento.  Os rastreamentos resultantes são baixados para o localhost e, em seguida, diagnosticados.  Os resultados do diagnóstico são apresentados da mesma forma que ao executar o [diagnóstico local](#local-diagnosis).  Da mesma forma, não é necessário especificar uma função, pois ela pode ser inferida com base nos módulos do Windows PowerShell instalados no sistema remoto.
 
-O diagnóstico remoto utiliza a comunicação remota do Windows PowerShell para todos os acessos ao host remoto.  Portanto, é um pré-requisito que o destino de rastreamento tem a comunicação remota do Windows PowerShell habilitada (consulte [habilitar PSRemoting](https://technet.microsoft.com/library/hh849694.aspx)) e que o localhost está configurado corretamente para iniciar conexões com o destino.
+O diagnóstico remoto utiliza a comunicação remota do Windows PowerShell para todos os acessos ao host remoto.  Portanto, é um pré-requisito que o destino de rastreamento tem a comunicação remota do Windows PowerShell habilitada (consulte [habilitar PSRemoting](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7)) e que o localhost está configurado corretamente para iniciar conexões com o destino.
 
 > [!NOTE]
-> Na maioria dos casos, só é necessário que o localhost seja uma parte da mesma floresta Active Directory e que um nome de host DNS válido seja usado.  Se seu ambiente utiliza um modelo de Federação mais complicado ou se você deseja usar endereços IP diretos para conectividade, talvez seja necessário executar configurações adicionais, como definir os [hosts confiáveis](https://technet.microsoft.com/library/ff700227.aspx)do WinRM.
+> Na maioria dos casos, só é necessário que o localhost seja uma parte da mesma floresta Active Directory e que um nome de host DNS válido seja usado.  Se seu ambiente utiliza um modelo de Federação mais complicado ou se você deseja usar endereços IP diretos para conectividade, talvez seja necessário executar configurações adicionais, como definir os [hosts confiáveis](/previous-versions/technet-magazine/ff700227(v=msdn.10))do WinRM.
 
 Você pode verificar se um destino de rastreamento está corretamente instanciado e configurado para aceitar conexões usando o `Test-HgsTraceTarget` cmdlet:
 ```PowerShell
@@ -122,7 +122,7 @@ Esse comando retornará `$True` se e somente se `Get-HgsTrace` puder estabelecer
 Ao executar o diagnóstico remoto de um usuário com privilégios suficientes para se conectar remotamente ao destino de rastreamento, não é necessário fornecer credenciais para `New-HgsTraceTarget` .  O `Get-HgsTrace` cmdlet reutilizará automaticamente as credenciais do usuário que invocou o cmdlet ao abrir uma conexão.
 
 > [!WARNING]
-> Algumas restrições se aplicam à reutilização de credenciais, especialmente ao executar o que é conhecido como "segundo salto".  Isso ocorre quando se tenta reutilizar credenciais de dentro de uma sessão remota para outra máquina.  É necessário configurar o [CredSSP](https://technet.microsoft.com/library/hh849872.aspx) para dar suporte a esse cenário, mas isso está fora do escopo do gerenciamento de malha protegida e solução de problemas.
+> Algumas restrições se aplicam à reutilização de credenciais, especialmente ao executar o que é conhecido como "segundo salto".  Isso ocorre quando se tenta reutilizar credenciais de dentro de uma sessão remota para outra máquina.  É necessário configurar o [CredSSP](/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7) para dar suporte a esse cenário, mas isso está fora do escopo do gerenciamento de malha protegida e solução de problemas.
 
 #### <a name="using-windows-powershell-just-enough-administration-jea-and-diagnostics"></a>Usando o Windows PowerShell apenas JEA (administração suficiente) e diagnósticos
 

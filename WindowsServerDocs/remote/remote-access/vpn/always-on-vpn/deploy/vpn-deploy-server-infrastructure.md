@@ -1,20 +1,18 @@
 ---
 title: Configurar a infraestrutura do servidor
 description: Nesta etapa, você instala e configura os componentes do lado do servidor necessários para dar suporte à VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 0a9d9c139c721608e9104c4943dda2664432c94d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31a11fa1a2991b9ee0ea70434e485cb6cdc7460f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955098"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946579"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Etapa 2. Configurar a infraestrutura do servidor
 
@@ -26,7 +24,7 @@ ms.locfileid: "86955098"
 Nesta etapa, você instalará e configurará os componentes do lado do servidor necessários para dar suporte à VPN. Os componentes do lado do servidor incluem a configuração de PKI para distribuir os certificados usados pelos usuários, o servidor VPN e o servidor NPS.  Você também configura o RRAS para dar suporte a conexões IKEv2 e ao servidor NPS para executar a autorização para as conexões VPN.
 
 ## <a name="configure-certificate-autoenrollment-in-group-policy"></a>Configurar o registro automático de certificado no Política de Grupo
-Neste procedimento, você configura Política de Grupo no controlador de domínio para que os membros do domínio solicitem automaticamente certificados de usuário e computador. Isso permite que os usuários VPN solicitem e recuperem certificados de usuário que autenticam conexões VPN automaticamente. Da mesma forma, essa política permite que os servidores NPS solicitem certificados de autenticação de servidor automaticamente. 
+Neste procedimento, você configura Política de Grupo no controlador de domínio para que os membros do domínio solicitem automaticamente certificados de usuário e computador. Isso permite que os usuários VPN solicitem e recuperem certificados de usuário que autenticam conexões VPN automaticamente. Da mesma forma, essa política permite que os servidores NPS solicitem certificados de autenticação de servidor automaticamente.
 
 Você registra certificados manualmente em servidores VPN.
 
@@ -99,7 +97,7 @@ Como o servidor RRAS não está ingressado no domínio, o registro automático n
 
 7. Se solicitado pela janela de lista de autoridades de certificação, selecione a autoridade de certificação corporativa apropriada para atender à solicitação de certificado.
 
-8. Copie o arquivo de saída **VPNGateway. cer** criado recentemente para o servidor RRAS. 
+8. Copie o arquivo de saída **VPNGateway. cer** criado recentemente para o servidor RRAS.
 
 9. Salve ou copie o arquivo **VPNGateway. cer** para um local escolhido no servidor RRAS.
 
@@ -113,7 +111,7 @@ Como o servidor RRAS não está ingressado no domínio, o registro automático n
 
 12. Verifique se existe um certificado válido para o servidor RRAS com as seguintes propriedades:
 
-    - **Finalidades pretendidas:** Autenticação de servidor, segurança de IP IKE intermediária 
+    - **Finalidades pretendidas:** Autenticação de servidor, segurança de IP IKE intermediária
 
     - **Modelo de certificado:** [_cliente_] servidor VPN
 
@@ -125,19 +123,19 @@ Aqui você pode ver um script de exemplo de uma política de solicitação de ce
 >Você pode encontrar uma cópia do script VPNGateway. inf no kit de IP da oferta de VPN na pasta políticas de solicitação de certificado. Atualize apenas ' Subject ' e ' \_ continue \_ ' com valores específicos do cliente.
 
 ```
-[Version] 
+[Version]
 
 Signature="$Windows NT$"
 
 [NewRequest]
 Subject = "CN=vpn.contoso.com"
-Exportable = FALSE   
-KeyLength = 2048     
-KeySpec = 1          
-KeyUsage = 0xA0      
+Exportable = FALSE
+KeyLength = 2048
+KeySpec = 1
+KeyUsage = 0xA0
 MachineKeySet = True
 ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
-RequestType = PKCS10 
+RequestType = PKCS10
 
 [Extensions]
 2.5.29.17 = "{text}"
@@ -203,7 +201,7 @@ Você também adiciona um grupo que contém servidores VPN e outro grupo que con
 
 Neste procedimento, você configura um modelo de autenticação cliente-servidor personalizado. Esse modelo é necessário porque você deseja melhorar a segurança geral do certificado selecionando os níveis de compatibilidade atualizados e escolhendo o provedor Microsoft Platform crypto. Essa última alteração permite que você use o TPM nos computadores cliente para proteger o certificado. Para obter uma visão geral do TPM, consulte [visão geral da tecnologia de Trusted Platform Module](/windows/device-security/tpm/trusted-platform-module-overview).
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >Provedor de criptografia de plataforma da Microsoft "requer um chip TPM, caso você esteja executando uma VM e receba o seguinte erro:" não é possível encontrar um CSP válido no computador local "ao tentar registrar manualmente o certificado, você precisa verificar" provedor de armazenamento de chaves de software Microsoft "e tê-lo em segundo lugar após" provedor Microsoft Platform crypto "na guia criptografia nas propriedades do certificado.
 
 **Procedure**
@@ -215,7 +213,7 @@ Neste procedimento, você configura um modelo de autenticação cliente-servidor
 3. No console modelos de certificado, clique com o botão direito do mouse em **usuário** e selecione **duplicar modelo**.
 
    >[!WARNING]
-   >Não selecione **aplicar** ou **OK** a qualquer momento antes da etapa 10.  Se você selecionar esses botões antes de inserir todos os parâmetros, muitas escolhas se tornarão fixas e não serão mais editáveis. Por exemplo, na guia **criptografia** , se o _provedor de armazenamento criptográfico herdado_ aparecer no campo Categoria do provedor, ele se tornará desabilitado, impedindo qualquer alteração adicional. A única alternativa é excluir o modelo e recriá-lo.  
+   >Não selecione **aplicar** ou **OK** a qualquer momento antes da etapa 10.  Se você selecionar esses botões antes de inserir todos os parâmetros, muitas escolhas se tornarão fixas e não serão mais editáveis. Por exemplo, na guia **criptografia** , se o _provedor de armazenamento criptográfico herdado_ aparecer no campo Categoria do provedor, ele se tornará desabilitado, impedindo qualquer alteração adicional. A única alternativa é excluir o modelo e recriá-lo.
 
 4. Na caixa de diálogo Propriedades do novo modelo, na guia **geral** , conclua as seguintes etapas:
 
@@ -234,7 +232,7 @@ Neste procedimento, você configura um modelo de autenticação cliente-servidor
    4. Em **permissões para usuários VPN**, marque as caixas de seleção **registrar** e **registrar automaticamente** na coluna **permitir** .
 
       >[!TIP]
-      >Certifique-se de manter a caixa de seleção ler marcada. Em outras palavras, você precisará das permissões de leitura para o registro. 
+      >Certifique-se de manter a caixa de seleção ler marcada. Em outras palavras, você precisará das permissões de leitura para o registro.
 
    5. Em **nomes de grupo ou de usuário**, selecione **usuários de domínio**e, em seguida, selecione **remover**.
 
@@ -298,7 +296,7 @@ Servidores VPN ingressados no domínio
     2. Na caixa de diálogo **Editar extensão de políticas de aplicativo** , selecione **Adicionar**.
 
     3. Na caixa de diálogo **Adicionar política de aplicativo** , selecione **segurança IP Ike intermediária**e, em seguida, selecione **OK**.
-   
+
         A adição de segurança IP IKE intermediária ao EKU ajuda em cenários em que existe mais de um certificado de autenticação de servidor no servidor VPN. Quando a segurança IP IKE intermediária estiver presente, o IPSec usará apenas o certificado com ambas as opções EKU. Sem isso, a autenticação IKEv2 pode falhar com o erro 13801: as credenciais de autenticação IKE são inaceitáveis.
 
     4. Selecione **OK** para retornar à caixa **de diálogo Propriedades do novo modelo** .
@@ -440,7 +438,7 @@ Ao contrário do certificado de usuário, você deve registrar manualmente o cer
 8. Selecione **Concluir**.
 
 9. No snap-in certificados, em **pessoal**, selecione **certificados**.
-    
+
     Os certificados listados aparecem no painel de detalhes.
 
 10. Clique com o botão direito do mouse no certificado que tem o nome do servidor VPN e selecione **abrir**.

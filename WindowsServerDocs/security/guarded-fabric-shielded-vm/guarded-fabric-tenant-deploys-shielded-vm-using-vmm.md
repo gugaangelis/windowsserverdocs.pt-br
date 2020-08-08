@@ -6,18 +6,18 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 1e2f5a3e011cd3b3593aaac38043c3cf140c2a72
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c91663f45dfbf729caa442f106491f7b75aa496d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936632"
+ms.locfileid: "87995411"
 ---
 # <a name="shielded-vms-for-tenants---deploying-a-shielded-vm-by-using-virtual-machine-manager"></a>VMs blindadas para locatários-implantando uma VM blindada usando Virtual Machine Manager
 
 Se você tiver acesso ao System Center 2016-Virtual Machine Manager (VMM), poderá implantar uma VM blindada para a qual um modelo de VM blindada já foi criado.
 
-Para implantar uma VM blindada no VMM, use as instruções em [provisionar uma nova VM blindada](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-vms#provision-a-new-shielded-vm).
+Para implantar uma VM blindada no VMM, use as instruções em [provisionar uma nova VM blindada](/system-center/vmm/guarded-deploy-vm?view=sc-vmm-2019#provision-a-new-shielded-vm).
 
 ## <a name="additional-references"></a>Referências adicionais
 

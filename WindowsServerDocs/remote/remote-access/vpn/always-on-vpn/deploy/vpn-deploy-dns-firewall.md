@@ -1,20 +1,18 @@
 ---
 title: Definir as configurações de Firewall e DNS
 description: Este tópico fornece instruções detalhadas para a implantação de Always On VPN no Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/11/2018
-ms.openlocfilehash: 0bdf2917a5f33b1e2ba5e3d216d8610887c79e8c
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 99db65c2c5bd78154e14ab9e388eb709351afc11
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860459"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946679"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>Etapa 5. Definir configurações de DNS e firewall
 
@@ -38,7 +36,7 @@ Para garantir que os clientes remotos possam se conectar ao seu servidor VPN, vo
 1. Em um servidor DNS, em Gerenciador do Servidor, selecione **ferramentas**e, em seguida, selecione **DNS**. O Gerenciador DNS é aberto.
 2. Na árvore de console do Gerenciador de DNS, selecione o servidor que você deseja gerenciar.
 3. No painel de detalhes, em **nome**, clique duas vezes em **zonas de pesquisa direta** para expandir a exibição.
-4. Em detalhes de **zonas de pesquisa direta** , clique com o botão direito do mouse na zona de pesquisa direta à qual você deseja adicionar um registro e, em seguida, selecione **novo host (a ou aaaa)** . A caixa de diálogo **novo host** é aberta.
+4. Em detalhes de **zonas de pesquisa direta** , clique com o botão direito do mouse na zona de pesquisa direta à qual você deseja adicionar um registro e, em seguida, selecione **novo host (a ou aaaa)**. A caixa de diálogo **novo host** é aberta.
 5. Em **novo host**, em **nome**, insira o nome alternativo da entidade do certificado para o servidor VPN.
 6. Em endereço IP, insira o endereço IP para o servidor VPN. Você pode inserir o endereço no formato IP versão 4 (IPv4) para adicionar um registro de recurso de host (A) ou formato de IP versão 6 (IPv6) para adicionar um registro de recurso de host (AAAA).
 7. Se você criou uma zona de pesquisa inversa para um intervalo de endereços IP, incluindo o endereço IP que você inseriu, marque a caixa de seleção **criar registro de ponteiro associado (PTR)** .  A seleção dessa opção cria um registro de recurso de ponteiro (PTR) adicional em uma zona inversa para esse host, com base nas informações inseridas em **nome** e **endereço IP**.
@@ -72,7 +70,7 @@ Configure o firewall para permitir que o tráfego RADIUS flua em ambas as direç
 Por padrão, o NPS e a VPN escutam o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Se você habilitar o Firewall do Windows com segurança avançada ao instalar o NPS, as exceções de firewall para essas portas serão criadas automaticamente durante o processo de instalação para o tráfego IPv6 e IPv4.
 
 >[!IMPORTANT]
->Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
+>Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para o tráfego RADIUS.
 
 ### <a name="use-the-same-radius-ports-for-the-internal-perimeter-network-firewall-configuration"></a>Usar as mesmas portas RADIUS para a configuração de firewall de rede de perímetro interno
 
@@ -82,6 +80,6 @@ Se você usar a configuração de porta RADIUS padrão no servidor VPN e no serv
 
 Se você não estiver usando as portas RADIUS padrão em sua implantação do NPS, deverá configurar o firewall para permitir o tráfego RADIUS nas portas que você está usando. Para obter mais informações, consulte [Configurar firewalls para tráfego RADIUS](../../../../../networking/technologies/nps/nps-firewalls-configure.md).
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 [Etapa 6. Configurar conexões de VPN Always On cliente do Windows 10](vpn-deploy-client-vpn-connections.md): nesta etapa, você configura os computadores cliente do Windows 10 para se comunicar com essa infraestrutura com uma conexão VPN. Você pode usar várias tecnologias para configurar clientes de VPN do Windows 10, incluindo o Windows PowerShell, o Microsoft Endpoint Configuration Manager e o Intune. Todos os três exigem um perfil de VPN XML para definir as configurações de VPN apropriadas.

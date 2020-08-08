@@ -7,12 +7,12 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 954efafe3185cadb347384c3c93a2eb8ef895143
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a1f53dba659af7d5ac0efff2e72bd168523bde0c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963552"
+ms.locfileid: "87995623"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Gerenciando tipos de Agendador de hipervisor do Hyper-V
 
@@ -40,7 +40,7 @@ Para os fins deste artigo, as descrições de SMT e como ela é utilizada pelo H
 
 ## <a name="understanding-how-hyper-v-virtualizes-processors"></a>Entendendo como o Hyper-V virtualiza processadores
 
-Antes de considerar os tipos de Agendador de hipervisor, também é útil entender a arquitetura do Hyper-V. Você pode encontrar um resumo geral em [visão geral da tecnologia Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview). Estes são conceitos importantes para este artigo:
+Antes de considerar os tipos de Agendador de hipervisor, também é útil entender a arquitetura do Hyper-V. Você pode encontrar um resumo geral em [visão geral da tecnologia Hyper-V](../hyper-v-technology-overview.md). Estes são conceitos importantes para este artigo:
 
 * O Hyper-V cria e gerencia partições de máquina virtual, entre as quais os recursos de computação são alocados e compartilhados, sob o controle do hipervisor. As partições fornecem limites de isolamento fortes entre todas as máquinas virtuais convidadas e entre as VMs convidadas e a partição raiz.
 

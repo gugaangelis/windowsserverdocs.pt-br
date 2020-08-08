@@ -1,20 +1,18 @@
 ---
 title: Criar certificados raiz para autenticação de VPN com o Azure AD
 description: O Azure AD usa o certificado VPN para assinar certificados emitidos para os clientes Windows 10 ao autenticar no Azure AD para conectividade VPN. O certificado marcado como primário é o emissor que o AD do Azure usa.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 06/28/2019
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 5058095fa4bd6f7ba769fd274f46bc8b96878158
-ms.sourcegitcommit: 430c6564c18f89eecb5bbc39cfee1a6f1d8ff85b
+ms.openlocfilehash: 098d2f2c17555c3e4375e4b54b676ef67a40dc4d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83855670"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946569"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>Etapa 7.2. Criar certificados raiz de acesso condicional para autenticação VPN com o Azure AD
 
@@ -32,9 +30,9 @@ Nesta etapa, você configura certificados raiz de acesso condicional para autent
 > [!IMPORTANT]
 > Depois que um certificado VPN for criado na portal do Azure, o Azure AD começará a usá-lo imediatamente para emitir certificados de vida curta para o cliente VPN. É fundamental que o certificado VPN seja implantado imediatamente no servidor VPN para evitar problemas com a validação de credenciais do cliente VPN.
 
-Quando um usuário tenta uma conexão VPN, o cliente VPN faz uma chamada para o WAM (Web Account Manager) no cliente Windows 10. O WAM faz uma chamada para o aplicativo de nuvem do servidor VPN. Quando as condições e os controles na política de acesso condicional são satisfeitos, o Azure AD emite um token na forma de um certificado de curta duração (1 hora) para o WAM. O WAM coloca o certificado no repositório de certificados do usuário e passa o controle para o cliente VPN.  
+Quando um usuário tenta uma conexão VPN, o cliente VPN faz uma chamada para o WAM (Web Account Manager) no cliente Windows 10. O WAM faz uma chamada para o aplicativo de nuvem do servidor VPN. Quando as condições e os controles na política de acesso condicional são satisfeitos, o Azure AD emite um token na forma de um certificado de curta duração (1 hora) para o WAM. O WAM coloca o certificado no repositório de certificados do usuário e passa o controle para o cliente VPN. 
 
-Em seguida, o cliente VPN envia os problemas de certificado pelo Azure AD para a VPN para validação de credenciais.  
+Em seguida, o cliente VPN envia os problemas de certificado pelo Azure AD para a VPN para validação de credenciais. 
 
 > [!NOTE]
 > O Azure AD usa o certificado criado mais recentemente na folha de conectividade de VPN como o emissor.

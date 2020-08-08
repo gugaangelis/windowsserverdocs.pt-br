@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 20b3f933565e8170e99f1eed2bfda24bd7705e1b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7f6de6b4ee0e442aed5f718c7025a6eb2e70388
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949109"
+ms.locfileid: "87995465"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>Exportar uma configuração NPS para importação em outro servidor
 
@@ -60,7 +60,7 @@ No exemplo a seguir, a configuração do NPS é exportada para um arquivo XML lo
 Export-NpsConfiguration –Path c:\config.xml
 ```
 
-Para obter mais informações, consulte [Export-NpsConfiguration](https://technet.microsoft.com/library/jj872749.aspx).
+Para obter mais informações, consulte [Export-NpsConfiguration](/powershell/module/nps/export-npsconfiguration?view=win10-ps).
 
 Depois de exportar a configuração do NPS, copie o arquivo XML para o servidor de destino.
 
@@ -78,7 +78,7 @@ O comando a seguir importa as configurações do arquivo chamado C:\Npsconfig.xm
 Import-NpsConfiguration -Path "C:\Npsconfig.xml"
 ```
 
-Para obter mais informações, consulte [Import-NpsConfiguration](https://technet.microsoft.com/library/jj872750.aspx).
+Para obter mais informações, consulte [Import-NpsConfiguration](/powershell/module/nps/import-npsconfiguration?view=win10-ps).
 
 ## <a name="export-and-import-the-nps-configuration-by-using-netsh"></a>Exportar e importar a configuração do NPS usando Netsh
 

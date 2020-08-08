@@ -7,12 +7,12 @@ ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: 9a060f1650d20a029d64739e1fc7f9be44d8355c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 38d0ae70e0b6e70e87cc962ec5776d4ffb950fe5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953432"
+ms.locfileid: "87995604"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>Implantar dispositivos gráficos usando um vGPU do RemoteFX
 
@@ -75,10 +75,10 @@ Você pode usar a interface do usuário do Gerenciador do Hyper-V ou cmdlets do 
 
 Use os seguintes cmdlets do PowerShell para adicionar, revisar e configurar o adaptador:
 
-- [Add-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/add-vmremotefx3dvideoadapter?view=win10-ps)
-- [Get-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefx3dvideoadapter?view=win10-ps)
-- [Set-VMRemoteFx3dVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
-- [Get-VMRemoteFXPhysicalVideoAdapter](https://docs.microsoft.com/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
+- [Add-VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/add-vmremotefx3dvideoadapter?view=win10-ps)
+- [Get-VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/get-vmremotefx3dvideoadapter?view=win10-ps)
+- [Set-VMRemoteFx3dVideoAdapter](/powershell/module/hyper-v/set-vmremotefx3dvideoadapter?view=win10-ps)
+- [Get-VMRemoteFXPhysicalVideoAdapter](/powershell/module/hyper-v/get-vmremotefxphysicalvideoadapter?view=win10-ps)
 
 ## <a name="monitor-performance"></a>Monitorar desempenho
 
@@ -108,4 +108,4 @@ Normalmente, os drivers e dispositivos gráficos são ajustados para executar ap
 
 Quando uma GPU está com poucos recursos, as operações de leitura e gravação levam muito tempo para serem concluídas. Os administradores podem usar contadores de desempenho para saber quando ajustar recursos e evitar tempo de inatividade para os usuários.
 
-Saiba mais sobre contadores de desempenho para monitorar o comportamento de vGPU do RemoteFX em [diagnosticar problemas de desempenho de gráficos no área de trabalho remota](https://docs.microsoft.com/azure/virtual-desktop/remotefx-graphics-performance-counters).
+Saiba mais sobre contadores de desempenho para monitorar o comportamento de vGPU do RemoteFX em [diagnosticar problemas de desempenho de gráficos no área de trabalho remota](/azure/virtual-desktop/remotefx-graphics-performance-counters).

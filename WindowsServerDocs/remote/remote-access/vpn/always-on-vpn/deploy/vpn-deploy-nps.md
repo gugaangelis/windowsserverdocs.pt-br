@@ -1,19 +1,17 @@
 ---
 title: Instalar e configurar o servidor NPS
 description: O processamento de solicitações de conexão do servidor NPS enviadas pelo servidor VPN verifica se o usuário tem permissão para se conectar, a identidade do usuário e registra os aspectos da solicitação de conexão que você escolheu ao configurar a contabilização RADIUS no NPS.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 08/30/2018
-ms.openlocfilehash: d286f44e198aa13204b884da3fdf729f18b7553b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 1f32178b7062260cd49aa80af5474903b5f8a59f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860449"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946619"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>Etapa 4. Instalar e configurar o servidor de políticas de rede (NPS)
 
@@ -45,7 +43,7 @@ As etapas nesta seção permitem que você conclua os seguintes itens:
 Neste procedimento, você instala o NPS usando o Windows PowerShell ou o assistente Gerenciador do Servidor adicionar funções e recursos. O NPS é um serviço de função da função de servidor Serviços de Acesso e Política de Rede.
 
 >[!TIP]
->Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Quando você instala o NPS e habilita o Firewall do Windows com segurança avançada, as exceções de firewall para essas portas são criadas automaticamente para o tráfego IPv4 e IPv6. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para Tráfego RADIUS.
+>Por padrão, o NPS ouve o tráfego RADIUS nas portas 1812, 1813, 1645 e 1646 em todos os adaptadores de rede instalados. Quando você instala o NPS e habilita o Firewall do Windows com segurança avançada, as exceções de firewall para essas portas são criadas automaticamente para o tráfego IPv4 e IPv6. Se os servidores de acesso à rede estiverem configurados para enviar tráfego RADIUS por portas diferentes desses padrões, remova as exceções criadas no firewall do Windows com segurança avançada durante a instalação do NPS e crie exceções para as portas que você usa para o tráfego RADIUS.
 
 **Procedimento para o Windows PowerShell:**
 
@@ -62,7 +60,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 
 2.  Em antes de começar, selecione **Avançar**.
 
-    >[!NOTE] 
+    >[!NOTE]
     >A página **antes de começar** do assistente para adicionar funções e recursos não será exibida se você tiver selecionado anteriormente **ignorar esta página por padrão** quando o assistente para adicionar funções e recursos for executado.
 
 3.  Em Selecionar tipo de instalação, verifique se a instalação baseada em **função ou em recurso** está selecionada e selecione **Avançar**.
@@ -84,7 +82,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
 11. Em confirmar seleções de instalação, selecione **reiniciar o servidor de destino automaticamente, se necessário**.
 
 12. Selecione **Sim** para confirmar a seleção e, em seguida, selecione **instalar**.
-    
+
     A página progresso da instalação exibe o status durante o processo de instalação. Quando o processo for concluído, a mensagem "a instalação foi bem-sucedida em *ComputerName*" será exibida, em que *ComputerName* é o nome do computador no qual você instalou o servidor de políticas de rede.
 
 13. Selecione **Fechar**.
@@ -99,10 +97,10 @@ Neste procedimento, você registra o servidor no Active Directory para que ele t
 
 **Procedure**
 
-1.  Em Gerenciador do Servidor, selecione **ferramentas**e, em seguida, selecione **servidor de políticas de rede**. O console do NPS é aberto.
+1.  No Gerenciador do Servidor, selecione **Ferramentas** e, em seguida, selecione **Servidor de Políticas de Rede**. O console do NPS é aberto.
 
 2.  No console do NPS, clique com o botão direito do mouse em **NPS (local)** e selecione **registrar servidor em Active Directory**.
-   
+
      A caixa de diálogo Servidor de Políticas de Rede é aberta.
 
 3.  Na caixa de diálogo servidor de diretivas de rede, selecione **OK** duas vezes.
@@ -127,7 +125,7 @@ Na seção [Configurar o servidor de acesso remoto para Always on VPN](vpn-deplo
 
 Neste procedimento, você usa a mesma cadeia de texto de segredo compartilhado para configurar o servidor VPN como um cliente RADIUS no NPS. Use a mesma cadeia de texto que você usou no servidor VPN ou a comunicação entre o servidor NPS e o servidor VPN falha.
 
->[!IMPORTANT] 
+>[!IMPORTANT]
 >Ao adicionar um novo servidor de acesso à rede (servidor VPN, ponto de acesso sem fio, comutador de autenticação ou servidor de conexão discada) à sua rede, você deve adicionar o servidor como um cliente RADIUS no NPS para que o NPS esteja ciente e possa se comunicar com o servidor de acesso à rede.
 
 **Procedure**
@@ -140,8 +138,8 @@ Neste procedimento, você usa a mesma cadeia de texto de segredo compartilhado p
 
 4. Em **nome amigável**, insira um nome de exibição para o servidor VPN.
 
-5. Em **Endereço (IP ou DNS)** , insira o endereço IP do nas ou o FQDN.
-     
+5. Em **Endereço (IP ou DNS)**, insira o endereço IP do nas ou o FQDN.
+
      Se você inserir o FQDN, selecione **verificar** se deseja verificar se o nome está correto e se mapeia para um endereço IP válido.
 
 6. Em **segredo compartilhado**, faça:
@@ -163,7 +161,7 @@ Neste procedimento, você configura o NPS como um servidor RADIUS na rede da sua
 1. No console do NPS, em configuração padrão, verifique se **servidor RADIUS para conexões dial-up ou VPN** está selecionado.
 
 2. Selecione **Configurar VPN ou dial-up**.
-        
+
     O assistente para configurar VPN ou dial-up é aberto.
 
 3. Selecione **conexões de VPN (rede virtual privada)** e selecione **Avançar**.
@@ -179,7 +177,7 @@ Neste procedimento, você configura o NPS como um servidor RADIUS na rede da sua
     2. Marque a caixa de seleção **protocolo de autenticação extensível** para selecioná-la.
 
     3. Em tipo (com base no método de acesso e configuração de rede), selecione **Microsoft: EAP protegido (PEAP)** e, em seguida, selecione **Configurar**.
-      
+
         A caixa de diálogo Editar propriedades EAP protegidas é aberta.
 
     4. Selecione **remover** para remover o tipo de EAP de senha segura (EAP-MSCHAP v2).
@@ -214,7 +212,7 @@ Neste procedimento, você configura o NPS como um servidor RADIUS na rede da sua
 
 Neste procedimento, você atualiza Política de Grupo no servidor NPS local manualmente. Quando o Política de Grupo for atualizado, se o registro automático de certificado estiver configurado e funcionando corretamente, o computador local será registrado automaticamente em um certificado pela autoridade de certificação (CA).
 
->[!NOTE]  
+>[!NOTE]
 >Política de Grupo atualizado automaticamente quando você reinicia o computador membro do domínio ou quando um usuário faz logon em um computador membro do domínio. Além disso, Política de Grupo atualiza periodicamente. Por padrão, essa atualização periódica ocorre a cada 90 minutos com um deslocamento aleatório de até 30 minutos.
 
 A associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para concluir este procedimento.
@@ -225,6 +223,6 @@ A associação em **Administradores**, ou equivalente, é o requisito mínimo ne
 
 2. No prompt do Windows PowerShell, digite **gpupdate**e pressione Enter.
 
-## <a name="next-steps"></a>{1&gt;{2&gt;Próximas etapas&lt;2}&lt;1}
+## <a name="next-steps"></a>Próximas etapas
 
 [Etapa 5. Definir configurações de DNS e firewall para Always On VPN](vpn-deploy-dns-firewall.md): nesta etapa, você instala o servidor de diretivas de rede (NPS) usando o Windows PowerShell ou o assistente de adição de funções e recursos do Gerenciador do servidor. Você também configura o NPS para lidar com todas as tarefas de autenticação, autorização e contabilidade das solicitações de conexão que ele recebe do servidor VPN.

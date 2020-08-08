@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 9d820acc69e71c5236dbff799f58c35e02f0d161
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f67609fff7f5de7cd1b53d73dcf86faaec9dec64
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970423"
+ms.locfileid: "87995460"
 ---
 # <a name="step-1-plan-directaccess-infrastructure"></a>Etapa 1 planejar a infraestrutura do DirectAccess
 
@@ -44,7 +44,7 @@ As tarefas de planejamento não precisam ser feitas em uma ordem específica.
 
     O DirectAccess usa IPv6 com IPsec para criar uma conexão segura entre os computadores cliente do DirectAccess e a rede interna corporativa. Contudo, o DirectAccess não precisa necessariamente de uma conectividade IPv6 com a Internet ou suporte IPv6 nativo em redes internas. Em vez disso, ele configura e usa automaticamente tecnologias de transição IPv6 para criar um túnel de tráfego IPv6 pela Internet IPv4 (6to4, Teredo ou IP-HTTPS) e pela Intranet somente IPv4 (NAT64 ou ISATAP). Para uma visão geral dessas tecnologias de transição, confira os seguintes recursos:
 
-    - [Tecnologias de transição IPv6](/previous-versions//bb726951(v=technet.10))
+    - [Tecnologias de transição IPv6](/previous-versions/bb726951(v=technet.10))
 
     - [Especificação do protocolo de túnel IP-HTTPS](/openspecs/windows_protocols/ms-iphttps/f1bf1125-49c2-4246-9c75-5d4fc9706b56)
 

@@ -1,19 +1,17 @@
 ---
 title: Estudo de caso do SDK do centro de administração do Windows-Fujitsu
 description: Estudo de caso do SDK do centro de administração do Windows-Fujitsu
-ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 05/23/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9acfa873e4ce7d3e91a23abff726836f0e11ce59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15f0120fdf1792ad127a9f5fa0e045ef7df18e85
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357222"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958744"
 ---
 # <a name="fujitsu-serverview-health-and-raid-extensions"></a>Extensões de integridade e RAID do Fujitsu ServerView
 
@@ -25,10 +23,10 @@ A Fujitsu observou uma oportunidade de se integrar facilmente ao centro de admin
 
 ![Extensão Fujitsu – exibição de árvore de integridade](../../media/extend-case-study-fujitsu/health-tree.png)
 
-Depois que a equipe ficou familiar com o SDK do centro de administração do Windows, a adição da interface do usuário para expor informações de hardware adicionais geralmente era simplesmente mais algumas linhas de código HTML e elas podiam rapidamente se expandir de uma única ferramenta para exibir uma exibição resumida do componente de hardware integridade, exibições detalhadas para logs de eventos do sistema, monitor de driver, exibições separadas para processador, memória, ventiladores, fontes de alimentação, temperaturas e voltagens e até mesmo uma ferramenta adicional para o gerenciamento de RAID. O uso de controles de interface do usuário disponíveis no SDK, como os controles de árvore, grade e detalhes do painel, permitiu que a equipe criasse a interface do usuário rapidamente e também obterá um design visual e de interação muito semelhante ao restante do centro de administração do Windows.
+Depois que a equipe ficou familiar com o SDK do centro de administração do Windows, a adição da interface do usuário para expor informações de hardware adicionais geralmente era simplesmente mais algumas linhas de código HTML e elas podiam rapidamente se expandir de uma única ferramenta para exibir uma exibição resumida da integridade do componente de hardware, exibições detalhadas para logs de eventos do sistema, monitor de driver, exibições separadas para processador , ventiladores, fontes de alimentação, temperaturas e voltagens e até mesmo uma ferramenta adicional para o gerenciamento de RAID. O uso de controles de interface do usuário disponíveis no SDK, como os controles de árvore, grade e detalhes do painel, permitiu que a equipe criasse a interface do usuário rapidamente e também obterá um design visual e de interação muito semelhante ao restante do centro de administração do Windows.
 
 ![Extensão Fujitsu-exibição de árvore RAID](../../media/extend-case-study-fujitsu/raid-tree.png)
 
 ![Extensão Fujitsu-exibição de volumes RAID](../../media/extend-case-study-fujitsu/raid-volumes.png)
 
-A parceria entre a Fujitsu e a equipe do centro de administração do Windows mostra claramente o valor da integração no centro de administração do Windows, permitindo que os clientes tenham informações de ponta a ponta sobre funções e serviços de servidor, para o sistema operacional e para o gerenciamento de hardware .
+A parceria entre a Fujitsu e a equipe do centro de administração do Windows mostra claramente o valor da integração no centro de administração do Windows, permitindo que os clientes tenham informações de ponta a ponta sobre funções e serviços de servidor, para o sistema operacional e para o gerenciamento de hardware.

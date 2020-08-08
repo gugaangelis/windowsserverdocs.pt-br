@@ -6,14 +6,12 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: 653df4bc517dccad5ecee6eb243d8a236648c7fd
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6804df686635e441c667ab395ca486d3791a2aa5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519053"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959404"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implantação e configuração do controlador de domínio virtualizado
 
@@ -680,7 +678,7 @@ Examine a seção anterior [Requisitos de plataforma](../../../ad-ds/get-started
 
 Se estiver migrando VMs de um hipervisor de origem para um hipervisor de destino diferente, as garantias de virtualização poderão ou não ser disparadas, dependendo da ID de Geração de VM do suporte de hipervisor, conforme explicado na tabela a seguir.
 
-|Hipervisor de origem|Hipervisor de destino|Resultado|
+|Hipervisor de origem|Hipervisor de destino|Result|
 |---------------------|---------------------|----------|
 |Dá suporte a ID de Geração de VM|Não dá suporte a ID de Geração de VM|Garantias não disparadas (se um DCCloneConfigFile.xml estiver presente, o DC será inicializado no DSRM)|
 |Não dá suporte a ID de Geração de VM|Dá suporte a ID de Geração de VM|Garantias disparadas|
