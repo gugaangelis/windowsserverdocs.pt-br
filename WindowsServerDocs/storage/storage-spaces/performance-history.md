@@ -2,17 +2,16 @@
 title: Histórico de desempenho para Espaços de Armazenamento Diretos
 ms.author: cosdar
 manager: eldenc
-ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ce984d3a88f46b77773c524e5b75135930e1bb03
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: f3c0babfad0ebecdac40262a783ecf683d6dc1e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961788"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968783"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Histórico de desempenho para Espaços de Armazenamento Diretos
 
@@ -46,7 +45,7 @@ Para obter detalhes sobre o que é coletado para cada tipo de objeto e como inte
 | Objeto             | Série                                                                               |
 |--------------------|--------------------------------------------------------------------------------------|
 | Unidades             | [O que é coletado para unidades](performance-history-for-drives.md)                     |
-| Adaptadores de rede   | [O que é coletado para adaptadores de rede](performance-history-for-network-adapters.md) |
+| Adaptadores de Rede   | [O que é coletado para adaptadores de rede](performance-history-for-network-adapters.md) |
 | Servidores            | [O que é coletado para servidores](performance-history-for-servers.md)                   |
 | Discos rígidos virtuais | [O que é coletado para discos rígidos virtuais](performance-history-for-vhds.md)           |
 | Máquinas virtuais   | [O que é coletado para máquinas virtuais](performance-history-for-vms.md)              |

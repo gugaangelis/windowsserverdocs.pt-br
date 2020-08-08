@@ -1,20 +1,18 @@
 ---
 title: Práticas recomendadas para executar o FreeBSD no Hyper-V
 description: Fornece recomendações para executar o FreeBSD em máquinas virtuais
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: article
 ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 18f59020ed4878e9a54150dcda18bca3da1dd614
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: f0903fa53e5a9384e3940c53fb880090108aa492
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80853279"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87968603"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>Práticas recomendadas para executar o FreeBSD no Hyper-V
 
@@ -26,13 +24,13 @@ Este tópico contém uma lista de recomendações para executar o FreeBSD como u
 
 O CARP (protocolo de redundância de endereço comum) permite que vários hosts compartilhem o mesmo endereço IP e VHID (ID de host virtual) para ajudar a fornecer alta disponibilidade para um ou mais serviços. Se um ou mais hosts falharem, os outros hosts assumirão de modo transparente para que os usuários não percebam uma falha de serviço. Para usar o CARP no FreeBSD 10,2, siga as instruções no [manual do FreeBSD](https://www.freebsd.org/doc/en/books/handbook/carp.html) e faça o seguinte no Gerenciador do Hyper-V.
 
-* Verifique se a máquina virtual tem um adaptador de rede e se ele foi atribuído a um comutador virtual. Selecione a máquina virtual e selecione **ações** > **configurações**.
+* Verifique se a máquina virtual tem um adaptador de rede e se ele foi atribuído a um comutador virtual. Selecione a máquina virtual e selecione **Actions**  >  **configurações**de ações.
 
 ![Captura de tela de configurações de máquina virtual com adaptador de rede selecionado](media/Hyper-V_Settings_NetworkAdapter.png)
 
 * Habilite a falsificação de endereço MAC. Para fazer isso,
 
-   1. Selecione a máquina virtual e selecione **ações** > **configurações**.
+   1. Selecione a máquina virtual e selecione **Actions**  >  **configurações**de ações.
 
    2. Expanda **adaptador de rede** e selecione **recursos avançados**.
 
@@ -40,7 +38,7 @@ O CARP (protocolo de redundância de endereço comum) permite que vários hosts 
 
 ## <a name="create-labels-for-disk-devices"></a>Criar rótulos para dispositivos de disco
 
-Durante a inicialização, os nós de dispositivo são criados à medida que novos dispositivos são descobertos. Isso pode significar que os nomes de dispositivos podem ser alterados quando novos dispositivos são adicionados. Se você receber um erro de montagem raiz durante a inicialização, deverá criar rótulos para cada partição IDE para evitar conflitos e alterações. Para saber como, consulte [rotulando dispositivos de disco](https://www.freebsd.org/doc/handbook/geom-glabel.html). Veja a seguir exemplos. 
+Durante a inicialização, os nós de dispositivo são criados à medida que novos dispositivos são descobertos. Isso pode significar que os nomes de dispositivos podem ser alterados quando novos dispositivos são adicionados. Se você receber um erro de montagem raiz durante a inicialização, deverá criar rótulos para cada partição IDE para evitar conflitos e alterações. Para saber como, consulte [rotulando dispositivos de disco](https://www.freebsd.org/doc/handbook/geom-glabel.html). Veja a seguir exemplos.
 
 > [!IMPORTANT]
 > Faça uma cópia de backup de seu fstab antes de fazer qualquer alteração.
