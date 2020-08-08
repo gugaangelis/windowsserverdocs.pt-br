@@ -2,18 +2,16 @@
 title: Tarefas de Gerenciamento de Arquivos
 description: Este artigo descreve o processo de automatização de tarefas de gerenciamento de arquivo
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 402af4bd7c00bedfc3d01d43071af4fcd374d428
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e10aeec47498d6af72e767f519b11ebb4e72932
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473993"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961380"
 ---
 # <a name="file-management-tasks"></a>Tarefas de Gerenciamento de Arquivos
 
@@ -21,7 +19,7 @@ ms.locfileid: "85473993"
 
 Tarefas de gerenciamento de arquivo automatizam o processo de descoberta de arquivos em um servidor e aplicam comandos simples. Essas tarefas podem ser agendadas para ocorrer periodicamente e reduzir os custos de repetitivos. Arquivos que serão processados por uma tarefa de gerenciamento de arquivo podem ser definidos por meio de qualquer uma das seguintes propriedades:
 
--   Location
+-   Localização
 -   Propriedades de classificação
 -   Hora de criação
 -   Hora de modificação

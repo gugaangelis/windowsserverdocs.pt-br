@@ -2,18 +2,16 @@
 title: Editar propriedades de modelo de cota
 description: Este artigo descreve como editar as propriedades de modelo de cota para estender alterações para cotas criadas com o modelo de cota original
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f4793616caf9ba4a8f9db09cd1902432323c081b
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 4e8a112f26f2b0ffdf8047063411dbb5539f4eb1
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474033"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961410"
 ---
 # <a name="edit-quota-template-properties"></a>Editar propriedades de modelo de cota
 

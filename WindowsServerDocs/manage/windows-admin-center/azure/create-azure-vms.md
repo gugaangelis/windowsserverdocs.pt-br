@@ -7,12 +7,12 @@ ms.author: nedpyle
 manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a93051f4b8aa95f5e48604a5ac7cc9f4c8242a2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c9401d19472e362ee411613ee97caa3428c35e4f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87940047"
+ms.locfileid: "87997533"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>Implantar máquinas virtuais do Azure de dentro do centro de administração do Windows
 
@@ -20,7 +20,7 @@ ms.locfileid: "87940047"
 
 O centro de administração do Windows versão 1910 permite implantar máquinas virtuais do Azure. Isso integra a implantação de VM no centro de administração do Windows-cargas de trabalho gerenciadas, como [serviço de migração de armazenamento](../../../storage/storage-migration-service/overview.md) e réplica de [armazenamento](../../../storage/storage-replica/storage-replica-overview.md). Em vez de criar novos servidores e VMs no portal do Azure manualmente antes de implantar sua carga de trabalho e, possivelmente, as etapas e configurações necessárias que estão faltando, o centro de administração do Windows pode implantar a VM do Azure, configurar seu armazenamento, associá-la ao seu domínio, instalar funções e configurar o sistema distribuído. Você também pode implantar novas VMs do Azure sem uma carga de trabalho na página conexões do centro de administração do Windows.
 
-O centro de administração do Windows também gerencia uma variedade de serviços do Azure. [Saiba mais sobre as opções de integração do Azure disponíveis com o centro de administração do Windows](../plan/azure-integration-options.md).
+O centro de administração do Windows também gerencia uma variedade de serviços do Azure. [Saiba mais sobre as opções de integração do Azure disponíveis com o centro de administração do Windows](./index.md).
 
 Se você quiser compensar e deslocar máquinas virtuais para o Azure em vez de criar novas, considere o uso de migrações para Azure. Para obter mais informações, consulte [visão geral de migrações para Azure](https://go.microsoft.com/fwlink/?linkid=2056064).
 
@@ -38,8 +38,8 @@ A criação de uma nova VM do Azure de dentro do centro de administração do Wi
 
 - Uma [assinatura do Azure](https://azure.microsoft.com).
 - Um [gateway do centro de administração do Windows registrado com o Azure](azure-integration.md)
-- Um [grupo de recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/management/overview) existente no qual você tem permissões de criação.
-- Uma [rede virtual do Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview) e uma sub-rede existentes.
+- Um [grupo de recursos do Azure](/azure/azure-resource-manager/management/overview) existente no qual você tem permissões de criação.
+- Uma [rede virtual do Azure](/azure/virtual-network/virtual-networks-overview) e uma sub-rede existentes.
 - Uma solução de [rota expressa](https://azure.microsoft.com/services/expressroute/) do Azure ou de [VPN do Azure](https://azure.microsoft.com/services/vpn-gateway/) vinculada à rede virtual e à sub-rede que permite a conectividade de VMs do Azure para seus clientes locais, controladores de domínio, o computador do centro de administração do Windows e quaisquer servidores que exijam comunicação com essa VM como parte de uma implantação de carga de trabalho. Por exemplo, para usar o serviço de migração de armazenamento para migrar o armazenamento para uma VM do Azure, o computador Orchestrator e o computador de origem devem ser capazes de contatar a VM do Azure de destino para a qual você está migrando.
 
 ## <a name="usage"></a>Uso

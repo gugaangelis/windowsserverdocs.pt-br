@@ -1,27 +1,25 @@
 ---
 title: Instalar a função Hyper-V no Windows Server
 description: Fornece instruções para instalar o Hyper-V usando o Gerenciador do Servidor ou o Windows PowerShell
-ms.prod: windows-server
 manager: dongill
-ms.technology: compute-hyper-v
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
 author: kbdazure
 ms.author: kathydav
 ms.date: 12/02/2016
-ms.openlocfilehash: 5bd77284fd73d75075cec307e989274c86552209
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 32632e7af3db0c3b390606bc784b929e76b2892f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475643"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997593"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalar a função Hyper-V no Windows Server
 
 >Aplica-se a: Windows Server 2016, Windows Server 2019
 
 Para criar e executar máquinas virtuais, instale a função Hyper-V no Windows Server usando Gerenciador do Servidor ou o cmdlet **install-WindowsFeature** no Windows PowerShell.
-Para o Windows 10, consulte [instalar o Hyper-V no Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
+Para o Windows 10, consulte [instalar o Hyper-V no Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v).
 
 Para saber mais sobre o Hyper-V, consulte [visão geral da tecnologia Hyper-v](../Hyper-V-Technology-Overview.md). Para experimentar o Windows Server 2019, você pode baixar e instalar uma cópia de avaliação. Consulte o [centro de avaliação](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019).
 
@@ -35,7 +33,7 @@ Se você quiser instalar apenas as ferramentas de gerenciamento, como o Gerencia
 
 1. Em **Gerenciador do Servidor**, no menu **Gerenciar** clique em **Adicionar Funções e Recursos**.
 
-2. Na página **Antes de começar**, verifique se o servidor de destino e o ambiente de rede estão preparados para a função e o recurso que você vai instalar. Clique em **Avançar**.
+2. Na página **Antes de começar**, verifique se o servidor de destino e o ambiente de rede estão preparados para a função e o recurso que você vai instalar. Clique em **Próximo**.
 
 3. Na página **Selecionar tipo de instalação**, selecione **Instalação baseada em função ou recurso** e em **Avançar**.
 
@@ -78,4 +76,4 @@ Se você quiser instalar apenas as ferramentas de gerenciamento, como o Gerencia
 
 ## <a name="additional-references"></a>Referências adicionais
 
-- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)
+- [Install-WindowsFeature](/powershell/module/Microsoft.Windows.ServerManager.Migration/Install-WindowsFeature)

@@ -5,19 +5,19 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ab68975c84e1b299914e09045eddbc302ca9697f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba426a2a4db853dbd91180fcceed6807726efbf8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896077"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992096"
 ---
 # <a name="hyper-v-processor-performance"></a>Desempenho do processador do Hyper-V
 
 
 ## <a name="virtual-machine-integration-services"></a>Serviços de integração de máquina virtual
 
-A máquina virtual Integration Services inclui drivers habilitados para dispositivos de e/s específicos do Hyper-V, o que reduz significativamente a sobrecarga de CPU para e/s em comparação com os dispositivos emulados. Você deve instalar a versão mais recente da máquina virtual Integration Services em cada máquina virtual com suporte. Os serviços diminuem o uso da CPU dos convidados, de convidados inativos para convidados muito usados e aumentam a taxa de transferência de e/s. Esta é a primeira etapa no ajuste do desempenho em um servidor que executa o Hyper-V. Para obter uma lista de sistemas operacionais convidados com suporte, consulte [visão geral do Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
+A máquina virtual Integration Services inclui drivers habilitados para dispositivos de e/s específicos do Hyper-V, o que reduz significativamente a sobrecarga de CPU para e/s em comparação com os dispositivos emulados. Você deve instalar a versão mais recente da máquina virtual Integration Services em cada máquina virtual com suporte. Os serviços diminuem o uso da CPU dos convidados, de convidados inativos para convidados muito usados e aumentam a taxa de transferência de e/s. Esta é a primeira etapa no ajuste do desempenho em um servidor que executa o Hyper-V. Para obter uma lista de sistemas operacionais convidados com suporte, consulte [visão geral do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
 ## <a name="virtual-processors"></a>Processadores virtuais
 
@@ -61,11 +61,11 @@ No Windows Server 2016, o Hyper-V apresenta uma topologia NUMA virtual para máq
 
 Não há nenhuma distinção entre um NUMA virtual e um físico da perspectiva da carga de trabalho. Dentro de uma máquina virtual, quando uma carga de trabalho aloca memória local para os dados e os acessa no mesmo nó NUMA, o acesso rápido de memória local resulta no sistema físico subjacente. Desta maneira, as penalidades de desempenho causadas pelo acesso de memória remoto são evitadas com sucesso. Somente aplicativos com reconhecimento de NUMA podem se beneficiar do vNUMA.
 
-Microsoft SQL Server é um exemplo de aplicativo com reconhecimento de NUMA. Para obter mais informações, consulte [noções básicas sobre o acesso não uniforme à memória](https://technet.microsoft.com/library/ms178144.aspx).
+Microsoft SQL Server é um exemplo de aplicativo com reconhecimento de NUMA. Para obter mais informações, consulte [noções básicas sobre o acesso não uniforme à memória](/previous-versions/sql/sql-server-2008-r2/ms178144(v=sql.105)).
 
 Os recursos de NUMA virtual e memória dinâmica não podem ser usados ao mesmo tempo. Uma máquina virtual com memória dinâmica habilitada efetivamente possui somente um nó NUMA virtual e nenhuma topologia NUMA é apresentada à máquina virtual, independentemente das configurações de NUMA virtuais.
 
-Para obter mais informações sobre NUMA virtual, consulte [visão geral de numa virtual do Hyper-V](https://technet.microsoft.com/library/dn282282.aspx).
+Para obter mais informações sobre NUMA virtual, consulte [visão geral de numa virtual do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282282(v=ws.11)).
 
 ## <a name="additional-references"></a>Referências adicionais
 

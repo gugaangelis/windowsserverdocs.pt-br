@@ -7,12 +7,12 @@ ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
 author: lizap
 ms.author: elizapo
 ms.date: 01/08/2019
-ms.openlocfilehash: a3c1f82d1c1f12c51a36a8285d28ccb9402f2817
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 53036a353fa08b7be06aae6b4b70353a8a99ea0e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963702"
+ms.locfileid: "87997625"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 
@@ -20,7 +20,7 @@ ms.locfileid: "87963702"
 
 O Hyper-V dá suporte a várias versões de distribuições do Windows Server, Windows e Linux para serem executadas em máquinas virtuais, como sistemas operacionais convidados. Este artigo aborda os sistemas operacionais Windows Server e Windows Guest com suporte. Para distribuições Linux e FreeBSD, consulte [máquinas virtuais Linux e FreeBSD com suporte para o Hyper-V no Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).
 
-Alguns sistemas operacionais têm o Integration Services integrado. Outros exigem que você instale ou atualize o Integration Services como uma etapa separada depois de configurar o sistema operacional na máquina virtual. Para obter mais informações, consulte as seções abaixo e [Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services).
+Alguns sistemas operacionais têm o Integration Services integrado. Outros exigem que você instale ou atualize o Integration Services como uma etapa separada depois de configurar o sistema operacional na máquina virtual. Para obter mais informações, consulte as seções abaixo e [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services).
 
 ## <a name="supported-windows-server-guest-operating-systems"></a>Sistemas operacionais convidados com suporte do Windows Server
 
@@ -55,7 +55,7 @@ A tabela a seguir fornece links para informações sobre os sistemas operacionai
 
 |Sistema operacional do host|Tópico|
 |-------------------------|---------|
-|Windows 10|[Sistemas operacionais convidados com suporte para o Hyper-V cliente no Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)|
+|Windows 10|[Sistemas operacionais convidados com suporte para o Hyper-V cliente no Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os)|
 |Windows Server 2012 R2 e Windows 8.1|-   [Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server 2012 R2 e Windows 8.1](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792027(v=ws.11))<br />-   [Máquinas virtuais Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)|
 |Windows Server 2012 e Windows 8|[Sistemas operacionais convidados do Windows com suporte para Hyper-V no Windows Server 2012 e Windows 8](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn792028(v=ws.11))|
 |Windows Server 2008 e Windows Server 2008 R2|[Sobre máquinas virtuais e sistemas operacionais convidados](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794868(v=ws.10))|
@@ -74,8 +74,4 @@ A Microsoft dá suporte aos sistemas operacionais convidados da seguinte forma:
 
 -   [Máquinas Virtuais do Linux e FreeBSD no Hyper-V](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
--   [Sistemas operacionais convidados com suporte para o Hyper-V cliente no Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os)
-
-
-
-
+-   [Sistemas operacionais convidados com suporte para o Hyper-V cliente no Windows 10](/virtualization/hyper-v-on-windows/about/supported-guest-os)

@@ -2,18 +2,16 @@
 title: Criar uma cota
 description: Este artigo descreve como criar uma cota baseada em um modelo
 ms.date: 7/7/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b3513510ef00eec7ea78a3193cf44c25ddb17c7e
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: ce4aa23aac2ccceed8b3600418609a7678e2227f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85475213"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961460"
 ---
 # <a name="create-a-quota"></a>Criar uma cota
 

@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: pavel; atales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 35eb3d01af9c957831a6c860738e6a2516096b03
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c2fdceb7ff3743890c73ee4108ffcf8e00fe437f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895973"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992057"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>Aprimoramentos do Gerenciador de memória e cache
 
@@ -22,7 +22,7 @@ Isso poderia potencialmente melhorar o desempenho de um aplicativo se ele depend
 
 
 ## <a name="cache-manager-improvements-in-windows-server-2012"></a>Aprimoramentos do Gerenciador de cache no Windows Server 2012
-Além dos aprimoramentos do Gerenciador de cache para ler a lógica antecipada de cargas de trabalho sequenciais, uma nova API [CcSetReadAheadGranularityEx](https://msdn.microsoft.com/library/windows/hardware/hh406341.aspx) foi adicionada para permitir que drivers de sistema de arquivos, como SMB, alterem seus parâmetros Read Ahead. Ele permite uma melhor taxa de transferência para cenários de arquivo remoto enviando várias solicitações Read Ahead de tamanho pequeno em vez de enviar uma única solicitação Read Ahead grande. Somente os componentes de kernel, como drivers de sistema de arquivos, podem configurar esses valores programaticamente por arquivo.
+Além dos aprimoramentos do Gerenciador de cache para ler a lógica antecipada de cargas de trabalho sequenciais, uma nova API [CcSetReadAheadGranularityEx](/windows-hardware/drivers/ifs/ccsetreadaheadgranularityex) foi adicionada para permitir que drivers de sistema de arquivos, como SMB, alterem seus parâmetros Read Ahead. Ele permite uma melhor taxa de transferência para cenários de arquivo remoto enviando várias solicitações Read Ahead de tamanho pequeno em vez de enviar uma única solicitação Read Ahead grande. Somente os componentes de kernel, como drivers de sistema de arquivos, podem configurar esses valores programaticamente por arquivo.
 
 ## <a name="memory-manager-improvements-in-windows-server-2012"></a>Aprimoramentos do Gerenciador de memória no Windows Server 2012
 Habilitar a combinação de páginas pode reduzir o uso de memória em servidores que têm muitas páginas particulares e paginável com conteúdo idêntico. Por exemplo, servidores que executam várias instâncias do mesmo aplicativo com uso intensivo de memória ou um único aplicativo que funciona com dados altamente repetitivos podem ser bons candidatos a experimentar a combinação de páginas. A desvantagem de habilitar a combinação de páginas é o aumento do uso da CPU.
@@ -33,4 +33,4 @@ Aqui estão alguns exemplos de funções de servidor em que a combinação de p�
 
 -   Microsoft SQL Servers que são configurados para usar AWE ou páginas grandes (a maior parte da memória é privada, mas não paginável)
 
-A combinação de páginas está desabilitada por padrão, mas pode ser habilitada usando o cmdlet [Enable-MMAgent](https://technet.microsoft.com/library/jj658954.aspx) do Windows PowerShell. A combinação de páginas foi adicionada no Windows Server 2012.
+A combinação de páginas está desabilitada por padrão, mas pode ser habilitada usando o cmdlet [Enable-MMAgent](/powershell/module/mmagent/enable-mmagent?view=win10-ps) do Windows PowerShell. A combinação de páginas foi adicionada no Windows Server 2012.

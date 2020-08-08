@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: hammadbu; vladmis; denisgun
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 9de802638a6f8225d4c8b942ac3cbea303f09a89
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9a82f0db1f586e1f762292c61eabdd7f6556c8bc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896054"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992110"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 
@@ -91,13 +91,13 @@ Considere as seguintes sugestões ao configurar aplicativos que serão usados em
 
 -   Desabilite os processos desnecessários que estão registrados para começar com a entrada do usuário ou uma inicialização da sessão.
 
-    Esses processos podem contribuir significativamente com o custo do uso da CPU ao criar uma nova sessão de usuário, que geralmente é um processo intensivo de CPU, e pode ser muito caro em cenários de manhã. Use MsConfig.exe ou MsInfo32.exe para obter uma lista de processos que são iniciados na entrada do usuário. Para obter informações mais detalhadas, você pode usar o [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
+    Esses processos podem contribuir significativamente com o custo do uso da CPU ao criar uma nova sessão de usuário, que geralmente é um processo intensivo de CPU, e pode ser muito caro em cenários de manhã. Use MsConfig.exe ou MsInfo32.exe para obter uma lista de processos que são iniciados na entrada do usuário. Para obter informações mais detalhadas, você pode usar o [Autoruns para Windows](/sysinternals/downloads/autoruns).
 
 Para o consumo de memória, você deve considerar o seguinte:
 
 -   Verifique se as DLLs carregadas por um aplicativo não estão realocadas.
 
-    -   DLLs realocadas podem ser verificadas selecionando processar exibição de DLL, conforme mostrado na figura a seguir, usando o [Gerenciador de processos](https://technet.microsoft.com/sysinternals/bb896653.aspx).
+    -   DLLs realocadas podem ser verificadas selecionando processar exibição de DLL, conforme mostrado na figura a seguir, usando o [Gerenciador de processos](/sysinternals/downloads/process-explorer).
 
     -   Aqui, podemos ver que y.dll foi realocada porque x.dll já ocupava seu endereço base padrão e a ASLR não estava habilitada
 

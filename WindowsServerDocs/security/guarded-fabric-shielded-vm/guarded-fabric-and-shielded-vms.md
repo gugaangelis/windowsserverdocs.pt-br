@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: c508df5b23481a53ccc112d6c81b11fc9dcea790
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: f81e77b0de231a03bcaa0cfe6877b1e67dd081db
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971383"
+ms.locfileid: "87989577"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>Visão geral sobre malha protegida e VMs blindadas
 
@@ -58,7 +58,7 @@ HGS, junto com os métodos para a criação de VMs blindadas, ajudam a fornecer 
 
 | **Tipo de garantia para VMs**                         | **Garantias de VMs blindadas, do Serviço de Proteção de Chave e de métodos de criação para VMs blindadas** |
 |----------------------------|--------------------------------------------------|
-| **Discos criptografados por BitLocker (discos do sistema operacional e discos de dados)**   | VMs blindadas usam o BitLocker para proteger seus discos. As chaves do BitLocker necessárias para inicializar a VM e descriptografar os discos são protegidas pelo TPM virtual da VM blindada usando tecnologias comprovadas pelo setor, como a inicialização medida segura. Embora as VMs blindadas apenas criptografem e protejam automaticamente o disco do sistema operacional, você também poderá [criptografar unidades de dados](https://technet.microsoft.com/itpro/windows/keep-secure/bitlocker-overview) anexadas à VM blindada. |
+| **Discos criptografados por BitLocker (discos do sistema operacional e discos de dados)**   | VMs blindadas usam o BitLocker para proteger seus discos. As chaves do BitLocker necessárias para inicializar a VM e descriptografar os discos são protegidas pelo TPM virtual da VM blindada usando tecnologias comprovadas pelo setor, como a inicialização medida segura. Embora as VMs blindadas apenas criptografem e protejam automaticamente o disco do sistema operacional, você também poderá [criptografar unidades de dados](/windows/security/information-protection/bitlocker/bitlocker-overview) anexadas à VM blindada. |
 | **Implantação de novas VMs blindadas de imagens/discos de modelo "confiáveis"** | Ao implantar novas VMs blindadas, os locatários são capazes de especificar em quais discos modelo confiam. Os discos modelos blindados têm assinaturas que são calculadas em um ponto no tempo quando seu conteúdo é considerado confiável. As assinaturas do disco são armazenadas em um catálogo de assinatura, que locatários fornecem com segurança à malha ao criar VMs blindadas. Durante o provisionamento das VMs blindadas, a assinatura do disco é computada novamente e comparada com as assinaturas confiáveis no catálogo. Se as assinaturas forem correspondentes, a máquina virtual blindada estará implantada. Se as assinaturas não corresponderem, o disco de modelo blindado será considerado não confiável e a implantação falha. |
 | **Proteção de senhas e outros segredos quando uma máquina virtual blindada é criada** | Ao criar VMs, é necessário garantir que os segredos da VM, como as assinaturas de disco confiável, os certificados RDP e a senha da conta de administrador local da VM, não sejam divulgados para a malha. Esses segredos são armazenados em um arquivo criptografado chamado de arquivo de dados de blindagem (um arquivo .PDK), que é protegido por chaves de locatário e carregado para a malha pelo locatário. Quando uma máquina virtual blindada é criada, o locatário seleciona os dados de blindagem para usar que fornece com segurança esses segredos somente para os componentes confiáveis na malha protegida. |
 | **Controle de locatário de onde a VM pode ser iniciada** | Os dados de blindagem também contêm uma lista das malhas protegidas nas quais uma VM blindada específica tem permissão para executar. Isso é útil, por exemplo, em casos em que uma máquina virtual blindada geralmente reside em uma nuvem privada local, mas talvez precise ser migrada para outra nuvem (pública ou privada) para fins de recuperação de desastres. A malha ou nuvem de destino deve suportar VMs blindadas e a VM blindada deve permitir que a malha a execute. |
@@ -164,6 +164,6 @@ As VMs blindadas e as VMs com suporte à criptografia continuam a oferecer supor
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Malha protegida e VMs blindadas](guarded-fabric-and-shielded-vms-top-node.md)
-- Blog: [blog de datacenter e segurança de nuvem privada](https://blogs.technet.microsoft.com/datacentersecurity/)
+- Blog: [blog de datacenter e segurança de nuvem privada](/archive/blogs/datacentersecurity/)
 - Vídeo: [introdução às máquinas virtuais blindadas](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 - Vídeo: [Aprofunde-se em VMs blindadas com o Windows Server 2016 Hyper-V](https://channel9.msdn.com/events/Ignite/2016/BRK3124)

@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 6de4232d-b0b3-4e43-8735-ebae35ae4f9f
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 5a0f8d372c8e84e6e9140ef40f89c1fa7b116355
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0059e04b79754a3fb183a51cbd75bc03e9a89ae5
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939997"
+ms.locfileid: "87997547"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Cenários de rede com suporte do Windows Server
 
@@ -170,7 +170,7 @@ Para obter mais informações, consulte [agrupamento NIC](technologies/nic-teami
 
 O conjunto é uma solução de agrupamento NIC alternativa que você pode usar em ambientes que incluem o Hyper-V e a pilha de SDN (rede definida pelo software) no Windows Server 2016. O conjunto integra algumas funcionalidades de agrupamento NIC ao comutador virtual Hyper-V.
 
-Para obter mais informações, consulte [RDMA (acesso remoto direto à memória) e o comutador inserido de equipe (Set)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+Para obter mais informações, consulte [RDMA (acesso remoto direto à memória) e o comutador inserido de equipe (Set)](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)
 
 
 
@@ -180,6 +180,3 @@ Os cenários de rede a seguir não têm suporte no Windows Server 2016.
 -   Redes virtuais de locatário baseadas em VLAN.
 
 -   Não há suporte para IPv6 na underlay nem na sobreposição.
-
-
-

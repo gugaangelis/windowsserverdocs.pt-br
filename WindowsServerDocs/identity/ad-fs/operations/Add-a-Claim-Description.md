@@ -6,21 +6,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a022ec618c7255021cd424120330671e007a658a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31c04f557900cee661c2283957f590caf370bbe5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962698"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942730"
 ---
 # <a name="add-a-claim-description"></a>Adicionar uma descrição da declaração
 
 
 Em uma organização de parceiro de conta, os administradores criam declarações para representar a associação de um usuário em um grupo ou função ou para representar alguns dados sobre um usuário, por exemplo, o número de identificação de funcionário de um usuário.
 
-Em uma organização de parceiro de recurso, os administradores criam declarações correspondentes para representar grupos e usuários que podem ser reconhecidos como usuários de recursos. Como as declarações de saída na organização do parceiro de conta mapeiam para declarações de entrada na organização do parceiro de recurso, o parceiro de recurso é capaz de aceitar as credenciais que o parceiro de conta fornece. 
+Em uma organização de parceiro de recurso, os administradores criam declarações correspondentes para representar grupos e usuários que podem ser reconhecidos como usuários de recursos. Como as declarações de saída na organização do parceiro de conta mapeiam para declarações de entrada na organização do parceiro de recurso, o parceiro de recurso é capaz de aceitar as credenciais que o parceiro de conta fornece.
 
 Você pode usar o procedimento a seguir para adicionar uma declaração.
 
@@ -28,7 +26,7 @@ A associação em **Administradores**, ou equivalente, no computador local é o 
 
 ## <a name="to-add-a-claim-description"></a>Para adicionar uma descrição de declaração
 
-1. No Gerenciador do Servidor, clique em **Ferramentas** e depois selecione **Gerenciamento do AD FS**. 
+1. No Gerenciador do Servidor, clique em **Ferramentas** e depois selecione **Gerenciamento do AD FS**.
 
 2. Expanda **serviço** e clique com o botão direito do mouse em **Adicionar Descrição da declaração**.
    ![Adicionar Descrição da declaração](media/Add-a-Claim-Description/claimdesc1.png)
@@ -54,5 +52,5 @@ A associação em **Administradores**, ou equivalente, no computador local é o 
 ![Adicionar Descrição da declaração](media/Add-a-Claim-Description/claimdesc2.png)
 
 
-## <a name="see-also"></a>Consulte Também  
-[Operações do AD FS](../ad-fs-operations.md) 
+## <a name="see-also"></a>Consulte Também
+[Operações do AD FS](../ad-fs-operations.md)

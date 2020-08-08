@@ -5,12 +5,12 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 02f2849b7259379ebf6beed927601b13966a7704
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 42e95662cd2177b37fef1b47f0a51989ab964168
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896141"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992156"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -56,7 +56,7 @@ Para obter recomendações adicionais e informações sobre como aproveitar os p
 
 O Windows Server 2016 recurso a opção de instalação Server Core. O Server Core oferece um ambiente mínimo para hospedar um conjunto selecionado de funções de servidor, incluindo o Hyper-V. Ele apresenta uma superfície de disco menor para o sistema operacional do host, além de um ataque menor e uma área de manutenção. Portanto, é altamente recomendável que os servidores de virtualização do Hyper-V usem a opção de instalação Server Core.
 
-Uma instalação do Server Core oferece uma janela de console somente quando o usuário está conectado, mas o Hyper-V expõe recursos de gerenciamento remoto, incluindo o [Windows PowerShell](https://technet.microsoft.com/library/hh848559.aspx) para que os administradores possam gerenciá-lo remotamente.
+Uma instalação do Server Core oferece uma janela de console somente quando o usuário está conectado, mas o Hyper-V expõe recursos de gerenciamento remoto, incluindo o [Windows PowerShell](/powershell/module/hyper-v/?view=win10-ps) para que os administradores possam gerenciá-lo remotamente.
 
 ## <a name="dedicated-server-role"></a>Função de servidor dedicada
 
@@ -66,7 +66,7 @@ Os administradores do sistema devem considerar cuidadosamente qual software est�
 
 ## <a name="guest-operating-systems"></a>Sistemas operacionais convidados
 
-O Hyper-V dá suporte e foi ajustado para vários sistemas operacionais convidados diferentes. O número de processadores virtuais com suporte por convidado depende do sistema operacional convidado. Para obter uma lista dos sistemas operacionais convidados com suporte, consulte [visão geral do Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
+O Hyper-V dá suporte e foi ajustado para vários sistemas operacionais convidados diferentes. O número de processadores virtuais com suporte por convidado depende do sistema operacional convidado. Para obter uma lista dos sistemas operacionais convidados com suporte, consulte [visão geral do Hyper-V](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11)).
 
 ## <a name="cpu-statistics"></a>Estatísticas de CPU
 
