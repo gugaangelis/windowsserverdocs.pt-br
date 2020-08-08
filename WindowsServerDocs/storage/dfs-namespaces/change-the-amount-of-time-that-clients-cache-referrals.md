@@ -2,18 +2,16 @@
 title: Mudar o tempo que os clientes armazenam as referências
 description: Este artigo descreve como mudar o tempo que os clientes armazenam as referências
 ms.date: 6/5/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: ddbb799cc46da040bfc2f62445cc2b41945d09f1
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 837b1016b1e601eb765d20877980ea75c2b8c70b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966288"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957774"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>Mudar o tempo que os clientes armazenam as referências em cache
 

@@ -1,18 +1,16 @@
 ---
 title: Implantar dispositivos de armazenamento NVMe usando a atribuição de dispositivo discreta
 description: Saiba como usar DDA para implantar dispositivos de armazenamento
-ms.prod: windows-server
-ms.technology: hyper-v
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: 2b92b175a6e914b62b069f76f92255cb99d55d74
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860899"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945939"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>Implantar dispositivos de armazenamento NVMe usando a atribuição de dispositivo discreta
 
@@ -37,10 +35,10 @@ Set-VM -Name VMName -AutomaticStopAction TurnOff
 ## <a name="dismount-the-device-from-the-host-partition"></a>Desmontar o dispositivo da partição de host
 
 ### <a name="locating-the-devices-location-path"></a>Localizando o caminho do local do dispositivo
-O caminho do local PCI é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao seguinte: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`.   Para obter mais detalhes sobre o local, encontre o caminho de localização: [planeje a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
+O caminho do local PCI é necessário para desmontar e montar o dispositivo do host.  Um caminho de local de exemplo é semelhante ao seguinte: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"` .   Para obter mais detalhes sobre o local, encontre o caminho de localização: [planeje a implantação de dispositivos usando a atribuição de dispositivo discreta](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md).
 
 ### <a name="disable-the-device"></a>Desabilitar o dispositivo
-Usando o Device Manager ou o PowerShell, verifique se o dispositivo está "desabilitado".  
+Usando o Device Manager ou o PowerShell, verifique se o dispositivo está "desabilitado".
 
 ### <a name="dismount-the-device"></a>Desmontar o dispositivo
 ```

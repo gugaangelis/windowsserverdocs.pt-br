@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90fa1203f09bc04b27885034895e52db5fa1c5f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b90ea772874c2a5731e03f4bcbc44de6efc34a20
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971483"
+ms.locfileid: "87995033"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>Criar a chave raiz do KDS (serviço de distribuição de chave)
 
@@ -25,7 +25,7 @@ Controladores de domínio (DC) exigem uma chave raiz para começar a gerar senha
 > [!NOTE]
 > Excluir e recriar a chave raiz pode levar a problemas em que a chave antiga continua a ser usada após a exclusão devido ao cache da chave. O KDC (serviço de distribuição de chaves) deve ser reiniciado em todos os controladores de domínio se a chave raiz for recriada.
 
-A associação ao grupo **Admins. do Domínio** ou **Administradores de Empresa** ou equivalente é o mínimo exigido para concluir este procedimento. Para obter informações detalhadas sobre como usar as contas e associações de grupo apropriadas, consulte [grupos padrão de domínio e locais](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+A associação ao grupo **Admins. do Domínio** ou **Administradores de Empresa** ou equivalente é o mínimo exigido para concluir este procedimento. Para obter informações detalhadas sobre como usar as contas e associações de grupo apropriadas, consulte [grupos padrão de domínio e locais](/previous-versions/orphan-topics/ws.10/dd728026(v=ws.10)).
 
 > [!NOTE]
 > Uma arquitetura de 64 bits é exigida para executar os comandos do Windows PowerShell, que são usados para administrar as contas de serviço gerenciado de grupo.
@@ -61,5 +61,3 @@ Para ambientes de teste com apenas um DC, você pode criar uma chave raiz do KDS
 
 ## <a name="see-also"></a>Consulte Também
 [Introdução com contas de serviço gerenciado de grupo](getting-started-with-group-managed-service-accounts.md)
-
-

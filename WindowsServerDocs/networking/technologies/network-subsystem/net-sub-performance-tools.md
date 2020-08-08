@@ -7,12 +7,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 07/16/2018
-ms.openlocfilehash: 3e08541b1bfd6dd07d134560c9d03306566b18db
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4344357db92a65725a7bcdc749966d3889d20695
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953912"
+ms.locfileid: "87995084"
 ---
 # <a name="performance-tools-for-network-workloads"></a>Ferramentas de desempenho para cargas de trabalho de rede
 
@@ -42,6 +42,6 @@ O Microsoft Server performance Advisor \( Spa \) ajuda os administradores de ti 
 
 O SPA gera gráficos e relatórios de diagnóstico abrangentes, além de fornecer recomendações para ajudá-lo a analisar rapidamente os problemas e desenvolver ações corretivas.
 
- Para obter mais informações e baixar o Advisor, consulte [Microsoft Server performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) no centro de desenvolvimento de hardware do Windows.
+ Para obter mais informações e baixar o Advisor, consulte [Microsoft Server performance Advisor](/previous-versions/dn481522(v=vs.85)) no centro de desenvolvimento de hardware do Windows.
 
 Para obter links para todos os tópicos deste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).

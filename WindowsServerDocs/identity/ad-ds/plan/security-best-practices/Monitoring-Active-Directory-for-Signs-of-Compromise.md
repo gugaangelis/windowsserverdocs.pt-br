@@ -6,20 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adds
-ms.openlocfilehash: b4031ce1d9a5bce4f0dd8fe98dea304b2373c2ae
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181822"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994350"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Monitorar o Active Directory em busca de sinais de comprometimento
 
 >Aplica-se a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-*Número da lei cinco: a vigilância eternas é o preço da segurança.* - [10 leis imutáveis da administração de segurança](/previous-versions//cc722488(v=technet.10))
+*Número da lei cinco: a vigilância eternas é o preço da segurança.* - [10 leis imutáveis da administração de segurança](/previous-versions/cc722488(v=technet.10))
 
 Um sistema de monitoramento de log de eventos sólido é uma parte crucial de qualquer design de Active Directory seguro. Muitos comprometimentos de segurança de computador poderiam ser descobertos no início do evento se as vítimas imprometessem o monitoramento e o alerta do log de eventos apropriado. Os relatórios independentes têm muito suporte para essa conclusão. Por exemplo, o [relatório de violação de dados 2009 Verizon](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) informa:
 

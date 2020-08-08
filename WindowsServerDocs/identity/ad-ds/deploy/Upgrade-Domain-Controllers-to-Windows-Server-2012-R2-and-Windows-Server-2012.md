@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: f4c4cfa0fe56acc19f1a78a5b1140d90b585cce5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ae0aa44dba50c467dd1bd2423e9eb67104387cd3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953305"
+ms.locfileid: "87994486"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>Atualizar controladores de domínio para o Windows Server 2012 R2 e o Windows Server 2012
 
@@ -55,7 +55,7 @@ Os links a seguir contêm instruções passo a passo para promover controladores
 - [Instalar uma réplica de controlador de domínio do Windows Server 2012 em um domínio existente (nível 200)](./install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain--level-200-.md)
 - [Instalar um novo domínio de árvore ou filho do Active Directory do Windows Server 2012 (nível 200)](./install-a-new-windows-server-2012-active-directory-child-or-tree-domain--level-200-.md)
 - [Instalar um RODC (controlador de domínio somente leitura) do Active Directory do Windows Server 2012 (nível 200)](./rodc/install-a-windows-server-2012-active-directory-read-only-domain-controller--rodc---level-200-.md)
-- [Fórum do Windows Server 2012 sobre controladores de domínio](https://docs.microsoft.com/answers/topics/windows-server-2012.html)
+- [Fórum do Windows Server 2012 sobre controladores de domínio](/answers/topics/windows-server-2012.html)
 
 ## <a name="windows-update-considerations"></a>Considerações sobre Windows Update
 
@@ -175,7 +175,7 @@ Os requisitos mínimos do sistema para o Windows Server 2012 estão listados na 
 
 Esta seção aborda os requisitos de espaço em disco apenas para a atualização de controladores de domínio do Windows Server 2008 ou do Windows Server 2008 R2. Para saber mais sobre os requisitos de espaço em disco para atualização de controladores de domínio em versões anteriores do Windows Server, consulte [Requisitos de espaço em disco para atualizar para o Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008) ou [Requisitos de espaço em disco para atualizar para o Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754463(v=ws.10)#BKMK_2008R2).
 
-Forneça espaço no disco que hospeda o banco de dados do Active Directory e os arquivos de log para permitir o armazenamento das extensões de esquema orientadas a aplicativos e personalizadas, índices iniciados por administradores e aplicativos e objetos/atributos que serão adicionados ao diretório durante o tempo de implantação do controlador de domínio (normalmente de cinco a oito anos). O dimensionamento correto no momento da implantação costuma ser um bom investimento quando comparado aos grandes custos gerados para expandir o armazenamento em disco após a implantação. Para obter mais informações, consulte [Planejamento de capacidade para os Serviços de Domínio do Active Directory](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services).
+Forneça espaço no disco que hospeda o banco de dados do Active Directory e os arquivos de log para permitir o armazenamento das extensões de esquema orientadas a aplicativos e personalizadas, índices iniciados por administradores e aplicativos e objetos/atributos que serão adicionados ao diretório durante o tempo de implantação do controlador de domínio (normalmente de cinco a oito anos). O dimensionamento correto no momento da implantação costuma ser um bom investimento quando comparado aos grandes custos gerados para expandir o armazenamento em disco após a implantação. Para obter mais informações, consulte [Planejamento de capacidade para os Serviços de Domínio do Active Directory](../../../administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services.md).
 
 Em controladores de domínio que serão atualizados, antes de começar a atualização do sistema operacional, verifique se a unidade que hospeda o banco de dados Active Directory (NTDS.DIT) possui espaço livre em disco que represente pelo menos 20% do arquivo NTDS.NIT. Se não houver espaço livre em disco suficiente no volume, poderá ocorrer falha na atualização e o relatório de compatibilidade de atualização retornará um erro indicando que não há espaço livre suficiente no disco:
 

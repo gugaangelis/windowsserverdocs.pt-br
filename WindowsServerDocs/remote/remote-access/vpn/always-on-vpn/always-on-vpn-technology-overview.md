@@ -1,19 +1,17 @@
 ---
 title: Visão geral da tecnologia de VPN Always On
 description: 'Esta página fornece uma breve visão geral das tecnologias de VPN Always On com links para documentos detalhados. '
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
-ms.openlocfilehash: 12c80e7e266ac3a8c788781a4d98f0a856164084
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 155d06657811878464d905a51f249cbc8ad3cfe2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182012"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958284"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Visão geral da tecnologia de VPN Always On
 

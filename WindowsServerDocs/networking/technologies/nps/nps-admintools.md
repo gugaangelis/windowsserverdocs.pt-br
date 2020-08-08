@@ -2,33 +2,31 @@
 title: Gerenciamento de Servidor de Políticas de Rede com Ferramentas de Administração
 description: Você pode usar este tópico para saber mais sobre as ferramentas que você pode usar para gerenciar o servidor de políticas de rede no Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 5de80dc0-53be-42b7-8e5b-24d213bf2b25
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 1bb6447197bfed1108a62be077b0a076bef995da
-ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.openlocfilehash: 68127562525ead20726ee61322d077c1c9093d32
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80316355"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994151"
 ---
 # <a name="network-policy-server-management-with-administration-tools"></a>Gerenciamento de Servidor de Políticas de Rede com Ferramentas de Administração
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para saber mais sobre as ferramentas que você pode usar para gerenciar seu NPSs.
 
 Depois de instalar o NPS, você pode administrar o NPSs:
 
-- Localmente, usando o console de gerenciamento do NPS da Microsoft \(snap-in do MMC\), o console NPS estático em ferramentas administrativas, comandos do Windows PowerShell ou o Shell de rede \(comandos netsh\) para NPS.
+- Localmente, usando o snap-in MMC do console de gerenciamento Microsoft NPS \( \) , o console NPS estático em ferramentas administrativas, comandos do Windows PowerShell ou os \( comandos netsh \) do Shell de rede para NPS.
 - De um NPS remoto, usando o snap-in do MMC do NPS, os comandos netsh para NPS, os comandos do Windows PowerShell para NPS ou Conexão de Área de Trabalho Remota.
 - De uma estação de trabalho remota, usando Conexão de Área de Trabalho Remota em combinação com outras ferramentas, como o MMC do NPS ou o Windows PowerShell.
 
 >[!NOTE]
->No Windows Server 2016, você pode gerenciar o NPS local usando o console do NPS. Para gerenciar o NPSs remoto e local, você deve usar o snap\-do MMC do NPS no.
+>No Windows Server 2016, você pode gerenciar o NPS local usando o console do NPS. Para gerenciar o NPSs remoto e local, você deve usar o snap-in do MMC do NPS \- .
 
 As seções a seguir fornecem instruções sobre como gerenciar seus NPSs locais e remotos.
 
@@ -36,40 +34,40 @@ As seções a seguir fornecem instruções sobre como gerenciar seus NPSs locais
 
 Depois de instalar o NPS, você pode usar este procedimento para gerenciar o NPS local usando o MMC do NPS.
 
-**Credenciais administrativas** 
+**Credenciais administrativas**
 
 Para concluir este procedimento, é preciso ser um membro do grupo Administradores.
 
 ### <a name="to-configure-the-local-nps-by-using-the-nps-console"></a>Para configurar o NPS local usando o console do NPS
 
-1. Em Gerenciador do Servidor, clique em **ferramentas**e, em seguida, clique em **servidor de políticas de rede**. O console do NPS é aberto.
+1. No Gerenciador do Servidor, clique em **Ferramentas**e, em seguida, clique em **Servidor de Políticas de Rede**. O console do NPS é aberto.
 
-2. No console do NPS, clique em NPS \(local\). No painel de detalhes, escolha **configuração padrão** ou **Configuração avançada**e siga um destes procedimentos com base na sua seleção:
+2. No console do NPS, clique em NPS \( local \) . No painel de detalhes, escolha **configuração padrão** ou **Configuração avançada**e siga um destes procedimentos com base na sua seleção:
     - Se você escolher **configuração padrão**, selecione um cenário na lista e siga as instruções para iniciar um assistente de configuração.
     - Se você escolher **Configuração avançada**, clique na seta para expandir **as opções de configuração avançadas**e, em seguida, examine e configure as opções disponíveis com base na funcionalidade do NPS que você deseja-servidor RADIUS, proxy RADIUS ou ambos.
 
-## <a name="manage-multiple-npss-by-using-the-nps-mmc-snap-in"></a>Gerenciar vários NPSs usando o snap\-do MMC do NPS em
+## <a name="manage-multiple-npss-by-using-the-nps-mmc-snap-in"></a>Gerenciar vários NPSs usando o snap-in do MMC do NPS \-
 
-Você pode usar este procedimento para gerenciar o NPS local e vários NPSs remotos usando o snap\-do MMC do NPS no.
+Você pode usar este procedimento para gerenciar o NPS local e vários NPSs remotos usando o snap-in do MMC do NPS \- .
 
 Antes de executar o procedimento a seguir, você deve instalar o NPS no computador local e em computadores remotos.
 
-Dependendo das condições da rede e do número de NPSs que você gerencia usando o snap do MMC do NPS\-no, a resposta do snap\-do MMC pode ser lenta. Além disso, o tráfego de configuração do NPS é enviado pela rede durante uma sessão de administração remota usando o\-snap do NPS no. Verifique se sua rede está fisicamente segura e se os usuários mal-intencionados não têm acesso a esse tráfego de rede.
+Dependendo das condições da rede e do número de NPSs que você gerencia usando o snap in do MMC do NPS \- , a resposta do snap-in do MMC \- pode ser lenta. Além disso, o tráfego de configuração do NPS é enviado pela rede durante uma sessão de administração remota usando o snap-in do NPS \- . Verifique se sua rede está fisicamente segura e se os usuários mal-intencionados não têm acesso a esse tráfego de rede.
 
-**Credenciais administrativas** 
+**Credenciais administrativas**
 
 Para concluir este procedimento, é preciso ser um membro do grupo Administradores.
 
-### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>Para gerenciar vários NPSs usando o snap\-do NPS em
+### <a name="to-manage-multiple-npss-by-using-the-nps-snap-in"></a>Para gerenciar vários NPSs usando o snap-in do NPS \-
 
 1. Para abrir o MMC, execute o Windows PowerShell como administrador. No Windows PowerShell, digite **MMC**e pressione Enter. O Console de Gerenciamento Microsoft será aberto.
-2. No MMC, no menu **arquivo** , clique em **Adicionar/remover snap\-em**. A caixa de diálogo **Adicionar ou Remover Snap\-ins** é aberta.
-3. Em **Adicionar ou remover snap\-ins**, no **snap\-ins disponíveis**, role para baixo na lista, clique em **servidor de políticas de rede**e clique em **Adicionar**. A caixa de diálogo **Selecionar Computador** será aberta.
-4. Em **Selecionar computador**, verifique se **o computador local \(computador no qual esse console está sendo executado\)** está selecionado e clique em **OK**. O\-de snap no para o NPS local é adicionado à lista em **snap\-ins selecionados**.
-5. Em **Adicionar ou remover snap\-ins**, no **snap\-ins disponíveis**, verifique se o **servidor de políticas de rede** ainda está selecionado e clique em **Adicionar**. A caixa de diálogo **Selecionar computador** é aberta novamente.
-6. Em **Selecionar computador**, clique em **outro computador**e digite o endereço IP ou o nome de domínio totalmente qualificado \(FQDN\) do NPS remoto que você deseja gerenciar usando o\-snap do NPS no. Opcionalmente, você pode clicar em **procurar** para examinar o diretório do computador que deseja adicionar. Clique em **OK**.
-7. Repita as etapas 5 e 6 para adicionar mais NPSs ao snap do NPS\-no. Depois de adicionar todos os NPSs que você deseja gerenciar, clique em **OK**.
-8. Para salvar o snap-in do NPS para uso posterior, clique em **arquivo**e em **salvar**. Na caixa de diálogo **salvar como** , navegue até o local do disco rígido onde você deseja salvar o arquivo, digite um nome para o seu console de gerenciamento Microsoft \(arquivo. msc\) e, em seguida, clique em **salvar**. 
+2. No MMC, no menu **arquivo** , clique em **Adicionar/remover snap- \- in**. A caixa de diálogo **Adicionar ou remover snap \- ins** é aberta.
+3. Em **Adicionar ou remover snap- \- ins**, em **snap \- ins disponíveis**, role para baixo na lista, clique em **servidor de políticas de rede**e clique em **Adicionar**. A caixa de diálogo **Selecionar Computador** será aberta.
+4. Em **Selecionar computador**, verifique se **computador local \( o computador no qual esse console está sendo \) executado** está selecionado e clique em **OK**. O snap- \- in para o NPS local é adicionado à lista nos **snap- \- ins selecionados**.
+5. Em **Adicionar ou remover snap- \- ins**, em **snap \- ins disponíveis**, verifique se o **servidor de políticas de rede** ainda está selecionado e clique em **Adicionar**. A caixa de diálogo **Selecionar computador** é aberta novamente.
+6. Em **Selecionar computador**, clique em **outro computador**e digite o endereço IP ou o FQDN do nome de domínio totalmente qualificado \( \) do NPS remoto que você deseja gerenciar usando o snap-in do NPS \- . Opcionalmente, você pode clicar em **procurar** para examinar o diretório do computador que deseja adicionar. Clique em **OK**.
+7. Repita as etapas 5 e 6 para adicionar mais NPSs ao snap- \- in do NPS. Depois de adicionar todos os NPSs que você deseja gerenciar, clique em **OK**.
+8. Para salvar o snap-in do NPS para uso posterior, clique em **arquivo**e em **salvar**. Na caixa de diálogo **salvar como** , navegue até o local do disco rígido onde você deseja salvar o arquivo, digite um nome para o arquivo. msc do console de gerenciamento Microsoft \( \) e clique em **salvar**.
 
 ## <a name="manage-an-nps-by-using-remote-desktop-connection"></a>Gerenciar um NPS usando Conexão de Área de Trabalho Remota
 
@@ -80,19 +78,19 @@ Usando Conexão de Área de Trabalho Remota, você pode gerenciar remotamente se
 Você pode usar Área de Trabalho Remota conexão para gerenciar vários NPSs usando um dos dois métodos.
 
 1. Crie uma conexão de Área de Trabalho Remota com cada um dos seus NPSs individualmente.
-2. Use Área de Trabalho Remota para se conectar a um NPS e, em seguida, use o MMC do NPS nesse servidor para gerenciar outros servidores remotos. Para obter mais informações, consulte a seção anterior **gerenciar vários NPSs usando o Snap\-do MMC do NPS no**.
+2. Use Área de Trabalho Remota para se conectar a um NPS e, em seguida, use o MMC do NPS nesse servidor para gerenciar outros servidores remotos. Para obter mais informações, consulte a seção anterior **gerenciar vários NPSs usando o snap- \- in do MMC do NPS**.
 
-**Credenciais administrativas** 
+**Credenciais administrativas**
 
 Para concluir este procedimento, você deve ser um membro do grupo Administradores no NPS.
 
 ### <a name="to-manage-an-nps-by-using-remote-desktop-connection"></a>Para gerenciar um NPS usando Conexão de Área de Trabalho Remota
 
-1. Em cada NPS que você deseja gerenciar remotamente, em Gerenciador do Servidor, selecione **servidor local**. No painel detalhes Gerenciador do Servidor, exiba a configuração **área de trabalho remota** e siga um destes procedimentos. 
+1. Em cada NPS que você deseja gerenciar remotamente, em Gerenciador do Servidor, selecione **servidor local**. No painel detalhes Gerenciador do Servidor, exiba a configuração **área de trabalho remota** e siga um destes procedimentos.
     1. Se o valor da configuração **área de trabalho remota** estiver **habilitado**, você não precisará executar algumas das etapas neste procedimento. Pule para a etapa 4 para iniciar a configuração de Área de Trabalho Remota permissões de usuário.
     2. Se a configuração de **área de trabalho remota** estiver **desabilitada**, clique na palavra **desabilitada**. A caixa de diálogo **Propriedades do sistema** é aberta na guia **remoto** .
-2. Em **área de trabalho remota**, clique em **permitir conexões remotas com este computador**. A caixa de diálogo **conexão de área de trabalho remota** é aberta. Siga um destes procedimentos.
-    1. Para personalizar as conexões de rede que são permitidas, clique em **Firewall do Windows com segurança avançada**e defina as configurações que você deseja permitir. 
+2. Em **área de trabalho remota**, clique em **permitir conexões remotas com este computador**. A caixa de diálogo **conexão de área de trabalho remota** é aberta. Execute uma delas.
+    1. Para personalizar as conexões de rede que são permitidas, clique em **Firewall do Windows com segurança avançada**e defina as configurações que você deseja permitir.
     2. Para habilitar Conexão de Área de Trabalho Remota para todas as conexões de rede no computador, clique em **OK**.
 3. Em **Propriedades do sistema**, em **área de trabalho remota**, decida se deseja habilitar **permitir conexões somente de computadores que executam o área de trabalho remota com autenticação no nível da rede**e faça sua seleção.
 4. Clique em **Selecionar Usuários**. A caixa de diálogo **área de trabalho remota usuários** é aberta.
@@ -112,7 +110,7 @@ Você pode usar comandos no contexto netsh NPS para mostrar e definir a configur
 
 Você pode executar esses comandos no prompt de comando do Windows Server 2016 ou no Windows PowerShell. Você também pode executar comandos netsh nps em scripts e arquivos em lotes.
 
-**Credenciais administrativas** 
+**Credenciais administrativas**
 
 Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local.
 
@@ -121,16 +119,16 @@ Para executar esse procedimento, você deve ser membro do grupo Administradores 
 1. Abra o prompt de comando ou o Windows PowerShell.
 2. Digite **netsh**e pressione Enter.
 3. Digite **NPS**e pressione Enter.
-4. Para exibir uma lista de comandos disponíveis, digite um ponto de interrogação \(?\) e pressione ENTER.
+4. Para exibir uma lista de comandos disponíveis, digite um ponto de interrogação \( ? \) e pressione Enter.
 
 
-Para obter mais informações sobre comandos netsh NPS, consulte [comandos netsh para o servidor de políticas de rede no Windows Server 2008](https://technet.microsoft.com/library/cc754428(v=ws.10).aspx), ou baixe toda a [referência técnica do netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc?redir=0) na galeria do TechNet. Este download é a referência técnica completa do Shell de rede para o Windows Server 2008 e o Windows Server 2008 R2. O formato é a ajuda do Windows \(*. chm\) em um arquivo zip. Esses comandos ainda estão presentes no Windows Server 2016 e no Windows 10, para que você possa usar o netsh nesses ambientes, embora o uso do Windows PowerShell seja recomendado.
+Para obter mais informações sobre comandos netsh NPS, consulte [comandos netsh para o servidor de políticas de rede no Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754428(v=ws.10)), ou baixe toda a [referência técnica do netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc?redir=0) na galeria do TechNet. Este download é a referência técnica completa do Shell de rede para o Windows Server 2008 e o Windows Server 2008 R2. O formato é ajuda do Windows \( *. chm \) em um arquivo zip. Esses comandos ainda estão presentes no Windows Server 2016 e no Windows 10, para que você possa usar o netsh nesses ambientes, embora o uso do Windows PowerShell seja recomendado.
 
 ## <a name="use-windows-powershell-to-manage-npss"></a>Usar o Windows PowerShell para gerenciar o NPSs
 
 Você pode usar comandos do Windows PowerShell para gerenciar o NPSs. Para obter mais informações, consulte os seguintes tópicos de referência de comando do Windows PowerShell.
 
-- [Cmdlets do servidor de diretivas de rede (NPS) no Windows PowerShell](https://technet.microsoft.com/library/jj872739(v=wps.630).aspx). Você pode usar esses comandos netsh no Windows Server 2012 R2 ou em sistemas operacionais posteriores.
-- [Módulo do NPS](https://technet.microsoft.com/itpro/powershell/windows/nps/index). Você pode usar esses comandos netsh no Windows Server 2016.
+- [Cmdlets do servidor de diretivas de rede (NPS) no Windows PowerShell](/powershell/module/nps/?view=win10-ps&viewFallbackFrom=winserverr2-ps). Você pode usar esses comandos netsh no Windows Server 2012 R2 ou em sistemas operacionais posteriores.
+- [Módulo do NPS](/powershell/module/nps/?view=win10-ps). Você pode usar esses comandos netsh no Windows Server 2016.
 
 Para obter mais informações sobre a administração do NPS, consulte [gerenciar o servidor de políticas de rede (NPS)](nps-manage-top.md).

@@ -5,15 +5,13 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: be6a1918a209f14ec8cc911aa4294825d0aa8b47
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: d9625992d7098a1f5cd510901be07187702b3771
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182352"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967083"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>Configurar um ambiente de laboratório do AD FS
 

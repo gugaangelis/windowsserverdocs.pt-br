@@ -1,19 +1,17 @@
 ---
 title: Adicionar um módulo a uma extensão de ferramenta
 description: Desenvolver uma extensão de ferramenta SDK do centro de administração do Windows (projeto Honolulu) – adicionar um módulo a uma extensão de ferramenta
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 9d30980ca404187ff1481242c1c0ef0a3d571416
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e7875f8aa2320d7292b314cb18f3e17894e76fa0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357099"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87945039"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>Adicionar um módulo a uma extensão de ferramenta
 
@@ -21,19 +19,19 @@ ms.locfileid: "71357099"
 
 Neste artigo, adicionaremos um módulo vazio a uma extensão de ferramenta que criamos com a CLI do centro de administração do Windows.
 
-## <a name="prepare-your-environment"></a>Prepare o ambiente
+## <a name="prepare-your-environment"></a>Prepare o seu ambiente
 
 Se você ainda não fez isso, siga as instruções em desenvolver uma extensão de [ferramenta](../develop-tool.md) (ou [solução](../develop-solution.md)) para preparar seu ambiente e criar uma nova extensão de ferramenta vazia.
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Usar a CLI do angular para criar um módulo (e um componente)
 
-Se você ainda não conhece a angulares, é altamente recomendável que você leia a documentação sobre o site Angular.Io para conhecer angulares e NgModule. Para obter mais informações sobre NgModule, acesse: [https://angular.io/guide/ngmodule](https://angular.io/guide/ngmodule )
+Se você ainda não conhece a angulares, é altamente recomendável que você leia a documentação sobre o site Angular.Io para conhecer angulares e NgModule. Para obter mais informações sobre NgModule, acesse:https://angular.io/guide/ngmodule
 
 * Mais informações sobre como gerar um novo módulo no CLI angular: https://github.com/angular/angular-cli/wiki/generate-module
 * Mais informações sobre como gerar um novo componente no CLI angular: https://github.com/angular/angular-cli/wiki/generate-component
 
 
-Abra um prompt de comando, altere o diretório para \src\app em seu projeto e, em seguida, execute os comandos a seguir, substituindo ```{!ModuleName}``` pelo nome do módulo (espaços removidos):
+Abra um prompt de comando, altere o diretório para \src\app em seu projeto e, em seguida, execute os seguintes comandos, substituindo ```{!ModuleName}``` pelo nome do módulo (espaços removidos):
 
 ```
 cd \src\app
@@ -55,7 +53,7 @@ ng generate component ManageFooWorksPortal
 
 ## <a name="add-routing-information"></a>Adicionar informações de roteamento
 
-Se você ainda não conhece o Angular, é altamente recomendável que aprender sobre o Roteamento e a navegação angular. As seções a seguir definem os elementos de roteamento necessários que permitem o Windows Admin Center navegar até sua extensão e entre os modos de exibição dela em resposta a atividade do usuário. Para saber mais, acesse: [https://angular.io/guide/router](https://angular.io/guide/router )
+Se você ainda não conhece o Angular, é altamente recomendável que aprender sobre o Roteamento e a navegação angular. As seções a seguir definem os elementos de roteamento necessários que permitem o Windows Admin Center navegar até sua extensão e entre os modos de exibição dela em resposta a atividade do usuário. Para saber mais, acesse:https://angular.io/guide/router
 
 Use o mesmo nome de módulo que você usou na etapa anterior.
 
@@ -83,7 +81,7 @@ Use o mesmo nome de módulo que você usou na etapa anterior.
             // if the component has child components that need to be routed to, include them in the children array.
             children: [
                 {
-                    path: '', 
+                    path: '',
                     redirectTo: 'base',
                     pathMatch: 'full'
                 }
@@ -143,7 +141,7 @@ Abra o arquivo ```{!module-name}.component.ts```, encontrado com a seguinte conv
 | Valor | Explicação | Exemplo de nome de arquivo |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | Seu nome do módulo (letras minúsculas, espaços substituídos por traços) | ```manage-foo-works-portal.component.ts``` |
-    
+
 Modifique o conteúdo do arquivo para o seguinte:
 
 ``` ts
@@ -157,7 +155,7 @@ public ngOnInit() {
 ```
 ### <a name="update-app-routingmodulets"></a>Atualizar app-Routing. Module. TS
 
-Abra o arquivo ```app-routing.module.ts``` e modifique o caminho padrão para que ele carregue o novo módulo que você acabou de criar.  Localize a entrada para ```path: ''``` e atualize ```loadChildren``` para carregar o módulo em vez do módulo padrão:
+Abra ```app-routing.module.ts``` o arquivo e modifique o caminho padrão para que ele carregue o novo módulo que você acabou de criar.  Localize a entrada para ```path: ''``` e atualize ```loadChildren``` para carregar seu módulo em vez do módulo padrão:
 
 | Valor | Explicação | Exemplo |
 | ----- | ----------- | ------- |
@@ -166,14 +164,14 @@ Abra o arquivo ```app-routing.module.ts``` e modifique o caminho padrão para qu
 
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/{!module-name}/{!module-name}.module#{!ModuleName}Module'
     },
 ```
 Aqui está um exemplo de um caminho padrão atualizado:
 ``` ts
     {
-        path: '', 
+        path: '',
         loadChildren: 'app/manage-foo-works-portal/manage-foo-works-portal.module#ManageFooWorksPortalModule'
     },
 ```

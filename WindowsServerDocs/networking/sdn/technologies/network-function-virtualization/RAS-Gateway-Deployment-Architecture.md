@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 0de90508ec3a7db2624047d23de47e79d9ea2a39
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e15131291f14f8e7affc45d49f1b81e7c8b29ba7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87952287"
+ms.locfileid: "87994754"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>Arquitetura de implantação do Gateway de RAS
 
@@ -91,7 +91,7 @@ Quando você assina um novo cliente e adiciona o cliente como um novo locatário
     > -   Depois que o controlador de rede tiver configurado um gateway RAS e um refletor de rota para o locatário, sempre que o mesmo locatário exigir uma nova conexão VPN site a site, o controlador de rede verificará a capacidade disponível nessa VM do gateway RAS. Se o gateway original puder atender à capacidade necessária, a nova conexão de rede também será configurada na mesma VM de gateway de RAS. Se a VM do gateway de RAS não puder lidar com capacidade adicional, o controlador de rede selecionará uma nova VM de gateway RAS disponível e configurará a nova conexão nela. Essa nova VM de gateway de RAS associada ao locatário se torna o cliente de refletor de rota do refletor de rota de gateway RAS de locatário original.
     > -   Como os pools de gateway de RAS estão atrás dos balanceadores de carga de software (SLBs), os endereços VPN site a site dos locatários usam um único endereço IP público, chamado de VIP (endereço IP virtual), que é convertido pelo SLBs em um endereço IP interno de datacenter, chamado de DIP (endereço IP dinâmico), para um gateway RAS que roteia o tráfego para o locatário Esse mapeamento de endereço IP público para privado por SLB garante que os túneis VPN site a site sejam corretamente estabelecidos entre os sites corporativos e os gateways RAS de CSP e os refletores de rota.
     >
-    >     Para obter mais informações sobre SLB, VIPs e DIPs, consulte [balanceamento de carga de Software &#40;&#41; SLB para Sdn](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+    >     Para obter mais informações sobre SLB, VIPs e DIPs, consulte [balanceamento de carga de Software &#40;&#41; SLB para Sdn](./software-load-balancing-for-sdn.md).
 
 5.  Depois que o túnel VPN site a site entre o site corporativo e o gateway de RAS do datacenter do CSP é estabelecido para o novo locatário, as rotas estáticas associadas aos túneis são automaticamente provisionadas nos lados Enterprise e CSP do túnel.
 
@@ -154,8 +154,3 @@ Quando seu locatário tem vários sites corporativos, o locatário pode configur
 **Correção rápida da falha do gateway**
 
 Para garantir uma resposta rápida de failover, você pode configurar o tempo de parâmetro BGP KeepAlive entre rotas de borda e o roteador de controle em um intervalo de tempo curto, como menor ou igual a dez segundos. Com esse intervalo curto de Keep Alive, se um roteador de borda BGP de gateway RAS falhar, a falha será detectada rapidamente e o controlador de rede seguirá as etapas fornecidas nas seções anteriores. Essa vantagem pode reduzir a necessidade de um protocolo de detecção de falha separado, como o protocolo BFD (detecção de encaminhamento bidirecional).
-
-
-
-
-

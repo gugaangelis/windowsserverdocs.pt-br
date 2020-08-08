@@ -7,12 +7,12 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/24/2018
-ms.openlocfilehash: 0b82128c703f5f3d1fe357beae90a15481232d5c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ca1c308ee38726d02ef19ebdfa4c83086fef0a7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970773"
+ms.locfileid: "87995147"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Criar uma máquina virtual e se conectar a uma rede virtual de locatário ou VLAN
 
@@ -31,9 +31,9 @@ As seções neste tópico incluem exemplos de comandos do Windows PowerShell que
 
 2. Se a VM exigir acesso à rede na inicialização, não inicie a VM até depois de definir a ID da interface na porta do adaptador de rede da VM. Se você iniciar a VM antes de definir a ID da interface e a interface de rede não existir, a VM não poderá se comunicar na rede no controlador de rede e todas as políticas aplicadas.
 
-3. Se você precisar de ACLs personalizadas para essa interface de rede, crie a ACL agora usando as instruções no tópico [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
+3. Se você precisar de ACLs personalizadas para essa interface de rede, crie a ACL agora usando as instruções no tópico [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](./use-acls-for-traffic-flow.md)
 
-Verifique se você já criou uma rede virtual antes de usar este comando de exemplo. Para obter mais informações, consulte [criar, excluir ou atualizar redes virtuais de locatário](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks).
+Verifique se você já criou uma rede virtual antes de usar este comando de exemplo. Para obter mais informações, consulte [criar, excluir ou atualizar redes virtuais de locatário](./create,-delete,-or-update-tenant-virtual-networks.md).
 
 ## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>Criar uma VM e conectar-se a uma rede virtual usando os cmdlets do controlador de rede do Windows PowerShell
 
@@ -221,6 +221,3 @@ Você criou uma VM com êxito, conectou a VM a uma rede virtual de locatário e 
    ```
 
 Você criou uma VM com êxito, conectou a VM a uma VLAN e iniciou a VM para que ela possa processar cargas de trabalho de locatário.
-
-
-

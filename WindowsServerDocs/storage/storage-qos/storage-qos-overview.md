@@ -6,12 +6,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0fd557341d19725a57c52d3786420c8c3357ebdf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ced2fe051f0595e8333aa2704889cc88ec1304ac
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963732"
+ms.locfileid: "87994723"
 ---
 # <a name="storage-quality-of-service"></a>Qualidade de serviço do armazenamento
 
@@ -884,6 +884,6 @@ IOPSNormalizationSize
 ```
 
 ## <a name="see-also"></a>Consulte Também
-- [Windows Server 2016](../../get-started/windows-server-2016.md)
+- [Windows Server 2016](../../index.yml)
 - [Réplica de armazenamento no Windows Server 2016](../storage-replica/storage-replica-overview.md)
 - [Espaços de Armazenamento Diretos no Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)

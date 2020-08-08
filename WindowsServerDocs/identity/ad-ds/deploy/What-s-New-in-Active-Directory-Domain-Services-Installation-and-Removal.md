@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 7444fcc6807e43192e68c006dcd49464a503976b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 09863123a69eec72b3d8bfaaf138bb2d2562f687
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953293"
+ms.locfileid: "87994511"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Novidades na instalação e na remoção dos Serviços de Domínio Active Directory
 
@@ -173,7 +173,7 @@ Esta seção lista alguns dos problemas conhecidos que afetam AD DS instalação
 
    Nesse caso, é preciso executar o cmdlet ADDSDeployment separadamente do cmdlet que não dá suporte a processos nativos de 64 bits.
 
-- Há um novo sistema de arquivos no Windows Server 2012 chamado sistema de arquivos resiliente. Não armazene o banco de dados Active Directory, nem os arquivos de log ou o SYSVOL em um volume de dados formatado com ReFS (Sistema de Arquivos Resiliente). Para saber mais sobre ReFS, consulte [Criando a próxima geração de sistema de arquivos para Windows: ReFS](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx).
+- Há um novo sistema de arquivos no Windows Server 2012 chamado sistema de arquivos resiliente. Não armazene o banco de dados Active Directory, nem os arquivos de log ou o SYSVOL em um volume de dados formatado com ReFS (Sistema de Arquivos Resiliente). Para saber mais sobre ReFS, consulte [Criando a próxima geração de sistema de arquivos para Windows: ReFS](/archive/blogs/b8/building-the-next-generation-file-system-for-windows-refs).
 - No Gerenciador do Servidor, os servidores que executam AD DS ou outras funções de servidor em uma instalação Server Core e foram atualizados para o Windows Server 2012, a função de servidor pode aparecer com status vermelho, mesmo que os eventos e status sejam coletados conforme o esperado. Os servidores que executam uma instalação do Server Core de uma versão preliminar do Windows Server 2012 também podem ser afetados.
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>A instalação dos Serviços de Domínio Active Directory será interrompida se um erro impedir a replicação crítica

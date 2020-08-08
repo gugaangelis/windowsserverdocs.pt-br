@@ -1,19 +1,17 @@
 ---
 title: Aprimoramentos de VPN Always On
 description: A VPN Always On tem muitos benefícios em relação às soluções de VPN do Windows do passado. As principais melhorias na integração, segurança, conectividade, controle de rede e compatibilidade são alinhadas Always On VPN com a visão em nuvem, primeiro e móvel da Microsoft.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e20d59311d8bc21052855acae9fc2eb356fdff23
-ms.sourcegitcommit: 717222e9efceb5964872dbf97034cad60f3c48df
+ms.openlocfilehash: db2d33f2452d7fddffef5458d0e80954b3603a48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87295047"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958234"
 ---
 # <a name="always-on-vpn-enhancements"></a>Aprimoramentos de VPN Always On
 
@@ -28,7 +26,7 @@ A VPN Always On tem muitos benefícios em relação às soluções de VPN do Win
 
 - **Segurança:** A VPN Always On tem recursos de segurança novos e avançados para restringir o tipo de tráfego, quais aplicativos podem usar a conexão VPN e quais métodos de autenticação você pode usar para iniciar a conexão. Quando a conexão está ativa na maioria das vezes, é especialmente importante proteger a conexão. Para obter mais detalhes, consulte [Opções de autenticação de VPN](/windows/security/identity-protection/vpn/vpn-authentication).
 
-- **Conectividade VPN:** Always On VPN, com ou sem o túnel de dispositivo fornece o recurso de gatilho automático. Antes de Always On VPN, a capacidade de disparar uma conexão automática por meio de autenticação de usuário ou de dispositivo não era possível.  
+- **Conectividade VPN:** Always On VPN, com ou sem o túnel de dispositivo fornece o recurso de gatilho automático. Antes de Always On VPN, a capacidade de disparar uma conexão automática por meio de autenticação de usuário ou de dispositivo não era possível.
 
 - **Controle de rede:** Always On VPN permite que os administradores especifiquem as políticas de roteamento em um nível mais granular, até mesmo no aplicativo individual, que é perfeito para aplicativos de linha de negócios (LOB) que exigem acesso remoto especial.  Always On VPN também é totalmente compatível com o protocolo IP versão 4 (IPv4) e a versão 6 (IPv6). Ao contrário do DirectAccess, não há nenhuma dependência específica no IPv6.
 
@@ -44,7 +42,7 @@ A Microsoft introduziu ou aprimorou os seguintes recursos de integração no Alw
 
 | Aprimoramento da chave   |  Descrição  |
 |----------------|---|
-| **[Proteção de Informações do Windows (WIP)](/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | A integração com WIP permite a imposição de diretiva de rede para determinar se o tráfego tem permissão para passar pela VPN. Se o perfil do usuário estiver ativo e as políticas de WIP forem aplicadas, Always On VPN será disparada automaticamente para se conectar. Além disso, quando você usa o WIP, não é necessário especificar as regras AppTriggerList e TrafficFilterList separadamente no perfil de VPN (a menos que você queira uma configuração mais avançada), pois as políticas de WIP e as listas de aplicativos entram em vigor automaticamente. |
+| **[WIP (Proteção de Informações do Windows)](/windows/threat-protection/windows-information-protection/protect-enterprise-data-using-wip)** | A integração com WIP permite a imposição de diretiva de rede para determinar se o tráfego tem permissão para passar pela VPN. Se o perfil do usuário estiver ativo e as políticas de WIP forem aplicadas, Always On VPN será disparada automaticamente para se conectar. Além disso, quando você usa o WIP, não é necessário especificar as regras AppTriggerList e TrafficFilterList separadamente no perfil de VPN (a menos que você queira uma configuração mais avançada), pois as políticas de WIP e as listas de aplicativos entram em vigor automaticamente. |
 |**[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-overview)** |Always On VPN nativamente dá suporte ao Windows Hello para empresas (no modo de autenticação baseada em certificado) para fornecer uma experiência de logon único direta para entrada no computador e conexão com a VPN. Portanto, nenhuma autenticação secundária (credenciais de usuário) é necessária para a conexão VPN, possibilitando o uso de uma conexão Always On com a autenticação do Windows Hello para empresas. |
 | **[Microsoft Azure o acesso condicional](/azure/active-directory/active-directory-conditional-access-controls)**  |O cliente VPN Always On pode ser integrado à plataforma de acesso condicional do Azure para impor a MFA (autenticação multifator), a conformidade do dispositivo ou uma combinação dos dois. Quando em conformidade com as políticas de acesso condicional, o Azure Active Directory (Azure AD) emite um certificado de autenticação IPsec (segurança IP) de curta duração (por padrão, 60 minutos) que pode ser usado para autenticar o gateway de VPN. A conformidade do dispositivo usa políticas de conformidade do Configuration Manager/Intune, que podem incluir o estado do atestado de integridade do dispositivo como parte da verificação de conformidade da conexão.|
 |  **MFA do Azure** |Quando combinado com serviços de serviço RADIUS (RADIUS) e a extensão do NPS (servidor de políticas de rede) para o Azure MFA, a autenticação VPN pode usar MFA forte. | **Plug-in de VPN de terceiros**  | Com o Plataforma Universal do Windows (UWP), provedores de VPN de terceiros podem criar um único aplicativo para toda a gama de dispositivos Windows 10. A UWP fornece uma camada de API principal garantida entre dispositivos, eliminando a complexidade e os problemas frequentemente associados à gravação de drivers de nível de kernel. Atualmente, os plug-ins de VPN UWP do Windows 10 existem para o [Pulse Secure](https://www.microsoft.com/p/pulse-secure/9nblggh3b0bp), o [acesso F5](https://www.microsoft.com/p/f5-access/9wzdncrdsfn0), o [Check Point cápsula VPN](https://www.microsoft.com/p/check-point-capsule-vpn/9wzdncrdjxtj), o [FortiClient](https://www.microsoft.com/p/forticlient/9wzdncrdh6mc), o [SonicWALL Mobile Connect](https://www.microsoft.com/p/sonicwall-mobile-connect/9wzdncrdsfkz)e o [GlobalProtect](https://www.microsoft.com/p/globalprotect/9nblggh6bzl3); sem dúvida, outros serão exibidos no futuro. |
@@ -82,7 +80,7 @@ A seguir estão alguns dos aprimoramentos de rede no Always On VPN:
 | **Políticas de roteamento específicas do aplicativo** |                            Além de definir políticas de roteamento de conexão VPN globais para separação de tráfego de intranet e Internet, é possível adicionar políticas de roteamento para controlar o uso de túnel dividido ou configurações de túnel forçado em uma base por aplicativo. Essa opção proporciona um controle mais granular sobre quais aplicativos têm permissão para interagir com quais recursos por meio do túnel VPN.                             |
 |           **Rotas de exclusão**            |                 Always On VPN dá suporte à capacidade de especificar rotas de exclusão que controlam especificamente o comportamento de roteamento para definir qual tráfego deve atravessar a VPN apenas e não passar pela interface de rede física.<p><p>***Observações:***<br>-As rotas de exclusão atualmente funcionam para o tráfego na mesma sub-rede que o cliente, por exemplo, LinkLocal.<br>-As rotas de exclusão funcionam apenas em uma configuração de túnel dividido.                  |
 
-## <a name="configuration-and-compatibility"></a>Configuração e compatibilidade 
+## <a name="configuration-and-compatibility"></a>Configuração e compatibilidade
 
 A seguir estão alguns dos aprimoramentos de configuração e compatibilidade no Always On VPN:
 

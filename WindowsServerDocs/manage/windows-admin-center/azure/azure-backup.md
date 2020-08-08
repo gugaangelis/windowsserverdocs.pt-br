@@ -6,18 +6,18 @@ author: saurabhsensharma
 ms.author: saurse
 ms.date: 03/25/2019
 ms.localizationpriority: low
-ms.openlocfilehash: 796dfe509b1d24595dd3bc1aedd514789f4a378b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 12b549daeb6cb5f1db53af2bc2cbc08dd6091eae
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949630"
+ms.locfileid: "87994669"
 ---
 # <a name="backup-your-windows-servers-from-windows-admin-center-with-azure-backup"></a>Fazer backup de seus servidores Windows do centro de administração do Windows com o backup do Azure
 
 >Aplica-se a: Versão prévia do Windows Admin Center, Windows Admin Center
 
-[Saiba mais sobre a integração do Azure com o Windows Admin Center.](../plan/azure-integration-options.md)
+[Saiba mais sobre a integração do Azure com o Windows Admin Center.](./index.md)
 
 O centro de administração do Windows simplifica o processo de fazer backup de seus servidores Windows no Azure e de protegê-lo contra exclusões acidentais ou mal-intencionadas, corrupção e até mesmo ransomware. Para automatizar a instalação, você pode conectar o gateway do Windows Admin Center no Azure.
 
@@ -26,7 +26,7 @@ Use as informações a seguir para configurar o backup para o Windows Server e c
 ## <a name="what-is-azure-backup-and-how-does-it-work-with-windows-admin-center"></a>O que é o backup do Azure e como ele funciona com o centro de administração do Windows?
 
 O **Backup do Azure** é o serviço baseado no Azure que você pode usar para fazer backup (ou proteger) e restaurar os dados na nuvem da Microsoft. Ele substitui a solução de backup local ou externa existente por uma solução confiável, segura e econômica baseada em nuvem.
-[Saiba mais sobre o backup do Azure](https://docs.microsoft.com/azure/backup/backup-overview).
+[Saiba mais sobre o backup do Azure](/azure/backup/backup-overview).
 
 O Backup do Azure oferece vários componentes que você pode baixar e implantar em um computador, servidor, ou na nuvem. O componente ou o agente que você implanta depende daquilo que deseja proteger. Todos os componentes de backup do Azure (não importa se você está protegendo dados locais ou no Azure) podem ser usados para fazer backup de dados em um cofre dos serviços de recuperação no Azure.
 
@@ -75,7 +75,7 @@ Selecione as configurações apropriadas para o backup do Azure, conforme descri
 - Insira uma **frase secreta de criptografia** de sua escolha (mínimo de 16 caracteres).  O **backup do Azure** protege seus dados de backup com uma frase secreta de criptografia configurada pelo usuário e gerenciada pelo usuário. A senha de criptografia é necessária para recuperar dados do backup do Azure.
 
 > [!NOTE]
-> A senha deve ser armazenada em um local externo seguro, como outro servidor ou o [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal). A Microsoft não armazenará a senha e não poderá recuperar ou redefinir a senha se ela for perdida ou esquecida.
+> A senha deve ser armazenada em um local externo seguro, como outro servidor ou o [Azure Key Vault](/azure/key-vault/quick-create-portal). A Microsoft não armazenará a senha e não poderá recuperar ou redefinir a senha se ela for perdida ou esquecida.
 
 - Examine todas as configurações e clique em **aplicar**
 
@@ -90,7 +90,7 @@ O centro de administração do Windows executará as seguintes operações
 
 Depois de configurar com êxito o backup do Azure, você verá o **painel de backup** ao abrir a ferramenta de backup para uma conexão de servidor existente. Você pode executar as seguintes tarefas no **painel de backup**
 
-- **Acesse o cofre no Azure:** Você pode clicar no link do **cofre dos serviços de recuperação** na guia **visão geral** do **painel de backup** para ser levado ao cofre no Azure para executar um [conjunto avançado de operações de gerenciamento](https://docs.microsoft.com/azure/backup/backup-azure-manage-windows-server)
+- **Acesse o cofre no Azure:** Você pode clicar no link do **cofre dos serviços de recuperação** na guia **visão geral** do **painel de backup** para ser levado ao cofre no Azure para executar um [conjunto avançado de operações de gerenciamento](/azure/backup/backup-azure-manage-windows-server)
 - **Executar um backup ad hoc:** Clique em **fazer backup agora** para fazer um backup ad hoc.
-- **Monitorar trabalhos e configurar notificações de alerta:** Navegue até a guia **trabalhos** do painel para monitorar trabalhos em andamento ou passados e [configurar notificações de alerta](https://docs.microsoft.com/azure/backup/backup-azure-manage-windows-server#configuring-notifications-for-alerts) para receber emails de quaisquer trabalhos com falha ou outros alertas relacionados ao backup.
+- **Monitorar trabalhos e configurar notificações de alerta:** Navegue até a guia **trabalhos** do painel para monitorar trabalhos em andamento ou passados e [configurar notificações de alerta](/azure/backup/backup-azure-manage-windows-server#configuring-notifications-for-alerts) para receber emails de quaisquer trabalhos com falha ou outros alertas relacionados ao backup.
 - **Exibir pontos de recuperação e recuperar dados:** Clique na guia **pontos de recuperação** do painel para exibir os pontos de recuperação e clique em **recuperar dados** para obter as etapas para recuperar os dados do Azure.

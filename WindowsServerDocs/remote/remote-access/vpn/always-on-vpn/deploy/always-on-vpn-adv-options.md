@@ -2,20 +2,18 @@
 title: Recursos avançados de VPN Always On
 description: Além do cenário de implantação fornecido nessa implantação, você pode adicionar outros recursos avançados de VPN para melhorar a segurança e a disponibilidade de sua conexão VPN.
 ms.assetid: 51a1ee61-3ffe-4f65-b8de-ff21903e1e74
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/2019
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: fd3ebf1acada5de1ed3f4b14ddeca761728ffa75
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 60f79b7bb624f6e64c0c32033335ddcd2eea262e
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965538"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995081"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Recursos avançados da VPN Always On
 
@@ -41,7 +39,7 @@ A seguir estão as opções adicionais para autenticação.
 
 |Opção  |Descrição  |
 |---------|---------|
-|Windows Hello para Empresas     |No Windows 10, o Windows Hello para empresas substitui senhas ao fornecer autenticação forte de dois fatores em PCs e dispositivos móveis. Essa autenticação consiste em um novo tipo de credencial de usuário que está vinculado a um dispositivo e usa um PIN (número de identificação pessoal) ou biométrico.<p>O cliente de VPN do Windows 10 é compatível com o Windows Hello para empresas. Depois que o usuário fizer logon usando um gesto, a conexão VPN usará o certificado do Windows Hello para empresas para autenticação baseada em certificado.<p>Documentos relacionados:<ul><li>[Windows Hello para Empresas](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>Estudo de caso técnico: [habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](/previous-versions//mt728163(v=technet.10))</li></ul>         |
+|Windows Hello for Business     |No Windows 10, o Windows Hello para empresas substitui senhas ao fornecer autenticação forte de dois fatores em PCs e dispositivos móveis. Essa autenticação consiste em um novo tipo de credencial de usuário que está vinculado a um dispositivo e usa um PIN (número de identificação pessoal) ou biométrico.<p>O cliente de VPN do Windows 10 é compatível com o Windows Hello para empresas. Depois que o usuário fizer logon usando um gesto, a conexão VPN usará o certificado do Windows Hello para empresas para autenticação baseada em certificado.<p>Documentos relacionados:<ul><li>[Windows Hello for Business](/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>Estudo de caso técnico: [habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](/previous-versions/mt728163(v=technet.10))</li></ul>         |
 |MFA (autenticação multifator do Azure)     |O Azure MFA tem versões de nuvem e locais que você pode integrar com o mecanismo de autenticação de VPN do Windows.<p>Para obter mais informações sobre como esse mecanismo funciona, consulte [integrar a autenticação RADIUS com o Azure servidor de autenticação multifator](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius).         |
 
 ## <a name="advanced-vpn-features"></a>Recursos avançados de VPN
@@ -57,7 +55,7 @@ A seguir estão as opções adicionais para recursos avançados.
 
 ---
 ## <a name="blocking-vpn-clients-that-use-revoked-certificates"></a>Bloqueando clientes VPN que usam certificados revogados
-  
+
 Depois de instalar as atualizações, o servidor RRAS pode impor a revogação de certificados para VPNs que usam IKEv2 e certificados de máquina para autenticação, como VPNs Always on do túnel de dispositivo. Isso significa que para essas VPNs, o servidor RRAS pode negar conexões VPN a clientes que tentam usar um certificado revogado.
 
 **Disponibilidade**
@@ -72,26 +70,26 @@ A tabela a seguir lista as versões que contêm as correções para cada versão
 |Windows Server, versão 1709  |[KB4507465](https://support.microsoft.com/help/4507465/windows-10-update-kb4507465)  |
 |Windows Server 2016, versão 1607  |[KB4503294](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294) |
 
-**Como configurar os pré-requisitos** 
+**Como configurar os pré-requisitos**
 
 1. Instale as atualizações do Windows à medida que elas se tornarem disponíveis.
 1. Verifique se todos os certificados do cliente VPN e do servidor RRAS que você usa têm entradas de CDP e se o servidor RRAS pode acessar as respectivas CRLs.
 1. No servidor RRAS, use o cmdlet **set-VpnAuthProtocol** do PowerShell para configurar o parâmetro **RootCertificateNameToAccept** .<p>
-   O exemplo a seguir lista os comandos para fazer isso. No exemplo, **CN = Contoso Root Certification Authority** representa o nome distinto da autoridade de certificação raiz. 
+   O exemplo a seguir lista os comandos para fazer isso. No exemplo, **CN = Contoso Root Certification Authority** representa o nome distinto da autoridade de certificação raiz.
    ``` powershell
    $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority*" } )
    Set-VpnAuthProtocol -RootCertificateNameToAccept $cert1 -PassThru
    ```
 **Como configurar o servidor RRAS para impor a revogação de certificado para conexões VPN baseadas em certificados de computador IKEv2**
 
-1. Em uma janela de prompt de comando, execute o seguinte comando: 
+1. Em uma janela de prompt de comando, execute o seguinte comando:
    ```
    reg add HKLM\SYSTEM\CurrentControlSet\Services\RemoteAccess\Parameters\Ikev2 /f /v CertAuthFlags /t REG_DWORD /d "4"
    ```
 
 1. Reinicie o serviço de **Roteamento e acesso remoto** .
-  
-Para desabilitar a revogação de certificados para essas conexões VPN, defina **CertAuthFlags = 2** ou remova o valor de **CertAuthFlags** e reinicie o serviço de **Roteamento e acesso remoto** . 
+
+Para desabilitar a revogação de certificados para essas conexões VPN, defina **CertAuthFlags = 2** ou remova o valor de **CertAuthFlags** e reinicie o serviço de **Roteamento e acesso remoto** .
 
 **Como revogar um certificado de cliente VPN para uma conexão VPN baseada em um certificado de computador IKEv2**
 1. Revogue o certificado de cliente VPN da autoridade de certificação.
@@ -102,29 +100,29 @@ Para desabilitar a revogação de certificados para essas conexões VPN, defina 
    certutil -setreg chain\ChainCacheResyncFiletime @now
    ```
 
-**Como verificar se a revogação de certificado para conexões VPN com base em certificado de máquina IKEv2 está funcionando**  
->[!Note]  
+**Como verificar se a revogação de certificado para conexões VPN com base em certificado de máquina IKEv2 está funcionando**
+>[!Note]
 > Antes de usar este procedimento, certifique-se de habilitar o log de eventos operacional do CAPI2.
 1. Siga as etapas anteriores para revogar um certificado de cliente VPN.
 1. Tente se conectar à VPN usando um cliente que tenha o certificado revogado. O servidor RRAS deve recusar a conexão e exibir uma mensagem como "as credenciais de autenticação IKE são inaceitáveis".
-1. No servidor RRAS, abra Visualizador de Eventos e navegue até **aplicativos e serviços Logs/Microsoft/Windows/CAPI2**. 
+1. No servidor RRAS, abra Visualizador de Eventos e navegue até **aplicativos e serviços Logs/Microsoft/Windows/CAPI2**.
 1. Procure um evento que tenha as seguintes informações:
    * Nome do log: **Microsoft-Windows-CAPI2/operacional Microsoft-Windows-CAPI2/Operational**
-   * ID do evento: **41** 
-   * O evento contém o seguinte texto: **Subject = "*FQDN do cliente*"** (o*FQDN do cliente* representa o nome de domínio totalmente qualificado do cliente que tem o certificado revogado.) 
+   * ID do evento: **41**
+   * O evento contém o seguinte texto: **Subject = "*FQDN do cliente*"** (o*FQDN do cliente* representa o nome de domínio totalmente qualificado do cliente que tem o certificado revogado.)
 
    O **<Result>** campo dos dados do evento deve incluir **o certificado é revogado**. Por exemplo, consulte os trechos a seguir de um evento:
    ```xml
-   Log Name:      Microsoft-Windows-CAPI2/Operational Microsoft-Windows-CAPI2/Operational  
-   Source:        Microsoft-Windows-CAPI2  
-   Date:          5/20/2019 1:33:24 PM  
-   Event ID:      41  
-   ...  
+   Log Name:      Microsoft-Windows-CAPI2/Operational Microsoft-Windows-CAPI2/Operational
+   Source:        Microsoft-Windows-CAPI2
+   Date:          5/20/2019 1:33:24 PM
+   Event ID:      41
+   ...
    Event Xml:
    <Event xmlns="https://schemas.microsoft.com/win/2004/08/events/event">
-    <UserData>  
-     <CertVerifyRevocation>  
-      <Certificate fileRef="C97AE73E9823E8179903E81107E089497C77A720.cer" subjectName="client01.corp.contoso.com" />  
+    <UserData>
+     <CertVerifyRevocation>
+      <Certificate fileRef="C97AE73E9823E8179903E81107E089497C77A720.cer" subjectName="client01.corp.contoso.com" />
       <IssuerCertificate fileRef="34B1AE2BD868FE4F8BFDCA96E47C87C12BC01E3A.cer" subjectName="Contoso Root Certification Authority" />
       ...
       <Result value="80092010">The certificate is revoked.</Result>
@@ -144,23 +142,23 @@ Para obter mais informações sobre o atestado de chave do TPM no Windows 10, co
 
 ## <a name="next-step"></a>Próxima etapa
 
-[Comece a planejar a implantação de VPN Always on](always-on-vpn-deploy-planning.md): antes de instalar a função de servidor de acesso remoto no computador que você planeja usar como um servidor VPN, execute as seguintes tarefas. Após o planejamento apropriado, você pode implantar Always On VPN e, opcionalmente, configurar o acesso condicional para conectividade VPN usando o Azure AD.  
+[Comece a planejar a implantação de VPN Always on](always-on-vpn-deploy-planning.md): antes de instalar a função de servidor de acesso remoto no computador que você planeja usar como um servidor VPN, execute as seguintes tarefas. Após o planejamento apropriado, você pode implantar Always On VPN e, opcionalmente, configurar o acesso condicional para conectividade VPN usando o Azure AD.
 
 ## <a name="related-topics"></a>Tópicos relacionados
 - [Balanceamento de carga do servidor proxy NPS](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md): clientes do serviço RADIUS (RADIUS), que são servidores de acesso à rede, como servidores VPN (rede virtual privada) e pontos de acesso sem fio, criam solicitações de conexão e as enviam para servidores RADIUS, como o NPS. Em alguns casos, um servidor NPS pode receber muitas solicitações de conexão ao mesmo tempo, resultando em um desempenho degradado ou em uma sobrecarga.
 
-- [Visão geral do Gerenciador de tráfego](/azure/traffic-manager/traffic-manager-overview): Este tópico fornece uma visão geral do Gerenciador de tráfego do Azure, que permite controlar a distribuição do tráfego do usuário para pontos de extremidade de serviço. O Gerenciador de Tráfego usa o DNS (Sistema de Nomes de Domínio) para direcionar solicitações de cliente ao ponto de extremidade mais apropriado com base em um método de roteamento de tráfego e na integridade dos pontos de extremidade. 
+- [Visão geral do Gerenciador de tráfego](/azure/traffic-manager/traffic-manager-overview): Este tópico fornece uma visão geral do Gerenciador de tráfego do Azure, que permite controlar a distribuição do tráfego do usuário para pontos de extremidade de serviço. O Gerenciador de Tráfego usa o DNS (Sistema de Nomes de Domínio) para direcionar solicitações de cliente ao ponto de extremidade mais apropriado com base em um método de roteamento de tráfego e na integridade dos pontos de extremidade.
 
 - [Windows Hello para empresas](/windows/access-protection/hello-for-business/hello-identity-verification): Este tópico fornece os pré-requisitos, como implantações e implantações híbridas somente na nuvem.  Este tópico também lista as perguntas frequentes sobre o Windows Hello para empresas.
 
-- [Estudo de caso técnico: Habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](/previous-versions//mt728163(v=technet.10)): neste estudo de caso técnico, você aprende como a Microsoft implementa o acesso remoto com o Windows Hello para empresas.  O Windows Hello for Business é uma abordagem de autenticação com chave privada/pública ou baseada em certificados para empresas e consumidores que vai além de senhas. Essa forma de autenticação depende de credenciais de par de chaves que podem substituir senhas e são resistentes a violações, roubos e phishing. 
+- [Estudo de caso técnico: Habilitando o acesso remoto com o Windows Hello para empresas no Windows 10](/previous-versions/mt728163(v=technet.10)): neste estudo de caso técnico, você aprende como a Microsoft implementa o acesso remoto com o Windows Hello para empresas.  O Windows Hello for Business é uma abordagem de autenticação com chave privada/pública ou baseada em certificados para empresas e consumidores que vai além de senhas. Essa forma de autenticação depende de credenciais de par de chaves que podem substituir senhas e são resistentes a violações, roubos e phishing.
 
-- [Integrar a autenticação RADIUS com o azure servidor de autenticação multifator](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): Este tópico orienta você pela adição e configuração de uma autenticação de cliente RADIUS com o Azure servidor de autenticação multifator. RADIUS é um protocolo padrão para aceitar solicitações de autenticação e processar essas solicitações. O Servidor de Autenticação Multifator do Azure pode atuar como um servidor RADIUS. 
+- [Integrar a autenticação RADIUS com o azure servidor de autenticação multifator](/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): Este tópico orienta você pela adição e configuração de uma autenticação de cliente RADIUS com o Azure servidor de autenticação multifator. RADIUS é um protocolo padrão para aceitar solicitações de autenticação e processar essas solicitações. O Servidor de Autenticação Multifator do Azure pode atuar como um servidor RADIUS.
 
-- [Recursos de segurança de VPN](/windows/access-protection/vpn/vpn-security-features): Este tópico fornece diretrizes de segurança de VPN para bloqueio de VPN, integração de WIP (proteção de informações do Windows) com VPN e filtros de tráfego. 
+- [Recursos de segurança de VPN](/windows/access-protection/vpn/vpn-security-features): Este tópico fornece diretrizes de segurança de VPN para bloqueio de VPN, integração de WIP (proteção de informações do Windows) com VPN e filtros de tráfego.
 
 - [Opções de perfil de VPN disparadas automaticamente](/windows/access-protection/vpn/vpn-auto-trigger-profile): Este tópico fornece opções de perfil de VPN disparadas automaticamente, como gatilho de aplicativo, gatilho baseado em nome e Always on.
 
-- [VPN e acesso condicional](/windows/access-protection/vpn/vpn-conditional-access): Este tópico fornece uma visão geral da plataforma de acesso condicional baseado em nuvem para fornecer uma opção de conformidade do dispositivo para clientes remotos. O Acesso Condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer aplicativo conectado ao Azure Active Directory (Azure AD). 
+- [VPN e acesso condicional](/windows/access-protection/vpn/vpn-conditional-access): Este tópico fornece uma visão geral da plataforma de acesso condicional baseado em nuvem para fornecer uma opção de conformidade do dispositivo para clientes remotos. O Acesso Condicional é um mecanismo de avaliação com base em política que permite que você crie regras de acesso para qualquer aplicativo conectado ao Azure Active Directory (Azure AD).
 
 - [Atestado de chave do TPM](../../../../../identity/ad-ds/manage/component-updates/tpm-key-attestation.md): Este tópico fornece uma visão geral do Trusted Platform Module (TPM) e as etapas para implantar o atestado de chave do TPM. Você também pode encontrar informações de solução de problemas e etapas para resolver problemas.

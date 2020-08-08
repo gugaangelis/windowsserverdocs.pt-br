@@ -1,20 +1,18 @@
 ---
 title: Acesso condicional para conectividade VPN usando o Azure AD
 description: Nesta etapa opcional, você pode ajustar como os usuários de VPN autorizados acessam seus recursos usando o acesso condicional do Azure Active Directory (Azure AD).
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.localizationpriority: medium
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: da32df185cb0c0c2370e60119dd9c2fbd510bd08
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 9c57d120106041692b920891b7d0c3341daec314
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964258"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958224"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>Etapa 7. Adicional Acesso condicional para conectividade VPN usando o Azure AD
 
@@ -46,7 +44,7 @@ Um cliente EAP-TLS não pode se conectar, a menos que o servidor NPS conclua uma
 
 ## <a name="step-72-create-root-certificates-for-vpn-authentication-with-azure-ad"></a>[Etapa 7.2. Criar certificados raiz para autenticação de VPN com o Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
-Nesta etapa, você configura certificados raiz para autenticação de VPN com o Azure AD, que cria automaticamente um aplicativo de nuvem do servidor VPN no locatário.  
+Nesta etapa, você configura certificados raiz para autenticação de VPN com o Azure AD, que cria automaticamente um aplicativo de nuvem do servidor VPN no locatário.
 
 Para configurar o acesso condicional para conectividade VPN, você precisa:
 

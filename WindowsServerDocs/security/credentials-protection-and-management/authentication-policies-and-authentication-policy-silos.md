@@ -1,20 +1,18 @@
 ---
 title: Políticas de autenticação e silos de políticas de autenticação
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 7eb0e640-033d-49b5-ab44-3959395ad567
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 705cba94299572f02c12896e2dac0ec8c2d070c0
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0bca5a7e78a663c535e1d727339c6dd9eb50704b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520175"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957914"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Políticas de autenticação e silos de políticas de autenticação
 
@@ -37,7 +35,7 @@ Um silo de política de autenticação controla quais contas podem ser restringi
 
 **Esquema do Active Directory para silos de política de autenticação**
 
-|Nome de Exibição|Descrição|
+|Nome de exibição|Descrição|
 |--------|--------|
 |Silo de política de autenticação|Uma instância desta classe define as políticas de autenticação e comportamentos relacionados para usuários, computadores e serviços designados.|
 |Silos de política de autenticação|Um contêiner desta classe pode conter objetos do silo de política de autenticação.|
@@ -108,7 +106,7 @@ As políticas para os objetos do Active Directory para usuários, computadores e
 
 As políticas de autenticação podem ser configuradas para cada silo usando o Console Administrativo do Active Directory ou o Windows PowerShell. Para mais informações, consulte [Como configurar contas protegidas](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/how-to-configure-protected-accounts).
 
-## <a name="how-it-works"></a>Como isso funciona
+## <a name="how-it-works"></a>Como ele funciona
 Esta seção explica como os silos de política de autenticação e as políticas de autenticação funcionam em conjunto com o grupo de segurança Usuários Protegidos, bem como a implementação do protocolo Kerberos no Windows.
 
 -   [Como o protocolo Kerberos é usado com silos e políticas de autenticação](#BKMK_HowKerbUsed)

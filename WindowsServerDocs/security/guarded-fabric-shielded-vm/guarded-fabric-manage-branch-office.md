@@ -1,21 +1,19 @@
 ---
 title: Considerações sobre filiais
-ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
-ms.openlocfilehash: a9893ecd76e142dd243a1d99e83a48d2edfd5872
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: b56b2d4f74f18e68a3849b01e84b0aca5ca7412e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856559"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957904"
 ---
 # <a name="branch-office-considerations"></a>Considerações das filiais
 
-> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), 
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral),
 
 Este artigo descreve as práticas recomendadas para executar máquinas virtuais blindadas em filiais e outros cenários remotos em que os hosts do Hyper-V podem ter períodos de tempo com conectividade limitada com o HGS.
 

@@ -1,20 +1,18 @@
 ---
 title: Configurar o EAP-TLS para ignorar a verificação de lista de revogação de certificados (CRL)
 description: Um cliente EAP-TLS não pode se conectar, a menos que o servidor NPS conclua uma verificação de revogação da cadeia de certificados (incluindo o certificado raiz) do cliente e verifique se os certificados foram revogados.
-ms.prod: windows-server
-ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: v-tea
 author: Teresa-MOTIV
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: e97556ab35471c1745c01b6ebd047cd1451ffb27
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6ef6294863807b20558264a5b02069a64499ae55
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966748"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958124"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>Etapa 7.1. Configurar o EAP-TLS para ignorar a verificação de lista de revogação de certificados (CRL)
 
@@ -31,9 +29,9 @@ Nesta etapa, você pode adicionar **IgnoreNoRevocationCheck** e defini-lo para p
 >[!NOTE]
 >Se um servidor de roteamento e acesso remoto do Windows (RRAS) usar o NPS para chamadas RADIUS de proxy para um segundo NPS, você deverá definir **IgnoreNoRevocationCheck = 1** em ambos os servidores.
 
-Um cliente EAP-TLS não pode se conectar, a menos que o servidor NPS conclua uma verificação de revogação da cadeia de certificados (incluindo o certificado raiz). Os certificados de nuvem emitidos para o usuário pelo Azure AD não têm uma CRL porque eles são certificados de curta duração com um tempo de vida de uma hora. O EAP no NPS precisa ser configurado para ignorar a ausência de uma CRL. Por padrão, IgnoreNoRevocationCheck é definido como 0 (desabilitado). Adicione IgnoreNoRevocationCheck e defina-o como 1 para permitir a autenticação de clientes quando o certificado não incluir pontos de distribuição de CRL. 
+Um cliente EAP-TLS não pode se conectar, a menos que o servidor NPS conclua uma verificação de revogação da cadeia de certificados (incluindo o certificado raiz). Os certificados de nuvem emitidos para o usuário pelo Azure AD não têm uma CRL porque eles são certificados de curta duração com um tempo de vida de uma hora. O EAP no NPS precisa ser configurado para ignorar a ausência de uma CRL. Por padrão, IgnoreNoRevocationCheck é definido como 0 (desabilitado). Adicione IgnoreNoRevocationCheck e defina-o como 1 para permitir a autenticação de clientes quando o certificado não incluir pontos de distribuição de CRL.
 
-Como o método de autenticação é EAP-TLS, esse valor de registro só é necessário em EAP\13. Se outros métodos de autenticação EAP forem usados, o valor do registro também deverá ser adicionado sob eles. 
+Como o método de autenticação é EAP-TLS, esse valor de registro só é necessário em EAP\13. Se outros métodos de autenticação EAP forem usados, o valor do registro também deverá ser adicionado sob eles.
 
 **Procedure**
 

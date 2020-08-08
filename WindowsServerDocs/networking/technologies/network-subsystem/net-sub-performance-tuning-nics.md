@@ -8,12 +8,12 @@ manager: dcscontentpm
 ms.author: v-tea
 author: Teresa-Motiv
 ms.date: 12/23/2019
-ms.openlocfilehash: a29830fe5f6f23138b5872b95926ae7dc8834ae4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0b6b09960e6d5f344aa4873d4c821ebdfb6f6a30
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955583"
+ms.locfileid: "87994230"
 ---
 # <a name="performance-tuning-network-adapters"></a>Adaptadores de rede para ajuste do desempenho
 
@@ -79,7 +79,7 @@ Muitos adaptadores de rede fornecem opções para otimizar a latência induzida 
 
 A seguir estão algumas sugestões de ajuste no desempenho para redes sensíveis a microssegundo.
 
-- Defina o BIOS do computador para **Alto Desempenho**, com estados C desabilitados. Entretanto, observe que isso depende do sistema e do BIOS, alguns sistemas fornecerão maior desempenho se o sistema operacional controlar o gerenciamento de energia. Você pode verificar e ajustar suas configurações de gerenciamento de energia de **configurações** ou usando o comando **powercfg** . Para obter mais informações, consulte [Opções de linha de comando powercfg](https://docs.microsoft.com/windows-hardware/design/device-experiences/powercfg-command-line-options).
+- Defina o BIOS do computador para **Alto Desempenho**, com estados C desabilitados. Entretanto, observe que isso depende do sistema e do BIOS, alguns sistemas fornecerão maior desempenho se o sistema operacional controlar o gerenciamento de energia. Você pode verificar e ajustar suas configurações de gerenciamento de energia de **configurações** ou usando o comando **powercfg** . Para obter mais informações, consulte [Opções de linha de comando powercfg](/windows-hardware/design/device-experiences/powercfg-command-line-options).
 
 - Defina o perfil de gerenciamento de energia do sistema operacional para **Sistema de alto desempenho**.
    > [!NOTE]
@@ -219,8 +219,8 @@ Set-NetTCPSetting -AutoTuningLevelLocal <Value>
 
 Para obter mais informações sobre esses cmdlets, consulte os seguintes artigos:
 
-- [Get-NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/get-nettcpsetting?view=win10-ps)
-- [Set-NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)
+- [Get-NetTCPSetting](/powershell/module/nettcpip/get-nettcpsetting?view=win10-ps)
+- [Set-NetTCPSetting](/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)
 
 #### <a name="autotuning-levels"></a>Níveis de ajuste automática
 
@@ -376,6 +376,6 @@ Todas essas configurações foram localizadas na seguinte subchave do registro:
 O Windows Vista e o Windows Server 2008 introduziram a WFP (Windows Filtering Platform). A WFP fornece APIs para fornecedores de software independentes (ISVs) que não são da Microsoft para criar filtros de processamento de pacotes. Exemplos incluem software de firewall e antivírus.
 
 > [!NOTE]
-> Um filtro WFP mal escrito pode diminuir significativamente o desempenho de rede de um servidor. Para obter mais informações, consulte [portando drivers de processamento de pacotes e aplicativos para o WFP](https://docs.microsoft.com/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) no centro de desenvolvimento do Windows.
+> Um filtro WFP mal escrito pode diminuir significativamente o desempenho de rede de um servidor. Para obter mais informações, consulte [portando drivers de processamento de pacotes e aplicativos para o WFP](/windows-hardware/drivers/network/porting-packet-processing-drivers-and-apps-to-wfp) no centro de desenvolvimento do Windows.
 
 Para obter links para todos os tópicos deste guia, consulte [ajuste de desempenho do subsistema de rede](net-sub-performance-top.md).

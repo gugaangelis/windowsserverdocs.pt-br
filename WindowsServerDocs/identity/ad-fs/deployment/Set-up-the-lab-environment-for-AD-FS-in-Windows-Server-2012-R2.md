@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 30dc33bec01cf4a9ab0b944464d4bbc60f6ca74e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 276c4d22c3df64debd696ae07fff996fdbf4ceea
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938228"
+ms.locfileid: "87994276"
 ---
 # <a name="set-up-the-lab-environment-for-ad-fs-in-windows-server-2012-r2"></a>Configurar o ambiente de laboratório para o AD FS no Windows Server 2012 R2
 
@@ -85,7 +85,7 @@ Você deve instalar um certificado SSL (Secure Socket Layer) no servidor ADFS1, 
 
 -   Nome Alternativo da Entidade (DNS): enterpriseregistration.contoso.com
 
-Para obter mais informações sobre como configurar certificados SSL, consulte [Configure SSL/TLS on a Web site in the domain with an Enterprise CA (Configurar SS/TLS em um site da Web no domínio com uma AC corporativa)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)).
+Para obter mais informações sobre como configurar certificados SSL, consulte [Configure SSL/TLS on a Web site in the domain with an Enterprise CA (Configurar SS/TLS em um site da Web no domínio com uma AC corporativa)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831822(v=ws.11)).
 
 [Vídeo de instruções do Serviços de Federação do Active Directory: atualizando certificados](https://channel9.msdn.com/Search?term=Active%20Directory%20Federation%20Services#pubDate=year&ch9Search).
 
