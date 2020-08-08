@@ -7,14 +7,12 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: active-directory-federation-services
-ms.openlocfilehash: cecffe6ae789c4a7c8c9ff382e83d84ade8ef018
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 0cfb91269e0a55524346d7189d728848d9c6e670
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87519845"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940463"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Criar um aplicativo cliente nativo usando clientes OAuth públicos com o AD FS 2016 ou posterior
 

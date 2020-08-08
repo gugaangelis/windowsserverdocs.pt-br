@@ -1,18 +1,16 @@
 ---
 ms.assetid: a6343f1c-e9dd-4a02-91ad-39bd519d66cd
 title: SMB Multichannel simplificado e redes de cluster de várias NICs
-ms.prod: windows-server
-ms.technology: storage-failover-clustering
 ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: f345cd877f1c611683c2ffdef56b9b58cc070e49
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 7fad43cb5f3de5c10ed815fa802b6168c15850d1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473053"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990753"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>SMB Multichannel simplificado e redes de cluster de várias NICs
 
@@ -58,7 +56,7 @@ Ao usar mais de uma rede privada (somente cluster), verifique a configuração d
  **Figura 4: configuração de recurso de endereço local do link de IPv6 (FE80) automática**
 
 ## <a name="throughput-and-fault-tolerance"></a>Taxa de transferência e tolerância a falhas
-O Windows Server 2019 e o Windows Server 2016 detectam automaticamente os recursos da NIC e tentarão usar cada NIC na configuração mais rápida possível. NICs que são agrupadas, NICs usando RSS, e NICs com capacidade RDMA podem ser usadas. A tabela a seguir resume as compensações ao usar essas tecnologias. A taxa de transferência máxima é obtida ao usar várias NICs compatíveis com RDMA. Para obter mais informações, consulte [noções básicas do SMB Mutlichannel](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
+O Windows Server 2019 e o Windows Server 2016 detectam automaticamente os recursos da NIC e tentarão usar cada NIC na configuração mais rápida possível. NICs que são agrupadas, NICs usando RSS, e NICs com capacidade RDMA podem ser usadas. A tabela a seguir resume as compensações ao usar essas tecnologias. A taxa de transferência máxima é obtida ao usar várias NICs compatíveis com RDMA. Para obter mais informações, consulte [noções básicas do SMB Mutlichannel](/archive/blogs/josebda/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0).
 
 ![Uma ilustração de taxa de transferência e tolerância a falhas para várias configurações de NIC ](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)
  **Figura 5: taxa de transferência e tolerância a falhas para vários conifigurations NIC**

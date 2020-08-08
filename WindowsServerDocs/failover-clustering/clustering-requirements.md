@@ -1,20 +1,18 @@
 ---
 title: Requisitos de hardware e opções de armazenamento de clustering de failover
 description: Requisitos de hardware e opções de armazenamento para criar um cluster de failover.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed3337e0543953182ed73337ff7aa0a2f093376c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 65d2d21138efbae3c5ada56bfa8628f06c4dcbe7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177923"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990802"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>Requisitos de hardware e opções de armazenamento de clustering de failover
 
@@ -65,7 +63,7 @@ Ao implantar uma rede de área de armazenamento (SAN) com um cluster de failover
 - **Isolar dispositivos de armazenamento, um cluster por dispositivo**: os servidores de diferentes clusters podem não conseguir acessar os mesmos dispositivos de armazenamento. Na maioria dos casos, um LUN usado para um conjunto de servidores clusterizados deve ser isolado de todos os outros servidores através de uma máscara de LUN ou divisão em zonas.
 - **Considere usar software de E/S de vários caminhos ou adaptadores de rede emparelhados**: em uma malha de armazenamento altamente disponível, você pode implantar clusters de failover com várias controladoras usando software de E/S de vários caminhos ou adaptadores de rede emparelhados (também chamado de balanceamento de carga e failover, ou LBFO). Isso fornece o mais alto nível de redundância e disponibilidade. Para o Windows Server 2012 R2 ou o Windows Server 2012, sua solução de vários caminhos deve ser baseada no Microsoft Multipath I/O (MPIO). O fornecedor de hardware normalmente fornece um DSM (módulo específico ao dispositivo) do MPIO para o hardware, embora o Windows Server inclua um ou mais DSMs como parte do sistema operacional.
 
-    Para obter mais informações sobre o LBFO, consulte [visão geral do agrupamento NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming) na biblioteca técnica do Windows Server.
+    Para obter mais informações sobre o LBFO, consulte [visão geral do agrupamento NIC](../networking/technologies/nic-teaming/nic-teaming.md) na biblioteca técnica do Windows Server.
 
     >[!IMPORTANT]
     >As controladoras e o software MPIO podem fazer muita diferenciação de versões. Se você estiver implementando uma solução multipath para o cluster, trabalhe em sintonia com o fornecedor de hardware para escolher os adaptadores, firmware e software corretos para a versão do Windows Server que você está executando.
@@ -74,6 +72,6 @@ Ao implantar uma rede de área de armazenamento (SAN) com um cluster de failover
 
 ## <a name="more-information"></a>Mais informações
 
-- [Clustering de failover](failover-clustering.md)
+- [Clustering de failover](./failover-clustering-overview.md)
 - [Espaços de armazenamento](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [Usando clustering convidado para alta disponibilidade](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

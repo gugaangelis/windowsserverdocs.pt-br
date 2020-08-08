@@ -7,14 +7,12 @@ manager: mtillman
 ms.reviewer: anandyadavMSFT
 ms.date: 03/29/2019
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 5d56a84680467359b68ae1ab115801d82a34c822
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e6d6063d3d01cda48a662160c9ad661169371677
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407239"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956193"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>Analisador de diagnóstico do AD FS ajuda
 
@@ -26,13 +24,13 @@ A operação completa leva 3 etapas simples:
 2. Execute o diagnóstico e carregue o arquivo para AD FS ajuda
 3. Exibir análise de diagnóstico e resolver problemas
 
-Vá para [AD FS Help Diagnostics Analyzer (https://aka.ms/adfsdiagnosticsanalyzer)](https://aka.ms/adfsdiagnosticsanalyzer) para iniciar a solução de problemas.
+Vá para [AD FS Help Diagnostics Analyzer ( https://aka.ms/adfsdiagnosticsanalyzer) ](https://aka.ms/adfsdiagnosticsanalyzer) para iniciar a solução de problemas.
 
 ![AD FS ferramenta Analisador de diagnóstico na ajuda do AD FS](media/ad-fs-diagonostics-analyzer/home.png)
 
 ## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>Etapa 1: configurar o módulo ADFSToolbox no servidor AD FS
 
-Para executar o [Diagnostics Analyzer](https://aka.ms/adfsdiagnosticsanalyzer), você deve instalar o módulo do PowerShell do ADFSToolbox. Se o servidor de AD FS tiver conectividade com a Internet, você poderá instalar o módulo ADFSToolbox diretamente da galeria do PowerShell. No caso de nenhuma conectividade com a Internet, você pode instalá-la manualmente. 
+Para executar o [Diagnostics Analyzer](https://aka.ms/adfsdiagnosticsanalyzer), você deve instalar o módulo do PowerShell do ADFSToolbox. Se o servidor de AD FS tiver conectividade com a Internet, você poderá instalar o módulo ADFSToolbox diretamente da galeria do PowerShell. No caso de nenhuma conectividade com a Internet, você pode instalá-la manualmente.
 
 [!WARNING]
 Se você estiver usando AD FS 2,1 ou inferior, deverá instalar a versão 1.0.13 do ADFSToolbox. O ADFSToolbox não dá mais suporte ao AD FS 2,1 ou inferior nas versões mais recentes.
@@ -58,7 +56,7 @@ O módulo ADFSToolbox deve ser copiado manualmente para os servidores AD FS ou W
     ```powershell
     Install-Module -Name ADFSToolbox -Force
     ```
-3. Copie a pasta ADFSToolbox localizada `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` em seu computador local para o mesmo local em seu AD FS ou computador WAP.
+3. Copie a pasta ADFSToolbox localizada `%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` em seu computador local para o mesmo local em seu computador AD FS ou WAP.
 
 4. Inicie uma janela do PowerShell com privilégios elevados no computador AD FS e execute o cmdlet a seguir para importar o módulo.
 
@@ -82,11 +80,11 @@ Em um servidor 2016 ou superior AD FS farm, o comando lerá a lista de servidore
     Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
 ```
 
-O resultado é um arquivo JSON que é criado no mesmo diretório em que o comando foi executado. O nome do arquivo é AdfsDiagnosticsFile\<carimbo de data/hora\>. Um nome de arquivo de exemplo é AdfsDiagnosticsFile-07312019-184201. JSON.
+O resultado é um arquivo JSON que é criado no mesmo diretório em que o comando foi executado. O nome do arquivo é AdfsDiagnosticsFile- \<timestamp\> . Um nome de arquivo de exemplo é AdfsDiagnosticsFile-07312019-184201.jsem.
 
 ## <a name="step-3-upload-the-diagnostics-file"></a>Etapa 3: carregar o arquivo de diagnóstico
 
-Na etapa 3 em [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) use o navegador de arquivos para selecionar o arquivo de resultado a ser carregado.
+Na etapa 3, em [https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer) usar o navegador de arquivos para selecionar o arquivo de resultado a ser carregado.
 
 Clique em **carregar** para concluir o carregamento.
 
@@ -104,7 +102,7 @@ Há cinco seções dos resultados do teste:
 4. Não executado: Esta seção contém a lista de testes que não puderam ser executados devido a informações ausentes.
 5. Não aplicável: Esta seção contém a lista de testes que não foram executados porque eles não são aplicáveis para o servidor específico no qual o comando estava em execução.
 
-![ferramenta Analisador de diagnóstico AD FS-lista de resultados de teste](media/ad-fs-diagonostics-analyzer/step3a_v3.png) cada resultado de teste é exibido com detalhes que descrevem o teste e a resolução das etapas:
+![Ferramenta do analisador de diagnóstico de AD FS-lista de resultados de teste ](media/ad-fs-diagonostics-analyzer/step3a_v3.png) cada resultado de teste é exibido com detalhes que descrevem o teste e a resolução das etapas:
 
 1. Nome do teste: nome do teste que foi executado
 2. Descrição: uma descrição do teste.
@@ -113,7 +111,7 @@ Há cinco seções dos resultados do teste:
 
 ![Ferramenta Analisador de diagnóstico de AD FS-resolução de falha](media/ad-fs-diagonostics-analyzer/step3b_v3.png)
 
-## <a name="next"></a>Próximo
+## <a name="next"></a>Avançar
 
 - [Usar AD FS guias de troublehshooting de ajuda](https://aka.ms/adfshelp/troubleshooting )
 - [Solução de problemas do AD FS](ad-fs-tshoot-overview.md)

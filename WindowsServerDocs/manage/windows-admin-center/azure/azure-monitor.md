@@ -1,19 +1,17 @@
 ---
 title: Monitorar servidores e configurar alertas com o Azure Monitor do centro de administração do Windows
 description: O centro de administração do Windows (Project Honolulu) integra-se com o Azure Monitor
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 03/24/2019
-ms.openlocfilehash: d6c18e3c4ef052b2e2d274f491762d8e31de4758
-ms.sourcegitcommit: c40c29683d25ed75b439451d7fa8eda9d8d9e441
+ms.openlocfilehash: 81501cb5f4255b7a65ebc5f9f6cb9413938864f0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85833309"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940117"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Monitorar servidores e configurar alertas com o Azure Monitor do centro de administração do Windows
 
@@ -22,11 +20,11 @@ ms.locfileid: "85833309"
 [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) é uma solução que coleta, analisa e atua na telemetria de uma variedade de recursos, incluindo servidores Windows e VMS, tanto localmente quanto na nuvem. Embora Azure Monitor receba dados de VMs do Azure e outros recursos do Azure, este artigo se concentra em como o Azure Monitor funciona com servidores e VMs locais, especificamente com o centro de administração do Windows. Se você estiver interessado em saber como usar Azure Monitor para receber alertas de email sobre o cluster hiperconvergente, leia sobre como [usar Azure monitor para enviar emails para serviço de integridade falhas](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor).
 
 ## <a name="how-does-azure-monitor-work"></a>Como funciona Azure Monitor?
-![](../media/azure-monitor-diagram.png)os dados img gerados de servidores locais do Windows são coletados em um espaço de trabalho log Analytics no Azure monitor. Em um espaço de trabalho, você pode habilitar várias soluções de monitoramento — conjuntos de lógica que fornecem informações para um cenário específico. Por exemplo, Gerenciamento de Atualizações do Azure, a central de segurança do Azure e Azure Monitor para VMs são soluções de monitoramento que podem ser habilitadas em um espaço de trabalho. 
+![](../media/azure-monitor-diagram.png)os dados img gerados de servidores locais do Windows são coletados em um espaço de trabalho log Analytics no Azure monitor. Em um espaço de trabalho, você pode habilitar várias soluções de monitoramento — conjuntos de lógica que fornecem informações para um cenário específico. Por exemplo, Gerenciamento de Atualizações do Azure, a central de segurança do Azure e Azure Monitor para VMs são soluções de monitoramento que podem ser habilitadas em um espaço de trabalho.
 
-Quando você habilita uma solução de monitoramento em um espaço de trabalho Log Analytics, todos os servidores que se reportam a esse espaço de trabalho começarão a coletar dados relevantes para essa solução, para que a solução possa gerar insights para todos os servidores no espaço de trabalho. 
+Quando você habilita uma solução de monitoramento em um espaço de trabalho Log Analytics, todos os servidores que se reportam a esse espaço de trabalho começarão a coletar dados relevantes para essa solução, para que a solução possa gerar insights para todos os servidores no espaço de trabalho.
 
-Para coletar dados de telemetria em um servidor local e enviá-los para o espaço de trabalho Log Analytics, Azure Monitor requer a instalação do Microsoft Monitoring Agent ou o MMA. Determinadas soluções de monitoramento também exigem um agente secundário. Por exemplo, Azure Monitor para VMs também depende de um agente ServiceMap para funcionalidade adicional que essa solução fornece. 
+Para coletar dados de telemetria em um servidor local e enviá-los para o espaço de trabalho Log Analytics, Azure Monitor requer a instalação do Microsoft Monitoring Agent ou o MMA. Determinadas soluções de monitoramento também exigem um agente secundário. Por exemplo, Azure Monitor para VMs também depende de um agente ServiceMap para funcionalidade adicional que essa solução fornece.
 
 Algumas soluções, como o Azure Gerenciamento de Atualizações, também dependem da automação do Azure, que permite que você gerencie centralmente recursos em ambientes do Azure e não Azure. Por exemplo, o Azure Gerenciamento de Atualizações usa a automação do Azure para agendar e orquestrar a instalação de atualizações entre computadores em seu ambiente, de forma centralizada, do portal do Azure.
 
@@ -38,7 +36,7 @@ De dentro do WAC, você pode habilitar duas soluções de monitoramento:
 - [Gerenciamento de atualizações do Azure](azure-update-management.md) (na ferramenta de atualizações)
 - Azure Monitor para VMs (em configurações do servidor), a. k. um insights de máquinas virtuais
 
-Você pode começar a usar o Azure Monitor de qualquer uma dessas ferramentas. Se você nunca usou Azure Monitor antes, o WAC provisionará automaticamente um espaço de trabalho Log Analytics (e uma conta de automação do Azure, se necessário), e instalará e configurará o Microsoft Monitoring Agent (MMA) no servidor de destino. Em seguida, ele instalará a solução correspondente no espaço de trabalho. 
+Você pode começar a usar o Azure Monitor de qualquer uma dessas ferramentas. Se você nunca usou Azure Monitor antes, o WAC provisionará automaticamente um espaço de trabalho Log Analytics (e uma conta de automação do Azure, se necessário), e instalará e configurará o Microsoft Monitoring Agent (MMA) no servidor de destino. Em seguida, ele instalará a solução correspondente no espaço de trabalho.
 
 Por exemplo, se você primeiro acessar a ferramenta atualizações para configurar o Azure Gerenciamento de Atualizações, o WAC irá:
 

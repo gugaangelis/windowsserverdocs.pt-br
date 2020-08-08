@@ -3,17 +3,16 @@ ms.assetid: 2f4b6641-0ec2-4b1c-85fb-a1f1d16685c8
 title: Opções avançadas de atualização com suporte a cluster e atualização de perfis de execução
 description: Como configurar opções avançadas e atualizar perfis de execução para a atualização com suporte a cluster (CAU)
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 08/06/2018
-ms.openlocfilehash: e9bda378b287407f6225c844c2a147b8cd85c709
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: f5f81edbe1c7eab772d1c4b1bbe90695fa725f8c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473313"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990898"
 ---
 # <a name="cluster-aware-updating-advanced-options-and-updating-run-profiles"></a>Opções avançadas de atualização com suporte a cluster e atualização de perfis de execução
 
@@ -86,4 +85,4 @@ Invoke-CauRun –ClusterName CONTOSO-FC1 @MyRunProfile
 
 -   [Atualização com suporte a cluster](cluster-aware-updating.md)
 
--   [Cmdlets de atualização com suporte a cluster no Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)
+-   [Cmdlets de atualização com suporte a cluster no Windows PowerShell](/powershell/module/clusterawareupdating/?view=win10-ps)

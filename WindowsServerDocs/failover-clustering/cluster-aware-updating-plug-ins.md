@@ -3,18 +3,16 @@ ms.assetid: d44d4430-41e2-483a-9685-92610cdef32a
 title: Como funcionam os plug-ins de atualização com suporte a cluster
 description: Como usar plug-ins para coordenar atualizações ao usar a atualização com suporte a cluster no Windows Server para instalar atualizações em um cluster.
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
-ms.technology: storage-failover-clustering
-ms.openlocfilehash: ac09163eb40045289a68287aa3eace20ff714d09
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 42ba496ce0d62a6a911f762f6ea7330001fb9031
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409576"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990888"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>Como funcionam os plug-ins de atualização com suporte a cluster
 
@@ -48,10 +46,10 @@ Usando os cmdlets do PowerShell da CAU listados na tabela a seguir, você pode e
 
 |Cmdlet|Descrição|
 |----------|---------------|
-|[Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/add-cauclusterrole)|Adiciona a função clusterizada CAU que fornece a \- funcionalidade de autoatualização para o cluster especificado.|
-|[Invoke-CauRun](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-caurun)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e instala essas atualizações através de uma Execução de Atualização no cluster especificado.|
-|[Invoke-CauScan](https://docs.microsoft.com/powershell/module/clusterawareupdating/invoke-causcan)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e retorna uma lista do conjunto inicial de atualizações que seriam aplicadas a cada nó no cluster especificado.|
-|[Set-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/set-cauclusterrole)|Define as propriedades de configuração para a função clusterizada do CAU no cluster especificado.|
+|[Add-CauClusterRole](/powershell/module/clusterawareupdating/add-cauclusterrole)|Adiciona a função clusterizada CAU que fornece a \- funcionalidade de autoatualização para o cluster especificado.|
+|[Invoke-CauRun](/powershell/module/clusterawareupdating/invoke-caurun)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e instala essas atualizações através de uma Execução de Atualização no cluster especificado.|
+|[Invoke-CauScan](/powershell/module/clusterawareupdating/invoke-causcan)|Executa uma varredura de nós do cluster quanto às atualizações aplicáveis ​​e retorna uma lista do conjunto inicial de atualizações que seriam aplicadas a cada nó no cluster especificado.|
+|[Set-CauClusterRole](/powershell/module/clusterawareupdating/set-cauclusterrole)|Define as propriedades de configuração para a função clusterizada do CAU no cluster especificado.|
 
 Se você não especificar um \- parâmetro de plug-in Cau usando esses cmdlets, o padrão será o plug- \- in **Microsoft. WindowsUpdatePlugin**.
 
@@ -83,9 +81,9 @@ Os plug- \- ins que o Cau instala \( **Microsoft. WindowsUpdatePlugin** e **Micr
 
 |Cmdlet|Descrição|
 |----------|---------------|
-|[Get-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/get-cauplugin)|Recupera informações sobre um ou mais plug-ins de atualização de software \- registrados no computador local.|
-|[Register-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/register-cauplugin)|Registra um plug-in de atualização de software CAU \- no computador local.|
-|[Unregister-CauPlugin](https://docs.microsoft.com/powershell/module/clusterawareupdating/unregister-cauplugin)|Remove um plug-in de atualização de software \- da lista de plug- \- ins que podem ser usados pela Cau. **Observação:** Os plug- \- ins instalados com a cau \( **Microsoft. WindowsUpdatePlugin** e **Microsoft. HotfixPlugin** \) não podem ter o registro cancelado.|
+|[Get-CauPlugin](/powershell/module/clusterawareupdating/get-cauplugin)|Recupera informações sobre um ou mais plug-ins de atualização de software \- registrados no computador local.|
+|[Register-CauPlugin](/powershell/module/clusterawareupdating/register-cauplugin)|Registra um plug-in de atualização de software CAU \- no computador local.|
+|[Unregister-CauPlugin](/powershell/module/clusterawareupdating/unregister-cauplugin)|Remove um plug-in de atualização de software \- da lista de plug- \- ins que podem ser usados pela Cau. **Observação:** Os plug- \- ins instalados com a cau \( **Microsoft. WindowsUpdatePlugin** e **Microsoft. HotfixPlugin** \) não podem ter o registro cancelado.|
 
 ## <a name="using-the-microsoftwindowsupdateplugin"></a><a name="BKMK_WUP"></a>Usando o Microsoft. WindowsUpdatePlugin
 
@@ -406,7 +404,6 @@ Você deve habilitar o **SMB de gerenciamento remoto do servidor de arquivos \( 
 
 -   [Visão geral da atualização com suporte a cluster](cluster-aware-updating.md)
 
--   [Cluster-Aware Updating Windows PowerShell Cmdlets (Cmdlets do Windows PowerShell para Atualização com Suporte a Cluster)](https://docs.microsoft.com/powershell/module/clusterawareupdating)
+-   [Cluster-Aware Updating Windows PowerShell Cmdlets (Cmdlets do Windows PowerShell para Atualização com Suporte a Cluster)](/powershell/module/clusterawareupdating)
 
--   [Referência do plug-in de atualização com suporte a cluster](https://msdn.microsoft.com/library/hh418084.aspx)
-
+-   [Referência do plug-in de atualização com suporte a cluster](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)

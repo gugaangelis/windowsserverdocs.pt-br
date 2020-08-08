@@ -1,24 +1,22 @@
 ---
 title: Configurando a proteção LSA adicional
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 038e7c2b-c032-491f-8727-6f3f01116ef9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 1c923cfe39892ba105c437cf73843c2f6d07e49b
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 78533908de1a1f43cbfac9054dcfe6ec83edce9d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857069"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948749"
 ---
 # <a name="configuring-additional-lsa-protection"></a>Configurando a proteção LSA adicional
 
->Aplicável ao: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico para o profissional de TI explica como configurar proteção adicional para o processo de LSA (Autoridade de Segurança Local), a fim de impedir a injeção de código que poderá comprometer credenciais.
 
@@ -44,7 +42,7 @@ Para um plug-in ou driver de LSA carregar com êxito como um processo protegido,
 #### <a name="recommended-practices"></a>Práticas recomendadas
 Use a lista a seguir para testar completamente se essa proteção LSA está habilitada antes de você implantar amplamente o recurso:
 
--   Identifique todos os plug-ins e drivers de LSA que estão em uso em sua organização. 
+-   Identifique todos os plug-ins e drivers de LSA que estão em uso em sua organização.
     Isso inclui drivers ou plug-ins não Microsoft, como drivers de cartão inteligente e plug-ins criptográficos, bem como qualquer software desenvolvido internamente que seja usado para forçar filtros de senha ou notificações de mudança de senha.
 
 -   Verifique se todos os plug-ins de LSA estão digitalmente assinados com um certificado da Microsoft, de forma que o carregamento do plug-in não falhe.
@@ -67,7 +65,7 @@ Você pode usar o modo de auditoria para identificar plug-ins e drivers de LSA q
 
 ##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>Para habilitar o modo de auditoria para Lsass.exe em um único computador editando o Registro
 
-1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave de Registro que está localizada em: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
+1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave do Registro localizada em: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
 2.  Defina o valor da chave de Registro como **AuditLevel=dword:00000008**.
 
@@ -83,14 +81,14 @@ Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Micros
 
 > [!IMPORTANT]
 > Esses eventos operacionais não são gerados quando um depurador de kernel está conectado e habilitado em um sistema.
-> 
+>
 > Se um plug-in ou driver contiver Seções Compartilhadas, o Evento 3066 será registrado com o Evento 3065. A remoção das Seções Compartilhadas deve impedir que os dois eventos ocorram, a menos que o plug-in não atenda aos requisitos de nível de assinatura da Microsoft.
 
 Para habilitar o modo de auditoria para vários computadores em um domínio, é possível usar a Extensão do Lado do Cliente do Registro para Política de Grupo para implantar o valor do Registro de nível de auditoria Lsass.exe. Você precisa modificar a chave de Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
 ##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>Para criar a configuração do valor AuditLevel em um GPO
 
-1.  Abra o Console de Gerenciamento de Diretiva de Grupo (GPMC).
+1.  Abra o GPMC (Console de Gerenciamento de Diretiva de Grupo).
 
 2.  Crie um novo GPO (Objeto de Política de Grupo) que esteja vinculado no nível de domínio ou à unidade organizacional que contém as contas do computador. Ou então, você pode selecionar um GPO que já esteja implantado.
 
@@ -130,8 +128,8 @@ Depois disso, você poderá ver esses eventos em Visualizador de Eventos: Micros
 
 As Seções Compartilhadas geralmente são o resultado de técnicas de programação que permitem que os dados da instância interajam com outros processos que usam o mesmo contexto de segurança. Isso pode criar vulnerabilidades de segurança.
 
-## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>Como configurar a proteção de credenciais de LSA adicional
-Em dispositivos que executam o Windows 8.1 (com ou sem inicialização segura ou UEFI), a configuração é possível executando os procedimentos descritos nesta seção. Para dispositivos que executam o Windows RT 8,1, a proteção LSASS. exe está sempre habilitada e não pode ser desativada.
+## <a name="how-to-configure-additional-lsa-protection-of-credentials"></a><a name="BKMK_HowToConfigure"></a>Como configurar a proteção de LSA adicional de credenciais
+Em dispositivos que executam o Windows 8.1 (com ou sem inicialização segura ou UEFI), a configuração é possível executando os procedimentos descritos nesta seção. Para dispositivos que executam o Windows RT 8,1, a proteção do lsass.exe está sempre habilitada e não pode ser desativada.
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>Nos dispositivos baseados em x86 ou x64 que usam Inicialização Segura e UEFI ou não
 Em dispositivos baseados em x86 ou x64 que usam a inicialização segura ou a UEFI, uma variável UEFI é definida no firmware UEFI quando a proteção do LSA é habilitada usando a chave do registro. Quando a configuração está armazenada no firmware, a variável de UEFI não pode ser excluída ou alterada na chave de Registro. A variável de UEFI deve ser redefinida.
@@ -142,7 +140,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 ##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>Para habilitar a proteção de LSA em um único computador
 
-1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave de Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave do Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
 2.  Defina o valor da chave do Registro como: "RunAsPPL"=dword:00000001.
 
@@ -150,7 +148,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 ##### <a name="to-enable-lsa-protection-using-group-policy"></a>Para habilitar a proteção de LSA usando a Política de Grupo
 
-1.  Abra o Console de Gerenciamento de Diretiva de Grupo (GPMC).
+1.  Abra o GPMC (Console de Gerenciamento de Diretiva de Grupo).
 
 2.  Crie um novo GPO que esteja vinculado no nível de domínio ou à unidade organizacional que contém as contas do computador. Ou então, você pode selecionar um GPO que já esteja implantado.
 
@@ -174,7 +172,7 @@ Você pode usar os procedimentos a seguir para habilitar ou desabilitar a prote�
 
 ##### <a name="to-disable-lsa-protection"></a>Para desabilitar a proteção de LSA
 
-1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave de Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+1.  Abra o Editor de Registro (RegEdit.exe) e navegue para a chave do Registro localizada em: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
 2.  Exclua o seguinte valor da chave do Registro: "RunAsPPL"=dword:00000001.
 
@@ -195,6 +193,6 @@ Para descobrir se a LSA foi iniciada no modo protegido quando o Windows foi inic
 ## <a name="additional-resources"></a>Recursos adicionais
 [Proteção e gerenciamento de credenciais](credentials-protection-and-management.md)
 
-[Serviço de assinatura de arquivo para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
+[serviço de assinatura de arquivo para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
 
 

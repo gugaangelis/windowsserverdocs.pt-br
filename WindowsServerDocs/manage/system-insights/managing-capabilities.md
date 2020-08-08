@@ -1,19 +1,17 @@
 ---
 title: Gerenciamento de recursos
 description: O System insights expõe uma variedade de configurações que podem ser configuradas para cada funcionalidade, e essas configurações podem ser ajustadas para atender às necessidades específicas de sua implantação. Este tópico descreve como gerenciar as várias configurações de cada funcionalidade por meio do centro de administração do Windows ou do PowerShell, fornecendo exemplos básicos do PowerShell e capturas de tela do centro de administração do Windows para demonstrar como ajustar essas configurações.
-ms.prod: windows-server
-ms.technology: system-insights
 ms.topic: article
 author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: 66745440094ccf55b774727320d59074139a7f33
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: e82b27d2d746592b29b86a66ee34b21f8605a0d8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85471777"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940157"
 ---
 # <a name="managing-capabilities"></a>Gerenciamento de recursos
 

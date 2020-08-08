@@ -7,12 +7,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: ecea87a3716ef68c599594851037e774ad589998
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4417748504a0458396cd02e965547c2573f2c44f
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955803"
+ms.locfileid: "87990082"
 ---
 # <a name="network-load-balancing"></a>Network Load Balancing
 
@@ -21,7 +21,7 @@ ms.locfileid: "87955803"
 Neste tópico, fornecemos uma visão geral do recurso NLB de balanceamento de carga de rede \( \) no Windows Server 2016. Você pode usar o NLB para gerenciar dois ou mais servidores como um único cluster virtual. O NLB aprimora a disponibilidade e a escalabilidade de aplicativos de servidor de Internet, como aqueles usados em Web, FTP, firewall, proxy, VPN de rede privada virtual \( \) e outros servidores de missão \- crítica.
 
 > [!NOTE]
-> O Windows Server 2016 inclui um novo software inspirado pelo Azure Load Balancer \( SLB \) como um componente da infraestrutura de Sdn de rede definida pelo software \( \) . Use SLB em vez de NLB se você estiver usando o SDN, usando cargas de trabalho não Windows, precisar de NAT de conversão de endereços de rede \( \) de saída ou necessidade de balanceamento de carga de camada 3 \( L3 \) ou não baseado em TCP. Você pode continuar a usar o NLB com o Windows Server 2016 para implantações não SDN. Para obter mais informações sobre SLB, consulte [balanceamento de carga de software (SLB) para Sdn](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+> O Windows Server 2016 inclui um novo software inspirado pelo Azure Load Balancer \( SLB \) como um componente da infraestrutura de Sdn de rede definida pelo software \( \) . Use SLB em vez de NLB se você estiver usando o SDN, usando cargas de trabalho não Windows, precisar de NAT de conversão de endereços de rede \( \) de saída ou necessidade de balanceamento de carga de camada 3 \( L3 \) ou não baseado em TCP. Você pode continuar a usar o NLB com o Windows Server 2016 para implantações não SDN. Para obter mais informações sobre SLB, consulte [balanceamento de carga de software (SLB) para Sdn](../sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md).
 
 O recurso NLB de balanceamento de carga de rede \( \) distribui o tráfego entre vários servidores usando o \/ protocolo de rede IP TCP. Ao combinar dois ou mais computadores que estão executando aplicativos em um único cluster virtual, o NLB fornece confiabilidade e desempenho para servidores Web e outros \- servidores de missão crítica.
 
@@ -59,7 +59,7 @@ Escalabilidade é a medida que determina como um computador, serviço ou aplicat
 ### <a name="manageability"></a>Capacidade de gerenciamento
 Para dar suporte à escalabilidade, o NLB pode fazer o seguinte:
 
--   Gerencie e configure vários clusters NLB e os hosts de cluster de um único computador usando o Gerenciador NLB ou os [cmdlets NLB (balanceamento de carga de rede) no Windows PowerShell](https://technet.microsoft.com/library/hh801274.aspx).
+-   Gerencie e configure vários clusters NLB e os hosts de cluster de um único computador usando o Gerenciador NLB ou os [cmdlets NLB (balanceamento de carga de rede) no Windows PowerShell](/previous-versions/windows/powershell-scripting/hh801274(v=wps.630)).
 
 -   Especificar o comportamento do balanceamento de carga para uma única porta ou para um grupo de portas IP usando regras de gerenciamento de portas.
 
@@ -141,7 +141,7 @@ Install-WindowsFeature NLB -IncludeManagementTools
 
 Após a conclusão da instalação, não é necessário reiniciar o computador.
 
-Para obter mais informações, consulte [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps).
+Para obter mais informações, consulte [Install-WindowsFeature](/powershell/module/servermanager/install-windowsfeature?view=win10-ps).
 
 ### <a name="network-load-balancing-manager"></a>Gerenciador de balanceamento de carga de rede
 Para abrir o Gerenciador de Balanceamento de Carga de Rede em um Gerenciador do Servidor, clique em **Ferramentas** e depois clique em **Gerenciador de Balanceamento de Carga de Rede**.
@@ -151,8 +151,8 @@ A tabela a seguir fornece links para informações adicionais sobre o recurso NL
 
 |Tipo de conteúdo|Referências|
 |----------------|--------------|
-|Implantação|[Guia de implantação de balanceamento de carga de rede](https://technet.microsoft.com/library/cc754833(WS.10).aspx) &#124; configurar o [balanceamento de carga de rede com serviços de terminal](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|
-|Operações|[Gerenciar clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [definir parâmetros de balanceamento de carga de rede](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124; [controlar hosts em clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|
-|Solução de problemas|[Solucionando problemas de clusters de balanceamento de carga de rede](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [eventos e erros de cluster NLB](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
+|Implantação|[Guia de implantação de balanceamento de carga de rede](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754833(v=ws.10)) &#124; configurar o [balanceamento de carga de rede com serviços de terminal](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771300(v=ws.10))|
+|Operações|[Gerenciar clusters de balanceamento de carga de rede](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753954(v=ws.10)) &#124; [definir parâmetros de balanceamento de carga de rede](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731619(v=ws.10)) &#124; [controlar hosts em clusters de balanceamento de carga de rede](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770870(v=ws.10))|
+|Solução de problemas|[Solucionando problemas de clusters de balanceamento de carga de rede](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732592(v=ws.10)) &#124; [eventos e erros de cluster NLB](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731678(v=ws.10))|
 |Ferramentas e configurações|[Cmdlets do Windows PowerShell para Balanceamento de Carga de Rede](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |Recursos da comunidade|[Fórum de \( clustering de alta disponibilidade \)](https://go.microsoft.com/fwlink/p/?LinkId=230641)

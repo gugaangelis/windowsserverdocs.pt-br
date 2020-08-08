@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: be9eaa7b742f554539fa5bbd08f46d47a347c1ad
-ms.sourcegitcommit: f305bc5f1c5a44dac62f4288450af19f351f9576
+ms.openlocfilehash: f651f60b5ba9e871a88a2df15d87b6819e851642
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87118566"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956283"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>Guia Passo a passo: gerencie riscos com Multi-Factor Authentication adicional para aplicativos confidenciais
 
@@ -183,9 +181,9 @@ Agora você está pronto para iniciar o Servidor de Autenticação Multifator do
 
     > [!NOTE]
     > O assistente de instalação do **Adaptador do AD FS de Autenticação Multifator** cria um grupo de segurança chamado **PhoneFactor Admins** no Active Directory e adiciona a conta de serviço do AD FS do serviço de federação a esse grupo.
-    > 
+    >
     > É recomendável que você verifique no controlador de domínio se o grupo **PhoneFactor Admins** realmente foi criado e se a conta de serviço do AD FS é um membro desse grupo.
-    > 
+    >
     > Se necessário, adicione manualmente a conta de serviço do AD FS ao grupo **PhoneFactor Admins** no controlador de domínio.
 
     Para obter detalhes adicionais sobre como instalar o Adaptador do AD FS, clique no link de ajuda no canto superior direito do Servidor de Autenticação Multifator.

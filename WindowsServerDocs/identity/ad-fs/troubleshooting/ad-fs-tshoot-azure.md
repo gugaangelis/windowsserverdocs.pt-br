@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: b66d688052398ba76b6721e8bab0d0878be4959a
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: d7941733ff2191e94c6c1e380d4349585a5c98d3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517701"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956173"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>Solução de problemas AD FS-Azure AD
 Com o crescimento da nuvem, muitas empresas passaram a migrar para usar o Azure AD para seus vários aplicativos e serviços.  A Federação com o Azure AD se tornou uma prática padrão com muitas organizações.  Este documento abordará alguns dos aspectos da solução de problemas que surgem com essa Federação.  Vários tópicos do documento geral de solução de problemas ainda pertencem à Federação com o Azure para que este documento se concentre em apenas especificações com o Azure AD e a interação AD FS.

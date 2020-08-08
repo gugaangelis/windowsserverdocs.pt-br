@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: f6d2b48fe652848009fe54d990f5443b17ad4266
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 4aacc4d3f3ea132a85da1108064ec1f44e2a6eac
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517661"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87956163"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Aprimoramentos de auditoria para o AD FS no Windows Server 2016
 

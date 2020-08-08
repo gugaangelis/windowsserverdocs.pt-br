@@ -7,12 +7,12 @@ ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 68014e0941205db61cc0b607e6784fb8d6d807ab
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72062d002e5530031a99e3b742507277ed5ec490
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955863"
+ms.locfileid: "87990069"
 ---
 # <a name="virtual-network-encryption"></a>Criptografia de rede virtual
 
@@ -28,9 +28,8 @@ A criptografia de rede virtual requer:
 Depois de habilitar a criptografia em uma sub-rede, todo o tráfego de rede dentro dessa sub-rede é criptografado automaticamente, além de qualquer criptografia no nível do aplicativo que também possa ocorrer.  O tráfego que cruza entre sub-redes, mesmo se marcado como criptografado, é enviado sem criptografia automaticamente. Qualquer tráfego que cruzar o limite de rede virtual também é enviado sem criptografia.
 
 >[!TIP]
->Se você precisar restringir os aplicativos para se comunicar apenas na sub-rede criptografada, poderá usar ACLs (listas de controle de acesso) somente para permitir a comunicação dentro da sub-rede atual. Para obter mais informações, consulte [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
+>Se você precisar restringir os aplicativos para se comunicar apenas na sub-rede criptografada, poderá usar ACLs (listas de controle de acesso) somente para permitir a comunicação dentro da sub-rede atual. Para obter mais informações, consulte [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](../manage/use-acls-for-traffic-flow.md).
 
 ### <a name="next-steps"></a>Próximas etapas
 
-[Configurar a criptografia para uma rede virtual](https://docs.microsoft.com/windows-server/networking/sdn/vnet-encryption/sdn-config-vnet-encryption)
-
+[Configurar a criptografia para uma rede virtual](./sdn-config-vnet-encryption.md)

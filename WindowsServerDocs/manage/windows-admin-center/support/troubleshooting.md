@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: a7ef7eb2acf9a641babf5690119c61f452aaabbc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937615"
+ms.locfileid: "87990204"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solução de problemas do Windows Admin Center
 
@@ -69,7 +69,7 @@ Isso pode acontecer se o caminho padrão do módulo do PowerShell tiver sido mod
 
 * [Verificar a versão do Windows](#check-the-windows-version)
 * Você adicionou uma regra de porta de entrada para HTTPS?
-* [Saiba mais sobre como instalar o Windows Admin Center em uma VM do Azure](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/azure-integration#use-a-windows-admin-center-gateway-deployed-in-azure)
+* [Saiba mais sobre como instalar o Windows Admin Center em uma VM do Azure](../azure/azure-integration.md)
 
 ### <a name="check-the-windows-version"></a>Verificar a versão do Windows
 
@@ -237,4 +237,3 @@ Inclua qualquer erro ou aviso encontrado no log de eventos, assim como as seguin
 * Windows [versão](#check-the-windows-version) do computador que você está **tentando gerenciar**:
 * Qual navegador que você está usando?
     * Se estiver usando o Google Chrome, qual é a versão? (Ajuda > Sobre o Google Chrome)
-

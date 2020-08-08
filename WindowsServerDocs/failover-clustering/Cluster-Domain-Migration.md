@@ -1,20 +1,18 @@
 ---
 title: Migração de cluster entre domínios no Windows Server 2016/2019
 description: Este artigo descreve como mover um cluster do Windows Server 2019 de um domínio para outro
-ms.prod: windows-server
 manager: eldenc
-ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6062dd987a136bc2be67c09efbe399bb8fae24f6
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 32f7e62fd08080f8b56c9c495f374d5c927454bb
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178522"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990974"
 ---
 # <a name="failover-cluster-domain-migration"></a>Migração de domínio de cluster de failover
 
@@ -65,7 +63,7 @@ Como mostra a animação, essa opção não é destrutiva, mas requer um hardwar
 2. Use o [Assistente de migração de cluster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos os recursos para o novo cluster. Lembrete, isso não copia dados, portanto, precisará ser feito separadamente.
 3. Descomissionar ou destruir o cluster antigo.
 
-Em ambas as opções, o novo cluster precisaria ter todos os [aplicativos com reconhecimento de cluster](https://technet.microsoft.com/aa369082(v=vs.90)) instalados, os drivers atualizados e possivelmente os testes para garantir que todos sejam executados corretamente.  Esse é um processo demorado se os dados também precisarem ser movidos.
+Em ambas as opções, o novo cluster precisaria ter todos os [aplicativos com reconhecimento de cluster](/previous-versions/windows/desktop/mscs/cluster-aware-applications) instalados, os drivers atualizados e possivelmente os testes para garantir que todos sejam executados corretamente.  Esse é um processo demorado se os dados também precisarem ser movidos.
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -140,4 +138,3 @@ Se você estiver usando o novo recurso de testemunha USB, não será possível a
 ```
 New-ClusternameAccount : Cluster name account cannot be created.  This cluster contains a file share witness with invalid permissions for a cluster of type AdministrativeAccesssPoint ActiveDirectoryAndDns. To proceed, delete the file share witness.  After this you can create the cluster name account and recreate the file share witness.  The new file share witness will be automatically created with valid permissions.
 ```
-

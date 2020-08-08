@@ -1,18 +1,16 @@
 ---
 title: Falhas de Serviço de Integridade
-ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
-ms.technology: storage-health-service
 ms.topic: article
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: de2e9939302c0b9937fb54b4082feeecf6de5295
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 5f35c52e6b4aaf382c80507ca562b52ce27da953
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473103"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990792"
 ---
 # <a name="health-service-faults"></a>Falhas de Serviço de Integridade
 
@@ -24,7 +22,7 @@ O Serviço de Integridade monitora constantemente o cluster Espaços de Armazena
 
 Cada falha contém cinco campos importantes:
 
--   Severity
+-   Gravidade
 -   Descrição do problema
 -   Próximas etapas recomendadas para solucionar o problema
 -   Informações de identificação para a entidade com falha
@@ -72,7 +70,7 @@ Isso retorna todas as falhas que afetam apenas o volume ou o compartilhamento de
 
 ## <a name="usage-in-net-and-c"></a>Uso em .NET e C #
 
-### <a name="connect"></a>Conectar
+### <a name="connect"></a>Connect
 
 Para consultar o Serviço de Integridade, será necessário estabelecer um **CimSession** com o cluster. Para fazer isso, você precisará de algumas coisas que estão disponíveis apenas no .NET completo, o que significa que não é possível fazer isso prontamente diretamente de um aplicativo Web ou móvel. Esses exemplos de código usarão C \# , a opção mais direta para essa camada de acesso a dados.
 
@@ -135,7 +133,7 @@ public void DiscoverObjects(CimSession Session)
 
 Esses são os mesmos objetos que você obtém no PowerShell usando cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**e **Get-volume**.
 
-Você pode acessar todas as mesmas propriedades, documentadas em [classes de API de gerenciamento de armazenamento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
+Você pode acessar todas as mesmas propriedades, documentadas em [classes de API de gerenciamento de armazenamento](/previous-versions/windows/desktop/stormgmt/storage-management-api-classes).
 
 ```
 using System.Diagnostics;

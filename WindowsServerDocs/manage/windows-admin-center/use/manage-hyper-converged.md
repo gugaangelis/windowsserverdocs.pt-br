@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fc9ab25ee9138b078af31c2e13965d1300c8a6b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87962490"
+ms.locfileid: "87990484"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "87962490"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>O que é a infraestrutura hiperconvergente
 
-A infraestrutura hiperconvergente consolida a computação, o armazenamento e a rede definidos pelo software em um cluster para fornecer virtualização de alto desempenho, econômica e facilmente escalonável. Esse recurso foi introduzido no Windows Server 2016 com [espaços de armazenamento diretos](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview), [rede definida pelo software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking) e [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server).
+A infraestrutura hiperconvergente consolida a computação, o armazenamento e a rede definidos pelo software em um cluster para fornecer virtualização de alto desempenho, econômica e facilmente escalonável. Esse recurso foi introduzido no Windows Server 2016 com [espaços de armazenamento diretos](../../../storage/storage-spaces/storage-spaces-direct-overview.md), [rede definida pelo software](../../../networking/sdn/software-defined-networking.md) e [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md).
 
 > [!Tip]
 > Procurando adquirir a infraestrutura hiperconvergente? A Microsoft recomenda essas soluções [definidas por software do Windows Server](https://microsoft.com/wssd) de nossos parceiros. Eles são projetados, montados e validados em nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente.
@@ -287,6 +287,6 @@ Isso é tudo sobre seus comentários! O benefício mais importante das atualiza�
 ### <a name="additional-references"></a>Referências adicionais
 
 - [Windows Admin Center](../overview.md)
-- [Espaços de Armazenamento Diretos](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
-- [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
-- [Rede definida pelo software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)
+- [Espaços de Armazenamento Diretos](../../../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Hyper-V](../../../virtualization/hyper-v/hyper-v-on-windows-server.md)
+- [Rede definida pelo software](../../../networking/sdn/software-defined-networking.md)

@@ -2,19 +2,17 @@
 title: Visão geral da Atualização com Suporte a Cluster
 description: A CAU (atualização com suporte a cluster) automatiza a instalação de atualização de software em clusters que executam o Windows Server.
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 ms.assetid: 3c2993b4-aa81-452b-a5c3-3724ad95d892
-ms.openlocfilehash: a889e19947d014bc2008417f64f6be5cc53112e6
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: defec4b34dfd0e2efa5724e499330c79b993bb60
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409887"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990813"
 ---
 # <a name="cluster-aware-updating-overview"></a>Visão geral da Atualização com Suporte a Cluster
 
@@ -80,7 +78,7 @@ Para usar a CAU, instale o recurso de clustering de failover no Windows Server e
 
 Para instalar o recurso Clustering de Failover, você pode usar as seguintes ferramentas:
 - Adicionar assistente de funções e recursos no Gerenciador de Servidores
-- [Install-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)   Cmdlet do Windows PowerShell
+- [Install-WindowsFeature](/powershell/module/servermanager/Install-WindowsFeature?view=winserver2012r2-ps&viewFallbackFrom=win10-ps)   Cmdlet do Windows PowerShell
 - Ferramenta de linha de comando de Gerenciamento e Manutenção de Imagens de Implantação (DISM)
 
 Para obter mais informações, consulte [instalar o recurso de cluster de failover](create-failover-cluster.md#install-the-failover-clustering-feature).
@@ -101,9 +99,9 @@ Você deve instalar as Ferramentas de Clustering de Failover da seguinte maneira
 ### <a name="enabling-self-updating-mode"></a>Habilitando o modo de autoatualização
 Para habilitar o modo de autoatualização, você deve adicionar a função clusterizada de atualização com suporte de cluster ao cluster de failover. Para fazer isso, use um dos seguintes métodos:
 - Em Gerenciador do servidor, selecione **ferramentas**  >  **atualização com suporte a cluster**e, em seguida, na janela de atualização com suporte a cluster, selecione **Configurar opções de autoatualização de cluster**.
-- Em uma sessão do PowerShell, execute o cmdlet [Add-CauClusterRole](https://docs.microsoft.com/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) .
+- Em uma sessão do PowerShell, execute o cmdlet [Add-CauClusterRole](/powershell/module/clusterawareupdating/Add-CauClusterRole?view=win10-ps) .
 
-Para desinstalar o CAU, desinstale o recurso de clustering de failover ou as ferramentas de clustering de failover usando Gerenciador do Servidor, o cmdlet [Uninstall-WindowsFeature](https://docs.microsoft.com/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) ou as ferramentas de linha de comando do DISM \- .
+Para desinstalar o CAU, desinstale o recurso de clustering de failover ou as ferramentas de clustering de failover usando Gerenciador do Servidor, o cmdlet [Uninstall-WindowsFeature](/powershell/module/servermanager/Uninstall-WindowsFeature?view=win10-ps) ou as ferramentas de linha de comando do DISM \- .
 
 ### <a name="additional-requirements-and-best-practices"></a>Requisitos adicionais e práticas recomendadas
 
@@ -134,8 +132,6 @@ Os links a seguir fornecem mais informações sobre como usar a atualização co
 
 -   [Como funcionam os plug-ins da CAU \-](cluster-aware-updating-plug-ins.md)
 
--   [\-Cmdlets de atualização com reconhecimento de cluster no Windows PowerShell](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
+-   [\-Cmdlets de atualização com reconhecimento de cluster no Windows PowerShell](/powershell/module/clusterawareupdating/?view=win10-ps&viewFallbackFrom=winserverr2-ps)
 
 -   [\-Referência de plug- \- in de atualização com reconhecimento de cluster](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
-
-

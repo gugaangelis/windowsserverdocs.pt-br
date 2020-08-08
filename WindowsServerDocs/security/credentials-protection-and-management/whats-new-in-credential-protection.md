@@ -1,26 +1,24 @@
 ---
 title: O que há de novo na proteção de credenciais
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f297
 author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: 35097cee243239735995a00cec7a6fd3936c62a8
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 9522988946fbf5aa060ff81ab7a54077f5ca28f4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80857039"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948709"
 ---
 # <a name="whats-new-in-credential-protection"></a>O que há de novo na proteção de credenciais
 
 ## <a name="credential-guard-for-signed-in-user"></a>Credential Guard para usuário conectado
 
-A partir do Windows 10, a versão 1507, o Kerberos e o NTLM usam segurança baseada em virtualização para proteger os segredos Kerberos & NTLM da sessão de logon do usuário conectado. 
+A partir do Windows 10, a versão 1507, o Kerberos e o NTLM usam segurança baseada em virtualização para proteger os segredos Kerberos & NTLM da sessão de logon do usuário conectado.
 
 A partir do Windows 10, versão 1511, o Credential Manager usa a segurança baseada em virtualização para proteger as credenciais salvas do tipo de credencial do domínio. As credenciais conectadas e as credenciais de domínio salvas não serão passadas para um host remoto usando a área de trabalho remota. O Credential Guard pode ser habilitado sem o bloqueio UEFI.
 
@@ -45,15 +43,15 @@ As proteções de domínio exigem um domínio Active Directory.
 
 A partir do Windows 10 versão 1507 e do Windows Server 2016, se um dispositivo ingressado no domínio for capaz de registrar sua chave pública vinculada com um controlador de domínio do Windows Server 2016 (DC), o dispositivo poderá se autenticar com a chave pública usando a autenticação de PKINIT Kerberos para um DC do Windows Server 2016.
 
-A partir do Windows Server 2016, o KDCs dá suporte à autenticação usando a confiança de chave Kerberos.  
+A partir do Windows Server 2016, o KDCs dá suporte à autenticação usando a confiança de chave Kerberos.
 
 [Saiba mais sobre o suporte de chave pública para dispositivos ingressados no domínio & confiança de chave Kerberos](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
 
 ### <a name="pkinit-freshness-extension-support"></a>Suporte à extensão de atualização de PKINIT
 
-A partir do Windows 10, versão 1507 e Windows Server 2016, os clientes Kerberos tentarão a extensão de atualização de PKInit para os logons baseados em chave pública. 
+A partir do Windows 10, versão 1507 e Windows Server 2016, os clientes Kerberos tentarão a extensão de atualização de PKInit para os logons baseados em chave pública.
 
-A partir do Windows Server 2016, o KDCs pode dar suporte à extensão de atualização PKInit.  Por padrão, o KDCs não oferecerá a extensão de atualização PKInit. 
+A partir do Windows Server 2016, o KDCs pode dar suporte à extensão de atualização PKInit.  Por padrão, o KDCs não oferecerá a extensão de atualização PKInit.
 
 [Saiba mais sobre o suporte à extensão de atualização de PKINIT](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication).
 
@@ -61,10 +59,10 @@ A partir do Windows Server 2016, o KDCs pode dar suporte à extensão de atualiz
 
 A partir do DFL (nível funcional de domínio) do Windows Server 2016, os DCs podem dar suporte à distribuição de segredos de NTLM de um usuário de chave pública. Esse recurso é unavailble no DFLs inferior.
 
-> [!WARNING] 
-> Adicionar um controlador de domínio a um domínio com segredos NTLM sem interrupção habilitados antes que o DC seja atualizado com pelo menos o 8 de novembro de 2016, a manutenção do serviço corre o risco de falha do DC. 
+> [!WARNING]
+> Adicionar um controlador de domínio a um domínio com segredos NTLM sem interrupção habilitados antes que o DC seja atualizado com pelo menos o 8 de novembro de 2016, a manutenção do serviço corre o risco de falha do DC.
 
-Configuração: para novos domínios, esse recurso é habilitado por padrão. Para domínios existentes, ele deve ser configurado no centro administrativo Active Directory: 
+Configuração: para novos domínios, esse recurso é habilitado por padrão. Para domínios existentes, ele deve ser configurado no centro administrativo Active Directory:
 
 1. No centro administrativo Active Directory, clique com o botão direito do mouse no domínio no painel esquerdo e selecione **Propriedades**.
 
@@ -74,12 +72,12 @@ Configuração: para novos domínios, esse recurso é habilitado por padrão. Pa
 
     ![Autolance expirando segredos NTLM](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)
 
-3. Clique em **OK**. 
+3. Clique em **OK**.
 
 ### <a name="allowing-network-ntlm-when-user-is-restricted-to-specific-domain-joined-devices"></a>Permitindo a rede NTLM quando o usuário está restrito a dispositivos ingressados no domínio específico
 
 A partir do DFL (nível funcional de domínio) do Windows Server 2016, os DCs podem dar suporte à permissão de NTLM de rede quando um usuário está restrito a dispositivos ingressados no domínio específico. Este recurso não está disponível no DFLs inferior.
 
-Configuração: na política de autenticação, clique em **Permitir autenticação de rede NTLM quando o usuário estiver restrito a dispositivos selecionados**. 
+Configuração: na política de autenticação, clique em **Permitir autenticação de rede NTLM quando o usuário estiver restrito a dispositivos selecionados**.
 
 [Saiba mais sobre as políticas de autenticação](https://technet.microsoft.com/windows-server-docs/security/credentials-protection-and-management/authentication-policies-and-authentication-policy-silos).

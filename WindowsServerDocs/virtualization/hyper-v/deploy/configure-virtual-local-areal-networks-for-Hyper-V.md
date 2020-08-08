@@ -7,12 +7,12 @@ ms.assetid: 8510a709-001c-4eee-b6d6-c451e8a8a836
 author: kbdazure
 ms.author: kathydav
 ms.date: 10/11/2016
-ms.openlocfilehash: dea2da2d0a10839fd9fe69dbb7b3974290b85975
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e44a60becc84e3b376797bd64ffe433ce44b8c55
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963612"
+ms.locfileid: "87990358"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Configurar redes locais virtuais para o Hyper-V
 As \( VLANs de redes locais virtuais \) oferecem uma maneira de isolar o tráfego de rede. As VLANs são configuradas em switches e roteadores que dão suporte a 802.1 q. Se você configurar várias VLANs e quiser que a comunicação ocorra entre elas, será necessário configurar os dispositivos de rede para permitir isso.
@@ -50,8 +50,8 @@ Se a máquina virtual precisar usar mais VLANs, siga um destes procedimentos:
 
 - Conecte mais adaptadores de rede virtual a comutadores virtuais apropriados e atribua as IDs de VLAN. Certifique-se de configurar os endereços IP corretamente e que o tráfego que você deseja rotear por meio da VLAN também usa o endereço IP correto.
 
-- Configure o adaptador de rede virtual no modo de tronco usando o cmdlet [set \- VMNetworkAdapterVlan](https://technet.microsoft.com/library/hh848475.aspx) .
+- Configure o adaptador de rede virtual no modo de tronco usando o cmdlet [set \- VMNetworkAdapterVlan](/powershell/module/hyper-v/set-vmnetworkadaptervlan?view=win10-ps) .
 
 ## <a name="see-also"></a>Consulte Também
 
-[\-Comutador virtual Hyper-V](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
+[\-Comutador virtual Hyper-V](../../hyper-v-virtual-switch/hyper-v-virtual-switch.md)

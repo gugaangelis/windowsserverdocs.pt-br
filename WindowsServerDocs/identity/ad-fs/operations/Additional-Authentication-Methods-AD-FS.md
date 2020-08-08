@@ -6,21 +6,19 @@ ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ff129f2b049d3e17e6b39d653cc3962eba75090b
-ms.sourcegitcommit: 2cc251eb5bc3069bf09bc08e06c3478fcbe1f321
+ms.openlocfilehash: fed038c81b298036401004751aab46dba520eab3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84333897"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87940269"
 ---
 # <a name="configure-3rd-party-authentication-providers-as-primary-authentication-in-ad-fs-2019"></a>Configurar provedores de autenticação de terceiros como autenticação primária no AD FS 2019
 
 
-As organizações estão enfrentando ataques que tentam forçar a força bruta, comprometer ou bloquear contas de usuário, enviando solicitações de autenticação baseadas em senha.  Para ajudar a proteger as organizações contra o comprometimento, AD FS introduziu recursos como bloqueio "inteligente" de extranet e bloqueio baseado em endereço IP.  
+As organizações estão enfrentando ataques que tentam forçar a força bruta, comprometer ou bloquear contas de usuário, enviando solicitações de autenticação baseadas em senha.  Para ajudar a proteger as organizações contra o comprometimento, AD FS introduziu recursos como bloqueio "inteligente" de extranet e bloqueio baseado em endereço IP.
 
-No entanto, essas atenuações são reativas.  Para fornecer uma maneira proativa, para reduzir a gravidade desses ataques, AD FS tem a capacidade de solicitar fatores que não sejam de senha antes de coletar a senha.  
+No entanto, essas atenuações são reativas.  Para fornecer uma maneira proativa, para reduzir a gravidade desses ataques, AD FS tem a capacidade de solicitar fatores que não sejam de senha antes de coletar a senha.
 
 Por exemplo, AD FS 2016 introduziu o Azure MFA como autenticação primária para que os códigos de OTP do aplicativo autenticador pudessem ser usados como o primeiro fator.
 Com base nisso, com AD FS 2019, você pode configurar provedores de autenticação externa como fatores de autenticação primária.
@@ -54,7 +52,7 @@ Depois que um provedor externo é habilitado para extranet, intranet ou ambos, e
 Antes de configurar provedores de autenticação externa como primário, verifique se você tem os seguintes pré-requisitos em vigor
 - O nível de comportamento de farm de AD FS (FBL) foi gerado para ' 4 ' (esse valor é convertido em AD FS 2019)
     - Este é o valor padrão de FBL para novos farms de 2019 AD FS
-    - Para AD FS farms com base no Windows Server 2012 R2 ou 2016, o FBL pode ser gerado usando o cmdlet do PowerShell Invoke-AdfsFarmBehaviorLevelRaise.  Para obter mais detalhes sobre como atualizar um farm de AD FS, consulte o artigo de atualização do farm para farms do SQL ou farms de WID 
+    - Para AD FS farms com base no Windows Server 2012 R2 ou 2016, o FBL pode ser gerado usando o cmdlet do PowerShell Invoke-AdfsFarmBehaviorLevelRaise.  Para obter mais detalhes sobre como atualizar um farm de AD FS, consulte o artigo de atualização do farm para farms do SQL ou farms de WID
     - Você pode verificar o valor de FBL usando o cmdlet Get-AdfsFarmInformation
 - O farm AD FS 2019 está configurado para usar as páginas voltadas para o usuário do novo 2019 ' paginado '
     - Esse é o comportamento padrão para novos farms de 2019 AD FS
@@ -63,12 +61,12 @@ Antes de configurar provedores de autenticação externa como primário, verifiq
 ## <a name="enable-external-authentication-methods-as-primary"></a>Habilitar métodos de autenticação externa como primário
 Depois de verificar os pré-requisitos, há duas maneiras de configurar AD FS provedores de autenticação adicionais como primário:
 
-### <a name="using-powershell"></a>Usar o PowerShell
+### <a name="using-powershell"></a>Usando o PowerShell
 
 
 ```powershell
 PS C:\> Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrimary $true
-``` 
+```
 
 
 O serviço de AD FS deve ser reiniciado depois de habilitar ou desabilitar a autenticação adicional como primário.
@@ -82,7 +80,7 @@ O serviço de AD FS deve ser reiniciado depois de habilitar ou desabilitar a aut
 
 ## <a name="enable-username-and-password-as-additional-authentication"></a>Habilitar nome de usuário e senha como autenticação adicional
 Para concluir o cenário "proteger a senha", habilite o nome de usuário e a senha como autenticação adicional usando o PowerShell ou o console de gerenciamento do AD FS
-### <a name="using-powershell"></a>Usar o PowerShell
+### <a name="using-powershell"></a>Usando o PowerShell
 
 
 
@@ -92,7 +90,7 @@ PS C:\> $providers = (Get-AdfsGlobalAuthenticationPolicy).AdditionalAuthenticati
 PS C:\>$providers = $providers + "FormsAuthentication"
 
 PS C:\>Set-AdfsGlobalAuthenticationPolicy -AdditionalAuthenticationProvider $providers
-``` 
+```
 
 ### <a name="using-the-ad-fs-management-console"></a>Usando o console de gerenciamento do AD FS
 No console de gerenciamento do AD FS, **Service**em  ->  **métodos de autenticação**de serviço, em métodos de **autenticação adicionais**, clique em **Editar**

@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/08/2018
-ms.openlocfilehash: 21008268f14435852c7de78ce826bc380f9017a1
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d0d9f149a95c00fdac02cbdd383fb950e56b845a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955813"
+ms.locfileid: "87990044"
 ---
 # <a name="virtual-network-peering"></a>Emparelhamento de rede virtual
 
@@ -57,7 +57,7 @@ Depois de emparelhar as redes virtuais, os recursos em qualquer rede virtual pod
 
 -   As máquinas virtuais em uma rede virtual podem acessar o balanceador de carga interno na rede virtual emparelhada.
 
-Você pode aplicar listas de controle de acesso (ACLs) em qualquer rede virtual para bloquear o acesso a outras redes virtuais ou sub-redes, se desejado. Se você abrir a conectividade completa entre redes virtuais emparelhadas (que é a opção padrão), poderá aplicar ACLs a sub-redes ou máquinas virtuais específicas para bloquear ou negar acesso específico. Para saber mais sobre ACLs, confira [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
+Você pode aplicar listas de controle de acesso (ACLs) em qualquer rede virtual para bloquear o acesso a outras redes virtuais ou sub-redes, se desejado. Se você abrir a conectividade completa entre redes virtuais emparelhadas (que é a opção padrão), poderá aplicar ACLs a sub-redes ou máquinas virtuais específicas para bloquear ou negar acesso específico. Para saber mais sobre ACLs, confira [usar ACLs (listas de controle de acesso) para gerenciar o fluxo de tráfego de rede do datacenter](../manage/use-acls-for-traffic-flow.md).
 
 ## <a name="service-chaining"></a>Encadeamento de serviços
 
@@ -65,7 +65,7 @@ Você pode configurar rotas definidas pelo usuário que apontem para máquinas v
 
 Você pode implantar redes Hub e spoke, em que a rede virtual do Hub pode hospedar componentes de infraestrutura, como uma solução de virtualização de rede. Todas as redes virtuais spoke emparelhadas com a rede virtual do Hub. O tráfego pode fluir por meio de dispositivos de rede virtual na rede virtual do Hub.
 
-O emparelhamento de rede virtual permite que o próximo salto em uma rota definida pelo usuário seja o endereço IP de uma máquina virtual na rede virtual emparelhada. Para saber mais sobre as rotas definidas pelo usuário, confira [usar dispositivos de rede virtual em uma rede virtual](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-network-virtual-appliances-on-a-vn).
+O emparelhamento de rede virtual permite que o próximo salto em uma rota definida pelo usuário seja o endereço IP de uma máquina virtual na rede virtual emparelhada. Para saber mais sobre as rotas definidas pelo usuário, confira [usar dispositivos de rede virtual em uma rede virtual](../manage/use-network-virtual-appliances-on-a-vn.md).
 
 ## <a name="gateways-and-on-premises-connectivity"></a>Gateways e conectividade local
 
@@ -87,4 +87,3 @@ Você pode monitorar o status da conexão de emparelhamento, que pode estar em u
 
 ## <a name="next-steps"></a>Próximas etapas
 [Configurar o emparelhamento de rede virtual](sdn-configure-vnet-peering.md): neste procedimento, você usa o Windows PowerShell para localizar a rede lógica do provedor de HNV para criar duas redes virtuais, cada uma com uma sub-rede. Você também configura o emparelhamento entre as duas redes virtuais.
-

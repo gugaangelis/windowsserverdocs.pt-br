@@ -1,20 +1,18 @@
 ---
 title: Grupo de segurança de usuários protegidos
 description: Segurança do Windows Server
-ms.prod: windows-server
-ms.technology: security-credential-protection
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: cd849486e441c8315daa95db351bcd214b929759
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 450279f5af907e4643f8ee8c1ea0ff36edd9aea5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518002"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948689"
 ---
 # <a name="protected-users-security-group"></a>Grupo de segurança de usuários protegidos
 
@@ -61,7 +59,7 @@ A tabela a seguir especifica as propriedades do grupo Usuários protegidos.
 |Atributo|Valor|
 |-------|-----|
 |SID/RID conhecido|S-1-5-21-<domain>-525|
-|Tipo|Domínio global|
+|Type|Domínio global|
 |Contêiner padrão|CN=Usuários, DC=<domain>, DC=|
 |Membros padrão|Nenhum|
 |Membro padrão de|Nenhum|

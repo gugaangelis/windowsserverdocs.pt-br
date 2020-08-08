@@ -1,22 +1,20 @@
 ---
-title: Pré-configurar os objetos de computador do cluster no Active Directory Domain Services
+title: Pré-configurar objetos de computador do cluster no Active Directory Domain Services
 description: Como pré-configurar objetos de computador de cluster no Active Directory Domain Services.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c0d8efc1bdb5a2c3a653afbe61b211f94658101d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 1f9255b0f3ca85a2c128549fbe9dc2c01c870b1b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181722"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990762"
 ---
-# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar os objetos de computador do cluster no Active Directory Domain Services
+# <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Pré-configurar objetos de computador do cluster no Active Directory Domain Services
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -138,5 +136,5 @@ Um administrador no cluster de failover poderá agora criar funções clusteriza
 
 ## <a name="more-information"></a>Mais informações
 
-- [Clustering de failover](failover-clustering.md)
+- [Clustering de failover](./failover-clustering-overview.md)
 - [Configuração de contas de cluster no Active Directory](configure-ad-accounts.md)

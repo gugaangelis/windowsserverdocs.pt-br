@@ -2,18 +2,17 @@
 ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
 title: Atualização com suporte a cluster-perguntas frequentes
 ms.topic: article
-ms.prod: windows-server
 manager: lizross
 ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 description: Respostas para perguntas frequentes sobre a atualização com suporte a cluster no Windows Server.
-ms.openlocfilehash: aa2f99378713d93bafed710b96542559ac44ead7
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 0283f7f29ccc647508530d6cfdbf54b41086b90c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85473333"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990908"
 ---
 # <a name="cluster-aware-updating-frequently-asked-questions"></a>Atualização com suporte a cluster: perguntas frequentes
 
@@ -101,7 +100,7 @@ Sim. A CAU oferece suporte às seguintes dimensões de flexibilidade para atende
 
 **Opções de execução de atualização avançada** O administrador também pode especificar em um grande conjunto de opções de execução de atualização avançadas, como o número máximo de vezes que o processo de atualização é repetido em cada nó. Essas opções podem ser especificadas usando a interface do usuário da CAU ou os cmdlets do PowerShell da CAU. Essas configurações personalizadas podem ser salvas em um Perfil de Execução da Atualização e reutilizadas para execuções de atualização mais tarde.
 
-A ** \- arquitetura de plug-in pública da** Cau inclui recursos para registrar, cancelar o registro e selecionar plug- \- ins. o Cau é fornecido com dois plug- \- ins padrão: um coordena as APIs do WUA do agente de Windows Update \( \) em cada nó de cluster; o segundo aplica hotfixes que são copiados manualmente para um compartilhamento de arquivos que é acessível para os nós de cluster. Se uma empresa tiver necessidades exclusivas que não podem ser atendidas com esses dois plug- \- ins, a empresa poderá criar um novo plug-in de Cau \- de acordo com a especificação da API pública. Para obter mais informações, [consulte \- \- referência de plug-in de atualização com reconhecimento de cluster](https://msdn.microsoft.com/library/hh418084(VS.85).aspx).
+A ** \- arquitetura de plug-in pública da** Cau inclui recursos para registrar, cancelar o registro e selecionar plug- \- ins. o Cau é fornecido com dois plug- \- ins padrão: um coordena as APIs do WUA do agente de Windows Update \( \) em cada nó de cluster; o segundo aplica hotfixes que são copiados manualmente para um compartilhamento de arquivos que é acessível para os nós de cluster. Se uma empresa tiver necessidades exclusivas que não podem ser atendidas com esses dois plug- \- ins, a empresa poderá criar um novo plug-in de Cau \- de acordo com a especificação da API pública. Para obter mais informações, [consulte \- \- referência de plug-in de atualização com reconhecimento de cluster](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes).
 
 Para obter informações sobre como configurar e personalizar os plug-ins da CAU \- para dar suporte a diferentes cenários de atualização, consulte [como os plug- \- ins funcionam](assetId:///847b571b-12b3-473c-953f-75a5a1f51333).
 
@@ -154,11 +153,10 @@ Sim. A CAU oferece suporte a várias opções de Execução de Atualização que
 
 ## <a name="where-is-the-cau-plug-in-specification"></a>Onde está a especificação de plug- \- in Cau?
 
--   [\-Referência de plug- \- in de atualização com reconhecimento de cluster](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)
+-   [\-Referência de plug- \- in de atualização com reconhecimento de cluster](/previous-versions/windows/desktop/mscs/cluster-aware-update-plug-in-interfaces-and-classes)
 
 -   [Exemplo de plug- \- in de atualização com reconhecimento de cluster](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)
 
 ## <a name="additional-references"></a>Referências adicionais
 
 -   [\-Visão geral da atualização com reconhecimento de cluster](cluster-aware-updating.md)
-

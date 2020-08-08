@@ -7,12 +7,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/14/2018
-ms.openlocfilehash: 87972f9a0d83a4b7f192e2fe0f751ee66c599044
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2bf186d2f8761ca51c77b4d02489b0d85c53e046
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955913"
+ms.locfileid: "87990159"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Solucionar problemas de pilha de rede definida do Windows Server Software
 
@@ -20,7 +20,7 @@ ms.locfileid: "87955913"
 
 Este guia examina os erros comuns de SDN (rede definida pelo software) e os cenários de falha e descreve um fluxo de trabalho de solução de problemas que aproveita as ferramentas de diagnóstico disponíveis.
 
-Para obter mais informações sobre a rede definida pelo software da Microsoft, consulte [rede definida pelo software](../../sdn/Software-Defined-Networking--SDN-.md).
+Para obter mais informações sobre a rede definida pelo software da Microsoft, consulte [rede definida pelo software](../software-defined-networking.md).
 
 ## <a name="error-types"></a>Tipos de erro
 A lista a seguir representa a classe de problemas que geralmente vimos com a HNVv1 (virtualização de rede do Hyper-V) no Windows Server 2012 R2 de implantações de produção no mercado e coincide de várias maneiras com os mesmos tipos de problemas vistos no Windows Server 2016 HNVv2 com a nova pilha de SDN (rede definida pelo software).
@@ -54,12 +54,12 @@ Import-Module hnvdiagnostics
 ```
 
 ### <a name="network-controller-diagnostics"></a>Diagnóstico do controlador de rede
-Esses cmdlets estão documentados no TechNet no [tópico do cmdlet de diagnóstico do controlador de rede](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/). Eles ajudam a identificar problemas com a consistência da diretiva de rede no caminho de controle entre os nós do controlador de rede e entre o controlador de rede e os agentes do host NC em execução nos hosts do Hyper-V.
+Esses cmdlets estão documentados no TechNet no [tópico do cmdlet de diagnóstico do controlador de rede](/powershell/module/networkcontrollerdiagnostics/). Eles ajudam a identificar problemas com a consistência da diretiva de rede no caminho de controle entre os nós do controlador de rede e entre o controlador de rede e os agentes do host NC em execução nos hosts do Hyper-V.
 
  Os cmdlets _debug-ServiceFabricNodeStatus_ e _Get-NetworkControllerReplica_ devem ser executados de uma das máquinas virtuais do nó do controlador de rede. Todos os outros cmdlets de diagnóstico NC podem ser executados em qualquer host que tenha conectividade com o controlador de rede e esteja no grupo de segurança de gerenciamento do controlador de rede (Kerberos) ou tenha acesso ao certificado X. 509 para gerenciar o controlador de rede.
 
 ### <a name="hyper-v-host-diagnostics"></a>Diagnóstico de host do Hyper-V
-Esses cmdlets estão documentados no TechNet no [tópico do cmdlet de diagnóstico de HNV (virtualização de rede) do Hyper-V](https://docs.microsoft.com/powershell/module/hnvdiagnostics/). Eles ajudam a identificar problemas no caminho de dados entre as máquinas virtuais de locatário (leste/oeste) e o tráfego de entrada por meio de um VIP SLB (Norte/Sul).
+Esses cmdlets estão documentados no TechNet no [tópico do cmdlet de diagnóstico de HNV (virtualização de rede) do Hyper-V](/powershell/module/hnvdiagnostics/). Eles ajudam a identificar problemas no caminho de dados entre as máquinas virtuais de locatário (leste/oeste) e o tráfego de entrada por meio de um VIP SLB (Norte/Sul).
 
 O _debug-VirtualMachineQueueOperation_, o _Get-CustomerRoute_, o _Get-PACAMapping_, o _Get-ProviderAddress_, o _Get-VMNetworkAdapterPortId_, o _Get-VMSwitchExternalPortId_e o _Test-EncapOverheadSettings_ são todos os testes locais que podem ser executados em qualquer host Hyper-V. Os outros cmdlets invocam testes de caminho de dados por meio do controlador de rede e, portanto, precisam de acesso ao controlador de rede como Descried acima.
 

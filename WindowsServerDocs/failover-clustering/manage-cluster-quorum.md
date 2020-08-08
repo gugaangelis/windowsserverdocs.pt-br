@@ -1,20 +1,18 @@
 ---
 title: Configurar e gerenciar o quorum em um cluster de failover
 description: Informações detalhadas sobre como gerenciar o quorum de cluster em um cluster de failover do Windows Server.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2847b9268207155efc181c97c58a91c1d51eac6d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 02158cc005cc46bd42e88569b14c17c59ef377ee
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177812"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990765"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar e gerenciar o quorum
 
@@ -32,7 +30,7 @@ O modelo de quorum no Windows Server é flexível. Se precisar modificar a confi
 
 A tabela a seguir lista as três opções de configuração de quorum disponíveis no Assistente para Configurar Quorum de Cluster.
 
-| Opção  |DESCRIÇÃO  |
+| Opção  |Descrição  |
 | --------- | ---------|
 | Usar configurações típicas     |  O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó. Se for apropriado para seu cluster, e houver armazenamento compartilhado de cluster disponível, o cluster selecionará uma testemunha de disco. Essa opção é recomendada na maioria dos casos, pois o software de cluster escolhe automaticamente uma configuração de quorum e de testemunha que forneça a mais alta disponibilidade para seu cluster.       |
 | Adicionar ou alterar a testemunha de quorum     |   Você pode adicionar, alterar ou remover um recurso de testemunha. Você pode configurar uma testemunha de disco ou compartilhamento de arquivos. O cluster atribui automaticamente um voto a cada nó e gerencia dinamicamente os votos do nó.      |
@@ -60,7 +58,7 @@ A tabela a seguir fornece informações adicionais e considerações sobre os ti
 | ---------    |---------        |---------                        |
 | Testemunha de disco     |  <ul><li> LUN dedicado que armazena uma cópia do banco de dados do cluster</li><li> Mais útil para clusters com armazenamento compartilhado (não replicado)</li>       |  <ul><li>O tamanho do LUN deve ser, no mínimo, 512 MB</li><li> Deve ser dedicado a uso de cluster e não designado a uma função clusterizada</li><li> Deve ser incluído em um armazenamento clusterizado e passar nos testes de validação de armazenamento</li><li> Não pode ser um disco que seja um CSV (Volume Compartilhado Clusterizado)</li><li> Disco básico com um volume único</li><li> Não precisa ter uma letra da unidade</li><li> Pode ser formatado com NTFS ou ReFS</li><li> Também pode ser configurado com RAID de hardware para tolerância a falhas</li><li> Deve ser excluído dos backups e da verificação antivírus</li><li> Uma testemunha de disco não tem suporte com Espaços de Armazenamento Diretos</li>|
 | Testemunha de compartilhamento de arquivos     | <ul><li>Compartilhamento de arquivos SMB configurado em um servidor de arquivos que executa Windows Server</li><li> Não armazena uma cópia do banco de dados do cluster</li><li> Mantém informações de cluster somente em um arquivo witness.log</li><li> Mais útil para clusters multissite com armazenamento replicado </li>       |  <ul><li>Deve ter um espaço livre mínimo de 5 MB</li><li> Deve ser dedicado a um único cluster e não usado para armazenar dados de usuário ou de aplicativo</li><li> Deve ter permissões de gravação habilitadas para objeto de computador do nome do cluster</li></ul><br>A seguir estão considerações adicionais para um servidor de arquivos que hospeda a testemunha de compartilhamento de arquivos:<ul><li>Um único servidor de arquivos pode ser configurado com testemunhas de compartilhamento de arquivos para vários clusters.</li><li> O servidor de arquivos deve estar em um site separado da carga de trabalho do cluster. Isso permite a mesma oportunidade para que qualquer site de cluster sobreviva se a comunicação da rede de site a site for perdida. Se o servidor de arquivos estiver no mesmo site, esse site se tornará o site primário, e ele será o único site que poderá atingir o compartilhamento de arquivos.</li><li> O servidor de arquivos pode ser executado em uma máquina virtual, se esta não estiver hospedada no mesmo cluster que utiliza a testemunha de compartilhamento de arquivos.</li><li> Para alta disponibilidade, o servidor de arquivos pode ser configurado em um cluster de failover separado. </li>      |
-| Testemunha da nuvem     |  <ul><li>Um arquivo testemunha armazenado no armazenamento de BLOBs do Azure</li><li> Recomendado quando todos os servidores no cluster têm uma conexão de Internet confiável.</li>      |  Consulte [implantar uma testemunha em nuvem](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness).       |
+| Testemunha da nuvem     |  <ul><li>Um arquivo testemunha armazenado no armazenamento de BLOBs do Azure</li><li> Recomendado quando todos os servidores no cluster têm uma conexão de Internet confiável.</li>      |  Consulte [implantar uma testemunha em nuvem](./deploy-cloud-witness.md).       |
 
 ### <a name="node-vote-assignment"></a>Atribuição de voto de nó
 
@@ -83,7 +81,7 @@ No Windows Server 2012, como uma opção de configuração de quorum avançada, 
 
 Com o gerenciamento de quorum dinâmico, também é possível que um cluster seja executado no último nó de cluster sobrevivente. Pelo ajuste dinâmico do requisito de maioria de quorum, o cluster pode sustentar desligamentos de nó sequenciais para um único nó.
 
-O voto dinâmico atribuído ao cluster de um nó pode ser verificado com a propriedade comum **DynamicWeight** do nó de cluster usando o cmdlet [Get-ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode?view=win10-ps) do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum. Um valor de 1 indica que o nó tem um voto de quorum.
+O voto dinâmico atribuído ao cluster de um nó pode ser verificado com a propriedade comum **DynamicWeight** do nó de cluster usando o cmdlet [Get-ClusterNode](/powershell/module/failoverclusters/get-clusternode?view=win10-ps) do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum. Um valor de 1 indica que o nó tem um voto de quorum.
 
 A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação **Validar Quorum de Cluster**.
 
@@ -96,7 +94,7 @@ A atribuição de voto para todos os nós de cluster pode ser verificada usando 
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>Recomendações gerais para configuração de quorum
 
-O software do cluster configura automaticamente o quorum para um novo cluster, de acordo com o número de nós configurado e a disponibilidade de armazenamento compartilhado. Essa geralmente é a configuração de quorum mais apropriada para esse cluster. Entretanto, é uma boa ideia examinar a configuração de quorum depois de criar o cluster, e antes de colocá-lo em produção. Para exibir a configuração de quorum de cluster detalhada, você pode usar o assistente para validar uma configuração ou o cmdlet [Test-cluster](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) do Windows PowerShell, para executar o teste de **configuração de quorum de validação** . No Gerenciador de Cluster de Failover, a configuração de quorum básica é exibida nas informações de resumo do cluster selecionado ou você pode examinar as informações sobre os recursos de quorum que o retorna quando você executa o cmdlet [Get-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) do Windows PowerShell.
+O software do cluster configura automaticamente o quorum para um novo cluster, de acordo com o número de nós configurado e a disponibilidade de armazenamento compartilhado. Essa geralmente é a configuração de quorum mais apropriada para esse cluster. Entretanto, é uma boa ideia examinar a configuração de quorum depois de criar o cluster, e antes de colocá-lo em produção. Para exibir a configuração de quorum de cluster detalhada, você pode usar o assistente para validar uma configuração ou o cmdlet [Test-cluster](/powershell/module/failoverclusters/test-cluster?view=win10-ps) do Windows PowerShell, para executar o teste de **configuração de quorum de validação** . No Gerenciador de Cluster de Failover, a configuração de quorum básica é exibida nas informações de resumo do cluster selecionado ou você pode examinar as informações sobre os recursos de quorum que o retorna quando você executa o cmdlet [Get-ClusterQuorum](/powershell/module/failoverclusters/get-clusterquorum?view=win10-ps) do Windows PowerShell.
 
 A qualquer momento, você pode executar o teste **Validar Configuração de Quorum** para validar que a configuração de quorum é ideal para seu cluster. A saída do teste indica se uma alteração na configuração de quorum é recomendada e as configurações que são ideais. Se uma alteração for recomendada, você poderá usar o Assistente para Configurar Quorum do Cluster para aplicar as configurações recomendadas.
 
@@ -165,7 +163,7 @@ Depois que o assistente for executado e a página **Resumo** for exibida, se voc
 
 ### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes do Windows PowerShell
 
-Os exemplos a seguir mostram como usar o cmdlet [set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) e outros cmdlets do Windows PowerShell para configurar o quorum do cluster.
+Os exemplos a seguir mostram como usar o cmdlet [set-ClusterQuorum](/powershell/module/failoverclusters/set-clusterquorum?view=win10-ps) e outros cmdlets do Windows PowerShell para configurar o quorum do cluster.
 
 O exemplo a seguir altera a configuração de quorum no cluster *CONTOSO-FC1* para uma configuração simples de maioria dos nós sem testemunha de quorum.
 
@@ -313,6 +311,6 @@ A tabela a seguir resume considerações e recomendações para essa configuraç
 
 ## <a name="more-information"></a>Mais informações
 
-* [Clustering de failover](failover-clustering.md)
-* [Failover Clusters Cmdlets in Windows PowerShell (Cmdlets do Windows PowerShell de Clusters de Failover)](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)
+* [Clustering de failover](./failover-clustering-overview.md)
+* [Failover Clusters Cmdlets in Windows PowerShell (Cmdlets do Windows PowerShell de Clusters de Failover)](/powershell/module/failoverclusters/?view=win10-ps)
 * [Noções básicas sobre quorum de cluster e pool](../storage/storage-spaces/understand-quorum.md)
