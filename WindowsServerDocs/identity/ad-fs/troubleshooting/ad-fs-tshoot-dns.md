@@ -6,16 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: a9be4a72cd60cfdd5807c67132dba837093be4db
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b0134478ce0a4e91d6e33d5a0845a2be5df53d3f
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959018"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954172"
 ---
-# <a name="ad-fs-troubleshooting---dns"></a>Solução de problemas AD FS-DNS 
+# <a name="ad-fs-troubleshooting---dns"></a>Solução de problemas AD FS-DNS
 Uma das primeiras coisas a verificar, se AD FS não estiver funcionando ou respondendo, é a resolução de nomes DNS.  Esses são os testes básicos para determinar se os servidores de AD FS ou os servidores WAP estão sendo encontrados na sua rede.  Para usuários internos, esses testes devem ser resolvidos para os servidores de AD FS (STS).    Para usuários externos, esses testes devem ser resolvidos para os servidores WAP.
 
 O restante deste documento mostrará como fazer algumas verificações de resolução de nome rápidas usando ferramentas de linha de comando.

@@ -5,16 +5,14 @@ author: allenma
 ms.author: allenma
 ms.date: 08/14/2018
 ms.topic: article
-ms.prod: windows-server-hyper-v
-ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 128f9d734311f8eaf0f06204e114171fa8b0f750
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87768424"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994099"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Sobre a seleção do tipo de Agendador de hipervisor do Hyper-V
 
@@ -32,7 +30,7 @@ Este documento descreve alterações importantes no padrão do Hyper-V e no uso 
 
 ## <a name="background"></a>Segundo plano
 
-A partir do Windows Server 2016, o Hyper-V dá suporte a vários métodos de agendamento e gerenciamento de processadores virtuais, chamados de tipos de Agendador de hipervisor.  Uma descrição detalhada de todos os tipos de Agendador de hipervisor pode ser encontrada em [compreendendo e usando os tipos de Agendador de hipervisor do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types).
+A partir do Windows Server 2016, o Hyper-V dá suporte a vários métodos de agendamento e gerenciamento de processadores virtuais, chamados de tipos de Agendador de hipervisor.  Uma descrição detalhada de todos os tipos de Agendador de hipervisor pode ser encontrada em [compreendendo e usando os tipos de Agendador de hipervisor do Hyper-V](./manage-hyper-v-scheduler-types.md).
 
 >[!NOTE]
 >Novos tipos de Agendador de hipervisor foram introduzidos primeiro com o Windows Server 2016 e não estão disponíveis em versões anteriores. Todas as versões do Hyper-V anteriores ao Windows Server 2016 dão suporte apenas ao agendador clássico. O suporte para o Agendador principal foi publicado apenas recentemente.
@@ -78,7 +76,7 @@ Esses impactos no desempenho podem ser minimizados seguindo as diretrizes de imp
 A implantação de hosts Hyper-V com a postura de segurança máxima requer o uso do tipo de Agendador principal do hipervisor. Para garantir que nossos clientes sejam protegidos por padrão, a Microsoft está alterando as configurações padrão e recomendadas a seguir.
 
 >[!NOTE]
->Embora o suporte interno do hipervisor para os tipos de Agendador tenha sido incluído na versão inicial do Windows Server 2016, do Windows Server 1709 e do Windows Server 1803, as atualizações são necessárias para acessar o controle de configuração que permite selecionar o tipo de Agendador de hipervisor.  Consulte [compreendendo e usando os tipos de Agendador de hipervisor do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types) para obter detalhes sobre essas atualizações.
+>Embora o suporte interno do hipervisor para os tipos de Agendador tenha sido incluído na versão inicial do Windows Server 2016, do Windows Server 1709 e do Windows Server 1803, as atualizações são necessárias para acessar o controle de configuração que permite selecionar o tipo de Agendador de hipervisor.  Consulte [compreendendo e usando os tipos de Agendador de hipervisor do Hyper-V](./manage-hyper-v-scheduler-types.md) para obter detalhes sobre essas atualizações.
 
 ### <a name="virtualization-host-changes"></a>Alterações do host de virtualização
 
@@ -168,7 +166,7 @@ Os detalhes dessa contratação de convidado são fornecidos abaixo. no entanto,
 
 ### <a name="nononarchitecturalcoresharing-enlightenment-details"></a>Detalhes da NoNonArchitecturalCoreSharing de esclarecimento
 
-A partir do Windows Server 2016, o hipervisor define um novo esclarecimento para descrever seu manuseio de planejamento e posicionamento de VP para o sistema operacional convidado. Esse esclarecimento é definido na [especificação funcional do nível superior do hipervisor v 5.0 c](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/tlfs).
+A partir do Windows Server 2016, o hipervisor define um novo esclarecimento para descrever seu manuseio de planejamento e posicionamento de VP para o sistema operacional convidado. Esse esclarecimento é definido na [especificação funcional do nível superior do hipervisor v 5.0 c](/virtualization/hyper-v-on-windows/reference/tlfs).
 
 O hipervisor sintética CPUID CPUID CPU. 0x40000004. EAX: 18 [NoNonArchitecturalCoreSharing = 1] indica que um processador virtual nunca compartilhará um núcleo físico com outro processador virtual, exceto os processadores virtuais que são relatados como threads SMT irmãos. Por exemplo, um vice-presidente convidado nunca será executado em um thread SMT junto com um VP raiz em execução simultânea em um thread SMT irmão no mesmo núcleo do processador. Essa condição só é possível durante a execução virtualizada e, portanto, representa um comportamento de SMT sem arquitetura que também tem implicações de segurança sérias. O sistema operacional convidado pode usar NoNonArchitecturalCoreSharing = 1 como uma indicação de que é seguro habilitar otimizações, o que pode ajudar a evitar a sobrecarga de desempenho da configuração de STIBP.
 

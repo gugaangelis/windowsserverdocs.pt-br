@@ -4,13 +4,12 @@ description: Configurando controles de recurso de CPU do host
 author: allenma
 ms.date: 12/15/2017
 ms.topic: article
-ms.prod: windows-server
-ms.openlocfilehash: 1e35595a0b5a0ab12187aae2cf714fc4d53901ee
-ms.sourcegitcommit: acfdb7b2ad283d74f526972b47c371de903d2a3d
+ms.openlocfilehash: fc65159474f9b1cd8bf282acf00ff06f4727673b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87769624"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994060"
 ---
 # <a name="hyper-v-host-cpu-resource-management"></a>Gerenciamento de recursos de CPU do host Hyper-V
 
@@ -18,12 +17,12 @@ Os controles de recurso de CPU do host Hyper-V introduzidos no Windows Server 20
 Usando esses controles, os administradores podem dedicar um subconjunto dos processadores de um sistema host à partição raiz.
 Isso pode separar o trabalho feito em um host Hyper-V das cargas de trabalhos em execução em máquinas virtuais convidadas executando-as em subconjuntos separados dos processadores do sistema.
 
-Para obter detalhes sobre o hardware para hosts Hyper-V, consulte [requisitos do sistema do Hyper-v do Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
+Para obter detalhes sobre o hardware para hosts Hyper-V, consulte [requisitos do sistema do Hyper-v do Windows 10](/virtualization/hyper-v-on-windows/reference/hyper-v-requirements).
 
 ## <a name="background"></a>Segundo plano
 
 Antes de definir controles para recursos de CPU do host Hyper-V, é útil examinar os conceitos básicos da arquitetura do Hyper-V.
-Você pode encontrar um resumo geral na seção [arquitetura do Hyper-V](https://docs.microsoft.com/windows-server/administration/performance-tuning/role/hyper-v-server/architecture) .
+Você pode encontrar um resumo geral na seção [arquitetura do Hyper-V](../../../administration/performance-tuning/role/hyper-v-server/architecture.md) .
 Estes são conceitos importantes para este artigo:
 
 * O Hyper-V cria e gerencia partições de máquina virtual, entre as quais os recursos de computação são alocados e compartilhados, sob o controle do hipervisor.  As partições fornecem limites de isolamento fortes entre todas as máquinas virtuais convidadas e entre as VMs convidadas e a partição raiz.

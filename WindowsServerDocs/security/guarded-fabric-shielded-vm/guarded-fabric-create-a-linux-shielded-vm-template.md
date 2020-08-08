@@ -1,27 +1,25 @@
 ---
 title: Criar um disco de modelo de VM blindada Linux
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: d0e1d4fb-97fc-4389-9421-c869ba532944
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1a6325a5d8e931f1e62c83ba4013d94760e39f86
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: 0535a15d0b21b62bb9f8b91729f773d1f4db0db0
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80856789"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966063"
 ---
 # <a name="create-a-linux-shielded-vm-template-disk"></a>Criar um disco de modelo de VM blindada Linux
 
-> Aplica-se a: Windows Server 2019, Windows Server (canal semestral), 
+> Aplica-se a: Windows Server 2019, Windows Server (canal semestral),
 
 Este tópico explica como preparar um disco de modelo para VMs blindadas Linux que podem ser usadas para criar uma instância de uma ou mais VMs de locatário.
 
-## <a name="prerequisites"></a>{1&gt;{2&gt;Pré-requisitos&lt;2}&lt;1}
+## <a name="prerequisites"></a>Pré-requisitos
 
 Para preparar e testar uma VM blindada Linux, você precisará dos seguintes recursos disponíveis:
 
@@ -72,7 +70,7 @@ Essas etapas guiarão você pelos requisitos mínimos para obter uma VM Linux pr
 5.  Usando o Gerenciador do Hyper-V, [Configure um comutador externo](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) no servidor de virtualização para que a VM do Linux possa acessar a Internet para obter atualizações.
 
 6.  Em seguida, crie uma nova máquina virtual na qual instalar o sistema operacional Linux.
-    No painel Ações, clique em **novo** > **máquina virtual** para abrir o assistente.
+    No painel Ações, clique em **nova**  >  **máquina virtual** para abrir o assistente.
     Forneça um nome amigável para sua VM, como "modelos Linux" e clique em **Avançar**.
 
 7.  Na segunda página do assistente, selecione **geração 2** para garantir que a VM seja provisionada com um perfil de firmware baseado em UEFI.
@@ -139,7 +137,7 @@ Essas etapas guiarão você pelos requisitos mínimos para obter uma VM Linux pr
     ```
 
 14. Quando terminar de personalizar o SO Linux, localize o programa de instalação do lsvmprep em seu sistema e execute-o.
-    
+
     ```bash
     # The path below may change based on the version of lsvmprep installed
     # Run "find /opt -name lsvmprep" to locate the lsvmprep executable
@@ -150,7 +148,7 @@ Essas etapas guiarão você pelos requisitos mínimos para obter uma VM Linux pr
 
 16. Se você tiver criado qualquer ponto de verificação de sua VM (incluindo pontos de verificação automáticos criados pelo Hyper-V com a atualização dos criadores de outono do Windows 10), certifique-se de excluí-los antes de continuar.
     Os pontos de verificação criam discos diferenciais (. avhdx) que não têm suporte no assistente de disco de modelo.
-    
+
     Para excluir pontos de verificação, abra o **Gerenciador do Hyper-V**, selecione sua VM, clique com o botão direito do mouse no ponto de verificação superior no painel pontos de verificação e clique em **excluir subárvore do ponto de verificação**.
 
     ![Excluir todos os pontos de verificação de sua VM de modelo no Gerenciador do Hyper-V](../media/Guarded-Fabric-Shielded-VM/delete-checkpoints-lsvm-template.png)
@@ -187,7 +185,7 @@ New-SelfSignedCertificate -Subject "CN=Linux Shielded VM Template Disk Signing C
 ### <a name="process-the-disk-with-the-template-disk-wizard-cmdlet"></a>Processar o disco com o cmdlet do assistente de disco de modelo
 
 Copie o disco do modelo e o certificado para um computador executando o Windows Server, versão 1709 e execute os comandos a seguir para iniciar o processo de assinatura.
-O VHDX que você fornecer ao parâmetro `-Path` será substituído pelo disco de modelo atualizado, portanto, certifique-se de fazer uma cópia antes de executar o comando.
+O VHDX que você fornecer ao `-Path` parâmetro será substituído pelo disco de modelo atualizado, portanto, certifique-se de fazer uma cópia antes de executar o comando.
 
 > [!IMPORTANT]
 > O Ferramentas de Administração de Servidor Remoto disponível no Windows Server 2016 ou Windows 10 não pode ser usado para preparar um disco de modelo de VM blindada do Linux.

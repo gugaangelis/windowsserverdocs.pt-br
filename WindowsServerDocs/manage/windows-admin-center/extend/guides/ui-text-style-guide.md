@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 01/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: d77498b9d4c8573dfac82b7291b6d0676d0d8c1e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a784bdfdfbfbbc4f91579d40cedb22230a70b13a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971973"
+ms.locfileid: "87993588"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guia de estilo de texto e o design de IU de Windows Admin Center
 
@@ -19,7 +19,7 @@ ms.locfileid: "87971973"
 
 Este tópico descreve a abordagem geral para escrita de texto (UI) da interface de usuário para o Windows Admin Center, bem como alguns convenções específicas e abordagens que estamos aproveitando.
 
-Windows Admin Center e qualquer extensão deve seguir [princípios de voz da Microsoft](https://docs.microsoft.com/style-guide/brand-voice-above-all-simple-human) para que a experiência seja fácil de usar e amigável. Este guia de estilo baseia-se nestes princípios de voz, bem como o [Guia de estilo de escrita Microsoft](https://docs.microsoft.com/style-guide/welcome/), portanto, certifique-se de fazer check-out de ambos desses recursos para informações sobre coisas como [acessibilidade](https://docs.microsoft.com/style-guide/accessibility/accessibility-guidelines-requirements), [acrônimos](https://docs.microsoft.com/style-guide/acronyms)e [Escolha do word](https://docs.microsoft.com/style-guide/word-choice/) , como [ Por favor,](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/p/please)e [Desculpe](https://docs.microsoft.com/style-guide/a-z-word-list-term-collections/s/sorry).
+Windows Admin Center e qualquer extensão deve seguir [princípios de voz da Microsoft](/style-guide/brand-voice-above-all-simple-human) para que a experiência seja fácil de usar e amigável. Este guia de estilo baseia-se nestes princípios de voz, bem como o [Guia de estilo de escrita Microsoft](/style-guide/welcome/), portanto, certifique-se de fazer check-out de ambos desses recursos para informações sobre coisas como [acessibilidade](/style-guide/accessibility/accessibility-guidelines-requirements), [acrônimos](/style-guide/acronyms)e [Escolha do word](/style-guide/word-choice/) , como [ Por favor,](/style-guide/a-z-word-list-term-collections/p/please)e [Desculpe](/style-guide/a-z-word-list-term-collections/s/sorry).
 
 ## <a name="buttons"></a>Botões
 
@@ -29,7 +29,7 @@ Windows Admin Center e qualquer extensão deve seguir [princípios de voz da Mic
 
 ## <a name="capitalization"></a>Uso de maiúsculas
 
-Podemos siga o estilo da Microsoft para [capitalização](https://docs.microsoft.com/style-guide/capitalization) - capitalização do estilo sentença de uso para praticamente tudo.
+Podemos siga o estilo da Microsoft para [capitalização](/style-guide/capitalization) - capitalização do estilo sentença de uso para praticamente tudo.
 
 | Elemento da interface de usuário              |Uso de maiúsculas|Comentários|
 |-------------------------|--------------|--------|
@@ -215,7 +215,7 @@ O estado nulo ocorre quando os dados ou o conteúdo do cliente estão ausentes d
 ## <a name="punctuation"></a>Pontuação
 
 - Sem pontuação final (pontos e interrogação) para títulos ou frases incompletas. Uma exceção é uma caixa de diálogo de confirmação onde o título faz a pergunta
-- Use as instruções do guia de estilo doa Microsoft sobre [pontos](https://docs.microsoft.com/style-guide/punctuation/periods) e [pontos de interrogação](https://docs.microsoft.com/style-guide/punctuation/question-marks).
+- Use as instruções do guia de estilo doa Microsoft sobre [pontos](/style-guide/punctuation/periods) e [pontos de interrogação](/style-guide/punctuation/question-marks).
 
 ## <a name="status-messages"></a>Mensagens de status
 

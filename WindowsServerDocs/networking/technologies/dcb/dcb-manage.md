@@ -6,12 +6,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bc012fd6a685b005b9f7f2b055d49050ef3c009a
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9732be4cb0f9301e7011075a663f5499bcf8a277
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971773"
+ms.locfileid: "87993973"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Gerenciar a ponte do Data Center (DCB)
 
@@ -464,10 +464,10 @@ Há comandos DCB do Windows PowerShell para o Windows Server 2016 e o Windows Se
 
 O tópico a seguir para o Windows Server 2016 fornece descrições e sintaxe de cmdlets do Windows PowerShell para toda a ponte de data center \( DCB a \) qualidade dos \( \) \- cmdlets específicos de QoS de serviço. Ela lista os cmdlets em ordem alfabética com base no verbo no início do cmdlet.
 
-- [Módulo DcbQoS](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
+- [Módulo DcbQoS](/powershell/module/dcbqos/?view=win10-ps)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Comandos do Windows PowerShell para DCB do Windows Server 2012 R2
 
 O tópico a seguir para o Windows Server 2012 R2 fornece descrições e sintaxe de cmdlets do Windows PowerShell para toda a ponte de data center \( DCB a \) qualidade dos \( \) \- cmdlets específicos de QoS de serviço. Ela lista os cmdlets em ordem alfabética com base no verbo no início do cmdlet.
 
-- [Cmdlets de Qualidade de Serviço (QoS) de Ponte de Datacenter no Windows PowerShell](https://technet.microsoft.com/library/hh967440.aspx)
+- [Cmdlets de Qualidade de Serviço (QoS) de Ponte de Datacenter no Windows PowerShell](/powershell/module/dcbqos/?view=win10-ps&viewFallbackFrom=winserverr2-ps)

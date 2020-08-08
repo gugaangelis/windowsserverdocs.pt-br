@@ -6,14 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: ea421bb274ec7f6a6b1ba5be03391dd92fb10b33
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 584088900bea8acb83da076311d29ed5f45ea71e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955049"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954232"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>ingresso no Local de Trabalho em qualquer dispositivo de SSO e autenticação de dois fatores contínua em aplicativos da empresa
 
@@ -42,7 +40,7 @@ As empresas podem gerenciar o risco relacionado ao acesso a informações e cond
 
 -   Fornece uma experiência de entrada contínua para os usuários acessarem recursos da empresa em dispositivos confiáveis.
 
-### <a name="single-sign-on"></a>Logon único
+### <a name="single-sign-on"></a>Logon Único
 O SSO (Logon Único) no contexto desse cenário é a funcionalidade que reduz o número de prompts de senhas que o usuário final precisa digitar para acessar os recursos da empresa em dispositivos conhecidos. Essa funcionalidade implica que haverá apenas um prompt aos usuários durante o tempo de vida do SSO para acessar aplicativos e recursos da empresa nesse dispositivo. Se um dispositivo utiliza o Ingresso no Local Trabalho, o usuário que está registrado para usar esse dispositivo adquire SSO persistente, por padrão, por sete dias. Esse usuário tem uma experiência de entrada contínua na mesma sessão ou em novas sessões.
 
 ## <a name="solution-overview"></a>Visão geral da solução

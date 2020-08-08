@@ -5,18 +5,18 @@ ms.topic: article
 ms.author: asmahi; sandysp; jopoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 916239535b92e1248918c76897e5222fa1dc6451
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b1616af3cfc1f14c534392c7f083b333b4744ef3
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896112"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993348"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Considerações sobre a máquina virtual do Linux
 
 As máquinas virtuais Linux e BSD têm considerações adicionais em comparação com as máquinas virtuais do Windows no Hyper-V.
 
-A primeira consideração é se Integration Services estão presentes ou se a VM está sendo executada meramente em hardware emulado sem esclarecimento. Uma tabela de versões do Linux e BSD que têm Integration Services internos ou baixáveis está disponível em [máquinas virtuais Linux e FreeBSD com suporte para o Hyper-V no Windows](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows). Essas páginas têm grades de recursos disponíveis do Hyper-V disponíveis para as versões de distribuição do Linux e observações sobre esses recursos, quando aplicável.
+A primeira consideração é se Integration Services estão presentes ou se a VM está sendo executada meramente em hardware emulado sem esclarecimento. Uma tabela de versões do Linux e BSD que têm Integration Services internos ou baixáveis está disponível em [máquinas virtuais Linux e FreeBSD com suporte para o Hyper-V no Windows](../../../../virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md). Essas páginas têm grades de recursos disponíveis do Hyper-V disponíveis para as versões de distribuição do Linux e observações sobre esses recursos, quando aplicável.
 
 Mesmo quando o convidado está em execução Integration Services, ele pode ser configurado com hardware herdado que não apresenta o melhor desempenho. Por exemplo, configure e use um adaptador Ethernet virtual para o convidado em vez de usar um adaptador de rede herdado. Com o Windows Server 2016, a rede avançada, como SR-IOV, também está disponível.
 
@@ -51,7 +51,7 @@ Uma ferramenta útil para netbenchmarks de rede é o ntttcp, que está disponív
 
 ## <a name="linux-storage-performance"></a>Desempenho do armazenamento do Linux
 
-Algumas práticas recomendadas, como as seguintes, estão listadas em [práticas recomendadas para executar o Linux no Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v). O kernel do Linux tem diferentes agendadores de e/s para reordenar solicitações com algoritmos diferentes. NOOP é uma fila de primeiro a entrar, que passa a decisão de agendamento para ser feita pelo hipervisor. É recomendável usar NOOP como o Agendador ao executar a máquina virtual do Linux no Hyper-V. Para alterar o Agendador de um dispositivo específico, na configuração do carregador de inicialização (/etc/grub.conf, por exemplo), adicione `elevator=noop` aos parâmetros do kernel e reinicie o.
+Algumas práticas recomendadas, como as seguintes, estão listadas em [práticas recomendadas para executar o Linux no Hyper-V](../../../../virtualization/hyper-v/best-practices-for-running-linux-on-hyper-v.md). O kernel do Linux tem diferentes agendadores de e/s para reordenar solicitações com algoritmos diferentes. NOOP é uma fila de primeiro a entrar, que passa a decisão de agendamento para ser feita pelo hipervisor. É recomendável usar NOOP como o Agendador ao executar a máquina virtual do Linux no Hyper-V. Para alterar o Agendador de um dispositivo específico, na configuração do carregador de inicialização (/etc/grub.conf, por exemplo), adicione `elevator=noop` aos parâmetros do kernel e reinicie o.
 
 Semelhante à rede, o desempenho de convidado do Linux com o armazenamento beneficia o máximo de várias filas com profundidade suficiente para manter o host ocupado. O desempenho de armazenamento de MicroBenchMark é provavelmente melhor com a ferramenta de benchmark fio com o mecanismo libaio.
 

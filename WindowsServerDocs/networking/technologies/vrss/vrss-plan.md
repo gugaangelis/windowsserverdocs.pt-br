@@ -8,12 +8,12 @@ manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/04/2018
-ms.openlocfilehash: 9457a1763f92e7f2571040c1c6e8e323d96ee598
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ccfaa9fa02dd7324f1682592867b027cad4006a8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87951935"
+ms.locfileid: "87993561"
 ---
 # <a name="plan-the-use-of-vrss"></a>Planejar o uso de vRSS
 
@@ -40,7 +40,7 @@ Veja a seguir as informações adicionais necessárias para concluir essas etapa
 
 3. **Ausência de Sr \- IOV**. Verifique se um único \- Driver FV da função virtual do Sr IOV de virtualização de saída de entrada raiz \( \- \) \( \) não está conectado à interface de rede da VM. Você pode verificar isso usando o comando **Get-NetAdapterSriov** . Se um driver VF for carregado, o RSS usará as configurações de dimensionamento desse driver em vez das configuradas por vRSS. Se o driver VF não oferecer suporte a RSS, o vRSS será desabilitado.
 
-4. **Configuração de agrupamento NIC**. Se você estiver usando o agrupamento NIC, é importante que você configure corretamente a VMQ para trabalhar com as configurações de agrupamento NIC. Para obter informações detalhadas sobre implantação e gerenciamento de agrupamento NIC, consulte [agrupamento NIC](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming).
+4. **Configuração de agrupamento NIC**. Se você estiver usando o agrupamento NIC, é importante que você configure corretamente a VMQ para trabalhar com as configurações de agrupamento NIC. Para obter informações detalhadas sobre implantação e gerenciamento de agrupamento NIC, consulte [agrupamento NIC](../nic-teaming/nic-teaming.md).
 
 5. **Número de LPS**. Verifique se a VM tem mais de um processador lógico \( LP \) . o vRSS se baseia em RSS na VM ou no host Hyper-V para balancear a carga do tráfego recebido para vários LPs para processamento paralelo. Você pode observar quantos LPs sua VM tem ao executar o comando **Get-VMProcessor** do Windows PowerShell no host. Depois de executar o comando, você pode observar a entrada de coluna de contagem para o número de LPs.
 

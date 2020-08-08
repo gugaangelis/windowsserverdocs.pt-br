@@ -6,18 +6,18 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: f577ebd805e5373a10dd43a3d5054f92d4881c7d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2092e330af479ae0cbdb1da88ba87cf233307b59
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895911"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993260"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Funções, serviços de função e recursos que não estão em contêineres do Server Core-Windows Server, versão 1803
 
 > Aplica-se a: Windows Server, versão 1803
 
-No Windows Server, versão 1803, [reduzimos o tamanho geral da imagem de contêiner do Server Core para **1,58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/). A maneira como fizemos isso é otimizando a arquitetura e removendo as coisas que você não precisa em um [contêiner do Server Core](https://docs.microsoft.com/virtualization/windowscontainers/about/). Alguns eram coisas que não funcionavam em contêineres, alguns eram funções e recursos que ninguém está usando.
+No Windows Server, versão 1803, [reduzimos o tamanho geral da imagem de contêiner do Server Core para **1,58 GB**](https://blogs.technet.microsoft.com/virtualization/2018/01/22/a-smaller-windows-server-core-container-with-better-application-compatibility/). A maneira como fizemos isso é otimizando a arquitetura e removendo as coisas que você não precisa em um [contêiner do Server Core](/virtualization/windowscontainers/about/). Alguns eram coisas que não funcionavam em contêineres, alguns eram funções e recursos que ninguém está usando.
 
 > [!IMPORTANT]
 > Nós os removemos da imagem de **contêiner** do Server Core, e não do [próprio Server Core](server-core-roles-and-services.md).

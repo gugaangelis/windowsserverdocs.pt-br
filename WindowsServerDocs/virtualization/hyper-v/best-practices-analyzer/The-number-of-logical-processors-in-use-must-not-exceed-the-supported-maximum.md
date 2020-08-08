@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 66df8b02-91d1-424b-8934-a39c214d530e
 author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d74fa49a3ce0015cb8ee819b537153519c498627
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 4a78f81fa90bc25d9ca1888d2c74d90a417f1071
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960459"
+ms.locfileid: "87993426"
 ---
 # <a name="the-number-of-logical-processors-in-use-must-not-exceed-the-supported-maximum"></a>O número de processadores lógicos em uso não deve exceder o máximo com suporte
 
@@ -41,7 +41,7 @@ Nas seções a seguir, os itálicos indicam o texto que aparece na ferramenta de
 
 *Remova alguns processadores desta máquina ou use o msconfig para limitar o número de processadores disponíveis.*
 
-Consulte as instruções a seguir para usar o msconfig. Para obter detalhes sobre como remover processadores, consulte as instruções fornecidas com o computador ou contate o fabricante do hardware. Para obter detalhes sobre as configurações máximas com suporte para o Hyper-V, consulte [planejar a escalabilidade do Hyper-v no Windows Server 2016](../plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md).
+Consulte as instruções a seguir para usar o msconfig. Para obter detalhes sobre como remover processadores, consulte as instruções fornecidas com o computador ou contate o fabricante do hardware. Para obter detalhes sobre as configurações máximas com suporte para o Hyper-V, consulte [planejar a escalabilidade do Hyper-v no Windows Server 2016](../plan/plan-hyper-v-scalability-in-windows-server.md).
 
 ### <a name="to-limit-the-number-of-available-processors"></a>Para limitar o número de processadores disponíveis
 
@@ -52,6 +52,3 @@ Consulte as instruções a seguir para usar o msconfig. Para obter detalhes sobr
 3.  Selecione **número de processadores** e, em seguida, selecione um número na lista. Clique em **OK**.
 
 4.  Reinicie o computador para executá-lo usando o novo número de processadores.
-
-
-

@@ -1,31 +1,29 @@
 ---
-title: Implantar controlador de rede usando o Windows PowerShell
+title: Implantar o controlador de rede usando o Windows PowerShell
 description: Este tópico fornece instruções sobre como usar o Windows PowerShell para implantar o controlador de rede em um ou mais computadores ou máquinas virtuais (VMs) que executam o Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: anpaul
 author: AnirbanPaul
 manager: grcusanz
 ms.date: 08/23/2018
-ms.openlocfilehash: 429d79ec9ed2f22bd7c7e1a4c1bd8f6cb6ff7fb1
-ms.sourcegitcommit: b00d7c8968c4adc8f699dbee694afe6ed36bc9de
+ms.openlocfilehash: e26caa963bfde32be2770577c0745ea3cf3b454a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80860729"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993783"
 ---
-# <a name="deploy-network-controller-using-windows-powershell"></a>Implantar controlador de rede usando o Windows PowerShell
+# <a name="deploy-network-controller-using-windows-powershell"></a>Implantar o controlador de rede usando o Windows PowerShell
 
->Aplicável a: Windows Server (canal semestral), Windows Server 2016
+>Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Este tópico fornece instruções sobre como usar o Windows PowerShell para implantar o controlador de rede em uma ou mais máquinas virtuais (VMs) que executam o Windows Server 2016.
 
 >[!IMPORTANT]
->Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(\) da VM que está instalada em um host do Hyper-V. Depois de instalar o controlador de rede em VMs em três hosts Hyper\-V diferentes, você deve habilitar os hosts do Hyper\-V para a rede definida pelo software \(SDN\) adicionando os hosts ao controlador de rede usando o comando **New-NetworkControllerServer**do Windows PowerShell. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione. Para obter mais informações, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
+>Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma VM de máquina virtual do Hyper-V \( \) instalada em um host do Hyper-v. Depois de ter instalado o controlador de rede em VMs em três \- hosts Hyper-v diferentes, você deve habilitar os \- hosts Hyper v para o Sdn de rede definido pelo software \( \) adicionando os hosts ao controlador de rede usando o comando **New-NetworkControllerServer**do Windows PowerShell. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione. Para obter mais informações, consulte [New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver).
 
-Este tópico contém as seguintes seções.
+Este tópico inclui as seções a seguir.
 
 - [Instalar a função de servidor do controlador de rede](#install-the-network-controller-server-role)
 
@@ -43,15 +41,15 @@ Este tópico contém as seguintes seções.
 
 ## <a name="install-the-network-controller-server-role"></a>Instalar a função de servidor do controlador de rede
 
-Você pode usar este procedimento para instalar a função de servidor do controlador de rede em uma máquina virtual \(\)da VM.
+Você pode usar este procedimento para instalar a função de servidor do controlador de rede em uma VM de máquina virtual \( \) .
 
 >[!IMPORTANT]
->Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma máquina virtual do Hyper-V \(\) da VM que está instalada em um host do Hyper-V. Depois de instalar o controlador de rede em VMs em três hosts Hyper\-V diferentes, você deve habilitar os hosts do Hyper\-V para a rede definida pelo software \(SDN\) adicionando os hosts ao controlador de rede. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione.
+>Não implante a função de servidor do controlador de rede em hosts físicos. Para implantar o controlador de rede, você deve instalar a função de servidor do controlador de rede em uma VM de máquina virtual do Hyper-V \( \) instalada em um host do Hyper-v. Depois de instalar o controlador de rede em VMs em três \- hosts Hyper-v diferentes, você deve habilitar os \- hosts Hyper-v para o Sdn de rede definido pelo software \( \) adicionando os hosts ao controlador de rede. Ao fazer isso, você está permitindo que o software SDN Load Balancer funcione.
 
-A associação em **Administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.  
+A associação em **Administradores**, ou equivalente, é o requisito mínimo para executar este procedimento.
 
 >[!NOTE]
->Se você quiser usar Gerenciador do Servidor em vez do Windows PowerShell para instalar o controlador de rede, consulte [instalar a função de servidor do controlador de rede usando Gerenciador do servidor](https://technet.microsoft.com/library/mt403348.aspx)
+>Se você quiser usar Gerenciador do Servidor em vez do Windows PowerShell para instalar o controlador de rede, consulte [instalar a função de servidor do controlador de rede usando Gerenciador do servidor](../technologies/network-controller/install-the-network-controller-server-role-using-server-manager.md)
 
 Para instalar o controlador de rede usando o Windows PowerShell, digite os seguintes comandos em um prompt do Windows PowerShell e pressione ENTER.
 
@@ -66,7 +64,7 @@ A instalação do controlador de rede requer que você reinicie o computador. Pa
 O cluster do controlador de rede fornece alta disponibilidade e escalabilidade para o aplicativo do controlador de rede, que você pode configurar depois de criar o cluster e que é hospedado na parte superior do cluster.
 
 >[!NOTE]
->Você pode executar os procedimentos nas seções a seguir diretamente na VM em que você instalou o controlador de rede ou pode usar o Ferramentas de Administração de Servidor Remoto para o Windows Server 2016 para executar os procedimentos de um computador remoto que esteja executando o o Windows Server 2016 ou o Windows 10. Além disso, a associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para executar esse procedimento. Se o computador ou a VM na qual você instalou o controlador de rede estiver ingressado em um domínio, sua conta de usuário deverá ser membro de **usuários de domínio**.
+>Você pode executar os procedimentos nas seções a seguir diretamente na VM em que você instalou o controlador de rede ou pode usar o Ferramentas de Administração de Servidor Remoto para o Windows Server 2016 para executar os procedimentos de um computador remoto que esteja executando o Windows Server 2016 ou Windows 10. Além disso, a associação em **Administradores**, ou equivalente, é o requisito mínimo necessário para executar esse procedimento. Se o computador ou a VM na qual você instalou o controlador de rede estiver ingressado em um domínio, sua conta de usuário deverá ser membro de **usuários de domínio**.
 
 Você pode criar um cluster de controlador de rede criando um objeto de nó e, em seguida, configurando o cluster.
 
@@ -74,7 +72,7 @@ Você pode criar um cluster de controlador de rede criando um objeto de nó e, e
 
 Você precisa criar um objeto de nó para cada VM que seja membro do cluster do controlador de rede.
 
-Para criar um objeto de nó, digite o seguinte comando no prompt de comando do Windows PowerShell e pressione ENTER. Certifique-se de adicionar valores para cada parâmetro que são apropriados para sua implantação.  
+Para criar um objeto de nó, digite o seguinte comando no prompt de comando do Windows PowerShell e pressione ENTER. Certifique-se de adicionar valores para cada parâmetro que são apropriados para sua implantação.
 
 ```
 New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <string>-RestInterface <string> [-NodeCertificate <X509Certificate2>]
@@ -84,9 +82,9 @@ A tabela a seguir fornece descrições para cada parâmetro do comando **New-Net
 
 |Parâmetro|Descrição|
 |-------------|---------------|
-|{1&gt;Nome&lt;1}|O parâmetro **Name** especifica o nome amigável do servidor que você deseja adicionar ao cluster|
-|Server|O parâmetro **Server** especifica o nome do host, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do servidor que você deseja adicionar ao cluster. Para computadores ingressados no domínio, o FQDN é necessário.|
-|FaultDomain|O parâmetro **FaultDomain** especifica o domínio de falha do servidor que você está adicionando ao cluster. Esse parâmetro define os servidores que podem apresentar falha ao mesmo tempo que o servidor que você está adicionando ao cluster. Essa falha pode ser causada por dependências físicas compartilhadas, como fontes de energia e rede. Os domínios de falha normalmente representam hierarquias relacionadas a essas dependências compartilhadas, com mais servidores que provavelmente falham juntos em um ponto mais alto na árvore de domínio de falha. Durante o tempo de execução, o controlador de rede considera os domínios de falha no cluster e tenta distribuir os serviços do controlador de rede para que eles estejam em domínios de falha separados. Esse processo ajuda a garantir, em caso de falha de qualquer domínio de falha, que a disponibilidade desse serviço e seu estado não sejam comprometidos. Os domínios de falha são especificados em um formato hierárquico. Por exemplo: "FD:/DC1/Rack1/Host1", em que DC1 é o nome do datacenter, Rack1 é o nome do rack e Host1 é o nome do host onde o nó é colocado.|
+|Nome|O parâmetro **Name** especifica o nome amigável do servidor que você deseja adicionar ao cluster|
+|Servidor|O parâmetro **Server** especifica o nome do host, o FQDN (nome de domínio totalmente qualificado) ou o endereço IP do servidor que você deseja adicionar ao cluster. Para computadores ingressados no domínio, o FQDN é necessário.|
+|FaultDomain|O parâmetro **FaultDomain** especifica o domínio de falha do servidor que você está adicionando ao cluster. Esse parâmetro define os servidores que podem apresentar falha ao mesmo tempo que o servidor que você está adicionando ao cluster. Essa falha pode ser causada por dependências físicas compartilhadas, como fontes de energia e rede. Os domínios de falha normalmente representam hierarquias relacionadas a essas dependências compartilhadas, com mais servidores que provavelmente falham juntos em um ponto mais alto na árvore de domínio de falha. Durante o tempo de execução, o controlador de rede considera os domínios de falha no cluster e tenta distribuir os serviços do controlador de rede para que eles estejam em domínios de falha separados. Esse processo ajuda a garantir que, em caso de falha de qualquer domínio de falha, a disponibilidade do serviço e seu estado não sejam comprometidos. Os domínios de falha são especificados em um formato hierárquico. Por exemplo: "FD:/DC1/Rack1/Host1", em que DC1 é o nome do datacenter, Rack1 é o nome do rack e Host1 é o nome do host onde o nó é colocado.|
 |RestInterface|O parâmetro **RestInterface** especifica o nome da interface no nó em que a comunicação de transferência de estado de reapresentação (REST) é encerrada. Essa interface de controlador de rede recebe solicitações de API Northbound da camada de gerenciamento da rede.|
 |NodeCertificate|O parâmetro **NodeCertificate** especifica o certificado que o controlador de rede usa para autenticação do computador. O certificado será necessário se você usar a autenticação baseada em certificado para comunicação dentro do cluster; o certificado também é usado para criptografia de tráfego entre os serviços do controlador de rede. O nome da entidade do certificado deve ser o mesmo que o nome DNS do nó.|
 
@@ -99,7 +97,7 @@ Install-NetworkControllerCluster -Node <NetworkControllerNode[]> -ClusterAuthent
 ```
 
 A tabela a seguir fornece descrições para cada parâmetro do comando **install-NetworkControllerCluster** .
-  
+
 |Parâmetro|Descrição|
 |-------------|---------------|
 |ClusterAuthentication|O parâmetro **ClusterAuthentication** especifica o tipo de autenticação que é usado para proteger a comunicação entre os nós e também é usado para criptografia de tráfego entre os serviços do controlador de rede. Os valores com suporte são **Kerberos**, **X509** e **None**. A autenticação Kerberos usa contas de domínio e só pode ser usada se os nós do controlador de rede estiverem ingressados no domínio. Se você especificar a autenticação baseada em X509, deverá fornecer um certificado no objeto NetworkControllerNode. Além disso, você deve provisionar manualmente o certificado antes de executar esse comando.|
@@ -163,7 +161,7 @@ Se você estiver usando o Kerberos como o mecanismo clientauthentication válido
 3. Para recuperar a credencial que você adicionou ao controlador de rede, digite o comando a seguir e pressione ENTER. Certifique-se de adicionar valores para cada parâmetro que são apropriados para sua implantação.
 
     ```
-    Get-NetworkControllerCredential -ConnectionUri https://networkcontroller -ResourceId cred1  
+    Get-NetworkControllerCredential -ConnectionUri https://networkcontroller -ResourceId cred1
     ```
 
 4. Examine a saída do comando, que deve ser semelhante à saída de exemplo a seguir.
@@ -194,7 +192,7 @@ Depois de implantar o controlador de rede, você pode usar comandos do Windows P
 
 A tabela a seguir fornece a sintaxe para comandos do Windows PowerShell que você pode usar para realizar essas tarefas.
 
-|{1&gt;Tarefa&lt;1}|{1&gt;Comando&lt;1}|Sintaxe|
+|Tarefa|Comando|Sintaxe|
 |--------|-------|----------|
 |Modificar configurações de cluster do controlador de rede|Set-NetworkControllerCluster|`Set-NetworkControllerCluster [-ManagementSecurityGroup <string>][-Credential <PSCredential>] [-computerName <string>][-CertificateThumbprint <String> ] [-UseSSL]`
 |Modificar configurações do aplicativo do controlador de rede|Set-NetworkController|`Set-NetworkController [-ClientAuthentication <ClientAuthentication>] [-Credential <PSCredential>] [-ClientCertificateThumbprint <string[]>] [-ClientSecurityGroup <string>] [-ServerCertificate <X509Certificate2>] [-RestIPAddress <String>] [-ComputerName <String>][-CertificateThumbprint <String> ] [-UseSSL]`
@@ -221,7 +219,7 @@ $c = New-NetworkControllerNodeObject -Name Node3 -Server NCNode3.contoso.com -Fa
 
 $cert= get-item Cert:\LocalMachine\My | get-ChildItem | where {$_.Subject -imatch "networkController.contoso.com" }
 
-Install-NetworkControllerCluster -Node @($a,$b,$c)  -ClusterAuthentication Kerberos -DiagnosticLogLocation \\share\Diagnostics - ManagementSecurityGroup Contoso\NCManagementAdmins -CredentialEncryptionCertificate $cert  
+Install-NetworkControllerCluster -Node @($a,$b,$c)  -ClusterAuthentication Kerberos -DiagnosticLogLocation \\share\Diagnostics - ManagementSecurityGroup Contoso\NCManagementAdmins -CredentialEncryptionCertificate $cert
 Install-NetworkController -Node @($a,$b,$c) -ClientAuthentication Kerberos -ClientSecurityGroup Contoso\NCRESTClients -ServerCertificate $cert -RestIpAddress 10.0.0.1/24
 ```
 
@@ -230,5 +228,3 @@ Install-NetworkController -Node @($a,$b,$c) -ClientAuthentication Kerberos -Clie
 Se você não estiver usando o Kerberos com a implantação do controlador de rede, deverá implantar certificados.
 
 Para obter mais informações, consulte [etapas de pós-implantação para o controlador de rede](../technologies/network-controller/post-deploy-steps-nc.md).
-
-

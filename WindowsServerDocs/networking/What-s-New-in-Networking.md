@@ -5,12 +5,12 @@ ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
 author: dcuomo
 ms.author: dacuo
-ms.openlocfilehash: 78741ae45a5f175d6be0e608adba5c6c6fcbf771
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69e1fee1a8ae0ff1c878c64790650290b4804351
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964392"
+ms.locfileid: "87993815"
 ---
 # <a name="whats-new-in-networking"></a>Novidades na rede
 
@@ -35,7 +35,7 @@ As seções a seguir contêm informações sobre esses novos recursos e tecnolog
 
 A seguir estão as tecnologias de infraestrutura de SDN novas ou aprimoradas.
 
--   **Controlador de rede**. Novidade no Windows Server 2016, o controlador de rede fornece um ponto de automação centralizado e programável para gerenciar, configurar, monitorar e solucionar problemas de infraestrutura de rede física e virtual em seu datacenter. Usando o Controlador de Rede, você pode automatizar a configuração da infraestrutura de rede em vez de executar a configuração manual dos dispositivos e dos serviços de rede. Para obter mais informações, consulte [controlador de rede](sdn/technologies/network-controller/Network-Controller.md) e [implantar redes definidas por software usando scripts](https://technet.microsoft.com/library/mt427380.aspx).
+-   **Controlador de rede**. Novidade no Windows Server 2016, o controlador de rede fornece um ponto de automação centralizado e programável para gerenciar, configurar, monitorar e solucionar problemas de infraestrutura de rede física e virtual em seu datacenter. Usando o Controlador de Rede, você pode automatizar a configuração da infraestrutura de rede em vez de executar a configuração manual dos dispositivos e dos serviços de rede. Para obter mais informações, consulte [controlador de rede](sdn/technologies/network-controller/Network-Controller.md) e [implantar redes definidas por software usando scripts](/previous-versions/windows/server/mt427380(v=ws.12)).
 
 -   **Comutador virtual do Hyper-V**. O comutador virtual do Hyper-V é executado em hosts Hyper-V e permite que você crie comutação distribuída e roteamento e uma camada de imposição de política que esteja alinhada e compatível com Microsoft Azure. Para saber mais, consulte [Comutador Virtual do Hyper-V](../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).
 
@@ -50,7 +50,7 @@ A seguir estão as tecnologias de infraestrutura de SDN novas ou aprimoradas.
         Para obter mais informações, consulte [What ' s New in RAS gateway](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md) and [RAS gateway for Sdn](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md).
 
     - **Load Balancer de software (SLB) e conversão de endereços de rede (NAT)**. O balanceador de carga da camada 4-Sul e leste-oeste e o NAT aprimoram a taxa de transferência ao dar suporte ao retorno direto de servidor, com o qual o tráfego de rede de retorno pode ignorar o multiplexador de balanceamento de carga.
-       Para obter mais informações, consulte [balanceamento de carga de Software &#40;&#41; SLB para Sdn](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md).
+       Para obter mais informações, consulte [balanceamento de carga de Software &#40;&#41; SLB para Sdn](./sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md).
 
     Para obter mais informações, consulte [virtualização de função de rede](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md).
 
@@ -145,5 +145,3 @@ O IPAM fornece recursos de monitoramento e administração altamente personaliz�
      Você pode usar o Windows PowerShell para definir escopos de acesso em objetos IPAM.
 
 Para obter mais informações, consulte [o que há de novo no IPAM](technologies/ipam/What-s-New-in-IPAM.md) e [gerenciar o IPAM](technologies/ipam/Manage-IPAM.md).
-
-

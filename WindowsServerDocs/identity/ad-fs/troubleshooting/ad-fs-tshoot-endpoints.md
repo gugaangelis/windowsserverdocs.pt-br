@@ -6,14 +6,12 @@ ms.author: billmath
 manager: mtillman
 ms.date: 01/03/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 807b5c5de14bf6a43419d0b9d2d3a4e6953d0075
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7739093e483e8f797e87259c176ff3c92514903d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366218"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954162"
 ---
 # <a name="ad-fs-troubleshooting---ad-fs-metadata-endpoints"></a>Solução de problemas de AD FS – AD FS pontos de extremidade de metadados
 Os pontos de extremidade fornecem acesso à funcionalidade do servidor de Federação de AD FS, como a publicação de metadados de Federação.  Para verificar se o servidor de AD FS está respondendo às solicitações da Web, podemos verificar os vários pontos de extremidade.
@@ -24,7 +22,7 @@ A Federação passiva refere-se a cenários em que seu navegador é redirecionad
 
 1.  Usando um navegador da Web, navegue até o ponto de extremidade de metadados de Federação do AD FS.  Por exemplo: https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 2. O arquivo XML deve ser baixado localmente em seu computador.
-3. Abra-o e verifique se ele contém informações semelhantes às informações abaixo: ![](media/ad-fs-tshoot-endpoints/meta2.png) passiva
+3. Abra-o e verifique se ele contém informações semelhantes à informações abaixo: ![ passiva](media/ad-fs-tshoot-endpoints/meta2.png)
 
 ## <a name="ws-mex-test-active-test"></a>Teste de WS-MEX (teste ativo)
 O WS-MetaDataExchange é um protocolo de serviços Web e faz parte do roteiro do WS-Federation.  Ele usa uma mensagem SOAP para solicitar metadados.  Testando o ponto de extremidade, podemos determinar se o servidor de AD FS está respondendo às solicitações da Web para WS-MetaDataExchange.  Use o procedimento a seguir para testar o ponto de extremidade.

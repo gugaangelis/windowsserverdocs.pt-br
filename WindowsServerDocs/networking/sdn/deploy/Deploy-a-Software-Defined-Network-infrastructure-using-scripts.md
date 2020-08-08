@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: e671421225e9fa2d5e7461c795a9f7c9789efd88
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970813"
+ms.locfileid: "87993771"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implantar uma infraestrutura de rede definida pelo software usando scripts
 
@@ -20,7 +20,7 @@ ms.locfileid: "87970813"
 
 Se você quiser que suas cargas de trabalho de locatário se comuniquem fora de suas redes virtuais, você pode configurar regras de NAT de SLB, túneis de gateway de site a site ou encaminhamento de camada 3 para rotear entre cargas de trabalho físicas e virtuais.
 
-Você também pode implantar uma infraestrutura SDN usando o Virtual Machine Manager (VMM). Para obter mais informações, consulte [Configurar uma infraestrutura de Sdn (rede definida pelo software) na malha do VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).
+Você também pode implantar uma infraestrutura SDN usando o Virtual Machine Manager (VMM). Para obter mais informações, consulte [Configurar uma infraestrutura de Sdn (rede definida pelo software) na malha do VMM](/system-center/vmm/deploy-sdn?view=sc-vmm-2019).
 
 ## <a name="pre-deployment"></a>Pré-implantação
 
@@ -35,7 +35,7 @@ Comece Configurando o comutador virtual do Hyper-v (servidores físicos) e a atr
 ### <a name="install-host-networking"></a>Instalar rede do host
 
 1. Instale os drivers de rede mais recentes disponíveis para o hardware da NIC.
-2. Instale a função Hyper-V em todos os hosts (para obter mais informações, consulte [introdução ao Hyper-v no Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/Get-started-with-Hyper-V-on-Windows).
+2. Instale a função Hyper-V em todos os hosts (para obter mais informações, consulte [introdução ao Hyper-v no Windows Server 2016](../../../virtualization/hyper-v/get-started/get-started-with-hyper-v-on-windows.md).
 
    ```PowerShell
    Install-WindowsFeature -Name Hyper-V -ComputerName <computer_name> -IncludeManagementTools -Restart
@@ -62,7 +62,7 @@ Comece Configurando o comutador virtual do Hyper-v (servidores físicos) e a atr
    New-NetIPAddress -InterfaceAlias "vEthernet (<switch name>)" -IPAddress <IP> -DefaultGateway <Gateway IP> -AddressFamily IPv4 -PrefixLength <Length of Subnet Mask - for example: 24>
    ```
 
-5. Adicional Implante uma máquina virtual no host Active Directory Domain Services ([instale Active Directory Domain Services (nível 100)](https://technet.microsoft.com/library/hh472162.aspx) e um servidor DNS.
+5. Adicional Implante uma máquina virtual no host Active Directory Domain Services ([instale Active Directory Domain Services (nível 100)](../../../identity/ad-ds/deploy/install-active-directory-domain-services--level-100-.md) e um servidor DNS.
 
     a. Conecte a máquina virtual do servidor Active Directory/DNS à VLAN de gerenciamento:
 
@@ -171,7 +171,7 @@ Se você usar o nano como seus hosts do Hyper-V (servidores físicos) para a imp
 
 Supondo que o script SDN Express foi executado até a conclusão sem relatar erros, você pode executar a etapa a seguir para garantir que os recursos de malha tenham sido implantados corretamente e estejam disponíveis para implantação de locatário.
 
-Use [ferramentas de diagnóstico](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack) para garantir que não haja nenhum erro em nenhum recurso de malha no controlador de rede.
+Use [ferramentas de diagnóstico](../troubleshoot/troubleshoot-windows-server-software-defined-networking-stack.md) para garantir que não haja nenhum erro em nenhum recurso de malha no controlador de rede.
 
    ``Debug-NetworkControllerConfigurationState -NetworkController <FQDN of Network Controller Rest Name>``
 

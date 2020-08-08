@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 98f6c2e39b2a5eeab76103c1ae477dde785a0e04
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c1823e1cbfc58e50c7231293b846c31480e01a6
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385386"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954152"
 ---
 # <a name="ad-fs-troubleshooting---integrated-windows-authentication"></a>Solução de problemas AD FS-autenticação integrada do Windows
 A autenticação integrada do Windows permite que os usuários façam logon com suas credenciais do Windows e experimentem SSO (logon único) usando Kerberos ou NTLM.
 
 ## <a name="reason-integrated-windows-authentication-fails"></a>Motivo da falha de autenticação integrada do Windows
-Há três razões principais pelas quais a autenticação integrada do Windows falhará. São eles:
+Há três razões principais pelas quais a autenticação integrada do Windows falhará. Eles são:
     - Nome da entidade de serviço (SPN) configuração incorreta
     - Token de associação de canal
     - Configuração do Internet Explorer
@@ -34,16 +32,16 @@ Um exemplo de como um SPN é usado com AD FS é o seguinte:
 
 Se a conta de serviço do AD FS tiver um SPN mal configurado ou incorreto, isso poderá causar problemas.  Observando os rastreamentos de rede, você poderá ver erros como o erro KRB: KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN.
 
-Usando os rastreamentos de rede (como o Wireshark), você pode determinar qual SPN o navegador está tentando resolver e, em seguida, usar a ferramenta de linha de comando, SetSPN-Q <spn>, você pode fazer uma pesquisa nesse SPN.  Ele pode não ser encontrado ou pode ser atribuído a outra conta que não seja a conta de serviço AD FS.
+Usando os rastreamentos de rede (como o Wireshark), você pode determinar qual SPN o navegador está tentando resolver e, em seguida, usar a ferramenta de linha de comando, SetSPN-Q <spn> , você pode fazer uma pesquisa nesse SPN.  Ele pode não ser encontrado ou pode ser atribuído a outra conta que não seja a conta de serviço AD FS.
 
-![totalmente](media/ad-fs-tshoot-iwa/iwa3.png)
+![integrado](media/ad-fs-tshoot-iwa/iwa3.png)
 
 Você pode verificar o SPN examinando as propriedades da conta de serviço AD FS.
 
-![totalmente](media/ad-fs-tshoot-iwa/iwa1.png)
+![integrado](media/ad-fs-tshoot-iwa/iwa1.png)
 
 ## <a name="channel-binding-token"></a>Token de associação de canal
-Atualmente, quando um aplicativo cliente se autentica no servidor usando Kerberos, Digest ou NTLM usando HTTPS, um canal de TLS (segurança de nível de transporte) é estabelecido primeiro e a autenticação ocorre usando esse canal. 
+Atualmente, quando um aplicativo cliente se autentica no servidor usando Kerberos, Digest ou NTLM usando HTTPS, um canal de TLS (segurança de nível de transporte) é estabelecido primeiro e a autenticação ocorre usando esse canal.
 
 O token de associação de canal é uma propriedade do canal externo protegido por TLS e é usado para associar o canal externo a uma conversa no canal interno autenticado pelo cliente.
 
@@ -54,7 +52,7 @@ Isso pode ser causado por:
  - Fiddler
  - Proxies reversos executando ponte SSL
 
-Por padrão, AD FS tem isso definido como "permitir".  Você pode alterar essa configuração usando o cmdlt do PowerShell `Set-ADFSProperties -ExtendProtectionTokenCheck`
+Por padrão, AD FS tem isso definido como "permitir".  Você pode alterar essa configuração usando o cmdlt do PowerShell`Set-ADFSProperties -ExtendProtectionTokenCheck`
 
 Para obter mais informações sobre isso [, consulte práticas recomendadas para o planejamento e a implantação seguros de AD FS](../../ad-fs/design/best-practices-for-secure-planning-and-deployment-of-ad-fs.md).
 
@@ -67,14 +65,14 @@ Por padrão, o Internet Explorer terá o seguinte modo:
 
 Há duas coisas principais que podem impedir isso de happeing.
    - Habilitar a autenticação integrada do Windows não é verificado nas propriedades do IE.  Isso está localizado em opções da Internet-> segurança avançada->.
-   
-   ![totalmente](media/ad-fs-tshoot-iwa/iwa4.png)
-   
+
+   ![integrado](media/ad-fs-tshoot-iwa/iwa4.png)
+
    - As zonas de segurança não estão configuradas corretamente
        - Os FQDNs não estão na zona da intranet
        - A URL do AD FS não está na zona da intranet.
 
-      ![totalmente](media/ad-fs-tshoot-iwa/iwa5.png)
+      ![integrado](media/ad-fs-tshoot-iwa/iwa5.png)
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Solução de problemas do AD FS](ad-fs-tshoot-overview.md)

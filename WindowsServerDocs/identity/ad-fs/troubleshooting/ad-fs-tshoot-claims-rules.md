@@ -6,20 +6,18 @@ ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: 94e841282963e2b2b6ada552b54c7732d965b6b6
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 349b673b7c062fd8f14d9a9fd857e1d7c859d3de
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955968"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954192"
 ---
 # <a name="ad-fs-troubleshooting---claims-rules-syntax"></a>AD FS solução de problemas – sintaxe de regras de declarações
 Uma declaração é uma instrução que um assunto faz sobre si mesmo ou outro assunto.  As declarações são emitidas por uma terceira parte confiável e recebem um ou mais valores e, em seguida, são empacotadas em tokens de segurança que são emitidos pelo servidor de AD FS.  Este artigo lida com a sintaxe e a criação de declarações.  Para obter informações sobre a emissão de declarações [, consulte AD FS solução de problemas-emissão de declarações](ad-fs-tshoot-claims-issuance.md).
 
->[!NOTE]  
->Você pode usar o [ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) no site de [ajuda do ADFS](https://adfshelp.microsoft.com) para ajudar a solucionar problemas de declarações.   
+>[!NOTE]
+>Você pode usar o [ClaimsXRay](https://adfshelp.microsoft.com/ClaimsXray/TokenRequest) no site de [ajuda do ADFS](https://adfshelp.microsoft.com) para ajudar a solucionar problemas de declarações.
 
 ## <a name="how-claim-rules-are-processed"></a>Como as regras de declaração são processadas
 As regras de declaração são processadas por meio do [pipeline de declarações](../../ad-fs/technical-reference/The-Role-of-the-Claims-Pipeline.md) usando o [mecanismo de declarações](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md). O mecanismo de declarações é um componente lógico do Serviço de Federação que examina o conjunto de declarações de entrada apresentadas por um usuário e em seguida, dependendo da lógica em cada regra, produzirá um conjunto de declarações de saída.
@@ -36,7 +34,7 @@ O idioma da regra de declaração consiste nos seguintes componentes, separados 
 
 Exemplo:
 
-```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");``` 
+```c:[type == "Name", value == "domain user"] => issue(type = "Role", value = "employee");```
 
 A declaração a seguir tem o seguinte:
 - condição – `c:[type == "Name", value == "domain user"] ` avalia a declaração de entrada de se o nome da conta do Windows é um usuário de domínio

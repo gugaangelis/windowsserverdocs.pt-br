@@ -1,19 +1,17 @@
 ---
 title: Cadeias de caracteres e localização no centro de administração do Windows
 description: Saiba mais sobre como preparar suas cadeias de caracteres para localização no SDK do centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 61289ae175ca8b906386cff9e36f5023ea28d051
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 565e4da69466549538c380457269304c7f1cdd5a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385242"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944916"
 ---
 # <a name="strings-and-localization-in-windows-admin-center"></a>Cadeias de caracteres e localização no centro de administração do Windows #
 
@@ -38,21 +36,21 @@ Gera a seguinte estrutura de acessador:
 MsftSme.resourcesStrings<Strings>().HelloWorld.cim.title;
 ```
 
-## <a name="add-other-languages-for-localization"></a>Adicionar outros idiomas para localização ## 
+## <a name="add-other-languages-for-localization"></a>Adicionar outros idiomas para localização ##
 
-Para localização em outros idiomas, um arquivo String. resjson precisa ser criado para cada idioma. Esses arquivos precisam ser colocados no ```\loc\output\{!ExtensionName}\{!LanguageFolder}\strings.resjson```. Os idiomas disponíveis com pastas correspondentes são:
+Para localização em outros idiomas, um arquivo String. resjson precisa ser criado para cada idioma. Esses arquivos precisam ser colocados no ```\loc\output\{!ExtensionName}\{!LanguageFolder}\strings.resjson``` . Os idiomas disponíveis com pastas correspondentes são:
 
 | Idioma      | Pasta      |
 | ------------- |-------------|
 | Čeština | cs-CZ |
 | Deutsch | de-DE |
-| Inglês | en-US |
+| Inglês | pt-BR |
 | Español | es-ES |
-| Français | fr-FR | 
-| Magyar | hu-HU | 
+| Français | fr-FR |
+| Magyar | hu-HU |
 | Italiano | it-IT |
-| 日本語 | ja-JP | 
-| 한국어 | ko-KR | 
+| 日本語 | ja-JP |
+| 한국어 | ko-KR |
 | Nederlands | nl-NL |
 | Polski | pl-PL |
 | Português (Brasil) | pt-BR |
@@ -63,18 +61,18 @@ Para localização em outros idiomas, um arquivo String. resjson precisa ser cri
 | 中文(简体) | zh-CN |
 | 中文(繁體) | zh-TW |
 > [!NOTE]
-> Se suas necessidades de estrutura de arquivo forem diferentes dentro de Loc/saída, você precisará ajustar o localeOffset para a tarefa Gulp ' Generate-resjson-JSON-localizada ' que está no gulpfile. js. Esse deslocamento é a profundidade da pasta Loc que deve começar a Pesquisar arquivos. resjson de cadeias de caracteres.
+> Se suas necessidades de estrutura de arquivo forem diferentes dentro de Loc/saída, você precisará ajustar o localeOffset para a tarefa Gulp ' Generate-resjson-JSON-localizada ' que está na gulpfile.js. Esse deslocamento é a profundidade da pasta Loc que deve começar a Pesquisar arquivos. resjson de cadeias de caracteres.
 
-Cada arquivo Strings. resjson será formatado da mesma maneira como mencionado anteriormente na parte superior deste guia. 
+Cada arquivo Strings. resjson será formatado da mesma maneira como mencionado anteriormente na parte superior deste guia.
 
-Por exemplo, para incluir uma localização para espanhol, inclua essa entrada ```\loc\output\HelloWorld\es-ES\strings.resjson```em: 
+Por exemplo, para incluir uma localização para espanhol, inclua essa entrada em ```\loc\output\HelloWorld\es-ES\strings.resjson``` :
 ```json
 "HelloWorld_cim_title": "CIM Componente",
 ```
-Sempre que você adicionar cadeias de caracteres localizadas, a geração de Gulp deverá ser executada novamente para que apareçam. Executar:
+Sempre que você adicionar cadeias de caracteres localizadas, a geração de Gulp deverá ser executada novamente para que apareçam. Execute:
 ``` cmd
-gulp generate 
+gulp generate
 ```
 
-Para confirmar que as cadeias de caracteres foram geradas, navegue até ```\src\app\assets\strings\{!LanguageFolder}\strings.resjson```. Sua entrada recém-adicionada aparecerá neste arquivo.
-Agora, se você alternar a opção de idioma no centro de administração do Windows, poderá ver as cadeias de caracteres localizadas em sua extensão. 
+Para confirmar que as cadeias de caracteres foram geradas, navegue até ```\src\app\assets\strings\{!LanguageFolder}\strings.resjson``` . Sua entrada recém-adicionada aparecerá neste arquivo.
+Agora, se você alternar a opção de idioma no centro de administração do Windows, poderá ver as cadeias de caracteres localizadas em sua extensão.

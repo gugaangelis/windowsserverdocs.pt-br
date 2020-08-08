@@ -7,12 +7,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: v-tea
 author: Teresa-MOTIV
-ms.openlocfilehash: f1e4713e6d658e6a51955e321e39cb7f90e261a9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3a1b85504fcae1aabc155d9cf415bc49d4722494
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87963802"
+ms.locfileid: "87993635"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Solucionar problemas da VPN Always On
 
@@ -112,7 +112,7 @@ Em geral, o computador cliente VPN é adicionado ao domínio baseado em Active D
 
 Os logs de aplicativo em computadores cliente registram a maioria dos detalhes de nível superior dos eventos de conexão VPN.
 
-Procure eventos da origem RasClient. Todas as mensagens de erro retornam o código de erro no final da mensagem. Alguns dos códigos de erro mais comuns são detalhados abaixo, mas uma lista completa está disponível nos [códigos de erro de roteamento e acesso remoto](/previous-versions//mt728163(v=technet.10)).
+Procure eventos da origem RasClient. Todas as mensagens de erro retornam o código de erro no final da mensagem. Alguns dos códigos de erro mais comuns são detalhados abaixo, mas uma lista completa está disponível nos [códigos de erro de roteamento e acesso remoto](/previous-versions/mt728163(v=technet.10)).
 
 ## <a name="nps-logs"></a>Logs do NPS
 

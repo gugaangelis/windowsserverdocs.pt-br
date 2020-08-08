@@ -1,19 +1,17 @@
 ---
 title: Como usar o PowerShell em sua extensão
 description: Usando o PowerShell em sua extensão SDK do centro de administração do Windows (projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6e99fc43d4acb7a70dfd3a8ba19dae6492c41b2b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2dccdeebafc5adc7ea391b0e8d62176a62189606
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357045"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87944886"
 ---
 # <a name="using-powershell-in-your-extension"></a>Como usar o PowerShell em sua extensão #
 
@@ -23,19 +21,19 @@ Vamos aprofundar-se no SDK de extensões do centro de administração do Windows
 
 ## <a name="powershell-in-typescript"></a>PowerShell no TypeScript ##
 
-O processo de compilação Gulp tem uma etapa de geração ```{!ScriptName}.ps1``` que levará qualquer um deles ```\src\resources\scripts``` na pasta e os ```powershell-scripts``` criará na classe sob a ```\src\generated``` pasta.
+O processo de compilação Gulp tem uma etapa de geração que levará qualquer um ```{!ScriptName}.ps1``` deles na ```\src\resources\scripts``` pasta e os criará na ```powershell-scripts``` classe sob a ```\src\generated``` pasta.
 
->[!NOTE] 
-> Não atualize ```powershell-scripts.ts``` manualmente nem os ```strings.ts``` arquivos. Qualquer alteração feita será substituída na próxima geração.
+>[!NOTE]
+> Não atualize manualmente ```powershell-scripts.ts``` nem os ```strings.ts``` arquivos. Qualquer alteração feita será substituída na próxima geração.
 
 ## <a name="running-a-powershell-script"></a>Executando um script do PowerShell ##
-Todos os scripts que você deseja executar em um nó podem ser colocados no ```\src\resources\scripts\{!ScriptName}.ps1```. 
->[!IMPORTANT] 
-> As alterações feitas em um ```{!ScriptName}.ps1``` arquivo não serão refletidas no projeto até que ```gulp generate``` o tenha sido executado.
+Todos os scripts que você deseja executar em um nó podem ser colocados no ```\src\resources\scripts\{!ScriptName}.ps1``` .
+>[!IMPORTANT]
+> As alterações feitas em um ```{!ScriptName}.ps1``` arquivo não serão refletidas no projeto até que o ```gulp generate``` tenha sido executado.
 
 A API funciona primeiro criando uma sessão do PowerShell nos nós que você está direcionando, criando o script do PowerShell com quaisquer parâmetros que precisam ser passados e, em seguida, executando o script nas sessões que foram criadas.
 
-Por exemplo, temos este script ```\src\resources\scripts\Get-NodeName.ps1```:
+Por exemplo, temos este script ```\src\resources\scripts\Get-NodeName.ps1``` :
 ``` ps1
 Param
  (
@@ -47,7 +45,7 @@ Param
 
 Criaremos uma sessão do PowerShell para nosso nó de destino:
 ``` ts
-const session = this.appContextService.powerShell.createSession('{!TargetNode}'); 
+const session = this.appContextService.powerShell.createSession('{!TargetNode}');
 ```
 Em seguida, criaremos o script do PowerShell com um parâmetro de entrada:
 ```ts
@@ -70,7 +68,7 @@ Por fim, precisamos executar esse script na sessão que criamos:
             }
             return 'no response';
         }
-      ) 
+      )
     );
   }
 
@@ -87,26 +85,26 @@ this.getNodeName().subscribe(
      }
 );
 ```
-Ao fornecer o nome do nó para o método CreateSession, uma nova sessão do PowerShell é criada, usada e, em seguida, destruída imediatamente após a conclusão da chamada do PowerShell. 
+Ao fornecer o nome do nó para o método CreateSession, uma nova sessão do PowerShell é criada, usada e, em seguida, destruída imediatamente após a conclusão da chamada do PowerShell.
 
 ### <a name="key-options"></a>Opções de chave ###
-Algumas opções estão disponíveis ao chamar a API do PowerShell. Cada vez que uma sessão é criada, ela pode ser criada com ou sem uma chave. 
+Algumas opções estão disponíveis ao chamar a API do PowerShell. Cada vez que uma sessão é criada, ela pode ser criada com ou sem uma chave.
 
-**Chave:** Isso cria uma sessão com chave que pode ser pesquisada e reutilizada, mesmo entre componentes (o que significa que Component1 pode criar uma sessão com a chave "SME-ROCKS", e Component2 pode usar essa mesma sessão). Se uma chave for fornecida, a sessão criada deverá ser descartada chamando Dispose () como foi feito no exemplo acima. Uma sessão não deve ser mantida sem ser descartada por mais de 5 minutos. 
+**Chave:** Isso cria uma sessão com chave que pode ser pesquisada e reutilizada, mesmo entre componentes (o que significa que Component1 pode criar uma sessão com a chave "SME-ROCKS", e Component2 pode usar essa mesma sessão). Se uma chave for fornecida, a sessão criada deverá ser descartada chamando Dispose () como foi feito no exemplo acima. Uma sessão não deve ser mantida sem ser descartada por mais de 5 minutos.
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```
 
-**Sem chave** Uma chave será criada automaticamente para a sessão. Esta sessão com ser descartada automaticamente após 3 minutos. Usar a configuração de menos permite que sua extensão recicle o uso de qualquer runspace que já esteja disponível no momento da criação de uma sessão. Se nenhum runspace estiver disponível do que um novo, ele será criado. Essa funcionalidade é válida para chamadas únicos, mas o uso repetido pode afetar o desempenho. Uma sessão leva aproximadamente 1 segundo para ser criada, portanto, A reciclagem contínua de sessões pode causar lentidão.
+**Mínimo:** Uma chave será criada automaticamente para a sessão. Esta sessão com ser descartada automaticamente após 3 minutos. Usar a configuração de menos permite que sua extensão recicle o uso de qualquer runspace que já esteja disponível no momento da criação de uma sessão. Se nenhum runspace estiver disponível do que um novo, ele será criado. Essa funcionalidade é válida para chamadas únicos, mas o uso repetido pode afetar o desempenho. Uma sessão leva aproximadamente 1 segundo para ser criada, portanto, A reciclagem contínua de sessões pode causar lentidão.
 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNodeName}');
 ```
-ou 
-``` ts 
+ou o
+``` ts
 const session = this.appContextService.powerShell.createAutomaticSession('{!TargetNodeName}');
 ```
-Na maioria das situações, crie uma sessão com chave ```ngOnInit()``` no método e, em seguida, descarte ```ngOnDestroy()```-a em. Siga esse padrão quando houver vários scripts do PowerShell em um componente, mas a sessão subjacente não for compartilhada entre componentes.
+Na maioria das situações, crie uma sessão com chave no ```ngOnInit()``` método e, em seguida, descarte-a em ```ngOnDestroy()``` . Siga esse padrão quando houver vários scripts do PowerShell em um componente, mas a sessão subjacente não for compartilhada entre componentes.
 Para obter melhores resultados, certifique-se de que a criação da sessão seja gerenciada dentro de componentes em vez de serviços – isso ajuda a garantir que o tempo de vida e a limpeza possam ser gerenciados corretamente.
 
 Para obter melhores resultados, certifique-se de que a criação da sessão seja gerenciada dentro de componentes em vez de serviços – isso ajuda a garantir que o tempo de vida e a limpeza possam ser gerenciados corretamente.
@@ -118,13 +116,13 @@ this.appContextService.powerShellStream.run(session, script);
 ```
 
 ### <a name="long-running-scripts"></a>Scripts de longa execução ###
-Se você tiver um script de longa execução que deseja executar em segundo plano, um item de trabalho poderá ser enviado. O estado do script será acompanhado pelo gateway e as atualizações para o status poderão ser enviadas para uma notificação. 
+Se você tiver um script de longa execução que deseja executar em segundo plano, um item de trabalho poderá ser enviado. O estado do script será acompanhado pelo gateway e as atualizações para o status poderão ser enviadas para uma notificação.
 ```ts
 const workItem: WorkItemSubmitRequest = {
     typeId: 'Long Running Script',
     objectName: 'My long running service',
     powerShellScript: script,
-    
+
     //in progress notifications
     inProgressTitle: 'Executing long running request',
     startedMessage: 'The long running request has been started',
@@ -150,7 +148,7 @@ const workItem: WorkItemSubmitRequest = {
 return this.appContextService.workItem.submit('{!TargetNode}', workItem);
 ```
 
->[!NOTE] 
+>[!NOTE]
 > Para que o progresso seja mostrado, o Write-Progress deve ser incluído no script que você escreveu. Por exemplo:
 > ``` ps1
 >  Write-Progress -Activity ‘The script is almost done!' -percentComplete 95
@@ -158,9 +156,9 @@ return this.appContextService.workItem.submit('{!TargetNode}', workItem);
 
 #### <a name="workitem-options"></a>Opções de item de trabalho ####
 
-| function | Explicação |
+| função | Explicação |
 | ----- | ----------- |
-| Enviar () | Envia o item de trabalho 
+| Enviar () | Envia o item de trabalho
 | submitAndWait() | Enviar o item de trabalho e aguardar a conclusão de sua execução
 | aguardar () | Aguardar a conclusão do item de trabalho existente
 | consulta () | Consultar um item de trabalho existente por ID
@@ -172,7 +170,7 @@ Se você precisar executar o mesmo script em vários nós, uma sessão do PowerS
 const batchSession = this.appContextService.powerShell.createBatchSession(
     ['{!TargetNode1}', '{!TargetNode2}', sessionKey);
   this.appContextService.powerShell.runBatchSingleCommand(batchSession, command).subscribe((responses: PowerShellBatchResponseItem[]) => {
-    for (const response of responses) { 
+    for (const response of responses) {
       if (response.error || response.errors) {
         //handle error
       } else {
@@ -182,14 +180,14 @@ const batchSession = this.appContextService.powerShell.createBatchSession(
       }
     }
      },
-     Error => { /* handle error */ });  
+     Error => { /* handle error */ });
 
 ```
 
 
 #### <a name="powershellbatch-options"></a>Opções de PowerShellBatch ####
-| Option | Explicação |
+| Opção | Explicação |
 | ----- | ----------- |
-| runSingleCommand | Executar um único comando em todos os nós na matriz 
-| Funcionam | Executar comando correspondente no nó emparelhado
-| cancelar | Cancelar o comando em todos os nós na matriz
+| runSingleCommand | Executar um único comando em todos os nós na matriz
+| Executar | Executar comando correspondente no nó emparelhado
+| cancel | Cancelar o comando em todos os nós na matriz

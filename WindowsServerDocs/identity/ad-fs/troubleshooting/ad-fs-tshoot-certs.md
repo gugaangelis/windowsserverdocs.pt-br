@@ -6,24 +6,22 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server
-ms.technology: identity-adfs
-ms.openlocfilehash: fdadbefc138562246c72f7707b303d966bff0989
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7f209ba7a9afdb7a2522bcb167609ec823ddea8e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407194"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954202"
 ---
 # <a name="ad-fs-troubleshooting---certificates"></a>Solução de problemas AD FS-certificados
-AD FS requer os seguintes certificados para funcionar corretamente.  Se qualquer um deles não tiver sido instalado ou configurado corretamente, os problemas podem surgir.  
+AD FS requer os seguintes certificados para funcionar corretamente.  Se qualquer um deles não tiver sido instalado ou configurado corretamente, os problemas podem surgir.
 
 ## <a name="required-certificates"></a>Certificados necessários
 AD FS requer os seguintes certificados:
 
 
 
-- **Confiança de Federação** – isso requer que um certificado encadeado para uma AC (autoridade de certificação) raiz da Internet mutuamente confiável esteja presente no repositório de raiz confiável do provedor de declarações e dos servidores de Federação de terceira parte confiável, um o design de certificação cruzada foi implementado na qual cada lado trocou sua CA raiz com seu parceiro ou certificados autoassinados que foram importados em cada lado, quando apropriado.
+- **Confiança de Federação** – isso requer que um certificado encadeado para uma AC (autoridade de certificação) raiz da Internet mutuamente confiável esteja presente no repositório de raiz confiável do provedor de declarações e dos servidores de Federação de terceira parte confiável, um design de certificação cruzada foi implementado em que cada lado trocou sua CA raiz com seu parceiro ou certificados autoassinados que foram importados em cada lado, quando apropriado.
 - **Assinatura de token** – cada computador serviço de Federação requer um certificado de autenticação de tokens.  O certificado de autenticação de tokens do provedor de declarações deve ser confiável pelo servidor de Federação de terceira parte confiável. O certificado de autenticação de tokens de terceira parte confiável deve ser confiável para todos os aplicativos que recebem tokens do servidor de Federação RP.
 - **Protocolo SSL (SSL)** – o certificado SSL para o serviço de Federação deve estar presente em um repositório confiável no computador proxy do servidor de Federação e tem uma cadeia válida para um repositório de AC (autoridade de certificação) confiável.
 - **CRL (lista de certificados revogados)** – para qualquer certificado que tenha uma CRL publicada, a CRL deve estar acessível a todos os clientes e servidores que precisam acessar o certificado.
@@ -49,12 +47,12 @@ A tabela a seguir é uma lista de erros comuns e possíveis causas.
 |Evento|Causa|Resolução
 |-----|-----|-----|
 |Evento 249-não foi possível encontrar um certificado no repositório de certificados. Em cenários de substituição de certificado, isso pode potencialmente causar uma falha quando a Serviço de Federação está assinando ou descriptografando usando esse certificado.|O certificado em questão não está presente no repositório de certificados local ou a conta de serviço não tem permissão para a chave privada do certificado.|Verifique se o certificado está instalado no repositório do LocalMAchine\My no servidor de AD FS. Verifique se a conta de serviço AD FS tem acesso de leitura à chave privada do certificado.|
-|Evento 315-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de assinatura de confiança do provedor de declarações.|O certificado não foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
-|Evento 316-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de assinatura de confiança de terceira parte confiável.|O certificado não foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
-|Evento 317-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de criptografia de confiança de terceira parte confiável.|O certificado não foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
-|Evento 319-ocorreu um erro enquanto a cadeia de certificados para o certificado do cliente estava sendo compilada.|O certificado não foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
+|Evento 315-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de assinatura de confiança do provedor de declarações.|O certificado foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
+|Evento 316-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de assinatura de confiança de terceira parte confiável.|O certificado foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
+|Evento 317-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de criptografia de confiança de terceira parte confiável.|O certificado foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
+|Evento 319-ocorreu um erro enquanto a cadeia de certificados para o certificado do cliente estava sendo compilada.|O certificado foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
 |Evento 360-uma solicitação foi feita a um ponto de extremidade de transporte de certificado, mas a solicitação não incluiu um certificado de cliente.|A AC raiz que emitiu o certificado do cliente não é confiável.</br></br>O certificado do cliente expirou.</br></br>O certificado do cliente é auto-assinado e não é confiável.|Verifique se a autoridade de certificação raiz que emitiu o certificado do cliente está presente no repositório raiz confiável.</br></br>Verifique se o certificado do cliente não expirou.</br></br>Se o certificado do cliente for auto-assinado, verifique se ele foi adicionado à lista de certificados confiáveis ou substitua o certificado autoassinado por um certificado confiável.|
-|Evento 374-ocorreu um erro ao criar a cadeia de certificados para o certificado de criptografia de confiança do provedor de declarações.|O certificado não foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
+|Evento 374-ocorreu um erro ao criar a cadeia de certificados para o certificado de criptografia de confiança do provedor de declarações.|O certificado foi revogado.</br></br>Não é possível verificar a cadeia de certificados.</br></br>O certificado expirou ou ainda não é válido.|Verifique se o certificado é válido e se não foi revogado.</br></br>Verifique se a CRL está acessível.|
 |Evento 381-ocorreu um erro durante uma tentativa de criar a cadeia de certificados para o certificado de configuração.|Um dos certificados configurados para uso no servidor de AD FS está expirado ou foi revogado.|Verifique se todos os certificados configurados não foram revogados e se não expiraram.|
 |Evento 385-AD FS detectou que um ou mais certificados no banco de dados de configuração do AD FS precisam ser atualizados manualmente.|Um dos certificados configurados para uso no servidor de AD FS expirou ou está se aproximando da data de expiração.|Atualize o certificado expirado ou em breve-para-expirar com uma substituição. (Se você estiver usando certificados autoassinados e a substituição automática de certificado estiver habilitada, esse erro poderá ser ignorado, pois ele será resolvido automaticamente.)|
 |Evento 387-AD FS detectado que um ou mais dos certificados especificados no Serviço de Federação não estavam acessíveis para a conta de serviço usada pelo serviço do Windows AD FS.|A conta de serviço de AD FS não tem permissões de leitura para a chave privada de um ou mais certificados configurados.|Verifique se a conta de serviço AD FS tem permissão de leitura para a chave privada de todos os certificados configurados.|
@@ -66,4 +64,3 @@ A tabela a seguir é uma lista de erros comuns e possíveis causas.
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Solução de problemas do AD FS](ad-fs-tshoot-overview.md)
- 
