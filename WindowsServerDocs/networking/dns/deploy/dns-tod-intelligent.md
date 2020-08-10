@@ -6,16 +6,16 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 771b87776e6530f330e68f1f06b39fef191cb7c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e999406a64e77e769ba9a6ffdc27cce109f2ef5a
+ms.sourcegitcommit: be6583ea86b47fa5ac3363b44ab0de75b571c90e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996890"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88039649"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>Usar a política de DNS para respostas de DNS inteligente com base na hora do dia
 
->Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
+> Aplica-se a: Windows Server (Canal Semestral), Windows Server 2016
 
 Você pode usar este tópico para aprender a distribuir o tráfego do aplicativo em diferentes instâncias distribuídas geograficamente de um aplicativo usando políticas de DNS com base na hora do dia.
 
@@ -59,13 +59,13 @@ Para configurar a política DNS para as respostas de consulta com base no balanc
 - [Adicionar registros aos escopos de zona](#bkmk_records)
 - [Criar as políticas de DNS](#bkmk_policies)
 
->[!NOTE]
->Você deve executar essas etapas no servidor DNS que é autoritativo para a zona que deseja configurar. A associação em **DNSAdmins**, ou equivalente, é necessária para executar os procedimentos a seguir.
+> [!NOTE]
+> Você deve executar essas etapas no servidor DNS que é autoritativo para a zona que deseja configurar. A associação em **DNSAdmins**, ou equivalente, é necessária para executar os procedimentos a seguir.
 
 As seções a seguir fornecem instruções de configuração detalhadas.
 
->[!IMPORTANT]
->As seções a seguir incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos.
+> [!IMPORTANT]
+> As seções a seguir incluem exemplos de comandos do Windows PowerShell que contêm valores de exemplo para muitos parâmetros. Certifique-se de substituir os valores de exemplo nesses comandos por valores apropriados para sua implantação antes de executar esses comandos.
 
 #### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>Criar as sub-redes do cliente DNS
 A primeira etapa é identificar as sub-redes ou o espaço de endereço IP das regiões para as quais você deseja redirecionar o tráfego. Por exemplo, se você quiser redirecionar o tráfego para os EUA e Europa, precisará identificar as sub-redes ou os espaços de endereço IP dessas regiões.
@@ -74,12 +74,12 @@ Você pode obter essas informações de mapas de IP geográfico. Com base nessas
 
 Você pode usar os seguintes comandos do Windows PowerShell para criar sub-redes de cliente DNS.
 
-```
-Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24, 182.0.0.0/24"
+```PowerShell
+Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet "192.0.0.0/24", "182.0.0.0/24"
 
-Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.0.0/24"
-
+Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24", "151.1.0.0/24"
 ```
+
 Para obter mais informações, consulte [Add-DnsServerClientSubnet](/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
 #### <a name="create-the-zone-scopes"></a><a name="bkmk_zscopes"></a>Criar os escopos de zona
@@ -89,17 +89,17 @@ Por exemplo, se você quiser redirecionar o tráfego para o nome DNS www.contoso
 
 Um escopo de zona é uma instância exclusiva da zona. Uma zona DNS pode ter vários escopos de zona, com cada escopo de zona contendo seu próprio conjunto de registros DNS. O mesmo registro pode estar presente em vários escopos, com endereços IP diferentes ou os mesmos endereços IP.
 
->[!NOTE]
->Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e as operações de DNS herdadas funcionam nesse escopo.
+> [!NOTE]
+> Por padrão, um escopo de zona existe nas zonas DNS. Esse escopo de zona tem o mesmo nome que a zona e as operações de DNS herdadas funcionam nesse escopo.
 
 Você pode usar os seguintes comandos do Windows PowerShell para criar escopos de zona.
 
-```
+```PowerShell
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
 
 Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScope"
-
 ```
+
 Para obter mais informações, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).
 
 #### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona
@@ -109,12 +109,12 @@ Por exemplo, em **SeattleZoneScope**, o registro <strong>www.contosogiftservices
 
 Você pode usar os seguintes comandos do Windows PowerShell para adicionar registros aos escopos de zona.
 
-```
+```PowerShell
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
 
 Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.3" -ZoneScope "DublinZoneScope"
-
 ```
+
 O parâmetro ZoneScope não é incluído quando você adiciona um registro no escopo padrão. Isso é o mesmo que adicionar registros a uma zona DNS padrão.
 
 Para obter mais informações, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
@@ -133,10 +133,10 @@ Depois de configurar essas políticas de DNS, o comportamento do servidor DNS é
 
 Você pode usar os seguintes comandos do Windows PowerShell para criar uma política DNS que vincula as sub-redes do cliente DNS e os escopos de zona.
 
->[!NOTE]
->Neste exemplo, o servidor DNS está no fuso horário GMT, portanto, os períodos de hora de pico devem ser expressos no tempo de Greenwich equivalente.
+> [!NOTE]
+> Neste exemplo, o servidor DNS está no fuso horário GMT, portanto, os períodos de hora de pico devem ser expressos no tempo de Greenwich equivalente.
 
-```
+```PowerShell
 Add-DnsServerQueryResolutionPolicy -Name "America6To9Policy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,4;DublinZoneScope,1" -TimeOfDay "EQ,01:00-04:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 1
 
 Add-DnsServerQueryResolutionPolicy -Name "Europe6To9Policy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "SeattleZoneScope,1;DublinZoneScope,4" -TimeOfDay "EQ,17:00-20:00" -ZoneName "contosogiftservices.com" -ProcessingOrder 2
@@ -146,8 +146,8 @@ Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ClientSu
 Add-DnsServerQueryResolutionPolicy -Name "EuropePolicy" -Action ALLOW -ClientSubnet "eq,EuropeSubnet" -ZoneScope "DublinZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 4
 
 Add-DnsServerQueryResolutionPolicy -Name "RestOfWorldPolicy" -Action ALLOW --ZoneScope "DublinZoneScope,1;SeattleZoneScope,1" -ZoneName "contosogiftservices.com" -ProcessingOrder 5
-
 ```
+
 Para obter mais informações, consulte [Add-DnsServerQueryResolutionPolicy](/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).
 
 Agora, o servidor DNS é configurado com as políticas de DNS necessárias para redirecionar o tráfego com base na localização geográfica e na hora do dia.
