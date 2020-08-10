@@ -1,4 +1,4 @@
-Execute o seguinte comando para ingressar no cluster existente do HGS.
+Execute o comando a seguir para ingressar no cluster HGS existente.
 
 
 ```powershell
