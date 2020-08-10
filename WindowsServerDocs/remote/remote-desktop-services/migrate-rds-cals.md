@@ -1,26 +1,24 @@
 ---
 title: Migrar suas Licenças de Acesso para Cliente de Serviços de Área de Trabalho Remota (RDS CALs)
 description: Este artigo descreve como migrar suas Licenças de Acesso para Cliente dos Serviços de Área de Trabalho Remota para novos servidores de licença do Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 5d95c2bc3a92a8cdcba4b308c88d94cb9af6d2a5
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b3f1fb102f08e8947feba0c522cd43c462154c36
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80855989"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936995"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Migrar suas Licenças de Acesso para Cliente de Serviços de Área de Trabalho Remota (RDS CALs)
 
 Você tem três opções para migrar as CALs para Serviços de Área de Trabalho Remota:
-1. Método de conexão automática: Este método recomendado comunica-se por meio da Internet diretamente à Microsoft Clearinghouse, com saída pela porta TCP 443.  
-2. Usar um navegador da Web: Esse método permite a migração quando o servidor que executa a ferramenta de Gerenciador de Licenciamento de Área de Trabalho Remota não tem conectividade com a Internet, mas o administrador tem conectividade com a Internet em um dispositivo separado. A URL para o método de migração da Web é exibida no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota. 
+1. Método de conexão automática: Este método recomendado comunica-se por meio da Internet diretamente à Microsoft Clearinghouse, com saída pela porta TCP 443.
+2. Usar um navegador da Web: Esse método permite a migração quando o servidor que executa a ferramenta de Gerenciador de Licenciamento de Área de Trabalho Remota não tem conectividade com a Internet, mas o administrador tem conectividade com a Internet em um dispositivo separado. A URL para o método de migração da Web é exibida no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota.
 3. Usar um telefone: Esse método permite ao administrador concluir o processo de migração por telefone com um representante da Microsoft. O número de telefone apropriado é determinado pelo país/região que você escolheu no Assistente para Ativação do Servidor e é exibido no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota.
 
 Neste artigo, [Estabelecer método de migração de CAL para Serviços de Área de Trabalho Remota](#establish-rds-cal-migration-method) destaca as etapas gerais comuns em qualquer método de migração de CAL para Serviços de Área de Trabalho Remota, enquanto [Migrar CALs para Serviços de Área de Trabalho Remota](#migrate-rds-cals) destaca as etapas específicas a cada método de migração.
@@ -38,7 +36,7 @@ Independentemente do método de migração, você deve, no mínimo, ser um membr
     - O servidor de licença de origem não está mais em funcionamento.
 7. A próxima página do assistente depende do motivo de migração que você escolheu.
     - Se você escolheu **o servidor de licença de origem está sendo substituído por este servidor de licença** como o motivo para migrar as CALs para Serviços de Área de Trabalho Remota, a página **Informações do servidor de licença de origem** é exibida.
-    
+
        Na página de Informações do servidor de licença de origem, insira o nome ou endereço IP do servidor de licença de origem.
 
        Se o servidor de licença de origem está disponível na rede, clique em **Avançar**. O assistente entra em contato com o servidor de licença de origem. Se o servidor de licença de origem estiver executando um sistema operacional anterior ao Windows Server 2008 R2 ou o estiver desativado, será exibido um lembrete de que você deve remover as CALs para Serviços de Área de Trabalho Remota manualmente do servidor de licença de origem após a conclusão do assistente. Depois de confirmar que você compreende esse requisito, a página **Obter pacote de chaves de licença do cliente** será exibida.
@@ -66,7 +64,7 @@ Existem três mecanismos para migrar licenças para o servidor de licença de de
 
 ### <a name="using-a-web-browser"></a>Usar um navegador da Web
 1. Na página **Obter pacote de chaves de licença de cliente**, clique no hiperlink para se conectar ao site Licenciamento de Serviços de Área de Trabalho Remota.
-   Se você estiver executando o Gerenciador de Licenciamento de Área de Trabalho Remota em um computador que não tem conectividade com a Internet, anote o endereço do site Licenciamento de Serviços de Área de Trabalho Remota e, em seguida, conecte-se ao site da Web por meio de um computador que tenha conectividade com a Internet. 
+   Se você estiver executando o Gerenciador de Licenciamento de Área de Trabalho Remota em um computador que não tem conectividade com a Internet, anote o endereço do site Licenciamento de Serviços de Área de Trabalho Remota e, em seguida, conecte-se ao site da Web por meio de um computador que tenha conectividade com a Internet.
 2. Na página da Web de Licenciamento do Serviços de Área de Trabalho Remota, em **Selecionar Opção**, selecione **Gerenciar CALs** e, em seguida, clique em **Avançar**.
 3. Forneça as seguintes informações obrigatórias e depois clique em **Avançar**:
     - **ID do servidor de licença de destino**: Um número de 35 dígitos, em grupos de 5 algarismos, que é exibido na página **Obter pacote de chaves de licença do cliente** no Assistente de Gerenciamento de CALs para Serviços de Área de Trabalho Remota.
@@ -84,7 +82,7 @@ Existem três mecanismos para migrar licenças para o servidor de licença de de
 6. Depois de inserir as informações necessárias, clique em **Avançar**.
 7. Verificar se todas as informações que você inseriu estão corretas e, em seguida, clique em **Avançar** para enviar sua solicitação para a Microsoft Clearinghouse. A página da Web exibe então uma ID de pacote de chaves de licença gerada pela Microsoft Clearinghouse.
 
-   > [!IMPORTANT] 
+   > [!IMPORTANT]
    > Mantenha uma cópia da ID do pacote de chaves de licença. A posse dessas informações facilita a comunicação com a Microsoft Clearinghouse caso você necessite de assistência para recuperar as CALs para Serviços de Área de Trabalho Remota.
 
 8. Na mesma página **Obter pacote de chaves de licença do cliente**, insira a ID do pacote de chaves de licença e, em seguida, clique em **Avançar** para migrar as CALs para Serviços de Área de Trabalho Remota para o servidor de licença.

@@ -1,19 +1,17 @@
 ---
 title: Funções de Serviços de Área de Trabalho Remota
 description: Descreve os componentes de um serviço de hospedagem de área de trabalho.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: lizross
-ms.openlocfilehash: 42116323dce36b071b2af20ff46330a8d39c13ed
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 378e93cb501bc380c33e2cdee4ce85b52d70430b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963058"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954893"
 ---
 # <a name="remote-desktop-services-roles"></a>Funções de Serviços de Área de Trabalho Remota
 

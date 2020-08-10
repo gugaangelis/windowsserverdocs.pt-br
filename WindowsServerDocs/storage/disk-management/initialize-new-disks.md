@@ -2,18 +2,16 @@
 title: Inicializar novos discos
 description: Como inicializar novos discos com o Gerenciamento de Disco, preparando-os para uso. Também inclui links para solução de problemas.
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 68e51cff5b70ed0b11488e44cebba057e7432d99
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: adfc298c460bfa55516898df1781217dfe55d129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86965268"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87942291"
 ---
 # <a name="initialize-new-disks"></a>Inicializar novos discos
 
@@ -29,7 +27,7 @@ Se você adicionar um novo disco ao computador e ele não aparecer no Explorador
 Aqui está como inicializar um novo disco usando o Gerenciamento de Disco. Se você preferir usar o PowerShell, use o cmdlet [initialize-disk](/powershell/module/storage/initialize-disk).
 
 1. Abra o Gerenciamento de Disco com permissões de administrador.
- 
+
     Para fazer isso, na caixa de pesquisa na barra de tarefas, digite **Gerenciamento de disco**, selecione e mantenha o cursor (ou clique com botão direito) em **Gerenciamento de disco** e, em seguida, selecione **Executar como administrador** > **Sim**. Se não for possível abrir como um administrador, digite **Gerenciamento do computador** e, em seguida, vá para **Armazenamento** > **Gerenciamento de disco**.
 1. No Gerenciamento de Disco, clique com o botão direito do mouse no disco que você quer inicializar e clique em **Inicializar disco** (mostrado aqui). Se o disco estiver listado como *Offline*, primeiro clique duas vezes nele e selecione **Online**.
 

@@ -1,20 +1,18 @@
 ---
 title: Criar e implantar uma coleção de Serviços de Área de Trabalho Remota
 description: Saiba como adicionar programas de RDSH e RemoteApp em sua implantação do RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/22/2019
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 6a842c7984dc63fe40c05300f6cfbb6718846525
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7827d83fdd071cb57b51ee8c04776680e5e29e64
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80852949"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936945"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>Criar uma coleção de serviços de área de trabalho remota para aplicativos e áreas de trabalho a executar
 
@@ -22,11 +20,11 @@ ms.locfileid: "80852949"
 
 Use as etapas a seguir para criar uma coleção de sessão dos Serviços de Área de Trabalho Remota. Uma coleção de sessão reúne os aplicativos e áreas de trabalho que você deseja disponibilizar para os usuários. Crie e depois publique a coleção para que os usuários possam acessá-la.
 
-Antes de criar uma coleção, decida qual tipo de coleção é necessária: sessões de área de trabalho pessoal ou em pool. 
+Antes de criar uma coleção, decida qual tipo de coleção é necessária: sessões de área de trabalho pessoal ou em pool.
 
 - **Use sessões da área de trabalho em pool para a virtualização baseada em sessão**: aproveite o poder de computação do Windows Server para fornecer um ambiente de várias sessões econômico para conduzir as cargas de trabalho cotidianas dos usuários
 - **Use sessões da área de trabalho pessoal para criar uma VDI (Virtual Desktop Infrastructure)** : aproveite o cliente do Windows para fornecer o alto desempenho, a compatibilidade de aplicativos e a familiaridade que seus usuários já passaram a esperar de sua experiência de área de trabalho do Windows.
- 
+
 Com uma sessão em pool, vários usuários acessam um pool compartilhado de recursos, enquanto na sessão de área de trabalho pessoal, os usuários recebem sua própria área de trabalho dentro do pool. A sessão em pool fornece o menor custo geral, enquanto as sessões pessoais permitem que os usuários personalizem sua experiência de área de trabalho.
 
 Se for preciso compartilhar aplicativos hospedados com uso intensivo de gráficos, combine as áreas de trabalho de sessão pessoal com a nova funcionalidade DDA (Atribuição de Dispositivo Discreto) para também oferecer suporte aos aplicativos hospedados que exijam a aceleração de gráficos. Confira [Qual tecnologia de virtualização de gráficos é ideal para você](rds-graphics-virtualization.md) para acessar mais informações.
@@ -36,12 +34,12 @@ Independentemente do tipo de coleção que você escolher, preencha essas coleç
 
 ## <a name="create-a-pooled-desktop-session-collection"></a>Criar uma coleção de sessão de área de trabalho em pool
 
-1.  No Gerenciador do Servidor, clique em **Serviços de Área de Trabalho Remota > Coleções > Tarefas > Criar Coleções de Sessões**.  
-2.  Digite um nome para a coleção, por exemplo, **ContosoAps**.  
-3.  Selecione o servidor de host para a sessão de área de trabalho remota que você criou (por exemplo, Contoso-Shr1).  
-4.  Aceite os **Grupos de usuários** padrão.  
-5.  Insira o local do compartilhamento de arquivo que você criou para os discos de perfil do usuário dessa coleção (por exemplo, **\Contoso-Cb1\UserDisksr**).   
-6.  Clique em **Criar**. Quando a coleção for criada, clique em **Fechar**.  
+1.  No Gerenciador do Servidor, clique em **Serviços de Área de Trabalho Remota > Coleções > Tarefas > Criar Coleções de Sessões**.
+2.  Digite um nome para a coleção, por exemplo, **ContosoAps**.
+3.  Selecione o servidor de host para a sessão de área de trabalho remota que você criou (por exemplo, Contoso-Shr1).
+4.  Aceite os **Grupos de usuários** padrão.
+5.  Insira o local do compartilhamento de arquivo que você criou para os discos de perfil do usuário dessa coleção (por exemplo, **\Contoso-Cb1\UserDisksr**).
+6.  Clique em **Criar**. Quando a coleção for criada, clique em **Fechar**.
 
 
 ## <a name="create-a-personal-desktop-session-collection"></a>Criar uma coleção de sessão de área de trabalho pessoal
@@ -57,6 +55,6 @@ Você pode usar os cmdlets do PowerShell para gerenciar suas coleções de sess�
 ## <a name="publish-remoteapp-programs"></a>Publicar programas RemoteApp
 Use as etapas a seguir para publicar os aplicativos e recursos em sua coleção:
 
-1.  No Gerenciador do Servidor, selecione a nova coleção (**ContosoApps**).  
-2.  Em Programas RemoteApp, clique em **Publicar Programas RemoteApp**.  
-3. Selecione os programas a publicar e clique em **Publicar**.  
+1.  No Gerenciador do Servidor, selecione a nova coleção (**ContosoApps**).
+2.  Em Programas RemoteApp, clique em **Publicar Programas RemoteApp**.
+3. Selecione os programas a publicar e clique em **Publicar**.

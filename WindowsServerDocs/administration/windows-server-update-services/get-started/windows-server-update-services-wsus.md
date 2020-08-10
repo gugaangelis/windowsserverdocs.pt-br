@@ -1,20 +1,18 @@
 ---
 title: Introdução ao WSUS (Windows Server Update Services)
 description: Tópico sobre o WSUS (Windows Server Update Service) – uma visão geral da função de servidor e suas aplicações práticas
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09ec5b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 07095fbbe16464645564f07434285c76b8cfd4a1
-ms.sourcegitcommit: fb808a6fc851a3e5c47e6a7654366145d2f19554
+ms.openlocfilehash: 45f88b9295bfc2d48d8e1a599b33bea05717ef0f
+ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84740629"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87881052"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
@@ -38,9 +36,9 @@ Os principais cenários em que o WSUS agrega valor aos seus negócios são:
 
 > [!NOTE]
 > A atualização de qualquer versão do Windows Server que seja compatível com WSUS 3.2 para o Windows Server 2012 R2 exige que você primeiro desinstale o WSUS 3.2.
-> 
+>
 > No Windows Server 2012, a atualização de qualquer versão do Windows Server com o WSUS 3.2 instalado será bloqueada durante o processo de instalação se o WSUS 3.2 for detectado. Nesse caso, será solicitado que você primeiro desinstale o Windows Server Update Services antes de atualizar o servidor.
-> 
+>
 > No entanto, devido às alterações nesta versão do Windows Server e do Windows Server 2012 R2, ao atualizar de qualquer versão do Windows Server e do WSUS 3.2, a instalação não é bloqueada. A falha na desinstalação do WSUS 3.2 antes de executar uma atualização do Windows Server 2012 R2 causará falha nas tarefas de pós-instalação do WSUS no Windows Server 2012 R2. Nesse caso, a única medida corretiva conhecida é formatar o disco rígido e reinstalar o Windows Server.
 
 O Windows Server Update Services é uma função de servidor interna que inclui as seguintes melhorias:

@@ -2,18 +2,16 @@
 title: Transformar um disco GPT (Tabela de Partição GUID) em um disco MBR (Registro Mestre de Inicialização)
 description: Descreve como converter um disco GUID (Tabela de Partição GUID) em um disco do estilo de partição MBR (Registro Mestre de Inicialização).
 ms.date: 06/19/2018
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 5a387f7672fd04917e8c3e76543cba73f7195b42
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4fc402dbf46944930da8ee803b1440149bc09309
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966068"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935895"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Transformar um disco GPT em um disco MBR
 

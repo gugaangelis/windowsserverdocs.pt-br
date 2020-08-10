@@ -1,20 +1,18 @@
 ---
 title: Atualização das suas implantações de Host de Sessão de Área de Trabalho Remota para o Windows Server 2016
 description: Este artigo descreve como atualizar as implantações existentes de Serviços de Área de Trabalho Remota para o Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: spatnaik
 ms.date: 08/01/2016
 ms.topic: article
 ms.assetid: 5c9b98b8-4eca-4a39-b10b-2bac729f7f44
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e685c51a003a7121dab19c74d82796311ef0889a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b825c79ac698f2a61c81628180f1d7cc14b826e8
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857119"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87948839"
 ---
 # <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>Atualização das suas implantações de Host de Sessão de Área de Trabalho Remota para o Windows Server 2016
 
@@ -31,7 +29,7 @@ Para manter o tempo de inatividade ao mínimo, siga as etapas abaixo durante a a
 
 1. Identificar os servidores a serem atualizados, digamos, metade dos servidores na coleção.
 2. Impedir novas conexões para esses servidores definindo **Permitir Novas conexões** como false.
-3. Fazer logoff de todas as sessões nesses servidores. 
+3. Fazer logoff de todas as sessões nesses servidores.
 4. Remova esses servidores da coleção.
 5. Atualize os servidores para o Windows Server 2016.
 6. Definir **Permitir Novas Conexões** como "false" nos servidores restantes na coleção.

@@ -1,17 +1,15 @@
 ---
 title: Replicação do DFS – Perguntas Frequentes
 ms.date: 06/18/2014
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 4c4d5310fa6cf47945483c9ee7a3f89afd313da9
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 0a19bdd00000e466f2a2af92116356a9ad2a6428
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966128"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950781"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicação do DFS: Perguntas frequentes (FAQ)
 
@@ -26,16 +24,16 @@ Para obter mais informações sobre Namespaces DFS, consulte [Namespaces DFS: Pe
 
 Para obter informações sobre as novidades da Replicação do DFS, confira os seguintes tópicos:
 
-  - [Visão geral de Namespaces do DFS e Replicação do DFS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) (no Windows Server 2012)  
-      
-  - Tópico [Novidades no Sistema de Arquivos Distribuído](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee307957(v=ws.10)) em [Alterações na funcionalidade do Windows Server 2008 para o Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391932(v=ws.10))  
-      
-  - Tópico [Sistema de Arquivos Distribuído](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10)) em [Alterações na funcionalidade do Windows Server 2003 com SP1 para o Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))  
-      
+  - [Visão geral de Namespaces do DFS e Replicação do DFS](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v=ws.11)) (no Windows Server 2012)
+
+  - Tópico [Novidades no Sistema de Arquivos Distribuído](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee307957(v=ws.10)) em [Alterações na funcionalidade do Windows Server 2008 para o Windows Server 2008 R2](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391932(v=ws.10))
+
+  - Tópico [Sistema de Arquivos Distribuído](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753479(v=ws.10)) em [Alterações na funcionalidade do Windows Server 2003 com SP1 para o Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753208(v=ws.10))
+
 
 Para obter uma lista das alterações recentes deste tópico, consulte a seção [Histórico de Alterações](#change-history) deste tópico.
 
-      
+
 
 ## <a name="interoperability"></a>Interoperabilidade
 
@@ -53,10 +51,10 @@ Para obter mais informações sobre como replicar o SYSVOL usando a Replicação
 
 Sim. Para migrar de FRS para a Replicação do DFS, confira os seguintes documentos:
 
-  - Para migrar a replicação de pastas que não seja a pasta SYSVOL, confira [Guia de operações do DFS: Migrar do FRS para a Replicação do DFS](https://go.microsoft.com/fwlink/?linkid=192776) e [FRS2DFSR – Um utilitário de migração de FRS para DFSR](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437).  
-      
-  - Para migrar a replicação da pasta SYSVOL para Replicação do DFS, configura o [Guia de migração da Replicação do SYSVOL: FRS para Replicação do DFS](./migrate-sysvol-to-dfsr.md).  
-      
+  - Para migrar a replicação de pastas que não seja a pasta SYSVOL, confira [Guia de operações do DFS: Migrar do FRS para a Replicação do DFS](https://go.microsoft.com/fwlink/?linkid=192776) e [FRS2DFSR – Um utilitário de migração de FRS para DFSR](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437).
+
+  - Para migrar a replicação da pasta SYSVOL para Replicação do DFS, configura o [Guia de migração da Replicação do SYSVOL: FRS para Replicação do DFS](./migrate-sysvol-to-dfsr.md).
+
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>posso usar a Replicação do DFS em um ambiente misto Windows/UNIX?
 
@@ -90,14 +88,14 @@ Sim. No entanto, as configurações de triagem de arquivo do FSRM (Gerenciador d
 
 Veja abaixo as práticas recomendadas para implementar triagens de arquivo ou cotas:
 
-  - A pasta DfsrPrivate oculta não deve estar sujeita a cotas nem a triagens de arquivo.  
-      
-  - Os arquivos que passaram por triagem não devem existir em nenhuma pasta replicada antes de a triagem ser habilitada.  
-      
-  - Nenhuma pasta pode exceder a cota antes de a cota ser habilitada.  
-      
-  - Você deve usar cotas rígidas com cuidado. É possível que membros individuais de um grupo de replicação permaneçam dentro de uma cota antes da replicação, mas a excedam quando os arquivos forem replicados. Por exemplo, se um usuário copiar um arquivo de 10 megabytes (MB) para o servidor A (que está no limite rígido) e outro usuário copiar um arquivo de 5 MB no servidor B, quando a próxima replicação ocorrer, ambos os servidores excederão a cota em 5 megabytes. Isso pode fazer com que a Replicação do DFS repita continuamente a replicação dos arquivos, causando lacunas no vetor de versão e possíveis problemas de desempenho.  
-      
+  - A pasta DfsrPrivate oculta não deve estar sujeita a cotas nem a triagens de arquivo.
+
+  - Os arquivos que passaram por triagem não devem existir em nenhuma pasta replicada antes de a triagem ser habilitada.
+
+  - Nenhuma pasta pode exceder a cota antes de a cota ser habilitada.
+
+  - Você deve usar cotas rígidas com cuidado. É possível que membros individuais de um grupo de replicação permaneçam dentro de uma cota antes da replicação, mas a excedam quando os arquivos forem replicados. Por exemplo, se um usuário copiar um arquivo de 10 megabytes (MB) para o servidor A (que está no limite rígido) e outro usuário copiar um arquivo de 5 MB no servidor B, quando a próxima replicação ocorrer, ambos os servidores excederão a cota em 5 megabytes. Isso pode fazer com que a Replicação do DFS repita continuamente a replicação dos arquivos, causando lacunas no vetor de versão e possíveis problemas de desempenho.
+
 
 ### <a name="is-dfs-replication-cluster-aware"></a>A Replicação do DFS reconhece o cluster?
 
@@ -105,7 +103,7 @@ Sim, a Replicação do DFS no Windows Server 2012 R2, no Windows Server 2012 e n
 
 
 > [!NOTE]
-> A Replicação do DFS não é compatível com a replicação de arquivos em Volumes Compartilhados Clusterizados. 
+> A Replicação do DFS não é compatível com a replicação de arquivos em Volumes Compartilhados Clusterizados.
 <br>
 
 
@@ -145,10 +143,10 @@ Não. A Replicação do DFS não replicará arquivos ou pastas criptografados us
 
 A Replicação do DFS poderá replicar com segurança arquivos de pasta pessoal (.pst) do Microsoft Outlook e arquivos do Microsoft Access somente se eles forem armazenados para fins de arquivamento e não forem acessados pela rede usando um cliente como o Outlook ou o Access (para abrir os arquivos .pst ou do Access, primeiro copie-os para um dispositivo de armazenamento local). Os motivos para isso são os seguintes:
 
-  - Abrir arquivos .pst em conexões de rede pode levar a dados corrompidos nos arquivos .pst. Para obter mais informações sobre por que não é possível acessar os arquivos .pst com segurança em uma rede, confira o [artigo 297019](https://go.microsoft.com/fwlink/?linkid=125363) na Base de Dados de Conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=125363).  
-      
-  - Arquivos .pst e do Access tendem a permanecer abertos por longos períodos enquanto são acessados por um cliente, como o Outlook ou o Office Access. Isso impede a Replicação do DFS de replicar esses arquivos até que eles sejam fechados.  
-      
+  - Abrir arquivos .pst em conexões de rede pode levar a dados corrompidos nos arquivos .pst. Para obter mais informações sobre por que não é possível acessar os arquivos .pst com segurança em uma rede, confira o [artigo 297019](https://go.microsoft.com/fwlink/?linkid=125363) na Base de Dados de Conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=125363).
+
+  - Arquivos .pst e do Access tendem a permanecer abertos por longos períodos enquanto são acessados por um cliente, como o Outlook ou o Office Access. Isso impede a Replicação do DFS de replicar esses arquivos até que eles sejam fechados.
+
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>Posso usar a Replicação do DFS em um grupo de trabalho?
 
@@ -170,12 +168,12 @@ Não. A Replicação do DFS não requer explicitamente a sincronização de hor�
 
 Sim. No entanto, você deve primeiro instalar o Windows Server 2003 Service Pack 2 ou o hotfix. Para obter mais informações, confira o [artigo 920335](https://go.microsoft.com/fwlink/?linkid=76776) na Base de Dados de Conhecimento Microsoft (https://go.microsoft.com/fwlink/?LinkId=76776). Além disso, a replicação de um volume inteiro pode causar os seguintes problemas:
 
-  - Se o volume contiver um arquivo de paginação do Windows, a replicação falhará e registrará o evento 4312 do DFSR no log de eventos do sistema.  
-      
-  - A Replicação do DFS define o sistema e os atributos ocultos na pasta replicada nos servidores de destino. Isso ocorre porque o Windows aplica o sistema e os atributos ocultos à pasta raiz do volume por padrão. Se o caminho local da pasta replicada nos servidores de destino for também uma raiz do volume, nenhuma alteração adicional será feita aos atributos da pasta.  
-      
-  - Ao replicar um volume que contém a pasta do sistema Windows, a Replicação do DFS reconhece a pasta %WINDIR% e não a replica. No entanto, a Replicação do DFS replica pastas usadas por aplicativos que não são da Microsoft, o que pode fazer com que os aplicativos falhem nos servidores de destino se os aplicativos tiverem problemas de interoperabilidade com Replicação do DFS.  
-      
+  - Se o volume contiver um arquivo de paginação do Windows, a replicação falhará e registrará o evento 4312 do DFSR no log de eventos do sistema.
+
+  - A Replicação do DFS define o sistema e os atributos ocultos na pasta replicada nos servidores de destino. Isso ocorre porque o Windows aplica o sistema e os atributos ocultos à pasta raiz do volume por padrão. Se o caminho local da pasta replicada nos servidores de destino for também uma raiz do volume, nenhuma alteração adicional será feita aos atributos da pasta.
+
+  - Ao replicar um volume que contém a pasta do sistema Windows, a Replicação do DFS reconhece a pasta %WINDIR% e não a replica. No entanto, a Replicação do DFS replica pastas usadas por aplicativos que não são da Microsoft, o que pode fazer com que os aplicativos falhem nos servidores de destino se os aplicativos tiverem problemas de interoperabilidade com Replicação do DFS.
+
 
 ### <a name="does-dfs-replication-support-rpc-over-http"></a>A Replicação do DFS dá suporte a RPC sobre HTTP?
 
@@ -219,31 +217,31 @@ Não. Os grupos de replicação podem se estender entre domínios dentro de uma 
 
 A lista a seguir apresenta um conjunto de diretrizes de escalabilidade que foram testadas pela Microsoft e aplicadas ao Windows Server 2012 R2, ao Windows Server 2016 e ao Windows Server 2019
 
-  - Tamanho de todos os arquivos replicados em um servidor: 100 terabytes.  
-      
-  - Número de arquivos replicados em um volume: 70 milhões.  
-      
-  - Tamanho máximo do arquivo: 250 gigabytes.  
-      
+  - Tamanho de todos os arquivos replicados em um servidor: 100 terabytes.
+
+  - Número de arquivos replicados em um volume: 70 milhões.
+
+  - Tamanho máximo do arquivo: 250 gigabytes.
+
 
 
 > [!IMPORTANT]
-> Ao criar grupos de replicação com um grande número ou tamanho de arquivos, é recomendável exportar um clone de banco de dados e usar técnicas de pré-propagação para minimizar a duração da replicação inicial. Para obter mais informações, confira [Sincronização inicial da Replicação do DFS no Windows Server 2012 R2: o ataque dos clones](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/DFS-Replication-Initial-Sync-in-Windows-Server-2012-R2-Attack-of/ba-p/424877). 
+> Ao criar grupos de replicação com um grande número ou tamanho de arquivos, é recomendável exportar um clone de banco de dados e usar técnicas de pré-propagação para minimizar a duração da replicação inicial. Para obter mais informações, confira [Sincronização inicial da Replicação do DFS no Windows Server 2012 R2: o ataque dos clones](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/DFS-Replication-Initial-Sync-in-Windows-Server-2012-R2-Attack-of/ba-p/424877).
 <br>
 
 
 A seguinte lista apresenta um conjunto de diretrizes de escalabilidade que foram testadas pela Microsoft no Windows Server 2012, no Windows Server 2008 R2 e no Windows Server 2008:
 
-  - Tamanho de todos os arquivos replicados em um servidor: 10 terabytes.  
-      
-  - Número de arquivos replicados em um volume: 11 milhões.  
-      
-  - Tamanho máximo do arquivo: 64 gigabytes.  
-      
+  - Tamanho de todos os arquivos replicados em um servidor: 10 terabytes.
+
+  - Número de arquivos replicados em um volume: 11 milhões.
+
+  - Tamanho máximo do arquivo: 64 gigabytes.
+
 
 
 > [!NOTE]
-> Não há mais um limite ao número de grupos de replicação, pastas replicadas, conexões ou membros do grupo de replicação. 
+> Não há mais um limite ao número de grupos de replicação, pastas replicadas, conexões ou membros do grupo de replicação.
 <br>
 
 
@@ -265,12 +263,12 @@ A Replicação do DFS usa novos objetos no contexto de nomeação de domínio de
 
 Sim. Há três maneiras de automatizar os relatórios de integridade:
 
-  - Usar o módulo DFSR do Windows PowerShell incluído no Windows Server 2012 R2 ou DfsrAdmin.exe em conjunto com as tarefas agendadas para gerar relatórios de integridade regularmente. Para obter mais informações, confira [Como automatizar os relatórios de integridade da Replicação do DFS](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010).  
-      
-  - Usar o pacote de gerenciamento Replicação do DFS para System Center Operations Manager para criar alertas com base em condições especificadas.  
-      
-  - Use o provedor WMI da Replicação do DFS para o script de alertas.  
-      
+  - Usar o módulo DFSR do Windows PowerShell incluído no Windows Server 2012 R2 ou DfsrAdmin.exe em conjunto com as tarefas agendadas para gerar relatórios de integridade regularmente. Para obter mais informações, confira [Como automatizar os relatórios de integridade da Replicação do DFS](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010).
+
+  - Usar o pacote de gerenciamento Replicação do DFS para System Center Operations Manager para criar alertas com base em condições especificadas.
+
+  - Use o provedor WMI da Replicação do DFS para o script de alertas.
+
 
 ### <a name="can-i-use-microsoft-system-center-operations-manager-to-monitor-dfs-replication"></a>Posso usar o Microsoft System Center Operations Manager para monitorar Replicação do DFS?
 
@@ -284,7 +282,7 @@ O Gerenciamento de DFS está incluído no Windows Server 2012 R2, no Windows Ser
 
 
 > [!IMPORTANT]
-> Para ver ou gerenciar grupos de replicação que contêm pastas replicadas somente leitura ou membros que são clusters de failover, use a versão do Gerenciamento do DFS incluída no Windows Server 2012 R2, no Windows Server 2012, no Windows Server 2008 R2, em <a href="https://go.microsoft.com/fwlink/p/?linkid=238560">Ferramentas de Administração de Servidor Remoto para Windows 8</a> ou em <a href="https://technet.microsoft.com/library/ee449475">Ferramentas de Administração de Servidor Remoto para Windows 7</a>. 
+> Para ver ou gerenciar grupos de replicação que contêm pastas replicadas somente leitura ou membros que são clusters de failover, use a versão do Gerenciamento do DFS incluída no Windows Server 2012 R2, no Windows Server 2012, no Windows Server 2008 R2, em <a href="https://go.microsoft.com/fwlink/p/?linkid=238560">Ferramentas de Administração de Servidor Remoto para Windows 8</a> ou em <a href="https://technet.microsoft.com/library/ee449475">Ferramentas de Administração de Servidor Remoto para Windows 7</a>.
 <br>
 
 
@@ -300,16 +298,16 @@ Para recuperar arquivos perdidos, restaure os arquivos da pasta do sistema de ar
 
 Sim. Há várias maneiras de monitorar a replicação:
 
-  - A Replicação do DFS tem um pacote de gerenciamento para o System Center Operations Manager que fornece monitoramento proativo.  
-      
-  - O Gerenciamento do DFS tem um relatório de diagnóstico nativo para a lista de pendências de replicação, eficiência da replicação e o número de arquivos e pastas em um determinado grupo de replicação.  
-      
-  - O módulo DFSR do Windows PowerShell no Windows Server 2012 R2 contém cmdlets para iniciar testes de propagação e gravar relatórios de propagação e de integridade. Para obter mais informações, confira [Cmdlets de replicação do Sistema de Arquivos Distribuído no Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)).  
-      
-  - Dfsrdiag.exe é uma ferramenta de linha de comando que pode gerar uma contagem da lista de pendências ou disparar um teste de propagação. Ambos mostram o estado da replicação. A propagação mostra se os arquivos estão sendo replicados em todos os nós. A lista de pendências mostra quantos arquivos ainda precisam ser replicados para que os dois computadores estejam em sincronia. A contagem da lista de pendências é o número de atualizações que um membro do grupo de replicação não processou. Em computadores que executam o Windows Server 2012 R2, o Windows Server 2012 ou o Windows Server 2008 R2, o Dfsrdiag.exe também pode exibir as atualizações que a Replicação do DFS está replicando no momento.  
-      
-  - Os scripts podem usar o WMI para coletar informações da lista de pendências, seja manualmente ou por meio do MOM.  
-      
+  - A Replicação do DFS tem um pacote de gerenciamento para o System Center Operations Manager que fornece monitoramento proativo.
+
+  - O Gerenciamento do DFS tem um relatório de diagnóstico nativo para a lista de pendências de replicação, eficiência da replicação e o número de arquivos e pastas em um determinado grupo de replicação.
+
+  - O módulo DFSR do Windows PowerShell no Windows Server 2012 R2 contém cmdlets para iniciar testes de propagação e gravar relatórios de propagação e de integridade. Para obter mais informações, confira [Cmdlets de replicação do Sistema de Arquivos Distribuído no Windows PowerShell](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)).
+
+  - Dfsrdiag.exe é uma ferramenta de linha de comando que pode gerar uma contagem da lista de pendências ou disparar um teste de propagação. Ambos mostram o estado da replicação. A propagação mostra se os arquivos estão sendo replicados em todos os nós. A lista de pendências mostra quantos arquivos ainda precisam ser replicados para que os dois computadores estejam em sincronia. A contagem da lista de pendências é o número de atualizações que um membro do grupo de replicação não processou. Em computadores que executam o Windows Server 2012 R2, o Windows Server 2012 ou o Windows Server 2008 R2, o Dfsrdiag.exe também pode exibir as atualizações que a Replicação do DFS está replicando no momento.
+
+  - Os scripts podem usar o WMI para coletar informações da lista de pendências, seja manualmente ou por meio do MOM.
+
 
 ## <a name="performance"></a>Desempenho
 
@@ -478,46 +476,46 @@ Para obter uma lista de valores de atributo e suas descrições, confira [Atribu
 
 Os valores de atributo a seguir são definidos usando a função `SetFileAttributes dwFileAttributes` e replicados pela Replicação do DFS. As alterações nesses valores de atributo disparam a replicação dos atributos. O conteúdo do arquivo não é replicado, a menos que o conteúdo também seja alterado. Para obter mais informações, confira [Função SetFileAttributes](https://go.microsoft.com/fwlink/?linkid=182269) na biblioteca do MSDN (https://go.microsoft.com/fwlink/?LinkId=182269).
 
-  - FILE\_ATTRIBUTE\_HIDDEN  
-      
-  - FILE\_ATTRIBUTE\_READONLY  
-      
-  - FILE\_ATTRIBUTE\_SYSTEM  
-      
-  - FILE\_ATTRIBUTE\_NOT\_CONTENT\_INDEXED  
-      
-  - FILE\_ATTRIBUTE\_OFFLINE  
-      
+  - FILE\_ATTRIBUTE\_HIDDEN
+
+  - FILE\_ATTRIBUTE\_READONLY
+
+  - FILE\_ATTRIBUTE\_SYSTEM
+
+  - FILE\_ATTRIBUTE\_NOT\_CONTENT\_INDEXED
+
+  - FILE\_ATTRIBUTE\_OFFLINE
+
 
 Os valores de atributo a seguir são replicados pela Replicação do DFS, mas não disparam a replicação.
 
-  - FILE\_ATTRIBUTE\_ARCHIVE  
-      
-  - FILE\_ATTRIBUTE\_NORMAL  
-      
+  - FILE\_ATTRIBUTE\_ARCHIVE
+
+  - FILE\_ATTRIBUTE\_NORMAL
+
 
 Os valores de atributo de arquivo a seguir também disparam a replicação, embora não possam ser definidos usando a função `SetFileAttributes` (use a função `GetFileAttributes` para ver os valores de atributo).
 
-  - FILE\_ATTRIBUTE\_REPARSE\_POINT  
-      
+  - FILE\_ATTRIBUTE\_REPARSE\_POINT
+
 
 > [!NOTE]
-> A Replicação do DFS não replica valores de atributo de ponto de nova análise, a menos que a marca de nova análise seja IO_REPARSE_TAG_SYMLINK. Arquivos com a marca de nova análise IO_REPARSE_TAG_DEDUP, IO_REPARSE_TAG_SIS ou IO_REPARSE_TAG_HSM são replicados como arquivos normais. No entanto, a tag de nova análise e os buffers de dados de nova análise não são replicados para outros servidores porque o ponto de nova análise funciona apenas no sistema local. 
+> A Replicação do DFS não replica valores de atributo de ponto de nova análise, a menos que a marca de nova análise seja IO_REPARSE_TAG_SYMLINK. Arquivos com a marca de nova análise IO_REPARSE_TAG_DEDUP, IO_REPARSE_TAG_SIS ou IO_REPARSE_TAG_HSM são replicados como arquivos normais. No entanto, a tag de nova análise e os buffers de dados de nova análise não são replicados para outros servidores porque o ponto de nova análise funciona apenas no sistema local.
 <br>
 
-  - FILE\_ATTRIBUTE\_COMPRESSED  
-      
-  - FILE\_ATTRIBUTE\_ENCRYPTED  
-      
+  - FILE\_ATTRIBUTE\_COMPRESSED
+
+  - FILE\_ATTRIBUTE\_ENCRYPTED
+
 
 > [!NOTE]
-> A Replicação do DFS não replica arquivos criptografados usando o EFS (Encrypting File System). A Replicação do DFS replica arquivos criptografados usando um software que não é da Microsoft, mas somente se ele não definir o valor do atributo FILE_ATTRIBUTE_ENCRYPTED no arquivo. 
+> A Replicação do DFS não replica arquivos criptografados usando o EFS (Encrypting File System). A Replicação do DFS replica arquivos criptografados usando um software que não é da Microsoft, mas somente se ele não definir o valor do atributo FILE_ATTRIBUTE_ENCRYPTED no arquivo.
 <br>
 
-  - FILE\_ATTRIBUTE\_SPARSE\_FILE  
-      
-  - FILE\_ATTRIBUTE\_DIRECTORY  
-      
+  - FILE\_ATTRIBUTE\_SPARSE\_FILE
+
+  - FILE\_ATTRIBUTE\_DIRECTORY
+
 
 A Replicação do DFS não replica o valor FILE\_ATTRIBUTE\_TEMPORARY.
 
@@ -541,12 +539,12 @@ Para obter mais informações sobre a replicação inicial, confira [Criar um gr
 
 Sim. A Replicação do DFS supera três problemas comuns do FRS:
 
-  - Encapsulamentos de diário: a Replicação do DFS recupera-se de encapsulamentos de diário em tempo real. Cada arquivo ou pasta existente será marcada como journalWrap e verificada no sistema de arquivos antes que a replicação seja habilitada novamente. Durante a recuperação, esse volume não está disponível para replicação em nenhuma das direções.  
-      
-  - Replicação excessiva: para evitar a replicação excessiva, a Replicação do DFS usa um sistema de créditos.  
-      
-  - Pastas transformadas: para evitar nomes de pastas transformadas, a Replicação do DFS armazena dados conflitantes em uma pasta DfsrPrivate\\ConflictandDeleted oculta (localizada sob o caminho local da pasta replicada). Por exemplo, criar várias pastas simultaneamente com nomes idênticos em servidores diferentes replicados usando o FRS faz com que o FRS altere o nome das pastas mais antigas. A Replicação do DFS, em vez disso, move as pastas mais antigas para a pasta Conflito e Excluída.  
-      
+  - Encapsulamentos de diário: a Replicação do DFS recupera-se de encapsulamentos de diário em tempo real. Cada arquivo ou pasta existente será marcada como journalWrap e verificada no sistema de arquivos antes que a replicação seja habilitada novamente. Durante a recuperação, esse volume não está disponível para replicação em nenhuma das direções.
+
+  - Replicação excessiva: para evitar a replicação excessiva, a Replicação do DFS usa um sistema de créditos.
+
+  - Pastas transformadas: para evitar nomes de pastas transformadas, a Replicação do DFS armazena dados conflitantes em uma pasta DfsrPrivate\\ConflictandDeleted oculta (localizada sob o caminho local da pasta replicada). Por exemplo, criar várias pastas simultaneamente com nomes idênticos em servidores diferentes replicados usando o FRS faz com que o FRS altere o nome das pastas mais antigas. A Replicação do DFS, em vez disso, move as pastas mais antigas para a pasta Conflito e Excluída.
+
 
 ### <a name="does-dfs-replication-replicate-files-in-chronological-order"></a>A Replicação do DFS replica arquivos em ordem cronológica?
 
@@ -558,14 +556,14 @@ Se um aplicativo abrir um arquivo e criar um bloqueio de arquivo nele (impedindo
 
 ### <a name="does-dfs-replication-replicate-ntfs-file-permissions-alternate-data-streams-hard-links-and-reparse-points"></a>A Replicação do DFS replica permissões de arquivo NTFS, fluxos de dados alternativos, links físicos e pontos de nova análise?
 
-  - A Replicação do DFS replica as permissões de arquivo NTFS e os fluxos de dados alternativos.  
-      
-  - A Microsoft não é compatível com a criação de links físicos de NTFS de ou para arquivos em uma pasta replicada. Fazer isso pode causar problemas de replicação com os arquivos afetados. Os arquivos de vínculo físico são ignorados pela Replicação do DFS e não são replicados. Os pontos de junção também não são replicados e a Replicação do DFS registra em log o evento 4406 para cada ponto de junção que encontra.  
-      
-  - Os únicos pontos de nova análise replicados pela Replicação do DFS são aqueles que usam a tag IO\_REPARSE\_TAG\_SYMLINK; no entanto, a Replicação do DFS não garante que o alvo de um symlink também seja replicado. Para obter mais informações, confira o [blog Ask the Directory Services Team](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11)).  
-      
-  - Arquivos com as tags de nova análise IO\_REPARSE\_TAG\_DEDUP, IO\_REPARSE\_TAG\_SIS ou IO\_REPARSE\_TAG\_HSM são replicados como arquivos normais. A tag de nova análise e os buffers de dados de nova análise não são replicados para outros servidores porque o ponto de nova análise funciona apenas no sistema local. Dessa forma, a Replicação do DFS pode replicar pastas em volumes que usam Eliminação de Duplicação de Dados no Windows Server 2012 ou SIS (armazenamento de instância única), no entanto, as informações de eliminação de duplicação de dados são mantidas separadamente por cada servidor no qual o serviço de função está habilitado.  
-      
+  - A Replicação do DFS replica as permissões de arquivo NTFS e os fluxos de dados alternativos.
+
+  - A Microsoft não é compatível com a criação de links físicos de NTFS de ou para arquivos em uma pasta replicada. Fazer isso pode causar problemas de replicação com os arquivos afetados. Os arquivos de vínculo físico são ignorados pela Replicação do DFS e não são replicados. Os pontos de junção também não são replicados e a Replicação do DFS registra em log o evento 4406 para cada ponto de junção que encontra.
+
+  - Os únicos pontos de nova análise replicados pela Replicação do DFS são aqueles que usam a tag IO\_REPARSE\_TAG\_SYMLINK; no entanto, a Replicação do DFS não garante que o alvo de um symlink também seja replicado. Para obter mais informações, confira o [blog Ask the Directory Services Team](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725893(v=ws.11)).
+
+  - Arquivos com as tags de nova análise IO\_REPARSE\_TAG\_DEDUP, IO\_REPARSE\_TAG\_SIS ou IO\_REPARSE\_TAG\_HSM são replicados como arquivos normais. A tag de nova análise e os buffers de dados de nova análise não são replicados para outros servidores porque o ponto de nova análise funciona apenas no sistema local. Dessa forma, a Replicação do DFS pode replicar pastas em volumes que usam Eliminação de Duplicação de Dados no Windows Server 2012 ou SIS (armazenamento de instância única), no entanto, as informações de eliminação de duplicação de dados são mantidas separadamente por cada servidor no qual o serviço de função está habilitado.
+
 
 ### <a name="does-dfs-replication-replicate-timestamp-changes-if-no-other-changes-are-made-to-the-file"></a>A Replicação do DFS replicará alterações de carimbo de data/hora se nenhuma outra alteração for feita no arquivo?
 
@@ -577,7 +575,7 @@ Sim. A Replicação do DFS replica as alterações de permissão para arquivos e
 
 
 > [!NOTE]
-> Alterar ACLs em um grande número de arquivos pode afetar o desempenho da replicação. No entanto, ao usar a RDC, a quantidade de dados transferidos é proporcional ao tamanho das ACLs, não ao tamanho do arquivo inteiro. A quantidade de tráfego de disco ainda é proporcional ao tamanho dos arquivos, pois os arquivos devem ser lidos de e para a pasta de preparo. 
+> Alterar ACLs em um grande número de arquivos pode afetar o desempenho da replicação. No entanto, ao usar a RDC, a quantidade de dados transferidos é proporcional ao tamanho das ACLs, não ao tamanho do arquivo inteiro. A quantidade de tráfego de disco ainda é proporcional ao tamanho dos arquivos, pois os arquivos devem ser lidos de e para a pasta de preparo.
 <br>
 
 
@@ -595,12 +593,12 @@ Não. O serviço de Replicação do DFS usa RPC (chamadas de procedimento remoto
 
 Para obter mais informações, confira os seguintes sites da Microsoft:
 
-  - [Referência Técnica de RPC](https://go.microsoft.com/fwlink/?linkid=182278)  
-      
-  - [Sobre a Compactação Diferencial Remota](https://go.microsoft.com/fwlink/?linkid=182279)  
-      
-  - [Constantes em nível de autenticação](https://go.microsoft.com/fwlink/?linkid=182280)  
-      
+  - [Referência Técnica de RPC](https://go.microsoft.com/fwlink/?linkid=182278)
+
+  - [Sobre a Compactação Diferencial Remota](https://go.microsoft.com/fwlink/?linkid=182279)
+
+  - [Constantes em nível de autenticação](https://go.microsoft.com/fwlink/?linkid=182280)
+
 
 ### <a name="how-are-simultaneous-replications-handled"></a>Como as replicações simultâneas são tratadas?
 
@@ -624,10 +622,10 @@ Não há suporte para criar uma conexão de replicação unidirecional com a Rep
 
 Se você estiver usando o Windows Server 2008 ou o Windows Server 2003 R2, poderá simular uma conexão unidirecional executando as seguintes ações:
 
-  - Treine os administradores para fazer alterações apenas aos servidores que você deseja designar como primários. Em seguida, permita que as alterações sejam replicadas nos servidores de destino.  
-      
-  - Configure as permissões de compartilhamento nos servidores de destino para que os usuários finais não tenham permissões de Gravação. Se nenhuma alteração for permitida nos servidores de branch, não haverá nada para replicar de volta, simulando uma conexão unidirecional e mantendo a baixa utilização da WAN.  
-      
+  - Treine os administradores para fazer alterações apenas aos servidores que você deseja designar como primários. Em seguida, permita que as alterações sejam replicadas nos servidores de destino.
+
+  - Configure as permissões de compartilhamento nos servidores de destino para que os usuários finais não tenham permissões de Gravação. Se nenhuma alteração for permitida nos servidores de branch, não haverá nada para replicar de volta, simulando uma conexão unidirecional e mantendo a baixa utilização da WAN.
+
 
 ### <a name="is-there-a-way-to-force-a-complete-replication-of-all-files-including-unchanged-files"></a>Há uma maneira de forçar uma replicação completa de todos os arquivos, incluindo arquivos inalterados?
 
@@ -643,7 +641,7 @@ Para obter mais informações sobre a replicação inicial, confira [Criar um gr
 
 
 > [!WARNING]
-> A designação de membro primário é usada somente durante o processo de replicação inicial. Se você usar o comando <STRONG>Dfsradmin</STRONG> para especificar um membro primário para uma pasta replicada após a conclusão da replicação, a Replicação do DFS não designará o servidor como um membro primário no Active Directory Domain Services. No entanto, se o banco de dados de Replicação do DFS no servidor depois sofrer danos irreversíveis ou perda, o servidor tentará executar uma replicação inicial como o membro primário, em vez de recuperar seus dados de outro membro do grupo de replicação. Essencialmente, o servidor passa a ser um servidor primário não autorizado, o que pode causar conflitos. Por esse motivo, especifique o membro primário manualmente somente se tiver certeza de que a replicação inicial sofreu uma falha irrecuperável. 
+> A designação de membro primário é usada somente durante o processo de replicação inicial. Se você usar o comando <STRONG>Dfsradmin</STRONG> para especificar um membro primário para uma pasta replicada após a conclusão da replicação, a Replicação do DFS não designará o servidor como um membro primário no Active Directory Domain Services. No entanto, se o banco de dados de Replicação do DFS no servidor depois sofrer danos irreversíveis ou perda, o servidor tentará executar uma replicação inicial como o membro primário, em vez de recuperar seus dados de outro membro do grupo de replicação. Essencialmente, o servidor passa a ser um servidor primário não autorizado, o que pode causar conflitos. Por esse motivo, especifique o membro primário manualmente somente se tiver certeza de que a replicação inicial sofreu uma falha irrecuperável.
 <br>
 
 
@@ -659,12 +657,12 @@ Quando a Replicação do DFS detecta um conflito, ela usa a versão do arquivo q
 
 Quando ocorre um conflito, a Replicação do DFS registra um evento informativo no log de eventos da Replicação do DFS. Esse evento não requer ação do usuário pelos seguintes motivos:
 
-  - Ele não é visível para os usuários (ele fica visível somente para administradores de servidor).  
-      
-  - A Replicação do DFS trata o conflito e a pasta excluída como um cache. Quando um limite de cota é atingido, ele limpa alguns desses arquivos. Não há nenhuma garantia de que os arquivos conflitantes serão salvos.  
-      
-  - O conflito pode residir em um servidor diferente daquele da origem do conflito.  
-      
+  - Ele não é visível para os usuários (ele fica visível somente para administradores de servidor).
+
+  - A Replicação do DFS trata o conflito e a pasta excluída como um cache. Quando um limite de cota é atingido, ele limpa alguns desses arquivos. Não há nenhuma garantia de que os arquivos conflitantes serão salvos.
+
+  - O conflito pode residir em um servidor diferente daquele da origem do conflito.
+
 
 ## <a name="staging"></a>Preparando
 

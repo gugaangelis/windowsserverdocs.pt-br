@@ -1,20 +1,18 @@
 ---
 title: Configurações de segurança do Windows 10 com suporte para os Serviços de Área de Trabalho Remota VDI
 description: Fornece informações sobre configurações compatíveis com Windows 10 VDI com RDS no Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 10/27/2016
 ms.topic: article
 ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
-ms.openlocfilehash: 4ecd290a910ddbb1aba85b26764fb86e30731172
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 7fd8de56d02dfe83add67b740405265a232747d9
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963348"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946339"
 ---
 # <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>Configurações de segurança do Windows 10 com suporte para os Serviços de Área de Trabalho Remota VDI
 
@@ -40,10 +38,10 @@ O Credential Guard remoto tem suporte apenas para conexões diretas com as máqu
 > [!NOTE]
 > Se você tiver um Agente de Conexão em um ambiente de instância única e o nome DNS corresponde ao nome do computador, você poderá usar o Credential Guard Remoto, embora não haja suporte para isso.
 
-## <a name="shielded-vms-and-encryption-supported-vms"></a>VMs blindadas e criptografia com suporte: 
+## <a name="shielded-vms-and-encryption-supported-vms"></a>VMs blindadas e criptografia com suporte:
 
-- Não há suporte para VMs blindadas no VDI de Serviços de Área de Trabalho Remota 
+- Não há suporte para VMs blindadas no VDI de Serviços de Área de Trabalho Remota
 
 Para aproveitar VMs com Suporte para Criptografia:
-- Use uma coleção não gerenciada e uma tecnologia de provisionamento fora do processo de criação de coleção de Serviços de Área de Trabalho Remota para provisionar as máquinas virtuais. 
-- Discos de Perfil do Usuário não têm suporte, pois eles dependem de discos diferenciais 
+- Use uma coleção não gerenciada e uma tecnologia de provisionamento fora do processo de criação de coleção de Serviços de Área de Trabalho Remota para provisionar as máquinas virtuais.
+- Discos de Perfil do Usuário não têm suporte, pois eles dependem de discos diferenciais

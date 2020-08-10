@@ -1,20 +1,18 @@
 ---
 title: Controlar suas Licenças de Acesso para Cliente de Serviços de Área de Trabalho Remota (RDS CALs)
 description: Saiba como controlar CALs em sua implantação do RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 80d82d30-3ad0-4a8c-9a9b-2773c47eee19
 author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: 7e5793427b4a294d90c7b9ebeb66bb27578be190
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 7804b0339a9c086a6e68dd83d63b0da5ff292665
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857329"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954813"
 ---
 # <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Controlar suas Licenças de Acesso para Cliente de Serviços de Área de Trabalho Remota (RDS CALs)
 
@@ -23,7 +21,7 @@ ms.locfileid: "80857329"
 É possível usar a ferramenta Gerenciador de Licenciamento de Área de Trabalho Remota para criar relatórios para acompanhar as CALs de RDS por Usuário que foram lançadas por um servidor de licenças de Área de Trabalho Remota.
 
 > [!NOTE]
->  Se você estiver usando o Azure AD Domain Services em seu ambiente, a ferramenta Gerenciador de Licenciamento de Área de Trabalho Remota não funcionará para obter CALs por Usuário. Em vez disso, você precisa acompanhar o licenciamento manualmente, por meio de eventos de logon, sondagem de conexões ativas de Área de Trabalho Remota por meio do Agente de Conexão ou outro mecanismo que funciona para você. 
+>  Se você estiver usando o Azure AD Domain Services em seu ambiente, a ferramenta Gerenciador de Licenciamento de Área de Trabalho Remota não funcionará para obter CALs por Usuário. Em vez disso, você precisa acompanhar o licenciamento manualmente, por meio de eventos de logon, sondagem de conexões ativas de Área de Trabalho Remota por meio do Agente de Conexão ou outro mecanismo que funciona para você.
 
 Use as seguintes etapas para gerar um relatório de CALs por Usuário:
 

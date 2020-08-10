@@ -1,19 +1,17 @@
 ---
 title: Novidades no Windows Server, versão 1803
 description: Quais são os novos recursos de computação, identidade, gerenciamento, automação, rede, segurança, armazenamento.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
-ms.openlocfilehash: 32410c9b2645d96ee1190afdda6a2ce75f09feef
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 19a502733a51b22427075e90b6ef88280805b27a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409556"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950100"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novidades no Windows Server, versão 1803
 

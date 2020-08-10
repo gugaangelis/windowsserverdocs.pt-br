@@ -1,19 +1,17 @@
 ---
 title: Melhorias de segurança do SMB
 description: Uma explicação do recurso de criptografia SMB no Windows Server 2012 R2, no Windows Server 2012 e no Windows Server 2016.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9052e9e6a1327b67fd75b07ab2ee6fc56b1190ac
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: e81b5ca5d28c33187b90fbabebc3d3f36073124c
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954693"
 ---
 # <a name="smb-security-enhancements"></a>Melhorias de segurança do SMB
 
@@ -43,17 +41,17 @@ Você pode habilitar a Criptografia SMB para todo o servidor de arquivos ou apen
 ### <a name="enable-smb-encryption-with-windows-powershell"></a>Habilitar a criptografia SMB com o Windows PowerShell
 
 1. Para habilitar a Criptografia SMB para um compartilhamento de arquivo individual, digite o seguinte script no servidor:
-    
+
     ```PowerShell
     Set-SmbShare –Name <sharename> -EncryptData $true
     ```
 2. Para habilitar a Criptografia SMB para todo o servidor de arquivos, digite o seguinte script no servidor:
-    
+
     ```PowerShell
     Set-SmbServerConfiguration –EncryptData $true
     ```
 3. Para criar um compartilhamento de arquivo SMB com a Criptografia SMB habilitada, digite o seguinte script:
-    
+
     ```PowerShell
     New-SmbShare –Name <sharename> -Path <pathname> –EncryptData $true
     ```

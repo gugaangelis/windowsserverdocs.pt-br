@@ -1,26 +1,24 @@
 ---
 title: Licenciar a implantação do RDS com CALs (Licenças de Acesso para Cliente)
 description: Visão geral do cliente de licenciamento nos Serviços de Área de Trabalho Remota.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 5be6546b-df16-4475-bcba-aa75aabef3e3
 author: lizap
 ms.author: elizapo
 ms.date: 02/12/2020
 manager: dongill
-ms.openlocfilehash: a11820b9c75bbcb928da562f3f74e4130e9c8096
-ms.sourcegitcommit: 599162b515c50106fd910f5c180e1a30bbc389b9
+ms.openlocfilehash: d257893e19286ab2a4c8293a2cf2b2e6697898ce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83775319"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936985"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licenciar a implantação do RDS com CALs (Licenças de Acesso para Cliente)
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Cada usuário e dispositivo que se conecta a um Host da Sessão da Área de Trabalho Remota precisa de uma CAL (licença de acesso para cliente). Use o Licenciamento de Área de Trabalho Remota para instalar, emitir e rastrear as CALs para Serviços de Área de Trabalho Remota.  
+Cada usuário e dispositivo que se conecta a um Host da Sessão da Área de Trabalho Remota precisa de uma CAL (licença de acesso para cliente). Use o Licenciamento de Área de Trabalho Remota para instalar, emitir e rastrear as CALs para Serviços de Área de Trabalho Remota.
 
 Quando um usuário ou um dispositivo se conecta a um servidor Host da Sessão da Área de Trabalho Remota, ele determina se uma CAL para Serviços de Área de Trabalho Remota é necessária. Em seguida, o servidor Host da Sessão da Área de Trabalho Remota solicita uma CAL para Serviços de Área de Trabalho Remota do servidor de licenças de Área de Trabalho Remota. Se uma CAL para Serviços de Área de Trabalho Remota apropriada estiver disponível em um servidor de licença, uma CAL para Serviços de Área de Trabalho Remota será emitida para o cliente e, a partir de lá, para a área de trabalho ou aplicativos que estão tentando usar.
 

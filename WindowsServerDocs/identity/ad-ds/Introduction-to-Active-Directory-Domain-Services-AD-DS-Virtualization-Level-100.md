@@ -2,19 +2,17 @@
 title: Virtualização com segurança do AD DS (Active Directory Domain Services)
 description: Reversão de USN e virtualização segura do Active Directory
 ms.topic: article
-ms.prod: windows-server
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 03/22/2019
-ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: b9009e4688665e972531b1d38a5ecc92fa990556
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: b7485b0465bdcacdbe23604c390fa4218cb7365d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86955618"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938691"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Virtualização com segurança do AD DS (Active Directory Domain Services)
 

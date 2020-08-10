@@ -1,17 +1,15 @@
 ---
 title: Migrar a replicação do SYSVOL para a Replicação do DFS
 ms.date: 07/02/2012
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 09c17ac9459f5fc1d9da6c03ec88fc365e6dcbde
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 6e022e4fdae631199bacca5f67c7953125ddd141
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966118"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950730"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>Migrar a replicação do SYSVOL para a Replicação do DFS
 
@@ -36,37 +34,37 @@ Este documento pressupõe que você tenha um conhecimento básico do AD DS (Acti
 
 [Informações conceituais da migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640170(v=ws.10))
 
-  - [Estados de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641052(v=ws.10))  
-      
-  - [Visão geral do procedimento de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639809(v=ws.10))  
-      
+  - [Estados de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641052(v=ws.10))
+
+  - [Visão geral do procedimento de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639809(v=ws.10))
+
 
 [Procedimento de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639860(v=ws.10))
 
-  - [Como migrar para o estado Preparado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641193(v=ws.10))  
-      
-  - [Como migrar para o estado Redirecionado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641340(v=ws.10))  
-      
-  - [Como migrar para o estado Eliminado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640254(v=ws.10))  
-      
+  - [Como migrar para o estado Preparado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641193(v=ws.10))
+
+  - [Como migrar para o estado Redirecionado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641340(v=ws.10))
+
+  - [Como migrar para o estado Eliminado](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640254(v=ws.10))
+
 
 [Solucionar problemas de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640395(v=ws.10))
 
-  - [Solucionar problemas de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639976(v=ws.10))  
-      
-  - [Como reverter a migração SYSVOL para um estado estável anterior](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640509(v=ws.10))  
-      
+  - [Solucionar problemas de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639976(v=ws.10))
+
+  - [Como reverter a migração SYSVOL para um estado estável anterior](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640509(v=ws.10))
+
 
 [Informações de referência da migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd640293(v=ws.10))
 
-  - [Cenários de migração SYSVOL compatíveis](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639854(v=ws.10))  
-      
-  - [Verificando o estado da migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639789(v=ws.10))  
-      
-  - [Dfsrmig](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641227(v=ws.10))  
-      
-  - [Ações da ferramenta de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639712(v=ws.10))  
-      
+  - [Cenários de migração SYSVOL compatíveis](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639854(v=ws.10))
+
+  - [Verificando o estado da migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639789(v=ws.10))
+
+  - [Dfsrmig](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd641227(v=ws.10))
+
+  - [Ações da ferramenta de migração SYSVOL](/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/dd639712(v=ws.10))
+
 
 ## <a name="additional-references"></a>Referências adicionais
 

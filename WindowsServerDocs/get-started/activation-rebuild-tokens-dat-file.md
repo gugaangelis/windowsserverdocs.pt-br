@@ -3,17 +3,16 @@ title: Recompilar o arquivo Tokens.dat
 description: Como recompilar o arquivo Tokens.dat quando você soluciona problemas de ativação do Windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
-ms.technology: server-general
 author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a5835cd601b2eb327c8605d70bf075e6c8e8414
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bc44dae97422e4d9d9e55b32004f806bbb7860f7
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71962992"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87941778"
 ---
 # <a name="rebuild-the-tokensdat-file"></a>Recompilar o arquivo Tokens.dat
 
@@ -23,11 +22,10 @@ Quando você soluciona problemas de ativação do Windows, pode precisar recompi
 
 Para recompilar o arquivo Tokens.dat, siga estas etapas:
 
-1. Abra uma janela do prompt de comandos com privilégios elevados:  
-   **Para Windows 10**
+1. Abra uma janela do prompt de comandos com privilégios elevados: **Para Windows 10**
 
    1. Abra o menu **Iniciar** e insira **cmd**.
-   1. Nos resultados da pesquisa, clique com o botão direito do mouse em **Prompt de Comando** e selecione **Executar como administrador**.  
+   1. Nos resultados da pesquisa, clique com o botão direito do mouse em **Prompt de Comando** e selecione **Executar como administrador**.
 
    **Para Windows 8.1**
    1. Passe o dedo da borda direita da tela e toque em **Pesquisar**. Ou, se você estiver usando um mouse, aponte para o canto inferior direito da tela e selecione **Pesquisar**.
@@ -39,7 +37,7 @@ Para recompilar o arquivo Tokens.dat, siga estas etapas:
    1. Abra o menu **Iniciar** e insira **cmd**.
    1. Na lista de resultados da pesquisa, clique com o botão direito do mouse em **cmd.exe** e selecione **Executar como administrador**.
 
-1. Insira a lista de comandos adequada para seu sistema operacional.  
+1. Insira a lista de comandos adequada para seu sistema operacional.
 
    Para o Windows 10, o Windows Server 2016 e as versões posteriores do Windows, insira os seguintes comandos em sequência:
    ```cmd

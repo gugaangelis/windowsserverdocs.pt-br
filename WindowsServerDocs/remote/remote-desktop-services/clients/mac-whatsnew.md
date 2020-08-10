@@ -1,20 +1,18 @@
 ---
 title: Novidades do cliente para macOS
 description: Saiba mais sobre as recentes alterações no cliente da Área de Trabalho Remota para MAC
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 04/08/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c378d8c4a87b6aa0cf4f6b4f30f3bd5524dbb7a9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e8769dd5784bcbac5c5384316564150801c1eb0e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80980848"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946509"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 

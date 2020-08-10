@@ -1,7 +1,6 @@
 ---
 title: Proteger o acesso privilegiado
 description: Abordagem em fases para proteger o acesso privilegiado
-ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 4165561524dcb8572dbafc3904638fcb4513d06d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 5db041be6aa9a61bc248296ade4296afeaa4fb3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86964719"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87953055"
 ---
 # <a name="securing-privileged-access"></a>Proteger o acesso privilegiado
 
@@ -69,7 +68,7 @@ O roteiro de recomendações da Microsoft é dividido em três fases:
 * [Fase 3: Em andamento](#phase-3-security-improvement-and-sustainment)
    * Melhoria e manutenção da segurança.
 
-O roteiro é priorizado para agendar primeiro as implementações mais eficientes e mais rápidas, com base em nossas experiências com esses ataques e na implementação da solução. 
+O roteiro é priorizado para agendar primeiro as implementações mais eficientes e mais rápidas, com base em nossas experiências com esses ataques e na implementação da solução.
 
 A Microsoft recomenda que você siga este roteiro para proteger o acesso privilegiado contra os adversários determinados. Você pode ajustar este roteiro para acomodar seus recursos existentes e requisitos específicos nas organizações.
 

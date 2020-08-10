@@ -1,20 +1,18 @@
 ---
 title: Área de Trabalho Remota – Conceder acesso ao seu computador de fora da rede
 description: Saiba mais sobre as opções para acessar remotamente seu computador de fora da rede
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: haley-rowland
 manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc1b7568006ef9e32132d772702212c5fd78ec4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 109f60ec099606dfc031fc07a8f457287f8fb50d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857419"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946429"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Área de Trabalho Remota – Conceder acesso ao seu computador de fora da rede
 
@@ -24,7 +22,7 @@ Quando você se conecta a seu computador usando um cliente de Área de Trabalho 
 
 ## <a name="enable-port-forwarding-on-your-router"></a>Habilitar o encaminhamento de porta no roteador
 
-O encaminhamento de porta simplesmente mapeia a porta no endereço IP do seu roteador (o IP público) para a porta e o endereço IP do computador que você deseja acessar. 
+O encaminhamento de porta simplesmente mapeia a porta no endereço IP do seu roteador (o IP público) para a porta e o endereço IP do computador que você deseja acessar.
 
 As etapas específicas para habilitar o encaminhamento de porta dependem de roteador em uso, portanto, você precisará pesquisar online para obter as instruções do seu roteador. ***Para acessar uma discussão geral sobre as etapas, confira o artigo [Como configurar o encaminhamento de porta em um roteador](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router) na wikiHow.
 
@@ -36,7 +34,7 @@ As etapas específicas para habilitar o encaminhamento de porta dependem de rote
 
 - Seu endereço IP público (o IP do roteador). Há várias maneiras para encontrar essa informação – você pode pesquisar (no Bing ou o Google) por "meu IP" ou exibir as [propriedades da rede Wi-Fi](https://binged.it/2Gwob34) (para o Windows 10).
 - Número da porta a mapear. Na maioria dos casos, a porta padrão usada por conexões de área de trabalho remota é a 3389.
-- Acesso de administrador ao roteador.  
+- Acesso de administrador ao roteador.
 
    >[!WARNING]
    > Você vai abrir seu computador para a internet – certifique-se de configurar uma senha forte para o seu computador.

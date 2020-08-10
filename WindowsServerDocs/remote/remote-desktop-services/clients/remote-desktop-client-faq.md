@@ -1,8 +1,6 @@
 ---
 title: Perguntas frequentes de clientes de Área de Trabalho Remota
 description: Perguntas frequentes sobre os clientes de área de trabalho remota
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 785a18cf-a5d0-4bc2-95e4-9ef53ee8f65a
 author: lizap
@@ -10,18 +8,18 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a91980477b34bb529e3e6f3c6ff66da9ea7f3c84
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80856049"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87955053"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Perguntas frequentes sobre os clientes de área de trabalho remota
 
 >Aplica-se a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-Agora que configurou o cliente de Área de Trabalho Remota em seu dispositivo (Android, Mac, iOS ou Windows), você pode ter dúvidas. Veja as respostas para as perguntas mais frequentes sobre os clientes de Área de Trabalho Remota. 
+Agora que configurou o cliente de Área de Trabalho Remota em seu dispositivo (Android, Mac, iOS ou Windows), você pode ter dúvidas. Veja as respostas para as perguntas mais frequentes sobre os clientes de Área de Trabalho Remota.
 
 - [Configurar](#setting-up)
 - [Conexões, gateway e redes](#connection-gateway-and-networks)
@@ -44,7 +42,7 @@ Confira o artigo [configuração compatível](remote-desktop-supported-config.md
 
 Tenho meu dispositivo configurado, mas não acho que o computador está pronto. Ajuda?
 
-Primeiro, você viu o Assistente de Instalação de Área de Trabalho Remota? Ele vai orientá-lo na preparação do computador para acesso remoto. Baixe e execute a ferramenta em seu computador configurar tudo. 
+Primeiro, você viu o Assistente de Instalação de Área de Trabalho Remota? Ele vai orientá-lo na preparação do computador para acesso remoto. Baixe e execute a ferramenta em seu computador configurar tudo.
 
 Caso contrário, se preferir fazer manualmente, continue lendo.
 
@@ -74,17 +72,17 @@ No Windows 8.1, siga as instruções para permitir conexões remotas em [Conecta
 Aqui estão algumas possíveis soluções para problemas comuns que podem ocorrer ao tentar se conectar a um computador remoto. Se essas soluções não funcionarem, você poderá encontrar mais ajuda no [site da Microsoft Community](https://go.microsoft.com/fwlink/p/?LinkId=242079).
 
 - **O computador remoto não foi encontrado.** Verifique se o nome do computador está correto e, em seguida, verifique se inseriu o nome corretamente. Caso ainda não consiga se conectar, tente usar o endereço IP do computador remoto em vez do nome dele.
-- **Há um problema com a rede.** Verifique se você tem uma conexão de Internet. 
+- **Há um problema com a rede.** Verifique se você tem uma conexão de Internet.
 - **A porta de Área de Trabalho Remota pode estar bloqueada por um firewall.** Se você estiver usando o Firewall do Windows, siga estas etapas:
 
-  1. Abra o Firewall do Windows. 
-  2. Clique em **Permitir um aplicativo ou recurso pelo Firewall do Windows**. 
+  1. Abra o Firewall do Windows.
+  2. Clique em **Permitir um aplicativo ou recurso pelo Firewall do Windows**.
   3. Clique em **Alterar configurações**. Talvez você seja solicitado a inserir uma senha de administrador ou a confirmar sua opção.
   4. Em **Aplicativos e recursos permitidos**, selecione **Área de Trabalho Remota** e toque ou clique em **OK**.
 
      Se você estiver usando um firewall diferente, verifique se a porta para a Área de Trabalho Remota (normalmente 3389) é aberta.
 - **Conexões remotas não podem ser configuradas no computador remoto.** Para corrigir esse problema, role para cima até a pergunta [Como configurar um computador para a Área de Trabalho Remota?](#how-do-i-set-up-a-pc-for-remote-desktop) neste tópico.
-- **O computador remoto pode permitir apenas a conexão de computadores com a Autenticação no Nível da Rede configurada.** 
+- **O computador remoto pode permitir apenas a conexão de computadores com a Autenticação no Nível da Rede configurada.**
 - **O computador remoto pode ter sido desligado.** Não é possível se conectar a um computador que está desligado, no estado de suspensão ou hibernação, portanto, verifique se as configurações de suspensão e hibernação no computador remoto estão definidas como **Nunca** (a hibernação não está disponível em todos os computadores).
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>Por que não é possível localizar ou se conectar ao meu computador?
@@ -97,7 +95,7 @@ Verifique o seguinte:
    > [!IMPORTANT]
    > Para usar o nome do computador, é preciso que a rede resolva o nome corretamente por DNS. Em muitas redes domésticas, você precisa usar o endereço IP em vez do nome de host para se conectar.
 - O computador está em uma rede diferente? Você configurou o computador para permitir conexões de fora?  Confira [Conceder acesso ao seu computador de fora da rede](remote-desktop-allow-outside-access.md) para obter ajuda.
-- Você está se conectando a uma versão do Windows com suporte? 
+- Você está se conectando a uma versão do Windows com suporte?
 
    > [!NOTE]
    > Não há suporte para Windows XP Home, Windows Media Center Edition, Windows Vista Home e Windows 7 Home ou Starter sem software de terceiros.
@@ -192,7 +190,7 @@ Isso pode acontecer nos seguintes cenários:
 Você pode corrigir esse problema configurando manualmente o idioma do teclado para a sessão remota. Veja as etapas na próxima seção.
 
 ### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>Como as configurações de idioma afetam os teclados em uma sessão remota?
-Há muitos tipos de layouts de teclado do Mac. Alguns deles são layouts específicos de Mac ou layouts personalizados para os quais uma correspondência exata pode não estar disponível na versão remota do Windows que você está usando. A sessão remota mapeia seu teclado para a melhor correspondência de idioma de teclado disponível no computador remoto. 
+Há muitos tipos de layouts de teclado do Mac. Alguns deles são layouts específicos de Mac ou layouts personalizados para os quais uma correspondência exata pode não estar disponível na versão remota do Windows que você está usando. A sessão remota mapeia seu teclado para a melhor correspondência de idioma de teclado disponível no computador remoto.
 
 Se o layout do teclado Mac estiver configurado para a versão do computador do teclado do idioma (por exemplo, francês – computador) todas as teclas deverão ser mapeadas corretamente e o teclado deverá funcionar.
 

@@ -1,27 +1,25 @@
 ---
-title: Visão geral sobre atualizações do Windows Server | Microsoft Docs
-description: Conheça algumas informações gerais sobre a atualização do Windows Server, juntamente com pontos a considerar antes de fazer a atualização de fato.
-ms.prod: windows-server
-ms.technology: server-general
+title: Visão geral das atualizações do Windows Server | Microsoft Docs
+description: Informações gerais sobre a atualização do Windows Server, juntamente com pontos a considerar antes de fazer a atualização de fato.
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/10/2019
-ms.openlocfilehash: 1ac4cbe8b9bda4ac2de2c7ad7ec27b1534c0de72
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1aa923287c26aa75916a418b6550e2dec6bbb6cd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854229"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87939246"
 ---
-# <a name="overview-about-windows-server-upgrades"></a>Visão geral sobre as atualizações do Windows Server
+# <a name="overview-of-windows-server-upgrades"></a>Visão geral das atualizações do Windows Server
 
-O processo de atualizar para uma versão mais nova do Windows Server pode variar muito, dependendo do sistema operacional com o qual você está começando e do caminho que você segue. Usamos os termos a seguir para distinguir diferentes ações, qualquer uma delas pode estar envolvida em uma nova implantação do Windows Server.
+O processo de atualizar para uma versão mais nova do Windows Server pode variar muito, dependendo do sistema operacional com o qual você está começando e do caminho que você segue. Usamos os termos a seguir para distinguir entre diferentes ações. Qualquer uma delas pode estar envolvida em uma nova implantação do Windows Server.
 
 - **Atualização.** Também conhecida como "atualização in-loco". Você passa de uma versão mais antiga do sistema operacional para uma versão mais recente permanecendo no mesmo hardware físico. **Esse é o método que abordaremos nesta seção.**
 
-    >[!Important]
-    >As atualizações in-loco também podem ser compatíveis com empresas de nuvem pública ou privada, porém, você deve consultar os detalhes com seu provedor de nuvem. Além disso, você não poderá executar uma atualização in-loco em nenhum Windows Server configurado para **Inicialização do VHD**.
+    > [!Important]
+    > As atualizações in-loco também podem ser compatíveis com empresas de nuvem pública ou privada, porém, você deve consultar os detalhes com seu provedor de nuvem. Além disso, você não poderá executar uma atualização in-loco em nenhum Windows Server configurado para a **Inicialização do VHD**. Não há suporte para uma atualização in-loco das edições do Windows Storage Server para o Windows Server 2019. Você pode executar uma **Migração** ou uma **Instalação**.
 
 - **Instalação.** Também conhecida como "instalação limpa". Você passa de uma versão mais antiga do sistema operacional para uma versão mais recente excluindo o sistema operacional mais antigo.
 
@@ -42,4 +40,3 @@ No entanto, sabemos que nem sempre isso é possível. Você pode usar o seguinte
 O Windows Server normalmente pode ser atualizado por pelo menos uma e, às vezes, duas versões. Por exemplo, o Windows Server 2012 R2 e o Windows Server 2016 podem ser atualizados in-loco para o Windows Server 2019.
 
 Também é possível atualizar de uma versão de avaliação do sistema operacional para uma versão comercial, de uma versão comercial mais antiga para uma versão mais nova ou, em alguns casos, de uma edição com licença de volume do sistema operacional para uma edição comercial comum. Para obter mais informações sobre outras opções de atualização além da atualização in-loco, confira [Opções de atualização e conversão para o Windows Server](../get-started/supported-upgrade-paths.md).
-""'

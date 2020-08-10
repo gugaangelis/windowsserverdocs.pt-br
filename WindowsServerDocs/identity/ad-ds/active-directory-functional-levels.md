@@ -6,16 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 10/29/2018
 ms.topic: article
-ms.prod: windows-server
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.technology: identity-adds
-ms.openlocfilehash: b6a9a5c08e24f5c7bb7ac50ac1c72386ef8a6d0f
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963048"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87938625"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Níveis funcionais de floresta e domínio
 
@@ -133,7 +131,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 
 ### <a name="windows-server-2008-forest-functional-level-features"></a>Recursos de nível funcional de floresta do Windows Server 2008
 
-* Todos os recursos que estão disponíveis no nível funcional de floresta do Windows Server2003, mas não há recurso adicional disponível. 
+* Todos os recursos que estão disponíveis no nível funcional de floresta do Windows Server2003, mas não há recurso adicional disponível.
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Recursos do nível funcional do domínio do Windows Server 2008
 
@@ -145,7 +143,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
       > Desde o Windows Server 2012 R2, o FRS (serviço de replicação de arquivos) foi preterido. Um novo domínio criado em um controlador de domínio que executa pelo menos o Windows Server 2012 R2 deve ser definido para o nível funcional do domínio do Windows Server 2008 ou superior.
 
   * Namespaces do DFS baseados em domínio em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Os namespaces baseados em domínio no modo Windows Server 2008 também exigem que a floresta use o nível funcional de floresta do Windows Server 2003. Para obter mais informações, consulte [Escolher um tipo de namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
-  * Suporte da criptografia AES (AES 128 e AES 256) para o protocolo Kerberos. Para que os TGTs sejam emitidos usando a AES, o nível funcional do domínio deve ser o Windows Server 2008 ou superior e a senha do domínio precisa ser alterada. 
+  * Suporte da criptografia AES (AES 128 e AES 256) para o protocolo Kerberos. Para que os TGTs sejam emitidos usando a AES, o nível funcional do domínio deve ser o Windows Server 2008 ou superior e a senha do domínio precisa ser alterada.
     * Para obter mais informações, consulte [Aprimoramentos do Kerberos](/previous-versions/windows/it-pro/windows-vista/cc749438(v=ws.10)).
 
       > [!NOTE]
@@ -182,7 +180,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
       - O ISTG (gerador de topologia entre sites) usa algoritmos aprimorados, que geram um escalonamento para oferecer suporte a florestas com um número de sites maior que o compatível com o AD DS no nível funcional de floresta do Windows 2000. O algoritmo de eleição do ISTG aprimorado é um mecanismo menos invasivo para a escolha do ISTG no nível funcional de floresta do Windows 2000.
    * A capacidade de criar instâncias da classe auxiliar dinâmica nomeada **dynamicObject** em uma partição do diretório de domínio
    * A capacidade de converter uma instância de objeto **inetOrgPerson** em uma instância de objeto **Usuário** e para concluir a conversão na direção oposta
-   * A capacidade de criar instâncias de novos tipos de grupo para dar suporte à autorização baseada em função. 
+   * A capacidade de criar instâncias de novos tipos de grupo para dar suporte à autorização baseada em função.
       - Esses tipos são chamados de grupos básicos de aplicativos e grupos de consulta LDAP.
    * Desativação e redefinição de atributos e classes no esquema. Os seguintes atributos podem ser reutilizados: ldapDisplayName, schemaIdGuid, OID e mapiID.
    * Namespaces do DFS baseados em domínio em execução no modo Windows Server 2008, que inclui suporte para a enumeração baseada em acesso e maior escalabilidade. Para obter mais informações, consulte [Escolher um tipo de namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
@@ -226,5 +224,5 @@ Sistemas operacionais do controlador de domínio compatíveis:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Aumentar o nível funcional do domínio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))  
+* [Aumentar o nível funcional do domínio](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753104(v=ws.11))
 * [Aumentar o nível funcional da floresta](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730985(v=ws.11))

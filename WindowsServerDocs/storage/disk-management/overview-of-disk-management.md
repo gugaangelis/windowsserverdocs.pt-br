@@ -2,18 +2,16 @@
 title: Visão geral do Gerenciamento de disco
 description: Gerenciamento de disco é um utilitário do sistema no Windows que permite a você executar tarefas avançadas de armazenamento, como inicializar uma nova unidade, estender volumes, reduzir partições e alterar letras da unidade.
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e200901d8ddd59f0c0bc45b34681f3aa41b44923
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 333b8f5676fbb83a16a8e56249701135eabd7d4a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85474413"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87935941"
 ---
 # <a name="overview-of-disk-management"></a>Visão geral do Gerenciamento de disco
 

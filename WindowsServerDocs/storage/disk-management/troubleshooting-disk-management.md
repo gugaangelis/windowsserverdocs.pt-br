@@ -2,18 +2,16 @@
 title: Solução de problemas do Gerenciamento de Disco
 description: Este artigo descreve como solucionar problemas do Gerenciamento de Disco
 ms.date: 12/20/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 56ffd044f8526626581455fb18b530fd71a2381e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 0c8fec6f6bf200bf3514e26ea86dc809991a97dd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182262"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954913"
 ---
 # <a name="troubleshooting-disk-management"></a>Solução de problemas do Gerenciamento de Disco
 

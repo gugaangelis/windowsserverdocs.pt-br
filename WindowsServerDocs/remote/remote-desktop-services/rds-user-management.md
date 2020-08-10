@@ -1,20 +1,18 @@
 ---
 title: Gerenciar usuários na coleção de RDS
 description: Saiba como gerenciar usuários nos Serviços de Área de Trabalho Remota.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 2727e1ab-69b8-46f3-9f6d-2540324fe596
 author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 430c38f98dd9aec3034e023d737952e3015622eb
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: a0ddb8ddc26df58e130315a3e1e0b70953c61dc4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80858679"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87954803"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>Gerenciar usuários na coleção de RDS
 
@@ -82,7 +80,7 @@ Agora que você criou os usuários e grupos no Active Directory, poderá adicion
    1. No Gerenciador do Servidor, clique em **Serviços de Área de Trabalho Remota > Visão geral** e, em seguida, clique em uma coleção específica.
    2. Em **Propriedades**, clique em **Tarefas > Editar propriedades**.
    3. Clique em **Grupos de usuários**.
-   4. Clique em **Adicionar** e insira o usuário ou grupo que você deseja que tenha acesso à coleção. Você também pode remover usuários e grupos desta janela selecionando o usuário ou grupo que deseja remover. Em seguida, clique em **Remover**. 
-   
-   >[!NOTE] 
+   4. Clique em **Adicionar** e insira o usuário ou grupo que você deseja que tenha acesso à coleção. Você também pode remover usuários e grupos desta janela selecionando o usuário ou grupo que deseja remover. Em seguida, clique em **Remover**.
+
+   >[!NOTE]
    > A janela Grupos de usuários nunca pode estar vazia. Para restringir o escopo de usuários que têm acesso à coleção, primeiro adicione usuários ou grupos específicos antes de remover grupos mais amplos.

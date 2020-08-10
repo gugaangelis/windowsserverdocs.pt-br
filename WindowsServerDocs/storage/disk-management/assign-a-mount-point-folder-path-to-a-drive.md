@@ -2,18 +2,16 @@
 title: Atribuir um caminho da pasta do ponto de montagem a uma unidade.
 description: Este artigo descreve como atribuir um caminho da pasta do ponto de montagem (em vez de uma letra da unidade) a uma unidade.
 ms.date: 06/07/2020
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 82b12edd9cb680eee567e5dc014615e3d042cd18
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 447eff6e9168825cec01d481ec9cb7e25431ac3e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966088"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936088"
 ---
 # <a name="mount-a-drive-in-a-folder"></a>Montar uma unidade em uma pasta
 
