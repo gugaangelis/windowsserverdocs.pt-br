@@ -72,6 +72,7 @@
 ## [Sistema de nome de domínio (DNS)](dns/dns-top.md)
 ### [Novidades no cliente DNS no Windows Server](dns/What-s-New-in-DNS-Client.md)
 ### [Novidades no servidor DNS no Windows Server](dns/What-s-New-in-DNS-Server.md)
+### [DNS Anycast](dns/deploy/anycast.md)
 ### [Diretrizes de cenário de política DNS](dns/deploy/DNS-Policy-Scenario-Guide.md)
 #### [Visão geral das políticas de DNS](dns/deploy/DNS-Policies-Overview.md)
 #### [Usar a política DNS para gerenciamento de tráfego de localização geográfica com servidores primários](dns/deploy/primary-geo-location.md)
