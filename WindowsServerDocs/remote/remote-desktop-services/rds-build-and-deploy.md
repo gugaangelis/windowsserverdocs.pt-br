@@ -1,24 +1,22 @@
 ---
 title: RDS – criar e implantar
 description: Etapas para criar uma implantação de Área de Trabalho Remota
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 04/18/2017
 ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: c0a2676cc5e7043cd1f96d6c1d393d7b0e443fe8
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: be58880108f84aa6141157dbe730e18fcff4c6c2
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961208"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961800"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>Crie e implante sua implantação de Serviços de Área de Trabalho Remota
 
-Uma implantação de Serviços de Área de Trabalho Remota é a infraestrutura usada para compartilhar aplicativos e recursos com seus usuários. Dependendo da experiência que desejar oferecer, você poderá tornar essa infraestrutura tão pequena ou complexa quanto for necessário. Implantações de Área de Trabalho Remota são dimensionadas com facilidade. Você poderá aumentar e diminuir o Acesso via Web à Área de Trabalho Remota, o Gateway, o Agente de Conexão e os servidores Host da Sessão como quiser. Você pode usar o Agente de Conexão de Área de Trabalho Remota para distribuir cargas de trabalho. A autenticação com base no Active Directory fornece um ambiente altamente seguro. 
+Uma implantação de Serviços de Área de Trabalho Remota é a infraestrutura usada para compartilhar aplicativos e recursos com seus usuários. Dependendo da experiência que desejar oferecer, você poderá tornar essa infraestrutura tão pequena ou complexa quanto for necessário. Implantações de Área de Trabalho Remota são dimensionadas com facilidade. Você poderá aumentar e diminuir o Acesso via Web à Área de Trabalho Remota, o Gateway, o Agente de Conexão e os servidores Host da Sessão como quiser. Você pode usar o Agente de Conexão de Área de Trabalho Remota para distribuir cargas de trabalho. A autenticação com base no Active Directory fornece um ambiente altamente seguro.
 
 [Os clientes da Área de Trabalho Remota](clients/remote-desktop-clients.md) habilitam o acesso de qualquer computador, tablet ou telefone Windows, Apple ou Android.
 
@@ -34,7 +32,7 @@ Deseja criar uma nova implantação de Área de Trabalho Remota? Use as informa�
 - [Implantar a infraestrutura de Serviços de Área de Trabalho Remota](rds-deploy-infrastructure.md)
 - [Criar uma coleção de sessão para conter os aplicativos e recursos que você deseja compartilhar](rds-create-collection.md)
 - [Licenciar sua implantação do RDS](rds-client-access-license.md)
-- Faça com que os usuários instalem um [cliente de Área de Trabalho Remota](clients/remote-desktop-clients.md) para que possam acessar os aplicativos e recursos. 
+- Faça com que os usuários instalem um [cliente de Área de Trabalho Remota](clients/remote-desktop-clients.md) para que possam acessar os aplicativos e recursos.
 - Habilite a alta disponibilidade adicionando Hosts da Sessão e Agentes de Conexão adicionais:
    - [Dimensionar uma coleção de RDS existente com um farm de host de sessão de Área de Trabalho Remota](rds-scale-rdsh-farm.md)
    - [Adicionar alta disponibilidade à infraestrutura do Agente de Conexão de Área de Trabalho Remota](rds-connection-broker-cluster.md)

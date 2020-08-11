@@ -1,21 +1,19 @@
 ---
 title: Opções de atualização e conversão para o Windows Server 2016
 description: Explica todos os caminhos de atualização com suporte para o Windows Server 2016.
-ms.prod: windows-server
 ms.date: 01/18/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 31bbda5de44e249504551d29c23382d735af146d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 862349c0601981f064becd8bd02a1b26b308dc48
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86954238"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959254"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Opções de atualização e conversão para o Windows Server 2016
 
@@ -35,13 +33,13 @@ O processo de transição para o Windows Server 2016 pode variar muito, dependen
 
 - **Atualizar** significa mudar do seu sistema operacional existente para uma versão mais recente, mantendo o mesmo hardware. (Às vezes, isso é chamado de atualização in-loco). Por exemplo, se seu servidor estiver executando o Windows Server 2012, ou o Windows Server 2012 R2, você poderá atualizá-lo para o Windows Server 2016. É possível atualizar de uma versão de avaliação do sistema operacional para uma versão comercial, de uma versão comercial mais antiga para uma versão mais nova ou, em alguns casos, de uma edição com licença de volume do sistema operacional para uma edição comercial comum.
 
-> [!IMPORTANT]  
-> A atualização funciona melhor em máquinas virtuais, onde os drivers de hardware específicos do OEM não são necessários para uma atualização bem-sucedida.  
+> [!IMPORTANT]
+> A atualização funciona melhor em máquinas virtuais, onde os drivers de hardware específicos do OEM não são necessários para uma atualização bem-sucedida.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, **somente é possível executar essa conversão de avaliação para versão comercial** com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, é possível converter edições de avaliação em versão comercial, independentemente da opção de instalação usada.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Se o seu servidor usa o Agrupamento NIC, desabilite o Agrupamento NIC antes da atualização e, depois, habilite-o novamente após a conclusão da atualização. confira [Visão geral do Agrupamento NIC](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831648(v=ws.11)) para obter detalhes.
 
 ## <a name="upgrading-previous-retail-versions-of-windows-server-to-windows-server-2016"></a>Atualizando versões comerciais anteriores do Windows Server para Windows Server 2016
@@ -61,8 +59,8 @@ Se a sua versão atual não aparecer na coluna à esquerda, a atualização para
 
 Se aparecer mais de uma edição na coluna à direita, a atualização para **qualquer** edição da mesma versão inicial tem suporte.
 
-|Se você está executando esta edição:|É possível atualizar para estas edições:|  
-|-------------------|----------|  
+|Se você está executando esta edição:|É possível atualizar para estas edições:|
+|-------------------|----------|
 |Windows Server 2012 Standard|Windows Server 2016 Standard ou Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard ou Datacenter|
@@ -82,7 +80,7 @@ Mesmo em caminhos de atualização de versões comerciais anteriores do Windows 
 
 É possível converter a versão de avaliação do Windows Server 2016 Standard para o Windows Server 2016 Standard (comercial) ou para o Datacenter (comercial). De igual modo, é possível converter a versão de avaliação do Windows Server 2016 Datacenter para a versão comercial.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, somente é possível executar essa conversão de avaliação para versão comercial com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, é possível converter edições de avaliação em versão comercial, independentemente da opção de instalação usada.
 
 Antes de tentar converter de uma versão de avaliação para a versão comercial, verifique se o servidor está realmente executando uma versão de avaliação. Para isso, siga um destes procedimentos:
@@ -105,7 +103,7 @@ Se o servidor estiver executando uma versão de avaliação do Windows Server 20
 
 Para a versão de avaliação do Windows Server 2016 Standard, também é possível realizar a conversão na versão comercial do Windows Server 2016 Datacenter em uma etapa usando o mesmo comando e a chave do produto correta.
 
-> [!TIP] 
+> [!TIP]
 > Para saber mais sobre o Dism.exe, consulte [Opções de linha de comando do DISM](https://go.microsoft.com/fwlink/?LinkId=192466).
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>Conversão de uma edição comercial atual em outra edição comercial atual

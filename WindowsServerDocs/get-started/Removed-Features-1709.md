@@ -1,26 +1,24 @@
 ---
 title: Recursos removidos ou com substituição planejada do Windows Server versão 1709 em diante
 description: Recursos e funcionalidades removidos ou planejados para remoção nas versões.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 98632ee7147c3041b0f13d0a0e90bf8115268d36
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: ad9c64083ec07bd8fc5d1db56978f2b469da9953
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959468"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959434"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Recursos removidos ou com substituição planejada do Windows Server versão 1709 em diante
 
 >Aplica-se a: Windows Server, versão 1709
 
-Veja a seguir uma lista de recursos e funcionalidades do Windows Server versão 1709, que foram removidos do produto nessa versão ou estão sendo considerados para possível substituição em versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. **Esta lista está sujeita a alteração nas versões subsequentes e pode não incluir todos os recursos ou as funcionalidades afetados.** 
+Veja a seguir uma lista de recursos e funcionalidades do Windows Server versão 1709, que foram removidos do produto nessa versão ou estão sendo considerados para possível substituição em versões futuras. Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial. **Esta lista está sujeita a alteração nas versões subsequentes e pode não incluir todos os recursos ou as funcionalidades afetados.**
 
 > [!TIP]
 > - Você pode obter acesso antecipado a builds do Windows Server ao ingressar no [Programa Windows Insider](https://insider.windows.com). Essa é uma ótima maneira de testar as alterações de recurso.
@@ -60,7 +58,7 @@ Esse método de autenticação será substituído. Em vez disso, você deve come
 ### <a name="internet-storage-name-service-isns"></a>iSNS (Internet Storage Name Service)
 O iSNS está sendo considerado para substituição. O recurso do protocolo SMB oferece essencialmente a mesma funcionalidade, com recursos adicionais. Consulte a [Visão geral do protocolo SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) para obter mais informações sobre esse recurso.
 
-### <a name="rsaaes-encryption-for-iis"></a>Criptografia RSA/AES para IIS 
+### <a name="rsaaes-encryption-for-iis"></a>Criptografia RSA/AES para IIS
 Esse método de criptografia está sendo considerado para substituição, pois o método superior de Cryptography API: Next Generation (CNG) já está disponível. Para saber mais sobre a criptografia do CNG, confira [Sobre o CNG](/windows/win32/seccng/about-cng).
 
 ### <a name="windows-powershell-20"></a>Windows PowerShell 2.0

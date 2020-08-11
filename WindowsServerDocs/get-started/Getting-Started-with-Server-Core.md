@@ -1,26 +1,24 @@
 ---
 title: Instalar o Server Core
 description: Como obter e instalar uma instalação do Server Core no Windows Server 2019, Windows Server 2016 ou Windows Server (Canal Semestral).
-ms.prod: windows-server
 ms.date: 05/21/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 13d36c233094511216483f0fb37dc6a004212a50
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 93b4cb477ce31543e67dd9f973637e830e0fd478
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826969"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959784"
 ---
 # <a name="install-server-core"></a>Instalar o Server Core
 
 > Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server (canal semestral)
-  
+
 Ao instalar o Windows Server 2016 pela primeira vez, você tem as seguintes opções de instalação:
 
 >[!NOTE]
@@ -33,10 +31,10 @@ Ao instalar o Windows Server 2016 pela primeira vez, você tem as seguintes opç
 
 Ao instalar o Windows Server 2016 (Canal Semestral) pela primeira vez, você tem as seguintes opções de instalação:
 
--    Windows Server Standard 
+-    Windows Server Standard
 -    Windows Server Datacenter
 
-A opção Server Core reduz o espaço necessário em disco e a superfície de ataque potencial, portanto recomendamos que você escolha a instalação Server Core, a menos que tenha uma necessidade particular por elementos adicionais da interface do usuário e ferramentas gráficas de gerenciamento que estão incluídas no Server com a opção Experiência Desktop. Se você achar que precisa de elementos de interface do usuário adicionais, consulte [Instalar o Server com Experiência Desktop](Getting-Started-with-Server-with-Desktop-Experience.md). 
+A opção Server Core reduz o espaço necessário em disco e a superfície de ataque potencial, portanto recomendamos que você escolha a instalação Server Core, a menos que tenha uma necessidade particular por elementos adicionais da interface do usuário e ferramentas gráficas de gerenciamento que estão incluídas no Server com a opção Experiência Desktop. Se você achar que precisa de elementos de interface do usuário adicionais, consulte [Instalar o Server com Experiência Desktop](Getting-Started-with-Server-with-Desktop-Experience.md).
 
 Com a opção Server Core, a interface padrão do usuário (a Experiência Desktop) não é instalada. Você gerencia o servidor usando a linha de comando, o Windows PowerShell ou por métodos remotos.
 

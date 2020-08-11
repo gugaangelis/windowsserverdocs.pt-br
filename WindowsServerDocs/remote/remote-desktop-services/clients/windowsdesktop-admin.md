@@ -1,20 +1,18 @@
 ---
 title: Cliente de Área de Trabalho do Windows para administradores
 description: Informações sobre o cliente da Área de Trabalho do Windows úteis principalmente para administradores.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 202b39c33896f6b5e570c8abcf630dad436466c3
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 12e2535092b2842cf23fcc573b417f7520e99504
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861419"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961830"
 ---
 # <a name="windows-desktop-client-for-admins"></a>Cliente de Área de Trabalho do Windows para administradores
 

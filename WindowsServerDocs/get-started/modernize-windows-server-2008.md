@@ -1,7 +1,6 @@
 ---
 title: Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2
 description: O Windows Server 2008 e 2008 R2 estão se aproximando do fim de serviço. Saiba como fazer upgrade local ou hospedar novamente no Azure.
-ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: mikeblodge
@@ -9,12 +8,12 @@ ms.author: mikeblodge
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 271c571229f18d596a67616a1b0dd93743928002
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 30ba7fcd97b9735319872b55f649fe4f84014faa
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86961327"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87967993"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2
 
@@ -35,10 +34,10 @@ Se estiver executando o Windows Server 2003, você precisará [fazer upgrade par
 Você pode migrar seus servidores locais do Windows Server 2008 e do Windows Server 2008 R2 para o Azure, onde poderá continuar a executá-los em máquinas virtuais. No Azure, você permanecerá em conformidade, ficará mais seguro e adicionará a inovação da nuvem ao seu trabalho. Os benefícios da migração para o Azure incluem:
 
 - Atualizações de segurança no Azure.
-- Obtenha mais três anos de atualizações de segurança críticas e importantes do Windows Server 2008 ou 2008 R2, incluídas sem custo adicional. 
+- Obtenha mais três anos de atualizações de segurança críticas e importantes do Windows Server 2008 ou 2008 R2, incluídas sem custo adicional.
 - Upgrades sem custo no Azure.
 - Adote mais serviços de nuvem conforme você estiver pronto.
-- Ao migrar o SQL Server para Instâncias Gerenciadas do Azure ou VMs, você obtém mais três anos de atualizações de segurança críticas do Windows Server 2008 ou 2008 R2, incluídas sem custo adicional. 
+- Ao migrar o SQL Server para Instâncias Gerenciadas do Azure ou VMs, você obtém mais três anos de atualizações de segurança críticas do Windows Server 2008 ou 2008 R2, incluídas sem custo adicional.
 - Aproveite as licenças existentes do SQL Server e do Windows Server para economias de nuvem exclusivas do Azure.
 
 [![Inicie a migração para o Azure com uma imagem especializada](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)

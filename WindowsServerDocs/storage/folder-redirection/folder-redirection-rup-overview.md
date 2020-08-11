@@ -1,19 +1,17 @@
 ---
 title: Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel
 description: Uma visão geral de tecnologias de Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e2ea3f0a7f0d3624dc7b16329fbe5c2374ec450f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2f08d10a4fea9ff86c22fedb8f9738a7177d0217
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182222"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989956"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Visão geral de Redirecionamento de pasta, Arquivos offline e Perfis de usuário móvel
 
@@ -134,5 +132,5 @@ Para obter informações adicionais relacionadas, consulte os seguintes recursos
 | Avaliação do produto | [Como dar suporte a Profissionais da Informação com Serviços e Armazenamento de Arquivo Confiáveis](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[Novidades em Arquivos Offline](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 e Windows Server 2008 R2)<br>[Novidades em Arquivos Offline para o Windows Vista](</previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Alterações a Arquivos Offline no Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine) |
 | Implantação | [Implantar Redirecionamento de Pastas, Arquivos Offline e Perfis de Usuários Móveis](deploy-folder-redirection.md)<br>[Como implementar uma solução de centralização de dados do usuário final: validação e implantação da tecnologia de Arquivos Offline e Redirecionamento de Pastas](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Guia de implantação de como gerenciar a implantação de dados de usuário de roaming](</previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guia Passo a Passo de Configuração de Novos Recursos de Arquivos Offline para Computadores com o Windows 7](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Como implantar o Redirecionamento de Pastas](</previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Como implementar o Redirecionamento de Pastas](</previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
 | Ferramentas e configurações | [Arquivos Offline no MSDN](/previous-versions/windows/desktop/offlinefiles/offline-files-portal)<br>[Referência de Política de Grupo de Arquivos Offline](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
-| Recursos da comunidade | [Fórum de Armazenamento e Serviços de Arquivo](https://docs.microsoft.com/answers/topics/windows-server-storage.html)<br>[Hey, Scripting Guy! Como trabalhar com o recurso Arquivos Offline no Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy! Como habilitar e desabilitar Arquivos Offline?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| Recursos da comunidade | [Fórum de Armazenamento e Serviços de Arquivo](/answers/topics/windows-server-storage.html)<br>[Hey, Scripting Guy! Como trabalhar com o recurso Arquivos Offline no Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy! Como habilitar e desabilitar Arquivos Offline?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | Tecnologias relacionadas|[Identidade e Acesso no Windows Server](../../identity/identity-and-access.yml)<br>[Armazenamento no Windows Server](../storage.yml)<br>[Acesso remoto e gerenciamento de servidor](../../remote/index.yml) |

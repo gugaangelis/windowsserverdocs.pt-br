@@ -1,18 +1,16 @@
 ---
 title: Instalar e gerenciar extensões
 description: Instalar e gerenciar extensões no Windows Admin Center (Projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 4ba2e760d57f1c3f59e40b78b449a8831b8093d2
-ms.sourcegitcommit: fe89b8001ad664b3618708b013490de93501db05
+ms.openlocfilehash: c2feaaff614d00afeaf5d132c446eebe5fdf0989
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942305"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87966773"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar e gerenciar extensões
 
@@ -24,7 +22,7 @@ O Windows Admin Center é criado como uma plataforma extensível em que cada tip
 
 O Windows Admin Center mostrará as extensões disponíveis no feed do NuGet especificado. Por padrão, o Windows Admin Center aponta para o feed do NuGet oficial da Microsoft que hospeda as extensões publicadas pela Microsoft e por outros desenvolvedores.
 
-1. Clique no botão **Configurações** no > superior direito. No painel esquerdo, clique em **Extensões**. 
+1. Clique no botão **Configurações** no > superior direito. No painel esquerdo, clique em **Extensões**.
 2. A guia **Extensões Disponíveis** listará as extensões no feed que estão disponíveis para instalação.
 3. Clique em uma extensão para exibir a descrição da extensão, a versão, o editor e outras informações no painel **Detalhes**.
 4. Clique em **Instalar** para instalar uma extensão. Se o gateway precisar ser executado no modo elevado para fazer essa alteração, você receberá uma solicitação de elevação do UAC. Após a conclusão da instalação, seu navegador será atualizado automaticamente e o Windows Admin Center será recarregado com a nova extensão instalada. Se a extensão que você está tentando instalar for uma atualização para uma extensão instalada anteriormente, você poderá clicar no botão **Atualizar para a mais recente** para instalar a atualização. Você também pode ir para a guia **Extensões Instaladas** para exibir as extensões instaladas e ver se uma atualização está disponível na coluna **Status**.
@@ -44,7 +42,7 @@ A lista **Extensões Disponíveis** mostrará extensões de todos os feeds regis
 
 Você pode desinstalar todas as extensões instaladas anteriormente ou até mesmo desinstalar todas as ferramentas pré-instaladas como parte da instalação do Windows Admin Center.
 
-1. Clique no botão **Configurações** no > superior direito. No painel esquerdo, clique em **Extensões**. 
+1. Clique no botão **Configurações** no > superior direito. No painel esquerdo, clique em **Extensões**.
 2. Clique na guia **Extensões Instaladas** para exibir todas as extensões instaladas.
 3. Escolha uma extensão para desinstalar e clique em **Desinstalar**.
 
@@ -56,7 +54,7 @@ Se o Windows Admin Center estiver instalado em um computador que não está cone
 
 ### <a name="manually-downloading-extension-packages"></a>Como baixar manualmente pacotes de extensão
 
-1. Em outro computador que tenha conectividade com a Internet, abra um navegador da Web e vá até a seguinte URL: [https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC) 
+1. Em outro computador que tenha conectividade com a Internet, abra um navegador da Web e vá até a seguinte URL: [https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC](https://dev.azure.com/WindowsAdminCenter/Windows%20Admin%20Center%20Feed/_packaging?_a=feed&feed=WAC)
 
    * Talvez seja necessário criar uma conta Microsoft e fazer logon para exibir os pacotes de extensão.
 

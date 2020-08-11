@@ -1,19 +1,17 @@
 ---
 title: Criar o plano de recuperação de desastre
 description: Saiba como criar um plano de recuperação de desastre para a implantação do RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 05/05/2017
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 18342bb7fd3ad26427ae1e1a051e20444fdff7c2
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e7bf323d1a0506e9f9718d2afb8da392f0118929
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80859019"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961730"
 ---
 # <a name="create-your-disaster-recovery-plan-for-rds"></a>Criar o plano de recuperação de desastre para RDS
 
@@ -38,7 +36,7 @@ Para uma implantação de RDS com base em sessões, agrupe as VMs para que elas 
 2. Grupo de failover 2 - VM do Agente de Conexão
 3. Grupo de failover 3 - VM de Acesso da Web
 
-O plano terá a aparência a seguir: 
+O plano terá a aparência a seguir:
 
 ![Um plano de recuperação de desastre para uma implantação de RDS com base em sessão](media/rds-asr-session-drplan.png)
 
@@ -62,20 +60,20 @@ Para uma implantação de RDS com áreas de trabalho em pool, agrupe as VMs para
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. Grupo de failover 2 - VM de Modelo
 5. Script 1 do grupo 2 - Desligar a VM de Modelo
-   
+
    A VM de modelo será iniciada quando for recuperada para o site secundário, mas como é uma VM com sysprep, não pode iniciar completamente. Além disso, o RDS requer que a VM seja desligada para criar uma configuração de VM em pool a partir dele. Portanto, é necessário desativá-la. Se você tiver um único servidor VMM, o nome da VM de modelo será o mesmo no primário e secundário. Por isso, usamos a ID da VM conforme especificado pelo *Contexto* variável no script a seguir. Se você tiver vários modelos, desative todos.
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. Script 2 do grupo 2 - Remover VMs em pool existentes
 
@@ -83,7 +81,7 @@ Para uma implantação de RDS com áreas de trabalho em pool, agrupe as VMs para
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops; 
+   $desktops = Get-RDVirtualDesktop -CollectionName Win8Desktops;
    Foreach($vm in $desktops){
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
@@ -98,8 +96,8 @@ Para uma implantação de RDS com áreas de trabalho em pool, agrupe as VMs para
    O nome da VM em pool deve ser exclusivo, usando o prefixo e o sufixo. Se o nome da VM já existir, o script falhará. Além disso, se no lado primário as VMs são numeradas de 1 a 5, a numeração do site de recuperação continuará de 6.
 
    ```powershell
-   ipmo RemoteDesktop; 
-   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
+   ipmo RemoteDesktop;
+   Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1}
    ```
 9. Grupo de failover 3 - Acesso via Web e VM do servidor de gateway
 
@@ -120,27 +118,27 @@ Para uma implantação de RDS com áreas de trabalho pessoais, agrupe as VMs par
    ipconfig /registerdns
    ```
 3. Script do grupo 1 - Adicionar hosts de virtualização
-      
+
    Modifique o script abaixo para executar cada host de virtualização na nuvem. Normalmente, após adicionar um host de virtualização a um Agente de Conexão, será necessário reiniciar o host. Certifique-se de que o host não tem uma reinicialização pendente antes de executar o script ou, caso contrário, ele falhará.
 
    ```powershell
    Broker - broker.contoso.com
    Virtualization host - VH1.contoso.com
 
-   ipmo RemoteDesktop; 
-   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
+   ipmo RemoteDesktop;
+   add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com
    ```
 4. Grupo de failover 2 - VM de Modelo
 5. Script 1 do grupo 2 - Desligar a VM de Modelo
-   
+
    A VM de modelo será iniciada quando for recuperada para o site secundário, mas como é uma VM com sysprep, não pode iniciar completamente. Além disso, o RDS requer que a VM seja desligada para criar uma configuração de VM em pool a partir dele. Portanto, é necessário desativá-la. Se você tiver um único servidor VMM, o nome da VM de modelo será o mesmo no primário e secundário. Por isso, usamos a ID da VM conforme especificado pelo *Contexto* variável no script a seguir. Se você tiver vários modelos, desative todos.
 
    ```powershell
-   ipmo virtualmachinemanager; 
+   ipmo virtualmachinemanager;
    Foreach($vm in $VMsAsTemplate)
    {
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
-   } 
+   }
    ```
 6. Grupo de failover 3 - VMs pessoais
 7. Script 1 do grupo 3 - Remover VMs pessoais existentes e adicioná-las
@@ -149,17 +147,17 @@ Para uma implantação de RDS com áreas de trabalho pessoais, agrupe as VMs par
 
    ```powershell
    ipmo RemoteDesktop
-   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops; 
-   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+   $desktops = Get-RDVirtualDesktop -CollectionName CEODesktops;
+   Export-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
 
    Foreach($vm in $desktops){
      Remove-RDVirtualDesktopFromCollection -CollectionName CEODesktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
-   
-   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
+
+   Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com
    ```
 8. Grupo de failover 3 - Acesso via Web e VM do servidor de gateway
 
-O plano terá a aparência a seguir: 
+O plano terá a aparência a seguir:
 
 ![Um plano de recuperação de desastre para uma implantação de RDS em áreas de trabalho pessoais](media/rds-asr-personal-desktops-drplan.png)

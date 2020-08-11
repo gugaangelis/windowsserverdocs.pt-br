@@ -1,21 +1,19 @@
 ---
 title: Instalação e atualização do Windows Server
 description: Como instalar, atualizar ou migrar para uma versão mais recente do Windows Server.
-ms.prod: windows-server
 ms.date: 05/14/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 98f876bd-63ff-4c3a-95d4-a8dd8d0d119c
 author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d282e2aa543070fcea0f4931419de0be5745c7d
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 4a51fbe19722f381407803e2d8ba1e876898ccce
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959628"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959684"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Instalação e atualização do Windows Server
 
@@ -46,10 +44,10 @@ Em algumas versões do sistema operacional, é possível converter uma edição 
 
 ## <a name="upgrade"></a>Atualizar, Atualização (Upgrade)
 Se você quer manter o mesmo hardware e todas as funções de servidor que configurou sem fazer uma nova instalação, a **atualização** é uma opção, e há muitas maneiras de fazer isso. Na atualização clássica, você vai de um sistema operacional antigo para um mais recente, mantendo suas configurações, funções de servidor e dados intactos. Por exemplo, se seu servidor executa o Windows Server 2012 R2, é possível atualizá-lo para o Windows Server 2016. Entretanto, nem todos os sistemas operacionais mais antigos têm um caminho para versões mais recentes.
- 
+
 >[!NOTE]
 >A atualização funciona melhor em máquinas virtuais, onde os drivers de hardware específicos do OEM não são necessários para uma atualização bem-sucedida.
- 
+
 É possível atualizar de uma versão de avaliação do sistema operacional para uma versão comercial, de uma versão comercial mais antiga para uma versão mais nova ou, em alguns casos, de uma edição com licença de volume do sistema operacional para uma edição comercial comum.
 
 Antes de começar com uma atualização, confira as tabelas nesta página para ver como é o processo de onde você está até onde quer chegar.
@@ -58,14 +56,14 @@ Para saber mais sobre as diferenças entre as opções de instalação disponív
 
 >[!NOTE]
 >Sempre que você migrar ou atualizar para qualquer versão do Windows Server, deve consultar e entender a [política de ciclo de vida de suporte](https://support.microsoft.com/lifecycle) e o período para essa versão, e planejar corretamente. Você pode [procurar as informações sobre o ciclo de vida](https://support.microsoft.com/lifecycle) para a versão específica do Windows Server em que está interessado.
- 
- 
+
+
 ## <a name="upgrading-to-windows-server-2016"></a>Atualização para o Windows Server 2016
 Para saber mais, incluindo limitações e restrições importantes sobre a atualização, a conversão de licença entre as edições do Windows Server 2016 e a conversão das edições de avaliação para varejo, confira [Caminhos de atualização compatíveis para o Windows Server 2016](https://go.microsoft.com/fwlink/?LinkId=828602).
- 
+
 >[!NOTE]
 >Observação: Não há suporte para atualizações que alternam da instalação Server Core para uma instalação de Servidor com Desktop (e vice-versa). Se o sistema operacional mais antigo que está sendo atualizado ou convertido para uma instalação é o Server Core, o resultado ainda será uma instalação Server Core do sistema operacional mais recente.
- 
+
 Tabela de referência rápida dos caminhos de atualização permitidos de edições de varejo mais antigas do Windows Server para edições de varejo do Windows Server 2016:
 
 
@@ -81,7 +79,7 @@ Tabela de referência rápida dos caminhos de atualização permitidos de ediç�
 |Grupo de trabalho do Windows Storage Server 2012|Grupo de trabalho do Windows Storage Server 2016|
 |Windows Storage Server 2012 R2 Standard|Windows Storage Server 2016 Standard|
 |Windows Storage Server 2012 R2 Workgroup|Grupo de trabalho do Windows Storage Server 2016|
- 
+
 ### <a name="license-conversion"></a>Conversão de licença
 É possível converter o Windows Server 2016 Standard (varejo) no Windows Server 2016 Datacenter (varejo).
 
@@ -90,7 +88,7 @@ Tabela de referência rápida dos caminhos de atualização permitidos de ediç�
 É possível converter a versão de avaliação do Windows Server 2016 Standard para o Windows Server 2016 Standard (comercial) ou para o Datacenter (comercial).
 
 É possível converter a versão de avaliação do Windows Server 2016 Datacenter em Windows Server 2016 Datacenter (varejo).
- 
+
 ## <a name="upgrading-to-windows-server-2012-r2"></a>Atualização para o Windows Server 2012 R2
 Para saber mais, incluindo limitações e restrições importantes sobre a atualização, a conversão de licença entre as edições do Windows Server 2012 R2 e a conversão das edições de avaliação para varejo, confira [Opções de atualização para o Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303416(v=ws.11)).
 
@@ -115,7 +113,7 @@ Tabela de referência rápida dos caminhos de atualização permitidos de ediç�
 
 ## <a name="upgrading-to-windows-server-2012"></a>Atualização para o Windows Server 2012
 Para saber mais, incluindo limitações e restrições importantes sobre atualização e conversão das edições de avaliação para varejo, confira [Versões de avaliação e opções de atualização para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204(v=ws.11)).
- 
+
 Tabela de referência rápida dos caminhos de atualização permitidos de edições de varejo mais antigas do Windows Server para edições de varejo do Windows Server 2012:
 
 |Se você está executando:|É possível atualizar para estas edições:|
@@ -147,5 +145,5 @@ Ao planejar sua atualização, esteja ciente das diretrizes a seguir para a etap
   - Há suporte somente para atualizações in-loco no mesmo idioma. Não é possível atualizar de um idioma para outro.
 
   - Você não pode migrar de uma instalação Server Core do Windows Server 2008 para o Windows Server 2012 R2 com a GUI do servidor (chamada de "Servidor com área de trabalho completa" no Windows Server). É possível alternar sua instalação de server core atualizada para o servidor com a Área de trabalho completa, mas apenas no Windows Server 2012 R2. O Windows Server 2016 e posteriores *não* dão suporte à troca do Server Core para Área de trabalho completa, portanto, realize essa mudança antes de atualizar para o Windows Server 2016.
-  
+
 Para saber mais, confira [Versões de avaliação e opções de atualização para o Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj574204\(v=ws.11\)), que inclui detalhes sobre a atualização específica para funções.

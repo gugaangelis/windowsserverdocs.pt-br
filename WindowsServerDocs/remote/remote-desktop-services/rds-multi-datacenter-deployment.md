@@ -1,20 +1,18 @@
 ---
 title: Data centers do RDS com redundância geográfica no Azure
 description: Saiba como criar uma implantação do RDS que usa vários data centers para fornecer alta disponibilidade em locais geográficos.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 61c36528-cf47-4af0-83c1-a883f79a73a5
 author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 18ed49472a00790a1c713016c4da9a056066a88a
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: cc36a81343b5416d3520a4e3483572d948c6bebc
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953708"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87958014"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Criar uma implantação do RDS em vários data centers com redundância geográfica para recuperação de desastres
 
@@ -54,28 +52,28 @@ Crie os seguintes recursos no Azure para criar uma implantação do RDS de vári
 4. Uma rede virtual no GR B, certifique-se de usar um espaço de endereço que não se sobreponha à implantação no GR A.
 5. Uma [conexão de rede virtual para rede virtual](/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps) entre os dois grupos de recursos.
 6. Duas máquinas virtuais do AD em um conjunto de disponibilidade no GR B, verifique se os nomes das VMs são diferentes das VMs do AD no GR A. Implante duas VMs com Windows Server 2016 em um único conjunto de disponibilidade, instale a função Active Directory Domain Services e, em seguida, promova-os para o controlador de domínio no domínio que você criou na etapa 1.
-7. Uma segunda implantação do RDS altamente disponível no GR B. 
+7. Uma segunda implantação do RDS altamente disponível no GR B.
    1. Use o modelo de [implantação de farm do RDS usando o Active Directory existente](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/) novamente, mas desta vez faça as seguintes alterações. (Para personalizar o modelo, selecione-o na galeria, clique em **Implantar no Azure** e, em seguida **Editar modelo**.)
-      1. Ajuste o espaço de endereço do IP privado de servidor DNS para corresponder à rede virtual no GR B. 
-      
+      1. Ajuste o espaço de endereço do IP privado de servidor DNS para corresponder à rede virtual no GR B.
+
          Pesquise nas variáveis por "dnsServerPrivateIp". Edite o IP padrão (10.0.0.4) para corresponder ao espaço de endereço definido na rede virtual no GR B.
-   
+
       2. Edite os nomes dos computadores para que não entrem em conflito com os nomes da implantação no GR A.
-      
+
          Localize as VMs na seção **Resources** do modelo. Altere o campo **computerName** em **osProfile**. Por exemplo, "gateway" pode se tornar "gateway **-b**"; "[concat ('rdsh-', copyIndex())]" pode se tornar "[concat ('rdsh-b-', copyIndex())]" e "broker" pode se tornar "broker **-b**".
-      
+
          (Também é possível alterar os nomes das VMs manualmente após executar o modelo.)
    2. Como na etapa 3 acima, use as informações em [Serviços de Área de Trabalho Remota: alta disponibilidade](rds-plan-high-availability.md) para configurar os outros componentes do RDS para alta disponibilidade.
 8. Um servidor de arquivos de escalabilidade horizontal de Espaços de Armazenamento Diretos com Réplica de Armazenamento entre as duas implantações. Use o [script do PowerShell](https://github.com/robotechredmond/301-s2d-sr-dr-md/tree/master/scripts) para implantar o [modelo](https://github.com/robotechredmond/301-s2d-sr-dr-md) entre os grupos de recursos.
 
    > [!NOTE]
-   > Você pode provisionar o armazenamento manualmente (em vez de usar o modelo e o script do PowerShell): 
+   > Você pode provisionar o armazenamento manualmente (em vez de usar o modelo e o script do PowerShell):
    >1. Implante um [SOFS de Espaços de Armazenamento Diretos de dois nós](rds-storage-spaces-direct-deployment.md) no GR A para armazenar seus UPDs (discos de perfil do usuário).
    >2. Implante um segundo SOFS de Espaços de Armazenamento Diretos idêntico no GR B, certifique-se de usar a mesma quantidade de armazenamento em cada cluster.
    >3. Configure a [Réplica de Armazenamento com replicação assíncrona](../../storage/storage-replica/cluster-to-cluster-storage-replication.md) entre os dois.
 
 ### <a name="enable-upds"></a>Habilitar UPDs
-A Réplica de Armazenamento replica os dados de um volume de origem (associado com a implantação primária/ativa) para um volume de destino (associado com a implantação secundária/passiva). Por design, o cluster de destino é exibido como **Online (sem acesso)** , a Réplica de Armazenamento desmonta os volumes de destino e seus pontos de montagem ou letras de unidade. Isso significa que habilitar UPDs para a implantação secundária fornecendo o caminho do compartilhamento de arquivos falhará, pois o volume não está montado. 
+A Réplica de Armazenamento replica os dados de um volume de origem (associado com a implantação primária/ativa) para um volume de destino (associado com a implantação secundária/passiva). Por design, o cluster de destino é exibido como **Online (sem acesso)** , a Réplica de Armazenamento desmonta os volumes de destino e seus pontos de montagem ou letras de unidade. Isso significa que habilitar UPDs para a implantação secundária fornecendo o caminho do compartilhamento de arquivos falhará, pois o volume não está montado.
 
 Quer saber mais sobre como gerenciar a replicação? Confira [Replicação de armazenamento de cluster para cluster](../../storage/storage-replica/cluster-to-cluster-storage-replication.md).
 
@@ -95,27 +93,27 @@ Para habilitar os UPDs em ambas as implantações, faça o seguinte:
    ```
 
 
-### <a name="azure-traffic-manager"></a>Gerenciador de Tráfego do Azure 
+### <a name="azure-traffic-manager"></a>Gerenciador de Tráfego do Azure
 
-Crie um perfil no [Gerenciador de Tráfego do Azure](/azure/traffic-manager/traffic-manager-overview) e certifique-se de selecionar o método de roteamento **Prioridade**. Defina os dois pontos de extremidade para os endereços IP públicos de cada implantação. Em **Configuração**, altere o protocolo para HTTPS (em vez de HTTP) e a porta para 443 (em vez de 80). Observe a **Vida útil do DNS** e defina-a de acordo com suas necessidades de failover. 
+Crie um perfil no [Gerenciador de Tráfego do Azure](/azure/traffic-manager/traffic-manager-overview) e certifique-se de selecionar o método de roteamento **Prioridade**. Defina os dois pontos de extremidade para os endereços IP públicos de cada implantação. Em **Configuração**, altere o protocolo para HTTPS (em vez de HTTP) e a porta para 443 (em vez de 80). Observe a **Vida útil do DNS** e defina-a de acordo com suas necessidades de failover.
 
 Note que o Gerenciador de Tráfego exige que os pontos de extremidade retornem 200 OK em resposta a uma solicitação GET para ser marcado como "íntegro". O objeto publicIP criado a partir de modelos do RDS funcionará, mas não adicione um adendo de caminho. Em vez disso, forneça aos usuários finais a URL do Gerenciador de Tráfego acrescida de "/RDWeb", por exemplo: ```http://deployment.trafficmanager.net/RDWeb```
 
-Ao implantar o Gerenciador de Tráfego do Azure com o método de roteamento Prioridade, você impede que os usuários finais acessem a implantação passiva enquanto a implantação ativa estiver funcionando. Se os usuários finais acessarem a implantação passiva e a direção da Réplica de Armazenamento ainda não tiver sido alternada para o failover, a entrada do usuário para de responder conforme a implantação tenta e não consegue acessar o compartilhamento de arquivos no cluster dos Espaços de Armazenamento Diretos passivo e, eventualmente, a implantação desiste e fornece ao usuário um perfil temporário.  
+Ao implantar o Gerenciador de Tráfego do Azure com o método de roteamento Prioridade, você impede que os usuários finais acessem a implantação passiva enquanto a implantação ativa estiver funcionando. Se os usuários finais acessarem a implantação passiva e a direção da Réplica de Armazenamento ainda não tiver sido alternada para o failover, a entrada do usuário para de responder conforme a implantação tenta e não consegue acessar o compartilhamento de arquivos no cluster dos Espaços de Armazenamento Diretos passivo e, eventualmente, a implantação desiste e fornece ao usuário um perfil temporário.
 
-### <a name="deallocate-vms-to-save-resources"></a>Desalocar as VMs para economizar recursos 
-Após configurar ambas as implantações, você pode, opcionalmente, desligar e desalocar a infraestrutura secundária de RDS e as VMs de RDSH para economizar com estas VMs. O SOFS dos Espaços de Armazenamento Diretos e as VMs do servidor AD sempre devem permanecer em execução na implantação secundária/passiva para habilitar a sincronização de conta e perfil do usuário.  
+### <a name="deallocate-vms-to-save-resources"></a>Desalocar as VMs para economizar recursos
+Após configurar ambas as implantações, você pode, opcionalmente, desligar e desalocar a infraestrutura secundária de RDS e as VMs de RDSH para economizar com estas VMs. O SOFS dos Espaços de Armazenamento Diretos e as VMs do servidor AD sempre devem permanecer em execução na implantação secundária/passiva para habilitar a sincronização de conta e perfil do usuário.
 
-Quando ocorrer um failover, você precisará iniciar as VMs desalocadas. Essa configuração de implantação tem a vantagem de um custo menor, mas um tempo de failover maior. Se ocorrer uma falha catastrófica na implantação ativa, você precisará iniciar manualmente a implantação passiva, ou precisará de um script de automação para detectar a falha e iniciar a implantação passiva automaticamente. Em ambos os casos, pode levar vários minutos para colocar a implantação passiva em execução e deixá-la disponível para os usuários, resultando em algum tempo de inatividade para o serviço. Esse tempo de inatividade depende da quantidade de tempo que leva para iniciar a infraestrutura do RDS e as VMs de RDSH (normalmente dois a quatro minutos, se as VMs forem iniciadas em paralelo em vez de em série) e o tempo para colocar o cluster passivo online (que depende do tamanho do cluster, normalmente dois a quatro minutos para um cluster de dois nós com dois discos por nó). 
+Quando ocorrer um failover, você precisará iniciar as VMs desalocadas. Essa configuração de implantação tem a vantagem de um custo menor, mas um tempo de failover maior. Se ocorrer uma falha catastrófica na implantação ativa, você precisará iniciar manualmente a implantação passiva, ou precisará de um script de automação para detectar a falha e iniciar a implantação passiva automaticamente. Em ambos os casos, pode levar vários minutos para colocar a implantação passiva em execução e deixá-la disponível para os usuários, resultando em algum tempo de inatividade para o serviço. Esse tempo de inatividade depende da quantidade de tempo que leva para iniciar a infraestrutura do RDS e as VMs de RDSH (normalmente dois a quatro minutos, se as VMs forem iniciadas em paralelo em vez de em série) e o tempo para colocar o cluster passivo online (que depende do tamanho do cluster, normalmente dois a quatro minutos para um cluster de dois nós com dois discos por nó).
 
-### <a name="active-directory"></a>Active Directory 
-Os servidores do Active Directory em cada implantação são réplicas dentro do mesmo domínio/floresta. O Active Directory tem um protocolo de sincronização interno para manter os quatro controladores de domínio em sincronia. No entanto, pode haver algum atraso, assim, se um novo usuário for adicionado a um servidor do AD, pode levar algum tempo para ser replicado em todos os servidores do AD nas duas implantações. Consequentemente, certifique-se de avisar os usuários para não tentarem entrar imediatamente depois de serem adicionados ao domínio. 
+### <a name="active-directory"></a>Active Directory
+Os servidores do Active Directory em cada implantação são réplicas dentro do mesmo domínio/floresta. O Active Directory tem um protocolo de sincronização interno para manter os quatro controladores de domínio em sincronia. No entanto, pode haver algum atraso, assim, se um novo usuário for adicionado a um servidor do AD, pode levar algum tempo para ser replicado em todos os servidores do AD nas duas implantações. Consequentemente, certifique-se de avisar os usuários para não tentarem entrar imediatamente depois de serem adicionados ao domínio.
 
-### <a name="rd-license-server"></a>Servidor de licença RD 
-Forneça uma [CAL do RD por usuário](rds-client-access-license.md) para cada usuário nomeado que está autorizado a acessar a implantação com redundância geográfica. Distribua as CALs por usuários de forma uniforme entre os dois servidores de licenças RD na implantação do ativa. Em seguida, duplique essas CALs nos dois servidores de licenças RD na implantação passiva. Como as CALs são duplicadas entre a implantação ativa e passiva, somente uma implantação pode estar ativa com a conexão dos usuários em qualquer momento; caso contrário, você violará o contrato de licença.  
+### <a name="rd-license-server"></a>Servidor de licença RD
+Forneça uma [CAL do RD por usuário](rds-client-access-license.md) para cada usuário nomeado que está autorizado a acessar a implantação com redundância geográfica. Distribua as CALs por usuários de forma uniforme entre os dois servidores de licenças RD na implantação do ativa. Em seguida, duplique essas CALs nos dois servidores de licenças RD na implantação passiva. Como as CALs são duplicadas entre a implantação ativa e passiva, somente uma implantação pode estar ativa com a conexão dos usuários em qualquer momento; caso contrário, você violará o contrato de licença.
 
-### <a name="image-management"></a>Gerenciamento de imagens 
-Ao atualizar as imagens de RDSH para fornecer atualizações de software ou novos aplicativos, você precisa atualizar separadamente as coleções de RDSH em cada implantação para manter uma experiência de usuário comum entre ambas as implantações. É possível usar a opção [Atualizar modelo de coleção de RDSH](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/), mas observe que a infraestrutura de RDS e as VMs de RDSH da implantação passiva devem estar em execução para executar o modelo. 
+### <a name="image-management"></a>Gerenciamento de imagens
+Ao atualizar as imagens de RDSH para fornecer atualizações de software ou novos aplicativos, você precisa atualizar separadamente as coleções de RDSH em cada implantação para manter uma experiência de usuário comum entre ambas as implantações. É possível usar a opção [Atualizar modelo de coleção de RDSH](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/), mas observe que a infraestrutura de RDS e as VMs de RDSH da implantação passiva devem estar em execução para executar o modelo.
 
 ## <a name="failover"></a>Failover
 
@@ -130,7 +128,7 @@ Você pode aprender mais em [Replicação de armazenamento de cluster para clust
 O Gerenciador de Tráfego do Azure reconhece automaticamente que a implantação primária falhou e que a implantação secundária está íntegra (nas VMs de Gateway de área de trabalho remota que foram iniciadas no GR B) e direciona o tráfego de usuários para a implantação secundária. Os usuários podem usar a mesma URL do Gerenciador de Tráfego para continuar a trabalhar em seus recursos remotos, desfrutando de uma experiência consistente. Observe que o cache DNS do cliente não atualizará o registro durante o TTL definido na configuração do Gerenciador de Tráfego do Azure.
 
 ### <a name="test-failover"></a>Failover de teste
-Em uma parceria de Réplica de Armazenamento, apenas um volume (a origem) pode estar ativo por vez. Isso significa que ao alternar a direção de parceria SR, o volume na implantação principal (GR A) torna-se o destino de replicação, logo, fica oculto. Portanto, qualquer usuário que se conectar ao GR A não terá mais acesso aos seus UPDs armazenados no SOFS no GR A. 
+Em uma parceria de Réplica de Armazenamento, apenas um volume (a origem) pode estar ativo por vez. Isso significa que ao alternar a direção de parceria SR, o volume na implantação principal (GR A) torna-se o destino de replicação, logo, fica oculto. Portanto, qualquer usuário que se conectar ao GR A não terá mais acesso aos seus UPDs armazenados no SOFS no GR A.
 
 Para testar o failover permitindo que os usuários continuem a fazer logon:
 1. Inicie as VMs de RDSH e da infraestrutura no GR B.
@@ -151,13 +149,13 @@ Agora o GR B é a implantação primária ativa. Para mudar novamente para o GR 
 2. Habilite novamente o ponto de extremidade de GR A no perfil do Gerenciador de Tráfego do Azure:
 
    ```powershell
-   Enable-AzureRmTrafficManagerEndpoint -Name publicIpA -Type AzureEndpoints -ProfileName MyTrafficManagerProfile -ResourceGroupName RGA 
+   Enable-AzureRmTrafficManagerEndpoint -Name publicIpA -Type AzureEndpoints -ProfileName MyTrafficManagerProfile -ResourceGroupName RGA
    ```
 
 ## <a name="considerations-for-on-premises-deployments"></a>Considerações para implantações locais
 
 Embora uma implantação local não possa usar os Modelos de Início Rápido do Azure mencionados neste artigo, é possível implementar todas as funções de infraestrutura manualmente. Em uma implantação local em que o custo não é orientado pelo consumo do Azure, considere o uso de um modelo ativo-ativo para o failover mais rápido.
 
-Você pode usar o Gerenciador de Tráfego do Azure com pontos de extremidade locais, mas isso requer uma assinatura do Azure. Como alternativa, ao DNS fornecido aos usuários finais, forneça a eles um registro CNAME que simplesmente direciona os usuários para a implantação primária. No caso de failover, modifique o registro DNS CNAME para redirecionar para a implantação secundária. Dessa forma, o usuário final usa uma única URL, assim como no Gerenciador de Tráfego do Azure, que direciona o usuário para a implantação apropriada. 
+Você pode usar o Gerenciador de Tráfego do Azure com pontos de extremidade locais, mas isso requer uma assinatura do Azure. Como alternativa, ao DNS fornecido aos usuários finais, forneça a eles um registro CNAME que simplesmente direciona os usuários para a implantação primária. No caso de failover, modifique o registro DNS CNAME para redirecionar para a implantação secundária. Dessa forma, o usuário final usa uma única URL, assim como no Gerenciador de Tráfego do Azure, que direciona o usuário para a implantação apropriada.
 
 Se você estiver interessado na criação de um modelo local-para site do Azure, considere o uso do [Azure Site Recovery](/azure/site-recovery/site-recovery-overview).

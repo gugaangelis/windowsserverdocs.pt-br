@@ -1,8 +1,6 @@
 ---
 title: Recursos removidos ou preteridos no Windows Server 2016
 description: Uma lista de funcionalidades e recursos no Windows Server 2016 que foram removidos do produto na versão atual ou estão previstos para possível remoção em versões futuras (preterido). Essa lista é direcionada para profissionais de TI que estão atualizando sistemas operacionais em um ambiente comercial.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 ms.assetid: 5d10c5f9-ebac-49a0-b808-c0b1702e0437
@@ -10,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: d2a1627a0a941f12da4731291a032e4b2e1ad887
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: baa5b19eb20c0ac46c8b1f5d94e2ad56ee6d3288
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86962018"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959864"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Recursos removidos ou preteridos no Windows Server 2016
 
@@ -28,32 +26,32 @@ Veja a seguir uma lista de recursos e funcionalidades do Windows Server 2016 que
 
 ## <a name="features-removed-from-windows-server-2016"></a>Recursos removidos do Windows Server 2016
 
-Os recursos e funcionalidades a seguir foram retirados desta versão do Windows Server 2016. Aplicativos, códigos ou o uso que dependem desses recursos não funcionarão nesta versão a menos que você implante um método alternativo.  
+Os recursos e funcionalidades a seguir foram retirados desta versão do Windows Server 2016. Aplicativos, códigos ou o uso que dependem desses recursos não funcionarão nesta versão a menos que você implante um método alternativo.
 
-> [!NOTE]  
-> Se você estiver migrando para o Windows Server 2016 de uma versão de servidor anterior ao Windows Server 2012 R2 ou Windows Server 2012, leia também os tópicos [Recursos removidos ou preteridos no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)) e [Recursos removidos ou preteridos no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11)).  
+> [!NOTE]
+> Se você estiver migrando para o Windows Server 2016 de uma versão de servidor anterior ao Windows Server 2012 R2 ou Windows Server 2012, leia também os tópicos [Recursos removidos ou preteridos no Windows Server 2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)) e [Recursos removidos ou preteridos no Windows Server 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831568(v=ws.11)).
 
 ### <a name="share-and-storage-management"></a>Gerenciamento de Compartilhamento e Armazenamento
 
-O snap-in de Gerenciamento de Compartilhamento e Armazenamento para o Microsoft Management Console foi removido. Em vez disso, siga qualquer um destes procedimentos:  
+O snap-in de Gerenciamento de Compartilhamento e Armazenamento para o Microsoft Management Console foi removido. Em vez disso, siga qualquer um destes procedimentos:
 
--   Se o computador que você deseja gerenciar está executando um sistema operacional mais antigo que o Windows Server 2016, conecte-o com a Área de Trabalho Remota e use a versão local do snap-in de Gerenciamento de Compartilhamento e Armazenamento.  
+-   Se o computador que você deseja gerenciar está executando um sistema operacional mais antigo que o Windows Server 2016, conecte-o com a Área de Trabalho Remota e use a versão local do snap-in de Gerenciamento de Compartilhamento e Armazenamento.
 
--   Em um computador que executa o Windows 8.1 ou anterior, use o snap-in de Gerenciamento de Compartilhamento e Armazenamento do RSAT para ver o computador que você deseja gerenciar.  
+-   Em um computador que executa o Windows 8.1 ou anterior, use o snap-in de Gerenciamento de Compartilhamento e Armazenamento do RSAT para ver o computador que você deseja gerenciar.
 
--   Use o Hyper-V em um computador cliente para executar uma máquina virtual que executa o Windows 7, Windows 8 ou Windows 8.1 com o snap-in de Gerenciamento de Compartilhamento e Armazenamento no RSAT.  
+-   Use o Hyper-V em um computador cliente para executar uma máquina virtual que executa o Windows 7, Windows 8 ou Windows 8.1 com o snap-in de Gerenciamento de Compartilhamento e Armazenamento no RSAT.
 
 ### <a name="journaldll"></a>Journal.dll
 
-Journal.dll foi removido do Windows Server 2016. Não há nenhum substituto.  
+Journal.dll foi removido do Windows Server 2016. Não há nenhum substituto.
 
 ### <a name="security-configuration-wizard"></a>Assistente de Configuração de Segurança
 
-O Assistente de Configuração de Segurança foi removido. Em vez disso, os recursos são protegidos por padrão. Se você precisar controlar configurações específicas de segurança, pode usar a Política de Grupo ou o [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc936627(v=technet.10)).  
+O Assistente de Configuração de Segurança foi removido. Em vez disso, os recursos são protegidos por padrão. Se você precisar controlar configurações específicas de segurança, pode usar a Política de Grupo ou o [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc936627(v=technet.10)).
 
 ### <a name="sqm"></a>SQM
 
-Os componentes de aceitação que gerenciam a participação no Programa de Aperfeiçoamento da Experiência do Usuário foram removidos. 
+Os componentes de aceitação que gerenciam a participação no Programa de Aperfeiçoamento da Experiência do Usuário foram removidos.
 
 ### <a name="windows-update"></a>Windows Update
 
@@ -73,22 +71,22 @@ O comando **wuauclt.exe /detectnow** foi removido e não conta mais com suporte.
 
 ## <a name="features-deprecated-starting-with-windows-server-2016"></a>Recursos preteridos a partir do Windows Server 2016
 
-Os seguintes recursos e funcionalidades foram preteridos a partir desta versão. Eventualmente, eles serão completamente removidos do produto, mas ainda estarão disponíveis nesta versão, algumas vezes, com determinadas funcionalidades removidas. Comece a planejar agora a implantação de métodos alternativos para qualquer aplicativo, código, ou utilização que dependa desses recursos.  
+Os seguintes recursos e funcionalidades foram preteridos a partir desta versão. Eventualmente, eles serão completamente removidos do produto, mas ainda estarão disponíveis nesta versão, algumas vezes, com determinadas funcionalidades removidas. Comece a planejar agora a implantação de métodos alternativos para qualquer aplicativo, código, ou utilização que dependa desses recursos.
 
-### <a name="configuration-tools"></a>Ferramentas de configuração  
+### <a name="configuration-tools"></a>Ferramentas de configuração
 
--   **Scregedit.exe** foi preterido. Se você tiver scripts que dependem de Scregedit.exe, ajuste-os para usar os métodos Reg.exe ou Windows PowerShell.  
+-   **Scregedit.exe** foi preterido. Se você tiver scripts que dependem de Scregedit.exe, ajuste-os para usar os métodos Reg.exe ou Windows PowerShell.
 
--   **Sconfig.exe** foi preterido. Em vez disso, use [Sconfig.cmd](./sconfig-on-ws2016.md). 
+-   **Sconfig.exe** foi preterido. Em vez disso, use [Sconfig.cmd](./sconfig-on-ws2016.md).
 
 ### <a name="netcfg-custom-apis"></a>APIs personalizadas de NetCfg
 
-A instalação de PrintProvider, NetClient e ISDN usando APIs personalizadas de NetCfg foi preterida.  
+A instalação de PrintProvider, NetClient e ISDN usando APIs personalizadas de NetCfg foi preterida.
 
-### <a name="remote-management"></a>Gerenciamento remoto  
+### <a name="remote-management"></a>Gerenciamento remoto
 
-WinRM.vbs foi preterido. Em vez disso, use a funcionalidade no provedor de WinRM do Windows PowerShell.  
+WinRM.vbs foi preterido. Em vez disso, use a funcionalidade no provedor de WinRM do Windows PowerShell.
 
 ### <a name="smb"></a>SMB
 
-SMB2+ sobre NetBT foi preterido. Em vez disso, implemente SMB sobre TCP ou RDMA. 
+SMB2+ sobre NetBT foi preterido. Em vez disso, implemente SMB sobre TCP ou RDMA.

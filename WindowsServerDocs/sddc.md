@@ -1,20 +1,18 @@
 ---
 title: Data center definido por software do Windows Server
 Description: Visão geral do Windows Server SDDC
-ms.prod: windows-server
-ms.technology: SDDC
 ms.topic: get-started article
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ceab6f99617bcb2e5581f6ea975ea8a71a2ea4b3
-ms.sourcegitcommit: 145cf75f89f4e7460e737861b7407b5cee7c6645
+ms.openlocfilehash: 632e08a6e560b9b9e4ab7010794eaf36d1873cac
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87409957"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990619"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Datacenter definido por software do Windows Server
 
@@ -26,7 +24,7 @@ ms.locfileid: "87409957"
 
 O SDDC (datacenter definido por software) é um termo comum no setor, que geralmente se refere a um Datacenter em que a infraestrutura inteira é virtualizada. A virtualização é a chave e significa simplesmente que o hardware e o software no datacenter se expandem além de uma proporção de um para um tradicional. Com um hardware de emulação de hipervisor de software, é possível abstrair sistemas operacionais e aplicativos do hardware físico e multiplicar para formar grupos de recursos elásticos de processadores, memória, E/S e redes.
 
-A implementação do SDDC da Microsoft consiste nas tecnologias do Windows Server destacadas neste artigo. Começa com o hipervisor do Hyper-V que fornece a plataforma de virtualização na qual a rede e o armazenamento são criados. As tecnologias de segurança, desenvolvidas para desafios específicos da infraestrutura virtualizada, reduzem as ameaças internas e externas. Com o PowerShell integrado ao Windows Server e a adição do [System Center](https://docs.microsoft.com/system-center/) e/ou do [Operations Management Suite](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview), você pode programar e automatizar o provisionamento, a implantação, a configuração e o gerenciamento.
+A implementação do SDDC da Microsoft consiste nas tecnologias do Windows Server destacadas neste artigo. Começa com o hipervisor do Hyper-V que fornece a plataforma de virtualização na qual a rede e o armazenamento são criados. As tecnologias de segurança, desenvolvidas para desafios específicos da infraestrutura virtualizada, reduzem as ameaças internas e externas. Com o PowerShell integrado ao Windows Server e a adição do [System Center](/system-center/) e/ou do [Operations Management Suite](/azure/operations-management-suite/operations-management-suite-overview), você pode programar e automatizar o provisionamento, a implantação, a configuração e o gerenciamento.
 
 As tecnologias integradas ao Windows Server e ao System Center são as principais bases da experiência do Windows Server SDDC. Porém, mesmo que seja uma plataforma virtualizada, ela ainda requer o hardware adequado. Os parceiros da Microsoft participando dos programas **Soluções WSSD (Definidas por Software do Windows Server)** e **Soluções do Azure Stack HCI** podem ajudar sua empresa a adquirir o hardware adequado, instalá-lo e executá-lo desde o primeiro dia.
 
@@ -58,7 +56,7 @@ As tecnologias de virtualização do Windows Server incluem atualizações ao Hy
 
 ![Imagem somente para fins de espaçamento](media/sddc/spacer1.png)![Diagrama de infraestrutura hiperconvergente do Windows Server](media/sddc/hyper-converged.png)
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Windows Server com hiperconvergência](https://docs.microsoft.com/windows-server/get-started/what-s-new-in-windows-server-2016#computevirtualizationvirtualizationmd)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Windows Server com hiperconvergência](./get-started/whats-new-in-windows-server-2016.md#compute)**
 
 ### <a name="hyper-v-hypervisor"></a>Hipervisor do Hyper-V
 
@@ -79,7 +77,7 @@ Flexível, seguro e não vinculado à topologia de armazenamento subjacente, o V
 - O VHDX compartilhado pode residir em um CSV (Volume Compartilhado Clusterizado) no armazenamento de bloco ou no armazenamento SMB com base em arquivos.
 - Protegido: o VHDX compartilhado é compatível com a Réplica do Hyper-V e ao backup em nível de host.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o clustering de convidado com o VHDX compartilhado](https://technet.microsoft.com/library/dn281956(v=ws.11).aspx)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o clustering de convidado com o VHDX compartilhado](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn281956(v=ws.11))**
 
 ### <a name="hyper-v-replica"></a>Réplica do Hyper-V
 
@@ -93,7 +91,7 @@ Não requer outras tecnologias de replicação de máquina virtual, reduzindo os
 - Processa a migração dinâmica automaticamente.
 - Gerenciamento e configuração simples: por meio do Gerenciador do Hyper-V, PowerShell ou com o Azure Site Recovery.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a Réplica do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a Réplica do Hyper-V](./virtualization/hyper-v/manage/set-up-hyper-v-replica.md)**
 
 ![Faixa Conectar tudo](media/sddc/networking.png)
 
@@ -107,7 +105,7 @@ Um ponto centralizado e programável de automação para gerenciar, configurar, 
 
 Os administradores usam uma Ferramenta de Gerenciamento que interage diretamente com o Controlador de Rede. O Controlador de Rede fornece informações sobre a infraestrutura de rede, incluindo a infraestrutura física e virtual para a Ferramenta de Gerenciamento.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Controlador de Rede](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-controller/network-controller)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Controlador de Rede](./networking/sdn/technologies/network-controller/network-controller.md)**
 
 ### <a name="datacenter-firewall"></a>Firewall do Datacenter
 
@@ -119,17 +117,17 @@ Quando implantado e oferecido como um serviço, os administradores locatários p
 
 O administrador do provedor de serviço ou o administrador de locatário pode gerenciar as políticas de Firewall do Datacenter usando o controlador de rede.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Firewall do Datacenter](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-function-virtualization/datacenter-firewall-overview)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Firewall do Datacenter](./networking/sdn/technologies/network-function-virtualization/datacenter-firewall-overview.md)**
 
 ### <a name="switch-embedded-teaming"></a>Agrupamento Incorporado de Comutador
 
 ![Imagem de uma linha para fins de espaçamento](media/sddc/networking-line.png)
 
-O SET é uma solução alternativa de Agrupamento NIC que você pode usar em ambientes que incluem o Hyper-V e a pilha de [SDN (Rede Definida por Software)](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking).
+O SET é uma solução alternativa de Agrupamento NIC que você pode usar em ambientes que incluem o Hyper-V e a pilha de [SDN (Rede Definida por Software)](./networking/sdn/software-defined-networking.md).
 
 ![Imagem somente para fins de espaçamento](media/sddc/spacer1.png)![Diagrama de agrupamento inserido do comutador](media/sddc/teaming.png)
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o agrupamento inserido do comutador](https://docs.microsoft.com/windows-server/networking/sdn/technologies/set-for-sdn)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o agrupamento inserido do comutador](./networking/sdn/technologies/set-for-sdn.md)**
 
 ### <a name="software-load-balancing"></a>Balanceamento de carga do software
 
@@ -139,7 +137,7 @@ O SLB permite que vários servidores hospedem a mesma carga de trabalho, fornece
 
 ![Imagem somente para fins de espaçamento](media/sddc/spacer1.png)![Diagrama de balanceamento de carga do software](media/sddc/balancer.png)
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o balanceamento de carga do software](https://docs.microsoft.com/windows-server/networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o balanceamento de carga do software](./networking/sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md)**
 
 ![diagrama de armazenamento](media/sddc/storage.png)
 
@@ -164,7 +162,7 @@ Monitore e gerencie centralmente o desempenho de armazenamento de máquinas virt
 
 A QoS do armazenamento é integrada na solução de armazenamento definida por software da Microsoft fornecida pelo Servidor de Arquivos de Escalabilidade Horizontal e pelo Hyper-V usando o protocolo SMB3. Um novo Gerenciador de Política oferece monitoramento de desempenho de armazenamento central.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a QoS do armazenamento](https://docs.microsoft.com/windows-server/storage/storage-qos/storage-qos-overview)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a QoS do armazenamento](./storage/storage-qos/storage-qos-overview.md)**
 
 ### <a name="storage-replica"></a>Réplica de Armazenamento
 
@@ -185,7 +183,7 @@ Replicação síncrona
 
 t e t1: dados liberados para o volume, logs sempre realizam gravação
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a réplica de armazenamento](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a réplica de armazenamento](./storage/storage-replica/storage-replica-overview.md)**
 
 ![diagrama de segurança](media/sddc/security.png)
 
@@ -197,7 +195,7 @@ Como um provedor de serviços de nuvem ou um administrador de nuvem privada corp
 
 ![diagrama de malha protegida](media/sddc/spacer1.png)![Diagrama de malha protegida](media/sddc/guarded-fabric.png)
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a malha protegida](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a malha protegida](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
 
 ### <a name="shielded-vms"></a>VMs blindadas
 
@@ -211,7 +209,7 @@ Os dados e o estado de uma VM blindada são protegidos contra inspeção, roubo 
 - As VMs blindadas são criptografadas pelo BitLocker ou outros meios para que somente os proprietários designados possam executá-las.
 - As VMs em execução podem ser convertidas em blindadas.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre as VMs blindadas](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre as VMs blindadas](./security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)**
 
 ### <a name="host-guardian-service"></a>Serviço Guardião de Host
 
@@ -221,7 +219,7 @@ O Serviço Guardião de Host detém as chaves para malhas legítimas, bem como m
 
 ![Imagem somente para fins de espaçamento](media/sddc/spacer1.png)![diagrama do guardião](media/sddc/guardian.png)
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Serviço Guardião de Host](https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Serviço Guardião de Host](./security/guarded-fabric-shielded-vm/guarded-fabric-manage-hgs.md)**
 
 ### <a name="device-health-attestation"></a>Atestado de Integridade do Dispositivo
 
@@ -233,7 +231,7 @@ O atestado permite que as empresas elevem o nível de segurança de suas organiz
 
 O modo confiável de hardware mostrado acima fornece o nível mais alto de garantia, com confiança proveniente de hardware do TPM v2.0 e conformidade com a política de integridade de código para lançamento de chave.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Atestado de Integridade do Dispositivo](https://docs.microsoft.com/windows-server/security/device-health-attestation)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o Atestado de Integridade do Dispositivo](./security/device-health-attestation.md)**
 
 ![diagrama de gerenciamento](media/sddc/management.png)
 
@@ -251,7 +249,7 @@ A DSC é compatível com "implantações contínuas" para que você possa implan
 -  A DSC pode ser usada em um ambiente de Nuvem pública, privada ou local.
 -  Você pode integrar a DSC a qualquer solução da Microsoft ou não, desde que possa executar um script do PowerShell no sistema alvo.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a DSC do PowerShell](https://docs.microsoft.com/powershell/dsc/overview)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre a DSC do PowerShell](/powershell/dsc/overview)**
 
 ### <a name="system-center-vmm"></a>System Center VMM
 
@@ -266,7 +264,7 @@ O Virtual Machine Manager faz parte do pacote do System Center, usado para confi
 - Rede: o VMM fornece virtualização de rede, incluindo suporte para criar e gerenciar redes virtuais e gateways de rede.
 - Armazenamento: o VMM pode descobrir, classificar, provisionar, alocar e atribuir o armazenamento local e remoto.
 
-![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o System Center VMM](https://docs.microsoft.com/system-center/vmm/)**
+![Ícone Saiba mais](media/sddc/learn.png)**[Saiba mais sobre o System Center VMM](/system-center/vmm/)**
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 

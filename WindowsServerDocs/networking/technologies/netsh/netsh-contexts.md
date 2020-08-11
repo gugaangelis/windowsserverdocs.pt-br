@@ -1,19 +1,17 @@
 ---
 title: Sintaxe, Contextos e Formatação do Comando Netsh
 description: Você pode usar este tópico para aprender a inserir contextos e subcontextos netsh, a entender a formatação da sintaxe e do comando netsh e a executar comandos netsh em computadores locais e remotos que estão executando Windows Server 2016 ou Windows 10.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 061d7252d5a7bbe09d3dca245d9b77ed20a4dedf
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: f72d3dfc3cd6f54b123cb00baf9ba75e4faeb906
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854759"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87969463"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Sintaxe, Contextos e Formatação do Comando Netsh
 
@@ -27,7 +25,7 @@ O Netsh também fornece um recurso de script com o qual você pode executar um g
 
 ## <a name="netsh-contexts"></a>Contextos netsh
 
-O netsh interage com outros componentes do sistema operacional usando arquivos \(DLL\) da biblioteca de vínculo\-dinâmico. 
+O netsh interage com outros componentes do sistema operacional usando arquivos \(DLL\) da biblioteca de vínculo\-dinâmico.
 
 Cada DLL auxiliar do netsh fornece um amplo conjunto de recursos chamado de *contexto*, que é um grupo de comandos específicos a uma função de servidor de rede ou recurso. Esses contextos ampliam a funcionalidade do netsh fornecendo suporte de configuração e monitoramento para um ou mais serviços, utilitários ou protocolos. Por exemplo, Dhcpmon.dll fornece o netsh com o contexto e o conjunto de comandos necessários para configurar e gerenciar servidores DHCP.
 
@@ -40,9 +38,9 @@ Veja a seguir um exemplo de saída desses comandos em um computador que executa 
 >    ```
 >   PS C:\Windows\system32> netsh
 >   netsh>/?
->    
+>
 >    The following commands are available:
->    
+>
 >    Commands in this context:
 >    ..            - Goes up one context level.
 >    ?             - Displays a list of commands.
@@ -83,10 +81,10 @@ Veja a seguir um exemplo de saída desses comandos em um computador que executa 
 >    wfp           - Changes to the `netsh wfp' context.
 >    winhttp       - Changes to the `netsh winhttp' context.
 >    winsock       - Changes to the `netsh winsock' context.
->    
+>
 >    The following sub-contexts are available:
 >     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
->    
+>
 >    To view help for a command, type the command, followed by a space, and then type ?.
 >    ```
 
@@ -149,7 +147,7 @@ Opcional. Especifica que o netsh insere o contexto do **netsh** especificado.
 
 **`Context`**
 
-Opcional. Especifica o contexto do **netsh** que você deseja inserir. 
+Opcional. Especifica o contexto do **netsh** que você deseja inserir.
 
 **`-r`**
 

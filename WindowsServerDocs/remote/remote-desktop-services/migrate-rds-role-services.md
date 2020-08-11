@@ -1,20 +1,18 @@
 ---
 title: Migrar sua implantação dos Serviços de Área de Trabalho Remota para o Windows Server 2016
 description: Este artigo descreve como migrar sua implantação dos Serviços de Área de Trabalho Remota para os novos servidores do Windows Server 2016.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 11/01/2016
 ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 2e4628e9ec7b5d75b88bb07282e2183a2f16fff2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 62c2cc99277b3cf74f6bde5be59b69569c27a31b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959148"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961810"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>Migrar sua implantação dos Serviços de Área de Trabalho Remota para o Windows Server 2016
 
@@ -53,8 +51,9 @@ Essa é a primeira e mais importante etapa para a migração: migrar os Agentes 
 
 3. Adicione os servidores do Agente de Conexão de Área de Trabalho Remota do Windows Server 2016 à implantação de alta disponibilidade.
 
-> [!NOTE] 
-> Não há suporte para uma configuração de alta disponibilidade mista com o Windows Server 2016 e o Windows Server 2012 R2 para os servidores do Agente de Conexão de Área de Trabalho Remota. Um Agente de Conexão de Área de Trabalho Remota executando o Windows Server 2016 pode atender coleções de sessão com servidores Host da Sessão de Área de Trabalho Remota executando o Windows Server 2012 R2 e pode atender coleções de áreas de trabalho virtuais com servidores Host de Virtualização de Área de Trabalho Remota executando o Windows Server 2012 R2.
+> [!NOTE]
+> Não há suporte para uma configuração de alta disponibilidade mista com o Windows Server 2016 e o Windows Server 2012 R2 para os servidores do Agente de Conexão de Área de Trabalho Remota.
+> Um Agente de Conexão de Área de Trabalho Remota executando o Windows Server 2016 pode atender coleções de sessão com servidores Host da Sessão de Área de Trabalho Remota executando o Windows Server 2012 R2 e pode atender coleções de áreas de trabalho virtuais com servidores Host de Virtualização de Área de Trabalho Remota executando o Windows Server 2012 R2.
 
 ## <a name="migrate-session-collections"></a>Migrar coleções de sessão
 

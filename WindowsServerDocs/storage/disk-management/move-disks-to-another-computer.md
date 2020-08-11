@@ -2,18 +2,16 @@
 title: Mover discos para outro computador
 description: Este artigo descreve como mover discos para outro computador
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6db73f963766e480f8ec478657354a51bcb1f456
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1527dbd567eb72e407023ecdcfade04856a3127a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385824"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971183"
 ---
 # <a name="move-disks-to-another-computer"></a>Mover discos para outro computador
 
@@ -58,14 +56,14 @@ Desinstale os discos que você quer mover usando o Gerenciador de Dispositivos.
 
 ## <a name="detect-new-disks"></a>Detectar novos discos
 
-1. No novo computador, abra o Gerenciamento de Disco. 
+1. No novo computador, abra o Gerenciamento de Disco.
 2. Clique em **Ação** e, em seguida, clique em **Examinar discos novamente**.
-3. Clique com o botão direito do mouse em qualquer disco marcado como **Externo**. 
+3. Clique com o botão direito do mouse em qualquer disco marcado como **Externo**.
 4. Clique em **Importar discos externos** e siga as instruções na tela.
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
--   Quando são movidos para outro computador, os volumes básicos recebem a próxima letra da unidade disponível nesse computador. 
+-   Quando são movidos para outro computador, os volumes básicos recebem a próxima letra da unidade disponível nesse computador.
 -   Os volumes dinâmicos mantêm a letra da unidade que tinham no computador anterior. Se um volume dinâmico não tinha uma letra da unidade no computador anterior, ele não receberá uma letra da unidade quando for movido para outro computador. Se a letra da unidade já estiver em uso no computador no qual o volume foi movido, ele receberá a próxima letra da unidade disponível.
 
 -   Se um administrador tiver usado o comando **mountvol /n** ou **diskpart automount** para impedir que novos volumes sejam adicionados ao sistema, os volumes movidos de outro computador não serão montados e não receberão uma letra da unidade. Para usar o volume, é necessário montar manualmente o volume e atribuir uma letra da unidade usando o Gerenciamento de Disco ou os comandos **DiskPart** e **mountvol**.

@@ -2,24 +2,22 @@
 title: Gerenciar VHD (Discos Rígidos Virtual)
 description: Este artigo descreve como gerenciar discos rígidos virtuais
 ms.date: 10/12/2017
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6ffa7e9dc769b8d8c892d0af1ceae5246df62d3e
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c00fcec3e27f3c91b429419fe25b5dc84125a720
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385811"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957664"
 ---
 # <a name="manage-virtual-hard-disks-vhd"></a>Gerenciar VHD (Discos Rígidos Virtual)
 
 > **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tópico descreve como criar, anexar e desanexar discos rígidos virtuais com o Gerenciamento de Disco. Os VHDs (discos rígidos virtuais) são arquivos de disco rígido virtualizados que, quando montados, aparecem e funcionam de forma praticamente idêntica a um disco rígido físico. Eles são mais comumente usados com máquinas virtuais Hyper-V. 
+Este tópico descreve como criar, anexar e desanexar discos rígidos virtuais com o Gerenciamento de Disco. Os VHDs (discos rígidos virtuais) são arquivos de disco rígido virtualizados que, quando montados, aparecem e funcionam de forma praticamente idêntica a um disco rígido físico. Eles são mais comumente usados com máquinas virtuais Hyper-V.
 
 ## <a name="viewing-vhds-in-disk-management"></a>Visualização de VHDs no Gerenciamento de Disco
 
@@ -40,7 +38,7 @@ VHDs são exibidos assim como discos físicos no Gerenciamento de Disco. Quando 
 
 ## <a name="attaching-and-detaching-a-vhd"></a>Anexar e desanexar um VHD
 
-Para tornar um VHD disponível para uso (um que você acabou de criar ou outro VHD existente): 
+Para tornar um VHD disponível para uso (um que você acabou de criar ou outro VHD existente):
 
 1. No menu **Ação**, selecione **Anexar VHD**.
 

@@ -1,30 +1,28 @@
 ---
 title: Produtos e edições do Windows Server 2016
 description: Explica as diferenças nas edições Windows Server Standard e Windows Server Datacenter
-ms.prod: windows-server
 ms.date: 10/04/2019
-ms.technology: server-general
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-a932-80cab33f419e
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4c35f0b65d0461e9dc2e23404d2637aecff415
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 50d0c603e5134c716c50e3aa8286cb33578ee06e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80827099"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959904"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparação das edições Standard e Datacenter do Windows Server 2016
 
 > Aplica-se a: Windows Server 2016
-  
+
 ## <a name="locks-and-limits"></a>Bloqueios e limites
 
 | Bloqueios e limites | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
-| ------------------- |---------- | --------------------------- |  
+| ------------------- |---------- | --------------------------- |
 | Número máximo de usuários | Com base em CALs   | Com base em CALs     |
 | Máximo de conexões SMB | 16.777.216      | 16.777.216          |
 | Máximo de conexões RRAS| ilimitado       | ilimitado         |
@@ -41,8 +39,8 @@ ms.locfileid: "80827099"
 
 ## <a name="server-roles"></a>Funções de servidor
 
-| Funções do Windows Server disponíveis     | Serviços de função | Windows Server 2016 Standard | Windows Server 2016 Datacenter |  
-| -------------------                | ----------    | ----------                   | ---------------------------    |  
+| Funções do Windows Server disponíveis     | Serviços de função | Windows Server 2016 Standard | Windows Server 2016 Datacenter |
+| -------------------                | ----------    | ----------                   | ---------------------------    |
 | Serviços de Certificados do Active Directory|              | Sim                          | Sim                            |
 | Active Directory Domain Services    |               | Sim                          | Sim                            |
 | Serviços de Federação do Active Directory|               | Sim                          | Sim                            |
@@ -80,8 +78,8 @@ ms.locfileid: "80827099"
 
 ## <a name="features"></a>Recursos
 
-|Recursos do Windows Server instaláveis com Gerenciador de Servidores (ou PowerShell)|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|Recursos do Windows Server instaláveis com Gerenciador de Servidores (ou PowerShell)|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |.NET Framework 3.5|Sim|Sim|
 |.NET Framework 4.6|Sim|Sim|
 |BITS|Sim|Sim|
@@ -144,8 +142,8 @@ ms.locfileid: "80827099"
 |Suporte a WoW64|Instalada|Instalada|
 |Visualizador XPS|Sim, quando instalado como servidor com Experiência Desktop|Sim, quando instalado como servidor com Experiência Desktop|
 
-|Recursos disponíveis em geral|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
-|-------------------|----------|---------------------------|  
+|Recursos disponíveis em geral|Windows Server 2016 Standard|Windows Server 2016 Datacenter|
+|-------------------|----------|---------------------------|
 |Analisador de práticas recomendadas|Sim|Sim|
 |Direct Access|Sim|Sim|
 |Memória Dinâmica (em virtualização)|Sim|Sim|

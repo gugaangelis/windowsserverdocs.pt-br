@@ -2,24 +2,22 @@
 title: Reduzir um volume básico
 description: Este artigo descreve como reduzir um volume básico
 ms.date: 06/07/2019
-ms.prod: windows-server
-ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2baf24ed656ef06d44dff93180701d25e6852500
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 652e5c85e0e094dd463302bffa8922ef5548dd6b
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71385865"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971173"
 ---
 # <a name="shrink-a-basic-volume"></a>Reduzir um volume básico
 
 > **Aplica-se a:** Windows 10, Windows 8.1, Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-É possível reduzir o espaço usado pelas partições primárias e unidades lógicas reduzindo-as para um espaço contíguo e adjacente no mesmo disco. Por exemplo, se você descobrir que precisa de uma partição adicional mas não tem discos adicionais, é possível reduzir a partição existente do final do volume para criar novo espaço não alocado, o qual poderá, em seguida, ser usado para uma nova partição. A operação de redução pode ser bloqueada com a presença de determinados tipos de arquivo. Para obter mais informações, consulte [Considerações adicionais](#additional-considerations) 
+É possível reduzir o espaço usado pelas partições primárias e unidades lógicas reduzindo-as para um espaço contíguo e adjacente no mesmo disco. Por exemplo, se você descobrir que precisa de uma partição adicional mas não tem discos adicionais, é possível reduzir a partição existente do final do volume para criar novo espaço não alocado, o qual poderá, em seguida, ser usado para uma nova partição. A operação de redução pode ser bloqueada com a presença de determinados tipos de arquivo. Para obter mais informações, consulte [Considerações adicionais](#additional-considerations)
 
 Quando você reduz uma partição, quaisquer arquivos comuns são automaticamente realocados no disco para criar o novo espaço não alocado. Não é necessário reformatar o disco para reduzir a partição.
 
@@ -63,7 +61,8 @@ Quando você reduz uma partição, quaisquer arquivos comuns são automaticament
 
 ## <a name="additional-considerations"></a>Considerações adicionais
 
--   Quando você reduz uma partição, determinados arquivos (por exemplo, o arquivo de paginação ou a área de armazenamento de cópia de sombra) não podem ser realocados automaticamente, e não será possível reduzir o espaço alocado além do ponto em que os arquivos não-móveis estão localizados. Se a operação de redução falhar, verifique o Log do aplicativo e procure o Evento 259, que identifica o arquivo não-móvel. Se você souber o(s) cluster(s) associado(s) ao arquivo que está impedindo a operação de redução, também é possível usar o comando **fsutil** em um prompt de comando (digite **fsutil volume querycluster /?** para uso). Quando você fornece o parâmetro **querycluster**, a saída do comando identificará o arquivo não-móvel que está impedindo o êxito da operação de redução.
+-   Quando você reduz uma partição, determinados arquivos (por exemplo, o arquivo de paginação ou a área de armazenamento de cópia de sombra) não podem ser realocados automaticamente, e não será possível reduzir o espaço alocado além do ponto em que os arquivos não-móveis estão localizados.
+Se a operação de redução falhar, verifique o Log do aplicativo e procure o Evento 259, que identifica o arquivo não-móvel. Se você souber o(s) cluster(s) associado(s) ao arquivo que está impedindo a operação de redução, também é possível usar o comando **fsutil** em um prompt de comando (digite **fsutil volume querycluster /?** para uso). Quando você fornece o parâmetro **querycluster**, a saída do comando identificará o arquivo não-móvel que está impedindo o êxito da operação de redução.
 Em alguns casos, é possível realocar o arquivo temporariamente. Por exemplo, se você precisar reduzir ainda mais a partição, é possível usar o Painel de Controle para mover o arquivo de paginação ou as cópias de sombra armazenadas para outro disco, excluir as cópias de sombra armazenadas, reduzir o volume e, em seguida, mover o arquivo de paginação de volta para o disco. Se a quantidade de clusters inválidos detectados pelo remapeamento dinâmico de clusters inválidos for muito alta, não será possível reduzir a partição. Se isso ocorrer, você deve considerar mover os dados e substituir o disco.
 
 -  Não use uma cópia em nível de bloco para transferir os dados. Isso também copia a tabela de setores defeituosos e o novo disco tratará os mesmos setores como defeituosos mesmo que estejam normais.

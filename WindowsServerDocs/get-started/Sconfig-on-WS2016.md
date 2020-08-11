@@ -1,21 +1,19 @@
 ---
 title: Configurar uma instalação Server Core do Windows Server com Sconfig.cmd
 description: Explica como usar Sconfig.cmd
-ms.prod: windows-server
 ms.date: 10/17/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: e6cac074-c6fc-46dd-9664-fa0342c0a5e8
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: db1a4fe48460a957369c2ca3ced24e0ccb54fef7
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 727525d426a8417e642485be51db7206f3efa64a
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86959118"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959464"
 ---
 # <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Configurar uma instalação Server Core do Windows Server 2016 ou Windows Server, versão 1709, com Sconfig.cmd
 
@@ -100,12 +98,12 @@ Você pode habilitar vários cenários de gerenciamento remoto da opção **Conf
 
 - Usando o Windows PowerShell
 
-- Gerenciador do Servidor  
+- Gerenciador do Servidor
 
 ## <a name="to-log-off-restart-or-shut-down-the-server"></a>Para fazer logoff, reiniciar ou desligar o servidor
 
-Para fazer logoff, reiniciar ou desligar o servidor, acesse o item de menu correspondente no menu principal. Essas opções também estão disponíveis a partir do menu **Segurança do Windows**, que pode ser acessado a partir de qualquer aplicativo a qualquer momento, pressionando CTRL+ALT+DEL.  
+Para fazer logoff, reiniciar ou desligar o servidor, acesse o item de menu correspondente no menu principal. Essas opções também estão disponíveis a partir do menu **Segurança do Windows**, que pode ser acessado a partir de qualquer aplicativo a qualquer momento, pressionando CTRL+ALT+DEL.
 
 ## <a name="to-exit-to-the-command-line"></a>Para sair da linha de comando
-  
+
 Selecione a opção **Sair da Linha de Comando** e pressione ENTER para sair da linha de comando. Para voltar para a Ferramenta de Configuração do Servidor, digite **Sconfig.cmd** e pressione ENTER.

@@ -1,20 +1,18 @@
 ---
 title: Serviços de Área de Trabalho Remota – Escolha como pagar
 description: Informações de planejamento sobre o licenciamento do RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: c796f832-e7cf-4bad-baeb-bb13f65612e7
 author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: ab1185fc90eb67882b8cde5f126be3bda62268a4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3bbc449423d1d2865eba3c7e1baea301bde75bc3
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857359"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87971553"
 ---
 # <a name="remote-desktop-services---choose-how-you-pay"></a>Serviços de Área de Trabalho Remota – Escolha como pagar
 

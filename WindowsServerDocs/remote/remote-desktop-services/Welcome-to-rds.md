@@ -1,8 +1,6 @@
 ---
 title: Bem-vindo aos Serviços de Área de Trabalho Remota no Windows Server 2016
 description: Fornece uma visão geral dos Serviços de Área de Trabalho Remota
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 02/22/2017
 ms.topic: article
@@ -10,14 +8,14 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 70979eae2ad9f54ab895572f97d9b5968cff31d9
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d856c6f751b9c8aa6c0f6547dd56d6ee36afb35
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854679"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961950"
 ---
-# <a name="welcome-to-remote-desktop-services"></a>Bem-vindo aos serviços de área de trabalho remota 
+# <a name="welcome-to-remote-desktop-services"></a>Bem-vindo aos serviços de área de trabalho remota
 
 Os RDS (Serviços de Área de Trabalho Remota) são a plataforma ideal para a criação de soluções de virtualização para cada necessidade do cliente final, incluindo fornecimento de aplicativos virtualizados individuais, de acesso seguro via Área de Trabalho Remota e dispositivos móveis e, por fim, da capacidade aos usuários finais de executarem seus aplicativos e áreas de trabalho da nuvem.
 
@@ -35,7 +33,7 @@ Dentro desses ambientes de virtualização, você tem flexibilidade adicional qu
 - **Áreas de trabalho**: Dê aos usuários uma experiência de área de trabalho completa com uma variedade de aplicativos que você instala e gerencia. Ideal para os usuários que se baseiam nesses computadores como suas estações de trabalho primárias ou que são provenientes de clientes finos, tais como os Serviços MultiPoint.
 - **RemoteApps**: especifique aplicativos individuais hospedados/executados na máquina virtualizada, mas que são exibidos como se estivessem em execução na área de trabalho do usuário, como aplicativos locais. Os aplicativos têm suas próprias entradas na barra de tarefas e podem ser redimensionados e movidos entre monitores. Ideal para implantar e gerenciar aplicativos-chave no ambiente remoto seguro, permitindo aos usuários trabalhar de suas próprias áreas de trabalho e personalizá-las.
 
-Para ambientes em que o custo-benefício é crucial e em que você deseja estender os benefícios da implantação de áreas de trabalho completas em um ambiente de virtualização baseada em sessão, você pode usar os [Serviços MultiPoint](../multipoint-services/multipoint-services.md) para entregar o melhor valor. 
+Para ambientes em que o custo-benefício é crucial e em que você deseja estender os benefícios da implantação de áreas de trabalho completas em um ambiente de virtualização baseada em sessão, você pode usar os [Serviços MultiPoint](../multipoint-services/multipoint-services.md) para entregar o melhor valor.
 
 Com essas opções e configurações, você tem a flexibilidade de implantar as áreas de trabalho e aplicativos de que seus usuários precisam de modo remoto, seguro e econômico.
 

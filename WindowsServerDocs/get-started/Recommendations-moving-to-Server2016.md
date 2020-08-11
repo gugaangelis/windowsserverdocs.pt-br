@@ -1,29 +1,27 @@
 ---
 title: Recomendações para mudar para o Windows Server 2016
 description: Recomendações para mudar para o Windows Server 2016.
-ms.prod: windows-server
 ms.date: 10/18/2016
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 74aa1da3-7076-4a1f-ad5b-9e17bd46dba2
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 478c967e9ce769f184d72d3534ed99c84924daed
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 31753008148d34785eefba059fe71688f46372b5
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86963938"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87959494"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>Recomendações para mudar para o Windows Server 2016
 
 >Aplica-se a: Windows Server 2016
 
 
-|Se você está executando:|Windows Server 2012 R2 ou Windows Server 2012|Windows Server 2008 R2 ou Windows Server 2008|  
-|-------------------|----------|--------------|--------------|---------------------------------------|  
+|Se você está executando:|Windows Server 2012 R2 ou Windows Server 2012|Windows Server 2008 R2 ou Windows Server 2008|
+|-------------------|----------|--------------|--------------|---------------------------------------|
 |**Infraestrutura de função do Windows Server**|Escolha a atualização ou migração dependendo das [diretrizes específicas da função](./migrate-roles-and-features.md).|-Para aproveitar os novos recursos no Windows Server 2016, implante novo hardware ou instale o Windows Server 2016 em uma máquina virtual em um host existente. Alguns novos recursos funcionam melhor em um host físico do Windows Server 2016 executando Hyper-V. <br>- Siga as [diretrizes específicas da função](./migrate-roles-and-features.md).|
 |**Gerenciamento de servidor da Microsoft e cargas de trabalho de aplicativo**|- Atualizações de aplicativo devem incluir *migração* para o Windows Server 2016. Consulte a [lista de compatibilidade](Server-Application-Compatibility.md). <br>- As atualizações ao Windows Server 2016 apenas (ou seja, sem atualizar os aplicativos) devem usar as diretrizes específicas do aplicativo.|-Para aproveitar os novos recursos no Windows Server 2016, implante novo hardware ou instale o Windows Server 2016 em uma máquina virtual em um host existente. Alguns novos recursos funcionam melhor em um host físico do Windows Server 2016 executando Hyper-V. Siga os guias de migração conforme aplicável. <br>- Ou permaneça em seu SO atual e execute em uma máquina virtual em execução em um host do Windows Server 2016 ou no Microsoft Azure. Entre em contato com seu revendedor EA, TAM ou Microsoft para conhecer opções de suporte estendido por meio do [Software Assurance](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx).|
 |**Cargas de trabalho de aplicativos de ISV**|- Atualizações para o Windows Server 2016 devem usar as diretrizes específicas do aplicativo. <br>- Para mais informações sobre a compatibilidade do Windows Server com aplicativos não Microsoft, visite o [portal de Certificação de logotipo do Windows Server](https://azure.microsoft.com/publish-your-app/).|-Para aproveitar os novos recursos no Windows Server 2016, implante novo hardware ou instale o Windows Server 2016 em uma máquina virtual em um host existente. Alguns novos recursos funcionam melhor em um host físico do Windows Server 2016 executando Hyper-V. Siga os guias de migração conforme aplicável. <br>- Ou permaneça em seu SO atual e execute em uma máquina virtual em execução em um host do Windows Server 2016 ou no Microsoft Azure. Entre em contato com seu revendedor EA, TAM ou Microsoft para conhecer opções de suporte estendido por meio do [Software Assurance](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx).|
@@ -35,17 +33,17 @@ Agora há ainda mais opções para ajudar você e seus clientes a aproveitar os 
 
 - Experimente o sistema operacional mais recente com seu aplicativo baixando a versão de avaliação do [Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016) para teste local. Depois que o teste for concluído e a qualidade for confirmada, você poderá executar uma conversão de licença simples com uma chave de licença para o varejo (exige reinicialização).
 
-- O [Microsoft Azure](https://azure.microsoft.com) também pode ser usado como avaliação para testes para garantir que seu aplicativo personalizado funcione no sistema operacional do servidor mais recente. Depois que o teste for concluído e qualidade for confirmada, [migre para a versão mais recente do Windows Server](./installation-and-upgrade.md#upgrade) em suas instalações. 
+- O [Microsoft Azure](https://azure.microsoft.com) também pode ser usado como avaliação para testes para garantir que seu aplicativo personalizado funcione no sistema operacional do servidor mais recente. Depois que o teste for concluído e qualidade for confirmada, [migre para a versão mais recente do Windows Server](./installation-and-upgrade.md#upgrade) em suas instalações.
 
 - Ou como alternativa, quando o teste for concluído e a qualidade for confirmada, o [Microsoft Azure](https://azure.microsoft.com) poderá ser usado como o local permanente para seu aplicativo ou serviço personalizado. Isso permite que o servidor antigo permaneça disponível até que você esteja pronto para mudar para o novo servidor no Azure.
 
-    - Se já tiver o Software Assurance para Windows Server, economize dinheiro implantando com o [Benefício de Uso do Azure Híbrido](https://azure.microsoft.com/pricing/hybrid-use-benefit/). 
+    - Se já tiver o Software Assurance para Windows Server, economize dinheiro implantando com o [Benefício de Uso do Azure Híbrido](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
 
 - Na maioria dos casos, o [Microsoft Azure](https://azure.microsoft.com) pode ser usado para hospedar o mesmo aplicativo na versão mais antiga do Windows Server em que ele é executado hoje. Migre o aplicativo e a carga de trabalho para uma máquina virtual com o sistema operacional de sua escolha usando imagens do [Azure Marketplace](https://azure.microsoft.com/marketplace/).
 
-    - Se já tiver o Software Assurance para Windows Server, economize dinheiro implantando com o [Benefício de Uso do Azure Híbrido](https://azure.microsoft.com/pricing/hybrid-use-benefit/). 
+    - Se já tiver o Software Assurance para Windows Server, economize dinheiro implantando com o [Benefício de Uso do Azure Híbrido](https://azure.microsoft.com/pricing/hybrid-use-benefit/).
 
-- O programa [Software Assurance](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx) para Windows Server oferece os benefícios de direitos da nova versão. Juntamente com uma lista de outros benefícios, os servidores com Software Assurance podem ser atualizados para a versão mais recente do Windows Server na hora certa, sem necessidade de comprar uma nova licença. 
+- O programa [Software Assurance](https://www.microsoft.com/Licensing/licensing-programs/software-assurance-default.aspx) para Windows Server oferece os benefícios de direitos da nova versão. Juntamente com uma lista de outros benefícios, os servidores com Software Assurance podem ser atualizados para a versão mais recente do Windows Server na hora certa, sem necessidade de comprar uma nova licença.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

@@ -5,14 +5,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 ms.date: 02/24/2020
 ms.topic: article
-ms.prod: windows-server
-ms.technology: networking
-ms.openlocfilehash: b73b6bf2150b8c97b858f41d7a4864a5d6fd5546
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: cb549f951865a065c70a6bfbfa9d49faf71ffd97
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182112"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87989792"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Ferramentas e configurações do Serviço de Tempo do Windows
 
@@ -255,7 +253,7 @@ Nas tabelas a seguir, "Todas as versões" refere-se às versões do Windows que 
 > Alguns dos parâmetros do Registro são medidos em tiques do relógio e outros são medidos em segundos. Para converter a hora de tiques do relógio em segundos, use estes fatores de conversão:
 > - 1 minuto = 60 s
 > - 1 s = 1000 ms
-> - 1 ms = 10.000 tiques do relógio em um sistema Windows, conforme descrito na [Propriedade DateTime.Ticks](https://docs.microsoft.com/dotnet/api/system.datetime.ticks).
+> - 1 ms = 10.000 tiques do relógio em um sistema Windows, conforme descrito na [Propriedade DateTime.Ticks](/dotnet/api/system.datetime.ticks).
 >
 > Por exemplo, 5 minutos passam a ser 5 &times; 60 &times; 1.000 &times; 10.000 = 3.000.000.000 tiques do relógio.
 

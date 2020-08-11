@@ -1,8 +1,6 @@
 ---
 title: Introdução ao cliente para Microsoft Store
 description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Microsoft Store.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ed87f2d03ef725c3efdfc2453b53201017e66e0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181942"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990363"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introdução ao cliente para Microsoft Store
 
@@ -203,4 +201,4 @@ Dois modos de mouse estão disponíveis para interagir com a sessão.
 | Ponteiro do mouse | Zoom                 | Com dois dedos, pinçar para ampliar a tela e abrir os dedos para reduzi-la |
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [Hub de Feedback](feedback-hub://?tabid=2&contextid=605).
+> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [Hub de Feedback](feedback-hub://?tabid=2&contextid=605).

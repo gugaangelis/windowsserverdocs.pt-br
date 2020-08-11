@@ -1,19 +1,17 @@
 ---
 title: Introdução ao cliente Web
 description: Descreve como entrar no cliente Web da Área de Trabalho Remota.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 6d408c70d75de0e2a14260f951209348e2aea63e
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "74189467"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961870"
 ---
 # <a name="get-started-with-the-web-client"></a>Introdução ao cliente Web
 
@@ -61,7 +59,7 @@ O cliente Web atualmente oferece suporte para copiar e colar somente texto. Arqu
 
 ## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>Usar um IME (Editor de Método de Entrada) na sessão remota
 
-Para usar um Editor de Método de Entrada para inserir caracteres complexos na sessão remota, selecione o ícone de engrenagem na barra de navegação para abrir o painel lateral **Configurações** e defina o controle **Habilitar Editor de Método de Entrada** como **Ativado**. Você precisa ter um Editor de Método de Entrada instalado e habilitado na sessão remota. 
+Para usar um Editor de Método de Entrada para inserir caracteres complexos na sessão remota, selecione o ícone de engrenagem na barra de navegação para abrir o painel lateral **Configurações** e defina o controle **Habilitar Editor de Método de Entrada** como **Ativado**. Você precisa ter um Editor de Método de Entrada instalado e habilitado na sessão remota.
 
 ## <a name="get-help-with-the-web-client"></a>Obter ajuda com o cliente Web
 
