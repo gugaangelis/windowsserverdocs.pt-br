@@ -1,20 +1,18 @@
 ---
 title: Planejar sua implantação do WSUS
 description: O tópico WUS (Windows Server Update Service) – uma visão geral do processo de planejamento da implantação com links para os tópicos relacionados
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 35865398-b011-447a-b781-1c52bc0c9e3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: de4fe62b179286f058a9c4508e9f907eeb9ae806
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 8e6aaaef666577db134d5d5bb42feffb38cb5a36
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178572"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990935"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
@@ -101,14 +99,14 @@ Esteja ciente de que configurar computadores cliente (incluindo servidores) para
 2. As edições do cliente Windows não poderão instalar o .NET 3.5 sob demanda por meio da Web. Aplicam-se ao .NET 3.5 as mesmas considerações que para as funções de servidor.
 
    > [!NOTE]
-   > Configurar uma origem de instalação dos Recursos sob Demanda não envolve WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
+   > Configurar uma origem de instalação dos Recursos sob Demanda não envolve WSUS. Para obter informações sobre como configurar os Recursos, consulte [Configurar Recursos sob Demanda no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275(v=ws.11)).
 
 3. Os dispositivos corporativos que executam o Windows 10, versão 1709 ou 1803, não podem instalar nenhum Recurso sob Demanda diretamente do WSUS. Para instalar Recursos sob Demanda, [crie um arquivo de recurso (repositório lado a lado)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) ou obtenha o pacote do Recurso sob Demanda de uma das seguintes fontes:
    - [VLSC](https://www.microsoft.com/licensing/servicecenter) (Centro de Atendimento de Licenciamento por Volume) – o acesso de VL é necessário
    - Portal OEM – o acesso OEM é necessário
    - Download do MSDN – assinatura do MSDN é obrigatória
 
-     Os pacotes de Recurso sob Demanda obtidos individualmente podem ser instalados usando [opções de linha de comando do DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
+     Os pacotes de Recurso sob Demanda obtidos individualmente podem ser instalados usando [opções de linha de comando do DISM](/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
 
 ### <a name="wsus-database-requirements"></a>Requisitos de banco de dados do WSUS
 O WSUS requer um dos seguintes bancos de dados:
@@ -244,9 +242,9 @@ O WSUS dá suporte à autenticação do Windows somente para o banco de dados. V
 
 O Banco de Dados Interno do Windows não fornece uma interface do usuário nem ferramentas de gerenciamento de banco de dados. Se você selecionar esse banco de dados para o WSUS, use ferramentas externas para gerenciar o banco de dados. Para obter mais informações, consulte:
 
--   [Executar backup e restauração dos dados do WSUS e Executando backup do servidor](https://technet.microsoft.com/library/dd939904(WS.10).aspx)
+-   [Executar backup e restauração dos dados do WSUS e Executando backup do servidor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939904(v=ws.10))
 
--   [Reindexar o banco de dados do WSUS](https://technet.microsoft.com/library/dd939795(WS.10).aspx)
+-   [Reindexar o banco de dados do WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939795(v=ws.10))
 
 #### <a name="wsus-with-sql-server"></a>WSUS com SQL Server
 É recomendável usar o SQL Server no WSUS nos seguintes casos:
@@ -324,7 +322,7 @@ A escolha de idiomas para um servidor upstream não é igual à escolha de idiom
 O WSUS permite direcionar atualizações a grupos de computadores clientes, assim é possível garantir que computadores específicos sempre obterão as atualizações certas na hora certa. Por exemplo, se todos os computadores de um departamento (por exemplo, a equipe de Contabilidade) tiver uma configuração específica, você poderá configurar um grupo para essa equipe, decidir quais atualizações são necessárias aos computadores e em qual horário deverão ser instaladas, e usar os relatórios do WSUS para avaliar as atualizações para a equipe.
 
 > [!NOTE]
-> Se um servidor do WSUS estiver em execução em modo de réplica, não será possível criar grupos de computadores nesse servidor. Todos os grupos de computadores necessários para computadores clientes do servidor de réplica precisam ser criados no servidor do WSUS que é a raiz da hierarquia de servidores do WSUS. Para obter mais informações sobre o modo de réplica, consulte Gerenciar servidores de réplica do WSUS [Gerenciar servidores de réplica do WSUS](https://technet.microsoft.com/library/dd939893(WS.10).aspx) no Guia de Operações do WSUS 3.0 SP2.
+> Se um servidor do WSUS estiver em execução em modo de réplica, não será possível criar grupos de computadores nesse servidor. Todos os grupos de computadores necessários para computadores clientes do servidor de réplica precisam ser criados no servidor do WSUS que é a raiz da hierarquia de servidores do WSUS. Para obter mais informações sobre o modo de réplica, consulte Gerenciar servidores de réplica do WSUS [Gerenciar servidores de réplica do WSUS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd939893(v=ws.10)) no Guia de Operações do WSUS 3.0 SP2.
 
 Os computadores sempre são atribuídos ao grupo **Todos os computadores** e permanecem atribuídos ao grupo **Computadores não atribuídos** até você atribuí-los a outro grupo. Os computadores podem pertencer a mais de um grupo.
 
@@ -436,14 +434,14 @@ Nem todas as atualizações são ótimas candidatas para distribuição usando o
 ### <a name="large-update-deployment"></a>Implantações de grandes atualizações
 Ao implantar grandes atualizações (como os service packs), é possível evitar a saturação da rede seguindo estas práticas:
 
-1.  Usar a otimização do BITS. As limitações de largura de banda do BITS podem ser controladas por horário no dia, mas elas se aplicam a todos os aplicativos que estão usando o BITS. Para saber como controlar a limitação do BITS, consulte [Políticas de Grupo](https://msdn.microsoft.com/library/windows/desktop/aa362844(v=vs.85).aspx).
+1.  Usar a otimização do BITS. As limitações de largura de banda do BITS podem ser controladas por horário no dia, mas elas se aplicam a todos os aplicativos que estão usando o BITS. Para saber como controlar a limitação do BITS, consulte [Políticas de Grupo](/windows/win32/bits/group-policies).
 
 2.  Usar a otimização do IIS (Serviços de Informações da Internet) para limitar a otimização a um ou mais serviços Web.
 
 3.  Usar grupos de computadores para controlar a distribuição. Um computador cliente se identifica como membro de um determinado grupo de computadores quando envia informações ao servidor do WSUS. O servidor do WSUS usa essas informações para determinar quais atualizações devem ser implantadas nesse computador. Você pode configurar vários grupos de computadores e aprovar em sequência grandes downloads de service packs para um subconjunto desses grupos.
 
 ### <a name="background-intelligent-transfer-service"></a>BITS
-O WSUS usa o protocolo BITS para todas as tarefas de transferência de arquivos. Isso inclui downloads para computadores clientes e sincronizações de servidores. O BITS permite que os programas baixem arquivos usando a largura de banda sobressalente. O BITS mantém transferências de arquivos através de desconexões da rede e reinicializações do computador. Para obter mais informações, consulte: [Serviço de Transferência Inteligente em Segundo Plano](https://msdn.microsoft.com/library/bb968799.aspx).
+O WSUS usa o protocolo BITS para todas as tarefas de transferência de arquivos. Isso inclui downloads para computadores clientes e sincronizações de servidores. O BITS permite que os programas baixem arquivos usando a largura de banda sobressalente. O BITS mantém transferências de arquivos através de desconexões da rede e reinicializações do computador. Para obter mais informações, consulte: [Serviço de Transferência Inteligente em Segundo Plano](/windows/win32/bits/background-intelligent-transfer-service-portal).
 
 ## <a name="17-plan-automatic-updates-settings"></a>1.7. Planejar definições das atualizações automáticas
 Você pode especificar um prazo limite para aprovar atualizações no servidor do WSUS. O prazo limite faz com que os computadores clientes instalem a atualização em um horário específico, mas há inúmeras situações diferentes, dependendo de se o prazo limite expirou, se há outras atualizações na fila para o computador instalar e se a atualização (ou outra atualização na fila) exige uma reinicialização.
@@ -463,4 +461,3 @@ No dia e horário agendado, as Atualizações Automáticas instalam a atualizaç
 Se for necessário reiniciar o computador, e qualquer usuário estiver conectado, uma caixa de diálogo de contagem regressiva será exibida, o que avisa o usuário sobre a reinicialização iminente. Você pode manipular as reinicializações do computador com a Política de Grupo.
 
 Depois que as novas atualizações forem baixadas, as Atualizações Automáticas sondarão no servidor do WSUS se há a lista de pacotes aprovados para confirmar se os pacotes que ele baixou ainda estão válidos e aprovados. Isso significa que, se um administrador do WSUS remover as atualizações da lista de atualizações aprovadas enquanto as Atualizações Automáticas estão baixando as atualizações, somente as atualizações que ainda estão aprovadas na realidade serão instaladas.
-

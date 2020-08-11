@@ -1,19 +1,17 @@
 ---
 title: Preparar seu ambiente para o Windows Admin Center
 description: Preparar seu ambiente para o Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: a37c7e8765ba6f83fc1ebe20aaba3dfb8bc29a3d
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 5506918ed8da3a71c5ca078ce84502a3d889a386
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891341"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997453"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Preparar seu ambiente para o Windows Admin Center
 
@@ -35,7 +33,7 @@ O Windows Admin Center exige recursos do PowerShell que não estão incluídos p
 
 Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior.
 
-Se não estiver instalado, você poderá [baixar e instalar o WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure).
+Se não estiver instalado, você poderá [baixar e instalar o WMF 5.1](/powershell/scripting/wmf/setup/install-configure).
 
 ## <a name="prepare-microsoft-hyper-v-server-2016"></a>Preparar o Microsoft Hyper-V Server 2016
 
@@ -93,7 +91,7 @@ O Windows Admin Center PowerShell requer recursos que não estão incluídos por
 
 Digite `$PSVersiontable` no PowerShell para verificar se o WMF está instalado e se a versão é 5.1 ou superior.
 
-Se não estiver instalado, você poderá [baixar o WMF 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure).
+Se não estiver instalado, você poderá [baixar o WMF 5.1](/powershell/scripting/wmf/setup/install-configure).
 
 ### <a name="step-2-enable-remote-management"></a>Etapa 2: Habilitar o Gerenciamento Remoto
 
@@ -129,4 +127,4 @@ O Microsoft Hyper-V Server 2012 R2 agora está pronto para o gerenciamento com o
 O Windows Admin Center usa o protocolo de compartilhamento de arquivos SMB para algumas tarefas de cópia de arquivo, como ao importar um certificado em um servidor remoto. Para que essas operações de cópia de arquivo tenham êxito, o firewall no servidor remoto deverá permitir conexões de entrada na porta 445.  Você pode usar a ferramenta Firewall no Windows Admin Center para verificar se a regra de entrada para “Gerenciamento Remoto do Servidor de Arquivos (SMB-In)” está definida para permitir o acesso nessa porta.
 
 > [!Tip]
-> Pronto para instalar o Windows Admin Center? [Baixar agora](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)
+> Pronto para instalar o Windows Admin Center? [Baixar agora](../overview.md#download-now)

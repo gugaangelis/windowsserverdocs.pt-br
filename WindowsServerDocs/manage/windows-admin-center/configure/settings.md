@@ -1,19 +1,17 @@
 ---
 title: Settings
 description: Saiba mais sobre as configurações do Windows Admin Center (Project Honolulu). As configurações de usuário permitem que os usuários alterem o idioma/região e outras preferências. As configurações de gateway permitem que os administradores configurem o gateway.
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 04/12/2018
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: e0fd6618f275058d4e22fe9abb9e484d4752ac9a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ff06a19d85858b8332412a51c029c9aeeba2af50
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71407052"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997440"
 ---
 # <a name="windows-admin-center-settings"></a>Configurações do Windows Admin Center
 
@@ -56,6 +54,6 @@ Na guia **Extensões**, os administradores podem instalar, desinstalar ou atuali
 
 A guia **Acesso** permite que os administradores configurem quem pode acessar o gateway do Windows Admin Center, bem como o provedor de identidade usado para autenticar usuários. [Saiba mais sobre como controlar o acesso ao gateway.](user-access-control.md)
 
-Na guia **Azure**, os administradores podem registrar o gateway com o Azure para habilitar os [recursos de integração do Azure](azure-integration.md) no Windows Admin Center.
+Na guia **Azure**, os administradores podem registrar o gateway com o Azure para habilitar os [recursos de integração do Azure](../azure/azure-integration.md) no Windows Admin Center.
 
 Ao usar a guia **Conexões Compartilhadas**, os administradores podem configurar uma lista única de conexões a serem compartilhadas entre todos os usuários do gateway do Windows Admin Center. [Saiba mais sobre como configurar conexões uma única vez para todos os usuários de um gateway.](shared-connections.md)

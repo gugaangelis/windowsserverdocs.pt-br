@@ -1,8 +1,6 @@
 ---
 title: Introdução ao cliente para macOS
 description: Saiba como configurar o cliente da Área de Trabalho Remota para Mac
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
@@ -10,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 57072fe5a92bcc59a1ccd46b1c0db7a6828a165d
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181952"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991595"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -164,4 +162,4 @@ O Windows Server 2012 R2 apresentou o suporte para um novo método de autentica�
 Para saber mais sobre esse recurso, confira [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

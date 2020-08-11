@@ -1,20 +1,18 @@
 ---
 title: Atualizações de segurança estendidas do Windows Server 2008 e 2008 R2
 description: Saiba como usar as ESUs (Atualizações de Segurança Estendidas) para o Windows Server 2008 e 2008 R2 após o término do ciclo de vida do suporte.
-ms.prod: windows-server
-ms.technology: server-general
 ms.mktglfcycl: manage
 author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: 19a65f2a254fe14f7cddfbda2a84e9d00f47da56
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: c74c8a278612d2ca47346ad95105f1258761494a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181842"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990475"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Como usar as ESUs (Atualizações de Segurança Estendidas) do Windows Server 2008 e 2008 R2
 
@@ -101,7 +99,7 @@ Para registrar sua VM a fim de obter as Atualizações de Segurança Estendidas 
 
     Se a equipe não aprovar a sua solicitação, você verá o seguinte erro:
 
-    [Não foi possível encontrar o tipo de recurso no namespace 'Microsoft.WindowsESU'](https://docs.microsoft.com/windows-server/get-started/extended-security-updates)
+    [Não foi possível encontrar o tipo de recurso no namespace 'Microsoft.WindowsESU']()
 
 6. Em **Detalhes do Azure**, selecione sua assinatura do Azure, um grupo de recursos e um local para sua chave.
 

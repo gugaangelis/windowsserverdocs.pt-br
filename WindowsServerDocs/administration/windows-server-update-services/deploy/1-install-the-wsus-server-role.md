@@ -1,20 +1,18 @@
 ---
 title: Etapa 1 – Instalar a função de servidor do WSUS
 description: Tópico sobre o WSUS (Serviço de Atualização do Windows Server) – descreve como instalar a função de servidor usando Gerenciador do Servidor
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: fabc8619-350e-403b-96f8-116424931300
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a923b2da4583c32010e7e3104315957f3f05acaf
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 980aa106b9ed4cb1ebc5b091fa308906dcdb2d6a
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87178562"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991033"
 ---
 # <a name="step-1-install-the-wsus-server-role"></a>Etapa 1: Instale a Função de Servidor do WSUS
 
@@ -23,7 +21,7 @@ ms.locfileid: "87178562"
 A próxima etapa na implantação do servidor do WSUS é instalar a função de servidor do WSUS. O procedimento a seguir descreve como instalar a função de servidor do WSUS usando o Gerenciador do Servidor.
 
 > [!IMPORTANT]
-> Este procedimento de instalação só trata sobre como instalar o WSUS usando o WID (Banco de Dados Interno do Windows). Os procedimentos para instalar o WSUS usando o Microsoft SQL Server estão documentados [no fórum do WSUS](https://docs.microsoft.com/answers/topics/windows-server-update-services.html).
+> Este procedimento de instalação só trata sobre como instalar o WSUS usando o WID (Banco de Dados Interno do Windows). Os procedimentos para instalar o WSUS usando o Microsoft SQL Server estão documentados [no fórum do WSUS](/answers/topics/windows-server-update-services.html).
 
 ### <a name="to-install-the-wsus-server-role"></a>Para instalar a função de servidor do WSUS
 
@@ -63,4 +61,3 @@ A próxima etapa na implantação do servidor do WSUS é instalar a função de 
 
 > [!IMPORTANT]
 > Neste momento, o processo de instalação é concluído, mas para que o WSUS fique funcional você precisa prosseguir para a [Etapa 2: Configurar o WSUS](2-configure-wsus.md).
-

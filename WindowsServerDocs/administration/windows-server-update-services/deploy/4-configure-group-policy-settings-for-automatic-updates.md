@@ -1,20 +1,18 @@
 ---
 title: Etapa 4 – Definir as configurações da política de grupo para atualizações automáticas
 description: Tópico sobre o WSUS (Windows Server Update Service) – definir configurações de Política de Grupo para Atualizações Automáticas é a etapa quatro em um processo de quatro etapas para implantar o WSUS
-ms.prod: windows-server
-ms.technology: manage-wsus
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d678c139ae2327eeecdff2731f1edb57d358a28a
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ca59369cda4c38af111b9ccd3141219b1516cbd7
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80828839"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991097"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas
 
@@ -639,7 +637,7 @@ O procedimento a seguir descreve como abrir o GPMC em seu controlador de domíni
 
     -   **Abra a Configuração do Computador > Extensão do Agendador de Manutenção do Política de Grupo**. No GPOE, navegue para *PolicyName* > **Configuração do Computador** > **Políticas** > **Modelos Administrativos** > **Componentes do Windows** > **Agendador de Manutenção**.
 
-Para obter mais informações sobre a Política de Grupo, confira [Visão geral da Política de Grupo](https://technet.microsoft.com/library/hh831791.aspx(v=ws.12)).
+Para obter mais informações sobre a Política de Grupo, confira [Visão geral da Política de Grupo](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831791(v=ws.11)).
 
 > [!TIP]
 > Depois de abrir a extensão de Política de Grupo desejada, use as seguintes etapas para habilitar, desabilitar ou navegar entre as configurações:

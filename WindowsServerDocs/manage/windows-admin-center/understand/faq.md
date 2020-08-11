@@ -1,19 +1,17 @@
 ---
 title: Perguntas frequentes sobre o Windows Admin Center
 description: Obtenha respostas sobre Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.prod: windows-server
-ms.openlocfilehash: 4125a3f427bd19ae7461aaaef058a558722d1987
-ms.sourcegitcommit: b35fbd2a67d7a3395b50b2a3acd0817ba4e36b26
+ms.openlocfilehash: 2b1b6c8665e289647fe793125e7cc4c5024b4135
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86891371"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87993539"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Perguntas frequentes sobre o Windows Admin Center
 
@@ -104,12 +102,12 @@ O tráfego do navegador para o gateway do Windows Admin Center usa HTTPS. O trá
 
 Sim, em alguns casos o Windows Admin Center requer CredSSP. Isso é necessário passar suas credenciais para autenticação para computadores além do servidor específico que você está direcionando para gerenciamento. Por exemplo, se você estiver gerenciando máquinas virtuais no **servidor B**, mas desejar armazenar os arquivos vhdx dessas máquinas virtuais em um compartilhamento de arquivo hospedado pelo **servidor C**, o Windows Admin Center precisará usar o CredSSP para autenticar com o **servidor C** a fim de acessar o compartilhamento de arquivo.
 
-O Windows Admin Center lida com a configuração do CredSSP automaticamente depois de solicitar seu consentimento. Antes de configurar o CredSSP, o Windows Admin Center verificará para garantir que o sistema tenha as [atualizações](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018) recentes do CredSSP. 
+O Windows Admin Center lida com a configuração do CredSSP automaticamente depois de solicitar seu consentimento. Antes de configurar o CredSSP, o Windows Admin Center verificará para garantir que o sistema tenha as [atualizações](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018) recentes do CredSSP.
 
 O CredSSP é usado atualmente nas seguintes áreas:
 
 - Uso de armazenamento SMB desagregado na ferramenta de máquinas virtuais (o exemplo acima).
-- Uso da ferramenta Atualizações nas soluções de gerenciamento de cluster de failover ou hiperconvergente, que executa [Atualização com Suporte a Cluster](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating) 
+- Uso da ferramenta Atualizações nas soluções de gerenciamento de cluster de failover ou hiperconvergente, que executa [Atualização com Suporte a Cluster](../../../failover-clustering/cluster-aware-updating.md)
 
 ## <a name="are-there-any-cloud-dependencies"></a>Existem dependências de nuvem?
 
@@ -164,4 +162,4 @@ A [página de início](https://aka.ms/WindowsAdminCenter) é o melhor ponto de p
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>Estou tendo um problema com o Windows Admin Center, onde posso obter ajuda?
 
-Confira nosso [guia de solução de problemas](../use/troubleshooting.md) e nossa lista de [problemas conhecidos](../use/known-issues.md).
+Confira nosso [guia de solução de problemas](../support/troubleshooting.md) e nossa lista de [problemas conhecidos](../support/known-issues.md).

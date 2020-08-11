@@ -1,20 +1,18 @@
 ---
 title: Shell de Rede (Netsh)
 description: Este tópico fornece uma visão geral do utilitário de linha de comando do netsh (Shell de rede) no Windows Server 2016.
-ms.prod: windows-server
-ms.technology: networking
 ms.topic: article
 ms.assetid: aedef092-8445-4e53-b9d4-525ecd98b02d
 manager: dougkim
 ms.author: lizross
 author: eross-msft
 ms.date: 09/13/2018
-ms.openlocfilehash: d9103585d1868f586f169f01096c4d37961e7033
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1f331a7ea987f413f814dcb1b0e4173714b1153b
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80316684"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87994615"
 ---
 # <a name="network-shell-netsh"></a>Netsh \(Shell de Rede\)
 
@@ -29,14 +27,14 @@ Na maioria dos casos, os comandos netsh fornecem a mesma funcionalidade disponí
 Além disso, há comandos netsh para tecnologias de rede, como IPv6, ponte de rede e RPC \(Chamada de Procedimento Remoto\), que não estão disponíveis no Windows Server como um snap-in do MMC.
 
 >[!IMPORTANT]
->É recomendável que você use o Windows PowerShell para gerenciar as tecnologias de rede no [Windows Server 2016 e Windows 10](https://technet.microsoft.com/library/mt156917.aspx) em vez de no Shell de Rede. No entanto, o Shell de Rede é incluído para oferecer compatibilidade com seus scripts e há suporte para o uso dele.
+>É recomendável que você use o Windows PowerShell para gerenciar as tecnologias de rede no [Windows Server 2016 e Windows 10](/powershell/windows/get-started?view=win10-ps) em vez de no Shell de Rede. No entanto, o Shell de Rede é incluído para oferecer compatibilidade com seus scripts e há suporte para o uso dele.
 
 ## <a name="network-shell-netsh-technical-reference"></a>Referência Técnica do Netsh (Shell de Rede)
 
-A Referência Técnica do Netsh fornece uma referência de comando netsh abrangente, incluindo sintaxe, parâmetros e exemplos para comandos netsh. Você pode usar a Referência Técnica do Netsh para criar scripts e arquivos em lotes usando comandos netsh para gerenciamento local ou remoto de tecnologias de rede em computadores que executam o Windows Server 2016 e o Windows 10.  
-  
-### <a name="content-availability"></a>Disponibilidade do conteúdo  
-  
-A Referência Técnica do Shell de Rede está disponível para download no formato \(*.chm\) da Ajuda do Windows na Galeria do TechNet: [Referência Técnica do Netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
-  
+A Referência Técnica do Netsh fornece uma referência de comando netsh abrangente, incluindo sintaxe, parâmetros e exemplos para comandos netsh. Você pode usar a Referência Técnica do Netsh para criar scripts e arquivos em lotes usando comandos netsh para gerenciamento local ou remoto de tecnologias de rede em computadores que executam o Windows Server 2016 e o Windows 10.
+
+### <a name="content-availability"></a>Disponibilidade do conteúdo
+
+A Referência Técnica do Shell de Rede está disponível para download no formato \(*.chm\) da Ajuda do Windows na Galeria do TechNet: [Referência Técnica do Netsh](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)
+
 ---

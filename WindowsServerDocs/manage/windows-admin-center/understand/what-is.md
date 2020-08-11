@@ -1,19 +1,17 @@
 ---
 title: O que é o Windows Admin Center
 description: O que é o Windows Admin Center (Projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: da2970a8777ddcc95e2e8af0d979341965cb70ad
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 3075c571fb933692745a872df138ef5cbfa6b283
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87518524"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995306"
 ---
 # <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center?
 
@@ -57,7 +55,7 @@ O Windows Admin Center possui vários aprimoramentos para tornar a plataforma de
 
 ### <a name="azure-integration"></a>**Integração com o Azure**
 
-O Windows Admin Center tem vários pontos de [integração com os serviços do Azure](../plan/azure-integration-options.md), incluindo o Azure Active Directory, o Backup do Azure, o Azure Site Recovery e muito mais.
+O Windows Admin Center tem vários pontos de [integração com os serviços do Azure](../azure/index.md), incluindo o Azure Active Directory, o Backup do Azure, o Azure Site Recovery e muito mais.
 
 ### <a name="deploy-hyper-converged-and-failover-clusters"></a>**Implantar clusters hiperconvergentes e de failover**
 

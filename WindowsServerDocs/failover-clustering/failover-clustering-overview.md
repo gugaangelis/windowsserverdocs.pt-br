@@ -1,20 +1,18 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
 title: Clustering de failover
-ms.prod: windows-server
 ms.topic: landing-page
 manager: lizross
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 657cf161086047ca87ca7dbd2adcd2b8e6bde892
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 41f5eef75e20a4da740141620493d2daa254b0a1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177882"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87992853"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Clustering de failover no Windows Server
 
@@ -44,7 +42,7 @@ O Clustering de Failover tem muitas aplicações práticas, dentre elas:
 
 |**Gerenciar**  |  **Ferramentas e configurações**  |  **Recursos da comunidade**       |
 | ------------- |  -------------- | --------------------- |
-| [Atualização com suporte a cluster](cluster-aware-updating.md)    |   [Cmdlets do PowerShell para clustering de failover](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [Fórum sobre alta disponibilidade (clustering)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [Serviço de integridade](health-service-overview.md)   |   [Cmdlets do PowerShell para atualização com suporte a cluster](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog da equipe de clustering de failover e balanceamento de carga de rede](https://blogs.msdn.com/b/clustering/)        |
+| [Atualização com suporte a cluster](cluster-aware-updating.md)    |   [Cmdlets do PowerShell para clustering de failover](/powershell/module/failoverclusters/?view=win10-ps)      |  [Fórum sobre alta disponibilidade (clustering)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [Serviço de integridade](health-service-overview.md)   |   [Cmdlets do PowerShell para atualização com suporte a cluster](/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog da equipe de clustering de failover e balanceamento de carga de rede](https://blogs.msdn.com/b/clustering/)        |
 |  [Migração de domínio do cluster](cluster-domain-migration.md)   |         |         |
 |  [Solução de problemas usando o Relatório de Erros do Windows](troubleshooting-using-wer-reports.md)   |         |         |

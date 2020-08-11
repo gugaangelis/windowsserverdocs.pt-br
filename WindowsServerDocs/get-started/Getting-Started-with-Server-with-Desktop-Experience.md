@@ -1,25 +1,23 @@
 ---
 title: Instalar o Servidor com Experiência Desktop
 description: Explica como obter e instalar uma instalação de Servidor com Experiência Desktop
-ms.prod: windows-server
 ms.date: 01/18/2017
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 5b38b8a0-4dfc-4130-be00-fc58bba99595
 author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: a1ac967743dcb9e38cb36e5c16f7e3dd6ec0c7d2
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 43a483df0f9ad8c6961f9309249a5c2eef88c085
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953548"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990540"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalar o Servidor com Experiência Desktop
 > Aplica-se a: Windows Server 2016
-  
+
 
 Ao instalar o Windows Server 2016 usando o Assistente de Instalação, é possível escolher entre o **Windows Server 2016** e o **Windows Server (Servidor com Experiência Desktop)** . A opção Servidor com Experiência Desktop é o equivalente do Windows Server 2016 à opção Instalação completa disponível no Windows Server 2012 R2 com o recurso Experiência Desktop instalado. Se você não fizer uma escolha no Assistente de instalação, o **Windows Server 2016**será instalado. Essa é a opção de instalação do **Server Core**.
 
@@ -42,7 +40,7 @@ A opção Servidor com Experiência Desktop instala a interface de usuário padr
 ### <a name="evaluation"></a>Avaliação
 Você pode obter uma cópia de avaliação de 180 dias licenciada do Windows Server em [Avaliações do Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016). Escolha **Windows Server 2016 | Opção ISO de 64 bits** para download, ou visite **Windows Server 2016 | Laboratório virtual**.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Para versões do Windows Server 2016 anteriores a 14393.0.161119-1705.RS1_REFRESH, somente é possível executar essa conversão de avaliação para versão comercial com o Windows Server 2016 que foi instalado usando a opção de Experiência Desktop (não a opção Server Core). A partir da versão 14393.0.161119-1705. RS1_REFRESH e versões posteriores, é possível converter edições de avaliação em versão comercial, independentemente da opção de instalação usada.
 
 
@@ -55,8 +53,8 @@ Para instalar a opção Servidor com Experiência Desktop a partir da mídia, in
 
 Se você já tiver uma instalação completa do produto Windows Server apropriado, é possível atualizá-la para uma instalação Servidor com Experiência Desktop na edição apropriada do Windows Server 2016, conforme indicado abaixo.
 
-> [!IMPORTANT]  
-> Nesta versão, a atualização funciona melhor em máquinas virtuais, onde os drivers de hardware específicos do OEM não são necessários para uma atualização bem-sucedida. Caso contrário, a migração é a opção recomendada.  
+> [!IMPORTANT]
+> Nesta versão, a atualização funciona melhor em máquinas virtuais, onde os drivers de hardware específicos do OEM não são necessários para uma atualização bem-sucedida. Caso contrário, a migração é a opção recomendada.
 
 - Não há suporte para atualizações in-loco de arquiteturas de 32 bits para 64 bits. Todas as edições do Windows Server 2016 são apenas 64 bits.
 - Não há suporte para atualizações in-loco de um idioma para outro.
@@ -68,8 +66,8 @@ Se a sua versão atual não aparecer na coluna à esquerda, a atualização para
 
 Se aparecer mais de uma edição na coluna à direita, a atualização para **qualquer** edição da mesma versão inicial tem suporte.
 
-|Se você está executando esta edição:|É possível atualizar para estas edições:|  
-|-------------------|----------|  
+|Se você está executando esta edição:|É possível atualizar para estas edições:|
+|-------------------|----------|
 |Windows Server 2012 Standard|Windows Server 2016 Standard ou Datacenter|
 |Windows Server 2012 Datacenter|Windows Server 2016 Datacenter|
 |Windows Server 2012 R2 Standard|Windows Server 2016 Standard ou Datacenter|
@@ -87,8 +85,8 @@ Para muitas opções adicionais para mover para o Windows Server 2016, como a co
 
 A capacidade de migrar varia entre as diferentes funções de servidor. A grade a seguir explica suas opções de migração e atualização de funções de servidor, especificamente ao mover para o Windows Server 2016. Para obter guias de migração sobre funções específicas, visite [Migrar funções e recursos no Windows Server](./migrate-roles-and-features.md). Para saber mais sobre instalação e atualização, confira [Instalação, atualização e migração do Windows Server](./installation-and-upgrade.md).
 
-|Função de servidor|Pode ser atualizado do Windows Server 2012 R2?|Pode ser atualizado do Windows Server 2012?|Migração compatível?|A migração pode ser concluída sem tempo de inatividade?|  
-|-------------------|----------|--------------|--------------|----------|  
+|Função de servidor|Pode ser atualizado do Windows Server 2012 R2?|Pode ser atualizado do Windows Server 2012?|Migração compatível?|A migração pode ser concluída sem tempo de inatividade?|
+|-------------------|----------|--------------|--------------|----------|
 |Serviços de Certificados do Active Directory|    Sim|    Sim|    Sim|    Não|
 |Active Directory Domain Services|    Sim|    Sim|    Sim|    Sim|
 |Serviços de Federação do Active Directory|    Não|    Não|    Sim|    Não (os novos nós precisam ser adicionados ao farm)|
@@ -103,8 +101,8 @@ A capacidade de migrar varia entre as diferentes funções de servidor. A grade 
 |Windows Server Update Services|    Sim|    Sim|    Sim|    Não|
 |Pastas de trabalho|    Sim|    Sim|    Sim|    Sim do cluster do WS 2012 R2 ao usar a [Atualização sem interrupção do sistema operacional do cluster](../failover-clustering/cluster-operating-system-rolling-upgrade.md).|
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Após a conclusão da instalação e imediatamente depois de ter instalado todas as funções e recursos de servidor necessários, procure por e instale as atualizações disponíveis para o Windows Server 2016 usando o Windows Update ou outros métodos de atualização.
 
 ---------------------------------------
-Se você precisar de uma opção de instalação diferente, ou se concluir a instalação e estiver pronto para implantar cargas de trabalho específicas, [volte para a página principal do Windows Server 2016](Windows-Server-2016.md).
+Se você precisar de uma opção de instalação diferente, ou se concluir a instalação e estiver pronto para implantar cargas de trabalho específicas, [volte para a página principal do Windows Server 2016](../index.yml).

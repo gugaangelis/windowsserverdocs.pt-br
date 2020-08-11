@@ -1,8 +1,6 @@
 ---
 title: Introdução ao cliente para iOS
 description: Saiba como configurar o cliente da Área de Trabalho Remota para iOS
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
@@ -10,12 +8,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 07/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f51a60e66a3e1452ed66c94c409c5e4e5cb191f
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181962"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997371"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -192,4 +190,4 @@ Se o Bluetooth estiver habilitado para seu dispositivo iOS, o cliente detectará
 Embora algumas combinações de teclas possam não funcionar como esperado em uma sessão remota, muitas das combinações comuns de teclas Windows, como CTRL + C, CTRL + V e ALT + TAB, funcionarão.
 
 > [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](https://docs.microsoft.com/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [fórum de clientes UserVoice](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [fórum de clientes UserVoice](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

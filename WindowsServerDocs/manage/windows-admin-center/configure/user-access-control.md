@@ -1,19 +1,17 @@
 ---
 title: Como configurar o controle de acesso do usuário e as permissões
 description: Saiba como configurar o controle de acesso do usuário e as permissões usando o Active Directory ou o Azure AD (Projeto Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 0de38560301d4d793214846036850a05a5d5a326
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 99fafcb5a42133baeb119a9857a2e05b7e3dbd89
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182202"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997419"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar o controle de acesso do usuário e as permissões
 
@@ -82,7 +80,7 @@ Os usuários e administradores podem exibir a conta conectada no momento e, alé
 
 ### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>Como configurar a autenticação do Azure Active Directory para o Windows Admin Center
 
-[Para configurar a autenticação do Azure AD, primeiro você deve registrar seu gateway com o Azure](azure-integration.md) (você só precisa fazer isso uma vez para o gateway do Windows Admin Center). Esta etapa cria um aplicativo do Azure AD do qual você pode gerenciar o acesso de administrador do gateway e usuário do gateway.
+[Para configurar a autenticação do Azure AD, primeiro você deve registrar seu gateway com o Azure](../azure/azure-integration.md) (você só precisa fazer isso uma vez para o gateway do Windows Admin Center). Esta etapa cria um aplicativo do Azure AD do qual você pode gerenciar o acesso de administrador do gateway e usuário do gateway.
 
 Se você quiser conceder a usuários ou grupos específicos do Azure AD acesso de administrador de gateway ou usuário de gateway ao serviço do Windows Admin Center, deverá fazer o seguinte:
 
@@ -103,7 +101,7 @@ Usando a guia **Azure** das configurações gerais do Windows Admin Center, os u
 
 Um dos benefícios de usar o Azure AD como uma camada adicional de segurança para controlar o acesso ao gateway do Windows Admin Center é que você pode aproveitar os eficientes recursos de segurança do Azure AD, como acesso condicional e autenticação multifator.
 
-[Saiba mais sobre como configurar o acesso condicional com o Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+[Saiba mais sobre como configurar o acesso condicional com o Azure Active Directory.](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="configure-single-sign-on"></a>Configurar logon único
 
@@ -111,7 +109,7 @@ Um dos benefícios de usar o Azure AD como uma camada adicional de segurança pa
 
 Quando você instala o Windows Admin Center no Windows 10, ele está pronto para usar o logon único. No entanto, se você pretende usar o Windows Admin Center no Windows Server, precisará configurar alguma forma de delegação do Kerberos em seu ambiente para poder usar o logon único. A delegação configura o computador do gateway como confiável para delegar ao nó de destino.
 
-Para configurar [Delegação restrita baseada em recursos](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview) em seu ambiente, use o seguinte exemplo do PowerShell. Este exemplo mostra como você deve configurar um Windows Server [node01.contoso.com] para aceitar a delegação do gateway do Windows Admin Center [wac.contoso.com] no domínio contoso.com.
+Para configurar [Delegação restrita baseada em recursos](../../../security/kerberos/kerberos-constrained-delegation-overview.md) em seu ambiente, use o seguinte exemplo do PowerShell. Este exemplo mostra como você deve configurar um Windows Server [node01.contoso.com] para aceitar a delegação do gateway do Windows Admin Center [wac.contoso.com] no domínio contoso.com.
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)

@@ -1,19 +1,17 @@
 ---
 title: Opções de acesso do usuário com o Windows Admin Center
 description: Opções de acesso do usuário e provedores de identidade com o Windows Admin Center (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 084cdae0bf8ca0eb3aff1f4679d30978b860efef
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71356921"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87996987"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Opções de acesso do usuário com o Windows Admin Center
 
@@ -33,7 +31,7 @@ Os **usuários de gateway** podem se conectar ao serviço de gateway do Windows 
 Os **administradores de gateway** podem configurar quem obtém acesso e como os usuários se autenticam no gateway.
 
 >[!NOTE]
-> Se não houver grupos de acesso definidos no Windows Admin Center, as funções refletirão o acesso à conta do Windows para o servidor de gateway. 
+> Se não houver grupos de acesso definidos no Windows Admin Center, as funções refletirão o acesso à conta do Windows para o servidor de gateway.
 
 [Configure o acesso de usuário e administrador do gateway no Windows Admin Center.](../configure/user-access-control.md)
 
@@ -51,7 +49,7 @@ Ao usar o Active Directory ou grupos de computadores locais como o provedor de i
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>Acesso condicional e autenticação multifator
 
-Ao exigir a autenticação do Azure AD para o gateway, você pode usar os recursos de segurança adicionais como o acesso condicional e a autenticação multifator fornecidos pelo Azure AD. [Saiba mais sobre como configurar o acesso condicional com o Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+Ao exigir a autenticação do Azure AD para o gateway, você pode usar os recursos de segurança adicionais como o acesso condicional e a autenticação multifator fornecidos pelo Azure AD. [Saiba mais sobre como configurar o acesso condicional com o Azure Active Directory.](/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
 ## <a name="role-based-access-control"></a>Controle de acesso baseado em função
 

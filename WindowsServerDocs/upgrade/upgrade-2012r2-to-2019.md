@@ -1,18 +1,16 @@
 ---
 title: Atualizar o Windows Server 2012 R2 para o Windows Server 2019 | Microsoft Docs
 description: Saiba como executar uma atualização in-loco para passar do Windows Server 2012 R2 para o Windows Server 2019.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 02d6dd21b798346245f209174902b6f4fdf24ff8
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: c23c04682fe796a5d76f487b5ed6d91e81ac3ad1
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80853339"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87995780"
 ---
 # <a name="upgrade-windows-server-2012-r2-to-windows-server-2019"></a>Atualizar o Windows Server 2012 R2 para o Windows Server 2019
 
@@ -92,4 +90,4 @@ Se acreditar que possa ter ocorrido um erro durante a atualização, copie e com
 
 ## <a name="related-articles"></a>Artigos relacionados
 
-- Para obter mais detalhes e informações sobre o Windows Server 2019, confira [Introdução ao Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19).
+- Para obter mais detalhes e informações sobre o Windows Server 2019, confira [Introdução ao Windows Server 2019](../get-started-19/get-started-19.md).

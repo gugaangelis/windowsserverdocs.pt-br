@@ -1,7 +1,6 @@
 ---
 title: Por que Estações de Trabalho com Acesso Privilegiado podem ajudar a proteger sua organização
 description: Como uma PAW pode ampliar a postura de segurança de sua organização
-ms.prod: windows-server
 ms.topic: article
 ms.assetid: 93589778-3907-4410-8ed5-e7b6db406513
 ms.date: 03/13/2019
@@ -9,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: b51255a0ac0120847e3eb05a373535bc1b7f5d44
-ms.sourcegitcommit: 3632b72f63fe4e70eea6c2e97f17d54cb49566fd
+ms.openlocfilehash: 6a7e916c78ad7b2711268f02bcf028dfb2621303
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87520155"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87991863"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -138,7 +137,7 @@ Essa metodologia é apropriada para contas que têm acesso a ativos de alto valo
 * **Trabalhadores com informações altamente confidenciais**: a abordagem usada em uma PAW também pode fornecer proteção para tarefas de trabalhadores com informações altamente confidenciais, como as que envolvem atividades de fusão e aquisição antes de qualquer anúncio, relatórios financeiros pré-lançamento, presença organizacional em redes sociais, comunicações executivas, segredos comerciais não patenteados, pesquisa confidencial ou outros dados confidenciais ou proprietários. Este guia não discute detalhadamente as configurações desses cenários de trabalhador de informações, nem inclui esse cenário nas instruções técnicas.
 
     > [!NOTE]
-    > A TI da Microsoft usa PAWs (chamadas internamente de "estações de trabalho de administração seguras" ou SAWs) para gerenciar o acesso seguro aos sistemas internos de alto valor dentro da Microsoft. Este guia oferece detalhes adicionais sobre o uso de PAW na Microsoft na seção "Como a Microsoft usa as estações de trabalho de administração". Para saber mais sobre essa abordagem de ambiente com ativos de alto valor, consulte o artigo [Proteger ativos de alto valor com estações de trabalho de administração seguras](/previous-versions//mt186538(v=technet.10)).
+    > A TI da Microsoft usa PAWs (chamadas internamente de "estações de trabalho de administração seguras" ou SAWs) para gerenciar o acesso seguro aos sistemas internos de alto valor dentro da Microsoft. Este guia oferece detalhes adicionais sobre o uso de PAW na Microsoft na seção "Como a Microsoft usa as estações de trabalho de administração". Para saber mais sobre essa abordagem de ambiente com ativos de alto valor, consulte o artigo [Proteger ativos de alto valor com estações de trabalho de administração seguras](/previous-versions/mt186538(v=technet.10)).
 
 Este documento descreverá o motivo de essa prática ser recomendada para proteger contas privilegiadas de alto impacto, a aparência dessas soluções de PAW para proteção de privilégios administrativos e como implantar rapidamente uma solução de PAW para administração de domínio e serviços de nuvem.
 
@@ -1086,7 +1085,7 @@ Depois que o disco de modelo e o arquivo de dados de blindagem estiverem prontos
 
 [Visão geral do Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)
 
-[Proteger ativos de alto valor com estações de trabalho de administração seguras](/previous-versions//mt186538(v=technet.10))
+[Proteger ativos de alto valor com estações de trabalho de administração seguras](/previous-versions/mt186538(v=technet.10))
 
 [Modo de Usuário Isolado no Windows 10 com Dave Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 

@@ -1,20 +1,18 @@
 ---
 title: Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
 description: Configurações e definições recomendadas para minimizar a sobrecarga para desktops Windows 10, versão 1909, usados como imagens da VDI.
-ms.prod: windows-server
 ms.reviewer: robsmi
-ms.technology: remote-desktop-services
 ms.author: helohr
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7568db50f09273b398955c314491b903f627d1a9
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87182092"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997123"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
 
@@ -195,7 +193,7 @@ Cada aplicativo UWP deve ser avaliado para aplicabilidade em cada ambiente exclu
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>Gerenciar recursos opcionais do Windows usando o PowerShell
 
-Gerencie recursos opcionais do Windows usando o PowerShell. Para obter mais informações, confira o [fórum do PowerShell no Windows Server](https://docs.microsoft.com/answers/topics/windows-server-powershell.html). Para enumerar os recursos do Windows atualmente instalados, execute o seguinte comando do PowerShell:
+Gerencie recursos opcionais do Windows usando o PowerShell. Para obter mais informações, confira o [fórum do PowerShell no Windows Server](/answers/topics/windows-server-powershell.html). Para enumerar os recursos do Windows atualmente instalados, execute o seguinte comando do PowerShell:
 
 ```powershell
 Get-WindowsOptionalFeature -Online
@@ -715,7 +713,7 @@ Há algumas configurações do Registro que podem aumentar o desempenho da rede.
 >[!NOTE]
 > Algumas configurações desta seção são somente baseadas no Registro e devem ser incorporadas na imagem base antes que ela seja implantada para uso em produção.
 
-As configurações a seguir estão documentadas nas [Diretrizes de Ajuste de Desempenho do Windows Server 2016](/windows-server/administration/performance-tuning/), publicadas em Microsoft.com pelo Grupo de Produtos do Windows.
+As configurações a seguir estão documentadas nas [Diretrizes de Ajuste de Desempenho do Windows Server 2016](../../administration/performance-tuning/index.md), publicadas em Microsoft.com pelo Grupo de Produtos do Windows.
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

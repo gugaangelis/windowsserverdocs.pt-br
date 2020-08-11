@@ -1,19 +1,17 @@
 ---
 title: 'Notas de versão: problemas importantes no Windows Server 2016'
 description: Resume os problemas críticos que exigem solução alternativa para evitar falhas, congelamento, falha de instalação e perda de dados.
-ms.prod: windows-server
 ms.date: 11/13/2018
-ms.technology: server-general
 ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 8ceff837c2b85466f5583eed03f39e73f32fd4a4
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: b7e86b0841023548b1df1937bdf0820d59e12292
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80826379"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87990504"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>Notas sobre a versão: Problemas importantes no Windows Server 2016
 
@@ -62,7 +60,7 @@ Para evitar isso, atualize o computador cliente para a Atualização de Anivers�
 
 ## <a name="shielded-virtual-machines"></a>Máquinas virtuais blindadas
 
-[comment]: # (ID: 369; Remetente: nirb; estado: aprovado)  
+[comment]: # (ID: 369; Remetente: nirb; estado: aprovado)
 - Verifique se você instalou todas as atualizações disponíveis antes de implantar máquinas virtuais blindadas em produção.
 
 - Se você usar a proteção baseada em virtualização de integridade de código ou máquinas virtuais blindadas (que usam a proteção baseada em virtualização de integridade de código), fique ciente de que essas tecnologias podem ser incompatíveis com alguns dispositivos e aplicativos. Você deve testar essas configurações no laboratório antes de habilitar os recursos em sistemas de produção. Deixar de fazer isso pode resultar em erros inesperados de perda ou interrupção de dados.
@@ -74,22 +72,22 @@ Esse problema afeta o Windows Server 2016 instalado com a opção de Servidor co
 
 Se você instalar qualquer aplicativo que adicione itens de atalho em uma pasta no menu **Iniciar**, os atalhos não funcionarão enquanto você não fizer logoff e logon novamente.
 
-Volte para a página principal do [Windows Server 2016](Windows-Server-2016.md).
+Volte para a página principal do [Windows Server 2016](../index.yml).
 
 ## <a name="storport-performance"></a>Desempenho do Storport
 
-Alguns sistemas podem apresentar um desempenho de armazenamento reduzido ao executar uma nova instalação do Windows Server 2016 em comparação com o Windows Server 2012 R2.  Foram feitas várias alterações durante o desenvolvimento do Windows Server 2016 para melhorar a segurança e a confiabilidade da plataforma. Algumas dessas alterações, como a habilitação do Windows Defender por padrão, resultam em caminhos mais longos de E/S que podem reduzir o desempenho de E/S em determinadas cargas de trabalho e padrões. A Microsoft não recomenda que o Windows Defender seja desabilitado porque ele é uma camada importante de proteção para os sistemas.  
+Alguns sistemas podem apresentar um desempenho de armazenamento reduzido ao executar uma nova instalação do Windows Server 2016 em comparação com o Windows Server 2012 R2.  Foram feitas várias alterações durante o desenvolvimento do Windows Server 2016 para melhorar a segurança e a confiabilidade da plataforma. Algumas dessas alterações, como a habilitação do Windows Defender por padrão, resultam em caminhos mais longos de E/S que podem reduzir o desempenho de E/S em determinadas cargas de trabalho e padrões. A Microsoft não recomenda que o Windows Defender seja desabilitado porque ele é uma camada importante de proteção para os sistemas. 
 
 ## <a name="copyright"></a>Direitos autorais
 
-Este documento é fornecido no estado em que se encontra. As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites, estão sujeitas a alterações sem prévio aviso.  
+Este documento é fornecido no estado em que se encontra. As informações e visualizações apresentadas neste documento, incluindo URL e outras referências a sites, estão sujeitas a alterações sem prévio aviso.
 
-Este documento não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft. Você pode copiar e usar este documento para fins de referência interna.  
+Este documento não fornece direitos legais e nenhuma propriedade intelectual sobre qualquer produto da Microsoft. Você pode copiar e usar este documento para fins de referência interna.
 
-&copy; 2016 Microsoft Corporation. Todos os direitos reservados.  
+&copy; 2016 Microsoft Corporation. Todos os direitos reservados.
 
-Microsoft, Active Directory, Hyper-V, Windows e Windows Server são marcas registradas ou marcas comerciais da Microsoft Corporation nos Estados Unidos e/ou em outros países.  
+Microsoft, Active Directory, Hyper-V, Windows e Windows Server são marcas registradas ou marcas comerciais da Microsoft Corporation nos Estados Unidos e/ou em outros países.
 
-Este produto contém um software de filtro gráfico, que é parcialmente baseado no trabalho do grupo Independent JPEG.  
+Este produto contém um software de filtro gráfico, que é parcialmente baseado no trabalho do grupo Independent JPEG.
 
 1.0

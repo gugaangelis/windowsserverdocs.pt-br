@@ -1,18 +1,16 @@
 ---
 title: Atualizar o Windows Server 2012 para o Windows Server 2016 | Microsoft Docs
 description: Saiba como executar uma atualização in-loco para passar do Windows Server 2012 para o Windows Server 2016.
-ms.prod: windows-server
-ms.technology: server-general
 ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: c6cc52e24b7ba66b349b3715bacf3a0f671ff0d0
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ea67496a0e094c68133dfd9315d070bb87c99dbc
+ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80854269"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87997240"
 ---
 # <a name="upgrade-windows-server-2012-to-windows-server-2016"></a>Atualizar o Windows Server 2012 para o Windows Server 2016
 
@@ -106,4 +104,4 @@ Você pode executar mais uma atualização para ir do Windows Server 2016 para o
 
 ## <a name="related-articles"></a>Artigos relacionados
 
-- Para obter mais detalhes e informações sobre o Windows Server 2016, confira [Introdução ao Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics).
+- Para obter mais detalhes e informações sobre o Windows Server 2016, confira [Introdução ao Windows Server 2016](../get-started/server-basics.md).
