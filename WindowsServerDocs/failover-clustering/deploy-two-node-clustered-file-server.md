@@ -6,12 +6,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.author: johnmar
 ms.date: 02/01/2019
-ms.openlocfilehash: b91aeadcce645797f42a029f7a8c82371b42d618
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 56130833ca2c3de8752fb79f5acdf30a1fafae2f
+ms.sourcegitcommit: 67a486b4fb3937a457eb00d21a2e33b753489fd8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968003"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88149550"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implantando um servidor de arquivos clusterizado de dois nós
 
@@ -321,28 +321,31 @@ Para configurar um cluster de failover do servidor de arquivos, siga as etapas a
    > [!NOTE]
    > Se você estiver usando endereços IP estáticos, será necessário selecionar a rede a ser usada e inserir o endereço IP que será usado para o nome do cluster.  Se você estiver usando o DHCP para seus endereços IP, o endereço IP será configurado automaticamente para você.
 
-6. Escolha **Próxima**.
+9. Escolha **Próxima**.
 
-7. Na janela **selecionar armazenamento** , selecione a unidade adicional (não a testemunha) que manterá seus compartilhamentos e **em seguida**.
+10. Na janela **selecionar armazenamento** , selecione a unidade adicional (não a testemunha) que irá conter seus compartilhamentos e clique em **Avançar**.
 
-8. Na página **confirmação** , verifique sua configuração e selecione **Avançar**.
+11. Na página **confirmação** , verifique sua configuração e selecione **Avançar**.
 
-9. Na página **Resumo** , ele fornecerá a configuração que ele criou.  Você pode selecionar Exibir relatório para ver o relatório da criação da função de servidor de arquivos.
+12. Na página **Resumo** , ele fornecerá a configuração que ele criou.  Você pode selecionar Exibir relatório para ver o relatório da criação da função de servidor de arquivos.
 
-10. Em **funções** na árvore de console, você verá a nova função criada listada como o nome que você criou.  Com ele realçado, no painel **ações** à direita, escolha **Adicionar um compartilhamento**.
+   > [!NOTE]
+   > Se a função não adicionar ou iniciar corretamente, o CNO (objeto de nome do cluster) poderá não ter permissão para criar objetos no Active Directory. A função servidor de arquivos requer um objeto de computador com o mesmo nome do "ponto de acesso para cliente" fornecido na etapa 8.
 
-11. Execute o assistente de compartilhamento, inserindo o seguinte:
+13. Em **funções** na árvore de console, você verá a nova função criada listada como o nome que você criou.  Com ele realçado, no painel **ações** à direita, escolha **Adicionar um compartilhamento**.
+
+14. Execute o assistente de compartilhamento, inserindo o seguinte:
 
     - Tipo de compartilhamento será
     - Local/caminho em que a pasta compartilhada será
     - O nome dos usuários do compartilhamento se conectarão ao
-    - Configurações adicionais, como enumeração baseada em acesso, Caching, criptografia, etc
+    - Configurações adicionais, como enumeração baseada em acesso, Caching, criptografia, etc.
     - Permissões de nível de arquivo se elas forem diferentes dos padrões
 
-12. Na página **confirmação** , verifique o que você configurou e selecione **criar** para criar o compartilhamento do servidor de arquivos.
+15. Na página **confirmação** , verifique o que você configurou e selecione **criar** para criar o compartilhamento do servidor de arquivos.
 
-13. Na página **resultados** , selecione fechar se ele criou o compartilhamento.  Se não foi possível criar o compartilhamento, ele apresentará os erros incorridos.
+16. Na página **resultados** , selecione fechar se ele criou o compartilhamento.  Se não foi possível criar o compartilhamento, ele apresentará os erros incorridos.
 
-14. Escolha **Fechar**.
+17. Escolha **Fechar**.
 
-15. Repita esse processo para quaisquer compartilhamentos adicionais.
+18. Repita esse processo para quaisquer compartilhamentos adicionais.
