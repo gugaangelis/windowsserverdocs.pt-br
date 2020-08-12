@@ -6,12 +6,12 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f98ec982601281d5b16a5ec369ca275de189c85
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 5eddc639fd07516b95b23684ec4137f328b7c105
+ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996473"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140293"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
@@ -100,19 +100,19 @@ O seguinte cmdlet ou cmdlets do Windows PowerShell executam a mesma função que
 O exemplo a seguir mostra quais discos físicos estão disponíveis no pool primordial.
 
 ```PowerShell
-Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk | Where-Object CanPool -eq $True
+Get-StoragePool -IsPrimordial $true | Get-PhysicalDisk -CanPool $True
 ```
 
 O exemplo a seguir cria um novo pool de armazenamento chamado *StoragePool1* que usa todos os discos disponíveis.
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk –CanPool $True)
 ```
 
 O exemplo a seguir cria um novo pool de armazenamento, *StoragePool1*, que usa quatro dos discos disponíveis.
 
 ```PowerShell
-New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName “Storage Spaces*” –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
+New-StoragePool –FriendlyName StoragePool1 –StorageSubsystemFriendlyName "Windows Storage*" –PhysicalDisks (Get-PhysicalDisk PhysicalDisk1, PhysicalDisk2, PhysicalDisk3, PhysicalDisk4)
 ```
 
 A sequência de cmdlets de exemplo a seguir mostra como adicionar um disco físico disponível *PhysicalDisk5* como espera ativa do pool de armazenamento *StoragePool1*.
