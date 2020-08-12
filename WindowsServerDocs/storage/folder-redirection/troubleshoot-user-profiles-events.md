@@ -1,19 +1,17 @@
 ---
 title: Solucionar problemas de perfis de usuário com eventos
 description: Como solucionar problemas de carregamento e descarregamento de perfis de usuário usando eventos e logs de rastreamento.
-ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
-ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e927a77627e786015a928d798aafee13a2cc34b
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: e6417fc6453499387fbf721ef31121e07eccdfdd
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71394384"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87957624"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>Solucionar problemas de perfis de usuário com eventos
 
@@ -70,8 +68,8 @@ A melhor estratégia ao usar o rastreamento de ETL é primeiro capturar o menor 
 Veja como criar e decodificar um rastreamento para o Serviço de Perfil do Usuário:
 
 1. Faça logon no computador em que o usuário está enfrentando problemas, usando uma conta que é membro do grupo de Administradores local.
-2. Em um prompt de comandos com privilégios elevados, insira os seguintes comandos, em que *\<Caminho\>* é o caminho para uma pasta local que você criou anteriormente, por exemplo C:\\logs:
-        
+2. Em um prompt de comandos com privilégios elevados, insira os seguintes comandos, em que *\<Path\>* é o caminho para uma pasta local que você criou anteriormente, por exemplo C:\\logs:
+
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
     logman update RUP -p {eb7428f5-ab1f-4322-a4cc-1f1a9b2c5e98} 0x7FFFFFFF 0x7 -ets
@@ -80,12 +78,12 @@ Veja como criar e decodificar um rastreamento para o Serviço de Perfil do Usuá
 4. Reproduza o problema. O procedimento para reproduzir o problema normalmente é entrar como o usuário que está enfrentando o problema, desconectar o usuário ou ambos.
 5. Depois de reproduzir o problema, faça logon novamente como administrador local.
 6. Em um prompt de comandos com privilégios elevados, execute o seguinte comando para salvar o log em um arquivo ETL:
-  
+
     ```PowerShell
     logman stop -n RUP -ets
     ```
 7. Digite o seguinte comando para exportar o arquivo ETL para um arquivo legível no diretório atual (provavelmente a pasta base ou a pasta %WINDIR%\\System32):
-    
+
     ```PowerShell
     Tracerpt <path>\RUP.etl
     ```

@@ -1,24 +1,22 @@
 ---
 title: Implantar o Windows Admin Center com Alta Disponibilidade
 description: Implantar o Windows Admin Center com Alta Disponibilidade (Project Honolulu)
-ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server
-ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 132f566e8467179c1a58e3555d26ab834dae7129
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71406940"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87970853"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>Implantar o Windows Admin Center com alta disponibilidade
 
 >Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
-Você pode implantar o Windows Admin Center em um cluster de failover para fornecer alta disponibilidade para o serviço de gateway do Windows Admin Center. A solução fornecida é uma solução ativa-passiva, em que apenas uma instância do Windows Admin Center está ativa. Se um dos nós no cluster falhar, o Windows Admin Center fará failover de maneira suave para outro nó, permitindo que você continue gerenciando os servidores em seu ambiente de maneira contínua. 
+Você pode implantar o Windows Admin Center em um cluster de failover para fornecer alta disponibilidade para o serviço de gateway do Windows Admin Center. A solução fornecida é uma solução ativa-passiva, em que apenas uma instância do Windows Admin Center está ativa. Se um dos nós no cluster falhar, o Windows Admin Center fará failover de maneira suave para outro nó, permitindo que você continue gerenciando os servidores em seu ambiente de maneira contínua.
 
 [Saiba mais sobre outras opções de implantação do Windows Admin Center.](../plan/installation-options.md)
 
@@ -35,7 +33,7 @@ Você pode implantar o Windows Admin Center em um cluster de failover para forne
 2. Conecte-se ao nó por meio do protocolo RDP e execute o script ```Install-WindowsAdminCenterHA.ps1``` com base nesse nó com os seguintes parâmetros:
     - `-clusterStorage`: o caminho local do Volume Compartilhado Clusterizado para armazenar dados do Windows Admin Center.
     - `-clientAccessPoint`: escolha um nome que será usado para acessar o Windows Admin Center. Por exemplo, se executar o script com o parâmetro `-clientAccessPoint contosoWindowsAdminCenter`, você acessará o serviço do Windows Admin Center acessando `https://contosoWindowsAdminCenter.<domain>.com`
-    - `-staticAddress`: Opcional. Um ou mais endereços estáticos para o serviço genérico do cluster. 
+    - `-staticAddress`: Opcional. Um ou mais endereços estáticos para o serviço genérico do cluster.
     - `-msiPath`: o caminho do arquivo .msi do Windows Admin Center.
     - `-certPath`: Opcional. O caminho para um arquivo .pfx de certificado.
     - `-certPassword`: Opcional. Uma senha SecureString do .pfx do certificado fornecida em `-certPath`
@@ -86,7 +84,7 @@ Você também pode atualizar o certificado enquanto atualiza a plataforma do Win
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
-``` 
+```
 
 ## <a name="uninstall"></a>Desinstalar
 

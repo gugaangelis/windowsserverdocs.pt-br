@@ -1,19 +1,17 @@
 ---
 title: Gerenciar uma coleção de sessão de área de trabalho pessoal no RDS
 description: Saiba como adicionar um RDSH e programas RemoteApp na implantação do RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 11/08/2016
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7088d164ecdd7211894b004ed580eecb33d1ba60
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: bd6c91b7f022e60e488c90776e0981523da7bccb
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80861059"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961650"
 ---
 # <a name="manage-your-personal-desktop-session-collections"></a>Gerenciar coleções de sessão de área de trabalho pessoal
 
@@ -24,7 +22,7 @@ Use o cmdlet **Set-RDPersonalSessionDesktopAssignment** para atribuir manualment
 
 -CollectionName \<string\>
 
--ConnectionBroker \<string\> 
+-ConnectionBroker \<string\>
 
 -User \<string\>
 
@@ -44,7 +42,7 @@ O cmdlet **Import-RDPersonalSessionDesktopAssignment** importa as associações 
 -Path \<string>
 
 **–Path** especifica o caminho e o nome do arquivo de importação.
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>Remover uma atribuição de usuário de um host de sessão pessoal
 Use o cmdlet **Remove-RDPersonalSessionDesktopAssignment** para remover a associação entre uma área de trabalho de sessão pessoal e um usuário. O cmdlet dá suporte aos seguintes parâmetros:
 
@@ -71,7 +69,7 @@ Use o cmdlet **Get-RDPersonalSessionDesktopAssignment** para obter uma lista de 
 
 -Name \<string\>
 
-É possível executar o cmdlet para consultar o nome da coleção, o nome de usuário, ou o nome da área de trabalho da sessão. Se você especificar apenas o parâmetro **–CollectionName**, o cmdlet retorna uma lista de hosts de sessão e usuários associados. Se você também especificar o parâmetro **–User**, o host de sessão associado a esse usuário é retornado. Se você fornecer o parâmetro **–Name**, o usuário associado a esse host de sessão é retornado. 
+É possível executar o cmdlet para consultar o nome da coleção, o nome de usuário, ou o nome da área de trabalho da sessão. Se você especificar apenas o parâmetro **–CollectionName**, o cmdlet retorna uma lista de hosts de sessão e usuários associados. Se você também especificar o parâmetro **–User**, o host de sessão associado a esse usuário é retornado. Se você fornecer o parâmetro **–Name**, o usuário associado a esse host de sessão é retornado.
 
 
 O cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta as associações atuais entre usuários e áreas de trabalho virtuais pessoais para um arquivo de texto. O cmdlet dá suporte aos seguintes parâmetros:

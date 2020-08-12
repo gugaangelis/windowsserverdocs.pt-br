@@ -1,17 +1,15 @@
 ---
 title: Serviço de Cópias de Sombra de Volume
 ms.date: 01/30/2019
-ms.prod: windows-server
-ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 9948fab77ab4869c27fd63e623315bd1b3e9ff47
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 44f0db935e50bf7976612edc4317b4212818f84d
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86966688"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87950740"
 ---
 # <a name="volume-shadow-copy-service"></a>Serviço de Cópias de Sombra de Volume
 
@@ -22,7 +20,6 @@ O backup e a restauração de dados comercialmente críticos podem ser muito com
   - Os dados geralmente precisam de backup, enquanto os aplicativos que produzem os dados ainda estão em execução. Isso significa que alguns dos arquivos de dados podem estar abertos ou podem estar em um estado inconsistente.
 
   - Se o conjunto de dados for grande, poderá ser difícil fazer backup de todos eles ao mesmo tempo.
-
 
 A execução correta de operações de backup e restauração exige uma forte coordenação entre os aplicativos de backup, os aplicativos de linha de negócios que estão sendo submetidos a backup e o hardware e o software de gerenciamento de armazenamento. O Serviço de Cópias de Sombra de Volume (VSS), que foi introduzido no Windows Server® 2003 facilita a conversa entre esses componentes para permitir que eles funcionem melhor juntos. Quando todos os componentes são compatíveis com o VSS, você pode usá-los para fazer backup dos dados do aplicativo sem colocar os aplicativos offline.
 
@@ -62,7 +59,7 @@ Uma solução completa do VSS requer todas as seguintes partes básicas:
 
 O diagrama a seguir ilustra como o serviço VSS coordena-se com solicitantes, gravadores e provedores para criar uma cópia de sombra de um volume.
 
-![](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
+![Diagrama arquitetônico do Serviço de Cópias de Sombra de Volume](media/volume-shadow-copy-service/Ee923636.94dfb91e-8fc9-47c6-abc6-b96077196741(WS.10).jpg)
 
 **Figura 1**   Diagrama arquitetônico do Serviço de Cópias de Sombra de Volume
 
@@ -70,7 +67,7 @@ O diagrama a seguir ilustra como o serviço VSS coordena-se com solicitantes, gr
 
 Esta seção coloca as várias funções do solicitante, do gravador e do provedor em contexto, listando as etapas que precisam ser executadas para criar uma cópia de sombra. O diagrama a seguir mostra como o Serviço de Cópias de Sombra de Volume controla a coordenação geral do solicitante, do gravador e do provedor.
 
-![](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
+![Diagrama como o Serviço de Cópias de Sombra de Volume funciona](media/volume-shadow-copy-service/Ee923636.1c481a14-d6bc-4796-a3ff-8c6e2174749b(WS.10).jpg)
 
 **Figura 2** Processo de criação de cópia de sombra
 
@@ -309,7 +306,7 @@ Com o Serviço de Cópias de Sombra de Volume e uma matriz de armazenamento com 
 
 3.  Os dados agora estão prontos para uso.
 
-![](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
+![Diagrama como transportar uma cópia de sombra entre dois servidores](media/volume-shadow-copy-service/Ee923636.633752e0-92f6-49a7-9348-f451b1dc0ed7(WS.10).jpg)
 
 **Figura 3**   Criação e transporte da cópia de sombra entre dois servidores
 
@@ -577,7 +574,7 @@ A tabela a seguir lista as versões mínimas do sistema operacional compatíveis
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />Observação</th>
+<th>Observação</th>
 </tr>
 </thead>
 <tbody>

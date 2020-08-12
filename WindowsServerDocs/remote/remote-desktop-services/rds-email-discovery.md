@@ -1,19 +1,17 @@
 ---
 title: Configurar a descoberta de email para assinar seu feed de RDS
 description: Saiba como integrar o Azure AD Domain Services à sua implantação do RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: c56a233adf28270aac809dc960e32b5363e4b8ab
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: 1f44257e5ce8ebea1b55acaa399d55aa772ab106
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "71387513"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87936856"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>Configurar a descoberta de email para assinar seu feed de RDS
 
@@ -33,9 +31,9 @@ Agora, use estas etapas para configurar a descoberta de email:
 2. Navegue até a página adequada para seu domínio registrado, onde você pode exibir, adicionar e editar registros DNS.
 3. Insira um novo registro DNS com as seguintes propriedades:
    - **Host:** _msradc
-   - **Texto:** \<URL do Web Feed da RD\>
+   - **Texto:** \<RD Web Feed URL\>
    - **TTL:** 300
 
-   Os nomes dos campos dos registros DNS variam de acordo com o registrador de nomes de domínio, mas esse processo resultará em um registro TXT denominado msradc.\<nome_de_domínio\> (por exemplo, _msradc.contoso.com) que tem um valor do Web Feed de RD completo.
+   Os nomes dos campos dos registros DNS variam de acordo com o registrador de nomes de domínio, mas esse processo resultará em um registro TXT denominado _msradc.\<domain_name\> (por exemplo, _msradc.contoso.com) que tem um valor do Web Feed de RD completo.
 
 Pronto! Agora, inicie o aplicativo da Área de Trabalho Remota em seu dispositivo e assine!

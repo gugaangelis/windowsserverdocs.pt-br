@@ -1,20 +1,18 @@
 ---
 title: Configurações do arquivo RDP com suporte da Área de Trabalho Remota
 description: Saiba mais sobre as configurações do arquivo RDP para a Área de Trabalho Remota
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
 ms.date: 06/30/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8132c6d996a3e814b15eb34b713832fb6a98d6a0
-ms.sourcegitcommit: 643a9916efb95ad0bb5cc0a9b115ac29af4cb076
+ms.openlocfilehash: 5303bb696131d4e122da11c2d72152bf304716b4
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/30/2020
-ms.locfileid: "85586698"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87961930"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configurações do arquivo RDP com suporte da Área de Trabalho Remota
 
@@ -59,17 +57,18 @@ A tabela também realça quais configurações são compatíveis como propriedad
 | redirected video capture encoding quality:i:value | Controla a qualidade do vídeo codificado. | - 0: Vídeo de alta compactação. A qualidade pode ser prejudicada quando há muito movimento. </br>- 1: Compactação média.</br>- 2: Vídeo de baixa compactação com alta qualidade da imagem. | 0 | Sim |
 | audiomode:i:value | Local de saída de áudio:</br>Determina se o computador local ou remoto reproduz áudio. | - 0: Reproduzir sons no computador local (reproduzir neste computador)</br>- 1: Reproduzir sons no computador remoto (reproduzir no computador remoto)</br>- 2: Não reproduzir sons (Não reproduzir) | 0 | Sim |
 | camerastoredirect:s:value | Redirecionamento de câmera:</br>Configura quais câmeras serão redirecionadas. Essa configuração usa uma lista delimitada por ponto e vírgula das interfaces KSCATEGORY_VIDEO_CAMERA de câmeras habilitadas para redirecionamento. | - *: Redirecione todas as câmeras</br> - Lista de câmeras, como camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- É possível excluir uma câmera específica, prefixando a cadeia de caracteres de link simbólico com "-" | Não redirecionar nenhuma câmera | Sim |
-| devicestoredirect:s:value | Redirecionamento de dispositivo USB:</br>Determina quais dispositivos no computador local serão redirecionados e estarão disponíveis na sessão remota. | – *: Redirecionar todos os dispositivos com suporte, incluindo aqueles conectados posteriormente</br> – ID de hardware válida para um ou mais dispositivos | Não redirecionar nenhum dispositivo | Sim |
+| devicestoredirect:s:value | Redirecionamento de dispositivos Plug and Play:</br>Determina quais dispositivos no computador local serão redirecionados e estarão disponíveis na sessão remota. | – *: Redirecionar todos os dispositivos com suporte, incluindo aqueles conectados posteriormente</br> – ID de hardware válida para um ou mais dispositivos</br> - DynamicDevices: Redirecionar todos os dispositivos com suporte que são conectados posteriormente | Não redirecionar nenhum dispositivo | Sim |
 | drivestoredirect:s:value | Redirecionamento de unidade/armazenamento:</br>Determina quais unidades de disco no computador local serão redirecionados e estarão disponíveis na sessão remota. | – Nenhum valor especificado: não redirecionar unidades</br>- *: Redirecionar todas as unidades de disco, incluindo unidades conectadas mais tarde</br>– DynamicDrives: redirecionar todas as unidades que estão conectadas mais tarde</br>– A unidade e os rótulos para uma ou mais unidades, tais como "drivestoredirect:s:C:;E:;": redirecionar as unidades especificadas | Não redirecionar nenhuma unidade | Sim |
 | redirectclipboard:i:value | Redirecionamento da área de transferência:</br>Determina se o redirecionamento de área de transferência fica habilitado. | - 0: Área de transferência no computador local não fica disponível na sessão remota</br>- 1: Área de transferência no computador local fica disponível na sessão remota | 1 | Sim |
 | redirectprinters:i:value | Redirecionamento de impressora:</br>Determina se as impressoras configuradas no computador local serão redirecionadas e estarão disponíveis na sessão remota | - 0: As impressoras no computador local não ficam disponíveis na sessão remota</br>- 1: As impressoras no computador local ficam disponíveis na sessão remota | 1 | Sim |
 | redirectsmartcards:i:value | Redirecionamento de cartão inteligente:</br>Determina se dispositivos de cartão inteligente no computador local serão redirecionados e estarão disponíveis na sessão remota. |- 0: O dispositivo de cartão inteligente no computador local não fica disponível na sessão remota</br>- 1: O dispositivo de cartão inteligente no computador local fica disponível na sessão remota | 1 | Sim |
+| usbdevicestoredirect:s:value | Redirecionamento de USB | – *: Redirecionar todos os dispositivos USB que ainda não foram redirecionados por outro redirecionamento de alto nível</br> - {GUID da classe de configuração do dispositivo}: Redirecionar todos os dispositivos que são membros da [classe de configuração do dispositivo](/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors/) especificada</br> - USBInstanceID: Redirecionar um dispositivo USB específico identificado pela ID da instância| Não redirecionar nenhum dispositivo USB | Sim |
 
 ## <a name="display-settings"></a>Configurações de vídeo
 
 | Configuração de RDP                        | Descrição            | Valores                 | Valor padrão          | Suporte à Área de Trabalho Virtual do Windows |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|
-| use multimon:i:value | Determina se a sessão remota usará uma ou várias telas do computador local. | - 0: Não habilitar suporte a várias telas</br>- 1: Habilitar suporte a várias telas | 0 | Sim |
+| use multimon:i:value | Determina se a sessão remota usará uma ou várias telas do computador local. | - 0: Não habilitar suporte a várias telas</br>- 1: Habilitar suporte a várias telas | 1 | Sim |
 | selectedmonitors:s:value | Especifica quais telas locais usar da sessão remota. As telas selecionadas devem ser contíguas. Requer que use Multimon seja definido como 1.</br></br>Disponível somente em clientes MSTSC (Caixa de Entrada do Windows) e MSRDC (Área de Trabalho do Windows). | Lista separada por vírgula de IDs de tela específicas do computador. As IDs podem ser recuperadas chamando mstsc.exe /l. A primeira ID listada será definida como a tela primária na sessão. | Todas as telas | Sim |
 | maximizetocurrentdisplays:i:value | Determina qual tela a sessão remota passará para tela inteira ao maximizar. Requer que use Multimon seja definido como 1.</br></br>Disponível somente no cliente MSRDC (Área de Trabalho do Windows). | - 0: A sessão é exibida em tela inteira em telas inicialmente selecionadas ao maximizar</br>- 1: A sessão passa dinamicamente para tela inteira nas telas tocadas pela janela da sessão ao maximizar | 0 | Sim |
 | singlemoninwindowedmode:i:value | Determina se uma sessão remota de várias telas alterna automaticamente para tela única ao sair da tela inteira. Requer que use Multimon seja definido como 1.</br></br>Disponível somente no cliente MSRDC (Área de Trabalho do Windows). | - 0: A sessão retém todas as telas ao sair da tela inteira</br>- 1: A sessão alterna para tela única ao sair da tela inteira | 0 | Sim |

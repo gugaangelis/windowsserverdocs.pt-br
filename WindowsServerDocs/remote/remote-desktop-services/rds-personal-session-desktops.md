@@ -1,25 +1,23 @@
 ---
 title: Usar as áreas de trabalho de sessão pessoal com os Serviços de Área de Trabalho Remota
 description: Aprenda a compartilhar áreas de trabalho personalizadas e atribuídas por meio de RDS.
-ms.prod: windows-server
-ms.technology: remote-desktop-services
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: c0c36793d08391ad98fa797004ed6dec9883e9f1
-ms.sourcegitcommit: 3a3d62f938322849f81ee9ec01186b3e7ab90fe0
+ms.openlocfilehash: ccb8bd5a91af6e4b9a8d1a610bf22747433bf913
+ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "80857399"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87946419"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>Usar as áreas de trabalho de sessão pessoal com os Serviços de Área de Trabalho Remota
 
 >Aplica-se a: Windows Server (Canal Semestral), Windows Server 2019, Windows Server 2016
 
-Você pode implantar áreas de trabalho pessoais baseadas em servidor em um ambiente de computação em nuvem usando áreas de trabalho de sessão pessoal.  Um ambiente de computação em nuvem tem uma separação entre os servidores de malha do Hyper-V e as máquinas virtuais convidadas, como a Plataforma de Nuvem da Microsoft ou a Microsoft Azure Cloud. O recurso de área de trabalho de sessão pessoal estende o cenário de implantação de área de trabalho baseada em sessão nos Serviços de Área de Trabalho Remota para criar um novo tipo de coleção de sessão em que cada usuário recebe seu próprio host de sessão pessoal com direitos administrativos. 
+Você pode implantar áreas de trabalho pessoais baseadas em servidor em um ambiente de computação em nuvem usando áreas de trabalho de sessão pessoal.  Um ambiente de computação em nuvem tem uma separação entre os servidores de malha do Hyper-V e as máquinas virtuais convidadas, como a Plataforma de Nuvem da Microsoft ou a Microsoft Azure Cloud. O recurso de área de trabalho de sessão pessoal estende o cenário de implantação de área de trabalho baseada em sessão nos Serviços de Área de Trabalho Remota para criar um novo tipo de coleção de sessão em que cada usuário recebe seu próprio host de sessão pessoal com direitos administrativos.
 
 Use as informações a seguir para criar e gerenciar uma coleção de área de trabalho de sessão pessoal.
 
@@ -36,7 +34,7 @@ Use o cmdlet **Set-RDPersonalSessionDesktopAssignment** para atribuir manualment
 
 -CollectionName \<string\>
 
--ConnectionBroker \<string\> 
+-ConnectionBroker \<string\>
 
 -User \<string\>
 
@@ -56,7 +54,7 @@ O cmdlet **Import-RDPersonalSessionDesktopAssignment** importa as associações 
 -Path \<string>
 
 **–Path** especifica o caminho e o nome do arquivo de importação.
- 
+
 ## <a name="removing-a-user-assignment-from-a-personal-session-host"></a>Remover uma atribuição de usuário de um host de sessão pessoal
 Use o cmdlet **Remove-RDPersonalSessionDesktopAssignment** para remover a associação entre uma área de trabalho de sessão pessoal e um usuário. O cmdlet dá suporte aos seguintes parâmetros:
 
@@ -83,7 +81,7 @@ Use o cmdlet **Get-RDPersonalSessionDesktopAssignment** para obter uma lista de 
 
 -Name \<string\>
 
-É possível executar o cmdlet para consultar o nome da coleção, o nome de usuário, ou o nome da área de trabalho da sessão. Se você especificar apenas o parâmetro **–CollectionName**, o cmdlet retorna uma lista de hosts de sessão e usuários associados. Se você também especificar o parâmetro **–User**, o host de sessão associado a esse usuário é retornado. Se você fornecer o parâmetro **–Name**, o usuário associado a esse host de sessão é retornado. 
+É possível executar o cmdlet para consultar o nome da coleção, o nome de usuário, ou o nome da área de trabalho da sessão. Se você especificar apenas o parâmetro **–CollectionName**, o cmdlet retorna uma lista de hosts de sessão e usuários associados. Se você também especificar o parâmetro **–User**, o host de sessão associado a esse usuário é retornado. Se você fornecer o parâmetro **–Name**, o usuário associado a esse host de sessão é retornado.
 
 
 O cmdlet **Export-RDPersonalPersonalDesktopAssignment** exporta as associações atuais entre usuários e áreas de trabalho virtuais pessoais para um arquivo de texto. O cmdlet dá suporte aos seguintes parâmetros:
