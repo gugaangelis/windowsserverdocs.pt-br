@@ -6,12 +6,12 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.openlocfilehash: 46e78e74781f4a85f279299745d841fd0bcaf7c3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18e480200bf2d22c5f46dd67d1ee6a704f566d55
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964853"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243198"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>Conceitos do OpenID Connect/OAuth com o AD FS
 Aplica-se ao AD FS 2016 e posterior
@@ -79,7 +79,7 @@ Tokens de segurança (tokens de ID e acesso) emitidos por AD FS contêm declara�
 
  2. AD FS valida a ID do cliente na solicitação de autenticação com a ID do cliente obtida durante o registro do cliente e do recurso no AD FS. Se estiver usando o cliente confidencial, AD FS também validará o segredo do cliente fornecido na solicitação de autenticação. AD FS também validar o URI de redirecionamento do cliente.
 
- 3. AD FS identifica o recurso que o cliente deseja acessar por meio do parâmetro de recurso passado na solicitação de autenticação. Se estiver usando a biblioteca de cliente MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo: *Scope = [URL do recurso]//[valores de escopo, por exemplo, OpenID]*.
+ 3. AD FS identifica o recurso que o cliente deseja acessar por meio do parâmetro de recurso passado na solicitação de autenticação. Se estiver usando a biblioteca de cliente MSAL, o parâmetro de recurso não será enviado. Em vez disso, a URL do recurso é enviada como parte do parâmetro de escopo: *Scope = [URL do recurso]/[valores de escopo, por exemplo, OpenID]*.
 
     Se o recurso não for passado usando o parâmetro de escopo ou recurso, o ADFS usará um recurso padrão urn: Microsoft: UserInfo cujas políticas (por exemplo, MFA, emissão ou política de autorização) não podem ser configuradas.
 

@@ -6,12 +6,12 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: 646660c1371b592670737b7d7d208b62208bfec9
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 81c35d1a5673793220ec860266d129a4ecdb4046
+ms.sourcegitcommit: b18effcba95c85d6e08e7d29808b576491a5352e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993936"
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "88243188"
 ---
 # <a name="data-center-bridging-dcb"></a>DCB \(Data Center Bridging\)
 
@@ -38,7 +38,7 @@ O DCB fornece \- alocação de largura de banda baseada em hardware para um tipo
 DCB consiste no conjunto de protocolos a seguir.
 
 - Serviço de transmissão aprimorado \( ETS \) – IEEE 802.1 Qaz, que se baseia nos padrões 802.1 p e 802.1 q
-- \(PFS \) de controle de fluxo de prioridade, IEEE 802.1 QBB
+- Controle de fluxo \( de prioridade PFC \) , IEEE 802.1 QBB
 - DCB Exchange Protocol \( DCBX \) , IEEE 802.1 AB, como estendido no padrão 802.1 Qaz.
 
 O protocolo DCBX permite que você configure o DCB em um comutador, que pode então configurar automaticamente um dispositivo final, como um computador executando o Windows Server 2016.
