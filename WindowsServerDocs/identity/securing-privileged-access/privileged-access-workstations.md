@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 6a7e916c78ad7b2711268f02bcf028dfb2621303
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 014e19088394135c00d1df63a46ba74f400fa411
+ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991863"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88140303"
 ---
 # <a name="privileged-access-workstations"></a>Estações de trabalho com acesso privilegiado
 
@@ -28,7 +28,7 @@ Em termos simples, uma PAW é uma estação de trabalho robusta e bloqueada, pro
 > [!NOTE]
 > A arquitetura da PAW não exige um mapeamento 1:1 de contas para as estações de trabalho, embora seja uma configuração comum. A PAW cria um ambiente de estação de trabalho confiável que pode ser usado por uma ou mais contas.
 
-Para fornecer a maior segurança possível, as PAWs sempre devem executar o sistema operacional mais atualizado e seguro disponível: A Microsoft recomenda enfaticamente o Windows 10 Enterprise, que inclui vários recursos de segurança adicionais não disponíveis em outras edições (em particular, o [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) e o [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)).
+Para fornecer a maior segurança possível, as PAWs sempre devem executar o sistema operacional mais atualizado e seguro disponível: A Microsoft recomenda enfaticamente o Windows 10 Enterprise, que inclui vários recursos de segurança adicionais indisponíveis em outras edições (em particular, o [Credential Guard](/windows/security/identity-protection/credential-guard/credential-guard) e o [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control)).
 
 > [!NOTE]
 > As organizações sem acesso ao Windows 10 Enterprise podem usar o Windows 10 Pro, que inclui várias tecnologias de base essenciais para as PAWs, incluindo a Inicialização Confiável, o BitLocker e a Área de Trabalho Remota.  Clientes da área de educação podem usar o Windows 10 Education.  O Windows 10 Home não deve ser usado para uma PAW.
