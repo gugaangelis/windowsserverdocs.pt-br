@@ -7,12 +7,12 @@ ms.assetid: 5ba5bb37-ece0-45cb-971b-f7149f658d19
 ms.author: anpaul
 author: AnirbanPaul
 ms.date: 08/23/2018
-ms.openlocfilehash: 7fcf8b095479ec21c045a60244917b09883a6162
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 84b96e724706db49945c2e4936d0b4d8691d8daa
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993771"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583321"
 ---
 # <a name="deploy-a-software-defined-network-infrastructure-using-scripts"></a>Implantar uma infraestrutura de rede definida pelo software usando scripts
 
@@ -113,21 +113,6 @@ Use as etapas a seguir para validar que a rede do host está configurada correta
 4. Execute o comando a seguir no host de implantação e especifique o FQDN de cada host Hyper-V para garantir que as credenciais Kerberos usadas forneçam acesso a todos os servidores.
 
    ``winrm id -r:<Hyper-V Host FQDN>``
-
-### <a name="nano-installation-requirements-and-notes"></a>Observações e requisitos de instalação do nano
-
-Se você usar o nano como seus hosts do Hyper-V (servidores físicos) para a implantação, os requisitos adicionais a seguir serão:
-
-1. Todos os nós do nano precisam ter o pacote DSC instalado com o pacote de idiomas:
-
-   - Microsoft-NanoServer-DSC-Package.cab
-   - Microsoft-NanoServer-DSC-Package_en-us.cab
-
-     ``dism /online /add-package /packagepath:<Path> /loglevel:4``
-
-2. Os scripts do SDN Express devem ser executados de um host não nano (Windows Server Core ou Windows Server c/GUI). Não há suporte para fluxos de trabalho do PowerShell no nano.
-
-3. Invocar a API NorthBound do controlador de rede usando os wrappers do PowerShell ou do NC REST (que dependem de Invoke-WebRequest e Invoke-RestMethod) deve ser feito em um host não nano.
 
 ### <a name="run-sdn-express-scripts"></a>Executar scripts do SDN Express
 

@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 818fca0ed62c140b3b0c4bbb1394380d42201f79
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0dc49603099427fb00507db021c391500a7c42f2
+ms.sourcegitcommit: 3d59c2aaebcd190b20d24bc8a449eee0681b6a3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961310"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88583311"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -21,7 +21,7 @@ O serviço de migração de armazenamento é lançado em duas partes: o serviço
 
 Por exemplo, o Windows Server, versão 1903 inclui novos recursos e correções para o serviço de migração de armazenamento, que também estão disponíveis para o Windows Server 2019 e o Windows Server, versão 1809, instalando [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
-## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a>Como coletar arquivos de log ao trabalhar com Suporte da Microsoft
+## <a name="how-to-collect-log-files-when-working-with-microsoft-support"></a><a name="collecting-logs"></a> Como coletar arquivos de log ao trabalhar com Suporte da Microsoft
 
 O serviço de migração de armazenamento contém logs de eventos para o serviço Orchestrator e o serviço de proxy. O servidor Orchestrator sempre contém ambos os logs de eventos, e os servidores de destino com o serviço de proxy instalado contêm os logs de proxy. Esses logs estão localizados em:
 
@@ -76,7 +76,7 @@ Para contornar este problema:
     <bindings>
       <netTcpBinding>
         <binding name="NetTcpBindingSms"
-                 sendTimeout="00:01:00"
+                 sendTimeout="00:10:00"
     ```
 
 2. Reinicie o serviço "serviço de migração de armazenamento" no computador do Orchestrator.
@@ -637,6 +637,6 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 Esse problema é causado por um defeito de código no serviço de migração de armazenamento. Atualmente, a única solução alternativa é renomear o computador para ter o mesmo nome que o nome NetBIOS e, em seguida, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para adicionar um nome de computador alternativo que contenha o nome mais longo que estava em uso antes de iniciar o inventário. O serviço de migração de armazenamento dá suporte à migração de nomes de computador alternativos.
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)
