@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 06/30/2020
+ms.date: 08/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5303bb696131d4e122da11c2d72152bf304716b4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 65a2a767e89af6d64893de1b8c7949bedd9e7625
+ms.sourcegitcommit: 9f2e04cd7e52c29fa2fbc64f67dcafbd021015ab
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961930"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88051840"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configurações do arquivo RDP com suporte da Área de Trabalho Remota
 
@@ -59,7 +59,9 @@ A tabela também realça quais configurações são compatíveis como propriedad
 | camerastoredirect:s:value | Redirecionamento de câmera:</br>Configura quais câmeras serão redirecionadas. Essa configuração usa uma lista delimitada por ponto e vírgula das interfaces KSCATEGORY_VIDEO_CAMERA de câmeras habilitadas para redirecionamento. | - *: Redirecione todas as câmeras</br> - Lista de câmeras, como camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- É possível excluir uma câmera específica, prefixando a cadeia de caracteres de link simbólico com "-" | Não redirecionar nenhuma câmera | Sim |
 | devicestoredirect:s:value | Redirecionamento de dispositivos Plug and Play:</br>Determina quais dispositivos no computador local serão redirecionados e estarão disponíveis na sessão remota. | – *: Redirecionar todos os dispositivos com suporte, incluindo aqueles conectados posteriormente</br> – ID de hardware válida para um ou mais dispositivos</br> - DynamicDevices: Redirecionar todos os dispositivos com suporte que são conectados posteriormente | Não redirecionar nenhum dispositivo | Sim |
 | drivestoredirect:s:value | Redirecionamento de unidade/armazenamento:</br>Determina quais unidades de disco no computador local serão redirecionados e estarão disponíveis na sessão remota. | – Nenhum valor especificado: não redirecionar unidades</br>- *: Redirecionar todas as unidades de disco, incluindo unidades conectadas mais tarde</br>– DynamicDrives: redirecionar todas as unidades que estão conectadas mais tarde</br>– A unidade e os rótulos para uma ou mais unidades, tais como "drivestoredirect:s:C:;E:;": redirecionar as unidades especificadas | Não redirecionar nenhuma unidade | Sim |
+| keyboardhook:i:value | Determina quando as combinações de tecla Windows (tecla WIN, ALT + TAB) são aplicadas à sessão remota para conexões de área de trabalho. | - 0: As combinações de tecla Windows são aplicadas no computador local</br>- 1: As combinações de tecla Windows são aplicadas no computador remoto quando no foco</br>- 2: As combinações de tecla Windows são aplicadas no computador remoto apenas no modo tela inteira | 2 | Sim |
 | redirectclipboard:i:value | Redirecionamento da área de transferência:</br>Determina se o redirecionamento de área de transferência fica habilitado. | - 0: Área de transferência no computador local não fica disponível na sessão remota</br>- 1: Área de transferência no computador local fica disponível na sessão remota | 1 | Sim |
+| redirectcomports:i:value | Redirecionamento de portas COM:</br>Determina se as portas COM (serial) no computador local serão redirecionadas e estarão disponíveis na sessão remota. | - 0: As portas COM no computador local não ficam disponíveis na sessão remota</br>- 1: As portas COM no computador local ficam disponíveis na sessão remota | 0 | Sim |
 | redirectprinters:i:value | Redirecionamento de impressora:</br>Determina se as impressoras configuradas no computador local serão redirecionadas e estarão disponíveis na sessão remota | - 0: As impressoras no computador local não ficam disponíveis na sessão remota</br>- 1: As impressoras no computador local ficam disponíveis na sessão remota | 1 | Sim |
 | redirectsmartcards:i:value | Redirecionamento de cartão inteligente:</br>Determina se dispositivos de cartão inteligente no computador local serão redirecionados e estarão disponíveis na sessão remota. |- 0: O dispositivo de cartão inteligente no computador local não fica disponível na sessão remota</br>- 1: O dispositivo de cartão inteligente no computador local fica disponível na sessão remota | 1 | Sim |
 | usbdevicestoredirect:s:value | Redirecionamento de USB | – *: Redirecionar todos os dispositivos USB que ainda não foram redirecionados por outro redirecionamento de alto nível</br> - {GUID da classe de configuração do dispositivo}: Redirecionar todos os dispositivos que são membros da [classe de configuração do dispositivo](/windows-hardware/drivers/install/system-defined-device-setup-classes-available-to-vendors/) especificada</br> - USBInstanceID: Redirecionar um dispositivo USB específico identificado pela ID da instância| Não redirecionar nenhum dispositivo USB | Sim |

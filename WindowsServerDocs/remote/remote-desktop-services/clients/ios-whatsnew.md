@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/06/2020
+ms.date: 08/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e142a299b43ac6167fa4bf34d5782899f28846
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0afb5a64a86d3b33ea5d78756abe09bf87564928
+ms.sourcegitcommit: 3ed5dd72451b494e17d508fed82fdc5559ba4ef0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970153"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88270138"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novidades do cliente para iOS
 
@@ -21,6 +21,15 @@ Atualizamos regularmente o [cliente da Área de Trabalho Remota para iOS](remote
 ## <a name="how-to-report-issues"></a>Como relatar problemas
 
 Temos o compromisso de tornar o cliente da Área de Trabalho Remota para iOS o melhor possível, por isso valorizamos seus comentários. Você pode relatar problemas em **Ajuda** > **Relatar um Problema**.
+
+## <a name="updates-for-version-1012"></a>Atualizações para a versão 10.1.2
+
+*Data da publicação 17/8/2020*
+
+Nesta atualização, abordamos problemas que foram relatados na atualização da versão 10.1.1.
+
+- Correção de uma falha que ocorreu para alguns usuários ao assinar um feed da Área de Trabalho Virtual do Windows usando autenticação não agenciada.
+- Corrigido o layout de ícones do espaço de trabalho no iPhone X, iPhone XS e iPhone 11 Pro.
 
 ## <a name="updates-for-version-1007"></a>Atualizações para a versão 10.0.7
 
