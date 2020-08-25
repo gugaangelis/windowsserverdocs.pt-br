@@ -1,17 +1,17 @@
 ---
-title: Canais de manutenção
-description: Explicação de canais de serviço do Windows Server – LTSC e SAC
+title: Canais de manutenção do Windows Server
+description: Explicação de canais de manutenção do Windows Server – LTSC e SAC
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 47fd1d50e9f90fb6617e2ded4bff3efeab5cd117
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 49de69c5a21a9c16012d79609784ff89395358db
+ms.sourcegitcommit: 893b9a24fd2efe30f5af909e3aa1f25907a17427
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969963"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88681277"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canais de manutenção do Windows Server: LTSC e SAC
 
@@ -36,8 +36,8 @@ A maioria dos recursos introduzidos no Canal Semestral será acumulada na próxi
 
 O Canal Semestral estará disponível para clientes de licença de volume com [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx), bem como por meio do Azure Marketplace ou outro provedor de nuvem/serviços de hospedagem e programas de fidelidade como as Assinaturas do Visual Studio.
 
-> [!NOTE]
-> **A versão atual do Canal Semestral é a versão 1909 do Windows Server**. Se você deseja colocar servidores nesse canal, instale o Windows Server, versão 1909, que pode ser instalado no modo Server Core ou como um Nano Server executado em um contêiner. As atualizações in-loco de uma versão do Canal de Manutenção em Longo Prazo não são compatíveis, porque estão em **canais de versões diferentes**. As versões do Canal Semestral não são atualizações – são a próxima versão do Windows Server no Canal Semestral.
+> [!Note]
+> **A versão atual do Canal Semestral é a versão 2004 do Windows Server**. Se você deseja colocar servidores nesse canal, instale o Windows Server, versão 2004, que pode ser instalado no modo Server Core ou como um Nano Server executado em um contêiner. As atualizações in-loco de uma versão do Canal de Manutenção em Longo Prazo não são compatíveis, porque estão em **canais de versões diferentes**. As versões do Canal Semestral não são atualizações – são a próxima versão do Windows Server no Canal Semestral.
 
 Nesse modelo, as versões do Windows Server são identificadas por ano e mês de lançamento: por exemplo, em 2017, uma versão do nono mês (setembro) seria identificada como **versão 1709**. Novas versões do Windows Server no Canal Semestral ocorrerão duas vezes por ano. O ciclo de vida de suporte para cada versão é 18 meses.
 
@@ -45,7 +45,8 @@ Nesse modelo, as versões do Windows Server são identificadas por ano e mês de
 
 Estas são as principais diferenças para levar em consideração:
 
-- Você precisa fazer upgrade para uma nova tecnologia no DevOps, nos contêineres e nos microsserviços? Nesse caso, considere **ingressar no Canal Semestral** ao instalar o **Windows Server, versão 1909**. Conforme descrito neste tópico, você receberá novas versões duas vezes por ano, com 18 meses de suporte base de produção por versão. Você pode obtê-lo por meio de licenciamento por volume, do Azure ou dos Serviços de Assinatura do Visual Studio. Atualmente, as versões no Canal Semestral exigem licenciamento por volume e Software Assurance se você pretende executar o produto na produção.
+- Você precisa inovar com rapidez? Você precisa de acesso antecipado aos recursos mais recentes do Windows Server? Você precisa dar suporte a aplicativos híbridos de ritmo rápido, a operações de desenvolvimento e a malhas do Hyper-V? Nesse caso, considere **ingressar no Canal Semestral** ao instalar o **Windows Server, versão 2004**. Conforme descrito neste tópico, você receberá novas versões duas vezes por ano, com 18 meses de suporte base de produção por versão. Você pode obtê-lo por meio de licenciamento por volume, do Azure ou dos Serviços de Assinatura do Visual Studio. Atualmente, as versões no Canal Semestral exigem licenciamento por volume e Software Assurance se você pretende executar o produto na produção.
+
 - Você precisa de estabilidade e de previsibilidade? Você precisa executar máquinas virtuais e cargas de trabalho tradicionais em servidores físicos? Nesse caso, considere **manter esses servidores no Canal de Manutenção em Longo Prazo**. A versão atual do LTSC é o **Windows Server 2019**. Conforme descrito neste tópico, você terá acesso às novas versões a cada dois ou três anos, com cinco anos de suporte base seguidos de cinco anos de suporte estendido por versão. As versões LTSC estão disponíveis em todos os mecanismos de lançamento. As versões do LTSC estão disponíveis para qualquer pessoa, independentemente do modelo de licenciamento usado.
 
 A tabela a seguir resume as principais diferenças entre os canais:
@@ -170,12 +171,12 @@ State   :     Installed
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Alterações no Nano Server no Canal Semestral do Windows Server](../get-started/nano-in-semi-annual-channel.md)
+- [Alterações no Nano Server no Canal Semestral do Windows Server](../get-started/nano-in-semi-annual-channel.md)
 
-[Ciclo de vida do suporte ao Windows Server](https://support.microsoft.com/lifecycle)
+- [Ciclo de vida do suporte ao Windows Server](https://support.microsoft.com/lifecycle)
 
-[Determinar se o Server Core está em execução](/previous-versions/windows/desktop/legacy/hh846315(v=vs.85)?f=255&MSPPError=-2147217396)
+- [Determinar se o Server Core está em execução](https://msdn.microsoft.com/library/hh846315%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)
 
-[Função GetProductInfo](/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
+- [Função GetProductInfo](https://docs.microsoft.com/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getproductinfo)
 
-[Cmdlets de registro em log de inventário de software](/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
+- [Cmdlets de registro em log de inventário de software](https://docs.microsoft.com/powershell/module/softwareinventorylogging/?view=winserver2012R2-ps)
