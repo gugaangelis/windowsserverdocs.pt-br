@@ -6,14 +6,14 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a0c93ddc6bf891a3f8157d36b67f60241d4d41b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991595"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702815"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -49,8 +49,8 @@ Para assinar um feed:
 1. Selecione **Adicionar feed** na página principal para se conectar ao serviço e recuperar seus recursos.
 2. Insira a URL do Feed. Ela pode ser uma URL ou endereço de email:
    - Essa URL é geralmente uma URL da Área de Trabalho Virtual do Windows. A que você usa depende de qual versão da Área de Trabalho Virtual do Windows que você está usando.
-      - Para a versão Fall 2019, use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
-      - Para a versão Spring 2020, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
+      - Na Área de Trabalho Virtual do Windows (clássica), use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+      - Na Área de Trabalho Virtual do Windows, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Para usar email, insira seu endereço de email. Isso informa ao cliente para pesquisar uma URL associada ao seu endereço de email, caso o administrador tenha configurado o servidor dessa maneira.
 3. Selecione **Inscrever-se**.
 4. Entre com sua conta quando solicitado.

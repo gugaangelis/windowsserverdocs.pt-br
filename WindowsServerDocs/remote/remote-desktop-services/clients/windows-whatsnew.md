@@ -5,18 +5,34 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/20/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 985d7b015c2ff3fe1d117e8277b445744f6a51e6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: dbaaafe2c01d41a9786d6718bad850dc08deaa81
+ms.sourcegitcommit: 6d991b16a6d9129e1f5d1ca7d688bd621b72d586
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961850"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88638873"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
 
 Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+
+## <a name="updates-for-version-1021519-insider"></a>Atualizações para a versão 10.2.1519 (Insider)
+
+*Data da publicação: 19/08/2020*
+
+- O cliente foi reescrito para usar o mesmo mecanismo principal de RDP subjacente dos clientes iOS, macOS e Android.
+- Foi adicionado suporte para a versão integrada do Azure Resource Manager da Área de Trabalho Virtual do Windows.
+- Foi adicionado suporte para x64 e ARM64.
+- Foi atualizado o design do painel lateral para tela inteira.
+- Foi adicionado suporte para os modos claro e escuro.
+- Foi adicionada uma funcionalidade para assinar implantações de nuvem soberana e se conectar a elas.
+- Foi adicionada uma funcionalidade para habilitar o backup e a restauração de workspaces (indicadores) na RTM (Release to Manufacturing).
+- Foi atualizada a funcionalidade para usar tokens existentes do Azure AD (Azure Active Directory) durante o processo de assinatura para reduzir o número de vezes que os usuários precisam entrar.
+- A assinatura atualizada agora pode detectar se você está usando a Área de Trabalho Virtual do Windows ou a Área de Trabalho Virtual do Windows (clássica).
+- Foi corrigido um problema ao copiar arquivos para PCs remotos.
+- Foram corrigidos problemas de acessibilidade com botões relatados frequentemente.
 
 ## <a name="updates-for-version-1011215"></a>Atualizações para a versão 10.1.1215
 
@@ -47,7 +63,7 @@ Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando no
 *Data da publicação: 15/03/2019*
 
 - Agora é possível definir um nome de exibição para contas de usuário de modo que você possa salvar o mesmo nome de usuário com senhas diferentes.
-- Agora é possível selecionar uma conta de usuário ao adicionar recursos remotos.
+- Agora é possível selecionar uma conta de usuário quando você adiciona os Recursos Remotos.
 - Correção de um problema em que o cliente não estava encerrando corretamente.
 - O cliente agora manipula corretamente ser suspenso quando janelas secundárias estiverem abertas.
 - Correções de bug adicionais.
@@ -60,7 +76,7 @@ Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando no
 - Correção de uma falha ao fechar a janela do cliente, enquanto uma conexão ainda está ativa.
 - Correção de um travamento ao reconectar depois após o cliente ser minimizado.
 - Permite que áreas de trabalho sejam arrastadas para qualquer lugar em um grupo.
-- Certifique-se de iniciar uma conexão dos resultados de lista rápida em uma janela separada, quando necessário.
+- Inicie uma conexão nos resultados da lista de atalhos em uma janela separada, quando necessário.
 - Correções de bug adicionais.
 
 ## <a name="updates-for-version-1011060"></a>Atualizações para a versão 10.1.1060

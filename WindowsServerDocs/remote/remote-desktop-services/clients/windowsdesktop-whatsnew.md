@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/11/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f3a2ff6268cbccc2d354227b577441a270faf9f
-ms.sourcegitcommit: f3a72c06e739d9ee9d8cd7e8259ccee8db7c7523
+ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88089965"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702835"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -57,7 +57,7 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 
 Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
 
-- A lógica de descoberta automática foi atualizada para a opção **Assinar** para dar suporte à atualização da Área de Trabalho Virtual do Windows no primeiro trimestre de 2020. Os clientes com apenas recursos de atualização do primeiro trimestre não precisam mais fornecer consentimento para a versão do terceiro trimestre de 2019.
+- Foi atualizada a lógica de descoberta automática para a opção **Assinar** para dar suporte à versão integrada do Azure Resource Manager da Área de Trabalho Virtual do Windows. Os clientes com apenas recursos da Área de Trabalho Virtual do Windows não precisam mais dar consentimento para a Área de Trabalho Virtual do Windows (clássica).
 - Suporte aprimorado para dispositivos de alto DPI com fator de escala de até 400%.
 - Correção de um problema em que a caixa de diálogo Desconectar não aparecia.
 - Correção de um problema em que as dicas de ferramentas da barra de comandos permaneciam visíveis por mais tempo do que o esperado.
@@ -71,7 +71,7 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - Agora, ao assinar, é possível escolher a conta em vez de digitar o endereço de email.
-- Foi adicionada uma nova opção **Assinar com URL** que permite especificar a URL do workspace que você está assinando ou aproveitar, quando disponível, a [descoberta de email](../rds-email-discovery.md) nos casos em que não conseguimos localizar seus recursos automaticamente. Isso é parecido com o processo de assinatura em outros clientes da Área de Trabalho Remota. E pode ser usado para assinar diretamente os workspaces da atualização da primavera de 2020 para o WVD.
+- Foi adicionada uma nova opção **Assinar com URL** que permite especificar a URL do workspace que você está assinando ou aproveitar, quando disponível, a [descoberta de email](../rds-email-discovery.md) nos casos em que não conseguimos localizar seus recursos automaticamente. Isso é parecido com o processo de assinatura em outros clientes da Área de Trabalho Remota. Isso pode ser usado para assinar diretamente os workspaces da Área de Trabalho Virtual do Windows.
 - Foi adicionado suporte para assinar um workspace usando um novo [esquema de URI](remote-desktop-uri.md) que pode ser enviado em um email para os usuários ou adicionado a um site de suporte.
 - Foi adicionada uma nova caixa de diálogo **Informações da conexão** que fornece detalhes de cliente, rede e servidor para sessões de área de trabalho e de aplicativo. Você pode acessar a caixa de diálogo na barra de conexão no modo de tela inteira ou no menu de sistema quando em janela.
 - As sessões de área de trabalho iniciadas no modo de janela agora sempre maximizam em vez de ficar em tela inteira ao maximizar a janela. Use a opção **Tela inteira** no menu de sistema para entrar em tela inteira.

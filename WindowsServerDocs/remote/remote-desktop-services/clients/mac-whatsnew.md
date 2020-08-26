@@ -5,20 +5,64 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/08/2020
+ms.date: 08/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e8769dd5784bcbac5c5384316564150801c1eb0e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 72d828099d8dfe29639789f526533a7bb1ba159d
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87946509"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702855"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novidades do cliente para macOS
 
 Atualizamos regularmente o [cliente da Área de Trabalho Remota para macOS](remote-desktop-mac.md), adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 Caso tenha problemas, entre em contato conosco a qualquer momento navegando em **Ajuda** > **Relatar um Problema**.
+
+## <a name="updates-for-version-1040"></a>Atualizações para a versão 10.4.0
+
+*Data da publicação: 20/8/20*
+
+Nessa versão, fizemos atualizações substanciais no código subjacente que possibilita a experiência de Área de Trabalho Remota para todos os nossos clientes. Também adicionamos alguns recursos novos e resolvemos bugs e falhas que estavam aparecendo no relatório de erros. Veja abaixo algumas alterações que podem ser observadas:
+
+- A Conexão Rápida ao PC (Cmd+K) permite que você se conecte a um PC sem criar um indicador.
+- A reconexão automática agora se recupera de falhas de rede transitórias em conexões com o PC.
+- Ao retomar um MacBook suspenso, você poderá usar a reconexão automática para se reconectar a todas as conexões ao PC desconectadas.
+- Foi adicionado suporte para proxies HTTP quando você assina recursos da Área de Trabalho Virtual do Windows e se conecta a eles.
+- Foi implementado suporte para a configuração automática de proxy HTTP com arquivos PAC.
+- Suporte integrado para resolução de nomes NETBIOS para que você possa se conectar a PCs na sua rede local com mais facilidade.
+- Foi corrigido um problema no qual a barra de menus de sistema não respondia enquanto o aplicativo estava em foco.
+- Foi corrigida uma condição de corrida do lado do cliente que poderia causar erros de descriptografia no servidor.
+- Foram feitos aprimoramentos no layout do monitor e na heurística geométrica para cenários com múltiplos monitores que envolvem monitores da classe Retina.
+- As configurações de layout de múltiplos monitores agora são mantidas nos cenários de redirecionamento de sessão.
+- Foi resolvido um problema que impedia a remoção da barra de menus em cenários com múltiplos monitores.
+- A interface do usuário da conta de usuário que interage com o conjunto de chaves do macOS agora exibirá erros de acesso do conjunto de chaves.
+- Agora, pressionar cancelar durante a assinatura do workspace fará com que nada seja adicionado à Central de Conexão.
+- Foram adicionados mapeamentos de chave do Cmd+Z e do Cmd+F para fazer mapeamento para Ctrl+Z e Ctrl+F, respectivamente.
+- Correção de um bug que fazia com que os aplicativos remotos fossem abertos em segundo plano na Central de Conexão quando iniciados.
+- Foi solucionado um problema no qual a reprodução de áudio AAC no macOS 10.15 fazia com que o cliente travasse.
+- Clicar em Shift + botão esquerdo do mouse agora funciona no modo Unicode.
+- Foi corrigido um bug no qual o uso da tecla Shift disparava o alerta de Teclas de Aderência no modo Unicode.
+- Foi adicionada uma verificação de disponibilidade de rede antes do início da conexão.
+- Foi resolvida a pulsação de miniaturas de PC que às vezes ocorria durante a sequência de conexão.
+- Foi corrigido um bug no qual o campo de senha na planilha Adicionar/Editar Conta de Usuário se tornava multilinha.
+- A opção "Recolher Tudo" agora ficará esmaecida se todos os workspaces estiverem recolhidos.
+- A opção "Expandir Tudo" agora ficará esmaecida se todos os workspaces estiverem expandidos.
+- A interface do usuário de permissões de primeira execução não é mais mostrada no High Sierra.
+- Foi corrigido um problema no qual os usuários não conseguiam se conectar aos pontos de extremidade da Área de Trabalho Virtual do Windows usando credenciais salvas no formato DOMÍNIO\NOME DE USUÁRIO.
+- O campo do nome de usuário na solicitação de credenciais agora é sempre preenchido em conexões da Área de Trabalho Virtual do Windows.
+- Foi corrigido um bug que cortava os botões Editar, Excluir e Atualizar nos workspaces se a Central de Conexão não fosse larga o suficiente.
+- O campo "URL de email ou de workspace" na folha Adicionar Workspace não diferencia mais maiúsculas de minúsculas.
+- Foram corrigidos vários problemas de acessibilidade que afetavam os cenários de navegação do teclado e o VoiceOver.
+- Muitas atualizações para aprimorar a interoperabilidade com os recursos atuais e futuros no serviço de Área de Trabalho Virtual do Windows.
+- Agora você pode configurar o nível de suporte ao AVC anunciado pelo cliente de um prompt de terminal. Estes são os níveis de suporte que você pode configurar:
+  
+   - Não anunciar o suporte ao AVC ao servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel disabled`
+   - Anunciar o suporte ao AVC420 ao servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel avc420`
+   - Anunciar o suporte ao AVC444 ao servidor: `defaults write com.microsoft.rdc.macos AvcSupportLevel avc444`
+
+Agradecemos novamente a todos que relataram bugs e nos ajudaram a diagnosticar problemas.
 
 ## <a name="updates-for-version-1039"></a>Atualizações da versão 10.3.9
 
@@ -332,8 +376,8 @@ Há algumas semanas desde a última atualização, mas trabalhamos duro durante 
 - Solução de problemas em que janelas RemoteApp apareciam por trás do Connection Center.
 - Correção de um problema que ocorria ao editar recursos locais após a importação da Área de Trabalho Remota 8.
 - Agora é possível iniciar uma conexão ao pressionar ENTER em um bloco da área de trabalho.
-- Quando você estiver no modo de exibição de tela inteira, CMD+M agora será mapeado corretamente para WIN+M.
-- O Connection Center, as Preferências e Sobre o Windows agora respondem a CMD+M.
+- Quando você estiver no modo de exibição de tela inteira, Cmd+M agora será mapeado corretamente para WIN+M.
+- As janelas Central de Conexão, Preferências e Sobre agora respondem a Cmd+M.
 - Agora é possível começar a descobrir feeds pressionando ENTER na página **Adicionar Recursos Remotos*.
 - Correção de um problema em que um novo feed de recursos remotos aparecia vazio no Connection Center até que você atualizasse.
 

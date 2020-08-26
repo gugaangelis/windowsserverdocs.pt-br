@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 05/26/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: fa1c713b06e63c919bc2e42e8d4ba3c14eecf8f0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971603"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702825"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -70,8 +70,8 @@ Há duas maneiras de assinar um workspace. O cliente pode tentar descobrir os re
 1. Na página principal do cliente, toque em **Assinar com URL**.
 2. Insira a URL do workspace ou o endereço de email:
    - Se você usar a **URL do workspace**, use aquela que o administrador lhe forneceu. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar uma das seguintes URLs:
-     - Área de Trabalho Virtual do Windows no outono de 2019: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
-     - Área de Trabalho Virtual do Windows na primavera de 2020: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
+     - Área de Trabalho Virtual do Windows (clássica): `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`
+     - Área de Trabalho Virtual do Windows: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`
    - Para usar o **email**, insira o seu. Isso instrui o cliente a procurar uma URL associada ao endereço de email caso o administrador tenha configurado a [descoberta de email](../rds-email-discovery.md).
 3. Toque em **Avançar**.
 4. Entre com sua conta quando solicitado.

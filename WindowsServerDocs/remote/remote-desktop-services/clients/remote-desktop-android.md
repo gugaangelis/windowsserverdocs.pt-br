@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 70d334aa13b96a210a2b168129119d09b0297f20
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 90a0796818a2beb7e592eae1556999729b2d9ab2
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970143"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702865"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -75,8 +75,8 @@ Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessã
 1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Feed de Recursos Remotos**.
 2. Insira a **URL do Feed**. Ela pode ser uma URL ou endereço de email:
    - A **URL** é o servidor de Acesso via Web da RD fornecida a você por seu administrador. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar uma das seguintes URLs dependendo de qual versão você está usando:
-     - Se você estiver usando a versão Fall 2019, use: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
-     - Se você estiver usando a versão Spring 2020, use: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
+     - Se você estiver usando a Área de Trabalho Virtual do Windows (clássica), use: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+     - Se você estiver usando a Área de Trabalho Virtual do Windows, use: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Se você planeja usar **Email**, insira seu endereço de email nesse campo. Isso instrui o cliente a procurar um servidor de Acesso via Web da Área de Trabalho Remota associado ao endereço de email se ele foi configurado pelo administrador.
 3. Toque em **Avançar**.
 4. Forneça suas informações de entrada quando solicitado. Isso pode variar com base na implantação e pode incluir:

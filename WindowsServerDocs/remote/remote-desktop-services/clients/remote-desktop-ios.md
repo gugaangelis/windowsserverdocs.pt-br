@@ -6,14 +6,14 @@ ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
 author: Heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 07/16/2020
+ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 723fa40e1c2d446381b333eee1289a25adefd5d8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fd8e1da0edd1e49ad0f43420e662a79871ee28f0
+ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997371"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702845"
 ---
 # <a name="get-started-with-the-ios-client"></a>Introdução ao cliente para iOS
 
@@ -72,8 +72,8 @@ Para adicionar um workspace:
 2. No campo URL do Feed, insira a URL do feed que você deseja adicionar. Essa URL pode ser uma URL ou um endereço de email.
    - Se você usar uma URL, use a que o administrador lhe forneceu.
       - Essa URL é geralmente uma URL da Área de Trabalho Virtual do Windows. A que você usa depende de qual versão da Área de Trabalho Virtual do Windows que você está usando.
-        - Para a versão Fall 2019, use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
-        - Para a versão Spring 2020, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
+        - Na Área de Trabalho Virtual do Windows (clássica), use `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
+        - Na Área de Trabalho Virtual do Windows, use `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
    - Se você usar um endereço de email, insira seu endereço de email. A inserção do seu endereço de email instrui o cliente a pesquisar uma URL associada ao seu endereço de email, caso o administrador tenha configurado o servidor dessa maneira.
 3. Toque em **Avançar**.
 4. Forneça suas credenciais quando solicitado.

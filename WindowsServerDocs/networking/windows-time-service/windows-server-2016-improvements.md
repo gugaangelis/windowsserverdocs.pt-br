@@ -1,17 +1,16 @@
 ---
 title: Aprimoramentos de precisão de tempo para o Windows Server 2016
 description: O Windows Server 2016 aprimorou os algoritmos usados para corrigir a hora e a condição do relógio local para sincronização com o UTC.
-author: dcuomo
-ms.author: dacuo
-manager: dougkim
+author: dahavey
+ms.author: dahavey
 ms.date: 10/17/2018
 ms.topic: article
-ms.openlocfilehash: 7c0644d88e158050b83873f4398fe7ee87b120d5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f7593b085dd07694bf7d51d2712501bea612e9af
+ms.sourcegitcommit: b5b040a47cf48c94852de9aad8b91475f891d2f7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997396"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88563396"
 ---
 # <a name="time-accuracy-improvements-for-windows-server-2016"></a>Aprimoramentos de precisão de tempo para o Windows Server 2016
 
@@ -172,7 +171,7 @@ As versões anteriores ao Windows Server 2016 apresentaram vários problemas na 
 
 Em alguns cenários que envolvem controladores de domínio convidados, as amostras de TimeSync do Hyper-V podem atrapalhar a sincronização de hora do domínio. Isso não deverá ser mais um problema para os convidados do Server 2016 em execução em hosts do Hyper-V do Server 2016.
 
-Para desabilitar o serviço TimeSync do Hyper-V em fornecer amostras para o w32time, defina a seguinte chave do Registro do convidado: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\VMICTimeProvider
+Para desabilitar o serviço TimeSync do Hyper-V de fornecer amostras para o w32time, defina a chave do Registro do convidado a seguir: `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\VMICTimeProvider
  "Enabled"=dword:00000000`
 
 #### <a name="allowing-linux-to-use-hyper-v-host-time"></a>Como permitir que o Linux use a hora do host do Hyper-V
