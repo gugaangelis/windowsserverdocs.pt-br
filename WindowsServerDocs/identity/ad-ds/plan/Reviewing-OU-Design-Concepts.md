@@ -1,17 +1,17 @@
 ---
 ms.assetid: 41b56704-c6f9-4d29-af97-62123e300565
 title: Examinando conceitos de design da UO
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 99b358d503a165a72785bd09ead8825b08d175a0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: adb770769d9d79ca5f5d9a9a753ecb90914e2309
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972263"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938546"
 ---
 # <a name="reviewing-ou-design-concepts"></a>Examinando conceitos de design da UO
 

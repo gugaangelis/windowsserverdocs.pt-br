@@ -1,17 +1,17 @@
 ---
 ms.assetid: 6785de86-4f7d-4ed1-9055-8de0871d59b5
 title: Apêndice M-links de documentos e leitura recomendada
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 977ea36fefaa05b49034367594e1d952d712adb2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 891ddf584fb8dc2936d51051aef63f2a7cbab8a2
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994473"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938746"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>Apêndice M: Links de documentos e leitura recomendada
 
@@ -35,7 +35,7 @@ A tabela a seguir contém uma lista de links para documentos externos e suas URL
 | [Artigo Suporte da Microsoft 814777](https://support.microsoft.com/kb/814777) | [https://support.microsoft.com/kb/814777](https://support.microsoft.com/kb/814777) |
 | [Abrir projeto de segurança de aplicativo Web (OWASP)](https://www.owasp.org/index.php/Main_Page) | [https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page) |
 | [Microsoft Security Development Lifecycle](https://www.microsoft.com/security/sdl/default.aspx) | [https://www.microsoft.com/security/sdl/default.aspx](https://www.microsoft.com/security/sdl/default.aspx) |
-| [Mitigar ataques de Pass-the-hash (PtH) e outras técnicas de roubo de credenciais](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) | [https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/MitigatingAtaques de Pass-the-hash (PtH) e outros roubos de credenciais Techniques_English.pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
+| [Mitigar ataques de Pass-the-hash (PtH) e outras técnicas de roubo de credenciais](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) | [https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating Ataques de Pass-the-hash (PtH) e outros roubos de credenciais Techniques_English.pdf](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf) |
 | [Determinados adversários e ataques direcionados](https://www.microsoft.com/download/details.aspx?id=34793) | [https://www.microsoft.com/download/details.aspx?id=34793](https://www.microsoft.com/download/details.aspx?id=34793) |
 | [Solução para o gerenciamento de senha da conta de administrador interno por meio de GPO](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789) | [https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789) |
 | [Artigo Suporte da Microsoft 817433](https://support.microsoft.com/?id=817433) | [https://support.microsoft.com/?id=817433](https://support.microsoft.com/?id=817433) |

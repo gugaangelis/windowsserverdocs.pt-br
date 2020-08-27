@@ -1,17 +1,17 @@
 ---
 ms.assetid: d590c90e-9adf-4305-b226-eb2a5743337b
 title: Noções básicas do design do AD DS
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 73c3aacd34be72f59d5d54d9d657143f8db8d610
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b457bd4ea2517fdebf024caceccbc1b19857f754
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965103"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938346"
 ---
 # <a name="understanding-ad-ds-design"></a>Noções básicas do design do AD DS
 

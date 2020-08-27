@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0abe0976-4b49-45d6-a7b3-81d28bdb8210
 title: Recomendações de política de auditoria
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 5b5ce5e7b53c7b82732613022c8309efe044143f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 33ce3713f95b995fdab63b9e3bd27650fae58347
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87972223"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938226"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendações de política de auditoria
 
@@ -68,7 +68,7 @@ Essas tabelas contêm a configuração padrão do Windows, as recomendações de
 | Auditoria do serviço de autenticação Kerberos |  |  | Sim Sim |
 | Auditoria das operações do tíquete de serviço Kerberos |  |  | Sim Sim |
 | Auditoria de outros eventos de logon de conta |  |  | Sim Sim |
-| **Gerenciamento de Conta** |  |  |  |
+| **Gerenciamento de Contas** |  |  |  |
 | Auditoria do gerenciamento de grupo de aplicativos |  |  |  |
 | Auditoria do gerenciamento da conta de computador |  | Sim não | Sim Sim |
 | Auditoria do gerenciamento do grupo de distribuição |  |  |  |
@@ -146,7 +146,7 @@ Essas tabelas contêm a configuração padrão do Windows, as recomendações de
 | Auditoria do serviço de autenticação Kerberos |  |  | Sim Sim |
 | Auditoria das operações do tíquete de serviço Kerberos |  |  | Sim Sim |
 | Auditoria de outros eventos de logon de conta |  |  | Sim Sim |
-| **Gerenciamento de Conta** |  |  |  |
+| **Gerenciamento de Contas** |  |  |  |
 | Auditoria do gerenciamento de grupo de aplicativos |  |  |  |
 | Auditoria do gerenciamento da conta de computador |  | Sim DC | Sim Sim |
 | Auditoria do gerenciamento do grupo de distribuição |  |  |  |

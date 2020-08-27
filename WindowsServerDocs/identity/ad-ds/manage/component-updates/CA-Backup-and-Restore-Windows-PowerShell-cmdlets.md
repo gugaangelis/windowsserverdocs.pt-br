@@ -1,17 +1,17 @@
 ---
 ms.assetid: 7e195f5b-b194-40f3-a26d-5cf4ade5fc4d
 title: Cmdlets do Windows PowerShell de backup e restauração de AC
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 817a4c117bfd39799a5147d657262eb208c9a79b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b008ec74adfc3a4b6c63ec29f719c45483412b1d
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943441"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939556"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>Cmdlets do Windows PowerShell de backup e restauração de AC
 
@@ -34,7 +34,7 @@ O módulo ADCSAdministration do Windows PowerShell foi introduzido no servidor d
 
 **Cmdlet ADCSAdministration: backup-CARoleService**
 
-|Argumentos-argumentos em **negrito** são necessários|Descrição|
+|Argumentos-argumentos em **negrito** são necessários|DESCRIÇÃO|
 |------------------------------------------------|---------------|
 |**-Caminho**|-Cadeia de caracteres-local para salvar o backup<br />-Este é o único parâmetro sem nome<br />-parâmetro posicional<p>**Exemplo:**<p>Backup-CARoleService.-path c:\adcsbackup1<p>Backup-CARoleService c:\adcsbackup2|
 |-Somente|-Fazer backup do certificado de autoridade de certificação sem o banco de dados<p>**Exemplo:**<p>Backup-CARoleService c:\adcsbackup3-keyonly|
@@ -64,7 +64,7 @@ Backup-CARoleService c:\adcsbackup5 -Password (ConvertTo-SecureString "Pa55w0rd!
 ## <a name="restore-caroleservice"></a>Restore-CARoleService
 **Cmdlet ADCSAdministration: Restore-CARoleService**
 
-|Argumentos-argumentos em **negrito** são necessários|Descrição|
+|Argumentos-argumentos em **negrito** são necessários|DESCRIÇÃO|
 |------------------------------------------------|---------------|
 |**-Caminho**|-Cadeia de caracteres-local para o qual restaurar o backup<br />-Este é o único parâmetro sem nome<br />-parâmetro posicional<p>**Exemplo:**<p>Restore-CARoleService.-path c:\adcsbackup1-Force<p>Restore-CARoleService c:\adcsbackup2-Force|
 |-Somente|-Restaurar o certificado de autoridade de certificação sem o banco de dados<br />-Deve ser especificado se o backup foi feito com a opção-keyonly<p>**Exemplo:**<p>Restore-CARoleService c:\adcsbackup3-addonly-Force|
@@ -79,7 +79,7 @@ Um backup não protegido por senha será obtido se a função ConvertTo-SecureSt
 
 **Tabela SEQ tabela \\ \* árabe 18: erros comuns**
 
-|Ação|Erro|Comentário|
+|Ação|Erro do|Comentário|
 |----------|---------|-----------|
 |**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: o processo não pode acessar o arquivo porque ele está sendo usado por outro processo. (Exceção de HRESULT:<p>0x80070020|Pare o serviço de serviços de certificados Active Directory antes de executar o cmdlet Restore-CARoleService|
 |**Restore-CARoleService C:\ADCSBackup**|Restore-CARoleService: o diretório não está vazio. (Exceção de HRESULT: 0x80070091)|Usar o parâmetro-Force para substituir chaves preexistentes|

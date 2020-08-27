@@ -1,17 +1,17 @@
 ---
 title: Recuperação de floresta do AD – etapas para restaurar a floresta
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
-ms.openlocfilehash: e6c758c6ad7f4754c0c3105ab9ffa4ace38ddfaf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b6dbd22eb34578013f90dda937ec1c26fe8fbf4e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953215"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938856"
 ---
 # <a name="ad-forest-recovery---steps-for-restoring-the-forest"></a>Recuperação de floresta do AD – etapas para restaurar a floresta
 

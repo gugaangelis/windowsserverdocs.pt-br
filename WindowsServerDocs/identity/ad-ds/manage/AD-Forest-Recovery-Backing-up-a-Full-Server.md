@@ -1,17 +1,17 @@
 ---
 title: Recuperação de floresta do AD-fazendo backup de um servidor completo
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 398918dc-c8ab-41a6-a377-95681ec0b543
-ms.openlocfilehash: cb7e6f7b8e8786ad816a9ec5e3211fa617723a9c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ef1eb77a108d742d4fe6c7b76bfe412c7eac95bc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956933"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939916"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>Recuperação de floresta do AD-fazendo backup de um servidor completo
 

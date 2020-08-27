@@ -1,17 +1,17 @@
 ---
 ms.assetid: 155abe09-6360-4913-8dd9-7392d71ea4e6
 title: Configurar um computador para solução de problemas
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 05aa12b16d67a8f91ed82064c8464927546bfee8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 049addf848e231104e844c06627997c71b335d20
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87947900"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938736"
 ---
 # <a name="configuring-a-computer-for-troubleshooting"></a>Configurar um computador para solução de problemas
 

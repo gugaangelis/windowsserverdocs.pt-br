@@ -1,17 +1,17 @@
 ---
 title: Recuperação de floresta do AD – verificar replicação
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 302e522a-fb40-43bc-bc63-83dcc87ebde5
-ms.openlocfilehash: b0dcbc06f5ca116096a2ff4a2a3ec0210d9ccb48
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: beb7968dee3b2948aed695864015a02f0aa3b47e
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943677"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88938146"
 ---
 # <a name="resources-to-verify-replication-is-working"></a>Recursos para verificar se a replicação está funcionando
 
@@ -29,7 +29,7 @@ Se o primeiro log de controladores de domínio recuperado a ID de evento 4614 ("
 1. Quando o evento 4612 do DFSR aparece no primeiro DC restaurado, execute uma restauração manual autoritativa, conforme descrito em [2218556: como forçar uma sincronização autoritativa e não autoritativa para o SYSVOL replicado pelo DFSR (como "D4/D2" para o FRS)](https://support.microsoft.com/kb/2218556) ( https://support.microsoft.com/kb/2218556) .
 2. Defina o **sinalizador SysvolReady** como 1 manualmente, conforme descrito em [947022 o compartilhamento Netlogon não está presente após a instalação do Active Directory Domain Services em um novo controlador de domínio baseado em Windows Server 2008 completo ou somente leitura](https://support.microsoft.com/kb/947022).
 
-Você também pode criar um relatório de diagnóstico Replicação do DFS. Para obter mais informações, consulte [criar um relatório de diagnóstico para replicação do DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11)) e [guia passo a passo do DFS para o Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11)). Se o servidor estiver executando o Windows Server 2008 R2, você poderá usar a [opção de linha de comandodfsrdiag.exe replicationstate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11)).
+Você também pode criar um relatório de diagnóstico Replicação do DFS. Para obter mais informações, consulte [criar um relatório de diagnóstico para replicação do DFS](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11)) e [guia passo a passo do DFS para o Windows Server 2008](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11)). Se o servidor estiver executando o Windows Server 2008 R2, você poderá usar a [ opção de linha de comandodfsrdiag.exe replicationstate](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754227(v=ws.11)).
 
 Você também pode executar o teste de replicações usando dcdiag.exe para verificar se há erros de replicação. Para obter mais informações, consulte o [artigo 249256](https://support.microsoft.com/kb/249256)da base de dados de conhecimento.
 

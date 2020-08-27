@@ -1,17 +1,17 @@
 ---
 ms.assetid: 16a344a9-f9a6-4ae2-9bea-c79a0075fd04
 title: Atestado de chave de TPM
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e2f0df3ab3310bcf62e98e61aee4ea447d37c456
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: aa23d8df4391514d08ff1ef065af14275274dfa9
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943354"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939896"
 ---
 # <a name="tpm-key-attestation"></a>Atestado de chave de TPM
 
@@ -141,7 +141,7 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
 
     -   **Credenciais do usuário:** Permitir que um usuário de autenticação comprovando um TPM válido especificando suas credenciais de domínio.
 
-    -   **Certificado de endosso:** O EKCert do dispositivo deve validar por meio de certificados de AC intermediárias do TPM gerenciados pelo administrador para um certificado de autoridade de certificação raiz gerenciado pelo administrador. Se você escolher essa opção, deverá configurar repositórios de certificados EKCA e EKRoot na AC emissora conforme descrito na seção [configuração da autoridade de certificação](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) neste tópico.
+    -   **Certificado de endosso:** O EKCert do dispositivo deve validar por meio de certificados de AC intermediárias do TPM gerenciados pelo administrador para um certificado de autoridade de certificação raiz gerenciado pelo administrador. Se você escolher essa opção, deverá configurar repositórios de certificados EKCA e EKRoot na AC emissora conforme descrito na seção  [configuração da autoridade de certificação](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) neste tópico.
 
     -   **Chave de endosso:** O EKPub do dispositivo deve aparecer na lista gerenciada pelo administrador PKI. Essa opção oferece o nível de garantia mais alto, mas requer mais esforço administrativo. Se você escolher essa opção, deverá configurar uma lista EKPub na AC emissora, conforme descrito na seção [configuração da autoridade de certificação](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md#BKMK_CAConfig) neste tópico.
 
@@ -149,9 +149,9 @@ Para configurar o modelo de certificado para o atestado de chave do TPM, execute
 
     **OIDs da política de emissão**
 
-    |OID|Tipo de atestado de chave|Descrição|Nível de garantia|
+    |OID|Tipo de atestado de chave|DESCRIÇÃO|Nível de garantia|
     |-------|------------------------|---------------|-------------------|
-    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para lista de EK gerenciada pelo administrador|Alta|
+    |1.3.6.1.4.1.311.21.30|EK|"EK verificado": para lista de EK gerenciada pelo administrador|Alto|
     |1.3.6.1.4.1.311.21.31|Certificado de endosso|"Certificado EK verificado": quando a cadeia de certificados EK é validada|Médio|
     |1.3.6.1.4.1.311.21.32|Credenciais de usuário|"EK confiável em uso": para EK atestado pelo usuário|Baixo|
 

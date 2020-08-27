@@ -1,17 +1,17 @@
 ---
 ms.assetid: c0d64566-5530-482e-a332-af029a5fb575
 title: Mapeamento de requisitos de design para modelos de design de floresta
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: f10c3c5bc1b974e27aa14341c5367885333172fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b796b06d8bdf5b4e644eaa3cc9f2e50f127c71a1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971003"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939046"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Mapeamento de requisitos de design para modelos de design de floresta
 

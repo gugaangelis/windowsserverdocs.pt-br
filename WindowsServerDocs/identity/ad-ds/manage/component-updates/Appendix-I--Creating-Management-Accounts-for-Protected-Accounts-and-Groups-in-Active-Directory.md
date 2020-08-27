@@ -1,17 +1,17 @@
 ---
 ms.assetid: 13fe87d9-75cf-45bc-a954-ef75d4423839
 title: Apêndice I-criando contas de gerenciamento para contas e grupos protegidos no Active Directory
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 944e71b546f6e5a7484f533b5c6dc86840484e46
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c77abee124f67f28ae94ab4969d145fac64e8154
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994917"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88939986"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>Apêndice I: Criar o gerenciamento de contas para contas e grupos protegidos no Active Directory
 
@@ -275,7 +275,7 @@ Nesse caso, você concederá as contas de gerenciamento recém-criadas para perm
 
    - /G indica que uma ACE de concessão está sendo configurada
 
-   - PIM001@tailspintoys.msfté o UPN (nome principal do usuário) da entidade de segurança à qual as ACEs serão concedidas
+   - PIM001@tailspintoys.msft é o UPN (nome principal do usuário) da entidade de segurança à qual as ACEs serão concedidas
 
    - RPWP concede as permissões Read Property e Write Property
 
