@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3acaa977-ed63-4e38-ac81-229908c47208
 title: Como são tratados os Cookies de servidor LDAP
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 077c40d6ed61da1d36bdfd792af41ea5067421fc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7e01afeeef7bb9751b4c23839569a9395fbd9c51
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943590"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941346"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>Como são tratados os Cookies de servidor LDAP
 
@@ -125,7 +125,7 @@ Se você estiver vendo o evento 2898 no servidor DC/LDAP, é recomendável defin
 
 Se você ainda estiver vendo eventos 2899 com um pool de 250 MB ou mais, é provável que muitos clientes tenham um número muito alto de objetos retornados, consultados com muita frequência. Os dados que você pode obter com o [Conjunto de coletores de dados de diretório ativo](/archive/blogs/askds/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond) podem ajudar a localizar consultas paginadas repetitivas que mantêm seus servidores LDAP ocupados. Essas consultas serão mostradas com um número de "entradas retornadas" que correspondem ao tamanho da página usada.
 
-Se possível, você deve examinar o design do aplicativo e implementar uma abordagem diferente com uma frequência menor, um volume de dados e/ou menos instâncias de cliente consultando esses dados. No caso dos aplicativos para os quais você tem acesso ao código-fonte, este guia para [criar aplicativos habilitados para AD eficientes](/previous-versions/ms808539(v=msdn.10)) pode ajudá-lo a entender a maneira ideal para os aplicativos acessarem o AD.
+Se possível, você deve examinar o design do aplicativo e implementar uma abordagem diferente com uma frequência menor, um volume de dados e/ou menos instâncias de cliente consultando esses dados. No caso dos aplicativos para os quais você tem acesso ao código-fonte, este guia para  [criar aplicativos habilitados para AD eficientes](/previous-versions/ms808539(v=msdn.10)) pode ajudá-lo a entender a maneira ideal para os aplicativos acessarem o AD.
 
 Se o comportamento da consulta não puder ser alterado, uma abordagem também será adicionar mais instâncias replicadas dos contextos de nomenclatura necessários e redistribuir os clientes e eventualmente reduzir a carga nos servidores LDAP individuais.
 

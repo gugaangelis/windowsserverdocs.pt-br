@@ -2,17 +2,17 @@
 ms.assetid: 66fa945e-598d-4f18-b603-97a39ce0d836
 title: Instalar um RODC (controlador de domínio somente leitura) do Active Directory do Windows Server 2012 (nível 200)
 description: Este tópico explica como criar uma conta RODC pré-configurada e, em seguida, anexar um servidor a essa conta durante a instalação do RODC. Este tópico também explica como instalar um RODC sem executar uma instalação em etapas.
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: a46d18a0d2f589cb0ae7ee5915af0c84b0c8982f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a0c800d975b36f92d5b4bcf1801d06897cbefac3
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950400"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941596"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>Instalar um RODC (controlador de domínio somente leitura) do Active Directory do Windows Server 2012 (nível 200)
 

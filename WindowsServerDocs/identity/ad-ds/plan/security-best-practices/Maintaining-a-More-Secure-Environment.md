@@ -1,17 +1,17 @@
 ---
 ms.assetid: 8f994e2e-6c07-43f0-aef4-75f8b2c9a144
 title: Manter um ambiente mais seguro
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: d4ddefda4ce9488320927542dcd24b9ac092bdb4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7cde4344a28888c997cfb751b2943429fbc4e686
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994313"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941406"
 ---
 # <a name="maintaining-a-more-secure-environment"></a>Manter um ambiente mais seguro
 

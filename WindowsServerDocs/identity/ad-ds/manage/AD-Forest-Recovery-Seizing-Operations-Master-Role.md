@@ -1,17 +1,17 @@
 ---
 title: Recuperação de floresta do AD-capturando uma função de mestre de operações
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: 7e6bb370-f840-4416-b5e2-86b0ba715f4f
-ms.openlocfilehash: dc9c435d45e15af627a259c73dcdd81a7689cbe6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7d7b1abfaf7e3ed4f3780ff2d819340ba8fe98c0
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943719"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941526"
 ---
 # <a name="ad-forest-recovery---seizing-an-operations-master-role"></a>Recuperação de floresta do AD-capturando uma função de mestre de operações
 
@@ -61,7 +61,7 @@ Use o procedimento a seguir para executar uma função de mestre de operações 
 |----------|-----------------|-------------|
 |Mestre de nomeação de domínio|Administradores Corporativos|**Capturar o mestre de nomenclatura**|
 |Mestre de esquema|Administradores de esquemas|**Capturar o mestre de esquema**|
-|Observação mestre de infraestrutura **:** depois de executar a função de mestre de infraestrutura, você poderá receber um erro mais tarde se precisar executar adprep/rodcprep. Para obter mais informações, consulte o artigo [949257](https://support.microsoft.com/kb/949257)da base de dados de conhecimento.|Administradores de Domínio|**Capturar mestre de infraestrutura**|
+|Observação mestre de infraestrutura **:**  depois de executar a função de mestre de infraestrutura, você poderá receber um erro mais tarde se precisar executar adprep/rodcprep. Para obter mais informações, consulte o artigo [949257](https://support.microsoft.com/kb/949257)da base de dados de conhecimento.|Administradores de Domínio|**Capturar mestre de infraestrutura**|
 |Mestre do emulador PDC|Administradores de Domínio|**Capturar PDC**|
 |Mestre de RID do |Administradores de Domínio|**Capturar mestre RID**|
 

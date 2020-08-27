@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4cc9c16c-1928-4dce-a3a8-6229be28eb65
 title: Conceitos de replicação do Active Directory
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: c1392d813497980d6060cc22fe35afa17c4043e0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 403a8be3d6b7fc6330395bf6e4d20141e01b76ba
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969943"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940316"
 ---
 # <a name="active-directory-replication-concepts"></a>Conceitos de replicação do Active Directory
 
@@ -75,7 +75,7 @@ Para obter mais informações sobre como esses aprimoramentos do KCC funcionam, 
 ## <a name="failover-functionality"></a><a name="BKMK_3"></a>Funcionalidade de failover
 Os sites asseguram que a replicação seja roteada em relação a falhas de rede e controladores de domínio offline. O KCC é executado em intervalos especificados para ajustar a topologia de replicação para alterações que ocorrem em AD DS, como quando novos controladores de domínio são adicionados e novos sites são criados. O KCC revisa o status de replicação das conexões existentes para determinar se as conexões não estão funcionando. Se uma conexão não estiver funcionando devido a um controlador de domínio com falha, o KCC criará automaticamente conexões temporárias com outros parceiros de replicação (se disponíveis) para garantir que a replicação ocorra. Se todos os controladores de domínio em um site estiverem indisponíveis, o KCC criará automaticamente conexões de replicação entre os controladores de domínio de outro site.
 
-## <a name="subnet"></a><a name="BKMK_4"></a>Sub-rede
+## <a name="subnet"></a><a name="BKMK_4"></a>Redes
 Uma sub-rede é um segmento de uma rede TCP/IP à qual um conjunto de endereços IP lógicos é atribuído. Sub-redes agrupam computadores de uma maneira que identifica sua proximidade física na rede. Os objetos de sub-rede no AD DS identificam os endereços de rede que são usados para mapear computadores para sites.
 
 ## <a name="site"></a><a name="BKMK_5"></a>Site

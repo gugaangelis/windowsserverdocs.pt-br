@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
 title: Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 23bab1ff39cf5097f7b6face4886c6be59a7e5d5
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9752425c0732c2290642d62239151f20acb99ad0
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943516"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940476"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Erro de replicação 1753 Não há mais pontos de extremidade disponíveis do mapeador de ponto de extremidade
 
@@ -147,7 +147,7 @@ Verifique se o serviço que está registrando seu serviço com o mapeador de pon
 
 Verificar se o cliente RPC (DC de destino) está conectado ao servidor RPC pretendido (DC de origem)
 
-Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio na _msdcs. \<forest root domain>Zona DNS, independentemente do domínio no qual residem dentro da floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
+Todos os DCs em uma floresta Active Directory comum registram um registro CNAME do controlador de domínio na _msdcs. \<forest root domain> Zona DNS, independentemente do domínio no qual residem dentro da floresta. O registro CNAME do DC é derivado do atributo objectGUID do objeto de configurações NTDS para cada controlador de domínio.
 
 Ao executar operações baseadas em replicação, um DC de destino consulta o DNS para o registro CNAME de DCs de origem. O registro CNAME contém o nome do computador totalmente qualificado do DC de origem que é usado para derivar o endereço IP de DCs de origem por meio da pesquisa de cache do cliente DNS, pesquisa de arquivo do host/LMHost, registro A/AAAA do host no DNS ou WINS.
 
@@ -294,7 +294,7 @@ Esses mapeamentos inválidos de host para IP podem ser causados por entradas obs
 
 Resumo: Este exemplo falhou porque um mapeamento de host para IP inválido (no arquivo de HOST, nesse caso) fez com que o DC de destino fosse resolvido para um controlador de domínio de "origem" que não tenha o serviço de Active Directory Domain Services em execução (ou até mesmo instalado para esse assunto) para que o SPN de replicação não tenha sido registrado e o DC de origem retornou o erro 1753. No segundo caso, um mapeamento de host para IP inválido (novamente no arquivo de HOST) fez com que o DC de destino se conectasse a um controlador de domínio que registrou o E351... o SPN de replicação, mas essa origem tinha um nome de host e uma identidade de segurança diferentes do DC de origem pretendido, de modo que as tentativas falharam com Error-2146893022: o nome principal de destino está incorreto.
 
-## <a name="related-topics"></a>Tópicos Relacionados
+## <a name="related-topics"></a>Tópicos relacionados
 
 * [Solução de problemas Active Directory operações que falham com o erro 1753: não há mais pontos de extremidade disponíveis no mapeador de pontos de extremidades.](https://support.microsoft.com/kb/2089874)
 * [Artigo 839880 da base de problemas ao solucionar erros do mapeador de ponto de extremidade RPC usando as ferramentas de suporte do Windows Server 2003 do CD do produto](https://support.microsoft.com/kb/839880)

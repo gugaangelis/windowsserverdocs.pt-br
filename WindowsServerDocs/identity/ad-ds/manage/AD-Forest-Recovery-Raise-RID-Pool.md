@@ -1,17 +1,17 @@
 ---
 title: Recuperação de floresta do AD – gerando pools RID
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
 ms.assetid: c37bc129-a5e0-4219-9ba7-b4cf3a9fc9a4
-ms.openlocfilehash: 624aac31ac92ea16dffcd84a323cc0b13037efde
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 96e27aac4f63008c2ae694c2fe365d6391d3c949
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969913"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941556"
 ---
 # <a name="ad-forest-recovery---raising-the-value-of-available-rid-pools"></a>Recuperação de floresta do AD-aumentando o valor dos pools RID disponíveis
 

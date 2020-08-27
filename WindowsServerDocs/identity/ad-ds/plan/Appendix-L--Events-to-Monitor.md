@@ -1,17 +1,17 @@
 ---
 ms.assetid: 99a68050-8d19-4c58-ad86-e08a3dcdb4f7
 title: Apêndice L-eventos a serem monitorados
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 07/30/2018
 ms.topic: article
-ms.openlocfilehash: 2c54a4615cf998b4f8358c71079ebe166bbd1d52
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 69cee9735f4cd59545fca2428702fe2670091ede
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969803"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941226"
 ---
 # <a name="appendix-l-events-to-monitor"></a>Apêndice L: Eventos a serem monitorados
 
@@ -25,15 +25,15 @@ Uma possível criticalidade de alto significa que uma ocorrência do evento deve
 
 |**ID de Evento Atual do Windows**|**ID de evento herdado do Windows**|**Criticidade Potencial**|**Resumo do Evento**|
 |--|--|--|--|
-|4618|N/D|Alta|Um padrão de evento de segurança monitorado ocorreu.|
-|4649|N/D|Alta|Foi detectado um ataque de reprodução. Pode ser um falso negativo inofensivo devido a erro de configuração incorreta.|
-|4719|612|Alta|A política de auditoria do sistema foi alterada.|
-|4765|N/D|Alta|O histórico de SID foi adicionado a uma conta.|
-|4766|N/D|Alta|Falha ao tentar adicionar o histórico SID a uma conta.|
-|4794|N/D|Alta|Foi feita uma tentativa de definir o Modo de Restauração dos Serviços de Diretório.|
-|4897|801|Alta|Separação de funções habilitada:|
-|4964|N/D|Alta|Grupos especiais foram atribuídos a um novo logon.|
-|5124|N/D|Alta|Uma configuração de segurança foi atualizada no serviço de respondente OCSP|
+|4618|N/D|Alto|Um padrão de evento de segurança monitorado ocorreu.|
+|4649|N/D|Alto|Foi detectado um ataque de reprodução. Pode ser um falso negativo inofensivo devido a erro de configuração incorreta.|
+|4719|612|Alto|A política de auditoria do sistema foi alterada.|
+|4765|N/D|Alto|O histórico de SID foi adicionado a uma conta.|
+|4766|N/D|Alto|Falha ao tentar adicionar o histórico SID a uma conta.|
+|4794|N/D|Alto|Foi feita uma tentativa de definir o Modo de Restauração dos Serviços de Diretório.|
+|4897|801|Alto|Separação de funções habilitada:|
+|4964|N/D|Alto|Grupos especiais foram atribuídos a um novo logon.|
+|5124|N/D|Alto|Uma configuração de segurança foi atualizada no serviço de respondente OCSP|
 |N/D|550|Médio a alto|Possível ataque de DoS (negação de serviço)|
 |1102|517|Médio a alto|O log de auditoria foi limpo|
 |4621|N/D|Médio|O administrador recuperou o sistema do CrashOnAuditFail. Os usuários que não forem administradores agora terão permissão para fazer logon. Algumas atividades auditáveis podem não ter sido registradas.|

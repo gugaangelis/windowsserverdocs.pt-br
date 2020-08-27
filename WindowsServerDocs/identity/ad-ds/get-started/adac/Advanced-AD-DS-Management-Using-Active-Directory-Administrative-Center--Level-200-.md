@@ -1,17 +1,17 @@
 ---
 ms.assetid: 4d21d27d-5523-4993-ad4f-fbaa43df7576
 title: Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 56792ce9c5a98e923627be4d98eba8404e046b46
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 567798afaa50604df737fe4ad119ff1cd13d31ae
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971133"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940376"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
@@ -43,7 +43,7 @@ O Windows PowerShell e camada de operações subjacentes para a nova funcionalid
 
 ## <a name="enabling-and-managing-the-active-directory-recycle-bin-using-active-directory-administrative-center"></a><a name="BKMK_EnableRecycleBin"></a>Habilitando e gerenciando a lixeira do Active Directory usando o Centro Administrativo do Active Directory
 
-### <a name="capabilities"></a>Capacidades
+### <a name="capabilities"></a>Funcionalidades
 
 - O Windows Server 2012 ou mais recente Centro Administrativo do Active Directory permite que você configure e gerencie o Active Directory Lixeira para qualquer partição de domínio em uma floresta. Não há mais um requisito para usar o Windows PowerShell ou Ldp.exe para habilitar a Lixeira do Active Directory ou restaurar objetos em partições de domínio.
 - O Centro Administrativo do Active Directory tem critérios de filtragem avançados, facilitando a restauração de destino em grandes ambientes, com muitos objetos excluídos intencionalmente.
@@ -120,7 +120,7 @@ A operação de restauração dá suporte a todas as opções de critérios de f
 - Quando excluído
 - Último pai conhecido
 - Type
-- Descrição
+- DESCRIÇÃO
 - City
 - País/região
 - department
@@ -444,7 +444,7 @@ A definição do nível de detalhe também mostra as pilhas .NET de cada funçã
 
 Os erros mostrados quando nenhuma instância dos Serviços Web do Active Directory está disponível são:
 
-|Erro|Operação|
+|Erro do|Operação|
 | --- | --- |
 |"Não é possível se conectar a nenhum domínio. Atualize ou tente novamente quando a conexão estiver disponível"|Mostrado no início do aplicativo do Centro Administrativo do Active Directory|
 |"Não é possível encontrar um servidor disponível no *<NetBIOS domain name>* domínio que está executando o serviço Web do Active Directory (ADWS)"|Mostrado ao tentar selecionar um nó do domínio no aplicativo do Centro Administrativo do Active Directory|

@@ -1,17 +1,17 @@
 ---
 title: Limpar metadados do AD DS Server
 description: Usar ferramentas internas para limpar metadados de controladores de domínio removidos
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: 9601ead1621aef187aaf6dfed83e31184e61e0d4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9708f30e94f739b003e511af9a30196b9a94549b
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953281"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940526"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Limpar os metadados do servidor do controlador Domínio do Active Directory
 
@@ -40,7 +40,7 @@ A associação em **Admins**. do domínio, ou equivalente, é o mínimo necessá
 
 ## <a name="clean-up-server-metadata-using-activedirectory-users-and-computers"></a>Limpar os metadados do servidor usando Active Directory usuários e computadores
 
-1. Abra **Usuários e Computadores do Active Directory**.
+1. Abra **Computadores e Usuários do Active Directory**.
 2. Se você tiver identificado parceiros de replicação em preparação para este procedimento e se não estiver conectado a um parceiro de replicação do controlador de domínio removido cujos metadados você está limpando, clique com o botão direito do mouse **Active Directory nó usuários e computadores** e clique em **alterar controlador de domínio**. Clique no nome do controlador de domínio do qual você deseja remover os metadados e, em seguida, clique em **OK**.
 3. Expanda o domínio do controlador de domínio que foi removida forçosamente e clique em **controladores de domínio**.
 4. No painel de detalhes, clique com o botão direito do mouse no objeto de computador do controlador de domínio cujos metadados você deseja limpar e clique em **excluir**.
@@ -88,7 +88,7 @@ Como alternativa, você pode limpar os metadados usando o Ntdsutil.exe, uma ferr
 
 7. Para confirmar a remoção do controlador de domínio:
 
-   Abra Usuários e Computadores do Active Directory. No domínio do controlador de domínio removido, clique em **controladores de domínio**. No painel de detalhes, um objeto para o controlador de domínio que você removeu não deve aparecer.
+   Abra Computadores e Usuários do Active Directory. No domínio do controlador de domínio removido, clique em **controladores de domínio**. No painel de detalhes, um objeto para o controlador de domínio que você removeu não deve aparecer.
 
    Abra Active Directory sites e serviços. Navegue até o contêiner **servidores** e confirme se o objeto de servidor para o controlador de domínio que você removeu não contém um objeto de configurações NTDS. Se nenhum dos objetos filho aparecer abaixo do objeto de servidor, você poderá excluir o objeto de servidor. Se um objeto filho for exibido, não exclua o objeto de servidor porque outro aplicativo está usando o objeto.
 

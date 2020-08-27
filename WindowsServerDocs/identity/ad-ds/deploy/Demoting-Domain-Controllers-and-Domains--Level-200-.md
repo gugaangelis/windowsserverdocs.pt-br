@@ -1,17 +1,17 @@
 ---
 ms.assetid: 65ed5956-6140-4e06-8d99-8771553637d1
 title: Rebaixando controladores de domínio e domínios (nível 200)
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 11/14/2018
 ms.topic: article
-ms.openlocfilehash: d9be9555c3e72b13fb86509289ee7459f4d1b687
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5a450d37c3dcd5f92e6685c1a7f0393d764b8e55
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959384"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940956"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>Rebaixando controladores de domínio e domínios
 
@@ -114,7 +114,7 @@ Os argumentos equivalentes de ADDSDeployment do Windows PowerShell são:
 -lastdomaincontrollerindomain <{ $true | false }>
 ```
 
-### <a name="warnings"></a>Avisos
+### <a name="warnings"></a>Warnings
 
 ![Assistente de configuração de Active Directory Domain Services-impacto das funções FSMO de credenciais](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_Warnings.png)
 

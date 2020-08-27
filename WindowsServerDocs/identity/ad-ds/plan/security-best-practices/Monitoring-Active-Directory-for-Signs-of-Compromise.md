@@ -1,17 +1,17 @@
 ---
 ms.assetid: a7ef2fba-b05c-4be2-93b2-b9456244c3ad
 title: Monitorar o Active Directory em busca de sinais de comprometimento
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 8b28d412411336062187a842912b6f4a41957eba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9b7aafb92b354181957c6c304ad9b366b4413e65
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994350"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941416"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Monitorar o Active Directory em busca de sinais de comprometimento
 
@@ -44,7 +44,7 @@ Os links a seguir fornecem informações sobre melhorias na auditoria do Windows
 Antes do Windows Vista e do Windows Server 2008, o Windows tinha apenas nove categorias de diretiva de auditoria de log de eventos:
 
 * Eventos de logon de conta
-* Gerenciamento de Conta
+* Gerenciamento de Contas
 * Acesso ao serviço de diretório
 * Eventos de logon
 * Acesso a objetos
@@ -145,7 +145,7 @@ Em ambientes de domínio, a maioria dos eventos de logon de conta é registrada 
 * Acesso a uma rede sem fio concedida a uma conta de usuário ou de computador
 * Acesso a uma rede 802.1 x com fio concedida a uma conta de usuário ou de computador
 
-#### <a name="account-management"></a>Gerenciamento de Conta
+#### <a name="account-management"></a>Gerenciamento de Contas
 
 ##### <a name="user-account-management"></a>Gerenciamento de contas de usuário
 Essa subcategoria relata cada evento de gerenciamento de conta de usuário, como quando uma conta de usuário é criada, alterada ou excluída; uma conta de usuário é renomeada, desabilitada ou habilitada; ou uma senha é definida ou alterada. Se essa configuração de diretiva de auditoria estiver habilitada, os administradores poderão rastrear eventos para detectar a criação de contas de usuário maliciosas, acidentais e mal-intencionadas.
@@ -298,7 +298,7 @@ Essa subcategoria relata as alterações no estado de segurança do sistema, com
 ##### <a name="security-system-extension"></a>Extensão do sistema de segurança
 Essa subcategoria relata o carregamento do código de extensão, como pacotes de autenticação pelo subsistema de segurança.
 
-##### <a name="system-integrity"></a>Integridade do sistema
+##### <a name="system-integrity"></a>Integridade do Sistema
 Essa subcategoria relata violações de integridade do subsistema de segurança.
 
 Driver IPsec
@@ -333,7 +333,7 @@ A política de auditoria avançada pode ser definida usando Active Directory ou 
 
 Auditpol.exe (para configurar a diretiva de auditoria do Windows) foi introduzida no Windows Server 2008 e no Windows Vista. Inicialmente, apenas auditpol.exe pode ser usado para definir a diretiva de auditoria avançada, mas Política de Grupo pode ser usado no Windows Server 2012, no Windows Server 2008 R2 ou no Windows Server 2008, Windows 8 e Windows 7.
 
-Auditpol.exe é um utilitário de linha de comando. A sintaxe é mostrada a seguir:
+Auditpol.exe é um utilitário de linha de comando. A sintaxe dela é a seguinte:
 
 `auditpol /set /<Category|Subcategory>:<audit category> /<success|failure:> /<enable|disable>`
 
@@ -358,19 +358,19 @@ A Microsoft fornece um [script de exemplo](https://support.microsoft.com/kb/9214
 
 Auditpol.exe pode ser usado para salvar e restaurar uma política de auditoria local e para exibir outros comandos relacionados à auditoria. Aqui estão os outros comandos **Auditpol** .
 
-`auditpol /clear`-Usado para limpar e redefinir políticas de auditoria local
+`auditpol /clear` -Usado para limpar e redefinir políticas de auditoria local
 
-`auditpol /backup /file:<filename>`-Usado para fazer backup de uma política de auditoria local atual em um arquivo binário
+`auditpol /backup /file:<filename>` -Usado para fazer backup de uma política de auditoria local atual em um arquivo binário
 
-`auditpol /restore /file:<filename>`-Usado para importar um arquivo de política de auditoria salvo anteriormente para uma política de auditoria local
+`auditpol /restore /file:<filename>` -Usado para importar um arquivo de política de auditoria salvo anteriormente para uma política de auditoria local
 
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-Se essa configuração de diretiva de auditoria estiver habilitada, ela fará com que o sistema pare imediatamente (com a mensagem STOP: C0000244 {Audit Failed}) se uma auditoria de segurança não puder ser registrada por qualquer motivo. Normalmente, um evento não é registrado quando o log de auditoria de segurança está cheio e o método de retenção especificado para o log de segurança **não substitui eventos** nem **substitui eventos por dias**. Normalmente, ele só é habilitado por ambientes que precisam de maior garantia de que o log de segurança está registrando em log. Se habilitada, os administradores devem observar com atenção o tamanho do log de segurança e girar os logs conforme necessário. Ele também pode ser definido com Política de Grupo modificando a opção de segurança **auditoria: desligar o sistema imediatamente se não for possível registrar auditorias de segurança** (padrão = desabilitado).
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>` -Se essa configuração de diretiva de auditoria estiver habilitada, ela fará com que o sistema pare imediatamente (com a mensagem STOP: C0000244 {Audit Failed}) se uma auditoria de segurança não puder ser registrada por qualquer motivo. Normalmente, um evento não é registrado quando o log de auditoria de segurança está cheio e o método de retenção especificado para o log de segurança **não substitui eventos** nem **substitui eventos por dias**. Normalmente, ele só é habilitado por ambientes que precisam de maior garantia de que o log de segurança está registrando em log. Se habilitada, os administradores devem observar com atenção o tamanho do log de segurança e girar os logs conforme necessário. Ele também pode ser definido com Política de Grupo modificando a opção de segurança **auditoria: desligar o sistema imediatamente se não for possível registrar auditorias de segurança** (padrão = desabilitado).
 
-`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`– Essa configuração de política de auditoria determina se o acesso de objetos do sistema global deve ser auditado. Se essa política estiver habilitada, ela fará com que os objetos do sistema, como mutexes, eventos, semáforos e dispositivos DOS, sejam criados com uma SACL (lista de controle de acesso) do sistema padrão. A maioria dos administradores consideram a auditoria de objetos do sistema global como "ruidosa", e eles só serão habilitados se suspeitarem de hackers mal-intencionados. Somente objetos nomeados recebem uma SACL. Se a política de auditoria de acesso a objetos de auditoria (ou a subcategoria de auditoria de objeto de kernel) também estiver habilitada, o acesso a esses objetos do sistema será auditado. Ao definir essa configuração de segurança, as alterações não terão efeito até que você reinicie o Windows. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança auditar o acesso de objetos do sistema global (padrão = desabilitado).
+`auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>` – Essa configuração de política de auditoria determina se o acesso de objetos do sistema global deve ser auditado. Se essa política estiver habilitada, ela fará com que os objetos do sistema, como mutexes, eventos, semáforos e dispositivos DOS, sejam criados com uma SACL (lista de controle de acesso) do sistema padrão. A maioria dos administradores consideram a auditoria de objetos do sistema global como "ruidosa", e eles só serão habilitados se suspeitarem de hackers mal-intencionados. Somente objetos nomeados recebem uma SACL. Se a política de auditoria de acesso a objetos de auditoria (ou a subcategoria de auditoria de objeto de kernel) também estiver habilitada, o acesso a esses objetos do sistema será auditado. Ao definir essa configuração de segurança, as alterações não terão efeito até que você reinicie o Windows. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança auditar o acesso de objetos do sistema global (padrão = desabilitado).
 
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`– Essa configuração de diretiva de auditoria Especifica que os objetos de kernel nomeados (como mutexes e semáforos) devem receber SACLs quando são criados. AuditBaseDirectories afeta objetos de contêiner enquanto AuditBaseObjects afeta objetos que não podem conter outros objetos.
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>` – Essa configuração de diretiva de auditoria Especifica que os objetos de kernel nomeados (como mutexes e semáforos) devem receber SACLs quando são criados. AuditBaseDirectories afeta objetos de contêiner enquanto AuditBaseObjects afeta objetos que não podem conter outros objetos.
 
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`– Essa configuração de política de auditoria Especifica se o cliente gera um evento quando um ou mais desses privilégios são atribuídos a um token de segurança do usuário: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege e TcbPrivilege. Se essa opção não estiver habilitada (padrão = desabilitada), os privilégios de BackupPrivilege e RestorePrivilege não serão registrados. Habilitar essa opção pode tornar o log de segurança extremamente ruidosa (às vezes, centenas de eventos por segundo) durante uma operação de backup. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança **auditoria: auditar o uso do privilégio de backup e restauração**.
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>` – Essa configuração de política de auditoria Especifica se o cliente gera um evento quando um ou mais desses privilégios são atribuídos a um token de segurança do usuário: AssignPrimaryTokenPrivilege, AuditPrivilege, BackupPrivilege, CreateTokenPrivilege, DebugPrivilege, EnableDelegationPrivilege, ImpersonatePrivilege, LoadDriverPrivilege, RestorePrivilege, SecurityPrivilege, SystemEnvironmentPrivilege, TakeOwnershipPrivilege e TcbPrivilege. Se essa opção não estiver habilitada (padrão = desabilitada), os privilégios de BackupPrivilege e RestorePrivilege não serão registrados. Habilitar essa opção pode tornar o log de segurança extremamente ruidosa (às vezes, centenas de eventos por segundo) durante uma operação de backup. Essa política também pode ser definida com Política de Grupo modificando a opção de segurança **auditoria: auditar o uso do privilégio de backup e restauração**.
 
 > [!NOTE]
 > Algumas informações fornecidas aqui foram tiradas do [tipo de opção de auditoria](/openspecs/windows_protocols/ms-gpac/262a2bed-93d4-4c04-abec-cf06e9ec72fd) da Microsoft e da ferramenta Microsoft SCM.

@@ -1,17 +1,17 @@
 ---
 ms.assetid: 3647b7e3-54a4-46c6-ab68-82fcf3bfacda
 title: Active Directory atualizações em toda a floresta
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
-ms.openlocfilehash: 5f5320129710749b271eee3097d80a6a246265f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3e1c732bdb941c184c14952a31d902c72933ca88
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953355"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940646"
 ---
 # <a name="forest-wide-updates"></a>Atualizações em toda a floresta
 
@@ -27,7 +27,7 @@ Para obter mais informações sobre como interpretar as cadeias de caracteres de
 
 Depois que as operações executadas pelo comando **forestprep** no Windows Server 2016 (operations 136-142) forem concluídas, o atributo de **revisão** para o objeto CN = ActiveDirectoryUpdate, CN = ForestUpdates, CN = Configuration, DC = ForestRootDomain será definido como **16**.
 
-| Número da operação e GUID | Descrição | Atributos | Permissões |
+| Número da operação e GUID | DESCRIÇÃO | Atributos | Permissões |
 |--|--|--|--|
 | **Operação 136**: {328092FB-16E7-4453-9AB8-7592DB56E9C4} | Concessão de "CN = Send-as, CN = Extended-Rights" para gMSA contas. | N/D | N/D |
 | **Operação 137**: {3A1C887F-DF0A-489F-b3f2-2D0409095F6E} | Concessão de "CN = Receive-as, CN = Extended-Rights" para gMSA contas. | N/D | N/D |
@@ -41,7 +41,7 @@ Depois que as operações executadas pelo comando **forestprep** no Windows Serv
 
 Depois que as operações executadas pelo comando **forestprep** no Windows Server 2012 R2 (operations 131-135) forem concluídas, o atributo de **revisão** para o objeto CN = ActiveDirectoryUpdate, CN = ForestUpdates, CN = Configuration, DC = ForestRootDomain será definido como **15**.
 
-| Número da operação e GUID | Descrição | Atributos | Permissões |
+| Número da operação e GUID | DESCRIÇÃO | Atributos | Permissões |
 |--|--|--|--|
 | **Operação 131**: {b83818c1-01a6-4f39-91b7-a3bb581c3ae3} | Foi criado um novo objeto de contêiner de configuração de política de autenticação CN = autenticação de política Authn, CN = Services na partição de configuração. | -objectClass: contêiner<br />-displayName: configuração da política de autenticação<br />-Descrição: contém a configuração da política de autenticação.<br />-showInAdvancedViewOnly: true | (A;; RPLCLORC;;; AU<br />(A;; RPWPCRLCLOCCRCWDWOSW;;; EUM<br />(A;; RPWPCRLCLOCCDCRCWDWOSDDTSW;;; Sy |
 | **Operação 132**: {bbbb9db0-4009-4368-8c40-6674e980d3c3} | Criou um novo objeto de políticas de autenticação CN = Authn Policies, CN = Authn Policy Configuration, CN = Services na partição de configuração. | -objectClass: msDS-AuthNPolicies<br />-displayName: políticas de autenticação<br />-Descrição: contém objetos de política de autenticação.<br />-showInAdvancedViewOnly: true | (A;; RPWPCRCCDCLCLOLORCWOWDSDDTDTSW;;; EUM<br />(A;; RPWPCRCCDCLCLORCWOWDSDDTSW;;; Sy<br />(A;; RPLCLORC;;; AU |
@@ -53,7 +53,7 @@ Depois que as operações executadas pelo comando **forestprep** no Windows Serv
 
 Depois que as operações executadas pelo comando **forestprep** no Windows Server 2012 (operations 84-130) forem concluídas, o atributo de **revisão** para o objeto CN = ActiveDirectoryUpdate, CN = ForestUpdates, CN = Configuration, DC = ForestRootDomain será definido como **11**.
 
-|Número da operação e GUID|Descrição|Atributos|Permissões|
+|Número da operação e GUID|DESCRIÇÃO|Atributos|Permissões|
 |-----------------------------|---------------|--------------|---------------|
 |**Operação 84**: {4664e973-cb20-4def-b3d5-559d6fe123e0}|Criou um novo contêiner CN = Claims Configuration, CN = Services na partição de configuração.|-objectClass: contêiner|(A;; RPLCLORC;;; AU<br />(A;; RPWPCRLCLOCCRCWDWOSW;;; EUM<br />(A;; RPWPCRLCLOCCDCRCWDWOSDDTSW;;; Sy|
 |**Operação 85**: {2972d92d-a07a-44AC-9cb0-bf243356f345}|Criou um novo objeto CN = tipos de declaração, CN = Claims Configuration, CN = Services na partição de configuração.|-objectClass: msDS-ClaimTypes<br />-showInAdvancedViewOnly: true|(A;; RPLCLORC;;; AU<br />(A;; RPWPCRLCLOCCDCRCWDWOSW;;; EUM<br />(A;; RPWPCRLCLOCCDCRCWDWOSDDTSW;;; Sy|

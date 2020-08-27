@@ -1,17 +1,17 @@
 ---
 ms.assetid: 0fd7b6aa-3e50-45a3-a3a6-56982844363e
 title: ID do evento 2088-falha na pesquisa de DNS com êxito de replicação
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 9dbb7debbca8d1625ebe975a051ed8b607d1ddd0
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a6e78c458f92e477ddeaf156370f5e254caf4679
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943281"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941336"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>ID do evento 2088: falha de pesquisa de DNS ocorreu com êxito na replicação
 
@@ -51,7 +51,7 @@ Ação do usuário:
 
 2) Confirme se o controlador de domínio de origem está executando Active Directory e está acessível na rede digitando "net view \\ <source DC name> " ou "ping <source DC name> ".
 
-3) Verifique se o controlador de domínio de origem está usando um servidor DNS válido para os serviços DNS e se o registro de host do controlador de domínio de origem e o registro CNAME estão registrados corretamente, usando a versão aprimorada do DNS do DCDIAG.EXE disponível em<https://www.microsoft.com/dns>
+3) Verifique se o controlador de domínio de origem está usando um servidor DNS válido para os serviços DNS e se o registro de host do controlador de domínio de origem e o registro CNAME estão registrados corretamente, usando a versão aprimorada do DNS do DCDIAG.EXE disponível em <https://www.microsoft.com/dns>
 
 Dcdiag/test: DNS
 
@@ -59,7 +59,7 @@ Dcdiag/test: DNS
 
 Dcdiag/test: DNS
 
-5) Para análise adicional de falhas de erro de DNS, consulte KB 824449:<https://support.microsoft.com/?kbid=824449>
+5) Para análise adicional de falhas de erro de DNS, consulte KB 824449: <https://support.microsoft.com/?kbid=824449>
 
 Valor de erro de dados adicional: 11004 o nome solicitado é válido, mas nenhum dado do tipo solicitado foi encontrado </code></introduction>
   <section>

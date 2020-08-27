@@ -1,17 +1,17 @@
 ---
 title: Instalar o Active Directory Domain Services em uma máquina virtual do Azure
 description: Como criar uma nova floresta Active Directory em uma VM (máquina virtual) em uma máquina virtual do Azure.
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 04/11/2019
 ms.topic: article
-ms.openlocfilehash: 7272ddc3693816974df528e6c5e10671bbe4ffb7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 98725e194226f048de5bc8332c02ec54c7525ee1
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87943771"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940116"
 ---
 # <a name="install-a-new-active-directory-forest-using-azure-cli"></a>Instalar uma nova floresta do Active Directory usando a CLI do Azure
 

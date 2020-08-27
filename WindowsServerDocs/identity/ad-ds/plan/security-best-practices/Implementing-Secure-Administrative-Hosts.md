@@ -1,17 +1,17 @@
 ---
 ms.assetid: eafdddc3-40d7-4a75-8f4f-a45294aabfc8
 title: Implementar hosts administrativos seguros
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: e4a969049c28b29fff61d4ede7995153ed3c5818
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 63f4f805ca5326f480ce3496deecf04a40d5ffa4
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958934"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941426"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementar hosts administrativos seguros
 
@@ -103,10 +103,10 @@ Para a estação de trabalho de produtividade, a equipe de ti pode receber conta
 
 Se você tiver implementado cartões inteligentes, as estações de trabalho administrativas deverão ser configuradas para exigir logons de cartão inteligente, e a equipe de ti deverá receber contas separadas para uso administrativo, também configurada para exigir cartões inteligentes para logon interativo. O host administrativo deve ser protegido conforme descrito anteriormente e somente usuários de ti designados devem ter permissão para fazer logon localmente na estação de trabalho administrativa.
 
-#### <a name="pros"></a>Prós
+#### <a name="pros"></a>Vantagens
 Ao implementar sistemas físicos separados, você pode garantir que cada computador esteja configurado adequadamente para sua função e que os usuários de ti não possam expor inadvertidamente os sistemas administrativos a riscos.
 
-#### <a name="cons"></a>Contras
+#### <a name="cons"></a>Desvantagens
 
 -   A implementação de computadores físicos separados aumenta os custos de hardware.
 
@@ -117,13 +117,13 @@ Ao implementar sistemas físicos separados, você pode garantir que cada computa
 ### <a name="implementing-a-secure-physical-workstation-with-a-virtualized-productivity-workstation"></a>Implementando uma estação de trabalho física segura com uma estação de trabalho de produtividade virtualizada
 Nessa abordagem, os usuários de ti recebem uma estação de trabalho administrativa segura da qual podem executar funções administrativas cotidianas, usando conexões Ferramentas de Administração de Servidor Remoto (RSAT) ou RDP para servidores dentro de seu escopo de responsabilidade. Quando os usuários precisam executar tarefas de produtividade, eles podem se conectar via RDP a uma estação de trabalho de produtividade remota em execução como uma máquina virtual. Credenciais separadas devem ser usadas para cada estação de trabalho e controles como cartões inteligentes devem ser implementados.
 
-#### <a name="pros"></a>Prós
+#### <a name="pros"></a>Vantagens
 
 -   Estações de trabalho administrativas e estações de trabalho de produtividade são separadas.
 
 -   A equipe de ti que usa estações de trabalho seguras para se conectar a estações de trabalho de produtividade pode usar credenciais separadas e cartões inteligentes, e as credenciais privilegiadas não são depositadas no computador menos seguro.
 
-#### <a name="cons"></a>Contras
+#### <a name="cons"></a>Desvantagens
 
 -   A implementação da solução requer o trabalho de design e implementação e opções de virtualização robustas.
 
@@ -134,7 +134,7 @@ Nessa abordagem, você pode emitir para os usuários de ti uma única estação 
 
 Você deve exigir um cartão inteligente ou outro logon multifator para as máquinas virtuais, usando contas separadas diferentes da conta usada para fazer logon no computador físico. Depois que um usuário de ti faz logon em um computador físico, ele pode usar o cartão inteligente de produtividade para se conectar ao computador de produtividade remota e uma conta separada e um cartão inteligente para se conectar ao seu computador administrativo remoto.
 
-#### <a name="pros"></a>Prós
+#### <a name="pros"></a>Vantagens
 
 -   Os usuários de ti podem usar uma única estação de trabalho física.
 
@@ -146,7 +146,7 @@ Você deve exigir um cartão inteligente ou outro logon multifator para as máqu
 
 -   Se o computador físico estiver comprometido, nenhuma credencial privilegiada será armazenada em cache na memória e o uso de cartões inteligentes poderá impedir o comprometimento de credenciais por agentes de pressionamento de tecla.
 
-#### <a name="cons"></a>Contras
+#### <a name="cons"></a>Desvantagens
 
 -   A implementação da solução requer o trabalho de design e implementação e opções de virtualização robustas.
 
@@ -163,7 +163,7 @@ Sempre que possível, as ferramentas de administração remota devem ser usadas 
 
 Em casos em que um usuário administrativo deve se conectar via RDP a um servidor de destino para gerenciá-lo diretamente, o gateway de área de trabalho remota deve ser configurado para permitir que a conexão seja feita somente se o usuário e o computador apropriados forem usados para estabelecer a conexão com o servidor de destino. A execução de ferramentas do RSAT (ou semelhantes) deve ser proibida em sistemas não designados para sistemas de gerenciamento, como estações de trabalho de uso geral e servidores membro que não são servidores de salto.
 
-#### <a name="pros"></a>Prós
+#### <a name="pros"></a>Vantagens
 
 -   A criação de servidores de salto permite mapear servidores específicos para "zonas" (coleções de sistemas com requisitos de configuração, conexão e segurança semelhantes) em sua rede e exigir que a administração de cada zona seja obtida pela equipe administrativa que se conecta de hosts administrativos seguros a um servidor de "zona" designado.
 
@@ -171,7 +171,7 @@ Em casos em que um usuário administrativo deve se conectar via RDP a um servido
 
 -   Ao implementar máquinas virtuais por administrador em servidores de salto, você impõe o desligamento e a redefinição das máquinas virtuais para um estado claro conhecido quando as tarefas administrativas são concluídas. Ao impor o desligamento (ou reiniciar) das máquinas virtuais quando as tarefas administrativas são concluídas, as máquinas virtuais não podem ser direcionadas por invasores, nem os ataques de roubo de credenciais são viáveis porque as credenciais em cache de memória não persistem além de uma reinicialização.
 
-#### <a name="cons"></a>Contras
+#### <a name="cons"></a>Desvantagens
 
 -   Os servidores dedicados são necessários para servidores de salto, sejam físicos ou virtuais.
 

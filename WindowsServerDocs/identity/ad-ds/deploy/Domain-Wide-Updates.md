@@ -2,17 +2,17 @@
 ms.assetid: 2a5d5271-6ac6-4c1b-b4ef-9b568932a55a
 title: Active Directory atualizações de esquema em todo o domínio
 description: Atualizações de esquema em todo o domínio executadas pelo adprep/domainprep ao promover um controlador de domínio
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 10/29/2018
 ms.topic: article
-ms.openlocfilehash: 606e48502587675b9a98e279f1b9047db8789021
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cc22ebec3546c852dff811b00a0e430c7f740abc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959094"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940776"
 ---
 # <a name="domain-wide-schema-updates"></a>Atualizações de esquema em todo o domínio
 
@@ -36,7 +36,7 @@ Depois que as operações executadas pelo **domainprep** no Windows Server 2016 
 
 Depois que as operações executadas pelo **domainprep** no Windows Server 2016 (operations 82-88) forem concluídas, o atributo de **revisão** para o objeto CN = ActiveDirectoryUpdate, CN = DomainUpdates, CN = System, DC = ForestRootDomain será definido como **15**.
 
-|Número de operações e GUID|Descrição|Atributos|Permissões|
+|Número de operações e GUID|DESCRIÇÃO|Atributos|Permissões|
 |------------------------------|---------------|--------------|---------------|
 |**Operação 82**: {83C53DA7-427E-47A4-A07A-A324598B88F7}|Criar CN = Contêiner de chaves na raiz do domínio|-objectClass: contêiner<br />-Descrição: contêiner padrão para objetos de credencial de chave<br />-ShowInAdvancedViewOnly: TRUE|Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;; EUM<br />Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;;D Um<br />Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;; Sy<br />Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;;D 3D<br />Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;; COMANDOS|
 |**Operação 83**: {C81FC9CC-0130-4FD1-B272-634D74818133}|Adicionar controle total permitir ACEs para o contêiner CN = Keys para "domain\Key admins" e "rootdomain\Enterprise Key admins".|N/D|Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;; Administradores de chaves)<br />Um CIS RPWPCRLCLOCCDCRCWDWOSDDTSW;;; Administradores de chave corporativa)|
@@ -56,7 +56,7 @@ Embora nenhuma operação seja executada pelo **domainprep** no Windows Server 2
 
 Depois que as operações executadas pelo **domainprep** no Windows Server 2012 (operations 78, 79, 80 e 81) forem concluídas, o atributo de **revisão** para o objeto CN = ActiveDirectoryUpdate, CN = DomainUpdates, CN = System, DC = ForestRootDomain será definido como **9**.
 
-|Número de operações e GUID|Descrição|Atributos|Permissões|
+|Número de operações e GUID|DESCRIÇÃO|Atributos|Permissões|
 |------------------------------|---------------|--------------|---------------|
 |**Operação 78**: {c3c927a6-cc1d-47c0-966B-be8f9b63d991}|Crie um novo objeto CN = TPM Devices na partição de domínio.|Classe de objeto: msTPM-InformationObjectsContainer|N/D|
 |**Operação 79**: {54afcfb9-637a-4251-9f47-4d50e7021211}|Foi criada uma entrada de controle de acesso para o serviço TPM.|N/D|OA CIIO; WP; ea1b7b93-5e48-46D5-bc6c-4df4fda78a35; bf967a86-0de6-11D0-a285-00aa003049e2; PS)|

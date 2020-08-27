@@ -1,17 +1,17 @@
 ---
 ms.assetid: b11f7a65-ec7b-4c11-8dc4-d7cabb54cd94
 title: Solucionar problemas de replicação do Active Directory
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 630ba90cd2e5c00753b707754d32530b38c8db8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2ceb13e3729310e01063c0c5c3694806b1565363
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941615"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941486"
 ---
 # <a name="troubleshooting-active-directory-replication-problems"></a>Solucionar problemas de replicação do Active Directory
 
@@ -126,7 +126,7 @@ Ferramentas:
 ### <a name="to-generate-a-repadmin-showrepl-spreadsheet-for-domain-controllers"></a>Para gerar uma planilha repadmin/showrepl para controladores de domínio
 
 1. Abra um prompt de comando como administrador: no menu Iniciar, clique com o botão direito do mouse em prompt de comando e clique em executar como administrador. Se a caixa de diálogo controle de conta de usuário for exibida, forneça as credenciais de administração de empresa, se necessário, e clique em continuar.
-2. No prompt de comando, digite o seguinte comando e pressione ENTER:`repadmin /showrepl * /csv > showrepl.csv`
+2. No prompt de comando, digite o seguinte comando e pressione ENTER: `repadmin /showrepl * /csv > showrepl.csv`
 3. Abra o Excel.
 4. Clique no botão Office, clique em abrir, navegue até showrepl.csv e clique em abrir.
 5. Oculte ou exclua a coluna A, bem como a coluna de tipo de transporte, da seguinte maneira:

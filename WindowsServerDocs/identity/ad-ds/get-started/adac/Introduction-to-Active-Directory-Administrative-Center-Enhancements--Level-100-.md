@@ -1,17 +1,17 @@
 ---
 ms.assetid: 074e63e9-976c-49da-8cba-9ae0b3325e34
 title: Introduction to Active Directory Administrative Center Enhancements (Level 100)
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: f494fc09027b17d2110731d73d3d8de6d0496342
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a7639fccf472d3b23b06a64dc0e621cfa4f8bb37
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957023"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940106"
 ---
 # <a name="introduction-to-active-directory-administrative-center-enhancements-level-100"></a>Introduction to Active Directory Administrative Center Enhancements (Level 100)
 
@@ -35,7 +35,7 @@ A Lixeira do Active Directory, a partir do Windows Server 2008 R2, tem como base
 
 Quando a Lixeira do Active Directory é habilitada, todos os atributos de valores vinculados e não vinculados dos objetos excluídos do Active Directory são preservados, e os objetos são integralmente restaurados para o mesmo estado lógico consistente em que estavam imediatamente antes da exclusão. Por exemplo, as contas de usuário restauradas automaticamente recuperam todas as associações de grupo e direitos de acesso correspondentes que tinham antes da exclusão, dentro e entre domínios. A Lixeira do Active Directory funciona nos ambientes do AD DS e do AD LDS. Para obter uma descrição detalhada da Lixeira do Active Directory, consulte [Novidades do AD DS: Lixeira do Active Directory](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd391916(v=ws.10)).
 
-**O que há de novo?** No Windows Server 2012 e mais recente, o recurso lixeira do Active Directory é aprimorado com uma nova interface gráfica do usuário para que os usuários gerenciem e restaurem objetos excluídos. Os usuários agora podem localizar visualmente uma lista de objetos excluídos e restaurá-los nos seus locais originais ou desejados.
+**Novidades** No Windows Server 2012 e mais recente, o recurso lixeira do Active Directory é aprimorado com uma nova interface gráfica do usuário para que os usuários gerenciem e restaurem objetos excluídos. Os usuários agora podem localizar visualmente uma lista de objetos excluídos e restaurá-los nos seus locais originais ou desejados.
 
 Se você planeja habilitar Active Directory Lixeira no Windows Server, considere o seguinte:
 
@@ -123,7 +123,7 @@ Nos procedimentos a seguir, você criará dois usuários de teste. Em seguida, c
    - Nome completo: test1
    - Logon SamAccountName do usuário: test1
    - Senha: p@ssword1
-   - Confirmar senha:p@ssword1
+   - Confirmar senha: p@ssword1
 
 5. Repita as etapas anteriores para criar um segundo usuário, test2.
 
@@ -229,7 +229,7 @@ O sistema operacional Windows Server 2008 permite que as organizações definam 
 
 É possível usar políticas de senha refinada para especificar várias políticas de senha dentro de um único domínio, bem como aplicar diferentes restrições de políticas de senha e de bloqueio de conta a diferentes conjuntos de usuários em um domínio. Por exemplo, você pode aplicar configurações mais estritas a contas privilegiadas e configurações menos estritas às contas de outros usuários. Em outros casos, talvez você deseje aplicar uma política especial de senha a contas cujas senhas sejam sincronizadas com outras fontes de dados. Para obter uma descrição detalhada da Política de Senha Refinada, consulte [AD DS: Políticas de senha refinada](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770394(v=ws.10))
 
-**O que há de novo?**
+**Novidades**
 
 No Windows Server 2012 e mais recente, o gerenciamento de diretiva de senha refinado é facilitado e mais visual, fornecendo uma interface do usuário para AD DS administradores para gerenciá-los no ADAC. Os administradores agora podem exibir a política resultante de um determinado usuário, exibir e classificar todas as políticas de senha em um determinado domínio e gerenciar políticas de senha individuais visualmente.
 

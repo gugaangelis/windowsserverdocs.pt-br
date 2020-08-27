@@ -1,17 +1,17 @@
 ---
 ms.assetid: f74eec9a-2485-4ee0-a0d8-cce01250a294
 title: Administração simplificada do AD DS
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
 ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 61961acf9fc1c858fddb4da70b4899e229ec6a3d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5fec303bb5681147d1a2d9ab008ad40ac6a1b52c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956973"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940046"
 ---
 # <a name="ad-ds-simplified-administration"></a>Administração simplificada do AD DS
 

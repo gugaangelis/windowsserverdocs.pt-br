@@ -1,17 +1,17 @@
 ---
 ms.assetid: 5ab76733-804d-4f30-bee6-cb672ad5075a
 title: Solução de problemas de implantação de controlador de domínio
-author: MicrosoftGuyJFlo
-ms.author: joflore
-manager: mtillman
+author: iainfoulds
+ms.author: iainfou
+manager: daveba
 ms.date: 03/20/2019
 ms.topic: article
-ms.openlocfilehash: 3615d7a0a536a0bb54efee2e8982f9b4e3686c8d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8c850a9a09af97d9aa377b79aaa87d06aa0d916c
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953325"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940606"
 ---
 # <a name="troubleshooting-domain-controller-deployment"></a>Solução de problemas de implantação de controlador de domínio
 
@@ -218,7 +218,7 @@ A seguir, problemas comuns observados durante o processo de desenvolvimento do W
 | Problema | O rebaixamento de um controlador de domínio deixa o DNS executando sem zonas |
 |--|--|
 | Sintomas | O servidor ainda atenderá solicitações de DNS, mas não terá informações sobre a zona |
-| Solução e notas | Ao remover a função AD DS, remova também a função Servidor DNS ou defina o serviço Servidor DNS como desabilitado. Lembre-se de apontar o cliente DNS para um servidor diferente. Se estiver usando o Windows PowerShell, execute o seguinte depois de rebaixar o servidor:<p>Código-desinstalar-WindowsFeature DNS<p>ou o<p>Conjunto de código-DNS-de-início do serviço desabilitado<br />parar o DNS do serviço |
+| Solução e notas | Ao remover a função AD DS, remova também a função Servidor DNS ou defina o serviço Servidor DNS como desabilitado. Lembre-se de apontar o cliente DNS para um servidor diferente. Se estiver usando o Windows PowerShell, execute o seguinte depois de rebaixar o servidor:<p>Código-desinstalar-WindowsFeature DNS<p>ou<p>Conjunto de código-DNS-de-início do serviço desabilitado<br />parar o DNS do serviço |
 
 | Problema | A promoção de um Windows Server 2012 para um domínio de rótulo único existente não configura updatetopleveldomain=1 ou allowsinglelabeldnsdomain=1 |
 |--|--|
@@ -292,7 +292,7 @@ A seguir, problemas comuns observados durante o processo de desenvolvimento do W
 
 | Problema | A verificação do pré-requisito adprep falha com o erro "Não é possível executar a verificação de conflitos de esquema do Exchange" |
 |--|--|
-| Sintomas | Ao tentar promover um controlador de domínio do Windows Server 2012 para uma floresta existente do Windows Server 2003, Windows Server 2008 ou Windows Server 2008 R2, a verificação dos pré-requisitos falha com o erro:<p>Falha na verificação de código dos pré-requisitos para o AD Prep. Não é possível executar a verificação de conflito de esquema do Exchange para o domínio *<domain name>* (exceção: o servidor RPC está indisponível)<p>O adprep.log mostra o erro:<p>Código-Adprep não pôde recuperar dados do servidor*<domain controller>*<p>por meio de Instrumentação de Gerenciamento do Windows (WMI). |
+| Sintomas | Ao tentar promover um controlador de domínio do Windows Server 2012 para uma floresta existente do Windows Server 2003, Windows Server 2008 ou Windows Server 2008 R2, a verificação dos pré-requisitos falha com o erro:<p>Falha na verificação de código dos pré-requisitos para o AD Prep. Não é possível executar a verificação de conflito de esquema do Exchange para o domínio  *<domain name>* (exceção: o servidor RPC está indisponível)<p>O adprep.log mostra o erro:<p>Código-Adprep não pôde recuperar dados do servidor *<domain controller>*<p>por meio de Instrumentação de Gerenciamento do Windows (WMI). |
 | Solução e notas | O novo controlador de domínio não pode acessar a WMI através de protocolos DCOM/RPC entre os controladores de domínio existentes. Até o momento, houve três causas para isso:<p>-Uma regra de firewall bloqueia o acesso aos controladores de domínio existentes<p>-A conta de serviço de rede está ausente no privilégio "logon como um serviço" (SeServiceLogonRight) nos controladores de domínio existentes<p>-O NTLM está desabilitado em controladores de domínio, usando as políticas de segurança descritas na [introdução à restrição de autenticação NTLM](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10)) |
 
 | Problema | A criação de uma nova floresta AD DS sempre mostra um aviso de DNS |
