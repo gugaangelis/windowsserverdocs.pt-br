@@ -1,18 +1,18 @@
 ---
 title: telnet
 description: Artigo de referência para telnet, que se comunica com um computador que executa o serviço do servidor Telnet.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b70a6156-9413-4300-84ce-a34c467e2b4e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd270011dfa3a0cfcef3cbdc41eb8140f409ff2d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fdf379a8d827ced295f1c36ac6c44ab5e167e66f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881602"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038284"
 ---
 # <a name="telnet"></a>telnet
 
@@ -28,9 +28,9 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |Parâmetro|Descrição|
 |-------|--------|
 |/a|Tente fazer logon automaticamente. O mesmo que a opção/l, exceto usa o nome de s do usuário conectado no momento.|
-|/e\<EscapeChar>|Caractere de escape usado para entrar no prompt do cliente Telnet.|
+|/e \<EscapeChar>|Caractere de escape usado para entrar no prompt do cliente Telnet.|
 |/f \<FileName>|Nome de arquivo usado para registro no lado do cliente.|
-|/l\<UserName>|Especifica o nome de usuário no qual fazer logon no computador remoto.|
+|/l \<UserName>|Especifica o nome de usuário no qual fazer logon no computador remoto.|
 |/t {vt100 &#124; vt52 &#124; ANSI &#124; VTNT}|Especifica o tipo de terminal. Os tipos de terminal com suporte são VT100, vt52, ANSI e VTNT.|
 |\<Host> [\<Port>]|Especifica o nome do host ou endereço IP do computador remoto ao qual se conectar e, opcionalmente, a porta TCP a ser usada (o padrão é a porta TCP 23).|
 |/?|Exibe a ajuda no prompt de comando. Como alternativa, você pode digitar/h.|

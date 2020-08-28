@@ -1,18 +1,18 @@
 ---
 title: goto
 description: Artigo de referência para o comando goto, que direciona cmd.exe para uma linha rotulada em um programa em lotes.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e0de1458-1f78-48ff-a746-c285a945a510
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc5059f90d471496deb0ccfc668054f1ed7cbde6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6f99a0c438f66e243a310cc715f12cab1543f41a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888596"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038877"
 ---
 # <a name="goto"></a>goto
 

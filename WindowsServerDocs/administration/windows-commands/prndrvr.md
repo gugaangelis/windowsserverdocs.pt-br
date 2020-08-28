@@ -1,18 +1,18 @@
 ---
 title: prndrvr
 description: Artigo de referência do comando prndrvr, que adiciona, exclui e lista os drivers de impressora.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 82b09e3e-bd38-4df1-9953-b0e9ee2565a3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2be35ef44b7c54a5b8390120cef65054c06008d2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 36ad4a4206e26065dfad9ff2d970da11e4efaa66
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884756"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038697"
 ---
 # <a name="prndrvr"></a>prndrvr
 
@@ -36,13 +36,13 @@ cscript prndrvr {-a | -d | -l | -x | -?} [-m <model>] [-v {0|1|2|3}] [-e <enviro
 | -d | Exclui um driver. |
 | -l | Lista todos os drivers de impressora instalados no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor, o Windows listará os drivers de impressora instalados no computador local. |
 | -X | Exclui todos os drivers de impressora e drivers de impressora adicionais que não estão em uso por uma impressora lógica no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor a ser removido da lista, o Windows excluirá todos os drivers de impressora não utilizados no computador local. |
-| -m`<model_name>` | Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações. |
+| -m `<model_name>` | Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações. |
 | `-v {0|1|2|3}` | Especifica a versão do driver que você deseja instalar. Consulte a descrição do parâmetro **-e**para obter informações sobre quais versões estão disponíveis para qual ambiente. Se você não especificar uma versão, a versão do driver apropriada para a versão do Windows em execução no computador em que você está instalando o driver será instalada. |
 | -e `<environment>` | Especifica o ambiente do driver que você deseja instalar. Se você não especificar um ambiente, o ambiente do computador em que você está instalando o driver será usado. Os parâmetros de ambiente com suporte são: **Windows NT x86**, **Windows x64** ou **Windows IA64**. |
-| -s`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
-| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
-| -h`<path>` | Especifica o caminho para o arquivo de driver. Se você não especificar um caminho, será usado o caminho para o local onde o Windows foi instalado. |
-| -i`<filename.inf>` | Especifica o caminho completo e o nome do arquivo para o driver que você deseja instalar. Se você não especificar um nome de arquivo, o script usará um dos arquivos. inf de impressora da caixa de entrada no subdiretório inf do diretório do Windows.<p>Se o caminho do driver não for especificado, o script pesquisará os arquivos de driver no arquivo de driver.cab. |
+| -s `<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -u `<Username>` -w `<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -h `<path>` | Especifica o caminho para o arquivo de driver. Se você não especificar um caminho, será usado o caminho para o local onde o Windows foi instalado. |
+| -i `<filename.inf>` | Especifica o caminho completo e o nome do arquivo para o driver que você deseja instalar. Se você não especificar um nome de arquivo, o script usará um dos arquivos. inf de impressora da caixa de entrada no subdiretório inf do diretório do Windows.<p>Se o caminho do driver não for especificado, o script pesquisará os arquivos de driver no arquivo de driver.cab. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 #### <a name="remarks"></a>Comentários

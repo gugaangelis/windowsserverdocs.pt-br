@@ -1,18 +1,18 @@
 ---
 title: create volume mirror
 description: Artigo de referência para o comando Create volume Mirror, que cria um espelho de volume usando os dois discos dinâmicos especificados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 48776917-783a-47ff-8da4-1cab77cea34b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f25c78a49393a0c48330a7b705c14b906f827c33
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ae8e05eea873ebb8c3ff12df43b60f14cc5804e6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879855"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033174"
 ---
 # <a name="create-volume-mirror"></a>create volume mirror
 
@@ -32,7 +32,7 @@ create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
 | --------- | ----------- |
 | tamanho =`<n>` | Especifica a quantidade de espaço em disco, em megabytes (MB), que o volume ocupará em cada disco. Se nenhum tamanho for fornecido, o novo volume ocupará o espaço livre restante no menor disco e uma quantidade igual de espaço em cada disco subsequente. |
 | disco = `<n>` , `<n>` [ `,<n>,...` ] | Especifica os discos dinâmicos nos quais o volume espelho é criado. Você precisa de dois discos dinâmicos para criar um volume de espelho. Uma quantidade de espaço igual ao tamanho especificado com o parâmetro de **tamanho** é alocada em cada disco. |
-| align =`<n>` | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Esse parâmetro é normalmente usado com matrizes de LUN (número de unidade lógica) de RAID de hardware para melhorar o desempenho. `<n>`é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
+| align =`<n>` | Alinha todas as extensões de volume ao limite de alinhamento mais próximo. Esse parâmetro é normalmente usado com matrizes de LUN (número de unidade lógica) de RAID de hardware para melhorar o desempenho. `<n>` é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um erro. |
 
 ## <a name="examples"></a>Exemplos

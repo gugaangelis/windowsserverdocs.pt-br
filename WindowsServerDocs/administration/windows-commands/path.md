@@ -1,18 +1,18 @@
 ---
 title: caminho
 description: Artigo de referência para definir o caminho de comando na variável de ambiente PATH, especificando o conjunto de diretórios usado para pesquisar arquivos executáveis (. exe).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1bfa1349-e79a-472b-a9e6-d7a91149ae8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c81dfef09b4c9a411db9469ec851d4f92180f1d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fe60518a70f4fdc9992f70b3b561b067404a31f1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885105"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032503"
 ---
 # <a name="path"></a>caminho
 

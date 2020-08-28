@@ -1,18 +1,18 @@
 ---
 title: nslookup server
 description: Artigo de referência para o comando do servidor Nslookup, que altera o servidor padrão para o domínio DNS (sistema de nomes de domínio) especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 608267f8-f7b4-412a-8dcd-e08b5ffc2085
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eacb1807810627956fcf75455e861d3ac381cf13
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 32450197fe7d3c04258b7fb3f77f8e17cd1c113e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885783"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038757"
 ---
 # <a name="nslookup-server"></a>nslookup server
 

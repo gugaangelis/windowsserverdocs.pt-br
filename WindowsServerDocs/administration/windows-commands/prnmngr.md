@@ -1,18 +1,18 @@
 ---
 title: prnmngr
 description: Artigo de referência para o comando Prnmngr, que adiciona, exclui e lista impressoras ou conexões de impressora, além de definir e exibir a impressora padrão.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 39eee1a8-4b41-4c9f-941e-486495135eb8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 53c49de622b38efc6e536d8113b58b43ffef2dbe
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 27196fcea2694b1f49bcd6f9ee74b88f16a853d8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884736"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038414"
 ---
 # <a name="prnmngr"></a>prnmngr
 
@@ -38,11 +38,11 @@ cscript prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <Servername>] [-p <Pri
 | -T | Define a impressora padrão para a impressora especificada pelo parâmetro **-p** . |
 | -l | Lista todas as impressoras instaladas no servidor especificado pelo parâmetro **-s** . Se você não especificar um servidor, o Windows listará as impressoras instaladas no computador local. |
 | c | Especifica que o parâmetro se aplica a conexões de impressora. Pode ser usado com os parâmetros **-a** e **-x** . |
-| -s`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
-| -p`<Printername>` | Especifica o nome da impressora que você deseja gerenciar. |
-| -m`<Modelname>` | Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações. |
-| -r`<portname>` | Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1: ou COM1:). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada. |
-| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -s `<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -p `<Printername>` | Especifica o nome da impressora que você deseja gerenciar. |
+| -m `<Modelname>` | Especifica (por nome) o driver que você deseja instalar. Os drivers geralmente são nomeados para o modelo de impressora para os quais dão suporte. Consulte a documentação da impressora para obter mais informações. |
+| -r `<portname>` | Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1: ou COM1:). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada. |
+| -u `<Username>` -w `<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 #### <a name="remarks"></a>Comentários

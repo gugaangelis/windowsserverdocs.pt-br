@@ -1,18 +1,18 @@
 ---
 title: ksetup addhosttorealmmap
 description: Artigo de referência para o comando ksetup addhosttorealmmap, que adiciona um mapeamento de SPN (nome da entidade de serviço) entre o host declarado e o realm.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 237742d5-fa68-466c-b97e-636f489248ea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9722560a9ddebd01120dd60661ec895771ff9c6b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 900bab0d86da82d8c81ca10f0f23fec9a44b198c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888147"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038867"
 ---
 # <a name="ksetup-addhosttorealmmap"></a>ksetup addhosttorealmmap
 

@@ -1,18 +1,18 @@
 ---
 title: tempo limite
 description: Artigo de referência para tempo limite, que pausa o processador de comando para o número de segundos especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e26b4a84-0e30-46e1-aa10-0667b7d3cb4c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90ba2da52f97ee603ce7992e4df135c1284c4070
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4905eaadc745fc5499cb393b1808794e2f803361
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881406"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038254"
 ---
 # <a name="timeout"></a>tempo limite
 
@@ -30,7 +30,7 @@ timeout /t <TimeoutInSeconds> [/nobreak]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/t\<TimeoutInSeconds>|Especifica o número decimal de segundos (entre-1 e 99999) a aguardar antes do processamento do processador de comando continuar. O valor-1 faz com que o computador aguarde indefinidamente por um pressionamento de tecla.|
+|/t \<TimeoutInSeconds>|Especifica o número decimal de segundos (entre-1 e 99999) a aguardar antes do processamento do processador de comando continuar. O valor-1 faz com que o computador aguarde indefinidamente por um pressionamento de tecla.|
 |/nobreak|Especifica para ignorar os traços de tecla do usuário.|
 |/?|Exibe a ajuda no prompt de comando.|
 

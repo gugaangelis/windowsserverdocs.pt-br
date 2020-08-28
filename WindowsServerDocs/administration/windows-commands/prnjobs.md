@@ -1,18 +1,18 @@
 ---
 title: prnjobs
 description: Artigo de referência para o comando prnjobs, que pausa, retoma, cancela e lista trabalhos de impressão.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5ad34199-7a5a-40c1-8053-bccd5929df43
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d955f50761e1229e0a1acf21a9f2179525bd7ee4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d25a6d5e6163465cf20304b0651e842afb77458f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884739"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038707"
 ---
 # <a name="prnjobs"></a>prnjobs
 
@@ -34,10 +34,10 @@ cscript prnjobs {-z | -m | -x | -l | -?} [-s <Servername>] [-p <Printername>] [-
 | -M | Retoma o trabalho de impressão especificado pelo parâmetro **-j** . |
 | -X | Cancela o trabalho de impressão especificado pelo parâmetro **-j** . |
 | -l | Lista todos os trabalhos de impressão em uma fila de impressão. |
-| -s`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
-| -p`<Printername>` | Obrigatórios. Especifica o nome da impressora que você deseja gerenciar. |
-| -j`<JobID>` | Especifica (por número de ID) o trabalho de impressão que você deseja cancelar. |
-| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -s `<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -p `<Printername>` | Obrigatórios. Especifica o nome da impressora que você deseja gerenciar. |
+| -j `<JobID>` | Especifica (por número de ID) o trabalho de impressão que você deseja cancelar. |
+| -u `<Username>` -w `<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 #### <a name="remarks"></a>Comentários

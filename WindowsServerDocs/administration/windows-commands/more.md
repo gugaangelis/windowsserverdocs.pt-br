@@ -1,18 +1,18 @@
 ---
 title: mais
 description: Artigo de referência para o comando more, que exibe uma tela de saída de cada vez.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/26/2019
-ms.openlocfilehash: 198f3f3f3b80282d876e4fdda9e7cde649a8c7da
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2c8d7a21220701bf46685d4c87ca02a4810aff1b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886370"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038836"
 ---
 # <a name="more"></a>mais
 
@@ -54,8 +54,8 @@ more [/c] [/p] [/s] [/t<n>] [+<n>] [<files>]
     | f | Pressione **F** para exibir o próximo arquivo listado na linha de comando. |
     | q | Pressione **Q** para fechar o comando **more** . |
     | = | Mostra o número da linha. |
-    | DTI`<n>` | Pressione **P** para exibir as próximas *n* linhas. |
-    | &`<n>` | Pressione **S** para ignorar as próximas *n* linhas. |
+    | DTI `<n>` | Pressione **P** para exibir as próximas *n* linhas. |
+    | & `<n>` | Pressione **S** para ignorar as próximas *n* linhas. |
     | ? | Pressionar **?** para mostrar os comandos que estão disponíveis no prompt **mais** .|
 
 - Se você usar o caractere de redirecionamento ( `<` ), também deverá especificar um nome de arquivo como a origem.
@@ -86,7 +86,7 @@ Para exibir o número da linha atual no prompt **mais** , digite:
 more =
 ```
 
-O número da linha atual é adicionado ao prompt **mais** , como`-- More [Line: 24] --`
+O número da linha atual é adicionado ao prompt **mais** , como `-- More [Line: 24] --`
 
 Para exibir um número específico de linhas no prompt **mais** , digite:
 

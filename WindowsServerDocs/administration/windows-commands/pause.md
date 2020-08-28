@@ -1,22 +1,22 @@
 ---
 title: pause
 description: Artigo de referência para o comando Pause, que suspende o processamento de programas em lotes.
-ms.topic: article
+ms.topic: reference
 ms.assetid: cab3afc3-d046-432f-a0bf-6282f0099032
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5f8f10ae64fea8cf2c4610247ebe28b03ce26ae
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0da314b5b73935fa895b613b827f832492428cc7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885066"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032473"
 ---
 # <a name="pause"></a>pause
 
-Suspende o processamento de um programa em lotes, exibindo o prompt,`Press any key to continue . . .`
+Suspende o processamento de um programa em lotes, exibindo o prompt, `Press any key to continue . . .`
 
 ## <a name="syntax"></a>Sintaxe
 

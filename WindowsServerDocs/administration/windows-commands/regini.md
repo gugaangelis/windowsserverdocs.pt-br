@@ -1,18 +1,18 @@
 ---
 title: regini
 description: Artigo de referência para o comando Regini, que modifica o registro da linha de comando ou de um script e aplica as alterações que foram predefinidas em um ou mais arquivos de texto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5ff18dc3-5bd8-400a-b311-fd73a3267e8c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d0653ca97ca4401cb24250bbce1c627b6c683982
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a779c41dba46e86f862982de0b203a09dd6c8384
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883961"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027434"
 ---
 # <a name="regini"></a>regini
 
@@ -30,10 +30,10 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputwidth][-b] text
 
 | Parâmetro | Descrição |
 |--|--|
-| -m`<\\computername>` | Especifica o nome do computador remoto com um registro que deve ser modificado. Use o formato ** \\ ComputerName**. |
-| -h`<hivefile hiveroot>` | Especifica o hive do Registro local a ser modificado. Você deve especificar o nome do arquivo do hive e a raiz do hive no formato **hivefile hiveroot**. |
-| -i`<n>` | Especifica o nível de recuo a ser usado para indicar a estrutura de árvore das chaves do registro na saída do comando. A ferramenta de **regdmp.exe** (que obtém as permissões atuais de uma chave do registro no formato binário) usa o recuo em múltiplos de quatro, portanto, o valor padrão é **4**. |
-| -o`<outputwidth>` | Especifica a largura da saída do comando, em caracteres. Se a saída for exibida na janela de comando, o valor padrão será a largura da janela. Se a saída for direcionada para um arquivo, o valor padrão será de **240** caracteres. |
+| -m `<\\computername>` | Especifica o nome do computador remoto com um registro que deve ser modificado. Use o formato ** \\ ComputerName**. |
+| -h `<hivefile hiveroot>` | Especifica o hive do Registro local a ser modificado. Você deve especificar o nome do arquivo do hive e a raiz do hive no formato **hivefile hiveroot**. |
+| -i `<n>` | Especifica o nível de recuo a ser usado para indicar a estrutura de árvore das chaves do registro na saída do comando. A ferramenta de **regdmp.exe** (que obtém as permissões atuais de uma chave do registro no formato binário) usa o recuo em múltiplos de quatro, portanto, o valor padrão é **4**. |
+| -o `<outputwidth>` | Especifica a largura da saída do comando, em caracteres. Se a saída for exibida na janela de comando, o valor padrão será a largura da janela. Se a saída for direcionada para um arquivo, o valor padrão será de **240** caracteres. |
 | -b | Especifica que **regini.exe** saída é compatível com versões anteriores do **regini.exe**. |
 | textfiles | Especifica o nome de um ou mais arquivos de texto que contêm dados de registro. Qualquer número de arquivos de texto ANSI ou Unicode pode ser listado. |
 

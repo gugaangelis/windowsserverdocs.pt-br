@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 85b52c1ad124ac47617948f1683038108214e2e3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a39bb99e570f09b57962d8b3d64ec783611ac04b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889876"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033014"
 ---
 # <a name="fsutil-resource"></a>fsutil resource
 
@@ -53,11 +53,11 @@ fsutil resource [stop] <rmrootpathname>
 | setdisponível | Especifica que um Gerenciador de recursos transacionais irá preferir a disponibilidade em relação à consistência. |
 | setconsistente | Especifica que um Gerenciador de recursos transacionais prefere a consistência em relação à disponibilidade. |
 | SETLOG | Altera as características de um Gerenciador de recursos transacionais que já está em execução. |
-| growth | Especifica a quantidade pela qual o log do Gerenciador de recursos transacionais pode crescer.<p>O parâmetro de crescimento pode ser especificado da seguinte maneira:<ul><li>Número de contêineres, usando o formato:`<containers> containers`</li><li>Porcentagem, usando o formato:`<percent> percent`</li></ul> |
+| growth | Especifica a quantidade pela qual o log do Gerenciador de recursos transacionais pode crescer.<p>O parâmetro de crescimento pode ser especificado da seguinte maneira:<ul><li>Número de contêineres, usando o formato: `<containers> containers`</li><li>Porcentagem, usando o formato: `<percent> percent`</li></ul> |
 | `<containers>` | Especifica os objetos de dados que são usados pelo Gerenciador de recursos transacionais. |
 | maxextent | Especifica o número máximo de contêineres para o Gerenciador de recursos transacionais especificado. |
 | minextent | Especifica o número mínimo de contêineres para o Gerenciador de recursos transacionais especificado. |
-| moda`{full|undo}` | Especifica se todas as transações são registradas em log ( **completo**) ou se apenas os eventos revertidos são registrados (**desfazer**). |
+| moda `{full|undo}` | Especifica se todas as transações são registradas em log ( **completo**) ou se apenas os eventos revertidos são registrados (**desfazer**). |
 | renomear | Altera o GUID do Gerenciador de recursos transacionais. |
 | shrink | Especifica o percentual pelo qual o log do Gerenciador de recursos transacionais pode diminuir automaticamente. |
 | tamanho | Especifica o tamanho do Gerenciador de recursos transacionais como um número especificado de *contêineres*. |

@@ -1,18 +1,18 @@
 ---
 title: openfiles
 description: Artigo de referência para o comando openfiles, que permite que um administrador consulte, exiba ou desconecte arquivos e diretórios que foram abertos em um sistema.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c3be561d-a11f-4bf1-9835-8e4e96fe98ec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79163a717746cfb43d0195cf30c7bbf7e1766623
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d2f148ef753e264256461b1135d84d325c1e1b70
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885122"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032624"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -32,13 +32,13 @@ openfiles /disconnect [/s <system> [/u [<domain>\]<username> [/p [<password>]]]]
 
 | Parâmetro | Descrição |
 |--|--|
-| /s`<system>` | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u`[<domain>\]<username>` | Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão. |
-| /p`[<password>]` | Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado. |
-| /ID`<openfileID>` | Desconecta arquivos abertos pela ID de arquivo especificada. Você pode usar o caractere curinga (**&#42;**) com esse parâmetro.<p>Observação: você pode usar o comando **Openfiles/Query** para localizar a ID do arquivo. |
-| SRDF`<accessedby>` | Desconecta todos os arquivos abertos associados ao nome de usuário especificado no parâmetro *accessedby* . Você pode usar o caractere curinga (**&#42;**) com esse parâmetro. |
-| /o`{read | write | read/write}` | Desconecta todos os arquivos abertos com o valor de modo aberto especificado. Os valores válidos são **leitura**, **gravação**ou **leitura/gravação**. Você pode usar o caractere curinga (**&#42;**) com esse parâmetro. |
-| /Op`<openfile>` | Desconecta todas as conexões de arquivos abertas que são criadas por um nome de arquivo aberto específico. Você pode usar o caractere curinga (**&#42;**) com esse parâmetro. |
+| /s `<system>` | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u `[<domain>\]<username>` | Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão. |
+| /p `[<password>]` | Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado. |
+| /ID `<openfileID>` | Desconecta arquivos abertos pela ID de arquivo especificada. Você pode usar o caractere curinga (**&#42;**) com esse parâmetro.<p>Observação: você pode usar o comando **Openfiles/Query** para localizar a ID do arquivo. |
+| SRDF `<accessedby>` | Desconecta todos os arquivos abertos associados ao nome de usuário especificado no parâmetro *accessedby* . Você pode usar o caractere curinga (**&#42;**) com esse parâmetro. |
+| /o `{read | write | read/write}` | Desconecta todos os arquivos abertos com o valor de modo aberto especificado. Os valores válidos são **leitura**, **gravação**ou **leitura/gravação**. Você pode usar o caractere curinga (**&#42;**) com esse parâmetro. |
+| /Op `<openfile>` | Desconecta todas as conexões de arquivos abertas que são criadas por um nome de arquivo aberto específico. Você pode usar o caractere curinga (**&#42;**) com esse parâmetro. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 ### <a name="examples"></a>Exemplos
@@ -88,9 +88,9 @@ openfiles /query [/s <system> [/u [<domain>\]<username> [/p [<password>]]]] [/fo
 
 | Parâmetro | Descrição |
 |--|--|
-| /s`<system>` | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u`[<domain>\]<username>` | Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão. |
-| /p`[<password>]` | Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado. |
+| /s `<system>` | Especifica o sistema remoto ao qual se conectar (por nome ou endereço IP). Não use barras invertidas. Se você não usar a opção **/s** , o comando será executado no computador local por padrão. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u `[<domain>\]<username>` | Executa o comando usando as permissões da conta de usuário especificada. Se você não usar a opção **/u** , as permissões do sistema serão usadas por padrão. |
+| /p `[<password>]` | Especifica a senha da conta de usuário que é especificada na opção **/u** . Se você não usar a opção **/p** , um prompt de senha será exibido quando o comando for executado. |
 | [/fo `{TABLE | LIST | CSV}` ] | Exibe a saída no formato especificado. Os valores válidos incluem:<ul><li>**Tabela** -exibe a saída em uma tabela.</li><li>**Lista** -exibe a saída em uma lista.</li><li>**CSV** -exibe a saída no formato CSV (valores separados por vírgula).</li></ul> |
 | /NH | Suprime cabeçalhos de coluna na saída. Válido somente quando o parâmetro **/fo** é definido como **Table** ou **CSV**. |
 | /v | Especifica que as informações detalhadas (detalhadas) sejam exibidas na saída. |
@@ -153,7 +153,7 @@ Para verificar o status atual do sinalizador global **manter a lista de objetos*
 openfiles /local
 ```
 
-Por padrão, o sinalizador global **manter a lista de objetos** está desabilitado e a seguinte mensagem é exibida,`INFO: The system global flag 'maintain objects list' is currently disabled.`
+Por padrão, o sinalizador global **manter a lista de objetos** está desabilitado e a seguinte mensagem é exibida, `INFO: The system global flag 'maintain objects list' is currently disabled.`
 
 Para habilitar o sinalizador global **manter a lista de objetos** , digite:
 
@@ -161,7 +161,7 @@ Para habilitar o sinalizador global **manter a lista de objetos** , digite:
 openfiles /local on
 ```
 
-A mensagem a seguir é exibida quando o sinalizador global está habilitado,`SUCCESS: The system global flag 'maintain objects list' is enabled. This will take effect after the system is restarted.`
+A mensagem a seguir é exibida quando o sinalizador global está habilitado, `SUCCESS: The system global flag 'maintain objects list' is enabled. This will take effect after the system is restarted.`
 
 Para desabilitar o sinalizador global **manter a lista de objetos** , digite:
 

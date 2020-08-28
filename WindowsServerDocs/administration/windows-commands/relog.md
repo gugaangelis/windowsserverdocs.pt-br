@@ -1,18 +1,18 @@
 ---
 title: relog
 description: Artigo de referência para o comando relog, que extrai informações do contador de desempenho dos arquivos de log do contador de desempenho.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c3c60503cf725d05afd4b21ceef5f36c64c2b155
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 563bd7a460ee8809ca4020f9a83f28df435127b8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883862"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027415"
 ---
 # <a name="relog"></a>relog
 
@@ -35,14 +35,14 @@ relog [<filename> [<filename> ...]] [/a] [/c <path> [<path> ...]] [/cf <filename
 |--|--|
 | `filename [filename ...]` | Especifica o nome de caminho de um log de contador de desempenho existente. Você pode especificar vários arquivos de entrada. |
 | -a | Anexa o arquivo de saída em vez de substituir. Essa opção não se aplica ao formato SQL, em que o padrão é sempre acrescentar. |
-| -c`path [path ...]` | Especifica o caminho do contador de desempenho para o log. Para especificar vários caminhos de contador, separe-os com um espaço e coloque os caminhos de contador entre aspas (por exemplo, `"path1 path2"` ). |
+| -c `path [path ...]` | Especifica o caminho do contador de desempenho para o log. Para especificar vários caminhos de contador, separe-os com um espaço e coloque os caminhos de contador entre aspas (por exemplo, `"path1 path2"` ). |
 | -CF nome do arquivo | Especifica o nome do caminho do arquivo de texto que lista os contadores de desempenho a serem incluídos em um arquivo relog. Use esta opção para listar caminhos de contador em um arquivo de entrada, um por linha. A configuração padrão é que todos os contadores no arquivo de log original sejam registrados novamente. |
-| -f`{bin | csv | tsv | SQL}` | Especifica o nome do caminho do formato de arquivo de saída. O formato padrão é **bin**. Para um banco de dados SQL, o arquivo de saída especifica o `DSN!CounterLog` . Você pode especificar o local do banco de dados usando o Gerenciador ODBC para configurar o DSN (nome do sistema de banco de dados). |
+| -f `{bin | csv | tsv | SQL}` | Especifica o nome do caminho do formato de arquivo de saída. O formato padrão é **bin**. Para um banco de dados SQL, o arquivo de saída especifica o `DSN!CounterLog` . Você pode especificar o local do banco de dados usando o Gerenciador ODBC para configurar o DSN (nome do sistema de banco de dados). |
 | valor-t | Especifica intervalos de amostra em *n* registros. Inclui todos os enésimo pontos de dados no arquivo relog. O padrão é todos os pontos de dados. |
-| -o`{Outputfile | SQL:DSN!Counter_Log}` | Especifica o nome do caminho do arquivo de saída ou do banco de dados SQL em que os contadores serão gravados. <P>**Observação:** Para as versões de 64 bits e 32 bits do relog.exe, você deve definir um DSN na fonte de dados ODBC (64 bits e 32-bit respectivamente) no sistema. Use o driver ODBC "SQL Server" para definir um DSN. |
-| -b`<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | Especifica a hora de início para copiar o primeiro registro do arquivo de entrada. A data e a hora devem estar nesse formato exato M/D/YYYYHH: MM: SS. |
+| -o `{Outputfile | SQL:DSN!Counter_Log}` | Especifica o nome do caminho do arquivo de saída ou do banco de dados SQL em que os contadores serão gravados. <P>**Observação:** Para as versões de 64 bits e 32 bits do relog.exe, você deve definir um DSN na fonte de dados ODBC (64 bits e 32-bit respectivamente) no sistema. Use o driver ODBC "SQL Server" para definir um DSN. |
+| -b `<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | Especifica a hora de início para copiar o primeiro registro do arquivo de entrada. A data e a hora devem estar nesse formato exato M/D/YYYYHH: MM: SS. |
 | -e `<M/D/YYYY> [[<HH>:]<MM>:]<SS>]` | Especifica a hora de término para copiar o último registro do arquivo de entrada. A data e a hora devem estar nesse formato exato M/D/YYYYHH: MM: SS. |
-| -configuração`{filename | i}` | Especifica o nome do caminho do arquivo de configurações que contém parâmetros de linha de comando. Se você estiver usando um arquivo de configuração, poderá usar **-i** como um espaço reservado para uma lista de arquivos de entrada que podem ser colocados na linha de comando. Se você estiver usando a linha de comando, não use **-i**. Você também pode usar caracteres curinga, como `*.blg` para especificar vários nomes de arquivo de entrada ao mesmo tempo. |
+| -configuração `{filename | i}` | Especifica o nome do caminho do arquivo de configurações que contém parâmetros de linha de comando. Se você estiver usando um arquivo de configuração, poderá usar **-i** como um espaço reservado para uma lista de arquivos de entrada que podem ser colocados na linha de comando. Se você estiver usando a linha de comando, não use **-i**. Você também pode usar caracteres curinga, como `*.blg` para especificar vários nomes de arquivo de entrada ao mesmo tempo. |
 | -Q | Exibe os contadores de desempenho e intervalos de tempo dos arquivos de log especificados no arquivo de entrada. |
 | -y | Ignora a solicitação respondendo "Sim" a todas as perguntas. |
 | /? | Exibe a ajuda no prompt de comando. |

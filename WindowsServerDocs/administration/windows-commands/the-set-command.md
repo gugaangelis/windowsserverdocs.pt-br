@@ -1,18 +1,18 @@
 ---
 title: Usando o comando Set
 description: Artigo de referência para o conjunto, que define as propriedades e os atributos dos servidores de serviços de implantação do Windows, computadores pré-configurados, imagens, grupos de imagens e servidores de transporte.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5def6be0-83b9-4133-bc1b-bbe6d407eca7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c454a07ba0ccc0b3a78432ab0cff701e5f7ea1b8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 580d094b6d8a030e5e7d8649fa2d7dd67009c052
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881505"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038264"
 ---
 # <a name="using-the-set-command"></a>Usando o comando Set
 

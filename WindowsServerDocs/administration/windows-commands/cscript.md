@@ -1,18 +1,18 @@
 ---
 title: cscript
 description: Artigo de referência para o comando cscript, que inicia um script para que ele seja executado em um ambiente de linha de comando.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fba3cbca-594e-4663-bb22-4ee0f63a1ac6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f6e27cae1531e0c10e8721d7f7fe11487406e35
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6b5c711d59f69267f8e2de51f34cb1c450e95fab
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891535"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033024"
 ---
 # <a name="cscript"></a>cscript
 

@@ -1,18 +1,18 @@
 ---
 title: prncnfg
 description: Artigo de referência para o comando prncnfg, que configura ou exibe informações de configuração sobre uma impressora.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 38a4e8fa-3122-495b-a125-35b926bc6415
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4f7329d4f5c7441232efffbc40dcc1177f083e1e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ba5d465a46a23261942428761d11ef279b78a62e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884761"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038717"
 ---
 # <a name="prncnfg"></a>prncnfg
 
@@ -33,20 +33,20 @@ cscript prncnfg {-g | -t | -x | -?} [-S <Servername>] [-P <Printername>] [-z <ne
 | -g | Exibe informações de configuração sobre uma impressora. |
 | -T | Configura uma impressora. |
 | -X | Renomeia uma impressora. |
-| -S`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
-| -P`<Printername>` | Especifica o nome da impressora que você deseja gerenciar. Obrigatórios. |
-| -z`<newprintername>` | Especifica o novo nome da impressora. Requer os parâmetros **-x** e **-P** . |
-| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
-| -r`<portname>` | Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1 ou COM1). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada. |
-| -l`<location>` | Especifica o local da impressora, como **Copyroom**. Se o local contiver espaços, use aspas em volta do texto, como **"copiar sala"**.|
-| -h`<sharename>` | Especifica o nome de compartilhamento da impressora. |
-| -m`<comment>` | Especifica a cadeia de caracteres de comentário da impressora. |
-| -f`<separatorfilename>` | Especifica um arquivo que contém o texto que aparece na página separadora. |
-| -y`<datatype>` | Especifica os tipos de dados que a impressora pode aceitar. |
-| -St`<starttime>` | Configura a impressora para a disponibilidade limitada. Especifica a hora do dia em que a impressora está disponível. Se você enviar um documento para uma impressora quando ela não estiver disponível, o documento será mantido (colocado em spool) até que a impressora fique disponível. Você deve especificar a hora como um relógio de 24 horas. Por exemplo, para especificar 11:00 P.M., digite **2300**. |
-| -UT`<endtime>` | Configura a impressora para a disponibilidade limitada. Especifica a hora do dia em que a impressora não está mais disponível. Se você enviar um documento para uma impressora quando ela não estiver disponível, o documento será mantido (colocado em spool) até que a impressora fique disponível. Você deve especificar a hora como um relógio de 24 horas. Por exemplo, para especificar 11:00 P.M., digite **2300**. |
-| -o`<priority>` | Especifica uma prioridade que o spooler usa para rotear trabalhos de impressão na fila de impressão. Uma fila de impressão com prioridade mais alta recebe todos os seus trabalhos antes de qualquer fila com prioridade mais baixa. |
-| -i`<defaultpriority>` | Especifica a prioridade padrão atribuída a cada trabalho de impressão. |
+| -S `<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -P `<Printername>` | Especifica o nome da impressora que você deseja gerenciar. Obrigatórios. |
+| -z `<newprintername>` | Especifica o novo nome da impressora. Requer os parâmetros **-x** e **-P** . |
+| -u `<Username>` -w `<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -r `<portname>` | Especifica a porta onde a impressora está conectada. Se essa for uma porta paralela ou serial, use a ID da porta (por exemplo, LPT1 ou COM1). Se esta for uma porta TCP/IP, use o nome da porta que foi especificado quando a porta foi adicionada. |
+| -l `<location>` | Especifica o local da impressora, como **Copyroom**. Se o local contiver espaços, use aspas em volta do texto, como **"copiar sala"**.|
+| -h `<sharename>` | Especifica o nome de compartilhamento da impressora. |
+| -m `<comment>` | Especifica a cadeia de caracteres de comentário da impressora. |
+| -f `<separatorfilename>` | Especifica um arquivo que contém o texto que aparece na página separadora. |
+| -y `<datatype>` | Especifica os tipos de dados que a impressora pode aceitar. |
+| -St `<starttime>` | Configura a impressora para a disponibilidade limitada. Especifica a hora do dia em que a impressora está disponível. Se você enviar um documento para uma impressora quando ela não estiver disponível, o documento será mantido (colocado em spool) até que a impressora fique disponível. Você deve especificar a hora como um relógio de 24 horas. Por exemplo, para especificar 11:00 P.M., digite **2300**. |
+| -UT `<endtime>` | Configura a impressora para a disponibilidade limitada. Especifica a hora do dia em que a impressora não está mais disponível. Se você enviar um documento para uma impressora quando ela não estiver disponível, o documento será mantido (colocado em spool) até que a impressora fique disponível. Você deve especificar a hora como um relógio de 24 horas. Por exemplo, para especificar 11:00 P.M., digite **2300**. |
+| -o `<priority>` | Especifica uma prioridade que o spooler usa para rotear trabalhos de impressão na fila de impressão. Uma fila de impressão com prioridade mais alta recebe todos os seus trabalhos antes de qualquer fila com prioridade mais baixa. |
+| -i `<defaultpriority>` | Especifica a prioridade padrão atribuída a cada trabalho de impressão. |
 | `{+|-}`compartilhado | Especifica se esta impressora é compartilhada na rede. |
 | `{+|-}`Encaminhe | Especifica se o documento deve ser enviado diretamente para a impressora sem ser colocado no spool. |
 | `{+|-}`Checked | Especifica se esta impressora deve ser publicada no Active Directory. Se você publicar a impressora, outros usuários poderão procurá-la com base em sua localização e recursos (como impressão de cores e grampeamento). |

@@ -1,18 +1,18 @@
 ---
 title: pathping
 description: Artigo de referência para o comando pathping, que obtém informações sobre a latência de rede e a perda de rede em saltos intermediários entre uma origem e um destino.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ec430125-b1dc-4aad-a7c9-b70f486d9e3c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: d5ce12d950356c5ebb5ad671de09aaebbc91b9fb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3ae867d0b4ea53aaa807fb461f7a32726efefc2e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885096"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89032483"
 ---
 # <a name="pathping"></a>pathping
 
@@ -36,14 +36,14 @@ pathping [/n] [/h <maximumhops>] [/g <hostlist>] [/p <Period>] [/q <numqueries> 
 | Parâmetro | Descrição |
 |--|--|
 | /n | Impede o **pathping** de tentar resolver os endereços IP de roteadores intermediários para seus nomes. Isso pode agilizar a exibição dos resultados do **pathping** . |
-| /h`<maximumhops>` | Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos. |
-| /g`<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem flexível** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é **9**. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
-| /p`<period>` | Especifica o número de milissegundos a aguardar entre pings consecutivos. O padrão é 250 milissegundos (1/4 segundo). Esse parâmetro envia pings individuais para cada salto intermediário. Por isso, o intervalo entre dois pings enviados para o mesmo salto é o *período* multiplicado pelo número de saltos. |
-| /q`<numqueries>` | Especifica o número de mensagens de solicitação de eco enviadas a cada roteador no caminho. O padrão é 100 consultas. |
-| /w`<timeout>` | Especifica o número de milissegundos para aguardar cada resposta. O padrão é 3000 milissegundos (3 segundos). Esse parâmetro envia vários pings em paralelo. Por isso, a quantidade de tempo especificada no parâmetro *Timeout* não é limitada pela quantidade de tempo especificada no parâmetro *period* para aguardar entre pings. |
-| /i`<IPaddress>` | Especifica o endereço de origem. |
-| /4`<IPv4>` | Especifica que pathping usa somente IPv4. |
-| /6`<IPv6>` | Especifica que o pathping usa somente IPv6. |
+| /h `<maximumhops>` | Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos. |
+| /g `<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem flexível** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é **9**. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
+| /p `<period>` | Especifica o número de milissegundos a aguardar entre pings consecutivos. O padrão é 250 milissegundos (1/4 segundo). Esse parâmetro envia pings individuais para cada salto intermediário. Por isso, o intervalo entre dois pings enviados para o mesmo salto é o *período* multiplicado pelo número de saltos. |
+| /q `<numqueries>` | Especifica o número de mensagens de solicitação de eco enviadas a cada roteador no caminho. O padrão é 100 consultas. |
+| /w `<timeout>` | Especifica o número de milissegundos para aguardar cada resposta. O padrão é 3000 milissegundos (3 segundos). Esse parâmetro envia vários pings em paralelo. Por isso, a quantidade de tempo especificada no parâmetro *Timeout* não é limitada pela quantidade de tempo especificada no parâmetro *period* para aguardar entre pings. |
+| /i `<IPaddress>` | Especifica o endereço de origem. |
+| /4 `<IPv4>` | Especifica que pathping usa somente IPv4. |
+| /6 `<IPv6>` | Especifica que o pathping usa somente IPv6. |
 | `<targetname>` | Especifica o destino, que é identificado pelo endereço IP ou pelo nome do host. |
 | /? | Exibe a ajuda no prompt de comando. |
 

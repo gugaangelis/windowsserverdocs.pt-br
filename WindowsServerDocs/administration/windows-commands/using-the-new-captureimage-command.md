@@ -1,18 +1,18 @@
 ---
 title: New-CaptureImage
 description: Artigo de referência para New-CaptureImage, que cria uma nova imagem de captura de uma imagem de inicialização existente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2dfd08f0-be59-4715-96e6-c498305873f4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25e0fe9b11984fe7814b577de4ac8b18d5b62ccb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5e98b0b52df39f20b9c84a55aa96c569943b556e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892424"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038164"
 ---
 # <a name="new-captureimage"></a>New-CaptureImage
 

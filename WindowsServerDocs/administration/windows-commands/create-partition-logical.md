@@ -1,18 +1,18 @@
 ---
 title: create partition logical
 description: Artigo de referência para o comando Create Partition Logical, que cria uma partição lógica em uma partição estendida existente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1f59b79a-d690-4d0e-ad38-40df5a0ce38e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 26adcb50c43f859d312dadc16328bc65aed29cee
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a9a95e735fcaed0e7f588a3d4ba643c1787782b5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879901"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033234"
 ---
 # <a name="create-partition-logical"></a>create partition logical
 
@@ -37,7 +37,7 @@ create partition logical [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | --------- | ----------- |
 | tamanho =`<n>` | Especifica o tamanho da partição lógica em megabytes (MB), que deve ser menor do que a partição estendida. Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida. |
 | deslocamento =`<n>` | Especifica o deslocamento em kilobytes (KB), no qual a partição é criada. O deslocamento é arredondado para preencher completamente qualquer tamanho de cilindro usado. Se nenhum deslocamento for fornecido, a partição será colocada na primeira extensão de disco grande o suficiente para contê-la. A partição é pelo menos tão longa em bytes quanto o número especificado por **Size = `<n>` **. Se você especificar um tamanho para a partição lógica, ela deverá ser menor do que a partição estendida. |
-| align =`<n>` | Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. Normalmente usado com matrizes de LUN (número de unidade lógica) RAID de hardware para melhorar o desempenho. `<n>`é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
+| align =`<n>` | Alinha todas as extensões de volume ou partição ao limite de alinhamento mais próximo. Normalmente usado com matrizes de LUN (número de unidade lógica) RAID de hardware para melhorar o desempenho. `<n>` é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
 #### <a name="remarks"></a>Comentários

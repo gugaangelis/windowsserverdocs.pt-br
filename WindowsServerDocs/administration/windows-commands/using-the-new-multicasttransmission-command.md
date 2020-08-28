@@ -1,18 +1,18 @@
 ---
 title: New-MulticastTransmission
 description: Artigo de referência para New-MulticastTransmission, que cria uma nova transmissão multicast para uma imagem.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c1f1dc46-dd50-4eb9-9f72-cf0e5d71bd3d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 77f25940a3316d715bced365e92ed0614c74ed33
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 30988ad23151f12533b75323f9376859a4c5d2a5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896907"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038144"
 ---
 # <a name="new-multicasttransmission"></a>New-MulticastTransmission
 
