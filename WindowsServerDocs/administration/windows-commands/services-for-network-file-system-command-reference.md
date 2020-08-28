@@ -1,18 +1,18 @@
 ---
 title: Referência aos comandos dos Serviços para Network File System
 description: Artigo de referência para * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 06c81f88-a672-4405-9b73-085f8933114c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f471557214f51464c2f1285b64a76084ea1a487
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cbeea54c69cf5fe2a25409b9e45dffda1da4bdb2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882714"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037384"
 ---
 # <a name="services-for-network-file-system-command-reference"></a>Referência aos comandos dos Serviços para Network File System
 

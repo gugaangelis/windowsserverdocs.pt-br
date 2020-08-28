@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: a0c6dbfe-d898-496d-9356-825f7fbd90ec
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 15d6b323248a51102b2ddcd6b2620722f22ae47a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7b5be73c47b419733e29e949327fd57c77967561
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890089"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030604"
 ---
 # <a name="fsutil-8dot3name"></a>fsutil 8dot3name
 
@@ -44,13 +44,13 @@ fsutil 8dot3name [strip] [/t] [/s] [/f] [/l [<log file.] ] [/v] <directorypath>
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| consultá`[<volumepath>]` | Consulta o sistema de arquivos para o estado do comportamento de criação de nome curto 8dot3.<p>Se um *VolumePath* não for especificado como um parâmetro, a configuração de comportamento de criação de 8dot3name padrão para todos os volumes será exibida. |
-| scanner`<directorypath>` | Examina os arquivos que estão localizados no *DirectoryPath* especificado para chaves do registro que podem ser impactadas se nomes 8dot3 curtos forem removidos dos nomes dos arquivos. |
-| Definição`<defaultvalue> | <volumepath>}` | Altera o comportamento do sistema de arquivos para a criação de nome 8dot3 nas seguintes instâncias:<ul><li>Quando *DefaultValue* é especificado, a chave do registro, **HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreation**, é definida como *DefaultValue*.<p>O *DefaultValue* pode ter os seguintes valores:<ul><li>**0**: habilita a criação de nome 8dot3 para todos os volumes no sistema.</li><li>**1**: desabilita a criação de nome 8dot3 para todos os volumes no sistema.</li><li>**2**: define a criação de nome 8dot3 em uma base por volume.</li><li>**3**: desabilita a criação de nome 8dot3 para todos os volumes, exceto o volume do sistema.</li></ul><li>Quando um *VolumePath* é especificado, os volumes especificados em disco sinalizam Propriedades de 8dot3name são definidos para habilitar a criação de nome 8dot3 para um volume especificado (**0**) ou definido para desabilitar a criação de nome 8dot3 no volume especificado (**1**).<p>Você deve definir o comportamento padrão do sistema de arquivos para a criação de nome 8dot3 para o valor **2** antes de habilitar ou desabilitar a criação de nome 8dot3 para um volume especificado.</li></ul> |
-| faixas`<directorypath>` | Remove os nomes de arquivo 8dot3 de todos os arquivos que estão localizados no *DirectoryPath*especificado. O nome de arquivo 8dot3 não é removido para nenhum arquivo em que o *DirectoryPath* combinado com o nome de arquivo contenha mais de 260 caracteres.<p>Esse comando lista, mas não modifica as chaves do registro que apontam para os arquivos que tinham nomes de arquivo 8dot3 removidos permanentemente. |
+| consultá `[<volumepath>]` | Consulta o sistema de arquivos para o estado do comportamento de criação de nome curto 8dot3.<p>Se um *VolumePath* não for especificado como um parâmetro, a configuração de comportamento de criação de 8dot3name padrão para todos os volumes será exibida. |
+| scanner `<directorypath>` | Examina os arquivos que estão localizados no *DirectoryPath* especificado para chaves do registro que podem ser impactadas se nomes 8dot3 curtos forem removidos dos nomes dos arquivos. |
+| Definição `<defaultvalue> | <volumepath>}` | Altera o comportamento do sistema de arquivos para a criação de nome 8dot3 nas seguintes instâncias:<ul><li>Quando *DefaultValue* é especificado, a chave do registro, **HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreationNtfsDisable8dot3NameCreation**, é definida como *DefaultValue*.<p>O *DefaultValue* pode ter os seguintes valores:<ul><li>**0**: habilita a criação de nome 8dot3 para todos os volumes no sistema.</li><li>**1**: desabilita a criação de nome 8dot3 para todos os volumes no sistema.</li><li>**2**: define a criação de nome 8dot3 em uma base por volume.</li><li>**3**: desabilita a criação de nome 8dot3 para todos os volumes, exceto o volume do sistema.</li></ul><li>Quando um *VolumePath* é especificado, os volumes especificados em disco sinalizam Propriedades de 8dot3name são definidos para habilitar a criação de nome 8dot3 para um volume especificado (**0**) ou definido para desabilitar a criação de nome 8dot3 no volume especificado (**1**).<p>Você deve definir o comportamento padrão do sistema de arquivos para a criação de nome 8dot3 para o valor **2** antes de habilitar ou desabilitar a criação de nome 8dot3 para um volume especificado.</li></ul> |
+| faixas `<directorypath>` | Remove os nomes de arquivo 8dot3 de todos os arquivos que estão localizados no *DirectoryPath*especificado. O nome de arquivo 8dot3 não é removido para nenhum arquivo em que o *DirectoryPath* combinado com o nome de arquivo contenha mais de 260 caracteres.<p>Esse comando lista, mas não modifica as chaves do registro que apontam para os arquivos que tinham nomes de arquivo 8dot3 removidos permanentemente. |
 | `<volumepath>` | Especifica o nome da unidade seguido por dois-pontos ou pelo GUID no formato `volume{GUID}` . |
 | /f | Especifica que todos os arquivos localizados no *DirectoryPath* especificado tenham os nomes de arquivo 8dot3 removidos mesmo se houver chaves do registro que apontem para arquivos usando o nome de arquivo 8dot3. Nesse caso, a operação Remove os nomes de arquivo 8dot3, mas não modifica nenhuma chave do registro que aponte para os arquivos que estão usando os nomes de arquivo 8dot3. **AVISO:** É recomendável que você faça backup de seu diretório ou volume antes de usar o parâmetro **/f** porque ele pode levar a falhas de aplicativo inesperadas, incluindo a incapacidade de desinstalar programas. |
-| /l`[<log file>]` | Especifica um arquivo de log onde as informações são gravadas.<p>Se o parâmetro **/l** não for especificado, todas as informações serão gravadas no arquivo de log padrão: `%temp%\8dot3_removal_log@(GMT YYYY-MM-DD HH-MM-SS)` . log * * |
+| /l `[<log file>]` | Especifica um arquivo de log onde as informações são gravadas.<p>Se o parâmetro **/l** não for especificado, todas as informações serão gravadas no arquivo de log padrão: `%temp%\8dot3_removal_log@(GMT YYYY-MM-DD HH-MM-SS)` . log * * |
 | /s | Especifica que a operação deve ser aplicada aos subdiretórios do *DirectoryPath*especificado. |
 | /t | Especifica que a remoção de nomes de arquivo 8dot3 deve ser executada no modo de teste. Todas as operações, exceto a remoção real dos nomes de arquivo 8dot3, são executadas. Você pode usar o modo de teste para descobrir quais chaves do Registro apontam para arquivos que usam os nomes de arquivo 8dot3. |
 | /v | Especifica que todas as informações gravadas no arquivo de log também são exibidas na linha de comando. |

@@ -1,18 +1,18 @@
 ---
 title: ntfrsutl
 description: Artigo de referência para o comando NTFRSUTL, que despeja as tabelas internas, thread e informações de memória para o serviço de replicação de arquivo NT (NTFRS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: d7721a19-5a87-4ab6-b816-65d2da2c811f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2676e4cc4d920d766f9cc122f127d3d5e8c9548a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6fdbb82322e2aaa130d396b4917f01e7b4391a31
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885292"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037254"
 ---
 # <a name="ntfrsutl"></a>ntfrsutl
 
@@ -46,7 +46,7 @@ ntfrsutl poll[/quickly[=[<n>]]][/slowly[=[<n>]]][/now][<computer>]
 | AD | Lista o modo de exibição do serviço NTFRS do DS. |
 | conjuntos | Especifica os conjuntos de réplica ativas. |
 | version | Especifica a API e as versões do serviço NTFRS. |
-| sondagem | Especifica os intervalos de sondagem atuais.<ul><li>`/quickly`-Sonda rapidamente até recuperar uma configuração estável.</li><li>`/quickly=`-Sonda rapidamente a cada número padrão de minutos.</li><li>`/quickly=<n>`-Sonda rapidamente a cada *n* minutos.</li><li>`/slowly`-Sonda lentamente até recuperar uma configuração estável.</li><li>`/slowly=`-Sonda lentamente cada número padrão de minutos.</li><li>`/slowly=<n>`-Pesquisas lentamente a cada *n* minutos.</li><li>`/now`-Sondas agora.</li></ul>|
+| sondagem | Especifica os intervalos de sondagem atuais.<ul><li>`/quickly` -Sonda rapidamente até recuperar uma configuração estável.</li><li>`/quickly=` -Sonda rapidamente a cada número padrão de minutos.</li><li>`/quickly=<n>` -Sonda rapidamente a cada *n* minutos.</li><li>`/slowly` -Sonda lentamente até recuperar uma configuração estável.</li><li>`/slowly=` -Sonda lentamente cada número padrão de minutos.</li><li>`/slowly=<n>` -Pesquisas lentamente a cada *n* minutos.</li><li>`/now` -Sondas agora.</li></ul>|
 | /? | Exibe a ajuda no prompt de comando. |
 
 ### <a name="examples"></a>Exemplos

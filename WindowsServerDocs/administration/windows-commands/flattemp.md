@@ -1,18 +1,18 @@
 ---
 title: flattemp
 description: Artigo de referência para o comando flattemp, que habilita ou desabilita pastas temporárias simples.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 059a0960-1fd9-4382-87fe-a85d5dccdaea
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b90bfdf06fad151ab92ea82782a4171877e6d0ad
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ac9a3ec390318d52d17f8e537eb10aad4bb1540c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890197"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030614"
 ---
 # <a name="flattemp"></a>flattemp
 

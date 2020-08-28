@@ -1,18 +1,18 @@
 ---
 title: 'secedit: analisar'
 description: Artigo de referência para * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3430cf9d-1411-48b1-b5a9-2e47701dc87f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7514fdb22e62e4e7524b8e2e9725da12aa2ec83c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b24a2a60163d7a7a368b18119fe2db199525b372
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883046"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037464"
 ---
 # <a name="seceditanalyze"></a>secedit: analisar
 

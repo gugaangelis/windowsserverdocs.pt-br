@@ -1,18 +1,18 @@
 ---
 title: bitsadmin peers e clear
 description: Artigo de referência para os pares Bitsadmin e o comando Clear, que limpa a lista de pares.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 71833862-be86-4829-8ce3-11e7869adf29
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf177f6a1d1907ff4ffc4488865a058928e4db3f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b3a3fa4ede5c1fd39ac74af6434e357934b702b8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893525"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026514"
 ---
 # <a name="bitsadmin-peers-and-clear"></a>bitsadmin peers e clear
 

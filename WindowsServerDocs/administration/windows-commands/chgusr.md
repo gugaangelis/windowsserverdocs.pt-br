@@ -1,18 +1,18 @@
 ---
 title: chgusr
 description: Artigo de referência para o comando chgusr, que altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f119d9d3-ed8b-42da-81f7-77591d908c83
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4bb3b550105474aefcacb3a1cd587b7fdd6e505
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5c2311e04c80c4b55e1ae9985c1e55b0e05c6804
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892765"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030984"
 ---
 # <a name="chgusr"></a>chgusr
 

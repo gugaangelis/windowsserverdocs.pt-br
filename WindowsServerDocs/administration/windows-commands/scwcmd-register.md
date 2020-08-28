@@ -1,18 +1,18 @@
 ---
 title: Scwcmd register
 description: Artigo de referência para * * * *-
-ms.topic: article
+ms.topic: reference
 ms.assetid: fe4d126a-9f27-4076-b7b1-fbefa45f378a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 227a59cd5a033f8bc6a30344a2c71afa435ab069
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fe54d69cde4607e2d99d4d1f0507fddd428bddd6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883170"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037504"
 ---
 # <a name="scwcmd-register"></a>Scwcmd: register
 

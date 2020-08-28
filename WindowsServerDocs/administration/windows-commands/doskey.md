@@ -1,18 +1,18 @@
 ---
 title: doskey
 description: Artigo de referência para o comando do Doskey e Doskey.exe, que recupera os comandos de linha de comando inseridos anteriormente, edita linhas de comando e cria macros.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4874fd43-d5ea-45f3-ae24-388ae925ed76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f945c0b73509e0a936bf4de1cae9bb721b77e5c3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8cda337419253ebdb9a390e5d8ba3bfa07fd1a91
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890763"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030784"
 ---
 # <a name="doskey"></a>doskey
 
@@ -97,7 +97,7 @@ doskey [/reinstall] [/listsize=<size>] [/macros:[all | <exename>] [/history] [/i
   | `$B` ou `$b` | Envia a saída da macro para um comando. Esses caracteres especiais são equivalentes ao uso do pipe `(` e `*` . |
   | `$T` ou `$t` | Separa os comandos. Use qualquer um desses caracteres especiais para separar comandos ao criar macros ou digitar comandos na linha de comando do **doskey** . Esses caracteres especiais são equivalentes a usar o e comercial ( `&` ) em uma linha de comando. |
   | `$$` | Especifica o caractere de cifrão ( `$` ). |
-  | `$1`pelos`$9` | Represente as informações de linha de comando que você deseja especificar ao executar a macro. Os caracteres especiais `$1` por meio de `$9` parâmetros de lote que permitem usar dados diferentes na linha de comando sempre que você executa a macro. O `$1` caractere em um comando do **doskey** é semelhante ao `%1` caractere em um programa em lotes. |
+  | `$1` pelos `$9` | Represente as informações de linha de comando que você deseja especificar ao executar a macro. Os caracteres especiais `$1` por meio de `$9` parâmetros de lote que permitem usar dados diferentes na linha de comando sempre que você executa a macro. O `$1` caractere em um comando do **doskey** é semelhante ao `%1` caractere em um programa em lotes. |
   | `$*` | Representa todas as informações de linha de comando que você deseja especificar ao digitar o nome da macro. O caractere especial `$*` é um parâmetro substituível que é semelhante aos parâmetros de `$1` lote `$9` , com uma diferença importante: tudo que você digita na linha de comando depois que o nome da macro é substituído pelo `$*` na macro. |
 
 - Para executar uma macro, digite o nome da macro no prompt de comando, começando na primeira posição. Se a macro tiver sido definida com `$*` ou qualquer um dos parâmetros de lote `$1` por meio de `$9` , use um espaço para separar os parâmetros. Não é possível executar uma macro do **doskey** a partir de um programa em lotes.

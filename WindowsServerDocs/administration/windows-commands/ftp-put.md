@@ -1,18 +1,18 @@
 ---
 title: ftp put
 description: Artigo de referência para o comando FTP put, que copia um arquivo local para o computador remoto usando o tipo de transferência de arquivo atual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 95cc1e3f-523d-4374-98b8-16e6c276b2ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/30/2020
-ms.openlocfilehash: e0794c12d7e613f92546903586fe14d23319185a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 518ef051b0e515351a14a0d6895ad50100f1dbd8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889124"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030564"
 ---
 # <a name="ftp-put"></a>ftp put
 

@@ -1,18 +1,18 @@
 ---
 title: netsh
 description: Artigo de referência para o comando netsh, que é um utilitário de script de linha de comando que permite que você, local ou remotamente, exiba ou modifique a configuração de rede de um computador atualmente em execução.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 96fc069d-53c0-4d0a-9f7f-f9f3d49a02bd carmonmills
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 366c7a21f44dc6545de7ba81cba8fe152c245b6b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fc8f6aff94494422150643fed6ce6681dfe54036
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886036"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037774"
 ---
 # <a name="netsh"></a>netsh
 
@@ -30,13 +30,13 @@ netsh [-a <Aliasfile>][-c <Context>][-r <Remotecomputer>][-u [<domainname>\<user
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| -a`<Aliasfile>` | Especifica que você retorna ao prompt netsh após a execução de Aliasfile e o nome do arquivo de texto que contém um ou mais comandos netsh. |
-| -c`<Context>` | Especifica que o netsh insere o contexto netsh especificado e o contexto netsh a ser inserido. |
-| -r`<Remotecomputer>` | Especifica o computador remoto a ser configurado.<p>**Importante:** Se você usar esse parâmetro, deverá verificar se o serviço de registro remoto está em execução no computador remoto. Se não estiver em execução, o Windows exibirá uma mensagem de erro "caminho de rede não encontrado". |
-| -u`<domainname>\<username>` | Especifica o nome de domínio e de conta de usuário a ser usado ao executar o comando netsh em uma conta de usuário. Se você omitir o domínio, o domínio local será usado por padrão. |
-| -p`<Password>` | Especifica a senha para a conta de usuário especificada pelo `-u <username>` parâmetro. |
+| -a `<Aliasfile>` | Especifica que você retorna ao prompt netsh após a execução de Aliasfile e o nome do arquivo de texto que contém um ou mais comandos netsh. |
+| -c `<Context>` | Especifica que o netsh insere o contexto netsh especificado e o contexto netsh a ser inserido. |
+| -r `<Remotecomputer>` | Especifica o computador remoto a ser configurado.<p>**Importante:** Se você usar esse parâmetro, deverá verificar se o serviço de registro remoto está em execução no computador remoto. Se não estiver em execução, o Windows exibirá uma mensagem de erro "caminho de rede não encontrado". |
+| -u `<domainname>\<username>` | Especifica o nome de domínio e de conta de usuário a ser usado ao executar o comando netsh em uma conta de usuário. Se você omitir o domínio, o domínio local será usado por padrão. |
+| -p `<Password>` | Especifica a senha para a conta de usuário especificada pelo `-u <username>` parâmetro. |
 | `<NetshCommand>` | Especifica o comando netsh a ser executado. |
-| -f`<scriptfile>` | Sai do comando netsh depois de executar o arquivo de script especificado. |
+| -f `<scriptfile>` | Sai do comando netsh depois de executar o arquivo de script especificado. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 #### <a name="remarks"></a>Comentários

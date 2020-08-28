@@ -1,18 +1,18 @@
 ---
 title: Manage-bde forcerecovery
 description: Artigo de referência para o comando Manage-bde forcerecovery, que força uma unidade protegida pelo BitLocker para o modo de recuperação na reinicialização.
-ms.topic: article
+ms.topic: reference
 ms.assetid: eecae37c-c9a3-46c5-b615-a0ace1f1d778
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 407ec574c66c057664d517bda35b82da908e0291
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 11dd4754ffebbd204e7ad463c56bce47f2a15714
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886879"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037684"
 ---
 # <a name="manage-bde-forcerecovery"></a>Manage-bde forcerecovery
 

@@ -1,18 +1,18 @@
 ---
 title: Diskshadow
 description: Artigo de referência para o comando DiskShadow, que é uma ferramenta que expõe a funcionalidade oferecida pelo VSS (serviço de cópias de sombra de volume).
-ms.topic: article
+ms.topic: reference
 ms.assetid: e962537d-b759-4368-b6f1-e8391cf7b221
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3170cde50208eb54d1657ceee0c409d76ed3b806
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bf36485319a74694b08a094950d52d70f7cd213a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890804"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030854"
 ---
 # <a name="diskshadow"></a>Diskshadow
 

@@ -1,18 +1,18 @@
 ---
 title: driverquery
 description: Artigo de referência para o comando driverquery, que permite que um administrador exiba uma lista de drivers de dispositivo instalados e suas propriedades.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 92ca4b84-e4e2-405b-9f31-bf6db9f66839
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a996d48927215f8304e5a16f9da67419cbf7de65
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dbd8ca2de7f15a5b5fb8682dae3a3aa2e105d7cd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890758"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030794"
 ---
 # <a name="driverquery"></a>driverquery
 
@@ -28,9 +28,9 @@ driverquery [/s <system> [/u [<domain>\]<username> [/p <password>]]] [/fo {table
 
 | Parâmetro | Descrição |
 | --------- |------------ |
-| /s`<system>` | Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local. |
-| /u`[<domain>]<username>` | Executa o comando com as credenciais da conta de usuário, conforme especificado pelo *usuário* ou *domínio \ nome_de_usuário*. Por padrão, */s* usa as credenciais do usuário que está conectado no momento no computador que está emitindo o comando. **/u** não pode ser usado a menos que **/s** seja especificado. |
-| /p`<password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . **/p** não pode ser usado a menos que **/u** seja especificado. |
+| /s `<system>` | Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O padrão é o computador local. |
+| /u `[<domain>]<username>` | Executa o comando com as credenciais da conta de usuário, conforme especificado pelo *usuário* ou *domínio \ nome_de_usuário*. Por padrão, */s* usa as credenciais do usuário que está conectado no momento no computador que está emitindo o comando. **/u** não pode ser usado a menos que **/s** seja especificado. |
+| /p `<password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . **/p** não pode ser usado a menos que **/u** seja especificado. |
 | /Fo Table | Formata a saída como uma tabela. Esse é o padrão. |
 | /Fo List | Formata a saída como uma lista. |
 | /Fo CSV | Formata a saída com valores separados por vírgula. |

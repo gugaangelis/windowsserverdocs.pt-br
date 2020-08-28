@@ -1,18 +1,18 @@
 ---
 title: Definir contexto
 description: Artigo de referência para o contexto de conjunto, que define o contexto para a criação da cópia de sombra.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fc16c7dd-e8f0-4c2a-8742-0bddb2848bfd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3506a79ec713f26b16f58cd8cda3903ce6503adf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d9097db093d10203c3cbdf753666408cd3932aaf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882706"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037394"
 ---
 # <a name="set-contex"></a>Definir contex
 

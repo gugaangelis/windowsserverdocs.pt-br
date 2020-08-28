@@ -1,18 +1,18 @@
 ---
 title: tskill
 description: Artigo de referência para tskill, que encerra um processo em execução em uma sessão em um servidor de Host da Sessão da Área de Trabalho Remota.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 08986e6a-6900-4ece-85a1-8f73b14db1b3 Lizap
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fe3db1f218bc95fab4f3f2d917575679ab81931
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 357523ce9806910bfddc8ed8992a7ac7be388d3f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896676"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026804"
 ---
 # <a name="tskill"></a>tskill
 
@@ -22,7 +22,7 @@ Encerra um processo em execução em uma sessão em um servidor de Host da Sess�
 
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
+> Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
 ```

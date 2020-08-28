@@ -1,18 +1,18 @@
 ---
 title: bitsadmin replaceremoteprefix
 description: Artigo de referência para o comando Bitsadmin replaceremoteprefix, que altera a URL remota para todos os arquivos no trabalho de *oldprefix* para *newprefix*, conforme necessário.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d0e0abb1-bdb4-4c74-abbc-16c809f5fd81
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 86149b09c65f430bf0a3bbe7a1595bb5385c6dcc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 21c1ede5b05a80ba80b1bd470065e914fb353c3c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893361"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026324"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 

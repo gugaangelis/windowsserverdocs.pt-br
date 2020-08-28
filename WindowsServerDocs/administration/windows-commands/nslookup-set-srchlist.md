@@ -1,18 +1,18 @@
 ---
 title: nslookup set srchlist
 description: Artigo de referência para o comando Set srchlist do nslookup, que altera o nome de domínio padrão do DNS (sistema de nomes de domínio) e a lista de pesquisa.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8486266d-22ac-4ce5-aad6-1cd0c08110a2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de02663ce43b9f3f24f1addd739438a0796be0ea
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 45f829337cca347b1503aca0fb02a1c77359914a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885497"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037284"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 

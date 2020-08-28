@@ -1,18 +1,18 @@
 ---
 title: bitsadmin removeclientcertificate
 description: Artigo de referência para o comando Bitsadmin removeclientcertificate, que remove o certificado do cliente do trabalho.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b417c3e5-aadd-4fcc-968f-45d8b67ca516
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f4b2a17a08f3c2b224d90237975841644ea16ecd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a447354a309d16ed75c89c586c8edabd2eadb528
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893371"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026424"
 ---
 # <a name="bitsadmin-removeclientcertificate"></a>bitsadmin removeclientcertificate
 

@@ -1,18 +1,18 @@
 ---
 title: cmstp
 description: Artigo de referência para cmstp, que instala ou remove um perfil de serviço do Gerenciador de conexões.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 34aad544-11c3-4e85-8bbf-5bc5a971da93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 36f07fd6215159c1b4e6384f93725e26e2d22ebc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 99e5e3d81855069b8a4465d554e7d9699c4bc08e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880058"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030954"
 ---
 # <a name="cmstp"></a>cmstp
 
@@ -38,7 +38,7 @@ cmstp.exe [/nf] [/s] [/u] [drive:][path]serviceprofilefilename.inf
 | --------- | ----------- |
 | `<serviceprofilefilename>.exe` | Especifica, por nome, o pacote de instalação que contém o perfil que você deseja instalar.<p>Necessário para a sintaxe 1, mas não é válido para a sintaxe 2. |
 | /q: a | Especifica que o perfil deve ser instalado sem avisar o usuário. A mensagem de verificação de que a instalação foi bem-sucedida ainda será exibida.<p>Necessário para a sintaxe 1, mas não é válido para a sintaxe 2. |
-| [unidade:] Multi-Path`<serviceprofilefilename>.inf` | Obrigatórios. Especifica, por nome, o arquivo de configuração que determina como o perfil deve ser instalado.<p>O parâmetro [unidade:] [caminho] não é válido para a sintaxe 1. |
+| [unidade:] Multi-Path `<serviceprofilefilename>.inf` | Obrigatórios. Especifica, por nome, o arquivo de configuração que determina como o perfil deve ser instalado.<p>O parâmetro [unidade:] [caminho] não é válido para a sintaxe 1. |
 | /nf | Especifica que os arquivos de suporte não devem ser instalados. |
 | /s | Especifica que o perfil de serviço deve ser instalado ou desinstalado silenciosamente (sem solicitar a resposta do usuário ou exibir a mensagem de verificação). Esse é o único parâmetro que você pode usar em combinação com **/u**.|
 | /u | Especifica que o perfil de serviço deve ser desinstalado. |

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin peers e list
 description: Artigo de referência para o comando Bitsadmin Peers e List, que lista todos os pares.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 18ec60c9-34d2-466e-982c-6165478ef224
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 413318a4cfd04256f69483bfd2b177ca5bf9de8a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e202df33e990cff9b776c3cf2f95d025c34e3edc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893482"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026464"
 ---
 # <a name="bitsadmin-peers-and-list"></a>bitsadmin peers e list
 

@@ -1,18 +1,18 @@
 ---
 title: DiskRAID
 description: Artigo de referência para a ferramenta de linha de comando do DiskRAID, que permite configurar e gerenciar a matriz redundante de subsistemas de armazenamento (RAID) de discos independentes (ou baratos).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 20aef1e5-7641-47cf-b4eb-cda117f65b6e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d13b8f6a8ffb4f78312a804dd277839021dbd9e1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b153d0ab1ec52f023c12b240518c6304d76e9093
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890816"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030914"
 ---
 # <a name="diskraid"></a>DiskRAID
 
@@ -623,19 +623,19 @@ select {hbaport | iadapter | iportal | provider | subsystem | controller | port 
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| object | Especifica o tipo de objeto a ser selecionado, incluindo: **provedor**, **subsistema**, **controlador**, **unidade**ou **LUN**. |
-| destes`[<n>]` | Define o foco para a porta HBA local especificada. Se nenhuma porta HBA for especificada, o comando exibirá a porta HBA selecionada no momento (se houver). A especificação de um índice de porta HBA inválido resulta em nenhuma porta HBA em foco. A seleção de uma porta HBA anula a seleção de todos os adaptadores iniciadores e portais iniciadores selecionados. |
-| IADAPTER`[<n>]` | Define o foco para o adaptador do iniciador iSCSI local especificado. Se nenhum adaptador do iniciador for especificado, o comando exibirá o adaptador do iniciador selecionado no momento (se houver). A especificação de um índice de adaptador iniciador inválido resulta em nenhum adaptador de iniciador em foco. A seleção de um adaptador de iniciador anula a seleção de portas HBA selecionadas e portais do iniciador. |
-| iportal`[<n>]` | Define o foco para o portal do iniciador iSCSI local especificado no adaptador do iniciador iSCSI selecionado. Se nenhum portal do iniciador for especificado, o comando exibirá o portal do iniciador selecionado no momento (se houver). A especificação de um índice inválido do portal do iniciador resulta em nenhum portal do iniciador selecionado. |
-| operador`[<n>]` | Define o foco para o provedor especificado. Se nenhum provedor for especificado, o comando exibirá o provedor selecionado no momento (se houver). A especificação de um índice de provedor inválido resulta em nenhum provedor em foco. |
-| subsistema`[<n>]` | Define o foco para o subsistema especificado. Se nenhum subsistema for especificado, o comando exibirá o subsistema com foco (se houver). A especificação de um índice de subsistema inválido resulta em nenhum subsistema em foco. A seleção de um subsistema seleciona implicitamente seu provedor associado. |
-| controle`[<n>]` | Define o foco para o controlador especificado no subsistema selecionado no momento. Se nenhum controlador for especificado, o comando exibirá o controlador selecionado no momento (se houver). A especificação de um índice de controlador inválido resulta em nenhum controlador em foco. A seleção de um controlador anula a seleção de quaisquer portas de controlador, unidades, LUNs, portais de destino, destinos e grupos do portal de destino selecionados. |
-| Porto`[<n>]` | Define o foco para a porta do controlador especificado no controlador selecionado no momento. Se nenhuma porta for especificada, o comando exibirá a porta selecionada no momento (se houver). A especificação de um índice de porta inválido resulta em nenhuma porta selecionada. |
-| Dirigir`[<n>]` | Define o foco para a unidade especificada ou o eixo físico no subsistema selecionado no momento. Se nenhuma unidade for especificada, o comando exibirá a unidade selecionada no momento (se houver). A especificação de um índice de unidade inválido resulta em nenhuma unidade em foco. A seleção de uma unidade anula a seleção de todos os controladores, portas do controlador, LUNs, portais de destino, destinos e grupos do portal de destino selecionados. |
-| LUN`[<n>]` | Define o foco para o LUN especificado no subsistema selecionado no momento. Se nenhum LUN for especificado, o comando exibirá o LUN selecionado no momento (se houver). A especificação de um índice LUN inválido resulta em nenhum LUN selecionado. A seleção de um LUN anula a seleção de todos os controladores, portas do controlador, unidades, portais de destino, destinos e grupos do portal de destino selecionados. |
-| tportal`[<n>]` | Define o foco para o portal de destino iSCSI especificado no subsistema selecionado no momento. Se nenhum portal de destino for especificado, o comando exibirá o portal de destino selecionado no momento (se houver). A especificação de um índice do portal de destino inválido resulta em nenhum portal de destino selecionado. A seleção de um portal de destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, destinos e grupos do portal de destino. |
-| alvo`[<n>]` | Define o foco para o destino iSCSI especificado no subsistema selecionado no momento. Se nenhum destino for especificado, o comando exibirá o destino selecionado no momento (se houver). A especificação de um índice de destino inválido resulta em nenhum destino selecionado. A seleção de um destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, portais de destino e grupos do portal de destino. |
-| TPGROUP`[<n>]` | Define o foco para o grupo do portal de destino iSCSI especificado no destino iSCSI selecionado no momento. Se nenhum grupo do portal de destino for especificado, o comando exibirá o grupo do portal de destino selecionado no momento (se houver). A especificação de um índice de grupo do portal de destino inválido resulta em nenhum grupo de portal de destino em foco. |
+| objeto | Especifica o tipo de objeto a ser selecionado, incluindo: **provedor**, **subsistema**, **controlador**, **unidade**ou **LUN**. |
+| destes `[<n>]` | Define o foco para a porta HBA local especificada. Se nenhuma porta HBA for especificada, o comando exibirá a porta HBA selecionada no momento (se houver). A especificação de um índice de porta HBA inválido resulta em nenhuma porta HBA em foco. A seleção de uma porta HBA anula a seleção de todos os adaptadores iniciadores e portais iniciadores selecionados. |
+| IADAPTER `[<n>]` | Define o foco para o adaptador do iniciador iSCSI local especificado. Se nenhum adaptador do iniciador for especificado, o comando exibirá o adaptador do iniciador selecionado no momento (se houver). A especificação de um índice de adaptador iniciador inválido resulta em nenhum adaptador de iniciador em foco. A seleção de um adaptador de iniciador anula a seleção de portas HBA selecionadas e portais do iniciador. |
+| iportal `[<n>]` | Define o foco para o portal do iniciador iSCSI local especificado no adaptador do iniciador iSCSI selecionado. Se nenhum portal do iniciador for especificado, o comando exibirá o portal do iniciador selecionado no momento (se houver). A especificação de um índice inválido do portal do iniciador resulta em nenhum portal do iniciador selecionado. |
+| operador `[<n>]` | Define o foco para o provedor especificado. Se nenhum provedor for especificado, o comando exibirá o provedor selecionado no momento (se houver). A especificação de um índice de provedor inválido resulta em nenhum provedor em foco. |
+| subsistema `[<n>]` | Define o foco para o subsistema especificado. Se nenhum subsistema for especificado, o comando exibirá o subsistema com foco (se houver). A especificação de um índice de subsistema inválido resulta em nenhum subsistema em foco. A seleção de um subsistema seleciona implicitamente seu provedor associado. |
+| controle `[<n>]` | Define o foco para o controlador especificado no subsistema selecionado no momento. Se nenhum controlador for especificado, o comando exibirá o controlador selecionado no momento (se houver). A especificação de um índice de controlador inválido resulta em nenhum controlador em foco. A seleção de um controlador anula a seleção de quaisquer portas de controlador, unidades, LUNs, portais de destino, destinos e grupos do portal de destino selecionados. |
+| Porto `[<n>]` | Define o foco para a porta do controlador especificado no controlador selecionado no momento. Se nenhuma porta for especificada, o comando exibirá a porta selecionada no momento (se houver). A especificação de um índice de porta inválido resulta em nenhuma porta selecionada. |
+| Dirigir `[<n>]` | Define o foco para a unidade especificada ou o eixo físico no subsistema selecionado no momento. Se nenhuma unidade for especificada, o comando exibirá a unidade selecionada no momento (se houver). A especificação de um índice de unidade inválido resulta em nenhuma unidade em foco. A seleção de uma unidade anula a seleção de todos os controladores, portas do controlador, LUNs, portais de destino, destinos e grupos do portal de destino selecionados. |
+| LUN `[<n>]` | Define o foco para o LUN especificado no subsistema selecionado no momento. Se nenhum LUN for especificado, o comando exibirá o LUN selecionado no momento (se houver). A especificação de um índice LUN inválido resulta em nenhum LUN selecionado. A seleção de um LUN anula a seleção de todos os controladores, portas do controlador, unidades, portais de destino, destinos e grupos do portal de destino selecionados. |
+| tportal `[<n>]` | Define o foco para o portal de destino iSCSI especificado no subsistema selecionado no momento. Se nenhum portal de destino for especificado, o comando exibirá o portal de destino selecionado no momento (se houver). A especificação de um índice do portal de destino inválido resulta em nenhum portal de destino selecionado. A seleção de um portal de destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, destinos e grupos do portal de destino. |
+| alvo `[<n>]` | Define o foco para o destino iSCSI especificado no subsistema selecionado no momento. Se nenhum destino for especificado, o comando exibirá o destino selecionado no momento (se houver). A especificação de um índice de destino inválido resulta em nenhum destino selecionado. A seleção de um destino desmarca quaisquer controladores, portas do controlador, unidades, LUNs, portais de destino e grupos do portal de destino. |
+| TPGROUP `[<n>]` | Define o foco para o grupo do portal de destino iSCSI especificado no destino iSCSI selecionado no momento. Se nenhum grupo do portal de destino for especificado, o comando exibirá o grupo do portal de destino selecionado no momento (se houver). A especificação de um índice de grupo do portal de destino inválido resulta em nenhum grupo de portal de destino em foco. |
 |`[<n>]` | Especifica o a `<object number>` ser selecionado. Se o `<object number>` especificado não for válido, todas as seleções existentes para objetos do tipo especificado serão limpas. Se não `<object number>` for especificado, o objeto atual será exibido.
 
 ### <a name="setflag"></a>SetFlag

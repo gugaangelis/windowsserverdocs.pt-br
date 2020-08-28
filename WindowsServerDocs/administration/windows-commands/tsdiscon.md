@@ -1,18 +1,18 @@
 ---
 title: tsdiscon
 description: Artigo de referência para tsdiscon, que desconecta uma sessão de um servidor de host de sessão de área de trabalho remota.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 13139674-7dee-4965-8cac-32f4928e8b9a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e81a1c7f68af0bb1d16ce64bb4985e3ddb8d18f2
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9fd0292ab1bd53a424c0acaa4b6a2dc98cb1f0a0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897078"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026854"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -23,7 +23,7 @@ Desconecta uma sessão de um servidor Host da Sessão da Área de Trabalho Remot
 
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
+> Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
 ```

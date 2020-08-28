@@ -1,18 +1,18 @@
 ---
 title: ChangePassword de Manage-bde
 description: Artigo de referência para o comando ChangePassword Manage-bde, que modifica a senha de uma unidade de dados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b174e152-8442-4fba-8b33-56a81ff4f547
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0134d69eb720f7e832caeff5ab7f6081d8695ac9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 97bae4c10756818ec8475a114aa048a4cae58617
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886933"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030534"
 ---
 # <a name="manage-bde-changepassword"></a>ChangePassword de Manage-bde
 

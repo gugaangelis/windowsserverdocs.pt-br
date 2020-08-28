@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setaclflag
 description: Artigo de referência para o comando Bitsadmin setaclflag, que define os sinalizadores de propagações da ACL (lista de controle de acesso).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6e3bcda0-827d-4dfd-8384-d1da018f3e10
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14f7268ec1ea8b3c55d4aa8dfe3af45bc6c488f9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 89b605e94505610a2b355de9e4bcbc485a2bb7bf
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893293"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026294"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 

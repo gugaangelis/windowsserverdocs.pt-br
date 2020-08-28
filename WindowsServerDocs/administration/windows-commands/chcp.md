@@ -1,18 +1,18 @@
 ---
 title: chcp
 description: Artigo de referência para o comando CHCP, que altera a página de código ativa do console.
-ms.topic: article
+ms.topic: reference
 ms.assetid: dc7b1c71-7b80-443d-9cf1-9bcf305aa1fd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21dcdc1e663656439bece576287877653d0dcd8c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8e725bb3220546864642b2e6a39ddcc0163b1b98
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892811"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031084"
 ---
 # <a name="chcp"></a>chcp
 
@@ -64,7 +64,7 @@ Para exibir a configuração da página de código ativa, digite:
 chcp
 ```
 
-É exibida uma mensagem semelhante à seguinte:`Active code page: 437`
+É exibida uma mensagem semelhante à seguinte: `Active code page: 437`
 
 Para alterar a página de código ativa para 850 (multilíngue), digite:
 
@@ -72,7 +72,7 @@ Para alterar a página de código ativa para 850 (multilíngue), digite:
 chcp 850
 ```
 
-Se a página de código especificada for inválida, a seguinte mensagem de erro será exibida:`Invalid code page`
+Se a página de código especificada for inválida, a seguinte mensagem de erro será exibida: `Invalid code page`
 
 ## <a name="additional-references"></a>Referências adicionais
 
