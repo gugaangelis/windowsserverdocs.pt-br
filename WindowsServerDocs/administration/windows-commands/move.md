@@ -1,18 +1,18 @@
 ---
 title: move
 description: Artigo de referência para o comando move, que move um ou mais arquivos de um diretório para outro diretório.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fde290a8-d385-450f-8987-ee837fed667d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5ceeced7e734775138cc47cba9d36981a4433750
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d2bfef9099a2ef590f94dd4effbd011bbc424a5d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886321"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035314"
 ---
 # <a name="move"></a>move
 

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setmaxdownloadtime
 description: Artigo de referência para o comando Bitsadmin setmaxdownloadtime, que define o tempo limite de download em segundos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 16b96cf1-5738-415c-9b9d-c4ea8d5e4fec
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5453c476f304bce3564167da93518793d7eef043
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a4b0096aeb14c4c8cb69654ad4b3723977d759ef
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893115"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024244"
 ---
 # <a name="bitsadmin-setmaxdownloadtime"></a>bitsadmin setmaxdownloadtime
 

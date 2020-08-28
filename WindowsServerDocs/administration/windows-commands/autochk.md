@@ -1,18 +1,18 @@
 ---
 title: autochk
 description: Artigo de referência para o comando autochk, que é executado quando o computador é iniciado e antes do Windows Server começar a verificar a integridade lógica de um sistema de arquivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8787e6a3-f023-4ea5-b2d1-61c6876d8aff
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91472aa7447c590aefcb4af58d1951e8e39225fe
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: acdb9330ca1b99578c43c98e30c647171413ddd2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895289"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028924"
 ---
 # <a name="autochk"></a>autochk
 

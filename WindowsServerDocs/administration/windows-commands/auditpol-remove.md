@@ -1,18 +1,18 @@
 ---
 title: auditpol remove
 description: Artigo de referência para o comando de remoção de Auditpol, que remove a política de auditoria por usuário para uma conta especificada ou todas as contas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: be42ec55-235c-44f7-9abd-ed1cf3f5b1f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8560f1c9d951f7c2c0cfd93638a85d9e43880da5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: eee48822a082c3e7f5aa37cbd09a24059c94624e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895376"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029024"
 ---
 # <a name="auditpol-remove"></a>auditpol remove
 

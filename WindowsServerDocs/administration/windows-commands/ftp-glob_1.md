@@ -1,18 +1,18 @@
 ---
 title: ftp glob
 description: Artigo de referência para o comando glob do FTP, que alterna a permissão de expansão de curinga para nomes de arquivo locais.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 111494f9-0083-4f48-9d35-46366debafae
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 75cecb1b61ccbe140c058359aaac669ea6c082d1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fdbdcc94110cf4078bbd29b6159c1781865f0bdc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889394"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023940"
 ---
 # <a name="ftp-glob"></a>ftp glob
 

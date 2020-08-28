@@ -1,18 +1,18 @@
 ---
 title: auditpol list
 description: Artigo de referência do comando lista de Auditpol, que lista categorias de política de auditoria e subcategorias, ou lista os usuários para os quais uma política de auditoria por usuário é definida.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 45502abe-3d6e-4e13-94f0-8e6fcb6db860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5047708056e4e926dc917b80b4b0a41ce5f9d773
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b49b138de8f25f25b00e593d6bd02620a3f2f624
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895422"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029074"
 ---
 # <a name="auditpol-list"></a>auditpol list
 

@@ -1,18 +1,18 @@
 ---
 title: ftp hash
 description: Artigo de referência do comando FTP hash, que alterna a impressão de sinal numérico (#) para cada bloco de dados transferido.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 76bed9b3-3efd-4a3e-831f-460626d02c44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: daadc68bc52426164024c5c54c251d2aa0962765
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 67ac838ce17d5b270767ea7a4d1cb2aa472fc0a1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889403"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023930"
 ---
 # <a name="ftp-hash"></a>ftp hash
 

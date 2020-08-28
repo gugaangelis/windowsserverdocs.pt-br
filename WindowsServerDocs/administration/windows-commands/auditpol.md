@@ -1,18 +1,18 @@
 ---
 title: auditpol
 description: Artigo de referência para o comando Auditpol, que exibe informações sobre e executa funções para manipular políticas de auditoria.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a02cfb9d-732f-4e77-aeba-f18265daa3af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 026dfb747f6013c6d2b6469eb2082819c4018504
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b4a945d1779c3a55fd6647e366770e7ee3d9ec67
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895293"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028954"
 ---
 # <a name="auditpol"></a>auditpol
 

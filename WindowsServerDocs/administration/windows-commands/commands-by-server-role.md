@@ -1,18 +1,18 @@
 ---
 title: Comandos por função de servidor
 description: Artigo de referência para comandos por função de servidor, que descreve a função principal do servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 343597ec-9b92-4b92-8d6c-faef4b565068
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ccb0141286e7c348ae85d173691f5d12db608b0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1cf73e232c0b2fb9daf34d3c322df576b6f3d372
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892689"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024240"
 ---
 # <a name="commands-by-server-role"></a>Comandos por função de servidor
 

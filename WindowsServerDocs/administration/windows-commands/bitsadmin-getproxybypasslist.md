@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getproxybypasslist
 description: Artigo de referência para o comando Bitsadmin getproxybypasslist, que recupera a lista de bypass de proxy para o trabalho especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 50959be3-7014-4bc9-9a7b-68f1ff94a94a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 16cca14a47f086be65764da5441d915d2d28d2db
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fb767ce9201b8c652df52a9049ce474ec8d8ea2e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894008"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028644"
 ---
 # <a name="bitsadmin-getproxybypasslist"></a>bitsadmin getproxybypasslist
 

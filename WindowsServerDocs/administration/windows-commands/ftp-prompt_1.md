@@ -1,18 +1,18 @@
 ---
 title: ftp prompt
 description: Artigo de referência para o comando de prompt de FTP, que alterna para ativar e desativar o modo de prompt.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 930df39b-45c4-4e0b-bfe2-1d1963be817a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4315a4550bd59d06a7a06e1d822256ed7dab73b6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4d337e01c3e1bfe93d15c65f0885ec8e7e9dfee2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889136"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023870"
 ---
 # <a name="ftp-prompt"></a>ftp prompt
 

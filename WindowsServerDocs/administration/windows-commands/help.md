@@ -1,18 +1,18 @@
 ---
 title: ajuda
 description: Artigo de referência para o comando de ajuda, que exibe uma lista dos comandos disponíveis ou informações de ajuda detalhadas sobre um comando especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c65b5ac3-711a-4368-95b8-ba82e2d00713
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b91b93b5ef8964cb73e9bb122f4e53d9d8343086
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 701b3a1840ac56e399bb4febf0765c2f69a84633
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888493"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035454"
 ---
 # <a name="help"></a>ajuda
 

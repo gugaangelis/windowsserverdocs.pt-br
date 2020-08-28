@@ -1,18 +1,18 @@
 ---
 title: evntcmd
 description: Artigo de referência para o comando evntcmd, que configura a tradução de eventos para interceptações, destinos de interceptação ou ambos com base nas informações de um arquivo de configuração.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c1aabb74-76e7-4304-95a6-50ad87e92fd9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9610608000ce106ec321f721a4181658453d6348
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 173cb9c2f1528748986daf753a9d213c5060e5d4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890548"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035864"
 ---
 # <a name="evntcmd"></a>evntcmd
 
@@ -30,8 +30,8 @@ evntcmd [/s <computername>] [/v <verbositylevel>] [/n] <filename>
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /s`<computername>` | Especifica, por nome, o computador no qual você deseja configurar a tradução de eventos para interceptações, destinos de interceptação ou ambos. Se você não especificar um computador, a configuração ocorrerá no computador local. |
-| /v`<verbositylevel>` | Especifica quais tipos de mensagens de status aparecem como interceptações e destinos de interceptação são configurados. Esse parâmetro deve ser um inteiro entre 0 e 10. Se você especificar 10, todos os tipos de mensagens serão exibidos, incluindo mensagens de rastreamento e avisos sobre se a configuração de interceptação foi bem-sucedida. Se você especificar 0, nenhuma mensagem será exibida. |
+| /s `<computername>` | Especifica, por nome, o computador no qual você deseja configurar a tradução de eventos para interceptações, destinos de interceptação ou ambos. Se você não especificar um computador, a configuração ocorrerá no computador local. |
+| /v `<verbositylevel>` | Especifica quais tipos de mensagens de status aparecem como interceptações e destinos de interceptação são configurados. Esse parâmetro deve ser um inteiro entre 0 e 10. Se você especificar 10, todos os tipos de mensagens serão exibidos, incluindo mensagens de rastreamento e avisos sobre se a configuração de interceptação foi bem-sucedida. Se você especificar 0, nenhuma mensagem será exibida. |
 | /n | Especifica que o serviço SNMP não deve ser reiniciado se este computador receber alterações de configuração de interceptação. |
 | `<filename>` | Especifica, por nome, o arquivo de configuração que contém informações sobre a tradução de eventos para interceptações e destinos de interceptação que você deseja configurar. |
 | /? | Exibe a ajuda no prompt de comando. |

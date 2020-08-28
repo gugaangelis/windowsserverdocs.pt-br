@@ -1,18 +1,18 @@
 ---
 title: delete disk
 description: Artigo de referência do comando excluir disco, que exclui um disco dinâmico ausente da lista de discos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 44079900-e4ed-49d0-81e4-d652c38cd636
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85657e571fb5f0f4e0a55cf54065056a8f28c385
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b02f88027d3fa7d425d65024350805eb2279185b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891442"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024210"
 ---
 # <a name="delete-disk"></a>delete disk
 

@@ -1,18 +1,18 @@
 ---
 title: Get-AutoaddDevices
 description: Artigo de referência para Get-AutoaddDevices, que exibe todos os computadores que estão no banco de dados de adição automática em um servidor dos serviços de implantação do Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 24b4b688-55b0-4bd9-a2f5-7ef4b3dfe2f2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e9fcb25f465cdb26112a48e25c856a42dd21326
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f449ddb58bb4e5f28a3cee02e9c769d363baf3b7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892466"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035894"
 ---
 # <a name="get-autoadddevices"></a>Get-AutoaddDevices
 
