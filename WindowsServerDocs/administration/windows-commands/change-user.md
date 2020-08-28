@@ -1,18 +1,18 @@
 ---
 title: change user
 description: Artigo de referência do comando Change User, que altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6202f024-8cf5-411e-89b1-ee37ff46499d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca78126095b11ca7bf900d10c253cd7ad19fcc12
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7c473349b75a5963cb66997ea568f5634eea194d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892895"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031144"
 ---
 # <a name="change-user"></a>change user
 
@@ -21,7 +21,7 @@ ms.locfileid: "87892895"
 Altera o modo de instalação para o servidor de Host da Sessão da Área de Trabalho Remota.
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxe
 

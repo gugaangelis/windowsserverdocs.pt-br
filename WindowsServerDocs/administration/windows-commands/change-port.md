@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64c0d012d8106d99f1d7a167dd8f2d1d9107150b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8014ba67b2c4383aa56a6fce5eb486bbccfba7e7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880263"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031154"
 ---
 # <a name="change-port"></a>change port
 
@@ -21,7 +21,7 @@ ms.locfileid: "87880263"
 Lista ou altera os mapeamentos de porta COM para que sejam compatíveis com os aplicativos do MS-DOS.
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 ## <a name="syntax"></a>Sintaxe
 
@@ -33,8 +33,8 @@ change port [<portX>=<portY| /d <portX | /query]
 
 | Parâmetro | Descrição |
 |-----------------|----------------------------------------|
-| <portX>=<portY> | Mapeia COM `<*portX*>` para`<*portY*>` |
-| /d<portX> | Exclui o mapeamento para COM`<*portX*>` |
+| <portX>=<portY> | Mapeia COM `<*portX*>` para `<*portY*>` |
+| /d <portX> | Exclui o mapeamento para COM `<*portX*>` |
 | /Query | Exibe os mapeamentos de porta atuais. |
 | /? | Exibe a ajuda no prompt de comando. |
 

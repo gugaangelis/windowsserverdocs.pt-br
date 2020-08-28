@@ -1,18 +1,18 @@
 ---
 title: tracert
 description: Artigo de referência para o tracert, que determina o caminho levado para um destino, enviando solicitações de eco do protocolo ICMP ou mensagens ICMPv6 para o destino com valores de campo TTL (tempo de vida) aumentando de forma incremental.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 9032a032-2e5e-49d4-9e86-f821600e4ba6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f73c9df4a72b0c28976e25bc2970da372275ea8b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7316daf691ff6f95ca4eb1608caea382885024ce
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897104"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026894"
 ---
 # <a name="tracert"></a>tracert
 
@@ -32,11 +32,11 @@ tracert [/d] [/h <MaximumHops>] [/j <Hostlist>] [/w <timeout>] [/R] [/S <Srcaddr
 |Parâmetro|Descrição|
 |-------|--------|
 |/d|Impede que o **tracert** tente resolver os endereços IP de roteadores intermediários para seus nomes. Isso pode acelerar a exibição de resultados de **tracert** .|
-|/h\<MaximumHops>|Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos.|
-|/j\<Hostlist>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. Use esse parâmetro somente ao rastrear endereços IPv4.|
-|/w\<timeout>|Especifica a quantidade de tempo em milissegundos para aguardar o tempo de ICMP excedido ou a mensagem de resposta de eco correspondente a uma determinada mensagem de solicitação de eco a ser recebida. Se não for recebido dentro do tempo limite, um asterisco (*) será exibido. O tempo limite padrão é 4000 (4 segundos).|
+|/h \<MaximumHops>|Especifica o número máximo de saltos no caminho para pesquisar o destino (destino). O padrão é 30 saltos.|
+|/j \<Hostlist>|Especifica que as mensagens de solicitação de eco usam a opção de rota de origem flexível no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist*. Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A *hostlist* é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. Use esse parâmetro somente ao rastrear endereços IPv4.|
+|/w \<timeout>|Especifica a quantidade de tempo em milissegundos para aguardar o tempo de ICMP excedido ou a mensagem de resposta de eco correspondente a uma determinada mensagem de solicitação de eco a ser recebida. Se não for recebido dentro do tempo limite, um asterisco (*) será exibido. O tempo limite padrão é 4000 (4 segundos).|
 |/R|Especifica que o cabeçalho de extensão de roteamento IPv6 deve ser usado para enviar uma mensagem de solicitação de eco para o host local, usando o destino como um destino intermediário e testando a rota inversa.|
-|/S\<Srcaddr>|Especifica o endereço de origem a ser usado nas mensagens de solicitação de eco. Use esse parâmetro somente ao rastrear endereços IPv6.|
+|/S \<Srcaddr>|Especifica o endereço de origem a ser usado nas mensagens de solicitação de eco. Use esse parâmetro somente ao rastrear endereços IPv6.|
 |/4|Especifica que tracert.exe pode usar somente IPv4 para este rastreamento.|
 |/6|Especifica que tracert.exe pode usar somente IPv6 para este rastreamento.|
 |\<TargetName>|Especifica o destino, identificado pelo endereço IP ou pelo nome do host.|

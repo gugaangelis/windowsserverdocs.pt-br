@@ -1,18 +1,18 @@
 ---
 title: bdehdcfg target
 description: Artigo de referência para o comando de destino BdeHdCfg, que prepara uma partição para uso como uma unidade do sistema pelo BitLocker e pela recuperação do Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f761d25d-8349-4ac7-ac46-6bb340a4348f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4da764bf25a661c53c27b15cbbee8e4d4ec2981
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 173dfa5a8e873b76e512ce1d657eb1d51391640a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895038"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031464"
 ---
 # <a name="bdehdcfg-target"></a>BdeHdCfg: destino
 
@@ -30,8 +30,8 @@ bdehdcfg -target {default|unallocated|<drive_letter> shrink|<drive_letter> merge
 | --------- | ----------- |
 | default | Indica que a ferramenta da linha de comando seguirá o mesmo processo que o assistente de instalação do BitLocker. |
 | unallocated | Cria a partição do sistema fora do espaço não alocado disponível no disco. |
-| `<drive_letter>`PodeReduzir | Reduz a unidade especificada pela quantidade necessária para criar uma partição do sistema ativa. Para usar esse comando, a unidade especificada deve ter pelo menos 5% de espaço livre. |
-| `<drive_letter>`Mescle | Usa a unidade especificada como partição do sistema ativa. A unidade do sistema operacional não pode ser um destino para mesclagem. |
+| `<drive_letter>` PodeReduzir | Reduz a unidade especificada pela quantidade necessária para criar uma partição do sistema ativa. Para usar esse comando, a unidade especificada deve ter pelo menos 5% de espaço livre. |
+| `<drive_letter>` Mescle | Usa a unidade especificada como partição do sistema ativa. A unidade do sistema operacional não pode ser um destino para mesclagem. |
 
 ## <a name="examples"></a>Exemplos
 

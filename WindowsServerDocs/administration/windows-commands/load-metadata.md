@@ -1,18 +1,18 @@
 ---
 title: load metadata
 description: Artigo de referência para o comando carregar metadados, que carrega um arquivo Metadata. cab antes de importar uma cópia de sombra transportável ou carrega os metadados do gravador no caso de uma restauração.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2c535487-668b-44fc-babb-ff59cf7d190e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b0f5412ee189814fcdf1f020f238e19dc308b7d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9953b06b46b82466dbf4fcba97c2d902c88d301c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887486"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037884"
 ---
 # <a name="load-metadata"></a>Carregar metadados
 

@@ -1,18 +1,18 @@
 ---
 title: systeminfo
 description: Artigo de referência para SystemInfo, que exibe informações detalhadas de configuração sobre um computador e seu sistema operacional, incluindo configuração do sistema operacional, informações de segurança, ID do produto e propriedades de hardware (como RAM, espaço em disco e placas de rede).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 39954968-3c2e-4d3e-9d89-c9c43347461e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b34e92a5035360cb600bfe73b405f0a7033b6196
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 40bb15fc79be45874b0047f1755259be34bccb2b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881902"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027204"
 ---
 # <a name="systeminfo"></a>systeminfo
 
@@ -30,10 +30,10 @@ Systeminfo [/s <Computer> [/u <Domain>\<UserName> [/p <Password>]]] [/fo {TABLE 
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s\<Computer>|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
-|/u\<Domain>\<UserName>|Executa o comando com as permissões de conta da conta de usuário especificada. Se **/u** não for especificado, esse comando usará as permissões do usuário que está conectado no momento ao computador que está emitindo o comando.|
-|/p\<Password>|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
-|/Fo\<Format>|Especifica o formato de saída com um dos seguintes valores:</br>TABELA: exibe a saída em uma tabela.</br>LISTA: exibe a saída em uma lista.</br>CSV: exibe a saída no formato de valores separados por vírgula.|
+|/s \<Computer>|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.|
+|/u \<Domain>\<UserName>|Executa o comando com as permissões de conta da conta de usuário especificada. Se **/u** não for especificado, esse comando usará as permissões do usuário que está conectado no momento ao computador que está emitindo o comando.|
+|/p \<Password>|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
+|/Fo \<Format>|Especifica o formato de saída com um dos seguintes valores:</br>TABELA: exibe a saída em uma tabela.</br>LISTA: exibe a saída em uma lista.</br>CSV: exibe a saída no formato de valores separados por vírgula.|
 |/NH|Suprime cabeçalhos de coluna na saída. Válido quando o parâmetro **/fo** é definido como Table ou CSV.|
 |/?|Exibe a ajuda no prompt de comando.|
 

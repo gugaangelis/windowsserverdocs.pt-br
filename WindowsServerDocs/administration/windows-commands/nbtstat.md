@@ -1,18 +1,18 @@
 ---
 title: nbtstat
 description: Artigo de referência para o comando nbtstat, que exibe estatísticas de protocolo NetBIOS sobre TCP/IP (NetBT), tabelas de nomes NetBIOS para o computador local e computadores remotos e o cache de nomes NetBIOS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1d2ea99e-72f1-471f-9525-d2c49bf3be82
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3367190fb751a0cb5081724c6ea8ad2b7f2c95ff
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 273aaadcf537864512d6dc7aedff0c9872c3cd05
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886113"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037794"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -32,8 +32,8 @@ nbtstat [/a <remotename>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| SRDF`<remotename>` | Exibe a tabela de nomes NetBIOS de um computador remoto, em que *RemoteName* é o nome do computador NetBIOS do computador remoto. A tabela de nomes NetBIOS é a lista de nomes NetBIOS que corresponde a aplicativos NetBIOS em execução nesse computador. |
-| SRDF`<IPaddress>` | Exibe a tabela de nomes NetBIOS de um computador remoto, especificada pelo endereço IP (em notação decimal pontilhada) do computador remoto. |
+| SRDF `<remotename>` | Exibe a tabela de nomes NetBIOS de um computador remoto, em que *RemoteName* é o nome do computador NetBIOS do computador remoto. A tabela de nomes NetBIOS é a lista de nomes NetBIOS que corresponde a aplicativos NetBIOS em execução nesse computador. |
+| SRDF `<IPaddress>` | Exibe a tabela de nomes NetBIOS de um computador remoto, especificada pelo endereço IP (em notação decimal pontilhada) do computador remoto. |
 | /c | Exibe o conteúdo do cache de nomes NetBIOS, a tabela de nomes NetBIOS e seus endereços IP resolvidos. |
 | /n | Exibe a tabela de nomes NetBIOS do computador local. O status **registrado** indica que o nome é registrado por difusão ou com um servidor WINS. |
 | /r | Exibe estatísticas de resolução de nomes NetBIOS. |

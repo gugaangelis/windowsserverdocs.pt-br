@@ -1,18 +1,18 @@
 ---
 title: gravador
 description: Artigo de referência para o gravador, que verifica se um gravador ou componente está incluído ou exclui um gravador ou componente do procedimento de backup ou restauração.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7cf98295-411d-4705-8573-f898ff45c140
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fbcca5f9bc15e77b812368fadfbc7af8f4fff96
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: db18b7f03bed4fc43da2ebee71c2e2a536d5e1d5
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896460"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89038074"
 ---
 # <a name="writer"></a>gravador
 

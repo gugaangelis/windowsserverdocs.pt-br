@@ -1,18 +1,18 @@
 ---
 title: tscon
 description: Artigo de referência para tscon, que se conecta a outra sessão em um servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 96f23a310d1cf9b1843194ee233b84f69c84bb0c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d0acb75411cae8c4d844e8ff2b113c6a9c638a9b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897081"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026874"
 ---
 # <a name="tscon"></a>tscon
 
@@ -23,7 +23,7 @@ Conecta-se a outra sessão em um servidor Host da Sessão da Área de Trabalho R
 
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
+> Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
 ```

@@ -1,18 +1,18 @@
 ---
 title: ksetup delenctypeattr
 description: Artigo de referência para o ksetup delenctypeattr, que remove o atributo de tipo de criptografia para o domínio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4fc25ef3-e271-4229-a712-72c507df55aa
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7901cdb53c051885e5e4040cbc28b7cae0ed2a4d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8427d76170156ff2cd01047cc0732bfa6b385e30
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888034"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037924"
 ---
 # <a name="ksetup-delenctypeattr"></a>ksetup delenctypeattr
 

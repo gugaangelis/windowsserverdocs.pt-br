@@ -1,18 +1,18 @@
 ---
 title: certreq
 description: Artigo de referência para o comando certreq, que solicita certificados de uma autoridade de certificação (CA), recupera uma resposta a uma solicitação anterior de uma CA, cria uma nova solicitação de um arquivo. inf, aceita e instala uma resposta a uma solicitação, constrói uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação existente e assina uma solicitação de certificação cruzada ou de subordinação qualificada
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e3beb043272de304edfcac294bc9b831a60b1003
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb910415c46a57353eeffe7168ce71c055d82eca
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992997"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031244"
 ---
 # <a name="certreq"></a>certreq
 
@@ -43,7 +43,7 @@ certreq –enroll –cert certId [options] renew [reusekeys]
 | Parâmetro | Descrição |
 | -------- | ----------- |
 | -Enviar | Envia uma solicitação para uma autoridade de certificação. |
-| -recuperar`<requestid>` | Recupera uma resposta a uma solicitação anterior de uma autoridade de certificação. |
+| -recuperar `<requestid>` | Recupera uma resposta a uma solicitação anterior de uma autoridade de certificação. |
 | -novo | Cria uma nova solicitação de um arquivo. inf. |
 | -aceitar | Aceita e instala uma resposta a uma solicitação de certificado. |
 | -política | Define a política para uma solicitação. |
@@ -103,7 +103,7 @@ Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicita�
 | --- | ---------- | ----- | ------- |
 | Assunto | Vários aplicativos dependem das informações da entidade em um certificado. É recomendável especificar um valor para essa chave. Se o assunto não estiver definido aqui, recomendamos que você inclua um nome de assunto como parte da extensão de certificado de nome alternativo da entidade. | Valores de cadeia de caracteres do nome distinto relativo | Subject = CN = Computador1. contoso. com Subject = CN = John Smith, CN = Users, DC = contoso, DC = com |
 | Exportável | Se definido como TRUE, a chave privada pode ser exportada com o certificado. Para garantir um alto nível de segurança, as chaves privadas não devem ser exportáveis; no entanto, em alguns casos, pode ser necessário se vários computadores ou usuários tiverem que compartilhar a mesma chave privada. | `true | false` | `Exportable = TRUE`. As chaves CNG podem distinguir entre esse e o texto não criptografado exportável. As chaves CAPI1 não podem. |
-| ExportableEncrypted | Especifica se a chave privada deve ser definida para ser exportável. | `true | false` | `ExportableEncrypted = true`<p>**Dica:** Nem todos os tamanhos de chave pública e algoritmos funcionarão com todos os algoritmos de hash. O CSP especificado também deve oferecer suporte ao algoritmo de hash especificado. Para ver a lista de algoritmos de hash com suporte, você pode executar o comando:`certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
+| ExportableEncrypted | Especifica se a chave privada deve ser definida para ser exportável. | `true | false` | `ExportableEncrypted = true`<p>**Dica:** Nem todos os tamanhos de chave pública e algoritmos funcionarão com todos os algoritmos de hash. O CSP especificado também deve oferecer suporte ao algoritmo de hash especificado. Para ver a lista de algoritmos de hash com suporte, você pode executar o comando: `certutil -oid 1 | findstr pwszCNGAlgid | findstr /v CryptOIDInfo` |
 | HashAlgorithm | Algoritmo de hash a ser usado para esta solicitação. | `Sha256, sha384, sha512, sha1, md5, md4, md2` | `HashAlgorithm = sha1`. Para ver a lista de algoritmos de hash com suporte, use: certutil-OID 1 | findstr pwszCNGAlgid | findstr/v CryptOIDInfo|
 | KeyAlgorithm| O algoritmo que será usado pelo provedor de serviços para gerar um par de chaves pública e privada.| `RSA, DH, DSA, ECDH_P256, ECDH_P521, ECDSA_P256, ECDSA_P384, ECDSA_P521` | `KeyAlgorithm = RSA` |
 | KeyContainer | Não recomendamos definir esse parâmetro para novas solicitações nas quais o novo material de chave é gerado. O contêiner de chave é automaticamente gerado e mantido pelo sistema.<p>Para solicitações em que o material de chave existente deve ser usado, esse valor pode ser definido como o nome do contêiner de chave da chave existente. Use o `certutil –key` comando para exibir a lista de contêineres de chave disponíveis para o contexto do computador. Use o `certutil –key –user` comando para o contexto do usuário atual.| Valor de cadeia de caracteres aleatória<p>**Dica:** Use aspas duplas em qualquer valor de chave INF que tenha espaços em branco ou caracteres especiais para evitar possíveis problemas de análise de INF. | `KeyContainer = {C347BD28-7F69-4090-AA16-BC58CF4D749C}` |
@@ -112,8 +112,8 @@ Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicita�
 | Uso de | Define a que a chave de certificado deve ser usada. | <ul><li>`CERT_DIGITAL_SIGNATURE_KEY_USAGE -- 80 (128)`</li><li>`CERT_NON_REPUDIATION_KEY_USAGE -- 40 (64)`</li><li>`CERT_KEY_ENCIPHERMENT_KEY_USAGE -- 20 (32)`</li><li>`CERT_DATA_ENCIPHERMENT_KEY_USAGE -- 10 (16)`</li><li>`CERT_KEY_AGREEMENT_KEY_USAGE -- 8`</li><li>`CERT_KEY_CERT_SIGN_KEY_USAGE -- 4`</li><li>`CERT_OFFLINE_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_CRL_SIGN_KEY_USAGE -- 2`</li><li>`CERT_ENCIPHER_ONLY_KEY_USAGE -- 1`</li><li>`CERT_DECIPHER_ONLY_KEY_USAGE -- 8000 (32768)`</li></ul> | `KeyUsage = CERT_DIGITAL_SIGNATURE_KEY_USAGE | CERT_KEY_ENCIPHERMENT_KEY_USAGE`<p>**Dica:** Vários valores usam um pipe (|) separador de símbolo. Certifique-se de usar aspas duplas ao usar vários valores para evitar problemas de análise de INF. Os valores mostrados são valores hexadecimais (decimais) para cada definição de bit. A sintaxe mais antiga também pode ser usada: um único valor hexadecimal com vários bits definidos, em vez da representação simbólica. Por exemplo, `KeyUsage = 0xa0`. |
 | Keyutilizaproperty | Recupera um valor que identifica a finalidade específica para a qual uma chave privada pode ser usada. | <ul><li>`NCRYPT_ALLOW_DECRYPT_FLAG -- 1`</li><li>`NCRYPT_ALLOW_SIGNING_FLAG -- 2`</li><li>`NCRYPT_ALLOW_KEY_AGREEMENT_FLAG -- 4`</li><li>`NCRYPT_ALLOW_ALL_USAGES -- ffffff (16777215)`</li></ul> | `KeyUsageProperty = NCRYPT_ALLOW_DECRYPT_FLAG | NCRYPT_ALLOW_SIGNING_FLAG` |
 | MachineKeyset | Essa chave é importante quando você precisa criar certificados que pertencem à máquina e não um usuário. O material da chave gerado é mantido no contexto de segurança da entidade de segurança (conta de usuário ou computador) que criou a solicitação. Quando um administrador cria uma solicitação de certificado em nome de um computador, o material da chave deve ser criado no contexto de segurança da máquina e não no contexto de segurança do administrador. Caso contrário, o computador não poderá acessar sua chave privada, pois ela estaria no contexto de segurança do administrador. | `true | false`. O padrão é falso. | `MachineKeySet = true` |
-| NotBefore | Especifica uma data ou data e hora antes da qual a solicitação não pode ser emitida. `NotBefore`pode ser usado com `ValidityPeriod` e `ValidityPeriodUnits` . | Data ou data e hora | `NotBefore = 7/24/2012 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são apenas para R `equestType=cert` . As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
-| NotAfter | Especifica uma data ou data e hora após a qual a solicitação não pode ser emitida. `NotAfter`Não pode ser usado com `ValidityPeriod` ou `ValidityPeriodUnits` . | Data ou data e hora | `NotAfter = 9/23/2014 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são `RequestType=cert` apenas para. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
+| NotBefore | Especifica uma data ou data e hora antes da qual a solicitação não pode ser emitida. `NotBefore` pode ser usado com `ValidityPeriod` e `ValidityPeriodUnits` . | Data ou data e hora | `NotBefore = 7/24/2012 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são apenas para R `equestType=cert` . As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
+| NotAfter | Especifica uma data ou data e hora após a qual a solicitação não pode ser emitida. `NotAfter` Não pode ser usado com `ValidityPeriod` ou `ValidityPeriodUnits` . | Data ou data e hora | `NotAfter = 9/23/2014 10:31 AM`<p>**Dica:** `NotBefore` e `NotAfter` são `RequestType=cert` apenas para. As tentativas de análise de data são sensíveis à localidade. O uso de nomes de meses causará a ambiguidade e deverá funcionar em todas as localidades. |
 | PrivateKeyArchive | A configuração PrivateKeyArchive só funcionará se o RequestType correspondente for definido como CMC porque apenas o formato de solicitação de mensagens de gerenciamento de certificado sobre CMS (CMC) permite transferir com segurança a chave privada do solicitante para a autoridade de arquivamento de chave. | `true | false` | `PrivateKeyArchive = true` |
 | EncryptionAlgorithm | O algoritmo de criptografia a ser usado. | As opções possíveis variam, dependendo da versão do sistema operacional e do conjunto de provedores criptográficos instalados. Para ver a lista de algoritmos disponíveis, execute o comando: `certutil -oid 2 | findstr pwszCNGAlgid` . O CSP especificado também deve oferecer suporte ao algoritmo de criptografia simétrica especificado e ao comprimento. | `EncryptionAlgorithm = 3des` |
 | EncryptionLength | Comprimento do algoritmo de criptografia a ser usado. | Qualquer comprimento permitido pelo EncryptionAlgorithm especificado. | `EncryptionLength = 128` |
@@ -129,7 +129,7 @@ Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicita�
 | UseExistingKeySet | Esse parâmetro é usado para especificar que um par de chaves existente deve ser usado na criação de uma solicitação de certificado. Se essa chave for definida como TRUE, você também deverá especificar um valor para a chave RenewalCert ou o nome do keycontainer. Você não deve definir a chave exportável porque não pode alterar as propriedades de uma chave existente. Nesse caso, nenhum material da chave é gerado quando a solicitação de certificado é criada. | `true | false` | `UseExistingKeySet = true` |
 | Proteção contra keyprotection | Especifica um valor que indica como uma chave privada é protegida antes do uso. | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | Especifica um valor booliano que indica se as extensões e os atributos padrão estão incluídos na solicitação. Os padrões são representados por seus OIDs (identificadores de objeto). | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | Um nome amigável para o novo certificado. | Texto | `FriendlyName = Server1` |
+| FriendlyName | Um nome amigável para o novo certificado. | Text | `FriendlyName = Server1` |
 | ValidityPeriodUnits | Especifica um número de unidades que deve ser usado com ValidityPeriod. Observação: isso é usado somente quando o `request type=cert` . | Numérico | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod deve ser um período de tempo no inglês dos EUA. Observação: isso é usado somente quando o tipo de solicitação = CERT. | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
@@ -170,9 +170,9 @@ Esta seção é opcional.
 | X500NameFlags | | <ul><li>`CERT_NAME_STR_NONE -- 0`</li><li>`CERT_OID_NAME_STR -- 2`</li><li>`CERT_X500_NAME_STR -- 3`</li><li>`CERT_NAME_STR_SEMICOLON_FLAG -- 40000000 (1073741824)`</li><li>`CERT_NAME_STR_NO_PLUS_FLAG -- 20000000 (536870912)`</li><li>`CERT_NAME_STR_NO_QUOTING_FLAG -- 10000000 (268435456)`</li><li>`CERT_NAME_STR_CRLF_FLAG -- 8000000 (134217728)`</li><li>`CERT_NAME_STR_COMMA_FLAG -- 4000000 (67108864)`</li><li>`CERT_NAME_STR_REVERSE_FLAG -- 2000000 (33554432)`</li><li>`CERT_NAME_STR_FORWARD_FLAG -- 1000000 (16777216)`</li><li>`CERT_NAME_STR_DISABLE_IE4_UTF8_FLAG -- 10000 (65536)`</li><li>`CERT_NAME_STR_ENABLE_T61_UNICODE_FLAG -- 20000 (131072)`</li><li>`CERT_NAME_STR_ENABLE_UTF8_UNICODE_FLAG -- 40000 (262144)`</li><li>`CERT_NAME_STR_FORCE_UTF8_DIR_STR_FLAG -- 80000 (524288)`</li><li>`CERT_NAME_STR_DISABLE_UTF8_DIR_STR_FLAG -- 100000 (1048576)`</li><li>`CERT_NAME_STR_ENABLE_PUNYCODE_FLAG -- 200000 (2097152)`</li></ul> |
 
 > [!NOTE]
-> `SubjectNameFlags`permite que o arquivo INF especifique quais campos de extensão de **assunto** e **SubjectAltName** devem ser preenchidos automaticamente pelo Certreq com base no usuário atual ou nas propriedades do computador atual: nome DNS, UPN e assim por diante. O uso do modelo literal significa que os sinalizadores de nome do modelo são usados. Isso permite que um único arquivo INF seja usado em vários contextos para gerar solicitações com informações de assunto específicas do contexto.
+> `SubjectNameFlags` permite que o arquivo INF especifique quais campos de extensão de **assunto** e **SubjectAltName** devem ser preenchidos automaticamente pelo Certreq com base no usuário atual ou nas propriedades do computador atual: nome DNS, UPN e assim por diante. O uso do modelo literal significa que os sinalizadores de nome do modelo são usados. Isso permite que um único arquivo INF seja usado em vários contextos para gerar solicitações com informações de assunto específicas do contexto.
 >
-> `X500NameFlags`Especifica os sinalizadores a serem passados diretamente para a `CertStrToName` API quando o `Subject INF keys` valor é convertido em um **nome**diferenciado de ASN. 1 codificado.
+> `X500NameFlags` Especifica os sinalizadores a serem passados diretamente para a `CertStrToName` API quando o `Subject INF keys` valor é convertido em um **nome**diferenciado de ASN. 1 codificado.
 
 #### <a name="example"></a>Exemplo
 
@@ -294,16 +294,16 @@ Você só pode renovar certificados válidos. Os certificados expirados não pod
 
 | Opções | Descrição |
 | ------- | ----------- |
-| -qualquer | `Force ICertRequest::Submit`para determinar o tipo de codificação.|
-| -Atrib.`<attributestring>` | Especifica os pares de cadeia de caracteres de **nome** e **valor** , separados por dois-pontos.<p>Separe os pares **nome** e cadeia de caracteres de **valor** usando `\n` (por exemplo, Nome1: value1\nName2: value2). |
+| -qualquer | `Force ICertRequest::Submit` para determinar o tipo de codificação.|
+| -Atrib. `<attributestring>` | Especifica os pares de cadeia de caracteres de **nome** e **valor** , separados por dois-pontos.<p>Separe os pares **nome** e cadeia de caracteres de **valor** usando `\n` (por exemplo, Nome1: value1\nName2: value2). |
 | -binário | Formata arquivos de saída como binários em vez de codificados em base64. |
-| -policyserver`<policyserver>` | LDAP`<path>`<br>Insira o URI ou a ID exclusiva para um computador que executa o serviço Web da política de registro de certificado.<p>Para especificar que você gostaria de usar um arquivo de solicitação navegando, basta usar um sinal de menos (-) para `<policyserver>` . |
-| -configuração`<ConfigString>` | Processa a operação usando a autoridade de certificação especificada na cadeia de caracteres de configuração, que é **CAHostName\CAName**. Para uma conexão https: \\ \, especifique o URI do servidor de registro. Para a AC do repositório do computador local, use um sinal de menos (-). |
+| -policyserver `<policyserver>` | LDAP `<path>`<br>Insira o URI ou a ID exclusiva para um computador que executa o serviço Web da política de registro de certificado.<p>Para especificar que você gostaria de usar um arquivo de solicitação navegando, basta usar um sinal de menos (-) para `<policyserver>` . |
+| -configuração `<ConfigString>` | Processa a operação usando a autoridade de certificação especificada na cadeia de caracteres de configuração, que é **CAHostName\CAName**. Para uma conexão https: \\ \, especifique o URI do servidor de registro. Para a AC do repositório do computador local, use um sinal de menos (-). |
 | -anônimo | Use credenciais anônimas para serviços Web de registro de certificado. |
 | -Kerberos | Use credenciais Kerberos (domínio) para serviços Web de registro de certificado. |
-| -ClientCertificate`<ClientCertId>` | Você pode substituir `<ClientCertId>` por uma impressão digital do certificado, CN, EKU, modelo, email, UPN ou a nova `name=value` sintaxe. |
-| -nome de usuário`<username>` | Usado com serviços Web de registro de certificado. Você pode substituir `<username>` pelo nome Sam ou pelo **domínio \** valor. Essa opção é para uso com a `-p` opção. |
-| -p`<password>` | Usado com serviços Web de registro de certificado. Substitua `<password>` pela senha do usuário real. Essa opção é para uso com a `-username` opção. |
+| -ClientCertificate `<ClientCertId>` | Você pode substituir `<ClientCertId>` por uma impressão digital do certificado, CN, EKU, modelo, email, UPN ou a nova `name=value` sintaxe. |
+| -nome de usuário `<username>` | Usado com serviços Web de registro de certificado. Você pode substituir `<username>` pelo nome Sam ou pelo **domínio \** valor. Essa opção é para uso com a `-p` opção. |
+| -p `<password>` | Usado com serviços Web de registro de certificado. Substitua `<password>` pela senha do usuário real. Essa opção é para uso com a `-username` opção. |
 | -usuário | Configura o `-user` contexto para uma nova solicitação de certificado ou especifica o contexto para uma aceitação de certificado. Esse é o contexto padrão, se nenhum for especificado no INF ou no modelo. |
 | -computador | Configura uma nova solicitação de certificado ou especifica o contexto de uma aceitação de certificado para o contexto da máquina. Para novas solicitações, ele deve ser consistente com a chave do MachineKeyset INF e o contexto do modelo. Se essa opção não for especificada e o modelo não definir um contexto, o padrão será o contexto do usuário. |
 | -CRL | Inclui listas de certificados revogados (CRLs) na saída para o arquivo de #7 PKCS codificado em base64 especificado por `certchainfileout` ou para o arquivo codificado em base64 especificado por `requestfileout` . |

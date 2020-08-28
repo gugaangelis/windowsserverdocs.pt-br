@@ -1,18 +1,18 @@
 ---
 title: taskkill
 description: Artigo de referência para taskkill, que encerra uma ou mais tarefas ou processos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2b71e792-08b6-46d4-95a5-cb6336a79524
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a89aa5a3014168aa9d2bd69b9197c899e02a186d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b3b0a2727116ca2a073e5ad5b17c4fe065453ab6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881830"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027114"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -32,12 +32,12 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 |         Parâmetro         |                                                                                                                                        Descrição                                                                                                                                        |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /s\<computer>       |                                                                                    Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                     |
-| /u\<Domain>\\\<UserName> | Executa o comando com as permissões de conta do usuário que é especificado por *username* ou *Domain* \\ *username*. **/u** pode ser especificado somente se **/s** for especificado. O padrão é as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
-|      /p\<Password>       |                                                                                                   Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                   |
-|       /Fi\<Filter>       |          Aplica um filtro para selecionar um conjunto de tarefas. Você pode usar mais de um filtro ou usar o caractere curinga ( **\\** \* ) para especificar todas as tarefas ou nomes de imagem. Consulte a tabela a seguir [para obter nomes de filtro](#filter-names-operators-and-values), operadores e valores válidos.           |
-|     /PID\<ProcessID>     |                                                                                                                 Especifica a ID do processo a ser encerrada.                                                                                                                 |
-|     /im\<ImageName>      |                                                                                Especifica o nome da imagem do processo a ser encerrado. Use o caractere curinga ( **\\** \* ) para especificar todos os nomes de imagem.                                                                                |
+|      /s \<computer>       |                                                                                    Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                     |
+| /u \<Domain>\\\<UserName> | Executa o comando com as permissões de conta do usuário que é especificado por *username* ou *Domain* \\ *username*. **/u** pode ser especificado somente se **/s** for especificado. O padrão é as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
+|      /p \<Password>       |                                                                                                   Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                   |
+|       /Fi \<Filter>       |          Aplica um filtro para selecionar um conjunto de tarefas. Você pode usar mais de um filtro ou usar o caractere curinga ( **\\** \* ) para especificar todas as tarefas ou nomes de imagem. Consulte a tabela a seguir [para obter nomes de filtro](#filter-names-operators-and-values), operadores e valores válidos.           |
+|     /PID \<ProcessID>     |                                                                                                                 Especifica a ID do processo a ser encerrada.                                                                                                                 |
+|     /im \<ImageName>      |                                                                                Especifica o nome da imagem do processo a ser encerrado. Use o caractere curinga ( **\\** \* ) para especificar todos os nomes de imagem.                                                                                |
 |            /f             |                                                                    Especifica que os processos são encerrados de modo forçado. Esse parâmetro é ignorado para processos remotos; todos os processos remotos são encerrados de modo forçado.                                                                     |
 |            /t             |                                                                                                          Encerra o processo especificado e todos os processos filho iniciados por ele.                                                                                                          |
 

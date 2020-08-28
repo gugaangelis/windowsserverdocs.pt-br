@@ -1,18 +1,18 @@
 ---
 title: bdehdcfg restart
 description: Artigo de referência para o comando BdeHdCfg restart, que informa BdeHdCfg de que o computador deve ser reiniciado depois que a preparação da unidade for concluída.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a98b76bb-36f1-4790-b337-7dc35f606bc6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 67d2a3dd7b4304c26543840d6681b4ec6e655651
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8db8ede29d5cecfdbe29031c21f86c5e2b8fc8c1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895093"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031484"
 ---
 # <a name="bdehdcfg-restart"></a>BdeHdCfg: reiniciar
 

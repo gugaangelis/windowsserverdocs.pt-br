@@ -1,18 +1,18 @@
 ---
 title: montagem automática
 description: Artigo de referência para o comando automount, que habilita ou desabilita o recurso de montagem automática.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4635fc91-a477-4f17-8dcc-aa08854bfe45
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a31e1569f1db4f47c63aae2e859587f5088dcbc4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 92fa9f66db510d887af793882a2400b31a1517c4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895194"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031634"
 ---
 # <a name="automount"></a>montagem automática
 

@@ -1,18 +1,18 @@
 ---
 title: tasklist
 description: Saiba como exibir uma lista dos processos em execução no computador local ou remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8dbe30ee-1484-46be-917b-5ca3ff4fdc9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a4f87c4cc2dc80c67e2004c929fa23aea8791fb9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8250828310b42646a48a5dbf454a01643fbb8ef3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881817"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027104"
 ---
 # <a name="tasklist"></a>tasklist
 
@@ -30,15 +30,15 @@ tasklist [/s <Computer> [/u [<Domain>\]<UserName> [/p <Password>]]] [{/m <Module
 
 |          Parâmetro           |                                                                                                                                            Descrição                                                                                                                                             |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        /s\<Computer>        |                                                                                         Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                         |
+|        /s \<Computer>        |                                                                                         Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                         |
 | t\<Domain>\\\]\<UserName> | Executa o comando com as permissões de conta do usuário que é especificado por *username* ou *Domain* \* username<em>. \* \* /u</em> \* pode ser especificado somente se **/s** for especificado. O padrão é as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
-|        /p\<Password>        |                                                                                                       Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                        |
-|         opção\<Module>         |                                                               Lista todas as tarefas com módulos DLL carregados que correspondem ao nome de padrão fornecido. Se o nome do módulo não for especificado, essa opção exibirá todos os módulos carregados por cada tarefa.                                                                |
+|        /p \<Password>        |                                                                                                       Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                        |
+|         opção \<Module>         |                                                               Lista todas as tarefas com módulos DLL carregados que correspondem ao nome de padrão fornecido. Se o nome do módulo não for especificado, essa opção exibirá todos os módulos carregados por cada tarefa.                                                                |
 |             /svc             |                                                                                    Lista todas as informações de serviço para cada processo sem truncamento. Válido quando o parâmetro **/fo** é definido como **Table**.                                                                                    |
 |              /v              |                                                                                 Exibe informações detalhadas da tarefa na saída. Para obter a saída detalhada completa sem truncamento, use **/v** e **/svc** juntos.                                                                                 |
 |  /Fo {CSV da lista de tabelas \| \| }  |                                                                             Especifica o formato a ser usado para a saída. Os valores válidos são **tabela**, **lista**e **CSV**. O formato padrão de saída é **tabela**.                                                                             |
 |             /NH              |                                                                                             Suprime cabeçalhos de coluna na saída. Válido quando o parâmetro **/fo** é definido como **Table** ou **CSV**.                                                                                              |
-|        /Fi\<Filter>         |                                                                          Especifica os tipos de processos a serem incluídos ou excluídos da consulta. Consulte a tabela a seguir para obter nomes de filtro, operadores e valores válidos.                                                                          |
+|        /Fi \<Filter>         |                                                                          Especifica os tipos de processos a serem incluídos ou excluídos da consulta. Consulte a tabela a seguir para obter nomes de filtro, operadores e valores válidos.                                                                          |
 |              /?              |                                                                                                                                Exibe a ajuda no prompt de comando.                                                                                                                                |
 
 ### <a name="filter-names-operators-and-values"></a>Filtrar nomes, operadores e valores

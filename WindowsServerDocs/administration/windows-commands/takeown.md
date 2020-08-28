@@ -1,18 +1,18 @@
 ---
 title: takeown
 description: Saiba como obter acesso a um arquivo, tornando-se o proprietário do arquivo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c0d3e64032f792e0ad2ff3a0a1156e9b7c1b1efa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b87f773f1b42291a679a642793f2b534982164d2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881891"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027194"
 ---
 # <a name="takeown"></a>takeown
 
@@ -30,7 +30,7 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|/s\<Computer>|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
+|/s \<Computer>|Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O valor padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando.|
 |t\<Domain>\]<User name>|Executa o script com as permissões da conta de usuário especificada. O valor padrão é permissões do sistema.|
 |/p [ \<Password> ]|Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .|
 |/f \<File name>|Especifica o nome do arquivo ou padrão de nome de diretório. Você pode usar o caractere curinga * ao especificar o padrão. Você também pode usar a sintaxe *ShareName* \* filename *.|

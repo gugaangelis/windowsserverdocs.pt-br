@@ -1,18 +1,18 @@
 ---
 title: certutil
 description: Artigo de referência para o comando certutil, que é um programa de linha de comando que despeja e exibe informações de configuração de autoridade de certificação (CA), configura os serviços de certificados, os componentes de AC de backup e restauração e verifica certificados, pares de chaves e cadeias de certificados.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afaf0c75350cfb4121d0ebc664469f4494afe8c7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 99c9d0ddca6ce1b91d86733995c30c46b747b7af
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992945"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031204"
 ---
 # <a name="certutil"></a>certutil
 
@@ -146,7 +146,7 @@ Em que:
 
 - **ExtensionName** é a cadeia de caracteres ObjectID da extensão.
 
-- **sinalizadores** define a prioridade da extensão. `0`é recomendado, enquanto `1` define a extensão como crítica, `2` desabilita a extensão e `3` faz as duas.
+- **sinalizadores** define a prioridade da extensão. `0` é recomendado, enquanto `1` define a extensão como crítica, `2` desabilita a extensão e `3` faz as duas.
 
 ```
 [-config Machine\CAName]
@@ -519,17 +519,17 @@ Em que:
 
 #### <a name="remarks"></a>Comentários
 
-- Para exibir a coluna **StatusCode** para todas as entradas, digite`-out StatusCode`
+- Para exibir a coluna **StatusCode** para todas as entradas, digite `-out StatusCode`
 
-- Para exibir todas as colunas da última entrada, digite:`-restrict RequestId==$`
+- Para exibir todas as colunas da última entrada, digite: `-restrict RequestId==$`
 
-- Para exibir **RequestId** e **disposição** para três solicitações, digite:`-restrict requestID>37,requestID<40 -out requestID,disposition`
+- Para exibir **RequestId** e **disposição** para três solicitações, digite: `-restrict requestID>37,requestID<40 -out requestID,disposition`
 
-- Para exibir IDs de**linha de** IDs de linha e **números de CRL** para todas as CRLs base, digite:`-restrict crlminbase=0 -out crlrowID,crlnumber crl`
+- Para exibir IDs de**linha de** IDs de linha e **números de CRL** para todas as CRLs base, digite: `-restrict crlminbase=0 -out crlrowID,crlnumber crl`
 
-- Para exibir, digite:`-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl`
+- Para exibir, digite: `-v -restrict crlminbase=0,crlnumber=3 -out crlrawcrl crl`
 
-- Para exibir a tabela de CRL inteira, digite:`CRL`
+- Para exibir a tabela de CRL inteira, digite: `CRL`
 
 - Use `Date[+|-dd:hh]` para restrições de data.
 
@@ -573,13 +573,13 @@ Em que:
 
 #### <a name="examples"></a>Exemplos
 
-- Para excluir solicitações com falha e pendentes enviadas por 22 de janeiro de 2001, digite:`1/22/2001 request`
+- Para excluir solicitações com falha e pendentes enviadas por 22 de janeiro de 2001, digite: `1/22/2001 request`
 
-- Para excluir todos os certificados que expiraram em 22 de janeiro de 2001, digite:`1/22/2001 cert`
+- Para excluir todos os certificados que expiraram em 22 de janeiro de 2001, digite: `1/22/2001 cert`
 
-- Para excluir a linha, os atributos e as extensões do certificado para RequestID 37, digite:`37`
+- Para excluir a linha, os atributos e as extensões do certificado para RequestID 37, digite: `37`
 
-- Para excluir as CRLs que expiraram em 22 de janeiro de 2001, digite:`1/22/2001 crl`
+- Para excluir as CRLs que expiraram em 22 de janeiro de 2001, digite: `1/22/2001 crl`
 
 ### <a name="-backup"></a>-backup
 
@@ -1283,7 +1283,7 @@ certutil [options] -DCInfo [domain] [verify | deletebad | deleteall]
 > [!TIP]
 > A capacidade de especificar um domínio de Active Directory Domain Services (AD DS) **[domain]** e especificar um controlador de domínio (**-DC**) foi adicionada ao Windows Server 2012. Para executar o comando com êxito, você deve usar uma conta que seja membro de **Administradores de domínio** ou **Administradores de empresa**. As modificações de comportamento desse comando são as seguintes:<ol><li>1. se um domínio não for especificado e um controlador de domínio específico não for especificado, essa opção retornará uma lista de controladores de domínio a serem processados a partir do controlador de domínio padrão.</li><li>2. se um domínio não for especificado, mas um controlador de domínio for especificado, um relatório dos certificados no controlador de domínio especificado será gerado.</li><li>3. se um domínio for especificado, mas um controlador de domínio não for especificado, uma lista de controladores de domínio será gerada junto com os relatórios nos certificados para cada controlador de domínio na lista.</li><li>4. se o domínio e o controlador de domínio forem especificados, uma lista de controladores de domínio será gerada a partir do controlador de domínio de destino. Um relatório dos certificados para cada controlador de domínio na lista também é gerado.</li></ol>
 >
->Por exemplo, suponha que haja um domínio chamado CPANDL com um controlador de domínio chamado CPANDL-DC1. Você pode executar o seguinte comando para recuperar uma lista de controladores de domínio e seus certificados do CPANDL-DC1:`certutil -dc cpandl-dc1 -DCInfo cpandl`
+>Por exemplo, suponha que haja um domínio chamado CPANDL com um controlador de domínio chamado CPANDL-DC1. Você pode executar o seguinte comando para recuperar uma lista de controladores de domínio e seus certificados do CPANDL-DC1: `certutil -dc cpandl-dc1 -DCInfo cpandl`
 
 ### <a name="-entinfo"></a>-entinfo
 
@@ -1403,7 +1403,7 @@ Em que:
 
 - O uso de **issuancepolicylist** restringe a construção de cadeia a apenas cadeias válidas para as políticas de emissão especificadas.
 
-- O uso de **cacerts** verifica os campos no arquivo em relação a **CertFile** ou **CRLfile**.
+- O uso de **cacerts**  verifica os campos no arquivo em relação a **CertFile** ou **CRLfile**.
 
 - O uso de **issuedcertfile** verifica os campos no arquivo em relação a **CRLfile**.
 
@@ -1631,13 +1631,13 @@ Em que:
 
 - **Tipo** é o tipo de objeto DS a ser criado, incluindo:
 
-  - `1`-Modelo (padrão)
+  - `1` -Modelo (padrão)
 
-  - `2`-Política de emissão
+  - `2` -Política de emissão
 
-  - `3`-Política de aplicativo
+  - `3` -Política de aplicativo
 
-- `-f`Cria um objeto DS.
+- `-f` Cria um objeto DS.
 
 ### <a name="-error"></a>-erro
 
@@ -1797,7 +1797,7 @@ Em que:
 
 - certid é um token de correspondência de certificado de descriptografia de arquivo de exportação KMS. Para obter mais informações, consulte o `-store` parâmetro neste artigo.
 
-- `-f`importa certificados não emitidos pela autoridade de certificação.
+- `-f` importa certificados não emitidos pela autoridade de certificação.
 
 ```
 [-f] [-silent] [-split] [-config Machine\CAName] [-p password] [-symkeyalg symmetrickeyalgorithm[,keylength]]
@@ -1815,7 +1815,7 @@ Em que:
 
 - **existingrow** importa o certificado no lugar de uma solicitação pendente para a mesma chave.
 
-- `-f`importa certificados não emitidos pela autoridade de certificação.
+- `-f` importa certificados não emitidos pela autoridade de certificação.
 
 ```
 [-f] [-config Machine\CAName]
@@ -1982,7 +1982,7 @@ Esta seção define todas as opções que você pode especificar, com base no co
 | -fixar PIN | PIN do cartão inteligente. |
 | -urlfetch | Recuperar e verificar certificados AIA e CRLs de CDP. |
 | -config Machine\CAName | Autoridade de certificação e nome do computador cadeia de caracteres. |
-| -policyserver URLorID | URL ou ID do servidor de política. Para a seleção U/I, use `-policyserver` . Para todos os servidores de política, use`-policyserver *`|
+| -policyserver URLorID | URL ou ID do servidor de política. Para a seleção U/I, use `-policyserver` . Para todos os servidores de política, use `-policyserver *`|
 | -anônimo | Usar credenciais SSL anônimas. |
 | -Kerberos | Use as credenciais SSL do Kerberos. |
 | -ClientCertificate clientcertID | Use as credenciais SSL do certificado X. 509. Para a seleção U/I, use `-clientcertificate` . |

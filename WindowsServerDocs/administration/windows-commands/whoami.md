@@ -1,18 +1,18 @@
 ---
 title: whoami
 description: Artigo de referência para whoami, que exibe informações de usuário, grupo e privilégios para o usuário que está conectado no momento ao sistema local.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6e3f4d5c-f1f5-4429-b602-afad2b3488bf
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bdcef4072fe692f2717fe79814af926a2c151636
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f3b66a8f8e45edc540745a210ef42b49740052e0
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896498"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89031704"
 ---
 # <a name="whoami"></a>whoami
 
@@ -40,7 +40,7 @@ whoami /all [/fo <Format>] [/nh]
 |/|Exibe o domínio atual e o nome de usuário e o SID (identificador de segurança).|
 |/groups|Exibe os grupos de usuários aos quais o usuário atual pertence.|
 |/priv|Exibe os privilégios de segurança do usuário atual.|
-|/Fo\<Format>|Especifica o formato de saída. Os valores válidos incluem:</br>**tabela** Exibe a saída em uma tabela. Este é o valor padrão.</br>**lista** de Exibe a saída em uma lista.</br>**CSV** Exibe a saída no formato de valores separados por vírgulas (CSV).|
+|/Fo \<Format>|Especifica o formato de saída. Os valores válidos incluem:</br>**tabela** Exibe a saída em uma tabela. Esse é o valor padrão.</br>**lista** de Exibe a saída em uma lista.</br>**CSV** Exibe a saída no formato de valores separados por vírgulas (CSV).|
 |/all|Exibe todas as informações no token de acesso atual, incluindo o nome de usuário atual, identificadores de segurança (SID), privilégios e grupos aos quais o usuário atual pertence.|
 |/NH|Especifica que o cabeçalho da coluna não deve ser exibido na saída. Isso é válido somente para formatos de tabela e CSV.|
 |/?|Exibe a ajuda no prompt de comando.|

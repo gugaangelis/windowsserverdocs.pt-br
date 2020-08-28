@@ -1,18 +1,18 @@
 ---
 title: importar o DiskShadow
 description: Artigo de referência para o comando de importação, que importa uma cópia de sombra transportável de um arquivo de metadados carregado para o sistema.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7bd78d76-0560-4d47-944c-fe960be2c10b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d0d76c9565904d6e24c41f4c728bf43061f5040
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 96f55be187b540151c23c84ae414575f20dcbe8f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888365"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037994"
 ---
 # <a name="import-diskshadow"></a>importar (DiskShadow)
 

@@ -1,18 +1,18 @@
 ---
 title: Referência de ferramentas de linha de comando Serviços de Área de Trabalho Remota (serviços de terminal)
 description: Artigo de referência para as ferramentas de linha de comando do Serviços de Área de Trabalho Remota (RDS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2f371848-5c48-470c-908c-afbc95d3a805
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ae8156298c9b5108748afa114e1e3cabc0180441
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5657ab1d0018f7bc854ebfa5dbd2985f8399d1af
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883839"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027354"
 ---
 # <a name="remote-desktop-services-terminal-services-command-line-tools-reference"></a>Referência de ferramentas de linha de comando Serviços de Área de Trabalho Remota (serviços de terminal)
 
@@ -21,7 +21,7 @@ ms.locfileid: "87883839"
 Saiba mais sobre as ferramentas de linha de comando Serviços de Área de Trabalho Remota (serviços de terminal) disponíveis, com descrições e links para obter informações mais detalhadas.
 
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
+> Para descobrir as novidades da versão mais recente, consulte Novidades do [serviços de área de trabalho remota no Windows Server](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn283323(v=ws.11)).
 
 | Comando | Descrição |
 |--|--|--|
