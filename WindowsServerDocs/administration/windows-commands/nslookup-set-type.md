@@ -1,18 +1,18 @@
 ---
 title: nslookup set type
 description: Artigo de referência para o comando Set Type do nslookup, que altera o tipo de registro de recurso para a consulta.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5248e314-fac1-413e-81dc-bbe0a0873ba5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b339f5dc809df1ad9f3301108169c65b02e63309
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e2e4d5466880991f79d58bd8553932309595da7a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885461"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033894"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 

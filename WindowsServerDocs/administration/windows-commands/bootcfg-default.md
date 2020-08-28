@@ -1,18 +1,18 @@
 ---
 title: bootcfg default
 description: Artigo de referência do comando Bootcfg padrão, que especifica a entrada do sistema operacional a ser designada como padrão.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e21824d7-8278-41d7-a2c5-ce09803d513a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 150cf8c2656b7abf3ebfdf3276ebf03b52781552
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 500a55e152d72cb9d7f0bc9eeeb91cfed3dfac1d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880621"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034474"
 ---
 # <a name="bootcfg-default"></a>bootcfg default
 

@@ -1,18 +1,18 @@
 ---
 title: for
 description: Artigo de referência para o comando for, que executa um comando especificado para cada arquivo, dentro de um conjunto de arquivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e275726c-035f-4a74-8062-013c37f5ded1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e964c502d012648f6633b099688781a8d4f22cf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7120ed613595b5b90334e49b0865c3e598f3cabb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890177"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027634"
 ---
 # <a name="for"></a>for
 
@@ -143,7 +143,7 @@ for {%% | %}<variable> in (<set>) do <command> [<commandlineoptions>]
 
     Usando nomes de variáveis em maiúsculas, como `%I` , você pode tornar seu código mais legível e evitar confusão com os modificadores, que não diferenciam maiúsculas de minúsculas.
 
-- **Analisando uma cadeia de caracteres:** Você pode usar a `for /f` lógica de análise em uma cadeia de caracteres imediata encapsulando `<literalstring>` : aspas duplas (*sem* usebackq) ou entre aspas simples (*com* usebackq) – por exemplo, (MyString) ou (' MyString '). `<literalstring>`é tratado como uma única linha de entrada de um arquivo. Durante a análise `<literalstring>` em aspas duplas, os símbolos de comando (como, `\ & | > < ^` ) são tratados como caracteres comuns.
+- **Analisando uma cadeia de caracteres:** Você pode usar a `for /f` lógica de análise em uma cadeia de caracteres imediata encapsulando `<literalstring>` : aspas duplas (*sem* usebackq) ou entre aspas simples (*com* usebackq) – por exemplo, (MyString) ou (' MyString '). `<literalstring>` é tratado como uma única linha de entrada de um arquivo. Durante a análise `<literalstring>` em aspas duplas, os símbolos de comando (como, `\ & | > < ^` ) são tratados como caracteres comuns.
 
 - **Saída de análise:** Você pode usar o `for /f` comando para analisar a saída de um comando, colocando entre parênteses um back-quot `<command>` . Ele é tratado como uma linha de comando, que é passada para um Cmd.exe filho. A saída é capturada na memória e analisada como se fosse um arquivo.
 

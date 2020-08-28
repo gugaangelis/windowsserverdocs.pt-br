@@ -1,18 +1,18 @@
 ---
 title: dfsdiag testsites
 description: Artigo de referência para Dfsdiag testsites, que verifica a configuração dos sites dos serviços de domínio Active Directory (AD DS) verificando se os servidores que atuam como servidores de namespace ou destinos de pasta (link) têm as mesmas associações de site em todos os controladores de domínio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 39a0d415-7eb7-4a26-861b-7ff00c45dcda
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d40d7833cabb9e03875660c7d4ebbc129eff0255
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f024059f8b67b783da6a9ce574695aac7d7829b3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891114"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034154"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag testsites
 

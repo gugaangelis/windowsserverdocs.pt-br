@@ -1,18 +1,18 @@
 ---
 title: reg copy
 description: Artigo de referência para o comando reg Copy, que copia uma entrada do registro para um local especificado no computador local ou remoto.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3fe74213-39ec-4b2d-ba3d-086243eac997
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc1141ddd8082ee6302886a5ce49b9805a19cede
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a56f4d14c7dd52ba23f126c44ff940c694993377
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884186"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028064"
 ---
 # <a name="reg-copy"></a>reg copy
 

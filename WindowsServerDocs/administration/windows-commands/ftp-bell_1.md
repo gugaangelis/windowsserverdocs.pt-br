@@ -1,18 +1,18 @@
 ---
 title: ftp bell
 description: Artigo de referência para o comando de Bell de FTP, que alterna um som audível para ocorrer após a conclusão de cada comando de transferência de arquivo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: bfc00fb6-b3d0-42a1-ac6d-df46f89dc152
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37b07a86c9f22522c191b53d2602e878f1b4b0e8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b994465538fa5d41a148b023848e18543f36d10c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889628"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034104"
 ---
 # <a name="ftp-bell"></a>ftp bell
 

@@ -1,18 +1,18 @@
 ---
 title: bootcfg timeout
 description: Artigo de referência para o comando Bootcfg timeout, que altera o valor de tempo limite do sistema operacional.
-ms.topic: article
+ms.topic: reference
 ms.assetid: aa858eac-2bb7-4a27-a9bc-3e4a6eb8b2c6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2b68956620d5f53e6d2898df80193080ca109e16
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ed3e94447dba6cb09be986c2c482a42e9d83fe22
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880535"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034344"
 ---
 # <a name="bootcfg-timeout"></a>bootcfg timeout
 

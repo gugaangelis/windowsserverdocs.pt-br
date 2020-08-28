@@ -1,18 +1,18 @@
 ---
 title: winrs
 description: Artigo de referência para o WinRS, que permite que você gerencie e execute programas remotamente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c370de31-5651-400a-872d-ef229aae2309
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54accc21cbacc6471840d1bd83e3c05d9052a0eb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2cf659e06f43a26ae95e4ff218758c21d3cf78e9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896814"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022630"
 ---
 # <a name="winrs"></a>winrs
 

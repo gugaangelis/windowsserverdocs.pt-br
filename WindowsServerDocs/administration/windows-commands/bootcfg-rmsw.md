@@ -1,18 +1,18 @@
 ---
 title: bootcfg rmsw
 description: Artigo de referência para o comando Bootcfg rmsw, que remove as opções de carregamento do sistema operacional para uma entrada de sistema operacional especificada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fd7e4248-880e-4e2b-929e-87f8d44b9a63
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ffe80c6a95421a66a1aebd119664c9e4f68952d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ad27ae706709467c693e008955bd2b1021ed972b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880547"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034354"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 

@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getaclflags
 description: Artigo de referência para o comando Bitsadmin getaclflags, que recupera os sinalizadores de propagações da ACL (lista de controle de acesso).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 99266def-7479-4430-a61c-98ec433fa88b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 437ad345ec778290499b7b128ee08ffd41be320c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5254d65bb5ba3e35fcf5368e24045530a76bfd95
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87894579"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033694"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 

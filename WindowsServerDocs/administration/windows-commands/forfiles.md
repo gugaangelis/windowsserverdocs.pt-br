@@ -1,18 +1,18 @@
 ---
 title: forfiles
 description: Artigo de referência para o comando Forfiles, que seleciona e executa um comando em um arquivo ou conjunto de arquivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 43f6b004-446d-4fdd-91c5-5653613524a4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/20/2020
-ms.openlocfilehash: 004c27b841629e18eac4d94f7fe0816b42762107
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c79aeddec4a2ea74eb79c7d807428b6bc5955ce2
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890148"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027624"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -28,11 +28,11 @@ forfiles [/P pathname] [/M searchmask] [/S] [/C command] [/D [+ | -] [{<date> | 
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /P`<pathname>` | Especifica o caminho do qual iniciar a pesquisa. Por padrão, a pesquisa começa no diretório de trabalho atual. |
-| Opção`<searchmask>` | Pesquisa arquivos de acordo com a máscara de pesquisa especificada. O searchmask padrão é `*` . |
+| /P `<pathname>` | Especifica o caminho do qual iniciar a pesquisa. Por padrão, a pesquisa começa no diretório de trabalho atual. |
+| Opção `<searchmask>` | Pesquisa arquivos de acordo com a máscara de pesquisa especificada. O searchmask padrão é `*` . |
 | /S | Instrui o comando **Forfiles** para pesquisar em subdiretórios de forma recursiva. |
-| /C`<command>` | Executa o comando especificado em cada arquivo. As cadeias de caracteres de comando devem ser encapsuladas entre aspas duplas. O comando padrão é `"cmd /c echo @file"` . |
-| /D`[{+\|-}][{<date> | <days>}]` | Seleciona os arquivos com uma data da última modificação dentro do período de tempo especificado:<ul><li>Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) ou anterior ou igual a ( **-** ) a data especificada, em que a *Data* está no formato mm/dd/aaaa.</li><li>Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) a data atual mais o número de dias especificado ou anterior ou igual a ( **-** ) a data atual menos o número de dias especificado.</li><li>Os valores válidos para *dias* incluem qualquer número no intervalo de 0 a 32768. Se nenhum sinal for especificado, **+** será usado por padrão.</li></ul> |
+| /C `<command>` | Executa o comando especificado em cada arquivo. As cadeias de caracteres de comando devem ser encapsuladas entre aspas duplas. O comando padrão é `"cmd /c echo @file"` . |
+| /D `[{+\|-}][{<date> | <days>}]` | Seleciona os arquivos com uma data da última modificação dentro do período de tempo especificado:<ul><li>Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) ou anterior ou igual a ( **-** ) a data especificada, em que a *Data* está no formato mm/dd/aaaa.</li><li>Seleciona arquivos com uma data da última modificação posterior ou igual a ( **+** ) a data atual mais o número de dias especificado ou anterior ou igual a ( **-** ) a data atual menos o número de dias especificado.</li><li>Os valores válidos para *dias* incluem qualquer número no intervalo de 0 a 32768. Se nenhum sinal for especificado, **+** será usado por padrão.</li></ul> |
 | /? | Exibe o texto de ajuda na janela cmd. |
 
 #### <a name="remarks"></a>Comentários

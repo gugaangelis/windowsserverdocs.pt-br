@@ -1,18 +1,18 @@
 ---
 title: convert mbr
 description: Artigo de referência para o comando Convert MBR, que converte um disco básico vazio com o estilo de partição GPT (tabela de partição GUID) em um disco básico com o estilo de partição MBR (registro mestre de inicialização).
-ms.topic: article
+ms.topic: reference
 ms.assetid: a635a4c0-af73-4330-b021-51d483424537
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61f387d55f310d2ea610aa3033464c66addfc353
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2a07ca0e6c3d07dadf416a04ac1c5c4adbeb5bfe
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892553"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034164"
 ---
 # <a name="convert-mbr"></a>convert mbr
 

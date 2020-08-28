@@ -1,18 +1,18 @@
 ---
 title: waitfor
 description: Artigo de referência para WAITFOR, que envia ou aguarda um sinal em um sistema. **WAITFOR** é usado para sincronizar computadores em uma rede.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a48ef70d-4d28-4035-b6b0-7d7b46ac2157
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e061c36f7cdf949ea76d548a4ed804a0e12169bf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a55629f6715e8b1d2e1aaede4153f74ac05ac98
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892242"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022902"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -33,11 +33,11 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parâmetro       |                                                                                         Descrição                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s\<Computer>     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+|    /s \<Computer>     | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
 | t\<Domain>\]<User> |                              Executa o script usando as credenciais da conta de usuário especificada. Por padrão, **WAITFOR** usa as credenciais do usuário atual.                               |
 |   /p [ \<Password> ]    |                                                    Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                     |
 |          /si          |                                                                        Envia o sinal especificado pela rede.                                                                        |
-|     /t\<Timeout>     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
+|     /t \<Timeout>     |                                              Especifica o número de segundos a aguardar por um sinal. Por padrão, **WAITFOR** espera indefinidamente.                                               |
 |     \<SignalName>     |                                                Especifica o sinal que **WAITFOR** espera ou envia. *Signalname* não diferencia maiúsculas de minúsculas.                                                 |
 |          /?           |                                                                             Exibe a ajuda no prompt de comando.                                                                             |
 

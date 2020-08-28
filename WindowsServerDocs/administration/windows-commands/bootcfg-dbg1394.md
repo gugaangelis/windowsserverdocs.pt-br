@@ -1,18 +1,18 @@
 ---
 title: bootcfg dbg1394
 description: Artigo de referência para o comando Bootcfg dbg1394, que configura a depuração de porta 1394 para uma entrada de sistema operacional especificada
-ms.topic: article
+ms.topic: reference
 ms.assetid: 35724697-90dd-4dbe-85b0-337fbd369dcc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 334a6f280c3e9de529ed7cbf8d1430177ca09f33
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f24561751d3a41bf1bf12148dc550f0a56c159c6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880713"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034524"
 ---
 # <a name="bootcfg-dbg1394"></a>bootcfg dbg1394
 

@@ -1,18 +1,18 @@
 ---
 title: rpcinfo
-description: Saiba como listar os programas em um computador remoto.
-ms.topic: article
+description: Artigo de referência do comando rpcinfo, que lista os programas em um computador remoto.
+ms.topic: reference
 ms.assetid: 7c342232-a8f0-42ff-8f11-d18c4981f5ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 642ed98ff762fd1151b459fdd96a6e00772a53dc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 87f362083e828c5e4378841efd4f084ce84705a6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883451"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033744"
 ---
 # <a name="rpcinfo"></a>rpcinfo
 
@@ -21,36 +21,47 @@ ms.locfileid: "87883451"
 Lista os programas em computadores remotos. O utilitário de linha de comando **rpcinfo** faz uma chamada de procedimento remoto (RPC) para um servidor RPC e relata o que ele encontra.
 
 ## <a name="syntax"></a>Sintaxe
+
 ```
-rpcinfo [/p [<Node>]] [/b <Program version>] [/t <Node Program> [<version>]] [/u <Node Program> [<version>]]
+rpcinfo [/p [<node>]] [/b <program version>] [/t <node program> [<version>]] [/u <node program> [<version>]]
 ```
 
-#### <a name="parameters"></a>Parâmetros
-|Parâmetro|Descrição|
-|-------|--------|
-|/p [ \<Node> ]|lista todos os programas registrados com o mapeador de porta no host especificado. Se você não especificar um nome de nó (computador), o programa consultará o mapeador de porta no host local.|
-|/b.\<Program version>|Solicita uma resposta de todos os nós de rede que têm o programa e a versão especificados registrados com o mapeador de porta. Você deve especificar um nome de programa ou número e um número de versão.|
-|/t \<Node Program> [ \<version> ]|Usa o protocolo de transporte TCP para chamar o programa especificado. Você deve especificar um nome de nó (computador) e um nome de programa. Se você não especificar uma versão, o programa chamará todas as versões.|
-|/u \<Node Program> [ \<version> ]|Usa o protocolo de transporte UDP para chamar o programa especificado. Você deve especificar um nome de nó (computador) e um nome de programa. Se você não especificar uma versão, o programa chamará todas as versões.|
-|/?|Exibe a ajuda no prompt de comando.|
+### <a name="parameters"></a>Parâmetros
+
+| Parâmetro | Descrição |
+|--|--|
+| /p `[<node>]` | lista todos os programas registrados com o mapeador de porta no host especificado. Se você não especificar um nome de nó (computador), o programa consultará o mapeador de porta no host local. |
+| /b. `<program version>` | Solicita uma resposta de todos os nós de rede que têm o programa e a versão especificados registrados com o mapeador de porta. Você deve especificar um nome de programa ou número e um número de versão. |
+| /t `<node program> [\<version>]` | Usa o protocolo de transporte TCP para chamar o programa especificado. Você deve especificar um nome de nó (computador) e um nome de programa. Se você não especificar uma versão, o programa chamará todas as versões. |
+| /u `<node program> [\<version>]` | Usa o protocolo de transporte UDP para chamar o programa especificado. Você deve especificar um nome de nó (computador) e um nome de programa. Se você não especificar uma versão, o programa chamará todas as versões. |
+| /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="examples"></a>Exemplos
+
 Para listar todos os programas registrados com o mapeador de porta, digite:
+
 ```
-rpcinfo /p [<Node>]
+rpcinfo /p [<node>]
 ```
+
 Para solicitar uma resposta de nós de rede que têm um programa especificado, digite:
+
 ```
-rpcinfo /b <Program version>
+rpcinfo /b <program version>
 ```
+
 Para usar o protocolo TCP para chamar um programa, digite:
+
 ```
-rpcinfo /t <Node Program> [<version>]
+rpcinfo /t <node program> [<version>]
 ```
+
 Use UDP (User Datagram Protocol) para chamar um programa:
+
 ```
-rpcinfo /u <Node Program> [<version>]
+rpcinfo /u <node program> [<version>]
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
+
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)

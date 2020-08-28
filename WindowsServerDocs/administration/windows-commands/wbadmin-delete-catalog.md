@@ -1,18 +1,18 @@
 ---
 title: wbadmin delete catalog
 description: Artigo de referência para WBADMIN Delete Catalog, que exclui o catálogo de backup armazenado no computador local.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d3041407-4577-4716-a39f-2c8ab48818d1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c43c201c4c14b3eab14fd8e1ec0d6d3e39fe4104
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b238e43eac784607a8f42175023eca88e13f2bfd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892236"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022820"
 ---
 # <a name="wbadmin-delete-catalog"></a>wbadmin delete catalog
 

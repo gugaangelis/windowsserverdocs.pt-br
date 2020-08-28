@@ -1,18 +1,18 @@
 ---
 title: diskperf
 description: Artigo de referência para o comando diskperf, que pode ser usado para habilitar ou desabilitar remotamente os contadores de desempenho de disco físico ou lógico em computadores que executam o Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f06916e8-069b-4ec8-a6eb-59f1d9f77111
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81cefe217abaa7b2d4ee843f3887076f66484422
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 09f095f5e6184b7961d02c05da4c2ca0c56a0482
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890861"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034114"
 ---
 # <a name="diskperf"></a>diskperf
 

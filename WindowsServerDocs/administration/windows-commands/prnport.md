@@ -1,18 +1,18 @@
 ---
 title: prnport
 description: Artigo de referência para o comando prnport, que cria, exclui e lista portas de impressora TCP/IP padrão, além de exibir e alterar a configuração de porta.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6a0ec638-a21e-4a34-be5c-bd0f7ca89ffe
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8aa1729c84b54393a6154dd5fc4ba5a5e6834fc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4723d266ed70c7e9bf56fd65216dcce0bab1188c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884701"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033884"
 ---
 # <a name="prnport"></a>prnport
 
@@ -35,16 +35,16 @@ cscript prnport {-a | -d | -l | -g | -t | -?} [-r <portname>] [-s <Servername>] 
 | -l | Lista todas as portas de impressora TCP/IP padrão no computador especificado pelo parâmetro **-s** . |
 | -g | Exibe a configuração de uma porta de impressora TCP/IP padrão. |
 | -T | Define as configurações de porta para uma porta de impressora TCP/IP padrão. |
-| -r`<portname>` | Especifica a porta à qual a impressora está conectada. |
-| -s`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
-| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
-| -o`{raw|lpr}` | Especifica o protocolo que a porta usa: TCP bruto ou TCP LPR. O protocolo TCP bruto é um protocolo de desempenho mais alto no Windows do que o protocolo LPR. Se você usar TCP bruto, poderá opcionalmente especificar o número da porta usando o parâmetro **-n** . O número da porta padrão é 9100. |
-| -h`<Hostaddress>` | Especifica (por endereço IP) a impressora para a qual você deseja configurar a porta. |
-| -q`<Queuename>` | Especifica o nome da fila para uma porta bruta TCP. |
-| -n`<portnumber>` | Especifica o número da porta para uma porta bruta TCP. O número da porta padrão é 9100. |
+| -r `<portname>` | Especifica a porta à qual a impressora está conectada. |
+| -s `<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -u `<Username>` -w `<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -o `{raw|lpr}` | Especifica o protocolo que a porta usa: TCP bruto ou TCP LPR. O protocolo TCP bruto é um protocolo de desempenho mais alto no Windows do que o protocolo LPR. Se você usar TCP bruto, poderá opcionalmente especificar o número da porta usando o parâmetro **-n** . O número da porta padrão é 9100. |
+| -h `<Hostaddress>` | Especifica (por endereço IP) a impressora para a qual você deseja configurar a porta. |
+| -q `<Queuename>` | Especifica o nome da fila para uma porta bruta TCP. |
+| -n `<portnumber>` | Especifica o número da porta para uma porta bruta TCP. O número da porta padrão é 9100. |
 | -m`{e|d}` | Especifica se o SNMP está habilitado. O parâmetro **e** HABILITA o SNMP. O parâmetro **d** DESABILITA o SNMP. |
-| -i`<SNMPindex` | Especifica o índice SNMP, se SNMP estiver habilitado. Para obter mais informações, consulte **rfc 1759** no [site do editor RFC](https://www.ietf.org/rfc/rfc1759.txt?number=1759). |
-| -y`<communityname>` | Especifica o nome da comunidade SNMP, se o SNMP estiver habilitado. |
+| -i `<SNMPindex` | Especifica o índice SNMP, se SNMP estiver habilitado. Para obter mais informações, consulte **rfc 1759** no [site do editor RFC](https://www.ietf.org/rfc/rfc1759.txt?number=1759). |
+| -y `<communityname>` | Especifica o nome da comunidade SNMP, se o SNMP estiver habilitado. |
 | -2`{e|-d}` | Especifica se spools duplos (também conhecidos como recolocação em spool) estão habilitados para portas TCP LPR. Spools duplos são necessários porque TCP LPR deve incluir uma contagem de bytes precisa no arquivo de controle que é enviado para a impressora, mas o protocolo não pode obter a contagem do provedor de impressão local. Portanto, quando um arquivo é colocado em spool em uma fila de impressão TCP LPR, ele também é colocado em spool como um arquivo temporário no diretório system32. TCP LPR determina o tamanho do arquivo temporário e envia o tamanho para o servidor que executa o LPD. O parâmetro **e** habilita spools duplos. O parâmetro **d** desabilita spools duplos. |
 | /? | Exibe a ajuda no prompt de comando. |
 

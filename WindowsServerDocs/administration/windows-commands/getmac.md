@@ -1,18 +1,18 @@
 ---
 title: getmac
 description: Artigo de referência para o comando GETMAC, que retorna o endereço MAC (controle de acesso à mídia) e a lista de protocolos de rede associados a cada um, localmente ou através de uma rede.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a749a348-7cd1-4336-9f33-bb42dd0e31e1
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ffc11e4aad7336e11cf65f8e51cdc155703c2dc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 901777744b98095e4e19ff39d9965d144ee1f1c8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87888634"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034074"
 ---
 # <a name="getmac"></a>getmac
 
@@ -30,9 +30,9 @@ getmac[.exe][/s <computer> [/u <domain\<user> [/p <password>]]][/fo {table | lis
 
 | Parâmetro | Descrição |
 | --------- |------------ |
-| /s`<computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. |
-| /u`<domain>\<user>` | Executa o comando com as permissões de conta do usuário especificado pelo *usuário* ou *domínio \ nome_de_usuário*. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
-| /p`<password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . |
+| /s `<computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. |
+| /u `<domain>\<user>` | Executa o comando com as permissões de conta do usuário especificado pelo *usuário* ou *domínio \ nome_de_usuário*. O padrão é as permissões do usuário conectado no momento no computador que emite o comando. |
+| /p `<password>` | Especifica a senha da conta de usuário que é especificada no parâmetro **/u** . |
 | /FO {tabela | list | CSV | Especifica o formato a ser usado para a saída da consulta. Os valores válidos são **tabela**, **lista**e **CSV**. O formato padrão de saída é **tabela**. |
 | /NH | Suprime o cabeçalho da coluna na saída. Válido quando o parâmetro **/fo** é definido como **Table** ou **CSV**. |
 | /v | Especifica que a saída exibe informações detalhadas. |

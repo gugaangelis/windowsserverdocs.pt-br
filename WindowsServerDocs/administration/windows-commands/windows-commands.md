@@ -1,18 +1,18 @@
 ---
 title: Comandos do Windows
 description: Referência
-ms.topic: article
+ms.topic: reference
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.openlocfilehash: 5b596523cc47d9798733ce4f57da43faa9ac075b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c389d0889d4dfca46472215f014e77e9b2346f87
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991137"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89022840"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 

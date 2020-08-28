@@ -1,18 +1,18 @@
 ---
 title: dfsdiag testreferral
 description: Artigo de referência para o comando Dfsdiag testreferral, que verifica referências a Sistema de Arquivos Distribuído (DFS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 877c60dc-e993-4bd5-87dd-e892e3f98a1a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21ed7a6dd56fda0a6185f3f5aaa2a15d9d6fb565
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 245238c83a9795dd4976836bae612f5e00a25a5b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891126"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034174"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag testreferral
 
@@ -40,7 +40,7 @@ dfsdiag /testreferral /DFSpath:<DFS path to get referrals> [/full]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| DFSpath`<path to get referrals>` | Um dos seguintes pode ser feito:<ul><li>**Em branco:** Testa somente domínios confiáveis.</li><li>`\\Domain:`Testa somente as referências do controlador de domínio.</li><li>`\\Domain\SYSvol:`Testa somente referências de SYSvol.</li><li>`\\Domain\NETLOGON:`Testa somente as referências de NETLOGON.</li><li>`\\<domain or server>\<namespace root>:`Testa apenas as referências de raiz de namespace.</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:`Testa apenas as referências da pasta DFS (link).</li></ul> |
+| DFSpath`<path to get referrals>` | Um dos seguintes pode ser feito:<ul><li>**Em branco:** Testa somente domínios confiáveis.</li><li>`\\Domain:` Testa somente as referências do controlador de domínio.</li><li>`\\Domain\SYSvol:` Testa somente referências de SYSvol.</li><li>`\\Domain\NETLOGON:` Testa somente as referências de NETLOGON.</li><li>`\\<domain or server>\<namespace root>:` Testa apenas as referências de raiz de namespace.</li><li>`\\<domain or server>\<namespace root>\<DFS folder>:` Testa apenas as referências da pasta DFS (link).</li></ul> |
 | /full | Aplica-se somente às referências de domínio e raiz. Verifica a consistência das informações de associação do site entre o registro e os serviços de domínio do Active Directory (AD DS). |
 
 ## <a name="examples"></a>Exemplos

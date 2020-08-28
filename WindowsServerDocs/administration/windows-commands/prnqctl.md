@@ -1,18 +1,18 @@
 ---
 title: prnqctl
 description: Artigo de referência para o comando prnqctl, que imprime uma página de teste e pausa ou retoma uma impressora.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8df9dfa7-984c-4276-bb7d-e7675e7c399e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 9ab7c6e8302ebd2c94daee98d8bbef87ecfd4854
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fd5eb91f280df80685d07c0b809e16edeae3d893
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884694"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033854"
 ---
 # <a name="prnqctl"></a>prnqctl
 
@@ -34,9 +34,9 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <Servername>] [-p <Printername>] [-
 | -M | Retoma a impressão na impressora especificada pelo parâmetro **-p** . |
 | -E | Imprime uma página de teste na impressora especificada pelo parâmetro **-p** . |
 | -X | Cancela todos os trabalhos de impressão na impressora especificada pelo parâmetro **-p** . |
-| -s`<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
-| -p`<Printername>` | Obrigatórios. Especifica o nome da impressora que você deseja gerenciar. |
-| -u `<Username>` -w`<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
+| -s `<Servername>` | Especifica o nome do computador remoto que hospeda a impressora que você deseja gerenciar. Se você não especificar um computador, o computador local será usado. |
+| -p `<Printername>` | Obrigatórios. Especifica o nome da impressora que você deseja gerenciar. |
+| -u `<Username>` -w `<password>` | Especifica uma conta com permissões para se conectar ao computador que hospeda a impressora que você deseja gerenciar. Todos os membros do grupo de administradores locais do computador de destino têm essas permissões, mas as permissões também podem ser concedidas a outros usuários. Se você não especificar uma conta, deverá estar conectado sob uma conta com essas permissões para que o comando funcione. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 #### <a name="remarks"></a>Comentários

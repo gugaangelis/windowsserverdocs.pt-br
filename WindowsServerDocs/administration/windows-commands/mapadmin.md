@@ -1,18 +1,18 @@
 ---
 title: mapadmin
 description: Artigo de referência para o comando mapadmin, que gerencia Mapeamento de Nomes de Usuário para serviços da Microsoft para o sistema de arquivos de rede.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b17332c7-8622-4223-9c43-2fb9cf4d992d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3334ae31b3abb85dcc3df046d8199c9b72ea3944
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b62e31dbe53c5e2b16093bb222b8129d3cca087
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886571"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89033944"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -43,8 +43,8 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | `<computer>` | Especifica o computador remoto que executa o serviço de Mapeamento de Nomes de Usuário que você deseja administrar. Você pode especificar o computador usando um nome WINS (serviço de cadastramento na Internet do Windows) ou um nome DNS (sistema de nomes de domínio) ou por endereço IP (Internet Protocol). |
-| -u`<user>` | Especifica o nome de usuário do usuário cujas credenciais devem ser usadas. Pode ser necessário adicionar o nome de domínio ao nome de usuário no formato *domínio \ nomedeusuário*. |
-| -p`<password>` | Especifica a senha do usuário. Se você especificar a opção **-u** , mas omitir a opção **-p** , será solicitada a senha do usuário. |
+| -u `<user>` | Especifica o nome de usuário do usuário cujas credenciais devem ser usadas. Pode ser necessário adicionar o nome de domínio ao nome de usuário no formato *domínio \ nomedeusuário*. |
+| -p `<password>` | Especifica a senha do usuário. Se você especificar a opção **-u** , mas omitir a opção **-p** , será solicitada a senha do usuário. |
 | `start | stop` | Inicia ou interrompe o serviço de Mapeamento de Nomes de Usuário. |
 | config | Especifica as configurações gerais para Mapeamento de Nomes de Usuário. As seguintes opções estão disponíveis com este parâmetro:<ul><li>**-r `<dddd>:<hh>:<mm>` :** especifica o intervalo de atualização para atualização dos bancos de dados do Windows e NIS em dias, horas e minutos. O intervalo mínimo é de 5 minutos.</li><li>**-i `{yes | no}` :** ativa o mapeamento simples (**Sim**) ou desativado (**não**). Por padrão, o mapeamento está ativado.</li></ul> |
 | add | Cria um novo mapeamento para um usuário ou grupo. As seguintes opções estão disponíveis com este parâmetro:<ul><li>**-Wu `<name>` :** especifica o nome do usuário do Windows para o qual um novo mapeamento está sendo criado.</li><li>**-uu `<name>` :** especifica o nome do usuário UNIX para o qual um novo mapeamento está sendo criado.</li><li>**-WG `<group>` :** especifica o nome do grupo do Windows para o qual um novo mapeamento está sendo criado.</li><li>**-UG `<group>` :** especifica o nome do grupo do UNIX para o qual um novo mapeamento está sendo criado.</li><li>**-setprimary:** Especifica que o novo mapeamento é o mapeamento principal.</li></ul> |
@@ -63,13 +63,13 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 - Para todas as opções que especificam um nome de usuário ou grupo, os seguintes formatos podem ser usados:
 
-    - Para usuários do Windows, use os formatos: `<domain>\<username>` , `\\<computer>\<username>` , `\<computer>\<username>` ou`<computer>\<username>`
+    - Para usuários do Windows, use os formatos: `<domain>\<username>` , `\\<computer>\<username>` , `\<computer>\<username>` ou `<computer>\<username>`
 
-    - Para grupos do Windows, use os formatos: `<domain>\<groupname>` , `\\<computer>\<groupname>` , `\<computer>\<groupname>` ou`<computer>\<groupname>`
+    - Para grupos do Windows, use os formatos: `<domain>\<groupname>` , `\\<computer>\<groupname>` , `\<computer>\<groupname>` ou `<computer>\<groupname>`
 
-    - Para usuários do UNIX, use os formatos: `<NISdomain>\<username>` , `<username>@<NISdomain>` , `<username>@PCNFS` ou`PCNFS\<username>`
+    - Para usuários do UNIX, use os formatos: `<NISdomain>\<username>` , `<username>@<NISdomain>` , `<username>@PCNFS` ou `PCNFS\<username>`
 
-    - Para grupos do UNIX, use os formatos: `<NISdomain>\<groupname>` , `<groupname>@<NISdomain>` , `<groupname>@PCNFS` ou`PCNFS\<groupname>`
+    - Para grupos do UNIX, use os formatos: `<NISdomain>\<groupname>` , `<groupname>@<NISdomain>` , `<groupname>@PCNFS` ou `PCNFS\<groupname>`
 
 ## <a name="additional-references"></a>Referências adicionais
 

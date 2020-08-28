@@ -1,18 +1,18 @@
 ---
 title: freedisk
 description: Artigo de referência para o comando freedisk, que verifica se a quantidade especificada de espaço em disco está disponível antes de continuar com um processo de instalação.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 91c15166-5baa-4b80-9e0c-4cd815d00530
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6c5c09e35f852be9229180ae894356e127f8a03
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6a3f8543e6fd2cff9a4e086068155d84526d9377
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890097"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89027604"
 ---
 # <a name="freedisk"></a>freedisk
 
@@ -30,10 +30,10 @@ freedisk [/s <computer> [/u [<domain>\]<user> [/p [<password>]]]] [/d <drive>] [
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /s`<computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
-| /u`[<domain>\]<user>` | Executa o script com as permissões da conta de usuário especificada. O padrão é permissões do sistema. |
+| /s `<computer>` | Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local. Esse parâmetro se aplica a todos os arquivos e pastas especificados no comando. |
+| /u `[<domain>\]<user>` | Executa o script com as permissões da conta de usuário especificada. O padrão é permissões do sistema. |
 | /p [ <password> ] | Especifica a senha da conta de usuário que é especificada em **/u**. |
-| /d`<drive>` | Especifica a unidade para a qual você deseja descobrir a disponibilidade de espaço livre. Você deve especificar `<drive>` para um computador remoto. |
+| /d `<drive>` | Especifica a unidade para a qual você deseja descobrir a disponibilidade de espaço livre. Você deve especificar `<drive>` para um computador remoto. |
 | `<value>` | Verifica se há uma quantidade específica de espaço livre em disco. Você pode especificar `<value>` em bytes, KB, MB, GB, TB, PB, EB, ZB ou YB. |
 
 #### <a name="remarks"></a>Comentários

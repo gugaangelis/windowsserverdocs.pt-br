@@ -1,18 +1,18 @@
 ---
 title: chamada
 description: Artigo de referência para o comando Call, que chama um programa em lotes de outro sem parar o programa do lote pai.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d34a41dc-e6c7-4467-bf6a-15cec704833e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 7ff402f159dc69d683ad5c568ca2d31d753eb77c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 749f073fa3f96f51aec5bf47e4e09ce7263d3205
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880397"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034254"
 ---
 # <a name="call"></a>chamada
 
@@ -90,7 +90,7 @@ Nos exemplos acima, **%1** e o caminho podem ser substituídos por outros valore
 
 - Trabalhando com extensões de comando
 
-    Se as extensões de comando estiverem habilitadas, **chame** aceita `<label>` como o destino da chamada. A sintaxe correta é`call :<label> <arguments>`
+    Se as extensões de comando estiverem habilitadas, **chame** aceita `<label>` como o destino da chamada. A sintaxe correta é `call :<label> <arguments>`
 
 ## <a name="examples"></a>Exemplos
 
