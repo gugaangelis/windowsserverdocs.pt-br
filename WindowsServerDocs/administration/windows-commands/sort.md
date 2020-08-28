@@ -1,18 +1,18 @@
 ---
 title: sort
 description: Artigo de referência para classificação, que lê entrada, classifica dados e grava os resultados na tela, em um arquivo ou em outro dispositivo.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 77116469-4790-4442-8a21-9fa73b65ef9f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec95133af8e9c2c617fedc3bf6a3085a6663b104
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 092fe9d7ce96b172237bb44c2ce4a460bfc1a8e4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882353"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036944"
 ---
 # <a name="sort"></a>sort
 
@@ -32,9 +32,9 @@ sort [/r] [/+<N>] [/m <Kilobytes>] [/l <Locale>] [/rec <Characters>] [[<Drive1>:
 |---------|-----------|
 |/r|Reverte a ordem de classificação (ou seja, classifica de Z a A e de 9 a 0).|
 |/+\<N>|Especifica o número da posição do caractere em que a **classificação** começará cada comparação. *N* pode ser qualquer número inteiro válido.|
-|opção\<Kilobytes>|Especifica a quantidade de memória principal a ser usada para a classificação em kilobytes (KB).|
-|/l\<Locale>|Substitui a ordem de classificação dos caracteres que são definidos pela localidade padrão do sistema (ou seja, o idioma e o país/região selecionados durante a instalação).|
-|/rec\<Characters>|Especifica o número máximo de caracteres em um registro ou uma linha do arquivo de entrada (o valor padrão é 4.096 e o máximo é 65.535).|
+|opção \<Kilobytes>|Especifica a quantidade de memória principal a ser usada para a classificação em kilobytes (KB).|
+|/l \<Locale>|Substitui a ordem de classificação dos caracteres que são definidos pela localidade padrão do sistema (ou seja, o idioma e o país/região selecionados durante a instalação).|
+|/rec \<Characters>|Especifica o número máximo de caracteres em um registro ou uma linha do arquivo de entrada (o valor padrão é 4.096 e o máximo é 65.535).|
 |[\<Drive1>:][\<Path1>]\<FileName1>|Especifica o arquivo a ser classificado. Se nenhum nome de arquivo for especificado, a entrada padrão será classificada. Especificar o arquivo de entrada é mais rápido do que redirecionar o mesmo arquivo como entrada padrão.|
 |/t [ \<Drive2> :] [ \<Path2> ]|Especifica o caminho do diretório para manter o armazenamento de trabalho do comando de **classificação** se os dados não couberem na memória principal. Por padrão, o diretório temporário do sistema é usado.|
 |/o [ \<Drive3> :] [ \<Path3> ]\<FileName3>|Especifica o arquivo onde a entrada classificada deve ser armazenada. Se não for especificado, os dados serão gravados na saída padrão. Especificar o arquivo de saída é mais rápido do que redirecionar a saída padrão para o mesmo arquivo.|

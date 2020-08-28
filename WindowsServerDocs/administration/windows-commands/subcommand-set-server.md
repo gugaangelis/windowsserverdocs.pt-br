@@ -1,18 +1,18 @@
 ---
 title: Conjunto de subcomandos-servidor
 description: Artigo de referência para o subcomando set-Server, que definiu as configurações para um servidor de serviços de implantação do Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: da55c29d-a94a-4d73-877b-af480f906ca0
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa9a40be9b2af534ddf80b03e2c56ac06b533a75
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9199fc06733724ba14415efd938488e7558ceb1c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882132"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036734"
 ---
 # <a name="subcommand-set-server"></a>Subcomando: Set-Server
 
@@ -134,7 +134,7 @@ wdsutil [Options] /Set-Server [/Server:<Server name>]
 |[/PreferredDC: <DC Name> ]|Especifica o nome do controlador de domínio que os serviços de implantação do Windows devem usar. Pode ser o nome NetBIOS ou o FQDN.|
 |[/PreferredGC: <GC Name> ]|Especifica o nome do servidor de catálogo global que os serviços de implantação do Windows devem usar. Pode ser o nome NetBIOS ou o FQDN.|
 |[/PrestageUsingMAC: {Sim &#124; não}]|Especifica se os serviços de implantação do Windows, ao criar contas de computador no AD DS, devem usar o endereço MAC em vez do GUID/UUID para identificar o computador.|
-|[/NewMachineNamingPolicy: <Policy> ]|Especifica o formato a ser usado ao gerar nomes de computador para clientes. Para obter informações sobre o formato a ser usado para o <policy> , clique com o botão direito do mouse no servidor no snap-in do MMC, clique em **Propriedades**e exiba a guia **serviços de diretório** . Por exemplo, **/NewMachineNamingPolicy:% 61Username% #**.|
+|[/NewMachineNamingPolicy: <Policy> ]|Especifica o formato a ser usado ao gerar nomes de computador para clientes. Para obter informações sobre o formato a ser usado para o <policy> , clique com o botão direito do mouse no servidor no snap-in do MMC, clique em  **Propriedades**e exiba a guia **serviços de diretório** . Por exemplo, **/NewMachineNamingPolicy:% 61Username% #**.|
 |[/NewMachineOU]|Usado para especificar o local em AD DS em que as contas de computador cliente serão criadas. Especifique o local usando as opções a seguir.<p>-[/Type: ServerDomain &#124; UserDomain &#124; o UserOU &#124; Custom] Especifica o tipo de local. O **ServerDomain** cria contas no mesmo domínio que o servidor dos serviços de implantação do Windows. **UserDomain** cria contas no mesmo domínio que o usuário que está executando a instalação. **Userou** cria contas na unidade organizacional do usuário que está executando a instalação. **Personalizado** permite que você especifique um local personalizado (você também deve especificar um valor para **/ou** com essa opção).<br />-[/OU: <Domain name of OU> ]-se você especificar **personalizado** para a opção **/Type** , essa opção especificará a unidade organizacional em que as contas de computador devem ser criadas.|
 |[/DomainSearchOrder: {GCOnly &#124; DCFirst}]|Especifica a política para pesquisar contas de computador no AD DS (catálogo global ou controlador de domínio).|
 |[/NewMachineDomainJoin: {Sim &#124; não}]|Especifica se um computador que ainda não está pré-configurado no AD DS deve ser ingressado no domínio durante a instalação. A configuração padrão é **Sim**.|

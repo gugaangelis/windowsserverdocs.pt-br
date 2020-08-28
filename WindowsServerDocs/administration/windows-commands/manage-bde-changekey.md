@@ -1,18 +1,18 @@
 ---
 title: Manage-bde ChangeKey
 description: Artigo de referência para o comando Manage-bde ChangeKey, que modifica a chave de inicialização para uma unidade do sistema operacional.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 69463db9-7e03-47ff-b233-a95d5055725f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b1ac3801fe78494d33ae57fd869986b55f886d0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: cfef099e1f596428fdbf7fd4389f4bd44846efce
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886955"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030114"
 ---
 # <a name="manage-bde-changekey"></a>Manage-bde ChangeKey
 

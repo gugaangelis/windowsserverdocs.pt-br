@@ -1,18 +1,18 @@
 ---
 title: unlodctr
 description: Artigo de referência para o Unlodctr, que remove nomes de contadores de desempenho e texto explicativo para um serviço ou driver de dispositivo do registro do sistema
-ms.topic: article
+ms.topic: reference
 ms.assetid: fc8aa6f0-c1d9-47ea-937a-28152148e774
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3c867a4634024527066c329f408a210e97718d1c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 732f64d97b55084153cbb16840f53498a50ebae4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897041"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029924"
 ---
 # <a name="unlodctr"></a>unlodctr
 

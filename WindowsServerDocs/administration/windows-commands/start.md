@@ -1,18 +1,18 @@
 ---
 title: start
 description: Artigo de referência para Start, que inicia uma janela de prompt de comando separada para executar um programa ou comando especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0173f9b3-5cd7-4edb-b01e-d02193b4fadc
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 54ec76cf6162cd887b21f99b6579fc123f4f614c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5f17b4093bbe82d869ad561dce45437389dc347e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882296"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036924"
 ---
 # <a name="start"></a>start
 
@@ -31,12 +31,12 @@ start [<Title>] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low 
 |Parâmetro|Descrição|
 |---------|-----------|
 |\<Title>|Especifica o título a ser exibido na barra de título da janela do prompt de comando.|
-|/d\<Path>|Especifica o diretório de inicialização.|
+|/d \<Path>|Especifica o diretório de inicialização.|
 |/i|Passa o ambiente de inicialização Cmd.exe para a nova janela do prompt de comando. Se **/i** não for especificado, o ambiente atual será usado.|
 |/Min \| /Max|Especifica para minimizar (**/min**) ou maximizar (**/Max**) a nova janela do prompt de comando.|
 |/Separate \| /Shared|Inicia programas de 16 bits em um espaço de memória separado (**/separate**) ou espaço de memória compartilhada (**/Shared**). Essas opções não têm suporte em plataformas de 64 bits.|
 |/Low \| /normal \| /High \| /Realtime \| /AboveNormal \| /BelowNormal|Inicia um aplicativo na classe de prioridade especificada. Os valores de classe de prioridade válidos são **/Low**, **/normal**, **/High**, **/Realtime**, **/AboveNormal**e **/BelowNormal**.|
-|/affinity\<HexAffinity>|Aplica a máscara de afinidade de processador especificada (expressa como um número hexadecimal) ao novo aplicativo.|
+|/affinity \<HexAffinity>|Aplica a máscara de afinidade de processador especificada (expressa como um número hexadecimal) ao novo aplicativo.|
 |/Wait|Inicia um aplicativo e aguarda sua finalização.|
 |/elevate|Executa o aplicativo como administrador.|
 |/b|Inicia um aplicativo sem abrir uma nova janela de prompt de comando. A manipulação CTRL + C é ignorada, a menos que o aplicativo permita o processamento de CTRL + C. Use CTRL + BREAK para interromper o aplicativo.|

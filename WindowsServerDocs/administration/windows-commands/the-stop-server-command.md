@@ -1,18 +1,18 @@
 ---
 title: parar-servidor
 description: Artigo de referência para Stop-Server, que interrompe os serviços de serviços de implantação do Windows.
-ms.topic: article
+ms.topic: reference
 ms.assetid: adff42ca-464f-4f05-ba25-e24e8d702981
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 455553b710ca5157d00e24cf7ed82e35d2ff245e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e2cd16e19bb8d2b02d4b44dbb019acf3311da9b4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881487"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030024"
 ---
 # <a name="stop-server"></a>parar-servidor
 > Aplica-se a: Windows Server (canal semestral), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012

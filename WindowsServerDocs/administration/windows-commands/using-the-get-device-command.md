@@ -1,18 +1,18 @@
 ---
 title: obter dispositivo
 description: Artigo de referência para Get-Device, que recupera as informações dos serviços de implantação do Windows sobre um computador pré-configurado (ou seja, um computador físico que foi embutido em uma conta de computador nos serviços de domínio Active Directory.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1da79286-7e1d-45f2-aea2-d446e16a6911
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7e50648a0a3e50542a7bb2ace4f887c08939ff7b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 118e14f738920527c61c8da25d19ab98126fc004
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896964"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029694"
 ---
 # <a name="get-device"></a>obter dispositivo
 

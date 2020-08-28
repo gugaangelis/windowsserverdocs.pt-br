@@ -1,18 +1,18 @@
 ---
 title: rd
 description: Artigo de referência para o comando Rd, que exclui um diretório.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 42e672f6-5bc2-4c16-af25-18e7ed2dd555
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1baacb12a0169d9915897a3d6672870c6a21927
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 360283cbc71e2d9e78acddb4e529c66535f8aa7d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884350"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037184"
 ---
 # <a name="rd"></a>rd
 

@@ -7,12 +7,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/15/2020
 description: Uma visão geral de Pastas de Trabalho - uma função de servidor no Windows Server que fornece uma maneira consistente para os usuários acessarem arquivos de trabalho de computadores e dispositivos.
-ms.openlocfilehash: adc03d9bcb4289896b996984ebb53b185008f3fb
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d8dcd07cd9a511cd0283030d048dff93ed02d6f1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994098"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036724"
 ---
 # <a name="work-folders-overview"></a>Visão geral de Pastas de Trabalho
 
@@ -137,9 +137,9 @@ A tabela a seguir aborda como diversas tecnologias de sincronização da Microso
 
 | | Pastas de trabalho | Arquivos Offline | OneDrive for Business | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
-| **Resumo da tecnologia** | Sincroniza arquivos armazenados em um servidor de arquivos com computadores e dispositivos | Sincroniza arquivos armazenados em um servidor de arquivos com computadores que têm acesso à rede corporativa (pode ser substituído por Pastas de Trabalho) | Sincroniza arquivos armazenados no Office 365 ou no SharePoint com computadores e dispositivos dentro ou fora de uma rede corporativa e fornece funcionalidade de colaboração de documentos | Sincroniza arquivos pessoais armazenados no OneDrive com PCs, computadores Mac e dispositivos |
+| **Resumo da tecnologia** | Sincroniza arquivos armazenados em um servidor de arquivos com computadores e dispositivos | Sincroniza arquivos armazenados em um servidor de arquivos com computadores que têm acesso à rede corporativa (pode ser substituído por Pastas de Trabalho) | Sincroniza arquivos armazenados no Microsoft 365 ou no SharePoint com computadores e dispositivos dentro ou fora de uma rede corporativa e fornece a funcionalidade de colaboração de documentos | Sincroniza arquivos pessoais armazenados no OneDrive com PCs, computadores Mac e dispositivos |
 | **Projetado para fornecer acesso de usuário a arquivos de trabalho** | Sim | Sim | Sim | Não |
-| **serviço de nuvem** | Nenhum | Nenhum | Office 365 | Microsoft OneDrive |
+| **serviço de nuvem** | Nenhum | Nenhum | Microsoft 365 | Microsoft OneDrive |
 | **Servidores de rede interna** | Servidores de arquivos que executam o Windows Server 2012 R2, o Windows Server 2016 e o Windows Server 2019 | Servidores de arquivos | SharePoint Server (opcional) | Nenhum |
 | **Clientes com suporte** | PCs, iOS, Android | PCs em uma rede corporativa ou conectado por meio do DirectAccess, VPNs ou outras tecnologias de acesso remoto | PCs, iOS, Android, Windows Phone | PCs, computadores Mac, Windows Phone, iOS, Android |
 
@@ -162,7 +162,7 @@ O serviço Pastas de trabalho faz parte da função Serviços de Arquivo e Armaz
 
 Para saber mais sobre como começar a usar máquinas virtuais do Windows Azure, acesse o [site do Windows Azure](https://www.windowsazure.com/documentation/services/virtual-machines).
 
-## <a name="see-also"></a>Consulte também
+## <a name="see-also"></a>Confira também
 
 | Tipo de conteúdo | Referências |
 | ------------------ | ---------------- |

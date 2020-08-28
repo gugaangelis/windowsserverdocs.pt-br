@@ -1,18 +1,18 @@
 ---
 title: cancelar inicialização-servidor
 description: Artigo de referência para Uninitialize-Server, que reverte as alterações feitas no servidor durante a configuração inicial do servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 015efb04-fe84-469f-bd81-49d0046296b2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 954c56d8a9c901431859e7a424c5df436ab6858a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ce98df7fa7c094970474432dd8fdedc56e302c6
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881453"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029974"
 ---
 # <a name="uninitialize-server"></a>cancelar inicialização-servidor
 

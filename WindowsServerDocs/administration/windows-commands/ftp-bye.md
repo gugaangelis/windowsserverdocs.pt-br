@@ -1,18 +1,18 @@
 ---
 title: ftp bye
 description: Artigo de referência para o comando FTP Adeus, que encerra a sessão FTP no computador remoto e, em seguida, sai.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f20e2bf2-7d12-4606-942a-8ed555eb8e90
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8bc35946fb975f003f9b3019a00eafb120e0816
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8d4bc3d085bf4a05a8bebc54a2db292aa0856d0b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87889599"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025825"
 ---
 # <a name="ftp-bye"></a>ftp bye
 

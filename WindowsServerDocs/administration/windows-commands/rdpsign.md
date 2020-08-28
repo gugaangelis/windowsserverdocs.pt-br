@@ -1,18 +1,18 @@
 ---
 title: rdpsign
 description: Artigo de referência para o comando rdpsign, que permite que você assine digitalmente um arquivo protocolo RDP (. RDP).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: f937cd0bebd2c57c4eef44c9dbf803176f285c2f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecd80969f42a440bfd583223779fe67c27c5c310
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884326"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037144"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -33,8 +33,8 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 
 | Parâmetro | Descrição |
 |--|--|
-| /sha1`<hash>` | Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados. Usado no Windows Server 2012 R2 e mais antigo. |
-| /sha256`<hash>` | Especifica a impressão digital, que é o hash do algoritmo de hash seguro 256 (SHA256) do certificado de autenticação que está incluído no repositório de certificados. Substitui/SHA1 no Windows Server 2016 e mais recente. |
+| /sha1 `<hash>` | Especifica a impressão digital, que é o hash Secure Hash Algorithm 1 (SHA1) do certificado de autenticação que está incluído no repositório de certificados. Usado no Windows Server 2012 R2 e mais antigo. |
+| /sha256 `<hash>` | Especifica a impressão digital, que é o hash do algoritmo de hash seguro 256 (SHA256) do certificado de autenticação que está incluído no repositório de certificados. Substitui/SHA1 no Windows Server 2016 e mais recente. |
 | /q | Modo silencioso. Nenhuma saída quando o comando for bem sucedido e a saída mínima se o comando falhar. |
 | /v | modo detalhado. Exibe todos os avisos, mensagens e status. |
 | /l | Testa os resultados de assinatura e saída sem realmente substituir nenhum dos arquivos de entrada. |

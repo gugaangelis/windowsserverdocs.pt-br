@@ -1,18 +1,18 @@
 ---
 title: fc
 description: Artigo de referência para o comando FC, que compara dois arquivos ou conjuntos de arquivos e exibe as diferenças entre eles.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 485fc3d8-b7c5-496d-87be-0011112f27d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 72c71a76b168b96164ea6739adff974ba37a2308
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: eb4bd745ec9c1a9dfe066fd5eeefdc2d5517d7cb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890364"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036624"
 ---
 # <a name="fc"></a>fc
 

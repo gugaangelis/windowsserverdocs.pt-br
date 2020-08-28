@@ -1,18 +1,18 @@
 ---
 title: convert basic
 description: Artigo de referência para o comando Convert Basic, que converte um disco dinâmico vazio em um disco básico.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 61329896-3b56-4959-8d58-45cbe18ba860
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 88ad686cd47bc9c347469697511a81f6cf4ae835
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: a094da440bb898f67178c18a3408567cee7eab3d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892591"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025930"
 ---
 # <a name="convert-basic"></a>convert basic
 

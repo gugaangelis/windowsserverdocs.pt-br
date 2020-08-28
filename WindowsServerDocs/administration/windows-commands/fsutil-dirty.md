@@ -5,14 +5,14 @@ manager: dmoss
 ms.author: toklima
 author: toklima
 ms.assetid: 385a2a7c-d6bd-4f11-9c18-fca0413f9e97
-ms.topic: article
+ms.topic: reference
 ms.date: 10/16/2017
-ms.openlocfilehash: 00fd11e577957e45bb8b2491b54cf1548effedc3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: fa63ec550821f99dffa59f092bb0f0523bfb948b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890006"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030144"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 
@@ -54,9 +54,9 @@ Para consultar o bit sujo na unidade C, digite:
 fsutil dirty query c:
 ```
 
-- Se o volume estiver sujo, a saída a seguir exibirá:`Volume C: is dirty`
+- Se o volume estiver sujo, a saída a seguir exibirá: `Volume C: is dirty`
 
-- Se o volume não estiver sujo, a saída a seguir exibirá:`Volume C: is not dirty`
+- Se o volume não estiver sujo, a saída a seguir exibirá: `Volume C: is not dirty`
 
 Para definir o bit sujo na unidade C, digite:
 

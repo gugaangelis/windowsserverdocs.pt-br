@@ -1,18 +1,18 @@
 ---
 title: criar partição estendida
 description: Artigo de referência para o comando criar partição estendida, que cria uma partição estendida no disco com foco.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4ad7cb66-9c66-4153-b94e-1030a7225070
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7475eca6395c2f0cdc29fcadefe3bb8905761c99
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0d60438d634309d93a2d8446e4d86ff909db27e4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879990"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030214"
 ---
 # <a name="create-partition-extended"></a>criar partição estendida
 
@@ -37,7 +37,7 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
 | --------- | ----------- |
 | tamanho =`<n>` | Especifica o tamanho da partição em megabytes (MB). Se nenhum tamanho for fornecido, a partição continuará até que não haja mais espaço livre na partição estendida. |
 | deslocamento =`<n>` | Especifica o deslocamento em kilobytes (KB), no qual a partição é criada. Se nenhum deslocamento for fornecido, a partição será iniciada no início do espaço livre no disco que é grande o suficiente para manter a nova partição. |
-| align =`<n>` | Alinha todas as extensões de partição com o limite de alinhamento mais próximo. Normalmente usado com matrizes de LUN (número de unidade lógica) RAID de hardware para melhorar o desempenho. `<n>`é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
+| align =`<n>` | Alinha todas as extensões de partição com o limite de alinhamento mais próximo. Normalmente usado com matrizes de LUN (número de unidade lógica) RAID de hardware para melhorar o desempenho. `<n>` é o número de kilobytes (KB) desde o início do disco até o limite de alinhamento mais próximo. |
 | NOERR | Somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 
 ## <a name="examples"></a>Exemplos

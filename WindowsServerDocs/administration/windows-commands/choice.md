@@ -1,18 +1,18 @@
 ---
 title: opção
 description: Artigo de referência para o comando Choice, que solicita ao usuário que selecione um item de uma lista de opções de caractere único em um programa em lotes e, em seguida, retorna o índice da opção selecionada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6aec3af1966d0b7952f0bbb5880e373356117e42
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 367f52ee41e72fe1c4c94c37a07e3a4227dec8a7
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880257"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89026040"
 ---
 # <a name="choice"></a>opção
 
@@ -28,12 +28,12 @@ choice [/c [<choice1><choice2><…>]] [/n] [/cs] [/t <timeout> /d <choice>] [/m 
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /c`<choice1><choice2><…>` | Especifica a lista de opções a serem criadas. As opções válidas incluem a-z, A-Z, 0-9 e caracteres ASCII estendidos (128-254). A lista padrão é YN, que é exibida como `[Y,N]?` . |
+| /c `<choice1><choice2><…>` | Especifica a lista de opções a serem criadas. As opções válidas incluem a-z, A-Z, 0-9 e caracteres ASCII estendidos (128-254). A lista padrão é YN, que é exibida como `[Y,N]?` . |
 | /n | Oculta a lista de opções, embora as opções ainda estejam habilitadas e o texto da mensagem (se especificado por **/m**) ainda seja exibido. |
 | /cs | Especifica que as opções diferenciam maiúsculas de minúsculas. Por padrão, as opções não diferenciam maiúsculas de minúsculas. |
-| /t`<timeout>` | Especifica o número de segundos para pausar antes de usar a opção padrão especificada por **/d**. Os valores aceitáveis são de **0** a **9999**. Se **/t** for definido como **0**, a **opção** não será pausada antes de retornar a escolha padrão. |
-| /d`<choice>` | Especifica a escolha padrão a ser usada depois de aguardar o número de segundos especificado por **/t**. A opção padrão deve estar na lista de opções especificadas por **/c**. |
-| opção`<text>` | Especifica uma mensagem a ser exibida antes da lista de opções. Se **/m** não for especificado, somente o prompt de opção será exibido. |
+| /t `<timeout>` | Especifica o número de segundos para pausar antes de usar a opção padrão especificada por **/d**. Os valores aceitáveis são de **0** a **9999**. Se **/t** for definido como **0**, a **opção** não será pausada antes de retornar a escolha padrão. |
+| /d `<choice>` | Especifica a escolha padrão a ser usada depois de aguardar o número de segundos especificado por **/t**. A opção padrão deve estar na lista de opções especificadas por **/c**. |
+| opção `<text>` | Especifica uma mensagem a ser exibida antes da lista de opções. Se **/m** não for especificado, somente o prompt de opção será exibido. |
 | /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="remarks"></a>Comentários

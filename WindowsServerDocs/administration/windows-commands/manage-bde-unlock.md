@@ -1,18 +1,18 @@
 ---
 title: gerenciar/desbloquear o BDE
 description: Artigo de referência para o comando de desbloqueio Manage-bde, que desbloqueia uma unidade protegida pelo BitLocker usando uma senha de recuperação ou uma chave de recuperação.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 7852bf7d-9102-40be-adcb-71e8f4dfde72
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d9b13e4ac27ab77a522d223749cd84e3b1bb11a6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e1d1566ee348b10efe2212c2e0004c72470944fe
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886640"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89030094"
 ---
 # <a name="manage-bde-unlock"></a>gerenciar/desbloquear o BDE
 
@@ -34,8 +34,8 @@ manage-bde -unlock {-recoverypassword <password>|-recoverykey <pathtoexternalkey
 | `<pathtoexternalkeyfile>` | Representa o arquivo de chave de recuperação externa que pode ser usado para desbloquear a unidade. |
 | `<drive>` | Representa uma letra de unidade seguida de dois-pontos. |
 | -certificado | O certificado de usuário local para um certificado do BitLocker para desbloquear o volume está localizado no repositório de certificados do usuário local. Você também pode usar **-CERT** como uma versão abreviada desse comando. |
-| -CF`<pathtocertificatefile>` | Caminho para o arquivo de certificado. |
-| -CT`<certificatethumbprint>` | Impressão digital do certificado que pode, opcionalmente, incluir o PIN (-PIN). |
+| -CF `<pathtocertificatefile>` | Caminho para o arquivo de certificado. |
+| -CT `<certificatethumbprint>` | Impressão digital do certificado que pode, opcionalmente, incluir o PIN (-PIN). |
 | -password | Apresenta um prompt para a senha para desbloquear o volume. Você também pode usar **-PW** como uma versão abreviada desse comando. |
 | -ComputerName | Especifica que manage-bde.exe será usado para modificar a proteção do BitLocker em um computador diferente. Você também pode usar **-CN** como uma versão abreviada desse comando. |
 | `<name>` | Representa o nome do computador no qual a proteção do BitLocker será modificada. Os valores aceitos incluem o nome NetBIOS do computador e o endereço IP do computador. |

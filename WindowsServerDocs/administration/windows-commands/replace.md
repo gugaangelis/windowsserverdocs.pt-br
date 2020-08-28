@@ -1,78 +1,81 @@
 ---
 title: substituir
-description: Saiba como usar o comando Replace para substituir arquivos.
-ms.topic: article
+description: Artigo de referência para o comando Replace, que pode substituir os novos arquivos existentes ou adicionados a um diretório.
+ms.topic: reference
 ms.assetid: 6143661e-d90f-4812-b265-6669b567dd1f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 34d1adfc6a92dce33a6a9bbac308d3338db3934e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5dfab76427a8f91339c29ac37607ce422d4f7e39
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883680"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037014"
 ---
 # <a name="replace"></a>substituir
 
-
-
-Substitui arquivos. Se usado com a opção **/a** , **replace** adiciona novos arquivos a um diretório em vez de substituir os arquivos existentes.
-
-
+Substituir os arquivos existentes em um diretório. Se usado com a opção **/a** , esse comando adiciona novos arquivos a um diretório em vez de substituir os arquivos existentes.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/a] [/p] [/r] [/w]
-replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] [/u]
+replace [<drive1>:][<path1>]<filename> [<drive2>:][<path2>] [/a] [/p] [/r] [/w]
+replace [<drive1>:][<path1>]<filename> [<drive2>:][<path2>] [/p] [/r] [/s] [/w] [/u]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|[\<Drive1>:][\<Path1>]\<FileName>|Especifica o local e o nome do arquivo de origem ou conjunto de arquivos. O *nome de arquivo* é necessário e pode incluir caracteres curinga (**&#42;** e **?**).|
-|[\<Drive2>:][\<Path2>]|Especifica o local do arquivo de destino. Não é possível especificar um nome de arquivo para os arquivos que você substituir. Se você não especificar uma unidade ou um caminho, **replace** usará a unidade e o diretório atuais como destino.|
-|/a|Adiciona novos arquivos ao diretório de destino em vez de substituir os arquivos existentes. Você não pode usar essa opção de linha de comando com a opção de linha de comando **/s** ou **/u** .|
-|/p|Solicita a confirmação antes de substituir um arquivo de destino ou adicionar um arquivo de origem.|
-|/r|Substitui arquivos somente leitura e não protegidos. Se você tentar substituir um arquivo somente leitura, mas não especificar **/r**, um erro resultará e interromperá a operação de substituição.|
-|/w|Aguarda a inserção de um disco antes que a pesquisa de arquivos de origem comece. Se você não especificar **/w**, **replace** começará a substituir ou a adicionar arquivos imediatamente depois que você pressionar Enter.|
-|/s|Pesquisa todos os subdiretórios no diretório de destino e substitui os arquivos correspondentes. Você não pode usar **/s** com a opção de linha de comando **/a** . O comando **replace** não pesquisa subdiretórios que são especificados em *caminho1*.|
-|/u|Substitui somente os arquivos no diretório de destino que são mais antigos do que aqueles no diretório de origem. Você não pode usar **/u** com a opção de linha de comando **/a** .|
-|/?|Exibe a ajuda no prompt de comando.|
+| Parâmetro | Descrição |
+|--|--|
+| `[<drive1>:][<path1>]<filename>` | Especifica o local e o nome do arquivo de origem ou conjunto de arquivos. A opção *filename* é necessária e pode incluir caracteres curinga (**&#42;** e **?**). |
+| `[<drive2>:][<path2>]` | Especifica o local do arquivo de destino. Não é possível especificar um nome de arquivo para os arquivos que você substituir. Se você não especificar uma unidade ou um caminho, esse comando usará a unidade e o diretório atuais como destino. |
+| /a | Adiciona novos arquivos ao diretório de destino em vez de substituir os arquivos existentes. Você não pode usar essa opção de linha de comando com a opção de linha de comando **/s** ou **/u** . |
+| /p | Solicita a confirmação antes de substituir um arquivo de destino ou adicionar um arquivo de origem. |
+| /r | Substitui arquivos somente leitura e não protegidos. Se você tentar substituir um arquivo somente leitura, mas não especificar **/r**, um erro resultará e interromperá a operação de substituição. |
+| /w | Aguarda a inserção de um disco antes que a pesquisa de arquivos de origem comece. Se você não especificar **/w**, esse comando começará a substituir ou a adicionar arquivos imediatamente depois que você pressionar Enter. |
+| /s | Pesquisa todos os subdiretórios no diretório de destino e substitui os arquivos correspondentes. Você não pode usar **/s** com a opção de linha de comando **/a** . O comando não pesquisa subdiretórios que são especificados em *caminho1*. |
+| /u | Substitui somente os arquivos no diretório de destino que são mais antigos do que aqueles no diretório de origem. Você não pode usar **/u** com a opção de linha de comando **/a** . |
+| /? | Exibe a ajuda no prompt de comando. |
 
-## <a name="remarks"></a>Comentários
+#### <a name="remarks"></a>Comentários
 
-- Como **replace** adiciona ou substitui arquivos, os nomes de arquivo são exibidos na tela. Após a conclusão da **substituição** , uma linha de resumo é exibida em um dos seguintes formatos:
+- Como esse comando adiciona ou substitui arquivos, os nomes de arquivo aparecem na tela. Depois que esse comando é feito, uma linha de resumo é exibida em um dos seguintes formatos:
+
   ```
   nnn files added
   nnn files replaced
   no file added
   no file replaced
   ```
-- Se você estiver usando disquetes e precisar alternar discos durante a operação de **substituição** , você poderá especificar a opção de linha de comando **/w** para que **replace** espere que você alterne os discos.
-- Você não pode usar **replace** para atualizar arquivos ocultos ou arquivos do sistema.
+
+- Se você estiver usando disquetes e precisar alternar discos ao executar esse comando, poderá especificar a opção de linha de comando **/w** para que esse comando espere que você alterne os discos.
+
+- Você não pode usar esse comando para atualizar arquivos ocultos ou arquivos do sistema.
+
 - A tabela a seguir mostra cada código de saída e uma breve descrição de seu significado:
-  |Código de saída|Descrição|
-  |---------|-----------|
-  |0|O comando **replace** substituiu ou adicionou os arquivos com êxito.|
-  |1|O comando **replace** encontrou uma versão incorreta do MS-dos.|
-  |2|O comando **replace** não pôde localizar os arquivos de origem.|
-  |3|O comando **replace** não pôde localizar o caminho de origem ou de destino.|
-  |5|O usuário não tem acesso aos arquivos que você deseja substituir.|
-  |8|Memória do sistema insuficiente para executar o comando.|
-  |11|O usuário usou a sintaxe incorreta na linha de comando.|
+
+  | Código de saída | Descrição |
+  |--|--|
+  | 0 | Esse comando substituiu ou adicionou os arquivos com êxito. |
+  | 1 | Este comando encontrou uma versão incorreta do MS-DOS. |
+  | 2 | Este comando não pôde localizar os arquivos de origem. |
+  | 3 | Este comando não pôde localizar o caminho de origem ou de destino. |
+  | 5 | O usuário não tem acesso aos arquivos que você deseja substituir. |
+  | 8 | Memória do sistema insuficiente para executar o comando. |
+  | 11 | O usuário usou a sintaxe incorreta na linha de comando. |
 
 > [!NOTE]
-> Você pode usar o parâmetro ERRORLEVEL na linha de comando **If** em um programa em lotes para processar códigos de saída que são retornados por **replace**.
+> Você pode usar o parâmetro ERRORLEVEL na linha de comando **If** em um programa em lotes para processar os códigos de saída retornados por esse comando.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
-Para atualizar todas as versões de um arquivo chamado phones. CLI (que aparece em vários diretórios na unidade C), com a versão mais recente do arquivo phones. CLI de um disquete na unidade A, digite:
+Para atualizar todas as versões de um arquivo chamado *phones. CLI* (que aparecem em vários diretórios na unidade C:), com a versão mais recente do arquivo *phones. CLI* de um disquete na unidade a:, digite:
 
-`replace a:\phones.cli c:\ /s`
+```
+replace a:\phones.cli c:\ /s
+```
 
 ## <a name="additional-references"></a>Referências adicionais
 

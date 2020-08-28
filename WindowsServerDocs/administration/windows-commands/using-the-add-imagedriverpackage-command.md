@@ -1,18 +1,18 @@
 ---
 title: Add-ImageDriverPackage
 description: Artigo de referência para Add-ImageDriverPackage, que adiciona um pacote de driver que está no repositório de driver a uma imagem de inicialização existente no servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6c2a4833-6427-47f8-9ffb-20b3786cb406
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 01fdcb2fda0bbfd793071009d09b813084fe8a68
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1aca048fe3a9d7d3307c0a860d2dbd6edda0400a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897008"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029834"
 ---
 # <a name="add-imagedriverpackage"></a>Add-ImageDriverPackage
 

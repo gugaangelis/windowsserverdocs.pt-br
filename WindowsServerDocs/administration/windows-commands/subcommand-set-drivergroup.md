@@ -1,18 +1,18 @@
 ---
 title: Conjunto de subcomandos – grupo de drivers
 description: Artigo de referência para subcomando set-Group-Driver, que define as propriedades de um grupo de drivers existente em um servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e4ba9b1c-8c52-4fd5-969b-f7905611b364
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a76277939906a5409bb109bdf52ed1403252acc9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 15289ee5f4e8b705f6deb1841422c5b49f73b784
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882256"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036874"
 ---
 # <a name="subcommand-set-drivergroup"></a>Subcomando: Set-grupo de driver
 

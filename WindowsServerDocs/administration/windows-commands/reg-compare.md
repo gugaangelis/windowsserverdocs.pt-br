@@ -1,18 +1,18 @@
 ---
 title: reg compare
 description: Artigo de referência do comando reg Compare, que compara as entradas ou as subchaves do registro especificadas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 177dc6a3-034e-4846-a394-330d03c14e0b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cac4b4f0e2e00cfc6d121ca27155b122291d0829
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3541ac56a59725d966e726301796f4467044cf6b
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884191"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037054"
 ---
 # <a name="reg-compare"></a>reg compare
 
@@ -30,7 +30,7 @@ reg compare <keyname1> <keyname2> [{/v Valuename | /ve}] [{/oa | /od | /os | on}
 |--|--|
 | `<keyname1>` | Especifica o caminho completo da subchave ou entrada a ser adicionada. Para especificar um computador remoto, inclua o nome do computador (no formato `\\<computername>\` ) como parte do *KeyName*. Omitir `\\<computername>\` faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: **HKLM**, **HKCU**, **HKCR**, **HKU**e **HKCC**. Se um computador remoto for especificado, as chaves de raiz válidas serão: **HKLM** e **HKU**. Se o nome da chave do registro contiver um espaço, coloque o nome da chave entre aspas. |
 | `<keyname2>` | Especifica o caminho completo da segunda subchave a ser comparada. Para especificar um computador remoto, inclua o nome do computador (no formato `\\<computername>\` ) como parte do *KeyName*. Omitir `\\<computername>\` faz com que a operação seja padronizada para o computador local. Especificar apenas o nome do computador em *KeyName2* faz com que a operação use o caminho para a subchave especificada em *KeyName1*. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: **HKLM**, **HKCU**, **HKCR**, **HKU**e **HKCC**. Se um computador remoto for especificado, as chaves de raiz válidas serão: **HKLM** e **HKU**. Se o nome da chave do registro contiver um espaço, coloque o nome da chave entre aspas. |
-| /v`<Valuename>` | Especifica o nome do valor a ser comparado sob a subchave. |
+| /v `<Valuename>` | Especifica o nome do valor a ser comparado sob a subchave. |
 | /ve | Especifica que somente as entradas que têm um nome de valor nulo devem ser comparadas. |
 | /oa | Especifica que todas as diferenças e correspondências são exibidas. Por padrão, somente as diferenças são listadas. |
 | /OD | Especifica que apenas as diferenças são exibidas. Esse é o comportamento padrão. |

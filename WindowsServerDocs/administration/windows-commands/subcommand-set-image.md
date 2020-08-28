@@ -1,18 +1,18 @@
 ---
 title: Conjunto de subcomando-imagem
 description: Artigo de referência para subcomando set-Image, que altera os atributos de uma imagem.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 2ae03c86-7a13-4e38-9182-32e55fffd504
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 35fff7823b730c4b9cc98ed2daafd437f6eecc2e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecb35deed9f938a7498aa282701034b5d9455233
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882194"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036814"
 ---
 # <a name="subcommand-set-image"></a>Subcomando: Set-Image
 

@@ -1,18 +1,18 @@
 ---
 title: cls
 description: Artigo de referência para o comando CLS, que limpa a janela de prompt de comando.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ce9bf55c-bed4-47fb-8f79-a134202c4ed3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6df6d12878d73df7ffe0b5567e782673d6087fc0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2a08f80d31ed33a2cd5a2d13c6055710500ce7fd
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880111"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025950"
 ---
 # <a name="cls"></a>cls
 

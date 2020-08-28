@@ -1,18 +1,18 @@
 ---
 title: convert gpt
 description: Artigo de referência do comando Convert GPT, que converte um disco básico vazio com o estilo de partição MBR (registro mestre de inicialização) em um disco básico com o estilo de partição GPT (tabela de partição GUID).
-ms.topic: article
+ms.topic: reference
 ms.assetid: b3b1b747-0a7a-4be2-8487-2c4be16ee190
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec1066e0ac50536db915eed9df7a6076ba5f3879
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 04b1bacee89e7553aa4ed37337c4667bc93d5da3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892575"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025880"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
