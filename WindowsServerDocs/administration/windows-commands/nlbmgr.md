@@ -1,18 +1,18 @@
 ---
 title: nlbmgr
 description: Artigo de referência para o comando Nlbmgr, que ajuda a configurar e gerenciar seus clusters de balanceamento de carga de rede e todos os hosts de cluster de um único computador, usando o Gerenciador de balanceamento de carga de rede.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 89cb8590-b7cf-4a27-89fa-0fa62ea1a1ca
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac0eeb423c5cd590befcce8d7f986fc6b6ebf7d1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5e9036a5fc4a0941445be4c9e9cf11c8064caa08
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885943"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023580"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -33,8 +33,8 @@ nlbmgr [/noping][/hostlist <filename>][/autorefresh <interval>][/help | /?]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | /noping | Impede que o Gerenciador de balanceamento de carga de rede execute ping nos hosts antes de tentar contatá-los por meio de Instrumentação de Gerenciamento do Windows (WMI). Use esta opção se você desabilitou o protocolo ICMP em todos os adaptadores de rede disponíveis. Se o Gerenciador de balanceamento de carga de rede tentar contatar um host que não está disponível, você enfrentará um atraso ao usar essa opção. |
-| /hostlist`<filename>` | Carrega os hosts especificados em filename no Gerenciador de balanceamento de carga de rede. |
-| /autorefresh`<interval>` | Faz com que o Gerenciador de balanceamento de carga de rede Atualize suas informações de host e de cluster a cada `<interval>` segundos. Se nenhum intervalo for especificado, as informações serão atualizadas a cada 60 segundos. |
+| /hostlist `<filename>` | Carrega os hosts especificados em filename no Gerenciador de balanceamento de carga de rede. |
+| /autorefresh `<interval>` | Faz com que o Gerenciador de balanceamento de carga de rede Atualize suas informações de host e de cluster a cada `<interval>` segundos. Se nenhum intervalo for especificado, as informações serão atualizadas a cada 60 segundos. |
 | /? | Exibe a ajuda no prompt de comando. |
 | /help | Exibe a ajuda no prompt de comando. |
 

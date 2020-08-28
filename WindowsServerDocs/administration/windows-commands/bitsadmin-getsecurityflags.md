@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getsecurityflags
 description: Artigo de referência para o comando Bitsadmin getsecurityflags, que relata os sinalizadores de segurança HTTP para o redirecionamento de URL e as verificações executadas no certificado do servidor durante a transferência.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c2e73519-34f4-487b-af11-97d5d08ef9bb
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec6b5f4a52f1ecbf40b9374dd96914d4334eaf07
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 39e5df028d687de22e8e6bf54731bf0067cd5319
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893868"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034854"
 ---
 # <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 

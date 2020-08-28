@@ -1,18 +1,18 @@
 ---
 title: bitsadmin setclientcertificatebyid
 description: Artigo de referência para o comando Bitsadmin setclientcertificatebyid, que especifica o identificador do certificado do cliente a ser usado para autenticação de cliente em uma solicitação HTTPS (SSL)
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8585a7a1-7472-437b-b04a-a11925782a3a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e46219a52eda48ddb3e203730e6275fb5e534020
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c23868f24fca7e4792f26debe4921e6e9cc22750
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893265"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028554"
 ---
 # <a name="bitsadmin-setclientcertificatebyid"></a>bitsadmin setclientcertificatebyid
 

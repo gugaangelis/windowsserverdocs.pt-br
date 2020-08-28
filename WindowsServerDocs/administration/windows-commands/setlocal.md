@@ -1,18 +1,18 @@
 ---
 title: setlocal
 description: Artigo de referência para setlocal, que inicia a localização de variáveis de ambiente em um arquivo em lotes.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e4e4b6d3-3f1a-4851-a782-25ee2470e16e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30b84c9dcaf741c57393e680d3f9c9cb7b92f19b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b82b6027dfe10817a78708c426f934d6543da345
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882531"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023400"
 ---
 # <a name="setlocal"></a>setlocal
 

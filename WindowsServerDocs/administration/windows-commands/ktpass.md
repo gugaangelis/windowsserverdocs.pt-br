@@ -1,18 +1,18 @@
 ---
 title: ktpass
 description: Artigo de referência para o comando ktpass, que configura o nome principal do servidor para o host ou serviço no AD DS e gera um arquivo. keytab que contém a chave secreta compartilhada do serviço.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 47087676-311e-41f1-8414-199740d01444
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bb523d35a1bbf2d15895201855a58e96ebb7772
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3ef7e2ba1aa84faa44cf4bf77e842e8d3bcdc235
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887644"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028234"
 ---
 # <a name="ktpass"></a>ktpass
 
@@ -44,20 +44,20 @@ ktpass
 
 | Parâmetro | Descrição |
 | --------- | ------------|
-| /out`<filename>` | Especifica o nome do arquivo Kerberos versão 5. keytab a ser gerado. **Observação:** Esse é o arquivo. keytab que você transfere para um computador que não está executando o sistema operacional Windows e, em seguida, substitui ou mescla com o arquivo. keytab existente, */etc/krb5.keytab*. |
+| /out `<filename>` | Especifica o nome do arquivo Kerberos versão 5. keytab a ser gerado. **Observação:** Esse é o arquivo. keytab que você transfere para um computador que não está executando o sistema operacional Windows e, em seguida, substitui ou mescla com o arquivo. keytab existente, */etc/krb5.keytab*. |
 | /princ `<principalname>` | Especifica o nome da entidade de segurança no formulário host/computer.contoso.com@CONTOSO.COM . **AVISO:** Esse parâmetro diferencia maiúsculas de minúsculas. |
 | /mapuser `<useraccount>` | Mapeia o nome da entidade de segurança Kerberos, que é especificada pelo parâmetro **princ** , para a conta de domínio especificada. |
-| /mapop`{add|set}` | Especifica como o atributo de mapeamento é definido.<ul><li>**Adicionar** – adiciona o valor do nome de usuário local especificado. Esse é o padrão.</li><li>**Set** – define o valor da criptografia somente des (padrão de criptografia de dados) para o nome de usuário local especificado.</li></ul> |
+| /mapop `{add|set}` | Especifica como o atributo de mapeamento é definido.<ul><li>**Adicionar** – adiciona o valor do nome de usuário local especificado. Esse é o padrão.</li><li>**Set** – define o valor da criptografia somente des (padrão de criptografia de dados) para o nome de usuário local especificado.</li></ul> |
 | `{-|+}`desonly | A criptografia somente DES é definida por padrão.<ul><li>**+** Define uma conta para criptografia somente DES.</li><li>**-** Libera a restrição em uma conta para criptografia somente DES. **Importante:** O Windows não dá suporte a DES por padrão.</li></ul> |
-| /in`<filename>` | Especifica o arquivo. keytab para ler de um computador host que não esteja executando o sistema operacional Windows. |
-| /pass`{password|*|{-|+}rndpass}` | Especifica uma senha para o nome de usuário principal que é especificado pelo parâmetro **princ** . Use `*` para solicitar uma senha. |
+| /in `<filename>` | Especifica o arquivo. keytab para ler de um computador host que não esteja executando o sistema operacional Windows. |
+| /pass `{password|*|{-|+}rndpass}` | Especifica uma senha para o nome de usuário principal que é especificado pelo parâmetro **princ** . Use `*` para solicitar uma senha. |
 | /minpass | Define o comprimento mínimo da senha aleatória para 15 caracteres. |
 | /maxpass | Define o comprimento máximo da senha aleatória como 256 caracteres. |
-| /crypto`{DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}` | Especifica as chaves que são geradas no arquivo keytab:<ul><li>**Des-CBC-CRC** -usado para compatibilidade.</li><li>**Des-CBC-MD5** -segue mais de acordo com a implementação de MIT e é usada para compatibilidade.</li><li>**RC4-HMAC-NT** -emprega a criptografia de 128 bits.</li><li>**Aes256-SHA1** -emprega a criptografia aes256-CTS-HMAC-SHA1-96.</li><li>   **Aes128-SHA1** -emprega a criptografia aes128-CTS-HMAC-SHA1-96.</li><li>**Todos** -Estados que todos os tipos de criptografia com suporte podem ser usados.</li></ul><p>**Observação:** Como as configurações padrão se baseiam em versões mais antigas do MIT, você sempre deve usar o `/crypto` parâmetro. |
+| /crypto `{DES-CBC-CRC|DES-CBC-MD5|RC4-HMAC-NT|AES256-SHA1|AES128-SHA1|All}` | Especifica as chaves que são geradas no arquivo keytab:<ul><li>**Des-CBC-CRC** -usado para compatibilidade.</li><li>**Des-CBC-MD5** -segue mais de acordo com a implementação de MIT e é usada para compatibilidade.</li><li>**RC4-HMAC-NT** -emprega a criptografia de 128 bits.</li><li>**Aes256-SHA1** -emprega a criptografia aes256-CTS-HMAC-SHA1-96.</li><li>   **Aes128-SHA1** -emprega a criptografia aes128-CTS-HMAC-SHA1-96.</li><li>**Todos** -Estados que todos os tipos de criptografia com suporte podem ser usados.</li></ul><p>**Observação:** Como as configurações padrão se baseiam em versões mais antigas do MIT, você sempre deve usar o `/crypto` parâmetro. |
 | /itercount | Especifica a contagem de iterações que é usada para criptografia AES. O padrão ignora **itercount** para criptografia não AES e define a criptografia aes como 4.096. |
-| /ptype`{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | Especifica o tipo de entidade de segurança.<ul><li>**KRB5_NT_PRINCIPAL** -o tipo de entidade de segurança geral (recomendado).</li><li>**KRB5_NT_SRV_INST** -a instância do serviço de usuário</li><li>  **KRB5_NT_SRV_HST** -a instância do serviço de host</li></ul> |
-| /kvno`<keyversionnum>` | Especifica o número de versão da chave. O valor padrão é 1. |
-| /answer`{-|+}` | Define o modo de resposta de segundo plano:<ul><li>**-** Respostas redefinem prompts de **senha automaticamente sem.**</li><li>**+** Respostas redefinem prompts de senha automaticamente com **Sim**.</li></ul> |
+| /ptype `{KRB5_NT_PRINCIPAL|KRB5_NT_SRV_INST|KRB5_NT_SRV_HST}` | Especifica o tipo de entidade de segurança.<ul><li>**KRB5_NT_PRINCIPAL** -o tipo de entidade de segurança geral (recomendado).</li><li>**KRB5_NT_SRV_INST** -a instância do serviço de usuário</li><li>  **KRB5_NT_SRV_HST** -a instância do serviço de host</li></ul> |
+| /kvno `<keyversionnum>` | Especifica o número de versão da chave. O valor padrão é 1. |
+| /answer `{-|+}` | Define o modo de resposta de segundo plano:<ul><li>**-** Respostas redefinem prompts de **senha automaticamente sem.**</li><li>**+** Respostas redefinem prompts de senha automaticamente com **Sim**.</li></ul> |
 | /target | Define qual controlador de domínio usar. O padrão é que o controlador de domínio seja detectado, com base no nome principal. Se o nome do controlador de domínio não for resolvido, uma caixa de diálogo solicitará um controlador de domínio válido. |
 | /rawsalt | força o ktpass a usar o algoritmo rawsalt ao gerar a chave. Esse parâmetro é opcional. |
 | `{-|+}dumpsalt` | A saída desse parâmetro mostra o algoritmo parâmetro de Salt do MIT que está sendo usado para gerar a chave. |

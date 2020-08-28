@@ -1,18 +1,18 @@
 ---
 title: ping
 description: Artigo de referência para o comando ping, que verifica a conectividade de rede.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 49272671-2eec-4fa5-881f-65c24cfbef52
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 999e8e80c85a85e2bbc2f933e1985c732ae85328
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 14f9ca67d2b4c8bd19c8ef9c67a464bc4e038387
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884992"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035264"
 ---
 # <a name="ping"></a>ping
 
@@ -37,18 +37,18 @@ ping [/t] [/a] [/n <count>] [/l <size>] [/f] [/I <TTL>] [/v <TOS>] [/r <count>] 
 |--|--|
 | /t | Especifica que o ping continua enviando mensagens de solicitação de eco para o destino até que seja interrompido. Para interromper e exibir estatísticas, pressione CTRL + ENTER. Para interromper e sair deste comando, pressione CTRL + C. |
 | /a | Especifica que a resolução de nome inversa é executada no endereço IP de destino. Se isso for bem-sucedido, o ping exibirá o nome do host correspondente. |
-| opção`<count>` | Especifica o número de mensagens de solicitação de eco enviadas. O padrão é 4. |
-| /l`<size>` | Especifica o comprimento, em bytes, do campo de **dados** nas mensagens de solicitação de eco enviadas. O padrão é 32. O tamanho máximo é 65.527. |
+| opção `<count>` | Especifica o número de mensagens de solicitação de eco enviadas. O padrão é 4. |
+| /l `<size>` | Especifica o comprimento, em bytes, do campo de **dados** nas mensagens de solicitação de eco enviadas. O padrão é 32. O tamanho máximo é 65.527. |
 | /f | Especifica que as mensagens de solicitação de eco são enviadas com o sinalizador não **fragmentar** no cabeçalho IP definido como 1 (disponível somente em IPv4). A mensagem de solicitação de eco não pode ser fragmentada por roteadores no caminho para o destino. Esse parâmetro é útil para solucionar problemas de PMTU (unidade máxima de transmissão) do caminho. |
-| /I`<TTL>` | Especifica o valor do campo TTL no cabeçalho IP para mensagens de solicitação de eco enviadas. O padrão é o valor de TTL padrão para o host. O *TTL* máximo é 255. |
-| /v`<TOS>` | Especifica o valor do campo tipo de serviço (TOS) no cabeçalho IP para mensagens de solicitação de eco enviadas (disponível somente em IPv4). O padrão é 0. *Tos* é especificado como um valor decimal de 0 a 255. |
-| /r`<count>` | Especifica que a opção de **rota de registro** no cabeçalho IP é usada para registrar o caminho usado pela mensagem de solicitação de eco e a mensagem de resposta de eco correspondente (disponível somente em IPv4). Cada salto no caminho usa uma entrada na opção de **rota de registro** . Se possível, especifique uma *contagem* que seja igual ou maior que o número de saltos entre a origem e o destino. A *contagem* deve ser no mínimo 1 e no máximo 9. |
-| /s`<count>` | Especifica que a opção de **carimbo de data/hora da Internet** no cabeçalho IP é usada para registrar a hora de chegada da mensagem de solicitação de eco e a mensagem de resposta de eco correspondente para cada salto. A *contagem* deve ser no mínimo 1 e no máximo 4. Isso é necessário para endereços de destino de link local. |
-| /j`<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem flexível** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
-| /k`<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem estrita** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem estrito, o próximo destino intermediário deve ser diretamente acessível (deve ser um vizinho em uma interface do roteador). O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
-| /w`<timeout>` | Especifica a quantidade de tempo, em milissegundos, para aguardar a mensagem de resposta de eco que corresponde a uma determinada mensagem de solicitação de eco a ser recebida. Se a mensagem de resposta de eco não for recebida dentro do tempo limite, a mensagem de erro "tempo limite de solicitação expirado" será exibida. O tempo limite padrão é 4000 (4 segundos). |
+| /I `<TTL>` | Especifica o valor do campo TTL no cabeçalho IP para mensagens de solicitação de eco enviadas. O padrão é o valor de TTL padrão para o host. O *TTL* máximo é 255. |
+| /v `<TOS>` | Especifica o valor do campo tipo de serviço (TOS) no cabeçalho IP para mensagens de solicitação de eco enviadas (disponível somente em IPv4). O padrão é 0. *Tos* é especificado como um valor decimal de 0 a 255. |
+| /r `<count>` | Especifica que a opção de **rota de registro** no cabeçalho IP é usada para registrar o caminho usado pela mensagem de solicitação de eco e a mensagem de resposta de eco correspondente (disponível somente em IPv4). Cada salto no caminho usa uma entrada na opção de **rota de registro** . Se possível, especifique uma *contagem* que seja igual ou maior que o número de saltos entre a origem e o destino. A *contagem* deve ser no mínimo 1 e no máximo 9. |
+| /s `<count>` | Especifica que a opção de **carimbo de data/hora da Internet** no cabeçalho IP é usada para registrar a hora de chegada da mensagem de solicitação de eco e a mensagem de resposta de eco correspondente para cada salto. A *contagem* deve ser no mínimo 1 e no máximo 4. Isso é necessário para endereços de destino de link local. |
+| /j `<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem flexível** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem flexível, os destinos intermediários sucessivos podem ser separados por um ou vários roteadores. O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
+| /k `<hostlist>` | Especifica que as mensagens de solicitação de eco usam a opção de **rota de origem estrita** no cabeçalho IP com o conjunto de destinos intermediários especificado em *hostlist* (disponível somente em IPv4). Com o roteamento de origem estrito, o próximo destino intermediário deve ser diretamente acessível (deve ser um vizinho em uma interface do roteador). O número máximo de endereços ou nomes na lista de hosts é 9. A lista de hosts é uma série de endereços IP (em notação decimal pontilhada) separados por espaços. |
+| /w `<timeout>` | Especifica a quantidade de tempo, em milissegundos, para aguardar a mensagem de resposta de eco que corresponde a uma determinada mensagem de solicitação de eco a ser recebida. Se a mensagem de resposta de eco não for recebida dentro do tempo limite, a mensagem de erro "tempo limite de solicitação expirado" será exibida. O tempo limite padrão é 4000 (4 segundos). |
 | /R | Especifica que o caminho de viagem de ida e volta é rastreado (disponível somente em IPv6). |
-| /S`<Srcaddr>` | Especifica o endereço de origem a ser usado (disponível somente em IPv6). |
+| /S `<Srcaddr>` | Especifica o endereço de origem a ser usado (disponível somente em IPv6). |
 | /4 | Especifica que o IPv4 é usado para executar ping. Esse parâmetro não é necessário para identificar o host de destino com um endereço IPv4. Ele só é necessário para identificar o host de destino por nome. |
 | /6 | Especifica que o IPv6 é usado para executar ping. Esse parâmetro não é necessário para identificar o host de destino com um endereço IPv6. Ele só é necessário para identificar o host de destino por nome. |
 | `<targetname>` | Especifica o nome do host ou o endereço IP do destino. |

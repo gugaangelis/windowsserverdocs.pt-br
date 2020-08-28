@@ -1,18 +1,18 @@
 ---
 title: dir
 description: Artigo de referência para o comando dir, que exibe uma lista de arquivos e subdiretórios de um diretório.
-ms.topic: article
+ms.topic: reference
 ms.assetid: edcbf69b-eaa4-466e-b210-3dd8892f4d93
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51d36f0f5498c5c853df2d6663f52411037c13d4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b3a37675d0ac93274c62792478267cfa25db375a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890984"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028344"
 ---
 # <a name="dir"></a>dir
 
@@ -57,11 +57,11 @@ dir [<drive>:][<path>][<filename>] [...] [/p] [/q] [/w] [/d] [/a[[:]<attributes>
 
 - Você pode usar o caractere curinga, **&#42;**, para substituir qualquer cadeia de caracteres, por exemplo:
 
-  - `dir *.txt`lista todos os arquivos no diretório atual com extensões que começam com. txt, como. txt,. txt1,. txt_old.
+  - `dir *.txt` lista todos os arquivos no diretório atual com extensões que começam com. txt, como. txt,. txt1,. txt_old.
 
-  - `dir read *.txt`lista todos os arquivos no diretório atual que começam com leitura e com extensões que começam com. txt, como. txt,. txt1 ou. txt_old.
+  - `dir read *.txt` lista todos os arquivos no diretório atual que começam com leitura e com extensões que começam com. txt, como. txt,. txt1 ou. txt_old.
 
-  - `dir read *.*`lista todos os arquivos no diretório atual que começam com ler com qualquer extensão.
+  - `dir read *.*` lista todos os arquivos no diretório atual que começam com ler com qualquer extensão.
 
   O curinga asterisco sempre usa mapeamento de nome de arquivo curto, portanto, você pode obter resultados inesperados. Por exemplo, o diretório a seguir contém dois arquivos (t.txt2 e t97.txt):
 

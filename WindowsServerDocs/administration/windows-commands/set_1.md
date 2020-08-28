@@ -1,18 +1,18 @@
 ---
 title: set
 description: Artigo de referência para Set, que exibe, define ou remove cmd.exe variáveis de ambiente.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 5fdd60d6-addf-4574-8c92-8aa53fa73d76
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 64d9668e3ff0b0b366a2009cdaa4f2eaf52edfa0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 30240d4ae286c472cfbce932201435097df33ddb
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882547"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023430"
 ---
 # <a name="set"></a>set
 

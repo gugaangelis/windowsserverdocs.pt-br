@@ -1,18 +1,18 @@
 ---
 title: findstr
 description: Artigo de referência para o comando Findstr, que procura padrões de texto em arquivos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c2d803fb-4cd2-46a1-a1b7-6f5e0249c418
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1b1ef8139208397361a8c787686d2bc4c3b5ab43
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: bdd268c3b2ddde1b42527968252770e6903bacc4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890238"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035124"
 ---
 # <a name="findstr"></a>findstr
 
@@ -75,9 +75,9 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<file>] 
     | `<string` | **Iniciando posição do Word** -início da palavra. |
     | `string>` | **Posição da palavra final** -fim da palavra. |
 
-    Os caracteres especiais na sintaxe de expressão regular têm o máximo de energia ao usá-los juntos. Por exemplo, use a combinação do caractere curinga ( `.` ) e o caractere REPEAT ( `*` ) para corresponder a qualquer cadeia de caracteres:`.*`
+    Os caracteres especiais na sintaxe de expressão regular têm o máximo de energia ao usá-los juntos. Por exemplo, use a combinação do caractere curinga ( `.` ) e o caractere REPEAT ( `*` ) para corresponder a qualquer cadeia de caracteres: `.*`
 
-    Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres que comece com *b* e terminando com *ing*:`b.*ing`
+    Use a expressão a seguir como parte de uma expressão maior para corresponder a qualquer cadeia de caracteres que comece com *b* e terminando com *ing*: `b.*ing`
 
 - Para pesquisar várias cadeias de caracteres em um conjunto de arquivos, você deve criar um arquivo de texto que contenha cada critério de pesquisa em uma linha separada.
 

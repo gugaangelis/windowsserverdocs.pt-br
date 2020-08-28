@@ -1,18 +1,18 @@
 ---
 title: bitsadmin
 description: Artigo de referência para o comando Bitsadmin, que é uma ferramenta de linha de comando usada para criar, baixar ou carregar trabalhos e monitorar seu progresso.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4853036e-1df8-45ad-8be6-cfb097b8dd27
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4bfaa79720dafdbed62a704b20940143b82390ac
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3744d45265b0b0ae7143d1e37c5e53511a23e26a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880751"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034605"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 

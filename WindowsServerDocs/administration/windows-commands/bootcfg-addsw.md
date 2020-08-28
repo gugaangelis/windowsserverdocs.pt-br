@@ -1,18 +1,18 @@
 ---
 title: bootcfg addsw
 description: Artigo de referência para o comando Bootcfg addsw, que adiciona opções de carregamento do sistema operacional para uma entrada de sistema operacional especificada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: d8389293-ecd9-42f0-b84b-b9ead4cf52e6
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 549bfec84cb45baec309d8ae7043be39f5d31a3a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e47d9001dc9b2bac7f08036f15408a1e35aaf075
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880747"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034544"
 ---
 # <a name="bootcfg-addsw"></a>bootcfg addsw
 

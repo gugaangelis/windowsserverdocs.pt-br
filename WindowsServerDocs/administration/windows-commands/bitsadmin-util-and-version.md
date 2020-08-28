@@ -1,18 +1,18 @@
 ---
 title: bitsadmin util e version
 description: Artigo de referência para o Bitsadmin util e o comando Version, que exibe a versão do serviço BITS.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 98f17328-dfbd-4cbb-93c1-b8d424bc3f0a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3490fe4e3eaa217b81287d8a2ed38a6fdb98279
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f033f47f2a90d334512b9eb023eb6a7be44bcfc3
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880797"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034664"
 ---
 # <a name="bitsadmin-util-and-version"></a>bitsadmin util e version
 

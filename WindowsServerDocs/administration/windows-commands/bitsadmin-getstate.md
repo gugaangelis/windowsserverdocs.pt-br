@@ -1,18 +1,18 @@
 ---
 title: bitsadmin getstate
 description: Artigo de referência para o comando GetState do Bitsadmin, que recupera o estado do trabalho especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1252d6cf-14ca-44df-beb2-930ff011f297
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38ad3cedbd4dc9b0cc3d5e855ea4fabd1736b6aa
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7267afde1062c1b8d3383ea92f02d18728650136
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87893848"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034814"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
@@ -41,7 +41,7 @@ Os valores de saída retornados podem ser:
 | Transferindo | O BITS está transferindo dados. |
 | Transferidos | O BITS transferiu com êxito todos os arquivos no trabalho. |
 | Suspenso | O trabalho está em pausa. |
-| Erro | Ocorreu um erro não recuperável; a transferência não será repetida. |
+| Erro do | Ocorreu um erro não recuperável; a transferência não será repetida. |
 | Transient_Error | Ocorreu um erro recuperável; a transferência é repetida quando o atraso mínimo de repetição expira. |
 | Confirmado | O trabalho foi concluído. |
 | Canceled | O trabalho foi cancelado. |

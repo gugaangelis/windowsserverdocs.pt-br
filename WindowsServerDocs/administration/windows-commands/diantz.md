@@ -1,18 +1,18 @@
 ---
 title: diantz
 description: Artigo de referência para o comando diantz, que empacota arquivos existentes em um arquivo de gabinete (. cab).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 218ed5d7-1203-4d68-ad9b-65cdd022d54f
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 108ab8df27faf6794e5ba77b725daf2944ecc240
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e4fbff07a808c9f7ebf96920f52b7f65611f270c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891013"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028354"
 ---
 # <a name="diantz"></a>diantz
 
@@ -35,7 +35,7 @@ diantz [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 | `<destination>` | Nome do arquivo para fornecer o arquivo compactado. Se omitido, o último caractere do nome do arquivo de origem será substituído por um sublinhado (_) e usado como o destino. |
 | /f `<directives_file>` | Um arquivo com diretivas **diantz** (pode ser repetido). |
 | /d var =`<value>` | Define a variável com o valor especificado. |
-| /l`<dir>` | Local para colocação de destino (o padrão é o diretório atual). |
+| /l `<dir>` | Local para colocação de destino (o padrão é o diretório atual). |
 | /v [ `<n>` ] | Definir nível de detalhamento de depuração (0 = nenhum,..., 3 = completo). |
 | /? | Exibe a ajuda no prompt de comando. |
 

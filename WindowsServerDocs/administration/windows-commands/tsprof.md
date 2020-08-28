@@ -1,18 +1,18 @@
 ---
 title: tsprof
 description: Artigo de referência para tsprof, que copia as informações de configuração Serviços de Área de Trabalho Remota usuário de um usuário para outro.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 43a9c986a58a28b8de8110789be99f157be9fb66
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f676b1d11586d413e544d451043da242861083e1
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896668"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023390"
 ---
 # <a name="tsprof"></a>tsprof
 
@@ -23,10 +23,8 @@ As informações de configuração de usuário Serviços de Área de Trabalho Re
 
 **tsprof** também pode definir o caminho do perfil para um usuário.
 
-
-
 > [!NOTE]
-> No Windows Server 2008 R2, os Serviços de Terminal foram renomeados como Serviços de Área de Trabalho Remota. Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
+> Para descobrir as novidades da versão mais recente, consulte [novidades do serviços de área de trabalho remota no Windows server 2012](/previous-versions/orphan-topics/ws.11/hh831527(v=ws.11)) na biblioteca do TechNet do Windows Server.
 
 ## <a name="syntax"></a>Sintaxe
 ```

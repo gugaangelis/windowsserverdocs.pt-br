@@ -1,18 +1,18 @@
 ---
 title: typeperf
 description: Artigo de referência para Typeperf, que grava dados de desempenho na janela de comando ou em um arquivo de log.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0c7ca89a-03b3-4626-afcf-ef8565e90043
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38a459fb1c52c627d05f3d19fb8f2e8055a89338
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 856279c96a8c1904dcf182dbf613447e02291330
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896649"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023380"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -41,15 +41,15 @@ typeperf -qx [object] [options]
 |                   Opção                   |                                                         Descrição                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               Exibe a ajuda contextual.                                               |
-| -f\<CSV&verbar;TSV&verbar;BIN&verbar;SQL> |                                    Especifica o formato do arquivo de saída. O padrão é CSV.                                     |
-|              -CF\<filename>               |              Especifica um arquivo que contém uma lista de contadores de desempenho a serem monitorados, com um contador por linha.               |
+| -f \<CSV&verbar;TSV&verbar;BIN&verbar;SQL> |                                    Especifica o formato do arquivo de saída. O padrão é CSV.                                     |
+|              -CF \<filename>               |              Especifica um arquivo que contém uma lista de contadores de desempenho a serem monitorados, com um contador por linha.               |
 |             -si < [[hh:] mm:] SS>             |                                  Especifica o intervalo de amostragem. O padrão é um segundo.                                   |
-|               -o\<filename>               |     Especifica o caminho para o arquivo de saída ou o banco de dados SQL. O padrão é STDOUT (gravado na janela de comando).      |
+|               -o \<filename>               |     Especifica o caminho para o arquivo de saída ou o banco de dados SQL. O padrão é STDOUT (gravado na janela de comando).      |
 |                -q [objeto]                 | Exibe uma lista de contadores instalados (sem instâncias). Para listar os contadores de um objeto, inclua o nome do objeto. \*\*\*EXEMPLO |
 |                -QX [objeto]                |        Exibe uma lista de contadores instalados com instâncias. Para listar os contadores de um objeto, inclua o nome do objeto.        |
-|               -SC\<samples>               |             Especifica o número de amostras a serem coletadas. O padrão é coletar dados até que CTRL + C seja pressionado.              |
-|            -configuração\<filename>             |                                    Especifica um arquivo de configurações contendo opções de comando.                                     |
-|            -s\<computer_name>             |                   Especifica um computador remoto para monitorar se nenhum computador for especificado no caminho do contador.                    |
+|               -SC \<samples>               |             Especifica o número de amostras a serem coletadas. O padrão é coletar dados até que CTRL + C seja pressionado.              |
+|            -configuração \<filename>             |                                    Especifica um arquivo de configurações contendo opções de comando.                                     |
+|            -s \<computer_name>             |                   Especifica um computador remoto para monitorar se nenhum computador for especificado no caminho do contador.                    |
 |                     -y                     |                                        Responda sim a todas as perguntas sem avisar.                                        |
 
 ## <a name="examples"></a>Exemplos

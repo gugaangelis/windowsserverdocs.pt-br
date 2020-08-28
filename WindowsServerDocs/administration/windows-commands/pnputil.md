@@ -1,18 +1,18 @@
 ---
 title: pnputil
 description: Artigo de referência para o comando pnputil, que adiciona pacotes de driver, remove pacotes de driver e lista pacotes de driver que estão no repositório de drivers, usando o utilitário pnputil.exe.
-ms.topic: article
+ms.topic: reference
 ms.assetid: fab686b8-09d3-4f6c-afa2-630e6036f44c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 4bd4a5ed4dcadb1011dfbf28647ba4f223249a34
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: adc465cfd2d94c2959b38af32104c7f829067cb8
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884927"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035234"
 ---
 # <a name="pnputil"></a>pnputil
 

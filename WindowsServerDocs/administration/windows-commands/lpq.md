@@ -1,18 +1,18 @@
 ---
 title: lpq
 description: Artigo de referência para o comando lpq, que exibe o status de uma fila de impressão em um computador que executa o LPD (daemon de impressora de linha).
-ms.topic: article
+ms.topic: reference
 ms.assetid: bb6abcc4-310a-4fa4-927b-4084b62ca02e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 550e94455ed7c57e723edb6608c42820e81fba0b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d495923b94884f0d4538839fcd3c1193e73ee938
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887066"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023700"
 ---
 # <a name="lpq"></a>lpq
 
@@ -30,8 +30,8 @@ lpq -S <servername> -P <printername> [-l]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| -S`<servername>` | Especifica (por nome ou endereço IP) o computador ou o dispositivo de compartilhamento de impressora que hospeda a fila de impressão LPD com um status que você deseja exibir. Esse parâmetro é necessário e deve estar em letras maiúsculas. |
-| -P`<Printername>` | Especifica (por nome) a impressora para a fila de impressão com um status que você deseja exibir. Esse parâmetro é necessário e deve estar em letras maiúsculas. |
+| -S `<servername>` | Especifica (por nome ou endereço IP) o computador ou o dispositivo de compartilhamento de impressora que hospeda a fila de impressão LPD com um status que você deseja exibir. Esse parâmetro é necessário e deve estar em letras maiúsculas. |
+| -P `<Printername>` | Especifica (por nome) a impressora para a fila de impressão com um status que você deseja exibir. Esse parâmetro é necessário e deve estar em letras maiúsculas. |
 | -l | Especifica que você deseja exibir detalhes sobre o status da fila de impressão. |
 | /? | Exibe a ajuda no prompt de comando. |
 

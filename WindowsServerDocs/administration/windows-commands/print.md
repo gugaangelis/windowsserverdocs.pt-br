@@ -1,18 +1,18 @@
 ---
 title: print
 description: Artigo de referência para o comando Print, que envia um arquivo de texto para uma impressora.
-ms.topic: article
+ms.topic: reference
 ms.assetid: aa2325d5-a993-4ed3-b996-255165452db8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: be955faa38af6a81ce5f61c255828470d906528c
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ecd679a3891a073bd73c0526c395dc67c2cf0933
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884834"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89035214"
 ---
 # <a name="print"></a>print
 

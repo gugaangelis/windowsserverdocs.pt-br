@@ -1,18 +1,18 @@
 ---
 title: cor
 description: Artigo de referência para o comando Color, que altera as cores de primeiro e segundo plano na janela do prompt de comando da sessão atual.
-ms.topic: article
+ms.topic: reference
 ms.assetid: f5b67131-d196-45ec-a3f9-b5d9f091fd86
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2534273eebe7f8596b0e8f2ab3c90cfdcf824d00
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 3ce7aa8e927e3796917d2720495f394636d9c240
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87892676"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028454"
 ---
 # <a name="color"></a>cor
 
@@ -36,7 +36,7 @@ Em que:
 
 A tabela a seguir lista os dígitos hexadecimais válidos que você pode usar como valores para `<b>` e `<f>` :
 
-| Valor | Color |
+| Valor | Cor |
 | ----- | ----- |
 | 0 | Preto |
 | 1 | Azul |

@@ -1,18 +1,18 @@
 ---
 title: dfsdiag testdfsintegrity
 description: Artigo de referência para o comando Dfsdiag testdfsintegrity, que verifica a integridade do namespace do Sistema de Arquivos Distribuído (DFS).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 173ee832-26e1-4ec8-a23a-38a7d6229ac3
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da30b85acfccee47f976a932c71c2a8906f45a4f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7bcfbe7f35965322a347651133a90e6806a5bb95
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891149"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028414"
 ---
 # <a name="dfsdiag-testdfsintegrity"></a>dfsdiag testdfsintegrity
 
@@ -36,7 +36,7 @@ dfsdiag /testdfsintegrity /DFSroot: <DFS root path> [/recurse] [/full]
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| /DFSroot:`<DFS root path>` | O namespace do DFS para diagnosticar. |
+| /DFSroot: `<DFS root path>` | O namespace do DFS para diagnosticar. |
 | /recurse | Executa o teste, incluindo qualquer Interlink de namespace. |
 | /full | Verifica a consistência do compartilhamento e das ACLs de NTFS, juntamente com a configuração do lado do cliente em todos os destinos de pasta. Ele também verifica se a propriedade online está definida. |
 

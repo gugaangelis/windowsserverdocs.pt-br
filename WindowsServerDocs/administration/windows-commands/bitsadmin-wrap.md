@@ -1,18 +1,18 @@
 ---
 title: bitsadmin wrap
 description: Artigo de referência para o comando Bitsadmin Wrap, que encapsula qualquer linha de texto de saída que se estende além da borda mais à direita da janela de comando para a próxima linha.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 14e57522-539d-4621-ad15-09f7a44ccab7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d17678ec735f9e7d6319368b0b35a67b47ea576
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 14ea78a09af0ba4dedce8438c5ec80cc39fcec9a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87880762"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89034634"
 ---
 # <a name="bitsadmin-wrap"></a>bitsadmin wrap
 

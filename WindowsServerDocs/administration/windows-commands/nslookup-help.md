@@ -1,18 +1,18 @@
 ---
 title: nslookup help
 description: Artigo de referência do comando de ajuda do nslookup, que exibe o conteúdo da ajuda de subcomando.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 20ffe3e4-4cf3-4bc4-9392-a6be4ccd2c23
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc881e60ae123484f4dc8609db16adbc729cf28e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b46909ddc2e98aa305c3c7a006290ea754358b7c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885875"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89023490"
 ---
 # <a name="nslookup-help"></a>nslookup help
 

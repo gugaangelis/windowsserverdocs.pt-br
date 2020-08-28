@@ -1,18 +1,18 @@
 ---
 title: scripts e exemplos do DiskPart
 description: Artigo de referência para scripts do DiskPart e exemplos sobre como automatizar tarefas relacionadas ao disco, como a criação de volumes ou a conversão de discos em discos dinâmicos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 319c0795-11df-47c8-b203-eadb0577ee0d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1ff62c18c567af3ab064683663f5112090250307
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 94dbcba1ff88cc265e8006511bb3831ac7d12831
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87890934"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89028274"
 ---
 # <a name="diskpart-scripts-and-examples"></a>scripts e exemplos do DiskPart
 
