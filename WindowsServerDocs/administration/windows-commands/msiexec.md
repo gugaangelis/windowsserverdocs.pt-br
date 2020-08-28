@@ -1,18 +1,18 @@
 ---
 title: msiexec
 description: Artigo de referência para o comando msiexec, que fornece os meios para instalar, modificar e executar operações no Windows Installer da linha de comando.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 122eb0ce-ecbc-4909-a52a-15c3413619af
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a72798d7bdd94b3315d54e866e78145af4db1d79
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1255cf26ac4dd3f9c28189ce7df76d63c875ee64
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886171"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025280"
 ---
 # <a name="msiexec"></a>msiexec
 
@@ -229,6 +229,6 @@ Você pode definir propriedades públicas por meio deste comando. Para obter inf
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
-- [Opções de linha de comandoMsiexec.exe](/windows/win32/msi/command-line-options)
+- [ Opções de linha de comandoMsiexec.exe](/windows/win32/msi/command-line-options)
 
 - [Opções de linha de comando do instalador padrão](/windows/win32/msi/standard-installer-command-line-options)

@@ -1,18 +1,18 @@
 ---
 title: reg unload
 description: Artigo de referência para o comando reg Unload, que remove uma seção do registro carregado usando a operação reg Load.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1d07791d-ca27-454e-9797-27d7e84c5048
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d2ea6f5981ea613ae5e0d9d4dcae155464b505a
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e4f0ba24fd2d6dead3ff4f224584b56adbfd8425
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87883983"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024990"
 ---
 # <a name="reg-unload"></a>reg unload
 

@@ -1,18 +1,18 @@
 ---
 title: ksetup listrealmflags
 description: Artigo de referência para o comando ksetup listrealmflags, que lista os sinalizadores de realm disponíveis que podem ser relatados pelo ksetup.
-ms.topic: article
+ms.topic: reference
 ms.assetid: aa96e4da-6b98-4c05-bccf-73cbf33258c2
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e69b91c8fe5ca7bddecb12a72a1e8ef31bec3dd
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d7c522449053a18cdd1e2a9e533dbce5d6e9f17c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887857"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025470"
 ---
 # <a name="ksetup-listrealmflags"></a>ksetup listrealmflags
 
@@ -30,7 +30,7 @@ ksetup /listrealmflags
 
 | Valor | Sinalizador de realm | Descrição |
 | ----- | ---------- | ----------- |
-| 0xF | Todos | Todos os sinalizadores de realm estão definidos. |
+| 0xF | Tudo | Todos os sinalizadores de realm estão definidos. |
 | 0x00 | Nenhum | Nenhum sinalizador de realm definido, e nenhum recurso adicional está habilitado. |
 | 0x01 | sendaddress | O endereço IP será incluído dentro dos tíquetes de concessão de tíquetes. |
 | 0x02 | tcpsupported | Tanto o protocolo TCP quanto o UDP (User Datagram Protocol) têm suporte nesse realm. |

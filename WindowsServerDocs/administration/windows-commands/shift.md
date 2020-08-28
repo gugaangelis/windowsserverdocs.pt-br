@@ -1,18 +1,18 @@
 ---
 title: shift
 description: Artigo de referência para Shift, que altera a posição de parâmetros de lote em um arquivo em lotes.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b56574e8-570a-4cc9-bbac-1b94fbf6a47a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 985c1271a1da8f486e2313ba9aeb266803664b93
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 21e27db00b76945fa24b4e46e4f08c74d090d49f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882389"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024800"
 ---
 # <a name="shift"></a>shift
 
@@ -30,7 +30,7 @@ shift [/n <N>]
 
 |Parâmetro|Descrição|
 |---------|-----------|
-|opção\<N>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
+|opção \<N>|Especifica o início da mudança no argumento *N*-ésimo, em que *N* é qualquer valor de 0 a 8. Requer extensões de comando, que são habilitadas por padrão.|
 |/?|Exibe a ajuda no prompt de comando.|
 
 ## <a name="remarks"></a>Comentários

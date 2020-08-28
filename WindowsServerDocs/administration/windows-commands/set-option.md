@@ -1,18 +1,18 @@
 ---
 title: Opção Set
 description: Artigo de referência para a opção set, que define as opções para a criação da cópia de sombra.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 4d8d4921-9fdd-4a3c-bb0f-9df5458c4b84
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 148efa02509678de65af7b2555094fbcb2a3fb55
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 0569e93ee5c732369b9bc07e4452d27558412b81
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882599"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036504"
 ---
 # <a name="set-option"></a>Opção Set
 

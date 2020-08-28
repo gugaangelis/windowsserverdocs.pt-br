@@ -1,18 +1,18 @@
 ---
 title: setx
 description: Artigo de referência para setx, que cria ou modifica variáveis de ambiente no ambiente do usuário ou do sistema, sem a necessidade de programação ou script.
-ms.topic: article
+ms.topic: reference
 ms.assetid: ef37482f-f8a8-4765-951a-2518faac3f44
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edab4ce56d3e43e26c1d14b32403a2954cbbce6
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 256f19453edd0c211215a0e161d7d60098ae9cc9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882524"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024890"
 ---
 # <a name="setx"></a>setx
 
@@ -32,18 +32,18 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 |         Parâmetro          |                                                                                                                                              Descrição                                                                                                                                              |
 |----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       /s\<Computer>       |                                                                                  Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O valor padrão é o nome do computador local.                                                                                  |
+|       /s \<Computer>       |                                                                                  Especifica o nome ou o endereço IP de um computador remoto. Não use barras invertidas. O valor padrão é o nome do computador local.                                                                                  |
 | t\<Domain>\]<User name> |                                                                                           Executa o script com as credenciais da conta de usuário especificada. O valor padrão é as permissões do sistema.                                                                                            |
 |      /p [ \<Password> ]      |                                                                                                         Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                         |
 |        \<Variable>         |                                                                                                                 Especifica o nome da variável de ambiente que você deseja definir.                                                                                                                  |
 |          \<Value>          |                                                                                                                Especifica o valor para o qual você deseja definir a variável de ambiente.                                                                                                                 |
-|         /k\<Path>         | Especifica que a variável é definida com base nas informações de uma chave do registro. O p*Ho* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o seguinte caminho:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|         /k \<Path>         | Especifica que a variável é definida com base nas informações de uma chave do registro. O p*Ho* usa a seguinte sintaxe:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por exemplo, você pode especificar o seguinte caminho:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
 |      /f \<File name>       |                                                                                                                               Especifica o arquivo que você deseja usar.                                                                                                                                |
 |        /a \<X> ,<Y>         |                                                                                                                    Especifica coordenadas absolutas e deslocamento como parâmetros de pesquisa.                                                                                                                    |
 |   /r \<X> , <Y><String>   |                                                                                                            Especifica as coordenadas relativas e o deslocamento da **cadeia de caracteres** como parâmetros de pesquisa.                                                                                                            |
 |             /m             |                                                                                                Especifica a definição da variável no ambiente do sistema. A configuração padrão é o ambiente local.                                                                                                 |
 |             /x             |                                                                                                       Exibe as coordenadas do arquivo, ignorando as opções de linha de comando **/a**, **/r**e **/d** .                                                                                                        |
-|      /d\<Delimiters>      |                    Especifica delimitadores como **,** ou **\\** a serem usados, além dos quatro delimitadores internos — espaço, tabulação, Enter e avanço de alimentação. Os delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo delimitadores internos.                    |
+|      /d \<Delimiters>      |                    Especifica delimitadores como **,** ou **\\** a serem usados, além dos quatro delimitadores internos — espaço, tabulação, Enter e avanço de alimentação. Os delimitadores válidos incluem qualquer caractere ASCII. O número máximo de delimitadores é 15, incluindo delimitadores internos.                    |
 |             /?             |                                                                                                                                 Exibe a ajuda no prompt de comando.                                                                                                                                  |
 
 ## <a name="remarks"></a>Comentários

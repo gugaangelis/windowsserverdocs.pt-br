@@ -1,18 +1,18 @@
 ---
 title: Adicionar dispositivo
 description: Artigo de referência para adicionar dispositivo, que pré-testar um computador nos serviços de domínio Active Directory. Os computadores pré-configurados também são chamados de computadores conhecidos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 1e599cc4-464a-421b-b6bb-c101af154131
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d23e5a2bc69b782e635fa9a47158274796715edf
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 89713dbfa28e552fa78a619bc5f5337d65460f22
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87897013"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024520"
 ---
 # <a name="add-device"></a>Adicionar dispositivo
 

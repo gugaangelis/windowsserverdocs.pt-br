@@ -1,18 +1,18 @@
 ---
 title: atmadm
 description: Artigo de referência para o comando atmadm, que monitora conexões e endereços que são registrados pelo Gerenciador de chamadas atM em uma rede atM (modo de transferência assíncrona).
-ms.topic: article
+ms.topic: reference
 ms.assetid: 37156c2e-c4d4-4fd8-a03d-245fb60bf996
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 608783d393aa3df97d1c1a5f524c1e1e3ed1856e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b79ecdad00872cb67beb38b7cfe35bbd2c45379e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895524"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029264"
 ---
 # <a name="atmadm"></a>atmadm
 

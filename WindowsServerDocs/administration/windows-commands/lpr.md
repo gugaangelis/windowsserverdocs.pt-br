@@ -1,18 +1,18 @@
 ---
 title: lpr
 description: Artigo de referência para o comando LPR, que envia um arquivo para um computador ou dispositivo de compartilhamento de impressora que executa o Serviço LPD (daemon de impressora de linha) em preparação para impressão.
-ms.topic: article
+ms.topic: reference
 ms.assetid: afc8790b-8b52-45c4-acdf-be0ffa9da534
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7a35c71dfed14e48464292f43d74928f437f4be8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 5ab663ab089c6727e7354accda5dc43b2d94c946
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887053"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036334"
 ---
 # <a name="lpr"></a>lpr
 
@@ -30,10 +30,10 @@ lpr [-S <servername>] -P <printername> [-C <bannercontent>] [-J <jobname>] [-o |
 
 | Parâmetro | Descrição |
 | --------- | ----------- |
-| -S`<servername>` | Especifica (por nome ou endereço IP) o computador ou o dispositivo de compartilhamento de impressora que hospeda a fila de impressão LPD com um status que você deseja exibir.  Esse parâmetro é necessário e deve estar em letras maiúsculas. |
-| -P`<printername> `| Especifica (por nome) a impressora para a fila de impressão com um status que você deseja exibir. Para localizar o nome da impressora, abra a pasta **impressoras** . Esse parâmetro é necessário e deve estar em letras maiúsculas. |
-| -C`<bannercontent>` | Especifica o conteúdo a ser impresso na página de faixa do trabalho de impressão. Se você não incluir esse parâmetro, o nome do computador do qual o trabalho de impressão foi enviado aparecerá na página de faixa. Esse parâmetro deve estar em letras maiúsculas. |
-| -J`<jobname>` | Especifica o nome do trabalho de impressão que será impresso na página de faixa. Se você não incluir esse parâmetro, o nome do arquivo que está sendo impresso aparecerá na página de faixa. Esse parâmetro deve estar em letras maiúsculas. |
+| -S `<servername>` | Especifica (por nome ou endereço IP) o computador ou o dispositivo de compartilhamento de impressora que hospeda a fila de impressão LPD com um status que você deseja exibir.  Esse parâmetro é necessário e deve estar em letras maiúsculas. |
+| -P `<printername> `| Especifica (por nome) a impressora para a fila de impressão com um status que você deseja exibir. Para localizar o nome da impressora, abra a pasta **impressoras** . Esse parâmetro é necessário e deve estar em letras maiúsculas. |
+| -C `<bannercontent>` | Especifica o conteúdo a ser impresso na página de faixa do trabalho de impressão. Se você não incluir esse parâmetro, o nome do computador do qual o trabalho de impressão foi enviado aparecerá na página de faixa. Esse parâmetro deve estar em letras maiúsculas. |
+| -J `<jobname>` | Especifica o nome do trabalho de impressão que será impresso na página de faixa. Se você não incluir esse parâmetro, o nome do arquivo que está sendo impresso aparecerá na página de faixa. Esse parâmetro deve estar em letras maiúsculas. |
 | `[-o | -o l]` | Especifica o tipo de arquivo que você deseja imprimir. O parâmetro **-o** especifica que você deseja imprimir um arquivo de texto. O parâmetro **-o l** especifica que você deseja imprimir um arquivo binário (por exemplo, um arquivo PostScript). |
 | -d | Especifica que o arquivo de dados deve ser enviado antes do arquivo de controle. Use esse parâmetro se a sua impressora exigir que o arquivo de dados seja enviado primeiro. Para obter mais informações, consulte a documentação da sua impressora. |
 | -X | Especifica que o comando **LPR** deve ser compatível com o sistema operacional Sun Microsystems (chamado de SunOS) para versões até e incluindo 4.1.4_u1. |

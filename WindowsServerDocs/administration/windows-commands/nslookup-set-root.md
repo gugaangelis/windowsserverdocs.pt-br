@@ -1,18 +1,18 @@
 ---
 title: nslookup set root
 description: Artigo de referência para o comando Set root do nslookup, que altera o nome do servidor raiz que é usado para consultas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8ad5393c-d4fd-4594-8187-576b1dcde60a
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69dd99b00e186a4338ec5c176d8fed128325b89e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 2b59f54445266bd1b4c12b04cf8011fc6a2321b9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885522"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025160"
 ---
 # <a name="nslookup-set-root"></a>nslookup set root
 

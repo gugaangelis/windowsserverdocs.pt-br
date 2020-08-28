@@ -1,18 +1,18 @@
 ---
 title: nslookup set retry
 description: Artigo de referência para o comando Set Retry do nslookup, que define o número de tentativas de obter informações de um servidor especificado.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 615fdfa2-fa29-47a8-8c9e-a6c5b45b3b71
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b4449be93c4587dcb5d1a7990a79352a1fa7b28
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 10f60b48485ae51d727f17a5cfcec8b2af61a743
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87885550"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025170"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 

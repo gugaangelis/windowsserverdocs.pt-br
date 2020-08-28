@@ -1,18 +1,18 @@
 ---
 title: Manage-bde wipefreespace
 description: Artigo de referência para o comando Manage-bde wipefreespace, que apaga o espaço livre no volume, removendo quaisquer fragmentos de dados que possam ter existido no espaço.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b8d83a2a-c5c8-4019-9041-23d1d6abf282
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ca4737eae6c152ac01e674efb3e674c88f5d1538
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 1a2499ef3d4aa290cbcd6a6e3626555032506eb4
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886586"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036514"
 ---
 # <a name="manage-bde-wipefreespace"></a>Manage-bde wipefreespace
 

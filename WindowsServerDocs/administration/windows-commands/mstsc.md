@@ -1,18 +1,18 @@
 ---
 title: mstsc
 description: Artigo de referência para o comando mstsc, que cria conexões com Host da Sessão da Área de Trabalho Remota servidores ou outros computadores remotos, edita um arquivo de configuração existente do Conexão de Área de Trabalho Remota (. RDP) e migra os arquivos de conexão herdados que foram criados com o Gerenciador de conexões do cliente para novos arquivos de conexão. rdp.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abf4824c50b931944c96307f6c9df42e6924b638
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 684ab29a9e1ded85443a2ec2d05ad4f55ec2cd5c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87886154"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025210"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -40,7 +40,7 @@ mstsc.exe /migrate
 | /h`<height>` | Especifica a altura da janela de Área de Trabalho Remota. |
 | /Public | Executa Área de Trabalho Remota no modo público. No modo público, as senhas e os bitmaps não são armazenados em cache. |
 | /span | Faz a correspondência entre a largura e a altura de Área de Trabalho Remota com a área de trabalho virtual local, abrangendo vários monitores, se necessário. |
-| /edit`<connectionfile>` | Abre o arquivo. rdp especificado para edição. |
+| /edit `<connectionfile>` | Abre o arquivo. rdp especificado para edição. |
 | /migrate | Migra os arquivos de conexão herdados que foram criados com o Gerenciador de conexões de cliente para novos arquivos de conexão. rdp. |
 | /? | Exibe a ajuda no prompt de comando. |
 

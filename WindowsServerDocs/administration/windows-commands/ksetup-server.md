@@ -1,18 +1,18 @@
 ---
 title: ksetup server
 description: Artigo de referência para o comando do servidor ksetup, que permite especificar um nome para um computador que executa o sistema operacional Windows, de modo que as alterações feitas pelo comando ksetup atualizem o computador de destino.
-ms.topic: article
+ms.topic: reference
 ms.assetid: e3407111-ac92-457f-aa1f-a04fe9109d59
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2bfa894468ee05b983d8c0122a1738982ef4d909
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 13ee60d6bcf4dfb0e4955aa47f6ecd9b39243a87
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887781"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025380"
 ---
 # <a name="ksetup-server"></a>ksetup server
 

@@ -1,18 +1,18 @@
 ---
 title: recuperar (DiskPart)
 description: Artigo de referência do comando DiskPart Recover, que atualiza o estado de todos os discos em um grupo de discos, tenta recuperar discos em um grupo de discos inválido e ressincroniza volumes espelhados e volumes RAID-5 que têm dados obsoletos.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 8cc3a73d-9456-41a0-b375-2b4cc37c3992
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d768ae658d7ab25e27cd657e9bdf66ff4b754a9b
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8074fa6ce5edb87911d4c2f774cb0402cd6f41d9
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884221"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025090"
 ---
 # <a name="recover-diskpart"></a>recuperar (DiskPart)
 

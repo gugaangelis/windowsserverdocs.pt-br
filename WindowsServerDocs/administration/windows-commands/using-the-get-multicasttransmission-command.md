@@ -1,18 +1,18 @@
 ---
 title: Get-MulticastTransmission
 description: Artigo de referência para Get-MulticastTransmission, que exibe informações sobre a transmissão multicast para uma imagem especificada.
-ms.topic: article
+ms.topic: reference
 ms.assetid: b733737b-1e81-43d4-a058-d6985a613bef
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 883bfb0d462ab87162d6e849947334eae010b0b1
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 9c5ac51a3ae3d17f21e15dafb940df8c020b221e
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896948"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029524"
 ---
 # <a name="get-multicasttransmission"></a>Get-MulticastTransmission
 
@@ -53,7 +53,7 @@ MediaType: instalar|Especifica o tipo de imagem. Observe que essa opção deve s
 |\mediaGroup: <Image group name> ]|Especifica o grupo de imagens que contém a imagem. Se nenhum nome de grupo de imagens for especificado e houver apenas um grupo de imagens no servidor, esse grupo de imagens será usado. Se houver mais de um grupo de imagens no servidor, você deverá usar essa opção para especificar um grupo de imagens.|
 |/Architecture: {x86 &#124; IA64 &#124; x64}|Especifica a arquitetura da imagem de inicialização associada à transmissão. Como é possível ter o mesmo nome de imagem para imagens de inicialização em diferentes arquiteturas, você deve especificar a arquitetura para garantir que a imagem correta seja usada.|
 |[/Filename:<File name>]|Especifica o arquivo que contém a imagem. Se a imagem não puder ser identificada exclusivamente pelo nome, você deverá usar essa opção para especificar o nome do arquivo.|
-|[/Show: clients]<p>ou o<p>[/details: clientes]|Exibe informações sobre os computadores cliente que estão conectados à transmissão multicast.|
+|[/Show: clients]<p>ou<p>[/details: clientes]|Exibe informações sobre os computadores cliente que estão conectados à transmissão multicast.|
 ## <a name="examples"></a>Exemplos
 **Windows Server 2008** Para exibir informações sobre a transmissão de uma imagem chamada vista com o Office, digite um dos seguintes:
 ```

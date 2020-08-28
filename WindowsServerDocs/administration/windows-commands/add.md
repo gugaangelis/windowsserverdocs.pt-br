@@ -1,18 +1,18 @@
 ---
 title: add
 description: Artigo de referência para o comando Add, que adiciona volumes ao conjunto de volumes que devem ser copiados por sombra ou adiciona aliases ao ambiente de alias.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 47efce7a-86d2-4872-ae31-baa108757afd
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ba5f425617fe48d10a900c82fbfcf9c174214f5
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e2a4d8e73799c2e2f2f93af4e85ebbeb6af4c69a
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895583"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029414"
 ---
 # <a name="add"></a>add
 

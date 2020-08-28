@@ -1,18 +1,18 @@
 ---
 title: reg query
 description: Artigo de referência do comando reg query, que retorna uma lista da próxima camada de subchaves e entradas localizadas em uma subchave especificada no registro.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0e6a0d7c-ed9b-4318-833d-33f265a81f39
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c8d841b537137088d95ce2be375ed83e718fca20
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 633928d89059e1b9a9677141011b391ee0d34757
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884053"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025080"
 ---
 # <a name="reg-query"></a>reg query
 
@@ -29,16 +29,16 @@ reg query <keyname> [{/v <Valuename> | /ve}] [/s] [/se <separator>] [/f <data>] 
 | Parâmetro | Descrição |
 |--|--|
 | `<keyname>` | Especifica o caminho completo da subchave. Para especificar um computador remoto, inclua o nome do computador (no formato `\\<computername>\` ) como parte do *KeyName*. Omitir `\\<computername>\` faz com que a operação seja padronizada para o computador local. O *KeyName* deve incluir uma chave de raiz válida. As chaves de raiz válidas para o computador local são: **HKLM**, **HKCU**, **HKCR**, **HKU**e **HKCC**. Se um computador remoto for especificado, as chaves de raiz válidas serão: **HKLM** e **HKU**. Se o nome da chave do registro contiver um espaço, coloque o nome da chave entre aspas. |
-| /v`<Valuename>` | Especifica o nome do valor do registro que deve ser consultado. Se omitido, todos os nomes de valor para *KeyName* serão retornados. *ValueName* para esse parâmetro será opcional se a opção **/f** também for usada. |
+| /v `<Valuename>` | Especifica o nome do valor do registro que deve ser consultado. Se omitido, todos os nomes de valor para *KeyName* serão retornados. *ValueName* para esse parâmetro será opcional se a opção **/f** também for usada. |
 | /ve | Executa uma consulta para nomes de valores vazios. |
 | /s | Especifica para consultar todas as subchaves e nomes de valor recursivamente. |
-| /se`<separator>` | Especifica o separador de valor único a ser procurado no tipo de nome de valor **REG_MULTI_SZ**. Se o *separador* não for especificado, será usado **\ 0** . |
+| /se `<separator>` | Especifica o separador de valor único a ser procurado no tipo de nome de valor **REG_MULTI_SZ**. Se o *separador* não for especificado, será usado **\ 0** . |
 | /f `<data>` | Especifica os dados ou o padrão a ser pesquisado. Use aspas duplas se uma cadeia de caracteres contiver espaços. Se não for especificado, um curinga (**&#42;**) será usado como o padrão de pesquisa. |
 | /k | Especifica a pesquisa somente em nomes de chave. |
 | /d | Especifica a pesquisa somente em dados. |
 | /c | Especifica que a consulta diferencia maiúsculas de minúsculas. Por padrão, as consultas não diferenciam maiúsculas de minúsculas. |
 | /e | Especifica para retornar apenas correspondências exatas. Por padrão, todas as correspondências são retornadas. |
-| /t`<Type>` | Especifica os tipos de registro a serem pesquisados. Os tipos válidos são: **REG_SZ**, **REG_MULTI_SZ**, **REG_EXPAND_SZ**, **REG_DWORD**, **REG_BINARY**, **REG_NONE**. Se não for especificado, todos os tipos serão pesquisados. |
+| /t `<Type>` | Especifica os tipos de registro a serem pesquisados. Os tipos válidos são: **REG_SZ**, **REG_MULTI_SZ**, **REG_EXPAND_SZ**, **REG_DWORD**, **REG_BINARY**, **REG_NONE**. Se não for especificado, todos os tipos serão pesquisados. |
 | /z | Especifica para incluir o equivalente numérico para o tipo de registro nos resultados da pesquisa. |
 | /? | Exibe a ajuda no prompt de comando. |
 

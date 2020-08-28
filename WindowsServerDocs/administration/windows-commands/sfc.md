@@ -1,18 +1,18 @@
 ---
 title: sfc
 description: Artigo de referência para o SFC, que verifica e verifica a integridade de todos os arquivos do sistema protegidos e substitui as versões incorretas pelas versões corretas.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 56aa6a1f07b75e37111d265fc15253ba1d3a7f1d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 6aa1fd38eaab1ffe3d6c3b9f2e4913d6a1e0ca4d
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882472"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89024880"
 ---
 # <a name="sfc"></a>sfc
 
@@ -46,7 +46,7 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 -   para obter mais informações sobre o **Sfc** no windows Server 2008 e o windows Server 2008 R2, consulte [Verificador de arquivos do sistema](https://go.microsoft.com/fwlink/?LinkId=227071).
 
 ## <a name="examples"></a>Exemplos
-Para verificar o **arquivo dekernel32.dll**, digite:
+Para verificar o ** arquivo dekernel32.dll**, digite:
 ```
 sfc /verifyfile=c:\windows\system32\kernel32.dll
 ```

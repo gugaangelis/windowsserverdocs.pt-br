@@ -1,18 +1,18 @@
 ---
 title: shutdown
 description: Artigo de referência para desligamento, que permite desligar ou reiniciar computadores locais ou remotos um de cada vez.
-ms.topic: article
+ms.topic: reference
 ms.assetid: c432f5cf-c5aa-4665-83af-0ec52c87112e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8dff8150cb6ccfea24238567581320a9b11650d3
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 44ee776ec2ec199fe39cfd17a05dfc3b8ba4502c
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87882365"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036444"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -39,10 +39,10 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 |/h|Coloca o computador local em hibernação, se a hibernação estiver habilitada. Você pode usar **/h** apenas com **/f**.|
 |/e|Permite documentar o motivo do desligamento inesperado no computador de destino.|
 |/f|Força o fechamento de aplicativos em execução sem avisar os usuários.</br>Cuidado: usar a opção **/f** pode resultar em perda de dados não salvos.|
-|opção\\\\\<ComputerName>|Especifica o computador de destino. Não pode ser usado com a opção **/l** .|
-|/t\<XXX>|Define o período de tempo limite ou o atraso para *xxx* segundos antes de uma reinicialização ou desligamento. Isso faz com que um aviso seja exibido no console local. Você pode especificar 0-600 segundos. Se você não usar **/t**, o período de tempo limite será de 30 segundos por padrão.|
+|opção \\\\\<ComputerName>|Especifica o computador de destino. Não pode ser usado com a opção **/l** .|
+|/t \<XXX>|Define o período de tempo limite ou o atraso para *xxx* segundos antes de uma reinicialização ou desligamento. Isso faz com que um aviso seja exibido no console local. Você pode especificar 0-600 segundos. Se você não usar **/t**, o período de tempo limite será de 30 segundos por padrão.|
 |/d [p \| u:] \<XX> :\<YY>|Lista o motivo da reinicialização ou desligamento do sistema. Estes são os valores de parâmetro:</br>**p** indica que a reinicialização ou o desligamento está planejado.</br>**u** indica que o motivo é definido pelo usuário.</br>Observação: se **p** ou **u** não forem especificados, a reinicialização ou o desligamento não será planejado.</br>*XX* especifica o número do motivo principal (inteiro positivo menor que 256).</br>*AA* Especifica o número do motivo secundário (inteiro positivo menor que 65536).|
-|/c\<Comment>|Permite que você explique detalhadamente a razão do desligamento. Você deve primeiro fornecer um motivo usando a opção **/d** . Você deve incluir comentários entre aspas. É possível usar até 511 caracteres.|
+|/c \<Comment>|Permite que você explique detalhadamente a razão do desligamento. Você deve primeiro fornecer um motivo usando a opção **/d** . Você deve incluir comentários entre aspas. É possível usar até 511 caracteres.|
 |/?|Exibe a ajuda no prompt de comando, incluindo uma lista dos motivos principais e secundários definidos no computador local.|
 
 ## <a name="remarks"></a>Comentários

@@ -1,18 +1,18 @@
 ---
 title: Update-ServerFiles
 description: Artigo de referência para Update-ServerFiles, que atualiza os arquivos na pasta compartilhada reminsd usando os arquivos mais recentes que são armazenados na pasta%Windir%\System32\RemInst do servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 23aa79df-38c6-401e-91bd-cd23811b30b4
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f60e5b5c5208d5718a287fd2d012368d13fad9f9
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ba2ed4129f1575d5057d2fc88500c0c47e291fc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881461"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036104"
 ---
 # <a name="update-serverfiles"></a>Update-ServerFiles
 

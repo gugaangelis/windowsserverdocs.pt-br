@@ -1,18 +1,18 @@
 ---
 title: Inicializar servidor
 description: Artigo de referência para Initialize-Server, que configura um servidor de serviços de implantação do Windows para uso inicial após a instalação da função de servidor.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 68a26ad9-5eb2-4490-b782-b7cd46b8000d
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ac0cf322818f433df4f5f0751656d9eb66bf2fd4
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: e751ad7b035c82481eed29dcad36b33a64895d57
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896912"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036414"
 ---
 # <a name="initialize-server"></a>Inicializar servidor
 

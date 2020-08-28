@@ -1,18 +1,18 @@
 ---
 title: reg restore
 description: Artigo de referência para o comando reg Restore, que grava subchaves e entradas salvas de volta no registro.
-ms.topic: article
+ms.topic: reference
 ms.assetid: a51f1c0c-969b-4b76-930a-c8bb14dea26e
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9642c0973968b3092f6f988017e8c4ad1ef16b09
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c3f1d864ce0a9d4fc6f244b3affe4b762f95d145
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87884022"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025070"
 ---
 # <a name="reg-restore"></a>reg restore
 

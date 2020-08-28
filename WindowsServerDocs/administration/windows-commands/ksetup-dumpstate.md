@@ -1,18 +1,18 @@
 ---
 title: ksetup dumpstate
 description: Artigo de referência para o comando dumpstate ksetup, que exibe o estado atual das configurações de realm para todos os territórios definidos no computador.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 3ef2f7b8-97af-4f42-9542-cff324840637
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b9c59ad53a7e9d1fb149a0a0a87f5f00938d6a33
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8723eac23cc2444bf4c16a661b13cc8cef4798dc
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887955"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025520"
 ---
 # <a name="ksetup-dumpstate"></a>ksetup dumpstate
 

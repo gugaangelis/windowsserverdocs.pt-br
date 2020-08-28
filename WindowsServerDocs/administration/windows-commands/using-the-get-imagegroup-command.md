@@ -1,18 +1,18 @@
 ---
 title: Get-MyImage
 description: Artigo de referência para Get-Image Group, que recupera informações sobre um grupo de imagens e as imagens contidas nele.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 0fc25aca-a529-44ee-bc8e-96bc8affb458
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfe2c804d24914b500703476d28e5281fdaef8c0
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 4ebf7ba1e207fddcef61952158d770fcfbd6df66
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879303"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029594"
 ---
 # <a name="get-imagegroup"></a>Get-MyImage
 

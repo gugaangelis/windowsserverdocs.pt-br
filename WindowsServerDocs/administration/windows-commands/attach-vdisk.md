@@ -1,18 +1,18 @@
 ---
 title: attach vdisk
 description: Artigo de referência para o comando attach VDISK, que anexa (às vezes, chamadas de montagens ou superfícies) um disco rígido virtual (VHD) para que ele apareça no computador host como uma unidade de disco rígido local.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 882ab875-0c14-4eb3-98ef-fd0e8fa40d9c
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 30ef29b0a8bbfed550cfa8c09a94c7b64c09b699
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: bf2b5bb435be441410eeb39ca84ad9a2bd2e0736
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993035"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89029254"
 ---
 # <a name="attach-vdisk"></a>attach vdisk
 
@@ -34,7 +34,7 @@ attach vdisk [readonly] { [sd=<SDDL>] | [usefilesd] } [noerr]
 | Parâmetro | Descrição |
 | --------- | ----------- |
 | readonly | Anexa o VHD como somente leitura. Qualquer operação de gravação retorna um erro. |
-| `sd=<SDDL string>` | Define o filtro de usuário no VHD. A cadeia de caracteres de filtro deve estar no formato SDDL (Security Descriptor Definition Language). Por padrão, o filtro de usuário permite acesso como em um disco físico. As cadeias de caracteres SDDL podem ser complexas, mas em sua forma mais simples, um descritor de segurança que protege o acesso é conhecido como DACL (lista de controle de acesso discricionário). Ele usa o formulário: `D:<dacl_flags><string_ace1><string_ace2>` ...`<string_acen>`<p>Os sinalizadores comuns de DACL são:<ul><li>**A**. Permitir o acesso</li><li>**D**. Negar acesso</li></ul>Os direitos comuns são:<ul><li>**GA**. Todo o acesso</li><li>**Gr**. Acesso de leitura</li><li> **GW**. Acesso de gravação</li></ul>As contas de usuário comuns são:<ul><li>**BA**. Administradores internos</li><li>**Au**. usuários autenticados</li><li>**Co**. Proprietário criador</li><li>**WD**. Todos</li></ul>Exemplos:<ul><li>**D:P: (A;; GR;;; AU**. Fornece acesso de leitura a todos os usuários autenticados.</li><li>**D:P: (A;; GA;;; WD**. Concede a todos acesso completo.</li></ul> |
+| `sd=<SDDL string>` | Define o filtro de usuário no VHD. A cadeia de caracteres de filtro deve estar no formato SDDL (Security Descriptor Definition Language). Por padrão, o filtro de usuário permite acesso como em um disco físico. As cadeias de caracteres SDDL podem ser complexas, mas em sua forma mais simples, um descritor de segurança que protege o acesso é conhecido como DACL (lista de controle de acesso discricionário). Ele usa o formulário: `D:<dacl_flags><string_ace1><string_ace2>` ... `<string_acen>`<p>Os sinalizadores comuns de DACL são:<ul><li>**A**. Permitir o acesso</li><li>**D**. Negar acesso</li></ul>Os direitos comuns são:<ul><li>**GA**. Todo o acesso</li><li>**Gr**. Acesso de leitura</li><li> **GW**. Acesso de gravação</li></ul>As contas de usuário comuns são:<ul><li>**BA**. Administradores internos</li><li>**Au**. usuários autenticados</li><li>**CO**. Proprietário criador</li><li>**WD**. Todos</li></ul>Exemplos:<ul><li>**D:P: (A;; GR;;; AU**. Fornece acesso de leitura a todos os usuários autenticados.</li><li>**D:P: (A;; GA;;; WD**. Concede a todos acesso completo.</li></ul> |
 | usefilesd | Especifica que o descritor de segurança no arquivo. vhd deve ser usado no VHD. Se o parâmetro **Usefilesd** não for especificado, o VHD não terá um descritor de segurança explícito, a menos que seja especificado com o parâmetro **SD** . |
 | NOERR | Usado somente para scripts. Quando um erro é encontrado, o DiskPart continua processando comandos como se o erro não tivesse ocorrido. Sem esse parâmetro, um erro faz com que o DiskPart saia com um código de erro. |
 

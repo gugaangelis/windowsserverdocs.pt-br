@@ -1,18 +1,18 @@
 ---
 title: ksetup getenctypeattr
 description: Artigo de referência para o comando ksetup getenctypeattr, que recupera o atributo de tipo de criptografia para o domínio.
-ms.topic: article
+ms.topic: reference
 ms.assetid: 6c7ec002-355e-474d-bc27-27215049f1a8
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 27dfd66e5108aa4704b999671397cb90049d1a15
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 194891e2a1a27b47c23adc5ee2f71a656f5ce6ab
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87887917"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89025510"
 ---
 # <a name="ksetup-getenctypeattr"></a>ksetup getenctypeattr
 
