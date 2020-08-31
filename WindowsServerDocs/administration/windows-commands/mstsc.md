@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 684ab29a9e1ded85443a2ec2d05ad4f55ec2cd5c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
+ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025210"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89057558"
 ---
 # <a name="mstsc"></a>mstsc
 
@@ -59,7 +59,15 @@ Para se conectar a uma sessão no modo de tela inteira, digite:
 ```
 mstsc /f
 ```
+ou
+```
+mstsc /v:computer1 /f
+```
+Para atribuir largura/altura, digite:
 
+```
+mstsc /v:computer1 /w:1920 /h:1080
+```
 Para abrir um arquivo chamado *filename. rdp* para edição, digite:
 
 ```
