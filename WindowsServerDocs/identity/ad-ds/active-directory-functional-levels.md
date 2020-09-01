@@ -1,19 +1,19 @@
 ---
 ms.assetid: f964d056-11bf-4d9b-b5ab-dceaad8bfbc3
 title: Níveis funcionais do Windows Server 2016
-ms.author: joflore
-author: MicrosoftGuyJFlo
-manager: mtillman
-ms.date: 10/29/2018
+ms.author: iainfou
+author: iainfoulds
+manager: daveba
+ms.date: 08/25/2020
 ms.topic: article
 ms.custom: it-pro
 ms.reviewer: maheshu
-ms.openlocfilehash: 75ba30502c7de1b0a88886f42c3a8ef9a84a7e18
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e82dccb79a4fc3452d528581beb43ef32d52ecfc
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87938625"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88940936"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Níveis funcionais de floresta e domínio
 
@@ -23,9 +23,9 @@ Os níveis funcionais determinam os recursos de domínio ou floresta do AD DS (A
 
 Ao implantar o AD DS, defina os níveis funcionais de domínio e floresta com o valor mais alto compatível com seu ambiente. Dessa forma, você pode usar o máximo de recursos de AD DS possível. Ao implantar uma nova floresta, é solicitado que você defina o nível funcional da floresta e, em seguida, defina o nível funcional do domínio. Você pode definir o nível funcional do domínio para um valor maior que o nível funcional da floresta, mas não pode definir o nível funcional do domínio com um valor inferior ao nível funcional da floresta.
 
-Com o fim da vida útil do Windows 2003, os DCs (controladores de domínio) do Windows 2003 precisam ser atualizados para o Windows Server 2008, 2008 R2, 2012, 2012 R2, 2016 ou 2019. Como resultado, qualquer controlador de domínio que execute o Windows Server 2003 deve ser removido do domínio.
+Com o fim da vida útil do Windows Server 2003, 2008 e 2008 R2, esses DCs (controladores de domínio) precisam ser atualizados para o Windows Server 2012, 2012 R2, 2016 ou 2019. Como resultado, qualquer controlador de domínio que execute o Windows Server 2008 R2 e mais antigos deve ser removido do domínio.
 
-Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](../../storage/dfs-replication/migrate-sysvol-to-dfsr.md) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](https://techcommunity.microsoft.com/t5/storage-at-microsoft/bg-p/FileCAB).
+Nos níveis funcionais de domínio do Windows Server 2008 e superior, a replicação do DFS (serviço de arquivos distribuído) é usada para replicar o conteúdo da pasta SYSVOL entre controladores de domínio. Se você criar um novo domínio no nível funcional de domínio do Windows Server 2008 ou superior, a Replicação do DFS será usada automaticamente para replicar o SYSVOL. Se você criou o domínio em um nível funcional inferior, será necessário migrar do uso do FRS para a Replicação do DFS para o SYSVOL. Para obter as etapas de migração, siga os [procedimentos no TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) ou consulte o [conjunto de etapas otimizadas no blog do Gabinete de arquivos da equipe de armazenamento](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx). O Windows Server 2016 RS1 é a última versão do Windows Server que inclui o FRS.
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
@@ -162,6 +162,7 @@ Sistemas operacionais do controlador de domínio compatíveis:
 
 Sistemas operacionais do controlador de domínio compatíveis:
 
+* Windows Server 2016
 * Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2

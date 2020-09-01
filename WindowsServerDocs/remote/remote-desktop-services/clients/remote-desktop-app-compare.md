@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 04/06/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 524b90965ca1dfca726294d4518fcefa4a470cf2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
+ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87970103"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88941506"
 ---
 # <a name="compare-the-clients"></a>Comparar os clientes
 
@@ -34,7 +34,7 @@ Se você acessar sua área de trabalho pessoal remotamente, haverá vários redi
 | Keyboard    | X                         | X                           | X             | X       | X   | X     | X             |
 | Mouse       | X                         | X                           | X             | X       | X\* | X     | X             |
 | Touch       | X                         | X                           | X             | X       | X   |       | X (exceto o IE) |
-| Caneta         | X                         | X                           |               |         |     |       |               |
+| Caneta         | X                         | X                           |               | X (como toque) |  X (como toque)  |       |               |
 
 *Veja a [lista de dispositivos de entrada com suporte para o cliente iOS da Área de Trabalho Remota](remote-desktop-ios.md#supported-input-devices).
 
@@ -51,7 +51,7 @@ Quando você habilita o redirecionamento de porta USB, quaisquer dispositivos US
 
 | Redirecionamento         | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Windows Store | Android | iOS         | macOS                           | Cliente Web    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
-| Câmeras             | X                         | X                           |               |         |   X         | X                               |               |
+| Câmeras             | X                         | X                           |               |     X    |   X         | X                               |               |
 | Área de Transferência           | X                         | X                           | X             | Texto    | Texto, imagens | X                               | texto          |
 | Unidade local/armazenamento | X                         | X                           |               | X       |   X        | X                               |               |
 | Local            | X                         | X                           |               |         |             |                                 |               |

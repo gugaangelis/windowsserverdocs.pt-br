@@ -7,12 +7,12 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: 7b9500c11ca5dba7ed2f51d1d6b32b7cf689f070
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eeadbdea10f08372cd927808b4b433d8ba7ee85f
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997123"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89037824"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
 
@@ -666,7 +666,7 @@ Uma consideração muito importante para VMs de VDI não persistente são as atu
 Para o Windows Defender, pode ser melhor permitir que as atualizações ocorram, mesmo em VDI não persistente. As atualizações serão aplicadas praticamente a cada sessão de logon, mas são pequenas e não devem ser um problema. Além disso, a VM não ficará desatualizada, pois apenas as últimas atualizações disponíveis serão aplicadas. O mesmo pode ser verdadeiro para arquivos de definição de terceiros.
 
 > [!NOTE]
-> Os aplicativos da loja (aplicativos UWP) são atualizados pela Windows Store. As versões modernas do Office, como o Office 365, são atualizadas por meio de seus próprios mecanismos quando conectados diretamente à Internet, ou por meio de tecnologias de gerenciamento.
+> Os aplicativos da loja (aplicativos UWP) são atualizados pela Windows Store. As versões modernas do Office, como o Microsoft 365, são atualizadas por meio dos próprios mecanismos quando conectados diretamente à Internet ou por meio de tecnologias de gerenciamento quando não estão conectados.
 
 ### <a name="windows-system-startup-event-traces"></a>Rastreamentos de eventos de inicialização do sistema do Windows
 

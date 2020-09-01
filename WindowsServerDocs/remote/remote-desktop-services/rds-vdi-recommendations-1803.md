@@ -6,12 +6,12 @@ ms.author: jaimeo, robsmi
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: e7bd68264f60b61a5c1063a51217bedb0c6c80ec
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb222547518dc0ee13e2c7a47037ffae74fee1fa
+ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989830"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "89036764"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>Otimizando o Windows 10, versão 1803, para uma função VDI (Virtual Desktop Infrastructure)
 
@@ -566,7 +566,7 @@ Uma consideração muito importante para VMs de VDI não persistente são as atu
 Para o Windows Defender, pode ser melhor permitir que as atualizações ocorram, mesmo em VDI não persistente. As atualizações serão aplicadas praticamente a cada sessão de logon, mas são pequenas e não devem ser um problema. Além disso, a VM não será ocultada pelas atualizações, pois apenas a última disponível será aplicada. O mesmo s aplica aos arquivos de definição não relacionados à Microsoft.
 
 > [!NOTE]
-> Os aplicativos da loja (aplicativos UWP) são atualizados pela Windows Store. As versões modernas do Office, como o Office 365, são atualizadas por meio de seus próprios mecanismos quando conectados diretamente à Internet, ou por meio de tecnologias de gerenciamento.
+> Os aplicativos da loja (aplicativos UWP) são atualizados pela Windows Store. As versões modernas do Office, como o Microsoft 365, são atualizadas por meio dos próprios mecanismos quando conectados diretamente à Internet ou por meio de tecnologias de gerenciamento quando não estão conectados.
 
 ### <a name="windows-defender-optimization-with-vdi"></a>Otimização do Windows Defender com VDI
 

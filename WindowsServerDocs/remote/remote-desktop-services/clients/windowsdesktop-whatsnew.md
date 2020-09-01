@@ -5,18 +5,18 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 08/25/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b23c19304aa7773dbb3c4e1406e065fb68947c5d
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
+ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702835"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821329"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
-É possível encontrar informações mais detalhadas sobre o cliente da Área de Trabalho do Windows em [Introdução ao cliente da Área de Trabalho do Windows](windowsdesktop.md). Você encontrará as atualizações mais recentes no cliente abaixo.
+É possível encontrar informações mais detalhadas sobre o cliente da Área de Trabalho do Windows em [Introdução ao cliente da Área de Trabalho do Windows](windowsdesktop.md). Você encontrará as atualizações mais recentes no cliente neste artigo.
 
 ## <a name="latest-client-versions"></a>Versões do cliente mais recentes
 
@@ -24,12 +24,12 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Versão  |
 |-----------|---------|
-|Público     |1.2.1186 |
+|Público     |1.2.1272 |
 |Participante do Programa Windows Insider    |1.2.1272 |
 
-## <a name="updates-for-version-121272-insider"></a>Atualizações para a versão 1.2.1272 [INSIDER]
+## <a name="updates-for-version-121272"></a>Atualizações para a versão 1.2.1272
 
-*Data da publicação: 11/08/2020*
+*Data da publicação: 25/08/2020*
 
 Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
 
