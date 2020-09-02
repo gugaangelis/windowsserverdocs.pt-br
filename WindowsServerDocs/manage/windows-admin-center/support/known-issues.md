@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 91e14b5ac023f6726ffc508f945567b83311d7a4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b4d7d039c775b85321d168f8de7415de6b92e784
+ms.sourcegitcommit: 97a65d8f52514848963e8917021bd9a1f6ee3b19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997013"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89287818"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -19,7 +19,7 @@ ms.locfileid: "87997013"
 
 Se você encontrar um problema não descrito nessa página, [informe-nos](https://aka.ms/WACfeedback).
 
-## <a name="installer"></a>Instalador
+## <a name="installer"></a>Installer
 
 - Ao instalar o Windows Admin Center usando seu próprio certificado, lembre-se que, se você copiar a impressão digital da ferramenta MMC do Gerenciador de certificado, [conterá um caractere inválido no início.](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) Como alternativa, digite o primeiro caractere da impressão digital e copiar/colar o restante.
 
@@ -102,7 +102,7 @@ Se não estiver instalado, você poderá [baixar e instalar o WMF 5.1](https://w
 
 - Você pode receber um erro que faz referência a "tamanho de pacote" ao exportar os arquivos de log grandes.
 
-  - Para resolver isso, use o seguinte comando em um prompt de comando com privilégios elevados no computador do gateway:```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - Para resolver isso, use o seguinte comando em um prompt de comando com privilégios elevados no computador do gateway: ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>Arquivos
 
@@ -130,7 +130,7 @@ Se não estiver instalado, você poderá [baixar e instalar o WMF 5.1](https://w
 
 - Ao usar o Área de Trabalho Remota para se conectar a um computador que não está ingressado no domínio, você deve inserir sua conta no ```MACHINENAME\USERNAME``` formato.
 
-- Algumas configurações podem bloquear o cliente da área de trabalho remota do centro de administração do Windows com a diretiva de grupo. Se você encontrar isso, habilite ```Allow users to connect remotely by using Remote Desktop Services``` em```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- Algumas configurações podem bloquear o cliente da área de trabalho remota do centro de administração do Windows com a diretiva de grupo. Se você encontrar isso, habilite ```Allow users to connect remotely by using Remote Desktop Services``` em ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
 - O Área de Trabalho Remota é afetado pela [compatibilidade do WebSocket.](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -210,7 +210,7 @@ O Hyper-V precisa ser instalado em máquinas virtuais que executam o sistema ope
 Para instalar o Hyper-V em máquinas virtuais que executam o sistema operacional Azure Stack do HCI, execute o seguinte comando:
 
 ```PowerShell
-Enable-windowsoptionalfeature -online -featurename Microsoft-hyper-v
+Enable-WindowsOptionalFeature -Online -FeatureName 'Microsoft-Hyper-V'
 ```
 
 ### <a name="step-17"></a>Etapa 1,7
