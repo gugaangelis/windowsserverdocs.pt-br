@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 09/25/2019
-ms.openlocfilehash: 8c3f28b544db7a41c15c4f12b58c58c1f750cb54
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: cda60c65772a41322a20b7277a7d7c80a4daf9e1
+ms.sourcegitcommit: a640c2d7f2d21d7cd10a9be4496e1574e5e955f0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997511"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89446769"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>Confirmar que os hosts protegidos podem atestar
 
@@ -37,7 +37,7 @@ Um administrador de malha precisa confirmar que os hosts Hyper-V podem ser execu
 
         Para configurar um servidor HGS de fallback, repita esse comando e especifique as URLs de fallback para a proteção de chave e os serviços de atestado. Para obter mais informações, consulte [configuração de fallback](guarded-fabric-manage-branch-office.md#fallback-configuration).
 
-    - **Por meio do VMM**: se você estiver usando o System Center 2016-Virtual Machine Manager (VMM), poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
+    - **Por meio do VMM**: se você estiver usando System Center Virtual Machine Manager (VMM), poderá configurar o atestado e as URLs de proteção de chave no VMM. Para obter detalhes, consulte [definir configurações globais do HgS](/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#configure-global-hgs-settings) em **provisionar hosts protegidos no VMM**.
 
     >**Observações**
     > - Se o administrador HGS [habilitou o HTTPS no servidor HgS](guarded-fabric-configure-hgs-https.md), inicie as URLs com `https://` .
@@ -60,7 +60,7 @@ Um administrador de malha precisa confirmar que os hosts Hyper-V podem ser execu
     ```
 
     > [!IMPORTANT]
-    > Se você estiver usando o Windows Server 2019 ou o Windows 10, versão 1809 e estiver usando políticas de integridade de código, `Get-HgsTrace` retorne uma falha para o diagnóstico **ativo da política de integridade de código** .
+    > Se você estiver usando o Windows Server 2019 ou o Windows 10, versão 1809 ou posterior, e estiver usando políticas de integridade de código, `Get-HgsTrace` retorne uma falha para o diagnóstico **ativo da política de integridade de código** .
     > Você pode ignorar esse resultado com segurança quando ele for o único diagnóstico com falha.
 
 ## <a name="next-step"></a>Próxima etapa
