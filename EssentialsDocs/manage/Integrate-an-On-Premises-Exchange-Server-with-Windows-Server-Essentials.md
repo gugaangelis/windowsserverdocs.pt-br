@@ -7,12 +7,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cef547570c58c405ac563a1c2215feda120350f4
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 7975f70d75a33549d0a3c7616b5260064d5cb323
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837875"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554419"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>Integrar um Exchange Server local com o Windows Server Essentials [fwlink_WSE_OPE]
 
@@ -34,10 +34,10 @@ Este guia fornece informações e instruções básicas para ajudá-lo a configu
 
 -   [Configurar o nome de domínio da Internet](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)
 
-###  <a name="set-up-a-server-that-is-running-windows-server-essentials"></a><a name="BKMK_SetUpSBS8"></a>Configurar um servidor que esteja executando o Windows Server Essentials
+###  <a name="set-up-a-server-that-is-running-windows-server-essentials"></a><a name="BKMK_SetUpSBS8"></a> Configurar um servidor que esteja executando o Windows Server Essentials
  Você já deve ter configurado um servidor que está executando o Windows Server Essentials. Ele será o controlador de domínio do servidor que executa o Exchange Server. Para obter informações sobre como configurar o Windows Server Essentials, consulte [Instalar o Windows Server Essentials](../install/Install-Windows-Server-Essentials.md).
 
-###  <a name="prepare-a-second-server-on-which-to-install-exchange-server"></a><a name="BKMK_SecondServer"></a>Preparar um segundo servidor no qual instalar o Exchange Server
+###  <a name="prepare-a-second-server-on-which-to-install-exchange-server"></a><a name="BKMK_SecondServer"></a> Preparar um segundo servidor no qual instalar o Exchange Server
  Você deve instalar o Exchange Server em outro servidor que esteja executando uma versão do sistema operacional Windows Server com suporte oficial à execução do Exchange Server 2010 ou do Exchange Server 2013. Em seguida, você deve associar o segundo servidor ao domínio do Windows Server Essentials.
 
  Para obter informações sobre como unir um segundo servidor ao domínio do Windows Server Essentials, consulte unir um segundo servidor à [rede em conectar](../use/Get-Connected-in-Windows-Server-Essentials.md)-se.
@@ -45,7 +45,7 @@ Este guia fornece informações e instruções básicas para ajudá-lo a configu
 > [!NOTE]
 >  A Microsoft não oferece suporte à instalação do Exchange Server em um servidor que executa o Windows Server Essentials.
 
-###  <a name="configure-your-internet-domain-name"></a><a name="BKMK_DomainNames"></a>Configurar o nome de domínio da Internet
+###  <a name="configure-your-internet-domain-name"></a><a name="BKMK_DomainNames"></a> Configurar o nome de domínio da Internet
  Para integrar o servidor local que executa o Exchange Server ao Windows Server Essentials, é necessário registrar um nome de domínio da Internet válido para sua empresa (como *contoso.com*). Você também deve trabalhar com o provedor de nomes de domínio para criar os registros de recursos de DNS exigidos pelo Exchange Server.
 
  Por exemplo, caso o nome de domínio da Internet de sua empresa seja contoso.com e você deseje usar um FQDN (nome de domínio totalmente qualificado) *mail.contoso.com* para fazer referência ao servidor local executando o Exchange Server, trabalhe com o provedor de nomes de domínio para criar os registros de recursos de DNS na tabela a seguir.
@@ -426,7 +426,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
  Se você desabilitar a integração com um Exchange Server local, não poderá mais usar o Painel do Windows Server Essentials para exibir, criar ou gerenciar caixas de correio do Exchange Server.
 
 ### <a name="what-do-i-need-to-know-about-email-accounts"></a>O que é necessário saber sobre contas de email?
- Uma solução de email hospedado é configurada no servidor. Uma solução de um provedor de email hospedado, como o Microsoft Office 365, pode fornecer contas de email individuais para usuários de rede. Quando você executa o Assistente Incluir conta de usuário no Windows Server Essentials para criar uma conta de usuário, o assistente tenta adicionar a conta de usuário à solução de email hospedada disponível. Ao mesmo tempo, o assistente atribui um nome de email (alias) ao usuário e define o tamanho máximo da caixa de correio (cota). O tamanho máximo da caixa de correio varia de acordo com o provedor de email que você usa. Depois de adicionar a conta de usuário, você pode continuar a gerenciar as informações de alias e cota da caixa de correio na página de propriedades do usuário. Para gerenciamento completo de suas contas de usuário e provedor de email hospedado, use o console de gerenciamento do provedor hospedado. Dependendo do seu provedor, você pode acessar o console de gerenciamento de um portal baseado na web ou de uma guia no Painel do servidor.
+ Uma solução de email hospedado é configurada no servidor. Uma solução de um provedor de email hospedado, como o Microsoft 365, pode fornecer contas de email individuais para usuários de rede. Quando você executa o Assistente Incluir conta de usuário no Windows Server Essentials para criar uma conta de usuário, o assistente tenta adicionar a conta de usuário à solução de email hospedada disponível. Ao mesmo tempo, o assistente atribui um nome de email (alias) ao usuário e define o tamanho máximo da caixa de correio (cota). O tamanho máximo da caixa de correio varia de acordo com o provedor de email que você usa. Depois de adicionar a conta de usuário, você pode continuar a gerenciar as informações de alias e cota da caixa de correio na página de propriedades do usuário. Para gerenciamento completo de suas contas de usuário e provedor de email hospedado, use o console de gerenciamento do provedor hospedado. Dependendo do seu provedor, você pode acessar o console de gerenciamento de um portal baseado na web ou de uma guia no Painel do servidor.
 
  O alias fornecido quando você executa o Assistente Incluir conta de usuário é enviado para o provedor de email hospedado como o nome sugerido para o alias do usuário. Por exemplo, se o alias de usuário for *frankm*, o endereço de email do usuário poderá ser <em>FrankM@Contoso.com</em> .
 

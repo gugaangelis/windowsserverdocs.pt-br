@@ -7,12 +7,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 44ee776ec2ec199fe39cfd17a05dfc3b8ba4502c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f83788b4d8e8f92ea1375b9a0f245f9bfa63bc85
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036444"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554379"
 ---
 # <a name="shutdown"></a>shutdown
 
@@ -23,7 +23,7 @@ Permite desligar ou reiniciar computadores locais ou remotos um por vez.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c comment]]
+shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t <XXX>] [/d [p|u:]<XX>:<YY> [/c "descriptive comment"]]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -47,23 +47,23 @@ shutdown [/i | /l | /s | /r | /a | /p | /h | /e] [/f] [/m \\<ComputerName>] [/t 
 
 ## <a name="remarks"></a>Comentários
 
--   Os usuários devem ser atribuídos ao direito **de usuário desligar o sistema** para desligar um computador local ou administrado remotamente que está usando o comando de **desligamento** .
--   Os usuários devem ser membros do grupo Administradores para anotar um desligamento inesperado de um computador local ou administrado remotamente. Se o computador de destino tiver ingressado em um domínio, os membros do grupo Administradores de domínio poderão executar esse procedimento. Para obter mais informações, consulte:
-    -   [Grupos locais padrão](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
-    -   [Grupos padrão](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
--   Se você quiser desligar mais de um computador por vez, poderá chamar o **desligamento** para cada computador usando um script ou pode usar **Shutdown** **/i** para exibir a caixa de diálogo de desligamento remoto.
--   Se você especificar códigos de motivo principal e secundário, deverá primeiro definir esses códigos de motivo em cada computador em que você planeja usar os motivos. Se os códigos de motivo não estiverem definidos no computador de destino, o controlador de eventos de desligamento não poderá registrar o texto de motivo correto.
--   Lembre-se de indicar que um desligamento é planejado usando o parâmetro **p:** . Omitir **p:** indica que um desligamento não está planejado. Se você digitar **p:** seguido pelo código de motivo para um desligamento não planejado, o comando não realizará o desligamento. Por outro lado, se você omitir **p:** e digitar o código de motivo para um desligamento planejado, o comando não realizará o desligamento.
+- Os usuários devem ser atribuídos ao direito **de usuário desligar o sistema** para desligar um computador local ou administrado remotamente que está usando o comando de **desligamento** .
+- Os usuários devem ser membros do grupo Administradores para anotar um desligamento inesperado de um computador local ou administrado remotamente. Se o computador de destino tiver ingressado em um domínio, os membros do grupo Administradores de domínio poderão executar esse procedimento. Para obter mais informações, consulte:
+    - [Grupos locais padrão](/previous-versions/windows/it-pro/windows-server-2003/cc785098(v=ws.10))
+    - [Grupos padrão](/previous-versions/windows/it-pro/windows-server-2003/cc756898(v=ws.10))
+- Se você quiser desligar mais de um computador por vez, poderá chamar o **desligamento** para cada computador usando um script ou pode usar **Shutdown** **/i** para exibir a caixa de diálogo de desligamento remoto.
+- Se você especificar códigos de motivo principal e secundário, deverá primeiro definir esses códigos de motivo em cada computador em que você planeja usar os motivos. Se os códigos de motivo não estiverem definidos no computador de destino, o controlador de eventos de desligamento não poderá registrar o texto de motivo correto.
+- Lembre-se de indicar que um desligamento é planejado usando o parâmetro **p:** . Omitir **p:** indica que um desligamento não está planejado. Se você digitar **p:** seguido pelo código de motivo para um desligamento não planejado, o comando não realizará o desligamento. Por outro lado, se você omitir **p:** e digitar o código de motivo para um desligamento planejado, o comando não realizará o desligamento.
 
 ## <a name="examples"></a>Exemplos
 
 Para forçar que os aplicativos fechem e reiniciem o computador local após um atraso de um minuto com o motivo do aplicativo: manutenção (planejada) e o comentário reconfigurando myapp.exe tipo:
 ```
-shutdown /r /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 Para reiniciar o ServerName do computador remoto \\ \\ com os mesmos parâmetros, digite:
 ```
-shutdown /r /m \\servername /t 60 /c Reconfiguring myapp.exe /f /d p:4:1
+shutdown /r /m \\servername /t 60 /c "Reconfiguring myapp.exe" /f /d p:4:1
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

@@ -7,12 +7,12 @@ ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d98ab8b203bc73da4129d63b5a2b7518742a3667
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 9013d63d0fbedfd679b8d717b9501f4af567b6f5
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181642"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554409"
 ---
 # <a name="support-for-larger-deployments"></a>Suporte para implantações maiores
 
@@ -35,7 +35,7 @@ O Windows Server 2012 R2 Essentials dá suporte apenas a um domínio por servido
 
 ## <a name="support-for-multiple-domain-controllers"></a>Suporte para vários controladores de domínio
 
- O Windows Server Essentials 2012 R2 bloqueia todos os serviços que aproveitam Azure Active Directory, como o Office 365, no qual mais de um controlador de domínio é implantado. O motivo é que a sincronização de conta e senha entre os controladores de domínio locais e Azure Active Directory pode levar a credenciais de conta com senhas que estão fora de sincronia. Essa limitação foi removida no Windows Server 2016 Essentials.
+ O Windows Server Essentials 2012 R2 bloqueia todos os serviços que aproveitam Azure Active Directory, como Microsoft 365, em que mais de um controlador de domínio é implantado. O motivo é que a sincronização de conta e senha entre os controladores de domínio locais e Azure Active Directory pode levar a credenciais de conta com senhas que estão fora de sincronia. Essa limitação foi removida no Windows Server 2016 Essentials.
 
 ## <a name="ability-to-specify-a-designated-domain-controller"></a>Capacidade de especificar um controlador de domínio designado
 

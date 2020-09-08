@@ -7,19 +7,19 @@ ms.assetid: 9bd191d6-ecc5-4230-a88e-f3fc281cb956
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c1d6d9b056c4ccc5b6961023e1f0c22034321960
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.openlocfilehash: 807aacc5039bf90ea4dd7c7859c232d8c8b3011a
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181572"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554339"
 ---
 # <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>
- Se você for um parceiro do Microsoft Online Service Partner Agreement (MOSPA) para Office 365, para garantir que você seja compensado corretamente quando uma solicitação de assinatura for originada do Windows Server Essentials por meio do módulo de integração do Office 365, você precisará criar uma chave do registro que contenha sua identificação de parceiro de registro (POR ID). As informações a seguir são lidas e enviadas ao provedor de serviços através dos URLs de sign-up do Office 365.
+ Se você for um parceiro do Microsoft Online Service Partner Agreement (MOSPA) para Microsoft 365, para garantir que você seja compensado corretamente quando uma solicitação de assinatura for originada do Windows Server Essentials por meio do módulo de integração de Microsoft 365, será necessário criar uma chave do registro que contenha a identificação do parceiro de registro (POR ID). As informações a seguir são lidas e passadas para o provedor de serviços por meio das URLs de inscrição Microsoft 365.
 
 -   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO
 

@@ -7,18 +7,18 @@ author: jasongerend
 ms.author: jgerend
 manager: lizapo
 ms.date: 06/07/2020
-ms.openlocfilehash: 48d9d564c7badf8ea34c77ce7004d0ce642b78cb
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: d08e969d0296c9ca1efc34bfd0ac6ad7e42519cf
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057578"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554539"
 ---
 # <a name="robocopy"></a>robocopy
 
 Copia dados de arquivo de um local para outro.
 
-## <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Sintaxe
 
 ```
 robocopy <source> <destination> [<file>[ ...]] [<options>]
@@ -61,8 +61,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 | /mir | Espelha uma árvore de diretório (equivalente a **/e** mais **/Purge**). Usando essa opção com a opção **/e** e um diretório de destino, o substitui as configurações de segurança do diretório de destino. |
 | /mov | Move arquivos e os exclui da origem depois que eles são copiados. |
 | /move | Move arquivos e diretórios e os exclui da origem depois que eles são copiados. |
-| /a +: [RASHCNET] | Adiciona os atributos especificados aos arquivos copiados. |
-| /a-:[RASHCNET] | Remove os atributos especificados dos arquivos copiados. |
+| /a +: [RASHCNET] | Adiciona os atributos especificados aos arquivos copiados.  Os valores válidos para essa opção são: <ul><li>**R** -somente leitura</li><li>**Um** arquivo morto</li><li>**S** -sistema</li><li>**H** -oculto</li><li>**C** -compactado</li><li>**N** -sem conteúdo indexado</li><li>**E** -criptografado</li><li>**T** -temporário</li></ul> |
+| /a-:[RASHCNET] | Remove os atributos especificados dos arquivos copiados. Os valores válidos para essa opção são: <ul><li>**R** -somente leitura</li><li>**Um** arquivo morto</li><li>**S** -sistema</li><li>**H** -oculto</li><li>**C** -compactado</li><li>**N** -sem conteúdo indexado</li><li>**E** -criptografado</li><li>**T** -temporário</li></ul> |
 | /Create | Cria apenas uma árvore de diretórios e arquivos de comprimento zero. |
 | /fat | Cria arquivos de destino usando somente nomes de arquivo FAT de comprimento de caractere 8,3. |
 | /256 | Desativa o suporte para caminhos com mais de 256 caracteres. |
@@ -89,8 +89,8 @@ robocopy c:\reports '\\marketing\videos' yearly-report.mov /mt /z
 |--|--|
 | /a | Copia somente os arquivos para os quais o atributo de **arquivo** está definido. |
 | /m | Copia somente os arquivos para os quais o atributo de **arquivo** está definido e redefine o atributo de **arquivo morto** . |
-| /ia`[RASHCNETO]` | Inclui somente os arquivos para os quais qualquer um dos atributos especificados são definidos. |
-| XA`[RASHCNETO]` | Exclui os arquivos para os quais qualquer um dos atributos especificados são definidos. |
+| /ia`[RASHCNETO]` | Inclui somente os arquivos para os quais qualquer um dos atributos especificados são definidos.  Os valores válidos para essa opção são: <ul><li>**R** -somente leitura</li><li>**Um** arquivo morto</li><li>**S** -sistema</li><li>**H** -oculto</li><li>**C** -compactado</li><li>**N** -sem conteúdo indexado</li><li>**E** -criptografado</li><li>**T** -temporário</li><li>**O** -offline</li></ul> |
+| XA`[RASHCNETO]` | Exclui os arquivos para os quais qualquer um dos atributos especificados são definidos. Os valores válidos para essa opção são: <ul><li>**R** -somente leitura</li><li>**Um** arquivo morto</li><li>**S** -sistema</li><li>**H** -oculto</li><li>**C** -compactado</li><li>**N** -sem conteúdo indexado</li><li>**E** -criptografado</li><li>**T** -temporário</li><li>**O** -offline</li></ul> |
 | /xf `<filename>[ ...]` | Exclui os arquivos que correspondem aos nomes ou caminhos especificados. Há suporte para caracteres curinga (**&#42;** e **?**). |
 | /xd `<directory>[ ...]` | Exclui os diretórios que correspondem aos nomes e caminhos especificados. |
 | /xc | Exclui arquivos alterados. |

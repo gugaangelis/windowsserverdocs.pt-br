@@ -7,12 +7,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 73ac5bb39280277a50af84f489e3a9c5ccb0db05
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.openlocfilehash: 6fa3f4c013e91fdf9015d106575af832720c1db8
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837995"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554489"
 ---
 # <a name="hosted-windows-server-essentials"></a>Windows Server Essentials hospedado
 
@@ -29,7 +29,7 @@ Este documento inclui informações específicas para os hosters que pretendem i
 
  **Acesso em qualquer local:** O acesso remoto via Web fornece uma experiência de navegador simplificada e compatível com toque para acessar aplicativos e dados de praticamente qualquer lugar em que haja uma conexão com a Internet e usando quase qualquer dispositivo. O Windows Server Essentials também fornece um aplicativo Windows Phone atualizado e um novo aplicativo para Windows 8.1 computadores cliente, permitindo que os usuários se conectem de forma intuitiva ao, pesquisem e acessem arquivos e pastas no servidor. Os arquivos são automaticamente armazenados em cache para acesso offline e sincronizados quando uma conexão ao servidor está disponível. O Windows Server Essentials transforma a configuração de VPN (rede virtual privada) em um processo simples, orientado por assistente, de apenas alguns cliques e simplifica o gerenciamento do acesso de VPN para os usuários. Os computadores cliente podem aproveitar uma conexão VPN para entrarem remotamente para o ambiente Windows SBS sem necessidade de irem para o escritório.
 
- **Flexibilidade da carga de trabalho:** O Windows Server Essentials foi projetado para permitir aos clientes a flexibilidade de escolher quais aplicativos e serviços são executados localmente e executados na nuvem. Em versões anteriores, o Windows Small Business Server Standard incluía o Exchange Server como um produto de componente, que adicionava despesa e complexidade aos clientes que desejavam aproveitar serviços de colaboração e mensagens baseados na nuvem. Com o Windows Server Essentials, os clientes podem aproveitar o mesmo tipo de experiência de gerenciamento integrado se optarem por executar uma cópia local do Exchange Server, assinarem um serviço do Exchange hospedado ou assinarem o Microsoft Office 365.
+ **Flexibilidade da carga de trabalho:** O Windows Server Essentials foi projetado para permitir aos clientes a flexibilidade de escolher quais aplicativos e serviços são executados localmente e executados na nuvem. Em versões anteriores, o Windows Small Business Server Standard incluía o Exchange Server como um produto de componente, que adicionava despesa e complexidade aos clientes que desejavam aproveitar serviços de colaboração e mensagens baseados na nuvem. Com o Windows Server Essentials, os clientes podem aproveitar o mesmo tipo de experiência de gerenciamento integrado se optarem por executar uma cópia local do Exchange Server, assinarem um serviço do Exchange hospedado ou assinarem Microsoft 365.
 
  **Monitoramento de integridade:** O Windows Server Essentials monitora seu próprio status de integridade e o status dos computadores cliente que executam Windows 8.1, Windows 7 e Mac OS X versão 10,5 e posterior. O status de integridade notifica-o das questões ou problemas relacionados a backups de computador, armazenamento de servidor, pouco espaço em disco, entre outros.
 
@@ -52,7 +52,7 @@ Este documento inclui informações específicas para os hosters que pretendem i
 
    Se estiver usando o Virtual Machine Manager, pode criar um modelo usando a instância em execução. Criar um modelo irá realizar a preparação do sistema da instância e desligará o servidor. Depois de armazená-la na sua biblioteca, é possível abrir a instância caso a caso.
 
-##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a>Como fazer automatizar a implantação?
+##  <a name="how-do-i-automate-the-deployment"></a><a name="BKMK_automatedeployment"></a> Como fazer automatizar a implantação?
  Depois de obter uma imagem personalizada, é possível realizar a implantação com a sua própria imagem. Para realizar a instalação parcialmente não monitorada, é preciso fornecer/implantar o unattend.xml para a instalação do WinPE. Para fazer uma instalação totalmente autônoma, você também precisa fornecer o arquivo de cfg.ini para a configuração inicial do Windows Server Essentials.
 
 1. Realizar somente instalação não monitorada do WinPE. Isso automatizará somente a instalação do WinPE, e permitirá que a instalação pare antes da Configuração inicial de modo que os usuários finais possam fornecer informações de Corporação, Domínio e Administrador por si mesmos após o RDP na sessão no servidor. Para fazer isso:
@@ -251,7 +251,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
  Como o Windows Server Essentials é um controlador de domínio, você pode unir um segundo servidor ao domínio da maneira padrão.
 
 ## <a name="which-email-solutions-can-be-integrated"></a>Que soluções de email podem ser integradas?
- O Windows Server Essentials dá suporte à integração com duas soluções de email prontas para uso: Office 365 e Exchange local. Se você estiver executando sua própria solução de email hospedado, será necessário desenvolver um suplemento para integrar o Windows Server Essentials à sua solução de email hospedado.
+ O Windows Server Essentials dá suporte à integração com duas soluções de email prontas para uso: Microsoft 365 e Exchange local. Se você estiver executando sua própria solução de email hospedado, será necessário desenvolver um suplemento para integrar o Windows Server Essentials à sua solução de email hospedado.
 
 ## <a name="how-do-i-migrate-on-premises-windows-sbs-201120082003-to-the-hosted-windows-server-essentials"></a>Como fazer migrar o Windows SBS (2011/2008/2003) local para o Windows Server Essentials hospedado?
  Os guias de migração estão disponíveis para as migrações locais do Windows Small Business Server (Windows SBS) para o Windows Server Essentials. Algumas das etapas podem não se aplicar exatamente da mesma maneira ao seu ambiente hospedado. Entretanto, as tarefas gerais e cargas de trabalho a serem migradas devem ser iguais. Recomendamos que você consulte os [guias de migração](https://go.microsoft.com/fwlink/p/?LinkID=254292) e faça as personalizações necessárias com base no seu ambiente de hospedagem.
@@ -363,7 +363,7 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
 
 - (Se aplicável) Configurar e gerenciar os Espaços de Armazenamento.
 
-- (Se aplicável) Configurar a integração da solução de email (Office 365, Exchange hospedado, e assim por diante).
+- (Se aplicável) Configurar a integração de solução de email (Microsoft 365, Hosted Exchange e assim por diante).
 
 - (Se aplicável) Configurar o Servidor de Mídia.
 
