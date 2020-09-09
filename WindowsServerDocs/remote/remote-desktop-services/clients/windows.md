@@ -8,14 +8,14 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/01/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 05e32c05aaafb941958e025253e67c856d81257d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990363"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282108"
 ---
-# <a name="get-started-with-the-windows-store-client"></a>Introdução ao cliente para Microsoft Store
+# <a name="get-started-with-the-microsoft-store-client"></a>Introdução ao cliente para Microsoft Store
 
 >Aplica-se a: Windows 10
 
@@ -24,7 +24,7 @@ Você pode usar o cliente de Área de Trabalho Remota para o Windows para trabal
 Use as informações a seguir para começar. Não se esqueça de conferir as [Perguntas Frequentes](remote-desktop-client-faq.md) se tiver alguma dúvida.
 
 > [!NOTE]
-> - Curioso sobre as novas versões para o cliente da Windows Store? Confira as [Novidades do cliente da Windows Store](windows-whatsnew.md)
+> - Curioso sobre as novas versões para o Cliente da Microsoft Store? Confira as [Novidades do Cliente da Microsoft Store](windows-whatsnew.md)
 > - É possível executar o cliente em qualquer versão do Windows 10 com suporte.
 
 ## <a name="get-the-rd-client-and-start-using-it"></a>Obter o cliente de Área de Trabalho Remota e começar a usá-lo

@@ -7,16 +7,16 @@ manager: lizross
 ms.author: helohr
 ms.date: 08/26/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 56e2a5f91983f8fe64382e162ecf18b30e75b41d
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: f33c60cb318466b6dbbff2edb3ab8efa7bb4be78
+ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88938786"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89282098"
 ---
-# <a name="whats-new-in-the-windows-store-client"></a>Novidades do cliente para Microsoft Store
+# <a name="whats-new-in-the-microsoft-store-client"></a>Novidades do cliente para Microsoft Store
 
-Atualizamos regularmente o [cliente da Windows Store](windows.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
+Atualizamos regularmente o [Cliente da Microsoft Store](windows.md) adicionando novos recursos e corrigindo problemas. Veja onde você encontrará as atualizações mais recentes.
 
 ## <a name="updates-for-version-1021522"></a>Atualizações para a versão 10.2.1522
 
