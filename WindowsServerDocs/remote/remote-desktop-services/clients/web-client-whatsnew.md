@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 11/15/2019
+ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 80663da151137d093634c36a25d4d061c8038e60
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
+ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961860"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89472026"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novidades do cliente Web
 
@@ -20,6 +20,17 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 
 > [!NOTE]
 > Alteramos o sistema de controle de versão para o cliente da Web. Começando com a versão 1.0.18.0, todas as versões de lançamento do cliente da Web irão conter números (no formato "W.X.Y.Z"). Os números de versão para o cliente Web de Área de Trabalho Remota sempre terminarão com um 0 (por exemplo, W.X.Y.0). Cada versão do cliente Web de Área de Trabalho Remota Virtual do Windows alterará o último dígito até a próxima versão do cliente Web da Área de Trabalho Remota (por exemplo, 1.0.18.1).
+
+## <a name="updates-for-10220"></a>Atualizações da versão 1.0.22.0
+*Data da publicação: 02/09/2020*
+
+- Agora, os usuários podem mover o menu minimizado.
+- Suporte aprimorado para monitores 4K e ultra-amplos e correção de um problema em que a cópia de grandes quantidades de dados causava falhas em sessões.
+- Suporte aprimorado para usar um IME (Editor de Método de Entrada) na sessão remota. Para saber mais sobre como usar um IME (Editor de Método de Entrada) com o cliente Web, confira [Conectar-se à Área de Trabalho Virtual do Windows com o cliente Web](/azure-docs/articles/virtual-desktop/connect-web.md).
+- Alteração da interface do usuário da página **Todos os Recursos**.
+- Correção de várias falhas de sequência de conexão em que o cliente Web retornava um *erro de protocolo geral*.
+- Correção de problemas de entrada de teclado em que sequências de teclas específicas não eram manipuladas adequadamente.
+- Aprimoramentos na acessibilidade.
 
 ## <a name="updates-for-version-10210"></a>Atualizações da versão 1.0.21.0
 *Data da publicação: 15/11/2019*
