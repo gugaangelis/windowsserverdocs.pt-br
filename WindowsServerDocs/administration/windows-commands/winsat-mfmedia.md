@@ -3,16 +3,16 @@ title: winsat mfmedia
 description: Referência para WinSAT mfmedia, que mede o desempenho da decodificação de vídeo (reprodução) usando a estrutura de Media Foundation.
 ms.topic: reference
 ms.assetid: 09a3b3dd-f746-4e6e-b684-76a9bde0c78d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 889ef018e5803f9905100b5ae0b65f1bc0c4093e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fca6bbce2bca22f4fcb7907fff2a4818fd0a5fb9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038094"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641095"
 ---
 # <a name="winsat-mfmedia"></a>winsat mfmedia
 

@@ -3,16 +3,16 @@ title: mais
 description: Artigo de referência para o comando more, que exibe uma tela de saída de cada vez.
 ms.topic: reference
 ms.assetid: ded14f6a-d82f-4aeb-a2d8-7ec1c94dfb8f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/26/2019
-ms.openlocfilehash: 2c8d7a21220701bf46685d4c87ca02a4810aff1b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 18e40ff1f3281967e05b47e41f3de405d7009691
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038836"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640159"
 ---
 # <a name="more"></a>mais
 

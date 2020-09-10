@@ -3,16 +3,16 @@ title: wevtutil
 description: Artigo de referência para wevtutil, que permite recuperar informações sobre os logs de eventos e publicadores.
 ms.topic: reference
 ms.assetid: d4c791e0-7e59-45c5-aa55-0223b77a4822
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b36619def02434a253f0e6e97ef47cb78190b8a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4679c8b8245b0db2e4dff7cf179e198201d4910d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031724"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89641237"
 ---
 # <a name="wevtutil"></a>wevtutil
 

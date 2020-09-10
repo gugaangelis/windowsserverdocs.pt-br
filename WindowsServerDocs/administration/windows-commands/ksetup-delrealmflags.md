@@ -3,16 +3,16 @@ title: ksetup delrealmflags
 description: Artigo de referência para o comando ksetup delrealmflags, que remove os sinalizadores de realm do realm especificado.
 ms.topic: reference
 ms.assetid: 22053041-1eb4-47f5-bed9-3d5681bcde7d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c82007f841c61cfeae90c1ebaceac5eca6dc7eb
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 90ebf697ae19cd31b45dc7744ba29f5dc0b9f597
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025540"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640054"
 ---
 # <a name="ksetup-delrealmflags"></a>ksetup delrealmflags
 
@@ -36,7 +36,7 @@ ksetup /delrealmflags <realmname> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 | Valor | Sinalizador de realm | Descrição |
 | ----- | ---------- | ----------- |
-| 0xF | Tudo | Todos os sinalizadores de realm estão definidos. |
+| 0xF | Todos | Todos os sinalizadores de realm estão definidos. |
 | 0x00 | Nenhum | Nenhum sinalizador de realm definido, e nenhum recurso adicional está habilitado. |
 | 0x01 | sendaddress | O endereço IP será incluído dentro dos tíquetes de concessão de tíquetes. |
 | 0x02 | tcpsupported | Tanto o protocolo TCP quanto o UDP (User Datagram Protocol) têm suporte nesse realm. |

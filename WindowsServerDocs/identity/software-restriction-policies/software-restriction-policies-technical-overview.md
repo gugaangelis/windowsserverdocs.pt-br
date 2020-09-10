@@ -3,16 +3,16 @@ title: Visão geral técnica das políticas de restrição de software
 description: Segurança do Windows Server
 ms.topic: article
 ms.assetid: dc7013b0-0efd-40fd-bd6d-75128adbd0b8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: f98075cd8e662b3344f426bd8d69181994096a5f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 49d0f32d1634a37f5ddda71f8147017e9863b1e6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953045"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640243"
 ---
 # <a name="software-restriction-policies-technical-overview"></a>Visão geral técnica das políticas de restrição de software
 
@@ -99,7 +99,7 @@ A tabela a seguir compara os recursos e as funções do AppLocker e SRP (Políti
 |Suporte para exportar e importar políticas|O SRP não oferece suporte à importação/exportação de política.|O AppLocker dá suporte à importação e à exportação de políticas. Isso permite que você crie a política do AppLocker em um computador de exemplo, teste-a e, em seguida, exporte essa política e importe-a de volta para o GPO desejado.|
 |Imposição de regras|Internamente, a imposição de regras de SRP ocorre no modo de usuário, o que é menos seguro.|Internamente, as regras do AppLocker para EXEs e DLLs são impostas no modo kernel, o que é mais seguro do que aplicá-las no modo de usuário.|
 
-## <a name="system-requirements"></a>Requisitos de sistema
+## <a name="system-requirements"></a>Requisitos do sistema
 As diretivas de restrição de software só podem ser configuradas e aplicadas a computadores que executam pelo menos o Windows Server 2003 e, pelo menos, o Windows XP. Política de Grupo é necessário para distribuir Política de Grupo objetos que contêm políticas de restrição de software.
 
 ## <a name="software-restriction-policies-components-and-architecture"></a>Componentes e arquitetura de diretivas de restrição de software

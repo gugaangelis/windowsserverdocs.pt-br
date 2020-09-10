@@ -3,16 +3,16 @@ title: sfc
 description: Artigo de referência para o SFC, que verifica e verifica a integridade de todos os arquivos do sistema protegidos e substitui as versões incorretas pelas versões corretas.
 ms.topic: reference
 ms.assetid: c58c25da-e028-42a6-9e10-973484a4b953
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6aa1fd38eaab1ffe3d6c3b9f2e4913d6a1e0ca4d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 18c7457b7f51449796374930d6232045be443c85
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024880"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640980"
 ---
 # <a name="sfc"></a>sfc
 

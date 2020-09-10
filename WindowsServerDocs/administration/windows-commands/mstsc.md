@@ -3,16 +3,16 @@ title: mstsc
 description: Artigo de referência para o comando mstsc, que cria conexões com Host da Sessão da Área de Trabalho Remota servidores ou outros computadores remotos, edita um arquivo de configuração existente do Conexão de Área de Trabalho Remota (. RDP) e migra os arquivos de conexão herdados que foram criados com o Gerenciador de conexões do cliente para novos arquivos de conexão. rdp.
 ms.topic: reference
 ms.assetid: 59801227-1e7e-4dbd-96e6-f54102a3ce92
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a9c1eb46e2d6802c50dfc89e4a3085e6a6afca2
-ms.sourcegitcommit: fe356f95188b7ce8e719765f44c0789c065832fb
+ms.openlocfilehash: f47a8ad0db569c82d64e74b10c30bec9aca958ab
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89057558"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640545"
 ---
 # <a name="mstsc"></a>mstsc
 

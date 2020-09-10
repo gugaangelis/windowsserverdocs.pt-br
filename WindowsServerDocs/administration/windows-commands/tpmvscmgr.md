@@ -3,16 +3,16 @@ title: tpmvscmgr
 description: Artigo de referência para tpmvscmgr, que é uma ferramenta de linha de comando que permite aos usuários com credenciais administrativas criar e excluir cartões inteligentes virtuais do TPM em um computador.
 ms.topic: reference
 ms.assetid: 8b2c8ff4-5c5d-446d-99e7-4daa1b36a163
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 298962ba0796d80328f8ea4209f79b9149553940
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: d5957ff63d7adca1c3800f806b838686cd8aa38f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026974"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640403"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 

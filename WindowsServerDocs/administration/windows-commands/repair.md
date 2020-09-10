@@ -3,16 +3,16 @@ title: reparo
 description: Artigo de referência para o comando de reparo, que repara volumes RAID-5 substituindo a região do disco com falha por um disco dinâmico especificado.
 ms.topic: reference
 ms.assetid: 9f84f661-f3cd-48c8-bf08-87819cf626fe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a0768a82f2de22a424b4979aa8844e9fbb4f67e5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 969a677f72af9ab5e99770983308db6e88c28c29
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027284"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89640995"
 ---
 # <a name="repair"></a>reparo
 
