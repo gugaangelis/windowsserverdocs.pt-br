@@ -3,16 +3,16 @@ title: alterar
 description: Artigo de referência do comando Change, que altera Host da Sessão da Área de Trabalho Remota configurações do servidor para logons, mapeamentos de porta COM e modo de instalação.
 ms.topic: reference
 ms.assetid: 90012116-0fb3-4f34-a819-cf4d4b4f8981
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f1dc7af27d1ada36013e5d8d44237a1d2b07f926
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bda2f4507b4ad6b6bcca7cc0ab58efcc91a8cc02
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031134"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629843"
 ---
 # <a name="change"></a>alterar
 

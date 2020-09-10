@@ -3,16 +3,16 @@ title: bitsadmin setreplyfilename
 description: Artigo de referência para o comando Bitsadmin setreplyfilename, que especifica o caminho do arquivo que contém a resposta de upload do servidor.
 ms.topic: reference
 ms.assetid: c26d3342-0533-40b1-a13e-e09678232b25
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2991503ad558b318f52d07447af18d4f9e6178aa
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e517b3b09e287d4364763b433e3209bf8d4794d6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033414"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630639"
 ---
 # <a name="bitsadmin-setreplyfilename"></a>bitsadmin setreplyfilename
 

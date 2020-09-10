@@ -3,16 +3,16 @@ title: change logon
 description: Artigo de referência para o comando Change login, que habilita ou desabilita os logons de sessões de cliente ou exibe o status de logon atual.
 ms.topic: reference
 ms.assetid: 41466260-aee9-4333-bcb6-178112c22afd
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 67f6a5b93fbe5ec16c4cece1c5c8429de06ce494
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 55732dc5803f4ac783828293f5da839cca364b40
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031164"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629906"
 ---
 # <a name="change-logon"></a>change logon
 

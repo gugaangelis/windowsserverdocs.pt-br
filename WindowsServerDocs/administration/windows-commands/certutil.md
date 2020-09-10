@@ -3,16 +3,16 @@ title: certutil
 description: Artigo de referência para o comando certutil, que é um programa de linha de comando que despeja e exibe informações de configuração de autoridade de certificação (CA), configura os serviços de certificados, os componentes de AC de backup e restauração e verifica certificados, pares de chaves e cadeias de certificados.
 ms.topic: reference
 ms.assetid: c264ccf0-ba1e-412b-9dd3-d77dd9345ad9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 99c9d0ddca6ce1b91d86733995c30c46b747b7af
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: fc1065ab3853f6098c725f4ccaaafc483cb6015d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031204"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629915"
 ---
 # <a name="certutil"></a>certutil
 
@@ -118,7 +118,7 @@ Defina atributos para uma solicitação de certificado pendente.
 certutil [options] -setattributes RequestID attributestring
 ```
 
-Em que:
+Sendo que:
 
 - **RequestId** é a ID de solicitação numérica para a solicitação pendente.
 
@@ -140,7 +140,7 @@ Defina uma extensão para uma solicitação de certificado pendente.
 certutil [options] -setextension requestID extensionname flags {long | date | string | \@infile}
 ```
 
-Em que:
+Sendo que:
 
 - **RequestId** é a ID de solicitação numérica para a solicitação pendente.
 
@@ -170,7 +170,7 @@ Revogar um certificado.
 certutil [options] -revoke serialnumber [reason]
 ```
 
-Em que:
+Sendo que:
 
 - **SerialNumber** é uma lista separada por vírgulas de números de série do certificado a revogar.
 
@@ -230,7 +230,7 @@ Tente entrar em contato com a interface de solicitação de serviços de certifi
 certutil [options] -ping [maxsecondstowait | camachinelist]
 ```
 
-Em que:
+Sendo que:
 
 - **camachinelist** é uma lista separada por vírgulas de nomes de computador de autoridade de certificação. Para um único computador, use uma vírgula de terminação. Essa opção também exibe o custo do site para cada computador de autoridade de certificação.
 
@@ -246,7 +246,7 @@ Exibir informações sobre a autoridade de certificação.
 certutil [options] -cainfo [infoname [index | errorcode]]
 ```
 
-Em que:
+Sendo que:
 
 - **InfoName** indica a propriedade de autoridade de certificação a ser exibida, com base na sintaxe do argumento InfoName a seguir:
 
@@ -364,7 +364,7 @@ Recupere o certificado para a autoridade de certificação.
 certutil [options] -ca.cert outcacertfile [index]
 ```
 
-Em que:
+Sendo que:
 
 - **outcacertfile** é o arquivo de saída.
 
@@ -382,7 +382,7 @@ Recupere a cadeia de certificados para a autoridade de certificação.
 certutil [options] -ca.chain outcacertchainfile [index]
 ```
 
-Em que:
+Sendo que:
 
 - **outcacertchainfile** é o arquivo de saída.
 
@@ -398,7 +398,7 @@ Obtém uma CRL (lista de certificados revogados).
 
 certutil [opções]-getcrl outfile [índice] [Delta]
 
-Em que:
+Sendo que:
 
 - **index** é o índice de CRL ou índice de chave (o padrão é CRL para a chave mais recente).
 
@@ -416,7 +416,7 @@ Publicar novas listas de certificados revogados (CRLs) ou CRLs delta.
 certutil [options] -crl [dd:hh | republish] [delta]
 ```
 
-Em que:
+Sendo que:
 
 - **DD: hh** é o novo período de validade da CRL em dias e horas.
 
@@ -473,7 +473,7 @@ Despeja o esquema para o certificado.
 ```
 certutil [options] -schema [ext | attrib | cRL]
 ```
-Em que:
+Sendo que:
 
 - O comando usa como padrão a tabela de solicitação e certificado.
 
@@ -495,7 +495,7 @@ Despeja a exibição de certificado.
 certutil [options] -view [queue | log | logfail | revoked | ext | attrib | crl] [csv]
 ```
 
-Em que:
+Sendo que:
 
 - a **fila** despeja uma fila de solicitações específica.
 
@@ -555,7 +555,7 @@ Exclui uma linha do banco de dados do servidor.
 certutil [options] -deleterow rowID | date [request | cert | ext | attrib | crl]
 ```
 
-Em que:
+Sendo que:
 
 - a **solicitação** exclui as solicitações com falha e pendentes, com base na data de envio.
 
@@ -589,7 +589,7 @@ Faz backup dos serviços de certificados Active Directory.
 certutil [options] -backup backupdirectory [incremental] [keeplog]
 ```
 
-Em que:
+Sendo que:
 
 - **BackupDirectory** é o diretório para armazenar os dados de backup.
 
@@ -609,7 +609,7 @@ Faz backup do banco de dados de serviços de certificados Active Directory.
 certutil [options] -backupdb backupdirectory [incremental] [keeplog]
 ```
 
-Em que:
+Sendo que:
 
 - **BackupDirectory** é o diretório para armazenar os arquivos de banco de dados de backup.
 
@@ -629,7 +629,7 @@ Faz backup da Active Directory certificado de serviços de certificados e da cha
 certutil [options] -backupkey backupdirectory
 ```
 
-Em que:
+Sendo que:
 
 - **BackupDirectory** é o diretório para armazenar o arquivo PFX de backup.
 
@@ -645,7 +645,7 @@ Restaura os serviços de certificados Active Directory.
 certutil [options] -restore backupdirectory
 ```
 
-Em que:
+Sendo que:
 
 - **BackupDirectory** é o diretório que contém os dados a serem restaurados.
 
@@ -661,7 +661,7 @@ Restaura o banco de dados de serviços de certificados Active Directory.
 certutil [options] -restoredb backupdirectory
 ```
 
-Em que:
+Sendo que:
 
 - **BackupDirectory** é o diretório que contém os arquivos de banco de dados a serem restaurados.
 
@@ -677,7 +677,7 @@ Restaura a Active Directory certificado de serviços de certificados e a chave p
 certutil [options] -restorekey backupdirectory | pfxfile
 ```
 
-Em que:
+Sendo que:
 
 - **BackupDirectory** é o diretório que contém o arquivo PFX a ser restaurado.
 
@@ -693,7 +693,7 @@ Importe o certificado e a chave privada. Para obter mais informações, consulte
 certutil [options] -importpfx [certificatestorename] pfxfile [modifiers]
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -763,7 +763,7 @@ Despeja o repositório de certificados.
 certutil [options] -store [certificatestorename [certID [outputfile]]]
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados. Por exemplo:
 
@@ -817,7 +817,7 @@ Adiciona um certificado ao repositório. Para obter mais informações, consulte
 certutil [options] -addstore certificatestorename infile
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -835,7 +835,7 @@ Exclui um certificado do repositório. Para obter mais informações, consulte o
 certutil [options] -delstore certificatestorename certID
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -853,7 +853,7 @@ Verifica um certificado no repositório. Para obter mais informações, consulte
 certutil [options] -verifystore certificatestorename [certID]
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -871,7 +871,7 @@ Repara uma associação de chave ou atualiza as propriedades do certificado ou o
 certutil [options] -repairstore certificatestorename certIDlist [propertyinffile | SDDLsecuritydescriptor]
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -914,7 +914,7 @@ Despeja o repositório de certificados. Para obter mais informações, consulte 
 certutil [options] -viewstore [certificatestorename [certID [outputfile]]]
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -954,7 +954,7 @@ Exclui um certificado do repositório.
 certutil [options] -viewdelstore [certificatestorename [certID [outputfile]]]
 ```
 
-Em que:
+Sendo que:
 
 - **certificatestorename** é o nome do repositório de certificados.
 
@@ -998,7 +998,7 @@ certutil [options] -dspublish certfile [NTAuthCA | RootCA | SubCA | CrossCA | KR
 certutil [options] -dspublish CRLfile [DSCDPContainer [DSCDPCN]]
 ```
 
-Em que:
+Sendo que:
 
 - **CertFile** é o nome do arquivo de certificado a ser publicado.
 
@@ -1086,7 +1086,7 @@ certutil [options] -setcasites verify [sitename]
 certutil [options] -setcasites delete
 ```
 
-Em que:
+Sendo que:
 
 - **SiteName** só é permitido quando direcionado a uma única autoridade de certificação.
 
@@ -1112,7 +1112,7 @@ certutil [options] -enrollmentServerURL [URL authenticationtype [priority] [modi
 certutil [options] -enrollmentserverURL URL delete
 ```
 
-Em que:
+Sendo que:
 
 - **AuthenticationType** especifica um dos seguintes métodos de autenticação de cliente, ao adicionar uma URL:
 
@@ -1178,7 +1178,7 @@ Exibe ou exclui entradas de cache de política de registro.
 certutil [options] -policycache [delete]
 ```
 
-Em que:
+Sendo que:
 
 - **excluir** exclui as entradas do cache do servidor de políticas.
 
@@ -1198,7 +1198,7 @@ certutil [options] -credstore URL add
 certutil [options] -credstore URL delete
 ```
 
-Em que:
+Sendo que:
 
 - A **URL** é a URL de destino. Você também pode usar `*` para corresponder a todas as entradas ou `https://machine*` para corresponder a um prefixo de URL.
 
@@ -1232,7 +1232,7 @@ Exibe ou exclui entradas de cache de URL.
 certutil [options] -URLcache [URL | CRL | * [delete]]
 ```
 
-Em que:
+Sendo que:
 
 - A **URL** é a URL armazenada em cache.
 
@@ -1317,7 +1317,7 @@ Exibe informações sobre o cartão inteligente.
 certutil [options] -scinfo [readername [CRYPT_DELETEKEYSET]]
 ```
 
-Em que:
+Sendo que:
 
 - **CRYPT_DELETEKEYSET** exclui todas as chaves no cartão inteligente.
 
@@ -1348,7 +1348,7 @@ Verifica um conjunto de chaves pública ou privada.
 certutil [options] -verifykeys [keycontainername cacertfile]
 ```
 
-Em que:
+Sendo que:
 
 - **KeyContainerName** é o nome do contêiner de chave para a chave a ser verificada. Essa opção assume como padrão as chaves do computador. Para alternar para as chaves de usuário, use `-user` .
 
@@ -1375,7 +1375,7 @@ certutil [options] -verify CRLfile cacertfile [issuedcertfile]
 certutil [options] -verify CRLfile cacertfile [deltaCRLfile]
 ```
 
-Em que:
+Sendo que:
 
 - **CertFile** é o nome do certificado a ser verificado.
 
@@ -1421,7 +1421,7 @@ Verifica a CTL de certificados AuthRoot ou não permitido.
 certutil [options] -verifyCTL CTLobject [certdir] [certfile]
 ```
 
-Em que:
+Sendo que:
 
 - **CTLobject** identifica a CTL a ser verificada, incluindo:
 
@@ -1452,7 +1452,7 @@ certutil [options] -sign infilelist | serialnumber | CRL outfilelist [startdate+
 certutil [options] -sign infilelist | serialnumber | CRL outfilelist [#hashalgorithm] [+alternatesignaturealgorithm | -alternatesignaturealgorithm]
 ```
 
-Em que:
+Sendo que:
 
 - **infilelist** é a lista separada por vírgulas de certificados ou arquivos CRL para modificar e assinar novamente.
 
@@ -1525,7 +1525,7 @@ Adicione um aplicativo de servidor de registro e um pool de aplicativos, se nece
 certutil [options] -addenrollmentserver kerberos | username | clientcertificate [allowrenewalsonly] [allowkeybasedrenewal]
 ```
 
-Em que:
+Sendo que:
 
 - o **addenrollmentserver** exige que você use um método de autenticação para a conexão do cliente com o servidor de registro de certificado, incluindo:
 
@@ -1551,7 +1551,7 @@ Exclui um aplicativo de servidor de registro e um pool de aplicativos, se necess
 certutil [options] -deleteenrollmentserver kerberos | username | clientcertificate
 ```
 
-Em que:
+Sendo que:
 
 - o **deleteenrollmentserver** exige que você use um método de autenticação para a conexão do cliente com o servidor de registro de certificado, incluindo:
 
@@ -1573,7 +1573,7 @@ Adicione um aplicativo de servidor de política e um pool de aplicativos, se nec
 certutil [options] -addpolicyserver kerberos | username | clientcertificate [keybasedrenewal]
 ```
 
-Em que:
+Sendo que:
 
 - o **addpolicyserver** exige que você use um método de autenticação para a conexão do cliente com o servidor de política de certificado, incluindo:
 
@@ -1591,7 +1591,7 @@ Exclui um aplicativo de servidor de política e um pool de aplicativos, se neces
 
 certutil [opções]-deletePolicyServer Kerberos | nome de usuário | ClientCertificate [keybasedrenewal]
 
-Em que:
+Sendo que:
 
 - o **deletepolicyserver** exige que você use um método de autenticação para a conexão do cliente com o servidor de política de certificado, incluindo:
 
@@ -1613,7 +1613,7 @@ certutil [options] -oid groupID
 certutil [options] -oid agID | algorithmname [groupID]
 ```
 
-Em que:
+Sendo que:
 
 - **ObjectID** exibe ou adiciona o nome de exibição.
 
@@ -1655,7 +1655,7 @@ Exibe um valor de registro.
 certutil [options] -getreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]][registryvaluename]
 ```
 
-Em que:
+Sendo que:
 
 - a **AC** usa a chave do registro de uma autoridade de certificação.
 
@@ -1699,7 +1699,7 @@ Define um valor de registro.
 certutil [options] -setreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]]registryvaluename value
 ```
 
-Em que:
+Sendo que:
 
 - a **AC** usa a chave do registro de uma autoridade de certificação.
 
@@ -1743,7 +1743,7 @@ Exclui um valor de registro.
 certutil [options] -delreg [{ca | restore | policy | exit | template | enroll |chain | policyservers}\[progID\]][registryvaluename]
 ```
 
-Em que:
+Sendo que:
 
 - a **AC** usa a chave do registro de uma autoridade de certificação.
 
@@ -1787,7 +1787,7 @@ Importa chaves de usuário e certificados para o banco de dados do servidor para
 certutil [options] -importKMS userkeyandcertfile [certID]
 ```
 
-Em que:
+Sendo que:
 
 - **userkeyandcertfile** é um arquivo de dados com chaves privadas do usuário e certificados que devem ser arquivados. Esse arquivo pode ser:
 
@@ -1811,7 +1811,7 @@ Importa um arquivo de certificado para o banco de dados.
 certutil [options] -importcert certfile [existingrow]
 ```
 
-Em que:
+Sendo que:
 
 - **existingrow** importa o certificado no lugar de uma solicitação pendente para a mesma chave.
 
@@ -1835,7 +1835,7 @@ certutil [options] -getkey searchtoken script outputscriptfile
 certutil [options] -getkey searchtoken retrieve | recover outputfilebasename
 ```
 
-Em que:
+Sendo que:
 
 - o **script** gera um script para recuperar e recuperar chaves (comportamento padrão se vários candidatos à recuperação correspondentes forem encontrados ou se o arquivo de saída não for especificado).
 
@@ -1887,7 +1887,7 @@ Mescla arquivos PFX.
 certutil [options] -mergePFX PFXinfilelist PFXoutfile [extendedproperties]
 ```
 
-Em que:
+Sendo que:
 
 - **PFXinfilelist** é uma lista separada por vírgulas de arquivos de entrada PFX.
 
@@ -1913,7 +1913,7 @@ Converte um arquivo PFX em um arquivo EPF.
 certutil [options] -convertEPF PFXinfilelist PFXoutfile [cast | cast-] [V3CAcertID][,salt]
 ```
 
-Em que:
+Sendo que:
 
 
 - **PFXinfilelist** é uma lista separada por vírgulas de arquivos de entrada PFX.
@@ -1950,7 +1950,7 @@ certutil <name_of_parameter> -?
 certutil -? -v
 ```
 
-Em que:
+Sendo que:
 
 - **-?** exibe a lista completa de parâmetros
 

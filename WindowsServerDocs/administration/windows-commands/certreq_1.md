@@ -3,16 +3,16 @@ title: certreq
 description: Artigo de referência para o comando certreq, que solicita certificados de uma autoridade de certificação (CA), recupera uma resposta a uma solicitação anterior de uma CA, cria uma nova solicitação de um arquivo. inf, aceita e instala uma resposta a uma solicitação, constrói uma solicitação de certificação cruzada ou de subordinação qualificada de um certificado ou solicitação de autoridade de certificação existente e assina uma solicitação de certificação cruzada ou de subordinação qualificada
 ms.topic: reference
 ms.assetid: 7a04e51f-f395-4bff-b57a-0e9efcadf973
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: eb910415c46a57353eeffe7168ce71c055d82eca
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1f2cdc1123595dae9c0c72bcdc77c2f55382c760
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89031244"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629939"
 ---
 # <a name="certreq"></a>certreq
 
@@ -129,7 +129,7 @@ Essa área do arquivo INF é obrigatória para qualquer novo modelo de solicita�
 | UseExistingKeySet | Esse parâmetro é usado para especificar que um par de chaves existente deve ser usado na criação de uma solicitação de certificado. Se essa chave for definida como TRUE, você também deverá especificar um valor para a chave RenewalCert ou o nome do keycontainer. Você não deve definir a chave exportável porque não pode alterar as propriedades de uma chave existente. Nesse caso, nenhum material da chave é gerado quando a solicitação de certificado é criada. | `true | false` | `UseExistingKeySet = true` |
 | Proteção contra keyprotection | Especifica um valor que indica como uma chave privada é protegida antes do uso. | <ul><li>`XCN_NCRYPT_UI_NO_PROTCTION_FLAG -- 0`</li><li>`XCN_NCRYPT_UI_PROTECT_KEY_FLAG -- 1`</li><li>`XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG -- 2`</li></ul> | `KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG` |
 | SuppressDefaults | Especifica um valor booliano que indica se as extensões e os atributos padrão estão incluídos na solicitação. Os padrões são representados por seus OIDs (identificadores de objeto). | `true | false` | `SuppressDefaults = true` |
-| FriendlyName | Um nome amigável para o novo certificado. | Text | `FriendlyName = Server1` |
+| FriendlyName | Um nome amigável para o novo certificado. | Texto | `FriendlyName = Server1` |
 | ValidityPeriodUnits | Especifica um número de unidades que deve ser usado com ValidityPeriod. Observação: isso é usado somente quando o `request type=cert` . | Numérico | `ValidityPeriodUnits = 3` |
 | ValidityPeriod | ValidityPeriod deve ser um período de tempo no inglês dos EUA. Observação: isso é usado somente quando o tipo de solicitação = CERT. | `Years |  Months | Weeks | Days | Hours | Minutes | Seconds` | `ValidityPeriod = Years` |
 
@@ -144,21 +144,21 @@ Esta seção é opcional.
 | OID de extensão | Definição | Exemplo |
 | ------------- | ---------- | ----- | ------- |
 | 2.5.29.17 | | 2.5.29.17 = {Text} |
-| *continue* | | `continue = UPN=User@Domain.com&` |
-| *continue* | | `continue = EMail=User@Domain.com&` |
-| *continue* | | `continue = DNS=host.domain.com&` |
-| *continue* | | `continue = DirectoryName=CN=Name,DC=Domain,DC=com&` |
-| *continue* | | `continue = URL=<http://host.domain.com/default.html&>` |
-| *continue* | | `continue = IPAddress=10.0.0.1&` |
-| *continue* | | `continue = RegisteredId=1.2.3.4.5&` |
-| *continue* | | `continue = 1.2.3.4.6.1={utf8}String&` |
-| *continue* | | `continue = 1.2.3.4.6.2={octet}AAECAwQFBgc=&` |
-| *continue* | | `continue = 1.2.3.4.6.2={octet}{hex}00 01 02 03 04 05 06 07&` |
-| *continue* | | `continue = 1.2.3.4.6.3={asn}BAgAAQIDBAUGBw==&` |
-| *continue* | | `continue = 1.2.3.4.6.3={hex}04 08 00 01 02 03 04 05 06 07` |
+| *continua* | | `continue = UPN=User@Domain.com&` |
+| *continua* | | `continue = EMail=User@Domain.com&` |
+| *continua* | | `continue = DNS=host.domain.com&` |
+| *continua* | | `continue = DirectoryName=CN=Name,DC=Domain,DC=com&` |
+| *continua* | | `continue = URL=<http://host.domain.com/default.html&>` |
+| *continua* | | `continue = IPAddress=10.0.0.1&` |
+| *continua* | | `continue = RegisteredId=1.2.3.4.5&` |
+| *continua* | | `continue = 1.2.3.4.6.1={utf8}String&` |
+| *continua* | | `continue = 1.2.3.4.6.2={octet}AAECAwQFBgc=&` |
+| *continua* | | `continue = 1.2.3.4.6.2={octet}{hex}00 01 02 03 04 05 06 07&` |
+| *continua* | | `continue = 1.2.3.4.6.3={asn}BAgAAQIDBAUGBw==&` |
+| *continua* | | `continue = 1.2.3.4.6.3={hex}04 08 00 01 02 03 04 05 06 07` |
 | 2.5.29.37 | | `2.5.29.37={text}` |
-| *continue* | | `continue = 1.3.6.1.5.5.7` |
-| *continue* | | `continue = 1.3.6.1.5.5.7.3.1` |
+| *continua* | | `continue = 1.3.6.1.5.5.7` |
+| *continua* | | `continue = 1.3.6.1.5.5.7.3.1` |
 | 2.5.29.19 | | `{text}ca=0pathlength=3` |
 | Crítico | | `Critical=2.5.29.19` |
 | KeySpec | | <ul><li>`AT_NONE -- 0`</li><li>`AT_SIGNATURE -- 2`</li><li>`AT_KEYEXCHANGE -- 1`</ul></li> |

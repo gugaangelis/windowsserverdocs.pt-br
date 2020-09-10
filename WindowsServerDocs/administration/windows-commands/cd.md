@@ -3,16 +3,16 @@ title: cd
 description: Artigo de referência do comando CD, que exibe o nome ou altera o diretório atual.
 ms.topic: reference
 ms.assetid: 932d9cc1-3dff-40da-835c-1cb0894874f1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ef5f6f247702c96b3dcca0bda7596ae43867d9e7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 27c7f9c60bafb8edf78a156c5d763d3bffc295c3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034194"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629972"
 ---
 # <a name="cd"></a>cd
 

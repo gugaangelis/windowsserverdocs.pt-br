@@ -3,16 +3,16 @@ title: bitsadmin setnotifycmdline
 description: Artigo de referência para o comando Bitsadmin setnotifycmdline, que define o comando de linha de comando que será executado quando o trabalho terminar de transferir dados ou quando um trabalho entrar em um estado.
 ms.topic: reference
 ms.assetid: 415ae6ef-8549-48b2-9693-2368a6e24075
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f486efcbaef5f68d6f8be7cab1caba204c77c7a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b086775edb57f9d1b1e6fbe80e38ad011b439b97
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026224"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630789"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 

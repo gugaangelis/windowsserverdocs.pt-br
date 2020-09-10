@@ -3,16 +3,16 @@ title: cacls
 description: Artigo de referência para o comando Cacls. Este comando foi preterido e não tem garantia de suporte em versões futuras do Windows.
 ms.topic: reference
 ms.assetid: b5bdbaaa-4557-48b8-80df-e75ee0d2f27d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8261e9711cee85ad1d59ff71f9cd8ac55e63fab8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 32be46658f47b534c80a9d9a712914aa6d878792
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034274"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630026"
 ---
 # <a name="cacls"></a>cacls
 

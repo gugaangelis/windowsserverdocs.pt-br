@@ -3,16 +3,16 @@ title: bitsadmin setsecurityflags
 description: Artigo de referência para o comando Bitsadmin setsecurityflags, que define sinalizadores de segurança para HTTP para determinar se o BITS deve verificar a lista de certificados revogados, ignorar determinados erros de certificado e definir a política a ser usada quando um servidor redireciona a solicitação HTTP.
 ms.topic: reference
 ms.assetid: 0da5cbf5-5f7f-4833-bbbe-c4e8379a78ab
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 56f1888eef89a0d6ef6dbe70ea08e99503e0d8b6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 771ff8ba34f82e942877158d351ed8ff760bda9d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034734"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89630633"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 
