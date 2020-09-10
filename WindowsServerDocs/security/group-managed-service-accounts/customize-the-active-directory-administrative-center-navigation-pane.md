@@ -2,16 +2,16 @@
 title: Personalizar o painel de navegação Centro Administrativo do Active Directory
 description: Segurança do Windows Server
 ms.assetid: c9933d16-e153-435a-b5b7-3e594db42d5c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ecadc09eaa0433458a0224582c3c2ba67dd938f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 34a15b768d3143d7083ab62bb9aa537a2c8bdeb4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87971473"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639792"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalizar o painel de navegação Centro Administrativo do Active Directory
 

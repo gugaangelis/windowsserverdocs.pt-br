@@ -3,16 +3,16 @@ title: logman start e logman stop
 description: Artigo de referência para os comandos logman start e logman stop, que inicia um coletor de dados e define a hora de início como manual ou para um conjunto de coletores de dados e define a hora de término como manual.
 ms.topic: reference
 ms.assetid: a40006a1-876e-474b-aaf1-f365c730deea
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b573ecd78ad9f062162d2c1ad16d59aebe740ee
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9a684eb010d52e5aba01fee609f878cc5485a7d5
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038857"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639967"
 ---
 # <a name="logman-start-and-logman-stop"></a>logman start e logman stop
 

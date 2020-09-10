@@ -3,16 +3,16 @@ title: logman
 description: Artigo de referência para o comando logman, que cria e gerencia a sessão de rastreamento de eventos e os logs de desempenho e dá suporte a muitas funções do monitor de desempenho da linha de comando.
 ms.topic: reference
 ms.assetid: 574a5203-5b3b-4759-a678-f26d00dde447
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b155e3cca0b9f5e35c1c817cfee4e96ca79b6610
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ac3e541436ca6f3b0e9d7c0dc03154ffefdfda0d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030544"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639515"
 ---
 # <a name="logman"></a>logman
 

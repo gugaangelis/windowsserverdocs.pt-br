@@ -3,16 +3,16 @@ title: Visão geral sobre o controle de conta de usuário
 description: Segurança do Windows Server
 ms.topic: article
 ms.assetid: 1b7a39cd-fc10-4408-befd-4b2c45806732
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 67739307d85e9d9dd83690dfef36aa65bfd21d02
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2729bafe910db6814479464a007ce0e49f8b3205
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936562"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638853"
 ---
 # <a name="user-account-control-overview"></a>Visão geral sobre o controle de conta de usuário
 \(O UAC do controle \) de conta de usuário é um componente fundamental da visão geral da segurança da Microsoft.  O UAC ajuda a minimizar o impacto de um programa mal-intencionado.

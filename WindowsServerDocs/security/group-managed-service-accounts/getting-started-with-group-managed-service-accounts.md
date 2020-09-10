@@ -3,16 +3,16 @@ title: Getting Started with Group Managed Service Accounts
 description: Segurança do Windows Server
 ms.topic: article
 ms.assetid: 7130ad73-9688-4f64-aca1-46a9187a46cf
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 979a6cf1e0b5e2d68c05f6285a9d745eabe41fa4
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 19da2b6ec2a7a3ca31c479388c087850c77d9c23
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991518"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638052"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Getting Started with Group Managed Service Accounts
 
@@ -52,12 +52,12 @@ Os serviços têm as entidades a seguir entre as quais escolher, e cada uma dela
 
 |Principals|Escopo|Serviços compatíveis|Gerenciamento de senhas|
 |-------|-----|-----------|------------|
-|Conta de Computador do sistema do Windows|Domain|Limitado a um servidor ingressado no domínio|O computador gerencia|
-|Conta de Computador sem o sistema do Windows|Domain|Qualquer servidor ingressado no domínio|Nenhum|
+|Conta de Computador do sistema do Windows|Domínio|Limitado a um servidor ingressado no domínio|O computador gerencia|
+|Conta de Computador sem o sistema do Windows|Domínio|Qualquer servidor ingressado no domínio|Nenhum|
 |Conta Virtual|Local|Limitado a um servidor|O computador gerencia|
-|Conta de Serviço Gerenciado independente do Windows 7|Domain|Limitado a um servidor ingressado no domínio|O computador gerencia|
-|Conta de Usuário|Domain|Qualquer servidor ingressado no domínio|Nenhum|
-|Conta de Serviço Gerenciado de Grupo|Domain|Qualquer servidor ingressado no domínio do Windows Server 2012|O controlador de domínio gerencia e o host recupera|
+|Conta de Serviço Gerenciado independente do Windows 7|Domínio|Limitado a um servidor ingressado no domínio|O computador gerencia|
+|Conta de Usuário|Domínio|Qualquer servidor ingressado no domínio|Nenhum|
+|Conta de Serviço Gerenciado de Grupo|Domínio|Qualquer servidor ingressado no domínio do Windows Server 2012|O controlador de domínio gerencia e o host recupera|
 
 Uma conta de computador do Windows, uma sMSA (Conta de Serviço Gerenciado independente) do Windows 7 ou contas virtuais não podem ser compartilhadas em diversos sistemas. Se você configurasse uma conta para serviços em farms de servidores a serem compartilhados, teria que escolher uma conta de usuário ou uma conta de computador separada do sistema do Windows. De qualquer maneira, essas contas não têm a funcionalidade de gerenciamento de senhas de ponto único de controle. Isso cria um problema em que cada organização precisa criar uma solução dispendiosa para atualizar chaves do serviço no Active Directory e distribuir as chaves a todas as instâncias desses serviços.
 

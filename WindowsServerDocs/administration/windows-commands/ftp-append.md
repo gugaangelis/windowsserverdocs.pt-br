@@ -3,16 +3,16 @@ title: ftp append
 description: Artigo de referência do comando FTP Append, que acrescenta um arquivo local a um arquivo no computador remoto usando a configuração de tipo de arquivo atual.
 ms.topic: reference
 ms.assetid: 7c1a133c-31dc-41a4-9eb9-258efd79804d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 58f85a99eed60bffafaa71d9b0af1cc67462453b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 42270b8f3633158e12d472a234fcf1904cee86de
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037744"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89638578"
 ---
 # <a name="ftp-append"></a>ftp append
 

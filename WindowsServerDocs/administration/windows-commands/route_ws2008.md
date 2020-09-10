@@ -3,16 +3,16 @@ title: route
 description: Artigo de referência para o comando Route, que modifica e exibe entradas na tabela de roteamento IP local.
 ms.topic: reference
 ms.assetid: afcd666c-0cef-47c2-9bcc-02d202b983b3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: a15e9190ac135a49cfacfd259a7058765cafa8a4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3c38c1946c49318fc9aae901758eef412a8a586a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033754"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639835"
 ---
 # <a name="route"></a>route
 

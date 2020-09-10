@@ -3,16 +3,16 @@ title: ksetup changepassword
 description: Artigo de referência para o comando ChangePassword ksetup, que usa o valor de centro de distribuição de chaves (KDC) senha (kpasswd) para alterar a senha do usuário conectado.
 ms.topic: reference
 ms.assetid: 283078e7-a88f-4875-90e6-f8605e6b7ea7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 89a01291d1f766f5d3235f0029ed84198531116a
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ff88136c51b9790867c76d54467996e9305cbc93
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037934"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639714"
 ---
 # <a name="ksetup-changepassword"></a>ksetup changepassword
 

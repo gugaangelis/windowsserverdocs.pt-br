@@ -3,16 +3,16 @@ title: query session
 description: Artigo de referência para o comando de sessão de consulta, que exibe informações sobre sessões em um servidor de Host da Sessão da Área de Trabalho Remota.
 ms.topic: reference
 ms.assetid: abc0ace8-0b74-4b6e-a937-a78bb4b61a1f
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 55f0269c57b70944befa4483cdeab96ec89b2bd9
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2842aa9b0a38438a92ee2b7072b1a1054642fd62
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038404"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639885"
 ---
 # <a name="query-session"></a>query session
 

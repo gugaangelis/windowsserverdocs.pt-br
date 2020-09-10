@@ -3,16 +3,16 @@ title: klist
 description: Artigo de referência para o comando klist, que exibe uma lista de tíquetes Kerberos atualmente armazenados em cache.
 ms.topic: reference
 ms.assetid: 4689b4a9-1740-47dd-9240-02105efca428
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d5284feae5da9c8c7fcdab90dd34ce7855128d5f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: abb088230e37eb2806380ec65e12bd3b5017e5a2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037714"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639775"
 ---
 # <a name="klist"></a>klist
 

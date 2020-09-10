@@ -3,16 +3,16 @@ title: msiexec
 description: Artigo de referência para o comando msiexec, que fornece os meios para instalar, modificar e executar operações no Windows Installer da linha de comando.
 ms.topic: reference
 ms.assetid: 122eb0ce-ecbc-4909-a52a-15c3413619af
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1255cf26ac4dd3f9c28189ce7df76d63c875ee64
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 93ce1de1f75ff03bc7bb5f79d2046502c2d81bc4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025280"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639613"
 ---
 # <a name="msiexec"></a>msiexec
 

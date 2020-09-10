@@ -3,16 +3,16 @@ title: Grupo de segurança de usuários protegidos
 description: Segurança do Windows Server
 ms.topic: article
 ms.assetid: 1b0b5180-f65a-43ac-8ef3-66014116f296
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: fb8fef4b954416e7ed284db9cf57b77f5a84c594
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: ba53c87119e798c3d3346b8fc245ffcc4e092a4d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995808"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89639803"
 ---
 # <a name="protected-users-security-group"></a>Grupo de segurança de usuários protegidos
 
