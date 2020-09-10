@@ -3,16 +3,16 @@ title: endlocal
 description: Artigo de referência para o comando endlocal, que encerra a localização de alterações de ambiente em um arquivo em lotes e restaura as variáveis de ambiente para seus valores antes da execução do comando SETLOCAL correspondente.
 ms.topic: reference
 ms.assetid: 765fae3c-0c0a-4639-99a4-cf613489b949
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 82fa050ef9f2ed35368a6eaf356c6aa6f70e5465
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 4220d143be2e3af9378854aa1a649c2358b44560
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89030694"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89636117"
 ---
 # <a name="endlocal"></a>endlocal
 

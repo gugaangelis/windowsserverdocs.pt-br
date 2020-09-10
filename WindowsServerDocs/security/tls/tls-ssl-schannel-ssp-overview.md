@@ -3,16 +3,16 @@ title: Visão geral de TLS/SSL (SSP do Schannel)
 description: Segurança do Windows Server
 ms.topic: article
 ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 05/16/2018
-ms.openlocfilehash: 512dd20e658f610ac9de7247380eed5d2aed54f6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 21ad7977039eda311dd6f093fc53c09c08cf0317
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989470"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637846"
 ---
 # <a name="tlsssl-overview-schannel-ssp"></a>Visão geral de TLS/SSL (SSP do Schannel)
 
@@ -20,7 +20,7 @@ ms.locfileid: "87989470"
 
 Este tópico para o profissional de ti apresenta as implementações de TLS e SSL no Windows usando o SSP (provedor de serviços de segurança do Schannel) descrevendo aplicativos práticos, alterações na implementação da Microsoft e requisitos de software, além de recursos adicionais para o Windows Server 2012 e o Windows 8.
 
-## <a name="description"></a><a name="BKMK_OVER"></a>Ndescrição
+## <a name="description"></a><a name="BKMK_OVER"></a>Descrição
 Schannel é um SSP (Provedor de Suporte de Segurança) que implementa os protocolos de autenticação padrão de Internet SSL e TLS.
 
 A Interface SSPI é uma API usada por sistemas Windows para executar funções relacionadas à segurança, incluindo autenticação. O SSPI funciona como uma interface comum para vários SSPs, incluindo o SSP do Schannel.

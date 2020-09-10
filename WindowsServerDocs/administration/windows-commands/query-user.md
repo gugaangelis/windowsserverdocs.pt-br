@@ -3,16 +3,16 @@ title: query user
 description: Artigo de referência para o comando Query User, que exibe informações sobre sessões de usuário em um Host da Sessão da Área de Trabalho Remota Server.
 ms.topic: reference
 ms.assetid: a670fb78-c055-464a-b61d-3a85632c52c5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 78d6fd5a153909c067e322b5f46982843a4f46d6
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: bacc14f6945c9f1257763121b66a77d072b51803
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038384"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637411"
 ---
 # <a name="query-user"></a>query user
 

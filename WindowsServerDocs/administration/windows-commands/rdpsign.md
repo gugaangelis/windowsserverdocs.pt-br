@@ -3,16 +3,16 @@ title: rdpsign
 description: Artigo de referência para o comando rdpsign, que permite que você assine digitalmente um arquivo protocolo RDP (. RDP).
 ms.topic: reference
 ms.assetid: 4a6fa8ce-3d32-49a5-b056-bcc1a23391f5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: ecd80969f42a440bfd583223779fe67c27c5c310
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a98619c468ce26e7af3406512be54937c8aa799d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037144"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637347"
 ---
 # <a name="rdpsign"></a>rdpsign
 

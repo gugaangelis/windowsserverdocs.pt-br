@@ -3,16 +3,16 @@ title: Configuração do Sc.exe
 description: Saiba como alterar as configurações de serviço usando o utilitário sc.exe
 ms.topic: reference
 ms.assetid: ad4d68a6-efe5-452b-8501-7f1f1c552a4a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 06/05/2018
-ms.openlocfilehash: f3522296c74b31ae89da25ec22b79523bb652148
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 55432910455896434a1857d17016519bedb51caf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037554"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637131"
 ---
 # <a name="scexe-config"></a>Configuração do Sc.exe
 

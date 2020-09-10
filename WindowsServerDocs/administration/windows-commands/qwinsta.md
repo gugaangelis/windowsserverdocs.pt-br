@@ -3,16 +3,16 @@ title: qwinsta
 description: Artigo de referência para o comando Qwinsta, que exibe informações sobre sessões em um servidor Host da Sessão da Área de Trabalho Remota.
 ms.topic: reference
 ms.assetid: a793212a-7ecd-44cb-a77b-c5c2edb34979
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b4da815514a79f8b4373464cb405f21226324d7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: def8a43822e1f7baf544b9f0da3ab84e42bbfb0f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037594"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89637406"
 ---
 # <a name="qwinsta"></a>qwinsta
 
