@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 885a10ee9b5a684c385de9baa0ebcdfac61f2c0e
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6b93e0e31c592a11d44aca74029012a1b6229227
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180822"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622979"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restaurar um sistema completo de um backup de computador cliente existente
 
@@ -32,7 +32,7 @@ ms.locfileid: "87180822"
 
 -   [Onde posso localizar os drivers para meu hardware?](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)
 
-##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a>O que é a restauração do sistema completo do computador?
+##  <a name="what-is-computer-full-system-restore"></a><a name="BKMK_WhatIs"></a> O que é a restauração do sistema completo do computador?
  Caso você substitua uma unidade de disco rígido ou o computador falhe de modo que não possa ser usado nem inicializado, é possível restaurar o sistema a partir de um backup anterior do computador. Uma restauração completa do sistema retorna o sistema para o estado em que estava no momento do backup.
 
 > [!IMPORTANT]
@@ -85,7 +85,7 @@ ms.locfileid: "87180822"
 ### <a name="raid-and-dynamic-disks"></a>RAID e discos dinâmicos
  Não há suporte para backup de RAID (Redundant Array of Independent Disk) e de discos dinâmicos.
 
-##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a>Como funciona o ambiente de restauração do sistema?
+##  <a name="how-does-the-system-restore-environment-work"></a><a name="BKMK_HowDoes"></a> Como funciona o ambiente de restauração do sistema?
  A mídia de restauração do sistema fornecida com o Windows ServerÂ &reg; 2012 Essentials instala ambiente de pré-instalação do Windows (Windows PE) no computador. O Windows PE substitui o ambiente MS-DOS e contém os principais arquivos de programa para o Windows. No Windows Server Essentials, há duas maneiras suportadas de restaurar um sistema: usando o serviço de restauração do cliente, que usa uma rede e não conta com a mídia ou usando a unidade flash USB.
 
 > [!NOTE]
@@ -97,7 +97,7 @@ ms.locfileid: "87180822"
 
  Na maioria dos casos, os arquivos de programa e os drivers contidos no ambiente de restauração do sistema são tudo o que é necessário para reiniciar o computador novo ou restaurado. Dependendo do hardware do computador novo ou restaurado, o ambiente de restauração do sistema talvez não inclua todos os drivers de adaptador de armazenamento e de rede que são necessários para reiniciar seu computador novo ou restaurado. O assistente de Restauração Completa do Sistema dá a oportunidade de instalar drivers, se necessário. Para obter mais informações sobre como encontrar os drivers de hardware, consulte [Onde localizar os drivers para meu hardware?](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers). Para informações sobre como usar a mídia de restauração do sistema, consulte [Usando o assistente de Restauração Completa do Sistema](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_Using).
 
-##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a>Criar uma unidade flash USB inicializável para restaurar um computador cliente
+##  <a name="create-a-bootable-usb-flash-drive-to-restore-a-client-computer"></a><a name="BKMK_CreateBootable"></a> Criar uma unidade flash USB inicializável para restaurar um computador cliente
  Se você precisar restaurar um computador cliente de um backup existente, mas não puder localizar o CD de restauração que veio com o servidor (no Windows Server Essentials) ou não quiser configurar o serviço de restauração do cliente no servidor (no Windows Server Essentials), você poderá criar uma unidade flash USB inicializável. Então, pode usar a unidade flash USB para iniciar o computador cliente e restaurar o sistema. A unidade flash USB usada deve ter, no mínimo, 1 GB.
 
 #### <a name="to-create-a-bootable-usb-flash-drive"></a>Para criar uma unidade flash USB inicializável
@@ -118,7 +118,7 @@ ms.locfileid: "87180822"
     > [!CAUTION]
     >  Todos os dados na unidade flash USB serão excluídos.
 
-##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a>Usando o assistente de restauração completa do sistema
+##  <a name="using-the-full-system-restore-wizard"></a><a name="BKMK_Using"></a> Usando o assistente de restauração completa do sistema
  Após usar com êxito a mídia de restauração, o serviço de restauração do cliente ou a unidade flash USB para iniciar e verificar se todos os drivers de hardware estão carregados no computador cliente novo ou restaurado, o Assistente de recuperação completa do sistema é exibido. Esse assistente permite acessar o servidor, o backup do computador e os volumes de origem que você deseja restaurar para o computador, além de realizar o próprio processo de restauração.
 
 > [!NOTE]
@@ -268,7 +268,7 @@ ms.locfileid: "87180822"
     > [!IMPORTANT]
     >  Se a opção Criptografia de Unidade de Disco BitLocker foi habilitada no computador antes da restauração, você deverá habilitar manualmente o Bitlocker após reiniciar o computador.
 
-##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a>Onde posso encontrar os drivers para o meu hardware?
+##  <a name="where-can-i-find-the-drivers-for-my-hardware"></a><a name="BKMK_FindDrivers"></a> Onde posso encontrar os drivers para o meu hardware?
  Dependendo do hardware do computador novo ou restaurado, a mídia de restauração talvez não inclua todos os adaptadores de armazenamento e de rede e os drivers que são necessários para reiniciar seu computador restaurado. Você deve determinar quais drivers estão ausentes, localizar esses drivers em uma mídia existente ou no site do fabricante, copiá-los para uma unidade flash e, em seguida, copiá-los da unidade flash para o computador novo ou restaurado ao executar o assistente de restauração completa do sistema.
 
  Quando um é submetido a backup, os drivers do computador são salvos em backup. Se sua mídia de recuperação não inclui todos os drivers necessários, é possível abrir um backup para aquele computador e, em seguida, copiar os drivers para uma unidade flash USB.

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 9cb68b88bc19b8f0f62c5586e39e010d9caad151
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 1672c8168dd206c166ca44392ca290ebb311dcc6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181232"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623513"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>Requisitos de Hardware do Computador de Destino
 

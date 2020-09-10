@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ba0c7a6e9adf4700754d01800ec80a805e10c9d5
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c743e0a30796eac374052787f7c47b0af6e656b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181012"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623162"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>Gerenciar o backup do computador cliente no Windows Server Essentials
 
@@ -56,7 +56,7 @@ ms.locfileid: "87181012"
 
 -   [Noções básicas sobre o histórico de arquivos](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_FileHistory)
 
-##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a>Como funciona o assistente para reparar banco de dados de backup
+##  <a name="how-the-repair-the-backup-database-wizard-works"></a><a name="BKMK_1"></a> Como funciona o assistente para reparar banco de dados de backup
  Se o Windows Server Essentials detectar erros no backup do banco de dados, envia uma notificação de integridade e o status de alerta muda para vermelho, que indica uma condição crítica.
 
  No Painel do Windows Server Essentials, clique no ícone de status de alerta para ver a notificação de erro de backup do banco de dados. A notificação inclui um **reparar** botão, que inicia o Assistente de Backup de Banco de Dados de reparo. O assistente pode levar horas para ser concluído.
@@ -66,7 +66,7 @@ ms.locfileid: "87181012"
 > [!CAUTION]
 >  Você deve fazer backup do banco de dados antes de tentar repará-la. Dependendo do tipo de erros encontrados no backup do banco de dados, o assistente não poderá recuperar alguns backups. Alguns ou todos os backups poderão ser perdidos permanentemente.
 
-##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a>Entender as configurações de backup do computador
+##  <a name="understand-the-computer-backup-settings"></a><a name="BKMK_2"></a> Entender as configurações de backup do computador
  Depois que o backup está configurado para computadores cliente, você pode especificar uma janela diferente de tempo para o realização do backup. Da mesma forma, você pode especificar um tempo de retenção de backup maior ou menor que o padrão.
 
  A opção**restaurar padrões** permite que você redefina a política de retenção e a janela de backup para o padrão fornecido durante a configuração inicial do backup.
@@ -81,7 +81,7 @@ ms.locfileid: "87181012"
 |Retenção de backups semanais|4 semanas|Especifica o número de semanas que o último backup da semana dura. Por exemplo, 4 backups semanais usando as configurações padrão, são armazenados. Na quinta semana e cada semana posteriormente, o backup semanal mais antigo será excluído.|
 |Retenção de backups mensais|6 meses|Especifica o número de meses que o último backup do mês dura. Por exemplo, usando a configuração padrão, 6 meses de backups serão armazenados. Sobre o quarto e cada mês posteriormente, o backup mensal mais antigo será excluído.|
 
-##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a>Configurar o backup para um computador cliente
+##  <a name="set-up-backup-for-a-client-computer"></a><a name="BKMK_3"></a> Configurar o backup para um computador cliente
  Se o backup é desabilitado, você pode configurar o backup do computador no Painel. Quando você configura o backup de um computador, você pode escolher fazer backup total do computador, ou selecione os volumes e as pastas que você deseja fazer backup.
 
 > [!NOTE]
@@ -129,7 +129,7 @@ ms.locfileid: "87181012"
 > [!IMPORTANT]
 >  O Volume Shadow Copy Service (VSS) não oferece suporte à criação de uma cópia fantasma de um volume virtual e o volume de hospedagem do mesmo conjunto istantâneo. O VSS oferece suporte à criação de instantâneos de volumes em um disco rígido virtual (VHD), se o backup do volume virtual for necessário. Para obter mais informações, consulte [Fazendo manutenção e backup de discos rígidos virtuais](https://go.microsoft.com/fwlink/p/?LinkId=256577).
 
-##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a>Alterar a hora em que o backup está agendado para ser executado
+##  <a name="change-the-time-that-backup-is-scheduled-to-run"></a><a name="BKMK_4"></a> Alterar a hora em que o backup está agendado para ser executado
  O processo de backup deve ser agendado durante um período quando o menor número possível de pessoas estiver usando os computadores em rede. Normalmente acontece durante as primeiras horas do dia ou tarde da noite. A hora padrão de backup é de 6:00 até 9:00 Horas. O servidor tenta fazer backup de computadores cliente somente durante o período de tempo agendado.
 
  No entanto, se sua empresa está ativa tradicionalmente no peróido fora do horário comercial, convém alterar essas configurações padrão.
@@ -147,7 +147,7 @@ ms.locfileid: "87181012"
 
 4.  Clique em **Aplicar** e em **OK**.
 
-##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a>Alterar a política de retenção de backup do computador
+##  <a name="change-the-computer-backup-retention-policy"></a><a name="BKMK_5"></a> Alterar a política de retenção de backup do computador
  Backups diários de todos os computadores se acumulam no seu servidor ao longo do tempo. Para ajudar a gerenciar esses backups, o Windows Server Essentials pode ajudá-lo a gerenciar os backups do banco de dados do computador. Você pode configurar qualquer número de backups para armazenar para todos os computadores.
 
  A política de armazenamento de backup determina quanto tempo um backup será mantido antes de ser excluído durante o processo de limpeza de backup. A limpeza do backup é executado às 23:59 Horas todos os sábados. Ele exclui todos os backups que estão fora da política de armazenamento do backup. Os padrões para a política de armazenamento de backup são:
@@ -176,7 +176,7 @@ ms.locfileid: "87181012"
     > [!NOTE]
     >  A política de armazenamento atualizada se aplica a todos os computadores cliente na sua rede que estão configurados para backup.
 
-##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a>Redefinir backup para as configurações padrão
+##  <a name="reset-backup-to-default-settings"></a><a name="BKMK_6"></a> Redefinir backup para as configurações padrão
  Depois que o backup está configurado para os computadores cliente, o administrador de rede pode ter especificado um período diferente de tempo. Da mesma forma, o administrador pode ter especificado um tempo de armazenamento de backup maior ou menor que o padrão. O botão **Redefinir padrões** permite redefinir a período de backup para o padrão fornecido durante a configuração inicial do backup.
 
  Os padrões são:
@@ -207,7 +207,7 @@ ms.locfileid: "87181012"
 
 4.  Clique em **Aplicar** e em **OK**.
 
-##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a>Usar ferramentas de reparo e recuperação
+##  <a name="use-repair-and-recovery-tools"></a><a name="BKMK_7"></a> Usar ferramentas de reparo e recuperação
  **Reparar backups:** se o banco de dados de backups do computador ficar corrompido ou inutilizável por algum motivo, você poderá tentar reparar o banco de dados usando o Assistente de reparo do banco de dados de backup. O assistente analisa os arquivos de backup para determinar se há problemas que podem ser corrigidos. Em seguida, o assistente tenta corrigir todos os problemas encontrados.
 
 > [!WARNING]
@@ -215,7 +215,7 @@ ms.locfileid: "87181012"
 
  **Recuperação do computador:** você pode criar uma unidade flash USB inicializável para usar para restaurar um computador de um backup existente. Você deve usar uma unidade flash USB de 1 GB ou maior. Depois que a unidade flash USB inicializável for criada, insira-a no computador que você deseja restaurar e, em seguida, inicie a unidade flash USB para iniciar o processo de restauração completa do sistema.
 
-##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a>Reparar o banco de dados de backup
+##  <a name="repair-the-backup-database"></a><a name="BKMK_8"></a> Reparar o banco de dados de backup
  Se você receber um alerta informando que o banco de dados do backup do computador tem problemas, você pode tentar repará-la.
 
 #### <a name="to-repair-the-backup-database"></a>Para reparar o banco de dados de backup
@@ -255,7 +255,7 @@ ms.locfileid: "87181012"
 
 5.  Os resultados são exibidos na seção **Reparar backups** .
 
-##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a>Desabilitar o backup de um computador
+##  <a name="disable-backup-for-a-computer"></a><a name="BKMK_9"></a> Desabilitar o backup de um computador
  Use o Painel para desabilitar rapidamente backups de computadores na sua rede.
 
 #### <a name="to-disable-backup-for-a-computer"></a>Para desabilitar o backup de um computador
@@ -274,7 +274,7 @@ ms.locfileid: "87181012"
 
    Para obter informações sobre como habilitar o backup de um computador depois que o backup foi desabilitado, consulte [configurar o backup de um computador cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3).
 
-##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a>Executar a tarefa de limpeza de backup
+##  <a name="run-the-backup-cleanup-task"></a><a name="BKMK_10"></a> Executar a tarefa de limpeza de backup
  A tarefa de limpeza backup do computador cliente está agendada para ser executada às 23:59H sempre aos sábados depois que todos os backups forem concluídos. A tarefa de limpeza exclui os backups do cliente computador backup do banco de dados de acordo com a política de amarzenamento de backup. As configurações padrão para a política de armazenamento de backup são:
 
 - Número de dias que os backups diários são mantidos: 5 dias
@@ -295,7 +295,7 @@ ms.locfileid: "87181012"
 
 4.  Clique na tarefa **Limpeza de Backup** e, em seguida, clique em **Executar** no painel de **ações** . O Status mudará para **executando** até que a tarefa seja concluída.
 
-##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a>Exibir alertas na barra de tarefas em um computador cliente
+##  <a name="view-alerts-in-the-task-bar-on-a-client-computer"></a><a name="BKMK_11"></a> Exibir alertas na barra de tarefas em um computador cliente
  Você poderá receber um aviso de backup na barra de tarefas em seu computador pelos seguintes motivos:
 
 -   Um backup é iniciado.
@@ -306,7 +306,7 @@ ms.locfileid: "87181012"
 
 -    Somente Windows Server Essentials: um novo volume é adicionado ao seu computador. A pessoa que administra sua rede precisa executar o Personalizar Assistente de Backup para incluir ou excluir o volume em backups futuros.
 
-##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a>Exibir status de backup no Launchpad
+##  <a name="view-backup-status-from-the-launchpad"></a><a name="BKMK_12"></a> Exibir status de backup no Launchpad
  Use a barra inicial para exibir o status de backup rápido para o seu computador.
 
 > [!TIP]
@@ -343,7 +343,7 @@ ms.locfileid: "87181012"
 
 4.  Clique em **OK** para fechar a caixa de diálogo **Propriedades de Backup**.
 
-##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a>Parar um backup em andamento no Launchpad
+##  <a name="stop-a-backup-in-progress-from-the-launchpad"></a><a name="BKMK_13"></a> Parar um backup em andamento no Launchpad
  Você pode facilmente interromper um backup está em andamento.
 
 #### <a name="to-stop-a-backup-in-progress"></a>Para interromper um backup em andamento
@@ -361,7 +361,7 @@ ms.locfileid: "87181012"
 
 5.  Clique em **OK** para fechar a caixa de diálogo **Propriedades de Backup**.
 
-##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a>Iniciar um backup no Launchpad
+##  <a name="start-a-backup-from-the-launchpad"></a><a name="BKMK_14"></a> Iniciar um backup no Launchpad
  Pode acontecer de você desejar fazer backup dos arquivos e pastas anteriores antes do backup regular agendado configurado no servidor. A barra inicial permite iniciar o backup do seu computador manualmente.
 
 #### <a name="to-start-a-backup"></a>Para iniciar um backup
@@ -383,7 +383,7 @@ ms.locfileid: "87181012"
 
 7.  Clique em **OK** para fechar a caixa de diálogo **Propriedades de Backup**.
 
-##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a>Como funciona o backup do computador
+##  <a name="how-computer-backup-works"></a><a name="BKMK_15"></a> Como funciona o backup do computador
  As seguintes ações ocorrem durante o backup diariamente:
 
 -   Contam com computadores da rede até um após o outro.
@@ -397,7 +397,7 @@ ms.locfileid: "87181012"
 > [!IMPORTANT]
 >  O Volume Shadow Copy Service (VSS) não oferece suporte à criação de uma cópia fantasma de um volume virtual e o volume de hospedagem do mesmo conjunto istantâneo. O VSS oferece suporte à criação de instantâneos de volumes em um disco rígido virtual (VHD), se o backup do volume virtual for necessário. Para obter mais informações, consulte [Fazendo manutenção e backup de discos rígidos virtuais](https://go.microsoft.com/fwlink/p/?LinkId=256577).
 
-##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a>Dicas para ajudar a evitar a perda de dados devido à corrupção do banco de dado de backup do cliente
+##  <a name="tips-to-help-prevent-data-loss-due-to-corruption-of-the-client-backup-database"></a><a name="BKMK_16"></a> Dicas para ajudar a evitar a perda de dados devido à corrupção do banco de dado de backup do cliente
  Se o banco de dados de backup do cliente estiver corrompido, você poderá perder dados críticos.
 
  Para ajudar a evitar a perda de dados devido à corrupção de banco de dados de backup do cliente, considere o seguinte:
@@ -417,7 +417,7 @@ ms.locfileid: "87181012"
 
      Depois de concluir a operação de restauração, reinicie o serviço.
 
-##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a>Restaurar arquivos ou pastas de um computador cliente backup
+##  <a name="restore-files-or-folders-from-a-client-computer-backup"></a><a name="BKMK_17"></a> Restaurar arquivos ou pastas de um computador cliente backup
  Você pode procurar e restaurar arquivos e pastas individuais de um backup.
 
 > [!NOTE]
@@ -436,7 +436,7 @@ ms.locfileid: "87181012"
 
 4.  Siga as instruções no assistente.
 
-##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a>Compreendendo o histórico de arquivos
+##  <a name="understanding-file-history"></a><a name="BKMK_FileHistory"></a> Compreendendo o histórico de arquivos
  O recurso de histórico de arquivos do Windows Server Essentials automaticamente faz backup dos arquivos que estão em pastas de bibliotecas, contatos, área de trabalho e favoritos dos computadores da rede que têm o recurso de histórico de arquivos. Se os originais forem perdidos, danificados ou excluídos, você pode restaurá-los. Você também pode encontrar versões diferentes dos arquivos em períodos determinados de tempo. Ao longo do tempo, você terá um histórico completo dos seus arquivos.
 
  No Windows Server Essentials, você pode personalizar as configurações de histórico de arquivos na página **histórico de arquivos** de **configurações e ferramentas de backup do computador cliente**.

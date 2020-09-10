@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: cbc2276eb3c627ebb94469e0acef2b57d086b5e7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 92bdcc107b3246fb1d288ab9b56f6c65d9b0634a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180742"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622822"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Unir computadores ao novo Server1 do Windows Server Essentials
 
@@ -38,7 +38,7 @@ ms.locfileid: "87180742"
 
  Com o servidor de origem e o servidor de destino ainda online, você deve garantir que a política de grupo, as configurações foram replicadas do servidor de destino para os computadores cliente. Execute as seguintes etapas em cada computador cliente:
 
-1.  Abra uma janela de prompt de comando.
+1.  Abra una janela de prompt de comando.
 
 2.  No prompt de comando, digite **GPRESULT /R** e pressione Enter.
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 8342c542861598411570c4e702aea5a94f992c79
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 464b30d610dcf25dc53c12bf38f8ec3da8691e2a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180802"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622946"
 ---
 # <a name="set-up-or-customize-server-backup"></a>Configurar ou personalizar o backup do servidor
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180802"
 
 -   [Itens para backup](Set-up-or-customize-server-backup.md#BKMK_4)
 
-##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a>Definir ou alterar as configurações de backup do servidor
+##  <a name="set-up-or-change-server-backup-settings"></a><a name="BKMK_1"></a> Definir ou alterar as configurações de backup do servidor
 
 #### <a name="to-set-up-or-change-server-backup-settings"></a>Para configurar ou alterar configurações de backup do servidor
 
@@ -57,10 +57,10 @@ ms.locfileid: "87180802"
 >    4. Na página **Otimizar Unidades**, selecione uma unidade e, em seguida, clique em **Alterar configurações**.
 >    5. Na janela **Agendamento de otimização**, desmarque a caixa de seleção **Executar seguindo um agendamento (recomendado)** e clique em **OK** para salvar a alteração.
 
-##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a>Agendamento de backup do servidor
+##  <a name="server-backup-schedule"></a><a name="BKMK_2"></a> Agendamento de backup do servidor
  Quando você usa o Assistente Configurar Backup do Servidor ou o Assistente Personalizar o Backup do Servidor, você pode optar por fazer backup de dados do servidor várias vezes durante o dia. Como os assistentes agendam backups baseados em incrementos, os backups são executados rapidamente e o desempenho do servidor não é afetado significativamente. Por padrão, os assistentes agendam um backup para executar diariamente às 12h e às 23h. No entanto, você pode ajustar o cronograma de backup de acordo com as necessidades da sua organização. Ocasionalmente, você deve avaliar a eficácia do seu plano de backup e alterar o plano conforme necessário.
 
-##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a>Unidade de destino de backup
+##  <a name="backup-target-drive"></a><a name="BKMK_Target"></a> Unidade de destino de backup
  Você pode usar várias unidades de armazenamento externo para backups, e pode alternar as unidades entre locais de armazenamento externo e no local. Isso pode melhorar o planejamento de preparação para desastres, ajudando a recuperar seus dados caso haja danos físicos ao hardware no local.
 
  Ao escolher uma unidade de armazenamento para o backup do servidor, considere o seguinte:
@@ -112,7 +112,7 @@ ms.locfileid: "87180802"
 >
 >    A unidade será exibida no Painel imediatamente.
 
-##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a>Itens cujo backup será feito
+##  <a name="items-to-be-backed-up"></a><a name="BKMK_4"></a> Itens cujo backup será feito
  Você pode optar por fazer backup de todas as unidades, arquivos e pastas no servidor ou selecionar apenas unidades, arquivos ou pastas individuais para backup.
 
  Quando você adicionar ou remove uma unidade ou pastas e arquivos compartilhados, você deve verificar a configuração de backup do servidor para certificar-se de que esses itens sejam adicionados ou removidos da configuração de backup. Para adicionar ou remover itens para backup, siga um destes procedimentos:

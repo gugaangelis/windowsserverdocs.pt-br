@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 65a195d5-0098-4c3c-b4ba-07f7319c8f1e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7fc1c9d681ac283eab4810d2a7cc4f7c4223a0b7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: fef23f94e9a2a591b14e6e1c8457f07f0ecbdfc7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181522"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89621861"
 ---
 # <a name="additional-customizations"></a>Personalizações Adicionais
 
@@ -46,7 +46,7 @@ Você pode fazer as seguintes personalizações adicionais para criar e personal
 
 -   [Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
--   [Substituir o URL de ponto de extremidade de compra/teste do módulo de integração do O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+-   [Substituir Microsoft 365 módulo de integração comprar-Experimente a URL de ponto de extremidade para dar suporte ao contrato de revendedor de serviços online da Microsoft](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
 -   [Criar um DVD de recuperação de servidor para servidores administrados remotamente](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 

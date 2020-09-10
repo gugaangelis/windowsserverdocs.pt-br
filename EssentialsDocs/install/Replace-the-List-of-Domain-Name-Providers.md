@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 104d0412-2d77-4cd4-99f7-65a885522850
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 736d7c2271752c79678c2d332ed450e6ba35b299
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 74509a7d64e718fe1d2b62f806306235e7d827e4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181102"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623361"
 ---
 # <a name="replace-the-list-of-domain-name-providers"></a>Substituir a Lista de Provedores de Nomes de Domínio
 
@@ -30,7 +30,7 @@ ms.locfileid: "87181102"
 -   [Adicionar uma entrada no Registro do computador de referência](../install/Replace-the-List-of-Domain-Name-Providers.md#BKMK_AddRegistry)
 
 
-###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a>Criar os arquivos do serviço de referência
+###  <a name="create-the-referral-service-files"></a><a name="BKMK_ReferralFiles"></a> Criar os arquivos do serviço de referência
  A Ferramenta de Administração de Serviços de Referência cria um conjunto de arquivos usados para definir a lista de provedores de nomes de domínio exibidos no Assistente de Configuração de Nomes de Domínio. Um arquivo XML formatado é criado para cada região do mundo e contém informações sobre os provedores de nomes de domínio que você especificou na ferramenta. Os arquivos criados pela ferramenta devem estar localizados em uma pasta que possa ser acessada por meio de um link seguro (HTTPS) que você gerencia pela Internet.
 
 ##### <a name="to-create-the-referral-files"></a>Para criar os arquivos de referência
@@ -49,7 +49,7 @@ ms.locfileid: "87181102"
 
 7.  Se um logotipo estiver disponível para o provedor de nomes de domínio, adicione-o clicando em **Alterar Logotipo**.
 
-8.  Clique em **Save** (Salvar).
+8.  Clique em **Salvar**.
 
 9. Repita as etapas 2 a 8 para cada provedor de nomes de domínio que desejar listar no assistente.
 
@@ -57,7 +57,7 @@ ms.locfileid: "87181102"
 
 11. Clique em **Gerar Arquivos para o Sistema de Arquivos**.
 
-###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a>Adicionar uma entrada ao registro no computador de referência
+###  <a name="add-an-entry-to-the-registry-on-the-reference-computer"></a><a name="BKMK_AddRegistry"></a> Adicionar uma entrada ao registro no computador de referência
  Uma entrada de Registro deve ser adicionada para que se especifique onde o sistema operacional pode achar os arquivos de serviços de referência.
 
 ##### <a name="to-add-a-key-to-the-registry"></a>Para adicionar uma chave ao Registro
@@ -83,12 +83,12 @@ ms.locfileid: "87181102"
 >  A slash (/) is required at the end of the URL.
 ~~~
 
-###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a>Problemas de status do nome de domínio
+###  <a name="domain-name-status-issues"></a><a name="BKMK_ReplaceDomainNameProviders"></a> Problemas de status do nome de domínio
  Se um parceiro adicionar provedores de nome de domínio e usar uma API (interface de programação de aplicativo) no SDK do Windows Server Essentials para definir os status desconhecido, falha e CertificateRequestNotSubmitted para o certificado, o cliente receberá uma mensagem incorreta e o resultado da configuração. Isso ocorre porque os casos são tratados por exceções, em vez de retornarem um status.
 
  Os seguintes status de domínio são falhas e devem ser relatados como erro:
 
-- Com falha
+- Failed (Falha)
 
 - PendingCustomerInterventionRequired (Intervenção de cliente pendente requerida)
 
@@ -104,7 +104,7 @@ ms.locfileid: "87181102"
 
 - Ready
 
-- Pendente
+- Pending (Pendente)
 
 - InRenewal (Em renovação)
 

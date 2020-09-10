@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c648ab5921d50a2b1178b44104977b8bb3abd692
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c20fd35a1a90e6d635891cd2257913c669273735
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180832"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623017"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Visão geral da Barra Inicial no Windows Server Essentials
 
@@ -39,7 +39,7 @@ A Barra Inicial do Windows Server Essentials é um pequeno aplicativo que é ins
 
 - [Usar a Barra Inicial com um computador Mac](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)
 
-##  <a name="use-the-launchpad"></a><a name="BKMK_Launchpad"></a>Usar o Launchpad
+##  <a name="use-the-launchpad"></a><a name="BKMK_Launchpad"></a> Usar o Launchpad
  Os links e informações a seguir estão disponíveis na Barra Inicial do Windows Server Essentials.
 
 ### <a name="backup"></a>Backup
@@ -65,13 +65,13 @@ A Barra Inicial do Windows Server Essentials é um pequeno aplicativo que é ins
 > [!NOTE]
 >  Para usar esse recurso, você deve ter o acesso ou permissões apropriados para fazer logon no servidor.
 
-### <a name="microsoft-office-365"></a>Microsoft Office 365
- O link para o **Microsoft Office 365** só aparece na Barra Inicial se o usuário tiver uma conta do Office 365. Clique em  **Microsoft Office 365** para acessar links adicionais para os recursos do Office 365. Para obter mais informações, consulte [Guia de início rápido usar Microsoft Office 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).
+### <a name="microsoft-365"></a>Microsoft 365
+ O link de **Microsoft 365** só aparecerá no Launchpad se o usuário tiver uma conta de Microsoft 365. Clique em  **Microsoft 365** para acessar links adicionais para os recursos de Microsoft 365. Para obter mais informações, consulte [Guia de início rápido usar Microsoft 365](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md).
 
 ### <a name="computer-health-alerts"></a>Alertas de integridade do computador
  Os alertas que aparecem na Barra Inicial fornecem um status rápido da integridade imediata do computador. Para exibir informações sobre um alerta de integridade, clique em um indicador de alerta para abrir o visualizador de alertas. Alertas de integridade são exibidos no visualizador com base no nível de gravidade. Os alertas mais graves aparecem primeiro na lista; alertas menos graves aparecem posteriormente na lista. Para obter mais informações sobre alertas de integridade do computador, consulte [gerenciar a integridade do sistema](Manage-System-Health-in-Windows-Server-Essentials.md).
 
-##  <a name="use-the-launchpad-with-a-mac-computer"></a><a name="BKMK_Mac"></a>Usar o Launchpad com um computador Mac
+##  <a name="use-the-launchpad-with-a-mac-computer"></a><a name="BKMK_Mac"></a> Usar o Launchpad com um computador Mac
  Você pode conectar um &reg; computador Mac executando o Mac OS X &reg; 10,5 ou posterior ao Windows Server Essentials, Windows Server Essentials ou windows Server 2012 R2 ou baixando e instalando o software do conector. Quando terminar de instalar o software do conector, você pode optar por iniciar automaticamente a Barra Inicial durante a inicialização.
 
  A Barra Inicial é um aplicativo pequeno que fornece aos usuários autenticados acesso aos principais recursos do servidor, incluindo mídias e arquivos compartilhados, suplementos e o Acesso via Web remoto. A Barra Inicial fornece também notificações e informações em tempo real sobre a integridade do computador.

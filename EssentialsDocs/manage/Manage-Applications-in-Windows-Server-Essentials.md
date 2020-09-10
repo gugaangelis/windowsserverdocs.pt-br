@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 7f83d595b56c1c6e2ae0e2565dd607a403b429b0
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 30b8dfa2087e76cc80011eb359715c95564ec1b6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181042"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623270"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Gerenciar aplicativos no Windows Server Essentials
 
@@ -24,7 +24,7 @@ ms.locfileid: "87181042"
 
 -   [Instalar ou remover suplementos usando o Painel](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)
 
-##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>Tarefas de gerenciamento de aplicativos no painel
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a> Tarefas de gerenciamento de aplicativos no painel
  A página de Gerenciamento de **Aplicativos** do Painel fornece:
 
 - Uma lista de suplementos instalados, que exibe:
@@ -53,7 +53,7 @@ ms.locfileid: "87181042"
 |Ler a política de privacidade do suplemento|Abre seu navegador da Internet em um site que possa exibir a política de privacidade.|
 |Como fazer para instalar ou remover suplementos?|Abre seu navegador da Internet em uma página da Web que exibe o tópico de Ajuda do assunto.|
 
-##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>Instalar ou remover suplementos usando o painel
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a> Instalar ou remover suplementos usando o painel
  Um suplemento é um aplicativo de software que fornece recursos e funcionalidades adicionais para seu servidor. Um número crescente de suplementos está disponível da Microsoft e de outros ISVs (fornecedores de software independentes).
 
  Antes de você poder aproveitar a funcionalidade estendida que um suplemento fornece, você deve primeiro instalar o suplemento no servidor.

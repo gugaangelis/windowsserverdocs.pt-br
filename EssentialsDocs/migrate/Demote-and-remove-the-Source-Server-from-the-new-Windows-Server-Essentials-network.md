@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d9f18b29-8e03-439e-bdf0-1dac5e4f70c5
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e55c717b1eeb5b8f75ebfb7b48abd656dd4ddaa3
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 3e0902f99be96e3197b90b4892f78849a5c84125
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838421"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89622883"
 ---
 # <a name="demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network1"></a>Rebaixar e remover o servidor de origem do novo network1 do Windows Server Essentials
 
@@ -32,7 +32,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir as tar
 5.  [Remover e realocar o servidor de origem](Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md#BKMK_RemoveTheSourceServer).
 
 
-###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a>Desinstalar o Exchange Server 2003
+###  <a name="uninstall-exchange-server-2003"></a><a name="BKMK_UninstallExchangeServer2003"></a> Desinstalar o Exchange Server 2003
 
 > [!IMPORTANT]
 >  Se você adicionar contas de usuário depois de mover caixas de correio para o servidor de destino e antes de desinstalar o Exchange Server 2003 do servidor de origem, as caixas de correio serão adicionadas no servidor de origem. Isso ocorre por design. Você deve mover as caixas de correio para o servidor de destino para todas as contas de usuário adicionadas durante esse período. Repita as instruções em mover as caixas de correio e as configurações do Exchange Server para a migração do Windows Server Essentials antes de desinstalar o Exchange Server 2003.
@@ -56,14 +56,14 @@ Depois de concluir a instalação do Windows Server Essentials e concluir as tar
    >  O Exchange Server verifica se não há caixas de correio ou pastas públicas no servidor. Se restar algum dado, uma mensagem de erro aparece ao clicar **Remover**. Para evitar esse problema, verifique se você concluiu todos os procedimentos no tópico [mover as configurações e os dados do SBS 2003 para o servidor de destino](./move-windows-sbs-2003-to-the-destination-server-for-migration.md).
 
 
-6. Clique em **Avançar**.
+6. Clique em **Próximo**.
 
 7. Quando solicitado, insira o Windows Small Business Server 2003 CD #3 e siga as instruções na tela.
 
-###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a>Desconecte as impressoras que estão conectadas diretamente ao servidor de origem
+###  <a name="disconnect-printers-that-are-directly-connected-to-the-source-server"></a><a name="BKMK_PhysicallyDisconnect"></a> Desconecte as impressoras que estão conectadas diretamente ao servidor de origem
  Antes de rebaixar o servidor de origem, desconecte fisicamente todas as impressoras diretamente conectadas ao servidor de origem e compartilhadas por meio do servidor de origem. Garanta que nenhum objeto do Active Directory permaneça para as impressoras estiverem diretamente conectadas ao servidor de origem. As impressoras podem ser conectadas diretamente ao servidor de destino e compartilhadas do Windows Server Essentials.
 
-###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a>Rebaixar o servidor de origem
+###  <a name="demote-the-source-server"></a><a name="BKMK_DemoteTheSourceServer"></a> Rebaixar o servidor de origem
  Antes de rebaixar o servidor de origem da função de controlador de domínio AD DS para a função de um servidor membro de domínio, certifique-se de que as configurações de política de grupo tenham sido aplicadas a todos os computadores cliente, conforme descrito no procedimento a seguir.
 
 > [!IMPORTANT]
@@ -108,7 +108,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir as tar
 
 4.  Verifique se o servidor de origem não está listado e, em seguida, feche **Usuários e Computadores do Active Directory**.
 
-###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a>Mover a função de servidor DHCP do servidor de origem para o roteador
+###  <a name="move-the-dhcp-server-role-from-the-source-server-to-the-router"></a><a name="BKMK_MoveTheDHCPRole"></a> Mover a função de servidor DHCP do servidor de origem para o roteador
 
 > [!NOTE]
 >
@@ -138,7 +138,7 @@ Depois de concluir a instalação do Windows Server Essentials e concluir as tar
     > [!IMPORTANT]
     >  Se você não tiver configurado reservas de DHCP ou IP estático no roteador para o servidor de destino e o intervalo DHCP não for igual ao do servidor de origem, é possível que o roteador emita um novo endereço IP para o servidor de destino. Se isso acontecer, redefina as regras do roteador para encaminhar para o novo endereço IP do servidor de destino.
 
-###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a>Remover e realocar o servidor de origem
+###  <a name="remove-and-repurpose-the-source-server"></a><a name="BKMK_RemoveTheSourceServer"></a> Remover e realocar o servidor de origem
  Desative o servidor de origem e desconecte-o da rede. É recomendável não reformatar o servidor de origem por pelo menos uma semana para garantir que todos os dados necessários sejam migrados para o servidor de destino. Depois de ter verificado que todos os dados foram migrados, você pode reinstalar este servidor na rede como um servidor secundário para outras tarefas, se necessário.
 
 > [!NOTE]

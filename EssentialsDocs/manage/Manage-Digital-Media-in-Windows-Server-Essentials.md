@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c59fd121fdf628fc0943214b699599f2f20625b3
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: b5788495a2d622a74d5099d3e7c91e62c8d84a6f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837825"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623131"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Gerenciar mídia digital no Windows Server Essentials
 
@@ -45,7 +45,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
 -   [Problemas conhecidos com tipos de arquivos de mídia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_KnownIssues)
 
-##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>Visão geral de mídia digital
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a> Visão geral de mídia digital
  Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que tenha sido codificado (compactado digitalmente). Codificação conteúdo envolve a conversão de entrada de áudio e vídeo para um arquivo de mídia digital, como um arquivo do Windows Media. Depois da mídia digital ser codificada, pode ser facilmente manipulada, distribuída e executada por computadores e facilmente são transmitidos por redes de computador.
 
  Exemplos dos tipos de mídia digital incluem: Windows Media Audio (WMA), Windows Media Video (WMV), MP3, JPEG e AVI. Para obter informações sobre os tipos de mídia digital com suporte no Windows Media Player, consulte [Tipos de arquivo com suporte pelo Windows Media Player](https://support.microsoft.com/kb/316992).
@@ -59,12 +59,12 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
 -   **Exibir apresentações de fotos**. Você pode armazenar fotos digitais na pasta compartilhada **fotos** no servidor e acessá-las a partir de qualquer computador ou um Xbox 360 conectado a uma TV em casa ou no escritório. Você pode assistir a apresentações de fotos, transformando sua TV em um grande quadro de imagens.
 
-###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a>Compartilhamento de mídia protegida por cópia
+###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a> Compartilhamento de mídia protegida por cópia
   O Windows Server Essentials não oferece suporte ao compartilhamento de mídia protegida por cópia. Isso inclui músicas adquiridas por meio de um repositório de música online.
 
  Mídia protegida contra cópia pode ser executada novamente somente no computador ou dispositivo que você usou para adquiri-lo. Proteção contra cópia impede a execução da mídia em mais de um computador ou dispositivo, mesmo que você copie a mídia para o servidor e executá-lo a partir dele. No entanto, você pode armazenar a mídia protegida por cópia no Windows Server Essentials e continuar a reproduzir a mídia no computador ou dispositivo que você usou para comprá-la.
 
-##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a>Gerenciar o servidor de mídia usando o painel
+##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a> Gerenciar o servidor de mídia usando o painel
   O Windows Server Essentials torna possível executar tarefas administrativas comuns usando o painel do Windows Server Essentials. O guia **mídia** do servidor **configurações** na página do Painel fornece o seguinte:
 
 |Seção|Funcionalidade|
@@ -75,7 +75,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
  Para obter mais informações, ver [Permitir ou restringir o acesso a uma biblioteca de mídia no servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6) e [compartilhamento de mídia protegida contra cópia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5).
 
-##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a>Como funciona o streaming de mídia
+##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a> Como funciona o streaming de mídia
  O recurso de streaming de mídia no Windows Server Essentials possibilita que computadores em rede e alguns dispositivos de mídia digital em rede reproduzam arquivos de mídia digital armazenados no servidor.
 
  Quando você ativa o servidor de mídia, o conteúdo que você compartilha nas bibliotecas de mídia estará disponível para execução em dispositivos na sua rede quesão capazes de receber streaming de mídia do seu servidor. Você pode transmitir a maioria dos tipos de arquivos de mídia digital. Alguns dos tipos mais comuns de arquivos que você pode transmitir incluem:
@@ -100,7 +100,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
   Para obter mais informações, consulte [Ativar ou desativar streaming de mídia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4).
 
-##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a>Ativar ou desativar streaming de mídia
+##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a> Ativar ou desativar streaming de mídia
  Você pode compartilhar músicas, vídeos e imagens do Windows Server Essentials transmitindo arquivos para qualquer DMR (receptor de mídia digital) com suporte, como computadores, celulares, televisões, receptores de mídia digital, extensores para o Windows Media Center (incluindo o Xbox 360) e outros dispositivos eletrônicos pessoais.
 
  Para obter uma lista atual de dispositivos de mídia digital compatíveis com o Windows Server Essentials, consulte o [centro de compatibilidade do Windows](https://www.microsoft.com/windows/compatibility/CompatCenter/Home).
@@ -108,7 +108,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 ### <a name="enabling-media-sharing"></a>Ativar o compartilhamento de mídia
  Para compartilhar a mídia armazenada no Windows Server Essentials, você precisa ativar o streaming de mídia. O Streaming de mídia é desativado por configuração padrão.
 
-####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a>Para ativar ou desativar o streaming de mídia
+####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a> Para ativar ou desativar o streaming de mídia
 
 1. Abra o painel do Windows Server Essentials.
 
@@ -126,7 +126,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
    Para obter mais informações, consulte [permitir ou restringir o acesso a uma biblioteca de mídia no servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6).
 
-##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a>Adicionar arquivos de mídia digital ao servidor
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a> Adicionar arquivos de mídia digital ao servidor
  O administrador do servidor pode adicionar mídia digital a pastas compartilhadas na biblioteca de mídia acessando o servidor diretamente ou usando o site de Acesso via Web remoto para entrar no painel. Outros usuários podem adicionar arquivos de mídia ao servidor usando a conexão **pastas compartilhadas** no Launchpad, usando o site de acesso via Web remoto ou usando o aplicativo meu servidor para Windows Phone. Para obter informações sobre como reproduzir mídia, consulte [reproduzir mídia digital](../use/Play-Digital-Media-in-Windows-Server-Essentials.md).
 
 > [!NOTE]
@@ -144,7 +144,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
 3.  Copiar e colar ou arrastar e soltar os arquivos de mídia que você deseja adicionar à pasta compartilhada apropriada no servidor.
 
-##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a>Permitir ou restringir o acesso a uma biblioteca de mídia no servidor
+##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a> Permitir ou restringir o acesso a uma biblioteca de mídia no servidor
 
 -   Quando você ativa o compartilhamento de mídia, ele cria quatro pastas predefinidas: Música, imagens, vídeos e TV gravada. Se houver qualquer uma das pastas no servidor, a pasta existente será reutilizada como uma pasta compartilhada para compartilhamento de mídia. Todas as permissões de conteúdo de mídia e de usuário da pasta existente são preservadas e são compartilhadas com todos os usuários da rede.
 
@@ -152,7 +152,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
 -   Se você ativar o compartilhamento de biblioteca de mídia para uma pasta compartilhada, qualquer player de mídia digital com suporte ou DMR que possa acessar sua rede do Windows Server Essentials também poderá acessar sua mídia digital nessa pasta compartilhada. Por exemplo, se você tiver uma rede sem fio e ela não estiver protegida, qualquer pessoa dentro do alcance de sua rede sem fio potencialmente pode acessar sua mídia digital nessa pasta. Antes de ativar o compartilhamento de biblioteca de mídia, certifique-se de proteger sua rede sem fio. Para obter mais informações, veja a documentação do ponto de acesso sem fio.
 
-##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a>Renomear a biblioteca de mídia
+##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a> Renomear a biblioteca de mídia
  O nome padrão da biblioteca de mídia é **servidor de mídia Digital**. Ele é criado quando você ativa o streaming de mídia no Windows Server Essentials. Para obter mais informações sobre como ativar o streaming de mídia, consulte [para ativar ou desativar o streaming de mídia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.5). Você pode modificar o nome da biblioteca de mídia a qualquer momento usando o painel do servidor.
 
 #### <a name="to-rename-the-media-library"></a>Para renomear a biblioteca de mídia
@@ -167,7 +167,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
 5.  Na caixa de diálogo **alterar o nome da biblioteca de mídia**, digite um novo nome para a biblioteca de mídia e, em seguida, clique em **OK**.
 
-##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a>Interromper o compartilhamento de mídia digital
+##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a> Interromper o compartilhamento de mídia digital
  O administrador do servidor pode interromper o compartilhamento de mídia digital armazenada em pastas compartilhadas em um servidor que executa o Windows Server Essentials.
 
 #### <a name="to-stop-sharing-media-in-shared-folders"></a>Para interromper o compartilhamento de mídia em pastas compartilhadas
@@ -184,13 +184,13 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 
 4.  Clicar em **Aplicar** ou **OK** para salvar suas alterações.
 
-##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>Habilitar dispositivos de mídia que usam o protocolo SMB para acessar arquivos compartilhados no servidor
+##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a> Habilitar dispositivos de mídia que usam o protocolo SMB para acessar arquivos compartilhados no servidor
  Dispositivos que usam protocolo SMB para acesso a arquivos e compartilhamento de rede em vez de DLNA (para streaming de mídia) exigem que a conta Guest seja ativada. Isso permite que qualquer dispositivo ou usuário da rede veja o conteúdo das pastas compartilhadas sem autenticação.
 
 > [!CAUTION]
 >  Quando você habilitar a conta de Convidado, qualquer pessoa pode acessar os recursos compartilhados no servidor por padrão.
 
-##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a>Processadores comuns e os perfis de vídeo aos quais eles dão suporte
+##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a> Processadores comuns e os perfis de vídeo aos quais eles dão suporte
  Para transmitir mídia de seu servidor do Windows Server Essentials, você pode usar um computador que esteja executando o sistema operacional Windows 7 ou Windows 8 ou outros dispositivos em rede (como players de mídia digital) ou extensores do Media Center (como o Xbox 360). Quando você estiver usando sua rede, use remoto da Web Access Media Player para executar arquivos que são armazenados no servidor.
 
  Você precisa de uma taxa de transferência de dados entre 200 KBps e 10 MBps. Você precisa usar formatos de mídia que seu computador e dispositivos podem reconhecer e reproduzir. Nem todos os dispositivos oferecem suporte a formatos de mídia, deve haver uma forma de seu computador e dispositivos para executar os arquivos de mídia que você tem.
@@ -218,7 +218,7 @@ Os tópicos a seguir abordam as recursos do servidor de streaming de mídia e ex
 > [!NOTE]
 >  Para fluxo de vídeo de alta definição através do Acesso Remoto via Web, é necessário um processador com pontuação de pelo menos 6.0.
 
-##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a>Problemas conhecidos com tipos de arquivo de mídia
+##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a> Problemas conhecidos com tipos de arquivo de mídia
  O recurso de streaming de mídia no Acesso Remoto via Web usa o Windows Media Player 12 Network Sharing Service. Streaming de mídia de Acesso Remoto via Web oferece suporte a tipos de arquivo de imagem, áudio e vídeo com suporte no Windows Media Player 12 e no Silverlight 4.
 
  A tabela a seguir lista os tipos de arquivo (formatos) que têm suporte no streaming de mídia do Acesso via Web Remoto. Se houver mídia de tipos de arquivos no servidor que não estão incluídos na tabela, não é permitido transmiti-los através de streaming de mídia do Acesso Remoto via Web.
