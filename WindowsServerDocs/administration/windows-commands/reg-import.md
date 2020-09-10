@@ -3,16 +3,16 @@ title: reg import
 description: Artigo de referência para o comando reg Import, que copia o conteúdo de um arquivo que contém subchaves de registro exportadas, entradas e valores no registro do computador local.
 ms.topic: reference
 ms.assetid: 0be103de-08fc-4f02-b590-361782680b3e
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4da7e3c66bedd3ba6a85e64c69e3fc4866df1e6c
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 49f83a20b4f9c9e1e64f6e33f0980757de60d9ec
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028034"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627029"
 ---
 # <a name="reg-import"></a>reg import
 

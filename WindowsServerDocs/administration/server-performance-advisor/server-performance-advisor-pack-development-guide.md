@@ -1,16 +1,16 @@
 ---
 title: Guia de desenvolvimento do Pacote do Server Performance Advisor
 description: Guia de desenvolvimento do Pacote do Server Performance Advisor
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 46daa58e6a13f0cf0f71131b05def481f42a594c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7f3174e203aca130b06b410066ec714254a7f125
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993098"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627746"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Guia de desenvolvimento do Pacote do Server Performance Advisor
 
@@ -697,7 +697,7 @@ Definir um valor de lista é o mesmo que definir uma tabela.
 
 O nome do valor da lista deve ser globalmente exclusivo. Esse nome se tornará o nome de uma tabela temporária. No exemplo anterior, a tabela chamada \# NetworkAdapterInformation será criada no estágio de inicialização do ambiente de execução, que contém todas as colunas descritas. Semelhante a um único nome de valor, um nome de valor de lista também é usado como parte do nome de exibição personalizado, por exemplo, vwNetworkAdapterInformation.
 
-@typede &lt; Column/ &gt; é definido por &lt; DataType/&gt;
+@type de &lt; Column/ &gt; é definido por &lt; DataType/&gt;
 
 A interface do usuário fictícia do relatório final poderia ter a seguinte aparência:
 
@@ -767,7 +767,7 @@ Ao mesmo tempo, duas chaves de estatísticas são geradas pela estrutura SPA. Um
 
 Como o exemplo a seguir indica que há suporte para várias colunas de **valor** com várias colunas de **chave** .
 
-CounterName | InstanceName | Média | Somar
+CounterName | InstanceName | Média | SUM
 --- | :---: | :---: | :---:
 % do Tempo do Processador | _Total | 10 | 20
 % do Tempo do Processador | CPU0 | 20 | 30 
@@ -878,9 +878,9 @@ Todos os dados coletados são importados para as seguintes tabelas correspondent
 
 O \[ dbo \] . \[ A API setnotification \] define o status da regra para que você possa ver um ícone de **êxito** ou de **aviso** na interface do usuário.
 
-* @ruleNamenvarchar (50)
+* @ruleName nvarchar (50)
 
-* @adviceNamenvarchar (50)
+* @adviceName nvarchar (50)
 
 As mensagens de alerta e recomendação são armazenadas no arquivo XML de provisionamento de metadados. Isso torna o script de relatório mais fácil de gerenciar.
 
@@ -910,11 +910,11 @@ END
 
 ### <a name="get-threshold-value"></a>Obter valor do limite
 
-O \[ dbo \] . \[ \]A API getlimite Obtém os limites:
+O \[ dbo \] . \[ \] A API getlimite Obtém os limites:
 
-* @keynvarchar (50)
+* @key nvarchar (50)
 
-* @valuesaída float
+* @value saída float
 
 > [!NOTE]
 > Os limites são pares de nome-valor e podem ser referenciados em qualquer regra. Os administradores do sistema podem usar o console do SPA para ajustar os limites.
@@ -949,7 +949,7 @@ if (@freediskSizeInGB < @freediskSize)
 
 O \[ dbo \] . \[ A API \] define o valor único:
 
-* @keynvarchar (50)
+* @key nvarchar (50)
 
 * @valuevariante do SQL \_
 
@@ -973,9 +973,9 @@ exec dbo.SetSingleValue N Osversion ,  6.1.7601
 exec dbo.SetSingleValue N OsLocation ,  c:\ 
 ```
 
-Em casos raros, talvez você queira remover o resultado definido anteriormente usando o \[ dbo \] . \[ \]API removeSingleValue.
+Em casos raros, talvez você queira remover o resultado definido anteriormente usando o \[ dbo \] . \[ \] API removeSingleValue.
 
-* @keynvarchar (50)
+* @key nvarchar (50)
 
 Você pode usar o script a seguir para remover o valor definido anteriormente.
 
@@ -987,7 +987,7 @@ exec dbo.removeSingleValue N Osversion
 
 O \[ dbo \] . \[ A API GetDuration \] Obtém a duração designada pelo usuário em segundos para a coleta de dados:
 
-* @durationsaída int
+* @duration saída int
 
 Aqui está um exemplo de script de relatório:
 
@@ -996,9 +996,9 @@ DECLARE @duration int
 exec dbo.GetDuration @duration output
 ```
 
-O \[ dbo \] . \[ \]A API getinterna Obtém o intervalo de um contador de desempenho. Isso poderá retornar NULL se o relatório atual não tiver informações do contador de desempenho.
+O \[ dbo \] . \[ \] A API getinterna Obtém o intervalo de um contador de desempenho. Isso poderá retornar NULL se o relatório atual não tiver informações do contador de desempenho.
 
-* @intervalsaída int
+* @interval saída int
 
 Aqui está um exemplo de script de relatório:
 

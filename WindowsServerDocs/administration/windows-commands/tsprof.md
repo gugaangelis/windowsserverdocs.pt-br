@@ -3,16 +3,16 @@ title: tsprof
 description: Artigo de referência para tsprof, que copia as informações de configuração Serviços de Área de Trabalho Remota usuário de um usuário para outro.
 ms.topic: reference
 ms.assetid: 27047868-b706-4208-b7e0-1437a2325dd3
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f676b1d11586d413e544d451043da242861083e1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: de1acc0c99f91f3ebf01d09d39d9fb0685d7f8f6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023390"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626693"
 ---
 # <a name="tsprof"></a>tsprof
 

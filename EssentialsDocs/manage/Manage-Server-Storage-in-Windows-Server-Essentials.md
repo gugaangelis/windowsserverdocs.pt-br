@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 0ee5669fc9ae6e1ee4e38065792d3da7611900a4
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 2cd8ac4e93027e3ab88042d0bca465f3fea67f26
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87837725"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626114"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Gerenciar o armazenamento de servidor no Windows Server Essentials
 
@@ -36,7 +36,7 @@ ms.locfileid: "87837725"
 
 -   [Criar um espaço de armazenamento](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_6)
 
-##  <a name="manage-hard-drives-using-the-dashboard"></a><a name="BKMK_1"></a>Gerenciar discos rígidos usando o painel
+##  <a name="manage-hard-drives-using-the-dashboard"></a><a name="BKMK_1"></a> Gerenciar discos rígidos usando o painel
  O Windows Server Essentials permite que você gerencie todos os discos rígidos que estão conectados ao servidor por meio do Painel. Na guia **Armazenamento** do painel, **Discos Rígidos** exibe todos os discos rígidos que estão disponíveis no servidor para armazenar os backups de dados e do servidor. O servidor monitora o espaço disponível em cada disco rígido e exibe um alerta se o espaço em disco rígido se tornar baixo. A guia **Discos Rígidos** exibe as seguintes informações:
 
 - O nome de cada disco rígido
@@ -62,7 +62,7 @@ ms.locfileid: "87837725"
 |**Criar um espaço de armazenamento**|Abre o assistente Criar um Espaço de Armazenamento, que permite que você use um ou mais discos rígidos para aumentar a capacidade de um pool de armazenamento.|
 |**Aumentar capacidade do pool de armazenamento**|**Observação:** Essa tarefa só ficará visível se o disco rígido selecionado estiver localizado em um espaço de armazenamento.<br /><br /> Abre o assistente Aumentar a Capacidade de um Pool de Armazenamento, que permite que você use um ou mais discos rígidos para aumentar a capacidade de um pool de armazenamento.|
 
-##  <a name="increase-storage-on-the-server"></a><a name="BKMK_2"></a>Aumentar o armazenamento no servidor
+##  <a name="increase-storage-on-the-server"></a><a name="BKMK_2"></a> Aumentar o armazenamento no servidor
  Para aumentar o armazenamento no servidor, você pode adicionar um disco rígido interno adicional no servidor. Para adicionar o disco rígido interno adicional, você deve desligar o servidor, adicionar o disco rígido interno e reiniciar o servidor. Você não precisa desligar o servidor se o disco rígido estiver conectado ao controlador SCSI. Nesse caso, o disco rígido pode ser conectado enquanto o servidor está em execução.
 
  Dependendo se o disco rígido a ser adicionado está formatado, siga um destes procedimentos:
@@ -81,7 +81,7 @@ ms.locfileid: "87837725"
 
 4.  Siga as instruções para concluir o assistente Adicionar um Novo Disco Rígido.
 
-###  <a name="to-clean-up-the-hard-drive"></a><a name="BKMK_Clean"></a>Para limpar o disco rígido
+###  <a name="to-clean-up-the-hard-drive"></a><a name="BKMK_Clean"></a> Para limpar o disco rígido
 
 1.  Abra o Painel.
 
@@ -91,7 +91,7 @@ ms.locfileid: "87837725"
 
 4.  Em ** \> propriedades de<DriveLetter**, na guia **geral** , clique em **limpeza da unidade**.
 
-##  <a name="perform-checks-and-repairs-on-hard-drives"></a><a name="BKMK_Check"></a>Executar verificações e reparos em discos rígidos
+##  <a name="perform-checks-and-repairs-on-hard-drives"></a><a name="BKMK_Check"></a> Executar verificações e reparos em discos rígidos
  O processo de verificação e reparo do disco rígido verifica a integridade do sistema de arquivos armazenado no discos rígidos. Ele executa um processo **chkdsk** no volume em que os arquivos de backup estão armazenados. O alerta de problema a seguir pode ser resolvido executando uma verificação e reparo nos discos rígidos:
 
 -   Um ou mais discos rígidos no backup do servidor devem ser verificados.
@@ -106,7 +106,7 @@ ms.locfileid: "87837725"
 
 4.  Na guia **Verificar e Reparar**, clique em **Verificar e Reparar**.
 
-##  <a name="format-hard-drives"></a><a name="BKMK_3"></a>Formatar discos rígidos
+##  <a name="format-hard-drives"></a><a name="BKMK_3"></a> Formatar discos rígidos
  Quando um disco rígido interno não formatado é detectado no servidor, um alerta de integridade orienta o usuário pelo processo de formatação. O assistente Adicionar um Novo Disco Rígido lhe orienta pela formatação do disco rígido e permite que você o configure de uma das seguintes maneiras:
 
 1.  Formatar o disco rígido e criar automaticamente uma unidade nele. Se você escolher essa opção, quando o assistente for concluído, será criada uma unidade lógica de disco rígido formatada com o sistema de arquivos NTFS.
@@ -117,7 +117,7 @@ ms.locfileid: "87837725"
 
 4.  Se já existir um espaço de armazenamento, use o novo disco rígido para aumentar a capacidade de um pool de armazenamento. Esta opção é exibida apenas se houver um espaço de armazenamento existente criado no servidor. Se você escolher essa opção, o assistente adicionará esse disco rígido ao pool de armazenamento.
 
-##  <a name="add-a-new-hard-drive"></a><a name="BKMK_4"></a>Adicionar um novo disco rígido
+##  <a name="add-a-new-hard-drive"></a><a name="BKMK_4"></a> Adicionar um novo disco rígido
  Quando você conectar uma nova unidade de disco rígido em um servidor que executa o Windows Server Essentials, você pode:
 
 -   [Usar o novo disco rígido para armazenar pastas do servidor](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4a)
@@ -126,7 +126,7 @@ ms.locfileid: "87837725"
 
 -   [Usar o novo disco rígido para aumentar a capacidade do pool de armazenamento](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)
 
-###  <a name="use-the-new-hard-drive-to-store-server-folders"></a><a name="BKMK_4a"></a>Usar o novo disco rígido para armazenar pastas do servidor
+###  <a name="use-the-new-hard-drive-to-store-server-folders"></a><a name="BKMK_4a"></a> Usar o novo disco rígido para armazenar pastas do servidor
  Para usar o novo disco rígido para armazenar pastas do servidor, você pode adicionar uma nova pasta do servidor no disco rígido ou mover uma pasta do servidor existente para o disco rígido.
 
 ##### <a name="to-store-server-folders"></a>Para armazenar pastas do servidor
@@ -148,7 +148,7 @@ ms.locfileid: "87837725"
 
    Para obter mais informações sobre como mover pastas do servidor, consulte [Add or move a server folder](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).
 
-###  <a name="use-the-new-hard-drive-to-store-server-backups"></a><a name="BKMK_4b"></a>Usar o novo disco rígido para armazenar backups do servidor
+###  <a name="use-the-new-hard-drive-to-store-server-backups"></a><a name="BKMK_4b"></a> Usar o novo disco rígido para armazenar backups do servidor
  Você pode usar o disco rígido recém-adicionado para armazenar backups de servidor.
 
 ##### <a name="to-store-server-backups"></a>Para armazenar backups do servidor
@@ -167,7 +167,7 @@ ms.locfileid: "87837725"
 
 4. Siga as instruções para concluir o assistente.
 
-###  <a name="use-the-new-hard-drive-to-increase-storage-pool-capacity"></a><a name="BKMK_4c"></a>Usar o novo disco rígido para aumentar a capacidade do pool de armazenamento
+###  <a name="use-the-new-hard-drive-to-increase-storage-pool-capacity"></a><a name="BKMK_4c"></a> Usar o novo disco rígido para aumentar a capacidade do pool de armazenamento
  Quando a capacidade do pool de armazenamento for baixa, você receberá um alerta informando que é possível aumentar a capacidade do pool de armazenamento adicionando um novo disco rígido ao pool de armazenamento usando o assistente Aumentar a Capacidade de um Pool de Armazenamento.
 
 > [!NOTE]
@@ -185,7 +185,7 @@ ms.locfileid: "87837725"
 
 5.  Siga as instruções para concluir o assistente.
 
-##  <a name="storage-spaces-overview"></a><a name="BKMK_5"></a>Visão geral dos espaços de armazenamento
+##  <a name="storage-spaces-overview"></a><a name="BKMK_5"></a> Visão geral dos espaços de armazenamento
  Os espaços de armazenamento permitem que você agrupe discos em um pool de armazenamento. Em seguida, você pode usar a capacidade do pool para criar espaços de armazenamento. Os espaços de armazenamento são unidades virtuais que aparecem na guia **Discos Rígidos** do Painel. Você pode usar espaços de armazenamento como qualquer outra unidade, portanto, é fácil trabalhar com arquivos neles. Quando a capacidade do pool se torna baixa, você pode criar espaços de armazenamento de grandes e adicionar mais unidades ao pool de armazenamento. Se você tiver dois ou mais discos dentro do pool de armazenamento, poderá criar espaços de armazenamento com um espelho bidirecional que não será afetado por uma falha de unidade? ou até mesmo a falha de duas unidades? se você criar um espaço de armazenamento de espelho triplo.
 
  Para criar um espaço de armazenamento, tudo o que você precisa é uma ou mais unidades adicionais além na unidade em que o Windows está instalado. Essas unidades podem ser discos rígidos internos ou externos ou unidades de estado sólido. Você pode usar uma variedade de tipos de unidades com espaços de armazenamento, inclusive unidades USB, SATA e SAS.
@@ -195,7 +195,7 @@ ms.locfileid: "87837725"
 
  Para obter mais informações sobre Espaços de Armazenamento, consulte as [Perguntas Frequentes de Espaços de Armazenamento](/windows-server/storage/storage-spaces/storage-spaces-direct-faq).
 
-##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a>Criar um espaço de armazenamento
+##  <a name="create-a-storage-space"></a><a name="BKMK_6"></a> Criar um espaço de armazenamento
  Para começar a trabalhar com espaços de armazenamento no servidor, os requisitos mínimos a seguintes devem ser atendidos:
 
 -   O servidor que executa o Windows Server Essentials deve ser conectado a unidades físicas adicionais (não apenas à unidade de inicialização), as unidades não devem hospedar nenhum volume e devem ter a capacidade mínima de 10 GB. É necessária uma unidade física para criar um pool de armazenamento. É necessário um mínimo de duas unidades físicas para criar um espaço de armazenamento de espelho resiliente.

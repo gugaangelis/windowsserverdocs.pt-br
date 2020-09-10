@@ -3,16 +3,16 @@ title: regini
 description: Artigo de referência para o comando Regini, que modifica o registro da linha de comando ou de um script e aplica as alterações que foram predefinidas em um ou mais arquivos de texto.
 ms.topic: reference
 ms.assetid: 5ff18dc3-5bd8-400a-b311-fd73a3267e8c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: a779c41dba46e86f862982de0b203a09dd6c8384
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 78c56a68392d066047123dc77bafc3d1b01de127
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027434"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627471"
 ---
 # <a name="regini"></a>regini
 

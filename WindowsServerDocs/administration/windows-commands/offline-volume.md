@@ -3,16 +3,16 @@ title: offline volume
 description: Artigo de referência para o comando de volume offline, que leva o volume online com foco para o estado offline.
 ms.topic: reference
 ms.assetid: b8f7192f-ea38-47d0-9d4e-58ef68336ae6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c38a38e8e907cc557f0c13690de3941c10f4065
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7902ef109c7e893d2610ae308a391d9efafbabfd
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032734"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627370"
 ---
 # <a name="offline-volume"></a>offline volume
 

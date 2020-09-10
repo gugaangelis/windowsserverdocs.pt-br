@@ -3,16 +3,16 @@ title: subst
 description: Saiba como associar um caminho a uma letra da unidade.
 ms.topic: reference
 ms.assetid: 3e69234c-2312-4343-868b-afc1017c622a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 680a3118d284d18946980ff8dc246ce08b5ea727
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f5fd87c01f305201cfd9db50cd454da56bc99c53
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024610"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626854"
 ---
 # <a name="subst"></a>subst
 

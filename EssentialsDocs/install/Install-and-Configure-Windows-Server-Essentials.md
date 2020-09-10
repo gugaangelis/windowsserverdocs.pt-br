@@ -5,14 +5,14 @@ ms.date: 06/17/2013
 ms.topic: article
 ms.assetid: e95cf219-46a4-4041-bd81-0c4c2a0622cf
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ce8f1dda49144a817f405d04f17046f701230446
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c6fe658db8756856a65bb5284731b949d8edbd31
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181172"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626231"
 ---
 # <a name="install-and-configure-windows-server-essentials"></a>Instalar e configurar o Windows Server Essentials
 
@@ -27,7 +27,7 @@ ms.locfileid: "87181172"
  Você instala e configura o Windows Server Essentials em duas etapas:
 
 
-###  <a name="step-1-install-the-windows-server-essentials-operating-system"></a><a name="BKMK_ManualInstallation"></a>Etapa 1: instalar o sistema operacional Windows Server Essentials
+###  <a name="step-1-install-the-windows-server-essentials-operating-system"></a><a name="BKMK_ManualInstallation"></a> Etapa 1: instalar o sistema operacional Windows Server Essentials
 
 > [!IMPORTANT]
 >  Depois que o sistema operacional for instalado, não personalize seu servidor até concluir [a etapa 2: configurar o sistema operacional Windows Server Essentials](#BKMK_Step2Configure).
@@ -90,7 +90,7 @@ ms.locfileid: "87181172"
 
    Durante a instalação, os arquivos temporários são copiados para uma pasta de instalação no seu computador, o que leva cerca de 30 minutos. Após a instalação do sistema operacional Windows Server Essentials, o computador é reiniciado. Agora, você está pronto para configurar o sistema operacional Windows Server Essentials.
 
-###  <a name="step-2-configure-the-windows-server-essentials-operating-system"></a><a name="BKMK_Step2Configure"></a>Etapa 2: configurar o sistema operacional Windows Server Essentials
+###  <a name="step-2-configure-the-windows-server-essentials-operating-system"></a><a name="BKMK_Step2Configure"></a> Etapa 2: configurar o sistema operacional Windows Server Essentials
 
 > [!IMPORTANT]
 >  Se você estiver migrando de uma versão anterior do Windows Small Business Server para o Windows Server Essentials, deverá seguir um processo diferente. Para informações sobre a migração de instalações, consulte o seguinte:

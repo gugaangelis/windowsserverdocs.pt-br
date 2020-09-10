@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f1d9beed01d17abfd88a135fb5ade48d0b6178ab
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 50f610bec8573916edffd3efb5e551a45fc6e72a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554509"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625954"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Visão geral do Painel no Windows Server Essentials
 
@@ -94,7 +94,7 @@ ms.locfileid: "89554509"
 |Dispositivos|Depois de conectar os computadores na rede do Windows Server Essentials, você pode gerenciá-los da página **Dispositivos** no Painel. Tarefas que você pode executar nessa página incluem:<br /><br /> -Exibir uma lista de computadores que ingressaram em sua rede.<br /><br /> -Gerenciar dispositivos móveis aproveitando o Microsoft 365 recurso de gerenciamento de dispositivo móvel.<br /><br /> **Observação:** Esse recurso só está disponível no Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials habilitada.<br /><br /> -Exiba as propriedades do computador e os alertas de integridade de cada computador.<br /><br /> -Configurar e gerenciar backups de computador.<br /><br /> -Restaurar arquivos e pastas nos computadores.<br /><br /> -Estabelecer uma conexão Área de Trabalho Remota com um computador<br /><br /> -Personalizar configurações de backup do computador e histórico de arquivos<br /><br /> Para obter informações sobre como gerenciar computadores e backups, consulte [gerenciar dispositivos](Manage-Devices-in-Windows-Server-Essentials.md).|
 |Armazenamento|Dependendo da versão do Windows Server Essentials em execução, a seção **Armazenamento** do Painel contém seguintes seções por padrão.<br /><br /> -A subseção **pastas do servidor** inclui tarefas que ajudam a exibir e gerenciar as propriedades das pastas do servidor. A página também inclui tarefas para abrir e adicionar pastas do servidor.<br /><br /> -A página **discos rígidos** inclui tarefas que ajudam a exibir e verificar a integridade das unidades que estão conectadas ao servidor.<br /><br /> -No Windows Server Essentials e no Windows Server 2012 R2 Standard com a função de experiência do Windows Server Essentials habilitada, a página **bibliotecas do SharePoint** inclui tarefas que ajudam a gerenciar as bibliotecas do SharePoint no serviço Microsoft 365.<br /><br /> Para obter informações sobre como gerenciar pastas de servidor, consulte [Manage Server Folders](Manage-Server-Folders-in-Windows-Server-Essentials.md).<br /><br /> Para obter informações sobre como gerenciar discos rígidos, consulte [gerenciar o armazenamento do servidor](Manage-Server-Storage-in-Windows-Server-Essentials.md).|
 |Aplicativos|-A seção de **aplicativos** do painel do Windows Server Essentials contém duas subseções por padrão.<br /><br /> Para obter informações sobre como gerenciar aplicativos de suplemento, consulte [gerenciar aplicativos](Manage-Applications-in-Windows-Server-Essentials.md).<br /><br /> -A subseção **suplementos** exibe uma lista de suplementos instalados e fornece tarefas que permitem a remoção de um suplemento e o acesso a informações adicionais sobre um complemento selecionado do.<br /><br /> -A subseção **Microsoft Pinpoint** exibe uma lista de aplicativos que estão disponíveis no Microsoft Pinpoint.|
-|Office 365|A guia **Office 365** é exibida somente quando o Windows Server Essentials é integrado com o Microsoft 365. Esta seção contém informações de conta de administrador e de assinatura do Office 365.|
+|Microsoft 365|A guia **Microsoft 365** é exibida somente quando o Windows Server Essentials está integrado ao Microsoft 365. Esta seção contém informações Microsoft 365 assinatura e conta de administrador.|
 
 > [!NOTE]
 >  Se você instalar um complemento para o Painel do Windows Server Essentials, o complemento pode criar seções administrativas adicionais. Essas seções podem aparecer na barra de navegação principal ou em uma guia subseção.

@@ -3,16 +3,16 @@ title: takeown
 description: Saiba como obter acesso a um arquivo, tornando-se o proprietário do arquivo.
 ms.topic: reference
 ms.assetid: 0683cd65-a6db-4cab-962b-45a0ff61f43c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b87f773f1b42291a679a642793f2b534982164d2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 93b8f58106b6e827254b3ab91f859767da9dae7c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89027194"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626737"
 ---
 # <a name="takeown"></a>takeown
 

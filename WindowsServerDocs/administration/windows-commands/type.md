@@ -1,19 +1,19 @@
 ---
-title: type
+title: tipo
 description: Artigo de referência para o tipo, que exibe o conteúdo de um arquivo de texto.
 ms.topic: reference
 ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dansimp
-ms.openlocfilehash: a7e188ec816b4ad16d86018bf7fe92954e778cbf
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: 7b944037c6dc73de89fa92b54a41b07ff09fcf69
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036074"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626662"
 ---
-# <a name="type"></a>type
+# <a name="type"></a>tipo
 
 No Shell de comando do Windows, **tipo** é um comando interno que exibe o conteúdo de um arquivo de texto. Use o comando **Type** para exibir um arquivo de texto sem modificá-lo.
 

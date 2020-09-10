@@ -3,16 +3,16 @@ title: PowerShell
 description: Artigo de referência para o comando do PowerShell, que abre o console do PowerShell em um prompt de comando.
 ms.topic: reference
 ms.assetid: 694fc970-0b6c-4046-b1b5-7eb1a0d26609
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/11/2018
-ms.openlocfilehash: 5c34e00ec2899d615c25808313db821f29c069f5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3cfe7a9bada34a2678f2c63e70f698b018478770
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89032453"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627233"
 ---
 # <a name="powershell"></a>PowerShell
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 48bfc36ba6f3fa369b694b2e160a5ee1282517f2
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: dd68308646eba5fba2f79593cba82de467c1888b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181562"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626361"
 ---
 # <a name="add-third-level-domain-names"></a>Adicionar Nomes de Domínio de Terceiro Nível
 
@@ -33,7 +33,7 @@ ms.locfileid: "87181562"
 
 -   [Reiniciar o serviço Gerenciamento de Nome de Domínio do Windows Server](Add-Third-Level-Domain-Names.md#BKMK_RestartService)
 
-###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>Adicionar uma implementação da interface IDomainSignupProvider ao assembly
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a> Adicionar uma implementação da interface IDomainSignupProvider ao assembly
  A interface IDomainSignupProvider é usada para adicionar as ofertas de domínio ao assistente.
 
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>Para adicionar o código de IDomainSignupProvider ao assembly
@@ -273,7 +273,7 @@ ms.locfileid: "87181562"
 
 21. Salve o projeto, mas não o feche, porque você irá adicionar a ele o próximo procedimento. Você não poderá criar o projeto até que tenha concluído o próximo procedimento.
 
-###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>Adicionar uma implementação da interface IDomainMaintenanceProvider ao assembly
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a> Adicionar uma implementação da interface IDomainMaintenanceProvider ao assembly
  O IDomainMaintenanceProvider é usado para manter o domínio depois que ele é criado.
 
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>Para adicionar o código de IDomainMaintenanceProvider ao assembly
@@ -512,10 +512,10 @@ ms.locfileid: "87181562"
 
 14. Salve e crie a solução.
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Assinar o assembly com uma assinatura Authenticode
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> Assinar o assembly com uma assinatura Authenticode
  Você deve assinar com a Authenticode o assembly para que seja usado no sistema operacional. Para obter mais informações sobre a assinatura do assembly, consulte [Assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>Instalar o assembly no computador de referência
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> Instalar o assembly no computador de referência
  Coloque o assembly em uma pasta no computador de referência. Anote o caminho da pasta, porque ele será informado no Registro na próxima etapa.
 
 ### <a name="add-a-key-to-the-registry"></a>Adicione uma chave ao Registro
@@ -555,7 +555,7 @@ ms.locfileid: "87181562"
 
 16. Digite o nome completo da classe do provedor definida no assembly e clique em **OK**.
 
-###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>Reiniciar o serviço de gerenciamento de nomes de domínio do Windows Server
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a> Reiniciar o serviço de gerenciamento de nomes de domínio do Windows Server
  É preciso reiniciar o serviço Gerenciamento de Domínio do Windows Server para que o provedor se torne disponível para o sistema operacional.
 
 ##### <a name="restart-the-service"></a>Reinicie o serviço.

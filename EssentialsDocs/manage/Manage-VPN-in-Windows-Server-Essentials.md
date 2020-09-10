@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: bb221a0ef80388fa8b5bffbc38f7cbec56d3f61c
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: a4e2d87787c3c7e9ebcb8dc216de725f7cb13a1f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180862"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626004"
 ---
 # <a name="manage-vpn-in-windows-server-essentials"></a>Gerenciar VPN no Windows Server Essentials
 
@@ -28,7 +28,7 @@ ms.locfileid: "87180862"
 
 -   [Usar VPN para se conectar ao Windows Server Essentials](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_3)
 
-##  <a name="enable-vpn-for-remote-access-on-the-server"></a><a name="BKMK_1"></a>Habilitar VPN para acesso remoto no servidor
+##  <a name="enable-vpn-for-remote-access-on-the-server"></a><a name="BKMK_1"></a> Habilitar VPN para acesso remoto no servidor
  Conclua o procedimento a seguir para configurar o VPN no Windows Server Essentials de modo a habilitar o acesso remoto.
 
 #### <a name="to-enable-vpn-in-windows-server-essentials"></a>Para habilitar o VPN no Windows Server Essentials
@@ -43,7 +43,7 @@ ms.locfileid: "87180862"
 
 5.  Siga as instruções para concluir o assistente.
 
-##  <a name="set-vpn-permissions-for-network-users"></a><a name="BKMK_2"></a>Definir permissões de VPN para usuários de rede
+##  <a name="set-vpn-permissions-for-network-users"></a><a name="BKMK_2"></a> Definir permissões de VPN para usuários de rede
  Você pode usar VPN para se conectar ao Windows Server Essentials e acessar todos os seus recursos que estão armazenados no servidor. Isso é especialmente útil se você tiver um computador cliente que está configurado com contas de rede que podem ser usadas para se conectar a um servidor do Windows Server Essentials hospedado por meio de uma conexão VPN. Todas as contas de usuário recém-criadas no Windows Server Essentials hospedado devem usar VPN para fazer logon no computador cliente pela primeira vez.
 
 #### <a name="to-set-vpn-permissions-for-network-users"></a>Para configurar permissões de VPN para os usuários da rede
@@ -58,14 +58,14 @@ ms.locfileid: "87180862"
 
 5.  Na **<\> Propriedades da conta de usuário**, clique na guia **acesso em qualquer lugar** .
 
-6.  Na guia **acesso em qualquer lugar** , para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **permitir VPN (rede virtual privada)** .
+6.  Na guia **acesso em qualquer lugar** , para permitir que um usuário se conecte ao servidor usando VPN, marque a caixa de seleção **permitir VPN (rede virtual privada)**  .
 
 7.  Clique em **Aplicar** e em **OK**.
 
-##  <a name="connect-client-computers-to-the-server"></a><a name="BKMK_Connect"></a>Conectar computadores cliente ao servidor
+##  <a name="connect-client-computers-to-the-server"></a><a name="BKMK_Connect"></a> Conectar computadores cliente ao servidor
  Depois que a VPN estiver habilitada em um servidor que esteja executando o Windows Server Essentials para acesso remoto, você poderá usar uma conexão VPN para se conectar e acessar todos os seus recursos armazenados no servidor. Porém, primeiro você deve conectar o computador ao servidor. Quando você conecta um computador ao servidor usando o Assistente de Conexão de Computador ao Servidor, uma conexão de rede VPN é gerada automaticamente no computador cliente e pode ser usada para acessar recursos do servidor quando você trabalha em casa ou em viagens. Para obter instruções passo a passo sobre a conexão de seu computador ao servidor, consulte [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
-##  <a name="use-vpn-to-connect-to-windows-server-essentials"></a><a name="BKMK_3"></a>Usar VPN para se conectar ao Windows Server Essentials
+##  <a name="use-vpn-to-connect-to-windows-server-essentials"></a><a name="BKMK_3"></a> Usar VPN para se conectar ao Windows Server Essentials
  Se você tiver um computador cliente que está configurado com contas de rede que podem ser usadas para se conectar a um servidor hospedado executando o Windows Server Essentials por meio de uma conexão VPN, todas as contas de usuário recém-criadas no servidor hospedado devem usar VPN para fazer logon no computador cliente pela primeira vez. Conclua o procedimento a seguir no computador cliente conectado ao servidor.
 
 #### <a name="to-use-vpn-to-remotely-access-server-resources"></a>Para usar VPN para acessar remotamente os recursos do servidor

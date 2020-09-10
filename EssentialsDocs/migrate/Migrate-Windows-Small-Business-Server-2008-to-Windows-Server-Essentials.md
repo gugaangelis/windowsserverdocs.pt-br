@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 1faa44fbc9b4aba07950c1197169ccba8bb708eb
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 81bb6a55efa3fef0154eda500e13928ac5db5b9e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838405"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625843"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Migrar do Windows Small Business Server 2008 para o Windows Server Essentials
 
@@ -59,7 +59,7 @@ Este guia descreve como migrar um domínio existente do Windows SBS 2008 para o 
 
  Vários procedimentos de migração exigem a abertura de uma janela de prompt de comando como administrador.
 
-###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>Para abrir uma janela de prompt de comando no servidor de origem como administrador
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a> Para abrir uma janela de prompt de comando no servidor de origem como administrador
 
 1.  Clique em Iniciar.
 

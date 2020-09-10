@@ -3,16 +3,16 @@ title: Add-DriverGroupPackage
 description: Artigo de referência para Add-DriverGroupPackage, que adiciona um pacote de driver a um grupo de drivers.
 ms.topic: reference
 ms.assetid: 7cd323ae-9049-448e-a460-6c7d6462d4c8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a6507e4367b64439dbef57327e71b9bd6c14fde
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 7560fd3eb2ea05e74f6c16bdde94b03dad03a967
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029874"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89626494"
 ---
 # <a name="add-drivergrouppackage"></a>Add-DriverGroupPackage
 

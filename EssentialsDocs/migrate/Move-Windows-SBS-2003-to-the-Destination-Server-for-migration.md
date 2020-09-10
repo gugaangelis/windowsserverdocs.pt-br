@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 427f695b36f7a062bdc570ba816560a6a1721b90
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f2fe4a1bb9277ae5b314aa02ee5c94896d1eefd9
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180582"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625724"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover configurações e dados do Windows SBS 2003 para o servidor de destino para migração para o Windows Server Essentials
 
@@ -54,8 +54,8 @@ Antes de copiar os dados do servidor de origem para o servidor de destino, execu
 Sendo que:
  - \<SourceServerName\> é o nome do servidor de origem
  - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
- - \<DestinationServerName\>é o nome do servidor de destino,
- - \<SharedDestinationFolderName\>é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.
+ - \<DestinationServerName\> é o nome do servidor de destino,
+ - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.
 
 4. Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem.
 
