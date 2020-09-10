@@ -7,15 +7,15 @@ metadata:
   description: Consolide a computação, o armazenamento e a rede definidos por software em um cluster para oferecer virtualização econômica, de alto desempenho e facilmente escalável.
   ms.service: help
   ms.topic: hub-page
-  author: coreyp-at-msft
-  ms.author: coreyp
+  author: eross-msft
+  ms.author: lizross
   ms.date: 06/10/2020
-  ms.openlocfilehash: da06358fad02f7ca2f7088bae1a82a2b21786bda
-  ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+  ms.openlocfilehash: 34faa74941b798a9c0eddb05fb01cae349824b51
+  ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
   ms.translationtype: HT
   ms.contentlocale: pt-BR
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87993880"
+  ms.lasthandoff: 09/10/2020
+  ms.locfileid: "89639382"
 productDirectory:
   items:
   - title: Hyper-V
