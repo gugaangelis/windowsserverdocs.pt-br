@@ -3,16 +3,16 @@ title: dfsdiag testdcs
 description: Artigo de referência para o comando Dfsdiag testdcs, que verifica a configuração de controladores de domínio no domínio especificado.
 ms.topic: reference
 ms.assetid: abb915ab-23eb-45d7-9a2e-b6b9a5756a70
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 54bb3f2a1c724a77ab3a55c6f5158bda81de94f8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0c2796cc149d905abae56bb909d337862c5fd7f2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024020"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633854"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag testdcs
 

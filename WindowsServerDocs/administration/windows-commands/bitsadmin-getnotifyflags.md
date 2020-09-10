@@ -3,16 +3,16 @@ title: bitsadmin getnotifyflags
 description: Artigo de referência para o comando Bitsadmin getnotifyflags, que recupera os sinalizadores de notificação para o trabalho especificado.
 ms.topic: reference
 ms.assetid: d4657e6c-8959-4db7-a4af-e73d3f80ecf8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b0281629eb98a7f74defb0971b691fd656d9d97
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b7cdc2d65316bfcc856bb0fe55a9379d4fc6ba6b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033434"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89631901"
 ---
 # <a name="bitsadmin-getnotifyflags"></a>bitsadmin getnotifyflags
 

@@ -3,16 +3,16 @@ title: add alias
 description: Artigo de referência para o comando Add alias, que adiciona aliases ao ambiente de alias.
 ms.topic: reference
 ms.assetid: 5fe12f5d-11e9-4f3d-b7f9-40b26c8685e5
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 6b89617643896957d2be9ca8e3c50e71cf011601
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1cc9b7c5395c29ac917a0b25b97fb091dc66a699
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029464"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633551"
 ---
 # <a name="add-alias"></a>add alias
 

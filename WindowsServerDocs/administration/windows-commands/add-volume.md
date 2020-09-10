@@ -3,16 +3,16 @@ title: add volume
 description: Artigo de referência para o comando Add volume, que adiciona volumes ao conjunto de cópias de sombra, que é o conjunto de volumes a serem copiados por sombra.
 ms.topic: reference
 ms.assetid: b7d4d35d-8bda-46d2-8df5-eb598cecaaba
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4cf64e98c498f16032963f0b09a5aec4df162452
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2a1dc6f00ebc497e9276d1f3b5a74a1f1a10dbfc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029434"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633546"
 ---
 # <a name="add-volume"></a>add volume
 

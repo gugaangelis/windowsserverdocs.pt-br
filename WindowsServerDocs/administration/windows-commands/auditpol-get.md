@@ -3,16 +3,16 @@ title: auditpol get
 description: Artigo de referência para o comando de obtenção do Auditpol, que recupera a política do sistema, a política por usuário, as opções de auditoria e o objeto do descritor de segurança de auditoria.
 ms.topic: reference
 ms.assetid: fe13de4e-836c-4207-b47c-64b6272d6c41
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 23de44ebc9bc91ad4db52ee7362b14d9c93648d8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 309e54170b7a154629a17e5fde1ed4943d0b180c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029084"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633225"
 ---
 # <a name="auditpol-get"></a>auditpol get
 

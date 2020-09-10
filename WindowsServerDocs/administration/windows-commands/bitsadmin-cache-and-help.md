@@ -3,16 +3,16 @@ title: bitsadmin cache and help
 description: Artigo de referência para o cache Bitsadmin e o comando help, que exibe o uso de linha de comando para as opções de **cache** .
 ms.topic: reference
 ms.assetid: 0b14db49-84ac-4c2f-bf1f-f65e13cbfb35
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a043be0a8cb5acae6f793bcb57dd3947bc2d93d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1c9d2f51e7d25fbf77e565dd7e9dd8d95c0cbc24
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89028894"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89632576"
 ---
 # <a name="bitsadmin-cache-and-help"></a>bitsadmin cache and help
 

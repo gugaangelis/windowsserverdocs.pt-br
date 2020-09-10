@@ -3,16 +3,16 @@ title: auditpol backup
 description: Artigo de referência para o comando de backup Auditpol, que faz o backup das configurações da política de auditoria do sistema, das configurações de política de auditoria por usuário para todos os usuários e de todas as opções de auditoria para um arquivo de texto CSV (valores separados por vírgula).
 ms.topic: reference
 ms.assetid: dc84e581-aa0f-4c91-b13b-1d970bad5517
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4c5dc71ef737c3c939d895a0693ff8213105caa1
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 1bee18b3bbad093364301543dda1199598e8ad00
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029144"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633246"
 ---
 # <a name="auditpol-backup"></a>auditpol backup
 

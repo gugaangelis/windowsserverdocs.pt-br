@@ -3,16 +3,16 @@ title: assign
 description: Artigo de referência para o comando assign, que atribui uma letra de unidade ou ponto de montagem ao volume com foco.
 ms.topic: reference
 ms.assetid: 57912b73-622e-489b-b053-a369021ba8e1
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a453790b3622804138794b9656b18ed160e6f676
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ff5f911fdaa4fc3703cbef2374b7431925a44fcf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89029314"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89633465"
 ---
 # <a name="assign"></a>assign
 
