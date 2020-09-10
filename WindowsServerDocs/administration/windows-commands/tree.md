@@ -3,16 +3,16 @@ title: tree
 description: Artigo de referência para a árvore, que exibe a estrutura de diretório de um caminho, ou do disco em uma unidade, graficamente.
 ms.topic: reference
 ms.assetid: 345d3192-401e-4a3b-a8ac-36a85c7be79d
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: c164fe8999313ffd40ec12b29c7ad8cf2bd7c7a5
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: e75e0048855a5c30bc90e04433301d5df6d177ae
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026884"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634159"
 ---
 # <a name="tree"></a>tree
 

@@ -3,16 +3,16 @@ title: expose
 description: Artigo de referência para o comando de exposição, que expõe uma cópia de sombra persistente como uma letra de unidade, um compartilhamento ou um ponto de montagem.
 ms.topic: reference
 ms.assetid: 9b0a21cf-3bef-4ade-b8f1-ac42f9203947
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 67e6b230b780e6ae84ea1ff30804c5722ca2337d
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3d36ec0a1c4f85282c1949700dad1f4568356748
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89036684"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635902"
 ---
 # <a name="expose"></a>expose
 

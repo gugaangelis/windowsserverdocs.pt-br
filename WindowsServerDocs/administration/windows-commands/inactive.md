@@ -3,16 +3,16 @@ title: inativos
 description: Artigo de referência para o comando inativo, que marca a partição do sistema ou a partição de inicialização com foco como inativa em discos básicos de MBR (registro mestre de inicialização).
 ms.topic: reference
 ms.assetid: f4fb4695-4e66-4166-b4ab-2c86a4605580
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 50b9145b809eb7a0f8605a27db97b2c7ac36d539
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 265e1ca2ef7c352aead87ab19bdabed3a0abe476
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037974"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634502"
 ---
 # <a name="inactive"></a>inativos
 

@@ -3,16 +3,16 @@ title: dedo nslookup
 description: Artigo de referência para o comando nslookup Finger, que se conecta com o servidor Finger no dispositivo atual.
 ms.topic: reference
 ms.assetid: 11ea2bde-8ccb-4b87-bbad-231dd9e5e858
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 26b544c44d0ca0238236c5354d1e1bfc4c4dc6c7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 0c94767c4e313b67ec099ed8cea1554b867211b1
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023550"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635703"
 ---
 # <a name="nslookup-finger"></a>/Finger nslookup
 

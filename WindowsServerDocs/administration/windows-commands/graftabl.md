@@ -3,16 +3,16 @@ title: graftabl
 description: Artigo de referência para o comando GRAFTABL, que permite que os sistemas operacionais Windows exibam um conjunto de caracteres estendidos no modo gráfico.
 ms.topic: reference
 ms.assetid: b08351d4-3d24-490c-86f6-1252da11d923
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b92cc0501b69127bb8dd9e3faba5591a48542ea
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 9f8759679865c87c11417c64ef130736de2a1e9e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035484"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634611"
 ---
 # <a name="graftabl"></a>graftabl
 

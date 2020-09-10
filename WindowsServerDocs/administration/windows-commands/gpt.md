@@ -3,16 +3,16 @@ title: gpt
 description: Artigo de referência para o comando GPT, que atribui os atributos GPT à partição com foco.
 ms.topic: reference
 ms.assetid: 1d6f9029-807f-4420-a336-36669b5361bc
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ce16138ec968451b68f7324cefd6097f2351a274
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 72260c00830d2d85fbe4324203dcfefe90154c7e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035514"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634720"
 ---
 # <a name="gpt"></a>gpt
 

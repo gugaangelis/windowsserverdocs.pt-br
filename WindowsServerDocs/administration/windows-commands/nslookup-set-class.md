@@ -3,16 +3,16 @@ title: nslookup set class
 description: Artigo de referência para o comando Set Class do nslookup, que altera a classe de consulta.
 ms.topic: reference
 ms.assetid: ed826400-40da-42b6-b7f0-95db73790723
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 676c9dad9d01c6889ec472d68df831ba3eec15c7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 5f4eb309c3972230247bf231b0e731e146d8159a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038777"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634035"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 

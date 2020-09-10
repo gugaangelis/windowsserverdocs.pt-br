@@ -3,16 +3,16 @@ title: gpupdate
 description: Artigo de referência para o comando gpupdate, que atualiza Política de Grupo configurações.
 ms.topic: reference
 ms.assetid: 2fd4e567-2ce1-4637-b611-c2f0895e5708
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 42f04a87d6f567f81b2fa8a4fc91b24a46510711
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 76bf70a617f2b87c042946faea27235f16af1533
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89035504"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89634692"
 ---
 # <a name="gpupdate"></a>gpupdate
 

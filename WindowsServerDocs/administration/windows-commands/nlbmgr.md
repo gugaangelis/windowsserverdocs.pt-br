@@ -3,16 +3,16 @@ title: nlbmgr
 description: Artigo de referência para o comando Nlbmgr, que ajuda a configurar e gerenciar seus clusters de balanceamento de carga de rede e todos os hosts de cluster de um único computador, usando o Gerenciador de balanceamento de carga de rede.
 ms.topic: reference
 ms.assetid: 89cb8590-b7cf-4a27-89fa-0fa62ea1a1ca
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e9036a5fc4a0941445be4c9e9cf11c8064caa08
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: dc3f1af169fc9510d95c348436a43036eee8cbb2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89023580"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635752"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 

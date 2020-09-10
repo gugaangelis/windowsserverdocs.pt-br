@@ -3,16 +3,16 @@ title: nslookup root
 description: Artigo de referência para o comando raiz Nslookup, que altera o servidor padrão para o servidor para a raiz do espaço de nome de domínio DNS (sistema de nomes de domínio).
 ms.topic: reference
 ms.assetid: 9c29edc3-ec49-43f2-bc49-86bf0612d816
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ef505427e92b6f0e14adf92d9eea463feb582314
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2e3dbbdf970143ce1e82f0c817fc1f53c5b22749
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038787"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89635649"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
