@@ -3,16 +3,16 @@ title: mqsvc
 description: Artigo de referência para o comando mqsvc, que permite que os aplicativos executados em momentos diferentes se comuniquem em redes e sistemas heterogêneos que podem estar temporariamente offline.
 ms.topic: reference
 ms.assetid: 8bfd7874-ccb4-453f-b908-3a5b9aee0ad6
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c89ca33c46212cb29cf35bed3c3cca80419e04e
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 070a45b2d42c16e00dbd5bc0a180c20377ff97bf
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89034974"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628141"
 ---
 # <a name="mqsvc"></a>mqsvc
 

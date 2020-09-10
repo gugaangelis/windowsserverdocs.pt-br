@@ -4,15 +4,15 @@ desctription: Describes the User Access Logging feature and how to start using i
 ms.topic: article
 ms.assetid: 5c395b8b-3b35-4042-b9cc-07e438f86d50
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: da8bb60ea455578eff96aed6173e4662fffd6ade
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 24471aca151a59306e8bf51119232f08dacdc606
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991753"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628154"
 ---
 # <a name="get-started-with-user-access-logging"></a>Introdução ao log de acesso do usuário
 
@@ -104,7 +104,7 @@ Os seguintes dados relacionados ao usuário são registrados no UAL.
 |**ActivityCount**|O número de vezes que um usuário específico acessa uma função ou um serviço.|
 |**FirstSeen**|A data e hora em que um usuário acessa primeiro uma função ou um serviço.|
 |**LastSeen**|A data e hora em que um usuário acessou pela última vez uma função ou um serviço.|
-|**NomeDoProduto**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|
+|**ProductName**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|
 |**RoleGUID**|O GUID atribuído ou registrado do UAL que representa a função de servidor ou o produto instalado.|
 |**RoleName**|O nome da função, do componente ou do subproduto que está fornecendo os dados do UAL. Também é associado a um ProductName e a um RoleGUID.|
 |**TenantIdentifier**|Um GUID exclusivo de um cliente locatário de uma função instalada ou de um produto que acompanha os dados do UAL, se aplicável.|
@@ -117,7 +117,7 @@ Os seguintes dados relacionados ao dispositivo são registrados no UAL.
 |**ActivityCount**|O número de vezes que um determinado dispositivo acessou a função ou um serviço.|
 |**FirstSeen**|A data e hora em que um endereço IP foi usado pela primeira vez para acessar uma função ou um serviço.|
 |**LastSeen**|A data e hora em que um endereço IP foi usado pela última vez para acessar uma função ou um serviço.|
-|**NomeDoProduto**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|
+|**ProductName**|O nome do produto de software principal, como o Windows, que está fornecendo os dados do UAL.|
 |**RoleGUID**|O GUID registrado ou UAL atribuído que representa a função de servidor ou o produto instalado.|
 |**RoleName**|O nome da função, do componente ou do subproduto que está fornecendo os dados do UAL. Também é associado a um ProductName e a um RoleGUID.|
 |**TenantIdentifier**|Um GUID exclusivo de um cliente locatário de uma função instalada ou de um produto que acompanha os dados do UAL, se aplicável.|

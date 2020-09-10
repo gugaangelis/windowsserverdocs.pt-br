@@ -3,16 +3,16 @@ title: Executar verificações de Analisador de Práticas Recomendadas e gerenci
 description: Gerenciador do Servidor
 ms.topic: article
 ms.assetid: 232f1c80-88ef-4a39-8014-14be788c2766
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f8c0440da49e6e78afece1af3ee8357ddf846e7e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 8b8ef48e81daa9c673f42d43b2f95abadec619a8
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895734"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627805"
 ---
 # <a name="run-best-practices-analyzer-scans-and-manage-scan-results"></a>Executar varreduras do Analisador de Práticas Recomendadas e gerenciar os resultados das varreduras
 
@@ -42,8 +42,8 @@ O BPA funciona medindo a conformidade de uma função com as regras de práticas
 
 |Nível de severidade|Descrição|
 |---------|--------|
-|Erro|Os resultados do erro são retornados quando uma função não satisfaz as condições de uma regra de prática recomendada e problemas de funcionalidade podem ser esperados.|
-|Informação|Os resultados de informações são retornados quando uma função satisfaz as condições de uma regra de prática recomendada.|
+|Erro do|Os resultados do erro são retornados quando uma função não satisfaz as condições de uma regra de prática recomendada e problemas de funcionalidade podem ser esperados.|
+|Informações|Os resultados de informações são retornados quando uma função satisfaz as condições de uma regra de prática recomendada.|
 |Aviso|Os resultados de aviso são retornados quando os resultados de uma incompatibilidade podem causar problemas se as alterações não foram feitas. O aplicativo pode ser compatível com a operação atual, mas pode não satisfazer as condições de uma regra se não forem feitas alterações em sua configuração ou nas configurações da diretriz. Por exemplo, uma varredura dos Serviços de Área de Trabalho Remota pode mostrar um resultado de aviso se um servidor de licença estiver indisponível para a função, porque, mesmo se nenhuma conexão remota estiver ativa no momento da varredura, não ter o servidor de licença impede que novas conexões remotas obtenham licenças válidas de acesso ao cliente.|
 
 ### <a name="rule-categories"></a>Categorias de regras

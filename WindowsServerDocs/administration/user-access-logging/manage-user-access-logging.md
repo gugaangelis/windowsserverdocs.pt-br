@@ -4,15 +4,15 @@ description: Descreve como gerenciar o registro em log de acesso do usuário
 ms.topic: article
 ms.assetid: 4f039017-4152-47eb-838e-bb6ef730b638
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 75f0395afbcbefcdc4ac3a9fc4dc4de3bf962428
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 0c2380c27d6d08e788658cf946f92322c3a1eabb
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991748"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628132"
 ---
 # <a name="manage-user-access-logging"></a>Gerenciar o Log de Acesso do Usuário
 

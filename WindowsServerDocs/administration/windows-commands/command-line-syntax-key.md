@@ -3,16 +3,16 @@ title: Chave de sintaxe de linha de comando
 description: Artigo de referência para a chave de sintaxe de linha de comando, que descreve a notação usada para indicar a sintaxe da linha de comando.
 ms.topic: reference
 ms.assetid: 338c0381-ad63-4a4c-bd2c-42c7a93821fe
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 0704305b12ffb3b3a51069cb0cfb1388324acbce
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 3b9e2ebe6734a92efc061928500ed5bd0581f9c7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033244"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629491"
 ---
 # <a name="command-line-syntax-key"></a>Chave de sintaxe de linha de comando
 

@@ -3,16 +3,16 @@ title: create
 description: Artigo de referência para o comando Create, que cria uma partição ou partição de sombra em um disco, um volume em um ou mais discos ou um VHD (disco rígido virtual).
 ms.topic: reference
 ms.assetid: b45acde1-8f4f-4ec3-b905-d8188f884af8
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: b0aefdccf2a9d2a560ce95cd7224a940beec51f7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 8a836320f9fe699beac20990ad60ade5f06e37f6
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033064"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629013"
 ---
 # <a name="create"></a>create
 

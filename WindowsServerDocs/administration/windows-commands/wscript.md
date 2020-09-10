@@ -3,16 +3,16 @@ title: wscript
 description: Artigo de referência para o WScript, que fornece um ambiente no qual os usuários podem executar scripts em uma variedade de idiomas que usam uma variedade de modelos de objeto para executar tarefas.
 ms.topic: reference
 ms.assetid: 2fbaf193-cdbd-414c-84c9-bb5720f84c29
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 08/21/2018
-ms.openlocfilehash: 689775951f1c97b7cc704801cd39691033005afe
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: af39abab4d493e0bd4a5ed9227c68e2e2e34dc2b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038064"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628465"
 ---
 # <a name="wscript"></a>wscript
 

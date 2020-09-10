@@ -3,16 +3,16 @@ title: compact
 description: Artigo de referência para o comando Compact, que exibe ou altera a compactação de arquivos ou diretórios em partições NTFS.
 ms.topic: reference
 ms.assetid: 429b3752-df0a-43a4-a210-df2f3ad03c3b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 210aaf8c20741659bb29d4855ae39099c964a400
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: a0d43fce44b7de6ecc5b435b7ed5f2de88ed0b9f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89025940"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629379"
 ---
 # <a name="compact"></a>compact
 

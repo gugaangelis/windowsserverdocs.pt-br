@@ -3,16 +3,16 @@ title: opção
 description: Artigo de referência para o comando Choice, que solicita ao usuário que selecione um item de uma lista de opções de caractere único em um programa em lotes e, em seguida, retorna o índice da opção selecionada.
 ms.topic: reference
 ms.assetid: c65a9119-410b-4dcf-9fa7-4e07d2a7238b
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 367f52ee41e72fe1c4c94c37a07e3a4227dec8a7
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 382e3618e66f56e05ebd0a7d6b6034e6d7543d64
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026040"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629683"
 ---
 # <a name="choice"></a>opção
 

@@ -3,16 +3,16 @@ title: date
 description: Artigo de referência do comando date, que exibe ou define a data do sistema. Se usado sem parâmetros,
 ms.topic: reference
 ms.assetid: ce6700fb-32f9-4350-a1af-5aee61d4448c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 78c8ca51882b2559e78cc457d1fd7fa5ec8e87b8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ca9e8b9305132e9af03308d2e0ca0cc20ed89469
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033034"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628970"
 ---
 # <a name="date"></a>date
 

@@ -4,15 +4,15 @@ description: Descreve como instalar e gerenciar o log de inventário de software
 ms.topic: article
 ms.assetid: e4230a75-6bcd-47d9-ba92-a052a90a6abc
 author: brentfor
-ms.author: coreyp
-manager: dongill
+ms.author: brentf
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f8e7743e51a5316df474ad97768cf01292db668
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d533480c18919933d3581901dd8377556c6571c7
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991920"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89628219"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Log de Inventário de Software
 
@@ -233,11 +233,11 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
 -   No Agregador do SIL:
 
-    -   Executar `Start-SilAggregator`
+    -   Execute `Start-SilAggregator`
 
         Isso é necessário para que o Agregador receba ativamente os dados que são encaminhados a ele via HTTPS dos servidores que você configurou (ou que configurará) a serem inventariados. Observe que mesmo se você tiver habilitado seus servidores para encaminhar para esse Agregador primeiro, não há problema algum, já que eles armazenarão em cache suas cargas de dados localmente por até 30 dias. Depois que o agregador, seu "targetUri" estiver em execução, todos os dados armazenados em cache serão encaminhados de uma vez ao agregador e todos os dados serão processados.
 
-    -   Executar `Add-SilVMHost`
+    -   Execute `Add-SilVMHost`
 
         Exemplo: `add-silvmhost –vmhostname contoso1 –hostcredential get-credential`
 
@@ -253,7 +253,7 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
 
 -   Nos Windows Servers a serem inventariados, abra o PowerShell como administrador e execute estes comandos:
 
-    -   Executar `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
+    -   Execute `Set-SilLogging –TargetUri "https://contososilaggregator" –CertificateThumbprint "your client certificate's thumbprint"`
 
         -   Isso informará o SIL no Windows Server para qual local se deve enviar os dados de inventário e qual certificado deve ser usado para a autenticação.
 
@@ -265,11 +265,11 @@ Depois de instalar o Agregador do Log de Inventário de Software no servidor, ab
             > [!IMPORTANT]
             > Se esses valores não estiverem corretos ou se o certificado não estiver instalado no repositório correto (ou se ele for inválido), os encaminhamentos para o destino falharão quando o Log do SIL for iniciado. Os dados serão armazenados em cache localmente por até 30 dias.
 
-    -   Executar `Start-SilLogging`
+    -   Execute `Start-SilLogging`
 
         Isso inicia o Log do SIL. A cada hora, em intervalos aleatórios dentro da mesma hora, o SIL encaminhará seus dados de inventário para o Agregador especificado com o parâmetro `–targeturi` . O primeiro encaminhamento será um conjunto completo de dados. Cada encaminhamento subsequente será mais de uma "pulsação" com apenas a identificação de dados que nada mudou. Se houver alguma alteração ao conjunto de dados, outro conjunto completo de dados será encaminhado.
 
-    -   Executar `Publish-SilData`
+    -   Execute `Publish-SilData`
 
         -   Na primeira vez que o SIL for habilitado para o log, esta etapa será opcional.
 
@@ -502,7 +502,7 @@ Com o cmdlet `Set-SilAggregator`, você pode:
 
     -   Certifique-se de que **targetUri** tem **https://** na entrada.
 
-    -   Certifique-se de que todas as atualizações necessárias para o Windows Server estão instaladas (veja os Pré-requisitos para o SIL).  Uma maneira rápida de verificar é procurar por eles usando o seguinte cmdlet:`Get-SilWindowsUpdate *3060*, *3000*`
+    -   Certifique-se de que todas as atualizações necessárias para o Windows Server estão instaladas (veja os Pré-requisitos para o SIL).  Uma maneira rápida de verificar é procurar por eles usando o seguinte cmdlet:   `Get-SilWindowsUpdate *3060*, *3000*`
 
     -   Verifique se o certificado usado para autenticar no agregador está instalado no repositório correto no servidor local a ser inventariado com o SilLogging (veja a seção Introdução).
 

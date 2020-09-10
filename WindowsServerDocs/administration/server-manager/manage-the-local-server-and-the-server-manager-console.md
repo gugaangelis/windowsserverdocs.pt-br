@@ -3,16 +3,16 @@ title: Manage the Local Server and the Server Manager Console
 description: Gerenciador do Servidor
 ms.topic: article
 ms.assetid: eeb32f65-d588-4ed5-82ba-1ca37f517139
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7892ec8f4102c8baadd8cded8982b6b92702afa8
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: c999e599d565f82f8f1d9f38dfb8ba84ffb3bb9b
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895747"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89627822"
 ---
 # <a name="manage-the-local-server-and-the-server-manager-console"></a>Manage the Local Server and the Server Manager Console
 
@@ -52,7 +52,7 @@ Você pode exibir ou alterar as seguintes configurações no bloco **Propriedade
 >
 > Como muitas propriedades exibidas no bloco **Propriedades** são controladas por ferramentas que não fazem parte do Gerenciador do servidor (painel de controle, por exemplo), as alterações nas configurações de **Propriedades** nem sempre são exibidas no bloco **Propriedades** imediatamente. Por padrão, os dados do bloco **Propriedades** são atualizadas a cada dois minutos. Para atualizar os dados do bloco de **Propriedades** imediatamente, clique em **Atualizar** na barra de endereços do Gerenciador do servidor.
 
-|Setting|Descrição|
+|Configuração|Descrição|
 |------|--------|
 |nome do computador|Exibe o nome amigável do computador e abre a caixa de diálogo **Propriedades do sistema** , que permite alterar o nome do servidor, a associação do domínio e outras configurações do sistema, como perfis de usuário.|
 |Domínio (ou Grupo de Trabalho, se o servidor não tiver ingressado em um domínio)|Exibe o domínio ou o grupo de trabalho do qual o servidor é membro. Abre a caixa de diálogo **Propriedades do sistema** , que permite alterar o nome do servidor, a associação do domínio e outras configurações do sistema, como perfis de usuário.|
@@ -112,7 +112,7 @@ A caixa de seleção não **iniciar Gerenciador do servidor automaticamente no l
 Para ampliar ou reduzir a exibição do console do Gerenciador do Servidor, você pode usar os comandos de **zoom** no menu **Exibir** ou pressionar **Ctrl + mais (+)** para ampliar e **Ctrl + menos (-)** para reduzir.
 
 ## <a name="customize-tools-that-are-displayed-in-the-tools-menu"></a><a name=BKMK_tools></a>Personalizar as ferramentas exibidas no menu Ferramentas
-O menu **ferramentas** do Gerenciador do servidor inclui links suaves para atalhos na pasta **Ferramentas administrativas** no **painel de controle/sistema e segurança**. A pasta **Ferramentas administrativas** contém uma lista de atalhos ou arquivos lnk para as ferramentas de gerenciamento disponíveis, como snap-ins do mmc. Gerenciador do servidor popula o menu **ferramentas** com links para esses atalhos e copia a estrutura de pastas da pasta **Ferramentas administrativas** para o menu **ferramentas** . Por padrão, as ferramentas na pasta Ferramentas Administrativas são organizadas em uma lista simples, classificadas por tipo e por nome. No menu**ferramentas** Gerenciador do servidor, os itens são classificados somente por nome, não por tipo.
+O menu **ferramentas** do Gerenciador do servidor inclui links suaves para atalhos na pasta **Ferramentas administrativas** no **painel de controle/sistema e segurança**. A pasta **Ferramentas administrativas** contém uma lista de atalhos ou arquivos lnk para as ferramentas de gerenciamento disponíveis, como snap-ins do MMC. Gerenciador do Servidor popula o menu **ferramentas** com links para esses atalhos e copia a estrutura de pastas da pasta **Ferramentas administrativas** para o menu **ferramentas** . Por padrão, as ferramentas na pasta Ferramentas Administrativas são organizadas em uma lista simples, classificadas por tipo e por nome. No menu**ferramentas** Gerenciador do servidor, os itens são classificados somente por nome, não por tipo.
 
 Para personalizar o menu **Ferramentas**, copie os atalhos das ferramentas ou dos scripts que você deseja usar para a pasta **Ferramentas Administrativas**. Você também pode organizar seus atalhos em pastas, o que cria menus em cascata no menu **Ferramentas**. Além disso, se você quiser restringir o acesso às ferramentas personalizadas no menu **ferramentas** , poderá definir direitos de acesso de usuário em suas pastas de ferramentas personalizadas em ferramentas administrativas ou diretamente na ferramenta original ou nos arquivos de script.
 

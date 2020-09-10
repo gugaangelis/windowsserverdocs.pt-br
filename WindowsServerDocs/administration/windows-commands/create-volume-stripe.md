@@ -3,16 +3,16 @@ title: create volume stripe
 description: Artigo de referência para o comando Create volume Stripe, que cria um volume distribuído usando dois ou mais discos dinâmicos especificados.
 ms.topic: reference
 ms.assetid: 20dce735-5f7c-4f83-a580-d087e2913a00
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4ae826a1f4f079cff28f10012af51797389e24e8
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b8e2265a264b96a0c966a7548b1323c469392af3
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89033104"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89629022"
 ---
 # <a name="create-volume-stripe"></a>create volume stripe
 
