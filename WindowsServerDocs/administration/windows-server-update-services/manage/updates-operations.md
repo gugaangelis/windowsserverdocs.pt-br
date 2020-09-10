@@ -3,16 +3,16 @@ title: Operações de atualizações
 description: Tópico Windows Server Update Service (WSUS)-como gerenciar atualizações, incluindo o processo de aprovação
 ms.topic: article
 ms.assetid: 4cb7ff54-3014-4e91-842a-a7b831ea59ff
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 32e6aa39dec354aeb7b3277d68c3bf07ef8a0161
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f4ce19a8cfcfdb427cb332daf95b43feb157abba
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896802"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624326"
 ---
 # <a name="updates-operations"></a>Operações de atualizações
 
@@ -45,7 +45,7 @@ Há duas considerações importantes que você deve ter em mente:
 
 3.  Selecione **aprovado para instalação**e clique em **aprovar**.
 
-4.  A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** será exibido. Clique em **fechar**
+4.  A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** será exibido. Clique em **Fechar**.
 
 5.  Você pode selecionar um prazo clicando com o botão direito do mouse na atualização, selecionando o grupo de computadores apropriado, clicando na seta ao lado dele e, em seguida, clicando em **prazo**.
 
@@ -69,7 +69,7 @@ Há duas considerações importantes que você deve ter em mente:
 
 7.  Se você quiser que o comportamento de aprovação seja alterado para todos os filhos, aprove **todos os computadores**e, em seguida, escolha **aplicar a filhos**.
 
-8.  Clique em **OK** depois de definir todas as suas aprovações. A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** estará disponível. Clique em **fechar**
+8.  Clique em **OK** depois de definir todas as suas aprovações. A janela **progresso da aprovação** exibirá o progresso para concluir a aprovação. Quando o processo for concluído, o botão **fechar** estará disponível. Clique em **Fechar**.
 
 ## <a name="declining-updates"></a>Recusando atualizações
 Se você selecionar essa opção, a atualização será removida da lista padrão de atualizações disponíveis e o servidor do WSUS não oferecerá a atualização para os clientes, seja para avaliação ou instalação. Você pode acessar essa opção selecionando uma atualização ou grupo de atualizações e clicando com o botão direito do mouse ou indo para o painel Ações. As atualizações recusadas serão exibidas na lista de atualizações somente se você selecionar **recusadas** na lista aprovação ao especificar o filtro para a lista de atualizações em **exibição**.

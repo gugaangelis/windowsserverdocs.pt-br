@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e832957a5d44851131cb622e4c3bf9d99d4e4a7f
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6314ef0baa92f6e6fe0d6a4bb2b49c3fcee6f893
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838265"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625065"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de computadores que se conectam ao servidor no Windows Server Essentials
 
@@ -49,7 +49,7 @@ ms.locfileid: "87838265"
 -   Problema 11: [problema 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)
 
 
-##  <a name="issue-1"></a><a name="BMRK_Package"></a>Problema 1
+##  <a name="issue-1"></a><a name="BMRK_Package"></a> Problema 1
  **Problema**
 
  Recebo uma instalação de pacote não teve sucesso. Tente instalar o Windows Server Essentials Connector novamente. Se o problema persistir, entre em contato com o erro do administrador de rede ao conectar um computador ao servidor
@@ -62,7 +62,7 @@ ms.locfileid: "87838265"
 
  Conclua todas as outras atualizações ou instalações de aplicativos. Se solicitado, reinicie o computador.
 
-##  <a name="issue-2"></a><a name="BKMK_ConnectorIssue2"></a>Problema 2
+##  <a name="issue-2"></a><a name="BKMK_ConnectorIssue2"></a> Problema 2
  **Problema**
 
  Não é possível ingressar um computador no Windows Server Essentials
@@ -75,7 +75,7 @@ ms.locfileid: "87838265"
 
  Renomeie o computador cliente com um nome que contenha apenas caracteres ASCII e tente adicionar o computador ao Windows Server Essentials novamente.
 
-##  <a name="issue-3"></a><a name="BKMK_ConnectorIssue2a"></a>Problema 3
+##  <a name="issue-3"></a><a name="BKMK_ConnectorIssue2a"></a> Problema 3
  **Problema**
 
  Obtenho um erro de instalação do software do conector cancelada ao conectar um computador ao servidor
@@ -100,13 +100,13 @@ ms.locfileid: "87838265"
 
 5.  Clique com o botão direito do mouse em uma pasta de servidor e, em seguida, clique em **Propriedades**.
 
-6.  Clique na guia **Segurança**.
+6.  Clique na guia **Segurança** .
 
 7.  Se não for permitido conceder permissões de **Controle total** à conta do SISTEMA, clique em **Editar** e, em seguida, clique em **SISTEMA**. Em **Permissões para o Sistema**, marque a caixa de seleção **Permitir** ao lado de **Controle total**.
 
 8.  Clique em **OK** duas vezes para atualizar as permissões e fechar a caixa de diálogo **Propriedades**.
 
-##  <a name="issue-4"></a><a name="BKMK_ConnectorIssueNetFramework"></a>Problema 4
+##  <a name="issue-4"></a><a name="BKMK_ConnectorIssueNetFramework"></a> Problema 4
  **Problema**
 
  Obtenho um para executar este aplicativo, você deve instalar uma das seguintes versões do .NET Framework: V 4.5.50709 "ao conectar um computador ao servidor
@@ -129,7 +129,7 @@ ms.locfileid: "87838265"
 
 4.  Após o .NET Framework 4.5 ter sido desinstalado com êxito, conecte o computador ao servidor. A versão correta do .NET Framework 4,5 é instalada juntamente com o software Connector.
 
-##  <a name="issue-5"></a><a name="BKMK_Time"></a>Problema 5
+##  <a name="issue-5"></a><a name="BKMK_Time"></a> Problema 5
  **Problema**
 
  Obtenho um servidor não está disponível. Para resolver esse problema, entre em contato com a pessoa responsável pela sua rede. ao conectar um computador ao servidor
@@ -181,7 +181,7 @@ ms.locfileid: "87838265"
 
 6.  No computador cliente, tente novamente conectar o computador cliente ao servidor. Para obter instruções, consulte Conectar computadores ao servidor.
 
-##  <a name="issue-6"></a><a name="BKMK_ServiceStopped"></a>Problema 6
+##  <a name="issue-6"></a><a name="BKMK_ServiceStopped"></a> Problema 6
  **Problema**
 
  Recebo um erro inesperado. Para resolver esse problema, entre em contato com a pessoa responsável pela sua rede. ao conectar um computador ao servidor
@@ -204,7 +204,7 @@ ms.locfileid: "87838265"
 
 3.  No painel **Ações**, clique em **Iniciar**.
 
-##  <a name="issue-7"></a><a name="BKMK_ConnectorIssueReconnect"></a>Problema 7
+##  <a name="issue-7"></a><a name="BKMK_ConnectorIssueReconnect"></a> Problema 7
  **Problema**
 
  Quando tento conectar um computador ao servidor novamente após uma tentativa de conexão malsucedida, recebo o aviso de que um computador com esse nome já está conectado ao servidor
@@ -215,7 +215,7 @@ ms.locfileid: "87838265"
 
  **Solução** Se você tem certeza de que nenhum outro computador com o mesmo nome já está conectado ao servidor, clique em **Avançar**, então siga as instruções para concluir o assistente **Conectar meu computador ao servidor**.
 
-##  <a name="issue-8"></a><a name="BKMK_JoinWin7"></a>Problema 8
+##  <a name="issue-8"></a><a name="BKMK_JoinWin7"></a> Problema 8
  **Problema**
 
  Quando tento conectar um computador cliente que está executando o Windows 7 Home ao servidor, a página da Web para executar o software do conector é aberta, mas o computador cliente não é capaz de se conectar ao servidor
@@ -228,7 +228,7 @@ ms.locfileid: "87838265"
 
  Desabilite o multicast em seu roteador. Em alguns roteadores, isso pode incluir a desabilitação do protocolo de roteamento RIP-2M. Para obter mais informações, consulte a documentação fornecida pelo fabricante do roteador.
 
-##  <a name="issue-9"></a><a name="BKMK_ConnectorIssueAutologon"></a>Problema 9
+##  <a name="issue-9"></a><a name="BKMK_ConnectorIssueAutologon"></a> Problema 9
  **Problema**
 
  O logon automático parou de funcionar após eu ter conectado o computador ao servidor
@@ -242,7 +242,7 @@ ms.locfileid: "87838265"
 > [!NOTE]
 >  A conta de domínio do Windows Server Essentials requer uma senha que atenda aos requisitos de política de senha padrão.
 
-##  <a name="issue-10"></a><a name="BKMK_ConnectorIssueOldLogs"></a>Problema 10
+##  <a name="issue-10"></a><a name="BKMK_ConnectorIssueOldLogs"></a> Problema 10
  **Problema**
 
  Desinstalar uma versão de pré-lançamento do software Connector não remove os logs existentes
@@ -263,7 +263,7 @@ ms.locfileid: "87838265"
 
 3.  Conecte o computador ao servidor novamente. Isso instala a versão de lançamento do software Connector, criando uma nova pasta Logs e novos arquivos de log.
 
-##  <a name="issue-11"></a><a name="BKMK_UpgradeClientOS"></a>Problema 11
+##  <a name="issue-11"></a><a name="BKMK_UpgradeClientOS"></a> Problema 11
  **Problema**
 
  Desejo atualizar o sistema operacional em um computador cliente

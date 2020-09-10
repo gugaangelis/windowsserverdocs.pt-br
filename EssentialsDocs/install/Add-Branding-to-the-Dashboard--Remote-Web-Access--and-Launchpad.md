@@ -5,14 +5,14 @@ ms.date: 04/10/2014
 ms.topic: article
 ms.assetid: 166262f8-b2a5-4b1c-a4a7-a141e1c54f10
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4d1b3ada8888de9885bfe88af56e5b0656fc92b7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: f162d4e7654b92fbf26ce4cd8ccaa0185c03c951
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181602"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624152"
 ---
 # <a name="add-branding-to-the-dashboard-remote-web-access-and-launchpad"></a>Adicionar Identidade Visual para o Dashboard, o Acesso Remoto da Web e a Barra Inicial
 
@@ -103,12 +103,12 @@ Você deve formatar os links na página **inicial** do site e na página de entr
 | Nome do vínculo | O nome do link de entrada. |
 | Texto | O texto exibido como o link da página de entrada. |
 | URL | A URL que é resolvida para o link da página de entrada. |
-| Ícone | O nome do arquivo de ícone para o link de entrada. Este arquivo deve estar no mesmo local de pasta do arquivo .xml. As imagens de ícone devem ter 16x16 pixels e no formato. png. Se você não fornecer um ícone, a imagem do ícone de link padrão será usada. |
+| ícone | O nome do arquivo de ícone para o link de entrada. Este arquivo deve estar no mesmo local de pasta do arquivo .xml. As imagens de ícone devem ter 16x16 pixels e no formato. png. Se você não fornecer um ícone, a imagem do ícone de link padrão será usada. |
 | HomepageLinks | A entrada pai da **Home** Page. |
 | Nome do vínculo | O nome do link da **Home** Page. |
 | Texto | O texto que aparece como o link da **Home** Page. |
 | URL | A URL que é resolvida para o link da **Home** Page. |
-| Ícone | O nome do arquivo de ícone para o link da **Home** Page. Este arquivo deve estar no mesmo local de pasta do arquivo .xml. As imagens de ícone devem ter 16x16 pixels e no formato. png. Se você não fornecer um ícone, a imagem do ícone do link da página **inicial** padrão será usada. |
+| ícone | O nome do arquivo de ícone para o link da **Home** Page. Este arquivo deve estar no mesmo local de pasta do arquivo .xml. As imagens de ícone devem ter 16x16 pixels e no formato. png. Se você não fornecer um ícone, a imagem do ícone do link da página **inicial** padrão será usada. |
 
 ## <a name="additional-references"></a>Referências adicionais
 

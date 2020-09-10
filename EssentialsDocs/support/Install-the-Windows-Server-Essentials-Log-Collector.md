@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: ead1f75ce459523fbb2678ed369949f679fb3124
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 7e10da0d87b98ef84f8b8b7ea2ec74bdd02a909e
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180362"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625323"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Instalar o coletor de log do Windows Server Essentials
 
@@ -20,7 +20,7 @@ ms.locfileid: "87180362"
 
 O assistente de instalação do coletor de logs do Windows Server Essentials instala o coletor de logs como um suplemento de Launchpad. Você pode instalar e usar o Coletor de Log em computadores da rede ou servidor, ou ambos. Após a instalação, o coletor de log será exibido no painel.
 
-###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a>Para instalar o coletor de logs
+###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a> Para instalar o coletor de logs
 
 1.  Baixe o pacote de instalação do coletor de log para qualquer servidor ou computador na rede.
 
@@ -37,7 +37,7 @@ O assistente de instalação do coletor de logs do Windows Server Essentials ins
 
 6.  Clique em **Instalar o suplemento**.
 
-###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>Reinstalando o coletor de logs
+###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a> Reinstalando o coletor de logs
  Se for necessário reinstalar o coletor de log, desinstale e reinstale o coletor de log no servidor e os computadores de rede na rede. Ao desinstalar o coletor de log no servidor do painel, todos os computadores de rede irão automaticamente desinstalar o coletor de log.
 
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Para desinstalar e reinstalar o coletor de log

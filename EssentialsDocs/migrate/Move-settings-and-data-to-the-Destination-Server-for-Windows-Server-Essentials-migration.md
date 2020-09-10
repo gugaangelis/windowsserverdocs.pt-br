@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2b882e87-347a-4010-b7fd-9599d61198dd
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a3e80eb391f913b4d62d8224afb7745eb2671289
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4a37d8e39dde95a143c15a5573be0deb0291d827
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180532"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625651"
 ---
 # <a name="move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover configurações e dados para o servidor de destino para migração para o Windows Server Essentials
 
@@ -46,8 +46,8 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
  Sendo que:
  - \<SourceServerName\> é o nome do servidor de origem
  - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
- - \<DestinationServerName\>é o nome do servidor de destino,
- - \<SharedDestinationFolderName\>é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.
+ - \<DestinationServerName\> é o nome do servidor de destino,
+ - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.
 
 3. Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem.
 

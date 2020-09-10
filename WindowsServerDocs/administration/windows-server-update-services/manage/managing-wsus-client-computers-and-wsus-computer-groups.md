@@ -3,16 +3,16 @@ title: Gerenciar os computadores cliente do WSUS e os grupos de computadores do 
 description: Tópico Windows Server Update Service (WSUS)-como gerenciar computadores e grupos cliente
 ms.topic: article
 ms.assetid: 4b1ea915-0f9f-4f0e-8913-a1dd460d07ab
-author: coreyp-at-msft
-ms.author: coreyp
-manager: lizapo
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 02aa39bda56d6b160a3600201ea8920823ce5f4d
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: f5045df7ec213e459b5f3d2aa1b8b2dedb76b8f4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87879346"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624430"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>Gerenciar os computadores cliente do WSUS e os grupos de computadores do WSUS
 

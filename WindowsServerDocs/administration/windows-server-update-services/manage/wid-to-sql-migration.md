@@ -3,16 +3,16 @@ title: Migrando o banco de dados do WSUS do WID (banco de dados interno do Windo
 description: Tópico Windows Server Update Service (WSUS)-como migrar o banco de dados do WSUS (SUSDB) de uma instância de banco de dados interna do Windows para uma instância local ou remota do SQL Server.
 ms.topic: get-started article
 ms.assetid: 90e3464c-49d8-4861-96db-ee6f8a09g7dr
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dougkim
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 07/25/2018
-ms.openlocfilehash: 7a5102ab622d051e87ca735e5a03f131d583838a
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 54f7eb0464d4454bd2929aace44eb37567973154
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991127"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624466"
 ---
 # <a name="migrating-the-wsus-database-from-wid-to-sql"></a>Migrando o banco de dados do WSUS do WID para o SQL
 
@@ -119,7 +119,7 @@ A conta **NT Authority\Network Service** deve ser listada. Se não for, você pr
 4. Na página **mapeamento de usuário** :
     - Em **Usuários mapeados para este logon**: selecione **SUSDB**
     - Em **Associação de função de banco de dados para: SUSDB**, verifique se o seguinte está marcado:
-        - **público**
+        - **public**
         - **WebService** ![ image9](images/image9.png)
 5. Clique em **OK**
 
@@ -145,8 +145,8 @@ A conta **NT Authority\Network Service** deve ser listada.
     > ![image11](images/image11.png)
 
 4. Na página **mapeamento de usuário** , selecione o banco de dados **SUSDB** em **Usuários mapeados para este logon**
-5. Marque **WebService** na **associação da função de banco de dados para: SUSDB**: ![ IMAGE12](images/image12.png)
-6. Clique em **OK** para salvar as configurações.
+5. Marque **WebService** na **associação da função de banco de dados para: SUSDB**:  ![ IMAGE12](images/image12.png)
+6. Clique em  **OK** para salvar as configurações.
     > [!NOTE]
     > Talvez seja necessário reiniciar o serviço SQL para que as alterações entrem em vigor.
 

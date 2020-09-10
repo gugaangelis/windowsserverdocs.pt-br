@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 031f407b392e02e9867640975520475acd5f8cbb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 90f931c128d4e4eb9747203db7d097c68d451702
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180322"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625199"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Histórico de arquivos de solução de problemas no Windows Server Essentials
 
@@ -30,7 +30,7 @@ ms.locfileid: "87180322"
 
   Para resolver esse problema, você deve excluir o Histórico de Arquivos manualmente usando o procedimento a seguir:
 
-####  <a name="to-manually-delete-file-history-backups-for-a-user-or-a-computer"></a><a name="BKMK_manuallyDelete"></a>Para excluir manualmente os backups de histórico de arquivos para um usuário ou um computador
+####  <a name="to-manually-delete-file-history-backups-for-a-user-or-a-computer"></a><a name="BKMK_manuallyDelete"></a> Para excluir manualmente os backups de histórico de arquivos para um usuário ou um computador
 
 1.  Faça logon no servidor como um administrador.
 

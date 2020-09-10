@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 68f2b05c-09eb-4cba-8db4-a91353b513c6
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 241e2225c9e1dfdea3189e938a04c4af4c033c3f
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 4de71e30e4dd706a52587dc1c869960c9b83bc5c
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838315"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625232"
 ---
 # <a name="troubleshoot-anywhere-access-in-windows-server-essentials"></a>Solucionar problemas do Acesso em Qualquer Local no Windows Server Essentials
 
@@ -33,7 +33,7 @@ O assistente Reparar o Acesso em Qualquer Local tenta identificar e reparar os p
 
 3. Clique em **Reparar**. O assistente Reparar o Acesso em Qualquer Local é iniciado.
 
-4. Clique em **Avançar**. O assistente analisa o Acesso em Qualquer Local, identifica o problema e tenta repará-lo.
+4. Clique em **Próximo**. O assistente analisa o Acesso em Qualquer Local, identifica o problema e tenta repará-lo.
 
 5. Se você receber um alerta quando o assistente for concluído, você pode clicar em **Tentar novamente** para tentar reparar o problema novamente. Se você continuar a receber um alerta, verifique o alerta para obter informações adicionais sobre o problema e as etapas de solução de problemas.
 

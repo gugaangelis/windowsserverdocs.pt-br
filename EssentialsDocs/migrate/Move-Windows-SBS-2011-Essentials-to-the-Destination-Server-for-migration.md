@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47548994-9fa0-42e0-afa4-c2ccbd063acb
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: a5f4aa55cb7c17568c97c933a9eed8f18ce03bd1
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5ab8e54fe94fa2f733e28dd461b7d35988589864
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180562"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625693"
 ---
 # <a name="move-windows-sbs-2011-essentials-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover as configurações e dados do Windows SBS 2011 Essentials para o servidor de destino para migração para o Windows Server Essentials
 
@@ -29,7 +29,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
 
 4.  [Mapeie os computadores permitidos para as contas de usuário](Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md#BKMK_MapPermittedComputers)
 
-##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a>Copiar dados para o servidor de destino
+##  <a name="copy-data-to-the-destination-server"></a><a name="BKMK_CopyData"></a> Copiar dados para o servidor de destino
  Antes de copiar os dados do servidor de origem para o servidor de destino, execute as seguintes tarefas:
 
 -   Examine a lista de pastas compartilhadas no servidor de origem, incluindo as permissões para cada pasta. Crie ou personalize as pastas no servidor de destino para corresponderem à estrutura de pasta que você está migrando do servidor de origem.
@@ -49,12 +49,12 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
      Sendo que:
      - \<SourceServerName\> é o nome do servidor de origem
      - \<SharedSourceFolderName\> é o nome da pasta compartilhada no servidor de origem
-     - \<DestinationServerName\>é o nome do servidor de destino,
-     - \<SharedDestinationFolderName\>é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.
+     - \<DestinationServerName\> é o nome do servidor de destino,
+     - \<SharedDestinationFolderName\> é a pasta compartilhada no servidor de destino para o qual os dados serão copiados.
 
 3.  Repita a etapa anterior para cada pasta compartilhada que você está migrando do servidor de origem.
 
-##  <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard-optional"></a><a name="BKMK_ImportADaccounts"></a>Importar Active Directory contas de usuário para o painel do Windows Server Essentials (opcional)
+##  <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard-optional"></a><a name="BKMK_ImportADaccounts"></a> Importar Active Directory contas de usuário para o painel do Windows Server Essentials (opcional)
  Por padrão, todas as contas de usuário criadas no servidor de origem são migradas automaticamente para o painel no Windows Server Essentials. No entanto, a migração automática de uma conta de usuário do Active Directory falhará se nem todas as propriedades atenderem aos requisitos de migração. Você pode usar o seguinte cmdlet do Windows PowerShell para importar usuários do Active Directory.
 
 #### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar uma conta de usuário Active Directory para o painel do Windows Server Essentials
@@ -67,7 +67,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
 
      `Import-WssUser  SamAccountName [AD username]`
 
-##  <a name="configure-the-network"></a><a name="BKMK_Network"></a>Configurar a rede
+##  <a name="configure-the-network"></a><a name="BKMK_Network"></a> Configurar a rede
 
 #### <a name="to-configure-the-network"></a>Para configurar a rede
 
@@ -83,7 +83,7 @@ Mova as configurações e os dados para o servidor de destino da seguinte maneir
 
 -   Porta 443: tráfego HTTPS da Web
 
-##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a>Mapear computadores permitidos para contas de usuário
+##  <a name="map-permitted-computers-to-user-accounts"></a><a name="BKMK_MapPermittedComputers"></a> Mapear computadores permitidos para contas de usuário
  Cada conta de usuário é migrada do Windows Small Business Server 2011 Essentials deve ser mapeada para um ou mais computadores.
 
 #### <a name="to-map-user-accounts-to-computers"></a>Para mapear contas de usuário para computadores

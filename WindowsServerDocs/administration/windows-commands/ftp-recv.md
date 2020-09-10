@@ -3,16 +3,16 @@ title: ftp recv
 description: Artigo de referência para o comando de recebimento de FTP, que copia um arquivo remoto para o computador local usando o tipo de transferência de arquivo atual.
 ms.topic: reference
 ms.assetid: f249ce61-247d-421b-9b93-48bce5108800
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a80c00c99df3466fc1077c3a09cab29f9e59860
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 65acf6bae09d9b1cad1bf89028b4a51232116c60
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89038907"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624656"
 ---
 # <a name="ftp-recv"></a>ftp recv
 

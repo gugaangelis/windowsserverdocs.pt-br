@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 4afba33d105f0348aaf7c130ccbe5a3b87fc1cb2
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: d46e760fd168d44cb8f036d6b1b28180db2ffce2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838305"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625109"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Solucionar problemas de instalação do Windows Server Essentials
 
@@ -33,7 +33,7 @@ Este tópico fornece solução de problemas que ocorrem durante a instalação d
 > [!NOTE]
 >  Para obter as informações de solução de problemas mais recentes da Comunidade do Windows Server Essentials, sugerimos que você visite o [Fórum do Windows Server Essentials](/answers/topics/windows-server-essentials.html/threads). O fórum do Windows Server Essentials é uma boa oportunidade para obter ajuda ou para fazer uma pergunta.
 
-##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a>Etapas gerais de solução de problemas
+##  <a name="general-troubleshooting-steps"></a><a name="BKMK_GeneralTroubleshootingSteps"></a> Etapas gerais de solução de problemas
  Se a instalação do Windows Server Essentials falhar, siga estas etapas para ajudar a identificar o problema que causou a falha.
 
 > [!IMPORTANT]
@@ -56,12 +56,12 @@ Este tópico fornece solução de problemas que ocorrem durante a instalação d
 
 6.  Se você receber a mensagem de erro ocorreu um erro durante a configuração do servidor durante a instalação, use o DVD de recuperação do servidor e as instruções fornecidas pelo fabricante do hardware para restaurar o servidor para as configurações padrão de fábrica.
 
-##  <a name="troubleshoot-driver-issues"></a><a name="BKMK_TroubleshootDrivers"></a>Solucionar problemas de driver
+##  <a name="troubleshoot-driver-issues"></a><a name="BKMK_TroubleshootDrivers"></a> Solucionar problemas de driver
  O problema mais comum ao instalar o Windows Server Essentials são os controladores de armazenamento que precisam ter drivers instalados manualmente. O Windows inclui drivers para muitos controladores de armazenamento, mas talvez não inclua drivers para o hardware específico.
 
  Também pode ser necessário instalar manualmente os drivers de placa de rede para seu hardware específico.
 
-###  <a name="adding-drivers-for-storage-controllers"></a><a name="BKMK_StorageDrivers"></a>Adicionando drivers para controladores de armazenamento
+###  <a name="adding-drivers-for-storage-controllers"></a><a name="BKMK_StorageDrivers"></a> Adicionando drivers para controladores de armazenamento
  Se o hardware exigir drivers de armazenamento que não estão incluídos no Windows Server Essentials, use as informações a seguir para concluir a instalação.
 
  Se você vir a mensagem a seguir durante a instalação, é necessário que você adicione manualmente os drivers para seu controlador de armazenamento:
@@ -95,7 +95,7 @@ Este tópico fornece solução de problemas que ocorrem durante a instalação d
 
    A instalação agora deve prosseguir normalmente.
 
-###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a>Adicionando drivers para adaptadores de rede
+###  <a name="adding-drivers-for-network-adapters"></a><a name="BKMK_AddingNICdrivers"></a> Adicionando drivers para adaptadores de rede
  Se um adaptador de rede no computador não tiver suporte do Windows Server Essentials, o servidor não terá conectividade de rede após a conclusão da instalação e você não poderá conectar computadores ao seu servidor.
 
  No final da instalação do Windows Server Essentials, você será informado se um driver de adaptador de rede não tiver sido instalado automaticamente. Você também pode usar **Conexões de Rede**, no Painel de Controle, para verificar um driver de adaptador de rede ausente. Se você não vir uma conexão de rede associada ao adaptador de rede em seu servidor, será necessário que você instale um driver.

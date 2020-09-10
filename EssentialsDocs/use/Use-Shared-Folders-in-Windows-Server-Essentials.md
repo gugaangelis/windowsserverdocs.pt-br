@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: cb7f3d7d-4225-409a-9f6b-34a106e8dd24
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: c7f042a47dd6f350b79ec17f69ffb87ab7b99259
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 8c2b906d1484f0f681325cccc36fe3446760a175
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87179452"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624885"
 ---
 # <a name="use-shared-folders-in-windows-server-essentials"></a>Use pastas compartilhadas no Windows Server Essentials
 
@@ -31,7 +31,7 @@ ms.locfileid: "87179452"
 
 -   [Uso do aplicativo My Server para Windows 8](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)
 
-##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Usando o Launchpad do Windows Server Essentials
+##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a> Usando o Launchpad do Windows Server Essentials
  Você pode usar a Barra Inicial de qualquer computador que esteja conectado ao servidor usando o Assistente Conectar Meu Computador ao Servidor. Para obter mais informações sobre como conectar o computador ao servidor, consulte [conectar computadores ao servidor](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
 -   [Uso da Barra Inicial do Windows Server Essentials](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)
@@ -42,7 +42,7 @@ ms.locfileid: "87179452"
 
 -   [Uso do aplicativo My Server para Windows 8](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)
 
-##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a>Usando o Launchpad do Windows Server Essentials
+##  <a name="using-the-windows-server-essentials-launchpad"></a><a name="BKMK_UsingLaunchpad"></a> Usando o Launchpad do Windows Server Essentials
  Você pode usar a Barra Inicial de qualquer computador que esteja conectado ao servidor usando o Assistente Conectar Meu Computador ao Servidor. Para obter mais informações sobre como conectar o computador ao servidor, consulte [conectar computadores ao servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
 
 
@@ -50,7 +50,7 @@ ms.locfileid: "87179452"
 
  Para obter mais informações sobre o Launchpad, consulte [visão geral da Launchpad](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md).
 
-###  <a name="copy-or-move-shared-files-or-folders-using-the-launchpad"></a><a name="BKMK_Launchpad"></a>Copiar ou mover arquivos ou pastas compartilhadas usando o Launchpad
+###  <a name="copy-or-move-shared-files-or-folders-using-the-launchpad"></a><a name="BKMK_Launchpad"></a> Copiar ou mover arquivos ou pastas compartilhadas usando o Launchpad
  Quando você deseja copiar ou mover arquivos compartilhados no Windows Server Essentials usando a Barra Inicial, clique na guia **Pastas compartilhadas** na Barra Inicial.
 
  Se você deseja mover um arquivo ou pasta de um local para outro em **Pastas compartilhadas**, você pode usar o método de arrastar e soltar da mesma maneira que você moveria arquivos e pastas no seu computador. Abra a pasta que contém o arquivo ou pasta que você deseja mover. Em seguida, abra a pasta aonde você deseja movê-lo em uma janela diferente. Posicione as janelas lado a lado na área de trabalho para que você possa ver o conteúdo de ambas e em seguida, arraste o arquivo ou pasta da primeira pasta para a segunda.
@@ -60,7 +60,7 @@ ms.locfileid: "87179452"
 
  Se você deseja copiar arquivos ou pastas de um local para outro em **Pastas compartilhadas**, você pode usar o método de copiar e colar da mesma maneira que você copiaria os arquivos no computador. Abra a pasta que contém os arquivos que você deseja copiar. Clique com botão direito nos arquivos que você deseja copiar e em seguida, clique em **Copiar**. Clique na pasta aonde você deseja colar os arquivos copiados e em seguida, clique em **Colar**.
 
-##  <a name="using-remote-web-access"></a><a name="BKMK_UsingRWA"></a>Usando o Acesso via Web remoto
+##  <a name="using-remote-web-access"></a><a name="BKMK_UsingRWA"></a> Usando o Acesso via Web remoto
 
  Você pode acessar arquivos e pastas compartilhados de qualquer computador remoto usando o site de Acesso via Web Remoto. Em um computador na rede de servidor, para acessar o site Acesso via Web remoto, abra o navegador da Internet e digite https://<ServerName \> /Remote. Usando o Acesso via Web Remoto, você pode exibir e gerenciar arquivos em pastas compartilhadas. Para obter as instruções passo a passo, consulte [usar o acesso via Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).
 
@@ -70,23 +70,23 @@ ms.locfileid: "87179452"
 > [!NOTE]
 >  O Acesso via Web Remoto no servidor deve ser ativado para acessar o site de Acesso via Web remoto. Para obter informações sobre como gerenciar Acesso via Web remotos, consulte [gerenciar acesso via Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md).
 
-###  <a name="create-rename-move-delete-or-copy-files-and-folders-in-remote-web-access"></a><a name="BKMK_2"></a>Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto
+###  <a name="create-rename-move-delete-or-copy-files-and-folders-in-remote-web-access"></a><a name="BKMK_2"></a> Criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto
 
  Você pode usar o Acesso via Web Remoto para criar novas pastas em uma pasta compartilhada existente para renomear arquivos e pastas, mover ou copiar arquivos e pastas e excluir arquivos e pastas no servidor. Para obter mais informações, consulte a seção criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto? no tópico [usar acesso via Web remotos](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).
 
-###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_3"></a>Carregar e baixar arquivos no Acesso via Web remoto
+###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_3"></a> Carregar e baixar arquivos no Acesso via Web remoto
  Na guia **Pastas compartilhadas** do Acesso via Web Remoto, você pode fazer upload e download de arquivos. Para obter mais informações, consulte a seção carregar e baixar arquivos no Acesso via Web remoto? no tópico [usar acesso via Web remotos](Use-Remote-Web-Access-in-Windows-Server-Essentials.md).
 
  Você pode usar o Acesso via Web Remoto para criar novas pastas em uma pasta compartilhada existente para renomear arquivos e pastas, mover ou copiar arquivos e pastas e excluir arquivos e pastas no servidor. Para obter mais informações, consulte a seção criar, renomear, mover, excluir ou copiar arquivos e pastas no Acesso via Web remoto? no tópico [usar acesso via Web remotos](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).
 
-###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_3"></a>Carregar e baixar arquivos no Acesso via Web remoto
+###  <a name="upload-and-download-files-in-remote-web-access"></a><a name="BKMK_3"></a> Carregar e baixar arquivos no Acesso via Web remoto
  Na guia **Pastas compartilhadas** do Acesso via Web Remoto, você pode fazer upload e download de arquivos. Para obter mais informações, consulte a seção carregar e baixar arquivos no Acesso via Web remoto? no tópico [usar acesso via Web remotos](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md).
 
 
-##  <a name="using-my-server-app-for-windows-phone"></a><a name="BKMK_Phone"></a>Usando meu aplicativo de servidor para Windows Phone
+##  <a name="using-my-server-app-for-windows-phone"></a><a name="BKMK_Phone"></a> Usando meu aplicativo de servidor para Windows Phone
  Você pode acessar as pastas compartilhadas por meio de seu Windows Phone usando o aplicativo My Server para Windows Phone. Você pode baixar este aplicativo do [Marketplace para Windows Phone](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a).
 
-##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a>Usando meu aplicativo de servidor para Windows 8
+##  <a name="using-my-server-app-for-windows-8"></a><a name="BKMK_App"></a> Usando meu aplicativo de servidor para Windows 8
  Você pode acessar as pastas compartilhadas por meio do Windows 8 usando o aplicativo My Server para o Windows 8. Você pode baixar o aplicativo da e armazenamento da [Loja de Aplicativos do Windows 8](https://windows.microsoft.com/windows-8/apps).
 
 ## <a name="see-also"></a>Confira também

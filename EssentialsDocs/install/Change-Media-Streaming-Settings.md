@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: dec690d2-f80c-4b09-99d6-3bba41331972
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 5001d16a3bcdfbb02e7578c61298108ef84c8536
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 041a7f53b02d9b6b6368bd2b2f4ac991a14a61fa
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181472"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623881"
 ---
 # <a name="change-media-streaming-settings"></a>Alterar Configurações de Streaming de Mídia
 
@@ -28,7 +28,7 @@ Várias opções estão disponíveis para você alterar as configurações de st
 
 -   [Habilitar ou desabilitar o streaming de mídia de forma programática](Change-Media-Streaming-Settings.md#BKMK_Program)
 
-##  <a name="hide-remote-media-streaming-add-in"></a><a name="BKMK_DisableRemote"></a>Ocultar suplemento de streaming de mídia remota
+##  <a name="hide-remote-media-streaming-add-in"></a><a name="BKMK_DisableRemote"></a> Ocultar suplemento de streaming de mídia remota
  Você pode ocultar o suplemento de streaming de mídia remota adicionando uma entrada no registro.
 
 #### <a name="to-hide-the-remote-media-streaming-add-in"></a>Para ocultar suplemento de streaming de mídia remota
@@ -49,7 +49,7 @@ Várias opções estão disponíveis para você alterar as configurações de st
 
 7.  Digite **1** nos dados de valor e clique em **OK**.
 
-##  <a name="set-the-media-library-name"></a><a name="BKMK_LibraryName"></a>Definir o nome da biblioteca de mídia
+##  <a name="set-the-media-library-name"></a><a name="BKMK_LibraryName"></a> Definir o nome da biblioteca de mídia
  Você pode usar uma classe do Windows Server Solutions SDK para definir o nome da biblioteca de mídia. Para definir o nome da biblioteca de mídia, você pode usar o método **SetMediaLibraryName** da classe **MediaStreamingManager** no namespace **Microsoft.WindowsServerSolutions.MediaStreaming**. O exemplo a seguir mostra como definir o nome da biblioteca de mídia:
 
 ```c#
@@ -62,10 +62,10 @@ mediaStreamingManager.SetMediaLibraryName(mediaLibraryName);
 
  Para obter mais informações, consulte o [SDK do Windows Server Solutions](https://go.microsoft.com/fwlink/?LinkID=248648).
 
-##  <a name="set-video-streaming-quality"></a><a name="BKMK_StreamingQuality"></a>Definir qualidade de streaming de vídeo
+##  <a name="set-video-streaming-quality"></a><a name="BKMK_StreamingQuality"></a> Definir qualidade de streaming de vídeo
  Defina a qualidade de streaming de vídeo obtendo a pontuação da CPU do WinSAT e criando e instalando o arquivo .xml que contém as informações de pontuação do WinSAT. Se o arquivo .xml que contém as informações de pontuação do WinSAT estiver instalado antes de executar a Configuração Inicial, a interface do usuário para definir a qualidade de vídeo não será exibida para o cliente. Para obter mais informações, consulte [Definir a Pontuação do WinSAT no Servidor](Set-the-WinSAT-Score-on-the-Server.md).
 
-##  <a name="programmatically-enable-or-disable-media-streaming"></a><a name="BKMK_Program"></a>Habilitar ou desabilitar o streaming de mídia programaticamente
+##  <a name="programmatically-enable-or-disable-media-streaming"></a><a name="BKMK_Program"></a> Habilitar ou desabilitar o streaming de mídia programaticamente
  Você pode usar uma classe do Windows Server Solutions SDK para habilitar ou desabilitar o streaming de mídia de forma programática. Para habilitar ou desabilitar o streaming de mídia, você pode usar o método **SetMediaStreamingEnabled** da classe **MediaStreamingManager** no namespace **Microsoft.WindowsServerSolutions.MediaStreaming**. O exemplo de código a seguir mostra como habilitar o streaming de mídia:
 
 ```c#

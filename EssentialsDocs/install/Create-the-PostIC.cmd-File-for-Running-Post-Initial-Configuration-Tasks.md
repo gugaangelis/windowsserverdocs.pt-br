@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f23acf905e1c0b090076efd75d2e104a1cb0d186
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5a3ae6711d54d1c1f2bebdae6db3065fce970312
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181352"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623716"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial
 
@@ -38,7 +38,7 @@ Você pode adicionar personalizações à configuração pós-inicial escrevendo
 
 4.  (Opcional) Crie um arquivo SetupFailure.cmd que executará o código se PostIC.cmd retornar algo diferente de 0.
 
-###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a>SetupFailure. cmd
+###  <a name="setupfailurecmd"></a><a name="BKMK_SetupFailure"></a> SetupFailure. cmd
  Você pode fornecer notificação de problemas na Configuração Inicial usando SetupFailure.cmd. O arquivo SetupFailure.cmd contém o código que você deseja executar se ocorrerem problemas. O arquivo SetupFailure.cmd está em C:\Windows\Setup\Scripts e será executado em caso de problemas com uma tarefa de configuração ou quando o arquivo PostIC.cmd retornar um valor diferente de 0.
 
 ##### <a name="to-define-notifications"></a>Para definir notificações

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: ef3a7934-e36f-40d8-9e0b-7ed59089f85e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 2ac063330cc1ae99bfd7d0d65950ba17ad815c87
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 6198e8d8e06a76b9768f5c1166b438639d2ffca2
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181512"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623969"
 ---
 # <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Kit de Avaliação e Implantação para Windows Server Essentials
 
@@ -71,7 +71,7 @@ O &reg; ADK (Kit de avaliação e implantação) do Windows Server 2012 Essentia
 
     -   [Adicionar informações de parceiro de registro do Contrato de Parceiro de Serviço Online da Microsoft](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)
 
-    -   [Substituir o URL de ponto de extremidade de compra/teste do módulo de integração do O365 em suporte ao Contrato de Revendedor de Serviços Online da Microsoft](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
+    -   [Substituir Microsoft 365 módulo de integração comprar-Experimente a URL de ponto de extremidade para dar suporte ao contrato de revendedor de serviços online da Microsoft](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)
 
     -   [Criar um DVD de recuperação de servidor para servidores administrados remotamente](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)
 
@@ -87,4 +87,4 @@ O &reg; ADK (Kit de avaliação e implantação) do Windows Server 2012 Essentia
 
  Active Directory, Microsoft, Windows Live, Windows PowerShell, Windows e Windows Server são marcas registradas do grupo de empresas Microsoft. Todas as outras marcas comerciais pertencem a seus respectivos proprietários.
 
- &copy;2012 Microsoft. Todos os direitos reservados.
+ &copy; 2012 Microsoft. Todos os direitos reservados.

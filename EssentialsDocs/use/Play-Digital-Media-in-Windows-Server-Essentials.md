@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 1ce7359929cb1658cc84418231fb7d65efce8692
-ms.sourcegitcommit: 04637054de2bfbac66b9c78bad7bf3e7bae5ffb4
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 77246642e7f011768742a30ed517d63b12c47ee4
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87838215"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624939"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Gerenciar mídia digital no Windows Server Essentials
 
@@ -38,7 +38,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 -   [Exibir e procurar mídia digital compartilhada](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_7)
 
 
-##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>Visão geral de mídia digital
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a> Visão geral de mídia digital
  Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que tenha sido codificado (compactado digitalmente). Codificação conteúdo envolve a conversão de entrada de áudio e vídeo para um arquivo de mídia digital, como um arquivo do Windows Media. Depois da mídia digital ser codificada, pode ser facilmente manipulada, distribuída e executada por computadores e facilmente são transmitidos por redes de computador.
 
  Exemplos dos tipos de mídia digital incluem: Windows Media Audio (WMA), Windows Media Video (WMV), MP3, JPEG e AVI. Para obter informações sobre os tipos de mídia digital com suporte no Windows Media Player, consulte [Tipos de arquivo com suporte pelo Windows Media Player](https://support.microsoft.com/kb/316992).
@@ -57,7 +57,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
  Mídia protegida contra cópia pode ser executada novamente somente no computador ou dispositivo que você usou para adquiri-lo. Proteção contra cópia impede a execução da mídia em mais de um computador ou dispositivo, mesmo que você copie a mídia para o servidor e executá-lo a partir dele. No entanto, você pode armazenar a mídia protegida por cópia no Windows Server Essentials e continuar a reproduzir a mídia no computador ou dispositivo que você usou para comprá-la.
 
-##  <a name="play-and-share-digital-media"></a><a name="BKMK_2"></a>Reproduzir e compartilhar mídia digital
+##  <a name="play-and-share-digital-media"></a><a name="BKMK_2"></a> Reproduzir e compartilhar mídia digital
  Depois de configurar a rede e se conectar com êxito seus computadores e dispositivos de mídia com a rede do servidor, você pode procurar os arquivos de mídia digital que armazena e compartilha no servidor.
 
 > [!NOTE]
@@ -70,7 +70,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 -   [Enviar arquivos de mídia no Windows Server Essentials para o Windows Media Player, Xbox 360 ou para um player de mídia digital em rede](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_SendToDevice)
 
 
-###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a>Pesquisar e reproduzir arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede
+###  <a name="search-for-and-play-media-files-on-windows-server-essentials-from-a-computer-or-digital-media-player-on-the-network"></a><a name="BKMK_2.1"></a> Pesquisar e reproduzir arquivos de mídia no Windows Server Essentials de um computador ou player de mídia digital na rede
  Quando o dispositivo estiver ingressado na rede do Windows Server Essentials, você poderá pesquisar e reproduzir arquivos de mídia digital de qualquer uma das seguintes maneiras:
 
 
@@ -87,7 +87,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 -   [Procurar e reproduzir mídia compartilhada usando o acesso via Web Remoto](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_RWA2)
 
 
-####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a>Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows Media Center
+####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-media-center"></a><a name="BKMK_WMC"></a> Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows Media Center
 
 1.  Clique em **Iniciar**, clique em **Todos os Programas** e clique em **Windows Update**.
 
@@ -97,14 +97,14 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 4.  Clique na imagem de arquivos de mídia para exibir ou executar o arquivo.
 
-####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-by-using-windows-media-player"></a><a name="BKMK_MWP"></a>Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows usando o Windows Media Player
+####  <a name="search-for-and-play-media-files-from-a-computer-that-is-running-windows-by-using-windows-media-player"></a><a name="BKMK_MWP"></a> Pesquisar e reproduzir arquivos de mídia de um computador que esteja executando o Windows usando o Windows Media Player
 
 -   Do computador ou dispositivo de mídia, abra **Windows Media Player** e procure sua biblioteca de mídia.
 
     > [!NOTE]
     >  As etapas de pesquisa variam dependendo da versão do Windows Media Player que você está usando. Para obter informações detalhadas, consulte a Ajuda para a sua versão.
 
-####  <a name="search-for-and-play-media-files-by-using-xbox-360"></a><a name="BKMK_Xbox"></a>Pesquisar e reproduzir arquivos de mídia usando o Xbox 360
+####  <a name="search-for-and-play-media-files-by-using-xbox-360"></a><a name="BKMK_Xbox"></a> Pesquisar e reproduzir arquivos de mídia usando o Xbox 360
 
 1.  Conecte seu console Xbox 360 à sua rede doméstica usando uma conexão com ou sem fio.
 
@@ -121,13 +121,13 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
     3.  Procurar a lista de arquivos e selecione o item que você deseja executar.
 
-####  <a name="search-for-and-play-media-files-by-using-other-digital-media-players-or-receivers-that-are-compatible-with-windows-server-essentials"></a><a name="BKMK_Other"></a>Pesquisar e reproduzir arquivos de mídia usando outros media players digitais ou receptores que são compatíveis com o Windows Server Essentials
+####  <a name="search-for-and-play-media-files-by-using-other-digital-media-players-or-receivers-that-are-compatible-with-windows-server-essentials"></a><a name="BKMK_Other"></a> Pesquisar e reproduzir arquivos de mídia usando outros media players digitais ou receptores que são compatíveis com o Windows Server Essentials
 
 1.  Vá para o [Centro de Compatibilidade do Windows](https://www.microsoft.com/windows/compatibility/CompatCenter/Home) e certifique-se de que seu reprodutor ou receptor de mídia digital aparece na lista de dispositivos compatíveis.
 
 2.  Como as etapas de pesquisa variam dependendo do reprodutor de mídia digital que você está usando, consulte a Ajuda para o seu dispositivo para obter instruções detalhadas.
 
-####  <a name="search-for-and-play-media-files-by-using-the-shared-folders-feature-of-the-launchpad"></a><a name="BKMK_SharedFolders"></a>Pesquisar e reproduzir arquivos de mídia usando o recurso pastas compartilhadas do Launchpad
+####  <a name="search-for-and-play-media-files-by-using-the-shared-folders-feature-of-the-launchpad"></a><a name="BKMK_SharedFolders"></a> Pesquisar e reproduzir arquivos de mídia usando o recurso pastas compartilhadas do Launchpad
 
 1.  Entre no Launchpad do Windows Server Essentials.
 
@@ -138,7 +138,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
     > [!NOTE]
     >  Como opção, você pode também clique duas vezes em uma pasta compartilhada para procurar o conteúdo da pasta.
 
-####  <a name="search-for-and-play-shared-media-by-using-remote-web-access"></a><a name="BKMK_RWA2"></a>Pesquisar e reproduzir mídia compartilhada usando o Acesso via Web remoto
+####  <a name="search-for-and-play-shared-media-by-using-remote-web-access"></a><a name="BKMK_RWA2"></a> Pesquisar e reproduzir mídia compartilhada usando o Acesso via Web remoto
 
 1.  Faça logon no Acesso Remoto via Web.
 
@@ -146,10 +146,10 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 3.  Clique duas vezes em uma pasta para exibir o conteúdo da pasta.
 
-###  <a name="send-media-files-on-windows-server-essentials-to-windows-media-player-xbox-360-or-to-a-networked-digital-media-player-in-the-network"></a><a name="BKMK_SendToDevice"></a>Enviar arquivos de mídia no Windows Server Essentials para o Windows Media Player, Xbox 360 ou para um player de mídia digital em rede
+###  <a name="send-media-files-on-windows-server-essentials-to-windows-media-player-xbox-360-or-to-a-networked-digital-media-player-in-the-network"></a><a name="BKMK_SendToDevice"></a> Enviar arquivos de mídia no Windows Server Essentials para o Windows Media Player, Xbox 360 ou para um player de mídia digital em rede
  Use **Windows Media Player** para procurar o arquivo de mídia que você deseja. Com o botão direito no arquivo de mídia e, em seguida, clique em **reproduzir em** para enviar o arquivo de mídia para um dispositivo de mídia em rede.
 
-##  <a name="play-shared-digital-media-files-from-a-remote-location"></a><a name="BKMK_3"></a>Reproduzir arquivos de mídia digital compartilhados de um local remoto
+##  <a name="play-shared-digital-media-files-from-a-remote-location"></a><a name="BKMK_3"></a> Reproduzir arquivos de mídia digital compartilhados de um local remoto
  Você pode reproduzir seus arquivos de mídia quando estiver fora da rede do Windows Server Essentials usando o Acesso via Web remoto. Você pode usar um telefone, um computador remoto ou um reprodutor de mídia digital para pesquisar e executar os arquivos de mídia compartilhada armazenada no servidor.
 
 #### <a name="to-play-shared-media-files-when-you-are-away-from-the-network"></a>Para executar arquivos de mídia compartilhada quando está fora da rede
@@ -174,7 +174,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 5. Quando o nome do arquivo de mídia for exibida, clique no nome do arquivo para executar a mídia.
 
-##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_4"></a>Adicionar arquivos de mídia digital ao servidor
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_4"></a> Adicionar arquivos de mídia digital ao servidor
 
  O administrador do servidor pode adicionar mídia digital a pastas compartilhadas na biblioteca de mídia acessando o servidor diretamente ou usando o site de Acesso via Web remoto para entrar no painel. Outros usuários podem adicionar arquivos de mídia ao servidor usando a conexão **pastas compartilhadas** no Launchpad, usando o site de acesso via Web remoto ou usando o aplicativo meu servidor para Windows Phone. Para obter informações sobre a execução de mídia, veja[reproduzir e compartilhar mídia digital](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2).
 
@@ -200,7 +200,7 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
 3.  Copiar e colar ou opção de arrastar e soltar, a mídia de arquivos que você deseja adicionar ao apropriado compartilhados pasta no servidor.
 
-##  <a name="download-format-options"></a><a name="BKMK_5"></a>Opções de formato de download
+##  <a name="download-format-options"></a><a name="BKMK_5"></a> Opções de formato de download
  Há duas opções para download de arquivos. Essas opções estão disponíveis somente quando baixar uma pasta ou vários arquivos para um computador em Windows.
 
  Escolha a opção a seguir que atenda às suas necessidades de downloads:
@@ -221,10 +221,10 @@ Mídia digital se refere ao áudio, vídeo e conteúdo de fotos que foram compac
 
   Antes de iniciar o download, o arquivo .exe ou .zip é criado. Dependendo do número de arquivos e o tamanho total dos arquivos a serem baixados, isso pode levar vários minutos. Depois que o arquivo de download é criado, o download do arquivo ocorre em segundo plano. Isso permite que você continue trabalhando enquanto o processo de download é concluído.
 
-##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a>Ferramenta de upload de arquivo fácil
+##  <a name="easy-file-upload-tool"></a><a name="BKMK_6"></a> Ferramenta de upload de arquivo fácil
  A ferramenta de upload de arquivo fácil simplifica o processo de carregamento de arquivos no servidor do Windows Server Essentials. Você pode adicionar quantos arquivos desejar à ferramenta de upload de arquivo fácil e, em seguida, carregá-los nas pastas compartilhadas no servidor do Windows Server Essentials em um único lote. Para obter mais informações, consulte a postagem de blog [Understanding Remote Web Access File Sharing (Entendendo o compartilhamento de arquivos do Acesso Remoto via Web)](/archive/blogs/sbs/understanding-remote-web-access-file-sharing).
 
-##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a>Exibir e procurar mídia digital compartilhada
+##  <a name="view-and-browse-shared-digital-media"></a><a name="BKMK_7"></a> Exibir e procurar mídia digital compartilhada
  Você pode exibir ou procurar recursos usando o Painel, a barra inicial, o site de Acesso Remoto via Web ou o aplicativo My Server para Windows Phone.
 
 #### <a name="to-view-and-browse-shared-media-from-the-dashboard"></a>Para exibir e procurar mídia compartilhada do Painel

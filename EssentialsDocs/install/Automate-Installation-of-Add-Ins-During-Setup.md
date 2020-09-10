@@ -5,20 +5,20 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: b75b201f655e13fd367bfedc523f5b21b8e88b43
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: ebfd0950c585e2383f736818789e8a2dce67ad4d
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181502"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623959"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar a instalação de suplementos durante a configuração
 
 >Aplica-se a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a>Automatizar a instalação de suplementos durante a instalação
+##  <a name="automate-installing-add-ins-during-setup"></a><a name="BKMK_AddIns"></a> Automatizar a instalação de suplementos durante a instalação
  Para instalar suplementos durante a instalação, use o método PostIC.cmd descrito na seção [Criar o arquivo PostIC.cmd para executar tarefas de configuração pós-início](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) deste documento.
 
  Adicione a seguinte entrada ao PostIC.cmd:

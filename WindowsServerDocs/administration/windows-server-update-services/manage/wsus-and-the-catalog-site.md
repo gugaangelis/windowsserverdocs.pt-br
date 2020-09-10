@@ -3,16 +3,16 @@ title: WSUS e o site do catálogo
 description: Tópico Windows Server Update Service (WSUS)-como importar hotfixes para o WSUS acessando o site do catálogo Microsoft Update
 ms.topic: article
 ms.assetid: f19a8659-5a96-4fdd-a052-29e4547fe51a
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 25a9852935c47e0c005d78ae7ea24d14c7c1a546
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 7e0d3c76e66275fe052d5d337dd30c67d7980638
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896789"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624272"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS e o site do catálogo
 
@@ -25,7 +25,7 @@ Para importar hotfixes para o WSUS, você deve acessar o site de catálogo Micro
 
 #### <a name="to-access-the-microsoft-update-catalog-site"></a>Para acessar o site de catálogo Microsoft Update
 
-1.  No console administrativo do WSUS, selecione o nó de servidor ou **as atualizações**superiores e, no painel **ações** , clique em **importar atualizações**. Uma janela do navegador será aberta no site do Microsoft Update Catalog.
+1.  No console administrativo do WSUS, selecione o nó de servidor ou  **as atualizações**superiores e, no painel **ações** , clique em **importar atualizações**. Uma janela do navegador será aberta no site do Microsoft Update Catalog.
 
 2.  Para acessar as atualizações neste site, você deve instalar o controle activeX de catálogo Microsoft Update.
 

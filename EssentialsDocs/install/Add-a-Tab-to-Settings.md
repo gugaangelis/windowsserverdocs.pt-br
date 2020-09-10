@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: aac6b7f3-9020-46c3-a83f-b81542300385
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: d974f4dc53b9ce389254b162a3305b277181ceed
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 17f2d7c8a409ed49ea0f9bfa50952467e4694243
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181532"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623991"
 ---
 # <a name="add-a-tab-to-settings"></a>Adicionar uma guia a Configurações
 
@@ -29,7 +29,7 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
 
 -   [Instalar o assembly no computador de referência](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).
 
-###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a>Adicionar uma implementação da interface ISettingsData ao assembly
+###  <a name="add-an-implementation-of-the-isettingsdata-interface-to-the-assembly"></a><a name="BKMK_ISettingsData"></a> Adicionar uma implementação da interface ISettingsData ao assembly
  A interface ISettingsData está incluída no namespace Microsoft.WindowsServerSolutions.Settings do assembly do AdminCommon.dll localizado em \Arquivos de programa\Windows Server\Bin.
 
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>Para adicionar o código de ISettingsData ao assembly
@@ -144,10 +144,10 @@ Você pode adicionar uma guia a Configurações no Dashboard criando e instaland
 
 16. Salve e crie a solução.
 
-###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Assinar o assembly com uma assinatura Authenticode
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a> Assinar o assembly com uma assinatura Authenticode
  Você deve assinar com a Authenticode o assembly para que seja usado no sistema operacional. Para obter mais informações sobre a assinatura do assembly, consulte [Assinando e verificando códigos com Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).
 
-###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>Instalar o assembly no computador de referência
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a> Instalar o assembly no computador de referência
  Depois de criar a solução com êxito, coloque uma cópia do arquivo DashboardSettingsPage.dll na seguinte pasta no computador de referência:
 
  **%Programfiles%\Windows Server\Bin\OEM**

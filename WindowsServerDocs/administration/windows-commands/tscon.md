@@ -3,16 +3,16 @@ title: tscon
 description: Artigo de referência para tscon, que se conecta a outra sessão em um servidor Host da Sessão da Área de Trabalho Remota (host de Sessão RD).
 ms.topic: reference
 ms.assetid: 315a9793-cd10-4987-bb68-89a9d13f7fce
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: d0acb75411cae8c4d844e8ff2b113c6a9c638a9b
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: 2ba6df3a8878c42ac8ce8ac88671bb645bfedf86
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026874"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624603"
 ---
 # <a name="tscon"></a>tscon
 

@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: d382e3fd-d393-4bd0-883f-db50104a969f
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: b8819b654d05a1e63c7f30b4359cabcc2906c7b8
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: 5186cc808b46aa334dc994186e3d7d8d898f9d96
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180402"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625359"
 ---
 # <a name="step-7-perform-post-migration-tasks-for-the-windows-server-essentials-migration"></a>Etapa 7: Realizar tarefas pós-migração para a migração do Windows Server Essentials
 
@@ -24,7 +24,7 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
 
 2.  [Compartilhar pasta de dados de linha de negócios e de outros aplicativos](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md#BKMK_ShareLineOfBusinessAndOtherApplications)
 
-##  <a name="delete-dns-entries-for-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a>Excluir entradas DNS para o servidor de origem
+##  <a name="delete-dns-entries-for-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a> Excluir entradas DNS para o servidor de origem
  Depois de desativar o servidor de origem, o servidor do serviço de nomes de domínio (DNS) ainda pode conter entradas que apontem para o servidor de origem. Exclua essas entradas DNS.
 
 #### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>Para excluir as entradas DNS que apontam para o Servidor de Origem
@@ -49,7 +49,7 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
 
 10. Repita as etapas de 6 a 9 para remover todas as Zonas de pesquisa inversa que apontam para o Servidor de origem.
 
-##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a>Compartilhar pastas de dados de linha de negócios e outras de aplicativos
+##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a> Compartilhar pastas de dados de linha de negócios e outras de aplicativos
  Você deve definir as permissões da pasta compartilhada e as permissões NTFS para as pastas de dados de linha de negócios e de outros aplicativos que você copiou para o Servidor de Destino. Depois de definir as permissões, as pastas compartilhadas são exibidas no Painel na guia **Armazenamento**.
 
  Se você estiver usando um script de logon para mapear unidades para as pastas compartilhadas, deverá atualizar o script para mapear para as unidades no Servidor de Destino.

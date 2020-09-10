@@ -3,16 +3,16 @@ title: O Assistente para limpeza de servidor
 description: Tópico Windows Server Update Service (WSUS)-como usar o assistente de limpeza do servidor para gerenciar o espaço em disco
 ms.topic: article
 ms.assetid: 7c351797-2716-4442-a668-60d5b4e77751
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 85713dc245e8e812fa0c715d037738feaeb1ca0e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 967df91afdf7bab1f6fd4d6c1daabcf04f104d23
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87891672"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624402"
 ---
 # <a name="the-server-cleanup-wizard"></a>O Assistente para limpeza de servidor
 

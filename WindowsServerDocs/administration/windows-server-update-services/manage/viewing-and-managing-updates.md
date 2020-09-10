@@ -3,16 +3,16 @@ title: Exibir e gerenciar atualizações
 description: Tópico Windows Server Update Service (WSUS)-como exibir e gerenciar atualizações no console do WSUS
 ms.topic: article
 ms.assetid: ac70192b-0309-4385-b697-2e8eda51911c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8da092fc64b46a192dd9f40816721d639af795cb
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: ded1b6741829fb74d3be9b33828c89b8091faf1a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896799"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624387"
 ---
 # <a name="viewing-and-managing-updates"></a>Exibir e gerenciar atualizações
 
@@ -162,7 +162,7 @@ As classificações de atualização representam o tipo de atualização. Para q
 |Atualizações de segurança|Correções liberadas em larga escala para produtos específicos, abordando problemas de segurança.|
 |Service packs|Conjuntos cumulativos de todos os hotfixes, atualizações de segurança, atualizações críticas e atualizações criadas desde o lançamento do produto. Os service packs também podem conter um número limitado de recursos ou alterações de design solicitadas pelo cliente.|
 |Ferramentas|Utilitários ou recursos que ajudam a realizar uma tarefa ou um conjunto de tarefas.|
-|Pacotes cumulativos de atualização|Um conjunto cumulativo de hotfixes, atualizações de segurança, atualizações críticas e outras atualizações que são reunidas para facilitar a implantação. Um ROLLUP geralmente tem como alvo uma área específica, como segurança, ou um componente específico, como Serviços de Informações da Internet (IIS).|
+|Pacotes cumulativos de atualizações|Um conjunto cumulativo de hotfixes, atualizações de segurança, atualizações críticas e outras atualizações que são reunidas para facilitar a implantação. Um ROLLUP geralmente tem como alvo uma área específica, como segurança, ou um componente específico, como Serviços de Informações da Internet (IIS).|
 |Atualizações|Correções liberadas amplamente para problemas específicos que abordam bugs não críticos relacionados à segurança.|
 
 ## <a name="icons-used-for-updates-in-windows-server-update-services"></a>Ícones usados para atualizações no Windows Server Update Services

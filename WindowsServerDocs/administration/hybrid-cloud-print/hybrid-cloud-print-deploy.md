@@ -4,15 +4,15 @@ description: Como configurar a impressão em nuvem híbrida da Microsoft
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247c5e9
 ms.topic: how-to
 author: msjimwu
-ms.author: coreyp
-manager: dongill
+ms.author: jimwu
+manager: mtillman
 ms.date: 3/15/2018
-ms.openlocfilehash: 253cf78e39809473fc865de90915b6a9f870d098
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 769e9db9be5121b47c72b076bba3a78be841c5de
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992769"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625156"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Implantar o Windows Server Hybrid Cloud Print
 
@@ -48,7 +48,7 @@ Há várias assinaturas, serviços e computadores que você precisará adquirir 
 
   Você pode usar o nome de domínio criado para você pelo Azure (*DomainName*. onmicrosoft.com) ou comprar seu próprio nome de domínio. Consulte [Adicionar seu nome de domínio personalizado usando o portal de Azure Active Directory](/azure/active-directory/fundamentals/add-custom-domain).
 
-## <a name="deployment-steps"></a>Etapas de implantação.
+## <a name="deployment-steps"></a>Etapas de implantação
 
 As etapas a seguir são para uma implantação típica de impressão em nuvem híbrida.
 
@@ -181,7 +181,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 2. Instale os módulos do PowerShell de impressão em nuvem híbrida.
     - Execute os seguintes comandos em um prompt de comando do PowerShell com privilégios elevados:
 
-        `find-module -Name PublishCloudPrinter`para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
+        `find-module -Name PublishCloudPrinter` para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
 
         `install-module -Name PublishCloudPrinter`
 
@@ -210,7 +210,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 
     ![Implantação de impressão em nuvem Servidor de Impressão](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - Verifique o arquivo de log para ver se há algum erro:`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
+    - Verifique o arquivo de log para ver se há algum erro: `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
 4. Execute **RegitEdit** em um prompt de comandos com privilégios elevados. Vá para o computador \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService.
     - Certifique-se de que AzureAudience está definido como o URI de ID de aplicativo do aplicativo de impressão de nuvem empresarial.
@@ -361,9 +361,9 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 
 - Valores para OMA-URI
   - CloudPrintOAuthAuthority =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority
-    - Valor =`https://login.microsoftonline.com/<Azure AD Directory ID>`
+    - Valor = `https://login.microsoftonline.com/<Azure AD Directory ID>`
   - CloudPrintOAuthClientId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId
-    - Valor =`<Azure AD Native App's Application ID>`
+    - Valor = `<Azure AD Native App's Application ID>`
   - CloudPrinterDiscoveryEndPoint =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint
     - Valor = URL externa do aplicativo do serviço de descoberta do Mopria (deve ser exatamente o mesmo, mas sem a direita `/` )
   - MopriaDiscoveryResourceId =./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/MopriaDiscoveryResourceId
@@ -382,7 +382,7 @@ Para habilitar a comunicação autenticada com os serviços HCP, precisamos cria
 5. Prepare uma atualização do criador de outono do Windows 10 ou uma máquina posterior. Ingresse o computador no Azure AD e faça logon como um usuário que está sincronizado com o Active Directory local e tenha recebido a permissão adequada para o arquivo MopriaDeviceDb. DB.
 6. No computador com Windows 10, abra um prompt de comando elevado do Windows PowerShell.
     - Execute os seguintes comandos.
-        - `find-module -Name PublishCloudPrinter`para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
+        - `find-module -Name PublishCloudPrinter` para confirmar que o computador pode alcançar o Galeria do PowerShell (PSGallery)
         - `install-module -Name PublishCloudPrinter`
 
             > Observação: você pode ver uma mensagem informando que ' PSGallery ' é um repositório não confiável.  Digite ' y ' para continuar com a instalação.
@@ -444,7 +444,7 @@ Em um dispositivo ingressado no Azure AD que tem as políticas de MDM configurad
 
 Veja abaixo problemas comuns durante a implantação HCP
 
-|Erro |Etapas recomendadas |
+|Erro do |Etapas recomendadas |
 |------|------|
 |Falha no script do PowerShell do CloudPrintDeploy | <ul><li>Verifique se o Windows Server tem a atualização mais recente.</li><li>Se Windows Server Update Services (WSUS) for usado, consulte [como disponibilizar recursos sob demanda e pacotes de idiomas quando você estiver usando o WSUS/SCCM](/windows/deployment/update/fod-and-lang-packs).</li></ul> |
 |Falha na instalação do SQLite com a mensagem: loop de dependência detectado para o pacote ' System. Data. SQLite ' | Install-Package System. Data. sqlite. Core-ProviderName NuGet-SkipDependencies<br>Install-Package System. Data. sqlite. EF6-ProviderName NuGet-SkipDependencies<br>Install-Package System. Data. sqlite. Linq-ProviderName NuGet-SkipDependencies<br><br>Depois que os pacotes tiverem sido baixados com êxito, verifique se eles são da mesma versão. Caso contrário, adicione o parâmetro-requiredversion aos comandos acima e defina-os para que sejam da mesma versão. |

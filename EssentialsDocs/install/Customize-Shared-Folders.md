@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: f6b5de8ea45ea219f55b04ef675a3853b403fafb
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: c1a6276199964ac7fd2eb3953cb3fac828063dfc
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87181312"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89623673"
 ---
 # <a name="customize-shared-folders"></a>Personalizar pastas compartilhadas
 
@@ -48,7 +48,7 @@ Por padrão, as pastas do servidor são criadas na maior partição de dados no 
 
    Opcionalmente, os parceiros podem deixar as pastas de dados na unidade C. Isso permite ao usuário final ou revendedor determinar o layout das pastas de dados nas unidades de dados.
 
-###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>Exemplo 1: criar uma pasta personalizada e mover as pastas padrão para um novo local do postal. cmd usando o Windows PowerShell
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a> Exemplo 1: criar uma pasta personalizada e mover as pastas padrão para um novo local do postal. cmd usando o Windows PowerShell
 
 1.  crie um arquivo PostIC.cmd para executar tarefas após a configuração inicial, como detalhado na seção [Criar o Arquivo PostIC.cmd para Execução de Tarefas após a Configuração Inicial](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md).
 
@@ -94,7 +94,7 @@ Por padrão, as pastas do servidor são criadas na maior partição de dados no 
     Set ERRORLEVEL=%error_level%
     ```
 
-###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>Exemplo 2: criar uma pasta personalizada e mover uma pasta existente usando o SDK de soluções do Windows Server
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a> Exemplo 2: criar uma pasta personalizada e mover uma pasta existente usando o SDK de soluções do Windows Server
  O código criado pode ser compilado como um executável e chamado pelo arquivo PostIC.cmd ou diretamente de um suplemento instalado.
 
 ```

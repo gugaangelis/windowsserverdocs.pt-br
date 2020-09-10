@@ -3,16 +3,16 @@ title: Mensagens do WSUS e dicas de solução de problemas
 description: Tópico do Windows Server Update Service (WSUS)-solucionar problemas usando mensagens do WSUS
 ms.topic: article
 ms.assetid: 9f6317f7-bfe0-42d9-87ce-d8f038c728ca
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: cf3d0337dfa7360bdf8304c587c4ea31b7607e27
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8abb77727139652f7d3d1ef2e4ce8dd8320db47a
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990957"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624232"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Mensagens do WSUS e dicas de solução de problemas
 

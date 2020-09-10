@@ -5,14 +5,14 @@ ms.date: 10/03/2016
 ms.topic: article
 ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: 3fda095624260c1f44a5a46887c1e8e1cbdcdca7
-ms.sourcegitcommit: d99bc78524f1ca287b3e8fc06dba3c915a6e7a24
+ms.author: geschuma
+manager: mtillman
+ms.openlocfilehash: abd092b3e6b4176c83b51995f140aad0dafc6e0f
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87180522"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89625636"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Executar tarefas de pós-implantação para o Windows Server Essentials migration1
 
@@ -30,7 +30,7 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
 -   [Dar ao grupo Administradores interno o direito de fazer logon como um trabalho em lotes](Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md#BKMK_AdminGroup)
 
 
-##  <a name="delete-dns-entries-of-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a>Excluir entradas DNS do servidor de origem
+##  <a name="delete-dns-entries-of-the-source-server"></a><a name="BKMK_DeleteDNSEntries"></a> Excluir entradas DNS do servidor de origem
  Depois de desativar o servidor de origem, o servidor do serviço de nomes de domínio (DNS) ainda pode conter entradas que apontem para o servidor de origem. Exclua essas entradas DNS.
 
 #### <a name="to-delete-dns-entries-that-point-to-the-source-server"></a>Para excluir as entradas DNS que apontam para o Servidor de Origem
@@ -55,12 +55,12 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
 
 10. Repita as etapas de 6 a 9 para remover todas as Zonas de pesquisa inversa que apontam para o Servidor de origem.
 
-##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a>Compartilhar pastas de dados de linha de negócios e outras de aplicativos
+##  <a name="share-line-of-business-and-other-application-data-folders"></a><a name="BKMK_ShareLineOfBusinessAndOtherApplications"></a> Compartilhar pastas de dados de linha de negócios e outras de aplicativos
  Você deve definir as permissões da pasta compartilhada e as permissões NTFS para as pastas de dados de linha de negócios e de outros aplicativos que você copiou para o Servidor de Destino. Depois de definir as permissões, as pastas compartilhadas são exibidas no painel do Windows Server Essentials na seção **armazenamento** .
 
  Se você estiver usando um script de logon para mapear unidades para as pastas compartilhadas, deverá atualizar o script para mapear para as unidades no Servidor de Destino.
 
-##  <a name="fix-client-computer-issues-after-migrating"></a><a name="BKMK_FixClientComputerIssuesAfterMigrating"></a>Corrigir problemas do computador cliente após a migração
+##  <a name="fix-client-computer-issues-after-migrating"></a><a name="BKMK_FixClientComputerIssuesAfterMigrating"></a> Corrigir problemas do computador cliente após a migração
  Se você migrar para o Windows Server Essentials do Windows Small Business Server 2003 Premium Edition com o Microsoft Internet Security and Acceleration (ISA) Server instalado, os computadores cliente na rede ainda terão o Microsoft Firewall Client e o Internet Explorer configurados para usar um servidor proxy.
 
  Isso causa problemas de conectividade nos computadores cliente, pois o servidor proxy não existe mais. Se houver um servidor proxy diferente configurado, os computadores cliente continuarão a usar o servidor executando o Windows SBS 2003 para o servidor proxy. Para corrigir esse problema, reconfigure o Internet Explorer para não usar um servidor proxy ou para usar o novo servidor proxy.
@@ -87,7 +87,7 @@ As tarefas a seguir ajudaram a concluir a configuração do servidor de destino 
 
 4.  Navegue até um site para garantir que as configurações de conexão estejam corretas.
 
-##  <a name="give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a><a name="BKMK_AdminGroup"></a>Dê ao grupo de administradores internos o direito de fazer logon como um trabalho em lotes
+##  <a name="give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a><a name="BKMK_AdminGroup"></a> Dê ao grupo de administradores internos o direito de fazer logon como um trabalho em lotes
  Depois de migrar um domínio existente do Windows Small Business Server 2003 para o Windows Server Essentials, você deve conceder ao grupo de administradores internos o direito de fazer logon como um trabalho em lotes. Verifique se o grupo Administradores interno ainda tem o direito de logon como um trabalho em lotes para o servidor de destino. Os administradores precisam desse direito para executar um alerta no servidor de destino sem fazer logon.
 
 #### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>Para dar ao grupo de Administradores interno o direito de fazer logon como um trabalho em lotes
