@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 06/01/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c28ccbe0cfd49f1cf774031b002bf7b6142d0a00
-ms.sourcegitcommit: 9a59e00db5e68b1a12769b5cd5523b8c501776ad
+ms.openlocfilehash: 9bad174ad596ffc0262947464f2353b91a92872c
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89282108"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554519"
 ---
 # <a name="get-started-with-the-microsoft-store-client"></a>Introdução ao cliente para Microsoft Store
 
@@ -198,7 +198,16 @@ Dois modos de mouse estão disponíveis para interagir com a sessão.
 | Ponteiro do mouse | Clique com o botão direito em          | Tocar com dois dedos                                                          |
 | Ponteiro do mouse | Clicar com o botão direito do mouse e arrastar | Tocar duas vezes e segurar com dois dedos e arrastar                              |
 | Ponteiro do mouse | Botão de rolagem do mouse          | Fechar e abrir dedos indicador e polegar e manter com dois dedos e arrastar para cima ou para baixo                          |
-| Ponteiro do mouse | Zoom                 | Com dois dedos, pinçar para ampliar a tela e abrir os dedos para reduzi-la |
+| Ponteiro do mouse | Zoom                 | Com dois dedos, pinçar para reduzir a tela e abrir os dedos para ampliá-la |
 
-> [!TIP]
-> Perguntas e comentários são sempre bem-vindos. No entanto, se você postar solicitações de suporte ou comentários sobre o produto na seção de comentários deste artigo, não poderemos responder aos seus comentários. Caso precise de ajuda ou deseje solucionar problemas do seu cliente, recomendamos expressamente que você acesse o [fórum de clientes da Área de Trabalho Remota](/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Caso tenha uma sugestão de recurso, conte-nos usando o [Hub de Feedback](feedback-hub://?tabid=2&contextid=605).
+## <a name="give-us-feedback"></a>Fornecer comentários
+
+Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](https://aka.ms/rdstorefeedback).
+
+Você também pode nos fornecer comentários selecionando o botão de reticências ( **...** ) no aplicativo cliente, depois selecionando **Comentários**, conforme mostrado na imagem a seguir.
+
+> [!div class="mx-imgBorder"]
+> ![Uma captura de tela mostrando o botão de reticências realçado em vermelho. Um menu suspenso foi aberto sob o botão, e a opção "Comentários" também está realçada em vermelho.](../media/ellipsis-icon.png)
+
+>[!NOTE]
+>Para que possamos ajudar você da melhor maneira, precisamos que nos forneça informações com o máximo possível de detalhes sobre o problema. Por exemplo, você pode incluir capturas de tela ou uma gravação das ações que você realizou antes de encontrar o problema. Para obter mais dicas sobre como fornecer comentários úteis, confira [Comentários](/windows-insider/at-home/feedback#add-new-feedback).

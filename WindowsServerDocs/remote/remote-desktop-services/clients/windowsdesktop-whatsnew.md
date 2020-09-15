@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 09/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ce718db142ac34a51642e1ed2128899a0e77dbf
-ms.sourcegitcommit: 47dc2671330c2ecc56cce39ef006cbfe108b4759
+ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
+ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821329"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90027161"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -25,19 +25,28 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Versão  |
 |-----------|---------|
 |Público     |1.2.1272 |
-|Participante do Programa Windows Insider    |1.2.1272 |
+|Participante do Programa Windows Insider    |1.2.1357 |
 
-## <a name="updates-for-version-121272"></a>Atualizações para a versão 1.2.1272
+## <a name="updates-for-version-121357-insiders"></a>Atualizações para a versão 1.2.1357 (Participantes do Programa Windows Insider)
+
+*Data da publicação: 09/09/2020*
+
+Download: [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- Correção de um problema em que o SSO (logon único) não funcionava no Windows 7.
+
+## <a name="updates-for-version-121275"></a>Atualizações para a versão 1.2.1275
 
 *Data da publicação: 25/08/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D7LK), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4D5aF), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Dan3)
+Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYR), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4FpYS), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Fg3H)
 
 - Funcionalidade adicionada para detectar automaticamente nuvens soberanas da identidade do usuário.
 - Funcionalidade adicionada para habilitar assinaturas de URL personalizadas para todos os usuários.
 - Corrigido um problema com a fixação de aplicativo na barra de tarefas do feed.
 - Correção de uma falha ao assinar com URL.
 - Experiência aprimorada ao arrastar janelas de aplicativos remotos com toque ou caneta.
+- Correção de um problema relacionado à localização.
 
 ## <a name="updates-for-version-121186"></a>Atualizações para a versão 1.2.1186
 
@@ -55,8 +64,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 
 *Data da publicação: 23/06/2020*
 
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHS), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zrAd), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4zeHR)
-
 - Foi atualizada a lógica de descoberta automática para a opção **Assinar** para dar suporte à versão integrada do Azure Resource Manager da Área de Trabalho Virtual do Windows. Os clientes com apenas recursos da Área de Trabalho Virtual do Windows não precisam mais dar consentimento para a Área de Trabalho Virtual do Windows (clássica).
 - Suporte aprimorado para dispositivos de alto DPI com fator de escala de até 400%.
 - Correção de um problema em que a caixa de diálogo Desconectar não aparecia.
@@ -67,8 +74,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 ## <a name="updates-for-version-121026"></a>Atualizações para a versão 1.2.1026
 
 *Data da publicação: 27/05/2020*
-
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xsGB), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xd8P), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4xq7m)
 
 - Agora, ao assinar, é possível escolher a conta em vez de digitar o endereço de email.
 - Foi adicionada uma nova opção **Assinar com URL** que permite especificar a URL do workspace que você está assinando ou aproveitar, quando disponível, a [descoberta de email](../rds-email-discovery.md) nos casos em que não conseguimos localizar seus recursos automaticamente. Isso é parecido com o processo de assinatura em outros clientes da Área de Trabalho Remota. Isso pode ser usado para assinar diretamente os workspaces da Área de Trabalho Virtual do Windows.
@@ -88,8 +93,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 ## <a name="updates-for-version-12945"></a>Atualizações para a versão 1.2.945
 
 *Data da publicação: 28/04/2020*
-
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNM), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vhNO), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4vuSV)
 
 - Adição de novas opções de configurações de exibição para conexões da área de trabalho disponíveis ao clicar com o botão direito do mouse em um ícone de área de trabalho no Centro de Conexão.
   - Agora há três opções de configuração de exibição: **Todas as exibições**, **Exibição única** e **Exibições selecionadas**.

@@ -4,12 +4,12 @@ ms.date: 07/02/2012
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 6e022e4fdae631199bacca5f67c7953125ddd141
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d4c34484f7eb12b9876dcca7809a31c0c291bcce
+ms.sourcegitcommit: 3da6fcf4d853f6ff24b785b87787d0677b878253
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950730"
+ms.lasthandoff: 09/12/2020
+ms.locfileid: "90044823"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>Migrar a replicação do SYSVOL para a Replicação do DFS
 
@@ -68,16 +68,16 @@ Este documento pressupõe que você tenha um conhecimento básico do AD DS (Acti
 
 ## <a name="additional-references"></a>Referências adicionais
 
-[Série de Migração SYSVOL: Parte 1 – Introdução ao processo de migração SYSVOL](https://go.microsoft.com/fwlink/?linkid=121756)
+[Série de Migração SYSVOL: Parte 1 – Introdução ao processo de migração SYSVOL](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-1-8211-introduction-to-the-sysvol/ba-p/423456)
 
-[Série de Migração SYSVOL: Parte 2 – Dfsrmig.exe: A ferramenta de migração SYSVOL](https://go.microsoft.com/fwlink/?linkid=121757)
+[Série de Migração SYSVOL: Parte 2 – Dfsrmig.exe: A ferramenta de migração SYSVOL](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-2-8211-dfsrmig-exe-the-sysvol/ba-p/423470)
 
-[Série de Migração SYSVOL: Parte 3 – Como migrar para o estado "PREPARADO"](https://go.microsoft.com/fwlink/?linkid=121758)
+[Série de Migração SYSVOL: Parte 3 – Como migrar para o estado 'PREPARADO'](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-3-migrating-to-the-prepared-state/ba-p/423503)
 
-[Série de Migração SYSVOL: Parte 4 – Migrar para o estado 'REDIRECIONADO'](https://go.microsoft.com/fwlink/?linkid=121759)
+[Série de Migração SYSVOL: Parte 4 – Como migrar para o estado 'REDIRECIONADO'](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-4-8211-migrating-to-the-8216/ba-p/423514)
 
-[Série de Migração SYSVOL: Parte 5 – Migrar para o estado 'ELIMINADO'](https://go.microsoft.com/fwlink/?linkid=121760)
+[Série de Migração SYSVOL: Parte 5 – Como migrar para o estado 'ELIMINADO'](https://techcommunity.microsoft.com/t5/storage-at-microsoft/sysvol-migration-series-part-5-8211-migrating-to-the-8216/ba-p/423516)
 
-[Guia passo a passo para Sistemas de Arquivos Distribuídos no Windows Server 2008](https://go.microsoft.com/fwlink/?linkid=85231)
+[Guia passo a passo para Sistemas de Arquivos Distribuídos no Windows Server 2008](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732863(v=ws.10))
 
-[Referência Técnica de VPN](https://go.microsoft.com/fwlink/?linkid=121764)
+[Referência Técnica de VPN](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759297(v=ws.10))

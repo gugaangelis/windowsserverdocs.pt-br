@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/05/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bd3e1d5f06e5c415b4f300d9a2c8a9b390e5051
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: cb1c519e6da55bb6ee8187db4b388870f1d4b42f
+ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702825"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89554459"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Introdução ao cliente da Área de Trabalho do Windows
 
@@ -132,18 +132,17 @@ O cliente usará as configurações definidas pelo administrador, a menos que vo
 - A **Resolução** permite que você especifique a resolução da área de trabalho remota. A sessão reterá essa resolução por toda a duração. Essa configuração só está disponível no modo **Tela única** e quando **Atualizar a resolução ao redimensionar** está desabilitado.
 - **Alterar o tamanho do texto e dos aplicativos** especifica o tamanho do conteúdo da sessão. Essa configuração se aplica somente ao se conectar ao Windows 8.1 e posterior ou ao Windows Server 2012 R2 e posterior. Essa configuração só está disponível no modo **Tela única** e quando **Atualizar a resolução ao redimensionar** está desabilitado.
 
-## <a name="provide-feedback"></a>Fornecer comentários
+## <a name="give-us-feedback"></a>Fornecer comentários
 
-Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](feedback-hub://?tabid=2&contextid=883). Você também pode acessar o Hub de Feedback por meio do cliente:
+Tem uma sugestão de recursos ou deseja relatar um problema? Conte-nos usando o [Hub de Comentários](https://aka.ms/rddesktopfeedback).
 
-1. Na Central de Conexões, toque na opção **Enviar comentários** na barra de comandos na parte superior do cliente para abrir o aplicativo Hub de Feedback.
-2. Insira as informações necessárias nos campos **Resumo** e **Detalhes**. Quando terminar, toque em **Avançar**.
-3. Selecione a opção **Problema** ou **Sugestão**.
-4. Verifique se a categoria está em **Aplicativos** > **Área de Trabalho Remota**. Em caso afirmativo, toque em **Avançar**.
-5. Examine os tópicos de comentários existentes para ver se outra pessoa relatou o mesmo problema. Caso contrário, selecione **Criar um bug** e, em seguida, toque em **Avançar**.
-6. Na próxima página, você poderá nos fornecer mais informações para ajudarmos a resolver seu problema. Você pode escrever informações mais detalhadas, enviar capturas de tela e até mesmo criar uma gravação do problema para nos mostrar o que aconteceu. Para fazer uma gravação, selecione **Iniciar a gravação** e, em seguida, repita o que você fez até o ponto em que o problema ocorreu. Quando terminar, retorne ao Hub de Feedback e selecione **Parar a gravação**.
-7. Quando estiver satisfeito com as informações, toque em **Enviar**.
-8. Na página “Agradecemos seus comentários!”, toque em **Compartilhar meus comentários** para gerar um link para seus comentários, que poderá ser compartilhado com outras pessoas, conforme necessário.
+Você também pode nos fornecer comentários selecionando o botão que se parece com um emoticon de smiley no aplicativo cliente, conforme mostrado na seguinte imagem:
+
+> [!div class="mx-imgBorder"]
+> ![Uma captura de tela do ícone de smiley que leva você ao Hub de Comentários.](../media/smiley-face-icon.png)
+
+>[!NOTE]
+>Para que possamos ajudar você da melhor maneira, precisamos que nos forneça informações com o máximo possível de detalhes sobre o problema. Por exemplo, você pode incluir capturas de tela ou uma gravação das ações que você realizou antes de encontrar o problema. Para obter mais dicas sobre como fornecer comentários úteis, confira [Comentários](/windows-insider/at-home/feedback#add-new-feedback).
 
 ### <a name="access-client-logs"></a>Acessar logs do cliente
 
