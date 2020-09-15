@@ -3,16 +3,16 @@ title: Administrar o Server Core
 description: Saiba como administrar uma instalação Server Core do Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
-ms.author: elizapo
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 8eba1e081c57c1c668a4e52ecb85fb4716a36fdc
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 089d6437bd8c246bae3da5898870ea9cdd442656
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895908"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077863"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar um servidor Server Core
 
@@ -40,7 +40,7 @@ Para definir um endereço IP estático, faça o seguinte:
    New-NetIPaddress -InterfaceIndex 12 -IPAddress 192.0.2.2 -PrefixLength 24 -DefaultGateway 192.0.2.1
    ```
 
-   onde:
+   em que:
    - **InterfaceIndex** é o valor de **IfIndex** da etapa 2. (Em nosso exemplo, 12)
    - **IPAddress** é o endereço IP estático que você deseja definir. (Em nosso exemplo, 191.0.2.2)
    - **PrefixLength** é o comprimento do prefixo (outra forma de máscara de sub-rede) para o endereço IP que você está definindo. (Para nosso exemplo, 24)
@@ -51,7 +51,7 @@ Para definir um endereço IP estático, faça o seguinte:
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4
    ```
 
-   onde:
+   em que:
    - **InterfaceIndex** é o valor de IfIndex da etapa 2.
    - **ServerAddresses** é o endereço IP do seu servidor DNS.
 5. Para adicionar vários servidores DNS, execute o seguinte cmdlet:
@@ -113,9 +113,9 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |             Definir a senha administrativa local             |                                                                                                                                                                                                      **administrador de usuário de rede**\*                                                                                                                                                                                                      |
 |                  Ingressar um computador em um domínio                  |                                                                                                                                                       **Netdom join% ComputerName%** **/Domain: \<domain\> /userd: \<domain\\username\> /passwordd:**\* <br> Reinicie o computador.                                                                                                                                                        |
 |              Confirmar que o domínio foi alterado              |                                                                                                                                                                                                                 **set**                                                                                                                                                                                                                 |
-|                Remover um computador de um domínio                |                                                                                                                                                                                                   **Netdom remover\<computername\>**                                                                                                                                                                                                    |
-|         Adicionar um usuário ao grupo local de administradores          |                                                                                                                                                                                       **Administradores do net localgroup/Add\<domain\\username\>**                                                                                                                                                                                       |
-|       Remover um usuário do grupo Administradores local       |                                                                                                                                                                                     **Administradores do net localgroup/Delete\<domain\\username\>**                                                                                                                                                                                      |
+|                Remover um computador de um domínio                |                                                                                                                                                                                                   **Netdom remover \<computername\>**                                                                                                                                                                                                    |
+|         Adicionar um usuário ao grupo local de administradores          |                                                                                                                                                                                       **Administradores do net localgroup/Add \<domain\\username\>**                                                                                                                                                                                       |
+|       Remover um usuário do grupo Administradores local       |                                                                                                                                                                                     **Administradores do net localgroup/Delete \<domain\\username\>**                                                                                                                                                                                      |
 |               Adicionar um usuário ao computador local                |                                                                                                                                                                                                **net user \<domain\username\> \* /Add**                                                                                                                                                                                                 |
 |               Adicionar um grupo ao computador local               |                                                                                                                                                                                                 **net localgroup \<group name\> /Add**                                                                                                                                                                                                  |
 |          Alterar o nome de um computador associado a um domínio          |                                                                                                                                                           **netdom RENAMECOMPUTER% ComputerName%/NewName: \<new computer name\> /userd: \<domain\\username\> /passwordd:**\*                                                                                                                                                            |
@@ -126,9 +126,9 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |                 Alterar para um endereço IP estático                 | **ipconfig/all** <br>Registre as informações relevantes ou Redirecione-as para um arquivo de texto (**ipconfig/all >ipconfig.txt**).<br>**netsh interface IPv4 mostrar interfaces**<br>Verifique se há uma lista de interfaces.<br>**netsh interface ipv4 set endereço \<Name ID from interface list\> origem = estático endereço = \<preferred IP address\> Gateway =\<gateway address\>**<br>Execute **ipconfig/all** para verificar se o DHCP habilitado está definido como **não**. |
 |                   Defina um endereço DNS estático.                   |   <strong>netsh interface ipv4 add dnsserver name = \<name or ID of the network interface card\> endereço = \<IP address of the primary DNS server\> índice = 1 <br></strong>netsh interface ipv4 add dnsserver name = \<name of secondary DNS server\> endereço = \<IP address of the secondary DNS server\> índice = 2\*\* <br> Repita conforme apropriado para adicionar mais servidores.<br>Execute **ipconfig/all** para verificar se os endereços estão corretos.   |
 | Alterar para um endereço IP fornecido pelo DHCP de um endereço IP estático |                                                                                                                                      **netsh interface ipv4 set endereço name = \<IP address of local system\> Source = DHCP** <br>Execute **ipconfig/all** para verificar se o DHCP habilitado está definido como **Sim**.                                                                                                                                      |
-|                      Inserir uma chave do produto                      |                                                                                                                                                                                                   **slmgr. vbs – ipk\<product key\>**                                                                                                                                                                                                    |
+|                      Inserir uma chave do produto                      |                                                                                                                                                                                                   **slmgr. vbs – ipk \<product key\>**                                                                                                                                                                                                    |
 |                  Ativar o servidor localmente                  |                                                                                                                                                                                                           **slmgr. vbs-ato**                                                                                                                                                                                                            |
-|                 Ativar o servidor remotamente                  |                                            **cscript slmgr. vbs – ipk\<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr. vbs-ato \<servername\> \<username\>\<password\>** <br>Obtenha o GUID do computador executando **cscript slmgr. vbs-did** <br> Executar **cscript slmgr. vbs-DLI \<GUID\> ** <br>Verifique se o status da licença está definido como **licenciado (ativado)**.                                             |
+|                 Ativar o servidor remotamente                  |                                            **cscript slmgr. vbs – ipk \<product key\>\<server name\>\<username\>\<password\>** <br>**cscript slmgr. vbs-ato \<servername\> \<username\>\<password\>** <br>Obtenha o GUID do computador executando **cscript slmgr. vbs-did** <br> Executar **cscript slmgr. vbs-DLI \<GUID\> ** <br>Verifique se o status da licença está definido como **licenciado (ativado)**.                                             |
 
 ### <a name="networking-and-firewall"></a>Rede e firewall
 
@@ -176,9 +176,9 @@ Use as informações de referência a seguir para executar tarefas administrativ
 |Tarefa|Comando|
 |----|-------|
 |Listar logs de eventos|**wevtutil El**|
-|Eventos de consulta em um log especificado|**wevtutil qe/f: texto\<log name\>**|
-|Exportar um log de eventos|**EPL de wevtutil\<log name\>**|
-|Limpar um log de eventos|**CL de wevtutil\<log name\>**|
+|Eventos de consulta em um log especificado|**wevtutil qe/f: texto \<log name\>**|
+|Exportar um log de eventos|**EPL de wevtutil \<log name\>**|
+|Limpar um log de eventos|**CL de wevtutil \<log name\>**|
 
 
 ### <a name="disk-and-file-system"></a>Disco e sistema de arquivos

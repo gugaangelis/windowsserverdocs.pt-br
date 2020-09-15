@@ -2,15 +2,15 @@
 title: Aprimoramentos do Gerenciador de memória e cache
 description: Aprimoramentos de cache e Gerenciador de Memória no Windows Server 2016
 ms.topic: article
-ms.author: pavel; atales
+ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c2fdceb7ff3743890c73ee4108ffcf8e00fe437f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 799598223812f5992db0354780424f7da13033ea
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992057"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078003"
 ---
 # <a name="cache-and-memory-manager-improvements"></a>Aprimoramentos do Gerenciador de memória e cache
 

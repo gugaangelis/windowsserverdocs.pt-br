@@ -3,16 +3,16 @@ title: Implantar o Windows Server Update Services
 description: O tópico WSUS (Windows Server Update Service) – uma visão geral do processo da implantação com links para quatro etapas para realizá-lo
 ms.topic: get-started-article
 ms.assetid: 2708f6b2-4252-4b8f-9b7e-84c9b4222075
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 8011da301c1b4733692910b1b3f126d0f59f9307
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 78df9b93205e07e58310ad2077571b29b9ff5360
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87881155"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624544"
 ---
 # <a name="deploy-windows-server-update-services"></a>Implantar o Windows Server Update Services
 

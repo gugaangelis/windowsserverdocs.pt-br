@@ -2,15 +2,15 @@
 title: Parâmetros de plano de energia balanceados recomendados para tempos de resposta rápidos
 description: Parâmetros de plano de energia balanceados recomendados para tempos de resposta rápidos
 ms.topic: conceptual
-ms.author: qizha;tristanb
+ms.author: qizha
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f733eea9ffae00421a58881b7ffc8deeaf7c785
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 77c33c80598645c4823748663d52fa3aa265e1dd
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992275"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077553"
 ---
 # <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parâmetros de plano de energia balanceados recomendados para cargas de trabalho que exigem tempos de resposta rápidos
 
@@ -19,7 +19,7 @@ O plano de energia **equilibrado** padrão usa a **taxa de transferência** como
 No entanto, o **tempo de resposta** pode aumentar exponencialmente com aumentos de utilização. Hoje em dia, o requisito de tempo de resposta rápido aumentou drasticamente. Embora a Microsoft tenha sugerido os usuários para alternar para o plano de energia de **alto desempenho** quando eles precisam de um tempo de resposta rápido, alguns usuários não querem perder o benefício de energia durante os níveis de carga leve a médio. Portanto, a Microsoft fornece o seguinte conjunto de alterações de parâmetro sugeridas para as cargas de trabalho que exigem tempo de resposta rápido.
 
 
-| Parâmetro | Descrição | Valor Padrão | Valor proposto |
+| Parâmetro | Descrição | Valor padrão | Valor proposto |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Limite de aumento de desempenho do processador | Limite de utilização acima do qual a frequência deve aumentar | 90 | 60 |
 | Limite de redução de desempenho do processador | Limite de utilização abaixo do qual a frequência é reduzida | 80 | 40 |

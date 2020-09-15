@@ -2,15 +2,15 @@
 title: Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 description: Diretrizes de ajuste de desempenho para hosts de sessão Área de Trabalho Remota
 ms.topic: article
-ms.author: hammadbu; vladmis; denisgun
+ms.author: hammadbu
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 9a82f0db1f586e1f762292c61eabdd7f6556c8bc
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 82a89454cfab7cda9de4375c843cde81af5b0544
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992110"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078173"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sessão Área de Trabalho Remota de ajuste de desempenho
 

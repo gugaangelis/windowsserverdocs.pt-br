@@ -2,15 +2,15 @@
 title: Visão geral sobre ajuste de energia e desempenho para o Windows Server
 description: Visão geral sobre o ajuste do gerenciamento de energia do processador (PPM) para o Windows Server.
 ms.topic: conceptual
-ms.author: qizha;tristanb
+ms.author: qizha
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 535c1e2ccff14f01f015b67fd0fc2c6be4a04729
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1e1f409e5c84a603c628e1ceebe97317864c8785
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992406"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077608"
 ---
 # <a name="power-and-performance-tuning"></a>Ajuste de potência e desempenho
 
@@ -111,8 +111,8 @@ No Windows Server 2016, o valor padrão para o modo Boost é 3.
 | **Nome** | **Comportamento baseado em estado P** | **Comportamento de CPPC** |
 |--------------------------|------------------------|-------------------|
 | 0 (desabilitado) | Desabilitado | Desabilitado |
-| 1 (habilitado) | Habilitada | Habilitado com eficiência |
-| 2 (agressivo) | Habilitada | Agressivo |
+| 1 (habilitado) | habilitado | Habilitado com eficiência |
+| 2 (agressivo) | habilitado | Agressivo |
 | 3 (eficiente habilitado) | Eficiente | Habilitado com eficiência |
 | 4 (agressivo eficiente) | Eficiente | Agressivo |
 

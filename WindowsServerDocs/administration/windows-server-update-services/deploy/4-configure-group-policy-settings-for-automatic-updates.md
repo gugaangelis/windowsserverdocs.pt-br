@@ -3,16 +3,16 @@ title: Etapa 4 – Definir as configurações da política de grupo para atualiz
 description: Tópico sobre o WSUS (Windows Server Update Service) – definir configurações de Política de Grupo para Atualizações Automáticas é a etapa quatro em um processo de quatro etapas para implantar o WSUS
 ms.topic: article
 ms.assetid: 62177d05-d832-4ea8-bca4-47a8cd34a19c
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ca59369cda4c38af111b9ccd3141219b1516cbd7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3beaea0ff9d0ab3851cfadbd516f36b45bd697ce
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87991097"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624571"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Etapa 4: Definir as configurações da Política de Grupo para atualizações automáticas
 

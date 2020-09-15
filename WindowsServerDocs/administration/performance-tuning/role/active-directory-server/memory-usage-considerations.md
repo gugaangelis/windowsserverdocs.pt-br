@@ -2,15 +2,15 @@
 title: Considerações sobre o uso de memória no ajuste de desempenho AD DS
 description: Uso de memória pelo processo de Lsass.exe em controladores de domínio que executam o Windows Server 2012 R2, 2016 e 2019.
 ms.topic: article
-ms.author: v-tea; lindakup
+ms.author: v-tea
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 6ad663e77603ca813601345614174afd0dcf0e99
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 546839b803e8306fb3093ade6e317a155b7a117d
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896224"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077273"
 ---
 # <a name="memory-usage-considerations-for-ad-ds-performance-tuning"></a>Considerações de uso de memória para ajuste de desempenho AD DS
 

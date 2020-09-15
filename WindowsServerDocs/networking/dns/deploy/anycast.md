@@ -2,18 +2,16 @@
 title: Visão geral do DNS anycast
 description: Este tópico fornece uma breve visão geral do DNS anycast
 manager: laurawi
-ms.prod: windows-server
-ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: greglin
 author: greg-lindsay
-ms.openlocfilehash: 2f91ace398cf236967fadde21db7ea0957640995
-ms.sourcegitcommit: c4f30b1617571fe434c7fe054695d163e73506b8
+ms.openlocfilehash: 2a891d2e74ec00c923808f7dde347bfd17a2b5b5
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88048884"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078573"
 ---
 # <a name="anycast-dns-overview"></a>Visão geral do DNS anycast
 
@@ -25,11 +23,11 @@ Este tópico fornece informações sobre como o DNS anycast funciona.
 
 A anycast é uma tecnologia que fornece vários caminhos de roteamento para um grupo de pontos de extremidade que são atribuídos ao mesmo endereço IP. Cada dispositivo do grupo anuncia o mesmo endereço em uma rede e os protocolos de roteamento são usados para escolher qual é o melhor destino.
 
-A anycast permite que você dimensione um serviço sem estado, como DNS ou HTTP, colocando vários nós atrás do mesmo endereço IP e usando o roteamento de ECMP (vários caminhos de custo igual) para direcionar o tráfego entre esses nós. A anycast é diferente da unicast, na qual cada ponto de extremidade tem seu próprio endereço IP separado. 
+A anycast permite que você dimensione um serviço sem estado, como DNS ou HTTP, colocando vários nós atrás do mesmo endereço IP e usando o roteamento de ECMP (vários caminhos de custo igual) para direcionar o tráfego entre esses nós. A anycast é diferente da unicast, na qual cada ponto de extremidade tem seu próprio endereço IP separado.
 
 ## <a name="why-use-anycast-with-dns"></a>Por que usar anycast com DNS?
 
-Com o DNS anycast, você pode habilitar um servidor DNS ou um grupo de servidores para responder a consultas DNS com base na localização geográfica de um cliente DNS. Isso pode melhorar o tempo de resposta DNS e simplificar as configurações do cliente DNS. O DNS anycast também fornece uma camada extra de redundância e pode ajudar a proteger contra ataques de negação de serviço DNS. 
+Com o DNS anycast, você pode habilitar um servidor DNS ou um grupo de servidores para responder a consultas DNS com base na localização geográfica de um cliente DNS. Isso pode melhorar o tempo de resposta DNS e simplificar as configurações do cliente DNS. O DNS anycast também fornece uma camada extra de redundância e pode ajudar a proteger contra ataques de negação de serviço DNS.
 
 ### <a name="how-anycast-dns-works"></a>Como funciona o DNS anycast
 
@@ -37,15 +35,15 @@ O DNS anycast funciona usando protocolos de roteamento como Border Gateway Proto
 
 Com a anycast, os servidores que existem em várias localizações geográficas anunciam um único endereço IP idêntico para seu gateway local (roteador). Quando um cliente DNS inicia uma consulta para o endereço anycast, as rotas disponíveis são avaliadas e a consulta DNS é enviada para o local preferencial. Em geral, esse é o local mais próximo com base na topologia de rede. Veja o exemplo a seguir.
 
-![DNS anycast](../../media/Anycast/anycast.png)
+![DNS Anycast](../../media/Anycast/anycast.png)
 
-**Figura 1**: quatro servidores DNS localizados em sites diferentes em uma rede cada um anuncia o mesmo endereço IP de anycast (setas pretas) para a rede. Um dispositivo cliente DNS envia uma solicitação para o endereço IP de anycast. Os dispositivos de rede analisam as rotas disponíveis e enviam a consulta DNS do cliente para o local mais próximo (seta azul). 
+**Figura 1**: quatro servidores DNS localizados em sites diferentes em uma rede cada um anuncia o mesmo endereço IP de anycast (setas pretas) para a rede. Um dispositivo cliente DNS envia uma solicitação para o endereço IP de anycast. Os dispositivos de rede analisam as rotas disponíveis e enviam a consulta DNS do cliente para o local mais próximo (seta azul).
 
 O DNS anycast é usado normalmente hoje para rotear o tráfego DNS para muitos serviços DNS globais. Por exemplo, o sistema de servidor DNS raiz depende muito do DNS anycast. A anycast também funciona com uma variedade de protocolos de roteamento e pode ser usada exclusivamente em intranets.
 
 ## <a name="windows-server-native-bgp-anycast-demo"></a>Demonstração de anycast do BGP nativo do Windows Server
 
-O procedimento a seguir demonstra como o BGP nativo no Windows Server pode ser usado com o DNS anycast.  
+O procedimento a seguir demonstra como o BGP nativo no Windows Server pode ser usado com o DNS anycast.
 
 ### <a name="requirements"></a>Requisitos
 
@@ -105,7 +103,7 @@ Use Gerenciador do Servidor e o console de gerenciamento do DNS ou o Windows Pow
 
 ### <a name="configure-loopback-adapters"></a>Configurar adaptadores de loopback
 
-Insira os seguintes comandos em um prompt elevado do Windows PowerShell em DC001 e DC002 para configurar adaptadores de loopback. 
+Insira os seguintes comandos em um prompt elevado do Windows PowerShell em DC001 e DC002 para configurar adaptadores de loopback.
 
 > [!NOTE]
 > O comando **install-Module** requer acesso à Internet. Isso pode ser feito por meio da atribuição temporária da VM a uma rede externa no Hyper-V.
@@ -160,7 +158,7 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 ### <a name="summary-diagram"></a>Diagrama de resumo
 
-![DNS anycast](../../media/Anycast/anycast-lab.png)
+![DNS Anycast](../../media/Anycast/anycast-lab.png)
 
 **Figura 2**: configuração de laboratório para demonstração de DNS de anycast BGP nativo
 
@@ -239,15 +237,15 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 P: o DNS de anycast é uma boa solução para usar em um ambiente DNS local?<br>
 R: o DNS de anycast funciona diretamente com um serviço DNS local. No entanto, a anycast não é *necessária* para que o serviço DNS seja dimensionado.
- 
+
 P: Qual é o impacto da implementação do DNS anycast em um ambiente com um número grande (ex: >50) de controladores de domínio? <br>
 R: não há nenhum impacto direto na funcionalidade. Se um balanceador de carga for usado, nenhuma configuração adicional nos controladores de domínio será necessária.
- 
+
 P: uma configuração de DNS anycast com suporte do atendimento ao cliente da Microsoft?<br>
-R: se você usar um balanceador de carga não Microsoft para encaminhar consultas DNS, a Microsoft dará suporte a problemas relacionados ao serviço do servidor DNS. Consulte o fornecedor do balanceador de carga para problemas relacionados ao encaminhamento de DNS. 
- 
+R: se você usar um balanceador de carga não Microsoft para encaminhar consultas DNS, a Microsoft dará suporte a problemas relacionados ao serviço do servidor DNS. Consulte o fornecedor do balanceador de carga para problemas relacionados ao encaminhamento de DNS.
+
 P: Qual é a melhor prática para o DNS de anycast com um número grande (ex: >50) de controladores de domínio?<br>
-R: a prática recomendada é usar um balanceador de carga em cada local geográfico. Os balanceadores de carga normalmente são fornecidos por um fornecedor externo. 
+R: a prática recomendada é usar um balanceador de carga em cada local geográfico. Os balanceadores de carga normalmente são fornecidos por um fornecedor externo.
 
 P: o DNS de anycast e o DNS do Azure têm funcionalidade semelhante?<br>
-R: o DNS do Azure usa Anycast. Para usar a anycast com o DNS do Azure, configure o balanceador de carga para encaminhar solicitações para o servidor DNS do Azure. 
+R: o DNS do Azure usa Anycast. Para usar a anycast com o DNS do Azure, configure o balanceador de carga para encaminhar solicitações para o servidor DNS do Azure.

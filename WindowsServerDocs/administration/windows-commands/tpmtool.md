@@ -3,15 +3,15 @@ title: tpmtool
 description: Artigo de referência para tpmtool, que obtém informações sobre o Trusted Platform Module.
 ms.topic: reference
 author: ashleytqy
-ms.author: ashleytqy
-manager: ronaldai
+ms.author: asteoh
+manager: raigner
 ms.date: 05/07/2019
-ms.openlocfilehash: b0f234755eefdca15f214dad428f02631592e8c2
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: f9d1a7c0bc1516feea3afaf00d750e54871ad818
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89026994"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077583"
 ---
 # <a name="tpmtool"></a>tpmtool
 

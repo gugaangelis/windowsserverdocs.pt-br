@@ -2,15 +2,15 @@
 title: Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 description: Ajuste de desempenho para hosts de virtualização Área de Trabalho Remota
 ms.topic: article
-ms.author: hammadbu; vladmis; denisgun
+ms.author: hammadbu
 author: phstee
 ms.date: 10/22/2019
-ms.openlocfilehash: 235dd0209030854f1fc883f52ab41550ab693dc5
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b9a634ddf8e2f90e3a61db7aad691ea22ec03fed
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992080"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078133"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Ajuste de desempenho Área de Trabalho Remota hosts de virtualização
 

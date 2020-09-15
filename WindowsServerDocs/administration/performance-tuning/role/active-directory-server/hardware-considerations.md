@@ -2,15 +2,15 @@
 title: Considerações de hardware no ajuste de desempenho do AD
 description: Considerações de hardware no ajuste de desempenho do AD
 ms.topic: article
-ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
+ms.author: timwi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0ec22e4c85dab5e76e61cea8a68d88d7fd37b14e
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: b01df0d8bcef7dc49ca1a27833abb1022fcf0d90
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896247"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077344"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>Considerações de hardware no adiciona ajuste de desempenho
 

@@ -3,15 +3,15 @@ title: Ferramentas de Administração de Servidor Remoto
 description: Tópico de nível superior das Ferramentas de Administração de Servidor Remoto
 ms.topic: get-started-article
 ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dansimp
-ms.openlocfilehash: 49a86a24b3637a701d6857af246eaa2852f1c73f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.author: lizross
+author: eross-msft
+manager: mtillman
+ms.openlocfilehash: a9851e00cde56c37d86b923a6780427d6dfab900
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948769"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624195"
 ---
 # <a name="remote-server-administration-tools"></a>Ferramentas de Administração de Servidor Remoto
 

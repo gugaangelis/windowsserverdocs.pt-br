@@ -2,15 +2,15 @@
 title: Solucionar problemas de desempenho do Gerenciador de memória e cache
 description: Solucionar problemas de desempenho do Gerenciador de memória e cache no Windows Server 16
 ms.topic: article
-ms.author: pavel; atales
+ms.author: pavel
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ba6c04ca8ac1941221809af958a9d6c53701b101
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: cb9aa4d9ec10b27e423da9d312b5d395c6e2e690
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992016"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077983"
 ---
 # <a name="troubleshoot-cache-and-memory-manager-performance-issues"></a>Solucionar problemas de desempenho do Gerenciador de memória e cache
 

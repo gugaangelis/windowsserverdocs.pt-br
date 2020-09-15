@@ -2,15 +2,15 @@
 title: Desempenho de e/s de armazenamento do Hyper-V
 description: Considerações de desempenho de e/s de armazenamento no ajuste de desempenho do Hyper-V
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: d19790a6a86c7538ee3a062b3f08bbbdbc8b9d92
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 762ff719eb60a2fbcec61c0b9b6cb2e14f9ba677
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992083"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078214"
 ---
 # <a name="hyper-v-storage-io-performance"></a>Desempenho de e/s de armazenamento do Hyper-V
 

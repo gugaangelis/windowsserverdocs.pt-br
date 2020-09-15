@@ -2,15 +2,15 @@
 title: Configuração do Hyper-V
 description: Considerações de configuração do Hyper-V para ajuste de desempenho
 ms.topic: article
-ms.author: asmahi; sandysp; jopoulso
+ms.author: asmahi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 42e95662cd2177b37fef1b47f0a51989ab964168
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a7779b882fe6a704dcf12819ad91042c20381eba
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992156"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077213"
 ---
 # <a name="hyper-v-configuration"></a>Configuração do Hyper-V
 
@@ -30,7 +30,7 @@ As considerações de hardware para servidores que executam o Hyper-V geralmente
 
     O servidor físico requer memória suficiente para as partições raiz e filho. A partição raiz requer memória para executar e/SS com eficiência em nome das máquinas virtuais e operações como um instantâneo de máquina virtual. O Hyper-V garante que memória suficiente esteja disponível para a partição raiz e permite que a memória restante seja atribuída a partições filho. As partições filho devem ser dimensionadas com base nas necessidades da carga esperada para cada máquina virtual.
 
--   **Storage**
+-   **Armazenamento**
 
     O hardware de armazenamento deve ter largura de banda de e/s suficiente e capacidade para atender às necessidades atuais e futuras das máquinas virtuais que o servidor físico hospeda. Considere esses requisitos ao selecionar os controladores de armazenamento e os discos e escolher a configuração de RAID. Colocar máquinas virtuais com cargas de trabalho com grande volume de disco em discos físicos diferentes provavelmente melhorará o desempenho geral. Por exemplo, se quatro máquinas virtuais compartilharem um único disco e a utilizarem ativamente, cada máquina virtual poderá produzir apenas 25% da largura de banda do disco.
 

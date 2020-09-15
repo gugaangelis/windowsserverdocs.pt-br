@@ -1,16 +1,16 @@
 ---
 title: O que é o Server Core 2008?
 description: Saiba mais sobre a opção de instalação Server Core no Windows Server 2008
-ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
-author: heidilohr
-ms.openlocfilehash: fb3e0b60787cb12c3401a14a54aebf4809c61b45
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+author: pronichkin
+ms.author: artemp
+ms.openlocfilehash: 443c0307529a21a6a23da996486a2e6c40894af1
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993229"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077783"
 ---
 # <a name="what-is-server-core-2008"></a>O que é o Server Core 2008?
 >Aplica-se a: Windows Server 2008
@@ -24,7 +24,7 @@ Antes de continuarmos, a frase "opção de instalação" precisa ser explicada. 
 
 **Tabela 1-1** Edições 2008 do Windows Server e seu suporte para opções de instalação
 
-| Edition       | Completo          | Server Core  |
+| Edição       | Completo          | Server Core  |
 | ------------- | :-------------: | :------------: |
 | Windows Server 2008 Standard (x86 e x64)       | X | X        |
 | Windows Server 2008 Enterprise (x86 e x64)       | X | X        |

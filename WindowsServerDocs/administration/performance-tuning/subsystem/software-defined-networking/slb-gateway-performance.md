@@ -2,15 +2,15 @@
 title: Ajuste de desempenho do gateway SLB em redes definidas pelo software
 description: Diretrizes de ajuste de desempenho do gateway SLB em redes SDN
 ms.topic: article
-ms.author: grcusanz; anpaul
+ms.author: grcusanz
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 64d045a270b8762d0d269055c8c65d1e40a71d63
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: d45a5f585c7da30e4d9bdd4c8ec3c2e2003b7ea0
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87895933"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077913"
 ---
 # <a name="slb-gateway-performance-tuning-in-software-defined-networks"></a>Ajuste de desempenho do gateway SLB em redes definidas pelo software
 
@@ -26,7 +26,7 @@ Uma conexão individual com um VIP (IP virtual) sempre será enviada para o mesm
 
 Em alguns casos, quando a origem da solicitação é originada de um host SDN que é adicionado ao mesmo controlador de rede que gerencia o VIP, a otimização adicional do caminho de entrada para a solicitação também é executada, o que permite que a maioria dos pacotes percorra diretamente do cliente para o servidor, ignorando totalmente a VM Mux.  Nenhuma configuração adicional é necessária para que essa otimização ocorra.
 
-Cada VM MUX SLB deve ser dimensionada de acordo com as diretrizes fornecidas na seção requisitos de função de máquina virtual de infraestrutura SDN do tópico [planejar uma infraestrutura de rede definida pelo software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) .
+Cada VM MUX SLB deve ser dimensionada de acordo com as diretrizes fornecidas na seção requisitos de função de máquina virtual de infraestrutura SDN do tópico  [planejar uma infraestrutura de rede definida pelo software](../../../../networking/sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md) .
 
 ## <a name="single-root-io-virtualization-sr-iov"></a>SR-IOV (virtualização de e/s de raiz única)
 

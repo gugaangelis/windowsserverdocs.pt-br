@@ -3,15 +3,16 @@ title: Configurar arquivos de despejo de memória para a instalação do Server 
 description: Saiba como configurar arquivos de despejo de memória para uma instalação do Server Core do Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: d01757fcf1539e41db866b46cdf9eba60a59fc04
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e3ef6076465bc7d165b58f1205ff8d0cf25014b7
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993211"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077773"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar arquivos de despejo de memória para a instalação do Server Core
 
@@ -23,7 +24,7 @@ Use as etapas a seguir para configurar um despejo de memória para a instalaçã
 
 A primeira etapa é configurar manualmente as opções de falha e recuperação do sistema. Isso é necessário para concluir as etapas restantes.
 
-Execute o seguinte comando:
+Execute o comando a seguir:
 
 ```
 wmic computersystem set AutomaticManagedPagefile=False
@@ -84,7 +85,7 @@ Para alterar o tipo de despejo de memória atual, execute o seguinte comando:
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<Value\>pode ser 0, 1, 2 ou 3, conforme definido abaixo.
+\<Value\> pode ser 0, 1, 2 ou 3, conforme definido abaixo.
 
 - 0: desabilitar a remoção de um despejo de memória.
 - 1: despejo de memória completo. Registra todo o conteúdo da memória do sistema quando o computador é interrompido inesperadamente. Um despejo de memória cheio pode conter dados de processos que estavam em execução quando o despejo de memória foi coletado.
@@ -145,7 +146,7 @@ Para verificar as configurações do arquivo de paginação atual, execute um do
    wmic.exe pagefile
    ```
 
-   ou o
+   ou
 
    ```
    wmic.exe pagefile list /format:list

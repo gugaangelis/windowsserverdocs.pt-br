@@ -2,15 +2,15 @@
 title: Ajuste de desempenho para HTTP 1.1/2
 description: Recomendações de ajuste de desempenho para HTTP 1.1/2
 ms.topic: article
-ms.author: ivanpash; gmonte
+ms.author: ivanpash
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 362ceea398e13c5e537d1d828b86eec8b5d66a8f
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: 853c71aea99d296c89f772b0ddba03ed024e385a
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896028"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078073"
 ---
 # <a name="performance-tuning-http-112"></a>Ajuste de desempenho HTTP 1.1/2
 

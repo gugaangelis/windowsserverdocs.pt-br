@@ -1,18 +1,17 @@
 ---
 title: Solucionar problemas no servidor DHCP
 description: Este Artilce apresenta como solucionar problemas no servidor DHCP e coletar dados.
-ms.service: na
 manager: dcscontentpm
 ms.date: 5/26/2020
 ms.topic: article
 author: Deland-Han
 ms.author: delhan
-ms.openlocfilehash: d6fc69c15c3465769232d89f70a65ca915d0584e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: a6b5e4128c2e07e51ab8a9c07155a8c0212fcad8
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989031"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078583"
 ---
 # <a name="troubleshoot-problems-on-the-dhcp-server"></a>Solucionar problemas no servidor DHCP
 
@@ -62,7 +61,7 @@ Para obter mais informações, consulte [analisar arquivos de log do servidor DH
 
 Um rastreamento de rede correlacionado pode indicar o que o servidor DHCP estava fazendo no momento em que o evento foi registrado. Para criar um rastreamento desse tipo, siga estas etapas:
 
-1.  Acesse o [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)e baixe o arquivo de [ \_tools.zipTSS](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) .
+1.  Acesse o [GitHub](https://github.com/CSS-Windows/WindowsDiag/tree/master/ALL/TSS)e baixe o arquivo de [ \_tools.zipTSS ](https://github.com/CSS-Windows/WindowsDiag/blob/master/ALL/TSS/tss_tools.zip) .
 
 2.  Copie o \_ arquivo detools.zip TSS e expanda-o para um local no disco local, como a pasta C: \\ Tools.
 

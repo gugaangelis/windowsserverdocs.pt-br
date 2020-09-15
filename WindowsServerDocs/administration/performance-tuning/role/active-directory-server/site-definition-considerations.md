@@ -2,15 +2,15 @@
 title: Definição de site e posicionamento do controlador de domínio no adiciona ajuste de desempenho
 description: Definição de site e considerações de posicionamento do controlador de domínio em Active Directory ajuste de desempenho.
 ms.topic: article
-ms.author: timwi; chrisrob; herbertm; kenbrumf;  mleary; shawnrab
+ms.author: timwi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: bb0850923dca2f0749c1f2cb5e787d998e8f03ca
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: fa051bd6637eff9f5a25cd8784d33a60095ccd54
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992250"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077193"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Posicionamento adequado dos controladores de domínio e considerações sobre o local
 

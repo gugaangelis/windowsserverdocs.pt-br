@@ -2,16 +2,16 @@
 title: Suporte mensal a ISVs para atualização delta sem WSUS
 description: Tópico sobre o WSUS (Windows Server Update Service) – como ISVs (fornecedores independentes de software) podem usar temporariamente a atualização Delta mensal, em vez da entrega de atualizações do WSUS Express para reduzir o tamanho do pacote
 ms.topic: get-started article
-author: sakitong
-ms.author: coreyp
-manager: dougkim
+ms.author: lizross
+author: eross-msft
+manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 103e52d140ee70ff2ee6ac7817371c9b80d037ca
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2b983b06a9f8bf4c2a6d5c72aef13689a72b3684
+ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990998"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89624477"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Suporte mensal a ISVs para atualização delta sem WSUS
 

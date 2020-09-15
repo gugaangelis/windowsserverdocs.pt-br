@@ -3,15 +3,16 @@ title: Funções, serviços de função e recursos que não estão em contêiner
 description: Saiba mais sobre as funções e os recursos que removemos da imagem de contêiner do Server Core para o Windows Server.
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: lizap
+author: pronichkin
+ms.author: artemp
 ms.localizationpriority: medium
 ms.date: 05/07/2018
-ms.openlocfilehash: 2092e330af479ae0cbdb1da88ba87cf233307b59
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8b81ae6dc86ad9fd3a8650ca22ba9f3a42af4d3f
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993260"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077853"
 ---
 # <a name="roles-role-services-and-features-not-in-server-core-containers---windows-server-version-1803"></a>Funções, serviços de função e recursos que não estão em contêineres do Server Core-Windows Server, versão 1803
 
@@ -69,7 +70,7 @@ Aqui está a lista completa de recursos e funções removidas da imagem de cont�
 <br>iSCSITargetServer
 <br>iSCSITargetStorageProviders
 <br>iSNS_Service
-<br>Licenças
+<br>Licenciamento
 <br>LightweightServer
 <br>Microsoft-Hyper-V-Management-clientes
 <br>Microsoft-Hyper-V-offline

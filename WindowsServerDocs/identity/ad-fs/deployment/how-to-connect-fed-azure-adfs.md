@@ -6,14 +6,13 @@ manager: mtillman
 ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
 ms.topic: get-started-article
 ms.date: 10/28/2018
-ms.subservice: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5db03a2d275dc4a02295c588bd0789fa757b8503
-ms.sourcegitcommit: d5e27c1f2f168a71ae272bebf8f50e1b3ccbcca3
+ms.openlocfilehash: 3a53e8bb9e06e51627d14f6e5e3b918f58102478
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86956208"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078673"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implantando os Serviços de Federação do Active Directory no Azure
 O AD FS fornece recursos simplificados e seguros de federação de identidade e de logon único (SSO) da Web. A federação com o Azure AD ou o O365 habilita os usuários a se autenticar usando credenciais locais e acessar todos os recursos na nuvem. Como resultado, é importante ter uma infraestrutura altamente disponível do AD FS para garantir o acesso a recursos locais e na nuvem. Implantar o AD FS no Azure pode ajudar a atingir a alta disponibilidade necessária com esforço mínimo.
@@ -22,7 +21,7 @@ Há várias vantagens na implantação do AD FS no Azure. Algumas delas são lis
 * **Alta disponibilidade** -com a tecnologia de Conjuntos de Disponibilidade do Azure, você garante uma infraestrutura altamente disponível.
 * **Fácil de dimensionar** – precisa de mais desempenho? Migre facilmente para computadores mais eficientes com apenas alguns cliques no Azure
 * **Redundância geográfica cruzada** – com a Redundância Geográfica do Azure, você pode ter certeza de que sua infraestrutura é altamente disponível em todo o mundo
-* **Fácil de gerenciar** – com opções de gerenciamento altamente simplificado no portal do Azure, o gerenciamento da infraestrutura é muito fácil e não tem complicações 
+* **Fácil de gerenciar** – com opções de gerenciamento altamente simplificado no portal do Azure, o gerenciamento da infraestrutura é muito fácil e não tem complicações
 
 ## <a name="design-principles"></a>Princípios de design
 ![Design de implantação](./media/how-to-connect-fed-azure-adfs/deployment.png)
@@ -75,7 +74,7 @@ Depois que os NSGs forem criados, associe NSG_INT à sub-rede INT e NSG_DMZ à s
 ![Configurar NSG](./media/how-to-connect-fed-azure-adfs/nsgconfigure1.png)
 
 * Clique em sub-redes para abrir o painel para sub-redes
-* Selecione a sub-rede a ser associada ao NSG 
+* Selecione a sub-rede a ser associada ao NSG
 
 Após a configuração, o painel Sub-redes deverá ser semelhante ao exemplo abaixo:
 
@@ -98,7 +97,8 @@ Para manter a alta disponibilidade e evitar a dependência de uma única conta d
 ![Criar contas de armazenamento](./media/how-to-connect-fed-azure-adfs/storageaccount1.png)
 
 ### <a name="3-create-availability-sets"></a>3. criar conjuntos de disponibilidade
-Para cada função (DC/AD FS e WAP), crie conjuntos de disponibilidade com 2 computadores cada, no mínimo. Isso ajudará a obter maior disponibilidade para cada função. Ao criar os conjuntos de disponibilidade, é essencial decidir o seguinte:
+Para cada função (DC/AD FS e WAP), crie conjuntos de disponibilidade com 2 computadores cada, no mínimo. Isso ajudará a obter maior disponibilidade para cada função.
+Ao criar os conjuntos de disponibilidade, é essencial decidir o seguinte:
 
 * **Domínios de falha**: máquinas virtuais no mesmo domínio de falha compartilham a mesma fonte de energia e o mesmo comutador de rede física. É recomendável ter no mínimo 2 domínios de falha. O valor padrão é 3, e você pode mantê-lo como está para os fins desta implantação
 * **Atualizar domínios**: computadores que pertencem ao mesmo domínio de atualização são reiniciados juntos durante uma atualização. Convém ter no mínimo 2 domínios de atualização. O valor padrão é 5, e você pode mantê-lo como está para os fins desta implantação
@@ -146,8 +146,8 @@ Para implantar um ILB, selecione Balanceadores de Carga no portal do Azure e cli
 
 > [!NOTE]
 > Se você não encontrar **Balanceadores de Carga** no menu, clique em **Procurar** na parte inferior esquerda do portal e role até ver **Balanceadores de Carga**.  Clique na estrela amarela para adicioná-lo ao menu. Agora, selecione o novo ícone de balanceador de carga para abrir o painel e iniciar a configuração do balanceador de carga.
-> 
-> 
+>
+>
 
 ![Procurar balanceador de carga](./media/how-to-connect-fed-azure-adfs/browseloadbalancer.png)
 
@@ -167,7 +167,7 @@ A próxima etapa é configurar o pool de back-end e a investigação de back-end
 
 **6.2. Configurar pool de back-end ILB**
 
-Selecione o ILB recém-criado no painel Balanceadores de Carga. Isso abrirá o painel de configurações. 
+Selecione o ILB recém-criado no painel Balanceadores de Carga. Isso abrirá o painel de configurações.
 
 1. Selecione pools de back-end no painel de configurações
 2. No painel Adicionar pool de back-end, clique em Adicionar máquina virtual
@@ -181,37 +181,25 @@ Selecione o ILB recém-criado no painel Balanceadores de Carga. Isso abrirá o p
 No painel de configurações doe ILB, selecione Investigações de Integridade.
 
 1. Clique em adicionar
-2. Fornecer detalhes para investigação  
-   a. **Nome**: nome da investigação  
-   b. **Protocolo**: HTTP  
-   c. **Porta**: 80 (http)  
-   d. **Caminho**:/ADFS/Probe   
-   e. **Intervalo**: 5 (valor padrão) – esse é o intervalo no qual o ILB investigará os computadores no pool de back-end  
-   f. **Limite não íntegro**: 2 (valor padrão) – esse é o limite de falhas de investigação consecutivas após o qual o ILB declarará que uma máquina no pool de back-end não está respondendo e interromperá o envio de tráfego para ela.
+2. Fornecer detalhes para investigação a. **Nome**: nome de investigação b. **Protocolo**: http c. **Porta**: 80 (HTTP) d. **Caminho**: /adfs/probe e. **Intervalo**: 5 (valor padrão) – é o intervalo em que o ILB investigará as máquinas no pool de back-end f. **Limite não íntegro**: 2 (valor padrão) – esse é o limite de falhas de investigação consecutivas após o qual o ILB declarará que uma máquina no pool de back-end não está respondendo e interromperá o envio de tráfego para ela.
 
 
 Estamos usando o ponto de extremidade /adfs/probe criado explicitamente para verificações de integridade em um ambiente do AD FS em que uma verificação completa do caminho HTTPS não pode ocorrer.  Isso é consideravelmente melhor que uma verificação básica da porta 443, que não reflete com precisão o status de uma implantação moderna do AD FS.  Encontre mais informações sobre esse tópico em https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/.
 
 **6.4. Criar regras de balanceamento de carga**
 
-Para equilibrar o tráfego de modo eficiente, o ILB deve ser configurado com regras de balanceamento de carga. Para criar uma regra de balanceamento de carga, 
+Para equilibrar o tráfego de modo eficiente, o ILB deve ser configurado com regras de balanceamento de carga. Para criar uma regra de balanceamento de carga,
 
 1. Selecione a regra de balanceamento de carga no painel de configurações do ILB
 2. Clique em Adicionar no painel de regra de balanceamento de carga
-3. No painel Adicionar regra de balanceamento de carga  
-   a. **Nome**: forneça um nome para a regra  
-   b. **Protocolo**: selecione TCP  
-   c. **Porta**: 443  
-   d. **Porta de back-end**: 443  
-   e. **Pool de back-end**: selecione o pool que você criou para o cluster de AD FS anterior  
-   f. **Investigação**: selecione a investigação criada anteriormente para os servidores do AD FS
+3. No painel adicionar regra de balanceamento de carga a. **Nome**: forneça um nome para a regra b. **Protocolo**: selecione TCP c. **Porta**: 443 d. **Porta de back-end**: 443 e. **Pool de back-end**: selecione o pool criado para o cluster do AD FS anteriormente f. **Investigação**: selecione a investigação criada anteriormente para os servidores do AD FS
 
 ![Configurar regras de balanceamento ILB](./media/how-to-connect-fed-azure-adfs/ilbdeployment5.png)
 
 **6.5. Atualizar DNS com ILB**
 
 Usando seu servidor DNS interno, crie um registro A para o ILB. O registro a deve ser para o serviço de Federação com o endereço IP apontando para o endereço IP do ILB. Por exemplo, se o endereço IP ILB for 10.3.0.8 e o serviço de Federação instalado for fs.contoso.com, crie um registro A para fs.contoso.com apontando para 10.3.0.8.
-Isso garantirá que todos os dados trasmitted para fs.contoso.com acabem no ILB e sejam adequadamente roteados. 
+Isso garantirá que todos os dados trasmitted para fs.contoso.com acabem no ILB e sejam adequadamente roteados.
 
 > [!WARNING]
 > Se você estiver usando o WID (banco de dados interno do Windows) para seu banco de dados AD FS, esse valor deverá ser definido temporariamente para apontar para o servidor de AD FS primário ou o proxy de aplicativo Web falhará registro. Depois de registrar com êxito todos os servidores proxy Application da Web, altere essa entrada DNS para apontar para o balanceador de carga.
@@ -231,7 +219,8 @@ Para garantir que os servidores de Proxy de Aplicativo Web possam acessar os ser
 
 **7.2. Instalar a função de Proxy de Aplicativo Web**
 
-Depois de garantir que os servidores de Proxy de Aplicativo da Web possam acessar os servidores do AD FS por trás do ILB, você pode instalar os servidores de Proxy de Aplicativo Web. Os servidores de Proxy de Aplicativo Web não precisam ser associados ao domínio. Instale as funções de Proxy de Aplicativo Web em dois servidores de Proxy de Aplicativo Web selecionando a função de Acesso Remoto. O gerenciador de servidores o guirá para concluir a instalação do WAP.
+Depois de garantir que os servidores de Proxy de Aplicativo da Web possam acessar os servidores do AD FS por trás do ILB, você pode instalar os servidores de Proxy de Aplicativo Web.
+Os servidores de Proxy de Aplicativo Web não precisam ser associados ao domínio. Instale as funções de Proxy de Aplicativo Web em dois servidores de Proxy de Aplicativo Web selecionando a função de Acesso Remoto. O gerenciador de servidores o guirá para concluir a instalação do WAP.
 Para obter mais informações sobre como implantar o WAP, leia [Instalar e configurar o servidor de Proxy de Aplicativo Web](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383662(v=ws.11)).
 
 ### <a name="8--deploying-the-internet-facing-public-load-balancer"></a>8. implantando a Internet (pública) Load Balancer
@@ -257,11 +246,11 @@ Clique na entrada do balanceador de carga recém-criado no painel Balanceadores 
 2. Clique em Configuração
 3. Forneça um rótulo DNS. Esse se tornará o rótulo DNS público que você pode acessar de qualquer lugar, por exemplo, contosofs.westus.cloudapp.azure.com. Você pode adicionar uma entrada no DNS externo para o serviço de federação (como fs.contoso.com) que é resolvida como o rótulo DNS do balanceador de carga externo (contosofs.westus.cloudapp.azure.com).
 
-![Configurar balanceador de carga para a Internet](./media/how-to-connect-fed-azure-adfs/elbdeployment3.png) 
+![Configurar balanceador de carga para a Internet](./media/how-to-connect-fed-azure-adfs/elbdeployment3.png)
 
 ![Configurar balanceador de carga (DNS) para a Internet](./media/how-to-connect-fed-azure-adfs/elbdeployment4.png)
 
-**8.3. Configurar o pool de back-end para o Balanceador de Carga para a Internet (Público)** 
+**8.3. Configurar o pool de back-end para o Balanceador de Carga para a Internet (Público)**
 
 Siga as mesmas etapas usadas para criar o balanceador de carga interno a fim de configurar o pool de back-end para o Balanceador de Carga para a Internet (Público) como o conjunto de disponibilidade para os servidores WAP. Por exemplo, contosowapset.
 
@@ -284,7 +273,7 @@ Siga as mesmas etapas usadas no ILB para configurar a regra de balanceamento de 
 
 Em geral, você precisa das regras a seguir para proteger com eficiência sua sub-rede interna (na ordem listada abaixo)
 
-| Regra | Descrição | Fluxo |
+| Regra | Descrição | Flow |
 |:--- |:--- |:---:|
 | AllowHTTPSFromDMZ |Permitir a comunicação HTTPS de rede de perímetro |Entrada |
 | DenyInternetOutbound |Sem acesso à Internet |Saída |
@@ -293,7 +282,7 @@ Em geral, você precisa das regras a seguir para proteger com eficiência sua su
 
 **9.2. Proteger a sub-rede de perímetro**
 
-| Regra | Descrição | Fluxo |
+| Regra | Descrição | Flow |
 |:--- |:--- |:---:|
 | AllowHTTPSFromInternet |Permitir HTTPS da Internet para a rede de perímetro |Entrada |
 | DenyInternetOutbound |Tudo para a Internet é bloqueado, exceto HTTPS |Saída |
@@ -302,15 +291,15 @@ Em geral, você precisa das regras a seguir para proteger com eficiência sua su
 
 > [!NOTE]
 > Se a autenticação de certificado de usuário do cliente (autenticação clientTLS usando os certificados de usuário X. 509) for necessária, AD FS exigirá que a porta TCP 49443 seja habilitada para acesso de entrada.
-> 
-> 
+>
+>
 
 ### <a name="10-test-the-ad-fs-sign-in"></a>10. testar a entrada AD FS
 A maneira mais fácil é testar o AD FS usando a página IdpInitiatedSignon.aspx. Para fazer isso, é necessário habilitar IdpInitiatedSignOn nas propriedades do AD FS. Siga as etapas abaixo para verificar a instalação do AD FS
 
 1. Execute o cmdlet abaixo no servidor do AD FS, usando o PowerShell, para defini-lo como habilitado.
-   Set-AdfsProperties -EnableIdPInitiatedSignonPage $true 
-2. Em qualquer computador externo, acesse https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx.  
+   Set-AdfsProperties -EnableIdPInitiatedSignonPage $true
+2. Em qualquer computador externo, acesse https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx.
 3. Você deve ver a página do AD FS como indicado abaixo:
 
 ![Testar página de logon](./media/how-to-connect-fed-azure-adfs/test1.png)
@@ -324,7 +313,7 @@ O modelo implanta uma configuração de seis máquinas, duas para controladores 
 
 [AD FS no modelo de implantação do Azure](https://github.com/paulomarquesc/adfs-6vms-regular-template-based)
 
-Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar esse modelo. Os diversos parâmetros disponíveis para personalizar a implantação estão listados abaixo, com a descrição do uso do parâmetro no processo de implantação. 
+Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar esse modelo. Os diversos parâmetros disponíveis para personalizar a implantação estão listados abaixo, com a descrição do uso do parâmetro no processo de implantação.
 
 | Parâmetro | Descrição |
 |:--- |:--- |
@@ -355,13 +344,13 @@ Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar es
 | AdminPassword |A senha para a conta de administrador local das máquinas virtuais |
 
 ## <a name="additional-resources"></a>Recursos adicionais
-* [Conjuntos de disponibilidade](https://aka.ms/Azure/Availability) 
+* [Conjuntos de disponibilidade](https://aka.ms/Azure/Availability)
 * [Azure Load Balancer](https://aka.ms/Azure/ILB)
-* [Load Balancer interno](https://aka.ms/Azure/ILB/Internal)
+* [Balanceador de Carga Interno](https://aka.ms/Azure/ILB/Internal)
 * [Balanceador de Carga para a Internet](https://aka.ms/Azure/ILB/Internet)
 * [Contas de Armazenamento](https://aka.ms/Azure/Storage)
 * [Redes virtuais do Azure](https://aka.ms/Azure/VNet)
-* [AD FS e Links de Proxy de Aplicativo Web](https://aka.ms/ADFSLinks) 
+* [AD FS e Links de Proxy de Aplicativo Web](https://aka.ms/ADFSLinks)
 
 ## <a name="next-steps"></a>Próximas etapas
 * [Integração de suas identidades locais com o Active Directory do Azure](/azure/active-directory/hybrid/whatis-hybrid-identity)

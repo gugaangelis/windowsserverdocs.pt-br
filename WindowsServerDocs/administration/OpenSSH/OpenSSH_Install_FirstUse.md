@@ -3,14 +3,14 @@ title: Instalação do OpenSSH para Windows Server
 description: Instalação do cliente e servidor OpenSSH para Windows Server usando as opções de configurações do Windows ou o Windows PowerShell.
 ms.date: 09/27/2019
 ms.topic: conceptual
-contributor: maertendMSFT
+ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: 8ed486adb9519fbc0f87cc3142386bec8211d783
-ms.sourcegitcommit: 771db070a3a924c8265944e21bf9bd85350dd93c
+ms.openlocfilehash: 2496ee056dec9fc5b39578d889d8279574e76ba5
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/27/2020
-ms.locfileid: "85469781"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078403"
 ---
 # <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Instalação do OpenSSH para Windows Server 2019 e Windows 10
 

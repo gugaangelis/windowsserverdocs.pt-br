@@ -2,15 +2,15 @@
 title: Planejamento de capacidade para Active Directory Domain Services
 description: Discussão detalhada dos fatores a serem considerados durante o planejamento de capacidade para AD DS.
 ms.topic: article
-ms.author: v-tea; kenbrunf
+ms.author: v-tea
 author: teresa-motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 2067f3dd8c07190c7f52eb75229f08e080ae0208
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 67b98988866fdc7a35e35ae353b7e37f3a13e083
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992308"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077673"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planejamento de capacidade para Active Directory Domain Services
 
@@ -701,7 +701,7 @@ Para ajustar as estimativas para processadores diferentes, ele costumava ser seg
     1. Em **solicitação simples**, insira os critérios de pesquisa para o processador de destino, por exemplo, as **correspondências de processador E5-2630 (baselinetarget)** e as **correspondências de processador E5-2650 (linha de base)**.
     1. Localize a configuração do servidor e do processador a ser usada (ou algo próximo, se uma correspondência exata não estiver disponível) e observe o valor nas colunas **resultado** e **n º núcleos** .
 1. Para determinar o modificador, use a seguinte equação:
-   >((*Plataforma de destino por valor de Pontuação de núcleo*) &times; (*MHz por núcleo da plataforma de linha de base*)) &divide;((*Valor de pontuação por núcleo de linha de base*) &times; (*MHz por núcleo de plataforma de destino*))
+   >((*Plataforma de destino por valor de Pontuação de núcleo*) &times; (*MHz por núcleo da plataforma de linha de base*)) &divide; ((*Valor de pontuação por núcleo de linha de base*) &times; (*MHz por núcleo de plataforma de destino*))
 
     Usando o exemplo acima:
    >(35,83 &times; 2000) &divide; (33,75 &times; 2300) = 0,92

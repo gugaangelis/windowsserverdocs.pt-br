@@ -1,19 +1,19 @@
 ---
 title: Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
-ms.author: cosmosdarwin
 manager: eldenc
 ms.topic: article
 author: cosmosdarwin
+ms.author: cosdar
 ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Uma discussão sobre opções de resiliência em Espaços de Armazenamento Diretos incluindo espelhamento e paridade.
 ms.localizationpriority: medium
-ms.openlocfilehash: 83a38655f1fa40522de84372e270b85f64128e6f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c6ef53927a1c6ed4e5275bc2412faa97510c024e
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961180"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078503"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Falha de tolerância e eficiência de armazenamento em Espaços de Armazenamento Diretos
 

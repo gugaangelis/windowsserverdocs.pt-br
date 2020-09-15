@@ -3,17 +3,18 @@ title: Criar uma conta de usuário padrão
 description: Criar uma conta de usuário básica para serviços do MultiPoint
 ms.topic: article
 ms.assetid: 1e113666-e45f-48b6-aad8-42c361c9046d
-author: lizap
-manager: dongill
-ms.openlocfilehash: 80137fda9838400034348e62f91798bfb2a09ed7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+author: evaseydl
+manager: scottman
+ms.author: evas
+ms.openlocfilehash: f6f4a7b6b59dc78e7670084912f2cb6939036022
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87944316"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077563"
 ---
 # <a name="create-a-standard-user-account"></a>Criar uma conta de usuário padrão
-Crie *contas de usuário padrão* para os usuários que acessarem regularmente estações, mas que não gerenciarão seu sistema MultiPoint Services. Os usuários com contas de usuário padrão podem executar a maioria dos aplicativos e salvar arquivos, mas não podem executar o Gerenciador do MultiPoint. Para ver quem tem acesso de usuário padrão, no Gerenciador do MultiPoint, clique na guia **usuários** . as contas de usuário padrão são exibidas na coluna **tipo de conta** como **padrão**.
+Crie *contas de usuário padrão* para os usuários que acessarem regularmente estações, mas que não gerenciarão seu sistema MultiPoint Services. Os usuários com contas de usuário padrão podem executar a maioria dos aplicativos e salvar arquivos, mas não podem executar o Gerenciador do MultiPoint. Para ver quem tem acesso de usuário padrão, no Gerenciador do MultiPoint, clique na guia **usuários** . As contas de usuário padrão são exibidas na coluna **tipo de conta** como **padrão**.
 
 Se seus usuários do MultiPoint Services armazenarem documentos particulares no Windows, cada usuário deverá fazer logon no sistema MultiPoint Services usando um nome de usuário exclusivo e uma senha.
 

@@ -3,17 +3,17 @@ title: Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2
 description: O Windows Server 2008 e 2008 R2 estão se aproximando do fim de serviço. Saiba como fazer upgrade local ou hospedar novamente no Azure.
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: mikeblodge
-ms.author: mikeblodge
+author: eross-msft
+ms.author: thierryp
 ms.date: 07/12/2018
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 30ba7fcd97b9735319872b55f649fe4f84014faa
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d31fb5b9d5e31ed9bb64a8335e40195b4cfb45ce
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967993"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90078473"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Fazer upgrade do Windows Server 2008 e do Windows Server 2008 R2
 

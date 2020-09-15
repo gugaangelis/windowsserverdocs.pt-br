@@ -3,14 +3,14 @@ title: Ajuste de desempenho para servidores de arquivos NFS
 description: Ajuste de desempenho para servidores de arquivos NFS
 ms.topic: article
 author: phstee
-ms.author: roopeshb, nedpyle
+ms.author: roopeshb
 ms.date: 10/16/2017
-ms.openlocfilehash: 897e45a99ac4640c5fbae4287ac99a0bce6eae66
-ms.sourcegitcommit: 53d526bfeddb89d28af44210a23ba417f6ce0ecf
+ms.openlocfilehash: dfa16581f0849b792f679c3fde31e390a623a133
+ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87896181"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90077253"
 ---
 # <a name="performance-tuning-nfs-file-servers"></a>Servidores de arquivos NFS de ajuste de desempenho
 
