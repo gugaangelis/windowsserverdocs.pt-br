@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 02158cc005cc46bd42e88569b14c17c59ef377ee
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 8ff6b6cfa6f8af87310970d9adab10d5df14c90d
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990765"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083687"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar e gerenciar o quorum
 
@@ -26,7 +26,7 @@ O quorum de um cluster é determinado pelo número de elementos votantes que dev
 
 ## <a name="quorum-configuration-options"></a>Opções de configuração de quorum
 
-O modelo de quorum no Windows Server é flexível. Se precisar modificar a configuração de quorum para o cluster, você poderá usar o assistente para configurar o quorum do cluster ou os cmdlets do Windows PowerShell de clusters de failover. Para ver as etapas e considerações para configurar o quorum, consulte [Configurar o quorum de cluster](#configure-the-cluster-quorum) posteriormente neste tópico.
+O modelo de quorum no Windows Server é flexível. Se precisar modificar a configuração de quorum para o cluster, você poderá usar o assistente para configurar o quorum do cluster ou os cmdlets do Windows PowerShell FailoverClusters. Para ver as etapas e considerações para configurar o quorum, consulte [Configurar o quorum de cluster](#configure-the-cluster-quorum) posteriormente neste tópico.
 
 A tabela a seguir lista as três opções de configuração de quorum disponíveis no Assistente para Configurar Quorum de Cluster.
 
@@ -66,7 +66,7 @@ Como opção de configuração de quorum avançado, você pode optar por atribui
 
 Você pode desejar remover votos dos nós em determinadas configurações de recuperação de desastre. Por exemplo, em um cluster multissite, você pode remover votos dos nós em um site de backup de forma que aqueles nós não afetem os cálculos de quorum. Essa configuração é recomendada somente para failover manual nos sites. Para obter mais informações, consulte [Considerações de quorum para configurações de recuperação de desastre](#quorum-considerations-for-disaster-recovery-configurations) posteriormente neste tópico.
 
-O voto configurado de um nó pode ser verificado pesquisando a propriedade comum **NodeWeight** do nó de cluster usando o cmdlet [Get-ClusterNode](https://technet.microsoft.com/library/hh847268.aspx)do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum configurado. Um valor de 1 indica que o voto de quorum do nó está atribuído e é gerenciado pelo cluster. Para obter mais informações sobre o gerenciamento de votos de nó, consulte [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) posteriormente neste tópico.
+O voto configurado de um nó pode ser verificado pesquisando a propriedade comum **NodeWeight** do nó de cluster usando o cmdlet [Get-ClusterNode](https://technet.microsoft.com/library/hh847268.aspx) do Windows PowerShell. Um valor de 0 indica que o nó não tem um voto de quorum configurado. Um valor de 1 indica que o voto de quorum do nó está atribuído e é gerenciado pelo cluster. Para obter mais informações sobre o gerenciamento de votos de nó, consulte [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) posteriormente neste tópico.
 
 A atribuição de voto para todos os nós de cluster pode ser verificada usando o teste de validação **Validar Quorum de Cluster**.
 
@@ -109,7 +109,7 @@ Para obter mais informações sobre como validar um cluster de failover, consult
 
 ## <a name="configure-the-cluster-quorum"></a>Configurar o quorum do cluster
 
-Você pode definir as configurações de quorum do cluster usando os cmdlets Gerenciador de Cluster de Failover ou clusters de failover do Windows PowerShell.
+Você pode definir as configurações de quorum do cluster usando Gerenciador de Cluster de Failover ou os cmdlets do Windows PowerShell FailoverClusters.
 
 > [!IMPORTANT]
 > Geralmente é melhor usar a configuração de quorum recomendada pelo Assistente para Configurar Quorum do Cluster. Recomendamos a personalização da configuração de quorum somente se você tiver determinado que a alteração é apropriada para seu cluster. Para obter mais informações, consulte [Recomendações gerais para configuração de quorum](#general-recommendations-for-quorum-configuration) neste tópico.
@@ -127,8 +127,8 @@ A associação no grupo local **Administradores** em cada servidor com cluster, 
 2. Com o cluster selecionado, em **ações**, selecione **mais ações**e, em seguida, selecione **definir configurações de quorum do cluster**. O Assistente para Configurar Quorum do Cluster aparece. Selecione **Avançar**.
 3. Na página **Selecionar Opção de Configuração de Quorum**, selecione uma das três opções de configuração e conclua as etapas para essa opção. Antes de configurar o quorum, você pode examinar suas escolhas. Para obter mais informações sobre as opções, consulte [noções básicas sobre quorum](#understanding-quorum), anteriormente neste tópico.
 
-    - Para permitir que o cluster redefina automaticamente as configurações de quorum ideais para sua configuração de cluster atual, selecione **usar configurações típicas** e conclua o assistente.
-    - Para adicionar ou alterar a testemunha de quorum, selecione **Adicionar ou alterar a testemunha de quorum**e, em seguida, conclua as etapas a seguir. Para obter informações e considerações sobre configurar uma testemunha de quorum, consulte [Configuração de testemunha](#witness-configuration) anteriormente neste tópico.
+    - Para permitir que o cluster redefina automaticamente as configurações de quorum ideais para sua configuração de cluster atual, selecione **usar configuração de quorum padrão** e conclua o assistente.
+    - Para adicionar ou alterar a testemunha de quorum, selecione **selecionar a testemunha de quorum**e, em seguida, conclua as etapas a seguir. Para obter informações e considerações sobre configurar uma testemunha de quorum, consulte [Configuração de testemunha](#witness-configuration) anteriormente neste tópico.
 
       1. Na página **Selecionar Testemunha de Quorum**, selecione uma opção para configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O assistente indica as opções de seleção de testemunha recomendadas para seu cluster.
 
@@ -137,8 +137,11 @@ A associação no grupo local **Administradores** em cada servidor com cluster, 
 
       2. Se você selecionar a opção para configurar uma testemunha de disco, na página **Configurar Testemunha de Armazenamento**, selecione o volume de armazenamento que deseja atribuir como a testemunha de disco e conclua o assistente.
       3. Se você selecionar a opção para configurar uma testemunha de compartilhamento de arquivos na página **Configurar Testemunha de Compartilhamento de Arquivo**, digite ou procure um compartilhamento de arquivos que será usado como o recurso de testemunha e conclua o assistente.
+      4. Se você selecionar a opção para configurar uma testemunha de nuvem, na página **Configurar testemunha de nuvem** , insira o nome da conta de armazenamento do Azure, a chave de conta de armazenamento do Azure e o ponto de extremidade de serviço do Azure e conclua o assistente.
+          > [!NOTE]
+          > Essa opção está disponível no Windows Server 2016 e superior.
 
-    - Para definir as configurações de gerenciamento de quorum e adicionar ou alterar a testemunha de quorum, selecione **configuração de quorum avançada e seleção de testemunha**e conclua as etapas a seguir. Para obter informações e considerações sobre as configurações de quorum avançadas, consulte [Atribuição de voto de nó](#node-vote-assignment) e [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) anteriormente neste tópico.
+    - Para definir as configurações de gerenciamento de quorum e adicionar ou alterar a testemunha de quorum, selecione **configuração de quorum avançada**e conclua as etapas a seguir. Para obter informações e considerações sobre as configurações de quorum avançadas, consulte [Atribuição de voto de nó](#node-vote-assignment) e [Gerenciamento dinâmico de quorum](#dynamic-quorum-management) anteriormente neste tópico.
 
       1. Na página **Selecionar Configuração de Votação**, selecione uma opção para atribuir votos aos nós. Por padrão, todos os nós são atribuídos a um voto. Entretanto, para determinados cenários, você pode atribuir votos somente a um subconjunto de nós.
 
@@ -146,13 +149,19 @@ A associação no grupo local **Administradores** em cada servidor com cluster, 
           > Você também pode selecionar **Nenhum nó**. Isso geralmente não é recomendado, porque não permite que os nós participem na votação de quorum, e requer a configuração de uma testemunha de disco. A testemunha de disco se torna o único ponto de falha do cluster.
 
       2. Na página **Configurar Gerenciamento de Quorum**, você pode habilitar ou desabilitar a opção **Permitir que o cluster gerencie dinamicamente a atribuição de votos de nós**. Selecionar essa opção geralmente aumenta a disponibilidade do cluster. Por padrão, a opção é habilitada e é altamente recomendado não desabilitar essa opção. Essa opção permite ao cluster continuar a ser executado em cenários de falha que não são possíveis quando essa opção está desabilitada.
-      3. Na página **Selecionar Testemunha de Quorum**, selecione uma opção para configurar uma testemunha de disco ou uma testemunha de compartilhamento de arquivos. O assistente indica as opções de seleção de testemunha recomendadas para seu cluster.
+          > [!NOTE]
+          > Essa opção não está presente no Windows Server 2016 e superior.
+          
+      3. Na página **selecionar testemunha de quorum** , selecione uma opção para configurar uma testemunha de disco, testemunha de compartilhamento de arquivos ou uma testemunha de nuvem. O assistente indica as opções de seleção de testemunha recomendadas para seu cluster.
 
           > [!NOTE]
           > Você pode selecionar **Não configurar uma testemunha de quorum** e concluir o assistente. Se você tiver um número par de nós votantes em seu cluster, isso pode não ser uma configuração recomendada.
 
       4. Se você selecionar a opção para configurar uma testemunha de disco, na página **Configurar Testemunha de Armazenamento**, selecione o volume de armazenamento que deseja atribuir como a testemunha de disco e conclua o assistente.
       5. Se você selecionar a opção para configurar uma testemunha de compartilhamento de arquivos na página **Configurar Testemunha de Compartilhamento de Arquivo**, digite ou procure um compartilhamento de arquivos que será usado como o recurso de testemunha e conclua o assistente.
+      6. Se você selecionar a opção para configurar uma testemunha de nuvem, na página **Configurar testemunha de nuvem** , insira o nome da conta de armazenamento do Azure, a chave de conta de armazenamento do Azure e o ponto de extremidade de serviço do Azure e conclua o assistente.
+          > [!NOTE]
+          > Essa opção está disponível no Windows Server 2016 e superior.
 
 4. Selecione **Avançar**. Confirme suas seleções na página de confirmação exibida e selecione **Avançar**.
 

@@ -1,21 +1,21 @@
 ---
 title: Cenários de rede de computação de host (HCN)
-ms.author: jmesser
-author: jmesser81
+description: Exemplo que mostra como usar a API de serviço de rede de computação de host para criar uma rede de computação de host no host que pode ser usada para conectar NICS virtuais a máquinas virtuais ou contêineres.
+ms.author: daschott
+author: daschott
 ms.date: 11/05/2018
-ms.openlocfilehash: c6b09ec65bd76fb63c2bb5c4eb5da1187f62ca75
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: e865326b77fbdec19af3e7db347734715458b18a
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955673"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083676"
 ---
 # <a name="common-scenarios"></a>Cenários comuns
 
->Aplica-se a: Windows Server (canal semestral), Windows Server 2019
+> Aplica-se a: Windows Server (canal semestral), Windows Server 2019
 
 ## <a name="scenario-hcn"></a>Cenário: HCN
-
 
 ### <a name="create-an-hcn"></a>Criar um HCN
 
@@ -26,12 +26,9 @@ using unique_hcn_network = wil::unique_any<
     HCN_NETWORK,
     decltype(&HcnCloseNetwork),
     HcnCloseNetwork>;
-
-
 /// Creates a simple HCN Network, waiting synchronously to finish the task
 void CreateHcnNetwork()
 {
-
     unique_hcn_network hcnnetwork;
     wil::unique_cotaskmem_string result;
     std::wstring settings = LR"(
@@ -61,7 +58,6 @@ void CreateHcnNetwork()
                                 "DestinationPrefix" : "0.0.0.0/0",
                             }
                         ]
-
                     }
                 ],
             },
@@ -80,10 +76,8 @@ void CreateHcnNetwork()
         }
     }
     })";
-
     GUID networkGuid;
     HRESULT result = CoCreateGuid(&networkGuid);
-
     result = HcnCreateNetwork(
         networkGuid,              // Unique ID
         settings.c_str(),      // Compute system settings document
@@ -99,48 +93,35 @@ void CreateHcnNetwork()
         //    "Error" : <string>,
         //    "Success" : <bool>,
        //   }
-
         // Failed to create network
         THROW_HR(result);
     }
-
     // Close the Handle
     result = HcnCloseNetwork(hcnnetwork.get());
-
     if (FAILED(result))
     {
         // UnMarshal  the result Json
         THROW_HR(result);
     }
-
 }
 ```
-
 ### <a name="delete-an-hcn"></a>Excluir um HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para abrir & excluir uma rede de computação de host
-
 ```C++
     wil::unique_cotaskmem_string errorRecord;
     GUID networkGuid; // Initialize it to appropriate network guid value
     HRESULT hr = HcnDeleteNetwork(networkGuid, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ### <a name="enumerate-all-networks"></a>Enumerar todas as redes
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todas as redes de computação do host.
-
 ```C++
      wil::unique_cotaskmem_string resultNetworks;
      wil::unique_cotaskmem_string errorRecord;
-
      // Filter to select Networks based on properties
      std::wstring filter [] = LR"(
      {
@@ -150,16 +131,11 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
      if (FAILED(result))
      {
          // UnMarshal  the result Json
-
          THROW_HR(result);
      }
 ```
-
-
 ### <a name="query-network-properties"></a>Propriedades da rede de consulta
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar as propriedades de rede.
-
 ```C++
     unique_hcn_network hcnnetwork;
     wil::unique_cotaskmem_string errorRecord;
@@ -170,44 +146,31 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
     })";
     GUID networkGuid; // Initialize it to appropriate network guid value
     HRESULT hr = HcnOpenNetwork(networkGuid, &hcnnetwork, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
-
     hr = HcnQueryNetworkProperties(hcnnetwork.get(), query.c_str(), &properties, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ## <a name="scenario-hcn-endpoint"></a>Cenário: ponto de extremidade HCN
-
 ### <a name="create-an-hcn-endpoint"></a>Criar um ponto de extremidade HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para criar um ponto de extremidade de rede de computação do host e, em seguida, adicioná-lo à máquina virtual ou a um contêiner.
-
 ```C++
 using unique_hcn_endpoint = wil::unique_any<
     HCN_ENDPOINT,
     decltype(&HcnCloseEndpoint),
     HcnCloseEndpoint>;
-
 void CreateAndHotAddEndpoint()
 {
     unique_hcn_endpoint hcnendpoint;
     unique_hcn_network hcnnetwork;
-
     wil::unique_cotaskmem_string errorRecord;
-
-
     std::wstring settings[] = LR"(
     {
         "SchemaVersion": {
@@ -224,7 +187,6 @@ void CreateAndHotAddEndpoint()
     })";
     GUID endpointGuid;
     HRESULT result = CoCreateGuid(&endpointGuid);
-
     result = HcnOpenNetwork(
         networkGuid,              // Unique ID
         &hcnnetwork,
@@ -235,7 +197,6 @@ void CreateAndHotAddEndpoint()
         // Failed to find network
         THROW_HR(result);
     }
-
     result = HcnCreateEndpoint(
         hcnnetwork.get(),
         endpointGuid,              // Unique ID
@@ -243,62 +204,44 @@ void CreateAndHotAddEndpoint()
         &hcnendpoint,
         &errorRecord
         );
-
     if (FAILED(result))
     {
         // Failed to create endpoint
         THROW_HR(result);
     }
-
     // Can use the sample from HCS API Spec on how to attach this endpoint
     // to the VM using AddNetworkAdapterToVm
-
     result = HcnCloseEndpoint(hcnendpoint.get());
-
     if (FAILED(result))
     {
         // UnMarshal  the result Json
         THROW_HR(result);
     }
-
 }
 ```
-
-
 ### <a name="delete-an-endpoint"></a>Excluir um ponto de extremidade
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para excluir um ponto de extremidade de rede de computação do host.
-
 ```C++
     wil::unique_cotaskmem_string errorRecord;
     GUID endpointGuid; // Initialize it to appropriate endpoint guid value
     HRESULT hr = HcnDeleteEndpoint(endpointGuid, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ### <a name="modify-and-endpoint"></a>Modificar e ponto de extremidade
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para modificar um ponto de extremidade de rede de computação do host.
-
 ```C++
     unique_hcn_endpoint hcnendpoint;
     GUID endpointGuid; // Initialize it to appropriate endpoint guid value
-
     HRESULT hr = HcnOpenEndpoint(endpointGuid, &hcnendpoint, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
-
     std::wstring  ModifySettingAddPortJson = LR"(
     {
         "ResourceType" : 0,
@@ -310,28 +253,19 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
         }
     }
     )";
-
-
     hr = HcnModifyEndpoint(hcnendpoint.get(), ModifySettingAddPortJson.c_str(), &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ### <a name="enumerate-all-enpoints"></a>Enumerar todos os pontos
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todos os pontos de extremidade de rede de computação do host.
-
 ```C++
     wil::unique_cotaskmem_string errorRecord;
-
     wil::unique_cotaskmem_string resultEndpoints;
     wil::unique_cotaskmem_string errorRecord;
-
     // Filter to select Endpoint based on properties
     std::wstring filter [] = LR"(
     {
@@ -343,59 +277,41 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
         THROW_HR(result);
     }
 ```
-
-
 ### <a name="query-endpoint-properties"></a>Propriedades do ponto de extremidade da consulta
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar todas as propriedades de um ponto de extremidade de rede de computação do host.
-
 ```C++
     unique_hcn_endpoint hcnendpoint;
     wil::unique_cotaskmem_string errorRecord;
     GUID endpointGuid; // Initialize it to appropriate endpoint guid value
-
     HRESULT hr = HcnOpenEndpoint(endpointGuid, &hcnendpoint, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
-
-
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
     {
         // Future
     })";
-
     hr = HcnQueryEndpointProperties(hcnendpoint.get(), query.c_str(), &properties, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the errorRecord Json
         THROW_HR(hr);
     }
 ```
-
-
 ## <a name="scenario-hcn-namespace"></a>Cenário: namespace HCN
-
 ### <a name="create-an-hcn-namespace"></a>Criar um namespace HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação de host para criar um namespace de rede de computação de host no host que pode ser usado para conectar o ponto de extremidade e contêineres.
-
 ```C++
 using unique_hcn_namespace = wil::unique_any<
     HCN_NAMESPACE,
     decltype(&HcnCloseNamespace),
     HcnCloseNamespace>;
-
 /// Creates a simple HCN Network, waiting synchronously to finish the task
 void CreateHcnNamespace()
 {
-
     unique_hcn_namespace handle;
     wil::unique_cotaskmem_string errorRecord;
     std::wstring settings = LR"(
@@ -408,10 +324,8 @@ void CreateHcnNamespace()
         "Flags" : 0,
         "Type" : 0,
     })";
-
     GUID namespaceGuid;
     HRESULT result = CoCreateGuid(&namespaceGuid);
-
     result = HcnCreateNamespace(
         namespaceGuid,              // Unique ID
         settings.c_str(),      // Compute system settings document
@@ -427,56 +341,40 @@ void CreateHcnNamespace()
         //    "Error" : <string>,
         //    "Success" : <bool>,
        //   }
-
         // Failed to create network
         THROW_HR(result);
     }
-
     result = HcnCloseNamespace(handle.get());
-
     if (FAILED(result))
     {
         // UnMarshal  the result Json
         THROW_HR(result);
     }
-
 }
 ```
-
-
 ### <a name="delete-an-hcn-namespace"></a>Excluir um namespace HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para excluir um namespace de rede de computação do host.
-
 ```C++
     wil::unique_cotaskmem_string errorRecord;
     GUID namespaceGuid; // Initialize it to appropriate namespace guid value
     HRESULT hr = HcnDeleteNamespace(namespaceGuid, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal the result Json
         THROW_HR(hr);
     }
-
 ```
-
-
 ### <a name="modify-an-hcn-namespace"></a>Modificar um namespace HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para modificar um namespace de rede de computação do host.
-
 ```C++
     unique_hcn_namespace handle;
     GUID namespaceGuid; // Initialize it to appropriate namespace guid value
     HRESULT hr = HcnOpenNamespace(namespaceGuid, &handle, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
     wil::unique_cotaskmem_string errorRecord;
     static std::wstring  ModifySettingAddEndpointJson = LR"(
     {
@@ -487,34 +385,24 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
         }
     }
     )";
-
-
     hr = HcnModifyNamespace(handle.get(), ModifySettingAddEndpointJson.c_str(), &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal the result Json
         THROW_HR(hr);
     }
     hr = HcnCloseNamespace(handle.get());
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
 ```
-
-
 ### <a name="enumerate-all-namespaces"></a>Enumerar todos os namespaces
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todos os namespaces de rede de computação do host.
-
 ```C++
     wil::unique_cotaskmem_string resultNamespaces;
     wil::unique_cotaskmem_string errorRecord;
-
     std::wstring filter [] = LR"(
     {
             // Future
@@ -525,60 +413,42 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
 ```
-
-
 ### <a name="query-namespace-properties"></a>Propriedades do namespace de consulta
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar Propriedades de namespace de rede de computação do host
-
 ```C++
     unique_hcn_namespace handle;
     GUID namespaceGuid; // Initialize it to appropriate namespace guid value
     HRESULT hr = HcnOpenNamespace(namespaceGuid, &handle, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
-
     wil::unique_cotaskmem_string errorRecord;
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
     {
         // Future
     })";
-
     HRESULT hr = HcnQueryNamespaceProperties(handle.get(), query.c_str(), &properties, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
 ```
-
-
 ## <a name="scenario-hcn-load-balancer"></a>Cenário: HCN Load Balancer
-
 ### <a name="create-an-hcn-load-balancer"></a>Criar um balanceador de carga HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para criar uma rede de computação de host Load Balancer no host que pode ser usado para balancear a carga do ponto de extremidade na computação.
-
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any<
     HCN_LOADBALANCER,
     decltype(&HcnCloseLoadBalancer),
     HcnCloseLoadBalancer>;
-
 /// Creates a simple HCN LoadBalancer, waiting synchronously to finish the task
 void CreateHcnLoadBalancer()
 {
-
     unique_hcn_loadbalancer handle;
     wil::unique_cotaskmem_string errorRecord;
     std::wstring settings = LR"(
@@ -603,11 +473,8 @@ void CreateHcnLoadBalancer()
         "InternalLoadBalancer" : false,
     }
      )";
-
     GUID lbGuid;
     HRESULT result = CoCreateGuid(&lbGuid);
-
-
     HRESULT hr = HcnCreateLoadBalancer(
         lbGuid,              // Unique ID
         settings.c_str(),      // LoadBalancer settings document
@@ -623,56 +490,40 @@ void CreateHcnLoadBalancer()
         //    "Error" : <string>,
         //    "Success" : <bool>,
        //   }
-
         // Failed to create network
         THROW_HR(hr);
     }
-
     hr = HcnCloseLoadBalancer(handle.get());
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
 }
 ```
-
-
 ### <a name="delete-an-hcn-load-balancer"></a>Excluir um balanceador de carga HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para excluir um balanceador de rede de computação de host.
-
 ```C++
     wil::unique_cotaskmem_string errorRecord;
     GUID lbGuid; // Initialize it to appropriate loadbalancer guid value
     HRESULT hr = HcnDeleteLoadBalancer(lbGuid , &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ### <a name="modify-an-hcn-load-balancer"></a>Modificar um balanceador de carga HCN
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para modificar um namespace de rede de computação do host.
-
 ```C++
     unique_hcn_loadbalancer handle;
     GUID lbGuid; // Initialize it to appropriate loadbalancer guid value
-
     HRESULT hr = HcnOpenLoadBalancer(lbGuid, &handle, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
     wil::unique_cotaskmem_string errorRecord;
     static std::wstring  ModifySettingAddEndpointJson = LR"(
     {
@@ -683,65 +534,46 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
         }
     }
     )";
-
-
     hr = HcnModifyLoadBalancer(handle.get(), ModifySettingAddEndpointJson.c_str(), &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal the result Json
         THROW_HR(hr);
     }
     hr = HcnCloseLoadBalancer(handle.get());
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ### <a name="enumerate-all-load-balancers"></a>Enumerar todos os balanceadores de carga
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para enumerar todos os Load Balancer de rede de computação do host.
-
 ```C++
     wil::unique_cotaskmem_string resultLoadBalancers;
     wil::unique_cotaskmem_string errorRecord;
-
     std::wstring filter [] = LR"(
     {
          // Future
-
     })";
     HRESULT result = HcnEnumerateLoadBalancers(filter.c_str(), & resultLoadbalancers, &errorRecord);
     if (FAILED(result))
     {
             // UnMarshal  the result Json
-
             THROW_HR(result);
     }
 ```
-
-
 ### <a name="query-load-balancer-properties"></a>Propriedades do balanceador de carga de consulta
-
 Este exemplo mostra como usar a API de serviço de rede de computação do host para consultar Propriedades do balanceador de rede de computação do host.
-
 ```C++
     unique_hcn_loadbalancer handle;
     GUID lbGuid; // Initialize it to appropriate loadbalancer guid value
-
     HRESULT hr = HcnOpenLoadBalancer(lbGuid, &handle, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
-
-
     wil::unique_cotaskmem_string errorRecord;
     wil::unique_cotaskmem_string properties;
     std:wstring query = LR"(
@@ -749,34 +581,25 @@ Este exemplo mostra como usar a API de serviço de rede de computação do host 
         "ID"  : "",
         "Type" : 0,
     })";
-
     hr = HcnQueryNProperties(handle.get(), query.c_str(), &properties, &errorRecord);
-
     if (FAILED(hr))
     {
         // UnMarshal  the result Json
         THROW_HR(hr);
     }
 ```
-
-
 ## <a name="scenario-hcn-notifications"></a>Cenário: notificações de HCN
-
 ### <a name="register-and-unregister-service-wide-notifications"></a>Registrar e cancelar o registro de notificações de todo o serviço
-
 Este exemplo demonstra como usar a API de serviço de rede de computação do host para registrar e cancelar o registro para notificações de todo o serviço. Isso permite que o chamador receba uma notificação (por meio da função de chamada de retorno especificada durante o registro) sempre que uma operação de todo o serviço, como um novo evento de criação de rede, ocorreu.
-
 ```C++
 using unique_hcn_callback = wil::unique_any<
     HCN_CALLBACK,
     decltype(&HcnUnregisterServiceCallback),
     HcnUnregisterServiceCallback>;
-
 // Callback handle returned by registration api. Kept at
 // global or module scope as it will automatically be
 // unregistered when it goes out of scope.
 unique_hcn_callback g_Callback;
-
 // Event notification callback function.
 void
 CALLBACK
@@ -790,7 +613,6 @@ ServiceCallback(
     UNREFERENCED_PARAMETER(context);
     // Reserved for future use
     UNREFERENCED_PARAMETER(NotificationStatus);
-
     switch (NotificationType)
     {
         case HcnNotificationNetworkCreate:
@@ -802,17 +624,14 @@ ServiceCallback(
             //     "Flags" : <uint32>,
             // };
             break;
-
         case HcnNotificationNetworkDelete:
             // TODO: UnMarshal the NotificationData
             break;
-
         Default:
             // TODO: handle other events.
             break;
     }
 }
-
 /// Register for service-wide notifications
 void RegisterForServiceNotifications()
 {
@@ -821,18 +640,13 @@ void RegisterForServiceNotifications()
         nullptr,
         &g_Callback));
 }
-
 /// Unregister from service-wide notifications
 void UnregisterForServiceNotifications()
 {
     // As this is a unique_hcn_callback, this will cause HcnUnregisterServiceCallback to be invoked
     g_Callback.reset();
-
 }
 ```
-
 ## <a name="next-steps"></a>Próximas etapas
-
 - Saiba mais sobre os [identificadores de contexto RPC para HCN](hcn-declaration-handles.md).
-
 - Saiba mais sobre os [esquemas de documento JSON HCN](hcn-json-document-schemas.md).
