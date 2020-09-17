@@ -1,18 +1,17 @@
 ---
 title: Máquinas virtuais do Debian com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-manager: dongill
 ms.topic: article
 ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: da96f78c9886ea392ccb2834f4b245a2422dc17e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c0ea0a8e9a030c8d35bf3042b16108523753b36b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965743"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746541"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuais do Debian com suporte no Hyper-V
 

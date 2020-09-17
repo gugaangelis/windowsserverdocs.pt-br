@@ -1,18 +1,17 @@
 ---
 title: Atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server
 description: Fornece instruções e considerações para atualizar a versão de uma máquina virtual
-manager: dongill
 ms.topic: article
 ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: 24e67bd88a644c44b65d5eb8ccd3d6190737b5db
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 236e0230c30e1d0260f4a72d1735b3ba687c3fd8
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995638"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746041"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Atualizar a versão da máquina virtual no Hyper-V no Windows 10 ou no Windows Server
 
@@ -70,7 +69,7 @@ New-VM -Name "WindowsCV5" -Version 5.0
 
 A tabela a seguir lista as versões de configuração da VM com suporte em hosts que executam uma versão de manutenção em longo prazo do Windows.
 
-| Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
+| Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5,0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
 |Windows Server 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows 10 Enterprise LTSC 2019|&#10006;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -84,7 +83,7 @@ A tabela a seguir lista as versões de configuração da VM com suporte em hosts
 
 A tabela a seguir lista as versões de configuração de VM para hosts que executam uma versão de canal semianual com suporte no momento do Windows. Para obter mais informações sobre versões de canal semianuais do Windows, visite as páginas a seguir para [Windows Server](../../../get-started-19/servicing-channels-19.md) e [Windows 10](/windows/deployment/update/waas-overview#servicing-channels)
 
-| Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5.0 |
+| Versão do Windows do host do Hyper-V | 9.1 | 9.0 | 8.3 | 8.2 | 8.1 | 8.0 | 7.1 | 7.0 | 6.2 | 5,0 |
 | --- |---|---|---|---|---|---|---|---|---|---|
 | Atualização de 2019 de maio do Windows 10 (versão 1903) |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|
 | Windows Server, versão 1903 |&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;| &#10004;|

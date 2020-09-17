@@ -1,18 +1,17 @@
 ---
 title: Sobre a criptografia de despejo
 description: Descreve como criptografar arquivos de despejo e solucionar problemas de criptografia.
-manager: dongill
 ms.topic: article
-author: larsiwer
+ms.author: benarm
+author: BenjaminArmstrong
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
-ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: e80af001a54d3be471b3bbcc9fde08a07556d754
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d2258a810993ea903efe670355720a5fc65a888b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993435"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746481"
 ---
 # <a name="about-dump-encryption"></a>Sobre a criptografia de despejo
 A criptografia de despejo pode ser usada para criptografar despejos de memória e despejos dinâmicos gerados para um sistema. Os despejos são criptografados usando uma chave de criptografia simétrica que é gerada para cada despejo. Em seguida, essa chave é criptografada usando a chave pública especificada pelo administrador confiável do host (protetor de chave de criptografia de despejo de memória). Isso garante que apenas alguém que tenha a chave privada correspondente possa descriptografar e, portanto, acessar o conteúdo do despejo. Esse recurso é utilizado em uma malha protegida.
@@ -20,7 +19,7 @@ Observação: se você configurar a criptografia de despejo, também desabilite 
 
 ## <a name="configuring-dump-encryption"></a>Configurando a criptografia de despejo
 ### <a name="manual-configuration"></a>Configuração manual
-Para ativar a criptografia de despejo usando o registro, configure os seguintes valores de registro em`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
+Para ativar a criptografia de despejo usando o registro, configure os seguintes valores de registro em `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
 | Nome do valor | Type | Valor |
 | ---------- | ---- | ----- |

@@ -1,18 +1,17 @@
 ---
 title: Práticas recomendadas para executar o Linux no Hyper-V
 description: Fornece recomendações para executar o Linux em uma máquina virtual
-manager: dongill
 ms.topic: article
 ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/15/2020
-ms.openlocfilehash: b9a03ec24adf0b77ff4a6e477f550c63760c9d85
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 216bd83eb06cd14b2b2290e3294041b097cfdbd9
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989104"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747161"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Práticas recomendadas para executar o Linux no Hyper-V
 
@@ -47,7 +46,7 @@ Devido ao hardware herdado ser removido da emulação em máquinas virtuais de g
 
 Como o temporizador PIT não está presente nas máquinas virtuais de geração 2, as conexões de rede com o servidor de TFTP PxE podem ser encerradas prematuramente e impedir que o carregador de carga Leia a configuração do grub e carregue um kernel do servidor.
 
-No RHEL 6. x, o carregador de logon EFI v 0.97 do grub herdado pode ser usado em vez de Grub2, conforme descrito aqui:[https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
+No RHEL 6. x, o carregador de logon EFI v 0.97 do grub herdado pode ser usado em vez de Grub2, conforme descrito aqui: [https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html](https://access.redhat.com/documentation/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s1-netboot-pxe-config-efi.html)
 
 Em distribuições Linux diferentes do RHEL 6. x, etapas semelhantes podem ser seguidas para configurar o grub v 0.97 para carregar kernels do Linux de um servidor PxE.
 

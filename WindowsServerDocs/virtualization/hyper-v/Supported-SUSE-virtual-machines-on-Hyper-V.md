@@ -1,18 +1,17 @@
 ---
 title: Máquinas virtuais SUSE com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-manager: dongill
 ms.topic: article
 ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 4e2948bdb07ecefc0cbb46553aeaece3efd914c2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 92dd65669a537d619d9104378adae26c91878dca
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989293"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746731"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>Máquinas virtuais SUSE com suporte no Hyper-V
 

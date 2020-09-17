@@ -1,18 +1,17 @@
 ---
 title: A ressincronização da replicação deve ser agendada para o horário de pico
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 093a7bb7-8e0a-486b-b42b-04edd8809710
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: dad983e19df328946f3bd7ec59f68ee3e9f8bfcc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 97df7945988f117ed16d59685cc60841775737da
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87939002"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746151"
 ---
 # <a name="resynchronization-of-replication-should-be-scheduled-for-off-peak-hours"></a>A ressincronização da replicação deve ser agendada para o horário de pico
 

@@ -2,15 +2,15 @@
 title: Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 description: Saiba mais sobre como o DDA funciona no Windows Server
 ms.topic: article
-author: chrishuybregts
-ms.author: chrihu
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/21/2019
-ms.openlocfilehash: 189a4f399ac76f1b7f30c5b45725c3a4fb6a8215
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f53cef755d52fe1fc1e1bc540f89e7c243007eb3
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989855"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745951"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planejar a implantação de dispositivos usando a atribuição de dispositivo discreta
 >Aplica-se a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019
@@ -24,7 +24,7 @@ Para saber mais sobre outros métodos de virtualização de GPU, consulte [plane
 ## <a name="supported-virtual-machines-and-guest-operating-systems"></a>Máquinas virtuais com suporte e sistemas operacionais convidados
 Há suporte para a atribuição de dispositivo discreto para VMs de geração 1 ou 2.  Além disso, os convidados com suporte incluem Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012r2 com [KB 3133690](https://support.microsoft.com/kb/3133690) aplicado e várias distribuições do [sistema operacional Linux.](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
 
-## <a name="system-requirements"></a>Requisitos do Sistema
+## <a name="system-requirements"></a>Requisitos de sistema
 Além dos requisitos do [sistema para o Windows Server](../../../get-started/system-requirements.md) e os [requisitos do sistema para o Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), a atribuição de dispositivo discreta requer hardware de classe de servidor capaz de conceder o controle do sistema operacional sobre a configuração da malha PCIe (controle nativo de PCI Express). Além disso, a raiz do PCIe complexa tem que dar suporte ao "ACS (Access Control Services"), que habilita o Hyper-V a forçar todo o tráfego de PCIe por meio do MMU de e/s.
 
 Esses recursos geralmente não são expostos diretamente no BIOS do servidor e, em geral, são ocultos por trás de outras configurações.  Por exemplo, os mesmos recursos são necessários para o suporte a SR-IOV e, no BIOS, talvez seja necessário definir "Habilitar SR-IOV".  Entre em contato com o fornecedor do sistema se não for possível identificar a configuração correta em seu BIOS.

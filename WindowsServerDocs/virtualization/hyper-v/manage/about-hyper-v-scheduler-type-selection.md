@@ -1,18 +1,18 @@
 ---
 title: Sobre a seleção do tipo de Agendador de hipervisor do Hyper-V
 description: Fornece informações para os administradores de host do Hyper-V no uso dos modos de Agendador do Hyper-V
-author: allenma
-ms.author: allenma
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: low
 ms.assetid: 5fe163d4-2595-43b0-ba2f-7fad6e4ae069
-ms.openlocfilehash: 332ec3a31d8a442fada7f01d30c5cb7d44965238
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9c41dfb5bad28122f8c2a6b06ff6574acd89a9ec
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994099"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746621"
 ---
 # <a name="about-hyper-v-hypervisor-scheduler-type-selection"></a>Sobre a seleção do tipo de Agendador de hipervisor do Hyper-V
 
@@ -28,7 +28,7 @@ Este documento descreve alterações importantes no padrão do Hyper-V e no uso 
 >[!IMPORTANT]
 >As vulnerabilidades de segurança de canal lateral conhecidas no momento em várias arquiteturas de processador podem ser exploradas por uma VM convidada mal-intencionada por meio do comportamento de agendamento do tipo de Agendador clássico do hipervisor herdado quando executadas em hosts com SMT (múltiplos Threading simultâneos) habilitados.  Se explorada com êxito, uma carga de trabalho mal-intencionada pode observar dados fora de seu limite de partição. Essa classe de ataques pode ser atenuada Configurando o hipervisor do Hyper-V para utilizar o tipo de Agendador principal do hipervisor e reconfigurar as VMs convidadas. Com o Agendador principal, o hipervisor restringe o VPSs de uma VM convidada a ser executado no mesmo núcleo de processador físico, o que isola fortemente a capacidade da VM de acessar dados para os limites do núcleo físico em que ele é executado.  Essa é uma mitigação altamente eficaz contra esses ataques de canal lateral, o que impede que a VM Observe quaisquer artefatos de outras partições, seja a raiz ou outra partição de convidado.  Portanto, a Microsoft está alterando as definições de configuração padrão e recomendadas para hosts de virtualização e VMs convidadas.
 
-## <a name="background"></a>Segundo plano
+## <a name="background"></a>Tela de fundo
 
 A partir do Windows Server 2016, o Hyper-V dá suporte a vários métodos de agendamento e gerenciamento de processadores virtuais, chamados de tipos de Agendador de hipervisor.  Uma descrição detalhada de todos os tipos de Agendador de hipervisor pode ser encontrada em [compreendendo e usando os tipos de Agendador de hipervisor do Hyper-V](./manage-hyper-v-scheduler-types.md).
 

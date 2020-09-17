@@ -2,15 +2,15 @@
 title: Implantar dispositivos de armazenamento NVMe usando a atribuição de dispositivo discreta
 description: Saiba como usar DDA para implantar dispositivos de armazenamento
 ms.topic: article
-author: chrishuybregts
-ms.author: chrihu
+ms.author: benarm
+author: BenjaminArmstrong
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: fdf6372d642a2e1413a2ed5029d9e9f25af4ce3f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 66da2888a5d7ce0777cb1976cdd484287362f691
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945939"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746081"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>Implantar dispositivos de armazenamento NVMe usando a atribuição de dispositivo discreta
 

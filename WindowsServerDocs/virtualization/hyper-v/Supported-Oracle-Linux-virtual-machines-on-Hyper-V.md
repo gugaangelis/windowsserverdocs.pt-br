@@ -1,18 +1,17 @@
 ---
 title: Máquinas virtuais Oracle Linux com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-manager: dongill
 ms.topic: article
 ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 06/05/2020
-ms.openlocfilehash: 0e9a11fbff5015037bffa1cad14e70d629fef94b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7c1029f31abe70b09bddc83f928ee492be18ef2b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989299"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746391"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Máquinas virtuais Oracle Linux com suporte no Hyper-V
 
@@ -1326,7 +1325,7 @@ Esta série tem apenas kernels de 64 bits.
 
    1. Crie um arquivo **/etc/udev/rules.d/100-Balloon.Rules**. Você pode usar qualquer outro nome desejado para o arquivo.
 
-   2. Adicione o seguinte conteúdo ao arquivo:`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. Adicione o seguinte conteúdo ao arquivo: `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. Reinicialize o sistema para habilitar o suporte a Hot-Add.
 

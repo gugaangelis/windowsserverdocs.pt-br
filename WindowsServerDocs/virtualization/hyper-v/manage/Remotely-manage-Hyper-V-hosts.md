@@ -1,18 +1,17 @@
 ---
 title: Gerenciar remotamente hosts do Hyper-V
 description: Descreve a compatibilidade de versão entre hosts Hyper-V e o Gerenciador do Hyper-V e como se conectar a hosts remotos em ambientes diferentes, incluindo entre domínios e autônomos.
-manager: dongill
 ms.topic: article
 ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/06/2016
-ms.openlocfilehash: 86e8ca55dbd61dca98054e15c06394f03190122e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2b0a7c93f5a6c6be7340c8d5b0a5bd93d21f1cec
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989741"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746651"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>Gerenciar hosts do Hyper-V remotamente com o Gerenciador do Hyper-V
 

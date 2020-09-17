@@ -1,18 +1,17 @@
 ---
 title: O Windows Vista deve ser configurado com a quantidade recomendada de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 64f4e53b-4adb-4e1d-bc48-c24f5f9d222f
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: edfc39153785b9926a39032520082329ad37d830
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: bd9c645dd1649ad23a37fda1727bfd9678097d51
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989776"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746161"
 ---
 # <a name="windows-vista-should-be-configured-with-the-recommended-amount-of-memory"></a>O Windows Vista deve ser configurado com a quantidade recomendada de memória
 

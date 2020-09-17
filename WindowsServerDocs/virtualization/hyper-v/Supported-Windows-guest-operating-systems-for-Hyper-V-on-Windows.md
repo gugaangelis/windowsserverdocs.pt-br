@@ -1,18 +1,17 @@
 ---
 title: Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 description: Lista os sistemas operacionais Windows com suporte para uso como um convidado em uma máquina virtual. Também fornece links para artigos semelhantes para versões anteriores do Hyper-V.
-manager: dongill
 ms.topic: article
 ms.assetid: 06b35897-2192-48b7-8c2d-125c520b0786
-author: lizap
-ms.author: elizapo
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 01/08/2019
-ms.openlocfilehash: 53036a353fa08b7be06aae6b4b70353a8a99ea0e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2e5cf6c94d0127a283c640a48aaa2fced5472e9d
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997625"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746721"
 ---
 # <a name="supported-windows-guest-operating-systems-for-hyper-v-on-windows-server"></a>Sistemas operacionais convidados do Windows com suporte para o Hyper-V no Windows Server
 
@@ -20,7 +19,7 @@ ms.locfileid: "87997625"
 
 O Hyper-V dá suporte a várias versões de distribuições do Windows Server, Windows e Linux para serem executadas em máquinas virtuais, como sistemas operacionais convidados. Este artigo aborda os sistemas operacionais Windows Server e Windows Guest com suporte. Para distribuições Linux e FreeBSD, consulte [máquinas virtuais Linux e FreeBSD com suporte para o Hyper-V no Windows](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md).
 
-Alguns sistemas operacionais têm o Integration Services integrado. Outros exigem que você instale ou atualize o Integration Services como uma etapa separada depois de configurar o sistema operacional na máquina virtual. Para obter mais informações, consulte as seções abaixo e [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services).
+Alguns sistemas operacionais têm o Integration Services integrado. Outros exigem que você instale ou atualize o Integration Services como uma etapa separada depois de configurar o sistema operacional na máquina virtual. Para obter mais informações, consulte as seções abaixo e  [Integration Services](/virtualization/hyper-v-on-windows/reference/integration-services).
 
 ## <a name="supported-windows-server-guest-operating-systems"></a>Sistemas operacionais convidados com suporte do Windows Server
 

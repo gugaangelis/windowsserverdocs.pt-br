@@ -1,18 +1,17 @@
 ---
 title: Configurar uma máquina virtual com um controlador SCSI para poder conectar e desconectar o armazenamento quente
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 511e1172-aeef-463d-b5dd-2bffae411ff1
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0b914b2d250bbcb4c5e795ec778dde8db91613ec
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9f0cdb47206c89c4da66786e8dfd118e6a05be81
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948457"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746971"
 ---
 # <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>Configurar uma máquina virtual com um controlador SCSI para poder conectar e desconectar o armazenamento quente
 

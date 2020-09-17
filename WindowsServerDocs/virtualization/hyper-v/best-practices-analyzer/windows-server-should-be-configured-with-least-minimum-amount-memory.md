@@ -1,18 +1,17 @@
 ---
 title: O Windows Server 2016 deve ser configurado com pelo menos a quantidade mínima de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d324af73-af73-40b0-bd5b-8003ba3e921b
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: f382b4725ec76802da36a83d8388445691990707
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7b1aeb2a8fcc6ac499946a5c9364775222b34d26
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997158"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746101"
 ---
 # <a name="windows-server-2016-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>O Windows Server 2016 deve ser configurado com pelo menos a quantidade mínima de memória
 

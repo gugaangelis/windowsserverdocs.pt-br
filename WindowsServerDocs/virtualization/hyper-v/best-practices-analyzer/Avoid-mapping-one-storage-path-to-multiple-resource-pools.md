@@ -1,18 +1,17 @@
 ---
 title: Evite mapear um caminho de armazenamento para vários pools de recursos
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 24992453-762b-4892-9a50-55d237b9b7f2
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 38e0fdb5956197984a78d195ea23a7e856634575
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fb2756889907dd9e268782816a9d035c9e6478d7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87942064"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747041"
 ---
 # <a name="avoid-mapping-one-storage-path-to-multiple-resource-pools"></a>Evite mapear um caminho de armazenamento para vários pools de recursos
 

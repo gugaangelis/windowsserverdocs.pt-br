@@ -1,18 +1,17 @@
 ---
 title: Os discos rígidos virtuais com arquivos de paginação devem ser excluídos da replicação
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: c0be8a5f-64a1-488a-944e-bb913bb90517
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 8f5c0cffa986e658d1ca750c11a6204bf8780a32
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 14729113ee2ba3694bcc29d50da5e7113c763268
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960219"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746561"
 ---
 # <a name="virtual-hard-disks-with-paging-files-should-be-excluded-from-replication"></a>Os discos rígidos virtuais com arquivos de paginação devem ser excluídos da replicação
 
@@ -24,7 +23,7 @@ Para obter mais informações sobre práticas recomendadas e varreduras, confira
 |-|-|
 |**Sistema operacional**|Windows Server 2016|
 |**Produto/Recurso**|Hyper-V|
-|**Gravidade**|Informação|
+|**Gravidade**|Informações|
 |**Categoria**|Configuração|
 
 Nas seções a seguir, os itálicos indicam o texto da interface do usuário que aparece na ferramenta de Analisador de Práticas Recomendadas para esse problema.

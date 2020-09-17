@@ -1,18 +1,17 @@
 ---
 title: Descrições de recursos para máquinas virtuais Linux e FreeBSD no Hyper-V
 description: Descreve os recursos que afetam os componentes principais, como rede, armazenamento, memória ao usar o Linux e o FreeBSD em uma máquina virtual
-manager: dongill
 ms.topic: article
 ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/03/2016
-ms.openlocfilehash: b5ffb10feaa32b7dce2c491d2e7bdd1d467818fa
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: eb4c17917e098bebad51b36e6f0c91d9d5b5f3c9
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989092"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747121"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Descrições de recursos para máquinas virtuais Linux e FreeBSD no Hyper-V
 

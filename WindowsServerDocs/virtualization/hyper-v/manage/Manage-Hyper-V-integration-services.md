@@ -1,18 +1,17 @@
 ---
 title: Gerenciar Integration Services do Hyper-V
 description: Descreve como ativar e desativar o Integration Services e instalá-los, se necessário
-author: kbdazure
-ms.author: kathydav
-manager: dongill
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/20/2016
 ms.topic: article
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 5d5f69e1c71df9746421329d8fdf11a9786a948b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 9056beec7d07d1657ece3703f461ecfe5d9cd0fc
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996760"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746441"
 ---
 # <a name="manage-hyper-v-integration-services"></a>Gerenciar Integration Services do Hyper-V
 
@@ -247,7 +246,7 @@ Recomendamos que você mantenha os serviços de integração atualizados para ob
 | - | | |
 | Convidados do Linux | gerenciador de pacotes | O Integration Services para Linux está integrado ao distribuição, mas pode haver atualizações opcionais disponíveis. ******** |
 
-\*Se o serviço de integração de troca de dados não puder ser habilitado, os serviços de integração para esses convidados estarão disponíveis no [centro de download](https://support.microsoft.com/kb/3071740) como um arquivo de gabinete (CAB). As instruções para aplicar um CAB estão disponíveis nesta [postagem de blog](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247).
+\* Se o serviço de integração de troca de dados não puder ser habilitado, os serviços de integração para esses convidados estarão disponíveis no [centro de download](https://support.microsoft.com/kb/3071740) como um arquivo de gabinete (CAB). As instruções para aplicar um CAB estão disponíveis nesta [postagem de blog](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247).
 
 **Para máquinas virtuais em execução no Windows 8.1/hosts 2012R2 do Windows Server:**
 

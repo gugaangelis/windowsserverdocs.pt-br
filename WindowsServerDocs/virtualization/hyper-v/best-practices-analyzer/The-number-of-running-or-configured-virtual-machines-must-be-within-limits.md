@@ -1,18 +1,17 @@
 ---
 title: O número de máquinas virtuais em execução ou configuradas deve estar dentro dos limites com suporte
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 9d3c4aa3-8416-46ec-a253-26dc98088d7b
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0bf7dcf854eea7c8cfe3e65fe7aee2a2d6cc5e14
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: f97ca9ad38bfdeee7e6d543a32f62f7a5344e700
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990241"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746821"
 ---
 # <a name="the-number-of-running-or-configured-virtual-machines-must-be-within-supported-limits"></a>O número de máquinas virtuais em execução ou configuradas deve estar dentro dos limites com suporte
 

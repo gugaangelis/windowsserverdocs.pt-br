@@ -1,18 +1,17 @@
 ---
 title: Evitar pausar uma máquina virtual
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 930f927c-e414-4a36-9786-028941e886e4
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6799795ae383fd0522ce0b35eba0443ae536b0dd
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 956ada130cea2d489545c8206ae8283041e6868f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969993"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747031"
 ---
 # <a name="avoid-pausing-a-virtual-machine"></a>Evitar pausar uma máquina virtual
 

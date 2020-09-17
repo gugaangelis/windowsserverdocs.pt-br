@@ -1,18 +1,17 @@
 ---
 title: Configure pelo menos a quantidade necessária de memória para uma máquina virtual que executa o Windows 7 e esteja habilitada para Memória Dinâmica
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 119965bf-6154-414d-b3a1-aa5b30eac5f6
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d5d88fd149cd2d8a361e11edb09cb467a422bd5f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cf6ab68e0c8d7339b8ba6574a7b0a4c02fa59e6e
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968463"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746961"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-7-and-enabled-for-dynamic-memory"></a>Configure pelo menos a quantidade necessária de memória para uma máquina virtual que executa o Windows 7 e esteja habilitada para Memória Dinâmica
 

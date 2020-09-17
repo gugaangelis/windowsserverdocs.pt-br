@@ -1,18 +1,17 @@
 ---
 title: Configurar a Réplica do Hyper-V
 description: Fornece instruções para configurar a réplica, testar o failover e fazer uma primeira replicação.
-manager: dongill
 ms.topic: article
 ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/10/2016
-ms.openlocfilehash: 24fce3e0ebbfc51167a7e6e390de092433cceaff
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cfa21867503c091da42866aba4c9bc51050200ae
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87941844"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746641"
 ---
 # <a name="set-up-hyper-v-replica"></a>Configurar a Réplica do Hyper-V
 
@@ -55,7 +54,7 @@ Veja o que você deve verificar antes de começar:
 
 -   **Decida como fazer a replicação inicial dos dados da máquina virtual**: a replicação começa transferindo as necessidades para transferir o estado atual das máquinas virtuais. Esse estado inicial pode ser transmitido diretamente através da rede existente, imediatamente ou em um momento posterior configurado por você. Você também pode usar uma máquina virtual restaurada pré-existente (por exemplo, se você restaurou um backup anterior da máquina virtual no servidor de réplica) como a cópia inicial. Ou então, você pode poupar largura de banda da rede copiando a cópia inicial para mídia externa e depois entregando fisicamente a mídia ao site de Réplica.  Se você quiser usar uma máquina virtual preexistente, exclua todos os instantâneos anteriores associados a ela.
 
-## <a name="deployment-steps"></a>Etapas de implantação.
+## <a name="deployment-steps"></a>Etapas de implantação
 
 ### <a name="step-1-set-up-the-hyper-v-hosts"></a>Etapa 1: configurar os hosts do Hyper-V
 Você precisará de pelo menos dois hosts Hyper-V com uma ou mais máquinas virtuais em cada servidor. [Introdução ao Hyper-V](../get-started/Get-started-with-Hyper-V-on-Windows.md). O servidor host no qual você replicará máquinas virtuais precisará ser configurado como o servidor de réplica.
@@ -81,9 +80,9 @@ Para permitir a replicação entre os servidores primário e secundário, o trá
 
 -  Para habilitar regras em um cluster Hyper-V, abra uma sessão do Windows PowerShell usando **Executar como administrador**e execute um destes comandos:
 
-    -   Para HTTP:`get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}`
+    -   Para HTTP:  `get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}`
 
-    -   Para HTTPS:`get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}`
+    -   Para HTTPS: `get-clusternode | ForEach-Object  {Invoke-command -computername $_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}`
 
 ### <a name="enable-virtual-machine-replication"></a>Habilitar replicação de máquina virtual
 Faça o seguinte em cada máquina virtual que você deseja replicar:
@@ -93,7 +92,7 @@ Faça o seguinte em cada máquina virtual que você deseja replicar:
 
 2.  Na página **Antes de Começar**, clique em **Avançar**.
 
-3.  Na página **especificar servidor de réplica** , na caixa servidor de réplica, insira o NetBIOS ou o FQDN do servidor de réplica. Se o servidor de réplica fizer parte de um cluster de failover, insira o nome do agente de réplica do Hyper-V. Clique em **Próximo**.
+3.  Na página **especificar servidor de réplica** , na caixa servidor de réplica, insira o NetBIOS ou o FQDN do servidor de réplica. Se o servidor de réplica fizer parte de um cluster de failover, insira o nome do agente de réplica do Hyper-V. Clique em **Avançar**.
 
 4.  Na página **especificar parâmetros de conexão** , a réplica do Hyper-V recupera automaticamente as configurações de porta e autenticação que você configurou para o servidor de réplica. Se os valores não estiverem sendo recuperados, verifique se o servidor está configurado como um servidor de réplica e se ele está registrado no DNS. Se necessário, digite manualmente a configuração.
 
@@ -103,7 +102,7 @@ Faça o seguinte em cada máquina virtual que você deseja replicar:
 
 7.  Na página **Configurar pontos de recuperação adicionais** , selecione se deseja manter apenas o ponto de recuperação mais recente ou criar pontos adicionais.    Se você quiser recuperar consistentemente aplicativos e cargas de trabalho que têm seus próprios gravadores VSS, recomendamos que você selecione a **frequência de serviço de cópias de sombra de volume (VSS)** y e especifique a frequência de criação de instantâneos consistentes com o aplicativo. Observe que o serviço solicitante do VMM do Hyper-V deve estar em execução nos servidores Hyper-V primário e secundário. Em seguida, clique em **Próximo**.
 
-8.  Na página **escolher replicação inicial** , selecione o método de replicação inicial a ser usado.  A configuração padrão para enviar a cópia inicial pela rede irá copiar o arquivo de configuração de máquina virtual primário (VMCX) e os arquivos de disco rígido virtual (VHDX e VHD) selecionados em sua conexão de rede. Verifique a disponibilidade da largura de banda da rede se você pretende usar essa opção. Se a máquina virtual primária já estiver configurada no site secundário como uma máquina virtual replicar, pode ser útil selecionar **usar uma máquina virtual existente no servidor de replicação como a cópia inicial**. Você pode usar a exportação do Hyper-V para exportar a máquina virtual primária e importá-la como uma máquina virtual de réplica no servidor secundário. Para máquinas virtuais maiores ou largura de banda limitada, você pode escolher que a replicação inicial na rede ocorra em um momento posterior e, em seguida, configurar horários de pico ou enviar as informações de replicação inicial como mídia offline.
+8.  Na página **escolher replicação inicial** , selecione o método de replicação inicial a ser usado.  A configuração padrão para enviar a cópia inicial pela rede irá copiar o arquivo de configuração de máquina virtual primário (VMCX) e os arquivos de disco rígido virtual (VHDX e VHD) selecionados em sua conexão de rede. Verifique a disponibilidade da largura de banda da rede se você pretende usar essa opção. Se a máquina virtual primária já estiver configurada no site secundário como uma máquina virtual replicar, pode ser útil selecionar  **usar uma máquina virtual existente no servidor de replicação como a cópia inicial**. Você pode usar a exportação do Hyper-V para exportar a máquina virtual primária e importá-la como uma máquina virtual de réplica no servidor secundário. Para máquinas virtuais maiores ou largura de banda limitada, você pode escolher que a replicação inicial na rede ocorra em um momento posterior e, em seguida, configurar horários de pico ou enviar as informações de replicação inicial como mídia offline.
 
     Se você fizer a replicação offline, você transportará a cópia inicial para o servidor secundário usando um meio de armazenamento externo, como um disco rígido ou uma unidade USB. Para fazer isso, você precisará conectar o armazenamento externo ao servidor primário (ou nó de proprietário em um cluster) e, em seguida, ao selecionar enviar cópia inicial usando a mídia externa, você pode especificar um local localmente ou em sua mídia externa na qual a cópia inicial pode ser armazenada.  Uma máquina virtual de espaço reservado é criada no site de réplica. Depois que a replicação inicial for concluída, o armazenamento externo poderá ser enviado para o site de réplica. Lá, você conectará a mídia externa ao servidor secundário ou ao nó proprietário do cluster secundário. Em seguida, você importará a réplica inicial para um local especificado e a mesclará na máquina virtual do espaço reservado.
 
@@ -114,7 +113,7 @@ Faça o seguinte em cada máquina virtual que você deseja replicar:
 ## <a name="run-a-failover"></a>Executar um failover
 Depois de concluir essas etapas de implantação, seu ambiente replicado estará ativo e em execução. Agora você pode executar failovers conforme necessário.
 
-**Failover de teste**: se você quiser executar um failover de teste, clique com o botão direito do mouse na máquina virtual primária e selecione failover de teste de **replicação**  >  **Test Failover**. Escolha o mais recente ou outro ponto de recuperação, se estiver configurado. Uma nova máquina virtual de teste será criada e iniciada no site secundário. Depois de concluir o teste, selecione **parar failover de teste** na máquina virtual de réplica para limpá-lo. Observe que, para uma máquina virtual, você só pode executar um failover de teste por vez. [Leia mais](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).
+**Failover de teste**: se você quiser executar um failover de teste, clique com o botão direito do mouse na máquina virtual primária e selecione failover de teste de **replicação**  >  **Test Failover**. Escolha o mais recente ou outro ponto de recuperação, se estiver configurado. Uma nova máquina virtual de teste será criada e iniciada no site secundário. Depois de concluir o teste, selecione  **parar failover de teste** na máquina virtual de réplica para limpá-lo. Observe que, para uma máquina virtual, você só pode executar um failover de teste por vez. [Leia mais](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).
 
 **Failover planejado**: para executar um failover planejado, clique com o botão direito do mouse na **Replication**máquina virtual primária e selecione  >  **failover planejado**de replicação. O failover planejado executa verificações de pré-requisitos para garantir zero perda de dados. Ele verifica se a máquina virtual primária está desligada antes de iniciar o failover. Após o failover da máquina virtual, ele começa a replicar as alterações de volta para o site primário quando ele está disponível. Observe que para isso funcionar, o servidor primário deve ser configurado para recebido a replicação do servidor secundário ou do agente de réplica do Hyper-V no caso de um cluster primário. O failover planejado envia o último conjunto de alterações controladas. [Leia mais](https://blogs.technet.com/b/virtualization/archive/2012/07/31/types-of-failover-operations-in-hyper-v-replica-part-ii-planned-failover.aspx).
 

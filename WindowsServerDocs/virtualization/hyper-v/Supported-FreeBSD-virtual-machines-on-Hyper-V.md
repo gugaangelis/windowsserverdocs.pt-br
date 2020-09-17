@@ -1,18 +1,17 @@
 ---
 title: Máquinas virtuais FreeBSD com suporte no Hyper-V
 description: Lista os serviços e recursos de integração do Linux incluídos em cada versão
-manager: dongill
 ms.topic: article
 ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
-author: shirgall
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: 3767c56640dd4e4e07e2cdd4a578ec0c3db2f470
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bf4b1aeb701741a7f58f3d186ffe7861cdd1e8e0
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965633"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746401"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuais FreeBSD com suporte no Hyper-V
 
@@ -28,7 +27,7 @@ O mapa de distribuição de recursos a seguir indica os recursos em cada versão
 
 * (*em branco*)-recurso não disponível
 
-|**Recurso**|**Versão do sistema operacional Windows Server**|**12 de 12,1**|**11.1-11.3**|**11,0**|**10,3**|**10,2**|**10,0-10,1**|**9,1-9,3, 8,4**|
+|**Recurso**|**Versão do sistema operacional Windows Server**|**12 de 12,1**|**11.1-11.3**|**11,0**|**10,3**|**10.2**|**10,0-10,1**|**9,1-9,3, 8,4**|
 |-|-|-|-|-|-|-|-|-|
 |**Disponibilidade**||Interno|Interno|Interno|Interno|Interno|Interno|[Portas](https://svnweb.freebsd.org/ports/branches/2015Q1/emulators/hyperv-is/) |
 |**[Núcleo](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|

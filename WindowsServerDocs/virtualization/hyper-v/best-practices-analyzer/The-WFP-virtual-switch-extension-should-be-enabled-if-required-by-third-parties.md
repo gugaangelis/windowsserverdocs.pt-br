@@ -1,18 +1,17 @@
 ---
 title: a extensão do comutador virtual WFP deve ser habilitada se for exigida pelas extensões de terceiros
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 628f58ef57e6a461791cd9641d043acfbfd79129
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b6099410d4d5e043387594022e8bb376d5fb52f7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87993450"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746671"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>a extensão do comutador virtual WFP deve ser habilitada se for exigida pelas extensões de terceiros
 

@@ -1,18 +1,17 @@
 ---
 title: Instalar a função Hyper-V no Windows Server
 description: Fornece instruções para instalar o Hyper-V usando o Gerenciador do Servidor ou o Windows PowerShell
-manager: dongill
 ms.topic: get-started-article
 ms.assetid: 8e871317-09d2-4314-a6ec-ced12b7aee89
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 12/02/2016
-ms.openlocfilehash: 32632e7af3db0c3b390606bc784b929e76b2892f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e8b95d744954d477e33322cad8d20ff3ff8d7258
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997593"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746001"
 ---
 # <a name="install-the-hyper-v-role-on-windows-server"></a>Instalar a função Hyper-V no Windows Server
 
@@ -33,7 +32,7 @@ Se você quiser instalar apenas as ferramentas de gerenciamento, como o Gerencia
 
 1. Em **Gerenciador do Servidor**, no menu **Gerenciar** clique em **Adicionar Funções e Recursos**.
 
-2. Na página **Antes de começar**, verifique se o servidor de destino e o ambiente de rede estão preparados para a função e o recurso que você vai instalar. Clique em **Próximo**.
+2. Na página **Antes de começar**, verifique se o servidor de destino e o ambiente de rede estão preparados para a função e o recurso que você vai instalar. Clique em **Avançar**.
 
 3. Na página **Selecionar tipo de instalação**, selecione **Instalação baseada em função ou recurso** e em **Avançar**.
 

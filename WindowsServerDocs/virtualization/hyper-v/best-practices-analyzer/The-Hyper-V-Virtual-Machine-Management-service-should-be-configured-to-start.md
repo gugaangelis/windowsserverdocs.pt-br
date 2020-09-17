@@ -1,18 +1,17 @@
 ---
 title: O serviço gerenciamento de máquinas virtuais do Hyper-V deve ser configurado para iniciar automaticamente
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 222bbe76-c514-4a3f-b61b-860a4dc2826a
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 73ef8f7de89da5a05fedd53b9b23a32fed683dbf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8245e425adb1b1187918e9ee213135c16a190cde
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960479"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746491"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-should-be-configured-to-start-automatically"></a>O serviço gerenciamento de máquinas virtuais do Hyper-V deve ser configurado para iniciar automaticamente
 

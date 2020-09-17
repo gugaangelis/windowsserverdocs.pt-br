@@ -1,18 +1,17 @@
 ---
 title: O Windows Server 2016 deve ser configurado com a quantidade recomendada de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 7860e609-d278-42a3-85a4-ca92c8b6b2ad
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 774ab1b92c31e007e4ca022f3d0b1efe0d1a00d8
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 6767274f79f70dc5ac3b70b8b4ed946820cb4fee
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997223"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90747131"
 ---
 # <a name="windows-server-2016-should-be-configured-with-the-recommended-amount-of-memory"></a>O Windows Server 2016 deve ser configurado com a quantidade recomendada de memória
 

@@ -1,18 +1,17 @@
 ---
 title: Usar a migração ao vivo sem clustering de failover para mover uma máquina virtual
 description: Fornece pré-requisitos e instruções para fazer uma migração ao vivo em um ambiente autônomo.
-manager: dongill
 ms.topic: article
 ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 01/17/2017
-ms.openlocfilehash: e28ddefb5c1718fa251aa3de6d4323a3bc14c633
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: b02c30a612ef6aa1ed56e1c26e86c21a48b5b138
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990230"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90746631"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>Usar a migração ao vivo sem clustering de failover para mover uma máquina virtual
 
