@@ -1,17 +1,16 @@
 ---
 title: Definir as configurações de TCP/IP de failover que você deseja que a máquina virtual de réplica use no caso de um failover
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 713be5cf428617287e0be0bc65b3e2beb2d11400
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: a84d7e6c4e5366642ac559e397af4a267bf19be5
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948444"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745831"
 ---
 # <a name="configure-the-failover-tcpip-settings-that-you-want-the-replica-virtual-machine-to-use-in-the-event-of-a-failover"></a>Definir as configurações de TCP/IP de failover que você deseja que a máquina virtual de réplica use no caso de um failover
 

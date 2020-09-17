@@ -1,18 +1,17 @@
 ---
 title: A compactação é recomendada para o tráfego de replicação
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: cf8be6e9-2909-4e4a-bb63-d1e1ebbc6930
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2184a2ec0441af7fdbfc7566d783bee82f6bbbb9
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 61f1b56720af3583745960073823fef7b7b5173f
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954523"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745841"
 ---
 # <a name="compression-is-recommended-for-replication-traffic"></a>A compactação é recomendada para o tráfego de replicação
 

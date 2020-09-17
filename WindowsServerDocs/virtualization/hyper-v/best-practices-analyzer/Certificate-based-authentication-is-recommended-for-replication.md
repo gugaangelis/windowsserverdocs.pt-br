@@ -1,18 +1,17 @@
 ---
 title: A autenticação baseada em certificado é recomendada para replicação
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: d931cc57-414f-4bdf-9ebd-08fd5e22b19d
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: ec5415d0bdad10c4b0f4f0560141dd290eca8e36
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3ef11472c042e19de9f7ee52ea5958ca0bf6e44b
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954493"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745851"
 ---
 # <a name="certificate-based-authentication-is-recommended-for-replication"></a>A autenticação baseada em certificado é recomendada para replicação
 

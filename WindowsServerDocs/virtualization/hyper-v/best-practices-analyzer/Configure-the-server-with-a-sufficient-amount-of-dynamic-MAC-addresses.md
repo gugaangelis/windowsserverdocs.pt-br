@@ -1,18 +1,17 @@
 ---
 title: Configurar o servidor com uma quantidade suficiente de endereços MAC dinâmicos
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: a2804519-9790-4006-80b6-e990a8f505fe
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: b0416bb38e78f62bddf8a7937eb821ee0988286d
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 0631954ccb89c41637e92d1170bed99d82a085b5
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87968373"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744121"
 ---
 # <a name="configure-the-server-with-a-sufficient-amount-of-dynamic-mac-addresses"></a>Configurar o servidor com uma quantidade suficiente de endereços MAC dinâmicos
 

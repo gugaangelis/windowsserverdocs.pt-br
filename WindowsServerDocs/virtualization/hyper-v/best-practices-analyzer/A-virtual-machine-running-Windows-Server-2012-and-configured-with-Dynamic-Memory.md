@@ -1,18 +1,17 @@
 ---
 title: Uma máquina virtual que executa o Windows Server 2012 e configurada com Memória Dinâmica deve usar os valores recomendados para as configurações de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0aa35e36-8e3b-498b-b71d-003a0a0947be
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 7c9ffcd0422b0512c431a903acb3e65e70f5c453
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: c14cb55ea11aad0801641535de2a544886db960a
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87948649"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744141"
 ---
 # <a name="a-virtual-machine-running-windows-server-2012-and-configured-with-dynamic-memory-should-use-recommended-values-for-memory-settings"></a>Uma máquina virtual que executa o Windows Server 2012 e configurada com Memória Dinâmica deve usar os valores recomendados para as configurações de memória
 

@@ -1,18 +1,17 @@
 ---
 title: Configurar máquinas virtuais que executam o Windows Vista com 1 ou 2 processadores virtuais
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: e562bce3-fd68-42c9-821c-12022ae4746c
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 14be82374fe43314bc7e7fe95aaa00f774295ed6
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: bf5780ae397dd774dd6063e9dcdafd36907199f4
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87960639"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744031"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>Configurar máquinas virtuais que executam o Windows Vista com 1 ou 2 processadores virtuais
 

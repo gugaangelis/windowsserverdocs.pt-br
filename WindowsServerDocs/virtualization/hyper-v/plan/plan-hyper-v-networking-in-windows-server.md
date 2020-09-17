@@ -1,17 +1,16 @@
 ---
 title: Planejar a rede do Hyper-V no Windows Server
 description: Descreve o que é necessário para a rede básica no Hyper-V e fornece links para instruções
-manager: dongill
 ms.topic: article
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: b31d942e8d7890a8f699f743bcd24953d2a3e760
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e36ebb6d90dcb4fc05e05c135a49f84e850249b2
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996069"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745931"
 ---
 # <a name="plan-for-hyper-v-networking-in-windows-server"></a>Planejar a rede do Hyper-V no Windows Server
 
@@ -26,7 +25,7 @@ A maneira mais fácil de estabelecer a rede básica é criar um comutador virtua
 
 Para lidar com diferentes tipos de rede, você pode adicionar comutadores virtuais e adaptadores de rede virtual. Todas as opções fazem parte do host Hyper-V, mas cada adaptador de rede virtual pertence a apenas uma máquina virtual.
 
-O comutador virtual é um comutador de rede Ethernet de camada 2 baseado em software. Ele fornece recursos internos para monitorar, controlar e segmentar o tráfego, bem como segurança e diagnóstico.  Você pode adicionar ao conjunto de recursos internos instalando plug-ins, também chamados de *extensões*. Eles estão disponíveis de fornecedores de software independentes. Para obter mais informações sobre o comutador e as extensões, consulte [comutador virtual do Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).
+O comutador virtual é um comutador de rede Ethernet de camada 2 baseado em software. Ele fornece recursos internos para monitorar, controlar e segmentar o tráfego, bem como segurança e diagnóstico.  Você pode adicionar ao conjunto de recursos internos instalando plug-ins, também chamados de  *extensões*. Eles estão disponíveis de fornecedores de software independentes. Para obter mais informações sobre o comutador e as extensões, consulte [comutador virtual do Hyper-V](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md).
 
 ### <a name="switch-and-network-adapter-choices"></a>Opções de adaptador de rede e de comutador
 O Hyper-V oferece três tipos de comutadores virtuais e dois tipos de adaptadores de rede virtual. Você escolherá qual delas deseja ao criá-la. Você pode usar o Gerenciador do Hyper-V ou o módulo do Hyper-V para Windows PowerShell para criar e gerenciar comutadores virtuais e adaptadores de rede virtual. Alguns recursos avançados de rede, como ACLs (listas de controle de acesso) de porta estendidas, só podem ser gerenciados usando cmdlets no módulo do Hyper-V.

@@ -1,18 +1,17 @@
 ---
 title: O Windows Vista deve ser configurado com pelo menos a quantidade mínima de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 49f6f9b6-c290-4b1b-b6f3-cc9a0acd8fb2
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 74f563cb19bf480f3c5dfa8df639f4b75adbaf4e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: d0ba0edaf57becfda16c5a55aab6e3f4c10febf9
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996716"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744072"
 ---
 # <a name="windows-vista-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>O Windows Vista deve ser configurado com pelo menos a quantidade mínima de memória
 

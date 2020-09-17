@@ -1,18 +1,17 @@
 ---
 title: Memória Dinâmica está habilitado, mas não respondendo em algumas máquinas virtuais
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 91b7f50f-a071-4ab6-beb1-1b29f92f52b6
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: d6227829f73cdccefecd0758a69a25a299665557
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c826fc39637b3a7cf0f155065945d180bce5e4cb
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87988956"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744131"
 ---
 # <a name="dynamic-memory-is-enabled-but-not-responding-on-some-virtual-machines"></a>Memória Dinâmica está habilitado, mas não respondendo em algumas máquinas virtuais
 

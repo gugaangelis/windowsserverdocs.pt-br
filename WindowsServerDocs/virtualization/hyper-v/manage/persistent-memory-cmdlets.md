@@ -3,15 +3,14 @@ title: Cmdlets para configurar dispositivos de memória persistente para VMs do 
 description: Como configurar dispositivos de memória persistente para VMs do Hyper-V
 ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
-ms.author: lizross
-author: eross-msft
-manager: mtillman
-ms.openlocfilehash: 68f4d4121513973e97a28ad26cea7856a842b302
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.author: benarm
+author: BenjaminArmstrong
+ms.openlocfilehash: 882e63b2119a2c6483234ef7993b47f0aeaf7915
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640199"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744051"
 ---
 # <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>Cmdlets para configurar dispositivos de memória persistente para VMs do Hyper-V
 

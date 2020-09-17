@@ -1,18 +1,17 @@
 ---
 title: O Windows 8 deve ser configurado com a quantidade recomendada de memória
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 0c739e7c-4403-4eff-9e69-213ba1ab7336
-author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: 31235c0526012fddc64d6359b63ad7a8fd3b2217
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c01da3f447ea5109d5912e84b0ba03ecabc50c63
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992577"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745791"
 ---
 # <a name="windows-8-should-be-configured-with-the-recommended-amount-of-memory"></a>O Windows 8 deve ser configurado com a quantidade recomendada de memória
 

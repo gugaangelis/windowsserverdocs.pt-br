@@ -1,18 +1,17 @@
 ---
 title: O hipervisor do Windows deve estar em execução
 description: Fornece instruções para resolver o problema relatado por essa regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 501a9beb-c464-46c0-88c5-e3e7e3e70101
-author: kbdazure
 ms.date: 10/03/2016
-ms.openlocfilehash: aa89f3735151b2dee795c1a325e22446e3770fa0
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 75437680370672a1eef9fad2957f398ce4f267d7
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87994537"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90744811"
 ---
 # <a name="windows-hypervisor-must-be-running"></a>O hipervisor do Windows deve estar em execução
 

@@ -1,18 +1,17 @@
 ---
 title: Configurar máquinas virtuais para usar o SR-IOV somente quando houver suporte do sistema operacional convidado
 description: Versão online do texto para esta regra de Analisador de Práticas Recomendadas.
-manager: dongill
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.topic: article
 ms.assetid: 33cf5b68-e43e-47ef-adbc-6b266c1d4dce
-author: kbdazure
 ms.date: 8/16/2016
-ms.openlocfilehash: 1939aa6e866eddcf5ac99a784332b65cd594ceb8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3a167b72f9c5c9a011980c07afe5a9a262aaa1be
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935504"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745681"
 ---
 # <a name="configure-virtual-machines-to-use-sr-iov-only-when-supported-by-the-guest-operating-system"></a>Configurar máquinas virtuais para usar o SR-IOV somente quando houver suporte do sistema operacional convidado
 
