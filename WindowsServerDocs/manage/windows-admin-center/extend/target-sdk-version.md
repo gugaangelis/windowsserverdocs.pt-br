@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 96e17326bc289b4ad018da59b01344956586a198
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3d6b08e69d69a37b31b616994b3bdb67666cb2bb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964552"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766929"
 ---
 # <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Direcionar uma versão diferente do SDK do centro de administração do Windows
 
@@ -21,12 +21,12 @@ Manter sua extensão atualizada com alterações do SDK e alterações na plataf
 
 Há três versões do SDK das quais você pode escolher:
 
-* ```latest```– Este pacote do SDK se alinha com a versão atual do centro de administração do Windows no GA
-* ```insider```– Este pacote SDK se alinha com a versão prévia atual do centro de administração do Windows (disponível no Windows Server Insider Preview)
-* ```next```– Este pacote SDK contém a funcionalidade mais recente
+* ```latest``` – Este pacote do SDK se alinha com a versão atual do centro de administração do Windows no GA
+* ```insider``` – Este pacote SDK se alinha com a versão prévia atual do centro de administração do Windows (disponível no Windows Server Insider Preview)
+* ```next``` – Este pacote SDK contém a funcionalidade mais recente
 
 > [!NOTE]
-> Saiba mais sobre as diferentes [versões](https://aka.ms/WACDownloadPage) do centro de administração do Windows que estão disponíveis para download.
+> Saiba mais sobre as diferentes [versões](../overview.md) do centro de administração do Windows que estão disponíveis para download.
 
 ## <a name="targeting-sdk-version-on-a-new-project"></a>Direcionando a versão do SDK em um novo projeto
 

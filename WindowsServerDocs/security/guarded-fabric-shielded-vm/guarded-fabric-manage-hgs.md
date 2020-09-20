@@ -5,12 +5,12 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
-ms.openlocfilehash: 851ea4a57068c1544f290c48f370e04b96857cf6
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4c6fe87cd407a41b3686d86a37308bb08ddd6793
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989162"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766739"
 ---
 # <a name="managing-the-host-guardian-service"></a>Gerenciando o serviço guardião de host
 
@@ -39,7 +39,7 @@ Isso também significa que o domínio e os administradores corporativos para os 
 Qualquer pessoa que possa conceder acesso a mais recursos representa um risco de segurança.
 
 ### <a name="using-just-enough-administration"></a>Usando apenas a administração suficiente
-O HGS vem com funções de administração Jea ( [apenas suficientes](https://aka.ms/JEAdocs) ) internas para ajudá-lo a gerenciá-lo com mais segurança.
+O HGS vem com funções de administração Jea ( [apenas suficientes](/powershell/scripting/learn/remoting/jea/overview) ) internas para ajudá-lo a gerenciá-lo com mais segurança.
 O JEA ajuda a permitir que você delegue tarefas de administração para usuários não administradores, o que significa que as pessoas que gerenciam políticas HGS não precisam realmente ser administradores de todo o computador ou domínio.
 O JEA funciona limitando os comandos que um usuário pode executar em uma sessão do PowerShell e usando uma conta local temporária nos bastidores (exclusivos para cada sessão de usuário) para executar os comandos que normalmente exigem elevação.
 
@@ -339,7 +339,7 @@ Para atestado confiável de TPM, há várias políticas internas configuradas no
 Algumas dessas políticas são "bloqueadas", o que significa que elas não podem ser desabilitadas por motivos de segurança.
 A tabela a seguir explica a finalidade de cada política padrão.
 
-Nome da Política                    | Finalidade
+Nome da política                    | Finalidade
 -------------------------------|-----------------------------------------------------
 Hgs_SecureBootEnabled          | Requer que os hosts tenham a inicialização segura habilitada. Isso é necessário para medir os binários de inicialização e outras configurações bloqueadas por UEFI.
 Hgs_UefiDebugDisabled          | Garante que os hosts não tenham um depurador de kernel habilitado. Os depuradores de modo de usuário são bloqueados com políticas de integridade de código.
@@ -597,7 +597,7 @@ Consulte a documentação do fornecedor do HSM para obter as etapas e os recurso
     1. Criar um certificado de criptografia com a propriedade de uso da chave de **codificação de dados** no HSM
     2. Criar um certificado de assinatura com a propriedade de uso de chave de **assinatura digital** em seu HSM
 3. Instale os certificados no repositório de certificados local de cada nó do HGS de acordo com as diretrizes do seu fornecedor HSM.
-4. Se o HSM usar permissões granulares para conceder permissão a aplicativos específicos ou usuários para usar a chave privada, você precisará conceder acesso à conta de serviço gerenciado de grupo HGS ao certificado. Você pode encontrar o nome da conta do gMSA HGS executando`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+4. Se o HSM usar permissões granulares para conceder permissão a aplicativos específicos ou usuários para usar a chave privada, você precisará conceder acesso à conta de serviço gerenciado de grupo HGS ao certificado. Você pode encontrar o nome da conta do gMSA HGS executando `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 5. Adicione os certificados de assinatura e criptografia ao HGS substituindo as impressões digitais por aquelas dos seus certificados nos seguintes comandos:
 
     ```powershell
@@ -609,7 +609,7 @@ Consulte a documentação do fornecedor do HSM para obter as etapas e os recurso
 
 Se você tiver um certificado com suporte de software emitido por uma autoridade de certificação pública ou de sua empresa que tenha uma chave privada não exportável, será necessário adicionar seu certificado ao HGS usando sua impressão digital.
 1. Instale o certificado em seu computador de acordo com as instruções da autoridade de certificação.
-2. Conceda à conta de serviço gerenciado do grupo HGS acesso de leitura à chave privada do certificado. Você pode encontrar o nome da conta do gMSA HGS executando`(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
+2. Conceda à conta de serviço gerenciado do grupo HGS acesso de leitura à chave privada do certificado. Você pode encontrar o nome da conta do gMSA HGS executando `(Get-IISAppPool -Name KeyProtection).ProcessModel.UserName`
 3. Registre o certificado com HGS usando o comando a seguir e substituindo na impressão digital do certificado (altere a *criptografia* para *assinar* certificados de assinatura):
 
     ```powershell
@@ -692,7 +692,7 @@ Essa é uma ação que requer que o proprietário da VM (pessoa ou entidade em p
 
 1. Desligue a VM. A VM não pode ser reativada até que as etapas restantes sejam concluídas ou, caso contrário, será necessário iniciar o processo novamente.
 
-2. Salve o protetor de chave atual em um arquivo:`Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
+2. Salve o protetor de chave atual em um arquivo: `Get-VMKeyProtector -VMName 'VM001' | Out-File '.\VM001.kp'`
 
 3. Transferir o KP para o proprietário da VM
 
@@ -721,11 +721,11 @@ Essa é uma ação que requer que o proprietário da VM (pessoa ou entidade em p
 
     > [!NOTE]
     > Se o proprietário da VM definir um protetor de chave incorreto na VM e não autorizar sua malha para executar a VM, você não poderá iniciar a VM blindada.
-    > Para retornar ao último protetor de chave válido, execute`Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
+    > Para retornar ao último protetor de chave válido, execute `Set-VMKeyProtector -RestoreLastKnownGoodKeyProtector`
 
     Depois que todas as VMs forem atualizadas para autorizar as novas chaves do guardião, você poderá desabilitar e remover as chaves antigas.
 
-9.  Obter as impressões digitais dos certificados antigos de`Get-HgsKeyProtectionCertificate -IsPrimary $false`
+9.  Obter as impressões digitais dos certificados antigos de `Get-HgsKeyProtectionCertificate -IsPrimary $false`
 
 10. Desabilite cada certificado executando os seguintes comandos:
 

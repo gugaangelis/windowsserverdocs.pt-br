@@ -6,19 +6,19 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 76b171b81ff01a7a16b700d720bf289fefddf0f7
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 1775149495871353ef250eff3cb8f6f8cc5c22d6
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990204"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766199"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Solução de problemas do Windows Admin Center
 
 > Aplica-se a: Windows Admin Center, Versão prévia do Windows Admin Center
 
 > [!Important]
-> Este guia ajudará você a diagnosticar e resolver problemas que impedem o uso do Windows Admin Center. Se tiver problemas com uma ferramenta específica, verifique se você encontrou um [problema conhecido.](https://aka.ms/wacknownissues)
+> Este guia ajudará você a diagnosticar e resolver problemas que impedem o uso do Windows Admin Center. Se tiver problemas com uma ferramenta específica, verifique se você encontrou um [problema conhecido.](./known-issues.md)
 
 ## <a name="installer-fails-with-message-_the-module-microsoftpowershelllocalaccounts-could-not-be-loaded_"></a>Falha do instalador com a mensagem: ** _o módulo ' Microsoft. PowerShell. LocalAccounts ' não pôde ser carregado._**
 

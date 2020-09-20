@@ -6,12 +6,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/31/2019
-ms.openlocfilehash: 5dcba9b92d9c0d85f99a1d54d50bef187fd51f10
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 04776c46d321a7a5aef19edd2866637c26d79125
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997477"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766319"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Como conectar o Windows Server aos serviços híbridos do Azure
 
@@ -64,7 +64,7 @@ Para obter mais informações, consulte [Replicação de servidor para servidor 
 
 ### <a name="extend-storage-capacity"></a>Estender a capacidade de armazenamento
 
-- **Sincronizar o servidor de arquivos com a nuvem usando a [Sincronização de Arquivos do Azure](https://aka.ms/afs)** Sincronize arquivos neste servidor com compartilhamentos de arquivos do Azure. Mantenha todos os seus arquivos locais ou use a camada de nuvem para liberar espaço e armazene em cache apenas os arquivos usados com mais frequência no servidor, dispondo em camadas os dados frios na nuvem. O backup dos dados na nuvem pode ser realizado, acabando com a necessidade de se preocupar com o backup do servidor local. Além disso, a sincronização de vários sites pode manter um conjunto de arquivos em sincronia entre vários servidores.
+- **Sincronizar o servidor de arquivos com a nuvem usando a [Sincronização de Arquivos do Azure](/azure/storage/files/storage-sync-files-planning)** Sincronize arquivos neste servidor com compartilhamentos de arquivos do Azure. Mantenha todos os seus arquivos locais ou use a camada de nuvem para liberar espaço e armazene em cache apenas os arquivos usados com mais frequência no servidor, dispondo em camadas os dados frios na nuvem. O backup dos dados na nuvem pode ser realizado, acabando com a necessidade de se preocupar com o backup do servidor local. Além disso, a sincronização de vários sites pode manter um conjunto de arquivos em sincronia entre vários servidores.
 Para obter mais informações, consulte [Sincronizar seu servidor de arquivos com a nuvem usando a Sincronização de Arquivos do Azure](azure-file-sync.md).
 
 - **Migrar o armazenamento para uma VM no Azure usando o [Serviço de Migração de Armazenamento](../../../storage/storage-migration-service/overview.md)** Use a ferramenta passo a passo para inventariar dados em servidores Windows e Linux e transferir os dados para uma nova VM do Azure. O Windows Admin Center pode criar uma VM do Azure para o trabalho que tem o tamanho e a configuração corretos para receber os dados do seu servidor de origem.

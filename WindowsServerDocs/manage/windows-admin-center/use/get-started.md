@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 02/15/2019
-ms.openlocfilehash: c824b2ae8c43be4b5b33b79ce9ddb75dd03c9a9e
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e5ea882347a0605d814682b50c2ec71e24047472
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990527"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766969"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introdução ao centro de administração do Windows
 
@@ -19,7 +19,7 @@ ms.locfileid: "87990527"
 
 > [!Tip]
 > Conhecendo o Windows Admin Center agora?
-> [Saiba mais sobre o Windows Admin Center](../overview.md) ou [baixe-o agora](https://aka.ms/windowsadmincenter).
+> [Saiba mais sobre o Windows Admin Center](../overview.md) ou [baixe-o agora](../overview.md).
 
 ## <a name="windows-admin-center-installed-on-windows-10"></a>Centro de administração do Windows instalado no Windows 10
 

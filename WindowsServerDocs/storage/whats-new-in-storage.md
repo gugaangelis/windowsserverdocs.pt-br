@@ -6,12 +6,12 @@ manager: dongill
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 3b1a3fa120e27439c1ec55f68521b813588d330b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b186f664411bde60351c949c0ca16e7b4d3bb40c
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87965943"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766989"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>O que há de novo no armazenamento no Windows Server
 
@@ -126,7 +126,7 @@ Para obter o aumento de desempenho, todos os membros do grupo de replicação de
 
 #### <a name="test-failover"></a>Failover de Teste
 
-Agora você pode montar temporariamente um instantâneo do armazenamento replicado em um servidor de destino para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
+Agora você pode montar temporariamente um instantâneo do armazenamento replicado em um servidor de destino para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](./storage-replica/storage-replica-frequently-asked-questions.md).
 
 #### <a name="windows-admin-center-support"></a>Suporte para o Windows Admin Center
 
@@ -170,7 +170,7 @@ Para obter mais informações, consulte a [Visão geral do canal semestral do Wi
 
 A proteção de recuperação de desastre adicionada pela réplica de armazenamento agora está expandida para incluir:
 
-- **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
+- **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup. Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](./storage-replica/storage-replica-frequently-asked-questions.md).
 - **Suporte do centro de administração do Windows**: o suporte ao gerenciamento gráfico da replicação agora está disponível no centro de administração do Windows por meio da ferramenta de Gerenciador do servidor. Isso inclui a replicação de servidor para servidor, cluster para cluster, bem como a replicação de cluster de ampliação.
 
 A réplica de armazenamento também contém os seguintes aprimoramentos:

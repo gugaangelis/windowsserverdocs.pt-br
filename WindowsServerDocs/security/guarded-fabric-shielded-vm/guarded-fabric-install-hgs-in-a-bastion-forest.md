@@ -5,12 +5,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 08/29/2018
-ms.openlocfilehash: 4e4bdf9c33d4511c470da50462469fadbd0641ce
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 358fae9a9ee477537d3ee929ff81920175d58298
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996233"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766409"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>Instalar o HGS em uma floresta de bastiões existente
 
@@ -76,7 +76,7 @@ Se você usar Política de Grupo para configurar a atribuição de direitos de u
 
 ## <a name="jea-security-groups"></a>Grupos de segurança do JEA
 
-Quando você configura o HGS, um ponto de extremidade do PowerShell de [Administração Jea (apenas suficiente)](https://aka.ms/JEAdocs) é configurado para permitir que os administradores gerenciem o HgS sem a necessidade de privilégios totais de administrador local.
+Quando você configura o HGS, um ponto de extremidade do PowerShell de [Administração Jea (apenas suficiente)](/powershell/scripting/learn/remoting/jea/overview) é configurado para permitir que os administradores gerenciem o HgS sem a necessidade de privilégios totais de administrador local.
 Não é necessário usar o JEA para gerenciar o HGS, mas ele ainda deve ser configurado durante a execução de Initialize-HgsServer.
 A configuração do ponto de extremidade JEA consiste em designar 2 grupos de segurança que contêm seus administradores HGS e os revisores HGS.
 Os usuários que pertencem ao grupo de administradores podem adicionar, alterar ou remover políticas no HGS; os revisores só podem exibir a configuração atual.

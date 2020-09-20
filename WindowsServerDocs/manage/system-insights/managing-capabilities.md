@@ -6,12 +6,12 @@ author: gawatu
 ms.author: gawatu
 manager: mallikarjun.chadalapaka
 ms.date: 6/05/2018
-ms.openlocfilehash: e78afb47877bb908df81876afe01d2f60b853c70
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 3f4e80136b3c70b7a121663a6defa048d2b0e852
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996705"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766219"
 ---
 # <a name="managing-capabilities"></a>Gerenciamento de recursos
 
@@ -22,7 +22,7 @@ No Windows Server 2019, o System insights expõe uma variedade de configuraçõe
 >[!TIP]
 >Você também pode usar esses vídeos curtos para ajudá-lo a começar e a gerenciar com segurança o System insights: [introdução ao System insights em 10 minutos](https://blogs.technet.microsoft.com/filecab/2018/07/24/getting-started-with-system-insights-in-10-minutes/)
 
-Embora esta seção Forneça exemplos do PowerShell, você pode usar a [documentação do PowerShell do System insights](https://aka.ms/systeminsightspowershell) para ver todos os cmdlets, parâmetros e conjuntos de parâmetros no System insights.
+Embora esta seção Forneça exemplos do PowerShell, você pode usar a [documentação do PowerShell do System insights](/powershell/module/systeminsights/) para ver todos os cmdlets, parâmetros e conjuntos de parâmetros no System insights.
 
 ## <a name="viewing-capabilities"></a>Recursos de exibição
 

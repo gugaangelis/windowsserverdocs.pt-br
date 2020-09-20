@@ -6,12 +6,12 @@ author: fauhse
 ms.author: fauhse
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3f314eb4372ecc7448a53a3aeda35b5c6288a8
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 56937ad0351a1421ab64b93351d7fa5f6d9f4fe8
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87969673"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766679"
 ---
 # <a name="sync-your-file-server-with-the-cloud-by-using-azure-file-sync"></a>Sincronizar seu servidor de arquivos com a nuvem usando a Sincronização de Arquivos do Azure
 
@@ -21,4 +21,4 @@ Use Sincronização de Arquivos do Azure para centralizar os compartilhamentos d
 
 Depois que os arquivos forem sincronizados com a nuvem, você poderá conectar vários servidores ao mesmo compartilhamento de arquivos do Azure para sincronizar e armazenar o conteúdo em cache localmente — as permissões (ACLs) sempre serão transportadas. O arquivos do Azure oferece um recurso de instantâneo que pode gerar instantâneos diferenciais de seu compartilhamento de arquivos do Azure. Esses instantâneos podem até mesmo ser montados como unidades de rede somente leitura via SMB para facilitar a navegação e a restauração. Combinado com camadas de nuvem, a execução de um servidor de arquivos local nunca foi tão fácil.
 
-Para obter mais informações, consulte [planejando uma implantação de sincronização de arquivos do Azure](https://aka.ms/afs).
+Para obter mais informações, consulte [planejando uma implantação de sincronização de arquivos do Azure](/azure/storage/files/storage-sync-files-planning).

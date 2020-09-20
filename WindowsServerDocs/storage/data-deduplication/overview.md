@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 5510e5459c30e51bed3f4f724fe02c6a96f9fc31
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 8959cde3254db31f077ae276ad72899a12f09feb
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936325"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766839"
 ---
 # <a name="data-deduplication-overview"></a>Visão geral de eliminação de duplicação de dados
 
@@ -51,7 +51,7 @@ A economia de espaço que pode ser obtida com a Eliminação de Duplicação de 
 Servidores de arquivo de finalidade geral são servidores de arquivos de uso geral que podem conter qualquer um dos seguintes tipos de compartilhamentos: <ul>
                     <li>Compartilhamentos de equipe</li>
                     <li>Pastas base de usuários</li>
-                    <li><a href="https://technet.microsoft.com/library/dn265974.aspx">Pastas de trabalho</a></li>
+                    <li><a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265974(v=ws.11)">Pastas de trabalho</a></li>
                     <li>Compartilhamentos de desenvolvimento de software</li>
                 </ul>
 Servidores de arquivos de finalidade geral são bons candidatos para Eliminação de Duplicação de Dados, porque os vários usuários tendem a ter muitas cópias ou versões do mesmo arquivo. Os compartilhamentos de desenvolvimento de software se beneficiam da Eliminação de Duplicação de Dados, porque muitos binários permanecem essencialmente inalterados de um build para outro.
@@ -61,7 +61,7 @@ Servidores de arquivos de finalidade geral são bons candidatos para Eliminaçã
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-vdi.png" alt="Illustration of VDI servers" /></td>
             <td style="vertical-align:top">
                 <b>Implantações de VDI (Virtual Desktop Infrastructure)</b><br />
-Servidores VDI, como <a href="https://technet.microsoft.com/library/cc725560.aspx">Serviços da Área de Trabalho Remota</a>, fornecem uma opção simples para que as organizações provisionem áreas de trabalho para os usuários. Há muitas razões para que uma organização recorra a essa tecnologia: <ul>
+Servidores VDI, como <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc725560(v=ws.11)">Serviços da Área de Trabalho Remota</a>, fornecem uma opção simples para que as organizações provisionem áreas de trabalho para os usuários. Há muitas razões para que uma organização recorra a essa tecnologia: <ul>
                     <li><b>Implantação de aplicativos</b>: você pode implantar aplicativos rapidamente em toda a empresa. Isso é particularmente útil quando você tem aplicativos que são atualizados com frequência, são usados raramente ou são difíceis de gerenciar.</li>
                     <li><b>Consolidação de aplicativos</b>: quando você instala e executa aplicativos de um conjunto de máquinas virtuais gerenciadas centralmente, você elimina a necessidade de atualizar aplicativos em computadores cliente. Essa opção também reduz a quantidade de largura de banda de rede necessária para acessar os aplicativos.</li>
                     <li><b>Acesso remoto</b>: os usuários podem acessar aplicativos corporativos de dispositivos como computadores domésticos, quiosques, hardware de baixa energia e sistemas operacionais diferentes do Windows.</li>
@@ -74,7 +74,7 @@ As implantações de VDI são ótimas candidatas para Eliminação de Duplicaç�
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-backup.png" alt="Illustration of backup applications" /></td>
             <td style="vertical-align:top">
                 <b>Destinos de backup, como aplicativos de backup virtualizados</b><br />
-Os aplicativos de backup, como o <a href="https://technet.microsoft.com/library/hh758173.aspx">Microsoft Data Protection Manager (DPM)</a>, são excelentes candidatos à eliminação de duplicação de dados devido à duplicação significativa entre instantâneos de backup.
+Os aplicativos de backup, como o <a href="/previous-versions/system-center/system-center-2012-R2/hh758173(v=sc.12)">Microsoft Data Protection Manager (DPM)</a>, são excelentes candidatos à eliminação de duplicação de dados devido à duplicação significativa entre instantâneos de backup.
             </td>
         </tr>
         <tr>

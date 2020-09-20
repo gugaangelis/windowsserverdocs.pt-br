@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: ea138d8bb0b804ae4d08ed6ffe330e9714af43f3
-ms.sourcegitcommit: 2b1a12c85acff137e5ac84cd0e62d8353fcdde31
+ms.openlocfilehash: 0c3e52c11f7771856608b86ddd778ef51c4c8516
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89087479"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766909"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -424,7 +424,7 @@ Há duas soluções para esse problema:
 
 Depois de concluir uma transferência e, em seguida, executar uma retransferência subsequente dos mesmos dados, talvez você não veja muita melhoria no tempo de transferência, mesmo quando poucos dados forem alterados enquanto isso no servidor de origem.
 
-Esse é o comportamento esperado ao transferir um número muito grande de arquivos e pastas aninhadas. O tamanho dos dados não é relevante. Primeiro, fizemos melhorias nesse comportamento no [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) e continuamos a otimizar o desempenho da transferência. Para ajustar ainda mais o desempenho, examine [otimizando o desempenho de inventário e transferência](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance).
+Esse é o comportamento esperado ao transferir um número muito grande de arquivos e pastas aninhadas. O tamanho dos dados não é relevante. Primeiro, fizemos melhorias nesse comportamento no [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) e continuamos a otimizar o desempenho da transferência. Para ajustar ainda mais o desempenho, examine [otimizando o desempenho de inventário e transferência](./faq.md#optimizing-inventory-and-transfer-performance).
 
 ## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>Os dados não são transferidos, o usuário renomeou ao migrar de ou para um controlador de domínio
 

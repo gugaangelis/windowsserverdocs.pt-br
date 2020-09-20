@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: bc1e63ff865a7eb6d4d83c75d6c2680dcf8ddb49
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: e8b19df2313bd0f3f6599aae8a23a18233f469e7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996866"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766919"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar a política DNS para a implantação de DNS de divisão \- Brain
 
@@ -86,7 +86,7 @@ Você pode usar o seguinte comando de exemplo para particionar o escopo de zona 
 
 `Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "internal"`
 
-Para obter mais informações, consulte [Add-DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
+Para obter mais informações, consulte [Add-DnsServerZoneScope](/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>Adicionar registros aos escopos de zona
 
@@ -103,14 +103,14 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39” -ZoneScope "internal"
 `
 
-Para obter mais informações, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
+Para obter mais informações, consulte [Add-DnsServerResourceRecord](/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
 ### <a name="create-the-dns-policies"></a><a name="bkmk_policies"></a>Criar as políticas de DNS
 
 Depois de identificar as interfaces de servidor para a rede externa e a rede interna e criar os escopos de zona, você deverá criar políticas de DNS que conectem os escopos de zona interna e externa.
 
 >[!NOTE]
->Este exemplo usa a interface de servidor como os critérios para diferenciar entre os clientes internos e externos. Outro método para diferenciar entre clientes externos e internos é usar sub-redes de cliente como um critério. Se você puder identificar as sub-redes às quais os clientes internos pertencem, você pode configurar a política DNS para diferenciar com base na sub-rede do cliente. Para obter informações sobre como configurar o gerenciamento de tráfego usando critérios de sub-rede do cliente, consulte [usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/scenario--use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers).
+>Este exemplo usa a interface de servidor como os critérios para diferenciar entre os clientes internos e externos. Outro método para diferenciar entre clientes externos e internos é usar sub-redes de cliente como um critério. Se você puder identificar as sub-redes às quais os clientes internos pertencem, você pode configurar a política DNS para diferenciar com base na sub-rede do cliente. Para obter informações sobre como configurar o gerenciamento de tráfego usando critérios de sub-rede do cliente, consulte [usar a política DNS para o gerenciamento de tráfego baseado na localização geográfica com servidores primários](./primary-geo-location.md).
 
 Quando o servidor DNS recebe uma consulta na interface privada, a resposta de consulta DNS é retornada do escopo da zona interna.
 

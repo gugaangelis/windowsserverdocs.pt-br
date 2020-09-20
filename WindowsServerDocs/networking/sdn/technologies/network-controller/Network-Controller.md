@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: anpaul
 author: AnirbanPaul
-ms.openlocfilehash: 9623ce4e5e31b905c1c18e9359811389d8d75f23
-ms.sourcegitcommit: 1eaad076ea74e72b36e8893aaa15f3e5f4237bd6
+ms.openlocfilehash: 27ceace93c42ccabdb2db0208c6e3dabce41e1b0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88659381"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766809"
 ---
 # <a name="network-controller"></a>Controlador de rede
 
@@ -28,7 +28,7 @@ Usando o Controlador de Rede, você pode automatizar a configuração da infraes
 > - [Implantar controlador de rede usando o Windows PowerShell](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
 > - [Instalar a função de servidor do Controlador de Rede usando o Gerenciador do Servidor](Install-the-Network-Controller-server-role-using-Server-Manager.md)
 > - [Etapas pós-implantação para o controlador de rede](post-deploy-steps-nc.md)
-> - [Cmdlets do controlador de rede](https://docs.microsoft.com/powershell/module/networkcontroller/?view=win10-ps)
+> - [Cmdlets do controlador de rede](/powershell/module/networkcontroller/?view=win10-ps)
 
 ## <a name="network-controller-overview"></a><a name="bkmk_overview"></a>Visão geral do Controlador de Rede
 

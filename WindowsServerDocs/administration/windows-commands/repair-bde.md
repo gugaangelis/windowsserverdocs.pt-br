@@ -7,19 +7,19 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e7ebf0f2923e565e16e546a7804ee42771eec83d
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 4caa619c248a30c48cdfc291f2fde25ba51d85f7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640633"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766279"
 ---
 # <a name="repair-bde"></a>repair-bde
 
 Tenta reconstruir partes críticas de uma unidade severamente danificada e recuperar dados recuperáveis se a unidade tiver sido criptografada usando o BitLocker e se tiver uma senha ou chave de recuperação válida para descriptografia.
 
 > [!IMPORTANT]
-> Se os dados de metadados do BitLocker na unidade estiverem corrompidos, você deverá ser capaz de fornecer um pacote de chave de backup além da senha de recuperação ou da chave de recuperação. Se você usou a configuração de backup de chave padrão para Active Directory Domain Services, é feito o backup do pacote de chave aqui. Você pode usar o [Visualizador BitLocker: Use a senha de recuperação do BitLocker](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) para obter o pacote de chaves do AD DS.
+> Se os dados de metadados do BitLocker na unidade estiverem corrompidos, você deverá ser capaz de fornecer um pacote de chave de backup além da senha de recuperação ou da chave de recuperação. Se você usou a configuração de backup de chave padrão para Active Directory Domain Services, é feito o backup do pacote de chave aqui. Você pode usar o [Visualizador BitLocker: Use a senha de recuperação do BitLocker](/windows/security/information-protection/bitlocker/bitlocker-use-bitlocker-recovery-password-viewer) para obter o pacote de chaves do AD DS.
 >
 > Usando o pacote de chaves e a senha de recuperação ou a chave de recuperação, você pode descriptografar partes de uma unidade protegida pelo BitLocker, mesmo que o disco esteja corrompido. Cada pacote de chave funciona apenas para uma unidade com o identificador de unidade correspondente.
 

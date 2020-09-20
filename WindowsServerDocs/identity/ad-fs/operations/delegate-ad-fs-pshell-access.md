@@ -7,12 +7,12 @@ manager: daveba
 ms.reviewer: zhvolosh
 ms.date: 01/31/2019
 ms.topic: article
-ms.openlocfilehash: 836a40ffa9df8fa308d1005fbac3a9e087488949
-ms.sourcegitcommit: 52a8d5d7e969eaa07fd3a45ed6d3cb5a5173b6d1
+ms.openlocfilehash: 7cf8e191fbc6fd9b5ff7cac5b6315ead4ad899ba
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88970623"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766249"
 ---
 # <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>Delegar acesso do Powershell Commandlet do AD FS para usuários não administradores
 Por padrão, a administração do AD FS por meio do PowerShell só pode ser realizada por administradores do AD FS. Para muitas organizações de grande porte, isso pode não ser um modelo operacional viável ao lidar com outras pessoas, como uma equipe de suporte técnico.
@@ -62,7 +62,7 @@ Se o farm não estiver usando a administração delegada, conceda os direitos de
 
 ### <a name="create-the-jea-role-file"></a>Criar o arquivo de função JEA
 
-No AD FS Server, crie a função JEA em um arquivo do bloco de notas. As instruções para criar a função são fornecidas em [recursos de função Jea](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/role-capabilities).
+No AD FS Server, crie a função JEA em um arquivo do bloco de notas. As instruções para criar a função são fornecidas em [recursos de função Jea](/powershell/scripting/learn/remoting/jea/role-capabilities).
 
 O commandlets delegado neste exemplo é `Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity` .
 
@@ -78,7 +78,7 @@ VisibleCmdlets = 'Reset-AdfsAccountLockout', 'Get-ADFSAccountActivity', 'Set-ADF
 
 
 ### <a name="create-the-jea-session-configuration-file"></a>Criar o arquivo de configuração de sessão JEA
-Siga as instruções para criar o arquivo de [configuração de sessão Jea](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/session-configurations) . O arquivo de configuração determina quem pode usar o ponto de extremidade JEA e quais recursos eles têm acesso.
+Siga as instruções para criar o arquivo de [configuração de sessão Jea](/powershell/scripting/learn/remoting/jea/session-configurations) . O arquivo de configuração determina quem pode usar o ponto de extremidade JEA e quais recursos eles têm acesso.
 
 Os recursos de função são referenciados pelo nome simples (nome de arquivo sem a extensão) do arquivo de capacidade de função. Se vários recursos de função estiverem disponíveis no sistema com o mesmo nome simples, o PowerShell usará sua ordem de pesquisa implícita para selecionar o arquivo de capacidade de função efetivo. Ele não dá acesso a todos os arquivos de capacidade de função com o mesmo nome.
 

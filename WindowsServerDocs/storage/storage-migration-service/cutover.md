@@ -6,12 +6,12 @@ ms.author: t-chrche
 manager: nedpyle
 ms.date: 08/31/2020
 ms.topic: article
-ms.openlocfilehash: 985fd14b7791d28246b8e9186ca83216df734875
-ms.sourcegitcommit: a640c2d7f2d21d7cd10a9be4496e1574e5e955f0
+ms.openlocfilehash: 1e886c505435976b6495e0460705821086781a62
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89448908"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766899"
 ---
 # <a name="how-cutover-works-in-storage-migration-service"></a>Como a transferência funciona no serviço de migração de armazenamento
 
@@ -66,7 +66,7 @@ Você pode controlar o progresso da transferência por meio de descrições de c
 |  Progresso | Descrição                                                                                               |  Observações |
 |:-----|:--------------------------------------------------------------------------------------------------------------------|:---|
 |  0% | A transferência está ociosa. |   |
-| 2%  | Conectando ao computador de origem... |   Certifique-se de que os [requisitos para computadores de origem e de destino](https://docs.microsoft.com/windows-server/storage/storage-migration-service/overview#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) sejam atendidos.|
+| 2%  | Conectando ao computador de origem... |   Certifique-se de que os [requisitos para computadores de origem e de destino](./overview.md#security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports) sejam atendidos.|
 | 5%  | Conectando ao computador de destino... |   |
 | 6%  | Definindo permissões de segurança no objeto de computador em Active Directory... |   Replica as permissões de segurança do objeto de Active Directory do computador de origem no computador de destino.|
 | 8%  | Certificando-se de que a conta temporária que criamos foi excluída com êxito no computador de origem... |   Garante que possamos criar uma conta temporária com o mesmo nome.|
@@ -95,7 +95,7 @@ Você pode controlar o progresso da transferência por meio de descrições de c
 | 52% | Aguardando o computador de origem responder após a primeira reinicialização... |   |
 | 55% | Aguardando o computador de origem responder após a segunda reinicialização... |   |
 | 56% | Aguardando o computador de origem responder após a terceira reinicialização... |   |
-| 57% | Removendo nomes de computador alternativos na origem... |   Garante que a origem não seja acessível a outros usuários e aplicativos. Para obter mais informações, consulte [netdom computername](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)). |
+| 57% | Removendo nomes de computador alternativos na origem... |   Garante que a origem não seja acessível a outros usuários e aplicativos. Para obter mais informações, consulte [netdom computername](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)). |
 | 58% | Removendo uma conta local temporária que criamos no computador de origem... |   |
 | 61% | Redefinindo a política de filtro de token de conta local no computador de origem... |   Habilita a política.|
 | 63% | Removendo o computador de destino do domínio... |   |
@@ -113,26 +113,26 @@ Você pode controlar o progresso da transferência por meio de descrições de c
 | 93% | Removendo nomes de computador alternativos no destino... |   Garante que o nome de destino foi substituído.|
 | 94% | Removendo uma conta local temporária que criamos no computador de destino...|   |
 | 97% | Redefinindo a política de filtro de token de conta local no computador de destino... |   Habilita a política.|
-| (100%) | Com sucesso |   |
+| (100%) | Êxito |   |
 
 ## <a name="faq"></a>Perguntas frequentes
 
 ### <a name="__is-domain-controller-migration-supported__"></a>__Há suporte para a migração do controlador de domínio?__
 
-Não no momento, mas veja a [página de perguntas frequentes](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#is-domain-controller-migration-supported) para obter uma solução alternativa.
+Não no momento, mas veja a [página de perguntas frequentes](./faq.md#is-domain-controller-migration-supported) para obter uma solução alternativa.
 
 
 ## <a name="known-issues"></a>Problemas conhecidos
 >Verifique se você atendeu os requisitos da [visão geral do serviço de migração de armazenamento](overview.md) e instalou o Windows Update mais recente no computador que executa o serviço de migração de armazenamento.
 
-Consulte a [página problemas conhecidos](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues) para obter mais informações sobre os seguintes problemas.
-* [__A validação de transferência do serviço de migração de armazenamento falha com o erro "o acesso foi negado para a política de filtro de token no computador de destino"__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
+Consulte a [página problemas conhecidos](./known-issues.md) para obter mais informações sobre os seguintes problemas.
+* [__A validação de transferência do serviço de migração de armazenamento falha com o erro "o acesso foi negado para a política de filtro de token no computador de destino"__](./known-issues.md#storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer)
 
-* [__Erro "falha na CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO em relação ao recurso do NetName" e a transferência de cluster do Windows Server 2008 R2 falha__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
+* [__Erro "falha na CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO em relação ao recurso do NetName" e a transferência de cluster do Windows Server 2008 R2 falha__](./known-issues.md#error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails)
 
-* [__A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar IPs estáticos__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
+* [__A transferência trava em "38% mapeando interfaces de rede no computador de origem..." ao usar IPs estáticos__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-static-ips)
 
-* [__A transferência trava em "38% mapeando interfaces de rede no computador de origem..."__](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
+* [__A transferência trava em "38% mapeando interfaces de rede no computador de origem..."__](./known-issues.md#cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer)
 
 ## <a name="additional-references"></a>Referências adicionais
 

@@ -7,12 +7,12 @@ ms.assetid: 692a188c-badc-44aa-ba86-71c0e8074510
 ms.topic: get-started-article
 ms.date: 10/28/2018
 ms.author: billmath
-ms.openlocfilehash: 3a53e8bb9e06e51627d14f6e5e3b918f58102478
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: a077a76814cc5ed99d4a1c0eb6c23584b22363e1
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078673"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766749"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implantando os Serviços de Federação do Active Directory no Azure
 O AD FS fornece recursos simplificados e seguros de federação de identidade e de logon único (SSO) da Web. A federação com o Azure AD ou o O365 habilita os usuários a se autenticar usando credenciais locais e acessar todos os recursos na nuvem. Como resultado, é importante ter uma infraestrutura altamente disponível do AD FS para garantir o acesso a recursos locais e na nuvem. Implantar o AD FS no Azure pode ajudar a atingir a alta disponibilidade necessária com esforço mínimo.
@@ -89,7 +89,7 @@ Será necessária uma conexão local para implantar o DC (controlador de domíni
 * ExpressRoute
 
 É recomendável usar o ExpressRoute. O ExpressRoute permite criar conexões privadas entre os data centers do Azure e a infraestrutura que está em seu local ou em um ambiente de colocalização. As conexões de ExpressRoute não passam pela Internet pública. Elas oferecem mais confiabilidade e velocidade, latências menores e maior segurança do que as conexões comuns pela Internet.
-Embora seja recomendável usar o ExpressRoute, você pode escolher qualquer método de conexão mais adequado à sua organização. Para saber mais sobre o ExpressRoute e as diversas opções de conectividade que o utilizam, confira [Visão geral técnica do ExpressRoute](https://aka.ms/Azure/ExpressRoute).
+Embora seja recomendável usar o ExpressRoute, você pode escolher qualquer método de conexão mais adequado à sua organização. Para saber mais sobre o ExpressRoute e as diversas opções de conectividade que o utilizam, confira [Visão geral técnica do ExpressRoute](/azure/expressroute/expressroute-introduction).
 
 ### <a name="2-create-storage-accounts"></a>2. criar contas de armazenamento
 Para manter a alta disponibilidade e evitar a dependência de uma única conta de armazenamento, você pode criar duas contas de armazenamento. Divida os computadores em cada conjunto de disponibilidade em dois grupos e atribua a cada grupo uma conta de armazenamento separada.
@@ -122,7 +122,7 @@ A próxima etapa é implantar máquinas virtuais que hospedam as diferentes fun�
 | contosowap1 |WAP |Rede de Perímetro |contosowapset |contososac1 |Estático |
 | contosowap2 |WAP |Rede de Perímetro |contosowapset |contososac2 |Estático |
 
-Como você deve ter notado, nenhum NSG foi especificado. Isso ocorre porque o Azure permite que você use NSG no nível de sub-rede. Em seguida, você pode controlar o tráfego de rede de máquinas usando o NSG individual associado à sub-rede ou ao objeto NIC. Leia mais em [O que é um NSG (grupo de segurança de rede)?](https://aka.ms/Azure/NSG).
+Como você deve ter notado, nenhum NSG foi especificado. Isso ocorre porque o Azure permite que você use NSG no nível de sub-rede. Em seguida, você pode controlar o tráfego de rede de máquinas usando o NSG individual associado à sub-rede ou ao objeto NIC. Leia mais em [O que é um NSG (grupo de segurança de rede)?](/azure/virtual-network/tutorial-filter-network-traffic).
 Um endereço IP estático é recomendável se você estiver gerenciando o DNS. Você pode usar o DNS do Azure e, em vez disso, nos registros DNS do domínio, referir-se às novas máquinas por seus FQDNs do Azure.
 O painel da máquina virtual deve ser semelhante ao exemplo abaixo após a implantação ser concluída:
 
@@ -345,12 +345,12 @@ Você pode usar uma rede virtual existente ou criar uma nova VNETao implantar es
 
 ## <a name="additional-resources"></a>Recursos adicionais
 * [Conjuntos de disponibilidade](https://aka.ms/Azure/Availability)
-* [Azure Load Balancer](https://aka.ms/Azure/ILB)
-* [Balanceador de Carga Interno](https://aka.ms/Azure/ILB/Internal)
-* [Balanceador de Carga para a Internet](https://aka.ms/Azure/ILB/Internet)
+* [Azure Load Balancer](/azure/load-balancer/load-balancer-overview)
+* [Balanceador de Carga Interno](/azure/load-balancer/quickstart-load-balancer-standard-internal-powershell)
+* [Balanceador de Carga para a Internet](/azure/load-balancer/quickstart-load-balancer-standard-public-powershell)
 * [Contas de Armazenamento](https://aka.ms/Azure/Storage)
-* [Redes virtuais do Azure](https://aka.ms/Azure/VNet)
-* [AD FS e Links de Proxy de Aplicativo Web](https://aka.ms/ADFSLinks)
+* [Redes virtuais do Azure](/azure/virtual-network/virtual-networks-overview)
+* [AD FS e Links de Proxy de Aplicativo Web](/archive/blogs/tangent_thoughts/qrg-quick-reference-guide-active-directory-federation-services)
 
 ## <a name="next-steps"></a>Próximas etapas
 * [Integração de suas identidades locais com o Active Directory do Azure](/azure/active-directory/hybrid/whatis-hybrid-identity)

@@ -6,12 +6,12 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a2fd0e688d33265119c8dcb915d485e953507c80
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 56d953c721fff2218b256fa99d83078485438c0f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990484"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765967"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Gerenciar a infraestrutura hiperconvergente com o centro de administração do Windows
 
@@ -25,7 +25,7 @@ A infraestrutura hiperconvergente consolida a computação, o armazenamento e a 
 > Procurando adquirir a infraestrutura hiperconvergente? A Microsoft recomenda essas soluções [definidas por software do Windows Server](https://microsoft.com/wssd) de nossos parceiros. Eles são projetados, montados e validados em nossa arquitetura de referência para garantir a compatibilidade e a confiabilidade, para que você comece a trabalhar rapidamente.
 
 > [!IMPORTANT]
-> Alguns dos recursos descritos neste artigo estão disponíveis apenas na versão prévia do centro de administração do Windows. [Como fazer obter esta versão?](https://aka.ms/windowsadmincenter)
+> Alguns dos recursos descritos neste artigo estão disponíveis apenas na versão prévia do centro de administração do Windows. [Como fazer obter esta versão?](../overview.md)
 
 ## <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center
 
@@ -96,7 +96,7 @@ Depois que a infraestrutura hiperconvergente for implantada, você poderá geren
 
 ### <a name="install-windows-admin-center"></a>Instalar o Windows Admin Center
 
-Se você ainda não fez isso, baixe e instale o centro de administração do Windows. A maneira mais rápida de colocar em funcionamento é instalá-lo em seu computador com Windows 10 e gerenciar seus servidores remotamente. Isso leva menos de cinco minutos. [Baixe agora](https://aka.ms/windowsadmincenter) ou [saiba mais sobre outras opções de instalação](../deploy/install.md).
+Se você ainda não fez isso, baixe e instale o centro de administração do Windows. A maneira mais rápida de colocar em funcionamento é instalá-lo em seu computador com Windows 10 e gerenciar seus servidores remotamente. Isso leva menos de cinco minutos. [Baixe agora](../overview.md) ou [saiba mais sobre outras opções de instalação](../deploy/install.md).
 
 ### <a name="add-hyper-converged-cluster"></a>Adicionar cluster hiperconvergente
 
@@ -163,7 +163,7 @@ Não.
 
 ### <a name="does-it-require-an-internet-connection"></a>Ele requer uma conexão com a Internet?
 
-Não.
+Nº
 
 Embora o centro de administração do Windows ofereça uma integração poderosa e conveniente com o Microsoft Azure Cloud, a experiência básica de gerenciamento e monitoramento para a infraestrutura hiperconvergente é completamente local. Ele pode ser instalado e usado sem uma conexão com a Internet.
 
@@ -231,7 +231,7 @@ Se você estiver apenas começando, aqui estão alguns tutoriais rápidos para a
 
 ### <a name="pause-and-safely-restart-a-server"></a>Pausar e reiniciar com segurança um servidor
 
-1. No **painel**, selecione **servidores** na navegação no lado esquerdo ou clicando no link **Exibir servidores >** no bloco no canto inferior direito do painel.
+1. No **painel**, selecione **servidores** na navegação no lado esquerdo ou clicando no link **Exibir servidores >**  no bloco no canto inferior direito do painel.
 2. Na parte superior, mude de **Resumo** para a guia **inventário** .
 3. Selecione um servidor clicando em seu nome para abrir a página de detalhes do **servidor** .
 4. Clique em **Pausar servidor para manutenção**. Se for seguro continuar, isso moverá as máquinas virtuais para outros servidores no cluster. O servidor terá o status drenando enquanto isso acontece. Se desejar, você pode assistir à movimentação das máquinas virtuais na página **máquinas virtuais > inventário** , onde o servidor host é mostrado claramente na grade. Quando todas as máquinas virtuais forem movidas, o status do servidor será **pausado**.
@@ -282,7 +282,7 @@ Isso é tudo sobre seus comentários! O benefício mais importante das atualiza�
 
 - [Enviar e votar em solicitações de recursos no UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Participe do fórum do centro de administração do Windows na Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- Tweet para`@servermgmt`
+- Tweet para `@servermgmt`
 
 ### <a name="additional-references"></a>Referências adicionais
 

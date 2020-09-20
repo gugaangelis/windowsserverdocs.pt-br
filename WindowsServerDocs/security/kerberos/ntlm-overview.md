@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: b7597e5c7cea656bd1c1e4edf8ed9c8ef3f0436a
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: d12e61fac3ba6c44dbcac35ea3097e95db54752a
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641074"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766779"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -41,7 +41,7 @@ Não há nenhuma funcionalidade removida ou preterida para NTLM para o Windows S
 ## <a name="server-manager-information"></a><a name="BKMK_INSTALL"></a>Informações sobre o Gerenciador do Servidor
 O NTLM não pode ser configurado a partir do Gerenciador do Servidor. Você pode usar as configurações de Política de Segurança ou Políticas de Grupo para gerenciar o uso da autenticação NTLM entre sistemas de computadores. Em um domínio, o Kerberos é o protocolo de autenticação padrão.
 
-## <a name="see-also"></a><a name="BKMK_LINKS"></a>Consulte também
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>Confira também
 A tabela a seguir lista os recursos relevantes para NTLM e outras tecnologias de autenticação do Windows.
 
 |Tipo de conteúdo|Referências|
@@ -49,6 +49,6 @@ A tabela a seguir lista os recursos relevantes para NTLM e outras tecnologias de
 |**Avaliação do produto**|[Introducing the Restriction of NTLM Authentication (Apresentando a restrição da autenticação NTLM)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd560653(v=ws.10))<p>[Alterações na autenticação NTLM](/previous-versions/windows/it-pro/windows-7/dd566199(v=ws.10))|
 |**Planejamento**|[IT Infrastructure Threat Modeling Guide (Guia de modelagem de ameaças de infraestrutura de TI)](/previous-versions/tn-archive/dd941826(v=technet.10))<p>[Ameaças e contramedidas: configurações de segurança no Windows Server 2003 e no Windows XP](/previous-versions/tn-archive/dd162275(v=technet.10))<p>[Guia de ameaças e contramedidas: configurações de segurança no Windows Server 2008 e no Windows Vista](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349791(v=ws.10))<p>[Guia de ameaças e contramedidas: configurações de segurança no Windows Server 2008 R2 e no Windows 7](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/hh125921(v=ws.10))|
 |**Implantação**|[Proteção Estendida para Autenticação](https://support.microsoft.com/kb/968389)<p>[Auditing and restricting NTLM usage guide (Guia de uso do NTLM para auditoria e restrição)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/jj865674(v=ws.10))<p>[Ask the Directory Services Team: NTLM Blocking and You: Application Analysis and Auditing Methodologies in Windows 7 (Pergunte à equipe dos Serviços de Diretório: Bloqueio NTLM e você: análise de aplicativo e metodologias de auditoria no Windows 7)](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<p>[Windows Authentication Blog (Blog de autenticação do Windows)](https://blogs.technet.com/authentication/)<p>[Configuring MaxConcurrentAPI for NTLM pass-through authentication (Configurando MaxConcurrentAPI para autenticação de passagem de NTLM)](https://support.microsoft.com/help/2688798/how-to-do-performance-tuning-for-ntlm-authentication-by-using-the-maxc)|
-|**Desenvolvimento**|[Windows NTLM da Microsoft \(\)](/windows/win32/secauthn/microsoft-ntlm)<p>[\[MS \- NLMP \] : \( especificação do protocolo de autenticação NTLM do NT LAN Manager \)](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<p>[\[MS \- NNTP \] : autenticação NTLM do Gerenciador de LAN NT \( \) : \( extensão NNTP de protocolo de transferência de notícias de rede \)](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<p>[\[MS \- NTHT \] : especificação de protocolo NTLM sobre http](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
+|**Desenvolvimento**|[Windows NTLM da Microsoft \(\)](/windows/win32/secauthn/microsoft-ntlm)<p>[\[MS \- NLMP \] : \( especificação do protocolo de autenticação NTLM do NT LAN Manager \)](/openspecs/windows_protocols/ms-nlmp/b38c36ed-2804-4868-a9ff-8dd3182128e4)<p>[\[MS \- NNTP \] : autenticação NTLM do Gerenciador de LAN NT \( \) : \( extensão NNTP de protocolo de transferência de notícias de rede \)](/openspecs/windows_protocols/ms-nntp/73ae7d96-30fe-4750-807c-bfe7c38b3a0a)<p>[\[MS \- NTHT \] : especificação de protocolo NTLM sobre http](/openspecs/windows_protocols/ms-ntht/f09cf6e1-529e-403b-a8a5-7368ee096a6a)|
 |**Solução de problemas**|Ainda não está disponível|
 |**Recursos da comunidade**|[Is this horse dead yet: NTLM Bottlenecks and the RPC runtime (Este assunto ainda não acabou: afunilamentos do NTLM e o tempo de execução do RPC)](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|

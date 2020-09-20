@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 381073ad383913684b1b861883b981a19583767f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 4fd03195feb275bd56c6958f8436c607829c8392
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997527"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766659"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>Implantar o Windows Admin Center no Azure
 
@@ -24,7 +24,7 @@ Você pode baixar [Deploy-WACAzVM.ps1](https://aka.ms/deploy-wacazvm) que será 
 ### <a name="prerequisites"></a>Pré-requisitos
 
 * Configure sua conta no [Azure cloud Shell](https://shell.azure.com). Se esta for a primeira vez que você usa Cloud Shell, você será solicitado a associar ou criar uma conta de armazenamento do Azure com Cloud Shell.
-* Em um Cloud Shell do **PowerShell** , navegue até seu diretório base:```PS Azure:\> cd ~```
+* Em um Cloud Shell do **PowerShell** , navegue até seu diretório base: ```PS Azure:\> cd ~```
 * Para carregar o ```Deploy-WACAzVM.ps1``` arquivo, arraste-o e solte-o do computador local para qualquer lugar na janela de Cloud Shell.
 
 Se especificar seu próprio certificado:
@@ -145,7 +145,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>Requisitos para VMs gerenciadas do Azure
 
 A porta 5985 (WinRM sobre HTTP) deve estar aberta e ter um ouvinte ativo.
-Você pode usar o código abaixo em Azure Cloud Shell para atualizar os nós gerenciados. ```$ResourceGroupName```e ```$Name``` usar as mesmas variáveis que o script de implantação, mas será necessário usar o ```$Credential``` específico para a VM que você está gerenciando.
+Você pode usar o código abaixo em Azure Cloud Shell para atualizar os nós gerenciados. ```$ResourceGroupName``` e ```$Name``` usar as mesmas variáveis que o script de implantação, mas será necessário usar o ```$Credential``` específico para a VM que você está gerenciando.
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -160,7 +160,7 @@ Antes de instalar o centro de administração do Windows em sua VM de gateway de
 > [!NOTE]
 > Essas instruções são para instalação no Windows Server com experiência desktop, não em uma instalação Server Core.
 
-1. [Baixe o centro de administração do Windows](https://aka.ms/windowsadmincenter) no computador local.
+1. [Baixe o centro de administração do Windows](../overview.md) no computador local.
 
 2. Estabeleça uma conexão de área de trabalho remota com a VM e copie a MSI do computador local e cole-a na VM.
 
@@ -192,6 +192,6 @@ Neste ponto, você deve ser capaz de acessar o centro de administração do Wind
 
 Quando você tentar acessar o centro de administração do Windows, o navegador solicitará credenciais para acessar a máquina virtual na qual o centro de administração do Windows está instalado. Aqui, você precisará inserir as credenciais que estão no grupo usuários locais ou administradores locais da máquina virtual.
 
-Para adicionar outras VMs na VNet, verifique se o WinRM está em execução nas VMs de destino executando o seguinte no PowerShell ou no prompt de comando na VM de destino:`winrm quickconfig`
+Para adicionar outras VMs na VNet, verifique se o WinRM está em execução nas VMs de destino executando o seguinte no PowerShell ou no prompt de comando na VM de destino: `winrm quickconfig`
 
 Se você não ingressou no domínio na VM do Azure, a VM se comporta como um servidor no grupo de trabalho, portanto, você precisará se certificar de [usar o centro de administração do Windows em um grupo de trabalho](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup).

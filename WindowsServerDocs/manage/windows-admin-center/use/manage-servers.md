@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 25edd2851638fec99b6afda0415fdf8e8c8f1699
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 7be02bd7c513d0e7680ed70f107a34c6a9af6ed2
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997185"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765957"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
@@ -71,13 +71,13 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [Tarefas agendadas](#scheduled-tasks) | Exibir e modificar tarefas agendadas |
 | [Serviços](#services) | Exibir e modificar serviços |
 | [Configurações](#settings) | Exibir e modificar serviços |
-| [Storage](#storage) | Exibir e modificar dispositivos de armazenamento |
+| [Armazenamento](#storage) | Exibir e modificar dispositivos de armazenamento |
 | [Serviço de Migração de Armazenamento](#storage-migration-service) | Migrar servidores e compartilhamentos de arquivos para o Azure ou o Windows Server 2019 |
 | [Réplica de armazenamento](#storage-replica) | Usar a réplica de armazenamento para gerenciar a replicação de armazenamento de servidor para servidor |
 | [Insights do sistema](#system-insights) | O System insights oferece maior insight sobre o funcionamento do seu servidor. |
 | [Atualizações](#updates) | Exibir instalado e verificar se há novas atualizações |
 | [Máquinas virtuais](manage-virtual-machines.md) | Exibir e gerenciar máquinas virtuais |
-| [Comutadores virtuais](#virtual-switches) | Exibir e gerenciar comutadores virtuais |
+| [Comutadores Virtuais](#virtual-switches) | Exibir e gerenciar comutadores virtuais |
 
 ## <a name="overview"></a>Visão geral
 
@@ -456,7 +456,7 @@ Use a **réplica de armazenamento** para gerenciar a replicação de armazenamen
 ## <a name="system-insights"></a>Insights do Sistema
 
 O **System insights** apresenta a análise preditiva nativamente no Windows Server para ajudar a fornecer uma visão mais detalhada do funcionamento do servidor.
-[Obtenha uma visão geral do System insights](https://aka.ms/systeminsights)
+[Obtenha uma visão geral do System insights](../../system-insights/overview.md)
 
 >[!NOTE]
 >O System insights requer o Windows Server 2019.

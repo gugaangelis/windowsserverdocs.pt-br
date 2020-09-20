@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: 2cc0a18b3b6de66f5992eb4584c95696e297e858
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: cdee2aaecf8710b9801b689b141b16d0dbacc691
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89641087"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766789"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
@@ -30,7 +30,7 @@ No Windows Server 2012 R2 e no Windows Server 2012, a capacidade de configurar a
 
 Para obter informações detalhadas sobre delegação restrita, conforme apresentada no Windows Server 2003, consulte [Transição de protocolo e delegação restrita de Kerberos](/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10)).
 
-A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões específicas para delegação restrita.  O S4U2Proxy (Service for User to Proxy) permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end. Essas extensões permitem que a delegação restrita seja configurada na conta do serviço de back-end, que pode estar em outro domínio. Para obter mais informações sobre essas extensões, consulte [ \[ MS-SFU \] : extensões de protocolo Kerberos: serviço para a especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx) na biblioteca MSDN.
+A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões específicas para delegação restrita.  O S4U2Proxy (Service for User to Proxy) permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end. Essas extensões permitem que a delegação restrita seja configurada na conta do serviço de back-end, que pode estar em outro domínio. Para obter mais informações sobre essas extensões, consulte [ \[ MS-SFU \] : extensões de protocolo Kerberos: serviço para a especificação de protocolo de delegação restrita e de usuário](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94) na biblioteca MSDN.
 
 **Aplicações práticas**
 
@@ -52,7 +52,7 @@ Isso também muda a decisão de se um servidor deve confiar na origem de uma ide
 
 Uma alteração no protocolo subjacente permite a delegação restrita entre domínios. A implementação do Windows Server 2012 R2 e do Windows Server 2012 do protocolo Kerberos inclui extensões para serviço para o protocolo S4U2Proxy (user to proxy). Trata-se de um conjunto de extensões para o protocolo Kerberos que permite que um serviço use seu respectivo tíquete de serviço Kerberos para que um usuário obtenha um tíquete de serviço do KDC (Centro de Distribuição de Chaves) para um serviço back-end.
 
-Para obter informações de implementação sobre essas extensões, consulte [ \[ MS-SFU \] : extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx) no msdn.
+Para obter informações de implementação sobre essas extensões, consulte [ \[ MS-SFU \] : extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94) no msdn.
 
 Para obter mais informações sobre a sequência de mensagem básica para a delegação Kerberos com um TGT (tíquete de concessão de tíquete) encaminhado em comparação com o serviço para as extensões de usuário (S4U), consulte a seção [1.3.3 Visão geral do protocolo](/openspecs/windows_protocols/ms-sfu/1fb9caca-449f-4183-8f7a-1a5fc7e7290a) no [MS-SFU]: Extensões do protocolo Kerberos: Serviço para usuário e especificação do protocolo de delegação restrita.
 

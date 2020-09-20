@@ -6,12 +6,12 @@ ms.author: billmath
 manager: femila
 ms.date: 08/11/2017
 ms.topic: article
-ms.openlocfilehash: 8a967718adc40d42c5798870b05cde6e228a0b18
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 2306c5ad57b7714c10076a5bb11f6cae5bb7f92d
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956553"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766879"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configurar o acesso condicional local usando dispositivos registrados
 
@@ -30,7 +30,7 @@ Os seguintes pré-requisitos são necessários para que você possa começar com
 |Azure AD Connect|2015 QFE de novembro ou posterior.  Obtenha a versão mais recente [aqui](https://www.microsoft.com/download/details.aspx?id=47594).
 |Windows Server 2016|Build 10586 ou mais recente para AD FS
 |Esquema de Active Directory do Windows Server 2016|O nível de esquema 85 ou superior é necessário.
-|Controlador de domínio do Windows Server 2016|Isso só é necessário para implantações de confiança de chave de Hello para empresas.  Informações adicionais podem ser encontradas [aqui](https://aka.ms/whfbdocs).
+|Controlador de domínio do Windows Server 2016|Isso só é necessário para implantações de confiança de chave de Hello para empresas.  Informações adicionais podem ser encontradas [aqui](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 |Cliente do Windows 10|A compilação 10586 ou mais recente, unida ao domínio acima, é necessária somente para cenários de ingresso no domínio e Microsoft Passport for Work do Windows 10
 |Conta de usuário do Azure AD com licença Azure AD Premium atribuída|Para registrar o dispositivo
 

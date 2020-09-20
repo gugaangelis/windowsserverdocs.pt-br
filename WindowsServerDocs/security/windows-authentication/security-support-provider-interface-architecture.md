@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/12/2016
-ms.openlocfilehash: aec55bca0be096a3866cc49e718743a9c32d8f6b
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: da7c390427a3f0f2348d91e14d0affef905db390
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89638748"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766949"
 ---
 # <a name="security-support-provider-interface-architecture"></a>Arquitetura de Interface SSPI
 
@@ -83,9 +83,9 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Microsoft Kerberos (Windows)](/windows/win32/secauthn/microsoft-kerberos)
 
--   [\[MS-KILE \] : extensões de protocolo Kerberos](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
+-   [\[MS-KILE \] : extensões de protocolo Kerberos](/openspecs/windows_protocols/ms-kile/2a32282e-dd48-4ad9-a542-609804b02cc9)
 
--   [\[MS-SFU \] : extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
+-   [\[MS-SFU \] : extensões de protocolo Kerberos: serviço para especificação de protocolo de delegação restrita e de usuário](/openspecs/windows_protocols/ms-sfu/3bff5864-8135-400e-bdd9-33b552051d94)
 
 -   [SSP/PA Kerberos (Windows)](/windows/win32/secauthn/kerberos-ssp-ap)
 
@@ -139,7 +139,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Autenticação de Microsoft Digest (Windows)](/windows/win32/secauthn/microsoft-digest-ssp)
 
--   [\[MS-DPSP \] : extensões de protocolo Digest](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
+-   [\[MS-DPSP \] : extensões de protocolo Digest](/openspecs/windows_protocols/ms-dpsp/3e44be62-2067-472a-9ef0-e937298b68fb)
 
 ### <a name="schannel-security-support-provider"></a><a name="BKMK_SchannelSSP"></a>Provedor de suporte de segurança Schannel
 O canal seguro (Schannel) é usado para autenticação de servidor baseada na Web, como quando um usuário tenta acessar um servidor Web seguro.
@@ -177,7 +177,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Referência técnica de TLS/SSL](/previous-versions/windows/it-pro/windows-server-2003/cc784149(v=ws.10))
 
--   [\[MS-TLSP \] : perfil de protocolo TLS](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
+-   [\[MS-TLSP \] : perfil de protocolo TLS](/openspecs/windows_protocols/ms-tlsp/58aba05b-62b0-4cd1-b88b-dc8a24920346)
 
 ### <a name="negotiate-security-support-provider"></a><a name="BKMK_NegoSSP"></a>Negociar provedor de suporte de segurança
 O mecanismo de negociação de GSS-API simples e protegido (SPNEGO) constitui a base para o Negotiate SSP, whichcan ser usado para negociar um protocolo de autenticação específico. Quando um aplicativo chama o SSPI para fazer logon em uma rede, ele pode especificar um SSP para processar a solicitação. Se o aplicativo especificar o Negotiate SSP, ele analisará a solicitação e selecionará o provedor apropriado para lidar com a solicitação, com base nas políticas de segurança configuradas pelo cliente.
@@ -194,9 +194,9 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 -   [Microsoft Negotiate (Windows)](/windows/win32/secauthn/microsoft-negotiate)
 
--   [\[MS-SPNG \] : extensões do mecanismo de negociação do GSS-API (SPNEGO) simples e protegidas](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
+-   [\[MS-SPNG \] : extensões do mecanismo de negociação do GSS-API (SPNEGO) simples e protegidas](/openspecs/windows_protocols/ms-spng/f377a379-c24f-4a0f-a3eb-0d835389e28a)
 
--   [\[MS-N2HT \] : especificação de protocolo de autenticação http Negotiate e Nego2](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
+-   [\[MS-N2HT \] : especificação de protocolo de autenticação http Negotiate e Nego2](/openspecs/windows_protocols/ms-n2ht/4b88aa77-4b12-4933-8740-0f32d8f4eacf)
 
 ### <a name="credential-security-support-provider"></a><a name="BKMK_CredSSP"></a>Provedor de suporte à segurança de credenciais
 O Credential Security Service Provider (CredSSP) fornece uma experiência de usuário SSO (logon único) ao iniciar novos serviços de terminal e Serviços de Área de Trabalho Remota sessões. O CredSSP permite que os aplicativos deleguem as credenciais dos usuários do computador cliente (usando o SSP do lado do cliente) para o servidor de destino (por meio do SSP do lado do servidor), com base nas políticas do cliente. As políticas de CredSSP são configuradas usando Política de Grupo, e a delegação de credenciais é desativada por padrão.
@@ -207,7 +207,7 @@ Esse provedor é incluído por padrão nas versões designadas na lista **aplica
 
 **Recursos adicionais para o SSP de credenciais**
 
--   [\[MS-CSSP \] : especificação do protocolo CredSSP (provedor de suporte à segurança de credencial)](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
+-   [\[MS-CSSP \] : especificação do protocolo CredSSP (provedor de suporte à segurança de credencial)](/openspecs/windows_protocols/ms-cssp/85f57821-40bb-46aa-bfcb-ba9590b8fc30)
 
 -   [Provedor de serviços de segurança de credenciais e SSO para logon de serviços de terminal](/previous-versions/windows/it-pro/windows-vista/cc749211(v=ws.10))
 

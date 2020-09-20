@@ -5,12 +5,12 @@ ms.topic: article
 author: phstee
 ms.author: nedpyle
 ms.date: 4/14/2017
-ms.openlocfilehash: 2515f400f746c5e256a168d191efa842d4ba50fd
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: f4cd1c68cd4d9ac6ba873f297c54818560d50176
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90077203"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765927"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Ajuste de desempenho para servidores de arquivos SMB
 
@@ -28,7 +28,7 @@ O desempenho do servidor de arquivos e os ajustes disponíveis dependem do proto
 
 ### <a name="smb-30-protocol-family"></a>Família de protocolos SMB 3,0
 
-O SMB 3,0 foi introduzido no Windows Server 2012 e aprimorado ainda mais no Windows Server 2012 R2 (SMB 3, 2) e no Windows Server 2016 (SMB 3.1.1). Essa versão introduziu tecnologias que podem melhorar significativamente o desempenho e a disponibilidade do servidor de arquivos. Para obter mais informações, consulte [SMB no Windows Server 2012 e 2012 R2 2012](https://aka.ms/smb3plus) e [o que há de novo no SMB 3.1.1](https://aka.ms/smb311).
+O SMB 3,0 foi introduzido no Windows Server 2012 e aprimorado ainda mais no Windows Server 2012 R2 (SMB 3, 2) e no Windows Server 2016 (SMB 3.1.1). Essa versão introduziu tecnologias que podem melhorar significativamente o desempenho e a disponibilidade do servidor de arquivos. Para obter mais informações, consulte [SMB no Windows Server 2012 e 2012 R2 2012](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) e [o que há de novo no SMB 3.1.1](https://aka.ms/smb311).
 
 
 
@@ -40,13 +40,13 @@ Sempre que o SMB detecta uma rede compatível com RDMA, ele tenta automaticament
 
 O SMB Direct não é necessário em nenhuma configuração de SMB, mas é sempre recomendado para aqueles que desejam menor latência e menor utilização da CPU.
 
-Para obter mais informações sobre o SMB Direct, consulte [melhorar o desempenho de um servidor de arquivos com o SMB Direct](https://aka.ms/smbdirect).
+Para obter mais informações sobre o SMB Direct, consulte [melhorar o desempenho de um servidor de arquivos com o SMB Direct](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134210(v=ws.11)).
 
 ### <a name="smb-multichannel"></a>SMB Multichannel
 
 O SMB Multichannel permite que os servidores de arquivos usem várias conexões de rede simultaneamente e fornece maior taxa de transferência.
 
-Para obter mais informações sobre o SMB multicanal, consulte [implantar o SMB multicanal](https://aka.ms/smbmulti).
+Para obter mais informações sobre o SMB multicanal, consulte [implantar o SMB multicanal](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn610980(v=ws.11)).
 
 ### <a name="smb-scale-out"></a>Expansão do SMB
 

@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
-ms.openlocfilehash: 09d39aa027adf360c339da434b16038a3b8e5c90
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fe519498e8021bde67b87ec7f78b3e1b9a64160b
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87964592"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766939"
 ---
 # <a name="prepare-your-development-environment"></a>Preparar seu ambiente de desenvolvimento
 
@@ -28,7 +28,7 @@ Para preparar seu ambiente de desenvolvimento, execute as seguintes etapas:
 
 Para começar a desenvolver com o SDK, baixe e instale os seguintes pré-requisitos:
 
-* [Centro de administração do Windows](https://aka.ms/WACDownloadPage) (versão de visualização ou GA)
+* [Centro de administração do Windows](../overview.md) (versão de visualização ou GA)
 * Visual Studio ou [Visual Studio Code](https://code.visualstudio.com)
 * [Node.js](https://nodejs.org/en/download/releases/) (versão 10.3.0)
 * [Gerenciador de pacotes de nó](https://npmjs.com/get-npm) (8.12.0 ou posterior)
@@ -71,4 +71,3 @@ Agora que seu ambiente está preparado, você está pronto para começar a criar
 ## <a name="sdk-design-toolkit"></a>Kit de ferramentas de design do SDK
 
 Confira o [Kit de ferramentas de design do SDK](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)do Windows Admin Center! Esse kit de ferramentas foi criado para ajudá-lo a simular rapidamente as extensões no PowerPoint usando estilos, controles e modelos de página do centro de administração do Windows. Veja como a extensão pode ser exibida no centro de administração do Windows antes de começar a codificar.
-

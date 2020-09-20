@@ -7,12 +7,12 @@ ms.author: jgerend
 manager: lizross
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9147d88b2d31def46e7a755abf17a2cdf767f8a2
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 71c719bb4c148a0ff1b287011086ba75e5a3fc69
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990685"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766569"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Visão geral do servidor de arquivos de expansão para dados de aplicativos
 
@@ -108,7 +108,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 </tr>
 <tr class="odd">
 <td>Sistema de Arquivos</td>
-<td><a href="https://docs.microsoft.com/windows-server/storage/refs/refs-overview">ReFS</a>(sistema de arquivos resiliente)</td>
+<td><a href="/windows-server/storage/refs/refs-overview">ReFS</a>(sistema de arquivos resiliente)</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 </tr>
@@ -223,7 +223,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 </tbody>
 </table>
 
-\*O redirecionamento de pasta, Arquivos Offline, perfis de usuário de roaming ou diretórios base geram um grande número de gravações que devem ser gravadas imediatamente no disco (sem buffer) ao usar compartilhamentos de arquivos disponíveis continuamente, reduzindo o desempenho em comparação com os compartilhamentos de arquivos de uso geral. Compartilhamentos de arquivos disponíveis continuamente também são incompatíveis com o Gerenciador de Recursos de Servidor de Arquivos e PCs que executam o Windows XP. Além disso, Arquivos Offline pode não fazer a transição para o modo offline por 3-6 minutos depois que um usuário perde o acesso a um compartilhamento, o que pode frustrar os usuários que ainda não estão usando o modo sempre offline do Arquivos Offline.
+\* O redirecionamento de pasta, Arquivos Offline, perfis de usuário de roaming ou diretórios base geram um grande número de gravações que devem ser gravadas imediatamente no disco (sem buffer) ao usar compartilhamentos de arquivos disponíveis continuamente, reduzindo o desempenho em comparação com os compartilhamentos de arquivos de uso geral. Compartilhamentos de arquivos disponíveis continuamente também são incompatíveis com o Gerenciador de Recursos de Servidor de Arquivos e PCs que executam o Windows XP. Além disso, Arquivos Offline pode não fazer a transição para o modo offline por 3-6 minutos depois que um usuário perde o acesso a um compartilhamento, o que pode frustrar os usuários que ainda não estão usando o modo sempre offline do Arquivos Offline.
 
 ## <a name="practical-applications"></a>Aplicações práticas
 
@@ -254,7 +254,7 @@ A tabela a seguir lista os recursos que fazem parte deste cenário e descreve co
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="failover-clustering.md">Clustering de failover</a></td>
+<td><a href="/windows-server/failover-clustering/failover-clustering-overview">Clustering de failover</a></td>
 <td>Os clusters de failover adicionaram os seguintes recursos no Windows Server 2012 para dar suporte ao servidor de arquivos de escalabilidade horizontal: nome de rede distribuído, tipo de recurso de Servidor de Arquivos de Escalabilidade Horizontal, CSV (volumes compartilhados de cluster) 2 e Servidor de Arquivos de Escalabilidade Horizontal função de alta disponibilidade. Para obter mais informações sobre esses recursos, consulte <a href="/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">o que&#39;s New no clustering de failover no Windows Server 2012 [redirected]</a>.</td>
 </tr>
 <tr class="even">

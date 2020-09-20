@@ -6,12 +6,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 3867df04c83fe536473c227e43700a4758c1294e
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 3be878629d19542629cc3cbb849ac46fe14de0bd
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87935853"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766829"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Limites de escalabilidade do servidor de destino iSCSI
 
@@ -71,7 +71,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td><p>Discos virtuais ou instantâneos montados localmente por dispositivo de armazenamento</p></td>
 <td><p>32</p></td>
 <td><p>Sim</p></td>
-<td><p>Discos virtuais montados localmente Don&#39;t oferecem qualquer funcionalidade específica de iSCSI e foram preteridos – para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>.</p></td>
+<td><p>Discos virtuais montados localmente Don&#39;t oferecem qualquer funcionalidade específica de iSCSI e foram preteridos – para obter mais informações, consulte <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">recursos removidos ou preteridos no Windows Server 2012 R2</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -351,7 +351,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <td><p>Redução de unidade lógica</p></td>
 <td><p>Sim (somente Windows Server 2012 R2 e mais recente)</p></td>
 <td><p>N/D</p></td>
-<td><p>Use <a href="https://docs.microsoft.com/powershell/module/iscsitarget/resize-iscsivirtualdisk">redimension-iSCSIVirtualDisk</a> para reduzir um LUN.</p></td>
+<td><p>Use <a href="/powershell/module/iscsitarget/resize-iscsivirtualdisk">redimension-iSCSIVirtualDisk</a> para reduzir um LUN.</p></td>
 </tr>
 <tr class="even">
 <td><p>Clonagem de unidade lógica</p></td>
@@ -421,7 +421,7 @@ Este tópico fornece os limites de servidor de destino iSCSI da Microsoft com su
 <tr class="odd">
 <td><p>Montagem local</p></td>
 <td><p>Com suporte</p></td>
-<td><p>Discos virtuais iSCSI montados localmente são preteridos-para obter mais informações, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">recursos removidos ou preteridos no Windows Server 2012 R2</a>. Instantâneos de disco dinâmico não podem ser montados localmente.</p></td>
+<td><p>Discos virtuais iSCSI montados localmente são preteridos-para obter mais informações, consulte <a href="/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn303411(v=ws.11)">recursos removidos ou preteridos no Windows Server 2012 R2</a>. Instantâneos de disco dinâmico não podem ser montados localmente.</p></td>
 </tr>
 </tbody>
 </table>
