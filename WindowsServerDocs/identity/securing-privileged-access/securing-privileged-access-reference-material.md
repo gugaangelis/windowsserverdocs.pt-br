@@ -8,12 +8,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: a7eda2d06a91891529ebbe5c7e448c17fdb070f3
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d2e7d7a064806646ccc075c96fff2ba20acfe005
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87953130"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766209"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de camadas administrativas do Active Directory
 
@@ -138,7 +138,7 @@ Devido a grande quantidade de ativos que dependem de sistemas de identidade como
 
 ![Diagrama que mostra que você deve reduzir a quantidade de sistemas de que o Active Directory e os controladores de domínio dependem](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-Para saber mais sobre como se proteger dos principais riscos do Active Directory, consulte [esta página](https://aka.ms/hardenAD).
+Para saber mais sobre como se proteger dos principais riscos do Active Directory, consulte [esta página](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md).
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>Padrões operacionais com base no princípio de origem limpa
 
@@ -313,7 +313,7 @@ Os administradores só podem entrar nas estações de trabalho de administrador 
 > [!NOTE]
 > Isso é necessário porque fazer logon interativamente em um host concede controle das credenciais nesse host.
 >
-> Consulte [Ferramentas administrativas e tipos de logon](https://aka.ms/admintoolsecurity) para obter detalhes sobre os tipos de logon, ferramentas de gerenciamento comuns e exposição de credencial.
+> Consulte [Ferramentas administrativas e tipos de logon]() para obter detalhes sobre os tipos de logon, ferramentas de gerenciamento comuns e exposição de credencial.
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>Uso da tecnologia e métodos de suporte aprovados
 
@@ -329,7 +329,7 @@ Os administradores que oferecem suporte a usuários e sistemas remotos devem seg
 Certifique-se de que as práticas a seguir sejam aplicadas neste cenário:
 
 - **Suporte de servidor remoto**: ao acessar remotamente um servidor, os administradores de Camada 0 devem seguir estas diretrizes:
-  - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Ferramentas administrativas e tipos de logon](https://aka.ms/admintoolsecurity).
+  - **Primário (ferramenta)** ferramentas remotas que usam logons de rede (tipo 3). Para saber mais, consulte [Ferramentas administrativas e tipos de logon]().
   - **Primário (interativo)** use RDP RestrictedAdmin ou uma sessão RDP padrão de uma estação de trabalho do administrador com uma conta de domínio
 
     > [!NOTE]
@@ -488,7 +488,7 @@ Um design de floresta administrativa deve incluir as seguintes considerações:
 
 - **Proteção da estação de trabalho**: compile as estações de trabalho administrativas usando as [Estações de trabalho com acesso privilegiado](../securing-privileged-access/privileged-access-workstations.md) (por meio da Fase 3), mas altere a associação de domínio na floresta administrativa em vez do ambiente de produção.
 - **Proteção do servidor e do DC**: para todos os controladores de domínio e servidores na floresta administrativa:
-   - Certifique-se de que todas as mídias sejam validadas usando as diretrizes em [Origem limpa para a mídia de instalação](https://aka.ms/cleansource)
+   - Certifique-se de que todas as mídias sejam validadas usando as diretrizes em [Origem limpa para a mídia de instalação]()
    - Certifique-se de que os servidores de floresta administrativa tenham os sistemas operacionais mais recentes instalados, mesmo que isso não seja viável em produção.
    - Os hosts da floresta de administrador devem ser atualizados automaticamente com atualizações de segurança.
 

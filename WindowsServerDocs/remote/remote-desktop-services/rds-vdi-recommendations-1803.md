@@ -4,12 +4,12 @@ description: Configurações e definições recomendadas para minimizar a sobrec
 ms.author: robsmi
 ms.topic: article
 author: jaimeo
-ms.openlocfilehash: 4ba432e13785694844229a41f2966eb7cf65fa7e
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 38ddd48b6bf5502851615adeb75446f07bc860c1
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078633"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766999"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>Otimizando o Windows 10, versão 1803, para uma função VDI (Virtual Desktop Infrastructure)
 
@@ -580,7 +580,7 @@ Isso é especialmente importante em ambientes onde o computador físico ou a VDI
 
 Observe que algumas configurações nesta seção são *apenas baseadas no registro* e devem ser incorporadas na imagem base antes que ela seja implantada para uso em produção.
 
-As configurações a seguir estão documentadas nas informações das [Diretrizes de Ajuste de Desempenho do Windows Server 2016](/windows-server/administration/performance-tuning/), publicadas em Microsoft.com pelo Grupo de Produtos do Windows.
+As configurações a seguir estão documentadas nas informações das [Diretrizes de Ajuste de Desempenho do Windows Server 2016](../../administration/performance-tuning/index.md), publicadas em Microsoft.com pelo Grupo de Produtos do Windows.
 
 #### <a name="disablebandwidththrottling"></a>DisableBandwidthThrottling
 

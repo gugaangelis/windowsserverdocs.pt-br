@@ -8,12 +8,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a869f826bd9d13e627f5710cca1b3ef1cdcdc4
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: cb6ffed04856c1e4fe670893a2af3acedb6da012
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87959624"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90765947"
 ---
 # <a name="manage-nano-server"></a>Gerenciar o Nano Server
 
@@ -212,12 +212,12 @@ Atualmente, a maneira de automatizar a instalação da atualização é converte
 
 ## <a name="performance-and-event-monitoring-on-nano-server"></a>Monitoramento de desempenho e eventos no Nano Server
 [comment]: # (de Venkat Yalla.)
-O Nano Server é totalmente compatível com a estrutura do ETW ( [Rastreamento de Eventos para Windows](https://aka.ms/u2pa0i)), mas algumas ferramentas conhecidas, usadas para gerenciar o rastreamento e contadores de desempenho, não estão disponíveis atualmente no Nano Server. No entanto, o Nano Server tem ferramentas e cmdlets para realizar cenários mais comuns de análise de desempenho.
+O Nano Server é totalmente compatível com a estrutura do ETW ( [Rastreamento de Eventos para Windows](/windows/win32/etw/event-tracing-portal)), mas algumas ferramentas conhecidas, usadas para gerenciar o rastreamento e contadores de desempenho, não estão disponíveis atualmente no Nano Server. No entanto, o Nano Server tem ferramentas e cmdlets para realizar cenários mais comuns de análise de desempenho.
 
 O fluxo de trabalho de alto nível permanece o mesmo em qualquer instalação do Windows Server - o rastreamento de baixa sobrecarga é executado no computador de destino (Nano Server) e os arquivos de rastreamento e/ou logs resultantes são processados posteriormente offline em um computador separado, usando ferramentas como o [Analisador de Desempenho do Windows](/previous-versions/windows/it-pro/windows-8.1-and-8/hh448170(v=win.10)), [Analisador de Mensagem](https://www.microsoft.com/download/details.aspx?id=44226) ou outros.
 
 > [!NOTE]
-> Veja [Como copiar arquivos do Nano Server](https://aka.ms/nri9c8) para ter uma atualização sobre como transferir arquivos usando a comunicação remota do PowerShell.
+> Veja [Como copiar arquivos do Nano Server](/previous-versions/windows/desktop/legacy/mt708806(v=vs.85)) para ter uma atualização sobre como transferir arquivos usando a comunicação remota do PowerShell.
 
 As seções a seguir listam as atividades de coleta de dados de desempenho mais comuns, juntamente com uma forma com suporte de realizá-las no Nano Server.
 
@@ -381,7 +381,7 @@ TimeCreated           Message
 9/15/2016 11:31:16 AM The Virtualization Based Security enablement policy check at phase 0 failed with status: {File...
 ```
 
-O Nano Server também oferece suporte a ```wevtutil.exe``` que permite recuperar informações sobre os logs de eventos e editores. confira [documentação do wevtutil.exe](https://aka.ms/qvod7p) para obter mais detalhes.
+O Nano Server também oferece suporte a ```wevtutil.exe``` que permite recuperar informações sobre os logs de eventos e editores. confira [documentação do wevtutil.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) para obter mais detalhes.
 
 ### <a name="graphical-interface-tools"></a>Ferramentas de interface gráfica
 As [ferramentas de gerenciamento de servidor baseadas na Web](https://techcommunity.microsoft.com/t5/windows-admin-center-blog/bg-p/Windows-Admin-Center-Blog) podem ser usadas para gerenciar remotamente os destinos do Nano Server e apresentar um Log de eventos do Nano Server usando um navegador da Web. Por fim, o snap-in MMC Visualizador de Eventos (eventvwr.msc) também pode ser usado para exibir logs- - basta abri-lo em um computador com uma área de trabalho e apontá-lo para um Nano Server remoto.

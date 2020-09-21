@@ -5,12 +5,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 ms.date: 02/24/2020
 ms.topic: article
-ms.openlocfilehash: cb549f951865a065c70a6bfbfa9d49faf71ffd97
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 60aae8d96107b45ca3ef101780a3f1fec9c5f364
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87989792"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766579"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Ferramentas e configurações do Serviço de Tempo do Windows
 
@@ -87,7 +87,7 @@ W32tm /query /computer:contosoW1 /configuration
 O resultado desse comando é uma lista de parâmetros de configuração que são definidos para o cliente de Hora do Windows.
 
 > [!IMPORTANT]
-> [O Windows Server 2016 aprimorou os algoritmos de sincronização de tempo](https://aka.ms/WS2016Time) para se alinhar com as especificações de RFC. Portanto, se você quiser definir o cliente local de Horário do Windows para apontar para vários pares, é altamente recomendável preparar três ou mais servidores de horário diferentes.
+> [O Windows Server 2016 aprimorou os algoritmos de sincronização de tempo](./accurate-time.md) para se alinhar com as especificações de RFC. Portanto, se você quiser definir o cliente local de Horário do Windows para apontar para vários pares, é altamente recomendável preparar três ou mais servidores de horário diferentes.
 >
 > Se você tiver apenas dois servidores de horário, deverá especificar o sinalizador (0x2) **UseAsFallbackOnly** para eliminar a prioridade de um deles. Por exemplo, se você quiser priorizar ntpserver.contoso.com em vez de clock.adatum.com, execute o comando a seguir.
 > ```cmd

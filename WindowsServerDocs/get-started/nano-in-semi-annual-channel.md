@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
 ms.assetid: a270334d-42a7-46ff-8eed-d8656a276544
-ms.openlocfilehash: c1b25402a209bf460c130f4fd76928f95dc7c0a7
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 6a0f95743a7be890da8aabc2d4fbd2e38a15952f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87967913"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766599"
 ---
 # <a name="changes-to-nano-server-in-windows-server-semi-annual-channel"></a>Alterações no Nano Server no Canal Semestral do Windows Server
 
@@ -33,5 +33,5 @@ No entanto, começando com o Windows Server versão 1803, o Nano Server está di
 
 ## <a name="related-topics"></a>Tópicos relacionados
 
-- [Documentação de contêineres do Windows](https://aka.ms/windowscontainers)
+- [Documentação de contêineres do Windows](/virtualization/windowscontainers/)
 - [Visão geral do Canal Semestral do Windows Server](../get-started-19/servicing-channels-19.md)

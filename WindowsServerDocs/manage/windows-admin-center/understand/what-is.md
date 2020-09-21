@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 3075c571fb933692745a872df138ef5cbfa6b283
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: affbc610484abc5a4e45534a7f75e4f06efc23e9
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995306"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766959"
 ---
 # <a name="what-is-windows-admin-center"></a>O que é o Windows Admin Center?
 
@@ -25,7 +25,7 @@ O Windows Admin Center é a evolução moderna das ferramentas de gerenciamento 
 
 ## <a name="how-does-windows-admin-center-work"></a>Como funciona o Windows Admin Center?
 
-O Windows Admin Center é executado em um navegador da Web e gerencia o Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Azure Stack HCI e mais por meio do **gateway do Windows Admin Center** instalado no Windows Server ou no Windows 10 ingressado em domínio. O gateway gerencia servidores por meio do PowerShell Remoto e WMI em WinRM. O gateway está incluído no Windows Admin Center em um único pacote .msi leve que você pode [baixar](https://aka.ms/windowsadmincenter).
+O Windows Admin Center é executado em um navegador da Web e gerencia o Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Azure Stack HCI e mais por meio do **gateway do Windows Admin Center** instalado no Windows Server ou no Windows 10 ingressado em domínio. O gateway gerencia servidores por meio do PowerShell Remoto e WMI em WinRM. O gateway está incluído no Windows Admin Center em um único pacote .msi leve que você pode [baixar](../overview.md).
 
 O gateway do Windows Admin Center, depois de publicado no DNS e ter acesso concedido através de firewalls corporativos correspondentes, permite a você conectar com segurança e gerenciar os servidores de qualquer lugar com o Microsoft Edge ou o Google Chrome.
 
@@ -70,4 +70,4 @@ O Windows Admin Center oferece a melhor experiência para [gerenciar clusters hi
 O Windows Admin Center foi criado com a extensibilidade em mente desde o início, permitindo que desenvolvedores da Microsoft e de terceiros construam ferramentas e soluções além das ofertas atuais. A Microsoft oferece um [SDK](../extend/extensibility-overview.md) que permite aos desenvolvedores criar suas próprias ferramentas para o Windows Admin Center.
 
 > [!Tip]
-> Pronto para instalar o Windows Admin Center? [Baixar agora](https://aka.ms/windowsadmincenter)
+> Pronto para instalar o Windows Admin Center? [Baixar agora](../overview.md)

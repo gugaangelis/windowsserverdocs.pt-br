@@ -7,12 +7,12 @@ author: eross-msft
 manager: mtillman
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: 2202658da6d89d3a289e0fd1e6df07e9ba4e4544
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0e477a404e7bef9ed1e201393a95e875c308e80f
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621996"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766889"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novidades no Windows Server, versão 1709
 
@@ -89,7 +89,7 @@ Para obter mais informações, confira [Visão geral de malha e VMs protegidas](
 ## <a name="storage"></a>Armazenamento
 
 **Réplica de Armazenamento**: A proteção de recuperação de desastres adicionada por Réplica de armazenamento no Windows Server 2016 foi agora expandida para incluir:
-- **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup.  Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](https://aka.ms/srfaq).
+- **Failover de teste**: a opção para montar o armazenamento de destino agora é possível por meio do recurso de failover de teste. Você pode montar um instantâneo do armazenamento replicado em nós de destino temporariamente para fins de teste ou backup.  Para obter mais informações, consulte [Perguntas Frequentes sobre a Réplica de Armazenamento](../storage/storage-replica/storage-replica-frequently-asked-questions.md).
 - **Suporte ao Project Honolulu**: o suporte para gerenciamento gráfico de replicação de servidor para servidor agora está disponível no Project Honolulu. Isso elimina a necessidade de usar o PowerShell para gerenciar uma carga de trabalho de proteção contra desastres comuns.
 
 **SMB**:

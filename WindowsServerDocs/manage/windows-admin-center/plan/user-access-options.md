@@ -6,12 +6,12 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c96968f55a06c7ccffd9f7919001f21bff6a75c
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 184eca56dc14e91220a7fb7eb196c48706562ff7
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87996987"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766709"
 ---
 # <a name="user-access-options-with-windows-admin-center"></a>Opções de acesso do usuário com o Windows Admin Center
 
@@ -58,7 +58,7 @@ Isso permite que eles se conectem ao computador remotamente e garantem que tenha
 No entanto, o trabalho de alguns usuários pode não exigir acesso irrestrito ao computador.
 Você pode usar o **controle de acesso baseado em função** no Windows Admin Center para fornecer a tais usuários acesso limitado ao computador, em vez de torná-los administradores locais completos.
 
-O controle de acesso baseado em função no Windows Admin Center funciona configurando cada servidor gerenciado com um ponto de extremidade de [Administração Suficiente](https://aka.ms/jeadocs) do PowerShell.
+O controle de acesso baseado em função no Windows Admin Center funciona configurando cada servidor gerenciado com um ponto de extremidade de [Administração Suficiente](/powershell/scripting/learn/remoting/jea/overview) do PowerShell.
 Esse ponto de extremidade define as funções, incluindo quais aspectos do sistema cada função tem permissão para gerenciar e quais usuários são atribuídos à função.
 Quando um usuário se conecta ao ponto de extremidade restrito, uma conta de administrador local temporária é criada para gerenciar o sistema em nome dele.
 Isso garante que até mesmo as ferramentas que não têm o próprio modelo de delegação ainda possam ser gerenciadas com o Windows Admin Center.

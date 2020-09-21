@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 12/02/2019
-ms.openlocfilehash: 4114869b3f138eea2e6ed45a4317699706471c5b
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 403a0f68f559d72dfaa54e4b537a50a66fc3ec6a
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997004"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766719"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>Que tipo de instalação é ideal para você?
 
@@ -77,4 +77,4 @@ Você pode habilitar a alta disponibilidade do serviço de gateway implantando o
 [Saiba como implantar o Windows Admin Center com alta disponibilidade.](../deploy/high-availability.md)
 
 > [!Tip]
-> Pronto para instalar o Windows Admin Center? [Baixar agora](https://aka.ms/windowsadmincenter)
+> Pronto para instalar o Windows Admin Center? [Baixar agora](../overview.md)

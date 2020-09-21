@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 8a1cd07167fd0a73d72dc57708a5f9bd23d2252c
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: d6fa3e4535748b6c4d5b45755b0336dc26815bee
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87958674"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766729"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -149,7 +149,7 @@ Aqui estão alguns vídeos de sessões do Microsoft Ignite 2019:
 - [Como usar os serviços híbridos do Microsoft Azure junto com o Windows Admin Center e o Windows Server](https://aka.ms/WAC-THR2073)
 - [P e R ao vivo: gerencie seu ambiente de servidor híbrido com o Windows Admin Center](https://aka.ms/WAC-MLS1055)
 - [Roteiro de aprendizagem: tecnologias híbridas de gerenciamento](https://aka.ms/WAC-HybridMgmtTech)
-- [Laboratório prático: Windows Admin Center e opção híbrida](https://aka.ms/WAC-HOL2019)
+- [Laboratório prático: Windows Admin Center e opção híbrida](/learn/?WT.mc_id=sitertzn_homepage_learn-redirect-handsonlabs)
 
 Aqui estão alguns vídeos de sessões do Windows Server Summit 2019:
 

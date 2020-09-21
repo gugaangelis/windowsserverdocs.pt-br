@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/20/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e0ce10cbdc1dfe70156d36a96978222395afaa94
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: c7d05731997aeb9fcdb1fadb73ba80f2ff6655e5
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702815"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766689"
 ---
 # <a name="get-started-with-the-macos-client"></a>Introdução ao cliente para macOS
 
@@ -159,7 +159,7 @@ O Windows Server 2012 R2 apresentou o suporte para um novo método de autentica�
 > [!IMPORTANT]
 > Os modelos personalizados de autenticação e autorização antes do Windows 8.1 não têm suporte, embora o artigo acima fale sobre eles.
 
-Para saber mais sobre esse recurso, confira [https://aka.ms/paa-sample](https://aka.ms/paa-sample).
+Para saber mais sobre esse recurso, confira [https://aka.ms/paa-sample](/samples/browse/?redirectedfrom=MSDN-samples).
 
 > [!TIP]
 > Perguntas e comentários são sempre bem-vindos. No entanto, NÃO publique uma solicitação de ajuda com solução de problemas usando o recurso de comentários no final deste artigo. Em vez disso, vá para o [Fórum de cliente da Área de Trabalho Remota](/answers/topics/windows-remote-desktop-client.html) e inicie uma nova conversa. Tem alguma sugestão de recurso? Conte-nos no [Fórum de voz do usuário cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

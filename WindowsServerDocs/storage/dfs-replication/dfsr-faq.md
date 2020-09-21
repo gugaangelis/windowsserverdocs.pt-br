@@ -4,12 +4,12 @@ ms.date: 06/18/2014
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 0a19bdd00000e466f2a2af92116356a9ad2a6428
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 346fa77e1a22626094baa33aaf70ead23f2f0db0
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87950781"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766639"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicação do DFS: Perguntas frequentes (FAQ)
 
@@ -282,7 +282,7 @@ O Gerenciamento de DFS está incluído no Windows Server 2012 R2, no Windows Ser
 
 
 > [!IMPORTANT]
-> Para ver ou gerenciar grupos de replicação que contêm pastas replicadas somente leitura ou membros que são clusters de failover, use a versão do Gerenciamento do DFS incluída no Windows Server 2012 R2, no Windows Server 2012, no Windows Server 2008 R2, em <a href="https://go.microsoft.com/fwlink/p/?linkid=238560">Ferramentas de Administração de Servidor Remoto para Windows 8</a> ou em <a href="https://technet.microsoft.com/library/ee449475">Ferramentas de Administração de Servidor Remoto para Windows 7</a>.
+> Para ver ou gerenciar grupos de replicação que contêm pastas replicadas somente leitura ou membros que são clusters de failover, use a versão do Gerenciamento do DFS incluída no Windows Server 2012 R2, no Windows Server 2012, no Windows Server 2008 R2, em <a href="https://go.microsoft.com/fwlink/p/?linkid=238560">Ferramentas de Administração de Servidor Remoto para Windows 8</a> ou em <a href="/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee449475(v=ws.10)">Ferramentas de Administração de Servidor Remoto para Windows 7</a>.
 <br>
 
 

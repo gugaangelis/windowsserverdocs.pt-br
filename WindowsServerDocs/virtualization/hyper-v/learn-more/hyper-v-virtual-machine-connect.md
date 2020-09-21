@@ -1,18 +1,17 @@
 ---
 title: Conexão com Máquina Virtual do Hyper-V
 description: Descreve a Conexão de Máquina Virtual, que fornece acesso remoto a uma máquina virtual. Inclui detalhes sobre como executar tarefas comuns, como enviar Ctrl-Alt-Delete para a máquina virtual.
-manager: dongill
 ms.topic: article
 ms.assetid: deae35b9-7647-42b8-b6bf-45645a44c9c4
-author: kbdazure
-ms.author: kathydav
+ms.author: benarm
+author: BenjaminArmstrong
 ms.date: 10/04/2016
-ms.openlocfilehash: 2ffe54a1699fdb23833adc5e0036747d516e3056
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 80e87fcfa38f441491985ba7bb58b25c7e4cc165
+ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87990174"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90745961"
 ---
 # <a name="hyper-v-virtual-machine-connection"></a>Conexão com Máquina Virtual do Hyper-V
 

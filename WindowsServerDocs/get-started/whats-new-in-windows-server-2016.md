@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: d0ba6860edd40202da3078ee0ad05eb91901e1f2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 5dfed9e70e4f0406c59c31201c8d2d1a9b3caafe
+ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87945709"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90766859"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novidades no Windows Server 2016
 
@@ -55,7 +55,7 @@ O Windows Server 2016 fornece uma nova máquina virtual blindada com base em Hyp
 
 - Suporte ao Serviço Guardião de Host para Active Directory seguro existente – você pode direcionar o Serviço Guardião de Host para usar uma floresta existente do Active Directory como seu Active Directory, em vez de criar sua própria instância do Active Directory
 
-Para obter mais detalhes e instruções para trabalhar com máquinas virtuais blindadas, consulte [Guia de validação de VMs blindadas e malha protegida para Windows Server 2016 (TPM)](https://aka.ms/shieldedvms).
+Para obter mais detalhes e instruções para trabalhar com máquinas virtuais blindadas, consulte [Guia de validação de VMs blindadas e malha protegida para Windows Server 2016 (TPM)](../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md).
 
 ## <a name="identity-and-access"></a>[Identidade e acesso](../identity/Identity-and-Access.yml)
 Novos recursos na identidade melhoram a capacidade para as organizações protegerem ambientes do Active Directory e ajuda a migrar para implantações apenas na nuvem e implantações híbridas, onde alguns aplicativos e serviços são hospedados na nuvem e outros são hospedados no local.
