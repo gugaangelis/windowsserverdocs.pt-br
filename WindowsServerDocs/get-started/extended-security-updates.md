@@ -7,12 +7,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 02/21/2020
-ms.openlocfilehash: f405486c5ea34b26f23a16552c24527939ca1fd4
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: aa528b6d3e5858cec6b55f2bcdf866dcda32eaf0
+ms.sourcegitcommit: ad8fe5bb915e616a437be60e1836d3ce891dabaa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89024560"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90813428"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Como usar as ESUs (Atualizações de Segurança Estendidas) do Windows Server 2008 e 2008 R2
 
@@ -46,7 +46,7 @@ Para obter mais informações, consulte as [Perguntas frequentes sobre atualiza�
 Se você executar VMs do Windows Server 2008 ou 2008 R2 no Azure, elas serão habilitadas automaticamente para as Atualizações de Segurança Estendidas. Você não precisa configurar nada, e não há nenhum encargo adicional pelo uso das Atualizações de Segurança Estendidas nas VMs do Azure. As Atualizações de Segurança Estendidas são entregues automaticamente às VMs do Azure quando elas estão configuradas para receber atualizações.
 
 > [!NOTE]
-> As VMs Microsoft.ClassicCompute exigem configuração adicional para implantação de Atualizações de Segurança Estendidas, pois elas não têm acesso ao [Serviço de Metadados de Instância do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/instance-metadata-service), que determina a elegibilidade das Atualizações de Segurança Estendidas. Entre em contato com o [suporte da Microsoft](https://support.microsoft.com/contactus?PID=17336) para obter mais ajuda.
+> As VMs Microsoft.ClassicCompute exigem configuração adicional para a implantação de Atualizações de Segurança Estendidas, pois elas não têm acesso ao [Serviço de Metadados de Instância do Azure](/azure/virtual-machines/windows/instance-metadata-service) que determina a elegibilidade das Atualizações de Segurança Estendidas. Entre em contato com o [suporte da Microsoft](https://support.microsoft.com/contactus?PID=17336) para obter mais ajuda.
 
 Para outros ambientes, como VMs locais ou servidores físicos, você precisará solicitar e configurar manualmente as Atualizações de Segurança Estendidas. Compre as Atualizações de Segurança Estendidas por meio de Programas de Licenciamento por Volume, como o EA (Contrato Enterprise), o EAS (Contrato Enterprise Subscription), o EES (Registro para Soluções Educacionais) ou o SCE (Registro de Servidor e de Nuvem).
 

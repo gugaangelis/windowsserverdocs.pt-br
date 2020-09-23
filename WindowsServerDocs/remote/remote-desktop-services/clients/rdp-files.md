@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/07/2020
+ms.date: 09/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 65a2a767e89af6d64893de1b8c7949bedd9e7625
-ms.sourcegitcommit: 9f2e04cd7e52c29fa2fbc64f67dcafbd021015ab
+ms.openlocfilehash: 6524c186e42b2c1c39dae5b95f4c6657bdd9dcbf
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88051840"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083737"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configurações do arquivo RDP com suporte da Área de Trabalho Remota
 
@@ -58,7 +58,7 @@ A tabela também realça quais configurações são compatíveis como propriedad
 | audiomode:i:value | Local de saída de áudio:</br>Determina se o computador local ou remoto reproduz áudio. | - 0: Reproduzir sons no computador local (reproduzir neste computador)</br>- 1: Reproduzir sons no computador remoto (reproduzir no computador remoto)</br>- 2: Não reproduzir sons (Não reproduzir) | 0 | Sim |
 | camerastoredirect:s:value | Redirecionamento de câmera:</br>Configura quais câmeras serão redirecionadas. Essa configuração usa uma lista delimitada por ponto e vírgula das interfaces KSCATEGORY_VIDEO_CAMERA de câmeras habilitadas para redirecionamento. | - *: Redirecione todas as câmeras</br> - Lista de câmeras, como camerastoredirect:s:\\?\usb#vid_0bda&pid_58b0&mi</br>- É possível excluir uma câmera específica, prefixando a cadeia de caracteres de link simbólico com "-" | Não redirecionar nenhuma câmera | Sim |
 | devicestoredirect:s:value | Redirecionamento de dispositivos Plug and Play:</br>Determina quais dispositivos no computador local serão redirecionados e estarão disponíveis na sessão remota. | – *: Redirecionar todos os dispositivos com suporte, incluindo aqueles conectados posteriormente</br> – ID de hardware válida para um ou mais dispositivos</br> - DynamicDevices: Redirecionar todos os dispositivos com suporte que são conectados posteriormente | Não redirecionar nenhum dispositivo | Sim |
-| drivestoredirect:s:value | Redirecionamento de unidade/armazenamento:</br>Determina quais unidades de disco no computador local serão redirecionados e estarão disponíveis na sessão remota. | – Nenhum valor especificado: não redirecionar unidades</br>- *: Redirecionar todas as unidades de disco, incluindo unidades conectadas mais tarde</br>– DynamicDrives: redirecionar todas as unidades que estão conectadas mais tarde</br>– A unidade e os rótulos para uma ou mais unidades, tais como "drivestoredirect:s:C:;E:;": redirecionar as unidades especificadas | Não redirecionar nenhuma unidade | Sim |
+| drivestoredirect:s:value | Redirecionamento de unidade/armazenamento:</br>Determina quais unidades de disco no computador local serão redirecionados e estarão disponíveis na sessão remota. | – Nenhum valor especificado: não redirecionar unidades</br>- *: Redirecionar todas as unidades de disco, incluindo unidades conectadas mais tarde</br>– DynamicDrives: redirecionar todas as unidades que estão conectadas mais tarde</br>– A unidade e os rótulos para uma ou mais unidades, tais como "drivestoredirect:s:C\:;E\:;": redirecionar as unidades especificadas | Não redirecionar nenhuma unidade | Sim |
 | keyboardhook:i:value | Determina quando as combinações de tecla Windows (tecla WIN, ALT + TAB) são aplicadas à sessão remota para conexões de área de trabalho. | - 0: As combinações de tecla Windows são aplicadas no computador local</br>- 1: As combinações de tecla Windows são aplicadas no computador remoto quando no foco</br>- 2: As combinações de tecla Windows são aplicadas no computador remoto apenas no modo tela inteira | 2 | Sim |
 | redirectclipboard:i:value | Redirecionamento da área de transferência:</br>Determina se o redirecionamento de área de transferência fica habilitado. | - 0: Área de transferência no computador local não fica disponível na sessão remota</br>- 1: Área de transferência no computador local fica disponível na sessão remota | 1 | Sim |
 | redirectcomports:i:value | Redirecionamento de portas COM:</br>Determina se as portas COM (serial) no computador local serão redirecionadas e estarão disponíveis na sessão remota. | - 0: As portas COM no computador local não ficam disponíveis na sessão remota</br>- 1: As portas COM no computador local ficam disponíveis na sessão remota | 0 | Sim |

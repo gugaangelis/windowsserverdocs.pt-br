@@ -1,25 +1,25 @@
 ---
 title: Introdução ao cliente para Microsoft Store
-description: Etapas básicas de configuração para o cliente de Área de Trabalho Remota para Microsoft Store.
+description: Instruções básicas de configuração para o cliente de Área de Trabalho Remota da Microsoft Store.
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 09/05/2020
+ms.date: 09/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bad174ad596ffc0262947464f2353b91a92872c
-ms.sourcegitcommit: 34f9577ef32cbdc7ef96040caabc9d83517f9b79
+ms.openlocfilehash: 07e778fef6a944107ab9cb66f06c8c5d980f3675
+ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89554519"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90779250"
 ---
 # <a name="get-started-with-the-microsoft-store-client"></a>Introdução ao cliente para Microsoft Store
 
 >Aplica-se a: Windows 10
 
-Você pode usar o cliente de Área de Trabalho Remota para o Windows para trabalhar remotamente com áreas de trabalho e aplicativos do Windows usando outro dispositivo Windows.
+Você pode usar o cliente de Área de Trabalho Remota para o Windows para trabalhar remotamente com PCs e aplicativos do Windows usando outro dispositivo Windows.
 
 Use as informações a seguir para começar. Não se esqueça de conferir as [Perguntas Frequentes](remote-desktop-client-faq.md) se tiver alguma dúvida.
 
@@ -33,21 +33,21 @@ Siga estas etapas para começar a usar a Área de Trabalho Remota em seu disposi
 
 1. Baixar o cliente da Área de Trabalho Remota da [Microsoft Store](https://www.microsoft.com/store/p/microsoft-remote-desktop/9wzdncrfj3ps).
 2. [Configure seu computador para aceitar conexões remotas](remote-desktop-allow-access.md).
-3. Adicione uma conexão de Área de Trabalho Remota ou um recurso remoto. Você usa uma conexão para se conectar diretamente a um computador Windows e um recurso remoto para usar um programa RemoteApp, área de trabalho baseada em sessão ou área de trabalho virtual publicada por seu administrador.
+3. Adicione uma conexão de PC remoto ou um workspace. Você usa uma conexão para se conectar diretamente a um PC Windows e um workspace para usar um programa RemoteApp, a área de trabalho baseada em sessão ou a área de trabalho virtual publicada por seu administrador.
 4. Fixe os itens para que você possa acessar a Área de Trabalho Remota rapidamente.
 
-### <a name="add-a-remote-desktop-connection"></a>Adicionar uma conexão de Área de Trabalho Remota
+### <a name="add-a-remote-pc-connection"></a>Adicionar uma conexão de PC remoto
 
-Para criar uma conexão de Área de Trabalho Remota:
+Para criar uma conexão de PC remoto:
 
-1. Na Central de Conexão, toque em **+ Adicionar** e em **Área de Trabalho**.
+1. Na Central de Conexão, toque em **+ Adicionar** e em **PCs**.
 2. Insira as informações a seguir para o computador com o qual você deseja se conectar:
    - **Nome do PC** – o nome do computador. O nome do computador pode ser um nome de computador Windows, um nome de domínio da Internet ou um endereço IP. Você também pode acrescentar informações de porta ao nome do computador (por exemplo, **MyDesktop:3389** ou **10.0.0.1:3389**).
    - **Conta de usuário** – a conta de usuário a ser usada para acessar o computador remoto. Toque em **+** para adicionar uma nova conta ou selecionar uma conta existente. Você pode usar os seguintes formatos para o nome de usuário: *nome_de_usuário*, *domínio\nome_de_usuário* ou <em>user_name@domain.com</em>. Especifique também se deseja solicitar as credenciais durante a conexão selecionando **Sempre perguntar**.
 3. Também é possível definir opções adicionais tocando em **Mostrar mais**:
    - **Nome de exibição**: um nome fácil de lembrar para o computador ao qual você está se conectando. Você pode usar qualquer cadeia de caracteres, mas se não especificar um nome amigável, o nome do computador será exibido.
    - **Grupo** – especifique um grupo para que seja mais fácil encontrar suas conexões mais tarde. Você pode adicionar um novo grupo tocando em **+** ou pode selecionar um na lista.
-   - **Gateway** – o Gateway de Área de Trabalho Remota que você deseja usar para se conectar a áreas de trabalho virtuais, programas RemoteApp e áreas de trabalho baseadas em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
+   - **Gateway** – o gateway de PC Remoto que você deseja usar para se conectar a PCs, programas RemoteApp e PCs baseados em sessão em uma rede corporativa interna. Obtenha as informações sobre o gateway do administrador do sistema.
    - **Conectar-se à sessão de administrador** – use essa opção para se conectar a uma sessão de console para administrar um servidor Windows.
    - **Trocar os botões do mouse** – use essa opção para trocar as funções dos botões esquerdo do mouse por aquelas do botão direito do mouse. A troca de botões do mouse é necessária quando você usa um computador configurado para um usuário canhoto, mas tem apenas um mouse para destros.
    - **Definir a resolução da sessão remota como:** – selecione a resolução que deseja usar na sessão. **Escolha para mim** definirá a resolução com base no tamanho do cliente.
@@ -58,32 +58,32 @@ Para criar uma conexão de Área de Trabalho Remota:
    - **Gravação de áudio** – quando habilitada, permite usar um microfone local com aplicativos no computador remoto.
 4. Toque em **Salvar**.
 
-É necessário editar essas configurações? Toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque em **Editar**.
+É necessário editar essas configurações? Toque no menu de estouro ( **...** ) ao lado do nome do PC e, em seguida, toque em **Editar**.
 
 Deseja excluir a conexão? Novamente, toque no menu de estouro ( **...** ) e, em seguida, toque em **Remover**.
 
-### <a name="add-a-remote-resource"></a>Adicionar um recurso remoto
+### <a name="add-a-workspace"></a>Adicionar um workspace
 
-Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador usando os Serviços de Área de Trabalho Remota.
+Workspaces são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador usando os Serviços de Área de Trabalho Remota.
 
-Para adicionar um recurso remoto:
+Para adicionar um workspace:
 
-1. Na tela da Central de Conexão, toque em **+Adicionar** e, em seguida, toque em **Recursos remotos**.
+1. Na tela da Central de Conexão, toque em **+ Adicionar** e, em seguida, toque em **Workspaces**.
 2. Insira a **URL do Feed** fornecida por seu administrador e toque em **Encontrar feeds**.
 3. Quando precisar, forneça as credenciais para assinar o feed.
 
-Os recursos remotos serão exibidos na Central de Conexão.
+Os workspaces serão exibidos na Central de Conexão.
 
-Para excluir os recursos remotos:
+Para excluir workspaces:
 
-1. Na Central de Conexão, toque no menu de estouro ( **...** ) ao lado do recurso remoto.
+1. Na Central de Conexão, toque no menu de estouro ( **...** ) ao lado do workspace.
 2. Toque em **Remover**.
 
-### <a name="pin-a-saved-desktop-to-your-start-menu"></a>Fixar uma área de trabalho salva ao menu Iniciar
+### <a name="pin-a-saved-pc-to-your-start-menu"></a>Fixar um PC salvo no menu Iniciar
 
-Para fixar uma conexão ao menu Iniciar, toque no menu de estouro ( **...** ) ao lado do nome da área de trabalho e, em seguida, toque em **Fixar na Tela Inicial**.
+Para fixar uma conexão no menu Iniciar, toque no menu de estouro ( **...** ) ao lado do nome do PC e, em seguida, toque em **Fixar em Iniciar**.
 
-Agora, você pode iniciar a conexão de área de trabalho remota tocando nela diretamente no menu Iniciar.
+Agora, você pode iniciar a conexão de PC tocando nela diretamente no menu Iniciar.
 
 ## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conectar-se a um Gateway de Área de Trabalho Remota para acessar os ativos internos
 
@@ -99,7 +99,7 @@ Para configurar um novo gateway:
 
 3. Insira as seguintes informações:
    - **Nome do servidor** – o nome do computador que você deseja usar como um gateway. O nome do servidor pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: **RDGateway:443** ou **10.0.0.1:443**).
-   - **Conta de usuário**: selecione ou adicione uma conta de usuário a ser usada com o Gateway de Área de Trabalho Remota ao qual você está se conectando. Selecione também a opção **Usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de Área de Trabalho Remota.
+   - **Conta de usuário**: selecione ou adicione uma conta de usuário a ser usada com o Gateway de PC Remoto ao qual você está se conectando. Selecione também a opção **Usar conta de usuário da área de trabalho** para usar as mesmas credenciais usadas para a conexão de PC Remoto.
 4. Toque em **Salvar**.
 
 ## <a name="global-app-settings"></a>Configurações globais do aplicativo
@@ -122,12 +122,12 @@ Você pode definir as seguintes configurações globais em seu cliente tocando e
 
 ### <a name="app-settings"></a>Configurações de aplicativo
 
-- **Mostrar versão prévia da área de trabalho** – permite que você veja uma versão prévia de uma área de trabalho na Central de Conexão antes de se conectar a ela. Esta configuração está ativada por padrão.
+- **Mostrar versões prévias do PC**: permite que você veja uma versão prévia de um PC na Central de Conexão antes de se conectar a ela. Esta configuração está ativada por padrão.
 - **Ajudar a melhorar a Área de Trabalho Remota** – envia dados anônimos à Microsoft. Usamos esses dados para melhorar o cliente. Para saber mais sobre como tratamos esses dados anônimos e particulares, confira a [Política de Privacidade da Microsoft](https://privacy.microsoft.com/privacystatement). Esta configuração está ativada por padrão.
 
 ### <a name="manage-your-user-accounts"></a>Gerenciar suas contas de usuário
 
-Ao se conectar a uma área de trabalho ou a recursos remotos, salve as informações da conta para se conectar a eles mais tarde. Defina também contas de usuário no cliente, em vez de salvar os dados de usuário ao se conectar a uma área de trabalho.
+Ao se conectar a um PC ou a um workspace, você pode salvar as informações da conta para se conectar a ela mais tarde. Defina também contas de usuário no cliente, em vez de salvar os dados de usuário ao se conectar a um PC.
 
 Para criar uma nova conta de usuário:
 
@@ -146,15 +146,15 @@ Para excluir uma conta de usuário:
 4. Toque em **Remover esta conta** na parte inferior para excluir a conta de usuário.
 5. Você também pode editar a conta de usuário e tocar em **Salvar**.
 
-## <a name="navigate-the-remote-desktop-session"></a>Navegar pela sessão de Área de Trabalho Remota
+## <a name="navigate-your-remote-session"></a>Navegar em sua sessão remota
 
-Quando você inicia uma conexão de Área de Trabalho Remota, existem ferramentas disponíveis que você pode usar para navegar pela sessão.
+Esta seção descreve as ferramentas disponíveis para ajudar você a navegar em sua sessão remota depois de se conectar ao serviço.
 
-### <a name="start-a-remote-desktop-connection"></a>Iniciar uma conexão de Área de Trabalho Remota
+### <a name="start-a-remote-session"></a>Iniciar uma sessão remota
 
-1. Toque na conexão de Área de Trabalho Remota para iniciar a sessão.
+1. Toque no nome da conexão que você deseja usar para iniciar a sessão.
 2. Se você não salvar as credenciais da conexão, precisará fornecer um **Nome de usuário** e uma **Senha**.
-3. Se precisar confirmar o certificado da Área de Trabalho Remota, examine as informações para verificar se você confia nesse computador antes de tocar em **Conectar**. Também é possível selecionar **Não pergunte sobre o certificado novamente** para sempre aceitar este certificado.
+3. Se precisar confirmar o certificado do seu workspace ou PC, examine as informações e verifique se você confia nesse PC antes de tocar em **Conectar**. Também é possível selecionar **Não pergunte sobre o certificado novamente** para sempre aceitar este certificado.
 
 ### <a name="connection-bar"></a>Barra de conexão
 
@@ -177,9 +177,9 @@ Toque nas **...** na barra de conexão para exibir a barra de comandos no lado d
 - **Tela inteira** – entra ou sai do modo de tela inteira.
 - **Toque ou Mouse**: alterne entre os modos de mouse (toque direto e ponteiro do mouse).
 
-### <a name="use-direct-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Usar gestos de toque direto e modos de mouse em uma sessão remota
+### <a name="use-direct-touch-gestures-and-mouse-modes"></a>Usar gestos de toque direto e modos de mouse
 
-Dois modos de mouse estão disponíveis para interagir com a sessão.
+Você pode interagir com sua sessão com dois modos de mouse disponíveis:
 
 - **Toque direto**: passa todos os contatos de toque para a sessão para que sejam interpretados remotamente.
   - Usado da mesma forma que você usaria o Windows com uma tela sensível ao toque.

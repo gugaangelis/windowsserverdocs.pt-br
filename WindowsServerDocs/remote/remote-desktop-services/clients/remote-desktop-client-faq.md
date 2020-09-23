@@ -8,12 +8,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 672a9d1b33137d9559d88b8773d3c7ccd2493ddc
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 420cedebcfc71a5ba78908d244d1f8ca651bee4c
+ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87955053"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90083667"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Perguntas frequentes sobre os clientes de área de trabalho remota
 
@@ -174,7 +174,7 @@ Para fazer uso do botão direito do mouse dentro de uma sessão aberta, você te
 
 - Mouse USB para PC de dois botões padrão
 - Apple Magic Mouse: Para habilitar o botão direito do mouse, clique em **Preferências do Sistema** no dock, clique em **Mouse** e habilite **Clique secundário**.
-- Apple Magic Trackpad ou MacBook Trackpad: Para habilitar o botão direito do mouse, clique em **Preferências do Sistema** no dock, clique em **Mouse** e habilite **Clique secundário**.
+- Apple Magic Trackpad ou MacBook Trackpad: Para habilitar o clique com o botão direito do mouse, clique em **Preferências do Sistema** no dock, clique em **Trackpad** e habilite **Clique secundário**.
 
 ### <a name="is-airprint-supported"></a>Há suporte para AirPrint?
 Não, o cliente de Área de Trabalho Remota não é compatível com AirPrint. Isso acontece tanto em clientes Mac quanto iOS.

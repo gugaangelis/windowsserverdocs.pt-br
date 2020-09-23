@@ -6,14 +6,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/20/2020
+ms.date: 09/17/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 90a0796818a2beb7e592eae1556999729b2d9ab2
-ms.sourcegitcommit: 8e5530ba7f7d3e2569590949e1f443d908683a17
+ms.openlocfilehash: 1f59c00e375ab142c4e3dadc480c648cdd8e2396
+ms.sourcegitcommit: 877d6db73d9520e3a23738d6528016235493cff3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88702865"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90779240"
 ---
 # <a name="get-started-with-the-android-client"></a>Introdução ao cliente para Android
 
@@ -21,37 +21,37 @@ ms.locfileid: "88702865"
 
 É possível usar o cliente de Área de Trabalho Remota para o Android para trabalhar com áreas de trabalho e aplicativos do Windows diretamente do seu dispositivo Android ou do Chromebook que dá suporte à Google Play Store.
 
-Use as informações a seguir para começar. Não se esqueça de conferir as [Perguntas Frequentes](remote-desktop-client-faq.md) se tiver alguma dúvida.
+Este artigo mostrará como começar a usar o cliente. Se você tiver outras dúvidas, confira nossas [Perguntas frequentes](remote-desktop-client-faq.md).
 
 > [!NOTE]
 > - Curioso sobre novas versões para o cliente Android? Confira [Novidades do cliente Android](android-whatsnew.md).
-> - O cliente Android dá suporte a dispositivos que executam o Android 4.1 e posterior, bem como Chromebooks com ChromeOS 53 e posterior. Saiba mais sobre aplicativos Android no Chrome [aqui](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps).
+> - O cliente Android dá suporte a dispositivos que executam o Android 4.1 e posterior, bem como Chromebooks com ChromeOS 53 e posterior. Saiba mais sobre os aplicativos Android no Chrome em [Sistemas de SO Chrome que dão suporte a aplicativos Android](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps).
 
-## <a name="set-up-the-remote-desktop-client-for-android"></a>Configurar o cliente de Área de Trabalho Remota para Android
-
-### <a name="download-the-remote-desktop-client-from-the-google-play-store"></a>Baixe o cliente da Área de Trabalho Remota da Google Play Store
+## <a name="download-the-remote-desktop-client"></a>Baixar o cliente de Área de Trabalho Remota
 
 Veja como configurar o cliente da Área de Trabalho Remota no dispositivo Android:
 
-1. Baixe o cliente da Área de Trabalho Remota da Microsoft do [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx).
+1. [Baixe o cliente de Área de Trabalho Remota da Microsoft](https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx) do Google Play.
 2. Inicie o **cliente da RD** na sua lista de aplicativos.
-3. Adicione uma [conexão de Área de Trabalho Remota](#add-a-remote-desktop-connection) ou [recursos remotos](#add-remote-resources). Use uma conexão para se conectar diretamente a um computador Windows e a recursos remotos para acessar aplicativos e áreas de trabalho publicados para você por um administrador.
+3. Adicione uma [conexão de Área de Trabalho Remota](#add-a-remote-desktop-connection) ou [recursos remotos](#add-remote-resources). As conexões da Área de Trabalho Remota permitem que você se conecte diretamente a um PC Windows e a recursos remotos para acessar aplicativos e áreas de trabalho publicados para você por um administrador.
 
-> [!NOTE]
-> Se você deseja testar novos recursos antes de eles serem lançados, é recomendável baixar o cliente [Beta da Área de Trabalho Remota da Microsoft](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta) da Google Play Store.
+## <a name="add-a-remote-desktop-connection"></a>Adicionar uma conexão de Área de Trabalho Remota
 
-### <a name="add-a-remote-desktop-connection"></a>Adicionar uma conexão de Área de Trabalho Remota
+Agora que você tem o cliente em seu dispositivo, você pode adicionar conexões de Área de Trabalho Remota para acessar seus recursos remotos.
 
-Caso ainda não tenha feito, [configure seu computador para aceitar conexões remotas](remote-desktop-allow-access.md).
+Para adicionar uma conexão, caso você ainda não o tenha feito, [configure seu PC para aceitar conexões remotas](remote-desktop-allow-access.md).
 
-Para criar uma conexão de Área de Trabalho Remota:
+Para adicionar uma conexão de Área de Trabalho Remota:
 
 1. Na Central de Conexão, toque em **+** e, em seguida, em **Área de Trabalho**.
-2. Insira o nome do computador remoto em **Nome do computador**. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Também é possível acrescentar informações de porta ao nome do computador (por exemplo, MyDesktop:3389 ou 10.0.0.1:3389). Esse é o único campo obrigatório.
+2. Insira o nome do computador remoto em **Nome do computador**. Esse nome pode ser um nome de computador Windows, um nome de domínio da Internet ou um endereço IP. Também é possível acrescentar informações de porta ao nome do computador (por exemplo, MyDesktop:3389 ou 10.0.0.1:3389). Este é o único campo obrigatório.
 3. Selecione o **Nome de usuário** usado para acessar o computador remoto.
+
    - Selecione **Entrar toda vez** para que o cliente solicite suas credenciais sempre que você se conectar ao computador remoto.
-   - Selecione **Adicionar conta de usuário** para salvar uma conta que você usa com frequência para que você não precise inserir as credenciais sempre que entrar. Confira [gerencie suas contas de usuário](#manage-your-user-accounts) para obter mais detalhes.
+   - Selecione **Adicionar conta de usuário** para salvar uma conta que você usa com frequência para que você não precise inserir as credenciais sempre que entrar. Para saber mais sobre contas do usuário, confira [Gerenciar suas contas de usuário](#manage-your-user-accounts).
+
 4. Você também pode tocar em **Mostrar opções adicionais** para definir os seguintes parâmetros opcionais:
+
    - Em **Nome amigável**, você pode inserir um nome fácil de lembrar para o computador ao qual você está se conectando. Se você não especificar um nome amigável, o nome do computador será exibido.
    - **Gateway** é o gateway de Área de Trabalho Remota que você usará para se conectar a um computador por meio de uma rede externa. Para obter mais informações, entre em contato com o administrador do sistema.
    - **Som** seleciona o dispositivo que sua sessão remota usa para áudio. Você pode optar por reproduzir som no dispositivo local, no dispositivo remoto ou por não reproduzir som.
@@ -59,6 +59,7 @@ Para criar uma conexão de Área de Trabalho Remota:
    - **Trocar os botões do mouse** alterna os comandos enviados pelos gestos direito e esquerdo do mouse. Ideal para usuários canhotos.
    - **Conectar-se à sessão de administrador** permite que você se conecte a uma sessão de administrador no computador remoto.
    - **Redirecionar armazenamento local** permite o redirecionamento de armazenamento local. Por padrão, essa configuração é desabilitada.
+
 5. Quando terminar, toque em **Salvar**.
 
 É necessário editar essas configurações? Toque no menu **Mais opções** ( **…** ) ao lado do nome da área de trabalho e, em seguida, toque em **Editar**.
@@ -66,20 +67,22 @@ Para criar uma conexão de Área de Trabalho Remota:
 Deseja remover a conexão? Novamente, toque no menu **Mais opções** ( **…** ) e, em seguida, toque em **Remover**.
 
 >[!TIP]
-> Se você receber o erro 0xf07 por uma senha incorreta (Não foi possível conectar ao PC remoto porque a senha associada com a conta de usuário expirou), altere sua senha e tente novamente.
+> Se você receber um erro de nome "0xf07" informando algo como "Não foi possível estabelecer conexão com o PC remoto porque a senha associada à conta de usuário expirou", tente novamente com uma nova senha.
 
-### <a name="add-remote-resources"></a>Adicionar recursos remotos
+## <a name="add-remote-resources"></a>Adicionar recursos remotos
 
-Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador. O cliente Android dá suporte a recursos publicados de implantações de **Serviços de Área de Trabalho Remota** e **Área de Trabalho Virtual do Windows**. Para adicionar recursos remotos:
+Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessão e áreas de trabalho virtuais publicadas por seu administrador. O cliente Android dá suporte a recursos publicados de implantações de **Serviços de Área de Trabalho Remota** e **Área de Trabalho Virtual do Windows**.
+
+Para adicionar recursos remotos:
 
 1. Na Central de Conexão, toque em **+** e, em seguida, toque em **Feed de Recursos Remotos**.
-2. Insira a **URL do Feed**. Ela pode ser uma URL ou endereço de email:
+2. Insira a **URL do Feed**. Essa URL pode ser uma URL ou um endereço de email:
    - A **URL** é o servidor de Acesso via Web da RD fornecida a você por seu administrador. Se estiver acessando recursos da Área de Trabalho Virtual do Windows, será possível usar uma das seguintes URLs dependendo de qual versão você está usando:
      - Se você estiver usando a Área de Trabalho Virtual do Windows (clássica), use: `https://rdweb.wvd.microsoft.com/api/feeddiscovery/webfeeddiscovery.aspx`.
      - Se você estiver usando a Área de Trabalho Virtual do Windows, use: `https://rdweb.wvd.microsoft.com/api/arm/feeddiscovery`.
-   - Se você planeja usar **Email**, insira seu endereço de email nesse campo. Isso instrui o cliente a procurar um servidor de Acesso via Web da Área de Trabalho Remota associado ao endereço de email se ele foi configurado pelo administrador.
+   - Se você planeja usar **Email**, insira seu endereço de email nesse campo. Preencher esse campo instrui o cliente a procurar um servidor de Acesso via Web da Área de Trabalho Remota associado ao endereço de email caso ele tenha sido configurado pelo seu administrador.
 3. Toque em **Avançar**.
-4. Forneça suas informações de entrada quando solicitado. Isso pode variar com base na implantação e pode incluir:
+4. Forneça suas credenciais de entrada quando solicitado. As credenciais você deve usar podem variar com base na implantação e pode incluir:
    - O **Nome de usuário** que tem permissão para acessar os recursos.
    - A **Senha** associada ao nome de usuário.
    - **Fator adicional**, que poderá ser solicitado se a autenticação tiver sido configurada dessa forma pelo administrador.
@@ -87,15 +90,19 @@ Recursos remotos são programas RemoteApp, áreas de trabalho baseadas em sessã
 
 Os recursos remotos serão exibidos na Central de Conexão.
 
+## <a name="remove-remote-resources"></a>Remover recursos remotos
+
 Para remover os recursos remotos:
 
 1. Na Central de Conexão, toque no menu de estouro ( **...** ) ao lado do recurso remoto.
 2. Toque em **Remover**.
-3. Confirme a remoção.
+3. Confirme que você removeu o recurso.
 
-### <a name="use-a-widget-to-pin-a-saved-desktop-to-your-home-screen"></a>Use um widget para fixar uma área de trabalho salva em sua tela inicial
+## <a name="pin-a-connection-to-your-home-screen"></a>Fixar uma conexão na tela inicial
 
-O cliente da Área de Trabalho Remota dá suporte à fixação de conexões em sua tela inicial usando o recurso de widget do Android. A maneira em que você adiciona um widget depende do tipo de dispositivo Android que você está usando e do seu sistema operacional. Aqui está a maneira mais comum para adicionar um widget:
+O cliente da Área de Trabalho Remota dá suporte ao uso do recurso de widget do Android para fixar conexões em sua tela inicial. O processo de adição de widget depende de qual tipo de dispositivo Android e versão do SO Android que você está usando.
+
+Para adicionar um widget:
 
 1. Toque em **Aplicativos** para iniciar o menu de aplicativos.
 2. Toque em **Widgets**.
@@ -144,7 +151,7 @@ Para configurar um novo Gateway de Área de Trabalho Remota:
 1. Na Central de Conexão, toque em **Configurações** e, em seguida, toque em **Gateways**.
 2. Toque em **+** para adicionar um novo gateway.
 3. Insira as seguintes informações:
-   - Insira o nome do computador que você deseja usar como um gateway em **Nome do servidor**. Pode ser um nome de computador do Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: RDGateway:443 ou 10.0.0.1:443).
+   - Insira o nome do computador que você deseja usar como um gateway em **Nome do servidor**. Esse nome pode ser um nome de computador Windows, um nome de domínio da Internet ou um endereço IP. Você também pode adicionar informações de porta ao nome do servidor (por exemplo: RDGateway:443 ou 10.0.0.1:443).
    - Selecione a **Conta de Usuário** que você usará para acessar o Gateway de Área de Trabalho Remota.
      - Selecione **Usar a conta de usuário de área de trabalho** para usar as mesmas credenciais especificadas para o computador remoto.
      - Selecione **Adicionar conta de usuário** para salvar uma conta que você usa com frequência para que você não precise inserir as credenciais sempre que entrar. Para obter mais informações, confira [Gerenciar suas contas de usuário](#manage-your-user-accounts).
@@ -174,16 +181,16 @@ Para excluir uma conta de usuário salva:
 2. Toque em uma conta de usuário na lista e segure para selecioná-la. Você pode selecionar vários usuários ao mesmo tempo.
 3. Toque na lixeira para excluir o usuário selecionado.
 
-## <a name="navigate-the-remote-desktop-session"></a>Navegar pela sessão de Área de Trabalho Remota
+## <a name="start-a-remote-desktop-connection"></a>Iniciar uma conexão de Área de Trabalho Remota
 
-Aqui está uma breve introdução a como abrir e navegar na sessão de Área de Trabalho Remota.
+Agora que você configurou seu cliente da Área de Trabalho Remota para Android, vamos aprender a iniciar uma sessão da Área de Trabalho Remota.
 
-### <a name="start-a-remote-desktop-connection"></a>Iniciar uma conexão de Área de Trabalho Remota
+Para iniciar uma sessão:
 
 1. Toque **no nome da conexão de Área de Trabalho Remota** para iniciar a sessão.
 2. Se for solicitado que você verifique o certificado da área de trabalho remota, toque em **Conectar**. Também é possível selecionar **Não me pergunte novamente para conexões com este computador** para sempre aceitar o certificado por padrão.
 
-### <a name="connection-bar"></a>Barra de conexão
+## <a name="use-the-connection-bar"></a>Usar a barra de conexão
 
 A barra de conexão lhe dá acesso a controles de navegação adicionais. Por padrão, a barra de conexão é colocada no meio da parte superior da tela. Arraste a barra para a esquerda ou para a direita para movê-la.
 
@@ -194,7 +201,7 @@ A barra de conexão lhe dá acesso a controles de navegação adicionais. Por pa
 - **Opções adicionais**: toque no ícone de opções adicionais para exibir a barra de seleção de sessão e a barra de comandos.
 - **Teclado**: toque no ícone de teclado para exibir ou ocultar o teclado. O controle de movimento panorâmico é exibido automaticamente quando o teclado é exibido.
 
-### <a name="session-selection-bar"></a>Barra de seleção de sessão
+## <a name="use-the-session-selection-bar"></a>Usar a barra de seleção de sessão
 
 Você pode ter várias conexões abertas em computadores diferentes ao mesmo tempo. Toque na barra de conexão para exibir a barra de seleção de sessão no lado esquerdo da tela. A barra de seleção de sessão permite exibir suas conexões abertas e alternar entre elas.
 
@@ -202,15 +209,15 @@ Quando está conectado a recursos remotos, você pode alternar entre os aplicati
 
 Para iniciar uma nova sessão em sua conexão atual, toque em **Iniciar Novo** e escolha na lista de itens disponíveis.
 
-Para desconectar uma sessão, toque em **X** no lado direito do bloco da sessão.
+Para desconectar uma sessão, toque em **X** no lado esquerdo do bloco da sessão.
 
-### <a name="command-bar"></a>Barra de comandos
+## <a name="use-the-command-bar"></a>Usar a barra de comandos
 
 Toque na barra de conexão para exibir a barra de comandos no lado direito da tela. Na barra de comandos, é possível alterar entre modos de mouse (toque direto e ponteiro do mouse) ou tocar no botão Página Inicial para retornar à Central de Conexão. Também é possível tocar no botão Voltar para retornar à Central de Conexão. Retornar à Central de Conexão não desconectará sua sessão ativa.
 
-### <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Usar gestos de toque e modos de mouse em uma sessão remota
+## <a name="touch-gestures-and-mouse-modes"></a>Gestos de toque e modos de mouse
 
-O cliente usa gestos de toque padrão. Você também pode usar gestos de toque para replicar as ações do mouse na área de trabalho remota. A tabela a seguir explica quais gestos correspondem a quais ações do mouse em cada modo de mouse.
+O cliente da Área de Trabalho Remota para Android usa gestos de toque padrão. Você também pode usar gestos de toque para replicar as ações do mouse na área de trabalho remota. A tabela a seguir explica quais gestos correspondem a quais ações do mouse em cada modo de mouse.
 
 > [!NOTE]
 > Há suporte para gestos de toque nativos no modo Toque Direto no Windows 8 ou posterior.
@@ -228,8 +235,6 @@ O cliente usa gestos de toque padrão. Você também pode usar gestos de toque p
 
 ## <a name="join-the-beta-channel"></a>Ingressar no canal Beta
 
-Se você quer acessar os recursos mais recentes antes de qualquer outra pessoa ou quer ajudar a identificar problemas antes da liberação de novas versões, o canal Beta é feito para você! O canal Beta também é uma ótima maneira de os administradores corporativos validarem novas versões do cliente Android para os ambientes deles.
+Se você deseja nos ajudar a testar novos builds e encontrar problemas em atualizações de versão futuras antes de serem lançadas, você deve participar do nosso canal Beta. Os administradores corporativos podem usar o canal Beta para validar novas versões do cliente Android para os usuários deles.
 
-Para participar da versão Beta, basta fornecer consentimento para acessar versões prévias e baixar o cliente. Você receberá versões prévias diretamente por meio da Google Play Store.
-
-[Participe da versão Beta](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)
+Para participar da versão Beta, [baixe nosso cliente Beta](https://play.google.com/apps/testing/com.microsoft.rdc.androidx) e forneça consentimento para acessar versões prévias e baixar o cliente. Você receberá versões prévias diretamente por meio da Google Play Store.

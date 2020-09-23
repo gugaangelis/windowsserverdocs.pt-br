@@ -72,6 +72,7 @@
 #### [Introdução ao cliente de Área de Trabalho do Windows](clients/windowsdesktop.md)
 #### [Cliente de Área de Trabalho do Windows para administradores](clients/windowsdesktop-admin.md)
 #### [Novidades do cliente de Área de Trabalho do Windows](clients/windowsdesktop-whatsnew.md)
+#### [Teclas de atalho](/windows/win32/termserv/terminal-services-shortcut-keys)
 ### Cliente para Microsoft Store
 #### [Introdução ao cliente para Microsoft Store](clients/windows.md)
 #### [Novidades do cliente para Microsoft Store](clients/windows-whatsnew.md)

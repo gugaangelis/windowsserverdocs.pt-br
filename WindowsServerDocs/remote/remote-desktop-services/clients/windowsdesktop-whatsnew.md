@@ -5,27 +5,27 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f0b5453265bc96cdeb7ba02795da8fa0f39ba1c
-ms.sourcegitcommit: 0407bd30eaf06358257cf88c3969a2cd8b77dca4
+ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
+ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90027161"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90718620"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
 É possível encontrar informações mais detalhadas sobre o cliente da Área de Trabalho do Windows em [Introdução ao cliente da Área de Trabalho do Windows](windowsdesktop.md). Você encontrará as atualizações mais recentes no cliente neste artigo.
 
-## <a name="latest-client-versions"></a>Versões do cliente mais recentes
+## <a name="supported-client-versions"></a>Versões do cliente com suporte
 
 O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesktop-admin.md#configure-user-groups). A tabela a seguir lista as versões atuais disponíveis para cada grupo de usuários:
 
-|Grupo de usuários |Versão  |
-|-----------|---------|
-|Público     |1.2.1272 |
-|Participante do Programa Windows Insider    |1.2.1357 |
+|Grupo de usuários |Última versão  |Versão mínima com suporte |
+|-----------|----------------|--------------------------|
+|Público     |1.2.1272        |1.2.945                   |
+|Participante do Programa Windows Insider    |1.2.1357        |1.2.1357                  |
 
 ## <a name="updates-for-version-121357-insiders"></a>Atualizações para a versão 1.2.1357 (Participantes do Programa Windows Insider)
 
