@@ -6,12 +6,12 @@ ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
 ms.author: lizross
 author: eross-msft
-ms.openlocfilehash: ac7d3f4ea17e35b42d974d1e29c692e8510c35ef
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 85d622094ac81aea8a2d90e4ef6eb5d226d0b290
+ms.sourcegitcommit: 50b295002d60f4183f452cc169f0768a347830ea
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995695"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91248579"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Configurar e exibir configurações de VLAN em Portas de comutador virtual do Hyper-V
 
@@ -23,11 +23,11 @@ Quando desejar definir as configurações de VLAN em portas do comutador virtual
 
 Se você estiver usando o VMM, o VMM usará o seguinte comando do Windows PowerShell para configurar a porta do comutador.
 
-```
-Set-VMNetworkAdapterIsolation <VM-name|-managementOS> -IsolationMode VLAN -DefaultIsolationID <vlan-value> -AllowUntaggedTraffic $True
+```powershell
+Set-VMNetworkAdapterIsolation <VM-name|-ManagementOS -IsolationMode VLAN -DefaultIsolationID <vlan-value> -AllowUntaggedTraffic $True
 ```
 Se você não estiver usando o VMM e estiver configurando a porta do comutador no Windows Server, poderá usar o console do Gerenciador do Hyper-V ou o seguinte comando do Windows PowerShell.
-```
+```powershell
 Set-VMNetworkAdapterVlan <VM-name|-managementOS> -Access -VlanID <vlan-value>
 ```
 
