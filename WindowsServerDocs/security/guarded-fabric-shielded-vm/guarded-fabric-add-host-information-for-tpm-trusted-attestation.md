@@ -1,17 +1,18 @@
 ---
 title: Adicionar informações do host para o atestado confiável do TPM
+description: Informações sobre como adicionar informações de host para atestado confiável de TPM.
 ms.topic: article
 ms.assetid: f0aa575b-b34e-4f6c-8416-ed3e398e0ad2
 manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 06/21/2019
-ms.openlocfilehash: fc879fda0f6a708a8a1d4ebd60834f4e6543f3ba
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 2f4f684b0c18c19cdbdf09e672c83e51f426ca04
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87997171"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388847"
 ---
 # <a name="add-host-information-for-tpm-trusted-attestation"></a>Adicionar informações do host para o atestado confiável do TPM
 
@@ -20,7 +21,7 @@ ms.locfileid: "87997171"
 Para o modo TPM, o administrador de malha captura três tipos de informações de host, cada um deles precisa ser adicionado à configuração do HGS:
 
 - Um identificador TPM (EKpub) para cada host Hyper-V
-- Políticas de integridade de código, uma lista branca de binários permitidos para os hosts do Hyper-V
+- Políticas de integridade de código, umalist de permissões de binários permitidos para os hosts do Hyper-V
 - Uma linha de base do TPM (medidas de inicialização) que representa um conjunto de hosts Hyper-V que são executados na mesma classe de hardware
 
 Depois que o administrador da malha capturar as informações, adicione-as à configuração do HGS, conforme descrito no procedimento a seguir.

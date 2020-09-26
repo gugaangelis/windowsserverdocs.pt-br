@@ -1,5 +1,5 @@
 ---
-title: reg
+title: comandos reg
 description: Artigo de referência para os comandos reg, que executam operações em valores e informações da subchave do registro em entradas do registro.
 ms.topic: reference
 ms.assetid: c97496b2-d1ff-4887-b5d2-6e1524be465a
@@ -7,14 +7,14 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a39fc22c2fe845d8cbbb64cf751455316bdc8747
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 619f6ae1d03197754145d0daad029deb817efffe
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639496"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388832"
 ---
-# <a name="reg"></a>reg
+# <a name="reg-commands"></a>comandos reg
 
 Executa operações em valores e informações da subchave do registro em entradas do registro.
 

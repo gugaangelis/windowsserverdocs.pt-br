@@ -5,14 +5,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.date: 06/07/2019
+ms.date: 09/21/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1293abac44cc648442939784ed5bb2b8049e702f
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: 51dcf4081828407bdfafeebcd4e8acb0f0d43dd5
+ms.sourcegitcommit: 8a826e992f28a70e75137f876a5d5e61238a24e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87992868"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365339"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volumes compartilhados de cluster em um cluster de failover
 
@@ -197,7 +197,7 @@ O cache do CSV oferece armazenamento em cache no nível do bloco das operações
 >[!NOTE]
 >Recomendamos habilitar o cache do CSV para todas as implantações clusterizadas do Hyper-V e do Servidor de Arquivos Escalável.
 
-Por padrão, no Windows Server 2012, o cache CSV é desabilitado. No Windows Server 2012 R2 e posterior, o cache CSV é habilitado por padrão. Porém, você ainda deverá alocar o tamanho do cache de bloco para a reserva.
+No Windows Server 2019, o cache CSV está ativado por padrão com 1 Gibibyte (GiB) alocado. No Windows Server 2016 e no Windows Server 2012, ele está desativado por padrão. No Windows Server 2012 R2, o cache CSV é habilitado por padrão; no entanto, você ainda deve alocar o tamanho do cache de blocos a ser reservado.
 
 A tabela a seguir descreve as duas definições de configuração que controlam o cache do CSV.
 

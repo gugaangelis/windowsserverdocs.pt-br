@@ -1,59 +1,59 @@
 ---
-title: 'secedit: generaterollback'
-description: Artigo de referência para * * * *-
+title: secedit generaterollback
+description: Artigo de referência para o comando secedit generaterollback, que permite gerar um modelo de reversão para um modelo de configuração especificado.
 ms.topic: reference
 ms.assetid: 385a6799-51a7-4fe3-bd73-10c7998b6680
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 28b8fedf952bfa5466bc0a893a46f2e7f69165f6
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: ae2e368ef387ea84095fcbcc51ad1e622225a2cc
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89636792"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388812"
 ---
-# <a name="seceditgeneraterollback"></a>secedit: generaterollback
+# <a name="secedit-generaterollback"></a>/generaterollback secedit
 
+Permite gerar um modelo de reversão para um modelo de configuração especificado. Se existir um modelo de reversão existente, executar esse comando novamente substituirá as informações existentes.
 
-
-Permite gerar um modelo de reversão para um modelo de configuração especificado.
+A execução bem-sucedida desse comando registra em log as incompatibilidades entre o modelo de segurança especificado a configuração da política de segurança no arquivo scesrv. log.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-Secedit /generaterollback /db <database file name> /cfg <configuration file name> /rbk <rollback template file name> [/log <log file name>] [/quiet]
+secedit /generaterollback /db <database file name> /cfg <configuration file name> /rbk <rollback template file name> [/log <log file name>] [/quiet]
 ```
 
-#### <a name="parameters"></a>Parâmetros
+### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|db|Obrigatórios.</br>Especifica o caminho e o nome de arquivo de um banco de dados que contém a configuração armazenada na qual a análise será executada.</br>Se o nome do arquivo especificar um banco de dados que não tenha um modelo de segurança (como representado pelo arquivo de configuração) associado a ele, a `/cfg \<configuration file name>` opção de linha de comando também deverá ser especificada.|
-|cfg|Obrigatórios.</br>Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise.</br>Essa opção de/cfg só é válida quando usada com o `/db \<database file name>` parâmetro. Se isso não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados.|
-|rbk|Obrigatórios.</br>Especifica um modelo de segurança no qual as informações de reversão são gravadas. Os modelos de segurança são criados usando o snap-in modelos de segurança. Os arquivos de reversão podem ser criados com este comando.|
-|log|Opcional.</br>Especifica o caminho e o nome do arquivo de log para o processo.|
-|silencioso|Opcional.</br>Suprime a saída de tela e de log. Você ainda pode exibir os resultados da análise usando o snap-in configuração e análise de segurança no console de gerenciamento Microsoft (MMC).|
-
-## <a name="remarks"></a>Comentários
-
-Se o caminho para o arquivo de log não for fornecido, o arquivo de log padrão, (*raiz_do_sistema*\ Usuários \* USERACCOUNT<em>\Meus Documents\Security\Logs \* DatabaseName</em>. log) será usado.
-
-A partir do Windows Server 2008, foi `Secedit /refreshpolicy` substituído por `gpupdate` . Para obter informações sobre como atualizar as configurações de segurança, consulte [gpupdate](gpupdate.md).
-
-A execução bem-sucedida desse comando irá indicar que a tarefa foi concluída com êxito. e registra apenas as incompatibilidades entre o modelo de segurança declarado e a configuração da política de segurança. Ele lista essas diferenças no scesrv. log.
-
-Se um modelo de reversão existente for especificado, esse comando irá substituí-lo. Você pode criar um novo modelo de reversão com esse comando. Nenhum parâmetro adicional é necessário para qualquer condição.
+| Parâmetro | Descrição |
+|--|--|
+| /DB | Obrigatórios. Especifica o caminho e o nome do arquivo do banco de dados que contém a configuração armazenada na qual a análise é executada. Se o nome do arquivo especificar um banco de dados que não tinha um modelo de segurança (como representado pelo arquivo de configuração) associado a ele, a `/cfg <configuration file name>` opção também deverá ser especificada. |
+| /cfg | Obrigatórios. Especifica o caminho e o nome do arquivo para o modelo de segurança que será importado para o banco de dados para análise. Essa opção só é válida quando usada com o `/db <database file name>` parâmetro. Se esse parâmetro também não for especificado, a análise será executada em qualquer configuração já armazenada no banco de dados. |
+| /rbk | Obrigatórios. Especifica um modelo de segurança no qual as informações de reversão são gravadas. Os modelos de segurança são criados usando o snap-in modelos de segurança. Os arquivos de reversão podem ser criados com este comando. |
+| /log | Especifica o caminho e o nome do arquivo de log a ser usado no processo. Se você não especificar um local de arquivo, o arquivo de log padrão `<systemroot>\Documents and Settings\<UserAccount>\My Documents\Security\Logs\<databasename>.log` será usado. |
+| /quiet | Suprime a saída de tela e de log. Você ainda pode exibir os resultados da análise usando o snap-in configuração e análise de segurança no console de gerenciamento Microsoft (MMC). |
 
 ## <a name="examples"></a>Exemplos
 
-Depois de criar o modelo de segurança usando o snap-in configuração e análise de segurança, SecTmplContoso. inf, crie o arquivo de configuração de reversão para salvar as configurações originais. Escreva a ação no arquivo de log FY11.
+Para criar o arquivo de configuração de reversão, para o arquivo *SecTmplContoso. inf* criado anteriormente, ao salvar as configurações originais e, em seguida, gravar a ação no arquivo de log *SecAnalysisContosoFY11* , digite:
+
 ```
-Secedit /generaterollback /db C:\Security\FY11\SecDbContoso.sdb /cfg sectmplcontoso.inf /rbk sectmplcontosoRBK.inf /log C:\Security\FY11\SecAnalysisContosoFY11.log
+secedit /generaterollback /db C:\Security\FY11\SecDbContoso.sdb /cfg sectmplcontoso.inf /rbk sectmplcontosoRBK.inf /log C:\Security\FY11\SecAnalysisContosoFY11.log
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
--   [Utilitário](secedit.md)
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
+
+- [secedit/Analyze](secedit-analyze.md)
+
+- [secedit/configure](secedit-configure.md)
+
+- [secedit/export](secedit-export.md)
+
+- [secedit/Import](secedit-import.md)
+
+- [/Validate secedit](secedit-validate.md)
