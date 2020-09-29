@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 05/24/2018
-ms.openlocfilehash: 1d3638b7a05c406293035c7f0a0e8854ed2ecee9
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: cac6c2af4f0cf900abcfea82f80b07e627c7e1e4
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766799"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91388419"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planejar sua implantação do WSUS
 
@@ -172,10 +172,10 @@ Você pode criar complexas hierarquias dos servidores do WSUS. Como é possível
 Você pode conectar servidores do WSUS em modo Autônomo (para permitir administração distribuída) ou em modo de Réplica (para permitir administração centralizada). Não é necessário implantar uma hierarquia de servidores que usa um único modo: você pode implantar uma solução do WSUS que use tanto servidores do WSUS autônomos quanto servidores de réplica.
 
 #### <a name="autonomous-mode"></a>Modo autônomo
-O modo Autônomo, também chamado administração distribuída, é a opção de instalação padrão para o WSUS. No modo Autônomo, um servidor upstream do WSUS compartilha atualizações com os servidores downstream durante a sincronização. Os servidores downstream do WSUS são administrados separadamente e não recebem status de aprovação de atualização ou informações de grupos de computadores provenientes do servidor upstream. Usando o modelo de gerenciamento distribuído, cada administrador do servidor do WSUS escolhe os idiomas das atualizações, cria grupos de computadores, atribui computadores aos grupos, testa e aprova atualizações e verifica se as atualizações corretas estão instaladas nos grupos de computadores adequados. A imagem a seguir mostra como é possível implantar servidores do WSUS autônomos em um ambiente de filial da empresa:
+O modo Autônomo, também chamado administração distribuída, é a opção de instalação padrão para o WSUS. No modo Autônomo, um servidor upstream do WSUS compartilha atualizações com os servidores downstream durante a sincronização. Os servidores downstream do WSUS são administrados separadamente e não recebem status de aprovação de atualização ou informações de grupos de computadores provenientes do servidor upstream. Usando o modelo de gerenciamento distribuído, cada administrador do servidor do WSUS escolhe os idiomas das atualizações, cria grupos de computadores, atribui computadores aos grupos, testa e aprova atualizações e verifica se as atualizações corretas estão instaladas nos grupos de computadores adequados.
 
 #### <a name="replica-mode"></a>Modo de réplica
-O modo de Réplica, também chamado administração centralizada, consiste em um servidor upstream do WSUS que compartilha atualizações, status de aprovação e grupos de computadores com servidores downstream. Os servidores de réplica herdam as aprovações de atualizações e não são administrados separadamente do servidor upstream do WSUS. A imagem a seguir mostra como é possível implantar servidores do WSUS de réplica em um ambiente de filial da empresa.
+O modo de Réplica, também chamado administração centralizada, consiste em um servidor upstream do WSUS que compartilha atualizações, status de aprovação e grupos de computadores com servidores downstream. Os servidores de réplica herdam as aprovações de atualizações e não são administrados separadamente do servidor upstream do WSUS.
 
 > [!NOTE]
 > Se você configurar vários servidores de réplica para que se conectem com um único servidor upstream do WSUS, não agende a sincronização para ser executada no mesmo horário em cada servidor de réplica. Essa prática evitará falhas repentinas no uso da largura de banda.
