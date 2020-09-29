@@ -1,17 +1,16 @@
 ---
 title: Como a transferência funciona no serviço de migração de armazenamento
 description: Resumo e detalhes de estágios de transferência no serviço de migração de armazenamento
-author: t-chrche
-ms.author: t-chrche
-manager: nedpyle
+author: nedpyle
+ms.author: nedpyle
 ms.date: 08/31/2020
 ms.topic: article
-ms.openlocfilehash: 1e886c505435976b6495e0460705821086781a62
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 2f323b03052f0a920ff064860bf5cbf4c6a2f01e
+ms.sourcegitcommit: 014e730c7fb19ed06393d144a446e4248fc35444
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766899"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91495643"
 ---
 # <a name="how-cutover-works-in-storage-migration-service"></a>Como a transferência funciona no serviço de migração de armazenamento
 
