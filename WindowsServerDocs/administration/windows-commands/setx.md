@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ec683f0ed4723e7905daea759965690b8adcd5
-ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
+ms.openlocfilehash: 417a00dbb037c298784df81f9c5ed5e9c28485f8
+ms.sourcegitcommit: 881a5bd40026288afbcee5fdbf602fd55f833d47
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/26/2020
-ms.locfileid: "91388294"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586436"
 ---
 # <a name="setx"></a>setx
 
@@ -64,6 +64,14 @@ setx [/s <computer> [/u [<domain>\]<user name> [/p [<password>]]]] /f <filename>
 - REG_DWORD valores do registro são extraídos e usados no modo hexadecimal.
 
 - O modo de arquivo dá suporte apenas à análise de arquivos de texto de retorno de carro e alimentação de linha (CRLF).
+
+- A execução desse comando em uma variável existente remove quaisquer referências de variáveis e usa valores expandidos.
+
+  Por exemplo, se a variável% PATH% tiver uma referência a% JAVADIR%, e% PATH% for manipulado usando **setx**,% JAVADIR% será expandido e seu valor será atribuído diretamente à variável de destino% Path%. Isso significa que as atualizações futuras para% JAVADIR% **não** serão refletidas na variável% path%.
+
+- Lembre-se de que há um limite de 1024 caracteres ao atribuir conteúdo a uma variável usando **setx**.
+
+  Isso significa que o conteúdo será cortado se você ultrapassar 1024 caracteres e o texto cortado for o que é aplicado à variável de destino. Se esse texto cortado for aplicado a uma variável existente, isso poderá resultar na perda de dados anteriormente mantidos pela variável de destino.
 
 ## <a name="examples"></a>Exemplos
 
