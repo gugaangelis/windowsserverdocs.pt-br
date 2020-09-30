@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7be02bd7c513d0e7680ed70f107a34c6a9af6ed2
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 1438db87cd59e233328422b03d4d9a6a659d4960
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90765957"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517522"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Gerenciar servidores com o centro de administração do Windows
 
@@ -56,7 +56,7 @@ As seguintes ferramentas estão disponíveis para conexões de servidor:
 | [DHCP](#dhcp) | Exibir e gerenciar a configuração do servidor DHCP |
 | [DNS](#dns) | Exibir e gerenciar a configuração do servidor DNS |
 | [Eventos](#events) | Exibir eventos |
-| [Arquivos](#files) | Procurar arquivos e pastas |
+| [Arquivos e compartilhamento de arquivos](#files-and-file-sharing) | Procurar arquivos e pastas |
 | [Firewall](#firewall) | Exibir e modificar regras de firewall |
 | [Aplicativos instalados](#installed-apps) | Exibir e remover aplicativos instalados |
 | [Usuários e Grupos Locais](#local-users-and-groups) | Exibir e modificar usuários e grupos locais |
@@ -217,13 +217,13 @@ Os seguintes recursos têm suporte em eventos:
 
 [**Exibir comentários e recursos propostos para eventos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BEvents%5D).
 
-## <a name="files"></a>Arquivos
+## <a name="files-and-file-sharing"></a>Arquivos e compartilhamento de arquivos
 
-**Os arquivos** permitem que você gerencie arquivos e pastas em um computador ou servidor.
+**Arquivos e compartilhamento** de arquivos permite que você gerencie arquivos e pastas em um computador ou servidor.
 
 ### <a name="features"></a>Recursos
 
-Os seguintes recursos têm suporte em arquivos:
+Os recursos a seguir têm suporte em arquivos e compartilhamento de arquivo:
 
 - Procurar arquivos e pastas
 - Pesquisar um arquivo ou uma pasta
@@ -237,8 +237,9 @@ Os seguintes recursos têm suporte em arquivos:
 - Exibir Propriedades de arquivo ou pasta
 - Adicionar, editar ou Remover compartilhamentos de arquivos
 - Modificar permissões de usuário e grupo em compartilhamentos de arquivos
+- Modificar a segurança do servidor de arquivos
 
-[**Exibir comentários e recursos propostos para arquivos**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BFiles%5D).
+[**Exibir comentários e recursos propostos para arquivos e compartilhamento de arquivo**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BFiles%5D).
 
 ## <a name="firewall"></a>Firewall
 

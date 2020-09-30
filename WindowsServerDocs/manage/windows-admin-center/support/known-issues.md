@@ -6,12 +6,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: b4d7d039c775b85321d168f8de7415de6b92e784
-ms.sourcegitcommit: 97a65d8f52514848963e8917021bd9a1f6ee3b19
+ms.openlocfilehash: c062531e96e12ca73e001018ac3f640e27fdad99
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89287818"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517552"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conhecidos do Windows Admin Center
 
@@ -19,7 +19,7 @@ ms.locfileid: "89287818"
 
 Se você encontrar um problema não descrito nessa página, [informe-nos](https://aka.ms/WACfeedback).
 
-## <a name="installer"></a>Installer
+## <a name="installer"></a>Instalador
 
 - Ao instalar o Windows Admin Center usando seu próprio certificado, lembre-se que, se você copiar a impressão digital da ferramenta MMC do Gerenciador de certificado, [conterá um caractere inválido no início.](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra) Como alternativa, digite o primeiro caractere da impressão digital e copiar/colar o restante.
 
@@ -195,7 +195,7 @@ A solução de gerenciamento do computador contém um subconjunto das ferramenta
 
   - Para habilitar o gerenciamento do cliente Windows 10, você deve executar o comando ```Enable-PSRemoting``` por um prompt de comandos com privilégios elevados do PowerShell.
 
-  - Você também pode precisar atualizar seu firewall para permitir conexões de fora da sub-rede local com ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any```. Para cenários de redes mais restritivos, consulte [esta documentação](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1).
+  - Você também pode precisar atualizar seu firewall para permitir conexões de fora da sub-rede local com ```Set-NetFirewallRule -Name WINRM-HTTP-In-TCP -RemoteAddress Any```. Para cenários de redes mais restritivos, consulte [esta documentação](/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-5.1&preserve-view=true).
 
 ## <a name="cluster-deployment"></a>Implantação de cluster
 
@@ -244,7 +244,7 @@ Disable-WsmanCredSSP -Role Server
 Test-ComputerSecureChannel -Verbose -Repair -Credential <account name>
 ```
 
-3. Redefinir dados de propogated da política de grupo usando o comando
+3. Redefinir dados propagados da política de grupo usando o comando
 ```Command Line
 gpupdate /force
 ```
@@ -288,6 +288,17 @@ O assistente de implantação de cluster no centro de administração do Windows
 - Alguns comandos como **Drives - Update firmware**, **Servers - Remove** e **Volumes - Open** são desabilitados e não são suportados atualmente.
 
 ## <a name="azure-services"></a>Serviços do Azure
+
+### <a name="azure-login-and-gateway-registration"></a>Logon do Azure e registro de gateway
+Na versão 2009, você pode encontrar problemas ao fazer logon no Azure ou registrar seu gateway do centro de administração do Windows com o Azure. As diretrizes a seguir devem ajudá-lo a mitigar esses problemas: 
+
+* Antes de usar qualquer recurso do Azure no centro de administração do Windows, incluindo o registro do gateway, verifique se você está conectado à sua conta do Azure em uma guia ou janela diferente. Sugerimos entrar por meio do [portal do Azure](https://portal.azure.com/).  
+
+* Se você entrar com êxito no Azure durante o registro do gateway, mas não vir a confirmação visual na página do **Azure** de suas configurações do centro de administração do Windows, tente navegar para uma página diferente em configurações antes de navegar de volta para a página **do Azure** . 
+
+* O pop-up de entrada do Azure pode aparecer com mais frequência neste Build e pode exigir que os administradores conceda permissões do centro de administração do Windows com mais frequência. 
+
+* Se você já tiver fornecido aprovação de administrador para o centro de administração do Windows no portal do Azure e ainda estiver vendo uma mensagem de erro dizendo "necessidade de aprovação de administrador", tente entrar no Azure usando uma das faixas no centro de administração do Windows em vez de na página de **configurações** . 
 
 ### <a name="azure-file-sync-permissions"></a>Sincronização de Arquivos do Azure permissões
 

@@ -5,13 +5,13 @@ author: Deland-Han
 manager: dcscontentpm
 ms.topic: article
 ms.author: delhan
-ms.date: 12/25/2019
-ms.openlocfilehash: f96302242eca58d589586fa44e6e7cd04ef98cc1
-ms.sourcegitcommit: 0b3d6661c44aa1a697087e644437279142726d84
+ms.date: 09/29/2020
+ms.openlocfilehash: 9008a3381ead368afb627bcfdcd8084a389afabb
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90083637"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517542"
 ---
 # <a name="how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows"></a>Como detectar, habilitar e desabilitar SMBv1, SMBv2 e SMBv3 no Windows
 
@@ -425,6 +425,30 @@ Para configurar isso usando Política de Grupo, siga estas etapas:
    > Ao usar Console de Gerenciamento de Política de Grupo, você não precisa usar aspas ou vírgulas. Basta digitar cada entrada em linhas individuais.
 
 6. Reinicie os sistemas de destino para concluir a desabilitação do SMB v1.
+
+### <a name="auditing-smbv1-usage"></a>Auditoria de uso de SMBv1
+
+Para determinar quais clientes estão tentando se conectar a um servidor SMB com SMBv1, você pode habilitar a auditoria no Windows Server 2016, Windows 10 e Windows Server 2019. Você também pode auditar no Windows 7 e no Windows Server 2008 R2 se eles tiverem instalado a atualização mensal de 2018 de maio e no Windows 8, Windows 8.1, Windows Server 2012 e Windows Server 2012 R2 se tiverem instalado a atualização de julho de 2017 mensal. 
+
+- Habilitar:
+  
+  ```PowerShell
+  Set-SmbServerConfiguration –AuditSmb1Access $true
+  ```
+
+- Desativar 
+  
+  ```PowerShell
+  Set-SmbServerConfiguration –AuditSmb1Access $false
+  ```
+  
+- Ocorre 
+  
+  ```PowerShell
+  Get-SmbServerConfiguration | Select AuditSmb1Access
+  ```
+
+Quando a auditoria do SMBv1 estiver habilitada, o evento 3000 aparecerá no log de eventos "Microsoft-Windows-SMBServer\Audit", identificando cada cliente que tenta se conectar com o SMBv1.
 
 ### <a name="summary"></a>Resumo
 

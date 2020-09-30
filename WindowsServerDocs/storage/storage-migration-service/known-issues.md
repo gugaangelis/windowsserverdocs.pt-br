@@ -6,12 +6,12 @@ ms.author: nedpyle
 manager: tiaascs
 ms.date: 07/29/2020
 ms.topic: article
-ms.openlocfilehash: 0c3e52c11f7771856608b86ddd778ef51c4c8516
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 6c3ca3a44665bab08c58853d569823f88c908f35
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766909"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517512"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conhecidos do serviço de migração de armazenamento
 
@@ -637,6 +637,17 @@ Guidance: Check the detailed error and make sure the inventory requirements are 
 
 Esse problema é causado por um defeito de código no serviço de migração de armazenamento. Atualmente, a única solução alternativa é renomear o computador para ter o mesmo nome que o nome NetBIOS e, em seguida, usar [netdom computername/Add](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc835082(v=ws.11)) para adicionar um nome de computador alternativo que contenha o nome mais longo que estava em uso antes de iniciar o inventário. O serviço de migração de armazenamento dá suporte à migração de nomes de computador alternativos.
 
-## <a name="see-also"></a>Confira também
+## <a name="storage-migration-service-inventory-fails-with-a-parameter-cannot-be-found-that-matches-parameter-name-includedfsn"></a>Falha no inventário do serviço de migração de armazenamento com "um parâmetro não encontrado que corresponda ao nome do parâmetro ' IncludeDFSN '" 
+
+Ao usar a versão 2009 do centro de administração do Windows para gerenciar um Orchestrator do Windows Server 2019, você recebe o seguinte erro ao tentar inventariar um computador de origem:
+
+```
+Remote exception : a parameter cannot be found that matches parameter name 'IncludeDFSN'" 
+```
+
+Para resolver, atualize a extensão de serviço de migração de armazenamento para pelo menos a versão 1.113.0 no centro de administração do Windows. A atualização deve aparecer automaticamente no feed e solicitar a instalação.
+
+
+## <a name="see-also"></a>Consulte também
 
 - [Visão geral do serviço de migração de armazenamento](overview.md)

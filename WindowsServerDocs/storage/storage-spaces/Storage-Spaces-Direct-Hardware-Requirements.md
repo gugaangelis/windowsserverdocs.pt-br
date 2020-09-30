@@ -5,14 +5,14 @@ ms.author: eldenc
 manager: eldenc
 ms.topic: article
 author: eldenchristensen
-ms.date: 07/24/2020
+ms.date: 09/24/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c53179f32f0e6837297859413fa0cb88d66a0d2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: fcbd7a955efda11543010d3e4705bf52b7d9bdea
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87961120"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517492"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware dos Espaços de Armazenamento Diretos
 
@@ -27,11 +27,11 @@ Para produção, a Microsoft recomenda a compra de uma solução de hardware/sof
 
 ## <a name="base-requirements"></a>Requisitos base
 
-Os sistemas, componentes, dispositivos e drivers devem ser **certificados pelo Windows server 2016 pelo** [catálogo do Windows Server](https://www.windowsservercatalog.com). Além disso, recomendamos que servidores, unidades, adaptadores de barramento de host e adaptadores de rede tenham as qualificações adicionais do **SDDC (Data Center)** e/ou do **Data Center** (AQS) Premium definidas pelo software, conforme mostrado abaixo. Há mais de 1.000 componentes com o SDDC AQs.
+Os sistemas, componentes, dispositivos e drivers devem ser certificados para o sistema operacional que você está usando no [catálogo do Windows Server](https://www.windowsservercatalog.com). Além disso, recomendamos que servidores, unidades, adaptadores de barramento de host e adaptadores de rede tenham as qualificações adicionais do **SDDC (Data Center)** e/ou do **Data Center** (AQS) Premium definidas pelo software, conforme mostrado abaixo. Há mais de 1.000 componentes com o SDDC AQs.
 
-![captura de tela do catálogo do Windows Server mostrando o AQs do SDDC](media/hardware-requirements/sddc-aqs.png)
+![Captura de tela do catálogo do Windows Server mostrando um sistema que inclui a certificação Premium do Data Center (SDDC) definida pelo software](media/hardware-requirements/sddc-aqs.png)
 
-O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) por assistente no Gerenciador de cluster de failover ou com o `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster?view=win10-ps) no PowerShell.
+O cluster totalmente configurado (servidores, rede e armazenamento) deve passar todos os [testes de validação de cluster](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732035(v=ws.10)) por assistente no Gerenciador de cluster de failover ou com o `Test-Cluster` [cmdlet](/powershell/module/failoverclusters/test-cluster) no PowerShell.
 
 Além disso, os seguintes requisitos se aplicam:
 
@@ -97,7 +97,7 @@ Veja como as unidades podem ser conectadas para Espaços de Armazenamento Direto
 - HBA (adaptador de barramento de host) SAS com unidades SATA
 - **sem suporte:** Placas de controlador RAID ou armazenamento SAN (Fibre Channel, iSCSI, FCoE). Os cartões HBA (adaptador de barramento de host) devem implementar o modo de passagem simples.
 
-![diagrama de interconexões de unidade com suporte](media/hardware-requirements/drive-interconnect-support-1.png)
+![Diagrama mostrando interconexões de unidade com suporte, com placas RAID sem suporte](media/hardware-requirements/drive-interconnect-support-1.png)
 
 As unidades podem ser internas ao servidor ou em um compartimento externo que esteja conectado a apenas um servidor. Os serviços de compartimento SCSI (SES) são necessários para o mapeamento e a identificação do slot. Cada compartimento externo deve apresentar um identificador exclusivo (ID exclusiva).
 
@@ -105,7 +105,7 @@ As unidades podem ser internas ao servidor ou em um compartimento externo que es
 - Unidades em um compartimento externo ("JBOD") conectado a um servidor
 - **sem suporte:** Compartimentos SAS compartilhados conectados a vários servidores ou a qualquer forma de MPIO (Multipath IO), em que as unidades podem ser acessadas por vários caminhos.
 
-![diagrama de interconexões de unidade com suporte](media/hardware-requirements/drive-interconnect-support-2.png)
+![O diagrama que mostra como as unidades internas e externas conectadas diretamente a um servidor tem suporte, mas a SAS compartilhada não é](media/hardware-requirements/drive-interconnect-support-2.png)
 
 ### <a name="minimum-number-of-drives-excludes-boot-drive"></a>Número mínimo de unidades (exclui a unidade de inicialização)
 

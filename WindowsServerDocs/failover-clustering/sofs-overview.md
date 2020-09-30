@@ -1,24 +1,24 @@
 ---
 title: Visão geral do servidor de arquivos de expansão para dados de aplicativos
-description: Visão geral do recurso de Servidor de Arquivos de Escalabilidade Horizontal para o Windows Server 201 R2 e o Windows Server 2012.
+description: O Servidor de Arquivos de Escalabilidade Horizontal foi projetado para fornecer compartilhamentos de arquivos de expansão que estão continuamente disponíveis para armazenamento de aplicativo de servidor baseado em arquivo. Os compartilhamentos de arquivos de expansão proporcionam a capacidade de compartilhar a mesma pasta em múltiplos nós do mesmo cluster. Esse cenário se concentra em como planejar e implantar o Servidor de Arquivos de Escalabilidade Horizontal.
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 manager: lizross
-ms.date: 04/26/2018
+ms.date: 09/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c719bb4c148a0ff1b287011086ba75e5a3fc69
-ms.sourcegitcommit: 5344adcf9c0462561a4f9d47d80afc1d095a5b13
+ms.openlocfilehash: 5aca126d036dffc9b7463edd07e70a3dd02b7dbd
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90766569"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517482"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Visão geral do servidor de arquivos de expansão para dados de aplicativos
 
->Aplica-se a: Windows Server 2012 R2, Windows Server 2012
+>Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Servidor de Arquivos de Escalabilidade Horizontal é um recurso projetado para fornecer compartilhamentos de arquivos de escalabilidade horizontal que estão continuamente disponíveis para armazenamento de aplicativo para servidores com base em arquivo. Os compartilhamentos de arquivos de expansão proporcionam a capacidade de compartilhar a mesma pasta em múltiplos nós do mesmo cluster. Esse cenário se concentra em como planejar e implantar o Servidor de Arquivos de Escalabilidade Horizontal.
+O Servidor de Arquivos de Escalabilidade Horizontal foi projetado para fornecer compartilhamentos de arquivos de expansão que estão continuamente disponíveis para armazenamento de aplicativo de servidor baseado em arquivo. Os compartilhamentos de arquivos de expansão proporcionam a capacidade de compartilhar a mesma pasta em múltiplos nós do mesmo cluster. Esse cenário se concentra em como planejar e implantar o Servidor de Arquivos de Escalabilidade Horizontal.
 
 Você pode implantar e configurar um servidor de arquivos clusterizado usando qualquer um dos seguintes métodos:
 
@@ -72,7 +72,7 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 <tbody>
 <tr class="odd">
 <td>SMB</td>
-<td>SMB Continuous Availability</td>
+<td>Disponibilidade contínua de SMB (*)</td>
 <td>Sim</td>
 <td>Sim</td>
 </tr>
@@ -101,19 +101,19 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 <td>Sim</td>
 </tr>
 <tr class="even">
-<td>Sistema de Arquivos</td>
+<td>Sistema de arquivos</td>
 <td>NTFS</td>
 <td>Sim</td>
 <td>NA</td>
 </tr>
 <tr class="odd">
-<td>Sistema de Arquivos</td>
+<td>Sistema de arquivos</td>
 <td><a href="/windows-server/storage/refs/refs-overview">ReFS</a>(sistema de arquivos resiliente)</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 <td>Recomendado com Espaços de Armazenamento Diretos</td>
 </tr>
 <tr class="even">
-<td>Sistema de Arquivos</td>
+<td>Sistema de arquivos</td>
 <td>Sistema de arquivos CSV (Volume Compartilhado Clusterizado)</td>
 <td>NA</td>
 <td>Sim</td>
@@ -223,7 +223,10 @@ A tabela a seguir lista os recursos do SMB 3.0, os sistemas de arquivos comuns d
 </tbody>
 </table>
 
-\* O redirecionamento de pasta, Arquivos Offline, perfis de usuário de roaming ou diretórios base geram um grande número de gravações que devem ser gravadas imediatamente no disco (sem buffer) ao usar compartilhamentos de arquivos disponíveis continuamente, reduzindo o desempenho em comparação com os compartilhamentos de arquivos de uso geral. Compartilhamentos de arquivos disponíveis continuamente também são incompatíveis com o Gerenciador de Recursos de Servidor de Arquivos e PCs que executam o Windows XP. Além disso, Arquivos Offline pode não fazer a transição para o modo offline por 3-6 minutos depois que um usuário perde o acesso a um compartilhamento, o que pode frustrar os usuários que ainda não estão usando o modo sempre offline do Arquivos Offline.
+\*A <a href="https://docs.microsoft.com/windows-server/storage/storage-spaces/cluster-sets#scale-out-file-server-and-cluster-sets">AC (disponibilidade contínua) de auto-retorno SMB em configurações hiperconvergentes</a> é cursor disponível no Windows Server 2019. 
+
+>[!NOTE]
+>O redirecionamento de pasta, Arquivos Offline, perfis de usuário de roaming ou diretórios base geram um grande número de gravações que devem ser gravadas imediatamente no disco (sem buffer) ao usar compartilhamentos de arquivos disponíveis continuamente, reduzindo o desempenho em comparação com os compartilhamentos de arquivos de uso geral. Compartilhamentos de arquivos disponíveis continuamente também são incompatíveis com o Gerenciador de Recursos de Servidor de Arquivos e PCs que executam o Windows XP. Além disso, Arquivos Offline pode não fazer a transição para o modo offline por 3-6 minutos depois que um usuário perde o acesso a um compartilhamento, o que pode frustrar os usuários que ainda não estão usando o modo sempre offline do Arquivos Offline.
 
 ## <a name="practical-applications"></a>Aplicações práticas
 

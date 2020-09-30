@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ded378a40537455423f79869dfd07dcd2ba625
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 293fa8a617d7ceb1628ec72df2f015b6b2547f16
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949591"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517582"
 ---
 # <a name="develop-a-solution-extension"></a>Desenvolver uma extensão de solução
 
@@ -74,8 +74,9 @@ Agora que você criou uma extensão com a CLI do centro de administração do Wi
 - Criar um [provedor de conexão personalizado](guides/create-connection-provider.md)
 - Modificar o [comportamento de navegação raiz](guides/modify-root-navigation.md)
 
-Ainda mais exemplos podem ser encontrados nosso [site do SDK do GitHub](https://aka.ms/wacsdk):
--  [Ferramentas para desenvolvedores](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) é uma extensão totalmente funcional que pode ser carregada no centro de administração do Windows e contém uma rica coleção de exemplos de funcionalidade e de ferramentas que você pode procurar e usar em sua própria extensão.
+Ainda mais exemplos podem ser encontrados em nosso guia do desenvolvedor. O guia do desenvolvedor é uma extensão de solução totalmente funcional que pode ser carregada no centro de administração do Windows e contém uma rica coleção de exemplos de funcionalidade e de ferramentas que você pode procurar e usar em sua própria extensão. 
+
+Habilite a extensão do guia do desenvolvedor na página **avançado** de suas configurações do centro de administração do Windows. 
 
 ## <a name="build-and-side-load-your-extension"></a>Compilar e carregar lado sua extensão
 

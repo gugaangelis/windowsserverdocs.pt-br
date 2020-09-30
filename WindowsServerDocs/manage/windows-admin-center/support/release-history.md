@@ -5,18 +5,19 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 01/06/2020
-ms.openlocfilehash: b78a8de53e315a3a2f9f546ed49c06b4bccfc682
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9cb7624b2fb9469ecd0af93cdf5251878ecec74c
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87937585"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517472"
 ---
 # <a name="windows-admin-center-release-history"></a>Histórico de lançamento do centro de administração do Windows
 
 Aqui está uma lista de nossos recursos mais recentes lançados:
 
-- A versão [2007](https://aka.ms/wac2007) é a versão mais recente do GA, que inclui suporte para o novo Azure Stack HCI e novos recursos para várias ferramentas.
+- A versão [2009](https://aka.ms/wac2009) é a versão mais recente do GA, que inclui suporte para o serviço kubernetes do Azure em Azure Stack HCI e atualizações principais para as máquinas virtuais, compartilhamentos de arquivos e ferramentas de contêineres.
+- A versão [2007](https://aka.ms/wac2007) inclui suporte para o novo Azure Stack de HCI e novos recursos para várias ferramentas.
 - A versão [1910,2](https://aka.ms/wac1910.2) inclui atualizações para a acessibilidade da plataforma e várias correções de bugs
 - A versão [1910](https://aka.ms/wac1910) apresenta vários novos serviços híbridos do Azure e traz recursos que estavam anteriormente em visualização para o canal ga.
 - A versão [1909](https://aka.ms/wac1909) apresenta o tipo de conexão específica da VM do Azure e unifica os tipos de conexão para clusters de failover tradicionais e clusters de HCI.

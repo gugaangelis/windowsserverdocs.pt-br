@@ -6,12 +6,12 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f3bf885cd86015842be26124e7374f622d38a9c2
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 9cf369558977c50ee0913b65e62de448959aac32
+ms.sourcegitcommit: f89639d3861c61620275c69f31f4b02fd48327ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87954122"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91517572"
 ---
 # <a name="develop-a-tool-extension"></a>Desenvolver uma extensão de ferramenta
 
@@ -64,8 +64,9 @@ Agora que você criou uma extensão com a CLI do centro de administração do Wi
 - Adicionar um [módulo vazio](guides/add-module.md)
 - Adicionar um [iframe](guides/add-iframe.md)
 
-Ainda mais exemplos podem ser encontrados nosso [site do SDK do GitHub](https://aka.ms/wacsdk):
--  [Ferramentas para desenvolvedores](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) é uma extensão totalmente funcional que pode ser carregada no centro de administração do Windows e contém uma rica coleção de exemplos de funcionalidade e de ferramentas que você pode procurar e usar em sua própria extensão.
+Ainda mais exemplos podem ser encontrados em nosso guia do desenvolvedor. O guia do desenvolvedor é uma extensão de solução totalmente funcional que pode ser carregada no centro de administração do Windows e contém uma rica coleção de exemplos de funcionalidade e de ferramentas que você pode procurar e usar em sua própria extensão. 
+
+Habilite a extensão do guia do desenvolvedor na página **avançado** de suas configurações do centro de administração do Windows. 
 
 ## <a name="customize-your-extensions-icon"></a>Personalizar o ícone da extensão
 
