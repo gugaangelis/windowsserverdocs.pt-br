@@ -7,25 +7,25 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.date: 02/19/2020
-ms.openlocfilehash: eeadbdea10f08372cd927808b4b433d8ba7ee85f
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: b0ff8f353d4536f89d698f362e2998d9682665f2
+ms.sourcegitcommit: e164aeffc01069b8f1f3248bf106fcdb7f64f894
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89037824"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91389010"
 ---
 # <a name="optimizing-windows-10-version-1909-for-a-virtual-desktop-infrastructure-vdi-role"></a>Como otimizar o Windows 10, versão 1909, para uma função da VDI (Virtual Desktop Infrastructure)
 
 Este artigo ajudará você a escolher as configurações para o Windows 10, versão 1909 (build 18363) que deverão resultar no melhor desempenho em um ambiente VDI (Virtual Desktop Infrastructure). Todas as configurações deste guia são recomendações a serem consideradas, não sendo, de modo algum, requisitos.
 
-As principais maneiras de otimizar o desempenho do Windows 10 em um ambiente VDI são minimizar os redesenhos de elementos gráficos do aplicativo e as atividades em segundo plano sem grande vantagem para o ambiente VDI e, normalmente, reduzir os processos em execução ao mínimo necessário. Uma meta secundária é reduzir o uso do espaço em disco na imagem base para o mínimo necessário. Com as implementações da VDI, a menor base possível, ou tamanho "gold" de imagem, pode reduzir ligeiramente o uso da memória no hipervisor, bem como provocar uma pequena redução nas operações gerais de rede necessárias para fornecer a imagem de área de trabalho ao consumidor.
+As principais maneiras de otimizar o desempenho do Windows 10 em um ambiente VDI são minimizar os redesenhos de elementos gráficos do aplicativo e as atividades em segundo plano sem grande vantagem para o ambiente VDI e, normalmente, reduzir os processos em execução ao mínimo necessário. Uma meta secundária é reduzir o uso do espaço em disco na imagem base para o mínimo necessário. Com as implementações da VDI, a menor base possível (ou tamanho "ouro" de imagem) pode reduzir ligeiramente o uso de memória no hipervisor, bem como provocar uma pequena redução nas operações gerais de rede necessárias para fornecer a imagem de área de trabalho ao consumidor.
 
 > [!NOTE]
 > Essas configurações recomendadas podem ser aplicadas a outras instalações do Windows 10 1909, incluindo aquelas em computadores físicos ou outras máquinas virtuais. Nenhuma recomendação deste artigo deverá afetar a capacidade de suporte do Windows 10 1909.
 
 ## <a name="vdi-optimization-principles"></a>Princípios da otimização da VDI
 
-Um ambiente VDI apresenta uma sessão de área de trabalho completa, incluindo aplicativos, a um usuário de computador em uma rede. O veículo de entrega de rede pode ser uma rede local ou a Internet. Os ambientes VDI são uma imagem “base” do sistema operacional, que então se torna a base para as áreas de trabalho apresentadas em seguida aos usuários. Há variações das implementações da VDI, como “persistente”, “não persistente” e “sessão da área de trabalho”. O tipo persistente preserva as alterações no sistema operacional da área de trabalho da VDI de uma sessão para a outra. O tipo não persistente não preserva as alterações no sistema operacional da área de trabalho da VDI de uma sessão para a outra. Para o usuário, essa área de trabalho não é muito diferente de nenhum outro dispositivo físico ou virtual, exceto pelo fato de ela ser acessada em uma rede.
+Um ambiente VDI apresenta uma sessão de área de trabalho completa, incluindo aplicativos, a um usuário de computador em uma rede. O veículo de entrega de rede pode ser uma rede local ou a Internet. Os ambientes VDI são uma imagem "base" do sistema operacional, que então se torna a base para as áreas de trabalho apresentadas em seguida aos usuários. Há variações das implementações da VDI, como "persistente", "não persistente" e "sessão da área de trabalho". O tipo persistente preserva as alterações no sistema operacional da área de trabalho da VDI de uma sessão para a outra. O tipo não persistente não preserva as alterações no sistema operacional da área de trabalho da VDI de uma sessão para a outra. Para o usuário, essa área de trabalho não é muito diferente de nenhum outro dispositivo físico ou virtual, exceto pelo fato de ela ser acessada em uma rede.
 
 As configurações de otimização podem ocorrer em um dispositivo de referência. Uma VM é um lugar ideal para criar a imagem, pois o estado pode ser salvo, os pontos de verificação podem ser criados e os backups podem ser feitos. Uma instalação padrão do sistema operacional é executada na VM base. Essa VM base é então otimizada com a remoção de aplicativos desnecessários, a instalação das atualizações do Windows, a instalação de outras atualizações, a exclusão de arquivos temporários e a aplicação de configurações.
 
@@ -33,9 +33,9 @@ Há outros tipos de VDI, como RDS (Sessão da Área de Trabalho Remota) e a rece
 
 Segurança e estabilidade são as principais prioridades da Microsoft quando se trata de produtos e serviços. Os clientes empresariais podem optar por utilizar a Segurança interna do Windows, um conjunto de serviços que funciona bem com ou sem a Internet. Para os ambientes VDI não conectados à Internet, as assinaturas de segurança podem ser baixadas várias vezes por dia, pois a Microsoft pode lançar mais de uma atualização de assinatura por dia. Essas assinaturas podem então ser fornecidas às VMs da VDI e agendadas para serem instaladas durante a produção, independentemente de serem persistentes ou não persistentes. Dessa forma, a proteção da VM é a mais atual possível.
 
-Há algumas configurações de segurança que não são aplicáveis aos ambientes VDI que não estão conectados à Internet e, portanto, não podem participar da segurança habilitada para nuvem. Há outras configurações que os dispositivos “normais” do Windows podem utilizar, como a Experiência de Nuvem, a Microsoft Store etc. A remoção do acesso aos recursos não utilizados reduz o volume, a largura de banda da rede e a superfície de ataque.
+Há algumas configurações de segurança que não são aplicáveis aos ambientes VDI que não estão conectados à Internet e, portanto, não podem participar da segurança habilitada para nuvem. Há outras configurações que os dispositivos "normais" do Windows podem utilizar, como a Experiência de Nuvem, a Microsoft Store etc. A remoção do acesso aos recursos não utilizados reduz o volume, a largura de banda da rede e a superfície de ataque.
 
-Em relação às atualizações, o Windows 10 utiliza um algoritmo de atualização mensal, não havendo, portanto, a necessidade de uma tentativa de atualização por parte dos clientes. Na maioria dos casos, os administradores da VDI controlam o processo de atualização por meio de um processo de desligamento de VMs com base em uma imagem “mestre” ou “ouro”, desselam a imagem que é somente leitura, aplicam o patch a ela e, em seguida, selam a imagem novamente e a colocam de novo em produção. Portanto, não é necessário ter VMs da VDI verificando o Windows Update. Em alguns casos, por exemplo, VMs da VDI persistentes, são realizados os procedimentos normais de aplicação de patch. O Windows Update ou o Microsoft Intune também podem ser usados. O System Center Configuration Manager pode ser usado para lidar com a atualização e outros tipos de entrega de pacote. Cabe a cada organização determinar a melhor abordagem para atualizar a VDI.
+Em relação às atualizações, o Windows 10 utiliza um algoritmo de atualização mensal, não havendo, portanto, a necessidade de uma tentativa de atualização por parte dos clientes. Na maioria dos casos, os administradores da VDI controlam o processo de atualização por meio de um processo de desligamento de VMs com base em uma imagem "mestra" ou "ouro", desselam a imagem que é somente leitura, aplicam o patch a ela e, em seguida, selam a imagem novamente e a colocam de novo em produção. Portanto, não é necessário ter VMs da VDI verificando o Windows Update. Em alguns casos, por exemplo, VMs da VDI persistentes, são realizados os procedimentos normais de aplicação de patch. O Windows Update ou o Microsoft Intune também podem ser usados. O System Center Configuration Manager pode ser usado para lidar com a atualização e outros tipos de entrega de pacote. Cabe a cada organização determinar a melhor abordagem para atualizar a VDI.
 
 > [!TIP]
 > Um script que implementa as otimizações abordadas neste tópico – bem como um arquivo de exportação de GPO que você pode importar com **LGPO.exe** – está disponível em [TheVDIGuys](https://github.com/TheVDIGuys) no GitHub.
@@ -58,13 +58,13 @@ Há várias implementações diferentes da VDI persistente:
 
     - Nessa circunstância, o sistema operacional e a manutenção do aplicativo podem funcionar normalmente usando o software de manutenção tradicional, como o Windows Server Update Services ou outras tecnologias de gerenciamento.
 
-    - A diferença entre um computador de VDI persistente e uma máquina virtual “normal” é a relação com a imagem mestre/ouro. Em algum ponto, as atualizações precisam ser aplicadas ao mestre. É nesse momento que as implementações decidem como as alterações persistentes do usuário são tratadas. Em alguns casos, o disco com as alterações é descartado e/ou redefinido, definindo, assim, um novo ponto de verificação. Também pode ocorrer que as alterações feitas pelo usuário são mantidas por meio de atualizações de qualidade mensal e a base é redefinida após uma atualização de recursos.
+    - A diferença entre um computador de VDI persistente e uma máquina virtual "normal" é a relação com a imagem mestra/ouro. Em algum ponto, as atualizações precisam ser aplicadas ao mestre. É nesse momento que as implementações decidem como as alterações persistentes do usuário são tratadas. Em alguns casos, o disco com as alterações é descartado e/ou redefinido, definindo, assim, um novo ponto de verificação. Também pode ocorrer que as alterações feitas pelo usuário são mantidas por meio de atualizações de qualidade mensal e a base é redefinida após uma atualização de recursos.
 
 ### <a name="non-persistent-vdi"></a>VDI não persistente
 
-Quando uma implementação de VDI não persistente é baseada em uma imagem base ou "gold", as otimizações são executadas principalmente na imagem base e, em seguida, por meio das configurações e políticas locais.
+Quando uma implementação de VDI não persistente é baseada em uma imagem base ou "ouro", as otimizações são executadas principalmente na imagem base e por meio das configurações e políticas locais.
 
-Com a VDI não persistente baseada em imagem, a imagem base é somente leitura. Quando uma VM não persistente é iniciada, uma cópia da imagem base é transmitida para a VM. A atividade que ocorre durante a inicialização e daí em diante até a próxima reinicialização é redirecionada para um local temporário. Normalmente, os usuários recebem locais de rede para armazenar os dados. Em alguns casos, o perfil do usuário é mesclado com a VM padrão para fornecer as configurações ao usuário.
+Com a VDI não persistente baseada em imagem, a imagem base é somente leitura. Quando uma VM não persistente é iniciada, uma cópia da imagem base é transmitida para a VM. A atividade que ocorre durante a inicialização e daí em diante até a próxima reinicialização é redirecionada para um local temporário. Normalmente, os usuários recebem locais de rede para armazenar os dados. Em alguns casos, o perfil do usuário é mesclado com a VM Standard para fornecer as configurações ao usuário.
 
 Um importante aspecto da VDI não persistente que se baseia em uma só imagem é a manutenção. As atualizações no sistema operacional e nos componentes geralmente são fornecidas uma vez por mês. Com a VDI baseada em imagem, há um conjunto de processos que precisa ser executado para obter atualizações para a imagem:
 
@@ -111,11 +111,11 @@ Sempre que os padrões do Windows são alterados, surgem perguntas em relação 
 
 Este documento evita intencionalmente abordar serviços, políticas ou tarefas do sistema que afetam a segurança. Depois disso, vem o Serviço do Windows. A capacidade de atender imagens da VDI fora das janelas de manutenção é removida, pois as janelas de manutenção existem quando a maioria dos eventos de serviço ocorre em ambientes VDI, *com exceção das atualizações de software de segurança*. A Microsoft publicou diretrizes para a Segurança do Windows em ambientes VDI. Para obter mais informações, confira [Guia de implantação do Windows Defender Antivírus em um ambiente VDI (Virtual Desktop Infrastructure)](/windows/security/threat-protection/windows-defender-antivirus/deployment-vdi-windows-defender-antivirus).
 
-Considere a capacidade de suporte ao alterar as configurações padrão do Windows. Problemas difíceis podem surgir ao alterar serviços, políticas ou tarefas agendadas do sistema, em nome de proteção, “torná-lo mais leve” etc. Consulte a Base de Dados de Conhecimento Microsoft para obter os atuais problemas conhecidos sobre as configurações padrão alteradas. As diretrizes deste documento e o script associado no GitHub serão mantidos com relação a problemas conhecidos, se surgirem. Além disso, você poderá relatar problemas de várias maneiras à Microsoft.
+Considere a capacidade de suporte ao alterar as configurações padrão do Windows. Problemas difíceis podem surgir ao alterar serviços, políticas ou tarefas agendadas do sistema, em nome de proteção, "torná-lo mais leve" etc. Consulte a Base de Dados de Conhecimento Microsoft para obter os atuais problemas conhecidos sobre as configurações padrão alteradas. As diretrizes deste documento e o script associado no GitHub serão mantidos com relação a problemas conhecidos, se surgirem. Além disso, você poderá relatar problemas de várias maneiras à Microsoft.
 
-Use seu mecanismo de pesquisa favorito com os termos “"valor inicial" site:support.microsoft.com” para mostrar os problemas conhecidos relacionados aos valores iniciais padrão dos serviços.
+Use seu mecanismo de pesquisa favorito com os termos "valor inicial" site:support.microsoft.com” para mostrar os problemas conhecidos relacionados aos valores iniciais padrão dos serviços.
 
-Você poderá observar que este documento e os scripts associados no GitHub não modificam nenhuma permissão padrão. Se estiver interessado em aumentar as configurações de segurança, comece com o projeto conhecido como **AaronLocker**. Para obter mais informações, confira [COMUNICADO: incluir aplicativos na lista de permissões com o “AaronLocker”](/archive/blogs/aaron_margosis/announcing-application-whitelisting-with-aaronlocker).
+Você poderá observar que este documento e os scripts associados no GitHub não modificam nenhuma permissão padrão. Se estiver interessado em aumentar as configurações de segurança, comece com o projeto conhecido como **AaronLocker**. Para obter mais informações, confira [Visão geral de "AaronLocker"](https://github.com/microsoft/AaronLocker).
 
 #### <a name="vdi-optimization-categories"></a>Categorias de otimização da VDI
 
@@ -143,7 +143,7 @@ Você poderá observar que este documento e os scripts associados no GitHub não
 
 ### <a name="universal-windows-platform-uwp-application-cleanup"></a>Limpeza de aplicativos do UWP (Plataforma Universal do Windows)
 
-Um dos objetivos de uma imagem da VDI é ser tão leve quanto possível. Uma forma de reduzir o tamanho da imagem é remover os aplicativos UWP que não serão usados no ambiente. Com aplicativos UWP, há os principais arquivos de aplicativo, também conhecidos como conteúdo. Há uma pequena quantidade de dados armazenada em cada perfil de usuário para configurações específicas do aplicativo. Também há uma pequena quantidade de dados no perfil ‘Todos os Usuários’.
+Um dos objetivos de uma imagem da VDI é ser tão leve quanto possível. Uma forma de reduzir o tamanho da imagem é remover os aplicativos UWP que não serão usados no ambiente. Com aplicativos UWP, há os principais arquivos de aplicativo, também conhecidos como conteúdo. Há uma pequena quantidade de dados armazenados em cada perfil de usuário para configurações específicas do aplicativo. Também há uma pequena quantidade de dados no perfil Todos os Usuários.
 
 Conectividade e tempo são fatores importantes quando se trata da limpeza de aplicativos UWP. Se você implantar a imagem base em um dispositivo sem conectividade de rede, o Windows 10 não poderá se conectar à Microsoft Store e baixará aplicativos e tentará instalá-los enquanto você estiver tentando desinstalá-los. Essa pode ser uma boa estratégia para personalizar a imagem e, em seguida, atualizar o que permanecerá em um estágio posterior do processo de criação da imagem.
 
@@ -188,8 +188,8 @@ Remove-AppxProvisionedPackage -Online -PackageName
 
 Cada aplicativo UWP deve ser avaliado para aplicabilidade em cada ambiente exclusivo. O ideal será fazer uma instalação padrão do Windows 10 1909 e, em seguida, observar quais aplicativos estão sendo executados e consumindo memória. Por exemplo, considere a possibilidade de remover os aplicativos que são iniciados automaticamente ou os aplicativos que exibem informações automaticamente no menu Iniciar, como Clima e Notícias, e que podem não ser úteis no ambiente.
 
->[!NOTE]
->Se você estiver utilizando os scripts do GitHub, poderá controlar com facilidade quais aplicativos serão removidos antes de executar o script. Depois de baixar os arquivos de script, localize o arquivo ‘Win10_1909_AppxPackages.txt’, edite-o e remova as entradas de aplicativos que deseja manter, como Calculadora, Notas Autoadesivas etc.
+> [!NOTE]
+> Se você estiver utilizando os scripts do GitHub, poderá controlar com facilidade quais aplicativos serão removidos antes de executar o script. Depois de baixar os arquivos de script, localize o arquivo "AppxPackages.json", edite-o e remova as entradas de aplicativos que deseja manter, como Calculadora, Notas Autoadesivas etc. Confira [a Personalização da seção](https://github.com/TheVDIGuys/Windows_10_VDI_Optimize#customization) para obter detalhes.
 
 ### <a name="manage-windows-optional-features-using-powershell"></a>Gerenciar recursos opcionais do Windows usando o PowerShell
 
@@ -208,7 +208,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName "DirectPlay" -All
 Desabilite recursos na imagem da VDI, conforme mostrado neste exemplo:
 
 ```powershell
-Disable-WindowsOptionalFeature -Online -FeatureName “WindowsMediaPlayer”
+Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer"
 ```
 
 Em seguida, o ideal será remover o pacote do Windows Media Player. Há dois pacotes do Windows Media Player no Windows 10 1909:
@@ -246,7 +246,7 @@ Caso deseje remover o pacote do Windows Media Player (para liberar cerca de 60 M
 ```powershell
  Remove-WindowsPackage -PackageName Microsoft-Windows-MediaPlayer-Package~31bf3856ad364e35~amd64~~10.0.18362.1 -Online
 
- Remove-WindowsPackage -PackageName Microsoft-Windows-MediaPlayer-Package~31bf3856ad364e35~amd64~~10.0.18362.1 -Online
+ Remove-WindowsPackage -PackageName Microsoft-Windows-MediaPlayer-Package~31bf3856ad364e35~amd64~~10.0.18362.449 -Online
 ```
 
 #### <a name="enable-or-disable-windows-features-using-dism"></a>Habilitar ou desabilitar recursos do Windows usando o DISM
@@ -255,7 +255,7 @@ Use a ferramenta Dism.exe para enumerar e controlar os recursos opcionais do Win
 
 #### <a name="default-user-settings"></a>Configurações padrão de usuário
 
-Há personalizações que podem ser feitas em um arquivo do Registro do Windows chamado ‘C:\Users\Default\NTUSER.DAT’. Todas as configurações feitas nesse arquivo serão aplicadas a todos os perfis de usuário seguintes criados com base em um dispositivo que executa essa imagem. Controle quais configurações serão aplicadas ao perfil do usuário padrão editando o arquivo ‘Win10_1909_DefaultUserSettings.txt’. Uma configuração que talvez você queira considerar com atenção e que é nova nesta iteração de recomendações de configurações é uma configuração chamada **TaskbarSmallIcons**. O ideal é verificar com a base de usuários antes de implementar essa configuração. **TaskbarSmallIcons** torna a barra de tarefas do Windows menor e consome menos espaço da tela, torna os ícones mais compactos, minimiza a interface de Pesquisa e é representado antes e depois nas seguintes ilustrações:
+Há personalizações que podem ser feitas em um arquivo do Registro do Windows chamado "C:\Users\Default\NTUSER.DAT". Todas as configurações feitas nesse arquivo serão aplicadas a todos os perfis de usuário seguintes criados com base em um dispositivo que executa essa imagem. Controle quais configurações serão aplicadas ao perfil do usuário padrão editando o arquivo "DefaultUserSettings.txt". Uma configuração que talvez você queira considerar com atenção e que é nova nesta iteração de recomendações de configurações é uma configuração chamada **TaskbarSmallIcons**. O ideal é verificar com a base de usuários antes de implementar essa configuração. **TaskbarSmallIcons** torna a barra de tarefas do Windows menor e consome menos espaço da tela, torna os ícones mais compactos, minimiza a interface de Pesquisa e é representado antes e depois nas seguintes ilustrações:
 
 Figura 1: barra de tarefas normal do Windows 10, versão 1909
 
@@ -273,41 +273,53 @@ Figura 3: Propriedades do Sistema otimizadas, Opções de Desempenho
 
 ![Propriedades do Sistema otimizadas, Opções de Desempenho](media/rds-vdi-recommendations-1909/performance-options.png)
 
-Veja a seguir as configurações de otimização aplicadas ao hive do Registro do perfil do usuário padrão para otimizar o desempenho:
+Para o Windows 10, versão 1909, veja abaixo as configurações de otimização aplicadas ao hive do Registro do perfil do usuário padrão para otimizar o desempenho:
 
-```
-Delete HKLM\Temp\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v OneDriveSetup /f
+```dos
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer" /v ShellState /t REG_BINARY /d 240000003C2800000000000000000000 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v IconsOnly /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewAlphaSelect /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ListviewShadow /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowCompColor /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowInfoTip /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAnimations /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 3 /f
+add "HKLM\Temp\Software\Microsoft\Windows\DWM" /v EnableAeroPeek /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\DWM" /v AlwaysHiberNateThumbnails /t REG_DWORD /d 0 /f
 add "HKLM\Temp\Control Panel\Desktop" /v DragFullWindows /t REG_SZ /d 0 /f
-add "HKLM\Temp\Control Panel\Desktop" /v WallPaper /t REG_SZ /d "" /f
-add "HKLM\Temp\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v AccentColor /t REG_DWORD /d 4292311040 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v ColorizationColor /t REG_DWORD /d 4292311040 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v AlwaysHibernateThumbnails /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v EnableAeroPeek /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\DWM /v AlwaysHibernateThumbnails /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v AutoCheckSelect /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideIcons /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ListviewAlphaSelect /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ListViewShadow /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v ShowInfoTip /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v TaskbarAnimations /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v TaskbarSmallIcons /t REG_DWORD /d 1 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People /v PeopleBand /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ComboBoxAnimation /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\ControlAnimations /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMAeroPeekEnabled /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\DWMSaveThumbnailEnabled /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\SelectionFade /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TaskbarAnimations /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation /v DefaultApplied /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SubscribedContent-338388Enabled /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SubscribedContent-338389Enabled /t REG_DWORD /d 0 /f
-add HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v SystemPaneSuggestionsEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Control Panel\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f
+add "HKLM\Temp\Control Panel\Desktop" /v UserPreferencesMask /t REG_BINARY /d 9032078010000000 /f
+add "HKLM\Temp\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy" /v 01 /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338393Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-353694Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-353696Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338388Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338389Enabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SystemPaneSuggestionsEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Control Panel\International\User Profile" /v HttpAcceptLanguageOptOut /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.Windows.Photos_8wekyb3d8bbwe" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.Windows.Photos_8wekyb3d8bbwe" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.SkypeApp_kzf8qxf38zg5c" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.SkypeApp_kzf8qxf38zg5c" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.YourPhone_8wekyb3d8bbwe" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.YourPhone_8wekyb3d8bbwe" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.MicrosoftEdge_8wekyb3d8bbwe" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.PPIProjection_cw5n1h2txyewy" /v Disabled /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications\Microsoft.PPIProjection_cw5n1h2txyewy" /v DisabledByUser /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\InputPersonalization" /v RestrictImplicitInkCollection /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\InputPersonalization" /v RestrictImplicitTextCollection /t REG_DWORD /d 1 /f
+add "HKLM\Temp\Software\Microsoft\Personalization\Settings" /v AcceptedPrivacyPolicy /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\InputPersonalization\TrainedDataStore" /v HarvestContacts /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
+add "HKLM\Temp\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
+add "HKCU\Software\Microsoft\InputPersonalization" /v RestrictImplicitInkCollection /t REG_DWORD /d 1 /f
+add "HKCU\Software\Microsoft\InputPersonalization" /v RestrictImplicitTextCollection /t REG_DWORD /d 1 /f
 ```
 
-Nas configurações de política local, o ideal é desabilitar imagens para telas de fundo na VDI.  Caso você deseje exibir imagens, o ideal é criar imagens da tela de fundo personalizadas com uma profundidade de cor reduzida para limitar a largura de banda de rede usada para transmitir informações da imagem. Se você optar por não especificar nenhuma imagem da tela de fundo na política local, o ideal será definir a cor da tela de fundo antes de definir a política local, porque, depois que a política for definida, o usuário não terá como alterar a cor da tela de fundo. Talvez seja melhor especificar “(nulo)” como a imagem da tela de fundo. Há outra configuração de política na próxima seção sobre o não uso da tela de fundo em sessões do protocolo RDP.
+Nas configurações de política local, o ideal é desabilitar imagens para telas de fundo na VDI. Caso você deseje exibir imagens, o ideal é criar imagens da tela de fundo personalizadas com uma profundidade de cor reduzida para limitar a largura de banda de rede usada para transmitir informações da imagem. Se você optar por não especificar nenhuma imagem da tela de fundo na política local, o ideal será definir a cor da tela de fundo antes de definir a política local, porque, depois que a política for definida, o usuário não terá como alterar a cor da tela de fundo. Talvez seja melhor especificar "(nulo)" como a imagem da tela de fundo. Há outra configuração de política na próxima seção sobre o não uso da tela de fundo em sessões do protocolo RDP.
 
 ### <a name="local-policy-settings"></a>Configurações de política local
 
@@ -538,17 +550,17 @@ Para obter mais informações sobre o NCSI (Indicador de Status da Conexão de R
 
 ### <a name="system-services"></a>Serviços do sistema
 
-Se você estiver considerando a possibilidade de desabilitar os serviços do sistema para conservar recursos, tome muito cuidado para que o serviço que está sendo considerado não seja de modo algum um componente de outro serviço. disponível Observe que alguns serviços não estão na lista porque não podem ser desabilitados de maneira compatível.
+Se você estiver considerando a possibilidade de desabilitar os serviços do sistema para conservar recursos, tome muito cuidado para que o serviço que está sendo considerado não seja de modo algum um componente de outro serviço. Observe que alguns serviços não estão na lista porque não podem ser desabilitados de maneira compatível.
 
 Além disso, a maioria dessas recomendações espelha as recomendações para o Windows Server 2016, instalado com a Experiência Desktop em [Diretrizes sobre como desabilitar serviços do sistema no Windows Server 2016 com Experiência Desktop](../../security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server.md)
 
-Muitos serviços que possam parecer bons candidatos à desabilitação são definidos com o tipo de início de serviço manual. Isso significa que o serviço não será iniciado automaticamente e não será iniciado, a menos que um processo ou um evento dispare uma solicitação para o serviço que está sendo considerado para desabilitação. Os serviços que já estão definidos para tipo de início manual normalmente são listados aqui.
+Muitos serviços que possam parecer bons candidatos à desabilitação são definidos com o tipo de início de serviço manual. Isso significa que o serviço não será iniciado automaticamente e não será iniciado, a menos que um processo ou um evento dispare uma solicitação para o serviço que está sendo considerado para desabilitação. Os serviços que já estão definidos para tipo de início manual normalmente não são listados aqui.
 
 > [!NOTE]
 > Você pode enumerar os serviços em execução com este código de exemplo do PowerShell, gerando apenas o nome curto do serviço:
 
 ```powershell
- Get-Service | Where-Object {$_.Status -eq "Running"} | select -ExpandProperty Name
+ Get-Service | Where-Object {$_.Status -eq "Running"} | Select-Object -ExpandProperty Name
  ```
 
 | Serviço do Windows | Item | Comentários|
@@ -575,7 +587,7 @@ Os serviços por usuário referem-se a serviços que são criados quando um usu�
 
 [Serviços por usuário no Windows 10 e no Windows Server](/windows/application-management/per-user-services-in-windows)
 
-Se você pretende alterar o valor inicial de um serviço, o método preferencial é abrir um prompt .cmd com privilégios elevados e executar a ferramenta Gerenciador de Controle de Serviço ‘Sc.exe’. Para obter mais informações sobre como usar o ‘Sc.exe’, confira [Sc](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc754599(v=ws.11))
+Se você pretende alterar o valor inicial de um serviço, o método preferencial é abrir um prompt .cmd com privilégios elevados e executar a ferramenta Gerenciador de Controle de Serviço "Sc.exe". Para obter mais informações sobre como usar o "Sc.exe", confira [Sc](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc754599(v=ws.11)).
 
 ### <a name="scheduled-tasks"></a>Tarefas Agendadas
 
@@ -589,7 +601,7 @@ Você pode obter todas as tarefas agendadas atuais, incluindo as descrições, c
  Get-ScheduledTask | Select-Object -Property TaskPath,TaskName,State,Description
 ```
 
->[!NOTE]
+> [!NOTE]
 > Há várias tarefas que não podem ser desabilitadas por meio de script, mesmo em uma execução com privilégios elevados. Recomendamos não desabilitar as tarefas que não podem ser desabilitadas usando um script.
 
 Nome da tarefa agendada:
@@ -674,7 +686,7 @@ O Windows está configurado, por padrão, para coletar e salvar dados limitados 
 
 ![Rastreamentos do sistema](media/rds-vdi-recommendations-1909/system-traces.png)
 
-Alguns dos rastreamentos exibidos em **Sessões de Rastreamento de Eventos** e **Sessões de Rastreamento de Eventos de Inicialização** não podem e não devem ser interrompidos. Outros, como o rastreamento ‘WiFiSession’, podem ser interrompidos. Para interromper um rastreamento em execução em **Sessões de Rastreamento de Eventos**, clique com o botão direito do mouse no rastreamento e, em seguida, clique em ‘Interromper’. Use o seguinte procedimento para impedir que os rastreamentos sejam iniciados automaticamente na inicialização:
+Alguns dos rastreamentos exibidos em **Sessões de Rastreamento de Eventos** e **Sessões de Rastreamento de Eventos de Inicialização** não podem e não devem ser interrompidos. Outros, como o rastreamento "WiFiSession", podem ser interrompidos. Para interromper um rastreamento em execução em **Sessões de Rastreamento de Eventos**, clique com o botão direito do mouse no rastreamento e, depois, clique em "Interromper". Use o seguinte procedimento para impedir que os rastreamentos sejam iniciados automaticamente na inicialização:
 
 1. Clique na pasta **Sessões de Rastreamento de Eventos de Inicialização**.
 
@@ -749,13 +761,15 @@ Aplica-se ao Windows 10. O padrão é **1023**. Esse parâmetro especifica o nú
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters" RequireSecuritySignature -Value 0 -Force
 ```
 
-Configurações adicionais das diretrizes de Linha de Base de Funcionalidade Limitada de Tráfego Restrito do Windows. A Microsoft lançou uma linha de base, criada com os mesmos procedimentos das [Linhas de Base de Segurança do Windows](/powershell/module/smbshare/set-smbserverconfiguration?view=win10-ps), para ambientes que não estão conectados diretamente à Internet ou que desejam reduzir os dados enviados à Microsoft e a outros serviços.
+Configurações adicionais das diretrizes de [Linha de base da funcionalidade limitada de tráfego restrita pelo Windows](https://docs.microsoft.com/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services).
 
-As configurações da [Linha de Base de Funcionalidade Limitada de Tráfego Restrita pelo Windows](/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services) são indicadas na tabela da Política de Grupo com um asterisco.
+A Microsoft lançou uma linha de base criada usando os mesmos procedimentos das [Linhas de Base de Segurança do Windows](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines) para ambientes que não são conectados diretamente à Internet ou que querem reduzir dados enviados à Microsoft e outros serviços.
+
+As configurações da Linha de Base de Funcionalidade Limitada de Tráfego Restrita pelo Windows são indicadas na tabela da Política de Grupo com um asterisco.
 
 #### <a name="disk-cleanup-including-using-the-disk-cleanup-wizard"></a>Limpeza de disco (incluindo o uso do assistente para Limpeza de Disco)
 
-A limpeza de disco pode ser especialmente útil com implementações da VDI da imagem mestra/ouro. Depois que a imagem é preparada, atualizada e configurada, uma das últimas tarefas a ser executada é a limpeza de disco. Há uma ferramenta interna chamada “Assistente para Limpeza de Disco” que pode ajudar a limpar a maioria das áreas potenciais de economia de espaço em disco. Em uma VM que tenha muitos poucos itens instalados, mas que foi totalmente corrigida, geralmente, é possível obter cerca de 4 GB de espaço em disco liberado executando a Limpeza de Disco.
+A limpeza de disco pode ser especialmente útil com implementações da VDI da imagem mestra/ouro. Depois que a imagem é preparada, atualizada e configurada, uma das últimas tarefas a ser executada é a limpeza de disco. Há uma ferramenta interna chamada "Assistente para Limpeza de Disco" que pode ajudar a limpar a maioria das áreas potenciais de economia de espaço em disco. Em uma VM que tenha muitos poucos itens instalados, mas que foi totalmente corrigida, geralmente, é possível obter cerca de 4 GB de espaço em disco liberado executando a Limpeza de Disco.
 
 Veja a seguir algumas sugestões para diversas tarefas de limpeza de disco. Todas elas devem ser testadas antes da implementação:
 
@@ -783,29 +797,28 @@ Veja a seguir algumas sugestões para diversas tarefas de limpeza de disco. Toda
 
 ### <a name="remove-onedrive-components"></a>Remover componentes do OneDrive
 
-A remoção do OneDrive envolve a remoção do pacote, a desinstalação e a remoção de arquivos *.lnk. O seguinte código de exemplo do PowerShell pode ser usado para auxiliar na remoção do OneDrive da imagem e está incluído nos scripts de otimização da VDI do GitHub:
+Remover OneDrive envolve a remoção do pacote, desinstalação e remoção de arquivos \*.lnk. O seguinte código de exemplo do PowerShell pode ser usado para auxiliar na remoção do OneDrive da imagem e está incluído nos scripts de otimização da VDI do GitHub:
 
 ```azurecli
+Get-Process -Name OneDrive | Stop-Process -Force -Confirm:$false
+Get-Process -Name explorer | Stop-Process -Force -Confirm:$false
+if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
+    { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
+        -ArgumentList "/uninstall"`
+        -Wait }
+if (Test-Path "C:\\Windows\\SysWOW64\\OneDriveSetup.exe")`
+    { Start-Process "C:\\Windows\\SysWOW64\\OneDriveSetup.exe"`
+        -ArgumentList "/uninstall"`
+        -Wait }
+Remove-Item -Path "C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force
+Remove-Item -Path "C:\\Windows\\ServiceProfiles\\NetworkService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force
 
-Taskkill.exe /F /IM "OneDrive.exe"
-Taskkill.exe /F /IM "Explorer.exe"`
-    if (Test-Path "C:\\Windows\\System32\\OneDriveSetup.exe")`
-     { Start-Process "C:\\Windows\\System32\\OneDriveSetup.exe"`
-         -ArgumentList "/uninstall"`
-         -Wait }
-    if (Test-Path "C:\\Windows\\SysWOW64\\OneDriveSetup.exe")`
-     { Start-Process "C:\\Windows\\SysWOW64\\OneDriveSetup.exe"`
-         -ArgumentList "/uninstall"`
-         -Wait }
-Remove-Item -Path
-"C:\\Windows\\ServiceProfiles\\LocalService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force
-Remove-Item -Path "C:\\Windows\\ServiceProfiles\\NetworkService\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk" -Force \# Remove the automatic start item for OneDrive from the default user profile registry hive
+# Remove the automatic start item for OneDrive from the default user profile registry hive
+
 Start-Process C:\\Windows\\System32\\Reg.exe -ArgumentList "Load HKLM\\Temp C:\\Users\\Default\\NTUSER.DAT" -Wait
 Start-Process C:\\Windows\\System32\\Reg.exe -ArgumentList "Delete HKLM\\Temp\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run /v OneDriveSetup /f" -Wait
 Start-Process C:\\Windows\\System32\\Reg.exe -ArgumentList "Unload HKLM\\Temp" -Wait Start-Process -FilePath C:\\Windows\\Explorer.exe -Wait
 ```
-
-Para perguntas ou questões sobre as informações neste artigo, entre em contato com a equipe de contas da Microsoft, pesquise o blog de VDI da Microsoft, poste uma mensagem nos fóruns da Microsoft ou entre em contato com a Microsoft.
 
 ## <a name="turn-windows-update-back-on"></a>Ativar o Windows Update novamente
 
@@ -825,7 +838,7 @@ Caso deseje ativar o Windows Update novamente, como no caso da VDI persistente, 
 
     - Política do Computador Local \\ Configuração do Computador \\ Modelos Administrativos \\ Componentes do Windows \\ Windows Update \\ Windows Update para Empresas
 
-        - Selecione quando as atualizações de qualidade são recebidas (altere "habilitado" para "não configurado")
+        - Selecione quando as atualizações de qualidade são recebidas (altere 'habilitado' para 'não configurado')
 
     -   Política do Computador Local \\ Configuração do Computador \\ Modelos Administrativos \\ Componentes do Windows \\ Windows Update \\ Windows Update para Empresas
 
@@ -856,6 +869,8 @@ Caso deseje ativar o Windows Update novamente, como no caso da VDI persistente, 
     - Biblioteca do Agendador de Tarefas \\ Microsoft \\ Windows \\ InstallService \\ ScanForUpdatesAsUser
 
 Para fazer com que todas essas configurações entrem em vigor, reinicie o dispositivo. Caso não deseje que este dispositivo receba as atualizações de recurso, acesse Configurações \\ Windows Update \\ Opções avançadas \\ escolha quando as atualizações são instaladas e, em seguida, defina manualmente a opção, **Uma atualização de recursos inclui novas funcionalidades e melhorias. Ela pode ser adiada por esta quantidade de dias para um valor diferente de zero, como 180, 365 etc.**
+
+Para perguntas ou questões sobre as informações neste artigo, entre em contato com a equipe de contas da Microsoft, pesquise o blog de VDI da Microsoft, poste uma mensagem nos fóruns da Microsoft ou entre em contato com a Microsoft.
 
 ### <a name="references"></a>Referências
 

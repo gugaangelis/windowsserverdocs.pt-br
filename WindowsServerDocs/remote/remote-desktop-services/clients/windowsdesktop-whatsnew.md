@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/16/2020
+ms.date: 09/22/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d45bfad559069f9652768ba7f89bbdd3521ab8a
-ms.sourcegitcommit: d04f8fd54fe9aa5703af2f66a7150f4a6fb5bb37
+ms.openlocfilehash: 4edd85e305d30cfe22480021b67f3c0213275926
+ms.sourcegitcommit: c0e0bdc9a1b28bd21951d68b5cfd2cce48a770ef
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90718620"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90999250"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -24,16 +24,20 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 
 |Grupo de usuários |Última versão  |Versão mínima com suporte |
 |-----------|----------------|--------------------------|
-|Público     |1.2.1272        |1.2.945                   |
-|Participante do Programa Windows Insider    |1.2.1357        |1.2.1357                  |
+|Público     |1.2.1364        |1.2.945                   |
+|Participante do Programa Windows Insider    |1.2.1364        |1.2.945                   |
 
-## <a name="updates-for-version-121357-insiders"></a>Atualizações para a versão 1.2.1357 (Participantes do Programa Windows Insider)
+## <a name="updates-for-version-121364"></a>Atualizações para a versão 1.2.1364
 
-*Data da publicação: 09/09/2020*
+*Data da publicação: 22/09/2020*
 
-Download: [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+Download: Windows [64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
 
 - Correção de um problema em que o SSO (logon único) não funcionava no Windows 7.
+- Corrigida a falha de conexão que acontecia ao chamar ou ingressar em uma chamada de equipe enquanto outro aplicativo tinha um fluxo de áudio aberto em modo exclusivo e quando a otimização de mídia para o Teams estava habilitada.
+- Corrigida uma falha ao enumerar dispositivos de áudio ou vídeo no Teams com a otimização de mídia para o Teams habilitada.
+- Adicionado um link "Precisa de ajuda com as configurações?" para a página de configurações da área de trabalho.
+- Corrigido um problema com o botão "Assinar" que acontecia ao usar temas escuros de alto contraste.
 
 ## <a name="updates-for-version-121275"></a>Atualizações para a versão 1.2.1275
 
@@ -51,8 +55,6 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 ## <a name="updates-for-version-121186"></a>Atualizações para a versão 1.2.1186
 
 *Data da publicação: 28/07/2020*
-
-Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qy), [Windows 32 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4Ciex), [Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4C7Qx)
 
 - Agora você pode se inscrever em workspaces com várias contas de usuário usando a opção de menu de estouro ( **...** ) na barra de comandos na parte superior do cliente. Para diferenciar workspaces, os títulos de workspace agora incluem o nome de usuário, assim como todos os títulos de atalhos de aplicativos.
 - Foram adicionadas informações adicionais às mensagens de erro de assinatura para aprimorar a solução de problemas.
