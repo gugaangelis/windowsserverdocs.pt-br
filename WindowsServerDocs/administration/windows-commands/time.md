@@ -1,5 +1,5 @@
 ---
-title: time
+title: hora
 description: Saiba como definir e exibir a hora do sistema.
 ms.topic: reference
 ms.assetid: 1276a257-7283-41da-ae80-fb4cfb311f9d
@@ -7,14 +7,14 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 4faa12cef8485be6b76b16ff2ab545d0eae06cb7
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 3bce9d2ac70af1983af6b85fdf3b12e8e573bc8a
+ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89640441"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91717873"
 ---
-# <a name="time"></a>time
+# <a name="time"></a>hora
 
 
 
@@ -43,7 +43,7 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 -   Os valores de *hh* válidos são de 0 a 24.
 -   Os valores *mm* e *SS* válidos são de 0 a 59.
 
-## <a name="examples"></a><a name="BKMK_examples"></a>Exemplos
+## <a name="examples"></a>Exemplos
 
 Se as extensões de comando estiverem habilitadas, para exibir a hora atual do sistema, digite:
 ```

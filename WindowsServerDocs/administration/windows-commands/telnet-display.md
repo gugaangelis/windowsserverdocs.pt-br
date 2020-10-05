@@ -1,18 +1,18 @@
 ---
 title: telnet display
-description: Artigo de referência para exibição de Telnet, que exibe parâmetros operacionais.
+description: Artigo de referência para o comando de exibição Telnet, que exibe os parâmetros operacionais.
 ms.topic: reference
 ms.assetid: 9272086c-3aaa-405d-ac71-652f25e2eb34
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f9c6bf048252d46e96f9d23bf9d2476c90e25b47
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 0eca6480f09ae1b773ce76520d3bbe6a24f9edba
+ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89639433"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91718023"
 ---
 # <a name="telnet-display"></a>Telnet: exibir
 
@@ -20,16 +20,20 @@ ms.locfileid: "89639433"
 
 Exibe parâmetros operacionais.
 
-## <a name="syntax"></a>Sintaxe
+## <a name="syntax"></a>Syntax
+
 ```
 d[isplay]
 ```
-#### <a name="parameters"></a>Parâmetros
-nenhum
+
 ## <a name="examples"></a>Exemplos
-Exibir parâmetros operacionais.
+
+Para exibir os parâmetros operacionais, digite:
+
 ```
 d
 ```
+
 ## <a name="additional-references"></a>Referências adicionais
+
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
