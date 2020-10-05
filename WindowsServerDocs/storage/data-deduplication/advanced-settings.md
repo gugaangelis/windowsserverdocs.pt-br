@@ -6,12 +6,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 73f9ce6e88fa56a645f0ffedba4f38dec87e973b
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: b8410cb5804e8cbac3ce03e575c2f33c2bc61388
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87936373"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716863"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configurações avançadas de Eliminação de Duplicação de Dados
 
@@ -24,10 +24,10 @@ Os [planos de trabalho de Eliminação de Duplicação de Dados padrão](underst
 
 ### <a name="changing-a-data-deduplication-schedule"></a><a id="modifying-job-schedules-change-schedule"></a>Alterar um plano de Eliminação de Duplicação de Dados
 Os trabalhos de Eliminação de Duplicação de Dados são programados pelo Agendador de Tarefas do Windows e podem ser exibidos e editados lá no caminho Microsoft\Windows\Deduplication. A Eliminação de Duplicação de Dados inclui vários cmdlets que facilitam o agendamento.
-* [`Get-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))mostra os trabalhos agendados atuais.
-* [`New-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))Cria um novo trabalho agendado.
-* [`Set-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))modifica um trabalho agendado existente.
-* [`Remove-DedupSchedule`](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc730705(v=ws.11))Remove um trabalho agendado.
+* [`Get-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/get-dedupschedule?view=win10-ps) mostra os trabalhos agendados atuais.
+* [`New-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/new-dedupschedule?view=win10-ps) Cria um novo trabalho agendado.
+* [`Set-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/set-dedupschedule?view=win10-ps) modifica um trabalho agendado existente.
+* [`Remove-DedupSchedule`](https://docs.microsoft.com/powershell/module/deduplication/remove-dedupschedule?view=win10-ps) Remove um trabalho agendado.
 
 O motivo mais comum para alterar quando executar trabalhos de Eliminação de Duplicação de Dados é garantir que os trabalhos sejam executados durante fora do horário comercial. O exemplo de passo a passo a seguir mostra como modificar o plano de Eliminação de Duplicação de Dados para um cenário em que *tudo corre bem*: um host hiperconvergido do Hyper-V que fica ocioso nos fins de semana e depois das 19h durante a semana. Para alterar a agenda, execute os cmdlets do PowerShell a seguir em um contexto de Administrador.
 
@@ -74,11 +74,11 @@ Você pode alternar as seguintes configurações para trabalhos de Eliminação 
     </thead>
     <tbody>
         <tr>
-            <td>Type</td>
+            <td>Tipo</td>
             <td>O tipo do trabalho que deve ser agendado</td>
             <td>
                 <ul>
-                    <li>Otimização</li>
+                    <li>Optimization</li>
                     <li>Coleta de Lixo</li>
                     <li>Anulação</li>
                 </ul>
@@ -308,7 +308,7 @@ Por exemplo, convém desabilitar a coleta de lixo completa. Para saber mais sobr
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">Coleta de Lixo completa</a>. Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso Backup</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code>poderá ser usado se a coleta de lixo completa for desejada em um volume de backup.</td>
+            <td>Essa configuração define o intervalo no qual os trabalhos de Coleta de Lixo regulares se tornam <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">Coleta de Lixo completa</a>. Uma configuração de X significa que a cada <sup>X</sup> trabalhos, um era trabalho de Coleta de Lixo completa. Observe que a Coleta de Lixo completa sempre está desabilitada (independentemente do valor do registro) para volumes com o <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de uso Backup</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code> poderá ser usado se a coleta de lixo completa for desejada em um volume de backup.</td>
             <td>Números inteiros (-1 indica desabilitada)</td>
             <td>Confira <a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">esta pergunta frequente</a></td>
         </tr>

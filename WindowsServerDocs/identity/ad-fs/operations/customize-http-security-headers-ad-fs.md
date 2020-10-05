@@ -7,24 +7,24 @@ manager: daveba
 ms.reviewer: akgoel23
 ms.date: 02/19/2019
 ms.topic: article
-ms.openlocfilehash: 0984625564bfc6dabf8951fdcdf09fe76b0fcbdf
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: ecb70f0b200ee1f143219fb6c88a15c5dc58a7d9
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87949700"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716917"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar cabeçalhos de resposta de segurança HTTP com o AD FS 2019
 
 Para proteger contra vulnerabilidades comuns de segurança e fornecer aos administradores a capacidade de aproveitar os avanços mais recentes em mecanismos de proteção baseados em navegador, AD FS 2019 adicionou a funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP enviados pelo AD FS. Isso é realizado por meio da introdução de dois novos cmdlets: `Get-AdfsResponseHeaders` e `Set-AdfsResponseHeaders` .
 
->[!NOTE]
->A funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP (exceto cabeçalhos CORS) usando cmdlets: `Get-AdfsResponseHeaders` e `Set-AdfsResponseHeaders` foi reportado para AD FS 2016. Você pode adicionar a funcionalidade ao seu AD FS 2016 instalando [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473) e [KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459).
+> [!NOTE]
+> A funcionalidade para personalizar os cabeçalhos de resposta de segurança HTTP (exceto cabeçalhos CORS) usando cmdlets: `Get-AdfsResponseHeaders` e `Set-AdfsResponseHeaders` foi reportado para AD FS 2016. Você pode adicionar a funcionalidade ao seu AD FS 2016 instalando [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473) e [KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459).
 
 Neste documento, abordaremos os cabeçalhos de resposta de segurança usados com frequência para demonstrar como personalizar os cabeçalhos enviados pelo AD FS 2019.
 
->[!NOTE]
->O documento supõe que o AD FS 2019 foi instalado.
+> [!NOTE]
+> O documento supõe que o AD FS 2019 foi instalado.
 
 
 Antes de discutirmos os cabeçalhos, vamos examinar alguns cenários que criam a necessidade de administradores personalizar cabeçalhos de segurança
@@ -142,8 +142,8 @@ Para entender melhor a solicitação de CORS, vamos analisar um cenário em que 
     - Access-Control-Request-Method – identifica o método HTTP (por exemplo, DELETE) a ser usado quando a solicitação real é feita
     - Access-Control-request-headers-identifica os cabeçalhos HTTP a serem usados quando a solicitação real é feita
 
-   >[!NOTE]
-   >A solicitação CORS é semelhante a uma solicitação HTTP padrão. no entanto, a presença de um cabeçalho de origem sinaliza que a solicitação de entrada está relacionada a CORS.
+   > [!NOTE]
+   > A solicitação CORS é semelhante a uma solicitação HTTP padrão. no entanto, a presença de um cabeçalho de origem sinaliza que a solicitação de entrada está relacionada a CORS.
 3. AD FS verifica se a origem da API da Web incluída no cabeçalho está listada nas origens confiáveis configuradas no AD FS (detalhes sobre como modificar as origens confiáveis na seção de personalização do CORS abaixo). AD FS, em seguida, responde com os seguintes cabeçalhos:
     - Acesso-controle-permitir-Origin – valor igual ao cabeçalho de origem
     - Access-Control-Allow-Method – valor igual ao cabeçalho Access-Control-Request-Method
@@ -205,8 +205,8 @@ As seguintes fontes podem ser definidas para a política default-src:
 - ' none ' – especificar isso restringe o conteúdo de qualquer origem a ser carregada
 - dados:-especificando dados: URIs permite que os criadores de conteúdo insiram pequenos arquivos embutidos em documentos. Uso não recomendado.
 
->[!NOTE]
->O AD FS usa JavaScript no processo de autenticação e, portanto, habilita o JavaScript, incluindo fontes ' não seguras ' e ' não seguras ' na política padrão.
+> [!NOTE]
+> O AD FS usa JavaScript no processo de autenticação e, portanto, habilita o JavaScript, incluindo fontes ' não seguras ' e ' não seguras ' na política padrão.
 
 ### <a name="custom-headers"></a>Cabeçalhos personalizados
 Além dos cabeçalhos de resposta de segurança listados acima (HSTS, CSP, X-Frame-Options, X-XSS-Protection e CORS), AD FS 2019 fornece a capacidade de definir novos cabeçalhos.

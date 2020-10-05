@@ -7,13 +7,16 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f8759679865c87c11417c64ef130736de2a1e9e
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 912f0e0cb3f3b632b25eda49f6f65338e7782326
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89634611"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716897"
 ---
+> [!IMPORTANT]
+> O comando **GRAFTABL** é um comando herdado e, portanto, desatualizado. Normalmente, ele não é instalado em versões modernas do Windows. Consulte a página [chcp](https://docs.microsoft.com/windows-server/administration/windows-commands/chcp) para manipulação de página de código.
+
 # <a name="graftabl"></a>graftabl
 
 Permite que os sistemas operacionais Windows exibam um conjunto de caracteres estendidos no modo gráfico. Se usado sem parâmetros, **GRAFTABL** exibirá a página de código anterior e a atual.

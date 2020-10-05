@@ -6,16 +6,16 @@ author: JasonGerend
 ms.author: jgerend
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eddc639fd07516b95b23684ec4137f328b7c105
-ms.sourcegitcommit: 08da40966c5d633f8748c8ae348f12656a54d3b2
+ms.openlocfilehash: 4758cc67c1dd5dc77ecacf1a8229d59f27eac60e
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88140293"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716874"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implantar espaços de armazenamento em um servidor autônomo
 
->Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Aplica-se a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este tópico descreve como implantar espaços de armazenamento em um servidor autônomo. Para obter informações sobre como criar um espaço de armazenamento em cluster, consulte [implantar um cluster de espaços de armazenamento no Windows Server 2012 R2](</previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>).
 
@@ -23,8 +23,8 @@ Para criar um espaço de armazenamento, você deve primeiramente criar um ou mai
 
 Em um pool de armazenamento, você pode criar um ou mais discos virtuais. Esses discos virtuais também são chamados de *espaços de armazenamento*. Um espaço de armazenamento aparece no sistema operacional do Windows como um disco regular, a partir do qual é possível criar volumes formatados. Ao criar um disco virtual por meio da interface de usuário de Serviços de Arquivo e Armazenamento, você pode configurar o tipo de resiliência (simples, espelho ou paridade), o tipo de provisionamento (dinâmico ou fixo) e o tamanho. Com o Windows PowerShell, você pode definir parâmetros adicionais, como o número de colunas, o valor de intercalação e quais discos físicos devem ser usados no pool. Para obter informações sobre esses parâmetros adicionais, consulte [New-VirtualDisk](/powershell/module/storage/new-virtualdisk?view=win10-ps) e o [Windows Server Storage forum](/answers/topics/windows-server-storage.html).
 
->[!NOTE]
->Você não pode usar um espaço de armazenamento para hospedar o sistema operacional Windows.
+> [!NOTE]
+> Você não pode usar um espaço de armazenamento para hospedar o sistema operacional Windows.
 
 Em um disco virtual, você pode criar um ou mais volumes. Ao criar um volume, você pode configurar o tamanho, a letra da unidade ou a pasta, sistema de arquivos (sistema de arquivos NTFS ou ReFS), o tamanho da unidade de alocação e um rótulo de volume opcional.
 
@@ -34,8 +34,8 @@ A figura a seguir ilustra o fluxo de trabalho dos Espaços de Armazenamento.
 
 **Figura 1: fluxo de trabalho de espaços de armazenamento**
 
->[!NOTE]
->Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
+> [!NOTE]
+> Este tópico inclui cmdlets do Windows PowerShell de exemplo que podem ser usados para automatizar alguns dos procedimentos descritos. Para obter mais informações, consulte [PowerShell](/powershell/scripting/powershell-scripting?view=powershell-6).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -46,10 +46,10 @@ Para usar espaços de armazenamento em um servidor autônomo baseado no Windows 
 
 |Área|Requisito|Observações|
 |---|---|---|
-|Tipos de barramento de disco|-SAS (Serial Attached SCSI)<br>-SATA (Serial Advanced Technology Attachment)<br>-Controladores de Fibre Channel e iSCSI. |Você também pode usar unidades USB. No entanto, não é ideal usar unidades USB em um ambiente de servidor.<br>Os espaços de armazenamento têm suporte em controladores iSCSI e Fibre Channel (FC), contanto que os discos virtuais criados sobre eles não sejam resilientes (simples com qualquer número de colunas).<br>|
+|Tipos de barramento de disco|– SCSI (SAS)<br>– SATA (Serial Advanced Technology Attachment)<br>– Controladores de iSCSI e Fibre Channel. |Você também pode usar unidades USB. No entanto, não é ideal usar unidades USB em um ambiente de servidor.<br>Os espaços de armazenamento têm suporte em controladores iSCSI e Fibre Channel (FC), contanto que os discos virtuais criados sobre eles não sejam resilientes (simples com qualquer número de colunas).<br>|
 |Configuração de disco|-Discos físicos devem ter pelo menos 4 GB<br>-Os discos devem estar em branco e não formatados. Não crie volumes.||
-|Considerações de HBA|-Adaptadores de barramento de host simples (HBAs) que não dão suporte à funcionalidade de RAID são recomendados<br>-Se for compatível com RAID, os HBAs devem estar no modo não RAID com toda a funcionalidade RAID desabilitada<br>-Os adaptadores não devem abstrair os discos físicos, armazenar dados em cache ou ocultar todos os dispositivos anexados. Isso inclui serviços de compartimentos fornecidos pelos dispositivos JBOD conectados. |Os Espaços de Armazenamento são compatíveis somente com os HBAs nos quais é possível desabilitar totalmente a funcionalidade RAID.|
-|Compartimentos JBOD|-Compartimentos JBOD são opcionais<br>-Recomendado para usar os compartimentos certificados com espaços de armazenamento listados no catálogo do Windows Server<br>-Se você estiver usando um compartimento JBOD, verifique com seu fornecedor de armazenamento que o compartimento dá suporte a espaços de armazenamento para garantir a funcionalidade completa<br>-Para determinar se o compartimento JBOD dá suporte à identificação de compartimento e de slot, execute o seguinte cmdlet do Windows PowerShell:<br><br>`Get-PhysicalDisk \| ? {$_.BusType –eq "SAS"} \| fc`<br><br>Se os campos **EnclosureNumber** e **SlotNumber** contiverem valores, o compartimento dará suporte a esses recursos.||
+|Considerações de HBA|– São recomendados HBAs (adaptadores de barramento de host) simples não compatíveis com o recurso de RAID<br>– Se forem compatíveis com RAID, os HBAs deverão estar no modo não RAID com todo o recurso RAID desabilitado<br>– Os adaptadores não devem abstrair os discos físicos, armazenar dados em cache nem ocultar os dispositivos anexados. Isso inclui serviços de compartimentos fornecidos pelos dispositivos JBOD conectados. |Os Espaços de Armazenamento são compatíveis somente com os HBAs nos quais é possível desabilitar totalmente a funcionalidade RAID.|
+|Compartimentos JBOD|-Compartimentos JBOD são opcionais<br>-Recomendado para usar os compartimentos certificados com espaços de armazenamento listados no catálogo do Windows Server<br>-Se você estiver usando um compartimento JBOD, verifique com seu fornecedor de armazenamento que o compartimento dá suporte a espaços de armazenamento para garantir a funcionalidade completa<br>-Para determinar se o compartimento JBOD dá suporte à identificação de compartimento e de slot, execute o seguinte cmdlet do Windows PowerShell:<br><br> Get-PhysicalDisk \| ? {$_. BusType – EQ "SAS"} \| FC <br> | Se os campos **EnclosureNumber** e **SlotNumber** contiverem valores, o compartimento dará suporte a esses recursos.|
 
 Para planejar o número de discos físicos e o tipo de resiliência desejado para uma implantação de servidor autônoma, use as orientações a seguir.
 
@@ -57,7 +57,7 @@ Para planejar o número de discos físicos e o tipo de resiliência desejado par
 |---|---|---|
 |**Simples**<br><br>-Distribui dados em discos físicos<br>-Maximiza a capacidade do disco e aumenta a taxa de transferência<br>-Sem resiliência (não protege contra falha de disco)<br><br><br><br><br><br><br>|Requer ao menos um disco físico.|Não use para hospedar dados insubstituíveis. Espaços simples não protegem contra falhas de disco.<br><br>Use para hospedar dados temporários ou recriá-los com baixo custo.<br><br>Adequado para cargas de trabalho de alto desempenho em que a resiliência não é necessária ou já é fornecida pelo aplicativo.|
 |**Espelho**<br><br>-Armazena duas ou três cópias dos dados no conjunto de discos físicos<br>-Aumenta a confiabilidade, mas reduz a capacidade. A duplicação ocorre a cada gravação. Um espaço espelhado também distribui os dados entre diversas unidades físicas.<br>-Maior taxa de transferência de dados e menor latência de acesso que a paridade<br>– Usa o controle de região sujo (DRT) para controlar as modificações nos discos no pool. Quando o sistema volta de um desligamento inesperado e os espaços ficam novamente online, o DRT torna os discos do pool consistentes entre si.|Ele requer ao menos dois discos para oferecer proteção contra falha de disco único.<br><br>Ele requer ao menos cinco discos para oferecer proteção contra duas falhas de disco simultâneas.|Use para a maioria das implantações. Por exemplo, espaços de espelho são indicados para o compartilhamento de arquivos geral ou para uma biblioteca de VHD (disco rígido virtual).|
-|**Parity**<br><br>-Distribui dados e informações de paridade em discos físicos<br>-Aumenta a confiabilidade quando comparada a um espaço simples, mas, de certa forma, reduz a capacidade<br>-Aumenta a resiliência por meio do registro em diário. Isso ajuda a prevenir dados corrompidos em caso de desligamento inesperado.|Ele requer ao menos três discos para oferecer proteção contra falha de disco único.|Use para cargas de trabalho que são altamente sequenciais, como arquivos ou backups.|
+|**Parity**<br><br>-Distribui dados e informações de paridade em discos físicos<br>-Aumenta a confiabilidade quando comparada a um espaço simples, mas, de certa forma, reduz a capacidade<br>– Aumenta a resiliência por meio do registro no diário. Isso ajuda a prevenir dados corrompidos em caso de desligamento inesperado.|Ele requer ao menos três discos para oferecer proteção contra falha de disco único.|Use para cargas de trabalho que são altamente sequenciais, como arquivos ou backups.|
 
 ## <a name="step-1-create-a-storage-pool"></a>Etapa 1: criar um pool de armazenamento
 
@@ -69,8 +69,8 @@ Primeiramente, você deve agrupar os discos físicos disponíveis em um ou mais 
 
     Por padrão, os discos disponíveis são incluídos em um pool chamado pool *primordial*. Se nenhum pool primordial estiver listado nos **POOLS DE ARMAZENAMENTO**, isso indica que o armazenamento não cumpre os requisitos dos Espaços de Armazenamento. Verifique se os discos estão de acordo com os requisitos descritos na seção Pré-requisitos.
 
-    >[!TIP]
-    >Se você selecionar o pool de armazenamento **Primordial**, os discos físicos disponíveis estarão listados em **DISCOS FÍSICOS**.
+    > [!TIP]
+    > Se você selecionar o pool de armazenamento **Primordial**, os discos físicos disponíveis estarão listados em **DISCOS FÍSICOS**.
 
 3. Em **pools de armazenamento**, selecione a lista **tarefas** e, em seguida, selecione **novo pool de armazenamento**. O assistente de novo pool de armazenamento será aberto.
 
@@ -88,8 +88,8 @@ Primeiramente, você deve agrupar os discos físicos disponíveis em um ou mais 
 
 8. Na página **exibir resultados** , verifique se todas as tarefas foram concluídas e, em seguida, selecione **fechar**.
 
-    >[!NOTE]
-    >Como opção, para continuar diretamente na próxima etapa, você pode marcar a caixa de seleção **Criar um disco virtual quando esse assistente fecha**.
+    > [!NOTE]
+    > Como opção, para continuar diretamente na próxima etapa, você pode marcar a caixa de seleção **Criar um disco virtual quando esse assistente fecha**.
 
 9. Em **POOLS DE ARMAZENAMENTO**, verifique se o novo pool de armazenamento está listado.
 
@@ -138,8 +138,8 @@ Em seguida, você deverá criar um ou mais discos virtuais no pool de armazename
 
 6. Na página **selecionar o layout de armazenamento** , selecione o layout desejado e, em seguida, selecione **Avançar**.
 
-    >[!NOTE]
-    >Se você selecionar um layout onde você não tem discos físicos suficientes, receberá uma mensagem de erro quando selecionar **Avançar**. Para obter informações sobre qual layout usar e os requisitos de disco, consulte [Prerequisites](#prerequisites)).
+    > [!NOTE]
+    > Se você selecionar um layout onde você não tem discos físicos suficientes, receberá uma mensagem de erro quando selecionar **Avançar**. Para obter informações sobre qual layout usar e os requisitos de disco, consulte [Prerequisites](#prerequisites)).
 
 7. Se você selecionou **espelhamento** como o layout de armazenamento e tiver cinco ou mais discos no pool, a página **configurar as configurações de resiliência** será exibida. Selecione uma das seguintes opções:
 
@@ -156,8 +156,8 @@ Em seguida, você deverá criar um ou mais discos virtuais no pool de armazename
 
      Com o provisionamento fixo, a capacidade de armazenamento é alocada imediatamente, no momento da criação do disco virtual. Portanto o provisionamento fixo usa espaço do pool de armazenamento igual ao tamanho do disco virtual.
 
-     >[!TIP]
-     >Com os Espaços de Armazenamento, você pode criar discos virtuais com ambos os provisionamentos dinâmico e fixo no mesmo pool de armazenamento. Por exemplo, você poderia usar um disco virtual com provisionamento dinâmico para hospedar um banco de dados e outro com provisionamento fixo para hospedar os arquivos de log associados.
+     > [!TIP]
+     > Com os Espaços de Armazenamento, você pode criar discos virtuais com ambos os provisionamentos dinâmico e fixo no mesmo pool de armazenamento. Por exemplo, você poderia usar um disco virtual com provisionamento dinâmico para hospedar um banco de dados e outro com provisionamento fixo para hospedar os arquivos de log associados.
 
 9. Na página **Especificar o tamanho do disco virtual**, execute o seguinte procedimento:
 
@@ -179,8 +179,8 @@ Em seguida, você deverá criar um ou mais discos virtuais no pool de armazename
 
 11. Na página **exibir resultados** , verifique se todas as tarefas foram concluídas e, em seguida, selecione **fechar**.
 
-    >[!TIP]
-    >A caixa de seleção **Criar um volume ao fechar o assistente** é marcada por padrão. Isso levará você até a próxima etapa.
+    > [!TIP]
+    > A caixa de seleção **Criar um volume ao fechar o assistente** é marcada por padrão. Isso levará você até a próxima etapa.
 
 ### <a name="windows-powershell-equivalent-commands-for-creating-virtual-disks"></a>Comandos equivalentes do Windows PowerShell para criar discos virtuais
 
@@ -206,8 +206,8 @@ New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualD
 
 O exemplo a seguir cria um disco virtual chamado *VirtualDisk1* em um pool de armazenamento chamado *StoragePool1*. O disco virtual usa espelhamento de três vias e possui tamanho fixo de 20 GB.
 
->[!NOTE]
->Você deve ter pelo menos cinco discos físicos no pool de armazenamento para que este cmdlet funcione. (Isso não inclui discos alocados como espera ativa.)
+> [!NOTE]
+> Você deve ter pelo menos cinco discos físicos no pool de armazenamento para que este cmdlet funcione. (Isso não inclui discos alocados como espera ativa.)
 
 ```PowerShell
 New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1 -ResiliencySettingName Mirror -NumberOfDataCopies 3 -Size 20GB -ProvisioningType Fixed
@@ -239,8 +239,8 @@ Em seguida, você deve criar um volume para o disco virtual. Você pode atribuir
 
     2. Na lista **Tamanho da unidade de alocação**, deixe a configuração **Padrão** ou defina o tamanho da unidade de alocação.
 
-        >[!NOTE]
-        >Para obter mais informações sobre o tamanho da unidade de alocação, consulte [Tamanho de cluster padrão para NTFS, FAT e exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
+        > [!NOTE]
+        > Para obter mais informações sobre o tamanho da unidade de alocação, consulte [Tamanho de cluster padrão para NTFS, FAT e exFAT](https://support.microsoft.com/help/140365/default-cluster-size-for-ntfs-fat-and-exfat).
 
 
     3. Opcionalmente, na caixa **Rótulo do volume**, digite um nome de rótulo para o volume, por exemplo, **Dados de RH**.

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: f750f7487e8220c93ea30a78ee185f28a74fd512
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: 71a443f4b588139a60b2330e668919a23250ba0f
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89622366"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716887"
 ---
 # <a name="taskkill"></a>taskkill
 
@@ -35,9 +35,9 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |      /s \<computer>       |                                                                                    Especifica o nome ou o endereço IP de um computador remoto (não use barras invertidas). O padrão é o computador local.                                                                                     |
 | /u \<Domain>\\\<UserName> | Executa o comando com as permissões de conta do usuário que é especificado por *username* ou *Domain* \\ *username*. **/u** pode ser especificado somente se **/s** for especificado. O padrão é as permissões do usuário que está conectado no momento no computador que está emitindo o comando. |
 |      /p \<Password>       |                                                                                                   Especifica a senha da conta de usuário que é especificada no parâmetro **/u** .                                                                                                   |
-|       /Fi \<Filter>       |          Aplica um filtro para selecionar um conjunto de tarefas. Você pode usar mais de um filtro ou usar o caractere curinga ( **\\** \* ) para especificar todas as tarefas ou nomes de imagem. Consulte a tabela a seguir [para obter nomes de filtro](#filter-names-operators-and-values), operadores e valores válidos.           |
+|       /Fi \<Filter>       |          Aplica um filtro para selecionar um conjunto de tarefas. Você pode usar mais de um filtro ou usar o caractere curinga ( `*` ) para especificar todas as tarefas ou nomes de imagem. Consulte a tabela a seguir [para obter nomes de filtro](#filter-names-operators-and-values), operadores e valores válidos.           |
 |     /PID \<ProcessID>     |                                                                                                                 Especifica a ID do processo a ser encerrada.                                                                                                                 |
-|     /im \<ImageName>      |                                                                                Especifica o nome da imagem do processo a ser encerrado. Use o caractere curinga ( **\\** \* ) para especificar todos os nomes de imagem.                                                                                |
+|     /im \<ImageName>      |                                                                                Especifica o nome da imagem do processo a ser encerrado. Use o caractere curinga ( `*` ) para especificar todos os nomes de imagem.                                                                                |
 |            /f             |                                                                    Especifica que os processos são encerrados de modo forçado. Esse parâmetro é ignorado para processos remotos; todos os processos remotos são encerrados de modo forçado.                                                                     |
 |            /t             |                                                                                                          Encerra o processo especificado e todos os processos filho iniciados por ele.                                                                                                          |
 
@@ -58,7 +58,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ## <a name="remarks"></a>Comentários
 * Não há suporte para os filtros de STATUS e WINDOWTITLE quando um sistema remoto é especificado.
-* O caractere curinga ( **\\** <em>) é aceito para a opção **/im</em> * somente quando um filtro é aplicado.
+* O caractere curinga ( `*` ) é aceito para a opção **/im** somente quando um filtro é aplicado.
 * O encerramento de processos remotos sempre é executado de modo forçado, independentemente de a opção **/f** ser especificada.
 * O fornecimento de um nome de computador para o filtro de nome de host causa um desligamento e todos os processos são interrompidos.
 * Você pode usar o **TaskList** para determinar a ID do processo (PID) do processo a ser encerrado.
@@ -74,25 +74,25 @@ taskkill /pid 1230 /pid 1241 /pid 1253
 Para forçar o encerramento do processo Notepad.exe se ele foi iniciado pelo sistema, digite:
 
 ```
-taskkill /f /fi USERNAME eq NT AUTHORITY\SYSTEM /im notepad.exe
+taskkill /f /fi "USERNAME eq NT AUTHORITY\SYSTEM" /im notepad.exe
 ```
 
 Para finalizar todos os processos no computador remoto srvmain com um nome de imagem começando com observação, ao usar as credenciais para a conta de usuário Hiropln, digite:
 
 ```
-taskkill /s srvmain /u maindom\hiropln /p p@ssW23 /fi IMAGENAME eq note* /im *
+taskkill /s srvmain /u maindom\hiropln /p p@ssW23 /fi "IMAGENAME eq note*" /im *
 ```
 
 Para encerrar o processo com a ID de processo 2134 e todos os processos filho que ele iniciou, mas somente se esses processos tiverem sido iniciados pela conta de administrador, digite:
 
 ```
-taskkill /pid 2134 /t /fi username eq administrator
+taskkill /pid 2134 /t /fi "username eq administrator"
 ```
 
 Para finalizar todos os processos que têm uma ID de processo maior ou igual a 1000, independentemente de seus nomes de imagem, digite:
 
 ```
-taskkill /f /fi PID ge 1000 /im *
+taskkill /f /fi "PID ge 1000" /im *
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
