@@ -6,12 +6,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 04/07/2020
-ms.openlocfilehash: c0ea0a8e9a030c8d35bf3042b16108523753b36b
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 440d3c0dc51cc9e7d9c4d8abe439f4adb5da07dc
+ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746541"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91752888"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuais do Debian com suporte no Hyper-V
 
@@ -77,11 +77,11 @@ O mapa de distribuição de recursos a seguir indica os recursos que estão pres
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
    ```
-4. Os recursos mais recentes do kernel de upstream só estão disponíveis usando o kernel inclusos do [Debian](https://wiki.debian.org/Backports).
+4. Os recursos mais recentes do kernel de upstream só estão disponíveis usando os kernels disponíveis no [repositório de backports do Debian](https://wiki.debian.org/Backports).
 
 5. Enquanto o Debian 7. x está sem suporte e usa um kernel mais antigo, o kernel incluído no Debian backports para Debian 7. x aprimorou os recursos do Hyper-V.
 
-Consulte Também
+## <a name="see-also"></a>Consulte Também
 
 * [Máquinas virtuais CentOS e Red Hat Enterprise Linux com suporte no Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

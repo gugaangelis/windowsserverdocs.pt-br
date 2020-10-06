@@ -6,12 +6,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 ms.author: benarm
 author: BenjaminArmstrong
 ms.date: 09/21/2017
-ms.openlocfilehash: 49ea6e324a11d2261dae8133e29d86d2c5bacae7
-ms.sourcegitcommit: dd1fbb5d7e71ba8cd1b5bfaf38e3123bca115572
+ms.openlocfilehash: 2a6107468e63f819e1957db0736c1a07c5dc24a0
+ms.sourcegitcommit: faa5db4cdba4ad2b3a65533b6b49d960080923c9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90746701"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91752880"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>O que há de novo no Hyper-V no Windows Server
 
@@ -162,7 +162,7 @@ Depois de atualizar o nível funcional do cluster:
 
 -   Você pode habilitar novos recursos do Hyper-V.
 
--   Para disponibilizar novos recursos de máquina virtual, use o cmdlet Update-VmConfigurationVersion para atualizar manualmente o nível de configuração da máquina virtual. Para obter instruções, consulte [atualizar a versão da máquina virtual](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md).
+-   Para disponibilizar novos recursos de máquina virtual, use o `Update-vmVersion` cmdlet para atualizar manualmente o nível de configuração da máquina virtual. Para obter instruções, consulte [atualizar a versão da máquina virtual](deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md).
 -   Você não pode adicionar um nó ao cluster Hyper-V que executa o Windows Server 2012 R2.
 
 > [!NOTE]
