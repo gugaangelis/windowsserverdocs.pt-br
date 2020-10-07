@@ -5,12 +5,12 @@ ms.topic: article
 author: apdutta
 ms.author: apdutta
 ms.date: 02/20/2020
-ms.openlocfilehash: 30d81f8c36c5ba745d0af1d940d8f4f3971d37a0
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: 926e28cff1815e5f6a82185ad78a3825ed188def
+ms.sourcegitcommit: ad2c13b09044710bf14236308ade8d74877c3e0d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078563"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91591156"
 ---
 # <a name="netsh-mbn-commands"></a>Comandos netsh mbn
 
@@ -33,6 +33,7 @@ Os comandos netsh mbn disponíveis são:
 - [help](#help)
 - [set](#set)
 - [show](#show)
+- [teste](#test)
 
 ## <a name="add"></a>adicionar
 
@@ -499,57 +500,34 @@ set tracing mode=yes
 
 Exibe informações de rede de banda larga móvel.
 
-Os comandos netsh mbn set disponíveis são:
+Os comandos netsh mbn show disponíveis são:
 
-- [Comandos netsh mbn](#netsh-mbn-commands)
-  - [add](#add)
-    - [dmprofile](#dmprofile)
-    - [profile](#profile)
-  - [connect](#connect)
-  - [delete](#delete)
-    - [dmprofile](#dmprofile-1)
-    - [profile](#profile-1)
-  - [diagnose](#diagnose)
-  - [disconnect](#disconnect)
-  - [dump](#dump)
-  - [help](#help)
-  - [set](#set)
-    - [acstate](#acstate)
-    - [dataenablement](#dataenablement)
-    - [dataroamcontrol](#dataroamcontrol)
-    - [enterpriseapnparams](#enterpriseapnparams)
-    - [highestconncategory](#highestconncategory)
-    - [powerstate](#powerstate)
-    - [profileparameter](#profileparameter)
-    - [slotmapping](#slotmapping)
-    - [tracing](#tracing)
-  - [show](#show)
-    - [acstate](#acstate-1)
-    - [capability](#capability)
-    - [connection](#connection)
-    - [dataenablement](#dataenablement-1)
-    - [dataroamcontrol](#dataroamcontrol-1)
-    - [dmprofiles](#dmprofiles)
-    - [enterpriseapnparams](#enterpriseapnparams-1)
-    - [highestconncategory](#highestconncategory-1)
-    - [homeprovider](#homeprovider)
-    - [interfaces](#interfaces)
-    - [netlteattachinfo](#netlteattachinfo)
-    - [pin](#pin)
-    - [pinlist](#pinlist)
-    - [preferredproviders](#preferredproviders)
-    - [profiles](#profiles)
-    - [profilestate](#profilestate)
-    - [provisionedcontexts](#provisionedcontexts)
-    - [purpose](#purpose)
-    - [radio](#radio)
-    - [readyinfo](#readyinfo)
-    - [signal](#signal)
-    - [slotmapping](#slotmapping-1)
-    - [slotstatus](#slotstatus)
-    - [smsconfig](#smsconfig)
-    - [tracing](#tracing-1)
-    - [visibleproviders](#visibleproviders)
+- [acstate](#acstate-1)
+- [capability](#capability)
+- [connection](#connection)
+- [dataenablement](#dataenablement-1)
+- [dataroamcontrol](#dataroamcontrol-1)
+- [dmprofiles](#dmprofiles)
+- [enterpriseapnparams](#enterpriseapnparams-1)
+- [highestconncategory](#highestconncategory-1)
+- [homeprovider](#homeprovider)
+- [interfaces](#interfaces)
+- [netlteattachinfo](#netlteattachinfo)
+- [pin](#pin)
+- [pinlist](#pinlist)
+- [preferredproviders](#preferredproviders)
+- [profiles](#profiles)
+- [profilestate](#profilestate)
+- [provisionedcontexts](#provisionedcontexts)
+- [purpose](#purpose)
+- [radio](#radio)
+- [readyinfo](#readyinfo)
+- [signal](#signal)
+- [slotmapping](#slotmapping-1)
+- [slotstatus](#slotstatus)
+- [smsconfig](#smsconfig)
+- [tracing](#tracing-1)
+- [visibleproviders](#visibleproviders)
 
 ### <a name="acstate"></a>acstate
 
@@ -1152,4 +1130,49 @@ show visibleproviders [interface=]<string>
 
 ```powershell
 show visibleproviders interface="Cellular"
+```
+
+## <a name="test"></a>test
+
+Executa testes para uma área de recurso específica enquanto coleta logs.
+
+**Sintaxe**
+```
+test [feature=<feature area>] [testPath=<path>] [taefPath=<path>] [param=<test input params>]
+```
+
+**Parâmetros**
+
+| Marca | Valor | Opcional? |
+|---|---|---|
+| **feature** | Uma área de recursos das áreas de recursos compatíveis listadas abaixo | Obrigatório |
+| **testpath** | Demarcador que contém os binários de teste | Opcional se o servidor HLK estiver instalado |
+| **taefpath** | Demarcador que contém os binários TAEF | Opcional se o servidor HLK estiver instalado |
+| **param** | Parâmetros separados por vírgulas, a serem usados para os testes | Necessários para determinadas áreas de recursos, opcionais para outros |
+
+**Comentários**
+
+As áreas de recursos compatíveis são:
+- conectividade
+- potência
+- radio
+- esim
+- sms
+- dssa
+- lte
+- bringup
+
+Alguns testes exigem parâmetros de teste adicionais que precisam ser fornecidos no campo `param`.
+Os parâmetros necessários para os recursos estão listados abaixo.
+- **connectivity**: AccessString, UserName (se aplicável), Senha (se aplicável)
+- **radio**: AccessString, UserName (se aplicável), Senha (se aplicável)
+- **esim**: ActivationCode
+- **bringup**: AccessString, UserName (se aplicável), Senha (se aplicável)
+
+**Exemplos**
+
+```
+test feature=connectivity param="AccessString=internet"
+test feature=lte testpath="C:\\data\\test\\bin" taefpath="C:\\data\\test\\bin"
+test feature=lte
 ```

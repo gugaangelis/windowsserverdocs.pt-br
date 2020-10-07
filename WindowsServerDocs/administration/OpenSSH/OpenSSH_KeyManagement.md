@@ -5,20 +5,20 @@ ms.date: 09/27/2018
 ms.topic: conceptual
 ms.author: damaerte
 author: maertendmsft
-ms.openlocfilehash: cb17f4289483a76efaa3f848477f47edcf4a85b3
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: c722b9fb81dde8e695d6065d7b2268f862e71d39
+ms.sourcegitcommit: 00406560a665a24d5a2b01c68063afdba1c74715
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078393"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91716869"
 ---
 # <a name="openssh-key-management"></a>Gerenciamento de chaves do OpenSSH
 
 A maioria das autenticações em ambientes Windows é feita com um par nome de usuário-senha.
 Isso funciona bem para sistemas que compartilham um domínio comum.
-Ao trabalhar entre domínios, como entre sistemas locais e hospedados na nuvem, torna-se mais difícil.
+Ao trabalhar entre domínios, como entre sistemas locais e hospedados na nuvem, ele se torna vulnerável a intrusões de força bruta.
 
-Por comparação, os ambientes do Linux geralmente usam pares chave pública/chave privada para direcionar a autenticação.
+Por comparação, os ambientes do Linux geralmente usam pares chave pública/chave privada para direcionar a autenticação que não exige o uso de senhas que podem ser adivinhadas.
 O OpenSSH inclui ferramentas para ajudar a dar suporte a isso, especificamente:
 
 * __ssh-keygen__ para gerar chaves seguras

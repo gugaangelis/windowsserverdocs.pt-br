@@ -7,12 +7,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 18142988108e1eafe59ca7fd83a29dd4dfb87720
-ms.sourcegitcommit: 664ed9bb0bbac2c9c0727fc2416d8c437f2d5cbe
+ms.openlocfilehash: e2bf87c27e8e61fa4baba81f234381d342af1343
+ms.sourcegitcommit: ed2b98e06bf7f616432bf8b6ad96544a34d5ce5c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89472026"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91625468"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novidades do cliente Web
 
@@ -23,6 +23,9 @@ Atualizamos regularmente o [cliente da Web da Área de Trabalho Remota](remote-d
 
 ## <a name="updates-for-10220"></a>Atualizações da versão 1.0.22.0
 *Data da publicação: 02/09/2020*
+
+> [!IMPORTANT]
+> Na versão 1.0.22.0, apresentamos uma regressão que afeta alguns sistemas operacionais Chromebook. Os usuários em sistemas operacionais afetados não poderão se conectar a uma sessão remota usando o cliente Web. Atualmente, estamos investigando esse problema e liberaremos uma nova versão do cliente Web assim que corrigirmos essa regressão. Enquanto isso, você poderá evitar esse problema revertendo para a versão 1.0.21.0. 
 
 - Agora, os usuários podem mover o menu minimizado.
 - Suporte aprimorado para monitores 4K e ultra-amplos e correção de um problema em que a cópia de grandes quantidades de dados causava falhas em sessões.
