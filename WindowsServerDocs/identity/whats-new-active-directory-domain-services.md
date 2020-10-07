@@ -6,12 +6,12 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 666b05d4a08ad72a62bffec05051ceed2155c36f
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 727e3dde99c0c2e7d4aa8999a91a2b913d9a314b
+ms.sourcegitcommit: 1808ce451b9e37ec1110bd684e1b0d3812fc77e0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87956023"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772396"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Novidades no Active Directory Domain Services para Windows Server 2016
 
@@ -67,11 +67,11 @@ Benefícios:
    - Acesso a Microsoft Store com a conta corporativa
    - Blocos dinâmicos e notificações
 
-- **Acesse recursos organizacionais** em dispositivos móveis (telefones, phablets) que não podem ser adicionados a um domínio do Windows, sejam de propriedade corporativa ou BYOD
+- **Acesse recursos organizacionais** em dispositivos móveis (telefones, tablets) que não podem ser adicionados a um domínio do Windows, independentemente de serem de propriedade corporativa ou BYOD.
 - **Logon único no** Office 365 e em outros aplicativos, sites e recursos organizacionais.
 - **Em dispositivos BYOD**, adicione uma conta de trabalho (de um domínio local ou do Azure AD) a um dispositivo de propriedade pessoal e aproveite o SSO para trabalhar com recursos, por meio de aplicativos e na Web, de uma forma que ajude a garantir a conformidade com novos recursos, como controle de conta condicional e atestado de integridade do dispositivo.
-- A **integração de MDM** permite que você registre automaticamente os dispositivos no MDM (Intune ou de terceiros)
-- **Configurar o modo "quiosque" e os dispositivos compartilhados** para vários usuários em sua organização
+- A **integração de MDM** permite que você registre automaticamente os dispositivos no MDM (Intune ou de terceiros).
+- **Configure o modo "quiosque" e os dispositivos compartilhados** para vários usuários em sua organização.
 - A **experiência do desenvolvedor** permite que você crie aplicativos que atendem a contextos corporativos e pessoais com uma pilha de programa compartilhada.
 - A opção de **geração de imagens** permite escolher entre imagens e permitir que os usuários configurem dispositivos corporativos diretamente durante a experiência de primeira execução.
 
