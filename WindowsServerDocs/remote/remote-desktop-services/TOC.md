@@ -109,5 +109,6 @@
 #### [O cliente de Área de Trabalho Remota se desconecta e não pode se reconectar à mesma sessão](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [Um laptop remoto se desconecta da rede sem fio](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [Desempenho ruim ou problemas com o aplicativo durante a conexão de área de trabalho remota](troubleshoot/poor-performance-or-application-problems.md)
+#### [Problema do editor de método de entrada em cenários do RemoteApp](troubleshoot/input-method-editor-error.md)
 
 ## [Recursos adicionais](rds-get-support.md)

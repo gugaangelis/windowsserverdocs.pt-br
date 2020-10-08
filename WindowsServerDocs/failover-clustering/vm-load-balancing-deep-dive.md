@@ -2,16 +2,16 @@
 ms.assetid: 5b5bab7a-727b-47ce-8efa-1d37a9639cba
 title: Aprofundamento de balanceamento de carga de máquina virtual
 ms.topic: article
-author: bhattacharyaz
 manager: eldenc
-ms.author: subhatt
+ms.author: johnmar
+author: JasonGerend
 ms.date: 09/19/2016
-ms.openlocfilehash: cebdc8c192abd737478c3b7a0c3db3e4a2bc8091
-ms.sourcegitcommit: dfa48f77b751dbc34409aced628eb2f17c912f08
+ms.openlocfilehash: 7fc9b449b11b5faf05ac279628f093053e292e8c
+ms.sourcegitcommit: 7a8a608df059b4278a974c52ed7b865421a83aa6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87957143"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833308"
 ---
 # <a name="virtual-machine-load-balancing-deep-dive"></a>Aprofundamento de balanceamento de carga de máquina virtual
 
@@ -35,7 +35,7 @@ A agressividade de balanceamento com base na memória e na heurística da CPU po
 |-------------------|----------------|----------|
 | 1 (padrão) | Baixo | Mover quando o host tiver mais de 80% carregado |
 | 2 | Médio | Mover quando o host tiver mais de 70% carregado |
-| 3 | Alta | Média de nós e movimentação quando o host é superior a 5% acima da média |
+| 3 | Alto | Média de nós e movimentação quando o host é superior a 5% acima da média |
 
 ![Gráfico de um PowerShell de configuração da agressividade de balanceamento](media/vm-load-balancing/detailed-VM-load-balancing-1.jpg)
 
@@ -43,7 +43,7 @@ A agressividade de balanceamento com base na memória e na heurística da CPU po
 O balanceamento de carga de VM é habilitado por padrão e quando ocorre o balanceamento de carga pode ser configurado pela propriedade comum de cluster ' AutoBalancerMode '. Para controlar quando a imparcialção de nó balanceia o cluster:
 
 ### <a name="using-failover-cluster-manager"></a>Usando Gerenciador de Cluster de Failover:
-1. Clique com o botão direito do mouse no nome do cluster e selecione o ![ elemento gráfico da opção "Propriedades" da seleção de propriedade para cluster por meio de Gerenciador de cluster de failover](media/vm-load-balancing/detailed-VM-load-balancing-2.jpg)
+1. Clique com o botão direito do mouse no nome do cluster e selecione o  ![ elemento gráfico da opção "Propriedades" da seleção de propriedade para cluster por meio de Gerenciador de cluster de failover](media/vm-load-balancing/detailed-VM-load-balancing-2.jpg)
 
 2.  Selecione o gráfico do painel "balanceador" para ![ selecionar a opção de balanceador por meio de Gerenciador de cluster de failover](media/vm-load-balancing/detailed-VM-load-balancing-3.jpg)
 
