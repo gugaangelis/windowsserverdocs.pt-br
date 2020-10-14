@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 09/22/2020
+ms.date: 10/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 4edd85e305d30cfe22480021b67f3c0213275926
-ms.sourcegitcommit: c0e0bdc9a1b28bd21951d68b5cfd2cce48a770ef
+ms.openlocfilehash: 96a307b06b0a29cfb66ba52ca5d8ea031bd979e7
+ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90999250"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955757"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -38,6 +38,7 @@ Download: Windows [64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [W
 - Corrigida uma falha ao enumerar dispositivos de áudio ou vídeo no Teams com a otimização de mídia para o Teams habilitada.
 - Adicionado um link "Precisa de ajuda com as configurações?" para a página de configurações da área de trabalho.
 - Corrigido um problema com o botão "Assinar" que acontecia ao usar temas escuros de alto contraste.
+- É permitido um limite de até 20 credenciais por aplicativo.
 
 ## <a name="updates-for-version-121275"></a>Atualizações para a versão 1.2.1275
 

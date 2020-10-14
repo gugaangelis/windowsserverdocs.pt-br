@@ -6,14 +6,14 @@ ms.assetid: 12efe858-6b76-4e08-9f72-b9603aceb0fc
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 08/25/2020
+ms.date: 10/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: a44926d50fae9dea38e3f5c46db423991a414a87
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: 2c34ab9c769beb25437e26442d85f75d40db163e
+ms.sourcegitcommit: ed77cfe8140a480b025907716e3635d40a5e3303
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941506"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91806631"
 ---
 # <a name="compare-the-clients"></a>Comparar os clientes
 
@@ -29,7 +29,7 @@ Se você acessar sua área de trabalho pessoal remotamente, haverá vários redi
 
 ### <a name="input-redirection"></a>Redirecionamento de entrada
 
-| Redirecionamento | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Windows Store | Android | iOS | macOS | Cliente Web    |
+| Redirecionamento | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Cliente da Microsoft Store</br>(URDC) | Android | iOS | macOS | Cliente Web    |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|---------------|
 | Keyboard    | X                         | X                           | X             | X       | X   | X     | X             |
 | Mouse       | X                         | X                           | X             | X       | X\* | X     | X             |
@@ -40,7 +40,7 @@ Se você acessar sua área de trabalho pessoal remotamente, haverá vários redi
 
 ### <a name="port-redirection"></a>Redirecionamento de porta
 
-| Redirecionamento | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Windows Store | Android | iOS | macOS | Cliente Web |
+| Redirecionamento | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Cliente da Microsoft Store</br>(URDC) | Android | iOS | macOS | Cliente Web |
 |-------------|---------------------------|-----------------------------|---------------|---------|-----|-------|------------|
 | Porta serial | X                         | X                           |               |         |     |       |            |
 | USB         | X                         | X                           |               |         |     |       |            |
@@ -49,7 +49,7 @@ Quando você habilita o redirecionamento de porta USB, quaisquer dispositivos US
 
 ### <a name="other-redirection-devices-etc"></a>Outros redirecionamentos (dispositivos etc.)
 
-| Redirecionamento         | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Windows Store | Android | iOS         | macOS                           | Cliente Web    |
+| Redirecionamento         | Windows Inbox</br>(MSTSC) | Windows Desktop</br>(MSRDC) | Cliente da Microsoft Store</br>(URDC) | Android | iOS         | macOS                           | Cliente Web    |
 |---------------------|---------------------------|-----------------------------|---------------|---------|-------------|---------------------------------|---------------|
 | Câmeras             | X                         | X                           |               |     X    |   X         | X                               |               |
 | Área de Transferência           | X                         | X                           | X             | Texto    | Texto, imagens | X                               | texto          |
