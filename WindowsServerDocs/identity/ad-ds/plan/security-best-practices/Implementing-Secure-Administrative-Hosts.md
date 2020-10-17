@@ -6,12 +6,12 @@ ms.author: iainfou
 manager: daveba
 ms.date: 05/31/2017
 ms.topic: article
-ms.openlocfilehash: 63f4f805ca5326f480ce3496deecf04a40d5ffa4
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: b5d559532393d120a9deb6337fe9125c101f34ef
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941426"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155648"
 ---
 # <a name="implementing-secure-administrative-hosts"></a>Implementar hosts administrativos seguros
 
@@ -73,7 +73,7 @@ O [Microsoft Security Compliance Manager](/previous-versions/tn-archive/cc677002
 > No momento em que este artigo foi escrito, o Microsoft Security Compliance Manager não inclui configurações específicas para servidores de salto ou outros hosts administrativos seguros, mas o SCM (Security Compliance Manager) ainda pode ser usado para criar linhas de base iniciais para seus hosts administrativos. No entanto, para proteger adequadamente os hosts, você deve aplicar configurações de segurança adicionais apropriadas a estações de trabalho e servidores altamente protegidos.
 
 ### <a name="applocker"></a>AppLocker
-Hosts administrativos e machinesshould virtuais são configurados com scripts, ferramentas e listas de permissões de aplicativos por meio do AppLocker ou de um software de restrição de aplicativo de terceiros. Quaisquer aplicativos administrativos ou utilitários que não aderem às configurações seguras devem ser atualizados ou substituídos por ferramentas que aderem ao desenvolvimento e às práticas administrativas seguras. Quando são necessárias ferramentas novas ou adicionais em um host administrativo, os aplicativos e utilitários devem ser totalmente testados e, se as ferramentas forem adequadas para a implantação em hosts administrativos, poderão ser adicionados às listas de permissões dos sistemas.
+Hosts administrativos e máquinas virtuais devem ser configurados com script, ferramenta e aplicativos por meio do AppLocker ou de um software de restrição de aplicativo de terceiros. Quaisquer aplicativos administrativos ou utilitários que não aderem às configurações seguras devem ser atualizados ou substituídos por ferramentas que aderem ao desenvolvimento e às práticas administrativas seguras. Quando são necessárias ferramentas novas ou adicionais em um host administrativo, os aplicativos e utilitários devem ser totalmente testados e, se as ferramentas forem adequadas para a implantação em hosts administrativos, poderão ser adicionados aos sistemas.
 
 ### <a name="rdp-restrictions"></a>Restrições de RDP
 Embora a configuração específica varie de acordo com a arquitetura de seus sistemas administrativos, você deve incluir restrições em quais contas e computadores podem ser usados para estabelecer conexões de protocolo RDP (RDP) com sistemas gerenciados, como usar os servidores de salto de Área de Trabalho Remota gateway (Gateway RD) para controlar o acesso a controladores de domínio e outros sistemas gerenciados de usuários e sistemas autorizados.
@@ -86,7 +86,7 @@ Organizações menores podem contar com ofertas como Windows Update ou [Windows 
 Embora você não deva implementar processos de atualização manual para sistemas seguros, configure uma infraestrutura separada para a atualização de sistemas seguros. Mesmo em organizações muito grandes, essa infraestrutura normalmente pode ser implementada por meio de servidores WSUS e GPOs dedicados para sistemas protegidos.
 
 ### <a name="blocking-internet-access"></a>Bloqueando o acesso à Internet
-Os hosts administrativos não devem ter permissão para acessar a Internet nem podem procurar a intranet de uma organização. Navegadores da Web e aplicativos semelhantes não devem ser permitidos em hosts administrativos. Você pode bloquear o acesso à Internet para hosts seguros por meio de uma combinação de configurações de firewall do perímetro, configuração do WFAS e configuração de proxy "buraco negro" em hosts seguros. Você também pode usar a lista de permissões do aplicativo para impedir que os navegadores da Web sejam usados em hosts administrativos.
+Os hosts administrativos não devem ter permissão para acessar a Internet nem podem procurar a intranet de uma organização. Navegadores da Web e aplicativos semelhantes não devem ser permitidos em hosts administrativos. Você pode bloquear o acesso à Internet para hosts seguros por meio de uma combinação de configurações de firewall do perímetro, configuração do WFAS e configuração de proxy "buraco negro" em hosts seguros. Você também pode usar alist do aplicativo para impedir que os navegadores da Web sejam usados em hosts administrativos.
 
 ### <a name="virtualization"></a>Virtualização
 Sempre que possível, considere implementar máquinas virtuais como hosts administrativos. Usando a virtualização, você pode criar sistemas administrativos por usuário que são armazenados e gerenciados centralmente e que podem ser facilmente desligados quando não estiverem em uso, garantindo que as credenciais não sejam deixadas ativas nos sistemas administrativos. Você também pode exigir que os hosts administrativos virtuais sejam redefinidos para um instantâneo inicial após cada uso, garantindo que as máquinas virtuais permaneçam original. Mais informações sobre as opções de virtualização de hosts administrativos são fornecidas na seção a seguir.

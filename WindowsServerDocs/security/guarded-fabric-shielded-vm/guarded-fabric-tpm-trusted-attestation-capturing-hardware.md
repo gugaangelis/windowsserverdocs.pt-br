@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.author: ryanpu
 ms.date: 04/01/2019
-ms.openlocfilehash: dedd7a3629b4381fd5f78f70a39f6906cab0573d
-ms.sourcegitcommit: 68444968565667f86ee0586ed4c43da4ab24aaed
+ms.openlocfilehash: c1d169147c6b09c8a238163a961c192e3e483728
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87995384"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155953"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar hosts protegidos usando atestado baseado em TPM
 
@@ -27,7 +27,7 @@ O modo TPM usa um identificador TPM (também chamado de identificador de platafo
 
     -  Isso é aplicável a todos os hosts Hyper-V executados na mesma classe de hardware
 
-3.  Política de integridade de código (uma lista de permissões de binários permitidos)
+3.  Política de integridade de código (umalist de permissão de binários permitidos)
 
     -  Isso é aplicável a todos os hosts Hyper-V que compartilham hardware e software comuns
 
@@ -35,7 +35,7 @@ Recomendamos que você capture a política de linha de base e CI de um "host de 
 
 ## <a name="versioned-attestation-policies"></a>Políticas de atestado com controle de versão
 
-O Windows Server 2019 apresenta um novo método de atestado, chamado de *atestado v2*, em que um certificado TPM deve estar presente para adicionar o EKPUB ao HgS. O método de atestado v1 usado no Windows Server 2016 permitia que você substituisse essa verificação de segurança, especificando o sinalizador-Force ao executar Add-HgsAttestationTpmHost ou outros cmdlets de atestado de TPM para capturar os artefatos. A partir do Windows Server 2019, o atestado V2 é usado por padrão e você precisa especificar o sinalizador-PolicyVersion v1 ao executar Add-HgsAttestationTpmHost se precisar registrar um TPM sem um certificado. O sinalizador-Force não funciona com o atestado v2.
+O Windows Server 2019 apresenta um novo método de atestado, chamado de *atestado v2*, em que um certificado TPM deve estar presente para adicionar o EKPUB ao HgS. O método de atestado v1 usado no Windows Server 2016 permitia a substituição dessa verificação de segurança, especificando o sinalizador-Force quando você executa Add-HgsAttestationTpmHost ou outros cmdlets de atestado de TPM para capturar os artefatos. A partir do Windows Server 2019, o atestado V2 é usado por padrão e você precisa especificar o sinalizador-PolicyVersion v1 ao executar Add-HgsAttestationTpmHost se precisar registrar um TPM sem um certificado. O sinalizador-Force não funciona com o atestado v2.
 
 Um host só poderá atestar se todos os artefatos (EKPub + TPM Baseline + IC Policy) usarem a mesma versão do atestado. O atestado V2 é tentado primeiro e, se isso falhar, o atestado v1 será usado. Isso significa que se você precisar registrar um identificador TPM usando o atestado v1, também precisará especificar o sinalizador-PolicyVersion v1 para usar o atestado v1 ao capturar a linha de base do TPM e criar a política CI. Se a política de linha de base e CI do TPM tiver sido criada usando o atestado V2 e, posteriormente, você precisar adicionar um host protegido sem um certificado TPM, será necessário recriar cada artefato com o sinalizador-PolicyVersion v1.
 

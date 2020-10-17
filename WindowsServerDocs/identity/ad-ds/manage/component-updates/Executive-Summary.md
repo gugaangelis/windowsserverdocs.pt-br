@@ -6,12 +6,12 @@ ms.author: iainfou
 manager: daveba
 ms.date: 05/08/2018
 ms.topic: article
-ms.openlocfilehash: b67dbb8c22545b55b7b07565c4c92bc363070bc1
-ms.sourcegitcommit: 1dc35d221eff7f079d9209d92f14fb630f955bca
+ms.openlocfilehash: ffd3cf45d276445bca36f9e01651b74468446f61
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88941326"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155934"
 ---
 # <a name="executive-summary"></a>Resumo executivo
 
@@ -78,7 +78,7 @@ Esta seção se concentra em controles técnicos para reduzir a superfície de a
 
 - A seção **contas e grupos com privilégios no Active Directory** discute as contas e os grupos com privilégios mais altos no Active Directory e os mecanismos pelos quais as contas privilegiadas são protegidas. Em Active Directory, três grupos internos são os grupos de privilégios mais altos no diretório (administradores corporativos, administradores de domínio e administradores), embora um número de grupos e contas adicionais também deva ser protegido.
 
-- A seção **implementando modelos administrativos de privilégios mínimos** concentra-se na identificação do risco de que o uso de contas altamente privilegiadas para os presentes na administração diária, além de fornecer recomendações para reduzir esse risco.
+- A seção **implementando Least-Privilege modelos administrativos** concentra-se na identificação do risco que o uso de contas altamente privilegiadas para a administração diária apresenta, além de fornecer recomendações para reduzir esse risco.
 
 O privilégio excessivo não é encontrado apenas em Active Directory em ambientes comprometidos. Quando uma organização desenvolveu o hábito de conceder mais privilégios do que o necessário, normalmente ele é encontrado em toda a infraestrutura:
 
@@ -139,11 +139,11 @@ Esta seção contém recomendações que ajudarão as organizações a se prepar
 
 - **Mantendo um ambiente mais seguro** -contém recomendações de alto nível destinadas a serem usadas como diretrizes para uso no desenvolvimento não apenas em uma segurança efetiva, mas o gerenciamento eficiente do ciclo de vida. As seguintes entidades estão incluídas nesta seção:
 
-    - **Criando práticas de segurança centradas nos negócios para o Active Directory** -para gerenciar com eficiência o ciclo de vida dos usuários, dados, aplicativos e sistemas gerenciados pelo Active Directory, siga estes princípios.
+    - **Criação de Business-Centric práticas de segurança para Active Directory** -para gerenciar efetivamente o ciclo de vida dos usuários, dados, aplicativos e sistemas gerenciados pelo Active Directory, siga esses princípios.
 
         - **Atribuir uma propriedade corporativa a Active Directory dados** -atribuir propriedade de componentes de infraestrutura a ela; para dados que são adicionados ao Active Directory Domain Services (AD DS) para dar suporte à empresa, por exemplo, novos funcionários, novos aplicativos e novos repositórios de informações, uma unidade de negócios ou um usuário designado deve ser associado aos dados.
 
-        - **Implementar gerenciamento de ciclo de vida voltado para negócios** -o gerenciamento do ciclo de vida deve ser implementado para dados em Active Directory.
+        - **Implementar Business-Driven gerenciamento do ciclo** de vida – o gerenciamento do ciclo de vida deve ser implementado para dados em Active Directory.
 
         - **Classificar todos os Active Directory dados-os** proprietários de negócios devem fornecer classificação de dados em Active Directory. Dentro do modelo de classificação de dados, a classificação para os seguintes dados de Active Directory deve ser incluída:
 
@@ -169,7 +169,7 @@ As práticas são listadas em ordem aproximada de prioridade, ou seja, números 
 | Elimine a associação permanente em grupos altamente privilegiados. | Táticas | Preventiva |
 | Implemente controles para conceder a Associação temporária em grupos privilegiados quando necessário. | Táticas | Preventiva |
 | Implementar hosts administrativos seguros. | Táticas | Preventiva |
-| Use a lista de permissões de aplicativos em controladores de domínio, hosts administrativos e outros sistemas confidenciais. | Táticas | Preventiva |
+| Use o Application allowslists em controladores de domínio, hosts administrativos e outros sistemas confidenciais. | Táticas | Preventiva |
 | Identificar ativos críticos e priorizar a segurança e o monitoramento. | Táticas | Ambos |
 | Implemente controles de acesso com privilégios mínimos e baseados em função para administração do diretório, sua infraestrutura de suporte e sistemas ingressados no domínio. | Estratégica | Preventiva |
 | Isole os sistemas e aplicativos herdados. | Táticas | Preventiva |

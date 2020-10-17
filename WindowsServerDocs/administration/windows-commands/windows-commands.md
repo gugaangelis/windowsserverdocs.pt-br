@@ -7,12 +7,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/29/2020
-ms.openlocfilehash: c389d0889d4dfca46472215f014e77e9b2346f87
-ms.sourcegitcommit: 96d46c702e7a9c3a321bbbb5284f73911c7baa3c
+ms.openlocfilehash: ad0c9b5aba9148a2763e8fde6c9ff5eb6556918f
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89022840"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92155841"
 ---
 # <a name="windows-commands"></a>Comandos do Windows
 
@@ -45,7 +45,7 @@ O PowerShell foi projetado para estender os recursos do Shell de comando para ex
 Para a automação do Windows mais robusta e atualizada, recomendamos o uso do PowerShell em vez de comandos do Windows ou do Windows Script Host para automação do Windows.
 
 > [!NOTE]
->Você também pode baixar e instalar o [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6), a versão de código aberto do PowerShell.
+>Você também pode baixar e instalar o [PowerShell Core](/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6&preserve-view=true), a versão de código aberto do PowerShell.
 
 > [!CAUTION]
 > A edição incorreta do Registro pode causar danos graves ao sistema. Antes de fazer as alterações a seguir no registro, você deve fazer backup de todos os dados importantes no computador.
@@ -53,7 +53,7 @@ Para a automação do Windows mais robusta e atualizada, recomendamos o uso do P
 > [!NOTE]
 > Para habilitar ou desabilitar a conclusão de nome de arquivo e diretório no Shell de comando em um computador ou sessão de logon de usuário, execute **regedit.exe** e defina o seguinte **valor de reg_DWOrd**:
 >
-> HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\completionChar\ reg_DWOrd
+> HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\completionChar\reg_DWOrd
 >
 > Para definir o valor de **reg_DWOrd** , use o valor hexadecimal de um caractere de controle para uma função específica (por exemplo, **0 9** é Tab e **0 08** é Backspace). As configurações especificadas pelo usuário têm precedência sobre as configurações do computador, e as opções de linha de comando têm precedência sobre as configurações do registro.
 
@@ -63,7 +63,7 @@ Para localizar informações sobre um comando específico, no menu a-Z a seguir,
 
 [Um](#a)  |  [B](#b)  |  [C](#c)  |  [D](#d)  |  [E](#e)  |  [F](#f)  |  [G](#g)  |  [H](#h)  |  [I](#i)  |  [J](#j)  |  [K](#k)  |  [L](#l)  |  [M](#m)  |  [N](#n)  |  [O](#o)  |  [P](#p)  |  [P](#q)  |  [R](#r)  |  [S](#s)  |  [T](#t)  |  [U](#u)  |  [V](#v)  |  [W](#w)  |  [X](#x) | Y | Z
 
-### <a name="a"></a>Um
+### <a name="a"></a>A
 
 - [active](active.md)
 - [add](add.md)
@@ -769,17 +769,17 @@ Para localizar informações sobre um comando específico, no menu a-Z a seguir,
   - [telnet unset](telnet-unset.md)
 - [tftp](tftp.md)
 - [time](time.md)
-- [timeout](timeout_1.md)
-- [title](title_1.md)
+- [timeout](timeout.md)
+- [title](title.md)
 - [tlntadmn](tlntadmn.md)
 - [tpmtool](tpmtool.md)
 - [tpmvscmgr](tpmvscmgr.md)
-- [tracerpt](tracerpt_1.md)
+- [tracerpt](tracerpt.md)
 - [tracert](tracert.md)
 - [tree](tree.md)
 - [tscon](tscon.md)
 - [tsdiscon](tsdiscon.md)
-- [tsecimp](tsecimp_1.md)
+- [tsecimp](tsecimp.md)
 - [tskill](tskill.md)
 - [tsprof](tsprof.md)
 - [type](type.md)
@@ -790,13 +790,13 @@ Para localizar informações sobre um comando específico, no menu a-Z a seguir,
 
 - [unexpose](unexpose.md)
 - [uniqueid](uniqueid.md)
-- [unlodctr](unlodctr_1.md)
+- [unlodctr](unlodctr.md)
 
 ### <a name="v"></a>V
 
 - [ver](ver.md)
 - [verifier](verifier.md)
-- [verify](verify_1.md)
+- [verify](verify.md)
 - [vol](vol.md)
 - [vssadmin](vssadmin.md)
   - [vssadmin delete shadows](vssadmin-delete-shadows.md)
@@ -826,7 +826,7 @@ Para localizar informações sobre um comando específico, no menu a-Z a seguir,
 - [wdsutil](wdsutil.md)
 - [wecutil](wecutil.md)
 - [wevtutil](wevtutil.md)
-- [where](where_1.md)
+- [where](where.md)
 - [whoami](whoami.md)
 - [winnt](winnt.md)
 - [winnt32](winnt32.md)

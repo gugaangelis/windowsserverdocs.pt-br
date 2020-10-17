@@ -62,11 +62,11 @@
 #### [Gerenciar o registro em log de acesso do usuário](user-access-logging/manage-user-access-logging.md)
 
 ## Ajustar o desempenho do Windows Server
-### [Diretrizes de ajuste de desempenho](performance-tuning/index.md) 
+### [Diretrizes de ajuste de desempenho](performance-tuning/index.md)
 ### [Microsoft Server Performance Advisor](server-performance-advisor/microsoft-server-performance-advisor.md)
 #### [Guia do usuário do Server Performance Advisor](server-performance-advisor/server-performance-advisor-users-guide.md)
 #### [Guia de desenvolvimento do Pacote do Server Performance Advisor](server-performance-advisor/server-performance-advisor-pack-development-guide.md)
 
 ## Automatizar o gerenciamento do Windows Server
-### [Scripts do Windows PowerShell](/powershell/scripting/powershell-scripting?view=powershell-5.1)
+### [Scripts do Windows PowerShell](/powershell/scripting/overview)
 ### [Comandos do Windows](windows-commands/windows-commands.md)

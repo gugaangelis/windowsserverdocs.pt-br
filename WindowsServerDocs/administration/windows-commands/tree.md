@@ -7,50 +7,49 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: e75e0048855a5c30bc90e04433301d5df6d177ae
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: c9f586dbcf9072feffe71e1c3d792f10afc951a4
+ms.sourcegitcommit: f45640cf4fda621b71593c63517cfdb983d1dc6a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89634159"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156401"
 ---
 # <a name="tree"></a>tree
 
-Exibe a estrutura de diretório de um caminho ou do disco em uma unidade graficamente.
-
-
+Exibe a estrutura de diretório de um caminho ou do disco em uma unidade graficamente. A estrutura exibida por esse comando depende dos parâmetros que você especificar no prompt de comando. Se você não especificar uma unidade ou um caminho, esse comando exibirá a estrutura de árvore começando com o diretório atual da unidade atual.
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-tree [<Drive>:][<Path>] [/f] [/a]
+tree [<drive>:][<path>] [/f] [/a]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|Parâmetro|Descrição|
-|---------|-----------|
-|\<Drive>:|Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório.|
-|\<Path>|Especifica o diretório para o qual você deseja exibir a estrutura de diretório.|
-|/f|Exibe os nomes dos arquivos em cada diretório.|
-|/a|Especifica que a **árvore** deve usar caracteres de texto em vez de caracteres gráficos para mostrar as linhas que vinculam subdiretórios.|
-|/?|Exibe a ajuda no prompt de comando.|
-
-## <a name="remarks"></a>Comentários
-
-A estrutura exibida pela **árvore** depende dos parâmetros que você especificar no prompt de comando. Se você não especificar uma unidade ou caminho, a **árvore** exibirá a estrutura de árvore que começa com o diretório atual da unidade atual.
+| Parâmetro | Descrição |
+|--|--|
+| `<drive>:` | Especifica a unidade que contém o disco para o qual você deseja exibir a estrutura do diretório. |
+| `<path>` | Especifica o diretório para o qual você deseja exibir a estrutura de diretório. |
+| /f | Exibe os nomes dos arquivos em cada diretório. |
+| /a | Especifica o uso de caracteres de texto em vez de caracteres gráficos para mostrar as linhas que vinculam subdiretórios. |
+| /? | Exibe a ajuda no prompt de comando. |
 
 ## <a name="examples"></a>Exemplos
 
 Para exibir os nomes de todos os subdiretórios no disco na unidade atual, digite:
+
 ```
 tree \
 ```
+
 Para exibir uma tela de cada vez, os arquivos em todos os diretórios na unidade C, digite:
+
 ```
 tree c:\ /f | more
 ```
+
 Para imprimir uma lista de todos os diretórios na unidade C, digite:
+
 ```
 tree c:\ /f  prn
 ```
