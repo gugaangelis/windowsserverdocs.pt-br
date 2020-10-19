@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 81f6aba6dce5bce28311a789f803ac2c7117fd0f
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: df9866682d96358c63b8ea708c05cdbd8216138a
+ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89628905"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92175792"
 ---
 # <a name="defrag"></a>defrag
 
@@ -67,8 +67,6 @@ defrag <volume> [<parameters>]
 
   - Volumes do sistema de arquivos que não são **NTFS**, **ReFS**, **Fat** ou **FAT32**.
 
-- Não é possível agendar para desfragmentar uma unidade de estado sólido (SSD) ou um volume em um disco rígido virtual (VHD) que reside em um SSD.
-
 - Para executar esse procedimento, você deve ser membro do grupo Administradores no computador local ou deve ter recebido a autoridade apropriada. Se o computador estiver em um domínio, é possível que os membros do grupo Admins. do Domínio possam executar esse procedimento. Como prática recomendada de segurança, considere o uso de **Executar como** para executar esse procedimento.
 
 - Um volume deve ter pelo menos 15% de espaço livre para **desfragmentar de forma completa** e adequada. a **desfragmentação** usa esse espaço como uma área de classificação para fragmentos de arquivos. Se um volume tiver menos de 15% de espaço livre, a **desfragmentação** irá desfragmentá-lo apenas parcialmente. Para aumentar o espaço livre em um volume, exclua arquivos desnecessários ou mova-os para outro disco.
@@ -115,7 +113,7 @@ O processo de desfragmentação executa a tarefa agendada como uma tarefa de man
 
 - Quando executado da tarefa agendada, a **desfragmentação** usa as diretrizes de política abaixo para SSDs:
 
-  - **Processos de otimização tradicionais**. Inclui a **desfragmentação tradicional**, por exemplo, mover arquivos para torná-los razoavelmente contíguos e **recortar**. Isso é feito uma vez por mês. No entanto, se a **desfragmentação** e o **recorte** tradicionais forem ignorados, a **análise** não será executada.
+  - **Processos de otimização tradicionais**. Inclui a **desfragmentação tradicional**, por exemplo, mover arquivos para torná-los razoavelmente contíguos e **recortar**. Isso é feito uma vez por mês. No entanto, se a **desfragmentação** e o **recorte** tradicionais forem ignorados, a **análise** não será executada. Alterar a frequência da tarefa agendada não afeta a cadência de uma vez por mês para o SSDs.
 
   - Se você executar manualmente a **desfragmentação tradicional** em uma SSD, entre suas execuções normalmente agendadas, a próxima execução de tarefa agendada executará a **análise** e **recortará**, mas ignorará a **desfragmentação tradicional** nesse SSD.
 

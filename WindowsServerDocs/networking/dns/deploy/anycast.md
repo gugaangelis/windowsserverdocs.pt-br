@@ -2,16 +2,18 @@
 title: Visão geral do DNS anycast
 description: Este tópico fornece uma breve visão geral do DNS anycast
 manager: laurawi
+ms.prod: windows-server
+ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: greglin
 author: greg-lindsay
-ms.openlocfilehash: 2a891d2e74ec00c923808f7dde347bfd17a2b5b5
-ms.sourcegitcommit: 7cacfc38982c6006bee4eb756bcda353c4d3dd75
+ms.openlocfilehash: f43c1978e193cbb2212966ab519b002d9fed45f5
+ms.sourcegitcommit: ccd38245f1b766be005d0c257962f756ff0c4e76
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90078573"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92175801"
 ---
 # <a name="anycast-dns-overview"></a>Visão geral do DNS anycast
 
@@ -23,11 +25,11 @@ Este tópico fornece informações sobre como o DNS anycast funciona.
 
 A anycast é uma tecnologia que fornece vários caminhos de roteamento para um grupo de pontos de extremidade que são atribuídos ao mesmo endereço IP. Cada dispositivo do grupo anuncia o mesmo endereço em uma rede e os protocolos de roteamento são usados para escolher qual é o melhor destino.
 
-A anycast permite que você dimensione um serviço sem estado, como DNS ou HTTP, colocando vários nós atrás do mesmo endereço IP e usando o roteamento de ECMP (vários caminhos de custo igual) para direcionar o tráfego entre esses nós. A anycast é diferente da unicast, na qual cada ponto de extremidade tem seu próprio endereço IP separado.
+A anycast permite que você dimensione um serviço sem estado, como DNS ou HTTP, colocando vários nós atrás do mesmo endereço IP e usando o roteamento de ECMP (vários caminhos de custo igual) para direcionar o tráfego entre esses nós. A anycast é diferente da unicast, na qual cada ponto de extremidade tem seu próprio endereço IP separado. 
 
 ## <a name="why-use-anycast-with-dns"></a>Por que usar anycast com DNS?
 
-Com o DNS anycast, você pode habilitar um servidor DNS ou um grupo de servidores para responder a consultas DNS com base na localização geográfica de um cliente DNS. Isso pode melhorar o tempo de resposta DNS e simplificar as configurações do cliente DNS. O DNS anycast também fornece uma camada extra de redundância e pode ajudar a proteger contra ataques de negação de serviço DNS.
+Com o DNS anycast, você pode habilitar um servidor DNS ou um grupo de servidores para responder a consultas DNS com base na localização geográfica de um cliente DNS. Isso pode melhorar o tempo de resposta DNS e simplificar as configurações do cliente DNS. O DNS anycast também fornece uma camada extra de redundância e pode ajudar a proteger contra ataques de negação de serviço DNS. 
 
 ### <a name="how-anycast-dns-works"></a>Como funciona o DNS anycast
 
@@ -37,13 +39,13 @@ Com a anycast, os servidores que existem em várias localizações geográficas 
 
 ![DNS Anycast](../../media/Anycast/anycast.png)
 
-**Figura 1**: quatro servidores DNS localizados em sites diferentes em uma rede cada um anuncia o mesmo endereço IP de anycast (setas pretas) para a rede. Um dispositivo cliente DNS envia uma solicitação para o endereço IP de anycast. Os dispositivos de rede analisam as rotas disponíveis e enviam a consulta DNS do cliente para o local mais próximo (seta azul).
+**Figura 1**: quatro servidores DNS localizados em sites diferentes em uma rede cada um anuncia o mesmo endereço IP de anycast (setas pretas) para a rede. Um dispositivo cliente DNS envia uma solicitação para o endereço IP de anycast. Os dispositivos de rede analisam as rotas disponíveis e enviam a consulta DNS do cliente para o local mais próximo (seta azul). 
 
 O DNS anycast é usado normalmente hoje para rotear o tráfego DNS para muitos serviços DNS globais. Por exemplo, o sistema de servidor DNS raiz depende muito do DNS anycast. A anycast também funciona com uma variedade de protocolos de roteamento e pode ser usada exclusivamente em intranets.
 
 ## <a name="windows-server-native-bgp-anycast-demo"></a>Demonstração de anycast do BGP nativo do Windows Server
 
-O procedimento a seguir demonstra como o BGP nativo no Windows Server pode ser usado com o DNS anycast.
+O procedimento a seguir demonstra como o BGP nativo no Windows Server pode ser usado com o DNS anycast.  
 
 ### <a name="requirements"></a>Requisitos
 
@@ -84,10 +86,14 @@ Defina as configurações de rede em máquinas virtuais com as seguintes configu
   - NIC1:10.10.10.1
   - Sub-rede: 255.255.255.0
   - DNS: 10.10.10.1
+  - Gateway: 10.10.10.254
 4.  DC002 (Windows Server)
   - NIC1:10.10.10.2
   - Sub-rede 255.255.255.0
-  - DNS: 10.10.10.2
+  - DNS: 10.10.10.2 *
+  - Gateway: 10.10.10.254
+
+   * Use 10.10.10.1 para DNS inicialmente ao executar o ingresso no domínio para DC002 para que você possa localizar o domínio Active Directory no DC001.
 
 ### <a name="configure-dns"></a>Configurar DNS
 
@@ -103,7 +109,7 @@ Use Gerenciador do Servidor e o console de gerenciamento do DNS ou o Windows Pow
 
 ### <a name="configure-loopback-adapters"></a>Configurar adaptadores de loopback
 
-Insira os seguintes comandos em um prompt elevado do Windows PowerShell em DC001 e DC002 para configurar adaptadores de loopback.
+Insira os seguintes comandos em um prompt elevado do Windows PowerShell em DC001 e DC002 para configurar adaptadores de loopback. 
 
 > [!NOTE]
 > O comando **install-Module** requer acesso à Internet. Isso pode ser feito por meio da atribuição temporária da VM a uma rede externa no Hyper-V.
@@ -136,12 +142,15 @@ Use os seguintes comandos do Windows PowerShell em VMs para configurar o roteame
 
 1.  Gateway
 ```PowerShell
+Install-WindowsFeature RemoteAccess -IncludeManagementTools
 Install-RemoteAccess -VpnType RoutingOnly
 Add-BgpRouter -BgpIdentifier “10.10.10.254” -LocalASN 8075
+Add-BgpPeer -Name "DC001" -LocalIPAddress 10.10.10.254 -PeerIPAddress 10.10.10.1 -PeerASN 65511 –LocalASN 8075
 ```
 
 2.  DC001
 ```PowerShell
+Install-WindowsFeature RemoteAccess -IncludeManagementTools
 Install-RemoteAccess -VpnType RoutingOnly
 Add-BgpRouter -BgpIdentifier “10.10.10.1” -LocalASN 65511
 Add-BgpPeer -Name "Labgw" -LocalIPAddress 10.10.10.1 -PeerIPAddress 10.10.10.254 -PeerASN 8075 –LocalASN 65511
@@ -150,6 +159,7 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 3.  DC002
 ```PowerShell
+Install-WindowsFeature RemoteAccess -IncludeManagementTools
 Install-RemoteAccess -VpnType RoutingOnly
 Add-BgpRouter -BgpIdentifier "10.10.10.2" -LocalASN 65511
 Add-BgpPeer -Name "Labgw" -LocalIPAddress 10.10.10.2 -PeerIPAddress 10.10.10.254 -PeerASN 8075 –LocalASN 65511
@@ -189,6 +199,9 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
     Tempos de ida e volta aproximados em mili-segundos:<br>
     Mínimo = 0ms, máximo = 0ms, média = 0ms
 
+    > [!NOTE]
+    > Se o ping falhar, verifique também se não há nenhuma regra de firewall bloqueando o ICMP.
+
 3.  Em CLIENT1 e CLIENT2, use nslookup ou mergulhe para consultar o registro TXT. Exemplos de ambos são mostrados abaixo.
 
     PS C: \> mergulhe Server. Zone. TST txt + Short<br>
@@ -201,10 +214,10 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
     PS C: \> (Get-netadapter). Nomes<br>
     Loopback<br>
     Ethernet 2<br>
-    PS C: \> Disable – netadapter "Ethernet 2"<br>
+    PS C: \> Disable-NetAdapter "Ethernet 2"<br>
     Confirmar<br>
     Tem certeza de que deseja executar esta ação?<br>
-    Disable – netadapter ' Ethernet 2 '<br>
+    Disable-NetAdapter ' Ethernet 2 '<br>
     [Y] Sim [A] Sim para todos [N] não [L] não para todos [S] suspender [?] Ajuda (o padrão é "Y"):<br>
     PS C: \> (Get-netadapter). Estado<br>
     Up<br>
@@ -227,7 +240,7 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
     "DC002"
 
-6.  Confirme se a sessão BGP está inoperante em DC001 usando Get-BgpStatistics no servidor de gateway.
+6.  Confirme se a sessão BGP está inoperante no DC001 usando Get-BgpStatistics no servidor de gateway.
 7.  Habilite o adaptador Ethernet em DC001 novamente e confirme se a sessão BGP foi restaurada e se os clientes recebem respostas DNS de DC001 novamente.
 
 > [!NOTE]
@@ -237,15 +250,15 @@ Add-BgpCustomRoute -Network 51.51.51.0/24
 
 P: o DNS de anycast é uma boa solução para usar em um ambiente DNS local?<br>
 R: o DNS de anycast funciona diretamente com um serviço DNS local. No entanto, a anycast não é *necessária* para que o serviço DNS seja dimensionado.
-
+ 
 P: Qual é o impacto da implementação do DNS anycast em um ambiente com um número grande (ex: >50) de controladores de domínio? <br>
 R: não há nenhum impacto direto na funcionalidade. Se um balanceador de carga for usado, nenhuma configuração adicional nos controladores de domínio será necessária.
-
+ 
 P: uma configuração de DNS anycast com suporte do atendimento ao cliente da Microsoft?<br>
-R: se você usar um balanceador de carga não Microsoft para encaminhar consultas DNS, a Microsoft dará suporte a problemas relacionados ao serviço do servidor DNS. Consulte o fornecedor do balanceador de carga para problemas relacionados ao encaminhamento de DNS.
-
+R: se você usar um balanceador de carga não Microsoft para encaminhar consultas DNS, a Microsoft dará suporte a problemas relacionados ao serviço do servidor DNS. Consulte o fornecedor do balanceador de carga para problemas relacionados ao encaminhamento de DNS. 
+ 
 P: Qual é a melhor prática para o DNS de anycast com um número grande (ex: >50) de controladores de domínio?<br>
-R: a prática recomendada é usar um balanceador de carga em cada local geográfico. Os balanceadores de carga normalmente são fornecidos por um fornecedor externo.
+R: a prática recomendada é usar um balanceador de carga em cada local geográfico. Os balanceadores de carga normalmente são fornecidos por um fornecedor externo. 
 
 P: o DNS de anycast e o DNS do Azure têm funcionalidade semelhante?<br>
-R: o DNS do Azure usa Anycast. Para usar a anycast com o DNS do Azure, configure o balanceador de carga para encaminhar solicitações para o servidor DNS do Azure.
+R: o DNS do Azure usa Anycast. Para usar a anycast com o DNS do Azure, configure o balanceador de carga para encaminhar solicitações para o servidor DNS do Azure. 
