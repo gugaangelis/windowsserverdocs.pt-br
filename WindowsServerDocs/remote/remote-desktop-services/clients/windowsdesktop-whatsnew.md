@@ -5,14 +5,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 10/09/2020
+ms.date: 10/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 96a307b06b0a29cfb66ba52ca5d8ea031bd979e7
-ms.sourcegitcommit: 6931830a70c5849d8f884cdc7bd4f5afc1a00cce
+ms.openlocfilehash: 8708f8ab6e8fb751f0ca39238574823ae5b499c4
+ms.sourcegitcommit: 45099dfe3682df1e2bc0bd5998594a79cfff16fe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91955757"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079835"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Novidades no cliente da Área de Trabalho do Windows
 
@@ -25,20 +25,29 @@ O cliente pode ser configurado para diferentes [grupos de usuários](windowsdesk
 |Grupo de usuários |Última versão  |Versão mínima com suporte |
 |-----------|----------------|--------------------------|
 |Público     |1.2.1364        |1.2.945                   |
-|Participante do Programa Windows Insider    |1.2.1364        |1.2.945                   |
+|Participante do Programa Windows Insider    |1.2.1440        |1.2.945                   |
+
+## <a name="updates-for-version-121440-insiders"></a>Atualizações para a versão 1.2.1440 (Participantes do Programa Windows Insider)
+
+*Data da publicação: 13/10/2020*
+
+Download: [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2139233), [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2139144), [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139368)
+
+- O cliente agora consegue distinguir os diferentes feeds no Centro de Conexão.
+- Correção de um problema em que a conta da assinatura não é a conta com que o usuário entrou.
+- Correção de um problema com o redirecionamento do Smartcard.
 
 ## <a name="updates-for-version-121364"></a>Atualizações para a versão 1.2.1364
 
 *Data da publicação: 22/09/2020*
 
-Download: Windows [64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
+Download: [Windows 64 bits](https://go.microsoft.com/fwlink/?linkid=2139369), [Windows 32 bits](https://go.microsoft.com/fwlink/?linkid=2139456), [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2139370)
 
 - Correção de um problema em que o SSO (logon único) não funcionava no Windows 7.
 - Corrigida a falha de conexão que acontecia ao chamar ou ingressar em uma chamada de equipe enquanto outro aplicativo tinha um fluxo de áudio aberto em modo exclusivo e quando a otimização de mídia para o Teams estava habilitada.
 - Corrigida uma falha ao enumerar dispositivos de áudio ou vídeo no Teams com a otimização de mídia para o Teams habilitada.
 - Adicionado um link "Precisa de ajuda com as configurações?" para a página de configurações da área de trabalho.
 - Corrigido um problema com o botão "Assinar" que acontecia ao usar temas escuros de alto contraste.
-- É permitido um limite de até 20 credenciais por aplicativo.
 
 ## <a name="updates-for-version-121275"></a>Atualizações para a versão 1.2.1275
 
@@ -86,7 +95,7 @@ Download: [Windows 64 bits](https://query.prod.cms.rt.microsoft.com/cms/api/am/b
 - O prompt Cancelar assinatura agora exibe um ícone de aviso e mostra os nomes do workspace como uma lista com marcadores.
 - Foi adicionada a seção Detalhes a mais caixas de diálogo de erro para ajudar a diagnosticar problemas.
 - Foi adicionado um carimbo de data/hora à seção Detalhes das caixas de diálogo de erro.
-- Corrigido um problema em que a configuração **desktop size id** do arquivo do RDP não funcionava corretamente.
+- Corrigido um problema em que a configuração **desktop size ID** do arquivo do RDP não funcionava corretamente.
 - Corrigido um problema em que a configuração de exibição **Atualizar a resolução ao redimensionar** não se aplicava após iniciar a sessão.
 - Problemas de localização corrigidos no painel de configurações da área de trabalho.
 - Foi corrigido o tamanho da caixa de foco ao alternar entre controles no painel de configurações da área de trabalho.
