@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ed154b0ef50ebf36b716ad93d30768739b39ffb5
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 6fa543d353f425ee41b836ecc97e562d77d9c19d
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729612"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524291"
 ---
 # <a name="remove-drivergroupfilter"></a>Remove-DriverGroupFilter
 
@@ -23,7 +23,7 @@ Remove uma regra de filtro de um grupo de drivers em um servidor.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type>
+wdsutil /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type>
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -38,10 +38,10 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 Para remover um filtro, digite um dos seguintes:
 ```
-WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer
+wdsutil /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer
 ```
 ```
-WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /FilterType:OSLanguage
+wdsutil /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /FilterType:OSLanguage
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

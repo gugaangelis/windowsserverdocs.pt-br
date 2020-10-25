@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 1a984c789a309395dcee0d93a6ba0877c44aab22
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 7684dfb694ac6814d00c91363d6573be5cf7be7f
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729841"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524891"
 ---
 # <a name="update-serverfiles"></a>Update-ServerFiles
 
@@ -21,7 +21,7 @@ Atualiza os arquivos na pasta compartilhada REMINST usando os arquivos mais rece
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
+wdsutil [Options] /Update-ServerFiles [/Server:<Server name>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -34,8 +34,8 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 Para atualizar os arquivos, digite um dos seguintes:
 ```
-WDSUTIL /Update-ServerFiles
-WDSUTIL /Verbose /Progress /Update-ServerFiles /Server:MyWDSServer
+wdsutil /Update-ServerFiles
+wdsutil /Verbose /Progress /Update-ServerFiles /Server:MyWDSServer
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: a4b0b3154f6cc7cee34e6fdcc91f332295164541
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 2ff17721282472032cb935f4bbb3e5682c356603
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729828"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524951"
 ---
 # <a name="subcommand-set-driverpackage"></a>Subcomando: Set-DriverPackage
 
@@ -21,7 +21,7 @@ Renomeia e/ou habilita ou desabilita um pacote de driver em um servidor.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
+wdsutil /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /PackageId:<ID>} [/Name:<New Name>] [/Enabled:{Yes | No}
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -38,10 +38,10 @@ WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /Pac
 
 Para alterar as configurações de um pacote, digite um dos seguintes:
 ```
-WDSUTIL /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Name:MyDriverPackage
+wdsutil /Set-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318} /Name:MyDriverPackage
 ```
 ```
-WDSUTIL /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
+wdsutil /Set-DriverPackage /DriverPackage:MyDriverPackage /Name:NewName /Enabled:Yes
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

@@ -1,18 +1,18 @@
 ---
 title: Add-DriverGroupFilter
-description: Artigo de referência para Add-DriverGroupFilter, que adiciona um filtro a um grupo de drivers em um servidor.
+description: Artigo de referência para o comando Add-DriverGroupFilter, que adiciona um filtro a um grupo de drivers em um servidor.
 ms.topic: reference
 ms.assetid: a66c5e68-99ea-4e47-b68d-8109633ae336
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: bf11cbe86242a8051b173aa23f53748c20aa4ca6
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: bd9e26e7bdf6b1a03d01b2993c969bbbcf5b8754
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729715"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524601"
 ---
 # <a name="add-drivergroupfilter"></a>Add-DriverGroupFilter
 
@@ -21,30 +21,39 @@ Adiciona um filtro a um grupo de drivers em um servidor.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL /Add-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type> /Policy:{Include | Exclude} /Value:<Value> [/Value:<Value> ...]
+wdsutil /Add-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server name>] /FilterType:<Filter Type> /Policy:{Include | Exclude} /Value:<Value> [/Value:<Value> ...]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|         Parâmetro          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /DriverGroup:\<Group Name> |                                                                                                                                                                                                                                                                                                                                                                                                                                                              Especifica o nome do grupo de drivers.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|  [/Server:\<Server name>]  |                                                                                                                                                                                                                                                                                                                                                                                                               Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado.                                                                                                                                                                                                                                                                                                                                                                                                               |
-| FilterType\<FilterType>  |                                                                                                                                                                                                   Especifica o tipo de filtro a ser adicionado ao grupo. Você pode especificar vários tipos de filtro em um único comando. Cada tipo de filtro deve ser seguido por **/Policy** e incluir pelo menos um **/Value**. \<FilterType> pode ser **BiosVendor**, **biosversion**, **ChassisType**, **manufacturer**, **UUID**, **OsVersion**, **OsEdition**ou **OsLanguage**. Para obter informações sobre como obter os valores para todos os outros tipos de filtro, consulte [filtros de grupo de driver](https://go.microsoft.com/fwlink/?LinkID=155158) ( <https://go.microsoft.com/fwlink/?LinkID=155158> ).                                                                                                                                                                                                    |
-|     [/Policy: {include      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Excluir}]                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|     [/Value: \<Value> ]      | Especifica o valor do cliente que corresponde a **/FilterType**. Você pode especificar vários valores para um único tipo. Consulte a lista a seguir para obter os valores válidos para **ChassisType**. Para obter informações sobre como obter os valores para todos os outros tipos de filtro, consulte [filtros de grupo de driver](https://go.microsoft.com/fwlink/?LinkID=155158) ( <https://go.microsoft.com/fwlink/?LinkID=155158> ).</br>**Outras**</br>**UnknownChassis**</br>**Área de Trabalho**</br>**LowProfileDesktop**</br>**PizzaBox**</br>**MiniTower**</br>**Torre**</br>**Portáteis**</br>**Laptop**</br>**Notebook**</br>**Aparelhos**</br>**DockingStation**</br>**AllInOne**</br>**Subnotebook**</br>**SpaceSaving**</br>**LunchBox**</br>**MainSystemChassis**</br>**ExpansionChassis**</br>**Subchassi**</br>**BusExpansionChassis**</br>**PeripheralChassis**</br>**StorageChassis**</br>**RackMountChassis**</br>**SealedCaseComputer**</br>**MultiSystemChassis**</br>**CompactPci**</br>**AdvancedTca** |
+| Parâmetro | Descrição |
+|--|--|
+| /DriverGroup:`<Groupname>` | Especifica o nome do novo grupo de drivers. |
+| Servidor`<Servername>` | Especifica o nome do servidor. Pode ser o nome NetBIOS ou o FQDN. Se nenhum nome de servidor for especificado, o servidor local será usado. |
+| FilterType`<Filtertype>` | Especifica o tipo do filtro a ser adicionado ao grupo. Você pode especificar vários tipos de filtro em um único comando. Cada tipo de filtro deve ser seguido por **/Policy** e pelo menos um **/Value**. Os valores válidos incluem:<ul><li>BiosVendor</li><li>Biosversion</li><li>Chassistype</li><li>Fabricante</li><li>Uuid</li><li>OSVersion</li><li>Osedition</li><li>OsLanguage</li></ul> Para obter informações sobre como obter valores para todos os outros tipos de filtro, consulte [filtros de grupo de driver](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759191(v=ws.11)). |
+| [/Policy: `{Include|Exclude}` ] | Especifica a política a ser definida no filtro. Se **/Policy** estiver definido como **include**, os computadores cliente que correspondem ao filtro terão permissão para instalar os drivers nesse grupo. Se **/Policy** for definido como **Exclude**, os computadores cliente que corresponderem ao filtro não terão permissão para instalar os drivers nesse grupo. |
+| [/Value: `<Value>` ] | Especifica o valor do cliente que corresponde a **/FilterType**. Você pode especificar vários valores para um único tipo. Para obter informações sobre valores de tipo de filtro aceitáveis, consulte [filtros de grupo de driver](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759191(v=ws.11)). |
 
 ## <a name="examples"></a>Exemplos
 
-Para adicionar um filtro a um grupo de drivers, digite um dos seguintes:
+Para adicionar um filtro a um grupo de drivers, digite:
+
 ```
-WDSUTIL /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /Value:Name2
+wdsutil /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /Value:Name2
 ```
+
 ```
-WDSUTIL /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /FilterType:ChassisType /Policy:Exclude /Value:Tower /Value:MiniTower
+wdsutil /Add-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufacturer /Policy:Include /Value:Name1 /FilterType:ChassisType /Policy:Exclude /Value:Tower /Value:MiniTower
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
 
+- [comando WDSUTIL Add-drivergrouppackage](wdsutil-add-drivergrouppackage.md)
+
+- [comando WDSUTIL Add-drivergrouppackages](wdsutil-add-drivergrouppackages.md)
+
+- [comando WDSUTIL Add-driver](wdsutil-add-drivergroup.md)
+
+- [Cmdlets dos serviços de implantação do Windows](/powershell/module/wds)

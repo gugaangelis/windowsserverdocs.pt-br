@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ab582e65ad3f1c9920071260541fefd0125bf428
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 28dfc8d64a1027eced15fb3d09a607a41535975c
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729631"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524341"
 ---
 # <a name="new-captureimage"></a>New-CaptureImage
 
@@ -21,7 +21,7 @@ Cria uma nova imagem de captura a partir de uma imagem de inicialização existe
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
+wdsutil [Options] /New-CaptureImage [/Server:<Server name>]
      /Image:<Image name>
      /Architecture:{x86 | ia64 | x64}
      [/Filename:<File name>]
@@ -47,11 +47,11 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 Para criar uma imagem de captura e nomeá-la WinPECapture. wim, digite:
 ```
-WDSUTIL /New-CaptureImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPECapture.wim
+wdsutil /New-CaptureImage /Image:WinPE boot image /Architecture:x86 /DestinationImage /FilePath:C:\Temp\WinPECapture.wim
 ```
 Para criar uma imagem de captura e aplicar as configurações especificadas, digite:
 ```
-WDSUTIL /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim
+wdsutil /Verbose /Progress /New-CaptureImage /Server:MyWDSServer /Image:WinPE boot image /Architecture:x64 /Filename:boot.wim
 /DestinationImage /FilePath:\\Server\Share\WinPECapture.wim /Name:New WinPE image /Description:WinPE image with capture utility /Overwrite:No /UnattendFilePath:\\Server\Share\WDSCapture.inf
 ```
 

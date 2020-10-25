@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: ed8fafb9c35f54656ab4551876dc0461ea1a2c55
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 6ff13092b5d99cd007d30eee80076f18814e138d
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729689"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524161"
 ---
 # <a name="disable-server"></a>desabilitar-servidor
 
@@ -21,7 +21,7 @@ Desabilita todos os serviços de um servidor de serviços de implantação do Wi
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
+wdsutil [Options] /Disable-Server [/Server:<Server name>]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -34,8 +34,8 @@ WDSUTIL [Options] /Disable-Server [/Server:<Server name>]
 
 Para desabilitar o servidor, execute um dos seguintes:
 ```
-WDSUTIL /Disable-Server
-WDSUTIL /Verbose /Disable-Server /Server:MyWDSServer
+wdsutil /Disable-Server
+wdsutil /Verbose /Disable-Server /Server:MyWDSServer
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

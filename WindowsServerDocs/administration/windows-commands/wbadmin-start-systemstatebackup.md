@@ -1,52 +1,45 @@
 ---
 title: wbadmin start systemstatebackup
-description: Artigo de referência para Wbadmin start systemstatebackup, que cria um backup de estado do sistema do computador local e o armazena no local especificado.
+description: Artigo de referência para o comando Wbadmin start systemstatebackup, que cria um backup de estado do sistema do computador local e o armazena no local especificado.
 ms.topic: reference
 ms.assetid: 998366c1-0a64-45e6-9ed3-4c3f5b8406f0
 ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 7bd0df6e0cbfd7e34439e858865420002f5fb364
-ms.sourcegitcommit: db2d46842c68813d043738d6523f13d8454fc972
+ms.openlocfilehash: afdfb3f4a52ae0f5897517f8d59069bea820bc4a
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89621479"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524721"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
-
-
 Cria um backup de estado do sistema do computador local e o armazena no local especificado.
+
+Para executar um backup de estado do sistema usando esse comando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados, clicando com o botão direito do mouse em **prompt de comando**e selecionando **Executar como administrador**.
 
 > [!NOTE]
 > Backup do Windows Server não faz backup ou recupera hives de usuário do registro (HKEY_CURRENT_USER) como parte do backup do estado do sistema ou da recuperação do estado do sistema.
 
-Para executar um backup de estado do sistema com esse subcomando, você deve ser membro do grupo **operadores de backup** ou do grupo **Administradores** ou ter recebido as permissões apropriadas. Além disso, você deve executar o **Wbadmin** em um prompt de comandos com privilégios elevados. (Para abrir um prompt de comando com privilégios elevados, clique com o botão direito do mouse em **prompt de comando**e clique em **Executar como administrador**.)
-
 ## <a name="syntax"></a>Sintaxe
 
 ```
-wbadmin start systemstatebackup
--backupTarget:<VolumeName>
-[-quiet]
+wbadmin start systemstatebackup -backupTarget:<VolumeName> [-quiet]
 ```
 
 ### <a name="parameters"></a>Parâmetros
 
-|   Parâmetro   |                                                                                                                                                                                                                      Descrição                                                                                                                                                                                                                      |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -backupTarget | Especifica o local em que você deseja armazenar o backup. O local de armazenamento requer uma letra da unidade ou um volume baseado em GUID do formato: \\ \\ ? \Volume{*GUID*}.</br>Não há suporte para um backup de estado do sistema em uma pasta de rede compartilhada em um computador que esteja executando o Windows Server 2008. Se o servidor estiver executando o Windows Server 2008 R2 ou posterior, você poderá usar o comando **-backuptarget: \\ \\ servername\sharedFolder \\ ** para armazenar os backups de estado do sistema. |
-|    -quiet     |                                                                                                                                                                                                   Executa o subcomando sem prompts para o usuário.                                                                                                                                                                                                    |
-
-## <a name="remarks"></a>Comentários
-
-Para obter informações sobre como salvar um backup de estado do sistema em um volume que, por sua vez, contém arquivos de estado do sistema, consulte o artigo 944530 na base de dados de conhecimento Microsoft ( [https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439) ).
+| Parâmetro | Descrição |
+|--|--|
+| -backupTarget | Especifica o local em que você deseja armazenar o backup. O local de armazenamento requer uma letra da unidade ou um volume baseado em GUID do formato: `\\?\Volume{*GUID*}` . Use o comando `-backuptarget:\\servername\sharedfolder\` para armazenar backups de estado do sistema. |
+| -quiet | Executa o comando sem prompts para o usuário. |
 
 ## <a name="examples"></a>Exemplos
 
 Para criar um backup de estado do sistema e armazená-lo no volume f, digite:
+
 ```
 wbadmin start systemstatebackup -backupTarget:f:
 ```
@@ -54,5 +47,7 @@ wbadmin start systemstatebackup -backupTarget:f:
 ## <a name="additional-references"></a>Referências adicionais
 
 - [Chave da sintaxe de linha de comando](command-line-syntax-key.md)
--   [Wbadmin](wbadmin.md)
--   Cmdlet [Start-WBBackup](/previous-versions/windows/it-pro/windows-8.1-and-8/hh825173(v=win.10))
+
+- [comando Wbadmin](wbadmin.md)
+
+- [Start-WBBackup](/powershell/module/windowserverbackup/Start-WBBackup)

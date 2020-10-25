@@ -7,12 +7,12 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: aa8ce1a8a989dd5e3551a3beccd11944f237c6b5
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: 86f8b2cdc7a0bc62f42c02c9ff7c6852e9b159f0
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729651"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524431"
 ---
 # <a name="get-driverpackage"></a>Get-DriverPackage
 
@@ -21,7 +21,7 @@ Exibe informações sobre um pacote de driver no servidor.
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name> | /PackageId:<ID>} [/Show:{Drivers | Files | All}]
+wdsutil /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name> | /PackageId:<ID>} [/Show:{Drivers | Files | All}]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -37,10 +37,10 @@ WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name
 
 Para exibir informações sobre um pacote de driver, digite um dos seguintes:
 ```
-WDSUTIL /Get-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}
+wdsutil /Get-DriverPackage /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}
 ```
 ```
-WDSUTIL /Get-DriverPackage /DriverPackage:MyDriverPackage /Show:All
+wdsutil /Get-DriverPackage /DriverPackage:MyDriverPackage /Show:All
 ```
 
 ## <a name="additional-references"></a>Referências adicionais

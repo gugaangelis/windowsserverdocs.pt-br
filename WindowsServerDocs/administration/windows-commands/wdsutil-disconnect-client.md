@@ -1,5 +1,5 @@
 ---
-title: Desconectar-cliente
+title: Disconnect-Client
 description: Artigo de referência para Disconnect-Client, que desconecta um cliente de uma transmissão multicast ou de um namespace.
 ms.topic: reference
 ms.assetid: 876bbe6c-76ab-4de5-879b-d2066e700326
@@ -7,21 +7,21 @@ ms.author: lizross
 author: eross-msft
 manager: mtillman
 ms.date: 10/16/2017
-ms.openlocfilehash: 902d488a20391cb4317931aeb2572655d9aa291a
-ms.sourcegitcommit: 720455aad2bac78cf64997d196a13f35ea0acb73
+ms.openlocfilehash: cc0d9b21ee7f7a400e363d978ba77778db4eb38a
+ms.sourcegitcommit: 554d274fea48a4d47c19845d969a9ec93dec82de
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91729687"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92524451"
 ---
-# <a name="disconnect-client"></a>Desconectar-cliente
+# <a name="disconnect-client"></a>Disconnect-Client
 
 Desconecta um cliente de uma transmissão multicast ou de um namespace. A menos que você especifique **/Force**, o cliente voltará para outro método de transferência (se houver suporte pelo cliente).
 
 ## <a name="syntax"></a>Sintaxe
 
 ```
-WDSUTIL /Disconnect-Client /ClientId:<Client ID> [/Server:<Server name>] [/Force]
+wdsutil /Disconnect-Client /ClientId:<Client ID> [/Server:<Server name>] [/Force]
 ```
 
 ### <a name="parameters"></a>Parâmetros
@@ -36,11 +36,11 @@ WDSUTIL /Disconnect-Client /ClientId:<Client ID> [/Server:<Server name>] [/Force
 
 Para desconectar um cliente, digite:
 ```
-WDSUTIL /Disconnect-Client /ClientId:1
+wdsutil /Disconnect-Client /ClientId:1
 ```
 Para desconectar um cliente e forçar a falha da instalação, digite:
 ```
-WDSUTIL /Disconnect-Client /Server:MyWDSServer /ClientId:1 /Force
+wdsutil /Disconnect-Client /Server:MyWDSServer /ClientId:1 /Force
 ```
 
 ## <a name="additional-references"></a>Referências adicionais
